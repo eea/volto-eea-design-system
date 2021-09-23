@@ -1,4 +1,4 @@
-# volto-addon-template
+# volto-eea-design-system
 
 ## Develop
 
@@ -10,15 +10,15 @@ Before starting make sure your development environment is properly set. See [Vol
 
 1.  Create new volto app
 
-        yo @plone/volto my-volto-project --addon @eeacms/volto-addon-template --skip-install
+        yo @plone/volto my-volto-project --addon @eeacms/volto-eea-design-system --skip-install
         cd my-volto-project
 
 1.  Add the following to `mrs.developer.json`:
 
         {
-            "volto-addon-template": {
-                "url": "https://github.com/eea/volto-addon-template.git",
-                "package": "@eeacms/volto-addon-template",
+            "volto-eea-design-system": {
+                "url": "https://github.com/eea/volto-eea-design-system.git",
+                "package": "@eeacms/volto-eea-design-system",
                 "branch": "develop",
                 "path": "src"
             }
@@ -48,4 +48,4 @@ Before starting make sure your development environment is properly set. See [Vol
 
 1.  Happy hacking!
 
-        cd src/addons/volto-addon-template/
+        cd src/addons/volto-eea-design-system/
