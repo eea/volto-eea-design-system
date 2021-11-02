@@ -1,0 +1,11 @@
+.addReducedTextBlock() when (@useReducedTextContainer = true) {
+  @{textContainerSelector} {
+    @{textContainerTextSelectors} {
+      max-width: @textContainerWidth;
+      margin-right: @textContainerTextRightMargin;
+      margin-left: @textContainerTextLeftMargin;
+    }
+  }
+}
+
+.addReducedTextBlock();
