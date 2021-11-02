@@ -13,7 +13,7 @@
 
 /* Group */
 @horizontalSpacing: 1.5em;
-@rowSpacing: 1em;
+@rowSpacing: 2em;
 @groupMargin: @verticalMargin -@horizontalSpacing -@rowSpacing;
 
 /* Group Element */
