@@ -63,6 +63,7 @@
 
 @lightSecondaryColor : @lightBlack;
 @headerLineHeight : 1.25;
+@headerFontWeight : 500;
 
 @h1 : unit((28 / 14), rem);
 @h2 : unit((24 / 14), rem);
@@ -148,6 +149,9 @@
 /*-------------------
     Scroll Bars
 --------------------*/
+// Pastanaga variables
+@mobileScrollbarWidth: 4px;
+@mobileScrollbarTrackBackground: transparent;
 
 @useCustomScrollbars: true;
 
