@@ -159,3 +159,5 @@
 @categoryNamePadding: 0.4em 1em;
 @categoryNameFontWeight: @bold;
 @categoryNameColor: @lightTextColor;
+// Pastanaga customization
+@categoryNameFloat: left;

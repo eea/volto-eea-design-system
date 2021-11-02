@@ -48,7 +48,7 @@
        States
 --------------------*/
 
-@activeIconTransform: rotate(90deg);
+@activeIconTransform: none;
 
 /*-------------------
       Variations
@@ -57,11 +57,8 @@
 /* Styled */
 @styledWidth: 600px;
 @styledBackground: @white;
-@styledBorderRadius: @defaultBorderRadius;
-@styledBoxShadow:
-  @subtleShadow,
-  0px 0px 0px 1px @borderColor
-;
+@styledBorderRadius: 0;
+@styledBoxShadow: none;
 
 /* Content */
 @styledContentMargin: 0em;
@@ -74,20 +71,20 @@
 /* Styled Title */
 @styledTitleMargin: 0em;
 @styledTitlePadding: 0.75em 1em;
-@styledTitleFontWeight: @bold;
-@styledTitleColor: @unselectedTextColor;
+@styledTitleFontWeight: @normal;
+@styledTitleColor: @teal;
 @styledTitleTransition: background-color @defaultDuration @defaultEasing;
-@styledTitleBorder: 1px solid @borderColor;
+@styledTitleBorder: none;
 @styledTitleTransition:
   background @defaultDuration @defaultEasing,
   color @defaultDuration @defaultEasing
 ;
 
 /* Styled Title States */
-@styledTitleHoverBackground: transparent;
-@styledTitleHoverColor: @textColor;
-@styledActiveTitleBackground: transparent;
-@styledActiveTitleColor: @selectedTextColor;
+@styledTitleHoverBackground: @darkWhite;
+@styledTitleHoverColor: @teal;
+@styledActiveTitleBackground: @darkWhite;
+@styledActiveTitleColor: @teal;
 
 /* Styled Child Title States */
 @styledHoverChildTitleBackground: @styledTitleHoverBackground;

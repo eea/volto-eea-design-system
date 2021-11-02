@@ -1,6 +1,7 @@
 /*******************************
             Dropdown
 *******************************/
+@dropdownTextColor: #636363;
 
 /*-------------------
        Element
@@ -10,7 +11,7 @@
   box-shadow @defaultDuration @defaultEasing,
   width @defaultDuration @defaultEasing
 ;
-@borderRadius: @defaultBorderRadius;
+@borderRadius: 0;
 
 @raisedShadow: 0px 2px 3px 0px @borderColor;
 
@@ -19,8 +20,8 @@
 --------------------*/
 
 /* Icon */
-@dropdownIconSize: @relative12px;
-@dropdownIconMargin: 0em 0em 0em 1em;
+@dropdownIconSize: 0;
+@dropdownIconMargin: 0;
 
 /* Current Text */
 @textTransition: none;
@@ -52,11 +53,11 @@
 @itemBorder: none;
 @itemHeight: auto;
 @itemDivider: none;
-@itemColor: @textColor;
+@itemColor: @dropdownTextColor;
 @itemVerticalPadding: @mini;
 @itemHorizontalPadding: @large;
 @itemPadding: @itemVerticalPadding @itemHorizontalPadding;
-@itemFontWeight: @normal;
+@itemFontWeight: 300;
 @itemLineHeight: 1em;
 @itemLineHeightOffset: (@itemLineHeight - 1em);
 @itemTextTransform: none;
@@ -137,7 +138,7 @@
 @selectionPadding: @selectionVerticalPadding @selectionIconDistance @selectionVerticalPadding @selectionHorizontalPadding;
 @selectionZIndex: 10;
 
-@selectionItemDivider: 1px solid @solidInternalBorderColor;
+@selectionItemDivider: none;
 @selectionMessagePadding: @selectionItemPadding;
 
 /* <select> */
@@ -153,7 +154,7 @@
 
 @selectionBoxShadow: none;
 @selectionBorderColor: @borderColor;
-@selectionBorder: 1px solid @selectionBorderColor;
+@selectionBorder: none;
 @selectionBorderRadius: @borderRadius;
 
 @selectionIconOpacity: 0.8;
@@ -163,7 +164,7 @@
 @selectionIconPadding: @selectionIconHitbox / @dropdownIconSize;
 @selectionIconTransition: opacity @defaultDuration @defaultEasing;
 
-@selectionMenuBorderRadius: 0em 0em @borderRadius @borderRadius;
+@selectionMenuBorderRadius: 0;
 @selectionMenuBoxShadow: @raisedShadow;
 @selectionMenuItemBoxShadow: none;
 
@@ -195,15 +196,15 @@
 /* Focus */
 @selectionFocusBorderColor: @focusedFormMutedBorderColor;
 @selectionFocusBoxShadow: none;
-@selectionFocusMenuBoxShadow: @raisedShadow;
+@selectionFocusMenuBoxShadow: none;
 
 /* Visible */
 @selectionVisibleTextFontWeight: @normal;
 @selectionVisibleTextColor: @hoveredTextColor;
 
 @selectionVisibleBorderColor: @focusedFormMutedBorderColor;
-@selectionVisibleBoxShadow: @raisedShadow;
-@selectionVisibleMenuBoxShadow: @raisedShadow;
+@selectionVisibleBoxShadow: none;
+@selectionVisibleMenuBoxShadow: none;
 
 /* Visible Hover */
 @selectionActiveHoverBorderColor: @focusedFormMutedBorderColor;
@@ -211,7 +212,7 @@
 @selectionActiveHoverMenuBoxShadow: @selectionVisibleMenuBoxShadow;
 
 @selectionVisibleConnectingBorder: 0em;
-@selectionVisibleIconOpacity: '';
+@selectionVisibleIconOpacity: 1;
 
 /*--------------
      Search
@@ -232,7 +233,7 @@
 @searchWidescreenMaxMenuHeight: @selectionWidescreenMaxMenuHeight;
 
 /* Inline */
-@inlineIconMargin: 0em @relative3px 0em @relative3px;
+@inlineIconMargin: 0em @relative7px 0em @relative3px;
 @inlineTextColor: inherit;
 @inlineTextFontWeight: @bold;
 @inlineMenuDistance: @relative3px;
@@ -280,7 +281,7 @@
 
 /* Hovered */
 @hoveredItemBackground: @transparentBlack;
-@hoveredItemColor: @selectedTextColor;
+@hoveredItemColor: @dropdownTextColor;
 @hoveredZIndex: @menuZIndex + 2;
 
 /* Default Text */
@@ -294,12 +295,12 @@
 @activeItemZIndex: @menuZIndex + 1;
 @activeItemBackground: transparent;
 @activeItemBoxShadow: none;
-@activeItemFontWeight: @bold;
+@activeItemFontWeight: 300;
 @activeItemColor: @selectedTextColor;
 
 /* Selected */
-@selectedBackground: @subtleTransparentBlack;
-@selectedColor: @selectedTextColor;
+@selectedBackground: none;
+@selectedColor: @blue;
 
 /* Error */
 @errorLabelBackground: #EACBCB;
