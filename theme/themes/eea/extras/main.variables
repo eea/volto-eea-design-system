@@ -3,5 +3,5 @@
 @textContainerWidth: 800px;
 @textContainerSelector: .content-area;
 @textContainerTextSelectors: h1, h2, h3, h4, h5, h6, p, ol, ul;
-@textContainerTextLeftMargin: auto;
-@textContainerTextRightMargin: auto;
+@textContainerTextLeftMargin: auto !important;
+@textContainerTextRightMargin: auto !important;
