@@ -5,3 +5,16 @@
 @textContainerTextSelectors: h1, h2, h3, h4, h5, h6, p, ol, ul;
 @textContainerTextLeftMargin: auto !important;
 @textContainerTextRightMargin: auto !important;
+
+/* Mobile Menu Nav */
+@mobileMenuNavAlignItems: center;
+@mobileMenuNavJustifyContent: center;
+@mobileMenuNavTextAlign: center;
+
+/* Mobile Menu Nav Menu */
+@mobileMenuNavMenuAlignItems: center;
+@mobileMenuNavMenuFontSize: @24px;
+
+/* Mobile Menu Nav Item */
+@mobileMenuNavItemJustifyContent: center;
+@mobileMenuNavItemLineHeight: 1.25;
