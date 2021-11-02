@@ -9,9 +9,9 @@
 @verticalMargin: 1em;
 @horizontalMargin: 0em;
 @margin: @verticalMargin @horizontalMargin;
-@borderCollapse: separate;
+@borderCollapse: collapse;
 @borderSpacing: 0px;
-@borderRadius: @defaultBorderRadius;
+@borderRadius: 0;
 @transition:
   background @defaultDuration @defaultEasing,
   color @defaultDuration @defaultEasing
@@ -40,22 +40,22 @@
 /* Table Header */
 @headerBorder: 1px solid @internalBorderColor;
 @headerDivider: none;
-@headerBackground: @offWhite;
+@headerBackground: @headerWhite;
 @headerAlign: inherit;
 @headerVerticalAlign: inherit;
-@headerColor: @textColor;
+@headerColor: @lightGrey;
 @headerVerticalPadding: @relativeSmall;
 @headerHorizontalPadding: @cellHorizontalPadding;
 @headerFontStyle: none;
-@headerFontWeight: @bold;
-@headerTextTransform: none;
+@headerFontWeight: @normal;
+@headerTextTransform: uppercase;
 @headerBoxShadow: none;
 
 /* Table Footer */
 @footerBoxShadow: none;
 @footerBorder: 1px solid @borderColor;
 @footerDivider: none;
-@footerBackground: @offWhite;
+@footerBackground: @white;
 @footerAlign: inherit;
 @footerVerticalAlign: middle;
 @footerColor: @textColor;

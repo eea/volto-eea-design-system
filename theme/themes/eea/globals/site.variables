@@ -21,7 +21,7 @@
 @googleFontRequest : '@{googleFontName}:@{googleFontSizes}&subset=@{googleSubset}';
 
 
-@bold              : bold;
+@bold              : 500;
 @normal            : normal;
 
 /*-------------------
@@ -278,6 +278,7 @@
 @darkWhite        : #F3F4F5;
 @midWhite         : #DCDDDE;
 @white            : #FFFFFF;
+@headerWhite      : #FAF8F8; // Pastanaga
 
 /*--- Colored Backgrounds ---*/
 @redBackground    : #F5C1C1; // Palette: alertError

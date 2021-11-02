@@ -30,7 +30,7 @@
   color @defaultDuration @defaultEasing
 ;
 @itemFontWeight: @normal;
-@itemTextColor: @textColor;
+@itemTextColor: @grey;
 
 /* Divider */
 @dividerSize: 1px;
@@ -55,7 +55,7 @@
 
 /* Icon */
 @iconFloat: none;
-@iconMargin: 0em @relative5px 0em 0em;
+@iconMargin: 0em @relative5px 0em @relative5px;
 @iconOpacity: 0.9;
 
 /* Dropdown Icon */
@@ -68,7 +68,7 @@
 @headerTextTransform: @normal;
 
 /* Vertical Icon */
-@verticalIconFloat: right;
+@verticalIconFloat: none;
 @verticalIconMargin: 0em 0em 0em 0.5em;
 
 /* Vertical Header */
@@ -158,16 +158,16 @@
 ---------------*/
 
 /* Hovered Item */
-@hoverItemBackground: @subtleTransparentBlack;
+@hoverItemBackground: none;
 @hoverItemTextColor: @selectedTextColor;
 
 /* Pressed Item */
-@pressedItemBackground: @subtleTransparentBlack;
+@pressedItemBackground: none;
 @pressedItemTextColor: @hoverItemTextColor;
 
 
 /* Active Item */
-@activeItemBackground: @transparentBlack;
+@activeItemBackground: none;
 @activeItemTextColor: @selectedTextColor;
 @activeItemFontWeight: @normal;
 @activeIconOpacity: 1;
@@ -243,16 +243,18 @@
 @secondaryMenuSubMenuItemPadding: @relative7px @secondarySubMenuHorizontalPadding;
 
 /* Pointing */
-@secondaryPointingBorderWidth: 2px;
+@secondaryPointingBorderWidth: 4px;
 @secondaryPointingBorderColor: @borderColor;
 @secondaryPointingItemVerticalPadding: @relativeTiny;
-@secondaryPointingItemHorizontalPadding: @relativeLarge;
+@secondaryPointingItemHorizontalPadding: @relativeMini;
+// Pastanaga custom
+@secondaryPointingItemTextTransform: uppercase;
 
 @secondaryPointingHoverTextColor: @textColor;
 
-@secondaryPointingActiveBorderColor: @black;
-@secondaryPointingActiveTextColor: @selectedTextColor;
-@secondaryPointingActiveFontWeight: @bold;
+@secondaryPointingActiveBorderColor: @pink;
+@secondaryPointingActiveTextColor: @black;
+@secondaryPointingActiveFontWeight: @normal;
 
 @secondaryPointingActiveDropdownBorderColor: transparent;
 
@@ -301,7 +303,7 @@
 
 /* Icon */
 @iconMenuTextAlign: center;
-@iconMenuItemColor: @black;
+@iconMenuItemColor: @grey;
 @iconMenuInvertedItemColor: @white;
 
 
@@ -439,7 +441,7 @@
 ;
 
 /* Resize large sizes */
-@mini: @11px;
+@mini: @9px;
 @tiny: @12px;
 @small: @13px;
 @large: @15px;
@@ -448,10 +450,10 @@
 @massive: @18px;
 
 /* Sizes */
-@miniWidth: 9rem;
+@miniWidth: 6rem;
 @tinyWidth: 11rem;
 @smallWidth: 13rem;
-@mediumWidth: 15rem;
+@mediumWidth: 15rem; // pastanaga wants 6rem as well
 @largeWidth: 18rem;
 @bigWidth: 20rem;
 @hugeWidth: 22rem;
