@@ -6,7 +6,7 @@
        Fonts
 --------------------*/
 
-@fontName          : 'Lato';
+@fontName          : 'Poppins';
 @fontSmoothing     : antialiased;
 
 @headerFont        : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -14,7 +14,7 @@
 
 @googleFontName    : @fontName;
 @importGoogleFonts : true;
-@googleFontSizes   : '400,700,400italic,700italic';
+@googleFontSizes   : '300,400,500,700,400italic,700italic&display=swap';
 @googleSubset      : 'latin';
 
 @googleProtocol    : 'https://';
@@ -52,16 +52,16 @@
 --------------------*/
 
 @primaryColor        : @blue;
-@secondaryColor      : @black;
+@secondaryColor      : @brown;
 
 @lightPrimaryColor   : @lightBlue;
-@lightSecondaryColor : @lightBlack;
+@lightSecondaryColor : @lightGrey;
 
 /*--------------
   Page Heading
 ---------------*/
 
-@headerFontWeight : @bold;
+@lightSecondaryColor : @lightBlack;
 @headerLineHeight : 1.25;
 
 @h1 : unit((28 / 14), rem);
@@ -77,12 +77,14 @@
 /* This adjusts the default form input across all elements */
 @inputBackground        : @white;
 @inputVerticalPadding   : @relative11px;
-@inputHorizontalPadding : @relative14px;
+/* This adjusts the default form input across all elements */
+@inputHorizontalPadding : 0;
 @inputPadding           : @inputVerticalPadding @inputHorizontalPadding;
 
 /* Input Text Color */
 @inputColor: @textColor;
-@inputPlaceholderColor: lighten(@inputColor, 75);
+//@inputPlaceholderColor: lighten(@inputColor, 75);
+@inputPlaceholderColor: #B8C6C8;
 @inputPlaceholderFocusColor: lighten(@inputColor, 45);
 
 /* Line Height Default For Inputs in Browser (Descenders are 17px at 14px base em) */
@@ -112,16 +114,16 @@
 @smallSize       : (13 / 14);
 @mediumSize      : (14 / 14);
 @largeSize       : (16 / 14);
-@bigSize         : (18 / 14);
-@hugeSize        : (20 / 14);
-@massiveSize     : (24 / 14);
+@bigSize         : (19 / 14);
+@hugeSize        : (22 / 14);
+@massiveSize     : (26 / 14);
 
 
 /*-------------------
         Page
 --------------------*/
 
-@pageBackground      : #FFFFFF;
+@pageBackground      : @white;
 @pageOverflowX       : hidden;
 
 @lineHeight          : 1.5;
@@ -138,7 +140,7 @@
        Links
 --------------------*/
 
-@linkColor           : #4183C4;
+@linkColor           : @blue;
 @linkUnderline       : none;
 @linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
 @linkHoverUnderline  : @linkUnderline;
@@ -196,7 +198,7 @@
         Grid
 --------------------*/
 
-@columnCount: 16;
+@columnCount: 12;
 
 /*-------------------
       Container
@@ -241,25 +243,25 @@
 --------------------*/
 
 /*---  Colors  ---*/
-@red              : #DB2828;
-@orange           : #F2711C;
-@yellow           : #FBBD08;
+@orange           : #FA5C2A; // Palette: reddishOrange
+@yellow           : #F6A808; // Palette: goldenRod
 @olive            : #B5CC18;
-@green            : #21BA45;
-@teal             : #00B5AD;
-@blue             : #2185D0;
+@green            : #51AA55; // Palette: darkPastelGreen
+@teal             : #517776; // Palette: slate
+@blue             : #007EB1; // Palette: Plone (tealBlue/cerulean)
 @violet           : #6435C9;
 @purple           : #A333C8;
-@pink             : #E03997;
-@brown            : #A5673F;
-@grey             : #767676;
-@black            : #1B1C1D;
+@pink             : #E40166; // Palette: darkHotPink
+@red              : @pink;
+@brown            : #826A6A; // Palette: reddishGrey
+@grey             : #68778D; // Palette: blueishGrey
+@black            : #252525; // Palette: darkishGrey
 
 /*---  Light Colors  ---*/
 @lightRed         : #FF695E;
 @lightOrange      : #FF851B;
 @lightYellow      : #FFE21F;
-@lightOlive       : #D9E778;
+@lightOlive       : #C9EAB1; // Palette: lightSage
 @lightGreen       : #2ECC40;
 @lightTeal        : #6DFFFF;
 @lightBlue        : #54C8FF;
@@ -267,7 +269,7 @@
 @lightPurple      : #DC73FF;
 @lightPink        : #FF8EDF;
 @lightBrown       : #D67C1C;
-@lightGrey        : #DCDDDE;
+@lightGrey        : #878F93;
 @lightBlack       : #545454;
 
 /*---   Neutrals  ---*/
@@ -278,15 +280,15 @@
 @white            : #FFFFFF;
 
 /*--- Colored Backgrounds ---*/
-@redBackground    : #FFE8E6;
+@redBackground    : #F5C1C1; // Palette: alertError
 @orangeBackground : #FFEDDE;
 @yellowBackground : #FFF8DB;
 @oliveBackground  : #FBFDEF;
 @greenBackground  : #E5F9E7;
-@tealBackground   : #E1F7F7;
-@blueBackground   : #DFF0FF;
+@tealBackground   : #EDF1F2; // Palette: Breadcrumbs
+@blueBackground   : #F2F6F8;
 @violetBackground : #EAE7FF;
-@purpleBackground : #F6E7FF;
+@purpleBackground : #B8C6C8; // Dublin Core Summary
 @pinkBackground   : #FFE3FB;
 @brownBackground  : #F1E2D3;
 
@@ -309,7 +311,7 @@
 @yellowTextColor : #B58105; // Yellow text is difficult to read
 @oliveTextColor  : #8ABC1E; // Olive is difficult to read
 @greenTextColor  : #1EBC30; // Green is difficult to read
-@tealTextColor   : #10A3A3; // Teal text is difficult to read
+@tealTextColor   : @teal;
 @blueTextColor   : @blue;
 @violetTextColor : @violet;
 @purpleTextColor : @purple;
@@ -332,7 +334,6 @@
 // Pastanaga custom borders colors
 @greyBorderColor      : #C7D5D8; // breadcrumbs border
 @lightGreyBorderColor : #EDF1F2; // breadcrumbs background
-
 @sidebarToggleButtonHighlightColor: @grey;
 
 /*-------------------
@@ -388,10 +389,10 @@
 
 /* Negative */
 @negativeColor           : @red;
-@negativeBackgroundColor : #FFF6F6;
+@negativeBackgroundColor : rgb(237, 195, 194);
 @negativeBorderColor     : #E0B4B4;
-@negativeHeaderColor     : #912D2B;
-@negativeTextColor       : #9F3A38;
+@negativeHeaderColor     : @black;
+@negativeTextColor       : @black;
 
 /* Info */
 @infoColor              : #31CCEC;
@@ -402,10 +403,10 @@
 
 /* Warning */
 @warningColor           : #F2C037;
-@warningBorderColor     : #C9BA9B;
-@warningBackgroundColor : #FFFAF3;
-@warningHeaderColor     : #794B02;
-@warningTextColor       : #573A08;
+@warningBorderColor     : #F3E2AB;
+@warningBackgroundColor : #F3E2AB;
+@warningHeaderColor     : @black;
+@warningTextColor       : @black;
 
 /*-------------------
         Paths
@@ -470,7 +471,7 @@
 @unselectedTextColor         : rgba(0, 0, 0, 0.4);
 @hoveredTextColor            : rgba(0, 0, 0, 0.8);
 @pressedTextColor            : rgba(0, 0, 0, 0.9);
-@selectedTextColor           : rgba(0, 0, 0, 0.95);
+@selectedTextColor           : @lightGrey;
 @disabledTextColor           : rgba(0, 0, 0, 0.2);
 
 @invertedTextColor           : rgba(255, 255, 255, 0.9);
@@ -481,6 +482,9 @@
 @invertedPressedTextColor    : rgba(255, 255, 255, 1);
 @invertedSelectedTextColor   : rgba(255, 255, 255, 1);
 @invertedDisabledTextColor   : rgba(255, 255, 255, 0.2);
+// check volto core to rename this lowercased variable
+@inverteditemlinkcolor       : @white;
+@invertedItemLinkColor       : @white;
 
 /*-------------------
      Brand Colors
@@ -490,7 +494,7 @@
 @twitterColor    : #55ACEE;
 @googlePlusColor : #DD4B39;
 @linkedInColor   : #1F88BE;
-@youtubeColor    : #FF0000;
+@youtubeColor    : #CC181E;
 @pinterestColor  : #BD081C;
 @vkColor         : #4D7198;
 @instagramColor  : #49769C;
@@ -501,7 +505,7 @@
 
 @circularRadius                : 500rem;
 
-@borderColor               : rgba(34, 36, 38, 0.15);
+@borderColor               : @greyBorderColor;
 @strongBorderColor         : rgba(34, 36, 38, 0.22);
 @internalBorderColor       : rgba(34, 36, 38, 0.1);
 @selectedBorderColor       : rgba(34, 36, 38, 0.35);
