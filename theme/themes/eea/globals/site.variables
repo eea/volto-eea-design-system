@@ -29,10 +29,10 @@
 --------------------*/
 
 /* This is the single variable that controls them all */
-@emSize   : 14px;
+@emSize   : 16px;
 
 /* The size of page text  */
-@fontSize : 14px;
+@fontSize : 16px;
 
 
 /*-------------------
@@ -62,7 +62,7 @@
 ---------------*/
 
 @headerFontWeight : @bold;
-@headerLineHeight : unit((18 / 14), em);
+@headerLineHeight : 1.25;
 
 @h1 : unit((28 / 14), rem);
 @h2 : unit((24 / 14), rem);
@@ -124,7 +124,7 @@
 @pageBackground      : #FFFFFF;
 @pageOverflowX       : hidden;
 
-@lineHeight          : 1.4285em;
+@lineHeight          : 1.5;
 @textColor           : rgba(0, 0, 0, 0.87);
 
 /*-------------------
@@ -199,11 +199,32 @@
 @columnCount: 16;
 
 /*-------------------
+      Container
+--------------------*/
+@textWidth: 800px;
+
+
+/*-------------------
+  Pastanaga Toolbar
+--------------------*/
+@toolbalWidth: 80px;
+@toolbalWidthMin: 20px;
+@fullSizeIcon: 36px;
+
+/*-------------------
      Transitions
 --------------------*/
 
 @defaultDuration : 0.1s;
 @defaultEasing   : ease;
+
+
+/*------------------
+ Pastanaga Animations
+--------------------*/
+
+@sidebarToggleButtonAnimationsDuration: 0.5s;
+@sidebarToggleButtonIterations: 4;
 
 /*-------------------
      Breakpoints
@@ -308,6 +329,12 @@
 @pinkBorderColor   : @pinkTextColor;
 @brownBorderColor  : @brownTextColor;
 
+// Pastanaga custom borders colors
+@greyBorderColor      : #C7D5D8; // breadcrumbs border
+@lightGreyBorderColor : #EDF1F2; // breadcrumbs background
+
+@sidebarToggleButtonHighlightColor: @grey;
+
 /*-------------------
      Alpha Colors
 --------------------*/
@@ -336,6 +363,12 @@
   0px 2px 4px 0px rgba(34, 36, 38, 0.12),
   0px 2px 10px 0px rgba(34, 36, 38, 0.15)
 ;
+
+/*-------------------
+   Pastanaga Opacities
+--------------------*/
+
+@sidebarToggleButtonNormalOpacity: 0.05;
 
 /*******************************
            Power-User
