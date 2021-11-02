@@ -6,6 +6,9 @@
       Element
 --------------------*/
 
+// Pastanaga variable
+@inputFontWeight: 300;
+
 @inputFont: @pageFont;
 @verticalPadding: @inputVerticalPadding;
 @horizontalPadding: @inputHorizontalPadding;

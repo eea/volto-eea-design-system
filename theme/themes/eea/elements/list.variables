@@ -97,7 +97,7 @@
 @invertedHeaderColor: @invertedTextColor;
 @invertedDescriptionColor: @invertedLightTextColor;
 @invertedItemLinkColor: @invertedTextColor;
-@invertedItemLinkHoverColor: @linkHoverColor;
+@invertedItemLinkHoverColor: @white;
 
 /* Link List */
 @linkListItemColor: @unselectedTextColor;

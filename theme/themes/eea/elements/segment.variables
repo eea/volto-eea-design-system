@@ -18,7 +18,7 @@
 @verticalMargin: 1rem;
 @horizontalMargin: 0em;
 @margin: @verticalMargin @horizontalMargin;
-@borderRadius: @defaultBorderRadius;
+@borderRadius: 0;
 
 /*-------------------
        Group
@@ -32,7 +32,7 @@
 @nestedGroupMargin: @verticalMargin @verticalMargin;
 
 @groupedSegmentBorder: none;
-@groupedSegmentDivider: @border;
+@groupedSegmentDivider: none;
 @groupedSegmentMargin: 0em;
 @groupedSegmentWidth: auto;
 @groupedSegmentBoxShadow: none;
@@ -102,10 +102,10 @@
 /* Attached */
 @attachedTopOffset: 0px;
 @attachedBottomOffset: 0px;
-@attachedHorizontalOffset: -@borderWidth;
-@attachedWidth: calc(100% - (@attachedHorizontalOffset * 2));
+@attachedHorizontalOffset: 0;
+@attachedWidth: 100%;
 @attachedBoxShadow: none;
-@attachedBorder: @borderWidth solid @solidBorderColor;
+@attachedBorder: 0;
 @attachedBottomBoxShadow:
   @boxShadow,
   @attachedBoxShadow
@@ -127,8 +127,8 @@
 @coloredBorderSize: 2px;
 
 /* Ordinality */
-@secondaryBackground: @darkWhite;
-@secondaryColor: @mutedTextColor;
+@secondaryBackground: @tealBackground;
+@secondaryColor: @teal;
 
 @tertiaryBackground:  @midWhite;
 @tertiaryColor: @mutedTextColor;
