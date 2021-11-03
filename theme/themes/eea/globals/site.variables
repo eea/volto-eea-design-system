@@ -21,7 +21,7 @@
 @googleFontRequest : '@{googleFontName}:@{googleFontSizes}&subset=@{googleSubset}';
 
 
-@bold              : 500;
+@bold              : bold;
 @normal            : normal;
 
 /*-------------------

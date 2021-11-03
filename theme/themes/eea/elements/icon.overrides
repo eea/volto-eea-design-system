@@ -159,7 +159,7 @@ for instance `lemon icon` not `lemon outline icon` since there is only one lemon
 @icon-help: '\e97f';
 @icon-hide: '\e980';
 @icon-highlighter: '\e981';
-@icon-home: '\e982';
+@icon-home: '\f015';
 @icon-horizontal: '\e983';
 @icon-image: '\e984';
 @icon-images: '\e985';
@@ -322,7 +322,7 @@ for instance `lemon icon` not `lemon outline icon` since there is only one lemon
 @icon-zoom-in: '\ea22';
 @icon-zoom-off: '\ea23';
 @icon-zoom-out: '\ea24';
-@icon-zoom: '\ea25';
+@icon-zoom: '\f002';
 
 /* Web Content */
 i.icon.search:before {
@@ -759,7 +759,7 @@ i.icon.pin:before {
 }
 
 i.icon.sign.in:before {
-  content: '\f090';
+  content: '\f2f6';
 }
 
 i.icon.upload:before {
