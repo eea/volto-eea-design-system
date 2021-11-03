@@ -23,7 +23,7 @@ import {
   Popup,
 } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
-import EUflag from '@eeacms/volto-eea-design-system/theme/themes/eea/assets/images/europe-flag.svg';
+import EUflag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/europe-flag.svg';
 import throttle from 'lodash.throttle';
 
 const messages = defineMessages({
