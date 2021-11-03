@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import { Segment, Header, Table, Icon, Image } from 'semantic-ui-react';
 
-import EUflag from '../../../../../theme/site/assets/images/europe-flag.svg';
+import EUflag from '@eeacms/volto-eea-design-system/theme/themes/eea/assets/images/europe-flag.svg';
 
 /**
  * Component to display the footer.
