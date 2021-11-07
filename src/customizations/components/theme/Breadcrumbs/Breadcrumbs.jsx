@@ -84,7 +84,7 @@ class Breadcrumbs extends Component {
         vertical
       >
         <Container>
-          <Breadcrumb>
+          <Breadcrumb size={'tiny'}>
             <Link
               to="/"
               className="section"
