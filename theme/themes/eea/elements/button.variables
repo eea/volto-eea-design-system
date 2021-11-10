@@ -44,7 +44,7 @@
 ;
 
 /* Icon */
-@iconHeight: @relativeTiny;
+@iconHeight: @relativeMedium;
 @iconOpacity: 0.8;
 @iconDistance: @relative6px;
 @iconColor: '';

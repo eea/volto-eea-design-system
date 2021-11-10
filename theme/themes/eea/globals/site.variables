@@ -63,13 +63,13 @@
 
 @lightSecondaryColor : @lightBlack;
 @headerLineHeight : 1.25;
-@headerFontWeight : 500;
+@headerFontWeight : 700;
 
-@h1 : unit((28 / 14), rem);
-@h2 : unit((24 / 14), rem);
-@h3 : unit((18 / 14), rem);
-@h4 : unit((15 / 14), rem);
-@h5 : unit((14 / 14), rem);
+@h1 : unit((32 / 16), rem);
+@h2 : unit((28 / 16), rem);
+@h3 : unit((21 / 16), rem);
+@h4 : unit((18 / 16), rem);
+@h5 : unit((16 / 16), rem);
 
 /*--------------
    Form Input
@@ -77,7 +77,7 @@
 
 /* This adjusts the default form input across all elements */
 @inputBackground        : @white;
-@inputVerticalPadding   : @relative11px;
+@inputVerticalPadding   : @relative12px;
 /* This adjusts the default form input across all elements */
 @inputHorizontalPadding : 0;
 @inputPadding           : @inputVerticalPadding @inputHorizontalPadding;
@@ -110,14 +110,23 @@
   This ensures these "ratios" remain constant despite changes in EM
 */
 
-@miniSize        : (11 / 14);
-@tinySize        : (12 / 14);
-@smallSize       : (13 / 14);
-@mediumSize      : (14 / 14);
-@largeSize       : (16 / 14);
-@bigSize         : (19 / 14);
-@hugeSize        : (22 / 14);
-@massiveSize     : (26 / 14);
+//@miniSize        : (3 / 12);
+//@tinySize        : (6 / 12);
+//@smallSize       : (12 / 12);
+//@mediumSize      : (18 / 12);
+//@largeSize       : (24 / 12);
+//@bigSize         : (36 / 12);
+//@hugeSize        : (48 / 12);
+//@massiveSize     : (60 / 12);
+
+@miniSize        : (11 / @emSize);
+@tinySize        : (12 / @emSize);
+@smallSize       : (14 / @emSize);
+@mediumSize      : (16 / @emSize);
+@largeSize       : (20 / @emSize);
+@bigSize         : (24 / @emSize);
+@hugeSize        : (28 / @emSize);
+@massiveSize     : (32 / @emSize);
 
 
 /*-------------------

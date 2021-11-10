@@ -7,7 +7,7 @@
 --------------------*/
 
 // Pastanaga variable
-@inputFontWeight: 300;
+@inputFontWeight: normal;
 
 @inputFont: @pageFont;
 @verticalPadding: @inputVerticalPadding;

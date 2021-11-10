@@ -1,10 +1,10 @@
 // #2749 Pastanaga  text block readability enhancements
-@useReducedTextContainer: true;
-@textContainerWidth: 800px;
-@textContainerSelector: .content-area;
-@textContainerTextSelectors: h1, h2, h3, h4, h5, h6, p, ol, ul;
-@textContainerTextLeftMargin: auto !important;
-@textContainerTextRightMargin: auto !important;
+@reduceTextElementsSize: true;
+@textElementsMaxWidth: 800px;
+@textElementsParentSelector: .content-area;
+@textElementsSelectors: e("h2, h3:not(.relatedItems-header), h4, h5, h6, p:not(.right):not(.left):not(.data-figure), ol, ul, blockquote, .slate-table");
+@textElementsLeftMargin: auto !important;
+@textElementsRightMargin: auto !important;
 
 /* Mobile Menu Nav */
 @mobileMenuNavAlignItems: center;
@@ -18,3 +18,8 @@
 /* Mobile Menu Nav Item */
 @mobileMenuNavItemJustifyContent: center;
 @mobileMenuNavItemLineHeight: 1.25;
+
+/*-------------------
+      login.less
+--------------------*/
+@loginContainerMaxWidth: 376px !important;
