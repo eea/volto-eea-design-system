@@ -2,7 +2,9 @@
 @reduceTextElementsSize: true;
 @textElementsMaxWidth: 800px;
 @textElementsParentSelector: .content-area;
-@textElementsSelectors: e("h2, h3:not(.relatedItems-header), h4, h5, h6, p:not(.right):not(.left):not(.data-figure), ol, ul, blockquote, .slate-table");
+@textElementsSelectors: e("h2, h3:not(.relatedItems-header), h4, h5, h6,
+ p:not(.right):not(.left):not(.data-figure):not(.help),
+ ol, ul, blockquote, .slate-table");
 @textElementsLeftMargin: auto !important;
 @textElementsRightMargin: auto !important;
 

@@ -46,7 +46,7 @@
   background-repeat: no-repeat;
   background-size: 64px 18px;
   transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
-  margin 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    margin 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
 .ui.menu.collapsed .item.logo > .image {
