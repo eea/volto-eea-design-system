@@ -1,11 +1,11 @@
 {
-  "name": "@eeacms/volto-addon-template",
-  "version": "0.1.0",
-  "description": "@eeacms/volto-addon-template: Volto add-on",
+  "name": "@eeacms/volto-eea-design-system",
+  "version": "0.1.1",
+  "description": "@eeacms/volto-eea-design-system: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
   "license": "MIT",
-  "homepage": "https://github.com/eea/volto-addon-template",
+  "homepage": "https://github.com/eea/volto-eea-design-system",
   "keywords": [
     "volto-addon",
     "volto",
@@ -14,10 +14,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:eea/volto-addon-template.git"
+    "url": "git@github.com:eea/volto-eea-design-system.git"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.5",
     "babel-plugin-transform-class-properties": "^6.24.1"

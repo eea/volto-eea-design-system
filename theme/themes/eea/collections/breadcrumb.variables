@@ -1,0 +1,37 @@
+/*******************************
+          Breadcrumb
+*******************************/
+
+/*-------------------
+     Breadcrumb
+--------------------*/
+
+@verticalMargin: 0em;
+@display: inline-block;
+@verticalAlign: middle;
+
+@dividerSpacing: @10px;
+@dividerOpacity: 0.7;
+@dividerColor: @teal;
+
+@dividerSize: @relativeSmall;
+@dividerVerticalAlign: baseline;
+
+@iconDividerSize: @relativeTiny;
+@iconDividerVerticalAlign: baseline;
+
+@sectionMargin: 0em;
+@sectionPadding: 0em;
+
+// Pastanaga custom variable
+@breadcrumb-bg: @tealBackground;
+
+/* Coupling */
+@segmentPadding: @relativeMini @relativeMedium;
+
+/*-------------------
+       States
+--------------------*/
+
+
+@activeFontWeight: @normal;

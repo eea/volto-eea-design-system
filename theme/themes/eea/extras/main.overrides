@@ -1,0 +1,22 @@
+.addReducedTextElements() when (@reduceTextElementsSize = true) {
+  @{textElementsParentSelector} {
+    @{textElementsSelectors} {
+      max-width: @textElementsMaxWidth;
+      margin-right: @textElementsRightMargin;
+      margin-left: @textElementsLeftMargin;
+    }
+  }
+}
+
+.addReducedTextElements();
+
+// login page keep the small size of login container
+#page-login {
+  .container {
+    max-width: @loginContainerMaxWidth;
+  }
+  // reset left margin since help is a p tag
+  .help {
+    margin-left: 0 !important;
+  }
+}
