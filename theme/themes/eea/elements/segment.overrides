@@ -8,6 +8,13 @@
   padding-left: 0;
 }
 
+// #141204 add some left and right padding for edit content area
+// this way we always have the delete and add button visible
+.has-sidebar .ui.segment.content-area {
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
 .ui.primary.segment {
   border-bottom: @4px solid @greyBorderColor;
   font-size: @16px;
