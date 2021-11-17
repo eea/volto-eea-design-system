@@ -75,3 +75,10 @@
     }
   }
 }
+
+// #141204 ensure that main column isn't enlarged over the sidebar section
+@media screen and (max-width: 1480px) {
+  .has-sidebar .logo-nav-wrapper {
+    flex-wrap: wrap;
+  }
+}
