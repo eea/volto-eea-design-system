@@ -7,7 +7,12 @@
 
 ## Features
 
-Demo GIF
+This package provides the following features:
+
+1. A Semantic UI theme
+2. A repository for the design system source files and mockups
+3. A website to showcase the design system
+
 
 ## Getting started
 
@@ -20,18 +25,26 @@ Demo GIF
    docker pull plone/volto
    ```
 
-1. Start Plone backend
+2. Start Plone backend
    ```
-   docker run -d --name plone -p 8080:8080 -e SITE=Plone -e PROFILES="profile-plone.restapi:blocks" plone
+   docker run -v $(pwd)/var:/data -e SITE=Plone -p 8080:8080 -e PROFILES="profile-plone.restapi:blocks" --name eea-plone -it --rm plone fg
    ```
+3. Wait until you get the following message:
+    ```
+    Serving on http://0.0.0.0:8080
+    ```
 
-1. Start Volto frontend
+4. Start Volto frontend
 
    ```
-   docker run -it --rm -p 3000:3000 --link plone -e ADDONS="@eeacms/volto-eea-design-system" plone/volto
+   docker run -it --rm -p 3000:3000 --link eea-plone -e ADDONS="@eeacms/volto-eea-design-system" plone/volto
    ```
+5. Wait until you get the following message:
+     ```
+    Volto started at http://localhost:8080 
+    ```
 
-1. Go to http://localhost:3000
+6. Go to http://localhost:3000, login with admin:admin if you need to edit the site.
 
 ### Add volto-eea-design-system to your Volto project
 
@@ -59,16 +72,24 @@ Demo GIF
    cd my-volto-project
    ```
 
-1. Install new add-ons and restart Volto:
+1. Install the new add-ons by updating `package.json` and restart Volto:
 
    ```
    yarn
    yarn start
    ```
 
-1. Go to http://localhost:3000
+2. Go to http://localhost:3000
 
-1. Happy editing!
+3. Happy editing!
+
+### Try the design system website
+
+Checkout the docs found within the [website](https://github.com/eea/volto-eea-design-system/blob/master/website/README.md) folder
+
+### Try the design system mockups
+
+Checkout the docs found within the [mockups](https://github.com/eea/volto-eea-design-system/blob/master/mockups/README.md) folder
 
 ## How to contribute
 
