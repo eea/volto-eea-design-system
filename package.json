@@ -19,7 +19,13 @@
   "dependencies": {},
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.5",
-    "babel-plugin-transform-class-properties": "^6.24.1"
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/react": "^6.2.9",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "scripts": {
     "release": "release-it",
