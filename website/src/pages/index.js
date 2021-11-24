@@ -16,7 +16,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/eea-design-system/intro"
+            to="/docs/intro"
           >
             Start with the EEA Design System
           </Link>
