@@ -85,22 +85,22 @@ This package provides the following features:
 
 ### Try the design system website
 
-Checkout the docs found within the [website](https://github.com/eea/volto-eea-design-system/blob/master/website/README.md) folder
+Checkout the docs found within the [website](https://github.com/eea/volto-eea-design-system/blob/develop/website/README.md) folder
 
 ### Try the design system mockups
 
-Checkout the docs found within the [mockups](https://github.com/eea/volto-eea-design-system/blob/master/mockups/README.md) folder
+Checkout the docs found within the [mockups](https://github.com/eea/volto-eea-design-system/blob/develop/mockups/README.md) folder
 
 ## How to contribute
 
-See [DEVELOP.md](https://github.com/eea/volto-eea-design-system/blob/master/DEVELOP.md).
+See [DEVELOP.md](https://github.com/eea/volto-eea-design-system/blob/develop/DEVELOP.md).
 
 ## Copyright and license
 
 The Initial Owner of the Original Code is European Environment Agency (EEA).
 All Rights Reserved.
 
-See [LICENSE.md](https://github.com/eea/volto-eea-design-system/blob/master/LICENSE.md) for details.
+See [LICENSE.md](https://github.com/eea/volto-eea-design-system/blob/develop/LICENSE.md) for details.
 
 ## Funding
 
