@@ -10,7 +10,7 @@ import { Image } from 'semantic-ui-react';
 import { useSelector } from 'react-redux';
 import config from '@plone/volto/registry';
 
-import LogoImage from '@eeacms/volto-ims-theme/../theme/site/assets/images/eea-logo.png';
+import LogoImage from '@eeacms/volto-eea-design-system/../theme/eea/assets/images/eea-logo.png';
 
 const messages = defineMessages({
   site: {
