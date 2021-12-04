@@ -222,8 +222,8 @@
 /*-------------------
   Pastanaga Toolbar
 --------------------*/
-@toolbalWidth: 80px;
-@toolbalWidthMin: 20px;
+@toolbarWidth: 80px;
+@toolbarWidthMin: 20px;
 @fullSizeIcon: 36px;
 
 /*-------------------
