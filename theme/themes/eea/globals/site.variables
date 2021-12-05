@@ -354,6 +354,20 @@
 @lightGreyBorderColor : #EDF1F2; // breadcrumbs background
 @sidebarToggleButtonHighlightColor: @grey;
 
+/* EEA IMS Palette */
+@blue: #004B87;
+@lightBlue: #086ca3;
+@darkBlue: #274357;
+@lightGrey: #999;
+@lighterGray: #cccccc;
+@darkGrey: #666;
+@purple: #8e004d;
+@green: #00888A;
+@lightGreen: #027572;
+@black: #333;
+@pureBlack: #000;
+@grayPrint: #bbb;
+
 /*-------------------
      Alpha Colors
 --------------------*/
@@ -586,6 +600,7 @@
 @largestTabletScreen : (@computerBreakpoint - 1px);
 @largestSmallMonitor : (@largeMonitorBreakpoint - 1px);
 @largestLargeMonitor : (@widescreenMonitorBreakpoint - 1px);
+@mobileWidth: 1279px;
 
 
 /*-------------------
