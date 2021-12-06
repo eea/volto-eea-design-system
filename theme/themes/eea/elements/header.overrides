@@ -21,6 +21,8 @@
     }
 
     .navigation {
+      width: 100%;
+
       &::-webkit-scrollbar {
         height: 0; /* remove scrollbar space */
         background: transparent; /* optional: just make scrollbar invisible */
@@ -86,6 +88,18 @@
 /*-------------------
       HEADER IMS Overrides
 --------------------*/
+
+.navigation-links {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.tools-wrapper {
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+}
 
 //@media only screen and (max-width: @mobileWidth) {
 //  .ui.segment.header-wrapper {
