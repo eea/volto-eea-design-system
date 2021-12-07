@@ -1,3 +1,179 @@
 /*******************************
         Global Overrides
 *******************************/
+
+/*-------------------
+      FOOTER IMS overrides
+--------------------*/
+
+//.first-footer,
+//.portal-footer {
+//  background: @blue !important;
+//}
+//
+//.second-footer,
+//.portal-colophon {
+//  background: @white !important;
+//}
+//
+//.portal-footer,
+//.portal-colophon {
+//  padding: 0 !important;
+//}
+//
+//.section-header {
+//  margin: 0 0 0.83em 0 !important;
+//  font-size: 1.375em !important;
+//  line-height: 1.2em !important;
+//}
+//
+//.portal-footer {
+//  font-size: 12px;
+//
+//  .colophon-section {
+//    &:not(:first-child) {
+//      border-top: 1px solid rgba(255, 255, 255, 0.23);
+//    }
+//  }
+//
+//  .section-centered {
+//    width: 100%;
+//    flex-basis: 100%;
+//    padding: 1.125rem 0;
+//    text-align: center;
+//  }
+//
+//  h2,
+//  p,
+//  div,
+//  a {
+//    color: @white !important;
+//  }
+//
+//  h2 {
+//    font-weight: bold !important;
+//  }
+//}
+//
+//.column {
+//  @media screen and (min-width: 767px) {
+//    width: 100%;
+//  }
+//}
+//
+//.first-footer {
+//  .media-centered {
+//    display: flex;
+//    flex-wrap: wrap;
+//    justify-content: center;
+//    font-size: 12px;
+//  }
+//
+//  .social-media,
+//  .media {
+//    line-height: 1;
+//  }
+//
+//  .social-media {
+//    display: flex;
+//    margin: 0 0.5em;
+//    @media screen and (max-width: 665px) {
+//      margin-bottom: 1em;
+//    }
+//
+//    .link-plain.media i {
+//      font-size: 4em !important;
+//    }
+//  }
+//
+//  .media {
+//    display: flex;
+//    align-items: center;
+//
+//    i {
+//      font-size: 4em;
+//    }
+//
+//    .media-body {
+//      margin-left: 0.5em;
+//      line-height: 1.8;
+//      text-align: left;
+//    }
+//  }
+//
+//  :not(:last-child).mx-2 {
+//    @media screen and (max-width: 665px) {
+//      margin-bottom: 1.5em;
+//    }
+//  }
+//
+//  .mx-2 {
+//    display: flex;
+//    align-items: center;
+//    margin: 0 2em;
+//    line-height: 1;
+//
+//    i {
+//      margin-right: 0;
+//      font-size: 3em;
+//    }
+//
+//    span {
+//      margin: 0 0 0 0.5em;
+//      line-height: 1.5;
+//      text-align: left;
+//    }
+//  }
+//}
+//
+//.portal-colophon {
+//  a {
+//    color: @darkBlue;
+//    font-weight: bold;
+//
+//    &:hover {
+//      color: @darkBlue;
+//    }
+//  }
+//
+//  .colophon-section {
+//    padding: 1.125rem 0;
+//  }
+//
+//  .europe-agency-text {
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//    color: @lightGrey;
+//    font-size: 12px;
+//    font-weight: normal;
+//
+//    span {
+//      margin: 0 1em;
+//    }
+//  }
+//
+//  .eea-software-info {
+//    border-top: 1px solid rgba(0, 0, 0, 0.11);
+//    font-size: 11px;
+//  }
+//
+//  .colophon-links {
+//    display: inline-block;
+//    margin: 0 1em 0.75em;
+//    font-size: @11px;
+//    @media screen and (max-width: 1023px) {
+//      width: 94%; /* 100% enlarged the content area beyond window area */
+//      text-align: center;
+//    }
+//
+//    i.creative.commons {
+//      font-size: 12px;
+//    }
+//  }
+//}
+//
+//.eu-flag {
+//  width: 60px;
+//  height: 38px;
+//}
