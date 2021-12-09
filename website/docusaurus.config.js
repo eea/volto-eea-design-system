@@ -56,11 +56,6 @@ module.exports = {
           editUrl:
             'https://github.com/eea/volto-eea-design-system/edit/develop/website/',
         },
-        blog: {
-          showReadingTime: true,
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/develop/website/blog/',
-        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
