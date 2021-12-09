@@ -1,13 +1,13 @@
 import { injectIntl } from 'react-intl';
-import React from 'react'
-import { Button } from 'semantic-ui-react'
+import React from 'react';
+import { Button } from 'semantic-ui-react';
 
 export default {
   title: 'Public components/Button',
   component: Button,
   argTypes: {
-    onClick:{
-      action: 'button clicked'
+    onClick: {
+      action: 'button clicked',
     },
   },
 };
@@ -16,7 +16,7 @@ export default {
 //const Template = (args) => <Button>{args.label}</Button>;
 
 // 👇 Each story then reuses that template
-export const Primary = (args) => <Button primary >{args.label}</Button>;
+export const Primary = (args) => <Button primary>{args.label}</Button>;
 Primary.args = { label: 'Primary' };
 
 export const Secondary = (args) => <Button secondary>{args.label}</Button>;

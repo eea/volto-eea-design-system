@@ -6,19 +6,19 @@ import { Segment } from 'semantic-ui-react';
 import Wrapper from '@plone/volto/storybook';
 
 export default {
-    title:'Demo/Header',
-    cocmponent: Header,
-    argTypes:{},
-    decorators:[
-        (Story) => (
-            <Wrapper location={{ pathname: '/folder2/folder21/doc212' }}>
-                <Segment className="portal-footer">
-                    <Story />
-                </Segment>
-            </Wrapper>
-        ),
-    ]
-}
+  title: 'Demo/Header',
+  cocmponent: Header,
+  argTypes: {},
+  decorators: [
+    (Story) => (
+      <Wrapper location={{ pathname: '/folder2/folder21/doc212' }}>
+        <Segment className="portal-footer">
+          <Story />
+        </Segment>
+      </Wrapper>
+    ),
+  ],
+};
 
 // export const Default = injectIntl(({ children, ...args }) => {
 //     return (
@@ -30,9 +30,7 @@ export default {
 //     );
 //   });
 
-const Template = (args) => <Header {...args}/>
+const Template = (args) => <Header {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
-    
-}
+Default.args = {};
