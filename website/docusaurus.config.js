@@ -40,8 +40,12 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Github',
-              href: 'https://github.com/eea/volto-eea-design-system',
+              label: 'EEA Website',
+              href: 'https://www.eea.europa.eu',
+            },
+            {
+              label: 'EEA Storybook',
+              href: 'https://eea.github.io/volto-kitkat-frontend/',
             },
           ],
         },
