@@ -1,4 +1,5 @@
 # volto-eea-design-system
+
 [![Releases](https://img.shields.io/github/v/release/eea/volto-eea-design-system)](https://github.com/eea/volto-eea-design-system/releases)
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-eea-design-system%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-eea-design-system/job/master/display/redirect)
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-eea-design-system%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-eea-design-system/job/develop/display/redirect)
@@ -12,7 +13,6 @@ This package provides the following features:
 1. A Semantic UI theme
 2. A repository for the design system source files and mockups
 3. A website to showcase the design system
-
 
 ## Getting started
 
@@ -30,19 +30,22 @@ This package provides the following features:
    docker run -v $(pwd)/var:/data -e SITE=Plone -p 8080:8080 -e PROFILES="profile-plone.restapi:blocks" --name eea-plone -it --rm plone fg
    ```
 3. Wait until you get the following message:
-    ```
-    Serving on http://0.0.0.0:8080
-    ```
+
+   ```
+   Serving on http://0.0.0.0:8080
+   ```
 
 4. Start Volto frontend
 
    ```
    docker run -it --rm -p 3000:3000 --link eea-plone -e ADDONS="@eeacms/volto-eea-design-system" plone/volto
    ```
+
 5. Wait until you get the following message:
-     ```
-    Volto started at http://localhost:8080 
-    ```
+
+   ```
+   Volto started at http://localhost:8080
+   ```
 
 6. Go to http://localhost:3000, login with admin:admin if you need to edit the site.
 
@@ -52,25 +55,25 @@ This package provides the following features:
 
 1. Start Volto frontend
 
-* If you already have a volto project, just update `package.json`:
+- If you already have a volto project, just update `package.json`:
 
-   ```JSON
-   "addons": [
-       "@eeacms/volto-eea-design-system"
-   ],
+  ```JSON
+  "addons": [
+      "@eeacms/volto-eea-design-system"
+  ],
 
-   "dependencies": {
-       "@eeacms/volto-eea-design-system": "^1.0.0"
-   }
-   ```
+  "dependencies": {
+      "@eeacms/volto-eea-design-system": "^1.0.0"
+  }
+  ```
 
-* If not, create one:
+- If not, create one:
 
-   ```
-   npm install -g yo @plone/generator-volto
-   yo @plone/volto my-volto-project --addon @eeacms/volto-eea-design-system
-   cd my-volto-project
-   ```
+  ```
+  npm install -g yo @plone/generator-volto
+  yo @plone/volto my-volto-project --addon @eeacms/volto-eea-design-system
+  cd my-volto-project
+  ```
 
 1. Install the new add-ons by updating `package.json` and restart Volto:
 
