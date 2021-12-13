@@ -24,7 +24,7 @@ export const Breadcrumb = injectIntl(({ children, ...args }) => {
 });
 
 export default {
-  title: 'Public components/Breadcrumb',
+  title: 'Components/Breadcrumb',
   component: Breadcrumb,
   argTypes: {},
 };
