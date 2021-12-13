@@ -8,13 +8,13 @@ export default {
   component: AccordionEEA,
   argTypes: {
     className: {
-        options: ['styled', 'fluid'],
-        control: { type: 'select' },
-      },
-      content: [
-        { title: '1', content: 'content 1' },
-        { title: '2', content: 'content 2' },
-      ],
+      options: ['styled', 'fluid'],
+      control: { type: 'select' },
+    },
+    content: [
+      { title: '1', content: 'content 1' },
+      { title: '2', content: 'content 2' },
+    ],
   },
 };
 
@@ -29,4 +29,3 @@ Default.args = {
   fluid: true,
   styled: true,
 };
-
