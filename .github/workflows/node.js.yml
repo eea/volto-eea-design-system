@@ -25,14 +25,13 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd website
+    - working-directory: ./website
     - run: ls -ltra
     - run: yarn
     - run: yarn build
-    - run: cd ..
     - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add docs
+          git add ../docs
           git commit -m "Autobuild of docusaurus docs"
           git push
