@@ -7,14 +7,10 @@ export default {
   title: 'Components/Accordion',
   component: AccordionEEA,
   argTypes: {
-    className: {
-      options: ['styled', 'fluid'],
+    variant: {
+      options: ['default', 'styled', 'inverted segment'],
       control: { type: 'select' },
     },
-    content: [
-      { title: '1', content: 'content 1' },
-      { title: '2', content: 'content 2' },
-    ],
   },
 };
 
@@ -23,9 +19,10 @@ const Template = (args) => <AccordionEEA {...args}></AccordionEEA>;
 export const Default = Template.bind({});
 Default.args = {
   content: [
-    { title: '1', content: 'content 1' },
-    { title: '2', content: 'content 2' },
+    { title: '1 Accordion Title', content: 'content 1' },
+    { title: '2 Accordion Title', content: 'content 2' },
   ],
+  variant: 'default',
   fluid: true,
   styled: true,
 };

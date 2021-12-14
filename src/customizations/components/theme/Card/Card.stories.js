@@ -10,7 +10,13 @@ export default {
 
 const Template = (args) => (
   <Card {...args}>
-    {args.hasImage && <Image src={args.src} wrapped ui={false} />}
+    {args.hasImage && (
+      <Image
+        src="https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large"
+        wrapped
+        ui={false}
+      />
+    )}
     <Card.Content>
       <Card.Header>{args.title}</Card.Header>
       <Card.Meta>{args.meta}</Card.Meta>
@@ -19,7 +25,7 @@ const Template = (args) => (
     {args.links !== null &&
       args.links.map((item) => (
         <Card.Content extra>
-          <a>{item.linkName}</a>
+          <a href="/#">{item.linkName}</a>
         </Card.Content>
       ))}
   </Card>
@@ -27,7 +33,7 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  src: '',
+  //src: 'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
   hasImage: false,
   title: 'Card Header',
   meta: 'meta data',

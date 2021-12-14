@@ -81,3 +81,11 @@
   display: flex;
   align-items: center;
 }
+
+.ui.segment.storybookComponents {
+  text-align: center;
+  padding: 200px;
+  img {
+    margin: auto;
+  }
+}
