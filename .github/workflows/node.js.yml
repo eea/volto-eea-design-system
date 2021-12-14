@@ -20,16 +20,17 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - working-directory: ./website
-    - run: ls -ltra
-    - run: yarn
-    - run: yarn build
-    - run: |
+    - name: Project checkout
+      uses: actions/checkout@v2
+      working-directory: ./website
+      - run: ls -ltra
+      - run: yarn
+      - run: yarn build
+      - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add ../docs
