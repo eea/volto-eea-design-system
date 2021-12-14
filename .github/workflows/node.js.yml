@@ -7,11 +7,11 @@ on:
   push:
     branches: [ github_actions ]
     paths:
-     - website/*
+     - website/**
   pull_request:
     branches: [ github_actions ]
     paths:
-     - website/*
+     - website/**
     
 
 jobs:
