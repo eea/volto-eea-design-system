@@ -1,4 +1,3 @@
-import { injectIntl } from 'react-intl';
 import React from 'react';
 import { Input } from 'semantic-ui-react';
 
