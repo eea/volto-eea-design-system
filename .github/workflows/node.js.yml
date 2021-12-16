@@ -31,18 +31,18 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Change directory to website
-    - run: cd website
+       run: cd website
     - name: Run yarn install
-    - run: yarn
+      run: yarn
     - name: Run yarn build
-    - run: yarn build
+      run: yarn build
     - name: Set git user name
-    - run: git config user.name github-actions
+      run: git config user.name github-actions
     - name: Set git user email
-    - run: git config user.email github-actions@github.com
+      run: git config user.email github-actions@github.com
     - name: Add git changes from docs folder
-    - run: git add ../docs
+      run: git add ../docs
     - name: Commit git changes
-    - run: git diff --staged --quiet || git commit -m "Autobuild of docusaurus docs"
+      run: git diff --staged --quiet || git commit -m "Autobuild of docusaurus docs"
     - name: Push changes
-    - run: git push
+      run: git push
