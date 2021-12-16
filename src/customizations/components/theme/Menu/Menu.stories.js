@@ -38,20 +38,20 @@ const Template = (args) => <MenuContent {...args}></MenuContent>;
 export const Default = Template.bind({});
 Default.args = {
     items: [
-        {key: "home", active:true, name:"HOME"},
-        {key: "news", name:"NEWS"},
-        {key: "events", name:"EVENTS"},
-        {key: "users", name:"USERS"},
+        {key: "item 1", active:true, name:"ITEM 1"},
+        {key: "item 2", name:"ITEM 2"},
+        {key: "item 3", name:"ITEM 3"},
+        {key: "item 4", name:"ITEM 4"},
     ],
 };
 
 export const Playground = Template.bind({});
 Playground.args = {
     items: [
-        {key: "home", active:true, name:"HOME"},
-        {key: "news", name:"NEWS"},
-        {key: "events", name:"EVENTS"},
-        {key: "users", name:"USERS"},
+        {key: "item 1", active:true, name:"ITEM 1"},
+        {key: "item 2", name:"ITEM 2"},
+        {key: "item 3", name:"ITEM 3"},
+        {key: "item 4", name:"ITEM 4"},
     ],
     secondary:false,
     pointing:false,
