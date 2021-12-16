@@ -4,7 +4,9 @@ module.exports = {
   title: 'EEA Design System',
   tagline: 'EEA Design System package',
   url: 'https://eea.github.io/',
-  baseUrl: '/eea-design-system/',
+  deploymentBranch: 'develop',
+  baseUrl: '/volto-eea-design-system/',
+  trailingSlash: true,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -38,8 +40,12 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Github',
-              href: 'https://github.com/eea/volto-eea-design-system',
+              label: 'EEA Website',
+              href: 'https://www.eea.europa.eu',
+            },
+            {
+              label: 'EEA Storybook',
+              href: 'https://eea.github.io/volto-kitkat-frontend/',
             },
           ],
         },
@@ -55,11 +61,6 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/eea/volto-eea-design-system/edit/develop/website/',
-        },
-        blog: {
-          showReadingTime: true,
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/develop/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
