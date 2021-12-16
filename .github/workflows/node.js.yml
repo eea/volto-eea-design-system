@@ -31,7 +31,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Change directory to website
-       run: cd website
+      run: cd website
     - name: Run yarn install
       run: yarn
     - name: Run yarn build
