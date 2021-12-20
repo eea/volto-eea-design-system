@@ -27,17 +27,7 @@ export default {
   },
 };
 
-function DescriptionList(
-  items,
-  verticalAlign,
-  floated,
-  icon,
-  selection,
-  animated,
-  divided,
-  size,
-  horizontal,
-) {
+function DescriptionList(items, verticalAlign, floated, icon, selection, animated, divided, size, horizontal) {
   return (
     <List
       selection={selection}
@@ -64,25 +54,15 @@ function DescriptionList(
 }
 
 export const Description = (args) => {
-  return DescriptionList(
-    args.items,
-    args.verticalAlign,
-    args.floated,
-    args.icon,
-    args.selection,
-    args.animated,
-    args.divided,
-    args.size,
-    args.horizontal,
-  );
+  return DescriptionList(args.items, args.verticalAlign, args.floated, args.icon, args.selection, args.animated, args.divided, args.size, args.horizontal);
 };
 
 Description.args = {
   items: [
-    { header: 'header 1', content: 'Lorem i', icon: 'users' },
-    { header: 'header 2', content: 'Praesent felis nisi, feugiat ' },
-    { header: 'header 3', content: 'Praesent felis nisi, feugiat ' },
-    { header: 'header 4', content: 'Praesent felis nisi, feugiat ' },
+    { header: 'header 1', content: 'Content 1', icon: 'users' },
+    { header: 'header 2', content: 'Content 2' },
+    { header: 'header 3', content: 'Content 3' },
+    { header: 'header 4', content: 'Content 4' },
   ],
   verticalAlign: 'middle',
   floated: 'right',

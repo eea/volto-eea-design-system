@@ -54,34 +54,34 @@ Unordered.args = {
   items: [
     {
       header: 'header 1',
-      content: 'Lorem i',
+      content: 'Content 1',
       subList: [
-        { header: 'Sub header 1', content: 'Lorem i' },
-        { header: 'Sub header ', content: 'Lorem i' },
+        { header: 'Sub header 1', content: 'content' },
+        { header: 'Sub header ', content: 'content' },
       ],
     },
     {
       header: 'header 2',
-      content: 'Praesent felis nisi, feugiat ',
+      content: 'Content 2',
       subList: [
-        { header: 'Sub header 1', content: 'Lorem i' },
-        { header: 'Sub header ', content: 'Lorem i' },
+        { header: 'Sub header 1', content: 'content' },
+        { header: 'Sub header ', content: 'content' },
       ],
     },
     {
       header: 'header 3',
-      content: 'Praesent felis nisi, feugiat ',
+      content: 'Content 3',
       subList: [
-        { header: 'Sub header 1', content: 'Lorem i' },
-        { header: 'Sub header ', content: 'Lorem i' },
+        { header: 'Sub header 1', content: 'content' },
+        { header: 'Sub header ', content: 'content' },
       ],
     },
     {
       header: 'header 4',
-      content: 'Praesent felis nisi, feugiat ',
+      content: 'Content 4',
       subList: [
-        { header: 'Sub header 1', content: 'Lorem i' },
-        { header: 'Sub header ', content: 'Lorem i' },
+        { header: 'Sub header 1', content: 'content' },
+        { header: 'Sub header ', content: 'content' },
       ],
     },
   ],
