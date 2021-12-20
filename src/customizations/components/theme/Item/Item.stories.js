@@ -13,7 +13,7 @@ const Template = (args) => <Item.Group {...args}></Item.Group>;
 
 
 
-export const DefaultItem = (args) => <Item {...args}></Item>;
+export const DefaultItem = (args) => <Item.Group><Item {...args}></Item></Item.Group>;
 DefaultItem.args = {
     header: 'Header',
     image: EUflag,
