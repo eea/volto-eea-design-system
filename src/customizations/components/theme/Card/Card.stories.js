@@ -9,7 +9,7 @@ export default {
 };
 
 const Template = (args) => (
-  <Card {...args}>
+  <Card fluid={args.fluid}>
     {args.hasImage && (
       <Image
         src="https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large"
@@ -23,8 +23,8 @@ const Template = (args) => (
       <Card.Description>{args.description}</Card.Description>
     </Card.Content>
     {args.links !== null &&
-      args.links.map((item) => (
-        <Card.Content extra>
+      args.links.map((item, index) => (
+        <Card.Content extra key={index}>
           <a href="/#">{item.linkName}</a>
         </Card.Content>
       ))}
