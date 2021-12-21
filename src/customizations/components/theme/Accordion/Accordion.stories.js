@@ -19,8 +19,8 @@ const Template = (args) => <AccordionEEA {...args}></AccordionEEA>;
 export const Default = Template.bind({});
 Default.args = {
   content: [
-    { title: '1 Accordion Title', content: 'content 1' },
-    { title: '2 Accordion Title', content: 'content 2' },
+    { title: 'Accordion Title 1', content: 'content 1' },
+    { title: 'Accordion Title 2', content: 'content 2' },
   ],
   variant: 'default',
   fluid: true,
