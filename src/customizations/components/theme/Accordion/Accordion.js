@@ -17,7 +17,7 @@ export function AccordionEEA({ content, variant, ...args }) {
   return (
     <Accordion className={variant}>
       {content.map((item, index) => (
-        <div>
+        <div key={index}>
           <Accordion.Title
             active={activeIndex === index}
             index={index}
