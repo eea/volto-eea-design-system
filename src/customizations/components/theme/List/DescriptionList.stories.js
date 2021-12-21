@@ -63,7 +63,7 @@ function DescriptionList(
   );
 }
 
-export const Description = (args) => {
+export const Default = (args) => {
   return DescriptionList(
     args.items,
     args.verticalAlign,
@@ -77,7 +77,7 @@ export const Description = (args) => {
   );
 };
 
-Description.args = {
+Default.args = {
   items: [
     { header: 'header 1', content: 'Content 1', icon: 'users' },
     { header: 'header 2', content: 'Content 2' },

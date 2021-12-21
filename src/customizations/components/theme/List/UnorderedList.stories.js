@@ -28,7 +28,7 @@ function UnorderedList(items, selection, animated, divided, size, horizontal) {
       {items.map((item, index) => (
         <List.Item key={index}>
           {item.content}
-          <List.List selection={selection}>
+          <List.List>
             {item.subList.map((sub, subIndex) => (
               <List.Item key={subIndex} as="a">
                 {sub.content}
@@ -41,7 +41,7 @@ function UnorderedList(items, selection, animated, divided, size, horizontal) {
   );
 }
 
-export const Unordered = (args) => {
+export const Default = (args) => {
   return UnorderedList(
     args.items,
     args.selection,
@@ -52,7 +52,7 @@ export const Unordered = (args) => {
   );
 };
 
-Unordered.args = {
+Default.args = {
   items: [
     {
       header: 'header 1',

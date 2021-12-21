@@ -28,7 +28,7 @@ function OrderedList(items, selection, animated, divided, size, horizontal) {
       {items.map((item, index) => (
         <List.Item key={index}>
           {item.content}
-          <List.List selection={selection} animated={animated}>
+          <List.List>
             {item.subList.map((sub, subIndex) => (
               <List.Item key={subIndex} as="a">
                 {sub.content}
@@ -41,7 +41,7 @@ function OrderedList(items, selection, animated, divided, size, horizontal) {
   );
 }
 
-export const Description = (args) => {
+export const Default = (args) => {
   return OrderedList(
     args.items,
     args.selection,
@@ -52,7 +52,7 @@ export const Description = (args) => {
   );
 };
 
-Description.args = {
+Default.args = {
   items: [
     {
       header: 'header 1',
