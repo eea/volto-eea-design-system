@@ -2,11 +2,11 @@ import { injectIntl } from 'react-intl';
 import React from 'react';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
 
-// export default {
-//     title: 'Components/Forms/Checkbox',
-//     component:Form,
-//     argTypes:{},
-// }
+export default {
+  title: 'Components/Forms/Checkbox',
+  component: Checkbox,
+  argTypes: {},
+};
 
 const Template = (args) => <Checkbox {...args}></Checkbox>;
 

@@ -1,9 +1,9 @@
 import { injectIntl } from 'react-intl';
 import React from 'react';
-import { Input } from 'semantic-ui-react';
+import { Input, Form } from 'semantic-ui-react';
 
 export default {
-  title: 'Components/Input',
+  title: 'Components/Forms/Input',
   component: Input,
   argTypes: {
     size: {
