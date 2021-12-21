@@ -73,7 +73,7 @@ Link.args = {
   circular: false,
   centered: false,
   spaced: false,
-  floated: '',
+  floated: 'left',
 };
 
 Link.storyName = 'Link Image';
