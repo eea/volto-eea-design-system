@@ -12,7 +12,7 @@ export default {
   argTypes: {},
 };
 
-export function MenuContent({
+ function MenuContent({
   items,
   secondary,
   pointing,
