@@ -13,7 +13,7 @@ module.exports = {
   organizationName: 'eea', // Usually your GitHub org/user name.
   projectName: 'volto-eea-design-system', // Usually your repo name.
   customFields: {
-    'storyBookUrl': 'http://192.168.30.188:6006/'
+    'storyBookUrl': 'http://192.168.30.188:6006'
   },
   themeConfig: {
     navbar: {
