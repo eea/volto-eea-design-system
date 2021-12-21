@@ -1,29 +1,37 @@
-import React from 'react'
-import { Radio } from 'semantic-ui-react'
+import React, { useState } from 'react';
+import { Radio, Form } from 'semantic-ui-react';
 
 export default {
-    title: 'Components/Radio',
-    component: Radio,
-    parameters: {
-        actions: {
-          handles: ['click'],
-        },
-      },
-    argtypes: {}
-}
+  title: 'Components/Forms/Radio',
+  component: Radio,
+  parameters: {
+    actions: {
+      handles: ['click'],
+    },
+  },
+  argtypes: {},
+  // decorators: [
+  //   (Story) => (
+  //     <Form>
+  //       <Form.Field><Story /></Form.Field>
+  //       <Form.Field><Story /></Form.Field>
+  //     </Form>
+  //   ),
+  // ],
+};
 
-const Template = (args) => <Radio {...args}></Radio>
+const Template = (args) => <Radio {...args}></Radio>;
 
 export const Default = Template.bind({});
 Default.args = {
-    label:"Radio Label",
-}
+  label: 'Radio Label',
+};
 
 export const Playground = Template.bind({});
 Playground.args = {
-    label:"Radio Label",
-    toggle: false,
-    slider:false,
-    disabled:false,
-    readOnly:false,
-}
+  label: 'Radio Label',
+  toggle: false,
+  slider: false,
+  disabled: false,
+  readOnly: false,
+};
