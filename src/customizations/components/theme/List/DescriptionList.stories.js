@@ -27,7 +27,17 @@ export default {
   },
 };
 
-function DescriptionList(items, verticalAlign, floated, icon, selection, animated, divided, size, horizontal) {
+function DescriptionList(
+  items,
+  verticalAlign,
+  floated,
+  icon,
+  selection,
+  animated,
+  divided,
+  size,
+  horizontal,
+) {
   return (
     <List
       selection={selection}
@@ -36,8 +46,8 @@ function DescriptionList(items, verticalAlign, floated, icon, selection, animate
       size={size}
       horizontal={horizontal}
     >
-      {items.map((item) => (
-        <List.Item>
+      {items.map((item, index) => (
+        <List.Item key={index}>
           <List.Content>
             <List.Header>
               {icon && <List.Icon name="right triangle" />}
@@ -54,7 +64,17 @@ function DescriptionList(items, verticalAlign, floated, icon, selection, animate
 }
 
 export const Description = (args) => {
-  return DescriptionList(args.items, args.verticalAlign, args.floated, args.icon, args.selection, args.animated, args.divided, args.size, args.horizontal);
+  return DescriptionList(
+    args.items,
+    args.verticalAlign,
+    args.floated,
+    args.icon,
+    args.selection,
+    args.animated,
+    args.divided,
+    args.size,
+    args.horizontal,
+  );
 };
 
 Description.args = {

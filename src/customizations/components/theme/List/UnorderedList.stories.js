@@ -25,12 +25,14 @@ function UnorderedList(items, selection, animated, divided, size, horizontal) {
       size={size}
       horizontal={horizontal}
     >
-      {items.map((item) => (
-        <List.Item>
+      {items.map((item, index) => (
+        <List.Item key={index}>
           {item.content}
           <List.List selection={selection}>
-            {item.subList.map((sub) => (
-              <List.Item as="a">{sub.content}</List.Item>
+            {item.subList.map((sub, subIndex) => (
+              <List.Item key={subIndex} as="a">
+                {sub.content}
+              </List.Item>
             ))}
           </List.List>
         </List.Item>
