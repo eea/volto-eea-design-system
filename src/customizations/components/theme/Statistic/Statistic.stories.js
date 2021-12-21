@@ -22,7 +22,9 @@ export default {
 const Template = (args) => (
   <Statistic.Group {...args}>
     {args.elements &&
-      args.elements.map((element) => <Statistic {...element}></Statistic>)}
+      args.elements.map((element, index) => (
+        <Statistic key={index} {...element}></Statistic>
+      ))}
     {!args.elements && <Statistic {...args}></Statistic>}
   </Statistic.Group>
 );
@@ -35,7 +37,7 @@ Default.args = {
   color: 'black',
   inverted: false,
   floated: 'right',
-  size: '',
+  size: 'small',
 };
 
 export const Group = Template.bind({});
