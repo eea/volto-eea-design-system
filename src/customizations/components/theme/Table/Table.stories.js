@@ -18,10 +18,6 @@ export default {
       control: { type: 'inline-radio' },
       options: ['bottom', 'middle', 'top'],
     },
-    color: {
-      control: { type: 'select' },
-      options: ['red', 'orange', 'yellow'],
-    },
   },
 };
 
@@ -54,8 +50,10 @@ function TableContent(
     >
       <Table.Header>
         <Table.Row textAlign={textAlign}>
-          {headers.map((item) => (
-            <Table.HeaderCell textAlign={textAlign}>{item}</Table.HeaderCell>
+          {headers.map((item, index) => (
+            <Table.HeaderCell key={index} textAlign={textAlign}>
+              {item}
+            </Table.HeaderCell>
           ))}
         </Table.Row>
       </Table.Header>
@@ -63,8 +61,12 @@ function TableContent(
       <Table.Body>
         {rows.map((item) => (
           <Table.Row textAlign={textAlign} verticalAlign={verticalAlign}>
-            {item.content.map((cell) => (
-              <Table.Cell textAlign={textAlign} verticalAlign={verticalAlign}>
+            {item.content.map((cell, index) => (
+              <Table.Cell
+                key={index}
+                textAlign={textAlign}
+                verticalAlign={verticalAlign}
+              >
                 {cell}
               </Table.Cell>
             ))}
@@ -88,7 +90,6 @@ export const Default = (args) => {
     args.size,
     args.textAlign,
     args.verticalAlign,
-    args.color,
     args.stackable,
   );
 };
@@ -111,6 +112,5 @@ Default.args = {
   size: '',
   textAlign: 'center',
   verticalAlign: 'middle',
-  color: '',
   stackable: false,
 };
