@@ -11,14 +11,14 @@ export default {
     },
     dimmer: {
       control: { type: 'select' },
-      options: [, true, 'inverted', 'blurring'],
+      options: [true, 'inverted', 'blurring'],
     },
   },
 };
 
 const trigger = <Button>Show Modal</Button>;
 
-const Template = (args) => <Modal {...args}></Modal>;
+const Template = (args) => <Modal {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

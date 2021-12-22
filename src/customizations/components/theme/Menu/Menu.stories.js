@@ -40,7 +40,7 @@ export function MenuContent({
         <Menu.Item
           key={index}
           name={item.key}
-          active={activeItem == item.key}
+          active={activeItem === item.key}
           onClick={handleItemClick}
         >
           {item.name}
@@ -50,7 +50,7 @@ export function MenuContent({
   );
 }
 
-const Template = (args) => <MenuContent {...args}></MenuContent>;
+const Template = (args) => <MenuContent {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
