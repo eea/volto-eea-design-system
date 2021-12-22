@@ -10,7 +10,7 @@ module.exports = {
   //url: 'http://localhost:3005',
   baseUrl: '/eea-design-system/',
   //baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/eea_icon.png',
   organizationName: 'eea', // Usually your GitHub org/user name.
