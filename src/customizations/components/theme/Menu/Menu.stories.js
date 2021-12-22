@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { Menu } from 'semantic-ui-react';
 
 export default {

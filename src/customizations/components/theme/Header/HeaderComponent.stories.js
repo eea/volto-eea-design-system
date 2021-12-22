@@ -29,7 +29,7 @@ function HeaderContent({ content, size, icon, textAlign }) {
   );
 }
 
-const Template = (args) => <Header {...args}></Header>;
+const Template = (args) => <HeaderContent {...args}></HeaderContent>;
 
 export const Default = Template.bind({});
 Default.args = {

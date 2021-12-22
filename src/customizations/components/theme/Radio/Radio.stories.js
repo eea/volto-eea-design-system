@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Radio, Form } from 'semantic-ui-react';
+import React from 'react';
+import { Radio } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Forms/Radio',
