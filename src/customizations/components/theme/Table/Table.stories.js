@@ -33,7 +33,6 @@ function TableContent(
   size,
   textAlign,
   verticalAlign,
-  color,
   stackable,
 ) {
   return (
@@ -45,13 +44,12 @@ function TableContent(
       collapsing={collapsing}
       compact={compact}
       size={size}
-      color={color}
       stackable={stackable}
     >
       <Table.Header>
-        <Table.Row textAlign={textAlign}>
+        <Table.Row textAlign='center'>
           {headers.map((item, index) => (
-            <Table.HeaderCell key={index} textAlign={textAlign}>
+            <Table.HeaderCell key={index} textAlign='center'>
               {item}
             </Table.HeaderCell>
           ))}
@@ -59,11 +57,11 @@ function TableContent(
       </Table.Header>
 
       <Table.Body>
-        {rows.map((item) => (
-          <Table.Row textAlign={textAlign} verticalAlign={verticalAlign}>
-            {item.content.map((cell, index) => (
+        {rows.map((item,rowIndex) => (
+          <Table.Row textAlign={textAlign} verticalAlign={verticalAlign} key={rowIndex}>
+            {item.content.map((cell, cellIndex) => (
               <Table.Cell
-                key={index}
+                key={cellIndex}
                 textAlign={textAlign}
                 verticalAlign={verticalAlign}
               >
@@ -109,7 +107,7 @@ Default.args = {
   striped: false,
   collapsing: false,
   compact: false,
-  size: '',
+  size: 'small',
   textAlign: 'center',
   verticalAlign: 'middle',
   stackable: false,
