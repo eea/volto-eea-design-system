@@ -1,6 +1,5 @@
-import { injectIntl } from 'react-intl';
 import React from 'react';
-import { Button, Checkbox, Form } from 'semantic-ui-react';
+import { Checkbox } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Forms/Checkbox',

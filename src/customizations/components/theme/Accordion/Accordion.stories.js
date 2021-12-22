@@ -1,6 +1,4 @@
-import { injectIntl } from 'react-intl';
-import { React, useState } from 'react';
-import { Accordion } from 'semantic-ui-react';
+import { React } from 'react';
 import { AccordionEEA } from './Accordion';
 
 export default {

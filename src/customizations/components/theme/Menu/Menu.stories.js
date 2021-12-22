@@ -12,14 +12,7 @@ export default {
   argTypes: {},
 };
 
- function MenuContent({
-  items,
-  secondary,
-  pointing,
-  tabular,
-  text,
-  vertical,
-}) {
+function MenuContent({ items, secondary, pointing, tabular, text, vertical }) {
   const [activeItem, setActiveItem] = useState(
     items.find((item) => item.active === true).key,
   );
@@ -40,7 +33,7 @@ export default {
         <Menu.Item
           key={index}
           name={item.key}
-          active={activeItem == item.key}
+          active={activeItem === item.key}
           onClick={handleItemClick}
         >
           {item.name}

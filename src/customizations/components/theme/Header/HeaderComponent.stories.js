@@ -20,15 +20,6 @@ export default {
   },
 };
 
-function HeaderContent({ content, size, icon, textAlign }) {
-  return (
-    <Header size={size} icon={icon} textAlign={textAlign}>
-      {icon && <Icon name="users" circular />}
-      <Header.Content>{content}</Header.Content>
-    </Header>
-  );
-}
-
 const Template = (args) => <Header {...args}></Header>;
 
 export const Default = Template.bind({});

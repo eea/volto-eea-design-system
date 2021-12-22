@@ -1,6 +1,4 @@
-import { injectIntl } from 'react-intl';
 import React from 'react';
-import { Input } from 'semantic-ui-react';
 import { Header } from '@plone/volto/components';
 import { Segment } from 'semantic-ui-react';
 import Wrapper from '@plone/volto/storybook';

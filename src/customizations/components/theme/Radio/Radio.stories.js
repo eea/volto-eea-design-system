@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Radio, Form } from 'semantic-ui-react';
+import React from 'react';
+import { Radio } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Forms/Radio',
@@ -10,14 +10,6 @@ export default {
     },
   },
   argtypes: {},
-  // decorators: [
-  //   (Story) => (
-  //     <Form>
-  //       <Form.Field><Story /></Form.Field>
-  //       <Form.Field><Story /></Form.Field>
-  //     </Form>
-  //   ),
-  // ],
 };
 
 const Template = (args) => <Radio {...args}></Radio>;

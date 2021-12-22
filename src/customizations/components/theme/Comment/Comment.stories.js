@@ -1,6 +1,5 @@
 import React from 'react';
 import CommentEEA from './Comment';
-import { Icon } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Comment',

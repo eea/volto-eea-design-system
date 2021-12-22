@@ -1,4 +1,3 @@
-import { injectIntl } from 'react-intl';
 import React from 'react';
 import { Table } from 'semantic-ui-react';
 
@@ -47,9 +46,9 @@ function TableContent(
       stackable={stackable}
     >
       <Table.Header>
-        <Table.Row textAlign='center'>
+        <Table.Row textAlign="center">
           {headers.map((item, index) => (
-            <Table.HeaderCell key={index} textAlign='center'>
+            <Table.HeaderCell key={index} textAlign="center">
               {item}
             </Table.HeaderCell>
           ))}
@@ -57,8 +56,12 @@ function TableContent(
       </Table.Header>
 
       <Table.Body>
-        {rows.map((item,rowIndex) => (
-          <Table.Row textAlign={textAlign} verticalAlign={verticalAlign} key={rowIndex}>
+        {rows.map((item, rowIndex) => (
+          <Table.Row
+            textAlign={textAlign}
+            verticalAlign={verticalAlign}
+            key={rowIndex}
+          >
             {item.content.map((cell, cellIndex) => (
               <Table.Cell
                 key={cellIndex}
