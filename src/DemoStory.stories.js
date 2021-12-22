@@ -15,7 +15,7 @@ export const Default = injectIntl(({ children, ...args }) => {
 });
 
 export default {
-  title: 'Demo/Footer',
+  title: 'Layout/Footer',
   component: Footer,
   argTypes: {},
 };
