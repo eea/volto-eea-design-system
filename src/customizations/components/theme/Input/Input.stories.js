@@ -2,7 +2,7 @@ import React from 'react';
 import { Input } from 'semantic-ui-react';
 
 export default {
-  title: 'Public components/Input',
+  title: 'Components/Forms/Input',
   component: Input,
   argTypes: {
     size: {
@@ -14,7 +14,7 @@ export default {
     type: {
       control: {
         type: 'select',
-        options: ['text', 'date', 'email', 'number', 'password'],
+        options: ['text', 'date', 'email', 'number', 'password', 'file'],
       },
     },
     onChange: {

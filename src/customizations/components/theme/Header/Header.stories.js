@@ -4,7 +4,7 @@ import { Segment } from 'semantic-ui-react';
 import Wrapper from '@plone/volto/storybook';
 
 export default {
-  title: 'Demo/Header',
+  title: 'Layout/Header',
   cocmponent: Header,
   argTypes: {},
   decorators: [

@@ -1,0 +1,24 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+export function getValues(args) {
+  let values = [
+    { label: 'Usage', value: 'usage' },
+    { label: 'Showcase', value: 'showcase' },
+  ];
+  if (args.api) {
+    values.push({ label: 'API', value: 'api' });
+  }
+  if (args.playground) {
+    values.push({ label: 'Playground', value: 'playground' });
+  }
+  return values;
+}
+
+<Tabs
+  defaultValue="usage"
+  values={getValues(props)}
+>
+  <TabItem value="usage">{props.usage}</TabItem>
+  <TabItem value="showcase">{props.showcase}</TabItem>
+  <TabItem value="api">{props.api}</TabItem>
+</Tabs>

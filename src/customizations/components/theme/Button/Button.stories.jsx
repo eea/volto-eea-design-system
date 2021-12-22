@@ -1,22 +1,76 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button, Icon } from 'semantic-ui-react';
 
 export default {
-  title: 'Public components/Button',
+  title: 'Components/Button',
   component: Button,
+  parameters: {
+    actions: {
+      handles: ['click'],
+    },
+  },
   argTypes: {
-    onClick: {
-      action: 'button clicked',
+    animated: {
+      options: [false, true, 'fade', 'vertical'],
+      control: { type: 'inline-radio' },
+    },
+    variant: {
+      options: ['default', 'primary', 'secondary'],
+      control: { type: 'inline-radio' },
     },
   },
 };
 
-//👇 We create a “template” of how args map to rendering
-//const Template = (args) => <Button>{args.label}</Button>;
+function ButtonContent(animated, variant, label, icon, content) {
+  if (animated) {
+    return (
+      <Button animated={animated} className={variant}>
+        <Button.Content visible>
+          {label} {animated}
+        </Button.Content>
+        <Button.Content hidden>
+          <Icon name="arrow right" />
+        </Button.Content>
+      </Button>
+    );
+  } else if (!animated && icon) {
+    return (
+      <Button
+        className={variant}
+        content="Like"
+        icon="heart"
+        label={{ as: 'a', basic: true, content: content }}
+        labelPosition="right"
+      />
+    );
+  } else {
+    return <Button className={variant}>{label}</Button>;
+  }
+}
 
-// 👇 Each story then reuses that template
-export const Primary = (args) => <Button primary>{args.label}</Button>;
-Primary.args = { label: 'Primary' };
+export const Default = (args) => {
+  return <Button>Default</Button>;
+};
+Default.args = {};
+Default.parameters = {
+  controls: { exclude: ['animated', 'variant'] },
+  hideNoControlsWarning: true,
+};
 
-export const Secondary = (args) => <Button secondary>{args.label}</Button>;
-Secondary.args = { label: 'Secondary' };
+export const Playground = (args) => {
+  return ButtonContent(
+    args.animated,
+    args.variant,
+    args.label,
+    args.icon,
+    args.content,
+  );
+};
+
+Playground.args = {
+  label: 'Playground',
+  animated: false,
+  variant: 'default',
+  icon: false,
+  content: '2048',
+};
