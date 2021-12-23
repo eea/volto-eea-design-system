@@ -83,8 +83,9 @@
 }
 
 .ui.segment.storybookComponents {
-  text-align: center;
   padding: 200px;
+  text-align: center;
+
   img {
     margin: auto;
   }

@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { Menu } from 'semantic-ui-react';
 
 export default {
@@ -43,7 +43,7 @@ function MenuContent({ items, secondary, pointing, tabular, text, vertical }) {
   );
 }
 
-const Template = (args) => <MenuContent {...args}></MenuContent>;
+const Template = (args) => <MenuContent {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

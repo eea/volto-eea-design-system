@@ -4,16 +4,19 @@ module.exports = {
   title: 'EEA Design System',
   tagline: 'EEA Design System package',
   url: 'https://eea.github.io/',
+  deploymentBranch: 'develop',
+  baseUrl: '/volto-eea-design-system/',
+  trailingSlash: true,
   //url: 'http://localhost:3005',
   baseUrl: '/eea-design-system/',
   //baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/eea_icon.png',
   organizationName: 'eea', // Usually your GitHub org/user name.
   projectName: 'volto-eea-design-system', // Usually your repo name.
   customFields: {
-    'storyBookUrl': 'http://192.168.30.188:6006'
+    storyBookUrl: 'http://192.168.30.188:6006',
   },
   themeConfig: {
     navbar: {
@@ -43,8 +46,12 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Github',
-              href: 'https://github.com/eea/volto-eea-design-system',
+              label: 'EEA Website',
+              href: 'https://www.eea.europa.eu',
+            },
+            {
+              label: 'EEA Storybook',
+              href: 'https://eea.github.io/volto-kitkat-frontend/',
             },
           ],
         },
@@ -58,14 +65,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          exclude: [
-            '**/md_components/**',
-          ],
-        },
-        blog: {
-          showReadingTime: true,
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/develop/website/blog/',
+          exclude: ['**/md_components/**'],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

@@ -9,11 +9,14 @@ import { connect } from 'react-redux';
 
 import { compose } from 'redux';
 import { Link } from 'react-router-dom';
-import { Breadcrumb, Container, Segment, Icon } from 'semantic-ui-react';
+import { Breadcrumb, Container, Segment } from 'semantic-ui-react';
 import { defineMessages, injectIntl } from 'react-intl';
 
+import { Icon } from '@plone/volto/components';
 import { getBreadcrumbs } from '@plone/volto/actions';
-import { getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
+
+import homeSVG from '@plone/volto/icons/home.svg';
 
 const messages = defineMessages({
   home: {
@@ -40,6 +43,7 @@ class Breadcrumbs extends Component {
   static propTypes = {
     getBreadcrumbs: PropTypes.func.isRequired,
     pathname: PropTypes.string.isRequired,
+    root: PropTypes.string,
     items: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string,
@@ -48,13 +52,10 @@ class Breadcrumbs extends Component {
     ).isRequired,
   };
 
-  /**
-   * Component will mount
-   * @method componentWillMount
-   * @returns {undefined}
-   */
-  UNSAFE_componentWillMount() {
-    this.props.getBreadcrumbs(getBaseUrl(this.props.pathname));
+  componentDidMount() {
+    if (!hasApiExpander('breadcrumbs', getBaseUrl(this.props.pathname))) {
+      this.props.getBreadcrumbs(getBaseUrl(this.props.pathname));
+    }
   }
 
   /**
@@ -65,7 +66,9 @@ class Breadcrumbs extends Component {
    */
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.pathname !== this.props.pathname) {
-      this.props.getBreadcrumbs(getBaseUrl(nextProps.pathname));
+      if (!hasApiExpander('breadcrumbs', getBaseUrl(this.props.pathname))) {
+        this.props.getBreadcrumbs(getBaseUrl(nextProps.pathname));
+      }
     }
   }
 
@@ -86,17 +89,14 @@ class Breadcrumbs extends Component {
         <Container>
           <Breadcrumb size={'tiny'}>
             <Link
-              to="/"
+              to={this.props.root || '/'}
               className="section"
               title={this.props.intl.formatMessage(messages.home)}
             >
-              <Icon name="home" />
+              <Icon name={homeSVG} size="18px" />
             </Link>
             {this.props.items.map((item, index, items) => [
-              <Breadcrumb.Divider
-                icon="angle right"
-                key={`divider-${item.url}`}
-              />,
+              <Breadcrumb.Divider key={`divider-${item.url}`} />,
               index < items.length - 1 ? (
                 <Link key={item.url} to={item.url} className="section">
                   {item.title}
@@ -114,11 +114,13 @@ class Breadcrumbs extends Component {
   }
 }
 
+export const BreadcrumbsComponent = Breadcrumbs;
 export default compose(
   injectIntl,
   connect(
     (state) => ({
       items: state.breadcrumbs.items,
+      root: state.breadcrumbs.root,
     }),
     { getBreadcrumbs },
   ),

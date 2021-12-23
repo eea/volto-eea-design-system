@@ -1,5 +1,5 @@
 import React from 'react';
-import {Label} from 'semantic-ui-react';
+import { Label } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Label',

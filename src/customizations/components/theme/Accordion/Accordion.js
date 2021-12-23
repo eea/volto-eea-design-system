@@ -7,7 +7,7 @@ export function AccordionEEA({ content, variant, ...args }) {
   const toggleOpenAccordion = (e, titleProps) => {
     const { index } = titleProps;
 
-    setActiveIndex(index);
+    setActiveIndex(newIndex);
   };
 
   return (
