@@ -35,7 +35,6 @@
     }
   }
   @media only screen and (min-width: @computerBreakpoint + @offset) and (max-width: @largestSmallMonitor + @offset) {
-
     [class*='mobile only']:not(.computer),
     [class*='tablet only']:not(.computer),
     [class*='computer hidden'],
