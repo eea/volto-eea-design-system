@@ -4,7 +4,16 @@ import { Checkbox } from 'semantic-ui-react';
 export default {
   title: 'Components/Forms/Checkbox',
   component: Checkbox,
-  argTypes: {},
+  parameters: {
+    actions: {
+      handles: ['click'],
+    },
+  },
+  argTypes: {
+    onChange: {
+      action: 'checkbox value changed',
+    },
+  },
 };
 
 const Template = (args) => <Checkbox {...args}></Checkbox>;
