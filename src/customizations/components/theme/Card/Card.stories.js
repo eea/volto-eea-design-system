@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Image,Icon } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Card',
@@ -24,7 +24,7 @@ const Template = (args) => (
     {args.links !== null &&
       args.links.map((item, index) => (
         <Card.Content extra key={index}>
-          <a href="/#">{item.linkName}</a>
+          <a href="/#"> <Icon name = {item.icon} />{item.linkName}</a>
         </Card.Content>
       ))}
   </Card>
@@ -38,5 +38,5 @@ Default.args = {
   meta: 'meta data',
   description: 'card description',
   fluid: false,
-  links: [{ linkName: 'Link 1' }],
+  links: [{ linkName: 'Link 1' , icon:"linkify"}],
 };
