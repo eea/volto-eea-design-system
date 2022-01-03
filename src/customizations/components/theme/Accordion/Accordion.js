@@ -7,11 +7,11 @@ export function AccordionEEA({ content, variant, ...args }) {
   const toggleOpenAccordion = (e, titleProps) => {
     const { index } = titleProps;
 
-    setActiveIndex(newIndex);
+    setActiveIndex(index);
   };
 
   return (
-    <Accordion className={variant}>
+    <Accordion className={variant} {...args}>
       {content.map((item, index) => (
         <div key={index}>
           <Accordion.Title
