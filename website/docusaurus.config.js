@@ -8,7 +8,6 @@ module.exports = {
   baseUrl: '/volto-eea-design-system/',
   trailingSlash: true,
   //url: 'http://localhost:3005',
-  baseUrl: '/eea-design-system/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/eea_icon.png',
