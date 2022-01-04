@@ -1,7 +1,3 @@
----
-title: Usage
-order: 1
----
 Messages component contains important information to alert users to take a certain actions.
 
 ## Do's

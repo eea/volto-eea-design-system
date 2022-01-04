@@ -1,7 +1,3 @@
----
-title: Usage
-order: 1
----
 Labels are used to indicate the different states for items in a list. They bring supplementary meaning by adding an indicative state (label) that is visually distinct (background colour) from other elements.
 
 ## Do's

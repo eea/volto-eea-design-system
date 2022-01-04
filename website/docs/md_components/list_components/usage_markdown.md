@@ -1,7 +1,3 @@
----
-title: Usage
-order: 1
----
 Used to present chunks of information in a concise and scannable way, lists help to organise content related to a single topic, grouping together a set of items or text options.
 
 ## Ordered lists

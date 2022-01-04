@@ -1,7 +1,3 @@
----
-title: Usage
-order: 1
----
 Cards component is used as an entry point to more detailed information. The component can include various sets of elements to serve users' specific needs.
 
 ## Do's
