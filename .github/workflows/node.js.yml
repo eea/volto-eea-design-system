@@ -4,10 +4,6 @@
 name: Node.js CI
 
 on:
-  push:
-    branches: [ develop ]
-    paths:
-     - website/**
   pull_request:
     branches: [ develop ]
     paths:
@@ -26,6 +22,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
     - name: Use Node.js ${{ matrix.node-version }} to build docusaurus website
       uses: actions/setup-node@v2
       with:
