@@ -22,5 +22,4 @@ Default.args = {
   ],
   variant: 'default',
   fluid: true,
-  styled: true,
 };
