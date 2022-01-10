@@ -1,5 +1,3 @@
-
-
 Buttons trigger an action in a web page. There are 4 variants of the button component with different levels of importance and usages.
 
 # Primary Button

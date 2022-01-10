@@ -1,7 +1,3 @@
----
-title: Usage
-order: 1
----
 A textarea is an input field allowing users to enter multiple lines of text.
 
 ## Do's

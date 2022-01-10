@@ -1,7 +1,3 @@
----
-title: Usage
-order: 1
----
 A text field is an input that can be used on a form, sign-in or any place where data is requested from the user.
 
 ## Do's

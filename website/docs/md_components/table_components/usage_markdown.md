@@ -1,7 +1,3 @@
----
-title: Usage
-order: 1
----
 Tables are used to structure complex data in an organised way that is more user friendly and discoverable.
 
 ## Do's
