@@ -33,7 +33,7 @@ const Template = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   //src: 'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-  hasImage: false,
+  hasImage: true,
   title: 'Card Header',
   meta: 'meta data',
   description: 'card description',

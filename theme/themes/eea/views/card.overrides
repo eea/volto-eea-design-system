@@ -1,3 +1,8 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+.ui.card {
+    font-family: @fontFamily !important;
+    border-radius: @borderRadius !important;
+}
