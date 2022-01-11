@@ -7,12 +7,12 @@ export default {
   argTypes: {
     size: {
       control: { type: 'inline-radio' },
-      options: ['mini', 'tiny', 'small', 'large', 'fullscreen'],
+      options: ['mini', 'tiny', 'small', 'large'],
     },
   },
 };
 
-function ConfirmContent({ cancelButton, confirmButton, content, size }) {
+function ConfirmContent({ confirmHeader, cancelButton, confirmButton, content, size }) {
   const [open, setOpen] = useState(false);
 
   const openConfirm = () => {
@@ -24,9 +24,10 @@ function ConfirmContent({ cancelButton, confirmButton, content, size }) {
   };
   return (
     <div>
-      <Button onClick={openConfirm}>Show</Button>
+      <Button primary onClick={openConfirm}>Show Confirmation</Button>
       <Confirm
         open={open}
+        header={confirmHeader}
         onCancel={closeConfirm}
         onConfirm={closeConfirm}
         cancelButton={cancelButton}
@@ -42,6 +43,7 @@ const Template = (args) => <ConfirmContent {...args}></ConfirmContent>;
 
 export const Default = Template.bind({});
 Default.args = {
+  confirmHeader: 'This is the confirm header',
   cancelButton: 'Cancel',
   confirmButton: 'OK',
   content: 'Are you sure?',

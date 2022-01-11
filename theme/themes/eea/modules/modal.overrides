@@ -2,6 +2,24 @@
          Theme Overrides
 *******************************/
 
+.ui.modal{
+  border-radius: @borderRadius !important;
+}
+
+.ui.modal>.header {
+  border: @border !important;
+}
+.ui.modal > .actions {
+  border: @border !important;
+  background-color: @background !important;
+}
+
+.ui.modal>.content {
+  padding: 1rem 1.5rem !important;
+}
+
+/******************************************/
+
 .ui.modal > .actions:after {
   display: block;
   height: 0;
