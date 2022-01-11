@@ -1,3 +1,25 @@
 /*******************************
          Tab Overrides
 *******************************/
+
+.eeaTab {
+    fontFamily: @pageFont;
+    font-size: @fontSize;
+}
+
+
+.eeaTab .ui.secondary.pointing.menu .active.item {
+    border-color: @secondaryColor;
+    color: @secondaryColor;
+    &:hover {
+        border-color: @secondaryColorDarken;
+        color: @secondaryColorDarken;
+    }
+}
+.eeaTab .ui.bottom.attached.segment.active.tab {
+    border: none;
+}
+
+.eeaTab .ui.secondary.pointing.menu {
+    border-color: @silverGray;
+}
