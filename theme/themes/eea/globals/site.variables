@@ -6,7 +6,7 @@
        Fonts
 --------------------*/
 
-@fontName          : 'Poppins';
+@fontName          : 'Roboto';
 @fontSmoothing     : antialiased;
 
 @headerFont        : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -43,7 +43,7 @@
    for explanation of @px variables
 */
 @relativeBorderRadius: @relative4px;
-@absoluteBorderRadius: @4px;
+@absoluteBorderRadius: 0px;
 
 @defaultBorderRadius: @absoluteBorderRadius;
 
@@ -51,11 +51,12 @@
     Brand Colors
 --------------------*/
 
-@primaryColor        : @blue;
-@secondaryColor      : @brown;
+@primaryColor         : @darkCerulean;
+@secondaryColor       : @darkCyan;
+@secondaryColorDarken : darken(@secondaryColor, 5%);
 
-@lightPrimaryColor   : @lightBlue;
-@lightSecondaryColor : @lightGrey;
+@lightPrimaryColor    : @pearlAqua;
+@lightSecondaryColor  : @carolinaBlue;
 
 /*--------------
   Page Heading
@@ -259,6 +260,37 @@
       Site Colors
 --------------------*/
 
+/*---  EEA Colors  ---*/
+
+// Green Colors
+@darkCyan         : #00928F;
+@ming             : #346F83;
+@steelBlue        : #478EA5;
+@pearlAqua        : #74CBC8;
+@powderBlue       : #AEDFE8;
+
+// Blue Colors
+//@mediumPersianBlue  : #0065A4;
+@darkCerulean       : #004B7F;
+@mediumElectricBlue : #00568C;
+@blueSapphire       : #1C618C;
+@carolinaBlue       : #5CA1CC;
+@freshAir           : #B2E1FF;
+
+// Secondary Colors
+@darkBlue         : #3D5265;
+@UCLABlue         : #54728C;
+@weldonBlue       : #7495B2;
+@lightSteelBlue   : #ACCAE5;
+
+//Gray Colors
+@black            : #000000;
+@oldSilver        : #808285;
+@mIdGray          : #BCBEC0;
+@silverGray       : #E6E7E8;
+@white            : #FFFFFF;
+
+
 /*---  Colors  ---*/
 @orange           : #FA5C2A; // Palette: reddishOrange
 @yellow           : #F6A808; // Palette: goldenRod
@@ -272,7 +304,7 @@
 @red              : @pink;
 @brown            : #826A6A; // Palette: reddishGrey
 @grey             : #68778D; // Palette: blueishGrey
-@black            : #252525; // Palette: darkishGrey
+//@black            : #252525; // Palette: darkishGrey
 
 /*---  Light Colors  ---*/
 @lightRed         : #FF695E;
@@ -364,7 +396,7 @@
 @purple: #8e004d;
 @green: #00888A;
 @lightGreen: #027572;
-@black: #333;
+//@black: #333;
 @pureBlack: #000;
 @grayPrint: #bbb;
 
