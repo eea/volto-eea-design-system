@@ -2,6 +2,60 @@
          Theme Overrides
 *******************************/
 
+//Color for button text depends on background
+.text-color(@backColor) when (lightness(@backColor) >= 40%){
+  color: @primaryButtonColor;
+}
+.text-color(@backColor) when (lightness(@backColor) < 40%){
+  color: @white;
+}
+
+//Global Button Styles
+.ui.button, .ui.buttons .button, .ui.buttons {
+  font-family: @pageFont !important;
+  font-weight: 500 !important;
+  border-radius: @borderRadius !important;
+  background-color: @oldSilver !important;
+  color: @white !important;
+}
+
+// Primary Button
+.ui.primary.button, .ui.primary.buttons {
+  background-color: @primaryButtonColor !important;
+  .text-color(@primaryButtonColor) !important;
+  &:hover,
+  &:active {
+    background-color: @primaryButtonColorHover !important;
+    .text-color(@primaryButtonColorHover) !important;
+  }
+}
+
+//Secondary Button
+.ui.secondary.button, .ui.secondary.buttons {
+  background-color: @white !important;
+  border: @secondaryBorder;
+  .text-color(@white) !important;
+  &:hover,
+  &:active {
+    border: @secondaryBorderHover;
+    color: @mediumElectricBlue !important;
+  } 
+}
+
+//Call to action Button
+.ui.actionButton.button, .ui.actionButton.buttons {
+  background-color: @actionButtonButtonColor !important;
+  .text-color(@actionButtonButtonColor) !important;
+  &:hover,
+  &:active {
+      background-color: @secondaryColorDarken !important;
+      .text-color(@secondaryColorDarken)  !important;
+    }
+}
+
+
+/**************************************************************/
+
 .ui.circular.icon.button {
   padding: 0.75em 0.25em 0;
 

@@ -48,11 +48,48 @@ function ButtonContent(animated, variant, label, icon, content) {
   }
 }
 
-export const Default = (args) => {
-  return <Button>Default</Button>;
+export const Primary = (args) => {
+  return <Button primary>{args.label}</Button>;
 };
-Default.args = {};
-Default.parameters = {
+Primary.args = {
+  label: 'Primary Button',
+};
+Primary.parameters = {
+  controls: { exclude: ['animated', 'variant'] },
+  hideNoControlsWarning: true,
+};
+
+export const Secondary = (args) => {
+  return <Button secondary>{args.label}</Button>;
+};
+Secondary.args = {
+  label: 'Secondary Button',
+};
+Secondary.parameters = {
+  controls: { exclude: ['animated', 'variant'] },
+  hideNoControlsWarning: true,
+};
+
+export const CallToAction = (args) => {
+  return (<Button icon labelPosition='right' className="actionButton">
+      {args.label}
+      <Icon name='right arrow' />
+    </Button>)};
+CallToAction.args = {
+  label: 'Call to action Button',
+};
+CallToAction.parameters = {
+  controls: { exclude: ['animated', 'variant'] },
+  hideNoControlsWarning: true,
+};
+
+export const Cancel = (args) => {
+  return <Button className="cancel">{args.label}</Button>;
+};
+Cancel.args = {
+  label: 'Cancel Button',
+};
+Cancel.parameters = {
   controls: { exclude: ['animated', 'variant'] },
   hideNoControlsWarning: true,
 };

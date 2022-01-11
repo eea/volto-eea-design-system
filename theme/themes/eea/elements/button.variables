@@ -7,6 +7,14 @@
 --------------------*/
 
 /* Button */
+@primaryButtonColor: @primaryColor;
+@primaryButtonColorHover: @mediumElectricBlue;
+@actionButtonButtonColor: @secondaryColor;
+@actionButtonButtonColorHover: @steelBlue;
+
+@secondaryBorder: 2px solid @primaryColor;
+@secondaryBorderHover: 2px solid @mediumElectricBlue;
+
 @verticalMargin: 0em;
 @horizontalMargin: 0.25em;
 @backgroundColor: #E0E1E2;
@@ -28,6 +36,7 @@
 @invertedTextShadow: @textShadow;
 @borderRadius: @defaultBorderRadius;
 @verticalAlign: baseline;
+
 
 /* Internal Shadow */
 @shadowDistance: 0em;
