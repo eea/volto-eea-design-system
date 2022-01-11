@@ -3,26 +3,30 @@
 *******************************/
 
 //Color for button text depends on background
-.text-color(@backColor) when (lightness(@backColor) >= 40%){
+.text-color(@backColor) when (lightness(@backColor) >= 40%) {
   color: @primaryButtonColor;
 }
-.text-color(@backColor) when (lightness(@backColor) < 40%){
+.text-color(@backColor) when (lightness(@backColor) < 40%) {
   color: @white;
 }
 
 //Global Button Styles
-.ui.button, .ui.buttons .button, .ui.buttons {
+.ui.button,
+.ui.buttons .button,
+.ui.buttons {
+  background-color: @oldSilver !important;
+  border-radius: @borderRadius !important;
+  color: @white !important;
   font-family: @pageFont !important;
   font-weight: 500 !important;
-  border-radius: @borderRadius !important;
-  background-color: @oldSilver !important;
-  color: @white !important;
 }
 
 // Primary Button
-.ui.primary.button, .ui.primary.buttons {
+.ui.primary.button,
+.ui.primary.buttons {
   background-color: @primaryButtonColor !important;
   .text-color(@primaryButtonColor) !important;
+
   &:hover,
   &:active {
     background-color: @primaryButtonColorHover !important;
@@ -31,28 +35,31 @@
 }
 
 //Secondary Button
-.ui.secondary.button, .ui.secondary.buttons {
-  background-color: @white !important;
+.ui.secondary.button,
+.ui.secondary.buttons {
   border: @secondaryBorder;
+  background-color: @white !important;
   .text-color(@white) !important;
+
   &:hover,
   &:active {
     border: @secondaryBorderHover;
     color: @mediumElectricBlue !important;
-  } 
+  }
 }
 
 //Call to action Button
-.ui.actionButton.button, .ui.actionButton.buttons {
+.ui.actionButton.button,
+.ui.actionButton.buttons {
   background-color: @actionButtonButtonColor !important;
   .text-color(@actionButtonButtonColor) !important;
+
   &:hover,
   &:active {
-      background-color: @secondaryColorDarken !important;
-      .text-color(@secondaryColorDarken)  !important;
-    }
+    background-color: @secondaryColorDarken !important;
+    .text-color(@secondaryColorDarken) !important;
+  }
 }
-
 
 /**************************************************************/
 

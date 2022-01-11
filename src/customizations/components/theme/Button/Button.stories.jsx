@@ -71,10 +71,13 @@ Secondary.parameters = {
 };
 
 export const CallToAction = (args) => {
-  return (<Button icon labelPosition='right' className="actionButton">
+  return (
+    <Button icon labelPosition="right" className="actionButton">
       {args.label}
-      <Icon name='right arrow' />
-    </Button>)};
+      <Icon name="right arrow" />
+    </Button>
+  );
+};
 CallToAction.args = {
   label: 'Call to action Button',
 };

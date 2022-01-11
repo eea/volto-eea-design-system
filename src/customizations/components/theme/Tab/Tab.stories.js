@@ -45,7 +45,13 @@ function TabContent({
   );
 }
 
-const Template = (args) => <Tab className="eeaTab" menu={{ secondary: true, pointing: true }} {...args}></Tab>;
+const Template = (args) => (
+  <Tab
+    className="eeaTab"
+    menu={{ secondary: true, pointing: true }}
+    {...args}
+  ></Tab>
+);
 
 export const Default = Template.bind({});
 Default.args = {

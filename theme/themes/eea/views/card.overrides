@@ -3,6 +3,6 @@
 *******************************/
 
 .ui.card {
-    font-family: @fontFamily !important;
-    border-radius: @borderRadius !important;
+  border-radius: @borderRadius !important;
+  font-family: @fontFamily !important;
 }

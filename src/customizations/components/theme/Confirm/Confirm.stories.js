@@ -12,7 +12,13 @@ export default {
   },
 };
 
-function ConfirmContent({ confirmHeader, cancelButton, confirmButton, content, size }) {
+function ConfirmContent({
+  confirmHeader,
+  cancelButton,
+  confirmButton,
+  content,
+  size,
+}) {
   const [open, setOpen] = useState(false);
 
   const openConfirm = () => {
@@ -24,7 +30,9 @@ function ConfirmContent({ confirmHeader, cancelButton, confirmButton, content, s
   };
   return (
     <div>
-      <Button primary onClick={openConfirm}>Show Confirmation</Button>
+      <Button primary onClick={openConfirm}>
+        Show Confirmation
+      </Button>
       <Confirm
         open={open}
         header={confirmHeader}

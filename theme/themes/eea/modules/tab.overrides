@@ -3,23 +3,24 @@
 *******************************/
 
 .eeaTab {
-    fontFamily: @pageFont;
-    font-size: @fontSize;
+  font-size: @fontSize;
+  fontfamily: @pageFont;
 }
-
 
 .eeaTab .ui.secondary.pointing.menu .active.item {
-    border-color: @secondaryColor;
-    color: @secondaryColor;
-    &:hover {
-        border-color: @secondaryColorDarken;
-        color: @secondaryColorDarken;
-    }
+  border-color: @secondaryColor;
+  color: @secondaryColor;
+
+  &:hover {
+    border-color: @secondaryColorDarken;
+    color: @secondaryColorDarken;
+  }
 }
+
 .eeaTab .ui.bottom.attached.segment.active.tab {
-    border: none;
+  border: none;
 }
 
 .eeaTab .ui.secondary.pointing.menu {
-    border-color: @silverGray;
+  border-color: @silverGray;
 }
