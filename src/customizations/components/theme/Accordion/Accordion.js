@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { Accordion, Icon } from 'semantic-ui-react';
 
 export function AccordionEEA({ content, variant, ...args }) {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState();
 
   const toggleOpenAccordion = (e, titleProps) => {
     const { index } = titleProps;
+    const newIndex = activeIndex === index ? -1 :index
 
-    setActiveIndex(index);
+    setActiveIndex(newIndex);
   };
 
   return (
