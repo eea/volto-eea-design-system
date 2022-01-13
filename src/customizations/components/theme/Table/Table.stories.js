@@ -178,7 +178,6 @@ function SortableTableContent({
   });
 
   const { column, data, direction } = state;
-  console.log(state);
 
   return (
     <Table
