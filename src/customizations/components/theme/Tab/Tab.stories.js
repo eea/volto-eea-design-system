@@ -19,54 +19,38 @@ export default {
 
 function TabContent({
   panes,
-  pointing,
-  secondary,
   text,
   attached,
   tabular,
   borderless,
-  color,
   vertical,
 }) {
   return (
     <Tab
       panes={panes}
-      menu={{
-        color,
-        pointing: pointing,
-        secondary: secondary,
-        text: text,
-        attached: attached,
-        tabular: tabular,
-        borderless: borderless,
-        vertical: vertical,
-      }}
+      className="eeaTab"
+      renderActiveOnly={false}
+      menu={{ secondary: true, pointing: true,vertical:vertical}}
     ></Tab>
   );
 }
 
-const Template = (args) => (
-  <Tab
-    className="eeaTab"
-    menu={{ secondary: true, pointing: true }}
-    {...args}
-  ></Tab>
-);
+const Template = (args) => <TabContent {...args}></TabContent>;
 
 export const Default = Template.bind({});
 Default.args = {
   panes: [
     {
       menuItem: 'Tab 1',
-      render: () => <Tab.Pane>Tab 1 Content</Tab.Pane>,
+      pane: 'Tab 1 Content',
     },
     {
       menuItem: 'Tab 2',
-      render: () => <Tab.Pane>Tab 2 Content</Tab.Pane>,
+      pane: 'Tab 2 Content',
     },
     {
       menuItem: 'Tab 3',
-      render: () => <Tab.Pane>Tab 3 Content</Tab.Pane>,
+      pane: 'Tab 3 Content',
     },
   ],
 };
@@ -76,22 +60,20 @@ Playground.args = {
   panes: [
     {
       menuItem: 'Tab 1',
-      render: () => <Tab.Pane>Tab 1 Content</Tab.Pane>,
+      pane: 'Tab 1 Content',
     },
     {
       menuItem: 'Tab 2',
-      render: () => <Tab.Pane>Tab 2 Content</Tab.Pane>,
+      pane: 'Tab 2 Content',
     },
     {
       menuItem: 'Tab 3',
-      render: () => <Tab.Pane>Tab 3 Content</Tab.Pane>,
+      pane: 'Tab 3 Content',
     },
   ],
-  pointing: false,
-  secondary: false,
-  text: false,
-  attached: false,
-  tabular: false,
-  borderless: false,
+  // text: false,
+  // attached: false,
+  // tabular: false,
+  // borderless: false,
   vertical: false,
 };
