@@ -2,7 +2,11 @@
          Theme Overrides
 *******************************/
 
-.ui.card {
-  border-radius: @borderRadius !important;
-  font-family: @fontFamily !important;
+.ui.card.eeaCard {
+  background: @background;
+  border-radius: @borderRadius;
+  font-family: @fontFamily;
+  box-shadow: none;
+  border: @cardBorder;
+  border-radius: @defaultBorderRadius;
 }

@@ -49,7 +49,7 @@ function ButtonContent(animated, variant, label, icon, content) {
 }
 
 export const Primary = (args) => {
-  return <Button primary>{args.label}</Button>;
+  return <Button className="eeaPrimary">{args.label}</Button>;
 };
 Primary.args = {
   label: 'Primary Button',
@@ -60,7 +60,7 @@ Primary.parameters = {
 };
 
 export const Secondary = (args) => {
-  return <Button secondary>{args.label}</Button>;
+  return <Button className="eeaSecondary">{args.label}</Button>;
 };
 Secondary.args = {
   label: 'Secondary Button',
@@ -87,7 +87,7 @@ CallToAction.parameters = {
 };
 
 export const Cancel = (args) => {
-  return <Button className="cancel">{args.label}</Button>;
+  return <Button className="cancelButton">{args.label}</Button>;
 };
 Cancel.args = {
   label: 'Cancel Button',

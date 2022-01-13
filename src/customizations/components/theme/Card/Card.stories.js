@@ -8,7 +8,7 @@ export default {
 };
 
 const Template = (args) => (
-  <Card fluid={args.fluid}>
+  <Card fluid={args.fluid} className="eeaCard">
     {args.hasImage && (
       <Image
         src="https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large"
