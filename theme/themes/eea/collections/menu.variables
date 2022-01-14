@@ -6,6 +6,10 @@
       Collection
 --------------------*/
 
+@paginationBorder: @eeaMenuBorder @silverGray;
+@activeColor: @secondaryColor;
+@activeItemBorder: @eeaMenuBorder @secondaryColor;
+
 /* Menu */
 @verticalMargin: @medium;
 @horizontalMargin: 0em;
