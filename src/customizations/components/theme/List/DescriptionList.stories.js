@@ -19,7 +19,7 @@ export default {
     },
     size: {
       control: {
-        type: 'inline-radio',
+        type: 'select',
       },
       options: ['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive'],
     },
@@ -77,18 +77,18 @@ export const Default = (args) => {
 };
 
 Default.args = {
-  items: [
-    { header: 'header 1', content: 'Content 1', icon: 'users' },
-    { header: 'header 2', content: 'Content 2' },
-    { header: 'header 3', content: 'Content 3' },
-    { header: 'header 4', content: 'Content 4' },
-  ],
   verticalAlign: 'middle',
   floated: 'right',
   icon: true,
   selection: false,
   animated: false,
   divided: false,
-  size: 'small',
   horizontal: false,
+  size: 'large',
+  items: [
+    { header: 'header 1', content: 'Content 1', icon: 'users' },
+    { header: 'header 2', content: 'Content 2' },
+    { header: 'header 3', content: 'Content 3' },
+    { header: 'header 4', content: 'Content 4' },
+  ],
 };

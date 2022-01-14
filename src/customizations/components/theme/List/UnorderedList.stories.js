@@ -7,21 +7,20 @@ export default {
   argTypes: {
     size: {
       control: {
-        type: 'inline-radio',
+        type: 'select',
       },
       options: ['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive'],
     },
   },
 };
 
-function UnorderedList(items, selection, animated, divided, size, horizontal) {
+function UnorderedList(size, animated, divided, horizontal, items) {
   return (
     <List
       bulleted
-      selection={selection}
+      size={size}
       animated={animated}
       divided={divided}
-      size={size}
       horizontal={horizontal}
     >
       {items.map((item, index) => (
@@ -42,16 +41,19 @@ function UnorderedList(items, selection, animated, divided, size, horizontal) {
 
 export const Default = (args) => {
   return UnorderedList(
-    args.items,
-    args.selection,
+    args.size,
     args.animated,
     args.divided,
-    args.size,
     args.horizontal,
+    args.items,
   );
 };
 
 Default.args = {
+  size: 'small',
+  animated: false,
+  divided: false,
+  horizontal: false,
   items: [
     {
       header: 'header 1',
@@ -86,9 +88,4 @@ Default.args = {
       ],
     },
   ],
-  selection: false,
-  animated: false,
-  divided: false,
-  size: 'small',
-  horizontal: false,
 };

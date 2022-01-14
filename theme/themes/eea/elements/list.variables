@@ -6,12 +6,15 @@
          View
 --------------------*/
 
+@listFont: @pageFont;
+
 /* List */
 @listStyleType: none;
 @listStylePosition: outside;
 @margin: 1em 0em;
 @verticalPadding: 0em;
 @horizontalPadding: 0em;
+@bulletSize: @relative30px;
 
 /* List Item */
 @itemVerticalPadding: @relative3px;
@@ -156,12 +159,14 @@
 @animatedListIndent: 1em;
 
 /* Bulleted */
+
+@bulletSize: @relative30px;
 @bulletDistance: 1.25rem;
 @bulletOffset: -@bulletDistance;
 
 @bulletOpacity: 1;
 @bulletCharacter: '•';
-@bulletColor: inherit;
+@bulletColor: @secondaryColor;
 @bulletLinkColor: @textColor;
 @bulletVerticalAlign: top;
 @bulletChildDistance: @bulletDistance;

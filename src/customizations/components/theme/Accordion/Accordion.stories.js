@@ -13,38 +13,38 @@ export default {
     variant: {
       options: ['default', 'styled', 'inverted segment'],
       control: { type: 'select' },
-      description: "Accordion style class",
+      description: 'Accordion style class',
       table: {
-        type: { 
-          summary: 'string', 
+        type: {
+          summary: 'string',
         },
         defaultValue: {
           summary: 'default',
         },
       },
     },
-    content:{
-      description:"Accordion content object",
+    content: {
+      description: 'Accordion content object',
       table: {
-        type: { 
-          summary: 'Object', 
+        type: {
+          summary: 'Object',
         },
         defaultValue: {
-          summary: '\"\"',
+          summary: '""',
         },
       },
     },
-    fluid:{
-      description:"take width of container",
+    fluid: {
+      description: 'take width of container',
       table: {
-        type: { 
-          summary: 'boolean', 
+        type: {
+          summary: 'boolean',
         },
         defaultValue: {
           summary: false,
         },
       },
-    }
+    },
   },
 };
 

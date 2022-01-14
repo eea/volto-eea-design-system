@@ -2,6 +2,18 @@
          Theme Overrides
 *******************************/
 
+.ui.list item {
+  font-family: @pageFont;
+  font-size: @fontSize;
+}
+
+.ui.bulleted.list .list > .item:before,
+.ui.bulleted.list > .item:before,
+ul.ui.list li:before {
+  color: @bulletColor !important;
+  font-size: @bulletSize;
+}
+
 .ui.inverted.list > a.item {
   text-decoration: underline;
 }
