@@ -10,20 +10,20 @@ export default {
     },
   },
   argTypes: {
-    placeholder:{
-      description:"placeholder text",
-      table:{
-        type:{summary:'string'},
-        defaultValue:{summary:' \""\ '}
-      }
+    placeholder: {
+      description: 'placeholder text',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
     },
-    options:{
-      description:"Array of Dropdown.Item props",
-      table:{
-        type:{summary:'Object'},
-        defaultValue:{summary:' \""\ '}
-      }
-    }
+    options: {
+      description: 'Array of Dropdown.Item props',
+      table: {
+        type: { summary: 'Object' },
+        defaultValue: { summary: ' "" ' },
+      },
+    },
   },
 };
 
@@ -82,53 +82,53 @@ Playground.args = {
 };
 
 Playground.argTypes = {
-  search:{
-    description:" search through a large list of choice",
-    table:{
-      type:{summary:'boolean'},
-      defaultValue:{summary:false}
-    }
+  search: {
+    description: ' search through a large list of choice',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
   },
-  multiple:{
-    description:"allow multiple selections",
-    table:{
-      type:{summary:'boolean'},
-      defaultValue:{summary:false}
-    }
+  multiple: {
+    description: 'allow multiple selections',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
   },
-  clearable:{
-    description:"remove some selection",
-    table:{
-      type:{summary:'boolean'},
-      defaultValue:{summary:false}
-    }
+  clearable: {
+    description: 'remove some selection',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
   },
-  inline:{
-    description:"format dropdown to appear inline in other content",
-    table:{
-      type:{summary:'boolean'},
-      defaultValue:{summary:false}
-    }
+  inline: {
+    description: 'format dropdown to appear inline in other content',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
   },
-  floating:{
-    description:"dropdown menu can appear to be floating below an element",
-    table:{
-      type:{summary:'boolean'},
-      defaultValue:{summary:false}
-    }
+  floating: {
+    description: 'dropdown menu can appear to be floating below an element',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
   },
-  disabled:{
-    description:"disable dropdown",
-    table:{
-      type:{summary:'boolean'},
-      defaultValue:{summary:false}
-    }
+  disabled: {
+    description: 'disable dropdown',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
   },
-  fluid:{
-    description:"takes the full width of its parent",
-    table:{
-      type:{summary:'boolean'},
-      defaultValue:{summary:false}
-    }
+  fluid: {
+    description: 'takes the full width of its parent',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
   },
-}
+};
