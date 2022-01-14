@@ -4,6 +4,11 @@ import { AccordionEEA } from './Accordion';
 export default {
   title: 'Components/Accordion',
   component: AccordionEEA,
+  parameters: {
+    actions: {
+      handles: ['click'],
+    },
+  },
   argTypes: {
     variant: {
       options: ['default', 'styled', 'inverted segment'],
