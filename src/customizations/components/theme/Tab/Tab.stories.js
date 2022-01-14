@@ -10,27 +10,27 @@ export default {
     },
   },
   argTypes: {
-    //   tabular: {
-    //     control: { type: 'inline-radio' },
-    //     options: [true, 'left','right'],
-    //   },
+    panes: {
+      description: 'tab names and content array',
+      table: {
+        type: {
+          summary: 'object',
+        },
+        defaultValue: {
+          summary: ' "" ',
+        },
+      },
+    },
   },
 };
 
-function TabContent({
-  panes,
-  text,
-  attached,
-  tabular,
-  borderless,
-  vertical,
-}) {
+function TabContent({ panes, text, attached, tabular, borderless, vertical }) {
   return (
     <Tab
       panes={panes}
       className="eeaTab"
       renderActiveOnly={false}
-      menu={{ secondary: true, pointing: true,vertical:vertical}}
+      menu={{ secondary: true, pointing: true, vertical: vertical }}
     ></Tab>
   );
 }
@@ -76,4 +76,18 @@ Playground.args = {
   // tabular: false,
   // borderless: false,
   vertical: false,
+};
+
+Playground.argTypes = {
+  vertical: {
+    description: 'vertical tab',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: {
+        summary: false,
+      },
+    },
+  },
 };

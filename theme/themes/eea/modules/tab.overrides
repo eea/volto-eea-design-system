@@ -3,24 +3,29 @@
 *******************************/
 
 .eeaTab {
-  font-size: @fontSize;
-  fontfamily: @pageFont;
-}
-
-.eeaTab .ui.secondary.pointing.menu .active.item {
-  border-color: @secondaryColor;
-  color: @secondaryColor;
-
-  &:hover {
-    border-color: @secondaryColorDarken;
-    color: @secondaryColorDarken;
+  .item {
+    font-size: @h3 !important;
   }
-}
 
-.eeaTab .ui.bottom.attached.segment.active.tab {
-  border: none;
-}
+  .tab {
+    font-size: @fontSize !important;
+  }
 
-.eeaTab .ui.secondary.pointing.menu {
-  border-color: @silverGray;
+  .ui.secondary.pointing.menu {
+    border-color: @silverGray;
+
+    .active.item {
+      border-color: @secondaryColor;
+      color: @secondaryColor;
+
+      &:hover {
+        border-color: @secondaryColorDarken;
+        color: @secondaryColorDarken;
+      }
+    }
+  }
+
+  .ui.bottom.attached.segment.active.tab {
+    border: none;
+  }
 }

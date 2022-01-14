@@ -6,45 +6,146 @@ export default {
   title: 'Components/Table',
   component: Table,
   argTypes: {
-    headers: { description: 'table headers' },
-    tableData: { description: 'table data' },
-    singleLine: {
-      description: 'contents should remain on a single line, and not wrap',
+    headers: {
+      description: 'table headers',
+      table: {
+        type: {
+          summary: 'object',
+        },
+        defaultValue: {
+          summary: ' "" ',
+        },
+      },
     },
-    celled: { description: 'table divided into individual cells' },
+    tableData: {
+      description: 'table data',
+      table: {
+        type: {
+          summary: 'object',
+        },
+        defaultValue: {
+          summary: ' "" ',
+        },
+      },
+    },
+    singleLine: {
+      description: 'Contents should remain on a single line, and not wrap',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: {
+          summary: 'false',
+        },
+      },
+    },
+    celled: {
+      description: 'table divided into individual cells',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: {
+          summary: 'true',
+        },
+      },
+    },
     fixed: {
       description:
-        'A table can use fixed a special faster form of table rendering that does not resize table cells based on content',
+        'A special faster form of table rendering that does not resize table cells based on content',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: {
+          summary: 'false',
+        },
+      },
     },
     striped: {
       description:
-        'alternate rows of content with a darker color to increase contrast',
+        'Alternate rows of content with a darker color to increase contrast',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: {
+          summary: 'false',
+        },
+      },
     },
     collapsing: {
-      description:
-        'A table can be collapsing, taking up only as much space as its rows',
+      description: 'Taking up only as much space as its rows',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: {
+          summary: 'false',
+        },
+      },
     },
     compact: {
-      description: 'table more compact to make more rows visible at a time',
+      description: 'Compact to make more rows visible at a time',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: {
+          summary: 'false',
+        },
+      },
     },
     stackable: {
       description:
-        'a table can specify how it stacks table content responsively',
+        'A table can specify how it stacks table content responsively',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: {
+          summary: 'false',
+        },
+      },
     },
     size: {
       control: { type: 'inline-radio' },
       options: ['small', 'large'],
       description: 'table size',
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: {
+          summary: 'large',
+        },
+      },
     },
     textAlign: {
       control: { type: 'inline-radio' },
       options: ['left', 'center', 'right'],
       description: 'adjust text alignment',
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: {
+          summary: 'center',
+        },
+      },
     },
     verticalAlign: {
       control: { type: 'inline-radio' },
       options: ['bottom', 'middle', 'top'],
       description: 'adjust vertical alignment',
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: {
+          summary: 'middle',
+        },
+      },
     },
   },
 };
@@ -66,6 +167,7 @@ function TableContent({
 }) {
   return (
     <Table
+      className="eeaTable"
       celled={celled}
       singleLine={singleLine}
       fixed={fixed}
@@ -110,6 +212,16 @@ function TableContent({
 
 export const Default = (args) => <TableContent {...args}></TableContent>;
 Default.args = {
+  singleLine: false,
+  celled: true,
+  fixed: false,
+  striped: false,
+  collapsing: false,
+  compact: false,
+  stackable: false,
+  size: 'large',
+  textAlign: 'center',
+  verticalAlign: 'middle',
   headers: [
     { name: 'Header 1', key: 'col1' },
     { name: 'Header 2', key: 'col2' },
@@ -121,16 +233,6 @@ Default.args = {
     { col1: 'Cell 7', col2: 'Cell 8', col3: 'Cell 9' },
     { col1: 'Cell 10', col2: 'Cell 11', col3: 'Cell 12' },
   ],
-  singleLine: true,
-  celled: false,
-  fixed: true,
-  striped: false,
-  collapsing: false,
-  compact: false,
-  size: 'small',
-  textAlign: 'center',
-  verticalAlign: 'middle',
-  stackable: false,
 };
 
 //***  Sortable table ***//
@@ -181,6 +283,7 @@ function SortableTableContent({
 
   return (
     <Table
+      className="eeaTable"
       celled={celled}
       singleLine={singleLine}
       fixed={fixed}
@@ -235,6 +338,16 @@ export const Sortable = (args) => (
   <SortableTableContent {...args}></SortableTableContent>
 );
 Sortable.args = {
+  singleLine: false,
+  celled: true,
+  fixed: false,
+  striped: false,
+  collapsing: false,
+  compact: false,
+  stackable: false,
+  size: 'large',
+  textAlign: 'center',
+  verticalAlign: 'middle',
   headers: [
     { name: 'Header 1', key: 'col1' },
     { name: 'Header 2', key: 'col2' },
@@ -246,14 +359,4 @@ Sortable.args = {
     { col1: 'Cell H', col2: 'Cell I', col3: 'Cell J' },
     { col1: 'Cell K', col2: 'Cell L', col3: 'Cell M' },
   ],
-  singleLine: true,
-  celled: false,
-  fixed: true,
-  striped: false,
-  collapsing: false,
-  compact: false,
-  size: 'small',
-  textAlign: 'center',
-  verticalAlign: 'middle',
-  stackable: false,
 };
