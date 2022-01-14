@@ -10,60 +10,60 @@ export default {
     },
   },
   argTypes: {
-    hasImage:{
-      description:"true if card contains image",
-      table:{
-        type:{
-          summary:"boolean"
+    hasImage: {
+      description: 'true if card contains image',
+      table: {
+        type: {
+          summary: 'boolean',
         },
-        defaultValue:{summary:true}
-      }
+        defaultValue: { summary: true },
+      },
     },
-    title:{
-      description:"card header",
-      table:{
-        type:{
-          summary:"string"
+    title: {
+      description: 'card header',
+      table: {
+        type: {
+          summary: 'string',
         },
-        defaultValue:{summary:' \""\ '}
-      }
+        defaultValue: { summary: ' "" ' },
+      },
     },
-    meta:{
-      description:"card meta data",
-      table:{
-        type:{
-          summary:"string"
+    meta: {
+      description: 'card meta data',
+      table: {
+        type: {
+          summary: 'string',
         },
-        defaultValue:{summary:' \""\ '}
-      }
+        defaultValue: { summary: ' "" ' },
+      },
     },
-    description:{
-      description:"card main content",
-      table:{
-        type:{
-          summary:"string"
+    description: {
+      description: 'card main content',
+      table: {
+        type: {
+          summary: 'string',
         },
-        defaultValue:{summary:' \""\ '}
-      }
+        defaultValue: { summary: ' "" ' },
+      },
     },
-    fluid:{
-      description:"card header",
-      table:{
-        type:{
-          summary:"boolean"
+    fluid: {
+      description: 'card header',
+      table: {
+        type: {
+          summary: 'boolean',
         },
-        defaultValue:{summary:false}
-      }
+        defaultValue: { summary: false },
+      },
     },
-    links:{
-      description:"if true takes width of container",
-      table:{
-        type:{
-          summary:"Object"
+    links: {
+      description: 'if true takes width of container',
+      table: {
+        type: {
+          summary: 'Object',
         },
-        defaultValue:{summary:' \""\ '}
-      }
-    }
+        defaultValue: { summary: ' "" ' },
+      },
+    },
   },
 };
 

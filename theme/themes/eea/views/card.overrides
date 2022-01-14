@@ -3,10 +3,10 @@
 *******************************/
 
 .ui.card.eeaCard {
+  border: @cardBorder;
   background: @background;
   border-radius: @borderRadius;
-  font-family: @fontFamily;
-  box-shadow: none;
-  border: @cardBorder;
   border-radius: @defaultBorderRadius;
+  box-shadow: none;
+  font-family: @fontFamily;
 }
