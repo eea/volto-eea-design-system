@@ -13,54 +13,55 @@ export default {
     onChange: {
       action: 'checkbox value changed',
     },
-    label:{
-      description:"Label of the form group",
-      table:{
-        type:{summary:'string'},
-        defaultValue:{summary:' \""\ '}
-      }
+    label: {
+      description: 'Label of the form group',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
     },
-    helperText:{
-      description:"Helper text of the form group",
-      table:{
-        type:{summary:'string'},
-        defaultValue:{summary:' \""\ '}
-      }
+    helperText: {
+      description: 'Helper text of the form group',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
     },
-    errorMessage:{
-      description:"Message to be shown in case of an invalid input by the user",
-      table:{
-        type:{summary:'string'},
-        defaultValue:{summary:' \""\ '}
-      }
+    errorMessage: {
+      description:
+        'Message to be shown in case of an invalid input by the user',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
     },
-    optionalText:{
-      description:"Text to be shown when the form group is optional",
-      table:{
-        type:{summary:'string'},
-        defaultValue:{summary:' (optional) '}
-      }
+    optionalText: {
+      description: 'Text to be shown when the form group is optional',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' (optional) ' },
+      },
     },
-    requiredText:{
-      description:"Text to be shown when the form group is required",
-      table:{
-        type:{summary:'string'},
-        defaultValue:{summary:' * '}
-      }
+    requiredText: {
+      description: 'Text to be shown when the form group is required',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' * ' },
+      },
     },
-    required:{
-      description:"Sets the required attribute on the form group",
-      table:{
-        type:{summary:'boolean'},
-        defaultValue:{summary:true}
-      }
+    required: {
+      description: 'Sets the required attribute on the form group',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: true },
+      },
     },
-    invalid:{
-      description:"Marks the form group as invalid",
-      table:{
-        type:{summary:'boolean'},
-        defaultValue:{summary:false}
-      }
+    invalid: {
+      description: 'Marks the form group as invalid',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
     },
   },
 };
@@ -89,7 +90,11 @@ function CheckboxForm({
         <Message header="Error Message" content={errorMessage} negative />
       ) : null}
       <Form.Field error={invalid}>
-        <Checkbox className="eeaCheckbox" label="Option 1" defaultChecked></Checkbox>
+        <Checkbox
+          className="eeaCheckbox"
+          label="Option 1"
+          defaultChecked
+        ></Checkbox>
         <Form.Field>Helper text for option 1</Form.Field>
       </Form.Field>
       <Form.Field error={invalid}>
@@ -130,7 +135,11 @@ function SingleCheckboxForm({
       <Form.Field>{helperText}</Form.Field>
 
       <Form.Field error={invalid}>
-        <Checkbox className="eeaCheckbox" label="Option 1" defaultChecked></Checkbox>
+        <Checkbox
+          className="eeaCheckbox"
+          label="Option 1"
+          defaultChecked
+        ></Checkbox>
         <Form.Field>Helper text for option 1</Form.Field>
       </Form.Field>
       {invalid ? (
@@ -165,12 +174,12 @@ invalid.args = {
 };
 
 invalid.argTypes = {
-  invalid:{
-    table:{
-      defaultValue:{summary:true}
-    }
-  }
-}
+  invalid: {
+    table: {
+      defaultValue: { summary: true },
+    },
+  },
+};
 
 export const optional = Template.bind({});
 optional.args = {
@@ -184,12 +193,12 @@ optional.args = {
 };
 
 optional.argTypes = {
-  required:{
-    table:{
-      defaultValue:{summary:false}
-    }
-  }
-}
+  required: {
+    table: {
+      defaultValue: { summary: false },
+    },
+  },
+};
 
 export const single = (args) => (
   <SingleCheckboxForm {...args}></SingleCheckboxForm>
@@ -205,9 +214,9 @@ single.args = {
 };
 
 single.argTypes = {
-  required:{
-    table:{
-      defaultValue:{summary:false}
-    }
-  }
-}
+  required: {
+    table: {
+      defaultValue: { summary: false },
+    },
+  },
+};

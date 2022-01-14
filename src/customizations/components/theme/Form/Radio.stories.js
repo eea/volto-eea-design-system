@@ -13,54 +13,55 @@ export default {
     onChange: {
       action: 'checkbox value changed',
     },
-    label:{
-      description:"Label of the form group",
-      table:{
-        type:{summary:'string'},
-        defaultValue:{summary:' \""\ '}
-      }
+    label: {
+      description: 'Label of the form group',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
     },
-    helperText:{
-      description:"Helper text of the form group",
-      table:{
-        type:{summary:'string'},
-        defaultValue:{summary:' \""\ '}
-      }
+    helperText: {
+      description: 'Helper text of the form group',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
     },
-    errorMessage:{
-      description:"Message to be shown in case of an invalid input by the user",
-      table:{
-        type:{summary:'string'},
-        defaultValue:{summary:' \""\ '}
-      }
+    errorMessage: {
+      description:
+        'Message to be shown in case of an invalid input by the user',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
     },
-    optionalText:{
-      description:"Text to be shown when the form group is optional",
-      table:{
-        type:{summary:'string'},
-        defaultValue:{summary:' (optional) '}
-      }
+    optionalText: {
+      description: 'Text to be shown when the form group is optional',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' (optional) ' },
+      },
     },
-    requiredText:{
-      description:"Text to be shown when the form group is required",
-      table:{
-        type:{summary:'string'},
-        defaultValue:{summary:' * '}
-      }
+    requiredText: {
+      description: 'Text to be shown when the form group is required',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' * ' },
+      },
     },
-    required:{
-      description:"Sets the required attribute on the form group",
-      table:{
-        type:{summary:'boolean'},
-        defaultValue:{summary:true}
-      }
+    required: {
+      description: 'Sets the required attribute on the form group',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: true },
+      },
     },
-    invalid:{
-      description:"Marks the form group as invalid",
-      table:{
-        type:{summary:'boolean'},
-        defaultValue:{summary:false}
-      }
+    invalid: {
+      description: 'Marks the form group as invalid',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
     },
   },
 };
@@ -205,12 +206,12 @@ invalid.args = {
 };
 
 invalid.argTypes = {
-  invalid:{
-    table:{
-      defaultValue:{summary:true}
-    }
-  }
-}
+  invalid: {
+    table: {
+      defaultValue: { summary: true },
+    },
+  },
+};
 
 export const BinaryRadio = (args) => <Binary {...args}></Binary>;
 BinaryRadio.args = {
@@ -224,12 +225,12 @@ BinaryRadio.args = {
 };
 
 BinaryRadio.argTypes = {
-  required:{
-    table:{
-      defaultValue:{summary:false}
-    }
-  }
-}
+  required: {
+    table: {
+      defaultValue: { summary: false },
+    },
+  },
+};
 
 BinaryRadio.storyName = 'Binary';
 
