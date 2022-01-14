@@ -1,9 +1,9 @@
-import React from 'react';
-import { Checkbox, Form, Message } from 'semantic-ui-react';
+import React, { useState } from 'react';
+import { Radio, Form, Message } from 'semantic-ui-react';
 
 export default {
-  title: 'Components/Forms/Checkbox',
-  component: Checkbox,
+  title: 'Components/Forms/Radio',
+  component: Radio,
   parameters: {
     actions: {
       handles: ['click'],
@@ -65,7 +65,7 @@ export default {
   },
 };
 
-function CheckboxForm({
+function RadioForm({
   label,
   helperText,
   errorMessage,
@@ -74,6 +74,9 @@ function CheckboxForm({
   invalid,
   required,
 }) {
+  const [active, setActive] = useState();
+
+  const handleChange = (e, { value }) => setActive(value);
   return (
     <Form>
       <Form.Field>
@@ -89,26 +92,44 @@ function CheckboxForm({
         <Message header="Error Message" content={errorMessage} negative />
       ) : null}
       <Form.Field error={invalid}>
-        <Checkbox className="eeaCheckbox" label="Option 1" defaultChecked></Checkbox>
+        <Radio
+          className="eeaRadio"
+          label="Option 1"
+          name="radioGroup"
+          value="1"
+          checked={active === '1'}
+          onChange={handleChange}
+        ></Radio>
         <Form.Field>Helper text for option 1</Form.Field>
       </Form.Field>
       <Form.Field error={invalid}>
-        <Checkbox className="eeaCheckbox" label="Option 2"></Checkbox>
+        <Radio
+          className="eeaRadio"
+          label="Option 2"
+          name="radioGroup"
+          value="2"
+          checked={active === '2'}
+          onChange={handleChange}
+        ></Radio>
         <Form.Field>Helper text for option 2</Form.Field>
       </Form.Field>
       <Form.Field error={invalid}>
-        <Checkbox
-          className="eeaCheckbox"
+        <Radio
+          className="eeaRadio"
           label="Option 3 (disabled)"
           disabled
-        ></Checkbox>
+          name="radioGroup"
+          value="3"
+          checked={active === '3'}
+          onChange={handleChange}
+        ></Radio>
         <Form.Field>Helper text for option 3</Form.Field>
       </Form.Field>
     </Form>
   );
 }
 
-function SingleCheckboxForm({
+function Binary({
   label,
   helperText,
   errorMessage,
@@ -117,6 +138,9 @@ function SingleCheckboxForm({
   invalid,
   required,
 }) {
+  const [active, setActive] = useState();
+
+  const handleChange = (e, { value }) => setActive(value);
   return (
     <Form>
       <Form.Field>
@@ -129,18 +153,34 @@ function SingleCheckboxForm({
       </Form.Field>
       <Form.Field>{helperText}</Form.Field>
 
-      <Form.Field error={invalid}>
-        <Checkbox className="eeaCheckbox" label="Option 1" defaultChecked></Checkbox>
-        <Form.Field>Helper text for option 1</Form.Field>
-      </Form.Field>
       {invalid ? (
         <Message header="Error Message" content={errorMessage} negative />
       ) : null}
+      <Form.Field error={invalid}>
+        <Radio
+          className="eeaRadio"
+          label="Yes"
+          name="radioGroup"
+          value="yes"
+          checked={active === 'yes'}
+          onChange={handleChange}
+        ></Radio>
+      </Form.Field>
+      <Form.Field error={invalid}>
+        <Radio
+          className="eeaRadio"
+          label="No"
+          name="radioGroup"
+          value="no"
+          checked={active === 'no'}
+          onChange={handleChange}
+        ></Radio>
+      </Form.Field>
     </Form>
   );
 }
 
-const Template = (args) => <CheckboxForm {...args}></CheckboxForm>;
+const Template = (args) => <RadioForm {...args}></RadioForm>;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -172,9 +212,9 @@ invalid.argTypes = {
   }
 }
 
-export const optional = Template.bind({});
-optional.args = {
-  label: 'Select your preferred destinations',
+export const BinaryRadio = (args) => <Binary {...args}></Binary>;
+BinaryRadio.args = {
+  label: 'Do you need help?',
   helperText: 'Helper text for the group',
   errorMessage: 'Error message for the group',
   optionalText: ' (optional)',
@@ -183,7 +223,7 @@ optional.args = {
   required: false,
 };
 
-optional.argTypes = {
+BinaryRadio.argTypes = {
   required:{
     table:{
       defaultValue:{summary:false}
@@ -191,23 +231,16 @@ optional.argTypes = {
   }
 }
 
-export const single = (args) => (
-  <SingleCheckboxForm {...args}></SingleCheckboxForm>
-);
-single.args = {
-  label: 'Select your preferred destinations',
-  helperText: 'Helper text for the group',
-  errorMessage: 'Error message for the group',
-  optionalText: ' (optional)',
-  requiredText: '*',
-  invalid: false,
-  required: false,
-};
+BinaryRadio.storyName = 'Binary';
 
-single.argTypes = {
-  required:{
-    table:{
-      defaultValue:{summary:false}
-    }
-  }
-}
+// export const BinaryInvalid = (args) => <Binary {...args}></Binary>;
+// BinaryInvalid.args = {
+//   label: 'Do you need help?',
+//   helperText: 'Helper text for the group',
+//   errorMessage: 'Error message for the group',
+//   optionalText: ' (optional)',
+//   requiredText: '*',
+//   invalid: true,
+//   required: true,
+// };
+// BinaryInvalid.storyName = 'Binary Invalid';
