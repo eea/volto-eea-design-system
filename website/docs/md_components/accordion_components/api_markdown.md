@@ -23,4 +23,3 @@ Use the `ECL` library's `autoInit()` (`ECL.autoInit()`) when your page is ready 
 Get target element, create an instance and invoke `init()`.
 
 Given you have 1 element with an attribute `data-ecl-accordion` on the page:
-

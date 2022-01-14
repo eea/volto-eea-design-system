@@ -8,7 +8,7 @@ Messages component contains important information to alert users to take a certa
 ## Don'ts
 
 - overuse messages - users may ignore them and they can get in the way of a user completing their task
-- write messages that are neutral. For example, instead of *The postal code you entered is invalid,* the message should say *Please enter a valid postal code*
+- write messages that are neutral. For example, instead of _The postal code you entered is invalid,_ the message should say _Please enter a valid postal code_
 
 ## When to use
 

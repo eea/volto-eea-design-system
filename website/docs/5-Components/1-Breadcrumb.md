@@ -9,5 +9,5 @@ import Usage from '../md_components/breadcrumb_components/usage_markdown.md';
 import Showcase from '../md_components/breadcrumb_components/showcase_markdown.md';
 
 <Tabs usage={<Usage />} showcase={<Showcase />} banana={false}>
-  
+
 </Tabs>
