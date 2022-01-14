@@ -7,15 +7,10 @@ export default {
   argTypes: {},
 };
 
-const Template = (args) => <Segment {...args}></Segment>;
+const Template = (args) => <Segment className="eeaSegment" {...args}></Segment>;
 
 export const Default = Template.bind({});
 Default.args = {
-  children: ['Content'],
-};
-
-export const Playground = Template.bind({});
-Playground.args = {
   children: ['Content'],
   basic: false,
   circular: false,
