@@ -8,6 +8,39 @@ export default {
     size: {
       control: { type: 'select' },
       options: ['mini', 'tine', 'small', 'large', 'big', 'huge', 'massive'],
+      description:"comment section size",
+      table:{
+        type:{summary:"string"},
+        defaultValue:{summary:"large"}
+      }
+    },
+    title:{
+      description:"comment section header",
+      table:{
+        type:{summary:"string"},
+        defaultValue:{summary:' \""\ '}
+      }
+    },
+    comments:{
+      description:"comments data",
+      table:{
+        type:{summary:"Object"},
+        defaultValue:{summary:' \""\ '}
+      }
+    },
+    threaded:{
+      description:"showing the relationship between comments",
+      table:{
+        type:{summary:"boolean"},
+        defaultValue:{summary:false}
+      }
+    },
+    minimal:{
+      description:"hide extra information",
+      table:{
+        type:{summary:"boolean"},
+        defaultValue:{summary:false}
+      }
     },
   },
 };
