@@ -4,7 +4,67 @@ import { Card, Image, Icon } from 'semantic-ui-react';
 export default {
   title: 'Components/Card',
   component: Card,
-  argTypes: {},
+  parameters: {
+    actions: {
+      handles: ['click'],
+    },
+  },
+  argTypes: {
+    hasImage:{
+      description:"true if card contains image",
+      table:{
+        type:{
+          summary:"boolean"
+        },
+        defaultValue:{summary:true}
+      }
+    },
+    title:{
+      description:"card header",
+      table:{
+        type:{
+          summary:"string"
+        },
+        defaultValue:{summary:' \""\ '}
+      }
+    },
+    meta:{
+      description:"card meta data",
+      table:{
+        type:{
+          summary:"string"
+        },
+        defaultValue:{summary:' \""\ '}
+      }
+    },
+    description:{
+      description:"card main content",
+      table:{
+        type:{
+          summary:"string"
+        },
+        defaultValue:{summary:' \""\ '}
+      }
+    },
+    fluid:{
+      description:"card header",
+      table:{
+        type:{
+          summary:"boolean"
+        },
+        defaultValue:{summary:false}
+      }
+    },
+    links:{
+      description:"if true takes width of container",
+      table:{
+        type:{
+          summary:"Object"
+        },
+        defaultValue:{summary:' \""\ '}
+      }
+    }
+  },
 };
 
 const Template = (args) => (
