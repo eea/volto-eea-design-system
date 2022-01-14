@@ -13,40 +13,40 @@ export default {
     size: {
       control: { type: 'inline-radio' },
       options: ['mini', 'tiny', 'small', 'large'],
-      description:"confirmation modal size",
-      table:{
-        type:{summary:"string"},
-        defaultValue:{summary:'small'}
-      }
+      description: 'confirmation modal size',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'small' },
+      },
     },
-    confirmHeader:{
-      description:"modal header",
-      table:{
-        type:{summary:'string'},
-        defaultValue:{summary:' \""\ '}
-      }
+    confirmHeader: {
+      description: 'modal header',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
     },
-    content:{
-      description:"modal message",
-      table:{
-        type:{summary:'string'},
-        defaultValue:{summary:' \""\ '}
-      }
+    content: {
+      description: 'modal message',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
     },
-    cancelButton:{
-      description:"cancel button text",
-      table:{
-        type:{summary:'string'},
-        defaultValue:{summary:' \""\ '}
-      }
+    cancelButton: {
+      description: 'cancel button text',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
     },
-    confirmButton:{
-      description:"confirmation button text",
-      table:{
-        type:{summary:'string'},
-        defaultValue:{summary:' \""\ '}
-      }
-    }
+    confirmButton: {
+      description: 'confirmation button text',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
+    },
   },
 };
 

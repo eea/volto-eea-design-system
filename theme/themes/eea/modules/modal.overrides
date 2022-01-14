@@ -2,21 +2,21 @@
          Theme Overrides
 *******************************/
 
-.ui.modal {
-  border-radius: @borderRadius !important;
-}
+.ui.modal.eeaModal {
+  border-radius: @borderRadius;
 
-.ui.modal > .header {
-  border: @border !important;
-}
+  .header {
+    border: @border;
+  }
 
-.ui.modal > .actions {
-  border: @border !important;
-  background-color: @background !important;
-}
+  .actions {
+    border: @border;
+    background-color: @background;
+  }
 
-.ui.modal > .content {
-  padding: 1rem 1.5rem !important;
+  .content {
+    padding: 1rem 1.5rem;
+  }
 }
 
 /******************************************/
