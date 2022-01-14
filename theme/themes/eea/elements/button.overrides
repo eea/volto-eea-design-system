@@ -14,50 +14,118 @@
 .ui.button,
 .ui.buttons .button,
 .ui.buttons {
-  background-color: @oldSilver !important;
+  padding: @buttonPadings !important;
+  border: @eeaButtonBorder;
   border-radius: @borderRadius !important;
-  color: @white !important;
   font-family: @pageFont !important;
+  font-size: @buttonFontSize !important;
   font-weight: 500 !important;
 }
 
 // Primary Button
-.ui.primary.button,
-.ui.primary.buttons {
-  background-color: @primaryButtonColor !important;
-  .text-color(@primaryButtonColor) !important;
+.ui.button.eeaPrimaryButton,
+.ui.buttons.eeaPrimaryButton {
+  border: @eeaButtonBorder @primaryButtonColor;
+  background-color: @primaryButtonColor;
+  .text-color(@primaryButtonColor);
 
   &:hover,
-  &:active {
-    background-color: @primaryButtonColorHover !important;
-    .text-color(@primaryButtonColorHover) !important;
+  &:active,
+  &:focus {
+    border: @eeaButtonBorder @primaryButtonColorHover;
+    background-color: @primaryButtonColorHover;
+    .text-color(@primaryButtonColorHover);
   }
 }
 
 //Secondary Button
-.ui.secondary.button,
-.ui.secondary.buttons {
-  border: @secondaryBorder;
-  background-color: @white !important;
-  .text-color(@white) !important;
+.ui.button.eeaSecondaryButton,
+.ui.buttons.eeaSecondaryButton {
+  border: @eeaButtonBorder @primaryButtonColor;
+  background-color: @white;
+  .text-color(@white);
 
   &:hover,
-  &:active {
-    border: @secondaryBorderHover;
-    color: @mediumElectricBlue !important;
+  &:active,
+  &:focus {
+    background-color: @primaryButtonColor;
+    .text-color(@primaryButtonColor);
+  }
+}
+
+//Secondary Button Inverted
+.ui.button.eeaSecondaryButtonInverted,
+.ui.buttons.eeaSecondaryButtonInverted {
+  border: @eeaButtonBorder @white;
+  background-color: transparent;
+  color: @white;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: @white;
+    .text-color(@white);
   }
 }
 
 //Call to action Button
-.ui.actionButton.button,
-.ui.actionButton.buttons {
-  background-color: @actionButtonButtonColor !important;
-  .text-color(@actionButtonButtonColor) !important;
+.ui.eeaActionButton.button,
+.ui.eeaActionButton.buttons {
+  border: @eeaButtonBorder @actionButtonButtonColor;
+  background-color: @actionButtonButtonColor;
+  .text-color(@actionButtonButtonColor);
+  text-transform: uppercase;
 
   &:hover,
-  &:active {
-    background-color: @secondaryColorDarken !important;
-    .text-color(@secondaryColorDarken) !important;
+  &:active,
+  &:focus {
+    border: @eeaButtonBorder @secondaryColorDarken;
+    background-color: @secondaryColorDarken;
+    .text-color(@secondaryColorDarken);
+  }
+}
+
+.ui.eeaActionButton.button[class*='right labeled'].icon.button {
+  padding-right: 3em !important;
+
+  i {
+    margin-right: 5px !important;
+  }
+}
+
+.ui.icon.right.labeled.button.eeaActionButton > .icon {
+  background-color: transparent;
+}
+
+//Cancel Button
+.ui.button.eeaCancelButton,
+.ui.buttons.eeaCancelButton {
+  border: @eeaButtonBorder @silverGray;
+  background-color: @silverGray;
+  color: @black;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border: @eeaButtonBorder @midGray;
+    background-color: @midGray;
+    color: @black;
+  }
+}
+
+//Text Button
+.ui.button.eeaTextButton,
+.ui.buttons.eeaTextButton {
+  border: none !important;
+  background-color: transparent;
+  color: @primaryColor;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border: none !important;
+    background-color: transparent;
+    color: @secondaryButtonColorHover;
   }
 }
 
