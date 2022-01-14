@@ -11,7 +11,7 @@
 @firstMargin: 0em 0em (@labelHeight + @verticalSpacing);
 @lastMargin: 0em 0em (@labelHeight);
 
-@background: @strongTransparentBlack;
+@background: @primaryColor;
 @border: none;
 @boxShadow: none;
 @padding: 0em;
@@ -21,7 +21,7 @@
 @barPosition: relative;
 @barHeight: 1.75em;
 @barBackground: #888888;
-@barBorderRadius: @borderRadius;
+@barBorderRadius: @defaultBorderRadius;
 @barTransitionEasing: @defaultEasing;
 @barTransitionDuration: @defaultDuration;
 @barTransition:
