@@ -15,8 +15,8 @@
     border-color: @silverGray;
 
     .active.item {
-      border-color: @secondaryColor;
-      color: @secondaryColor;
+      border-color: @secondaryColor  !important;
+      color: @secondaryColor  !important;
 
       &:hover {
         border-color: @secondaryColorDarken;

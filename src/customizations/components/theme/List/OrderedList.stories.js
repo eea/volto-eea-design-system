@@ -7,9 +7,50 @@ export default {
   argTypes: {
     size: {
       control: {
-        type: 'inline-radio',
+        type: 'select',
       },
       options: ['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive'],
+      description: 'a list can vary in size',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
+    },
+    selection: {
+      description: 'a selection list formats list items as possible choices',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    animated: {
+      description:
+        'a list can animate to set the current item apart from the list',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    divided: {
+      description: 'a list can show divisions between conten',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    horizontal: {
+      description: 'a list can be formatted to have items appear horizontally',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    items: {
+      description: 'array of list content',
+      table: {
+        type: { summary: 'object' },
+        defaultValue: { summary: ' "" ' },
+      },
     },
   },
 };

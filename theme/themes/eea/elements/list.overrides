@@ -6,7 +6,24 @@
   font-family: @pageFont;
   font-size: @fontSize;
 }
+.ui.list > .item:before { 
+  font-weight: @itemHeaderFontWeight;
+}
 
+//Description List
+.ui.list .list>.item .description, .ui.list>.item .description {
+  margin-top: @relative8px;
+}
+.ui.list .list>.item i.icon, .ui.list>.item i.icon {
+  color: @bulletColor !important;
+}
+
+//Ordered list
+.ui.ordered.list .list>.item:before, .ui.ordered.list>.item:before, ol.ui.list li:before {
+  color: @bulletColor !important;
+}
+
+//Unordered list
 .ui.bulleted.list .list > .item:before,
 .ui.bulleted.list > .item:before,
 ul.ui.list li:before {

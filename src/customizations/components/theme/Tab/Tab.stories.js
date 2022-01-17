@@ -55,8 +55,9 @@ Default.args = {
   ],
 };
 
-export const Playground = Template.bind({});
-Playground.args = {
+export const Vertical = Template.bind({});
+Vertical.args = {
+  vertical: true,
   panes: [
     {
       menuItem: 'Tab 1',
@@ -71,14 +72,9 @@ Playground.args = {
       pane: 'Tab 3 Content',
     },
   ],
-  // text: false,
-  // attached: false,
-  // tabular: false,
-  // borderless: false,
-  vertical: false,
 };
 
-Playground.argTypes = {
+Vertical.argTypes = {
   vertical: {
     description: 'vertical tab',
     table: {
