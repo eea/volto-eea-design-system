@@ -1,3 +1,15 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+.ui.items .item .content {
+  .header {
+    font-family: @itemHeaderFont !important;
+  }
+
+  .meta,
+  .description,
+  .extra {
+    font-family: @itemFont;
+  }
+}
