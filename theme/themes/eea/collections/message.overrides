@@ -2,13 +2,17 @@
          Theme Overrides
 *******************************/
 
-.ui.message .content {
-  font-size: @12px;
+.ui.message {
+  border-radius: @borderRadius !important;
+  box-shadow: @boxShadow !important;
 }
 
-.ui.icon.message > .icon:not(.close) {
-  align-self: flex-start;
-  margin-top: -7px;
+.ui.icon.message > .icon {
+  font-size: @iconSize !important;
+}
+
+.ui.message .content {
+  font-size: @12px;
 }
 
 .ui.attached.message {

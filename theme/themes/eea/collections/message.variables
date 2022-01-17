@@ -16,14 +16,11 @@
 @background: #F8F8F9;
 @lineHeightOffset: ((@lineHeight - 1em) / 2);
 
-@borderRadius: 0;
+@borderRadius: @defaultBorderRadius;
 @borderWidth: 0;
 @borderShadow: 0px 0px 0px @borderWidth @strongBorderColor inset;
 @shadowShadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-@boxShadow:
-  @borderShadow,
-  @shadowShadow
-;
+@boxShadow: none;
 
 @transition:
   opacity @defaultDuration @defaultEasing,
