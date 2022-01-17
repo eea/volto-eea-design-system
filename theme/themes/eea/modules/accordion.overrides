@@ -6,28 +6,30 @@
   margin: @itemsMargin;
   font-family: @titleFont !important;
   transition: @styledTitleTransition !important;
+
   .title {
+    padding: @relative12px;
     background-color: @backrgoundColor;
     font-family: @titleFont !important;
-    padding: @relative12px;
     font-size: @h3;
+
     i.icon {
       height: 100%;
-      transition: @iconTransition;
-      color: @iconColor;
       margin-right: @relative16px;
+      color: @iconColor;
+      transition: @iconTransition;
     }
   }
+
   .content {
-    font-family: @titleFont !important;
-    border-top: @contentBorder;
-    font-size: @pageFont;
-    background: @contentBckground;
     padding: @relative16px @relative64px !important;
+    border-top: @contentBorder;
+    background: @contentBckground;
+    font-family: @titleFont !important;
+    font-size: @pageFont;
   }
 }
 
 .ui.accordion.eeaAccordion .eeaAccordionItem .active.title i.icon {
-      transform: rotate(180deg);
+  transform: rotate(180deg);
 }
-
