@@ -93,7 +93,7 @@
 }
 
 .ui.segment.storybookComponents {
-  padding: 200px;
+  padding: 100px;
   text-align: center;
 
   img {

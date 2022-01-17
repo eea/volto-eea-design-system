@@ -115,22 +115,15 @@ const Template = (args) => <ModalEEA {...args}></ModalEEA>;
 
 export const Default = Template.bind({});
 Default.args = {
-  trigger: trigger,
-  header: 'Modal Header',
-  content: 'Modal Content',
-};
-
-export const Playground = Template.bind({});
-Playground.args = {
-  trigger: trigger,
   header: 'Modal Header',
   content: 'Modal Content',
   centered: true,
   size: 'mini',
   dimmer: true,
+  trigger: trigger,
 };
 
-Playground.argTypes = {
+Default.argTypes = {
   centered: {
     description: 'vertically centered in the viewport',
     table: {
@@ -142,4 +135,13 @@ Playground.argTypes = {
       },
     },
   },
+};
+
+export const Playground = Template.bind({});
+Playground.args = {
+  trigger: trigger,
+  header: 'Modal Header',
+  content: 'Modal Content',
+  size: 'mini',
+  dimmer: true,
 };
