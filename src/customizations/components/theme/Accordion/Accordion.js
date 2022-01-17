@@ -12,15 +12,15 @@ export function AccordionEEA({ content, variant, ...args }) {
   };
 
   return (
-    <Accordion className={variant} {...args}>
+    <Accordion className={`eeaAccordion ${variant}`} {...args}>
       {content.map((item, index) => (
-        <div key={index}>
+        <div className="eeaAccordionItem" key={index}>
           <Accordion.Title
             active={activeIndex === index}
             index={index}
             onClick={toggleOpenAccordion}
           >
-            <Icon name="dropdown" />
+            <Icon name="chevron circle down" />
             {item.title}
           </Accordion.Title>
           <Accordion.Content active={activeIndex === index}>
