@@ -11,26 +11,26 @@ export default {
     onInput: {
       action: 'Input entered',
     },
-    placeholder:{
-      description:"placeholder text",
-      table:{
-        type:{summary:"string"},
-        defaultValue:{summary:' \""\ '}
-      }
+    placeholder: {
+      description: 'placeholder text',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
     },
-    rows:{
-      description:"indicates row count for a TextArea",
-      table:{
-        type:{summary:"integer"},
-        defaultValue:{summary:2}
-      }
+    rows: {
+      description: 'indicates row count for a TextArea',
+      table: {
+        type: { summary: 'integer' },
+        defaultValue: { summary: 3 },
+      },
     },
-    fluid:{
-      description:"take on the size of its container",
-      table:{
-        type:{summary:"boolean"},
-        defaultValue:{summary:false}
-      }
+    fluid: {
+      description: 'take on the size of its container',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
     },
   },
 };
@@ -47,5 +47,4 @@ export const Default = Template.bind({});
 Default.args = {
   placeholder: 'Type here...',
   rows: 3,
-  fluid: false,
 };
