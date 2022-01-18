@@ -58,7 +58,7 @@ export default {
 };
 
 const Template = (args) => (
-  <Progress className="eeaProgressBar" {...args}></Progress>
+  <Progress {...args}></Progress>
 );
 
 // export const Default = Template.bind({});

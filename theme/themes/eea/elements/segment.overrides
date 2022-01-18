@@ -2,12 +2,12 @@
          Theme Overrides
 *******************************/
 
-.ui.segment.eeaSegment {
+.ui.segment.eea-segment {
   border-radius: @borderRadius;
   box-shadow: @eeaGlobalShadow;
 }
 
-.ui.secondary.segment.eeaSegment {
+.ui.secondary.segment.eea-segment {
   background-color: @policeBlue;
   color: @white;
 }

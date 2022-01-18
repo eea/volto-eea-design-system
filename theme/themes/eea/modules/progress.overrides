@@ -1,10 +1,10 @@
 /*******************************
             Progress
 *******************************/
-.ui.progress .bar {
-  border-radius: @barBorderRadius !important;
+div.ui.progress .bar {
+  border-radius: @barBorderRadius;
 }
 
-.ui.progress.eeaProgressBar .bar {
+div.ui.progress .bar {
   background-color: @background;
 }

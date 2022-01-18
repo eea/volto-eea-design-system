@@ -60,7 +60,7 @@ export const ButtonPopup = (args) => (
     <Popup
       {...args}
       trigger={
-        <Button icon labelPosition="right" className="eeaActionButton">
+        <Button icon labelPosition="right" className="eea-button-action">
           Info Popup
           <Icon name="info" />
         </Button>
