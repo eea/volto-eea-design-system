@@ -21,6 +21,7 @@
   ],
   "dependencies": {
     "@eeacms/volto-corsproxy": "*"
+    "react-timeline-semantic-ui": "^1.0.13"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.5",
