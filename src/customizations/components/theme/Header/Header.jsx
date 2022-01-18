@@ -3,18 +3,18 @@
  * @module components/theme/Header/Header
  */
 
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { Container, Segment, Dropdown, Image, Menu } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import logo from '../../../../../theme/themes/eea/assets/images/Header/EeaLogo.png';
-import menuIcon from '../../../../../theme/themes/eea/assets/images/Header/hamburgerMenuIcon.png';
+//import menuIcon from '../../../../../theme/themes/eea/assets/images/Header/hamburgerMenuIcon.png';
 import searchIcon from '../../../../../theme/themes/eea/assets/images/Header/searchIcon.png';
 import vector from '../../../../../theme/themes/eea/assets/images/Header/Vector.png';
 import eeaIcon from '../../../../../theme/themes/eea/assets/images/Header/eeaIcon.png';
-import arrow from '../../../../../theme/themes/eea/assets/images/Header/down-arrow.png';
+//import arrow from '../../../../../theme/themes/eea/assets/images/Header/down-arrow.png';
 
-import { Logo, Navigation } from '@plone/volto/components';
+//import { Logo, Navigation } from '@plone/volto/components';
 
 /**
  * Header component class.
@@ -71,7 +71,6 @@ class Header extends Component {
   }
 
   menuOnClick = (e, x) => {
-    console.log(x);
     this.setState({ activeItem: x.name });
   };
 

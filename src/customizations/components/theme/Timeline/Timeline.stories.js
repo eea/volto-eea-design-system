@@ -9,18 +9,18 @@ export default {
 
 function TimelineEEA({ items }) {
   return (
-    <>
+    <div className="eeaTimeline">
       {items.map((item, index) => (
         <Timeline {...item} key={index}></Timeline>
       ))}
-    </>
+    </div>
   );
 }
 
 const Template = (args) => (
-  <>
+  <div className="eeaTimeline">
     <Timeline {...args}></Timeline>
-  </>
+  </div>
 );
 
 export const Default = Template.bind({});
@@ -30,7 +30,7 @@ Default.args = {
   title: 'Title',
   description: 'description',
   color: 'red',
-  tags: ['tag1', 'tag2'],
+  tags: [],
   lineHeight: 1,
 };
 
@@ -107,28 +107,31 @@ Multiple.args = {
     {
       direction: 'left',
       icon: 'user',
+      time: 'Date and time',
       title: 'Title 1',
       description: 'description 1',
       color: 'red',
-      tags: ['tag1', 'tag2'],
+      tags: [],
       lineHeight: 3,
     },
     {
       direction: 'right',
       icon: 'user',
+      time: 'Date and time',
       title: 'Title 2',
       description: 'description 2',
       color: 'yellow',
-      tags: ['tag1', 'tag2'],
+      tags: [],
       lineHeight: 3,
     },
     {
       direction: 'left',
       icon: 'user',
+      time: 'Date and time',
       title: 'Title 3',
       description: 'description 3',
       color: 'violet',
-      tags: ['tag1', 'tag2'],
+      tags: [],
       lineHeight: 3,
     },
   ],
