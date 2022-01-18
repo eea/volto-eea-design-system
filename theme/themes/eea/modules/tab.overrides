@@ -2,7 +2,7 @@
          Tab Overrides
 *******************************/
 
-.eeaTab {
+div.eea-tab {
   .item {
     font-size: @h3 !important;
   }

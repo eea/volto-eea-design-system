@@ -167,7 +167,7 @@ function TableContent({
 }) {
   return (
     <Table
-      className="eeaTable"
+      className="eea-table"
       celled={celled}
       singleLine={singleLine}
       fixed={fixed}
@@ -283,7 +283,7 @@ function SortableTableContent({
 
   return (
     <Table
-      className="eeaTable"
+      className="eea-table"
       celled={celled}
       singleLine={singleLine}
       fixed={fixed}

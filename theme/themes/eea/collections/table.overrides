@@ -2,7 +2,7 @@
          Theme Overrides
 *******************************/
 
-.ui.table.eeaTable {
+.ui.table.eea-table {
   border: @defaultBorderRadius;
   border-radius: @tableBorderRadius;
 
@@ -29,7 +29,7 @@
 }
 
 //Active Header on sorting table
-.ui.sortable.table.eeaTable thead th {
+.ui.sortable.table.eea-table thead th {
   background-color: @headerBackground;
   color: @headerColor;
 
@@ -40,8 +40,8 @@
   }
 }
 
-.ui.celled.table.eeaTable tr td,
-.ui.celled.table.eeaTable tr th {
+.ui.celled.table.eea-table tr td,
+.ui.celled.table.eea-table tr th {
   border-left: 1px solid @secondaryColor;
 }
 /*******************************************************/

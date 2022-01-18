@@ -28,7 +28,7 @@ function TabContent({ panes, text, attached, tabular, borderless, vertical }) {
   return (
     <Tab
       panes={panes}
-      className="eeaTab"
+      className="eea-tab"
       renderActiveOnly={false}
       menu={{ secondary: true, pointing: true, vertical: vertical }}
     ></Tab>
