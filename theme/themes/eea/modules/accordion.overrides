@@ -2,15 +2,15 @@
          Theme Overrides
 *******************************/
 
-.ui.accordion.eeaAccordion .eeaAccordionItem {
+div.ui.accordion.eea-accordion .eea-accordion-item {
   margin: @itemsMargin;
-  font-family: @titleFont !important;
-  transition: @styledTitleTransition !important;
+  font-family: @titleFont;
+  transition: @styledTitleTransition;
 
   .title {
     padding: @relative12px;
     background-color: @backrgoundColor;
-    font-family: @titleFont !important;
+    font-family: @titleFont;
     font-size: @h3;
 
     i.icon {
@@ -21,15 +21,22 @@
     }
   }
 
-  .content {
-    padding: @relative16px @relative64px !important;
+  div.content {
+    padding: @contentPadding;
     border-top: @contentBorder;
     background: @contentBckground;
-    font-family: @titleFont !important;
-    font-size: @pageFont;
+    font-family: @titleFont;
+    font-size: @fontSize;
   }
 }
 
-.ui.accordion.eeaAccordion .eeaAccordionItem .active.title i.icon {
+/* Active accordion arrow */
+.ui.accordion.eea-accordion .eea-accordion-item .active.title i.icon {
   transform: rotate(180deg);
+}
+
+/* Accordion content padding for unstyled */
+div.ui.accordion.eea-accordion:not(.styled) .accordion .title~.content:not(.ui), 
+div.ui.accordion.eea-accordion:not(.styled) .title~.content:not(.ui) {
+  padding: @contentPadding;
 }
