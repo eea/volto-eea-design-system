@@ -4,13 +4,14 @@
  */
 
 import React, { Component } from 'react';
-import { Segment, Header, Table, Icon, Image, Grid } from 'semantic-ui-react';
+//import { Segment, Header, Table, Icon, Image, Grid } from 'semantic-ui-react';
+import { Segment, Icon, Image, Grid } from 'semantic-ui-react';
 
-import EUflag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/europe-flag.svg';
+//import EUflag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/europe-flag.svg';
 import EULogo from '../../../../../theme/themes/eea/assets/images/Footer/EULogo.png';
 import EIONETLogo from '../../../../../theme/themes/eea/assets/images/Footer/EIONETLogo.png';
-import Vector1 from '../../../../../theme/themes/eea/assets/images/Footer/Vector1.png';
-import Vector2 from '../../../../../theme/themes/eea/assets/images/Footer/Vector2.png';
+//import Vector1 from '../../../../../theme/themes/eea/assets/images/Footer/Vector1.png';
+//import Vector2 from '../../../../../theme/themes/eea/assets/images/Footer/Vector2.png';
 import EEALogo from '../../../../../theme/themes/eea/assets/images/Footer/EEALogo.png';
 import Logo1 from '../../../../../theme/themes/eea/assets/images/Footer/Extras/Logo1.png';
 import Logo2 from '../../../../../theme/themes/eea/assets/images/Footer/Extras/Logo2.png';
@@ -104,12 +105,114 @@ class Footer extends Component {
             alignItems: 'center',
           }}
         >
-          <div style={{ margin: '64.14px 141px 0px 156px' }}>
+          <p
+            style={{
+              marginTop: '79px',
+              fontSize: '36px',
+              fontWeight: '900',
+              letterSpacing: '5%',
+              textAlign: 'center',
+              marginBottom: '0',
+            }}
+          >
+            The EEA also contributes to
+          </p>
+
+          <div
+            className="footer-logos"
+            style={{
+              height: '192px',
+              display: 'flex',
+              margin: '62px 138px 0px 141px',
+              flexWrap: 'wrap',
+            }}
+          >
+            <Grid columns={5}>
+              <Grid.Row>
+                <Grid.Column>
+                  <Image src={Logo1}></Image>
+                </Grid.Column>
+                <Grid.Column>
+                  <Image src={Logo2}></Image>
+                </Grid.Column>
+                <Grid.Column>
+                  <Image src={Logo3}></Image>
+                </Grid.Column>
+                <Grid.Column>
+                  <Image src={Logo4}></Image>``
+                </Grid.Column>
+                <Grid.Column>
+                  <Image src={Logo5}></Image>
+                </Grid.Column>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Column>
+                  <Image src={Logo6}></Image>
+                </Grid.Column>
+                <Grid.Column>
+                  <Image src={Logo7}></Image>
+                </Grid.Column>
+                <Grid.Column>
+                  <Image src={Logo8}></Image>
+                </Grid.Column>
+                <Grid.Column>
+                  <Image src={Logo9}></Image>
+                </Grid.Column>
+                <Grid.Column>
+                  <Image src={Logo10}></Image>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+          </div>
+
+          <Image src={EEALogo}></Image>
+
+          <div>
+            <a href="/#" style={{ color: 'white' }}>
+              <Icon size="big" name="twitter"></Icon>
+            </a>
+            <a href="/#" style={{ color: 'white' }}>
+              <Icon size="big" name="facebook"></Icon>
+            </a>
+            <a href="/#" style={{ color: 'white' }}>
+              <Icon size="big" name="linkedin"></Icon>
+            </a>
+            <a href="/#" style={{ color: 'white' }}>
+              <Icon size="big" name="youtube"></Icon>
+            </a>
+            <a href="/#" style={{ color: 'white' }}>
+              <Icon size="big" name="rss"></Icon>
+            </a>
+            <a href="/#" style={{ color: 'white' }}>
+              <Icon size="big" name="instagram"></Icon>
+            </a>
+          </div>
+
+          <div>
+            <p>Contact us</p>
+            <span>
+              <Icon name="map marker alternate" size="big"></Icon>
+              Kongens Nytorv 6 1050 Copenhagen K
+            </span>
+            <span>
+              <Icon name="comment outline" size="big"></Icon>
+              Ask your question
+            </span>
+            <span>
+              <Icon name="phone" size="big"></Icon>
+              (+45) 33 36 71 00
+            </span>
+            <span>
+              <Icon name="envelope outline" size="big"></Icon>
+              Sign up to our newsletter
+            </span>
+          </div>
+
+          {/* <div style={{ margin: '64.14px 141px 0px 156px' }}>
             <p
               style={{
                 fontSize: '36px',
                 letterSpacing: '5%',
-                letterSpacing: '0px',
                 marginTop: '79px',
                 textAlign: 'center',
               }}
@@ -248,7 +351,7 @@ class Footer extends Component {
                 </Grid.Column>
               </Grid.Row>
             </Grid>
-          </div>
+          </div> */}
         </div>
       </Segment>
     );

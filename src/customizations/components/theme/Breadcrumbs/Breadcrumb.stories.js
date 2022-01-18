@@ -13,40 +13,40 @@ export default {
     icon: {
       control: { type: 'select' },
       options: ['right chevron', 'right arrow', 'caret right'],
-      description:"breadcrumb divider icon",
-      table:{
-        type:{
-          summary:"string"
+      description: 'breadcrumb divider icon',
+      table: {
+        type: {
+          summary: 'string',
         },
         defaultValue: {
           summary: 'right chevron',
         },
-      }
+      },
     },
     size: {
       control: { type: 'select' },
       options: ['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive'],
-      description:"breadcrumb size",
-      table:{
-        type:{
-          summary:"string"
+      description: 'breadcrumb size',
+      table: {
+        type: {
+          summary: 'string',
         },
         defaultValue: {
           summary: 'small',
         },
-      }
+      },
     },
-    sections:{
-      description:"breadcrumb tabs",
-      table:{
-        type:{
-          summary:"Object"
+    sections: {
+      description: 'breadcrumb tabs',
+      table: {
+        type: {
+          summary: 'Object',
         },
         defaultValue: {
-          summary: ' \""\ '
+          summary: ' "" ',
         },
-      }
-    }
+      },
+    },
   },
 };
 
