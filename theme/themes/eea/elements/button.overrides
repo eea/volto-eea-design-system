@@ -20,6 +20,19 @@ button.ui.buttons {
   font-family: @pageFont;
   font-size: @buttonFontSize;
   font-weight: 500;
+
+  /* Plain grey button as template */
+  border-color: @silverGray;
+  background-color: @silverGray;
+  color: @black;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: @midGray;
+    background-color: @midGray;
+    color: @black;
+  }
 }
 
 /* Primary Button */

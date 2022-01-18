@@ -2,7 +2,8 @@
          Theme Overrides
 *******************************/
 
-.ui.modal.eeaModal {
+/* Modal and confirm */
+.ui.modal.eea-modal {
   border-radius: @borderRadius;
 
   .header {
@@ -18,8 +19,6 @@
     padding: 1rem 1.5rem;
   }
 }
-
-/******************************************/
 
 .ui.modal > .actions:after {
   display: block;
