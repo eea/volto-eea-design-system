@@ -50,15 +50,18 @@ const Template = (args) => <CommentEEA {...args}></CommentEEA>;
 export const Default = Template.bind({});
 Default.args = {
   title: 'Comments Header',
+  threaded: false,
+  minimal: false,
+  size: 'large',
   comments: [
     {
-      src: '',
+      src: 'eea_icon.png',
       author: 'User 1',
       time: 'Message timestamp',
       text: 'Message Content',
       replies: [
         {
-          src: '',
+          src: 'eea_icon.png',
           author: 'User 4',
           time: 'Message timestamp',
           text: 'Message Content',
@@ -66,21 +69,18 @@ Default.args = {
       ],
     },
     {
-      src: '',
+      src: 'eea_icon.png',
       author: 'User 2',
       time: 'Message timestamp',
       text: 'Message Content',
       replies: [],
     },
     {
-      src: '',
+      src: 'eea_icon.png',
       author: 'User 2',
       time: 'Message timestamp',
       text: 'Message Content',
       replies: [],
     },
   ],
-  threaded: false,
-  minimal: false,
-  size: 'large',
 };

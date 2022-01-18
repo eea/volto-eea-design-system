@@ -47,7 +47,7 @@ export default {
       },
     },
     fluid: {
-      description: 'card header',
+      description: 'take up the width of its container',
       table: {
         type: {
           summary: 'boolean',
@@ -56,7 +56,7 @@ export default {
       },
     },
     links: {
-      description: 'if true takes width of container',
+      description: 'array with links to other content',
       table: {
         type: {
           summary: 'Object',
@@ -68,7 +68,7 @@ export default {
 };
 
 const Template = (args) => (
-  <Card fluid={args.fluid} className="eeaCard">
+  <Card fluid={args.fluid} className="eea-card">
     {args.hasImage && (
       <Image
         src="https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large"
@@ -97,10 +97,10 @@ const Template = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   //src: 'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-  hasImage: true,
   title: 'Card Header',
   meta: 'meta data',
   description: 'card description',
+  hasImage: true,
   fluid: false,
   links: [{ linkName: 'Link 1', icon: 'linkify' }],
 };
