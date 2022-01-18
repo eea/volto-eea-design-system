@@ -3,7 +3,7 @@
 *******************************/
 
 /* Pagination */
-.ui.pagination.eeaPagination.menu {
+.ui.pagination.eea-pagination.menu {
   border-bottom: @paginationBorder;
   border-radius: @defaultBorderRadius;
   font-size: @fontSize;
@@ -22,7 +22,7 @@
 
   a.item:hover {
     background-color: transparent;
-    color: @activeItemBorder;
+    color: @activeColor;
   }
 }
 

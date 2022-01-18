@@ -2,19 +2,20 @@
          Theme Overrides
 *******************************/
 
-.ui.message {
-  border-radius: @borderRadius !important;
-  box-shadow: @boxShadow !important;
+div.ui.message {
+  border-radius: @borderRadius;
+  box-shadow: @boxShadow ;
 }
 
-.ui.icon.message > .icon {
-  font-size: @iconSize !important;
+div.ui.icon.message > .icon,
+div.ui.icon.message>.icon:not(.close) {
+  font-size: @iconSize;
 }
 
-.ui.message .content {
+div.ui.message .content {
   font-size: @12px;
 }
 
-.ui.attached.message {
+div.ui.attached.message {
   margin: 0;
 }
