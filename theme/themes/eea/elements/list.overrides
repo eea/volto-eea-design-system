@@ -11,23 +11,29 @@
 }
 
 //Description List
-.ui.list .list>.item .description, .ui.list>.item .description {
+div.ui.list .list>.item .description,
+div.ui.list>.item .description {
   margin-top: @relative8px;
 }
-.ui.list .list>.item i.icon, .ui.list>.item i.icon {
-  color: @bulletColor !important;
+div.ui.list .list>.item i.icon,
+div.ui.list>.item i.icon {
+  color: @bulletColor;
 }
 
 //Ordered list
-.ui.ordered.list .list>.item:before, .ui.ordered.list>.item:before, ol.ui.list li:before {
-  color: @bulletColor !important;
+div.ui.ordered.list .list>.item:before,
+div.ui.ordered.list>.item:before, 
+ol.ui.list li:before {
+  color: @bulletColor;
 }
 
 //Unordered list
-.ui.bulleted.list .list > .item:before,
-.ui.bulleted.list > .item:before,
+div.ui.bulleted.list .list > .item:before,
+div.ui.bulleted.list .list > a.item:before,
+div.ui.bulleted.list > .item:before,
+div.ui.bulleted.list > a.item:before,
 ul.ui.list li:before {
-  color: @bulletColor !important;
+  color: @bulletColor;
   font-size: @bulletSize;
 }
 

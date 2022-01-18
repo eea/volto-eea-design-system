@@ -2,9 +2,9 @@
          Theme Overrides
 *******************************/
 
-.ui.items .item .content {
+div.ui.items .item .content {
   .header {
-    font-family: @itemHeaderFont !important;
+    font-family: @itemHeaderFont;
   }
 
   .meta,
