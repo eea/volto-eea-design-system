@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'semantic-ui-react';
 
 export default {
-  title: 'Components/Container',
+  title: 'Layout/Container',
   component: Container,
   parameters: {
     actions: {
@@ -13,6 +13,26 @@ export default {
     textAlign: {
       control: { type: 'inline-radio' },
       options: ['left', 'right', 'center', 'justified'],
+      description: 'align container text',
+      table: {
+        type: {
+          summary: 'text',
+        },
+        defaultValue: {
+          summary: 'left',
+        },
+      },
+    },
+    content: {
+      description: 'container content',
+      table: {
+        type: {
+          summary: 'object',
+        },
+        defaultValue: {
+          summary: ' "" ',
+        },
+      },
     },
   },
 };
@@ -34,15 +54,11 @@ const content = (
   </p>
 );
 
-const Template = (args) => <Container {...args}></Container>;
+const Template = (args) => (
+  <Container className="eeaContainer" {...args}></Container>
+);
 
 export const Default = Template.bind({});
 Default.args = {
   content: content,
-};
-
-export const Playground = Template.bind({});
-Playground.args = {
-  content: content,
-  text: false,
 };

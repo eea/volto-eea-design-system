@@ -3,7 +3,6 @@ title: Typography
 order: 1
 ---
 
-
 Note: all values expressed in pixels are in fact dynamically converted from rem values. The conversion depends on the settings of your browser.
 
 ## Typeface
@@ -40,16 +39,12 @@ Line-length is the number of characters displayed in a single line. Lines that a
 
 ### Heading 1
 
-
-
 |         | Font size                                    | Line height                                   |
 | ------- | -------------------------------------------- | --------------------------------------------- |
 | mobile  | 3XL - 1.75rem - <RemToPixels rem="1.75" />px | 3XL UI - 2rem - <RemToPixels rem="2" />px     |
 | desktop | 4XL - 2rem - <RemToPixels rem="2" />px       | 4XL UI - 2.5rem - <RemToPixels rem="2.5" />px |
 
 ### Heading 2
-
-
 
 |         | Font size                                    | Line height                                     |
 | ------- | -------------------------------------------- | ----------------------------------------------- |
@@ -58,7 +53,6 @@ Line-length is the number of characters displayed in a single line. Lines that a
 
 ### Heading 3
 
-
 |         | Font size                                   | Line height                                     |
 | ------- | ------------------------------------------- | ----------------------------------------------- |
 | mobile  | XL - 1.25rem - <RemToPixels rem="1.25" />px | XL UI - 1.5rem - <RemToPixels rem="1.5" />px    |
@@ -66,16 +60,12 @@ Line-length is the number of characters displayed in a single line. Lines that a
 
 ### Heading 4
 
-
-
 |         | Font size                                    | Line height                                           |
 | ------- | -------------------------------------------- | ----------------------------------------------------- |
 | mobile  | L - 1.125rem - <RemToPixels rem="1.125" />px | L Prolonged - 1.75rem - <RemToPixels rem="1.75" />px  |
 | desktop | XL - 1.25rem - <RemToPixels rem="1.25" />px  | XL Prolonged - 1.75rem - <RemToPixels rem="1.75" />px |
 
 ### Heading 5
-
-
 
 |                  | Font size                            | Line height                                        |
 | ---------------- | ------------------------------------ | -------------------------------------------------- |
@@ -87,8 +77,6 @@ Line-length is the number of characters displayed in a single line. Lines that a
 
 ### Lead paragraph
 
-
-
 |         | Font size                                    | Line height                                           |
 | ------- | -------------------------------------------- | ----------------------------------------------------- |
 | mobile  | L - 1.125rem - <RemToPixels rem="1.125" />px | L Prolonged - 1.75rem - <RemToPixels rem="1.75" />px  |
@@ -96,23 +84,17 @@ Line-length is the number of characters displayed in a single line. Lines that a
 
 ### Medium paragraph
 
-
-
 |                  | Font size                            | Line height                                        |
 | ---------------- | ------------------------------------ | -------------------------------------------------- |
 | mobile & desktop | M - 1rem - <RemToPixels rem="1" />px | M Prolonged - 1.5rem - <RemToPixels rem="1.5" />px |
 
 ### Small paragraph
 
-
-
 |                  | Font size                                    | Line height                                          |
 | ---------------- | -------------------------------------------- | ---------------------------------------------------- |
 | mobile & desktop | S - 0.875rem - <RemToPixels rem="0.875" />px | S Prolonged - 1.25rem - <RemToPixels rem="1.25" />px |
 
 ### Extra Small paragraph
-
-
 
 |                  | Font size                                   | Line height                                           |
 | ---------------- | ------------------------------------------- | ----------------------------------------------------- |

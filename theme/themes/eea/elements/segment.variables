@@ -18,7 +18,7 @@
 @verticalMargin: 1rem;
 @horizontalMargin: 0em;
 @margin: @verticalMargin @horizontalMargin;
-@borderRadius: 0;
+@borderRadius: @defaultBorderRadius;
 
 /*-------------------
        Group

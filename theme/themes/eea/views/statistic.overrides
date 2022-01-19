@@ -1,3 +1,19 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+.ui.statistic.eeaStatistic {
+  > .value {
+    color: @secondaryValueColor !important;
+    font-family: @valueFont !important;
+    font-weight: @valueFontWeight;
+  }
+
+  > .label {
+    margin-top: @topLabelDistance !important;
+    color: @primaryLabelColor !important;
+    font-family: @labelFont;
+    font-weight: @labelFontWeight;
+    text-transform: @labelTextTransform !important;
+  }
+}

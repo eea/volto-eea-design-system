@@ -2,6 +2,52 @@
          Theme Overrides
 *******************************/
 
+/* Pagination */
+.ui.pagination.eeaPagination.menu {
+  border-bottom: @paginationBorder;
+  border-radius: @defaultBorderRadius;
+  font-size: @fontSize;
+
+  .active.item {
+    border-bottom: @activeItemBorder;
+    margin: 0 0 -2px; //borders to overlap
+    background-color: transparent;
+    color: @activeColor;
+    font-weight: bold;
+
+    &:active {
+      color: @activeColor;
+    }
+  }
+
+  a.item:hover {
+    background-color: transparent;
+    color: @activeItemBorder;
+  }
+}
+
+.pagination-wrapper {
+  text-align: center;
+}
+
+.ui.pagination.menu {
+  border: none;
+  box-shadow: none;
+
+  .item {
+    color: @linkColor;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .active.item {
+    background: none;
+    color: @textColor;
+  }
+}
+
 .ui.menu .item.personal-bar {
   position: fixed;
   bottom: 68px;
@@ -168,29 +214,6 @@
   .ui.menu.stackable > .menu,
   .ui.menu.stackable > .menu.right {
     display: block;
-  }
-}
-
-/* Pagination */
-.pagination-wrapper {
-  text-align: center;
-}
-
-.ui.pagination.menu {
-  border: none;
-  box-shadow: none;
-
-  .item {
-    color: @linkColor;
-
-    &:before {
-      display: none;
-    }
-  }
-
-  .active.item {
-    background: none;
-    color: @textColor;
   }
 }
 

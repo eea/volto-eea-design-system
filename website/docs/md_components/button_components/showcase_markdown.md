@@ -1,12 +1,21 @@
 import Iframe from '../iframe_component.mdx';
 
-# Default Button
-<Iframe id='components-button--default&args=' > </Iframe>
+## Default Button
 
+<Iframe id='components-button--primary&args=' > </Iframe>
 
-# Primary Button
-<Iframe id='components-button--playground&args=label:Primary;variant:primary' > </Iframe>
+## Secondary Button
 
+<Iframe id='components-button--secondary&args=' > </Iframe>
 
-# Secondary Button
-<Iframe id='components-button--playground&args=label:Secondary;variant:secondary' > </Iframe>
+## Secondary Button Inverted
+
+<Iframe id='components-button--secondary-inverted&args=' > </Iframe>
+
+## Call To Action
+
+<Iframe id='components-button--call-to-action&args=' > </Iframe>
+
+## Text Button
+
+<Iframe id='components-button--text&args=' > </Iframe>

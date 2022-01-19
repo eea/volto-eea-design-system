@@ -10,10 +10,50 @@ export default {
         type: 'select',
         options: ['mini', 'tiny', 'small', '', 'large', 'huge'],
       },
+      description: 'statistic size',
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: {
+          summary: ' "" ',
+        },
+      },
     },
     floated: {
       type: 'select',
       options: ['left', 'right'],
+      description: 'sit to the left or right of other content',
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: {
+          summary: ' "" ',
+        },
+      },
+    },
+    horizontal: {
+      description: 'present its measurement horizontally',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: {
+          summary: false,
+        },
+      },
+    },
+    inverted: {
+      description: 'formatted to fit on a dark background',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: {
+          summary: false,
+        },
+      },
     },
   },
 };
@@ -22,9 +62,15 @@ const Template = (args) => (
   <Statistic.Group {...args}>
     {args.elements &&
       args.elements.map((element, index) => (
-        <Statistic key={index} {...element}></Statistic>
+        <Statistic
+          className="eeaStatistic"
+          key={index}
+          {...element}
+        ></Statistic>
       ))}
-    {!args.elements && <Statistic {...args}></Statistic>}
+    {!args.elements && (
+      <Statistic className="eeaStatistic" {...args}></Statistic>
+    )}
   </Statistic.Group>
 );
 
@@ -33,20 +79,69 @@ Default.args = {
   label: 'Statistic Label',
   value: 'Value',
   horizontal: false,
-  color: 'black',
   inverted: false,
   floated: 'right',
   size: 'small',
 };
 
+Default.argTypes = {
+  label: {
+    description: 'label content of the Statistic',
+    table: {
+      type: {
+        summary: 'string',
+      },
+      defaultValue: {
+        summary: ' "" ',
+      },
+    },
+  },
+  value: {
+    description: 'value content of the statistic',
+    table: {
+      type: {
+        summary: 'custom',
+      },
+      defaultValue: {
+        summary: ' "" ',
+      },
+    },
+  },
+};
+
 export const Group = Template.bind({});
 Group.args = {
   elements: [
-    { ...Default.args, label: 'label 1', value: '1' },
-    { ...Default.args, label: 'label 2', value: '2' },
+    { ...Default.args, label: 'label 1', value: '50' },
+    { ...Default.args, label: 'label 2', value: '500' },
+    { ...Default.args, label: 'label 3', value: '5000' },
   ],
   horizontal: false,
-  color: 'red',
   inverted: false,
-  widths: 'two',
+  widths: 'three',
+};
+
+Group.argTypes = {
+  elements: {
+    description: 'array of different statistics',
+    table: {
+      type: {
+        summary: 'object',
+      },
+      defaultValue: {
+        summary: ' "" ',
+      },
+    },
+  },
+  widths: {
+    description: 'a statistic group can have its items divided evenly',
+    table: {
+      type: {
+        summary: 'number',
+      },
+      defaultValue: {
+        summary: ' "" ',
+      },
+    },
+  },
 };

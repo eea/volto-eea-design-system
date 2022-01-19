@@ -7,27 +7,60 @@ export default {
   argTypes: {
     size: {
       control: {
-        type: 'inline-radio',
+        type: 'select',
       },
       options: ['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive'],
+      description: 'a list can vary in size',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
+    },
+    animated: {
+      description:
+        'a list can animate to set the current item apart from the list',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    divided: {
+      description: 'a list can show divisions between conten',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    horizontal: {
+      description: 'a list can be formatted to have items appear horizontally',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    items: {
+      description: 'array of list content',
+      table: {
+        type: { summary: 'object' },
+        defaultValue: { summary: ' "" ' },
+      },
     },
   },
 };
 
-function UnorderedList(items, selection, animated, divided, size, horizontal) {
+function UnorderedList(size, animated, divided, horizontal, items) {
   return (
     <List
       bulleted
-      selection={selection}
+      size={size}
       animated={animated}
       divided={divided}
-      size={size}
       horizontal={horizontal}
     >
       {items.map((item, index) => (
         <List.Item key={index}>
           {item.content}
-          <List.List selection={selection}>
+          <List.List>
             {item.subList.map((sub, subIndex) => (
               <List.Item key={subIndex} as="a">
                 {sub.content}
@@ -40,18 +73,21 @@ function UnorderedList(items, selection, animated, divided, size, horizontal) {
   );
 }
 
-export const Unordered = (args) => {
+export const Default = (args) => {
   return UnorderedList(
-    args.items,
-    args.selection,
+    args.size,
     args.animated,
     args.divided,
-    args.size,
     args.horizontal,
+    args.items,
   );
 };
 
-Unordered.args = {
+Default.args = {
+  size: 'small',
+  animated: false,
+  divided: false,
+  horizontal: false,
   items: [
     {
       header: 'header 1',
@@ -86,9 +122,4 @@ Unordered.args = {
       ],
     },
   ],
-  selection: false,
-  animated: false,
-  divided: false,
-  size: 'small',
-  horizontal: false,
 };

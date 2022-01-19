@@ -10,18 +10,76 @@ export default {
         type: 'inline-radio',
       },
       options: ['top', 'middle', 'bottom'],
+      description: 'vertical alignment',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
     },
     floated: {
       control: {
         type: 'inline-radio',
       },
       options: ['left', 'right'],
+      description: 'floated left or right',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
     },
     size: {
       control: {
-        type: 'inline-radio',
+        type: 'select',
       },
       options: ['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive'],
+      description: 'a list can vary in size',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
+    },
+    icon: {
+      description: 'list icon',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    selection: {
+      description: 'a selection list formats list items as possible choices',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    animated: {
+      description:
+        'a list can animate to set the current item apart from the list',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    divided: {
+      description: 'a list can show divisions between conten',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    horizontal: {
+      description: 'a list can be formatted to have items appear horizontally',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    items: {
+      description: 'array of list content',
+      table: {
+        type: { summary: 'object' },
+        defaultValue: { summary: ' "" ' },
+      },
     },
   },
 };
@@ -49,7 +107,7 @@ function DescriptionList(
         <List.Item key={index}>
           <List.Content>
             <List.Header>
-              {icon && <List.Icon name="right triangle" />}
+              {icon && <List.Icon name="chevron right" />}
               {item.header}
             </List.Header>
             <List.Description floated={floated}>
@@ -62,7 +120,7 @@ function DescriptionList(
   );
 }
 
-export const Description = (args) => {
+export const Default = (args) => {
   return DescriptionList(
     args.items,
     args.verticalAlign,
@@ -76,19 +134,19 @@ export const Description = (args) => {
   );
 };
 
-Description.args = {
-  items: [
-    { header: 'header 1', content: 'Content 1', icon: 'users' },
-    { header: 'header 2', content: 'Content 2' },
-    { header: 'header 3', content: 'Content 3' },
-    { header: 'header 4', content: 'Content 4' },
-  ],
+Default.args = {
   verticalAlign: 'middle',
   floated: 'right',
   icon: true,
   selection: false,
   animated: false,
   divided: false,
-  size: 'small',
   horizontal: false,
+  size: 'large',
+  items: [
+    { header: 'Header 1', content: 'Content 1', icon: 'users' },
+    { header: 'Header 2', content: 'Content 2' },
+    { header: 'Header 3', content: 'Content 3' },
+    { header: 'Header 4', content: 'Content 4' },
+  ],
 };

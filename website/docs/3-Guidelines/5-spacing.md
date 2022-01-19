@@ -3,8 +3,6 @@ title: Spacing
 order: 6
 ---
 
-
-
 ## Two spacing scales
 
 ECL provides two separate sets of scales:

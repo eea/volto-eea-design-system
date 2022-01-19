@@ -2,25 +2,34 @@
          Theme Overrides
 *******************************/
 
-/* Dropdown Icon */
-.ui.accordion .title .dropdown.icon,
-.ui.accordion .accordion .title .dropdown.icon {
-  float: right;
+.ui.accordion.eeaAccordion .eeaAccordionItem {
+  margin: @itemsMargin;
+  font-family: @titleFont !important;
+  transition: @styledTitleTransition !important;
+
+  .title {
+    padding: @relative12px;
+    background-color: @backrgoundColor;
+    font-family: @titleFont !important;
+    font-size: @h3;
+
+    i.icon {
+      height: 100%;
+      margin-right: @relative16px;
+      color: @iconColor;
+      transition: @iconTransition;
+    }
+  }
+
+  .content {
+    padding: @relative16px @relative64px !important;
+    border-top: @contentBorder;
+    background: @contentBckground;
+    font-family: @titleFont !important;
+    font-size: @pageFont;
+  }
 }
 
-.ui.accordion .title .dropdown.icon:before,
-.ui.accordion .accordion .title .dropdown.icon:before {
-  content: '\e904';
-}
-
-.ui.accordion .active.title .dropdown.icon:before,
-.ui.accordion .accordion .active.title .dropdown.icon:before {
-  content: '\e9ce';
-}
-
-.ui.styled.accordion .title,
-.ui.styled.accordion .accordion .title {
-  background: @darkWhite;
-  font-size: @12px;
-  text-transform: uppercase;
+.ui.accordion.eeaAccordion .eeaAccordionItem .active.title i.icon {
+  transform: rotate(180deg);
 }

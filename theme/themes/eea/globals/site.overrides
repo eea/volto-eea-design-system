@@ -2,6 +2,21 @@
         Global Overrides
 *******************************/
 
+body,
+p {
+  font-family: @pageFont !important;
+}
+
+.eeaBlockquote {
+  border-left: 10px solid @secondaryColor;
+}
+
+.eeaBlockquote .blockquoteQuote {
+  margin: @relative12px @relative30px;
+  color: @japaneseIndigo;
+  font-size: @h3;
+}
+
 /*-------------------
       FOOTER IMS overrides
 --------------------*/

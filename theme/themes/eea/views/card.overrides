@@ -1,3 +1,11 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+.ui.card.eeaCard {
+  border: @cardBorder;
+  background: @background;
+  border-radius: @defaultBorderRadius;
+  box-shadow: none;
+  font-family: @fontFamily;
+}

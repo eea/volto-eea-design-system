@@ -1,6 +1,34 @@
 /*******************************
          Theme Overrides
 *******************************/
+.ui.dropdown {
+  max-width: @inputMaxWidth !important;
+}
+
+.ui.dropdown.fluid {
+  max-width: 100% !important;
+}
+
+.ui.dropdown {
+  height: auto !important;
+  border: @border !important;
+  border-radius: @borderRadius !important;
+  font-family: @pageFont !important;
+  font-weight: @inputFontWeight;
+
+  &:active,
+  &:focus {
+    border: 2px solid @policeBlue !important;
+  }
+}
+
+.ui.dropdown.active {
+  border: 2px solid @policeBlue !important;
+}
+
+.ui.dropdown.error {
+  border: 2px solid @negativeBorderColor !important;
+}
 
 .ui.dropdown.right {
   float: right;
@@ -14,7 +42,8 @@
 .ui.selection.dropdown:not(.multiple):not(.search) > .dropdown.icon {
   position: static;
   /* custom padding for dropdowns */
-  font-size: 2em;
+  padding: 10px 0;
+  font-size: 1em;
 }
 
 .ui.selection.dropdown {

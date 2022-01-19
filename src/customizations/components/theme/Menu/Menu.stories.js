@@ -12,14 +12,7 @@ export default {
   argTypes: {},
 };
 
-export function MenuContent({
-  items,
-  secondary,
-  pointing,
-  tabular,
-  text,
-  vertical,
-}) {
+function MenuContent({ items, secondary, pointing, tabular, text, vertical }) {
   const [activeItem, setActiveItem] = useState(
     items.find((item) => item.active === true).key,
   );

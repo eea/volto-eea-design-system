@@ -6,6 +6,8 @@
        Element
 --------------------*/
 
+@poppupPadings: @relative12px @relative30px;
+
 @zIndex: 1900;
 @background: @white;
 

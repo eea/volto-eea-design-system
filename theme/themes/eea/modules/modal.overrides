@@ -2,6 +2,25 @@
          Theme Overrides
 *******************************/
 
+.ui.modal.eeaModal {
+  border-radius: @borderRadius;
+
+  .header {
+    border: @border;
+  }
+
+  .actions {
+    border: @border;
+    background-color: @background;
+  }
+
+  .content {
+    padding: 1rem 1.5rem;
+  }
+}
+
+/******************************************/
+
 .ui.modal > .actions:after {
   display: block;
   height: 0;

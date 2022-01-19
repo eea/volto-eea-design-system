@@ -6,6 +6,9 @@
          View
 --------------------*/
 
+@secondaryValueColor: @secondaryColor;
+@primaryLabelColor: @primaryColor;
+
 @verticalMargin: 1em;
 @margin: @verticalMargin 0em;
 @textAlign: center;
@@ -29,11 +32,11 @@
 @valueFontWeight: @normal;
 @valueLineHeight: 1em;
 @valueColor: @black;
-@valueTextTransform: uppercase;
+@valueTextTransform: none;
 
 /* Label */
 @labelSize: @relativeMedium;
-@topLabelDistance: 0rem;
+@topLabelDistance: 1rem;
 @bottomLabelDistance: 0rem;
 @labelFont: @headerFont;
 @labelFontWeight: @bold;
