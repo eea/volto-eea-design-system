@@ -1,5 +1,5 @@
 ---
-title: Lists
+title: List
 description: EEA Button Component
 hide_table_of_contents: true
 ---
