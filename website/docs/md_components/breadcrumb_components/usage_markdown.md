@@ -1,1 +1,20 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+---
+title: Usage
+---
+The Breadcrumb informs the users on their current location relative to the homepage of the website and allows them to navigate to higher levels. It is a series links except the last item in the group, which is the current page.
+
+### Dos 
+
+- the first element of the breadcrumb must always be labelled "Home" and must link to the homepage of the actual site where the current user page is located
+
+### Don'ts
+
+- use long labels which creates visual clutter
+
+### When to use
+
+- if your website's navigational structure is a tree of more than 2 levels
+
+### When not to use
+
+- if your website's navigational structure has less than 3 levels of depth

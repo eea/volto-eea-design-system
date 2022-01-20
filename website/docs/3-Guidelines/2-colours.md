@@ -3,18 +3,12 @@ title: Colours
 order: 2
 ---
 
-The colour palette is designed to support a flexible, modular visual style that feels connected across EC and EU websites and platforms. The intent of the palette is to **convey a united and open European spirit**, and leave users feeling welcome and in good hands.
+## Principles
+## Communication is key
 
-## Primary colours
+Although we value an aesthetically pleasing use of color, clear communication is our focus. We use colors to support the purpose of the content, communicating things like hierarchy of information, interactive states, and the difference between distinct elements.
 
-The **primary colour palette** is comprised of blues, yellows and greys. These colours are present accross all pages and, together with the neutral white, they make up for about 80% of the colours in the page layout. Use these colours to **create consistency** and a strong **visual hierarchy** throughout the page.
 
-### Variations
+## Colors follow accessibility guidelines
 
-## Notification colours
-
-The secondary colour palette is mainly used for notification colours. The secondary colours should make up 20% or less of the colour in the layout and should be used sparingly to highlight important information and calls to action.
-
-## Background colour
-
-White is the background colour of the EC-website.
+The color system is designed to generate themes that meet WCAG 2.1 compliant contrast ratios. This makes things easier to find, identify, and interact with. It also makes the whole experience more accessible for visitors who are color blind or who have low vision. However, you should never convey information using color alone.

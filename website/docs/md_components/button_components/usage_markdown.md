@@ -38,36 +38,11 @@ Use for medium-emphasis actions. They contain actions that are important but are
 - Do not use for navigation
 - Don't use an icon when it is not relevant or necessary to the action
 
-# Call to action (CTA) button
-
-Call to action button (CTA) captures users' attention in a web page. To perform an action or to visit another page for more information. The visual style has bright background colour and a high contrast label to indicate the importance of the action.
-
-## Do's
-
-- Ensure the button directs to a pre-defined goal, such as 'Search by priority'
-
-## Don'ts
-
-- Do not use more than once per page (except where the main action or user goal is repeated on the same page)
-
-## When to use
-
-- For promoting a message, or highly important content you want to draw users' attention
-
-## When not to use
-
-- Do not use for site navigation purpose
-
-# Text Link Button
-
+# Text link Button 
 Use for low-emphasis actions or for buttons that could have a long length text. It can be grouped with other buttons or placed independently.
-
 ## When to use
-
-- Use with low emphasis in a button group
-- Use on pages/cards when the main focus should be the content and not the button
-- When there is a single action intended
-
+- use with low emphasis in a button group
+- use on pages/cards when the main focus should be the content and not the button
+- when there is a single action intended
 ## When not to use
-
-- Do not use for navigation purpose
+- do not use for navigation purpose
