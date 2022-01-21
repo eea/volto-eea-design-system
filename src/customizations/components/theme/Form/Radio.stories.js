@@ -105,8 +105,9 @@ function RadioForm({
           value="1"
           checked={active === '1'}
           onChange={handleChange}
+          id="field1"
         ></Radio>
-        <Form.Field>Helper text for option 1</Form.Field>
+        <label htmlFor="field1">Helper text for option 1</label>
       </Form.Field>
       <Form.Field error={invalid}>
         <Radio
@@ -116,8 +117,9 @@ function RadioForm({
           value="2"
           checked={active === '2'}
           onChange={handleChange}
+          id="field2"
         ></Radio>
-        <Form.Field>Helper text for option 2</Form.Field>
+        <label htmlFor="field2">Helper text for option 2</label>
       </Form.Field>
       <Form.Field error={invalid}>
         <Radio
@@ -128,8 +130,9 @@ function RadioForm({
           value="3"
           checked={active === '3'}
           onChange={handleChange}
+          id="field3"
         ></Radio>
-        <Form.Field>Helper text for option 3</Form.Field>
+        <label htmlFor="field3">Helper text for option 3</label>
       </Form.Field>
     </Form>
   );
@@ -163,24 +166,30 @@ function Binary({
         <Message header="Error Message" content={errorMessage} negative />
       ) : null}
       <Form.Field error={invalid}>
-        <Radio
-          className="eeaRadio"
-          label="Yes"
-          name="radioGroup"
-          value="yes"
-          checked={active === 'yes'}
-          onChange={handleChange}
-        ></Radio>
+        
+          <Radio
+            className="eeaRadio"
+            label="Yes"
+            name="radioGroup"
+            value="yes"
+            checked={active === 'yes'}
+            onChange={handleChange}
+            id="radio-yes"
+          ></Radio>
+        <label htmlFor="radio-yes"> </label>
       </Form.Field>
       <Form.Field error={invalid}>
-        <Radio
-          className="eeaRadio"
-          label="No"
-          name="radioGroup"
-          value="no"
-          checked={active === 'no'}
-          onChange={handleChange}
-        ></Radio>
+       
+          <Radio
+            className="eeaRadio"
+            label="No"
+            name="radioGroup"
+            value="no"
+            checked={active === 'no'}
+            onChange={handleChange}
+            id="radio-no"
+          ></Radio>
+         <label htmlFor="radio-no"> </label>
       </Form.Field>
     </Form>
   );

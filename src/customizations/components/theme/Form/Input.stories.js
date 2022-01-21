@@ -47,14 +47,21 @@ export default {
         defaultValue: { summary: ' "" ' },
       },
     },
+    fluid: {
+      description: 'take on the size of its container',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
   },
 };
 
 const Template = (args) => (
   <Form>
     <Form.Field>
-      <label>{args.labeltext}</label>
-      <Input {...args} />
+      <label htmlFor="temp-id">{args.labeltext}</label>
+      <Input {...args} id="temp-id" />
     </Form.Field>
   </Form>
 );
@@ -67,15 +74,7 @@ StandardInput.args = {
   size: 'large',
   fluid: false,
 };
-StandardInput.argTypes = {
-  fluid: {
-    description: 'take on the size of its container',
-    table: {
-      type: { summary: 'boolean' },
-      defaultValue: { summary: false },
-    },
-  },
-};
+
 StandardInput.parameters = {
   controls: {
     exclude: ['onChange', 'onFocus'],
@@ -124,6 +123,7 @@ LoadingInput.args = {
   type: 'text',
   loading: true,
   size: 'large',
+  fluid: false,
 };
 LoadingInput.argTypes = {
   loading: {
@@ -149,6 +149,7 @@ ErrorInput.args = {
   type: 'text',
   error: true,
   size: 'large',
+  fluid: false,
 };
 ErrorInput.argTypes = {
   error: {
