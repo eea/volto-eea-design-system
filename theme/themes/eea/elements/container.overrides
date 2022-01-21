@@ -4,32 +4,27 @@
 @maxWidth: 1400px;
 
 /* All Sizes */
-.ui.container {
+div.ui.container {
   display: block;
-  width: auto !important;
-  margin: 0 30px;
-  //max-width: @maxWidth !important;
+  width: 100%;
+  padding-right: @mobilePadding;
+  padding-left: @mobilePadding;
   transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
-.ui.container.eeaContainer {
-  margin-right: 30px !important;
-  margin-left: 30px !important;
-}
-
 @media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {
-  .ui.container.eeaContainer {
-    margin-right: 40px !important;
-    margin-left: 40px !important;
+  div.ui.container {
+    padding-right: @tabletPadding;
+    padding-left: @tabletPadding;
   }
 }
 
 @media only screen and (min-width: @tabletBreakpoint + 1) {
-  .ui.container.eeaContainer {
-    margin-right: 140px !important;
-    margin-left: 140px !important;
+  div.ui.container {
+    padding-right: @desktopPadding;
+    padding-left: @desktopPadding;
   }
 }
 
