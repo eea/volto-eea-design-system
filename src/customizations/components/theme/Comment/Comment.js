@@ -1,6 +1,5 @@
 import React from 'react';
 import { Comment, Header } from 'semantic-ui-react';
-import CommentStories from './Comment.stories';
 //  "../../../../../../../../.storybook/assets/eea_icon.png"
 function CommentEEA({ title, comments, threaded, minimal, size }) {
   return (
@@ -9,7 +8,7 @@ function CommentEEA({ title, comments, threaded, minimal, size }) {
 
       {comments.map((comment, comIndex) => (
         <Comment key={comIndex}>
-          <Comment.Avatar src={comment.src}/>
+          <Comment.Avatar src={comment.src} alt="user avatar" />
           <Comment.Content>
             <Comment.Author as="a">{comment.author}</Comment.Author>
             <Comment.Metadata>
@@ -23,7 +22,7 @@ function CommentEEA({ title, comments, threaded, minimal, size }) {
           <Comment.Group>
             {comment.replies.map((reply, repIndex) => (
               <Comment key={repIndex}>
-                <Comment.Avatar src={comment.src} />
+                <Comment.Avatar src={comment.src} alt="user avatar" />
                 <Comment.Content>
                   <Comment.Author as="a">{reply.author}</Comment.Author>
                   <Comment.Metadata>
