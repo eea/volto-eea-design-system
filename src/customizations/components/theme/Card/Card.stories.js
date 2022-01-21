@@ -74,6 +74,7 @@ const Template = (args) => (
         src="https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large"
         wrapped
         ui={false}
+        alt="card image"
       />
     )}
     <Card.Content>
