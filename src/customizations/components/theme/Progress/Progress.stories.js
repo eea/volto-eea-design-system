@@ -57,9 +57,7 @@ export default {
   },
 };
 
-const Template = (args) => (
-  <Progress {...args}></Progress>
-);
+const Template = (args) => <Progress {...args}></Progress>;
 
 // export const Default = Template.bind({});
 // Default.args = {
