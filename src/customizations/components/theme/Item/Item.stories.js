@@ -8,11 +8,40 @@ export default {
   argTypes: {},
 };
 
-const Template = (args) => <Item.Group {...args}></Item.Group>;
+function SingleItem({ header, image, description, meta, extra }) {
+  return (
+    <Item>
+      <Item.Image src={image} alt="item image" />
+      <Item.Content>
+        <Item.Header>{header}</Item.Header>
+        <Item.Meta>{meta}</Item.Meta>
+        <Item.Description>{description}</Item.Description>
+        <Item.Extra>{extra}</Item.Extra>
+      </Item.Content>
+    </Item>
+  );
+}
+
+function ItemGroup({ items, divided, relaxed, unstackable, link }) {
+  return (
+    <Item.Group
+      divided={divided}
+      relaxed={relaxed}
+      unstackable={unstackable}
+      link={link}
+    >
+      {items.map((item) => (
+        <SingleItem key={item.childKey} {...item}></SingleItem>
+      ))}
+    </Item.Group>
+  );
+}
+
+const Template = (args) => <ItemGroup {...args}></ItemGroup>;
 
 export const DefaultItem = (args) => (
   <Item.Group>
-    <Item {...args}></Item>
+    <SingleItem {...args}></SingleItem>
   </Item.Group>
 );
 DefaultItem.args = {
