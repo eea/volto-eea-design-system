@@ -36,7 +36,10 @@ div.ui.accordion.eea-accordion .eea-accordion-item {
 }
 
 /* Accordion content padding for unstyled */
-div.ui.accordion.eea-accordion:not(.styled) .accordion .title~.content:not(.ui), 
-div.ui.accordion.eea-accordion:not(.styled) .title~.content:not(.ui) {
+div.ui.accordion.eea-accordion:not(.styled)
+  .accordion
+  .title
+  ~ .content:not(.ui),
+div.ui.accordion.eea-accordion:not(.styled) .title ~ .content:not(.ui) {
   padding: @contentPadding;
 }
