@@ -216,7 +216,10 @@
         Grid
 --------------------*/
 
-@columnCount: 12;
+@columnCount     : 12;
+@mobileColumns   : 4;
+@tabletColumns   : 8;
+@desktopColumns  : 12;
 
 /*-------------------
       Container
@@ -259,6 +262,11 @@
 @computerBreakpoint          : 1025px;
 @largeMonitorBreakpoint      : 1200px;
 @widescreenMonitorBreakpoint : 1920px;
+
+/* Paddings for breakpoints */
+@mobilePadding  : 30px;
+@tabletPadding  : 40px;
+@desktopPadding : 140px;
 
 /*-------------------
       Site Colors
@@ -783,6 +791,33 @@
 @relative64px : unit( (64 / @emSize), em);
 
 /* Columns */
+@oneMobile     : (1 / @mobileColumns * 100%);
+@twoMobile     : (2 / @mobileColumns * 100%);
+@threeMobile   : (3 / @mobileColumns * 100%);
+@fourMobile    : (4 / @mobileColumns * 100%);
+
+@oneTablet     : (1 / @tabletColumns * 100%);
+@twoTablet     : (2 / @tabletColumns * 100%);
+@threeTablet   : (3 / @tabletColumns * 100%);
+@fourTablet    : (4 / @tabletColumns * 100%);
+@fiveTablet    : (5 / @tabletColumns * 100%);
+@sixTablet     : (6 / @tabletColumns * 100%);
+@sevenTablet   : (7 / @tabletColumns * 100%);
+@eightTablet   : (8 / @tabletColumns * 100%);
+
+@oneDesktop     : (1 / @desktopColumns * 100%);
+@twoDesktop     : (2 / @desktopColumns * 100%);
+@threeDesktop   : (3 / @desktopColumns * 100%);
+@fourDesktop    : (4 / @desktopColumns * 100%);
+@fiveDesktop    : (5 / @desktopColumns * 100%);
+@sixDesktop     : (6 / @desktopColumns * 100%);
+@sevenDesktop   : (7 / @desktopColumns * 100%);
+@eightDesktop   : (8 / @desktopColumns * 100%);
+@nineDesktop    : (9 / @desktopColumns * 100%);
+@tenDesktop     : (10 / @desktopColumns * 100%);
+@elevenDesktop  : (11 / @desktopColumns * 100%);
+@twelveDesktop  : (12 / @desktopColumns * 100%);
+
 @oneWide        : (1 / @columnCount * 100%);
 @twoWide        : (2 / @columnCount * 100%);
 @threeWide      : (3 / @columnCount * 100%);
