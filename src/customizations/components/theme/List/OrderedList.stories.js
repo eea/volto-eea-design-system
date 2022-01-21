@@ -68,9 +68,9 @@ function OrderedList(items, selection, animated, divided, size, horizontal) {
       {items.map((item, index) => (
         <List.Item key={index}>
           {item.content}
-          <List.List>
+          <List.List role="list">
             {item.subList.map((sub, subIndex) => (
-              <List.Item key={subIndex} as="a">
+              <List.Item key={subIndex} as="a" role="listitem">
                 {sub.content}
               </List.Item>
             ))}
