@@ -2,7 +2,6 @@
 title: API
 ---
 
-
 ## API
 
 <SelectJSDoc />
@@ -34,6 +33,6 @@ It's also possible to use the `Select`'s `autoInit` method and pass specific lab
 ```js
 var select = ECL.Select.autoInit(
   document.querySelector('[data-ecl-select-multiple]'),
-  { defaultText: 'string', searchText: 'string', selectAllText: 'string' }
+  { defaultText: 'string', searchText: 'string', selectAllText: 'string' },
 );
 ```

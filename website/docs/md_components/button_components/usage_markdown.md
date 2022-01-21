@@ -38,11 +38,16 @@ Use for medium-emphasis actions. They contain actions that are important but are
 - Do not use for navigation
 - Don't use an icon when it is not relevant or necessary to the action
 
-# Text link Button 
+# Text link Button
+
 Use for low-emphasis actions or for buttons that could have a long length text. It can be grouped with other buttons or placed independently.
+
 ## When to use
+
 - use with low emphasis in a button group
 - use on pages/cards when the main focus should be the content and not the button
 - when there is a single action intended
+
 ## When not to use
+
 - do not use for navigation purpose

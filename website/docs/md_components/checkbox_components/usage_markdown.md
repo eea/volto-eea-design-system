@@ -1,6 +1,7 @@
 ---
 title: Usage
 ---
+
 The checkbox is a form input for users to choose one or more options from the list of selections.
 
 ## Dos

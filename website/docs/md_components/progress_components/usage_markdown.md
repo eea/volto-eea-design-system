@@ -1,4 +1,3 @@
-
 Pagination component is the control to navigate through multiple pages.
 
 ## Do's

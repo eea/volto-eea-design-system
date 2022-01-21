@@ -1,7 +1,4 @@
-
 The horizontal menu is used as a primary navigation and it can display up to 2 levels. It directs users to the pages where they need to visit.
-
-
 
 ## Do's
 

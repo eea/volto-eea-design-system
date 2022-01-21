@@ -1,4 +1,3 @@
-
 ## Data attributes
 
 Please pay attention to the following attributes before going further into implementing the JavaScript behaviors of the component:

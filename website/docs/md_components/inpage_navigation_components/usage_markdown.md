@@ -1,4 +1,3 @@
-
 The in-page navigation is a vertical menu containing (anchored) links to H2-headings on long content pages. It gives the user an overview of the page contents and has a fixed position (does not move while scrolling) at either the left side of a page on desktop or top-bar on mobile. This component helps users scan of the page quickly contents and may potentially reduce vertical scrolling, allowing users to easily jump straight to the segment of the page.
 
 ## Do's

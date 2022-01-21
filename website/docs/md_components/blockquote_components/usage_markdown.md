@@ -1,4 +1,3 @@
-
 The blockquotes component is used to capture users' attention of an excerpt, testimonial, or a quote cited from the article or other sources. The design style makes the quoted section more distinguishable than the rest of the content in the web page.
 
 ## Do's

@@ -1,4 +1,3 @@
-
 A media container is used to display media items (video, audio, image or other data) with a caption.
 
 ## Do's

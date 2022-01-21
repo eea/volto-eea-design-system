@@ -4,10 +4,10 @@ order: 2
 ---
 
 ## Principles
+
 ## Communication is key
 
 Although we value an aesthetically pleasing use of color, clear communication is our focus. We use colors to support the purpose of the content, communicating things like hierarchy of information, interactive states, and the difference between distinct elements.
-
 
 ## Colors follow accessibility guidelines
 
