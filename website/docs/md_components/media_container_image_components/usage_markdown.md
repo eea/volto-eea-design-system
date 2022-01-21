@@ -1,24 +1,10 @@
-A media container is used to display media items (video, audio, image or other data) with a caption.
+ Images must have natural snapshots that show unique situations.
 
-## Do's
-
-- always include thumbnails
-- be descriptive and concise in the caption to communicate the subject of the media file
-- write captions that are short, distinct and indicative and communicate the subject of the media content
-- include ALT tag
-- select appropriate images for video thumbnails, they need to depict what is in the audio or video file
-
-## Don'ts
-
-- don't choose images which are too complex to be distinguished in thumbnail size
-- don't automatically play audio or video files when a user arrives on a page (or scrolls to a media container)
-- don't automatically play next items after an audio or video item finished
-
-## When to use
-
-- whenever there is a need to display a media file
-- when you want to display content that's found on external sources (A-V Portal, Youtube, Vimeo, etc., done through iFrame)
-
-## When not to use
-
-- do not use the media container if there are above 5 consecutive items (this would make navigation more difficult)
+## Do’s
+•	use stylistic tools such as light, perspective, color, focus and composition to tell stories that are authentic and believable.
+•	The content of the photographs should be positive, optimistic, natural, realistic, warm, and welcoming. Framing should be playful and feel spontaneous
+## Don’ts
+•	Do not use images that are too dark or do not have enough contrast
+•	Do not use overlaying gradients
+•	images that are too static or that appear too symmetrical should not be used
+•	Do not Use images that are over exposed or over saturated.

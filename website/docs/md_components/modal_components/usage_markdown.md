@@ -1,18 +1,11 @@
-The horizontal menu is used as a primary navigation and it can display up to 2 levels. It directs users to the pages where they need to visit.
+Modals appear on top of the main content and require user interaction. This dialog disables the main content until the user explicitly interacts with the modal dialog.
 
-## Do's
+## Do’s
+•	Use modal dialogs for important warnings, to prevent or correct critical errors.
+•	Use modal dialogs to request the user to enter information critical to continuing the current process.
+•	Modal dialogs can be used to fragment a complex workflow into simpler steps.
 
-- keep first level items (parent pages) labels short, distinct and use maximum 16 characters including spaces, otherwise they will be hidden under a hamburger menu (☰) (for ENG labels, keep in mind a 20% buffer for other languages)
-- keep second level items (child pages) labels short, distinct and use maximum 32 characters (for ENG labels, keep in mind a 20% buffer for other languages)
-
-## Don'ts
-
-- do not use for anything else except the website's main navigation
-
-## When to use
-
-- use for primary navigation
-
-## When not to use
-
-- when you only have a one-page or a content shallow web site
+## Don’ts
+•	Do not use modal dialogs for nonessential information that is not related to the current user flow.
+•	Avoid modal dialogs that interrupt high-stake processes
+•	Avoid modal dialogues for complex decision making that require additional sources of information unavailable in the modal.

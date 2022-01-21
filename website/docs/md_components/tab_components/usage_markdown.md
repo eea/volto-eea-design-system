@@ -1,17 +1,18 @@
-Pagination component is the control to navigate through multiple pages.
+The tabs component lets users navigate between related sections of content, displaying one section at a time.
 
-## Do's
+## Do’s
+Tabs can be useful for users to quickly switch between related information if:
+•	Your content can be usefully separated into sections
+•	The first section is more relevant than the others for most users
+•	users will not need to view all the sections at once
 
-- place the pagination below the list of items
-
-## Don'ts
-
-- don't replace this component with an "infinite scrolling" feature
-
-## When to use
-
-- to show long lists otherwise redundant scrolling in one page
-
-## When not to use
-
-- don't use to break unrelated content on different pages
+## Don’ts
+Tabs hide content from users and not everyone will notice them or understand how they work.
+Do not use tabs if your users might need to:
+•	read all the content in order, for example, to understand a step-by-step process
+•	compare information in different tabs - having to memorize information and switch between tabs s can be frustrating 
+Test your content without tabs first. Consider if it is better to:
+•	simplify and reduce the amount of content
+•	split the content across multiple pages
+•	keep the content on a single page, separated by headings
+•	use a table of contents to let users navigate quickly to specific sections of content
