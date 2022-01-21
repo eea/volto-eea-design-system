@@ -4,9 +4,9 @@
 div.ui.popup {
   padding: @poppupPadings;
   border-radius: @defaultBorderRadius;
+
   svg.icon {
     line-height: 1rem;
     vertical-align: middle;
   }
 }
-
