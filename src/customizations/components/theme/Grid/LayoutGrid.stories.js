@@ -54,13 +54,13 @@ export const Columns12 = (args) => (
         <p>col-lg-2 col-md-3 col-sm-1</p>
       </div>
       <div
-        className="col-lg-2 col-lg-offset-10 col-md-3 col-sm-1"
+        className="col-lg-2 col-lg-offset-8 col-md-3 col-sm-1"
         style={{
           backgroundColor: 'lightblue',
           padding: '5px',
         }}
       >
-        <p>col-lg-offset-10</p>
+        <p>col-lg-offset-8</p>
       </div>
     </Grid.Row>
     <Grid.Row>
