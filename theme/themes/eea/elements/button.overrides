@@ -16,15 +16,15 @@ button.ui.buttons .button,
 button.ui.buttons {
   padding: @buttonPadings;
   border: @eeaButtonBorder;
-  border-radius: @borderRadius;
-  font-family: @pageFont;
-  font-size: @buttonFontSize;
-  font-weight: 500;
 
   /* Plain grey button as template */
   border-color: @silverGray;
   background-color: @silverGray;
+  border-radius: @borderRadius;
   color: @black;
+  font-family: @pageFont;
+  font-size: @buttonFontSize;
+  font-weight: 500;
 
   &:hover,
   &:active,
