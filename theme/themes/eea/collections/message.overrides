@@ -4,11 +4,11 @@
 
 div.ui.message {
   border-radius: @borderRadius;
-  box-shadow: @boxShadow ;
+  box-shadow: @boxShadow;
 }
 
 div.ui.icon.message > .icon,
-div.ui.icon.message>.icon:not(.close) {
+div.ui.icon.message > .icon:not(.close) {
   font-size: @iconSize;
 }
 
