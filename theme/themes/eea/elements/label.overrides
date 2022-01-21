@@ -2,6 +2,32 @@
          Theme Overrides
 *******************************/
 
+div.ui.label {
+  padding: @verticalPadding @horizontalPadding;
+  border: @border;
+  border-radius: @borderRadius;
+  font-size: @fontSize;
+  font-weight: 500;
+}
+
+div.ui.label.medium-label {
+  background-color: @yellow;
+}
+
+div.ui.label.high-label {
+  background-color: @orange;
+  color: @white;
+}
+
+div.ui.label.highlight-label {
+  background-color: @secondaryColor;
+  color: @white;
+}
+
+div.ui.label.ui.pointing:before {
+  border-width: 0;
+}
+
 .ui.label {
   .icon.right {
     margin: 0 0 0 0.75em;
