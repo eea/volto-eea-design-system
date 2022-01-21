@@ -15,8 +15,8 @@ div.eea-tab {
     border-color: @silverGray;
 
     .active.item {
-      border-color: @secondaryColor  !important;
-      color: @secondaryColor  !important;
+      border-color: @secondaryColor !important;
+      color: @secondaryColor !important;
 
       &:hover {
         border-color: @secondaryColorDarken;
