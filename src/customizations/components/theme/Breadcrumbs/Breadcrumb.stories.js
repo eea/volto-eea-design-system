@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumb } from 'semantic-ui-react';
+import { Breadcrumb, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Breadcrumb',
@@ -23,19 +23,6 @@ export default {
         },
       },
     },
-    size: {
-      control: { type: 'select' },
-      options: ['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive'],
-      description: 'breadcrumb size',
-      table: {
-        type: {
-          summary: 'string',
-        },
-        defaultValue: {
-          summary: 'small',
-        },
-      },
-    },
     sections: {
       description: 'breadcrumb tabs',
       table: {
@@ -53,22 +40,24 @@ export default {
 //const Template = (args) => <Breadcrumb {...args}></Breadcrumb>;
 
 const Template = (args) => (
-  <Breadcrumb size={args.size}>
-    {args.sections.map((section, index) => (
-      <>
-        <Breadcrumb.Section
-          key={section.key}
-          link={section.link}
-          active={index === args.sections.length - 1}
-        >
-          {section.content}{' '}
-        </Breadcrumb.Section>
-        {index !== args.sections.length - 1 && (
-          <Breadcrumb.Divider icon={`${args.icon}`} />
-        )}
-      </>
-    ))}
-  </Breadcrumb>
+  <Container style={{backgroundColor:"lightgray",width:"100%",padding:"10px 0"}}>
+    <Breadcrumb>
+        {args.sections.map((section, index) => (
+          <>
+            <Breadcrumb.Section
+              key={section.key}
+              link={section.link}
+              active={index === args.sections.length - 1}
+            >
+              {section.content}{' '}
+            </Breadcrumb.Section>
+            {index !== args.sections.length - 1 && (
+              <Breadcrumb.Divider icon={`${args.icon}`} />
+            )}
+          </>
+        ))}
+    </Breadcrumb>
+  </Container>
 );
 
 export const Default = Template.bind({});
@@ -79,5 +68,4 @@ Default.args = {
     { key: 'Section 3', content: 'Section 3', link: true },
   ],
   icon: 'right chevron',
-  size: 'small',
 };
