@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 import { Col } from './Col';
@@ -8,190 +9,143 @@ export default {
   argTypes: {},
 };
 
-export const Columns12 = (args) => (
-  <div>
-    <Grid.Row>
-      <div
-        className="col-lg-3 col-md-2 col-sm-1"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
-      >
-        <p>col-lg-3 col-md-2 col-sm-1</p>
-      </div>
-    </Grid.Row>
-    <Grid.Row>
-      <div
-        className="col-lg-6 col-md-4 col-sm-2"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
-      >
-        <p>col-lg-6 col-md-4 col-sm-2</p>
-      </div>
-    </Grid.Row>
-    <Grid.Row>
-      <div
-        className="col-lg-12 col-md-8 col-sm-4"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
-      >
-        <p>col-lg-12 col-md-8 col-sm-4</p>
-      </div>
-    </Grid.Row>
-    <Grid.Row>
-      <div
-        className="col-lg-2 col-md-3 col-sm-1"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
-      >
-        <p>col-lg-2 col-md-3 col-sm-1</p>
-      </div>
-      <div
-        className="col-lg-2 col-lg-offset-8 col-md-3 col-sm-1"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
-      >
-        <p>col-lg-offset-8</p>
-      </div>
-    </Grid.Row>
-    <Grid.Row>
-      <div
-        className="col-lg-4 col-md-2 col-sm-2"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
-      >
-        <p>col-lg-4 col-md-2 col-sm-2</p>
-      </div>
-      <div
-        className="col-lg-4 col-md-3 col-sm-1"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
-      >
-        <p>col-lg-4 col-md-3 col-sm-1</p>
-      </div>
-      <div
-        className="col-lg-4 col-md-3 col-sm-1"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
-      >
-        <p>col-lg-4 col-md-3 col-sm-1</p>
-      </div>
-    </Grid.Row>
-  </div>
-);
+const getColumns = (number) => {
+  const columns = _.times(number, (i) => (
+    <Col
+      desktop="1"
+      tablet="1"
+      mobile="1"
+    >
+      <div className="col-example">col-lg-1<br/>col-md-1<br/>col-sm-1</div>
+    </Col>
+  ));
 
-export const Columns12WithCol = (args) => (
+  
+
+  return columns;
+};
+
+export const Basic12 = (args) => (
+  <Grid.Row>{getColumns(12)}</Grid.Row>
+)
+Basic12.storyName = "12 Columns";
+
+export const GridExamples = (args) => (
   <div>
+    <Grid.Row>
+      <Col 
+        desktop="6"
+        tablet="4"
+        mobile="2"
+      >
+        <div className="col-example">col-lg-6<br/>col-md-4<br/>col-sm-2</div>
+      </Col>
+      <Col 
+        desktop="6"
+        tablet="4"
+        mobile="2"
+      >
+        <div className="col-example">col-lg-6<br/>col-md-4<br/>col-sm-2</div>
+      </Col>
+    </Grid.Row>
+    <Grid.Row>
+      <Col
+        desktop="4"
+        tablet="3"
+        mobile="1"
+      >
+        <div className="col-example">col-lg-4<br/>col-md-3<br/>col-sm-1</div>
+      </Col>
+      <Col
+        desktop="4"
+        tablet="2"
+        mobile="2"
+      >
+        <div className="col-example">col-lg-4<br/>col-md-2<br/>col-sm-2</div>
+      </Col>
+      <Col
+        desktop="4"
+        tablet="3"
+        mobile="1"
+      >
+        <div className="col-example">col-lg-4<br/>col-md-3<br/>col-sm-1</div>
+      </Col>
+    </Grid.Row>
     <Grid.Row>
       <Col
         desktop="3"
         tablet="3"
-        mobile="3"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
+        mobile="1"
       >
-        <p>col-lg-3 col-md-2 col-sm-1</p>
+        <div className="col-example">col-lg-3<br/>col-md-3<br/>col-sm-1</div>
       </Col>
-    </Grid.Row>
-    <Grid.Row>
       <Col
         desktop="6"
-        tablet="4"
+        tablet="2"
         mobile="2"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
       >
-        <p>col-lg-6 col-md-4 col-sm-2</p>
+        <div className="col-example">col-lg-6<br/>col-md-2<br/>col-sm-2</div>
+      </Col>
+      <Col
+        desktop="3"
+        tablet="3"
+        mobile="1"
+      >
+        <div className="col-example">col-lg-3<br/>col-md-3<br/>col-sm-1</div>
       </Col>
     </Grid.Row>
     <Grid.Row>
       <Col
-        desktop="12"
-        tablet="8"
-        mobile="4"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
+        desktop="3"
+        tablet="2"
+        mobile="1"
       >
-        <p>col-lg-12 col-md-8 col-sm-4</p>
+        <div className="col-example">col-lg-3<br/>col-md-2<br/>col-sm-1</div>
+      </Col>
+      <Col
+        desktop="3"
+        tablet="2"
+        mobile="1"
+      >
+        <div className="col-example">col-lg-3<br/>col-md-2<br/>col-sm-1</div>
+      </Col>
+      <Col
+        desktop="3"
+        tablet="2"
+        mobile="1"
+      >
+        <div className="col-example">col-lg-3<br/>col-md-2<br/>col-sm-1</div>
+      </Col>
+      <Col
+        desktop="3"
+        tablet="2"
+        mobile="1"
+      >
+        <div className="col-example">col-lg-3<br/>col-md-2<br/>col-sm-1</div>
       </Col>
     </Grid.Row>
     <Grid.Row>
       <Col
         desktop="2"
-        tablet="3"
+        tablet="1"
         mobile="1"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
       >
-        <p>col-lg-2 col-md-3 col-sm-1</p>
+        <div className="col-example">col-lg-2<br/>col-md-1<br/>col-sm-1</div>
       </Col>
       <Col
-        className="col-lg-2 col-lg-offset-10 col-md-3 col-sm-1"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
-      >
-        <p>col-lg-offset-10</p>
-      </Col>
-    </Grid.Row>
-    <Grid.Row>
-      <Col
-        desktop="4"
-        tablet="2"
+        desktop="8"
+        tablet="6"
         mobile="2"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
       >
-        <p>col-lg-4 col-md-2 col-sm-2</p>
+        <div className="col-example">col-lg-8<br/>col-md-6<br/>col-sm-2</div>
       </Col>
       <Col
-        desktop="4"
-        tablet="3"
+        desktop="2"
+        tablet="1"
         mobile="1"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
       >
-        <p>col-lg-4 col-md-3 col-sm-1</p>
-      </Col>
-      <Col
-        desktop="4"
-        tablet="3"
-        mobile="1"
-        style={{
-          backgroundColor: 'lightblue',
-          padding: '5px',
-        }}
-      >
-        <p>col-lg-4 col-md-3 col-sm-1</p>
+        <div className="col-example">col-lg-2<br/>col-md-1<br/>col-sm-1</div>
       </Col>
     </Grid.Row>
   </div>
-);
+)

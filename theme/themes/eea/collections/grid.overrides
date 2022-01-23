@@ -1,6 +1,13 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+.col-example {
+  background: @primaryColor;
+  color: @white;
+  padding: 10px;
+}
+
 /*
 .grid .column {
   min-width: @fourColumn !important;
