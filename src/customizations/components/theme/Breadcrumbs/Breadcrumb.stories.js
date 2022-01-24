@@ -1,5 +1,7 @@
 import React from 'react';
 import { Breadcrumb, Container } from 'semantic-ui-react';
+import homeSVG from '@plone/volto/icons/home.svg';
+import { Icon } from '@plone/volto/components';
 
 export default {
   title: 'Components/Breadcrumb',
@@ -40,13 +42,17 @@ export default {
 //const Template = (args) => <Breadcrumb {...args}></Breadcrumb>;
 
 const Template = (args) => (
-  <Container style={{backgroundColor:"lightgray",width:"100%",padding:"10px 0"}}>
-    <Breadcrumb>
+  <div className="eea-breadcrumb">
+    <Container>
+      <Breadcrumb>
+        <Breadcrumb.Section key="home" href="https://www.eea.europa.eu/">
+          <Icon name={homeSVG} size="16px" />
+        </Breadcrumb.Section>
         {args.sections.map((section, index) => (
           <>
             <Breadcrumb.Section
               key={section.key}
-              link={section.link}
+              href={section.href}
               active={index === args.sections.length - 1}
             >
               {section.content}{' '}
@@ -56,16 +62,17 @@ const Template = (args) => (
             )}
           </>
         ))}
-    </Breadcrumb>
-  </Container>
+      </Breadcrumb>
+    </Container>
+  </div>
 );
 
 export const Default = Template.bind({});
 Default.args = {
   sections: [
-    { key: 'Section 1', content: 'Section 1', link: true },
-    { key: 'Section 2', content: 'Section 2', link: true },
-    { key: 'Section 3', content: 'Section 3', link: true },
+    { key: 'Section 1', content: 'Section 1', href: '/#' },
+    { key: 'Section 2', content: 'Section 2', href: '/#' },
+    { key: 'Section 3', content: 'Section 3', href: '' },
   ],
   icon: 'right chevron',
 };

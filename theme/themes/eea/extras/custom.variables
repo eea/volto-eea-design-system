@@ -1,0 +1,36 @@
+/*******************************
+            Timeline
+*******************************/
+
+@timelineAlign: center;
+@timelineBoxShadow: @eeaGlobalShadow;
+@timelineBorder: none;
+
+//Colors
+@timelineBlue   : @darkCerulean;
+@timelineGreen  : @pineGreen;
+@timelineGrey   : @midGray;
+@timelineRed    : @red;
+@timelineOrange : @orange;
+@timelineYellow : @yellow;
+@timelineOlive  : @olive;
+@timelineTeal   : @teal;
+@timelineViolet : @violet;
+@timelinePurple : @purple;
+@timelinePink   : @pink;
+@timelineBrown  : @brown;
+
+/*******************************
+            Blockquote
+*******************************/
+@quoteColor: @secondaryColor;
+
+/*******************************
+        Inpage Navigation
+*******************************/
+
+@navBackground: @darkCerulean;
+@navColor: @white;
+
+
+

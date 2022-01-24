@@ -1,12 +1,11 @@
 import React from 'react';
 import { Container, Icon, Grid } from 'semantic-ui-react';
 import { Col } from '../Grid/Col';
-//import banner from '../../../../../theme/themes/eea/assets/images/banner.png';
 
-function Banner({ title, info }) {
+function Banner({ title, info, image }) {
   return (
     <div className="eea-page-banner">
-      <div className="eea-page-banner-image">
+      <div className={image ? 'eea-page-banner-image' : null}>
         <Container className="eea-page-banner-container">
           <div className="eea-page-banner-text">
             <Grid.Row className="eea-page-banner-text-row">
@@ -19,11 +18,11 @@ function Banner({ title, info }) {
               <Col desktop="3" tablet="2" mobile="4">
                 <div className="eea-page-banner-actions">
                   <div className="eea-page-banner-actions-bookmark">
-                    <Icon name="bookmark outline" color="white"></Icon>
+                    <Icon name="bookmark outline"></Icon>
                     Bookmark
                   </div>
                   <div className="eea-page-banner-actions-download">
-                    <Icon name="download" color="white"></Icon>
+                    <Icon name="download"></Icon>
                     Download
                   </div>
                 </div>

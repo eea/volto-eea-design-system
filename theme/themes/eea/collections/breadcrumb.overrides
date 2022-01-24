@@ -2,18 +2,28 @@
         Theme Overrides
 *******************************/
 
-.ui.breadcrumb {
+div.eea-breadcrumb .ui.breadcrumb {
   display: flex;
   align-items: center;
   padding-right: 1rem;
   padding-left: 1rem;
 
+  .section {
+    padding: 0 10px;
+  }
+
   a.section {
-    color: #0074a3;
+    color: @primaryColor;
+    font-size: @linkSize;
   }
 
   .section.active {
-    color: #4e7372;
+    font-size: @linkSize;
+    font-weight: @activeFontWeight;
+  }
+
+  .icon.divider {
+    color: @deepBlue;
   }
 
   .home.icon {

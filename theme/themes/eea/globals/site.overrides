@@ -14,35 +14,115 @@ p {
 h1 {
   font-size: 3rem !important;
 }
+
 h2 {
   font-size: 2.5rem !important;
 }
+
 h3 {
   font-size: 2.25rem !important;
 }
+
 h4 {
   font-size: 1.5rem !important;
 }
+
 h5 {
   font-size: 1.25rem !important;
+}
+
+/*-------------------
+      HEADER
+--------------------*/
+
+.eea-top-header {
+  display: flex;
+  height: 33px;
+  align-items: center;
+  background: @silverGray;
+}
+
+.eea-top-header .ui.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.eea-top-header-item {
+  display: flex;
+  align-items: center;
+  color: @japaneseIndigo;
+}
+
+#eea-official-union {
+  .ui.dropdown {
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
+    padding-left: 12px;
+    border: none !important;
+    border-radius: @defaultBorderRadius;
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+#eea-official-union-dropdown {
+  padding: 12px;
+
+  p,
+  a {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+#eea-top-header-theme-sites.ui.dropdown {
+  border: none !important;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#eea-theme-sites-dropdown {
+  border: none !important;
+  border-radius: @defaultBorderRadius;
+}
+
+#eea-theme-sites-list {
+  width: 200px;
+  width: 250px;
+  padding: 12px;
+  white-space: pre-wrap;
+}
+
+@media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {
+  #eea-theme-sites-dropdown {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: @tabletBreakpoint + 1) {
+  #eea-theme-sites-dropdown {
+    display: none;
+  }
 }
 
 /*-------------------
       FOOTER
 --------------------*/
 
-.eea-footer-container { 
-  max-width: 1400px;
+.eea-footer-container {
   width: 100%;
+  max-width: 1400px;
   margin: auto;
 }
 
 .eea-footer {
-  background: linear-gradient(180deg, #009591 -1.72%, #2E3E4C 61.15%);
-  color: @white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: linear-gradient(180deg, #009591 -1.72%, #2e3e4c 61.15%);
+  color: @white;
   font-family: @pageFont;
   font-size: @fontSize;
 }
@@ -72,8 +152,8 @@ p.eea-footer-contact-address {
 /* Theme sites logos */
 .flex-and-wrap {
   display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .footer-logo-row {
@@ -82,10 +162,12 @@ p.eea-footer-contact-address {
 
 .eea-theme-site-logo {
   padding: 1rem;
+
   img {
-      margin: auto;
+    margin: auto;
   }
 }
+
 .eea-footer-logo-description {
   margin: 5px 0 0 25px;
 }
@@ -93,7 +175,8 @@ p.eea-footer-contact-address {
 .eea-theme-sites {
   padding: 2rem 0;
 }
-.eea-theme-sites .row  {
+
+.eea-theme-sites .row {
   img {
     margin: auto;
   }
@@ -101,14 +184,16 @@ p.eea-footer-contact-address {
 
 .eea-footer-links {
   display: flex;
-  align: center;
   justify-content: flex-end;
   margin-top: 2rem;
+  align: center;
+
   a {
-    color: @white;
-    font-weight: 100;
-    cursor: pointer;
     padding-left: 3rem;
+    color: @white;
+    cursor: pointer;
+    font-weight: 100;
+
     &:hover,
     &:active {
       color: @secondaryColor;
@@ -122,50 +207,56 @@ p.eea-footer-contact-address {
 }
 
 .ionet-logo img {
-  float: left;
-  margin-left: 25px;
   margin-right: 20px;
+  margin-left: 25px;
+  float: left;
 }
 
 .ionet-logo p {
+  padding-top: 5px;
+  font-size: 17px !important;
   font-weight: bold;
   line-height: 1.8rem;
-  font-size: 17px !important;
-  padding-top: 5px;
 }
 
 .eea-footer-visual {
   width: 100%;
-  background-image: url(../assets/images/Footer/Extras/abstract-visual.svg);
-  background-size: 200% 200%;
-  background-position: center;
   padding: 5rem 0 3rem;
+  background-image: url(../assets/images/Footer/Extras/abstract-visual.svg);
+  background-position: center;
+  background-size: 200% 200%;
 }
 
-
-/********************************************************** banner */
+/*-------------------
+      BANNER
+--------------------*/
 
 .eea-page-banner {
   width: 100%;
   min-height: 450px;
+  background: @primaryColor;
 }
 
 .eea-page-banner-image {
+  top: 456px;
+  min-height: 450px;
   background-image: url(../assets/images/banner.png);
   background-repeat: no-repeat;
-  top: 456px;
   background-size: cover;
-  min-height: 450px;
 }
 
 div.ui.container.eea-page-banner-container {
-  color: white;
-  background: linear-gradient(0deg, rgba(31, 49, 65, 0.85) 0%, rgba(0, 36, 78, 0) 88.6%);;
-  opacity: 0.9;
   height: 100%;
   min-height: 450px;
-  margin-left: 0 !important;
   margin-right: 0 !important;
+  margin-left: 0 !important;
+  background: linear-gradient(
+    0deg,
+    rgba(31, 49, 65, 0.85) 0%,
+    rgba(0, 36, 78, 0) 88.6%
+  );
+  color: white;
+  opacity: 0.9;
 }
 
 .eea-page-banner-text {
@@ -174,29 +265,32 @@ div.ui.container.eea-page-banner-container {
 
 .eea-page-banner-title {
   h1 {
-    font-weight: 700;
     max-width: 626px;
     margin-top: 56px;
+    font-weight: 700;
   }
+
   p.eea-page-banner-meta {
-    font-weight: 500;
     font-size: 14px;
+    font-weight: 500;
     line-height: 16px;
   }
 }
 
 .eea-page-banner-actions {
   float: right;
+
   div {
     display: flex;
     margin: 3px 0;
   }
+
   i.icon {
     margin: 0 5px 5px 0;
   }
 }
 
 .eea-page-banner-text-row {
-    display: flex;
-    align-items: end;
+  display: flex;
+  align-items: end;
 }
