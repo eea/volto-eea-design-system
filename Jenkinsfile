@@ -107,6 +107,7 @@ pipeline {
       }
     }
 
+/*
     stage('Integration tests') {
       when {
         allOf {
@@ -163,6 +164,7 @@ pipeline {
         )
       }
     }
+*/
 
     stage('Report to SonarQube') {
       when {
