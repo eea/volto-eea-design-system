@@ -2,7 +2,7 @@ import React from 'react';
 import { List } from 'semantic-ui-react';
 
 export default {
-  title: 'Components/List/UnorderedList',
+  title: 'Components/List/Unordered list',
   component: List,
   argTypes: {
     size: {

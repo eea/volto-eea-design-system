@@ -2,7 +2,7 @@ import React from 'react';
 import { List } from 'semantic-ui-react';
 
 export default {
-  title: 'Components/List/DescriptionList',
+  title: 'Components/List/Description list',
   component: List,
   argTypes: {
     verticalAlign: {

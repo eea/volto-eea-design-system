@@ -19,7 +19,7 @@
 
   &:active,
   &:focus {
-    border: 2px solid @policeBlue !important;
+    border: 2px solid @deepBlue !important;
   }
 }
 
@@ -35,7 +35,7 @@ textarea {
 
   &:active,
   &:focus {
-    border: 2px solid @policeBlue !important;
+    border: 2px solid @deepBlue !important;
   }
 }
 
