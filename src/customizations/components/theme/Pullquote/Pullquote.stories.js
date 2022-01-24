@@ -43,7 +43,13 @@ export default {
 
 const Template = (args) => (
   <Container>
+    <p>{args.content}</p>
     <Pullquote {...args}></Pullquote>
+    <p>{args.content}</p>
+    <p>{args.content}</p>
+    <p>{args.content}</p>
+    <p>{args.content}</p>
+    <p>{args.content}</p>
   </Container>
 );
 
