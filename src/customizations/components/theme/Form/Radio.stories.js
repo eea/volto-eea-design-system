@@ -166,30 +166,28 @@ function Binary({
         <Message header="Error Message" content={errorMessage} negative />
       ) : null}
       <Form.Field error={invalid}>
-        
-          <Radio
-            className="eeaRadio"
-            label="Yes"
-            name="radioGroup"
-            value="yes"
-            checked={active === 'yes'}
-            onChange={handleChange}
-            id="radio-yes"
-          ></Radio>
+        <Radio
+          className="eeaRadio"
+          label="Yes"
+          name="radioGroup"
+          value="yes"
+          checked={active === 'yes'}
+          onChange={handleChange}
+          id="radio-yes"
+        ></Radio>
         <label htmlFor="radio-yes"> </label>
       </Form.Field>
       <Form.Field error={invalid}>
-       
-          <Radio
-            className="eeaRadio"
-            label="No"
-            name="radioGroup"
-            value="no"
-            checked={active === 'no'}
-            onChange={handleChange}
-            id="radio-no"
-          ></Radio>
-         <label htmlFor="radio-no"> </label>
+        <Radio
+          className="eeaRadio"
+          label="No"
+          name="radioGroup"
+          value="no"
+          checked={active === 'no'}
+          onChange={handleChange}
+          id="radio-no"
+        ></Radio>
+        <label htmlFor="radio-no"> </label>
       </Form.Field>
     </Form>
   );

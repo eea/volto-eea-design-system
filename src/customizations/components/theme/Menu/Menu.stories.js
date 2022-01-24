@@ -9,7 +9,19 @@ export default {
       handles: ['click'],
     },
   },
-  argTypes: {},
+  argTypes: {
+    items: {
+      description: 'array of menu tab names',
+      table: {
+        type: {
+          summary: 'object',
+        },
+        defaultValue: {
+          summary: ' "" ',
+        },
+      },
+    },
+  },
 };
 
 function MenuContent({ items, secondary, pointing, tabular, text, vertical }) {
@@ -68,4 +80,63 @@ Playground.args = {
   tabular: false,
   text: false,
   vertical: false,
+};
+
+Playground.argTypes = {
+  secondary: {
+    description:
+      'a menu can adjust its appearance to de-emphasize its contents',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: {
+        summary: false,
+      },
+    },
+  },
+  pointing: {
+    description: 'a menu can point to show its relationship to nearby content',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: {
+        summary: false,
+      },
+    },
+  },
+  tabular: {
+    description: 'a menu can be formatted to show tabs of information',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: {
+        summary: false,
+      },
+    },
+  },
+  text: {
+    description: 'a menu can be formatted for text content.',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: {
+        summary: false,
+      },
+    },
+  },
+  vertical: {
+    description: 'vertical menu displays elements vertically',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: {
+        summary: false,
+      },
+    },
+  },
 };
