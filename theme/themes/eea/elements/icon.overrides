@@ -30,6 +30,18 @@ for instance `lemon icon` not `lemon outline icon` since there is only one lemon
             Icons
 *******************************/
 
+@font-face {
+  font-display: swap;
+  font-family: 'Icons';
+  src: @fallbackSRC;
+  src: @src;
+  font-style: normal;
+  font-weight: @normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+}
+
 /* Deprecated *In/Out Naming Conflict) */
 i.icon.linkedin.in:before {
   content: '\f0e1';
@@ -4721,6 +4733,7 @@ i.icon.youtube.play:before {
 .loadOutlineIcons() when (@importOutlineIcons) {
   /* Load & Define Icon Font */
   @font-face {
+    font-display: swap;
     font-family: @outlineFontName;
     font-style: normal;
     font-variant: normal;
@@ -5226,6 +5239,7 @@ i.icon.youtube.play:before {
 .loadBrandIcons() when (@importBrandIcons) {
   /* Load & Define Brand Font */
   @font-face {
+    font-display: swap;
     font-family: @brandFontName;
     font-style: normal;
     font-variant: normal;
