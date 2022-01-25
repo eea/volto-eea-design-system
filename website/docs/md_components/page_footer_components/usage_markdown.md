@@ -1,8 +1,3 @@
----
-title: Usage
-order: 1
----
-
 The core footer provides supplementary information such as copyright, legal, privacy, social media, contact information and links to other important sites within the European Commission ecosystem. It is always placed at the bottom of every page.
 
 ## Anatomy

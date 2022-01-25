@@ -1,7 +1,3 @@
----
-title: Usage
----
-
 # Default single select
 
 The select component, is a widget which displays a list of selectable items from which the user can select one values.

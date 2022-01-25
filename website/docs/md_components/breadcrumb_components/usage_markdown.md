@@ -1,7 +1,3 @@
----
-title: Usage
----
-
 The Breadcrumb informs the users on their current location relative to the homepage of the website and allows them to navigate to higher levels. It is a series links except the last item in the group, which is the current page.
 
 ### Dos

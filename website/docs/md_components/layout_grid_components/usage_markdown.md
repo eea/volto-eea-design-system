@@ -1,7 +1,3 @@
----
-title: Grid
----
-
 ## The grid:
 
 - containers are required when using our default grid system as they are the most basic layout elements, representing a means to horizontally align components or content elements - this is done by invoking `.ecl-container`
