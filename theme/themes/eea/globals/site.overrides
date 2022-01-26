@@ -52,6 +52,8 @@ h5 {
   display: flex;
   align-items: center;
   color: @japaneseIndigo;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 #eea-official-union {
@@ -63,7 +65,7 @@ h5 {
     border: none !important;
     border-radius: @defaultBorderRadius;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 700;
   }
 }
 
@@ -80,31 +82,96 @@ h5 {
 #eea-top-header-theme-sites.ui.dropdown {
   border: none !important;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
-#eea-theme-sites-dropdown {
+#eea-official-union-dropdown,
+#eea-theme-sites-dropdown,
+#eea-top-header-theme-sites {
   border: none !important;
   border-radius: @defaultBorderRadius;
 }
 
 #eea-theme-sites-list {
-  width: 200px;
   width: 250px;
   padding: 12px;
   white-space: pre-wrap;
 }
 
-@media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {
-  #eea-theme-sites-dropdown {
+#eea-top-header-language-dropdown {
+  border: none !important;
+}
+
+.eea-main-header {
+  height: 160px;
+  .ui.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 160px;
+    .row {
+      padding: 0 0;
+    }
+  }
+}
+
+img#eea-logo {
+  max-width: 348px;
+  margin-top: 20px;
+}
+
+.eea-theme-site-item {
+  margin: 5px 0;
+}
+
+.eea-main-header-menu {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.eea-main-menu.ui.text.menu {
+  width: 100%;
+  max-height: 20px;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.eea-main-menu-item {
+  color: #3D5265;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.eea-header-burger-action {
+  background-color: @mediumPersianBlue;
+  height: 160px;
+  width: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eea-header-search-action {
+  background-color: @darkCyan;
+  height: 160px;
+  width: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: @tabletBreakpoint) {
+  #eea-top-header-theme-sites {
     display: none;
   }
 }
 
-@media only screen and (min-width: @tabletBreakpoint + 1) {
-  #eea-theme-sites-dropdown {
-    display: none;
-  }
+#eea-search-box {
+  height: 90vh;
+  background: linear-gradient(340.97deg, @darkCerulean 9.19%, #009591 77.47%);
+  z-index: 999;
 }
 
 /*-------------------

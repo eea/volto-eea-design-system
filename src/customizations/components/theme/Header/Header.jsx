@@ -4,15 +4,17 @@
  */
 
 import React, { Component } from 'react';
-import { Container, Segment, Dropdown, Image, Menu } from 'semantic-ui-react';
+import { Container, Dropdown, Image, Menu, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import logo from '../../../../../theme/themes/eea/assets/images/Header/EeaLogo.png';
-//import menuIcon from '../../../../../theme/themes/eea/assets/images/Header/hamburgerMenuIcon.png';
-import searchIcon from '../../../../../theme/themes/eea/assets/images/Header/searchIcon.png';
-import vector from '../../../../../theme/themes/eea/assets/images/Header/Vector.png';
-import eeaIcon from '../../../../../theme/themes/eea/assets/images/Header/eeaIcon.png';
-//import arrow from '../../../../../theme/themes/eea/assets/images/Header/down-arrow.png';
+import eeaFlag from '../../../../../theme/themes/eea/assets/images/Header/eea.png';
+import logo from '../../../../../theme/themes/eea/assets/images/Header/eea-logo.svg';
+import searchIcon from '../../../../../theme/themes/eea/assets/images/Header/search.png';
+import closeIcon from '../../../../../theme/themes/eea/assets/images/Header/close.png';
+import HeaderSearchPopUp from './HeaderSearchPopUp';
+import HeaderMenuPopUp from './HeaderMenuPopUp';
+
+import { Col } from '../Grid/Col';
 
 //import { Logo, Navigation } from '@plone/volto/components';
 
@@ -67,11 +69,18 @@ class Header extends Component {
     super(props);
     this.state = {
       activeItem: '',
+      activeMenu: false,
+      activeSearch: false,
     };
   }
 
   menuOnClick = (e, x) => {
     this.setState({ activeItem: x.name });
+    this.setState({ activeMenu: true });
+  };
+
+  searchOnClick = (e, x) => {
+    this.setState({ activeSearch: !this.state.activeSearch });
   };
 
   render() {
@@ -80,78 +89,26 @@ class Header extends Component {
         key: 'item 1',
         name: 'Item 1',
         active: false,
-        style: {
-          width: '111.49px',
-          height: '14.54px',
-          marginRight: '20.51px',
-          fontSize: '18px',
-          fontWeight: 'bold',
-          color: '#3D5265',
-        },
       },
       {
         key: 'item 2',
         name: 'Item 2',
         active: false,
-        style: {
-          width: '111.49px',
-          height: '14.54px',
-          marginRight: '20.51px',
-          fontSize: '18px',
-          fontWeight: 'bold',
-          color: '#3D5265',
-        },
       },
       {
         key: 'item 3',
         name: 'Item 3',
         active: false,
-        style: {
-          width: '111.49px',
-          height: '14.54px',
-          marginRight: '20.51px',
-          fontSize: '18px',
-          fontWeight: 'bold',
-          color: '#3D5265',
-        },
       },
       {
         key: 'item 4',
         name: 'Item 4',
         active: false,
-        style: {
-          width: '111.49px',
-          height: '14.54px',
-          marginRight: '20.51px',
-          fontSize: '18px',
-          fontWeight: 'bold',
-          color: '#3D5265',
-        },
       },
       {
         key: 'item 5',
         name: 'Item 5',
         active: false,
-        style: {
-          width: '111.49px',
-          height: '14.54px',
-          marginRight: '20.51px',
-          fontSize: '18px',
-          fontWeight: 'bold',
-          color: '#3D5265',
-        },
-      },
-      {
-        key: 'item 6',
-        name: 'Item 6',
-        active: false,
-        style: {
-          width: '111.49px',
-          height: '14.54px',
-          fontSize: '18px',
-          fontWeight: 'bold',
-          color: '#3D5265',
-        },
       },
     ];
 
@@ -187,159 +144,303 @@ class Header extends Component {
       { name: 'Türkçe', code: 'tr' },
     ];
 
-    const style1 = { ...items[1].style, fontSize: '22px', color: '#00928F' };
-
     return (
-      <Segment basic className="header-wrapper" role="banner">
-        <Container>
-          <div
-            className="top-header"
-            style={{
-              height: '29px',
-              width: '1380px',
-              backgroundColor: '#3D5265',
-              display: 'flex',
-              color: '#FFFFFF',
-              fontSize: '12px',
-              padding: '0',
-              alignItems: 'center',
-            }}
-          >
-            <div
-              className="top-header-info"
-              style={{
-                display: 'flex',
-                margin: '1px 403px 1px 153px',
-                alignItems: 'center',
-              }}
-            >
-              <p>
-                An official website of the European Union |{' '}
-                <a
-                  href="/#"
-                  style={{ textDecoration: 'underline', color: '#FFFFFF' }}
-                >
-                  See all EU institutions and bodies
-                </a>{' '}
-              </p>
+      <div className="eea-header">
+        <div className="eea-top-header">
+          <Container>
+            <div id="eea-official-union" className="eea-top-header-item">
+              <Image src={eeaFlag} alt="eea flag"></Image>
+
+              <Dropdown
+                text="An official website of the European Union | How do you Know?"
+                icon="chevron down"
+              >
+                <Dropdown.Menu id="eea-official-union-dropdown">
+                  <div>
+                    <p>
+                      All official European Union website addresses are in the{' '}
+                      <b>europa.eu</b> domain.
+                    </p>
+                    <a
+                      href="https://europa.eu/european-union/contact/institutions-bodies_en"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      See all EU institutions and bodies
+                    </a>
+                  </div>
+                </Dropdown.Menu>
+              </Dropdown>
             </div>
 
             <Dropdown
-              text="EEA Theme Sites "
+              id="eea-top-header-theme-sites"
+              className="eea-top-header-item"
+              text="Environmental information systems"
               icon="chevron down"
-              style={{ marginRight: '85px' }}
-            ></Dropdown>
-
-            <div
-              className="language"
-              style={{ display: 'flex', alignItems: 'center' }}
             >
-              {/* EN <Image src={vector} style={{marginLeft:"5px"}}></Image> */}
-              <Dropdown
-                text="EN"
-                button
-                icon="none"
-                style={{
-                  backgroundColor: '#3D5265',
-                  height: '29px',
-                  color: 'white',
-                  fontSize: '12px',
-                }}
-              >
-                <Dropdown.Menu>
-                  {languagesList.map((item, index) => (
-                    <Dropdown.Item
-                      key={index}
-                      text={item.name + '(' + item.code + ')'}
-                    ></Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-              <Image
-                src={vector}
-                style={{ position: 'relative', left: '-30px' }}
-              ></Image>
-            </div>
-          </div>
+              <Dropdown.Menu id="eea-theme-sites-dropdown">
+                <div id="eea-theme-sites-list">
+                  <div className="eea-theme-site-item">
+                    <a href="/#" target="_blank">
+                      Biodiversity Information System for Europe
+                    </a>
+                  </div>
+                  <div className="eea-theme-site-item">
+                    <a href="/#" target="_blank">
+                      Climate Adaptation Platform
+                    </a>
+                  </div>
+                  <div className="eea-theme-site-item">
+                    <a href="/#" target="_blank">
+                      Copernicus in situ component
+                    </a>
+                    <br />
+                  </div>
+                  <div className="eea-theme-site-item">
+                    <a href="/#" target="_blank">
+                      European Industrial Emissions Portal
+                    </a>
+                  </div>
+                  <div className="eea-theme-site-item">
+                    <a href="/#" target="_blank">
+                      Forest Information System for Europe
+                    </a>
+                  </div>
+                  <div className="eea-theme-site-item">
+                    <a href="/#" target="_blank">
+                      Information Platform for Chemical Monitoring
+                    </a>
+                  </div>
+                  <div className="eea-theme-site-item">
+                    <a href="/#" target="_blank">
+                      Marine Water Information System for Europe
+                    </a>
+                  </div>
+                  <div className="eea-theme-site-item">
+                    <a href="/#" target="_blank">
+                      Fresh Water Information System for Europe
+                    </a>
+                  </div>
+                </div>
+              </Dropdown.Menu>
+            </Dropdown>
 
-          <div
-            className="header"
-            style={{
-              width: '1380px',
-              height: '135px',
-              display: 'flex',
-              marginBottom: '0px',
-              padding: '0px',
-            }}
-          >
-            <Image
-              src={logo}
-              style={{
-                width: '311px',
-                height: '109.6px',
-                margin: '11px 591.39px 7.4px 139px',
-              }}
-            />
-            <div
-              style={{
-                display: 'flex',
-                marginRight: '139.11px',
-                position: 'relative',
-                top: '-1px',
-              }}
+            <Dropdown
+              id="eea-top-header-language-dropdown"
+              className="eea-top-header-item"
+              text="EN"
+              icon="globe"
             >
-              <Image
-                src={searchIcon}
-                style={{ width: '93px', height: '135px' }}
-              />
-              <Image
-                src={eeaIcon}
-                style={{
-                  width: '92.5px',
-                  height: '135px',
-                  position: 'relative',
-                  left: '-2px',
-                }}
-              />
-            </div>
-          </div>
+              <Dropdown.Menu>
+                {languagesList.map((item, index) => (
+                  <Dropdown.Item
+                    key={index}
+                    text={item.name + '(' + item.code + ')'}
+                  ></Dropdown.Item>
+                ))}
+              </Dropdown.Menu>
+            </Dropdown>
+          </Container>
+        </div>
 
-          <div
-            className="header-menu"
-            style={{
-              width: '1366px',
-              height: '40px',
-              backgroundColor: '#F9F9F9',
-              display: 'flex',
-            }}
-          >
-            <Menu
-              text
-              style={{
-                width: '797.49px',
-                height: '20.54px',
-                margin: '10px 140.51px 6.46px 428px',
-                backgroundColor: '#F9F9F9',
-                position: 'relative',
-                top: '-10px',
-              }}
-            >
-              {items.map((item) => (
-                <Menu.Item
-                  name={item.key}
-                  style={
-                    this.state.activeItem !== item.key ? item.style : style1
-                  }
-                  onClick={this.menuOnClick}
-                  active={this.state.activeItem === item.key}
-                >
-                  {item.name}
-                </Menu.Item>
-              ))}
-            </Menu>
-          </div>
-        </Container>
-      </Segment>
+        <div className="eea-main-header">
+          <Container>
+            <Grid.Row>
+              <Col desktop="4" tablet="3" mobile="3">
+                <Image src={logo} id="eea-logo" alt="eea logo"></Image>
+              </Col>
+              <Col desktop="8" tablet="5" mobile="1">
+                <div className="eea-main-header-menu">
+                  {!this.state.activeSearch && !this.state.activeMenu && (
+                    <Menu className="eea-main-menu" text>
+                      {items.map((item) => (
+                        <Menu.Item
+                          className="eea-main-menu-item"
+                          name={item.key}
+                          onClick={this.menuOnClick}
+                          active={this.state.activeItem === item.key}
+                          key={item.key}
+                        >
+                          {item.name}
+                        </Menu.Item>
+                      ))}
+                    </Menu>
+                  )}
+                  {this.state.activeMenu && (
+                    <div
+                      className="eea-header-burger-action"
+                      onClick={() => {
+                        this.setState({ activeMenu: false });
+                      }}
+                      role="none"
+                    ></div>
+                  )}
+                  <div className="eea-header-search-action">
+                    <Image
+                      src={this.activeSearch ? closeIcon : searchIcon}
+                      alt="search icon"
+                      onClick={this.searchOnClick}
+                    ></Image>
+                  </div>
+                </div>
+              </Col>
+            </Grid.Row>
+          </Container>
+          {this.state.activeSearch && <HeaderSearchPopUp></HeaderSearchPopUp>}
+          {this.state.activeMenu && <HeaderMenuPopUp></HeaderMenuPopUp>}
+        </div>
+      </div>
+      // <Segment basic className="header-wrapper" role="banner">
+      //   <Container>
+      //     <div
+      //       className="top-header"
+      //       style={{
+      //         height: '29px',
+      //         width: '1380px',
+      //         backgroundColor: '#3D5265',
+      //         display: 'flex',
+      //         color: '#FFFFFF',
+      //         fontSize: '12px',
+      //         padding: '0',
+      //         alignItems: 'center',
+      //       }}
+      //     >
+      //       <div
+      //         className="top-header-info"
+      //         style={{
+      //           display: 'flex',
+      //           margin: '1px 403px 1px 153px',
+      //           alignItems: 'center',
+      //         }}
+      //       >
+      //         <p>
+      //           An official website of the European Union |{' '}
+      //           <a
+      //             href="/#"
+      //             style={{ textDecoration: 'underline', color: '#FFFFFF' }}
+      //           >
+      //             See all EU institutions and bodies
+      //           </a>{' '}
+      //         </p>
+      //       </div>
+
+      //       <Dropdown
+      //         text="EEA Theme Sites "
+      //         icon="chevron down"
+      //         style={{ marginRight: '85px' }}
+      //       ></Dropdown>
+
+      //       <div
+      //         className="language"
+      //         style={{ display: 'flex', alignItems: 'center' }}
+      //       >
+      //         {/* EN <Image src={vector} style={{marginLeft:"5px"}}></Image> */}
+      //         <Dropdown
+      //           text="EN"
+      //           button
+      //           icon="none"
+      //           style={{
+      //             backgroundColor: '#3D5265',
+      //             height: '29px',
+      //             color: 'white',
+      //             fontSize: '12px',
+      //           }}
+      //         >
+      //           <Dropdown.Menu>
+      //             {languagesList.map((item, index) => (
+      //               <Dropdown.Item
+      //                 key={index}
+      //                 text={item.name + '(' + item.code + ')'}
+      //               ></Dropdown.Item>
+      //             ))}
+      //           </Dropdown.Menu>
+      //         </Dropdown>
+      //         <Image
+      //           src={vector}
+      //           style={{ position: 'relative', left: '-30px' }}
+      //         ></Image>
+      //       </div>
+      //     </div>
+
+      //     <div
+      //       className="header"
+      //       style={{
+      //         width: '1380px',
+      //         height: '135px',
+      //         display: 'flex',
+      //         marginBottom: '0px',
+      //         padding: '0px',
+      //       }}
+      //     >
+      //       <Image
+      //         src={logo}
+      //         style={{
+      //           width: '311px',
+      //           height: '109.6px',
+      //           margin: '11px 591.39px 7.4px 139px',
+      //         }}
+      //       />
+      //       <div
+      //         style={{
+      //           display: 'flex',
+      //           marginRight: '139.11px',
+      //           position: 'relative',
+      //           top: '-1px',
+      //         }}
+      //       >
+      //         <Image
+      //           src={searchIcon}
+      //           style={{ width: '93px', height: '135px' }}
+      //         />
+      //         <Image
+      //           src={eeaIcon}
+      //           style={{
+      //             width: '92.5px',
+      //             height: '135px',
+      //             position: 'relative',
+      //             left: '-2px',
+      //           }}
+      //         />
+      //       </div>
+      //     </div>
+
+      //     <div
+      //       className="header-menu"
+      //       style={{
+      //         width: '1366px',
+      //         height: '40px',
+      //         backgroundColor: '#F9F9F9',
+      //         display: 'flex',
+      //       }}
+      //     >
+      //       <Menu
+      //         text
+      //         style={{
+      //           width: '797.49px',
+      //           height: '20.54px',
+      //           margin: '10px 140.51px 6.46px 428px',
+      //           backgroundColor: '#F9F9F9',
+      //           position: 'relative',
+      //           top: '-10px',
+      //         }}
+      //       >
+      //         {items.map((item) => (
+      //           <Menu.Item
+      //             name={item.key}
+      //             style={
+      //               this.state.activeItem !== item.key ? item.style : style1
+      //             }
+      //             onClick={this.menuOnClick}
+      //             active={this.state.activeItem === item.key}
+      //           >
+      //             {item.name}
+      //           </Menu.Item>
+      //         ))}
+      //       </Menu>
+      //     </div>
+      //   </Container>
+      // </Segment>
     );
   }
 }
