@@ -3,6 +3,7 @@
 *******************************/
 
 div.ui.statistic.eea-statistic {
+  width: 100%;
   > .value {
     color: @secondaryValueColor;
     font-family: @valueFont;
@@ -21,4 +22,16 @@ div.ui.statistic.eea-statistic {
 div.ui.statistic.eea-statistic > .value ~ .label,
 div.ui.statistics.eea-statistic .statistic > .value ~ .label {
   margin-top: @topLabelDistance;
+}
+
+@media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {
+  div.ui.statistic.eea-statistic {
+    width: inherit;
+  }
+}
+
+@media only screen and (min-width: @tabletBreakpoint + 1) {
+  div.ui.statistic.eea-statistic {
+    width: inherit;
+  }
 }
