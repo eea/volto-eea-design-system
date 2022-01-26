@@ -25,41 +25,6 @@ import Logo10 from '../../../../../theme/themes/eea/assets/images/Footer/Extras/
 
 function ThemeSites() {
   return (
-    // <Container>
-    //     <div className="flex-and-wrap">
-    //         <div className="theme-site-logo">
-    //           <Image src={Logo1}></Image>
-    //         </div>
-    //         <div className="theme-site-logo">
-    //           <Image src={Logo2}></Image>
-    //         </div>
-    //         <div className="theme-site-logo">
-    //           <Image src={Logo3}></Image>
-    //         </div>
-    //         <div className="theme-site-logo">
-    //           <Image src={Logo4}></Image>
-    //         </div>
-    //         <div className="theme-site-logo">
-    //           <Image src={Logo5}></Image>
-    //         </div>
-    //         <div className="theme-site-logo">
-    //           <Image src={Logo6}></Image>
-    //         </div>
-    //         <div className="theme-site-logo">
-    //           <Image src={Logo7}></Image>
-    //         </div>
-    //         <div className="theme-site-logo">
-    //           <Image src={Logo8}></Image>
-    //         </div>
-    //         <div className="theme-site-logo">
-    //           <Image src={Logo9}></Image>
-    //         </div>
-    //         <div className="theme-site-logo">
-    //           <Image src={Logo10}></Image>
-    //         </div>
-    //     </div>
-    // </Container>
-
     <Container>
       <div className="eea-theme-sites">
         <Grid.Row className="footer-logo-row">
@@ -78,8 +43,6 @@ function ThemeSites() {
           <div className="col-md-5ths col-sm-2 eea-theme-site-logo">
             <Image src={Logo5}></Image>
           </div>
-        </Grid.Row>
-        <Grid.Row className="footer-logo-row">
           <div className="col-md-5ths col-sm-2 eea-theme-site-logo">
             <Image src={Logo6}></Image>
           </div>

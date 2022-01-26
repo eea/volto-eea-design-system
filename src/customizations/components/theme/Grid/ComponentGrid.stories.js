@@ -22,7 +22,7 @@ const getDiv = (text) => {
   return <div className="col-example">{text}</div>;
 };
 
-export const Basic16 = (args) => <Grid>{getColumns(16, '16/16')}</Grid>;
+export const Basic16 = (args) => <Grid>{getColumns(16, '')}</Grid>;
 
 export const GridExamples = (args) => (
   <Grid>
