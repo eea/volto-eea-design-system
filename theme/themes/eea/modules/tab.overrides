@@ -13,7 +13,7 @@ div.eea-tab {
 
   .ui.secondary.pointing.menu {
     border-color: @silverGray;
-
+    
     .active.item {
       border-color: @secondaryColor !important;
       color: @secondaryColor !important;
@@ -27,5 +27,12 @@ div.eea-tab {
 
   .ui.bottom.attached.segment.active.tab {
     border: none;
+  }
+}
+
+@media only screen and (max-width: @mobileBreakpoint) {
+  div.eea-tab .ui.secondary.pointing.menu {
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 }
