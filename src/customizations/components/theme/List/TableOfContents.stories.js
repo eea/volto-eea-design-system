@@ -5,17 +5,6 @@ export default {
   title: 'Components/List/Table of contents',
   component: List,
   argTypes: {
-    size: {
-      control: {
-        type: 'select',
-      },
-      options: ['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive'],
-      description: 'a list can vary in size',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: ' "" ' },
-      },
-    },
     selection: {
       description: 'a selection list formats list items as possible choices',
       table: {
@@ -60,7 +49,6 @@ function TableOfContents(
   selection,
   animated,
   divided,
-  size,
   horizontal,
 ) {
   return (
@@ -69,7 +57,6 @@ function TableOfContents(
       selection={selection}
       animated={animated}
       divided={divided}
-      size={size}
       horizontal={horizontal}
     >
       {items.map((item, index) => (
@@ -94,7 +81,6 @@ export const Default = (args) => {
     args.selection,
     args.animated,
     args.divided,
-    args.size,
     args.horizontal,
   );
 };
@@ -137,6 +123,5 @@ Default.args = {
   selection: false,
   animated: false,
   divided: false,
-  size: 'small',
   horizontal: false,
 };

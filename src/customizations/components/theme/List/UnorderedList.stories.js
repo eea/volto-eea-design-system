@@ -5,17 +5,6 @@ export default {
   title: 'Components/List/Unordered list',
   component: List,
   argTypes: {
-    size: {
-      control: {
-        type: 'select',
-      },
-      options: ['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive'],
-      description: 'a list can vary in size',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: ' "" ' },
-      },
-    },
     animated: {
       description:
         'a list can animate to set the current item apart from the list',
@@ -48,11 +37,10 @@ export default {
   },
 };
 
-function UnorderedList(size, animated, divided, horizontal, items) {
+function UnorderedList( animated, divided, horizontal, items) {
   return (
     <List
       bulleted
-      size={size}
       animated={animated}
       divided={divided}
       horizontal={horizontal}
@@ -75,7 +63,6 @@ function UnorderedList(size, animated, divided, horizontal, items) {
 
 export const Default = (args) => {
   return UnorderedList(
-    args.size,
     args.animated,
     args.divided,
     args.horizontal,
@@ -84,7 +71,6 @@ export const Default = (args) => {
 };
 
 Default.args = {
-  size: 'small',
   animated: false,
   divided: false,
   horizontal: false,

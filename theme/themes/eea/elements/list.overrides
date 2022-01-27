@@ -2,7 +2,7 @@
          Theme Overrides
 *******************************/
 
-.ui.list item {
+.ui.list .item {
   font-family: @pageFont;
   font-size: @fontSize;
 }
