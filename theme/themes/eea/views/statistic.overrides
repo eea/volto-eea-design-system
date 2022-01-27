@@ -8,6 +8,7 @@ div.ui.small.statistics {
 
 div.ui.statistic.eea-statistic {
   width: 100%;
+
   > .value {
     color: @secondaryValueColor;
     font-family: @valueFont;
@@ -28,9 +29,9 @@ div.ui.statistics.eea-statistic .statistic > .value ~ .label {
   margin-top: @topLabelDistance;
 }
 
-.ui[class*="right floated"].statistic.eea-statistic {
-    float: right;
-    margin: 1rem;
+.ui[class*='right floated'].statistic.eea-statistic {
+  margin: 1rem;
+  float: right;
 }
 
 @media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {

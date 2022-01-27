@@ -24,11 +24,21 @@
       border-radius: @defaultBorderRadius;
       font-size: @relative14px;
     }
+
+    .content .header {
+      min-width: 132px;
+    }
   }
 
   .Timeline-line {
     background: @silverGray !important;
   }
+}
+
+.eea-timeline .ui.cards > .card > .content > .header:not(.ui),
+.eea-timeline .ui.card > .content > .header:not(.ui) {
+  overflow: unset;
+  text-overflow: unset;
 }
 
 /* Timeline Colors */
@@ -151,7 +161,6 @@
   }
 }
 
-
 @media only screen and (max-width: @mobileBreakpoint) {
   .eea-timeline .ui.grid .row div:nth-child(2) {
     width: 60% !important;
@@ -159,11 +168,11 @@
   .eea-timeline .ui.grid .row div(4) {
     width: 0px !important;
   }
+
   .Timeline-line {
     display: none;
   }
 }
-
 
 /*******************************
             Blockquote
@@ -197,6 +206,7 @@ blockquote {
 blockquote.pullquote {
   padding: 10px 0 40px;
   margin: 0;
+
   i.icon {
     font-size: 2rem;
   }
@@ -211,10 +221,10 @@ blockquote.pullquote {
 }
 
 @media only screen and (min-width: @tabletBreakpoint + 1) {
-
   .eea-pullquote-body {
     margin: 0 2rem;
   }
+
   blockquote.pullquote.eea-pullquote-left {
     width: 400px;
     padding: 0 1.5rem 1rem 0;
@@ -226,8 +236,6 @@ blockquote.pullquote {
     padding: 0 0 1rem 1.5rem;
     float: right;
   }
-
-
 }
 
 /*******************************

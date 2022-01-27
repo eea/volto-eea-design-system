@@ -16,14 +16,14 @@ div.ui.accordion.eea-accordion .eea-accordion-item {
     font-size: @h3;
 
     i.icon {
+      display: flex;
       width: 31px;
       height: 31px;
-      display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 25px !important;
       margin-right: 18px;
       color: @iconColor;
+      font-size: 25px !important;
       transition: @iconTransition;
     }
   }
@@ -47,35 +47,36 @@ div.ui.accordion.eea-accordion:not(.styled)
   .accordion
   .title
   ~ .content:not(.ui),
-  div.ui.accordion.eea-accordion:not(.styled) .title ~ .content:not(.ui) {
+div.ui.accordion.eea-accordion:not(.styled) .title ~ .content:not(.ui) {
   padding: 12px 24px;
 }
 
 @media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {
-  div.ui.accordion.eea-accordion .eea-accordion-item  div.content,
+  div.ui.accordion.eea-accordion .eea-accordion-item div.content,
   div.ui.accordion.eea-accordion:not(.styled)
-  .accordion
-  .title
-  ~ .content:not(.ui),
+    .accordion
+    .title
+    ~ .content:not(.ui),
   div.ui.accordion.eea-accordion:not(.styled) .title ~ .content:not(.ui) {
     padding: 12px 34px;
   }
-  div.ui.accordion.eea-accordion .eea-accordion-item .title {
-     padding: 11px 25px;
-  }
 
+  div.ui.accordion.eea-accordion .eea-accordion-item .title {
+    padding: 11px 25px;
+  }
 }
 
 @media only screen and (min-width: @tabletBreakpoint + 1) {
-  div.ui.accordion.eea-accordion .eea-accordion-item  div.content,
+  div.ui.accordion.eea-accordion .eea-accordion-item div.content,
   div.ui.accordion.eea-accordion:not(.styled)
-  .accordion
-  .title
-  ~ .content:not(.ui),
+    .accordion
+    .title
+    ~ .content:not(.ui),
   div.ui.accordion.eea-accordion:not(.styled) .title ~ .content:not(.ui) {
     padding: 12px 74px;
   }
+
   div.ui.accordion.eea-accordion .eea-accordion-item .title {
-     padding: 12px 25px;
+    padding: 12px 25px;
   }
 }

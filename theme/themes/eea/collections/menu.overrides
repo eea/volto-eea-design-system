@@ -50,19 +50,20 @@
 
 @media only screen and (max-width: @mobileBreakpoint) {
   .ui.pagination.eea-pagination.menu {
-    width: 100%;
     display: flex;
+    width: 100%;
     justify-content: space-between;
   }
+
   .ui.pagination.eea-pagination.menu .item {
     min-width: 1rem;
     padding: 7px;
   }
+
   .ui.pagination.eea-pagination.menu .active.item {
     padding: 12px;
   }
 }
-
 
 .ui.menu .item.personal-bar {
   position: fixed;

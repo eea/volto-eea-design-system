@@ -13,7 +13,7 @@ div.eea-tab {
 
   .ui.secondary.pointing.menu {
     border-color: @silverGray;
-    
+
     .active.item {
       border-color: @secondaryColor !important;
       color: @secondaryColor !important;

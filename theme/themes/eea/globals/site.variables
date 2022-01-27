@@ -290,7 +290,7 @@
 
 // Secondary Colors - Darker to lighter
 @japaneseIndigo   : #2E3E4C;
-@deepBlue       : #3D5265;
+@deepBlue         : #3D5265;
 @UCLABlue         : #54728C;
 @weldonBlue       : #7495B2;
 @lightSteelBlue   : #ACCAE5;
