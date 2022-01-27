@@ -5,17 +5,6 @@ export default {
   title: 'Components/Forms/Input',
   component: Input,
   argTypes: {
-    size: {
-      control: {
-        type: 'select',
-        options: ['mini', 'small', 'large', 'big', 'huge'],
-      },
-      description: 'input size',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'large' },
-      },
-    },
     type: {
       control: {
         type: 'select',
@@ -71,7 +60,6 @@ StandardInput.args = {
   labeltext: 'Input label',
   placeholder: 'Placeholder',
   type: 'text',
-  size: 'large',
   fluid: false,
 };
 
@@ -88,7 +76,6 @@ DisabledInput.args = {
   placeholder: 'Placeholder',
   type: 'text',
   disabled: true,
-  size: 'large',
   fluid: false,
 };
 DisabledInput.argTypes = {
@@ -122,7 +109,6 @@ LoadingInput.args = {
   placeholder: 'Placeholder',
   type: 'text',
   loading: true,
-  size: 'large',
   fluid: false,
 };
 LoadingInput.argTypes = {
@@ -148,7 +134,6 @@ ErrorInput.args = {
   placeholder: 'Placeholder',
   type: 'text',
   error: true,
-  size: 'large',
   fluid: false,
 };
 ErrorInput.argTypes = {

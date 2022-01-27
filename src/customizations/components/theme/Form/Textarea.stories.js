@@ -24,14 +24,7 @@ export default {
         type: { summary: 'integer' },
         defaultValue: { summary: 3 },
       },
-    },
-    fluid: {
-      description: 'take on the size of its container',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
+    }
   },
 };
 
