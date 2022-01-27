@@ -4,6 +4,7 @@
 
 .col-example {
   padding: 10px;
+  margin-bottom: 12px;
   background: @primaryColor;
   color: @white;
 }
