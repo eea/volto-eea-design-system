@@ -55,7 +55,7 @@ Default.args = {
     {
       menuItem: 'Tab 4',
       pane: 'Tab 4 Content',
-    }
+    },
   ],
 };
 

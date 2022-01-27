@@ -44,13 +44,7 @@ export default {
   },
 };
 
-function TableOfContents(
-  items,
-  selection,
-  animated,
-  divided,
-  horizontal,
-) {
+function TableOfContents(items, selection, animated, divided, horizontal) {
   return (
     <List
       ordered

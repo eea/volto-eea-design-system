@@ -90,7 +90,7 @@ DefaultItem.argTypes = {
   },
 };
 
-DefaultItem.storyName = "Featured Item"
+DefaultItem.storyName = 'Featured Item';
 
 export const DefaultGroup = Template.bind({});
 DefaultGroup.args = {
@@ -159,4 +159,4 @@ DefaultGroup.argTypes = {
   },
 };
 
-DefaultGroup.storyName = "Item Group"
+DefaultGroup.storyName = 'Item Group';

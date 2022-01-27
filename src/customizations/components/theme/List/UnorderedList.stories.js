@@ -37,7 +37,7 @@ export default {
   },
 };
 
-function UnorderedList( animated, divided, horizontal, items) {
+function UnorderedList(animated, divided, horizontal, items) {
   return (
     <List
       bulleted

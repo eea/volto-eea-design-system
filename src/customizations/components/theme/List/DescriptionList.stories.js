@@ -73,9 +73,7 @@ function DescriptionList(
       {items.map((item, index) => (
         <List.Item key={index}>
           <List.Content>
-            <List.Header>
-              {item.header}
-            </List.Header>
+            <List.Header>{item.header}</List.Header>
             <List.Description floated={floated}>
               {item.content}
             </List.Description>

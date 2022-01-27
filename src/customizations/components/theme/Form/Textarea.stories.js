@@ -24,7 +24,7 @@ export default {
         type: { summary: 'integer' },
         defaultValue: { summary: 3 },
       },
-    }
+    },
   },
 };
 
