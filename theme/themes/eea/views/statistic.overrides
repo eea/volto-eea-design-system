@@ -2,6 +2,10 @@
          Theme Overrides
 *******************************/
 
+div.ui.small.statistics {
+  margin: 0rem;
+}
+
 div.ui.statistic.eea-statistic {
   width: 100%;
   > .value {
@@ -22,6 +26,11 @@ div.ui.statistic.eea-statistic {
 div.ui.statistic.eea-statistic > .value ~ .label,
 div.ui.statistics.eea-statistic .statistic > .value ~ .label {
   margin-top: @topLabelDistance;
+}
+
+.ui[class*="right floated"].statistic.eea-statistic {
+    float: right;
+    margin: 1rem;
 }
 
 @media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {

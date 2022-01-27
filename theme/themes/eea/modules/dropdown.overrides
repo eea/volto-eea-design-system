@@ -10,7 +10,7 @@
 }
 
 .ui.dropdown {
-  height: auto !important;
+  height: 48px !important;
   border: @border !important;
   border-radius: @borderRadius !important;
   font-family: @pageFont !important;

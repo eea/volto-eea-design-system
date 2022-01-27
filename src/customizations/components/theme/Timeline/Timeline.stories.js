@@ -25,7 +25,7 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  direction: 'right',
+  direction: 'left',
   icon: 'user',
   time: 'Date and time',
   title: 'Title',
@@ -118,7 +118,7 @@ Default.argTypes = {
 
 export const Multiple = (args) => (
   <div className="eea-timeline">
-    <TimelineEEA {...args}></TimelineEEA>;
+    <TimelineEEA {...args}></TimelineEEA>
   </div>
 );
 
@@ -135,7 +135,7 @@ Multiple.args = {
       lineHeight: 2,
     },
     {
-      direction: 'right',
+      direction: 'left',
       icon: 'check circle',
       time: 'Date and time',
       title: 'Title 2',
