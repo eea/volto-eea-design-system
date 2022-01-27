@@ -15,7 +15,7 @@ On mobile, at a breakpoint of 480px, this layout grid uses 4 columns.
 
 ![](../md_components/static/grid2.png)
 
-On tablet, at a breakpoint of 768px, this layout grid uses 8 columns.
+On tablet, at a breakpoint of 834px, this layout grid uses 8 columns.
 
 ![](../md_components/static/grid3.png)
 

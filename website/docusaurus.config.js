@@ -14,9 +14,14 @@ module.exports = {
   organizationName: 'eea', // Usually your GitHub org/user name.
   projectName: 'volto-eea-design-system', // Usually your repo name.
   customFields: {
-    storyBookUrl: 'https://eea.github.io/volto-kitkat-frontend/',
+//    storyBookUrl: 'https://eea.github.io/volto-kitkat-frontend/',
+      storyBookUrl: 'http://192.168.30.188:6006',
   },
   themeConfig: {
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+    },
     navbar: {
       title: 'EEA Design System',
       logo: {
