@@ -8,25 +8,6 @@
   color: @white;
 }
 
-/*
-.grid .column {
-  min-width: @fourColumn !important;
-}
-
-@media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {
-  .grid .column {
-    min-width: @eightColumn !important;
-  }
-}
-
-@media only screen and (min-width: @tabletBreakpoint + 1) {
-  .grid .column {
-    //min-width: ~"calc(8.33333333% - 50px)" !important;
-    //min-width: calc(~"8.33333333% - " @gutterWidth);
-    min-width: @twelveColumn !important;
-  }
-}
-*/
 .ui.grid > .header.row {
   padding-bottom: 0;
 }

@@ -151,6 +151,20 @@
   }
 }
 
+
+@media only screen and (max-width: @mobileBreakpoint) {
+  .eea-timeline .ui.grid .row div:nth-child(2) {
+    width: 60% !important;
+  }
+  .eea-timeline .ui.grid .row div(4) {
+    width: 0px !important;
+  }
+  .Timeline-line {
+    display: none;
+  }
+}
+
+
 /*******************************
             Blockquote
 *******************************/
@@ -181,31 +195,39 @@ blockquote {
 }
 
 blockquote.pullquote {
-  padding: 40px 0 40px;
-
+  padding: 10px 0 40px;
+  margin: 0;
   i.icon {
     font-size: 2rem;
   }
 }
 
 .eea-pullquote-body {
-  margin: 0 2rem;
-}
-
-blockquote.pullquote.eea-pullquote-left {
-  width: 400px;
-  padding: 0 1.5rem 1rem 0;
-  float: left;
-}
-
-blockquote.pullquote.eea-pullquote-right {
-  width: 400px;
-  padding: 0 0 1rem 1.5rem;
-  float: right;
+  margin: 0;
 }
 
 .eea-quote-right {
   float: right;
+}
+
+@media only screen and (min-width: @tabletBreakpoint + 1) {
+
+  .eea-pullquote-body {
+    margin: 0 2rem;
+  }
+  blockquote.pullquote.eea-pullquote-left {
+    width: 400px;
+    padding: 0 1.5rem 1rem 0;
+    float: left;
+  }
+
+  blockquote.pullquote.eea-pullquote-right {
+    width: 400px;
+    padding: 0 0 1rem 1.5rem;
+    float: right;
+  }
+
+
 }
 
 /*******************************

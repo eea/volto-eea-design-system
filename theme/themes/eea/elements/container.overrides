@@ -9,6 +9,7 @@ div.ui.container {
   width: 100%;
   padding-right: @mobilePadding;
   padding-left: @mobilePadding;
+  margin: 0;
   transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);

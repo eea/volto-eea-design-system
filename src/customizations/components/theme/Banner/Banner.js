@@ -11,7 +11,7 @@ function Banner({ title, info, image }) {
             <Grid.Row className="eea-page-banner-text-row">
               <Col desktop="9" tablet="6" mobile="4">
                 <div className="eea-page-banner-title">
-                  <h1>{title}</h1>
+                  <p className="eea-page-banner-header">{title}</p>
                   <p className="eea-page-banner-meta">{info}</p>
                 </div>
               </Col>
@@ -24,6 +24,15 @@ function Banner({ title, info, image }) {
                   <div className="eea-page-banner-actions-download">
                     <Icon name="download"></Icon>
                     Download
+                  </div>
+                </div>
+
+                <div className="eea-page-banner-actions-mobile">
+                  <div className="eea-page-banner-actions-bookmark">
+                    <Icon name="bookmark outline"></Icon>
+                  </div>
+                  <div className="eea-page-banner-actions-download">
+                    <Icon name="download"></Icon>
                   </div>
                 </div>
               </Col>

@@ -28,13 +28,13 @@ class Footer extends Component {
       <div className="eea-footer">
         <div className="eea-footer-visual">
           <div className="eea-footer-container">
-            <h3 className="eea-footer-header">The EEA also contributes to</h3>
+            <p className="eea-footer-header">The EEA also contributes to</p>
 
             <ThemeSites />
 
             <Container className="eea-subfooter">
               <Grid.Row>
-                <Col desktop="7" tablet="5" mobile="4">
+                <Col desktop="7" tablet="4" mobile="4">
                   <div className="eea-footer-logos eea-subfooter-item">
                     <Image src={EEALogo}></Image>
                     <p className="eea-footer-logo-description">
@@ -52,9 +52,9 @@ class Footer extends Component {
                     </div>
                   </div>
                 </Col>
-                <Col desktop="5" tablet="3" mobile="4">
+                <Col desktop="5" tablet="4" mobile="4">
                   <div className="eea-subfooter-item">
-                    <h3>Contact us</h3>
+                    <p className="eea-subfooter-item-header">Contact us</p>
                     <div className="eea-footer-contact-item">
                       <Icon name="comment outline" size="big"></Icon>
                       Ask your question
@@ -82,9 +82,6 @@ class Footer extends Component {
                       </a>
                       <a href="/#">
                         <Icon size="big" name="rss"></Icon>
-                      </a>
-                      <a href="/#">
-                        <Icon size="big" name="instagram"></Icon>
                       </a>
                     </div>
                   </div>
