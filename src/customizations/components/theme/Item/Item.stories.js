@@ -90,6 +90,8 @@ DefaultItem.argTypes = {
   },
 };
 
+DefaultItem.storyName = "Featured Item"
+
 export const DefaultGroup = Template.bind({});
 DefaultGroup.args = {
   items: [
@@ -156,3 +158,5 @@ DefaultGroup.argTypes = {
     },
   },
 };
+
+DefaultGroup.storyName = "Item Group"
