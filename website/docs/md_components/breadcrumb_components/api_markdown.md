@@ -1,7 +1,3 @@
----
-title: API
----
-
 ## API
 
 <BreadcrumbJSDoc />

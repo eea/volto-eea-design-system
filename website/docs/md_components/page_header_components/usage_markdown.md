@@ -1,7 +1,3 @@
----
-title: Usage
----
-
 The page header component provides users the context of the page. It is always placed just below the site header. There are five variations of the page header.
 
 The anatomy image is the default page header

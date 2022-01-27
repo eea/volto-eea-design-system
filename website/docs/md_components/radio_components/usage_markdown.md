@@ -1,7 +1,3 @@
----
-title: Usage
----
-
 Radio buttons provides a selection with two or more options. Only one option can be selected.
 
 ## Do's
