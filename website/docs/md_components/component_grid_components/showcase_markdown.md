@@ -1,9 +1,9 @@
 import Iframe from '../iframe_component.mdx';
 
-## Default
+## Basic 16
 
-<Iframe id='layout-grid-component-grid--default' style="height:600px!important;" > </Iframe>
+<Iframe id='layout-grid-component-grid--basic-16' > </Iframe>
 
-## Example
+## Grid Examples
 
-<Iframe id='layout-grid-component-grid--example' style="height:600px!important;" > </Iframe>
+<Iframe id='layout-grid-component-grid--grid-examples'> </Iframe>
