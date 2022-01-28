@@ -16,4 +16,12 @@ div.ui.items .item .content {
   .extra {
     font-family: @itemFont;
   }
+
+  .description {
+    font-size: @descriptionFontSize;
+  }
+
+  .extra {
+    color: @extraColor;
+  }
 }

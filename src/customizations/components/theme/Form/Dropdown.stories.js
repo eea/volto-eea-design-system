@@ -58,7 +58,12 @@ const listOptions = [
 const Template = (args) => (
   <Form>
     <Form.Field>
-      <Dropdown selection {...args} aria-label="item"></Dropdown>
+      <Dropdown
+        className="eea-dropdown"
+        selection
+        {...args}
+        aria-label="item"
+      ></Dropdown>
     </Form.Field>
   </Form>
 );

@@ -71,6 +71,8 @@ class Header extends Component {
       activeItem: '',
       activeMenu: false,
       activeSearch: false,
+      language: 'en',
+      burger: '',
     };
   }
 
@@ -81,6 +83,22 @@ class Header extends Component {
 
   searchOnClick = (e, x) => {
     this.setState({ activeSearch: !this.state.activeSearch });
+  };
+
+  onLanguageSelection = (e, data) => {
+    this.setState({
+      language: data.text.props.children[1].props.children,
+    });
+  };
+
+  burgerOnClick = () => {
+    if (this.state.burger === '') {
+      this.setState({ burger: 'open' });
+      this.setState({ activeMenu: true });
+    } else {
+      this.setState({ burger: '' });
+      this.setState({ activeMenu: false });
+    }
   };
 
   render() {
@@ -173,6 +191,28 @@ class Header extends Component {
               </Dropdown>
             </div>
 
+            <div id="eea-official-union-mobile" className="eea-top-header-item">
+              <Image src={eeaFlag} alt="eea flag"></Image>
+
+              <Dropdown text="An official EU website" icon="chevron down">
+                <Dropdown.Menu id="eea-official-union-dropdown-mobile">
+                  <div>
+                    <p>
+                      All official European Union website addresses are in the{' '}
+                      <b>europa.eu</b> domain.
+                    </p>
+                    <a
+                      href="https://europa.eu/european-union/contact/institutions-bodies_en"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      See all EU institutions and bodies
+                    </a>
+                  </div>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+
             <Dropdown
               id="eea-top-header-theme-sites"
               className="eea-top-header-item"
@@ -229,14 +269,25 @@ class Header extends Component {
             <Dropdown
               id="eea-top-header-language-dropdown"
               className="eea-top-header-item"
-              text="EN"
+              text={`${this.state.language.toUpperCase()}`}
               icon="globe"
             >
               <Dropdown.Menu>
                 {languagesList.map((item, index) => (
                   <Dropdown.Item
                     key={index}
-                    text={item.name + '(' + item.code + ')'}
+                    text={
+                      <span>
+                        {item.name}
+                        <span
+                          className="country-code"
+                          style={{ fontWeight: 'bold', marginLeft: '3px' }}
+                        >
+                          {item.code.toUpperCase()}
+                        </span>
+                      </span>
+                    }
+                    onClick={this.onLanguageSelection}
                   ></Dropdown.Item>
                 ))}
               </Dropdown.Menu>
@@ -247,10 +298,10 @@ class Header extends Component {
         <div className="eea-main-header">
           <Container>
             <Grid.Row>
-              <Col desktop="4" tablet="3" mobile="3">
+              <Col desktop="4" tablet="5" mobile="3">
                 <Image src={logo} id="eea-logo" alt="eea logo"></Image>
               </Col>
-              <Col desktop="8" tablet="5" mobile="1">
+              <Col desktop="8" tablet="3" mobile="1">
                 <div className="eea-main-header-menu">
                   {!this.state.activeSearch && !this.state.activeMenu && (
                     <Menu className="eea-main-menu" text>
@@ -269,19 +320,42 @@ class Header extends Component {
                   )}
                   {this.state.activeMenu && (
                     <div
-                      className="eea-header-burger-action"
+                      className="eea-header-burger-action desktop"
+                      role="none"
                       onClick={() => {
                         this.setState({ activeMenu: false });
                       }}
-                      role="none"
-                    ></div>
+                    >
+                      <span></span>
+                      <span></span>
+                    </div>
                   )}
-                  <div className="eea-header-search-action">
-                    <Image
-                      src={this.activeSearch ? closeIcon : searchIcon}
-                      alt="search icon"
-                      onClick={this.searchOnClick}
-                    ></Image>
+                  <div className="eea-header-search-action ">
+                    {!this.state.activeSearch ? (
+                      <Image
+                        src={searchIcon}
+                        alt="search icon"
+                        onClick={this.searchOnClick}
+                      ></Image>
+                    ) : (
+                      <div
+                        onClick={this.searchOnClick}
+                        className="eea-header-search-action "
+                      >
+                        <span></span>
+                        <span></span>
+                      </div>
+                    )}
+                  </div>
+
+                  <div
+                    className={`eea-header-burger-action mobile ${this.state.burger}`}
+                    role="none"
+                    onClick={this.burgerOnClick}
+                  >
+                    <span></span>
+                    <span></span>
+                    <span></span>
                   </div>
                 </div>
               </Col>

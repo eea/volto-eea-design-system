@@ -10,4 +10,12 @@ div.ui.card,
   box-shadow: @eeaGlobalShadow;
   font-family: @pageFont;
   font-size: @fontSize;
+
+  .meta {
+    color: @metaColor;
+  }
+
+  .extra.content a {
+    color: @extraColor;
+  }
 }

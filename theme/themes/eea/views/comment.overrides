@@ -5,3 +5,18 @@
 .ui.comments .comment .avatar.circular img {
   border-radius: 50%;
 }
+
+div.ui.comments .comment {
+  .metadata {
+    color: @metadataColor;
+  }
+
+  .actions a {
+    color: @actionLinkColor;
+
+    &:active,
+    &hover {
+      color: @actionLinkHoverColor;
+    }
+  }
+}

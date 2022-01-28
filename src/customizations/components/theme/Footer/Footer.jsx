@@ -36,12 +36,12 @@ class Footer extends Component {
               <Grid.Row>
                 <Col desktop="7" tablet="4" mobile="4">
                   <div className="eea-footer-logos eea-subfooter-item">
-                    <Image src={EEALogo}></Image>
+                    <Image src={EEALogo} alt="EEA Logo"></Image>
                     <p className="eea-footer-logo-description">
                       An agency of the European Union
                     </p>
                     <div className="ionet-logo">
-                      <Image src={EIONETLogo}></Image>
+                      <Image src={EIONETLogo} alt="IONET Logo"></Image>
                       <p>
                         European Environment
                         <br />

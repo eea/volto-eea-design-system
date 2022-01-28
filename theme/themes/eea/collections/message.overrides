@@ -3,19 +3,43 @@
 *******************************/
 
 div.ui.message {
+  background: @background;
   border-radius: @borderRadius;
   box-shadow: @boxShadow;
+
+  .header,
+  .header:not(.ui) {
+    font-size: @headerFontSize;
+    font-weight: @headerFontWeight;
+  }
+
+  p {
+    margin-top: 0;
+    color: @black;
+    font-size: 13px;
+  }
 }
 
 div.ui.icon.message > .icon,
 div.ui.icon.message > .icon:not(.close) {
-  font-size: @iconSize;
+  font-size: @fontSize;
 }
 
 div.ui.message .content {
-  font-size: @12px;
+  font-size: 13px;
 }
 
 div.ui.attached.message {
   margin: 0;
+}
+
+div.ui.attached.success.message,
+div.ui.success.message {
+  background: #edf9f0;
+  box-shadow: @successBoxShadow;
+
+  .content p {
+    color: #287d3c;
+    font-weight: @headerFontWeight;
+  }
 }

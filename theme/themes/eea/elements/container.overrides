@@ -1,15 +1,16 @@
 /*******************************
          Theme Overrides
 *******************************/
-@maxWidth: 1400px;
 
 /* All Sizes */
 div.ui.container {
   display: block;
-  width: 100%;
+  width: 100% !important;
+  max-width: @maxWidth !important;
   padding-right: @mobilePadding;
   padding-left: @mobilePadding;
-  margin: 0;
+
+  margin: auto !important;
   transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);

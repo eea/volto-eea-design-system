@@ -18,34 +18,43 @@ function ThemeSites() {
       <div className="eea-theme-sites">
         <Grid.Row className="footer-logo-row">
           <div className="col-md-5ths col-sm-5ths col-sm-2 eea-theme-site-logo">
-            <Image src={Logo1}></Image>
+            <Image src={Logo1} alt="Biodiversity"></Image>
           </div>
           <div className="col-md-5ths col-sm-5ths col-sm-2 eea-theme-site-logo">
-            <Image src={Logo2}></Image>
+            <Image src={Logo2} alt="Climate and energy in the EU"></Image>
           </div>
           <div className="col-md-5ths col-sm-5ths col-sm-2 eea-theme-site-logo">
-            <Image src={Logo3}></Image>
+            <Image src={Logo3} alt="Copernicus in situ"></Image>
           </div>
           <div className="col-md-5ths col-sm-5ths col-sm-2 eea-theme-site-logo">
-            <Image src={Logo4}></Image>
+            <Image
+              src={Logo4}
+              alt="Information platform for chemical monitoring"
+            ></Image>
           </div>
           <div className="col-md-5ths col-sm-5ths col-sm-2 eea-theme-site-logo">
-            <Image src={Logo5}></Image>
+            <Image src={Logo5} alt="WISE freshwater"></Image>
           </div>
           <div className="col-md-5ths col-sm-5ths col-sm-2 eea-theme-site-logo">
-            <Image src={Logo6}></Image>
+            <Image
+              src={Logo6}
+              alt="Forest information system for europe"
+            ></Image>
           </div>
           <div className="col-md-5ths col-sm-5ths col-sm-2 eea-theme-site-logo">
-            <Image src={Logo7}></Image>
+            <Image src={Logo7} alt="Climate adapt"></Image>
           </div>
           <div className="col-md-5ths col-sm-5ths col-sm-2 eea-theme-site-logo">
-            <Image src={Logo8}></Image>
+            <Image src={Logo8} alt="Copernicus land monitoring service"></Image>
           </div>
           <div className="col-md-5ths col-sm-5ths col-sm-2 eea-theme-site-logo">
-            <Image src={Logo9}></Image>
+            <Image
+              src={Logo9}
+              alt="European industrial emissions portal"
+            ></Image>
           </div>
           <div className="col-md-5ths col-sm-5ths col-sm-2 eea-theme-site-logo">
-            <Image src={Logo10}></Image>
+            <Image src={Logo10} alt="WISE marine"></Image>
           </div>
         </Grid.Row>
       </div>

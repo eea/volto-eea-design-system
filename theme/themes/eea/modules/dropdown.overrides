@@ -22,6 +22,10 @@
   }
 }
 
+.ui.dropdown.eea-dropdown .divider {
+  color: @black;
+}
+
 .ui.dropdown.active {
   border: 2px solid @deepBlue !important;
 }

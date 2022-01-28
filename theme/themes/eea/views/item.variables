@@ -135,7 +135,7 @@
 @extraWidth: 100%;
 @extraPadding: 0em 0em 0em;
 @extraBoxShadow: none;
-@extraColor: @lightTextColor;
+@extraColor: @black;
 @extraTransition: color @defaultDuration @defaultEasing;
 
 /*-------------------

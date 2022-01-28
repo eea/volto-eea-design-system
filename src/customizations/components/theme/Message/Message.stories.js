@@ -54,7 +54,6 @@ Default.args = {
 
 export const Success = Template.bind({});
 Success.args = {
-  header: 'Success message',
   content: 'This is a Success message',
   icon: 'exclamation circle',
   success: true,

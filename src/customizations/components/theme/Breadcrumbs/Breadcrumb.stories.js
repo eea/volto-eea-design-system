@@ -1,7 +1,6 @@
 import React from 'react';
-import { Breadcrumb, Container } from 'semantic-ui-react';
-import homeSVG from '@plone/volto/icons/home.svg';
-import { Icon } from '@plone/volto/components';
+import { Breadcrumb, Container, Image } from 'semantic-ui-react';
+import homeSVG from '../../../../../theme/themes/eea/assets/images/home-icon.svg';
 
 export default {
   title: 'Components/Breadcrumb',
@@ -46,7 +45,7 @@ const Template = (args) => (
     <Container>
       <Breadcrumb>
         <Breadcrumb.Section key="home" href="https://www.eea.europa.eu/">
-          <Icon name={homeSVG} size="16px" />
+          <Image src={homeSVG} alt="home" />
         </Breadcrumb.Section>
         {args.sections.map((section, index) => (
           <>

@@ -35,4 +35,10 @@ div.eea-tab {
     overflow-x: auto;
     overflow-y: hidden;
   }
+
+  div.eea-tab .ui.secondary.pointing.vertical.menu {
+    border: none;
+    overflow-x: unset;
+    overflow-y: unset;
+  }
 }

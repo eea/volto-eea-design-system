@@ -2,7 +2,6 @@
             Message
 *******************************/
 
-// @textColor
 
 /*-------------------
        Elements
@@ -13,7 +12,7 @@
 @verticalPadding: 1em;
 @horizontalPadding: 1.5em;
 @padding: @verticalPadding @horizontalPadding;
-@background: #F8F8F9;
+@background: #F2F2F2;
 @lineHeightOffset: ((@lineHeight - 1em) / 2);
 
 @borderRadius: @defaultBorderRadius;
@@ -30,7 +29,7 @@
 ;
 
 /* Header */
-@headerFontSize: @relativeLarge;
+@headerFontSize: 13px;
 @headerFontWeight: @bold;
 @headerDisplay: block;
 @headerDistance: 0rem;
@@ -39,7 +38,7 @@
 
 /* Paragraph */
 @messageTextOpacity: 0.85;
-@messageParagraphMargin: 0.75em;
+@messageParagraphMargin: 0;
 
 /* List */
 @listOpacity: 0.85;
@@ -134,23 +133,8 @@
   0px 0px 0px @borderWidth @positiveBorderColor inset,
   @shadowShadow
 ;
-@negativeBoxShadow:
-  0px 0px 0px @borderWidth @negativeBorderColor inset,
-  @shadowShadow
-;
-@infoBoxShadow:
-  0px 0px 0px @borderWidth @infoBorderColor inset,
-  @shadowShadow
-;
-@warningBoxShadow:
-  0px 0px 0px @borderWidth @warningBorderColor inset,
-  @shadowShadow
-;
-@errorBoxShadow:
-  0px 0px 0px @borderWidth @errorBorderColor inset,
-  @shadowShadow
-;
-@successBoxShadow:
-  0px 0px 0px @borderWidth @successBorderColor inset,
-  @shadowShadow
-;
+@negativeBoxShadow: none;
+@infoBoxShadow: none;
+@warningBoxShadow: none;
+@errorBoxShadow: none;
+@successBoxShadow: none;

@@ -81,7 +81,7 @@
 /* Metadata */
 @metaFontSize: @relativeMedium;
 @metaSpacing: 0.3em;
-@metaColor: @lightTextColor;
+@metaColor: @oldSilver;
 
 /* Icons */
 @actionOpacity: 0.75;
@@ -134,7 +134,7 @@
 @extraMargin: 0em 0em;
 @extraPadding: 0.75em 1em;
 @extraBoxShadow: none;
-@extraColor: @lightTextColor;
+@extraColor: @primaryColor;
 @extraTransition: color @defaultDuration @defaultEasing;
 
 /* Extra Links */

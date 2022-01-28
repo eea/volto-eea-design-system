@@ -3,22 +3,27 @@
 *******************************/
 
 div.eea-breadcrumb .ui.breadcrumb {
-  display: flex;
-  align-items: center;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: end;
+  padding-right: 0;
+  padding-left: 0;
 
   .section {
-    padding: 0 10px;
+    padding: 0 5px;
   }
 
   a.section {
     color: @primaryColor;
-    font-size: @linkSize;
+    font-size: 7px;
+
+    img {
+      width: 7.5px;
+    }
   }
 
   .section.active {
-    font-size: @linkSize;
+    font-size: 7px;
     font-weight: @activeFontWeight;
   }
 
@@ -30,8 +35,49 @@ div.eea-breadcrumb .ui.breadcrumb {
     margin-right: 0;
   }
 
+  i.icon {
+    font-size: 7px;
+  }
+
+  a:first-child {
+    padding: 0 5px 0 0;
+  }
+
   @media only screen and (min-width: @tabletBreakpoint) {
     padding-right: 0;
     padding-left: 0;
+  }
+}
+@media only screen and (min-width: @mobileBreakpoint + 1) {
+  div.eea-breadcrumb .ui.breadcrumb {
+    a.section {
+      color: @primaryColor;
+      font-size: @linkSize;
+
+      img {
+        width: 12px;
+      }
+    }
+
+    .section.active {
+      font-size: @linkSize;
+      font-weight: @activeFontWeight;
+    }
+
+    i.icon {
+      font-size: 12px;
+    }
+
+    .section {
+      padding: 0 7.5px;
+    }
+  }
+}
+
+@media only screen and (min-width: @tabletBreakpoint + 1) {
+  div.eea-breadcrumb .ui.breadcrumb {
+    .section {
+      padding: 0 10px;
+    }
   }
 }
