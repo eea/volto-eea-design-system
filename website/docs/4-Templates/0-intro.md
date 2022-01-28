@@ -6,4 +6,4 @@ hide_table_of_contents: true
 
 # Templates
 
-The core website minimises the duplication of content across the European Commission services. The site hosts general information shared with many different websites or departments. The core website is the hub for users to navigate to other thematic content and/or specific services such as web information system.
+ The site hosts general information shared with many different websites or departments. The core website is the hub for users to navigate to other thematic content and/or specific services such as web information system.

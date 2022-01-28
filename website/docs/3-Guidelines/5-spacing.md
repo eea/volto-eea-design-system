@@ -10,30 +10,41 @@ The responsive layout grid is made up of three elements: columns, gutters, and m
 Content is placed in the areas of the screen that contain columns. The number of columns displayed in the grid is determined by the breakpoint range, a range of predetermined screen sizes. A breakpoint can correspond with mobile, tablet, or other screen type.
 
 ![](../md_components/static/grid1.png)
+<br />
 
 On mobile, at a breakpoint of 480px, this layout grid uses 4 columns.
 
-![](../md_components/static/grid2.png)
+![](../md_components/static/mobile_grid.png)
+
+<br />
 
 On tablet, at a breakpoint of 834px, this layout grid uses 8 columns.
 
-![](../md_components/static/grid3.png)
+![](../md_components/static/tablet_grid.png)   
 
+<br /> 
 On desktop, at a breakpoint of 1024px, this layout grid uses 12 columns.
 
-![](../md_components/static/grid4.png)
+![](../md_components/static/desktop_grid.png)
+
 ## Gutters
 
 A gutter is the space between columns that helps separate content. Gutter widths are fixed values at each breakpoint range. Wider gutters are more appropriate for larger screens, as they create more open space between columns.
+<br />
 
-![](../md_components/static/columns1.png)
-On mobile, at a breakpoint of 480px, this layout grid uses 20px gutters.
+On mobile, at a breakpoint of 480px, this layout grid uses 20px gutters.  
+![](../md_components/static/mobile_grid.png)   
 
-![](../md_components/static/columns2.png)
-On tablet, at a breakpoint of 7687px, this layout grid uses 20px gutters.
+<br />
 
-![](../md_components/static/columns3.png)
-On desktop, at a breakpoint of 1024px, this layout grid uses 20px gutters.
+On tablet, at a breakpoint of 7687px, this layout grid uses 20px gutters.  
+![](../md_components/static/tablet_grid.png)   
+
+<br />
+
+On desktop, at a breakpoint of 1024px, this layout grid uses 20px gutters.   
+![](../md_components/static/desktop_grid.png)   
+
 
 ## Don’ts
 
@@ -51,4 +62,4 @@ To ensure that layouts are visually balanced, most measurements align to 8px, wh
 Smaller elements, such as icons, can align to a 4px grid, while typography can fall on a 4px baseline grid, meaning that each line’s typographic baseline is spaced in increments of 4px from its neighbor.
 
 ![](../md_components/static/spacing1.png)
-![](../md_components/static/spacing2.png)
+![](../md_components/static/8px_spacing.png)
