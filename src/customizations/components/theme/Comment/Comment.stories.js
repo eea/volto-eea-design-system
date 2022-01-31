@@ -55,7 +55,8 @@ Default.args = {
   size: 'large',
   comments: [
     {
-      src: 'eea_icon.png',
+      src:
+        '../../theme/../../../../theme/themes/eea/assets/images/eea_icon.png',
       author: 'User 1',
       time: 'Message timestamp',
       text: 'Message Content',
