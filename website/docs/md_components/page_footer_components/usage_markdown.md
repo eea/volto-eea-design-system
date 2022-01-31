@@ -24,4 +24,4 @@ The core footer provides supplementary information such as copyright, legal, pri
 
 ## When not to use
 
-- do not follow these guidelines when you are updating sites that fall under a different category of the Europa family
+- do not follow these guidelines when you are updating sites that fall under a different category of the EEA portal

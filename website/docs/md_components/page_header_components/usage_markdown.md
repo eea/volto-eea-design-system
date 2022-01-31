@@ -11,13 +11,6 @@ The anatomy image is the default page header
 | **Page title**                                                                                                                                                                                                             | yes           | no           |
 | **Introduction**                                                                                                                                                                                                           | no            | yes          |
 
-## Page header with thumbnail
-
-## Page header with background image without overlay
-
-## Page header background image with light overlay
-
-## Page header background image with dark overlay
 
 ## Do's
 
