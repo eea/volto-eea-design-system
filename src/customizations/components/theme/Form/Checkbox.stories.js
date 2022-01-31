@@ -176,7 +176,7 @@ Default.args = {
 
 export const invalid = Template.bind({});
 invalid.args = {
-  label: 'Select your preferred destinations',
+  label: 'Select your preferred options',
   helperText: 'Helper text for the group',
   errorMessage: 'Error message for the group',
   optionalText: ' (optional)',
@@ -195,7 +195,7 @@ invalid.argTypes = {
 
 export const optional = Template.bind({});
 optional.args = {
-  label: 'Select your preferred destinations',
+  label: 'Select your preferred options',
   helperText: 'Helper text for the group',
   errorMessage: 'Error message for the group',
   optionalText: ' (optional)',
@@ -216,7 +216,7 @@ export const single = (args) => (
   <SingleCheckboxForm {...args}></SingleCheckboxForm>
 );
 single.args = {
-  label: 'Select your preferred destinations',
+  label: 'Select your preferred options',
   helperText: 'Helper text for the group',
   errorMessage: 'Error message for the group',
   optionalText: ' (optional)',
