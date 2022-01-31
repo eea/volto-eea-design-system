@@ -11,7 +11,7 @@ import ThemeSites from './theme-sites.js';
 //import AbstractImg from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/abstract-visual.svg';
 //import EULogo from '../../../../../theme/themes/eea/assets/images/Footer/EULogo.png';
 import EIONETLogo from '../../../../../theme/themes/eea/assets/images/Footer/EIONETLogo.png';
-import EEALogo from '../../../../../theme/themes/eea/assets/images/Footer/EEALogo.png';
+import EEALogo from '../../../../../theme/themes/eea/assets/images/Footer/EEA-Logo-white.svg';
 
 import { Col } from '../Grid/Col';
 
@@ -34,7 +34,7 @@ class Footer extends Component {
 
             <Container className="eea-subfooter">
               <Grid.Row>
-                <Col desktop="8" tablet="5" mobile="4">
+                <Col desktop="8" tablet="5" mobile="2">
                   <div className="eea-footer-logos eea-subfooter-item">
                     <Image src={EEALogo} alt="EEA Logo"></Image>
                     <p className="eea-footer-logo-description">
@@ -52,7 +52,7 @@ class Footer extends Component {
                     </div>
                   </div>
                 </Col>
-                <Col desktop="4" tablet="3" mobile="4">
+                <Col desktop="4" tablet="3" mobile="2">
                   <div className="eea-subfooter-item">
                     <p className="eea-subfooter-item-header">Contact us</p>
                     <div className="eea-footer-contact-item">
@@ -64,7 +64,7 @@ class Footer extends Component {
                       Sign up to our newsletter
                     </div>
                     <p className="eea-footer-contact-address">
-                      Kongens Nytorv 6 1050 Copenhagen K
+                      Kongens Nytorv 6 1050 Copenhagen K (+45) 33 36 71 00
                     </p>
 
                     <div className="eea-footer-contact-social">

@@ -438,8 +438,7 @@
   }
 }
 
-/* Footer 5 colomns */
-.col-xs-5ths,
+/* Footer 5 columns */
 .col-sm-5ths,
 .col-md-5ths,
 .col-lg-5ths {
@@ -449,26 +448,19 @@
   padding-left: 15px;
 }
 
-.col-xs-5ths {
+.col-sm-5ths {
   width: 20%;
   float: left;
 }
 
 @media (min-width: @tabletBreakpoint) {
-  .col-sm-5ths {
-    width: 20%;
-    float: left;
-  }
-}
-
-@media (min-width: @computerBreakpoint) {
   .col-md-5ths {
     width: 20%;
     float: left;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: @computerBreakpoint) {
   .col-lg-5ths {
     width: 20%;
     float: left;
