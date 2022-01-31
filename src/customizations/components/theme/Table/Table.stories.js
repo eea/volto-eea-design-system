@@ -96,18 +96,6 @@ export default {
         },
       },
     },
-    stackable: {
-      description:
-        'A table can specify how it stacks table content responsively',
-      table: {
-        type: {
-          summary: 'boolean',
-        },
-        defaultValue: {
-          summary: 'false',
-        },
-      },
-    },
     size: {
       control: { type: 'inline-radio' },
       options: ['small', 'large'],
@@ -163,7 +151,6 @@ function TableContent({
   size,
   textAlign,
   verticalAlign,
-  stackable,
 }) {
   return (
     <Table
@@ -175,7 +162,7 @@ function TableContent({
       collapsing={collapsing}
       compact={compact}
       size={size}
-      stackable={stackable}
+      unstackable
     >
       <Table.Header>
         <Table.Row textAlign="center">
@@ -218,7 +205,6 @@ Default.args = {
   striped: false,
   collapsing: false,
   compact: false,
-  stackable: false,
   size: 'large',
   textAlign: 'center',
   verticalAlign: 'middle',
@@ -271,7 +257,6 @@ function SortableTableContent({
   size,
   textAlign,
   verticalAlign,
-  stackable,
 }) {
   const [state, dispatch] = React.useReducer(reducer, {
     column: null,
@@ -291,7 +276,7 @@ function SortableTableContent({
       collapsing={collapsing}
       compact={compact}
       size={size}
-      stackable={stackable}
+      stackable
       sortable
     >
       <Table.Header>
@@ -344,7 +329,6 @@ Sortable.args = {
   striped: false,
   collapsing: false,
   compact: false,
-  stackable: false,
   size: 'large',
   textAlign: 'center',
   verticalAlign: 'middle',

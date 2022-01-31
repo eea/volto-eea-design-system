@@ -84,6 +84,7 @@ function ModalEEA({
   const [open, setOpen] = React.useState(false);
   return (
     <Modal
+      closeIcon
       className="eea-modal"
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}

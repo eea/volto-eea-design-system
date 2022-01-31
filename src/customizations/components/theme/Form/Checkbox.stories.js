@@ -96,7 +96,7 @@ function CheckboxForm({
       ) : null}
       <Form.Field error={invalid}>
         <Checkbox
-          className="eeaCheckbox"
+          className="eea-checkbox"
           label="Option 1"
           defaultChecked
           id="field1"
@@ -105,7 +105,7 @@ function CheckboxForm({
       </Form.Field>
       <Form.Field error={invalid}>
         <Checkbox
-          className="eeaCheckbox"
+          className="eea-checkbox"
           label="Option 2"
           id="field2"
         ></Checkbox>
@@ -113,7 +113,7 @@ function CheckboxForm({
       </Form.Field>
       <Form.Field error={invalid}>
         <Checkbox
-          className="eeaCheckbox"
+          className="eea-checkbox"
           label="Option 3 (disabled)"
           disabled
           id="field3"
@@ -147,7 +147,7 @@ function SingleCheckboxForm({
 
       <Form.Field error={invalid}>
         <Checkbox
-          className="eeaCheckbox"
+          className="eea-checkbox"
           label="Option 1"
           defaultChecked
           id="field4"

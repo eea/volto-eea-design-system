@@ -10,7 +10,6 @@ import { connect } from 'react-redux';
 import eeaFlag from '../../../../../theme/themes/eea/assets/images/Header/eea.png';
 import logo from '../../../../../theme/themes/eea/assets/images/Header/eea-logo.svg';
 import searchIcon from '../../../../../theme/themes/eea/assets/images/Header/search.png';
-import closeIcon from '../../../../../theme/themes/eea/assets/images/Header/close.png';
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
 
@@ -341,6 +340,7 @@ class Header extends Component {
                       <div
                         onClick={this.searchOnClick}
                         className="eea-header-search-action "
+                        role="none"
                       >
                         <span></span>
                         <span></span>

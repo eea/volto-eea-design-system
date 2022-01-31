@@ -82,7 +82,6 @@ Success.parameters = {
 
 export const Warning = Template.bind({});
 Warning.args = {
-  header: 'Warning message',
   content: 'This is a Warning message',
   icon: 'exclamation circle',
   warning: true,
@@ -111,8 +110,8 @@ Warning.parameters = {
 
 export const Error = Template.bind({});
 Error.args = {
-  header: 'Error Message',
-  content: 'This is an Error message',
+  header: 'This is an Error Message',
+  content: 'This is information about the e rror message',
   icon: 'exclamation circle',
   error: true,
   size: 'small',
@@ -139,7 +138,6 @@ Error.parameters = {
 
 export const Info = Template.bind({});
 Info.args = {
-  header: 'Info Message',
   content: 'This is an Info message',
   icon: 'exclamation circle',
   info: true,

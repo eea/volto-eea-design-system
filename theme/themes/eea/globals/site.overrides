@@ -9,6 +9,7 @@ body {
 p {
   font-family: @pageFont !important;
   font-size: @fontSize;
+  line-height: @lineHeight;
 }
 
 h1 {
@@ -212,7 +213,7 @@ img#eea-logo {
 }
 
 .eea-main-menu-item {
-  color: #3d5265;
+  color: @deepBlue;
   font-size: 18px;
   font-weight: 500;
 }
@@ -391,18 +392,13 @@ img#eea-logo {
   }
 }
 
-@media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {
+@media only screen and (min-width: @mobileBreakpoint + 1) {
   .eea-main-menu.ui.text.menu {
     display: none;
   }
 
   .eea-header-burger-action.mobile {
     display: flex;
-  }
-
-  .eea-page-banner-text-row {
-    display: flex;
-    align-items: end;
   }
 
   #eea-official-union-mobile {
@@ -417,11 +413,6 @@ img#eea-logo {
 @media only screen and (min-width: @tabletBreakpoint + 1) {
   .eea-header-burger-action.mobile {
     display: none;
-  }
-
-  .eea-page-banner-text-row {
-    display: flex;
-    align-items: end;
   }
 
   #eea-top-header-theme-sites {
@@ -560,7 +551,7 @@ p.eea-footer-contact-address {
 }
 
 .eea-theme-sites {
-  padding: 2rem 0;
+  padding: 0rem 0 2rem;
 }
 
 .eea-theme-sites .row {
@@ -604,7 +595,7 @@ p.eea-footer-contact-address {
 
 .ionet-logo p {
   padding-top: 2px;
-  font-size: 11px !important;
+  font-size: 11px;
   font-weight: bold;
   line-height: 1rem;
 }
@@ -617,18 +608,24 @@ p.eea-footer-contact-address {
   background-size: 200% 200%;
 }
 
-@media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {
+@media only screen and (min-width: @mobileBreakpoint + 1) {
   .eea-footer-links {
-    justify-content: space-between;
+    width: 500px;
+    justify-content: space-around;
+    margin: 2rem auto 0;
 
     a {
       font-size: 11px;
     }
   }
 
+  .eea-theme-sites {
+    padding: 0;
+  }
+
   .ionet-logo p {
     padding-top: 5px;
-    font-size: 17px !important;
+    font-size: 16px;
     font-weight: bold;
     line-height: 1.8rem;
   }
@@ -644,19 +641,24 @@ p.eea-footer-contact-address {
     font-weight: 900;
   }
 
+  .eea-footer-logos img {
+    width: 192px;
+  }
+
   .eea-footer-contact-social i.big.icon {
     font-size: 1.8rem;
   }
 
   .eea-footer-logo-description {
+    margin: 5px 0 0 10px;
     font-size: 16px;
     line-height: 19px;
   }
 
   .ionet-logo img {
-    width: 69px;
+    width: 65px;
     margin-right: 8px;
-    margin-left: 5px;
+    margin-left: 10px;
     float: left;
   }
 
@@ -666,11 +668,6 @@ p.eea-footer-contact-address {
 }
 
 @media only screen and (min-width: @tabletBreakpoint + 1) {
-  .eea-page-banner-text-row {
-    display: flex;
-    align-items: end;
-  }
-
   #eea-top-header-theme-sites {
     display: block;
   }
@@ -678,6 +675,10 @@ p.eea-footer-contact-address {
   .eea-footer-header {
     font-size: 36px;
     font-weight: 900;
+  }
+
+  .eea-theme-sites {
+    padding: 0rem 0 2rem;
   }
 
   .eea-footer-links {
@@ -689,6 +690,10 @@ p.eea-footer-contact-address {
     }
   }
 
+  .eea-footer-logos img {
+    width: 283px;
+  }
+
   .ionet-logo img {
     width: 80px;
     margin-right: 20px;
@@ -698,7 +703,7 @@ p.eea-footer-contact-address {
 
   .ionet-logo p {
     padding-top: 5px;
-    font-size: 17px !important;
+    font-size: 17px;
     font-weight: bold;
     line-height: 1.8rem;
   }
@@ -714,6 +719,7 @@ p.eea-footer-contact-address {
   }
 
   .eea-footer-logo-description {
+    margin: 5px 0 0 25px;
     font-size: 16px;
     line-height: 19px;
   }
@@ -752,8 +758,8 @@ div.ui.container.eea-page-banner-container {
   margin-left: 0 !important;
   background: linear-gradient(
     0deg,
-    rgba(31, 49, 65, 0.85) 0%,
-    rgba(0, 36, 78, 0) 88.6%
+    rgb(20 33 44 / 90%) 24%,
+    rgba(0, 36, 78, 0) 80%
   );
   color: white;
   opacity: 0.9;
@@ -809,7 +815,12 @@ div.ui.container.eea-page-banner-container {
   padding: 0;
 }
 
-@media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {
+@media only screen and (min-width: @mobileBreakpoint + 1) {
+  .eea-page-banner-text-row {
+    display: flex;
+    align-items: end;
+  }
+
   .eea-page-banner-text {
     padding: 150px 0 20px;
   }

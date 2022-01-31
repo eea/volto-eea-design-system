@@ -34,7 +34,7 @@ class Footer extends Component {
 
             <Container className="eea-subfooter">
               <Grid.Row>
-                <Col desktop="7" tablet="4" mobile="4">
+                <Col desktop="8" tablet="5" mobile="4">
                   <div className="eea-footer-logos eea-subfooter-item">
                     <Image src={EEALogo} alt="EEA Logo"></Image>
                     <p className="eea-footer-logo-description">
@@ -52,7 +52,7 @@ class Footer extends Component {
                     </div>
                   </div>
                 </Col>
-                <Col desktop="5" tablet="4" mobile="4">
+                <Col desktop="4" tablet="3" mobile="4">
                   <div className="eea-subfooter-item">
                     <p className="eea-subfooter-item-header">Contact us</p>
                     <div className="eea-footer-contact-item">

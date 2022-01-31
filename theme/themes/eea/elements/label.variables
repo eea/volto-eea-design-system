@@ -145,6 +145,12 @@
 
 
 /* Colors */
+@globalLabelColor: @white;
+@lowImportanceBackground: @deepBlue;
+@mediumImportanceBackground: #346F83;
+@highImportanceBackground: #005293;
+@highlightImportanceBackground: #009591;
+
 @redTextColor: @white;
 @orangeTextColor: @white;
 @yellowTextColor: @white;

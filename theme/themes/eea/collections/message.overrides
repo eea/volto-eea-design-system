@@ -3,6 +3,7 @@
 *******************************/
 
 div.ui.message {
+  padding: @padding;
   background: @background;
   border-radius: @borderRadius;
   box-shadow: @boxShadow;
@@ -15,31 +16,112 @@ div.ui.message {
 
   p {
     margin-top: 0;
-    color: @black;
-    font-size: 13px;
+    color: @messageColor;
+    font-size: @messageFontSize;
   }
+}
+
+/* Icon next to header */
+div.ui.icon.message {
+  align-items: @iconAlign;
 }
 
 div.ui.icon.message > .icon,
 div.ui.icon.message > .icon:not(.close) {
-  font-size: @fontSize;
+  margin-top: 2px;
+  font-size: @iconSize;
 }
 
 div.ui.message .content {
-  font-size: 13px;
+  font-size: @messageFontSize;
 }
 
 div.ui.attached.message {
   margin: 0;
 }
 
+/* Success message */
 div.ui.attached.success.message,
 div.ui.success.message {
-  background: #edf9f0;
+  background: @successBackground;
   box-shadow: @successBoxShadow;
 
+  .header,
+  .header:not(.ui) {
+    color: @successColor;
+  }
+
   .content p {
-    color: #287d3c;
+    color: @successColor;
     font-weight: @headerFontWeight;
+  }
+
+  .icon,
+  .icon:not(.close) {
+    color: @successColor;
+  }
+}
+
+/* Warning Message */
+div.ui.warning.message {
+  background: @warningBackground;
+  box-shadow: @warningBoxShadow;
+
+  .header,
+  .header:not(.ui) {
+    color: @warningColor;
+  }
+
+  .content p {
+    color: @warningColor;
+    font-weight: @headerFontWeight;
+  }
+
+  .icon,
+  .icon:not(.close) {
+    color: @warningColor;
+  }
+}
+
+/* Error Message */
+div.ui.error.message,
+div.ui.negative.message {
+  background: @errorBackground;
+  box-shadow: @errorBoxShadow;
+
+  .header,
+  .header:not(.ui) {
+    color: @errorColor;
+  }
+
+  .content p {
+    color: @errorColor;
+    font-weight: @headerFontWeight;
+  }
+
+  .icon,
+  .icon:not(.close) {
+    color: @errorColor;
+  }
+}
+
+/* Info message */
+div.ui.info.message {
+  background: @infoBackground;
+  box-shadow: @infoBoxShadow;
+
+  .header,
+  .header:not(.ui) {
+    color: @infoColor;
+  }
+
+  .content p {
+    color: @infoColor;
+    font-weight: @headerFontWeight;
+  }
+
+  .icon,
+  .icon:not(.close) {
+    color: @infoColor;
   }
 }

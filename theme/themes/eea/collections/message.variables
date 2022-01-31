@@ -39,6 +39,8 @@
 /* Paragraph */
 @messageTextOpacity: 0.85;
 @messageParagraphMargin: 0;
+@messageColor: @black;
+@messageFontSize: 13px;
 
 /* List */
 @listOpacity: 0.85;
@@ -62,7 +64,8 @@
 --------------------*/
 
 /* Icon Message */
-@iconSize: 2em;
+@iconAlign: flex-start;
+@iconSize: 1rem;
 @iconOpacity: 0.8;
 @iconContentDistance: 0rem;
 @iconVerticalAlign: top;
@@ -133,8 +136,18 @@
   0px 0px 0px @borderWidth @positiveBorderColor inset,
   @shadowShadow
 ;
+
 @negativeBoxShadow: none;
 @infoBoxShadow: none;
+@infoBackground: #EEF2FA;
+@infoColor: #2E5AAC;
 @warningBoxShadow: none;
+@warningBackground: #FFF4EC;
+@warningColor: #B95000;
 @errorBoxShadow: none;
+@errorBackground: #FEEFEF;
+@errorColor: #DA1414;
 @successBoxShadow: none;
+@successBackground: #EDF9F0;
+@successColor: #287D3C;
+

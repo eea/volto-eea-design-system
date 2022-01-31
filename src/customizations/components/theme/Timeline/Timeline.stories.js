@@ -150,7 +150,7 @@ Multiple.args = {
       time: 'Date and time',
       title: 'Title 3',
       description: 'description 3',
-      color: 'red',
+      color: 'teal',
       tags: [],
       lineHeight: 2,
     },

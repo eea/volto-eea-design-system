@@ -142,6 +142,7 @@
 @pageOverflowX       : hidden;
 
 @lineHeight          : 1.5;
+@mobileLineHeight    : 1.25;
 @textColor           : rgba(0, 0, 0, 0.87);
 
 /*-------------------

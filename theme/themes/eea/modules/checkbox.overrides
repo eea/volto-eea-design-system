@@ -9,12 +9,12 @@
 }
 
 //Ckeckbox
-.ui.checkbox.eeaCheckbox label {
+.ui.checkbox.eea-checkbox label {
   font-family: @pageFont;
   font-size: @fontSize;
 }
 
-.ui.checkbox.eeaCheckbox label {
+.ui.checkbox.eea-checkbox label {
   &:before {
     border: 2px solid @oldSilver !important;
     border-radius: @defaultBorderRadius;
@@ -22,7 +22,9 @@
   }
 }
 
-.ui.checkbox.eeaCheckbox {
+.ui.checkbox.eea-checkbox {
+  margin-bottom: @bottomMargin;
+
   input {
     &:checked ~ label {
       &:after {
@@ -31,6 +33,12 @@
       }
     }
   }
+}
+
+/* Helper text for disabled element */
+.ui.disabled.checkbox.eea-checkbox + label,
+.ui.disabled.radio.checkbox.eea-radio + label {
+  opacity: @disabledCheckboxOpacity;
 }
 
 .ui.checkbox {
@@ -44,7 +52,7 @@
 }
 
 //Error Checkbox
-.error .ui.checkbox.eeaCheckbox {
+.error .ui.checkbox.eea-checkbox {
   input {
     &:checked ~ label {
       &:after {
@@ -56,26 +64,28 @@
 }
 
 //Radio Button
-.ui.radio.checkbox.eeaRadio label {
+.ui.radio.checkbox.eea-radio label {
   font-family: @pageFont;
   font-size: @fontSize;
 }
 
-.ui.radio.checkbox.eeaRadio label {
+.ui.radio.checkbox.eea-radio label {
   &:before {
     border: 2px solid @oldSilver;
     box-shadow: none;
   }
 }
 
-.ui.radio.checkbox.eeaRadio &:checked ~ label {
+.ui.radio.checkbox.eea-radio &:checked ~ label {
   &:before {
     border: 2px solid @primaryColor;
     box-shadow: none;
   }
 }
 
-.ui.radio.checkbox.eeaRadio {
+.ui.radio.checkbox.eea-radio {
+  margin-bottom: @bottomMargin;
+
   input {
     &:checked ~ label {
       &:after {

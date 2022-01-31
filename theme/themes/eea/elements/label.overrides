@@ -5,23 +5,26 @@
 div.ui.label {
   padding: @verticalPadding @horizontalPadding;
   border: @border;
+  background: @lowImportanceBackground;
   border-radius: @borderRadius;
+  color: @globalLabelColor;
   font-size: @fontSize;
   font-weight: 500;
 }
 
 div.ui.label.medium-label {
-  background-color: @yellow;
+  background-color: @mediumImportanceBackground;
+  color: @globalLabelColor;
 }
 
 div.ui.label.high-label {
-  background-color: @orange;
-  color: @white;
+  background-color: @highImportanceBackground;
+  color: @globalLabelColor;
 }
 
 div.ui.label.highlight-label {
-  background-color: @secondaryColor;
-  color: @white;
+  background-color: @highlightImportanceBackground;
+  color: @globalLabelColor;
 }
 
 div.ui.label.ui.pointing:before {
