@@ -1,8 +1,9 @@
+Effective headings are recognizable immediately, and help readers understand the flow of content on the page
 
-The EEA header shows users that they are on EEA portal and which service they are using.
+## How to Use
+- Employ Visual Contrast to Make Headings Stand Out. Headings need to appear separate from the rest of the content on the page.
+- Size matters: Headings Should Be Big
+- Use Headings as Titles. If we’re labeling a section of a website, the heading serves as the title for the section
+- Be Concise. Keep headings short. In some cases, it’s even okay to drop articles like “the” and “a,” as they can be assumed.
+- Not all headings should be bold
 
-## Do’s
-You must use the EEA header at the top of every page if your service is being hosted on one of these domains:
-•	eea.europa.eu
-## Don’ts
-You must not use the EEA header if your service is not being hosted in one of the above domains.

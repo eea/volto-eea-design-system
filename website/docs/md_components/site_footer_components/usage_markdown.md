@@ -1,13 +1,12 @@
-The core footer provides supplementary information such as copyright, legal, privacy, social media, contact information and links to other important sites within the European Commission ecosystem. It is always placed at the bottom of every page.
+The core footer provides supplementary information such as copyright, legal, privacy, social media, contact information and links to other important sites within the EEA. It is always placed at the bottom of every page.
 
 ## Anatomy
 
 | Components                                                   | Mandatory | Optional |
 | ------------------------------------------------------------ | --------- | -------- |
-| **Site name**                                                | yes       | no       |
+| **EEA Network**                                                | yes       | no       |
 | **Content owner details**<br />Ownership of the site content | yes       | no       |
-| **Class navigation**<br />Navigation through class names     | yes       | no       |
-| **Service navigation**<br />Provide service links            | yes       | no       |
+| **Contact Information**<br />Navigation through class names     | yes       | no       |
 | **Legal navigation**                                         | yes       | no       |
 
 ## Do's

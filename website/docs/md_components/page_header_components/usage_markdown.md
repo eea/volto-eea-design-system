@@ -1,15 +1,13 @@
-The page header component provides users the context of the page. It is always placed just below the site header. There are five variations of the page header.
-
-The anatomy image is the default page header
+The page header component provides users the context of the page. It is always placed just below the site header. 
 
 ## Anatomy
 
 | **Components**                                                                                                                                                                                                             | **Mandatory** | **Optional** |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------ |
-| **Breadcrumb**<br />Breadcrumb component provides information on the page and its relationship to the site's hierarchy and structure.<br />It is optional if your website's navigational structure has less than 3 levels. | no            | yes          |
-| **Meta**                                                                                                                                                                                                                   | no            | yes          |
+| **Meta( content type, published date, modified date, reading time )**                                                                                                                                                                                                                   | no            | yes          |
 | **Page title**                                                                                                                                                                                                             | yes           | no           |
-| **Introduction**                                                                                                                                                                                                           | no            | yes          |
+| **Download - Bookmark**                                                                                                                                                                                                           | no            | yes          |
+| **Breadcrumb**<br />Breadcrumb component provides information on the page and its relationship to the site's hierarchy and structure.<br />It is optional if your website's navigational structure has less than 3 levels. | no            | yes          |
 
 
 ## Do's
