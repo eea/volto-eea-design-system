@@ -23,11 +23,8 @@
 @width: 290px;
 @borderWidth: 1px;
 @borderShadow: 0px 0px 0px @borderWidth @solidBorderColor;
-@boxShadow:
-  @shadowBoxShadow,
-  @borderShadow
-;
-@border: none;
+@boxShadow: @eeaGlobalShadow;
+@border: 1px solid @midGray;
 @zIndex: '';
 @transition:
   box-shadow @defaultDuration @defaultEasing,
@@ -138,7 +135,7 @@
 @extraTransition: color @defaultDuration @defaultEasing;
 
 /* Extra Links */
-@extraLinkColor: @unselectedTextColor;
+@extraLinkColor: @linkColor;
 @extraLinkHoverColor: @linkHoverColor;
 
 /* Buttons */

@@ -1,21 +1,3 @@
 /*******************************
          Theme Overrides
 *******************************/
-
-div.ui.card,
-.ui.card.eea-card {
-  border: @cardBorder;
-  background: @background;
-  border-radius: @defaultBorderRadius;
-  box-shadow: @eeaGlobalShadow;
-  font-family: @pageFont;
-  font-size: @fontSize;
-
-  .meta {
-    color: @metaColor;
-  }
-
-  .extra.content a {
-    color: @extraColor;
-  }
-}
