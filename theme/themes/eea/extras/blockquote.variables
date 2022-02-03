@@ -1,5 +1,17 @@
 /*******************************
             Blockquote
 *******************************/
-@quoteColor: @secondaryColor;
-@eeaQuoteColor: @japaneseIndigo;
+/* Body */
+@blockquoteBorderLeft: 10px solid @secondaryColor;
+@childrenBorderLeft:   none;
+
+/* Quote */
+@quoteColor:      @secondaryColor;
+@quoteMargin:     @relative12px @relative30px;
+@quoteColor:      @japaneseIndigo;
+@quoteSize:       @h4;
+
+/* Author */
+@authorMarginTop: @relative16px;
+@authorWeight:    @bold;
+@authorSize:      @h5;

@@ -2,10 +2,10 @@ import React from 'react';
 
 function Blockquote({ citation, author }) {
   return (
-    <div className="eea-blockquote">
-      <blockquote className="eea-blockquote-quote">
+    <div className="eea blockquote">
+      <blockquote className="quote">
         {citation}
-        <div className="eea-blockquote-author">{author}</div>
+        <div className="author">{author}</div>
       </blockquote>
     </div>
   );
