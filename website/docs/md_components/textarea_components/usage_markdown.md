@@ -15,10 +15,10 @@ A textarea is an input field allowing users to enter multiple lines of text.
 
 ## When to use
 
-- use in any situation where the user needs to input limited amount of data (name, email address, age, etc)
+- use in any situation where the user needs to input a large, or unknown, amount of data
 
 ## When not to use
 
-- do not use where the user needs to input a large, or unknown amount of data
+- do not use when expected input is short
 - do not use when the user must respond with specific options which are known to the organisation
 

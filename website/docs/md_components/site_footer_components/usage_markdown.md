@@ -6,12 +6,12 @@ The core footer provides supplementary information such as copyright, legal, pri
 | ------------------------------------------------------------ | --------- | -------- |
 | **EEA Network**                                                | yes       | no       |
 | **Content owner details**<br />Ownership of the site content | yes       | no       |
-| **Contact Information**<br />Navigation through class names     | yes       | no       |
+| **Contact Information**<br />     | yes       | no       |
 | **Legal navigation**                                         | yes       | no       |
 
 ## Do's
 
-- make sure the pages contain all the elements in the anatomy table above
+- make sure the footer contain all the elements in the anatomy table above
 
 ## Don'ts
 

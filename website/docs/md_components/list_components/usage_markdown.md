@@ -12,7 +12,7 @@ Ordered lists display a set of items in a sequential and logical order, indicate
 
 ## Don'ts
 
-- **do not nest lists deeper than 3 levels**
+- do not nest lists deeper than 3 levels
 
 ## When to use
 
@@ -30,7 +30,7 @@ Unordered lists are used to group related content without any particular order, 
 
 ## Do's
 
-- indicate the external links, if linking to any pages external to the European Commission
+- indicate the external links, if linking to any pages external to the EEA
 - for easy to read purpose, try to use labels that are relatively consistent in characters & width
 
 ## Don'ts
