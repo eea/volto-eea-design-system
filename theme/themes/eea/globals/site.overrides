@@ -170,10 +170,15 @@ h5 {
 }
 
 #eea-top-header-language-dropdown {
+  display: flex;
   border: none !important;
   border-radius: @defaultBorderRadius;
   font-size: 10px;
   font-weight: 700;
+
+  img {
+    width: 50%;
+  }
 }
 
 #eea-top-header-language-dropdown .menu {
@@ -207,6 +212,14 @@ h5 {
 
     .row {
       padding: 0 0;
+
+      div:first-child {
+        padding-left: 0;
+      }
+
+      div:last-child {
+        padding-right: 0;
+      }
     }
   }
 }
@@ -285,9 +298,9 @@ img#eea-logo {
     position: inherit;
     left: 0;
     display: block;
-    width: 22px;
-    height: 4px;
-    margin: 3px;
+    width: 17px;
+    height: 2px;
+    margin: 2px;
     background: #ffffff;
     border-radius: 9px;
     opacity: 1;
@@ -334,10 +347,14 @@ img#eea-logo {
   justify-content: center;
   background-color: @darkCyan;
 
+  img {
+    width: 24px;
+  }
+
   span {
     position: absolute;
     width: 22px;
-    height: 4px;
+    height: 2px;
     background-color: #ffffff;
     border-radius: 9px;
     cursor: pointer;
@@ -355,19 +372,20 @@ img#eea-logo {
 #eea-search-box {
   position: relative;
   z-index: 99999;
+  overflow: scroll;
   width: 100%;
-  height: 90vh;
+  height: calc(100vh - 74px);
   background: linear-gradient(340.97deg, @darkCerulean 9.19%, #009591 77.47%);
 
   .ui.container {
     height: 100%;
+    align-items: baseline;
   }
 }
 
 .eea-search-body {
   position: relative;
   width: 100%;
-  height: 100%;
   margin: 135px 0 0 0;
 
   i.icon {
@@ -420,7 +438,15 @@ img#eea-logo {
   }
 }
 
+.eea-top-header-language-dropdown .menu .option .text {
+  font-size: 12px;
+}
+
 @media only screen and (min-width: @mobileBreakpoint + 1) {
+  #eea-search-box {
+    height: calc(100vh - 140px);
+  }
+
   .eea-top-header {
     height: 30px;
   }
@@ -447,7 +473,8 @@ img#eea-logo {
 
     span {
       width: 30px;
-      margin: 6px;
+      height: 4px;
+      margin: 4px;
     }
   }
 
@@ -455,8 +482,13 @@ img#eea-logo {
     width: 66px;
     height: 117px;
 
+    img {
+      width: 45px;
+    }
+
     span {
       width: 30px;
+      height: 4px;
     }
   }
 
@@ -480,9 +512,17 @@ img#eea-logo {
     top: 18px;
     left: -127px;
   }
+
+  .eea-top-header-language-dropdown .menu .option .text {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (min-width: @tabletBreakpoint + 1) {
+  #eea-search-box {
+    height: calc(100vh - 192px);
+  }
+
   .eea-top-header {
     height: 33px;
   }
@@ -553,6 +593,7 @@ img#eea-logo {
 
     span {
       width: 44.21px;
+      height: 4px;
     }
   }
 
@@ -1074,12 +1115,14 @@ div.ui.container.eea-page-banner-container {
 #eea-mega-menu-wrap {
   position: relative;
   z-index: 9999;
+  overflow: scroll;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 74px);
   background: linear-gradient(180deg, #0065a4 39.58%, #043570 100%);
 
   .ui.container {
     height: 100%;
+    align-items: baseline;
   }
 }
 
@@ -1095,8 +1138,7 @@ div.ui.container.eea-page-banner-container {
 nav.eea-nav {
   position: relative;
   width: 100%;
-  height: 100%;
-  margin-top: 100px;
+  margin-top: 40px;
 }
 
 nav.eea-nav ul,
@@ -1170,8 +1212,7 @@ a.menu-link:hover {
   flex-direction: column;
 }
 @media only screen and (min-width: @mobileBreakpoint) {
-  .nav.eea-nav {
-    margin-top: 50px;
+  nav.eea-nav {
     margin-top: 200px;
     background: transparent;
   }
@@ -1296,6 +1337,10 @@ a.menu-link:hover {
   }
 }
 @media only screen and (max-width: @mobileBreakpoint) {
+  #eea-mega-menu-wrap {
+    height: calc(100vh - 140px);
+  }
+
   .nav.eea-nav {
     padding: 20px;
   }
@@ -1320,7 +1365,6 @@ a.menu-link:hover {
     top: 0;
     width: 100%;
     max-width: 100%;
-    height: 100vh;
     flex-direction: column;
     overflow-x: hidden;
     transition: left 0.3s;
@@ -1527,7 +1571,7 @@ a.menu-link:hover {
     font-size: 20px;
 
     a.menu-link {
-      font-size: 20px;
+      font-size: 24px;
     }
   }
 
@@ -1545,4 +1589,28 @@ a.menu-link:hover {
       font-size: 18px;
     }
   }
+}
+@media only screen and (min-width: @tabletBreakpoint + 1) {
+  .menu-link.mega-menu-link.mega-menu-first-level {
+    padding: 30px 25px;
+    font-size: 48px;
+  }
+
+  .menu-link.menu-list-link.mega-menu-second-level {
+    padding: 25px 25px;
+    font-size: 40px;
+  }
+
+  .menu-link.menu-list-link.mega-menu-third-level {
+    padding: 18px 25px;
+    font-size: 36px;
+  }
+
+  #eea-mega-menu-wrap {
+    height: calc(100vh - 192px);
+  }
+}
+
+ul.mega-menu.mega-menu--multiLevel > li:last-child {
+  margin-bottom: 50px;
 }

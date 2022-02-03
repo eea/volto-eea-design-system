@@ -6,7 +6,7 @@
 @timelineBoxShadow: @eeaGlobalShadow;
 @timelineBorder: none;
 
-//Colors
+/* Colors */
 @timelineBlue   : @darkCerulean;
 @timelineGreen  : @pineGreen;
 @timelineGrey   : @midGray;
@@ -19,11 +19,6 @@
 @timelinePurple : @purple;
 @timelinePink   : @pink;
 @timelineBrown  : @brown;
-
-/*******************************
-            Blockquote
-*******************************/
-@quoteColor: @secondaryColor;
 
 /*******************************
         Inpage Navigation

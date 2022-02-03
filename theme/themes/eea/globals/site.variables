@@ -68,11 +68,12 @@
 @headerLineHeight : 1.25;
 @headerFontWeight : 700;
 
-@h1 : unit((32 / 16), rem);
-@h2 : unit((28 / 16), rem);
-@h3 : unit((21 / 16), rem);
-@h4 : unit((18 / 16), rem);
-@h5 : unit((16 / 16), rem);
+@h1 : unit((48 / 16), rem);
+@h2 : unit((40 / 16), rem);
+@h3 : unit((36 / 16), rem);
+@h4 : unit((24 / 16), rem);
+@h5 : unit((20 / 16), rem);
+@h5 : unit((18 / 16), rem);
 
 /*--------------
    Form Input
@@ -142,7 +143,7 @@
 @pageOverflowX       : hidden;
 
 @lineHeight          : 1.5;
-@mobileLineHeight    : 1.25;
+@mobileLineHeight    : 1.5;
 @textColor           : rgba(0, 0, 0, 0.87);
 
 /*-------------------
@@ -156,7 +157,7 @@
        Links
 --------------------*/
 
-@linkColor           : @blue;
+@linkColor           : @primaryColor;
 @linkUnderline       : none;
 @linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
 @linkHoverUnderline  : @linkUnderline;
