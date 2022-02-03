@@ -1,0 +1,70 @@
+@type: 'extra';
+@element: 'blockquote';
+
+@import (multiple) '../../theme.config';
+
+/*******************************
+            Blockquote
+*******************************/
+
+.eea-blockquote {
+  border-left: 10px solid @secondaryColor;
+}
+
+.eea-blockquote blockquote.eea-blockquote-quote {
+  margin: @relative12px @relative30px;
+  color: @eeaQuoteColor;
+  font-size: @h3;
+}
+
+blockquote .eea-blockquote-author {
+  margin-top: @relative16px;
+  font-weight: bold;
+}
+
+blockquote {
+  i.icon {
+    color: @quoteColor;
+  }
+
+  .pullquote-author {
+    text-align: right;
+  }
+}
+
+blockquote.pullquote {
+  padding: 10px 0 40px;
+  margin: 0;
+
+  i.icon {
+    font-size: 2rem;
+  }
+}
+
+.eea-pullquote-body {
+  margin: 0;
+}
+
+.eea-quote-right {
+  float: right;
+}
+
+@media only screen and (min-width: @tabletBreakpoint + 1) {
+  .eea-pullquote-body {
+    margin: 0 2rem;
+  }
+
+  blockquote.pullquote.eea-pullquote-left {
+    width: 400px;
+    padding: 0 1.5rem 1rem 0;
+    float: left;
+  }
+
+  blockquote.pullquote.eea-pullquote-right {
+    width: 400px;
+    padding: 0 0 1rem 1.5rem;
+    float: right;
+  }
+}
+
+.loadUIOverrides();

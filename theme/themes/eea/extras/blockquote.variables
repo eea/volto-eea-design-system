@@ -1,0 +1,5 @@
+/*******************************
+            Blockquote
+*******************************/
+@quoteColor: @secondaryColor;
+@eeaQuoteColor: @japaneseIndigo;
