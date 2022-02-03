@@ -1,5 +1,5 @@
 import React from 'react';
-import Timeline from 'react-timeline-semantic-ui';
+import Timeline from './Timeline';
 
 export default {
   title: 'Components/Timeline',
