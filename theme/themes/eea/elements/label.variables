@@ -6,18 +6,20 @@
        Element
 --------------------*/
 
+@labelFontSize: @fontSize;
+
 @verticalAlign: baseline;
 @verticalMargin: 0em;
 @horizontalMargin: @relative2px;
-@backgroundColor: #E8E8E8;
-@color: @mutedTextColor;
+@backgroundColor: @lowImportanceBackground;
+@color: @white;
 @backgroundImage: none;
 @verticalPadding: 0.5833em; /* medium is not @emSize custom value required */
 @horizontalPadding: 0.833em;
 @borderRadius: @defaultBorderRadius;
 @textTransform: none;
-@fontWeight: @bold;
-@borderWidth: 1px;
+@fontWeight: @normal;
+@borderWidth: 0;
 @border: none;
 
 @lineHeightOffset: -(@verticalPadding / 2);
@@ -229,7 +231,7 @@
 
 /* Pointing */
 @pointingBorderColor: inherit;
-@pointingBorderWidth: @borderWidth;
+@pointingBorderWidth: 0;
 @pointingVerticalDistance: 1em;
 @pointingTriangleSize: 0.6666em;
 @pointingHorizontalDistance: @pointingTriangleSize;

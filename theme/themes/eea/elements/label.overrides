@@ -2,37 +2,18 @@
          Theme Overrides
 *******************************/
 
-div.ui.label {
-  padding: @verticalPadding @horizontalPadding;
-  border: @border;
-  background: @lowImportanceBackground;
-  border-radius: @borderRadius;
-  color: @globalLabelColor;
-  font-size: @fontSize;
-  font-weight: 500;
-}
-
-div.ui.label.medium-label {
-  background-color: @mediumImportanceBackground;
-  color: @globalLabelColor;
-}
-
-div.ui.label.high-label {
-  background-color: @highImportanceBackground;
-  color: @globalLabelColor;
-}
-
-div.ui.label.highlight-label {
-  background-color: @highlightImportanceBackground;
-  color: @globalLabelColor;
-}
-
-div.ui.label.ui.pointing:before {
-  border-width: 0;
-}
-
 .ui.label {
-  .icon.right {
-    margin: 0 0 0 0.75em;
-  }
+  font-size: @labelFontSize;
+}
+
+.ui.label.medium {
+  background-color: @mediumImportanceBackground;
+}
+
+.ui.label.high {
+  background-color: @highImportanceBackground;
+}
+
+.ui.label.highlight {
+  background-color: @highlightImportanceBackground;
 }
