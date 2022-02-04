@@ -2,46 +2,13 @@
          Theme Overrides
 *******************************/
 
-div.ui.small.statistics {
-  margin: 0rem;
+/* Full width statistics for mobile */
+.ui.statistic {
+  width: @mobileStatisticWidth;
 }
 
-div.ui.statistic.eea-statistic {
-  width: 100%;
-
-  > .value {
-    color: @secondaryValueColor;
-    font-family: @valueFont;
-    font-weight: @valueFontWeight;
-  }
-
-  > .label {
-    margin-top: @topLabelDistance;
-    color: @primaryLabelColor;
-    font-family: @labelFont;
-    font-weight: @labelFontWeight;
-    text-transform: @labelTextTransform;
-  }
-}
-
-div.ui.statistic.eea-statistic > .value ~ .label,
-div.ui.statistics.eea-statistic .statistic > .value ~ .label {
-  margin-top: @topLabelDistance;
-}
-
-.ui[class*='right floated'].statistic.eea-statistic {
-  margin: 1rem;
-  float: right;
-}
-
-@media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {
-  div.ui.statistic.eea-statistic {
-    width: inherit;
-  }
-}
-
-@media only screen and (min-width: @tabletBreakpoint + 1) {
-  div.ui.statistic.eea-statistic {
-    width: inherit;
+@media only screen and (min-width: @mobileBreakpoint) {
+  .ui.statistic {
+    width: @tabletStatisticWidth;
   }
 }

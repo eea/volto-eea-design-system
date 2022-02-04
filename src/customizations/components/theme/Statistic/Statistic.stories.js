@@ -20,32 +20,8 @@ export default {
         },
       },
     },
-    floated: {
-      type: 'select',
-      options: ['left', 'right'],
-      description: 'sit to the left or right of other content',
-      table: {
-        type: {
-          summary: 'string',
-        },
-        defaultValue: {
-          summary: ' "" ',
-        },
-      },
-    },
     horizontal: {
       description: 'present its measurement horizontally',
-      table: {
-        type: {
-          summary: 'boolean',
-        },
-        defaultValue: {
-          summary: false,
-        },
-      },
-    },
-    inverted: {
-      description: 'formatted to fit on a dark background',
       table: {
         type: {
           summary: 'boolean',
@@ -79,8 +55,6 @@ Default.args = {
   label: 'Statistic Label',
   value: 'Value',
   horizontal: false,
-  inverted: false,
-  floated: 'right',
   size: 'small',
 };
 
