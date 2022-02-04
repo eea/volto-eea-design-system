@@ -2,16 +2,16 @@
             Blockquote
 *******************************/
 /* Body */
-@blockquoteBorderLeft: 10px solid @secondaryColor;
-@childrenBorderLeft:   none;
+@blockquoteBorderLeft : 10px solid @secondaryColor;
+@childrenBorderLeft   : none;
 
 /* Quote */
-@quoteColor:      @secondaryColor;
-@quoteMargin:     @relative12px @relative30px;
-@quoteColor:      @japaneseIndigo;
-@quoteSize:       @h4;
+@quoteColor      : @secondaryColor;
+@quoteMargin     : @relative12px @relative30px;
+@quoteColor      : @japaneseIndigo;
+@quoteFontSize   : @h4;
 
 /* Author */
-@authorMarginTop: @relative16px;
-@authorWeight:    @bold;
-@authorSize:      @h5;
+@authorMarginTop : @relative16px;
+@authorWeight    : @bold;
+@authorFontSize  : @h5;
