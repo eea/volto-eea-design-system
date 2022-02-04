@@ -1,1 +1,1 @@
-No specific UX guidelines
+No specific UX guidelines.

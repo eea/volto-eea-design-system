@@ -6,7 +6,7 @@ import Iframe from '../iframe_component.mdx';
 
 ## Invalid
 
-<Iframe id='components-forms-checkbox--invalid' > </Iframe>
+<Iframe id='components-forms-checkbox--invalid' height="400"> </Iframe>
 
 ## Optional
 

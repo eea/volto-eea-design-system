@@ -6,4 +6,4 @@ import Iframe from '../iframe_component.mdx';
 
 ## Vertical
 
-<Iframe id='components-tab--vertical' > </Iframe>
+<Iframe id='components-tab--vertical' height="400"> </Iframe>

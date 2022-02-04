@@ -3,4 +3,4 @@ title: Iconography
 order: 5
 ---
 
-Work in progress
+Work in progress.

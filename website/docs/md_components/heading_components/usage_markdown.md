@@ -1,6 +1,6 @@
-Effective headings are recognizable immediately, and help readers understand the flow of content on the page
+Effective headings are recognizable immediately, and help readers understand the flow of content on the page.
 
-## How to Use
+### How to Use
 - Employ Visual Contrast to Make Headings Stand Out. Headings need to appear separate from the rest of the content on the page.
 - Size matters: Headings Should Be Big
 - Use Headings as Titles. If we’re labeling a section of a website, the heading serves as the title for the section

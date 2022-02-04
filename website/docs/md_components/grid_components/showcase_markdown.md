@@ -6,4 +6,4 @@ import Iframe from '../iframe_component.mdx';
 
 ## Columns 12 With Col
 
-<Iframe id='layout-grid-layout-grid--grid-examples'  > </Iframe>
+<Iframe id='layout-grid-layout-grid--grid-examples' height="700" > </Iframe>

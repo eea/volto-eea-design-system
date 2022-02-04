@@ -1,3 +1,3 @@
 import Iframe from '../iframe_component.mdx';
 
-<Iframe id='components-comment--default' > </Iframe>
+<Iframe height="600" id='components-comment--default' > </Iframe>

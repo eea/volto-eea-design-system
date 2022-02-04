@@ -7,7 +7,7 @@ import Iframe from '../iframe_component.mdx';
 
 ## Invalid
 
-<Iframe id='components-forms-radio--invalid' > </Iframe>
+<Iframe id='components-forms-radio--invalid' height="400"> </Iframe>
 
 
 ## Binary
