@@ -3,14 +3,12 @@
 *******************************/
 
 /* Body */
-@pullquotePadding:      @relative10px 0 @relative50px;
-@pullquoteMobileMargin: 0;
-@pullquoteMargin:       0 2rem;
-@maxWidthOnFloat:       400px;
-@leftFloat:             left;
-@rightFloat:            right;
-@paddingLeftFloat:      0 1.5rem 1rem 0;
-@paddingRightFloat:     0 0 1rem 1.5rem;
+@pullquotePadding       : @relative10px 0 @relative50px;
+@pullquoteMobileMargin  : 0;
+@pullquoteMargin        : 0 2rem;
+@maxWidthOnFloat        : 400px;
+@paddingLeftFloat       : 0 1.5rem 1rem 0;
+@paddingRightFloat      : 0 0 1rem 1.5rem;
 
 
 /* Content */
@@ -20,6 +18,6 @@
 @authorTextAlign: right;
 
 /* Icon */
-@quoteIconSize:      2rem;
-@quoteIconColor:     @secondaryColor;
-@quoteDownIconFloat: right;
+@quoteIconSize      : 2rem;
+@quoteIconColor     : @secondaryColor;
+@quoteDownIconFloat : right;
