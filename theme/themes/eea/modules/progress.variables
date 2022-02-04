@@ -65,12 +65,12 @@
         Types
 --------------------*/
 
-@indicatingFirstColor: #75C9DB;
-@indicatingSecondColor: #0065A4;
-@indicatingThirdColor: #0065A4;
-@indicatingFourthColor: #00928F;
-@indicatingFifthColor: #00928F;
-@indicatingSixthColor: #007B6C;
+@indicatingFirstColor: @progressBarFrom0to30;
+@indicatingSecondColor: @progressBarFrom30to40;
+@indicatingThirdColor: @progressBarFrom40to60;
+@indicatingFourthColor: @progressBarFrom60to70;
+@indicatingFifthColor: @progressBarFrom70to90;
+@indicatingSixthColor: @progressBarFrom90to100;
 
 @indicatingFirstLabelColor: @textColor;
 @indicatingSecondLabelColor: @textColor;
