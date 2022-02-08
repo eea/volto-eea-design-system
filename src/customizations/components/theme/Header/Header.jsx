@@ -8,10 +8,11 @@ import { Container, Dropdown, Image, Menu, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import eeaFlag from '../../../../../theme/themes/eea/assets/images/Header/eea.png';
-import logo from '../../../../../theme/themes/eea/assets/images/Header/eea-logo.svg';
 import searchIcon from '../../../../../theme/themes/eea/assets/images/Header/search.png';
+import globeIcon from '../../../../../theme/themes/eea/assets/images/Header/globeIcon.png';
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
+import Logo from '../Logo/Logo';
 
 import { Col } from '../Grid/Col';
 
@@ -81,7 +82,12 @@ class Header extends Component {
   };
 
   searchOnClick = (e, x) => {
+    if (this.state.activeMenu === true) {
+      this.setState({ burger: '' });
+      this.setState({ activeMenu: false });
+    }
     this.setState({ activeSearch: !this.state.activeSearch });
+    this.setState({ activeItem: '' });
   };
 
   onLanguageSelection = (e, data) => {
@@ -91,6 +97,10 @@ class Header extends Component {
   };
 
   burgerOnClick = () => {
+    if (this.state.activeSearch === true) {
+      this.setState({ activeSearch: false });
+    }
+
     if (this.state.burger === '') {
       this.setState({ burger: 'open' });
       this.setState({ activeMenu: true });
@@ -99,6 +109,18 @@ class Header extends Component {
       this.setState({ activeMenu: false });
     }
   };
+
+  componentDidUpdate() {
+    if (
+      this.state.activeSearch ||
+      this.state.burger === 'open' ||
+      this.state.activeMenu
+    ) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }
 
   render() {
     const items = [
@@ -171,8 +193,9 @@ class Header extends Component {
               <Dropdown
                 text="An official website of the European Union | How do you Know?"
                 icon="chevron down"
+                aria-label="dropdown"
               >
-                <Dropdown.Menu id="eea-official-union-dropdown">
+                <Dropdown.Menu id="eea-official-union-dropdown" role="group">
                   <div>
                     <p>
                       All official European Union website addresses are in the{' '}
@@ -182,6 +205,8 @@ class Header extends Component {
                       href="https://europa.eu/european-union/contact/institutions-bodies_en"
                       target="_blank"
                       rel="noreferrer"
+                      role="option"
+                      aria-selected="false"
                     >
                       See all EU institutions and bodies
                     </a>
@@ -193,9 +218,16 @@ class Header extends Component {
             <div id="eea-official-union-mobile" className="eea-top-header-item">
               <Image src={eeaFlag} alt="eea flag"></Image>
 
-              <Dropdown text="An official EU website" icon="chevron down">
-                <Dropdown.Menu id="eea-official-union-dropdown-mobile">
-                  <div>
+              <Dropdown
+                text="An official EU website"
+                icon="chevron down"
+                aria-label="dropdown"
+              >
+                <Dropdown.Menu
+                  id="eea-official-union-dropdown-mobile"
+                  role="group"
+                >
+                  <div role="option" aria-selected="false">
                     <p>
                       All official European Union website addresses are in the{' '}
                       <b>europa.eu</b> domain.
@@ -217,46 +249,79 @@ class Header extends Component {
               className="eea-top-header-item"
               text="Environmental information systems"
               icon="chevron down"
+              aria-label="dropdown"
             >
-              <Dropdown.Menu id="eea-theme-sites-dropdown">
+              <Dropdown.Menu id="eea-theme-sites-dropdown" role="group">
                 <div id="eea-theme-sites-list">
-                  <div className="eea-theme-site-item">
+                  <div
+                    className="eea-theme-site-item"
+                    role="option"
+                    aria-selected="false"
+                  >
                     <a href="/#" target="_blank">
                       Biodiversity Information System for Europe
                     </a>
                   </div>
-                  <div className="eea-theme-site-item">
+                  <div
+                    className="eea-theme-site-item"
+                    role="option"
+                    aria-selected="false"
+                  >
                     <a href="/#" target="_blank">
                       Climate Adaptation Platform
                     </a>
                   </div>
-                  <div className="eea-theme-site-item">
+                  <div
+                    className="eea-theme-site-item"
+                    role="option"
+                    aria-selected="false"
+                  >
                     <a href="/#" target="_blank">
                       Copernicus in situ component
                     </a>
                     <br />
                   </div>
-                  <div className="eea-theme-site-item">
+                  <div
+                    className="eea-theme-site-item"
+                    role="option"
+                    aria-selected="false"
+                  >
                     <a href="/#" target="_blank">
                       European Industrial Emissions Portal
                     </a>
                   </div>
-                  <div className="eea-theme-site-item">
+                  <div
+                    className="eea-theme-site-item"
+                    role="option"
+                    aria-selected="false"
+                  >
                     <a href="/#" target="_blank">
                       Forest Information System for Europe
                     </a>
                   </div>
-                  <div className="eea-theme-site-item">
+                  <div
+                    className="eea-theme-site-item"
+                    role="option"
+                    aria-selected="false"
+                  >
                     <a href="/#" target="_blank">
                       Information Platform for Chemical Monitoring
                     </a>
                   </div>
-                  <div className="eea-theme-site-item">
+                  <div
+                    className="eea-theme-site-item"
+                    role="option"
+                    aria-selected="false"
+                  >
                     <a href="/#" target="_blank">
                       Marine Water Information System for Europe
                     </a>
                   </div>
-                  <div className="eea-theme-site-item">
+                  <div
+                    className="eea-theme-site-item"
+                    role="option"
+                    aria-selected="false"
+                  >
                     <a href="/#" target="_blank">
                       Fresh Water Information System for Europe
                     </a>
@@ -269,7 +334,13 @@ class Header extends Component {
               id="eea-top-header-language-dropdown"
               className="eea-top-header-item"
               text={`${this.state.language.toUpperCase()}`}
-              icon="globe"
+              icon={
+                <Image
+                  src={globeIcon}
+                  alt="language dropdown globe icon"
+                ></Image>
+              }
+              aria-label="dropdown"
             >
               <Dropdown.Menu>
                 {languagesList.map((item, index) => (
@@ -278,10 +349,7 @@ class Header extends Component {
                     text={
                       <span>
                         {item.name}
-                        <span
-                          className="country-code"
-                          style={{ fontWeight: 'bold', marginLeft: '3px' }}
-                        >
+                        <span className="country-code">
                           {item.code.toUpperCase()}
                         </span>
                       </span>
@@ -298,7 +366,8 @@ class Header extends Component {
           <Container>
             <Grid.Row>
               <Col desktop="4" tablet="5" mobile="3">
-                <Image src={logo} id="eea-logo" alt="eea logo"></Image>
+                {/* <Image src={logo} id="eea-logo" alt="eea logo"></Image> */}
+                <Logo id="eea-logo"></Logo>
               </Col>
               <Col desktop="8" tablet="3" mobile="1">
                 <div className="eea-main-header-menu">
@@ -323,6 +392,7 @@ class Header extends Component {
                       role="none"
                       onClick={() => {
                         this.setState({ activeMenu: false });
+                        this.setState({ activeItem: '' });
                       }}
                     >
                       <span></span>
@@ -365,156 +435,6 @@ class Header extends Component {
           {this.state.activeMenu && <HeaderMenuPopUp></HeaderMenuPopUp>}
         </div>
       </div>
-      // <Segment basic className="header-wrapper" role="banner">
-      //   <Container>
-      //     <div
-      //       className="top-header"
-      //       style={{
-      //         height: '29px',
-      //         width: '1380px',
-      //         backgroundColor: '#3D5265',
-      //         display: 'flex',
-      //         color: '#FFFFFF',
-      //         fontSize: '12px',
-      //         padding: '0',
-      //         alignItems: 'center',
-      //       }}
-      //     >
-      //       <div
-      //         className="top-header-info"
-      //         style={{
-      //           display: 'flex',
-      //           margin: '1px 403px 1px 153px',
-      //           alignItems: 'center',
-      //         }}
-      //       >
-      //         <p>
-      //           An official website of the European Union |{' '}
-      //           <a
-      //             href="/#"
-      //             style={{ textDecoration: 'underline', color: '#FFFFFF' }}
-      //           >
-      //             See all EU institutions and bodies
-      //           </a>{' '}
-      //         </p>
-      //       </div>
-
-      //       <Dropdown
-      //         text="EEA Theme Sites "
-      //         icon="chevron down"
-      //         style={{ marginRight: '85px' }}
-      //       ></Dropdown>
-
-      //       <div
-      //         className="language"
-      //         style={{ display: 'flex', alignItems: 'center' }}
-      //       >
-      //         {/* EN <Image src={vector} style={{marginLeft:"5px"}}></Image> */}
-      //         <Dropdown
-      //           text="EN"
-      //           button
-      //           icon="none"
-      //           style={{
-      //             backgroundColor: '#3D5265',
-      //             height: '29px',
-      //             color: 'white',
-      //             fontSize: '12px',
-      //           }}
-      //         >
-      //           <Dropdown.Menu>
-      //             {languagesList.map((item, index) => (
-      //               <Dropdown.Item
-      //                 key={index}
-      //                 text={item.name + '(' + item.code + ')'}
-      //               ></Dropdown.Item>
-      //             ))}
-      //           </Dropdown.Menu>
-      //         </Dropdown>
-      //         <Image
-      //           src={vector}
-      //           style={{ position: 'relative', left: '-30px' }}
-      //         ></Image>
-      //       </div>
-      //     </div>
-
-      //     <div
-      //       className="header"
-      //       style={{
-      //         width: '1380px',
-      //         height: '135px',
-      //         display: 'flex',
-      //         marginBottom: '0px',
-      //         padding: '0px',
-      //       }}
-      //     >
-      //       <Image
-      //         src={logo}
-      //         style={{
-      //           width: '311px',
-      //           height: '109.6px',
-      //           margin: '11px 591.39px 7.4px 139px',
-      //         }}
-      //       />
-      //       <div
-      //         style={{
-      //           display: 'flex',
-      //           marginRight: '139.11px',
-      //           position: 'relative',
-      //           top: '-1px',
-      //         }}
-      //       >
-      //         <Image
-      //           src={searchIcon}
-      //           style={{ width: '93px', height: '135px' }}
-      //         />
-      //         <Image
-      //           src={eeaIcon}
-      //           style={{
-      //             width: '92.5px',
-      //             height: '135px',
-      //             position: 'relative',
-      //             left: '-2px',
-      //           }}
-      //         />
-      //       </div>
-      //     </div>
-
-      //     <div
-      //       className="header-menu"
-      //       style={{
-      //         width: '1366px',
-      //         height: '40px',
-      //         backgroundColor: '#F9F9F9',
-      //         display: 'flex',
-      //       }}
-      //     >
-      //       <Menu
-      //         text
-      //         style={{
-      //           width: '797.49px',
-      //           height: '20.54px',
-      //           margin: '10px 140.51px 6.46px 428px',
-      //           backgroundColor: '#F9F9F9',
-      //           position: 'relative',
-      //           top: '-10px',
-      //         }}
-      //       >
-      //         {items.map((item) => (
-      //           <Menu.Item
-      //             name={item.key}
-      //             style={
-      //               this.state.activeItem !== item.key ? item.style : style1
-      //             }
-      //             onClick={this.menuOnClick}
-      //             active={this.state.activeItem === item.key}
-      //           >
-      //             {item.name}
-      //           </Menu.Item>
-      //         ))}
-      //       </Menu>
-      //     </div>
-      //   </Container>
-      // </Segment>
     );
   }
 }
