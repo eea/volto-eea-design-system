@@ -29,7 +29,7 @@ const messages = defineMessages({
  * @param {Object} intl Intl object
  * @returns {string} Markup of the component.
  */
-const Logo = () => {
+const Logo = ({ id }) => {
   const lang = useSelector((state) => state.intl.locale);
   const intl = useIntl();
   const url = config.settings.isMultilingual ? `/${lang}` : '/';
@@ -40,8 +40,9 @@ const Logo = () => {
         src={LogoImage}
         alt={intl.formatMessage(messages.eeasite)}
         title={intl.formatMessage(messages.eeasite)}
-        height={64}
+        //height={64}
         className="eea-logo"
+        id={id}
       />
     </Link>
   );
