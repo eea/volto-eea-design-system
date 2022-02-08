@@ -45,7 +45,6 @@
 @relativeBorderRadius: @relative4px;
 @absoluteBorderRadius: 0px;
 @eeaMenuBorder : @relative2px solid;
-@eeaButtonBorder: @relative2px solid;
 
 @defaultBorderRadius: @absoluteBorderRadius;
 
@@ -260,7 +259,7 @@
 --------------------*/
 
 @mobileBreakpoint            : 480px;
-@tabletBreakpoint            : 834px;
+@tabletBreakpoint            : 835px;
 @computerBreakpoint          : 1025px;
 @largeMonitorBreakpoint      : 1200px;
 @widescreenMonitorBreakpoint : 1920px;
@@ -453,32 +452,32 @@
 --------------------*/
 
 /* Positive */
-@positiveColor           : @green;
-@positiveBackgroundColor : #FCFFF5;
-@positiveBorderColor     : #A3C293;
-@positiveHeaderColor     : #1A531B;
-@positiveTextColor       : #2C662D;
+@positiveColor           : #287D3C; //
+@positiveBackgroundColor : #EDF9F0; //
+@positiveBorderColor     : #EDF9F0; //
+@positiveHeaderColor     : #287D3C; //
+@positiveTextColor       : #287D3C; //
 
 /* Negative */
-@negativeColor           : @red;
-@negativeBackgroundColor : rgb(237, 195, 194);
-@negativeBorderColor     : #E0B4B4;
-@negativeHeaderColor     : @black;
-@negativeTextColor       : @black;
+@negativeColor           : #DA1414; //
+@negativeBackgroundColor : #FEEFEF; //
+@negativeBorderColor     : #FEEFEF; //
+@negativeHeaderColor     : #DA1414; //
+@negativeTextColor       : #DA1414; //
 
 /* Info */
-@infoColor              : #31CCEC;
-@infoBackgroundColor    : #F8FFFF;
-@infoBorderColor        : #A9D5DE;
-@infoHeaderColor        : #0E566C;
-@infoTextColor          : #276F86;
+@infoColor              : #2E5AAC; //
+@infoBackgroundColor    : #EEF2FA; //
+@infoBorderColor        : #EEF2FA; //
+@infoHeaderColor        : #2E5AAC; //
+@infoTextColor          : #2E5AAC; //
 
 /* Warning */
-@warningColor           : #F2C037;
-@warningBorderColor     : #F3E2AB;
-@warningBackgroundColor : #F3E2AB;
-@warningHeaderColor     : @black;
-@warningTextColor       : @black;
+@warningColor           : #B95000; //
+@warningBorderColor     : #FFF4EC; //
+@warningBackgroundColor : #FFF4EC; //
+@warningHeaderColor     : #B95000; //
+@warningTextColor       : #B95000; //
 
 /*-------------------
         Paths
@@ -543,7 +542,7 @@
 @unselectedTextColor         : rgba(0, 0, 0, 0.4);
 @hoveredTextColor            : rgba(0, 0, 0, 0.8);
 @pressedTextColor            : rgba(0, 0, 0, 0.9);
-@selectedTextColor           : @lightGrey;
+@selectedTextColor           : @white;
 @disabledTextColor           : rgba(0, 0, 0, 0.2);
 
 @invertedTextColor           : rgba(255, 255, 255, 0.9);
