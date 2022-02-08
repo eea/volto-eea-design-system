@@ -13,7 +13,7 @@ div.ui.accordion.eea-accordion .eea-accordion-item {
     padding: 10px 19px;
     background-color: @backrgoundColor;
     font-family: @titleFont;
-    font-size: @h3;
+    font-size: @h4;
 
     i.icon {
       display: flex;
@@ -77,6 +77,96 @@ div.ui.accordion.eea-accordion:not(.styled) .title ~ .content:not(.ui) {
   }
 
   div.ui.accordion.eea-accordion .eea-accordion-item .title {
+    padding: 12px 25px;
+  }
+}
+
+/*accordion without classes*/
+
+.ui.accordion {
+  margin: @itemsMargin;
+  font-family: @titleFont;
+  transition: @styledTitleTransition;
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 19px !important;
+    border-bottom: 3px solid @silverGray;
+    background-color: #ffffff;
+    font-family: @titleFont;
+    font-size: @h4 !important;
+
+    &:hover {
+      color: @darkCyan;
+
+      i.icon {
+        color: @darkCyan;
+      }
+    }
+
+    &.active {
+      border-bottom: none;
+      margin-top: 20px;
+      background-color: @darkCyan;
+      color: #ffffff;
+    }
+
+    i.icon {
+      display: flex;
+      width: 31px;
+      height: 31px;
+      align-items: center;
+      justify-content: center;
+      margin-right: 18px;
+      margin-left: 10px;
+      color: @silverGray;
+      font-size: 25px !important;
+      transition: @iconTransition;
+    }
+  }
+
+  .content {
+    padding: 10px 19px !important;
+    background: @contentBckground;
+    font-family: @titleFont;
+    font-size: @fontSize;
+  }
+}
+
+/* Active accordion arrow */
+.ui.accordion .active.title i.icon {
+  color: #ffffff;
+  transform: rotate(180deg) !important;
+}
+
+/* Accordion content padding for unstyled */
+div.ui.accordion:not(.styled) .accordion .title ~ .content:not(.ui),
+div.ui.accordion:not(.styled) .title ~ .content:not(.ui) {
+  padding: 12px 24px;
+}
+
+@media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {
+  div.ui.accordion div.content,
+  div.ui.accordion:not(.styled) .accordion .title ~ .content:not(.ui),
+  div.ui.accordion:not(.styled) .title ~ .content:not(.ui) {
+    padding: 12px 34px;
+  }
+
+  div.ui.accordion .title {
+    padding: 11px 25px;
+  }
+}
+
+@media only screen and (min-width: @tabletBreakpoint + 1) {
+  div.ui.accordion div.content,
+  div.ui.accordion:not(.styled) .accordion .title ~ .content:not(.ui),
+  div.ui.accordion:not(.styled) .title ~ .content:not(.ui) {
+    padding-right: 74px;
+  }
+
+  div.ui.accordion .title {
     padding: 12px 25px;
   }
 }
