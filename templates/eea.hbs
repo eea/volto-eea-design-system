@@ -8,9 +8,9 @@ All notable changes to this project will be documented in this file. Dates are d
 
 {{#each releases}}
   {{#if href}}
-    ###{{#unless major}}#{{/unless}} [{{title}}]({{href}}) - {{niceDate}}
+    ###{{#unless major}}#{{/unless}} [{{title}}]({{href}}) - {{date}}
   {{else}}
-    #### {{title}} - {{niceDate}}
+    #### {{title}} - {{date}}
   {{/if}}
 
   {{! List commits with `Breaking change: ` somewhere in the message }}
