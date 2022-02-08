@@ -49,8 +49,8 @@ export default {
 const Template = (args) => (
   <Form>
     <Form.Field>
-      <label htmlFor="temp-id">{args.labeltext}</label>
       <Input {...args} id="temp-id" />
+      <label htmlFor="temp-id">{args.labeltext}</label>
     </Form.Field>
   </Form>
 );

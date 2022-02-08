@@ -2,7 +2,7 @@
             Checkbox
 *******************************/
 
-@checkboxSize: 17px;
+@checkboxSize: 20px;
 @checkboxColor: @textColor;
 @checkboxLineHeight: @checkboxSize;
 
@@ -52,7 +52,7 @@
 @checkboxFocusBackground: @white;
 @checkboxFocusBorderColor: @focusedFormMutedBorderColor;
 @checkboxFocusCheckColor: @selectedTextColor;
-@labelFocusColor: @selectedTextColor;
+@labelFocusColor: @textColor;
 
 /* Active */
 @labelActiveColor: @selectedTextColor;
@@ -83,14 +83,14 @@
 /* Radio */
 /* Uses px to avoid rounding issues with circles */
 
-@radioSize: 15px;
+@radioSize: 20px;
 @radioTop: 1px;
 @radioLeft: 0px;
 @radioLabelDistance: @labelDistance;
 
 @bulletTop: 1px;
 @bulletLeft: 0px;
-@bulletScale: (7 / 15); /* 7px as unitless value from radio size */
+@bulletScale: (0.55);
 @bulletColor: @textColor;
 @bulletRadius: @circularRadius;
 

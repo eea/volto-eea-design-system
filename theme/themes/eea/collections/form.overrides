@@ -2,6 +2,16 @@
          Theme Overrides
 *******************************/
 
+/* Chackbox label must be white on error without affecting @formErrorColor varible */
+.ui.form .fields.error .field .checkbox label:after,
+.ui.form .field.error .checkbox label:after,
+.ui.form .fields.error .field .checkbox .box:after,
+.ui.form .field.error .checkbox .box:after {
+  color: @formErrorLabelColor;
+}
+
+/******************************************************/
+
 .ui.form .inline.field {
   margin: 0;
 }
