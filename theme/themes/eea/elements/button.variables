@@ -6,6 +6,8 @@
        Element
 --------------------*/
 
+@buttonBorder: @relative2px solid;
+
 /* Button */
 @buttonFontSize: @fontSize;
 
@@ -15,28 +17,26 @@
 @actionButtonButtonColor: @secondaryColor;
 @actionButtonButtonColorHover: @steelBlue;
 
-@secondaryBorder: @eeaButtonBorder @primaryColor;
-@secondaryBorderHover: @eeaButtonBorder @darkMidnightBlue;
-
-@buttonPadings: @relative12px @relative30px;
+@secondaryBorder: @buttonBorder @primaryColor;
+@secondaryBorderHover: @buttonBorder @darkMidnightBlue;
 
 @verticalMargin: 0em;
 @horizontalMargin: 0.25em;
-@backgroundColor: #E0E1E2;
+@backgroundColor: @silverGray;
 @backgroundImage: none;
 @background: @backgroundColor @backgroundImage;
 @lineHeight: 1em;
 
 /* Button defaults to using same height as input globally */
 @verticalPadding: @inputVerticalPadding;
-@horizontalPadding: 1.5em;
+@horizontalPadding: 1.875em;
 
 /* Text */
 @textTransform: none;
 @tapColor: transparent;
 @fontFamily: @pageFont;
-@fontWeight: @bold;
-@textColor: rgba(0, 0, 0, 0.6);
+@fontWeight: 500;
+@textColor: @black;
 @textShadow: none;
 @invertedTextShadow: @textShadow;
 @borderRadius: @defaultBorderRadius;
@@ -98,7 +98,7 @@
 --------------------*/
 
 /* Hovered */
-@hoverBackgroundColor: #CACBCD;
+@hoverBackgroundColor: @midGray;
 @hoverBackgroundImage: @backgroundImage;
 @hoverBoxShadow: @boxShadow;
 @hoverColor: @hoveredTextColor;
