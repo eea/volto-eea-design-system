@@ -13,8 +13,6 @@ import ThemeSites from './theme-sites.js';
 import EIONETLogo from '../../../../../theme/themes/eea/assets/images/Footer/EIONETLogo.png';
 import EEALogo from '../../../../../theme/themes/eea/assets/images/Footer/EEA-Logo-white.svg';
 
-import { Col } from '../Grid/Col';
-
 /**
  * Component to display the footer.
  * @function Footer
@@ -25,24 +23,27 @@ import { Col } from '../Grid/Col';
 class Footer extends Component {
   render() {
     return (
-      <div className="eea-footer">
-        <div className="eea-footer-visual">
-          <div className="eea-footer-container">
-            <p className="eea-footer-header">The EEA also contributes to</p>
+      <footer>
+        <div className="visual">
+          <Container>
+            <div className="theme-sites">
+              <p className="header">The EEA also contributes to</p>
+              <ThemeSites />
+            </div>
+            <div className="subfooter">
+              <Grid>
+                <Grid.Column mobile={6} tablet={8} computer={8}>
+                  <div className="item">
+                    <div className="site logo">
+                      <Image src={EEALogo} alt="EEA Logo"></Image>
+                      <p className="description">
+                        An agency of the European Union
+                      </p>
+                    </div>
 
-            <ThemeSites />
-
-            <Container className="eea-subfooter">
-              <Grid.Row>
-                <Col desktop="8" tablet="5" mobile="2">
-                  <div className="eea-footer-logos eea-subfooter-item">
-                    <Image src={EEALogo} alt="EEA Logo"></Image>
-                    <p className="eea-footer-logo-description">
-                      An agency of the European Union
-                    </p>
-                    <div className="ionet-logo">
+                    <div className="ionet logo">
                       <Image src={EIONETLogo} alt="IONET Logo"></Image>
-                      <p>
+                      <p className="description">
                         European Environment
                         <br />
                         Information and
@@ -51,54 +52,54 @@ class Footer extends Component {
                       </p>
                     </div>
                   </div>
-                </Col>
-                <Col desktop="4" tablet="3" mobile="2">
-                  <div className="eea-subfooter-item">
-                    <p className="eea-subfooter-item-header">Contact us</p>
-                    <div className="eea-footer-contact-item">
+                </Grid.Column>
+                <Grid.Column mobile={6} tablet={4} computer={4}>
+                  <div className="item">
+                    <p className="header">Contact us</p>
+                    <div className="contact">
                       <Icon name="comment outline" size="big"></Icon>
                       Ask your question
                     </div>
-                    <div className="eea-footer-contact-item">
+                    <div className="contact">
                       <Icon name="envelope outline" size="big"></Icon>
                       Sign up to our newsletter
                     </div>
-                    <p className="eea-footer-contact-address">
+                    <p className="address">
                       Kongens Nytorv 6 1050 Copenhagen K (+45) 33 36 71 00
                     </p>
 
-                    <div className="eea-footer-contact-social">
-                      <a href="/#">
-                        <Icon size="big" name="twitter"></Icon>
+                    <div className="social">
+                      <a href="/#" aria-label="twitter link">
+                        <Icon name="twitter"></Icon>
                       </a>
-                      <a href="/#">
-                        <Icon size="big" name="facebook"></Icon>
+                      <a href="/#" aria-label="facebook link">
+                        <Icon name="facebook"></Icon>
                       </a>
-                      <a href="/#">
-                        <Icon size="big" name="linkedin"></Icon>
+                      <a href="/#" aria-label="linkedin link">
+                        <Icon name="linkedin"></Icon>
                       </a>
-                      <a href="/#">
-                        <Icon size="big" name="youtube"></Icon>
+                      <a href="/#" aria-label="youtube link">
+                        <Icon name="youtube"></Icon>
                       </a>
-                      <a href="/#">
-                        <Icon size="big" name="rss"></Icon>
+                      <a href="/#" aria-label="rss link">
+                        <Icon name="rss"></Icon>
                       </a>
                     </div>
                   </div>
-                </Col>
-              </Grid.Row>
+                </Grid.Column>
+              </Grid>
               <Grid.Row>
-                <div className="eea-footer-links">
+                <div className="menu">
                   <a href="/#">CMS Login</a>
                   <a href="/#">Sitemap</a>
                   <a href="/#">Privacy</a>
                   <a href="/#"> &copy; Copyright</a>
                 </div>
               </Grid.Row>
-            </Container>
-          </div>
+            </div>
+          </Container>
         </div>
-      </div>
+      </footer>
     );
   }
 }
