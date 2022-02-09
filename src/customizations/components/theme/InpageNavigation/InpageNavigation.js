@@ -1,47 +1,63 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import { Container, Icon } from 'semantic-ui-react';
 
-function InpageNavigation({ linkId }) {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [removeClass, setRemoveClass] = useState('hidden');
+class InpageNavigation extends Component {
+  // const [scrollPosition, setScrollPosition] = useState(0);
+  // const [removeClass, setRemoveClass] = useState('hidden');
 
-  const handleInpageNavigationVisibility = () => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      scrollPosition: 0,
+      removeClass: 'hidden'
+    };
+  }
+
+  handleInpageNavigationVisibility = () => {
     const position = window.scrollY;
-    setScrollPosition(position);
+    this.setState({scrollPosition: position})
+    //setScrollPosition(position);
 
-    if (scrollPosition > 50) {
-      return setRemoveClass('');
+    if (this.state.scrollPosition > 50) {
+      return this.setState({removeClass: ''});
     } else {
-      return setRemoveClass('hidden');
+      return this.setState({removeClass: 'hidden'});
     }
   };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleInpageNavigationVisibility);
-  });
+  componentDidMount() {
+    window.addEventListener("scroll",this.handleInpageNavigationVisibility);
+  }
 
-  const onInpageNavigationClick = () => {
+  componentWillUnmount() {
+    window.removeEventListener("scroll",this.handleInpageNavigationVisibility);
+  }
+
+  onInpageNavigationClick = () => {
     //setRemoveClass("hidden",() =>{window.scrollTo(0,0);});
     window.scrollTo(0, 0);
   };
 
-  return (
-    <Container>
-      <div
-        id="inpage-navigation"
-        onClick={onInpageNavigationClick}
-        role="none"
-        className={removeClass}
-      >
-        <div id="navigation-text-tablet">
-          <Icon name="chevron up" />
+  render() {
+
+    return (
+      <Container>
+        <div
+          id="inpage-navigation"
+          onClick={this.onInpageNavigationClick}
+          role="none"
+          className={this.state.removeClass}
+        >
+          <div id="navigation-text-tablet">
+            <Icon name="chevron up" />
+          </div>
+          <div id="navigation-text-desktop">
+            <Icon name="chevron up" /> Top
+          </div>
         </div>
-        <div id="navigation-text-desktop">
-          <Icon name="chevron up" /> Top
-        </div>
-      </div>
-    </Container>
-  );
+      </Container>
+    );
+  }
 }
 
 export default InpageNavigation;
