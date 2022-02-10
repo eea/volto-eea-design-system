@@ -18,7 +18,9 @@ function ThemeSites() {
     <div className="logos">
       <Grid columns={5}>
         <Grid.Column className="logo">
-          <Link to="/#"><Image src={Logo1} alt="Biodiversity"></Image></Link>
+          <Link to="/#">
+            <Image src={Logo1} alt="Biodiversity"></Image>
+          </Link>
         </Grid.Column>
         <Grid.Column className="logo">
           <Image src={Logo2} alt="Climate and energy in the EU"></Image>
@@ -27,7 +29,10 @@ function ThemeSites() {
           <Image src={Logo3} alt="Copernicus in situ"></Image>
         </Grid.Column>
         <Grid.Column className="logo">
-          <Image src={Logo4} alt="Information platform for chemical monitoring"></Image>
+          <Image
+            src={Logo4}
+            alt="Information platform for chemical monitoring"
+          ></Image>
         </Grid.Column>
         <Grid.Column className="logo">
           <Image src={Logo5} alt="WISE freshwater"></Image>
