@@ -16,17 +16,17 @@ div.ui.container {
     margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
-@media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
   div.ui.container {
     padding-right: @tabletPadding;
     padding-left: @tabletPadding;
   }
 }
 
-@media only screen and (min-width: @tabletBreakpoint + 1) {
+@media only screen and (min-width: @computerBreakpoint) {
   div.ui.container {
-    padding-right: @desktopPadding;
-    padding-left: @desktopPadding;
+    padding-right: @computerPadding;
+    padding-left: @computerPadding;
   }
 }
 
