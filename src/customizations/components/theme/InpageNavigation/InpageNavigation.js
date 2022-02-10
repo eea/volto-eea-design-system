@@ -13,7 +13,6 @@ class InpageNavigation extends Component {
   handleInpageNavigationVisibility = () => {
     const position = window.scrollY;
     this.setState({ scrollPosition: position });
-    //setScrollPosition(position);
 
     if (this.state.scrollPosition > 50) {
       return this.setState({ removeClass: '' });
@@ -31,7 +30,6 @@ class InpageNavigation extends Component {
   }
 
   onInpageNavigationClick = () => {
-    //setRemoveClass("hidden",() =>{window.scrollTo(0,0);});
     window.scrollTo(0, 0);
   };
 
