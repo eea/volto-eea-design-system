@@ -57,9 +57,124 @@ function HeaderMenuPopUp() {
     { name: 'Item 5', sections: [] },
   ];
 
+  // const menuItems = [
+  //   {
+  //     '@id': 'item1',
+  //     items: [
+  //       {
+  //         '@id': 'section1',
+  //         description: '',
+  //         items: [],
+  //         review_state: null,
+  //         title: 'Section 1',
+  //       },
+  //       {
+  //         '@id': 'section2',
+  //         description: '',
+  //         items: [
+  //           {
+  //             '@id': 'page1',
+  //             description: '',
+  //             items: [],
+  //             review_state: null,
+  //             title: 'Page 1',
+  //           },
+  //         ],
+  //         review_state: null,
+  //         title: 'Section 2',
+  //       },
+  //       {
+  //         '@id': 'section3',
+  //         description: '',
+  //         items: [],
+  //         review_state: null,
+  //         title: 'Section 3',
+  //       },
+  //     ],
+  //     review_state: null,
+  //     title: 'Item 1',
+  //   },
+  //   {
+  //     '@id': 'item2',
+  //     items: [
+  //       {
+  //         '@id': 'section1',
+  //         description: '',
+  //         items: [],
+  //         review_state: null,
+  //         title: 'Section 1',
+  //       },
+  //       {
+  //         '@id': 'section2',
+  //         description: '',
+  //         items: [
+  //           {
+  //             '@id': 'page1',
+  //             description: '',
+  //             items: [],
+  //             review_state: null,
+  //             title: 'Page 1',
+  //           },
+  //         ],
+  //         review_state: null,
+  //         title: 'Section 2',
+  //       },
+  //       {
+  //         '@id': 'section3',
+  //         description: '',
+  //         items: [],
+  //         review_state: null,
+  //         title: 'Section 3',
+  //       },
+  //     ],
+  //     review_state: null,
+  //     title: 'Item 2',
+  //   },
+  //   {
+  //     '@id': 'item3',
+  //     items: [],
+  //     review_state: null,
+  //     title: 'Item 3',
+  //   },
+  // ];
+
   return (
     <div id="eea-mega-menu-wrap">
       <Container>
+        {/* <Menu vertical>
+        {menuItems.map((item) => (
+          <Dropdown item text={item.title} key={item['@id']}>
+            {item.items.length > 0 ? 
+            (
+              <Dropdown.Menu fluid>
+                {item.items.map((subitem) => (
+                  
+                    {subitem.items.length > 0 ? 
+                    (
+                      <Dropdown item text={subitem.title}>
+                        <Dropdown.Menu>
+                          {subitem.items.map((finalItem) => (
+                            <Dropdown.Item key={finalItem['@id']}>{finalItem.title}</Dropdown.Item>
+                          ))}
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    ) 
+                    : 
+                    (
+                      <Dropdown.Item>{subitem.title}</Dropdown.Item>
+                    )
+                    }
+                  
+                ))}
+              </Dropdown.Menu>
+            ) 
+            : (
+              <></>
+            )}
+          </Dropdown>
+        ))}
+      </Menu> */}
+
         <nav className="eea-nav">
           <ul className="menu menu-bar">
             <li>
