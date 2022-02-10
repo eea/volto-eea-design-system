@@ -185,7 +185,7 @@ class Header extends Component {
 
     return (
       <div className="eea-header">
-        <div className="eea-top-header">
+        {/* <div className="eea-top-header">
           <Container>
             <div id="eea-official-union" className="eea-top-header-item">
               <Image src={eeaFlag} alt="eea flag"></Image>
@@ -360,7 +360,7 @@ class Header extends Component {
               </Dropdown.Menu>
             </Dropdown>
           </Container>
-        </div>
+        </div> */}
 
         <div className="eea-main-header">
           <Container>

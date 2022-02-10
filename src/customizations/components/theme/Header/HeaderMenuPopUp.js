@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container } from 'semantic-ui-react';
+import { Container, Menu, Dropdown } from 'semantic-ui-react';
 
 function HeaderMenuPopUp() {
   const [firstLevelHoverActive, setFirstLevelHoverActive] = useState(-1);
@@ -57,123 +57,126 @@ function HeaderMenuPopUp() {
     { name: 'Item 5', sections: [] },
   ];
 
-  // const menuItems = [
-  //   {
-  //     '@id': 'item1',
-  //     items: [
-  //       {
-  //         '@id': 'section1',
-  //         description: '',
-  //         items: [],
-  //         review_state: null,
-  //         title: 'Section 1',
-  //       },
-  //       {
-  //         '@id': 'section2',
-  //         description: '',
-  //         items: [
-  //           {
-  //             '@id': 'page1',
-  //             description: '',
-  //             items: [],
-  //             review_state: null,
-  //             title: 'Page 1',
-  //           },
-  //         ],
-  //         review_state: null,
-  //         title: 'Section 2',
-  //       },
-  //       {
-  //         '@id': 'section3',
-  //         description: '',
-  //         items: [],
-  //         review_state: null,
-  //         title: 'Section 3',
-  //       },
-  //     ],
-  //     review_state: null,
-  //     title: 'Item 1',
-  //   },
-  //   {
-  //     '@id': 'item2',
-  //     items: [
-  //       {
-  //         '@id': 'section1',
-  //         description: '',
-  //         items: [],
-  //         review_state: null,
-  //         title: 'Section 1',
-  //       },
-  //       {
-  //         '@id': 'section2',
-  //         description: '',
-  //         items: [
-  //           {
-  //             '@id': 'page1',
-  //             description: '',
-  //             items: [],
-  //             review_state: null,
-  //             title: 'Page 1',
-  //           },
-  //         ],
-  //         review_state: null,
-  //         title: 'Section 2',
-  //       },
-  //       {
-  //         '@id': 'section3',
-  //         description: '',
-  //         items: [],
-  //         review_state: null,
-  //         title: 'Section 3',
-  //       },
-  //     ],
-  //     review_state: null,
-  //     title: 'Item 2',
-  //   },
-  //   {
-  //     '@id': 'item3',
-  //     items: [],
-  //     review_state: null,
-  //     title: 'Item 3',
-  //   },
-  // ];
+  const menuItems = [
+    {
+      '@id': 'item1',
+      items: [
+        {
+          '@id': 'section1',
+          description: '',
+          items: [],
+          review_state: null,
+          title: 'Section 1',
+        },
+        {
+          '@id': 'section2',
+          description: '',
+          items: [
+            {
+              '@id': 'page1',
+              description: '',
+              items: [],
+              review_state: null,
+              title: 'Page 1',
+            },
+          ],
+          review_state: null,
+          title: 'Section 2',
+        },
+        {
+          '@id': 'section3',
+          description: '',
+          items: [],
+          review_state: null,
+          title: 'Section 3',
+        },
+      ],
+      review_state: null,
+      title: 'Item 1',
+    },
+    {
+      '@id': 'item2',
+      items: [
+        {
+          '@id': 'section1',
+          description: '',
+          items: [],
+          review_state: null,
+          title: 'Section 1',
+        },
+        {
+          '@id': 'section2',
+          description: '',
+          items: [
+            {
+              '@id': 'page1',
+              description: '',
+              items: [],
+              review_state: null,
+              title: 'Page 1',
+            },
+          ],
+          review_state: null,
+          title: 'Section 2',
+        },
+        {
+          '@id': 'section3',
+          description: '',
+          items: [],
+          review_state: null,
+          title: 'Section 3',
+        },
+      ],
+      review_state: null,
+      title: 'Item 2',
+    },
+    {
+      '@id': 'item3',
+      items: [],
+      review_state: null,
+      title: 'Item 3',
+    },
+  ];
 
   return (
     <div id="eea-mega-menu-wrap">
       <Container>
-        {/* <Menu vertical>
+      {/* <nav className='eea-nav'>
+      <Menu vertical>
         {menuItems.map((item) => (
-          <Dropdown item text={item.title} key={item['@id']}>
+          <Dropdown item text={item.title} key={item['@id']} simple>
             {item.items.length > 0 ? 
             (
               <Dropdown.Menu fluid>
-                {item.items.map((subitem) => (
-                  
-                    {subitem.items.length > 0 ? 
-                    (
-                      <Dropdown item text={subitem.title}>
-                        <Dropdown.Menu>
-                          {subitem.items.map((finalItem) => (
-                            <Dropdown.Item key={finalItem['@id']}>{finalItem.title}</Dropdown.Item>
-                          ))}
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    ) 
-                    : 
-                    (
-                      <Dropdown.Item>{subitem.title}</Dropdown.Item>
-                    )
-                    }
-                  
+                {item.items.map((itemL2) => (
+                  <>
+                    {itemL2.items.length > 0 ? 
+                      (
+                        <Dropdown item text={itemL2.title} key={item['@id']} simple>
+                          <Dropdown.Menu>
+                            {itemL2.items.map((itemL3) => (
+                              <Dropdown.Item text={itemL3.title} key={itemL3['@id']}></Dropdown.Item>
+                            ))}
+                          </Dropdown.Menu>
+                        </Dropdown>
+                      ) 
+                      : 
+                      (
+                        <Dropdown.Item text={itemL2.title} key={itemL2['@id']}></Dropdown.Item>
+                      )}
+                  </>
                 ))}
               </Dropdown.Menu>
             ) 
-            : (
+            : 
+            (
               <></>
             )}
           </Dropdown>
         ))}
-      </Menu> */}
+      </Menu>
+      </nav> */}
+        
 
         <nav className="eea-nav">
           <ul className="menu menu-bar">
