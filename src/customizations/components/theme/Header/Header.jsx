@@ -4,12 +4,12 @@
  */
 
 import React, { Component } from 'react';
-import { Container, Dropdown, Image, Menu, Grid } from 'semantic-ui-react';
+import { Container, Image, Menu, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import eeaFlag from '../../../../../theme/themes/eea/assets/images/Header/eea.png';
+//import eeaFlag from '../../../../../theme/themes/eea/assets/images/Header/eea.png';
 import searchIcon from '../../../../../theme/themes/eea/assets/images/Header/search.png';
-import globeIcon from '../../../../../theme/themes/eea/assets/images/Header/globeIcon.png';
+//import globeIcon from '../../../../../theme/themes/eea/assets/images/Header/globeIcon.png';
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
 import Logo from '../Logo/Logo';
@@ -151,37 +151,37 @@ class Header extends Component {
       },
     ];
 
-    const languagesList = [
-      { name: 'Albanian', code: 'sq' },
-      { name: 'Български', code: 'bg' },
-      { name: 'Bosnian', code: 'bs' },
-      { name: 'čeština', code: 'cs' },
-      { name: 'Hrvatski', code: 'hr' },
-      { name: 'dansk', code: 'da' },
-      { name: 'Nederlands', code: 'nl' },
-      { name: 'ελληνικά', code: 'el' },
-      { name: 'English', code: 'en' },
-      { name: 'eesti', code: 'et' },
-      { name: 'Suomi', code: 'fi' },
-      { name: 'Français', code: 'fr' },
-      { name: 'Deutsch', code: 'de' },
-      { name: 'magyar', code: 'hu' },
-      { name: 'Íslenska', code: 'is' },
-      { name: 'italiano', code: 'it' },
-      { name: 'Latviešu', code: 'lv' },
-      { name: 'lietuvių', code: 'lt' },
-      { name: 'Macedonian', code: 'mk' },
-      { name: 'Malti', code: 'mt' },
-      { name: 'Norsk', code: 'no' },
-      { name: 'polski', code: 'pl' },
-      { name: 'Português', code: 'pt' },
-      { name: 'Română', code: 'ro' },
-      { name: 'slovenčina', code: 'sk' },
-      { name: 'Slovenščina', code: 'sl' },
-      { name: 'Español', code: 'es' },
-      { name: 'Svenska', code: 'sv' },
-      { name: 'Türkçe', code: 'tr' },
-    ];
+    // const languagesList = [
+    //   { name: 'Albanian', code: 'sq' },
+    //   { name: 'Български', code: 'bg' },
+    //   { name: 'Bosnian', code: 'bs' },
+    //   { name: 'čeština', code: 'cs' },
+    //   { name: 'Hrvatski', code: 'hr' },
+    //   { name: 'dansk', code: 'da' },
+    //   { name: 'Nederlands', code: 'nl' },
+    //   { name: 'ελληνικά', code: 'el' },
+    //   { name: 'English', code: 'en' },
+    //   { name: 'eesti', code: 'et' },
+    //   { name: 'Suomi', code: 'fi' },
+    //   { name: 'Français', code: 'fr' },
+    //   { name: 'Deutsch', code: 'de' },
+    //   { name: 'magyar', code: 'hu' },
+    //   { name: 'Íslenska', code: 'is' },
+    //   { name: 'italiano', code: 'it' },
+    //   { name: 'Latviešu', code: 'lv' },
+    //   { name: 'lietuvių', code: 'lt' },
+    //   { name: 'Macedonian', code: 'mk' },
+    //   { name: 'Malti', code: 'mt' },
+    //   { name: 'Norsk', code: 'no' },
+    //   { name: 'polski', code: 'pl' },
+    //   { name: 'Português', code: 'pt' },
+    //   { name: 'Română', code: 'ro' },
+    //   { name: 'slovenčina', code: 'sk' },
+    //   { name: 'Slovenščina', code: 'sl' },
+    //   { name: 'Español', code: 'es' },
+    //   { name: 'Svenska', code: 'sv' },
+    //   { name: 'Türkçe', code: 'tr' },
+    // ];
 
     return (
       <div className="eea-header">
