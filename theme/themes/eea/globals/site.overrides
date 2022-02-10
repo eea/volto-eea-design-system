@@ -420,7 +420,7 @@ img#eea-logo {
   font-size: 12px;
 }
 
-@media only screen and (min-width: @mobileBreakpoint + 1) {
+@media only screen and (min-width: @tabletBreakpoint) {
   #eea-search-box {
     height: calc(100vh - 140px);
   }
@@ -496,7 +496,7 @@ img#eea-logo {
   }
 }
 
-@media only screen and (min-width: @tabletBreakpoint + 1) {
+@media only screen and (min-width: @computerBreakpoint) {
   #eea-search-box {
     height: calc(100vh - 192px);
   }
@@ -691,7 +691,7 @@ a.menu-link:hover {
 .mega-menu--multiLevel {
   flex-direction: column;
 }
-@media only screen and (min-width: @mobileBreakpoint) {
+@media only screen and (min-width: @tabletBreakpoint) {
   nav.eea-nav {
     margin-top: 200px;
     background: transparent;
@@ -816,7 +816,7 @@ a.menu-link:hover {
     display: none;
   }
 }
-@media only screen and (max-width: @mobileBreakpoint) {
+@media only screen and (max-width: @largestMobileScreen) {
   #eea-mega-menu-wrap {
     height: calc(100vh - 140px);
   }
@@ -983,7 +983,7 @@ a.menu-link:hover {
     visibility: hidden;
   }
 }
-@media only screen and (max-width: @mobileBreakpoint) and (hover: none) {
+@media only screen and (max-width: @largestMobileScreen) and (hover: none) {
   .eea-mobile-menu-trigger:hover ~ ul {
     left: 0;
   }
@@ -1046,7 +1046,7 @@ a.menu-link:hover {
   }
 }
 
-@media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
   li {
     font-size: 20px;
 
@@ -1061,7 +1061,7 @@ a.menu-link:hover {
   }
 }
 
-@media only screen and (max-width: @mobileBreakpoint) {
+@media only screen and (max-width: @largestMobileScreen) {
   li {
     font-size: 18px;
 
@@ -1070,7 +1070,7 @@ a.menu-link:hover {
     }
   }
 }
-@media only screen and (min-width: @tabletBreakpoint + 1) {
+@media only screen and (min-width: @computerBreakpoint) {
   .menu-link.mega-menu-link.mega-menu-first-level {
     padding: 30px 25px;
     font-size: 48px;

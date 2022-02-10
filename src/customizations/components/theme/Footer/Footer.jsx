@@ -58,12 +58,29 @@ class Footer extends Component {
       { link: '/#', src: Logo10, alt: 'WISE marine' },
     ];
 
+    const social = [
+      { name: 'twitter', link: '/#' },
+      { name: 'facebook', link: '/#' },
+      { name: 'linkedin', link: '/#' },
+      { name: 'youtube', link: '/#' },
+      { name: 'rss', link: '/#' },
+    ];
+
+    const contacts = {
+      header: 'Contact Us',
+      contacts: [
+        { icon: 'comment outline', text: 'Ask your question' },
+        { icon: 'envelope outline', text: 'Sign up to our newsletter' },
+      ],
+      address: 'Kongens Nytorv 6 1050 Copenhagen K (+45) 33 36 71 00',
+    };
+
     return (
       <footer>
         <div className="visual">
           <Container>
             <div className="theme-sites">
-              <p className="header">The EEA also contributes to</p>
+              <Footer.Header>The EEA also contributes to</Footer.Header>
               <Footer.Sites sites={sites}></Footer.Sites>
             </div>
             <div className="subfooter">
@@ -91,36 +108,9 @@ class Footer extends Component {
                 </Grid.Column>
                 <Grid.Column mobile={6} tablet={5} computer={4}>
                   <div className="item">
-                    <p className="header">Contact us</p>
-                    <div className="contact">
-                      <Icon name="comment outline" size="big"></Icon>
-                      Ask your question
-                    </div>
-                    <div className="contact">
-                      <Icon name="envelope outline" size="big"></Icon>
-                      Sign up to our newsletter
-                    </div>
-                    <p className="address">
-                      Kongens Nytorv 6 1050 Copenhagen K (+45) 33 36 71 00
-                    </p>
+                    <Footer.Contact contacts={contacts}></Footer.Contact>
 
-                    <div className="social">
-                      <a href="/#" aria-label="twitter link">
-                        <Icon name="twitter"></Icon>
-                      </a>
-                      <a href="/#" aria-label="facebook link">
-                        <Icon name="facebook"></Icon>
-                      </a>
-                      <a href="/#" aria-label="linkedin link">
-                        <Icon name="linkedin"></Icon>
-                      </a>
-                      <a href="/#" aria-label="youtube link">
-                        <Icon name="youtube"></Icon>
-                      </a>
-                      <a href="/#" aria-label="rss link">
-                        <Icon name="rss"></Icon>
-                      </a>
-                    </div>
+                    <Footer.Social social={social}></Footer.Social>
                   </div>
                 </Grid.Column>
               </Grid>
@@ -135,40 +125,70 @@ class Footer extends Component {
   }
 }
 
-Footer.Actions = class Actions extends Component {
-  render() {
-    return (
-      <div className="menu">
-        {this.props.actions &&
-          this.props.actions.map((action) => (
-            <a href={action.link}>
-              {action.copy && <>&copy;</>}
-              {action.title}
-            </a>
-          ))}
-      </div>
-    );
-  }
-};
+const Actions = (props) => (
+  <div className="menu">
+    {props.actions &&
+      props.actions.map((action) => (
+        <a href={action.link}>
+          {action.copy && <>&copy;</>}
+          {action.title}
+        </a>
+      ))}
+  </div>
+);
 
-Footer.Sites = class Sites extends Component {
-  render() {
-    return (
-      <div className="logos">
-        <Grid columns={5}>
-          {this.props.sites &&
-            this.props.sites.map((site) => (
-              <Grid.Column className="logo">
-                <Link to={site.link}>
-                  <Image src={site.src} alt={site.alt}></Image>
-                </Link>
-              </Grid.Column>
-            ))}
-        </Grid>
-      </div>
-    );
-  }
-};
+Footer.Actions = Actions;
+
+const Sites = (props) => (
+  <div className="logos">
+    <Grid columns={5}>
+      {props.sites &&
+        props.sites.map((site) => (
+          <Grid.Column className="logo">
+            <Link to={site.link}>
+              <Image src={site.src} alt={site.alt}></Image>
+            </Link>
+          </Grid.Column>
+        ))}
+    </Grid>
+  </div>
+);
+
+Footer.Sites = Sites;
+
+const Header = (props) => <p className="header">{props.children}</p>;
+
+Footer.Header = Header;
+
+const Social = (props) => (
+  <div className="social">
+    {props.social.map((item) => (
+      <a href={item.link} aria-label={`${item.name} link`}>
+        <Icon name={item.name}></Icon>
+      </a>
+    ))}
+  </div>
+);
+
+Footer.Social = Social;
+
+const Contact = (props) => (
+  <>
+    <p className="header">{props.contacts.header}</p>
+    {props.contacts.contacts.length > 0 &&
+      props.contacts.contacts.map((contact) => (
+        <div className="contact">
+          <Icon name={contact.icon} size="big"></Icon>
+          {contact.text}
+        </div>
+      ))}
+    {props.contacts.address && (
+      <p className="address">{props.contacts.address}</p>
+    )}
+  </>
+);
+
+Footer.Contact = Contact;
 
 /**
  * Property types.
