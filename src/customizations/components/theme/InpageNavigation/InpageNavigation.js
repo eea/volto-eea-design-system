@@ -1,36 +1,33 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { Component } from 'react';
 import { Container, Icon } from 'semantic-ui-react';
 
 class InpageNavigation extends Component {
-  // const [scrollPosition, setScrollPosition] = useState(0);
-  // const [removeClass, setRemoveClass] = useState('hidden');
-
   constructor(props) {
     super(props);
     this.state = {
       scrollPosition: 0,
-      removeClass: 'hidden'
+      removeClass: 'hidden',
     };
   }
 
   handleInpageNavigationVisibility = () => {
     const position = window.scrollY;
-    this.setState({scrollPosition: position})
+    this.setState({ scrollPosition: position });
     //setScrollPosition(position);
 
     if (this.state.scrollPosition > 50) {
-      return this.setState({removeClass: ''});
+      return this.setState({ removeClass: '' });
     } else {
-      return this.setState({removeClass: 'hidden'});
+      return this.setState({ removeClass: 'hidden' });
     }
   };
 
   componentDidMount() {
-    window.addEventListener("scroll",this.handleInpageNavigationVisibility);
+    window.addEventListener('scroll', this.handleInpageNavigationVisibility);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll",this.handleInpageNavigationVisibility);
+    window.removeEventListener('scroll', this.handleInpageNavigationVisibility);
   }
 
   onInpageNavigationClick = () => {
@@ -39,7 +36,6 @@ class InpageNavigation extends Component {
   };
 
   render() {
-
     return (
       <Container>
         <div
