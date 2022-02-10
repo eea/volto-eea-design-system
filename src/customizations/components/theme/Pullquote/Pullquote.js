@@ -1,5 +1,12 @@
 import React from 'react';
 import { Icon } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+
+Pullquote.propTypes = {
+  quote: PropTypes.string,
+  source: PropTypes.string,
+  quotePosition: PropTypes.oneOf(['left', 'right', 'none', 'inherit']),
+};
 
 function Pullquote({ quote, source, quotePosition }) {
   return (
