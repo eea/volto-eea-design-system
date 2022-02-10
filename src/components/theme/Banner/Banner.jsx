@@ -1,6 +1,13 @@
 import React from 'react';
 import { Container, Icon, Grid } from 'semantic-ui-react';
-import { Col } from '../Grid/Col';
+import { Col } from '../../../customizations/components/theme/Grid/Col';
+import PropTypes from 'prop-types';
+
+Banner.propTypes = {
+  title: PropTypes.string,
+  info: PropTypes.string,
+  image: PropTypes.bool,
+};
 
 function Banner({ title, info, image }) {
   return (
