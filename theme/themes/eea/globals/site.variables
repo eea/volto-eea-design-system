@@ -258,11 +258,17 @@
      Breakpoints
 --------------------*/
 
-@mobileBreakpoint            : 480px;
-@tabletBreakpoint            : 835px;
-@computerBreakpoint          : 1025px;
-@largeMonitorBreakpoint      : 1200px;
-@widescreenMonitorBreakpoint : 1920px;
+//@mobileBreakpoint            : 480px;
+//@tabletBreakpoint            : 835px;
+//@computerBreakpoint          : 1025px;
+//@largeMonitorBreakpoint      : 1200px;
+//@widescreenMonitorBreakpoint : 1920px;
+
+@mobileBreakpoint            : 320px;
+@tabletBreakpoint            : 480px;
+@computerBreakpoint          : 835px;
+@largeMonitorBreakpoint      : 1025px;
+@widescreenMonitorBreakpoint : 1200px;
 
 /* Paddings for breakpoints */
 @mobilePadding  : 30px;

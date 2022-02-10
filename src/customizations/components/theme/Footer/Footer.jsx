@@ -4,14 +4,14 @@
  */
 
 import React, { Component } from 'react';
-//import { Segment, Header, Table, Icon, Image, Grid } from 'semantic-ui-react';
 import { Icon, Image, Grid, Container } from 'semantic-ui-react';
-import ThemeSites from './theme-sites.js';
+import ThemeSites from './ThemeSites.js';
+import Actions from './Actions.js';
 
 //import AbstractImg from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/abstract-visual.svg';
 //import EULogo from '../../../../../theme/themes/eea/assets/images/Footer/EULogo.png';
-import EIONETLogo from '../../../../../theme/themes/eea/assets/images/Footer/EIONETLogo.png';
-import EEALogo from '../../../../../theme/themes/eea/assets/images/Footer/EEA-Logo-white.svg';
+import EIONETLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/EIONETLogo.png';
+import EEALogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/EEA-Logo-white.svg';
 
 /**
  * Component to display the footer.
@@ -32,7 +32,7 @@ class Footer extends Component {
             </div>
             <div className="subfooter">
               <Grid>
-                <Grid.Column mobile={6} tablet={8} computer={8}>
+                <Grid.Column mobile={6} tablet={7} computer={8}>
                   <div className="item">
                     <div className="site logo">
                       <Image src={EEALogo} alt="EEA Logo"></Image>
@@ -41,8 +41,8 @@ class Footer extends Component {
                       </p>
                     </div>
 
-                    <div className="ionet logo">
-                      <Image src={EIONETLogo} alt="IONET Logo"></Image>
+                    <div className="eionet logo">
+                      <Image src={EIONETLogo} alt="EIONET Logo"></Image>
                       <p className="description">
                         European Environment
                         <br />
@@ -53,7 +53,7 @@ class Footer extends Component {
                     </div>
                   </div>
                 </Grid.Column>
-                <Grid.Column mobile={6} tablet={4} computer={4}>
+                <Grid.Column mobile={6} tablet={5} computer={4}>
                   <div className="item">
                     <p className="header">Contact us</p>
                     <div className="contact">
@@ -89,12 +89,7 @@ class Footer extends Component {
                 </Grid.Column>
               </Grid>
               <Grid.Row>
-                <div className="menu">
-                  <a href="/#">CMS Login</a>
-                  <a href="/#">Sitemap</a>
-                  <a href="/#">Privacy</a>
-                  <a href="/#"> &copy; Copyright</a>
-                </div>
+                <Actions />
               </Grid.Row>
             </div>
           </Container>

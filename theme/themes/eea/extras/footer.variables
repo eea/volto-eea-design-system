@@ -51,28 +51,28 @@
 @mobileDescriptionLineHeight         : 0.563rem;
 @tabletDescriptionLineHeight         : 1.188rem;
 
-/* IONET Logo */
-@ionetMarginTop: 2rem;
+/* EIONET Logo */
+@eionetMarginTop: 2rem;
 
-@mobileIonetLogoWidth               : 37px;
-@tabletIonetLogoWidth               : 65px;
-@computerIonetLogoWidth             : 80px;
-@mobileIonetLogoMarginLeft          : 0.75rem;
-@tabletIonetLogoMarginLeft          : 0.625rem;
-@computerIonetLogoMarginLeft        : 1.563rem;
-@mobileIonetLogoMarginRight         : 0.5rem;
-@computerIonetLogoMarginRight       : 1.25rem;
+@mobileEionetLogoWidth               : 37px;
+@tabletEionetLogoWidth               : 65px;
+@computerEionetLogoWidth             : 80px;
+@mobileEionetLogoMarginLeft          : 0.75rem;
+@tabletEionetLogoMarginLeft          : 0.625rem;
+@computerEionetLogoMarginLeft        : 1.563rem;
+@mobileEionetLogoMarginRight         : 0.5rem;
+@computerEionetLogoMarginRight       : 1.25rem;
 
-/* IONET Logo Description */
-@ionetDescriptionFontWeight         : @bold;
-@mobileIonetDescriptionPaddingTop   : 0.125rem;
-@tabletIonetDescriptionPaddingTop   : 0.313rem;
-@mobileIonetDescriptionFontSize     : 0.5rem;
-@tabetIonetDescriptionFontSize      : 1rem;
-@computerIonetDescriptionFontSize   : 1.063rem;
-@mobileIonetDescriptionLineHeight   : 0.625rem;
-@tabletIonetDescriptionLineHeight   : 1.5rem;
-@computerIonetDescriptionLineHeight : 1.8rem;
+/* eIONET Logo Description */
+@eionetDescriptionFontWeight         : @bold;
+@mobileEionetDescriptionPaddingTop   : 0.125rem;
+@tabletEionetDescriptionPaddingTop   : 0.313rem;
+@mobileEionetDescriptionFontSize     : 0.5rem;
+@tabetEionetDescriptionFontSize      : 1rem;
+@computerEionetDescriptionFontSize   : 1.063rem;
+@mobileEionetDescriptionLineHeight   : 0.625rem;
+@tabletEionetDescriptionLineHeight   : 1.5rem;
+@computerEionetDescriptionLineHeight : 1.8rem;
 
 /* Contact Info */
 @contactMargin                      : 1rem 0;
@@ -96,7 +96,7 @@
 /* Footer Menu */
 @mobileMenuMargin                   : 0;
 @tabletMenuMargin                   : 2rem auto 0;
-@tabletMenuWidth                    : @mobileBreakpoint;
+@tabletMenuWidth                    : 500px;
 @menuLinkColor                      : @white;
 @menuFontWeight                     : 100;
 @mobileMenuFontSize                 : 0.438rem;
