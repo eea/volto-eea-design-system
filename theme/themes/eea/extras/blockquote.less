@@ -13,16 +13,16 @@
   .quote {
     display: flex;
     flex-direction: column;
-    gap: @quoteMargin;
-
-    // margin: @quoteMargin;
+    margin: @quoteMargin;
+    gap: @quoteGap;
     color: @quoteColor;
     font-size: @quoteFontSize;
 
     .meta {
-      // margin-top: @authorMarginTop;
-      font-size: @authorFontSize;
-      font-weight: @authorWeight;
+      margin: @metaMargin;
+      font-size: @metaFontSize;
+      font-weight: @metaWeight;
+      align-self: @metaAlignSelf;
     }
   }
 }

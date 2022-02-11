@@ -12,12 +12,12 @@ export default {
   component: Blockquote,
   argTypes: {
     content: {
-      name: 'Content',
+      name: 'citation',
       description: 'Blockquote content',
       type: { name: 'string', required: true },
     },
     meta: {
-      name: 'Meta',
+      name: 'meta',
       description: 'Author of the content',
       type: { name: 'string', required: true },
     },
@@ -49,22 +49,6 @@ Reversed.args = {
   meta: '22 December 1989',
 };
 
-export const BlockquoteWithImageAside = (args) => (
-  <Blockquote>
-    <Blockquote.Content as="div">
-      <Image src={args.imgSrc} size="tiny" floated="right" />
-      {args.content}
-    </Blockquote.Content>
-    <Blockquote.Meta>{args.meta}</Blockquote.Meta>
-  </Blockquote>
-);
-
-BlockquoteWithImageAside.args = {
-  content: CITATION,
-  meta: AUTHOR,
-  imgSrc: IMG,
-};
-
 export const BlockquoteWithImage = (args) => (
   <Blockquote>
     <Blockquote.Content>
@@ -76,6 +60,22 @@ export const BlockquoteWithImage = (args) => (
 );
 
 BlockquoteWithImage.args = {
+  content: CITATION,
+  meta: AUTHOR,
+  imgSrc: IMG,
+};
+
+export const BlockquoteWithImageAside = (args) => (
+  <Blockquote>
+    <Blockquote.Content as="div">
+      <Image src={args.imgSrc} size="tiny" floated="right" />
+      {args.content}
+    </Blockquote.Content>
+    <Blockquote.Meta>{args.meta}</Blockquote.Meta>
+  </Blockquote>
+);
+
+BlockquoteWithImageAside.args = {
   content: CITATION,
   meta: AUTHOR,
   imgSrc: IMG,
