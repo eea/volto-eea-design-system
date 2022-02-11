@@ -73,7 +73,7 @@ BlockquoteWithImageAside.args = {
 export const BlockquoteWithImage = (args) => (
   <Blockquote>
     <Blockquote.Content>
-      <Image src={args.src} size="tiny" floated="right" />
+      <Image src={args.src} size="tiny" />
       {args.citation}
     </Blockquote.Content>
     <Blockquote.Meta>{args.author}</Blockquote.Meta>
