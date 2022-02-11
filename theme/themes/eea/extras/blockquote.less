@@ -7,17 +7,22 @@
             Blockquote
 *******************************/
 
-
 .eea.blockquote {
   border-left: @blockquoteBorderLeft;
+
   .quote {
-    margin: @quoteMargin;
+    display: flex;
+    flex-direction: column;
+    gap: @quoteMargin;
+
+    // margin: @quoteMargin;
     color: @quoteColor;
-    font-size: @quoteFontSize ;
-    .author {
-      margin-top: @authorMarginTop;
-      font-weight: @authorWeight;
+    font-size: @quoteFontSize;
+
+    .meta {
+      // margin-top: @authorMarginTop;
       font-size: @authorFontSize;
+      font-weight: @authorWeight;
     }
   }
 }
