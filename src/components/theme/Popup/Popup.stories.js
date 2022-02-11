@@ -75,7 +75,7 @@ ButtonPopup.args = {
 };
 
 export const ImagePopup = (args) => (
-  <Segment placeholder>
+  <Segment placeholder className="flex align center">
     <Popup
       {...args}
       trigger={
@@ -83,7 +83,7 @@ export const ImagePopup = (args) => (
           src={EUflag}
           alt="EU Flag"
           title="EU Flag"
-          height={64}
+          width={150}
           className="eu-flag"
         />
       }
