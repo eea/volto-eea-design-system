@@ -42,11 +42,11 @@ class InpageNavigation extends Component {
           role="none"
           className={this.state.removeClass}
         >
-          <div id="navigation-text-tablet">
+          <div className="eea navigation mobile tablet only">
             <Icon name="chevron up" />
           </div>
-          <div id="navigation-text-desktop">
-            <Icon name="chevron up" /> Top
+          <div className="eea navigation tablet or lower hidden">
+            <Icon name="chevron up" /> top
           </div>
         </div>
       </Container>

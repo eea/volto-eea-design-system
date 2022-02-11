@@ -273,7 +273,7 @@
 /* Paddings for breakpoints */
 @mobilePadding  : 30px;
 @tabletPadding  : 40px;
-@desktopPadding : 140px;
+@computerPadding : 140px;
 
 /*-------------------
       Site Colors

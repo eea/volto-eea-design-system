@@ -1,9 +1,0 @@
-/*******************************
-        Inpage Navigation
-*******************************/
-
-@navBackground: @darkCerulean;
-@navColor: @white;
-
-
-
