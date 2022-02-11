@@ -35,7 +35,7 @@
 
 /* Content */
 @contentMargin: '';
-@contentPadding: 0.5em 0em 1em;
+@contentPadding: @relative16px @relative64px;
 @contentBckground: #F9F9F9;
 
 /*-------------------

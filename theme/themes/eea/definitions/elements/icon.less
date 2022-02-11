@@ -8,16 +8,14 @@
  *
  */
 
-
 /*******************************
             Theme
 *******************************/
 
-@type    : 'element';
-@element : 'icon';
+@type: 'element';
+@element: 'icon';
 
 @import (multiple) '../../theme.config';
-
 
 /*******************************
              Icon
@@ -103,11 +101,9 @@ i.disabled.icon {
   opacity: @disabledOpacity !important;
 }
 
-
 /*******************************
            Variations
 *******************************/
-
 
 /*-------------------
         Fitted
@@ -122,12 +118,14 @@ i.fitted.icon {
          Link
 --------------------*/
 
-i.link.icon, i.link.icons {
+i.link.icon,
+i.link.icons {
   cursor: pointer;
   opacity: @linkOpacity;
   transition: opacity @defaultDuration @defaultEasing;
 }
-i.link.icon:hover, i.link.icons:hover {
+i.link.icon:hover,
+i.link.icons:hover {
   opacity: 1 !important;
 }
 
@@ -209,7 +207,6 @@ i.inverted.circular.icon {
 i.inverted.icon {
   color: @white;
 }
-
 
 /*-------------------
        Colors

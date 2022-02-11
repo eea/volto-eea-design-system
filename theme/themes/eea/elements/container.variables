@@ -13,7 +13,7 @@
 
 /* Minimum Gutter is used to determine  the maximum container width for a given device */
 
-@maxWidth: 100%;
+@maxWidth: 1400px;
 
 /* Devices */
 @mobileMinimumGutter: 0em;

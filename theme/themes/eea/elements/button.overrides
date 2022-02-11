@@ -10,21 +10,34 @@
   color: @white;
 }
 
-//Global Button Styles
-.ui.button,
-.ui.buttons .button,
-.ui.buttons {
-  padding: @buttonPadings !important;
+/* Global Button Styles */
+button.ui.button,
+button.ui.buttons .button,
+button.ui.buttons {
+  padding: @buttonPadings;
   border: @eeaButtonBorder;
-  border-radius: @borderRadius !important;
-  font-family: @pageFont !important;
-  font-size: @buttonFontSize !important;
-  font-weight: 500 !important;
+
+  /* Plain grey button as template */
+  border-color: @silverGray;
+  background-color: @silverGray;
+  border-radius: @borderRadius;
+  color: @black;
+  font-family: @pageFont;
+  font-size: @buttonFontSize;
+  font-weight: 500;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: @midGray;
+    background-color: @midGray;
+    color: @black;
+  }
 }
 
-// Primary Button
-.ui.button.eeaPrimaryButton,
-.ui.buttons.eeaPrimaryButton {
+/* Primary Button */
+button.ui.button.primary,
+button.ui.buttons.eea-button.primary {
   border: @eeaButtonBorder @primaryButtonColor;
   background-color: @primaryButtonColor;
   .text-color(@primaryButtonColor);
@@ -38,9 +51,9 @@
   }
 }
 
-//Secondary Button
-.ui.button.eeaSecondaryButton,
-.ui.buttons.eeaSecondaryButton {
+/* Secondary Button */
+button.ui.button.secondary,
+button.ui.buttons.secondary {
   border: @eeaButtonBorder @primaryButtonColor;
   background-color: @white;
   .text-color(@white);
@@ -53,9 +66,9 @@
   }
 }
 
-//Secondary Button Inverted
-.ui.button.eeaSecondaryButtonInverted,
-.ui.buttons.eeaSecondaryButtonInverted {
+/* Secondary Button Inverted */
+button.ui.button.eea-button-white,
+button.ui.buttons.eea-button-white {
   border: @eeaButtonBorder @white;
   background-color: transparent;
   color: @white;
@@ -68,9 +81,9 @@
   }
 }
 
-//Call to action Button
-.ui.eeaActionButton.button,
-.ui.eeaActionButton.buttons {
+/* Call to action Button */
+button.ui.eea-button-action.button,
+button.ui.eea-button-action.buttons {
   border: @eeaButtonBorder @actionButtonButtonColor;
   background-color: @actionButtonButtonColor;
   .text-color(@actionButtonButtonColor);
@@ -85,7 +98,7 @@
   }
 }
 
-.ui.eeaActionButton.button[class*='right labeled'].icon.button {
+button.ui.eea-button-action.button[class*='right labeled'].icon.button {
   padding-right: 3em !important;
 
   i {
@@ -93,13 +106,13 @@
   }
 }
 
-.ui.icon.right.labeled.button.eeaActionButton > .icon {
+button.ui.icon.right.labeled.button.eea-button-action > .icon {
   background-color: transparent;
 }
 
-//Cancel Button
-.ui.button.eeaCancelButton,
-.ui.buttons.eeaCancelButton {
+/* Cancel Button */
+button.ui.button.eea-button-cancel,
+button.ui.buttons.eea-button-cancel {
   border: @eeaButtonBorder @silverGray;
   background-color: @silverGray;
   color: @black;
@@ -113,9 +126,9 @@
   }
 }
 
-//Text Button
-.ui.button.eeaTextButton,
-.ui.buttons.eeaTextButton {
+/* Text Button */
+button.ui.eea-button-text.button,
+button.ui.eea-button-text.buttons {
   border: none !important;
   background-color: transparent;
   color: @primaryColor;
@@ -128,8 +141,6 @@
     color: @secondaryButtonColorHover;
   }
 }
-
-/**************************************************************/
 
 .ui.circular.icon.button {
   padding: 0.75em 0.25em 0;

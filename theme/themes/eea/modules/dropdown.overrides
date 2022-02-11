@@ -10,7 +10,7 @@
 }
 
 .ui.dropdown {
-  height: auto !important;
+  height: 48px !important;
   border: @border !important;
   border-radius: @borderRadius !important;
   font-family: @pageFont !important;
@@ -18,12 +18,16 @@
 
   &:active,
   &:focus {
-    border: 2px solid @policeBlue !important;
+    border: 2px solid @deepBlue !important;
   }
 }
 
+.ui.dropdown.eea-dropdown .divider {
+  color: @black;
+}
+
 .ui.dropdown.active {
-  border: 2px solid @policeBlue !important;
+  border: 2px solid @deepBlue !important;
 }
 
 .ui.dropdown.error {

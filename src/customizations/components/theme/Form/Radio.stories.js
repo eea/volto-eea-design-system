@@ -99,37 +99,40 @@ function RadioForm({
       ) : null}
       <Form.Field error={invalid}>
         <Radio
-          className="eeaRadio"
+          className="eea-radio"
           label="Option 1"
           name="radioGroup"
           value="1"
           checked={active === '1'}
           onChange={handleChange}
+          id="field1"
         ></Radio>
-        <Form.Field>Helper text for option 1</Form.Field>
+        <label htmlFor="field1">Helper text for option 1</label>
       </Form.Field>
       <Form.Field error={invalid}>
         <Radio
-          className="eeaRadio"
+          className="eea-radio"
           label="Option 2"
           name="radioGroup"
           value="2"
           checked={active === '2'}
           onChange={handleChange}
+          id="field2"
         ></Radio>
-        <Form.Field>Helper text for option 2</Form.Field>
+        <label htmlFor="field2">Helper text for option 2</label>
       </Form.Field>
       <Form.Field error={invalid}>
         <Radio
-          className="eeaRadio"
+          className="eea-radio"
           label="Option 3 (disabled)"
           disabled
           name="radioGroup"
           value="3"
           checked={active === '3'}
           onChange={handleChange}
+          id="field3"
         ></Radio>
-        <Form.Field>Helper text for option 3</Form.Field>
+        <label htmlFor="field3">Helper text for option 3</label>
       </Form.Field>
     </Form>
   );
@@ -164,23 +167,27 @@ function Binary({
       ) : null}
       <Form.Field error={invalid}>
         <Radio
-          className="eeaRadio"
+          className="eea-radio"
           label="Yes"
           name="radioGroup"
           value="yes"
           checked={active === 'yes'}
           onChange={handleChange}
+          id="radio-yes"
         ></Radio>
+        <label htmlFor="radio-yes"> </label>
       </Form.Field>
       <Form.Field error={invalid}>
         <Radio
-          className="eeaRadio"
+          className="eea-radio"
           label="No"
           name="radioGroup"
           value="no"
           checked={active === 'no'}
           onChange={handleChange}
+          id="radio-no"
         ></Radio>
+        <label htmlFor="radio-no"> </label>
       </Form.Field>
     </Form>
   );
@@ -201,7 +208,7 @@ Default.args = {
 
 export const invalid = Template.bind({});
 invalid.args = {
-  label: 'Select your preferred destinations',
+  label: 'Select your preferred options',
   helperText: 'Helper text for the group',
   errorMessage: 'Error message for the group',
   optionalText: ' (optional)',

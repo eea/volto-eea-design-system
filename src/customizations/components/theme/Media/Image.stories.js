@@ -34,7 +34,7 @@ export default {
       description:
         'an image can specify that it needs an additional spacing to separate it from nearby content',
       table: {
-        type: { summary: 'bool|enum' },
+        type: { summary: 'bool|string' },
         defaultValue: { summary: ' "" ' },
       },
     },
@@ -43,7 +43,7 @@ export default {
       options: ['left', 'right'],
       description: 'an image can sit to the left or right of other content',
       table: {
-        type: { summary: 'enum' },
+        type: { summary: 'string' },
         defaultValue: { summary: ' "" ' },
       },
     },
@@ -57,13 +57,13 @@ export default {
   },
 };
 
-export const Default = (args) => <Image {...args} />;
+export const Default = (args) => <Image {...args} alt="image" />;
 
 Default.args = {
   src: 'https://www.eea.europa.eu/logo.jpg',
 };
 
-export const Link = (args) => <Image {...args} />;
+export const Link = (args) => <Image {...args} alt="link image" />;
 
 Link.args = {
   src: 'https://www.eea.europa.eu/logo.jpg',
@@ -158,7 +158,7 @@ Link.argTypes = {
 
 Link.storyName = 'Link Image';
 
-export const Playground = (args) => <Image {...args} />;
+export const Playground = (args) => <Image {...args} alt="playground image" />;
 
 Playground.args = {
   src: 'https://www.eea.europa.eu/logo.jpg',

@@ -57,9 +57,7 @@ export default {
   },
 };
 
-const Template = (args) => (
-  <Progress className="eeaProgressBar" {...args}></Progress>
-);
+const Template = (args) => <Progress {...args}></Progress>;
 
 // export const Default = Template.bind({});
 // Default.args = {
@@ -69,7 +67,6 @@ const Template = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   percent: 80,
-  indicating: true,
   progress: true,
   children: 'Label',
 };
@@ -87,17 +84,6 @@ Default.argTypes = {
       },
       defaultValue: {
         summary: ' "" ',
-      },
-    },
-  },
-  indicating: {
-    description: 'visually indicates the current level of progress of a task',
-    table: {
-      type: {
-        summary: 'boolean',
-      },
-      defaultValue: {
-        summary: false,
       },
     },
   },

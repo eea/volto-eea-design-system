@@ -5,17 +5,6 @@ export default {
   title: 'Components/Forms/Input',
   component: Input,
   argTypes: {
-    size: {
-      control: {
-        type: 'select',
-        options: ['mini', 'small', 'large', 'big', 'huge'],
-      },
-      description: 'input size',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'large' },
-      },
-    },
     type: {
       control: {
         type: 'select',
@@ -47,14 +36,21 @@ export default {
         defaultValue: { summary: ' "" ' },
       },
     },
+    fluid: {
+      description: 'take on the size of its container',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
   },
 };
 
 const Template = (args) => (
   <Form>
     <Form.Field>
-      <label>{args.labeltext}</label>
-      <Input {...args} />
+      <label htmlFor="temp-id">{args.labeltext}</label>
+      <Input {...args} id="temp-id" />
     </Form.Field>
   </Form>
 );
@@ -64,18 +60,9 @@ StandardInput.args = {
   labeltext: 'Input label',
   placeholder: 'Placeholder',
   type: 'text',
-  size: 'large',
   fluid: false,
 };
-StandardInput.argTypes = {
-  fluid: {
-    description: 'take on the size of its container',
-    table: {
-      type: { summary: 'boolean' },
-      defaultValue: { summary: false },
-    },
-  },
-};
+
 StandardInput.parameters = {
   controls: {
     exclude: ['onChange', 'onFocus'],
@@ -89,7 +76,6 @@ DisabledInput.args = {
   placeholder: 'Placeholder',
   type: 'text',
   disabled: true,
-  size: 'large',
   fluid: false,
 };
 DisabledInput.argTypes = {
@@ -123,7 +109,7 @@ LoadingInput.args = {
   placeholder: 'Placeholder',
   type: 'text',
   loading: true,
-  size: 'large',
+  fluid: false,
 };
 LoadingInput.argTypes = {
   loading: {
@@ -148,7 +134,7 @@ ErrorInput.args = {
   placeholder: 'Placeholder',
   type: 'text',
   error: true,
-  size: 'large',
+  fluid: false,
 };
 ErrorInput.argTypes = {
   error: {

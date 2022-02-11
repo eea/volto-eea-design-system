@@ -1,0 +1,30 @@
+@type: 'extra';
+@element: 'blockquote';
+
+@import (multiple) '../../theme.config';
+
+/*******************************
+            Blockquote
+*******************************/
+
+.eea.blockquote {
+  border-left: @blockquoteBorderLeft;
+
+  .quote {
+    display: flex;
+    flex-direction: column;
+    margin: @quoteMargin;
+    gap: @quoteGap;
+    color: @quoteColor;
+    font-size: @quoteFontSize;
+
+    .meta {
+      margin: @metaMargin;
+      font-size: @metaFontSize;
+      font-weight: @metaWeight;
+      align-self: @metaAlignSelf;
+    }
+  }
+}
+
+.loadUIOverrides();

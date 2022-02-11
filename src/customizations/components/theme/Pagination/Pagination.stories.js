@@ -70,7 +70,7 @@ export default {
   },
 };
 
-const Template = (args) => <Pagination className="eeaPagination" {...args} />;
+const Template = (args) => <Pagination className="eea-pagination" {...args} />;
 
 // export const Default = Template.bind({});
 // Default.args = {

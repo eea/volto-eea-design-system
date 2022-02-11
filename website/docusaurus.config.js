@@ -7,7 +7,7 @@ module.exports = {
   deploymentBranch: 'develop',
   baseUrl: '/volto-eea-design-system/',
   trailingSlash: true,
-  //url: 'http://localhost:3005',
+  // url: 'http://localhost:3005',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/eea_icon.png',
@@ -17,6 +17,10 @@ module.exports = {
     storyBookUrl: 'https://eea.github.io/volto-kitkat-frontend/',
   },
   themeConfig: {
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+    },
     navbar: {
       title: 'EEA Design System',
       logo: {

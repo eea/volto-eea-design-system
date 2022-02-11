@@ -68,11 +68,11 @@ function ConfirmContent({
   };
   return (
     <div>
-      <Button className="eeaPrimaryButton" onClick={openConfirm}>
+      <Button primary onClick={openConfirm}>
         Show Confirmation
       </Button>
       <Confirm
-        className="eeaModal"
+        className="eea-modal"
         open={open}
         header={confirmHeader}
         onCancel={closeConfirm}

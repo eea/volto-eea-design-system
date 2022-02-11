@@ -84,7 +84,8 @@ function ModalEEA({
   const [open, setOpen] = React.useState(false);
   return (
     <Modal
-      className="eeaModal"
+      closeIcon
+      className="eea-modal"
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
@@ -98,10 +99,10 @@ function ModalEEA({
         <Modal.Description>{content}</Modal.Description>
       </Modal.Content>
       <Modal.Actions>
-        <Button onClick={() => setOpen(false)} className="eeaCancelButton">
+        <Button onClick={() => setOpen(false)} className="eea-button-cancel">
           No
         </Button>
-        <Button onClick={() => setOpen(false)} className="eeaActionButton">
+        <Button onClick={() => setOpen(false)} primary>
           Yes
         </Button>
       </Modal.Actions>
@@ -109,7 +110,7 @@ function ModalEEA({
   );
 }
 
-const trigger = <Button className="eeaPrimaryButton">Show Modal</Button>;
+const trigger = <Button primary>Show Modal</Button>;
 
 const Template = (args) => <ModalEEA {...args}></ModalEEA>;
 

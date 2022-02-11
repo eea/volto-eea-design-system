@@ -6,9 +6,6 @@
          View
 --------------------*/
 
-@itemHeaderFont: @headerFont;
-@itemFont: @pageFont;
-
 /* Group */
 @groupMargin: 1.5em 0em;
 
@@ -135,7 +132,7 @@
 @extraWidth: 100%;
 @extraPadding: 0em 0em 0em;
 @extraBoxShadow: none;
-@extraColor: @lightTextColor;
+@extraColor: @black;
 @extraTransition: color @defaultDuration @defaultEasing;
 
 /*-------------------

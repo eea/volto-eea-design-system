@@ -18,7 +18,7 @@ export default {
       },
     },
     options: {
-      description: 'Array of Dropdown.Item props',
+      description: 'Array of dropdown options',
       table: {
         type: { summary: 'Object' },
         defaultValue: { summary: ' "" ' },
@@ -58,7 +58,12 @@ const listOptions = [
 const Template = (args) => (
   <Form>
     <Form.Field>
-      <Dropdown selection {...args}></Dropdown>
+      <Dropdown
+        className="eea-dropdown"
+        selection
+        {...args}
+        aria-label="item"
+      ></Dropdown>
     </Form.Field>
   </Form>
 );

@@ -14,11 +14,11 @@
 @maxWidth: 250px;
 @borderColor: @solidBorderColor;
 @borderWidth: 1px;
-@boxShadow: @floatingShadow;
+@boxShadow: @eeaGlobalShadow;
 @color: @textColor;
 
-@verticalPadding: 0.833em;
-@horizontalPadding: 1em;
+@verticalPadding: 0.75rem;
+@horizontalPadding: 1.875rem;
 @fontWeight: @normal;
 @fontStyle: @normal;
 @borderRadius: @defaultBorderRadius;

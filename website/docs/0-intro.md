@@ -3,7 +3,7 @@ title: EEA Component Library
 hide_table_of_contents: true
 ---
 
-## ec.europa.eu
+## eea.europa.eu
 
 This library contains all available components that you can use to build your own website.
 
@@ -13,4 +13,3 @@ All library elements are accompanied by
 - a visual demonstration
 - HTML/CSS code for implementation
 
-For support in building a European Commission website using the ECL, please contact [COMM Europa Management](mailto:Europamanagement@ec.europa.eu) (CEM).

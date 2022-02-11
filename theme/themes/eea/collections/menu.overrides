@@ -3,7 +3,7 @@
 *******************************/
 
 /* Pagination */
-.ui.pagination.eeaPagination.menu {
+.ui.pagination.eea-pagination.menu {
   border-bottom: @paginationBorder;
   border-radius: @defaultBorderRadius;
   font-size: @fontSize;
@@ -11,19 +11,34 @@
   .active.item {
     border-bottom: @activeItemBorder;
     margin: 0 0 -2px; //borders to overlap
-    background-color: transparent;
+    background-color: @pagginationItemBackground;
     color: @activeColor;
     font-weight: bold;
 
-    &:active {
+    &:hover,
+    &:active,
+    &:focus {
       color: @activeColor;
     }
   }
 
-  a.item:hover {
-    background-color: transparent;
-    color: @activeItemBorder;
+  a.item {
+    color: @pagginationItemColor;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-bottom: @activeItemBorder;
+      margin: 0 0 -2px;
+      background-color: @pagginationItemBackground;
+      color: @pagginationItemColor;
+    }
   }
+}
+
+.ui.pagination.eea-pagination.menu > .item:first-child,
+.ui.pagination.eea-pagination.menu .item:last-child {
+  border-radius: @defaultBorderRadius;
 }
 
 .pagination-wrapper {
@@ -45,6 +60,23 @@
   .active.item {
     background: none;
     color: @textColor;
+  }
+}
+
+@media only screen and (max-width: @mobileBreakpoint) {
+  .ui.pagination.eea-pagination.menu {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .ui.pagination.eea-pagination.menu .item {
+    min-width: 1rem;
+    padding: 7px;
+  }
+
+  .ui.pagination.eea-pagination.menu .active.item {
+    padding: 12px;
   }
 }
 

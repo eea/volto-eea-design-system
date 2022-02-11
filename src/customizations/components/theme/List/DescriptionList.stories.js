@@ -2,44 +2,15 @@ import React from 'react';
 import { List } from 'semantic-ui-react';
 
 export default {
-  title: 'Components/List/DescriptionList',
+  title: 'Components/List/Description list',
   component: List,
   argTypes: {
-    verticalAlign: {
-      control: {
-        type: 'inline-radio',
-      },
-      options: ['top', 'middle', 'bottom'],
-      description: 'vertical alignment',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
     floated: {
       control: {
         type: 'inline-radio',
       },
       options: ['left', 'right'],
       description: 'floated left or right',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
-    size: {
-      control: {
-        type: 'select',
-      },
-      options: ['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive'],
-      description: 'a list can vary in size',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: ' "" ' },
-      },
-    },
-    icon: {
-      description: 'list icon',
       table: {
         type: { summary: 'boolean' },
         defaultValue: { summary: false },
@@ -86,13 +57,10 @@ export default {
 
 function DescriptionList(
   items,
-  verticalAlign,
   floated,
-  icon,
   selection,
   animated,
   divided,
-  size,
   horizontal,
 ) {
   return (
@@ -100,16 +68,12 @@ function DescriptionList(
       selection={selection}
       animated={animated}
       divided={divided}
-      size={size}
       horizontal={horizontal}
     >
       {items.map((item, index) => (
         <List.Item key={index}>
           <List.Content>
-            <List.Header>
-              {icon && <List.Icon name="chevron right" />}
-              {item.header}
-            </List.Header>
+            <List.Header>{item.header}</List.Header>
             <List.Description floated={floated}>
               {item.content}
             </List.Description>
@@ -123,28 +87,22 @@ function DescriptionList(
 export const Default = (args) => {
   return DescriptionList(
     args.items,
-    args.verticalAlign,
     args.floated,
-    args.icon,
     args.selection,
     args.animated,
     args.divided,
-    args.size,
     args.horizontal,
   );
 };
 
 Default.args = {
-  verticalAlign: 'middle',
   floated: 'right',
-  icon: true,
   selection: false,
   animated: false,
   divided: false,
   horizontal: false,
-  size: 'large',
   items: [
-    { header: 'Header 1', content: 'Content 1', icon: 'users' },
+    { header: 'Header 1', content: 'Content 1' },
     { header: 'Header 2', content: 'Content 2' },
     { header: 'Header 3', content: 'Content 3' },
     { header: 'Header 4', content: 'Content 4' },

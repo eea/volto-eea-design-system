@@ -96,23 +96,29 @@ function CheckboxForm({
       ) : null}
       <Form.Field error={invalid}>
         <Checkbox
-          className="eeaCheckbox"
+          className="eea-checkbox"
           label="Option 1"
           defaultChecked
+          id="field1"
         ></Checkbox>
-        <Form.Field>Helper text for option 1</Form.Field>
-      </Form.Field>
-      <Form.Field error={invalid}>
-        <Checkbox className="eeaCheckbox" label="Option 2"></Checkbox>
-        <Form.Field>Helper text for option 2</Form.Field>
+        <label htmlFor="field1">Helper text for option 1</label>
       </Form.Field>
       <Form.Field error={invalid}>
         <Checkbox
-          className="eeaCheckbox"
+          className="eea-checkbox"
+          label="Option 2"
+          id="field2"
+        ></Checkbox>
+        <label htmlFor="field2">Helper text for option 2</label>
+      </Form.Field>
+      <Form.Field error={invalid}>
+        <Checkbox
+          className="eea-checkbox"
           label="Option 3 (disabled)"
           disabled
+          id="field3"
         ></Checkbox>
-        <Form.Field>Helper text for option 3</Form.Field>
+        <label htmlFor="field3">Helper text for option 3</label>
       </Form.Field>
     </Form>
   );
@@ -141,11 +147,12 @@ function SingleCheckboxForm({
 
       <Form.Field error={invalid}>
         <Checkbox
-          className="eeaCheckbox"
+          className="eea-checkbox"
           label="Option 1"
           defaultChecked
+          id="field4"
         ></Checkbox>
-        <Form.Field>Helper text for option 1</Form.Field>
+        <label htmlFor="field4">Helper text for option 1</label>
       </Form.Field>
       {invalid ? (
         <Message header="Error Message" content={errorMessage} negative />
@@ -169,7 +176,7 @@ Default.args = {
 
 export const invalid = Template.bind({});
 invalid.args = {
-  label: 'Select your preferred destinations',
+  label: 'Select your preferred options',
   helperText: 'Helper text for the group',
   errorMessage: 'Error message for the group',
   optionalText: ' (optional)',
@@ -188,7 +195,7 @@ invalid.argTypes = {
 
 export const optional = Template.bind({});
 optional.args = {
-  label: 'Select your preferred destinations',
+  label: 'Select your preferred options',
   helperText: 'Helper text for the group',
   errorMessage: 'Error message for the group',
   optionalText: ' (optional)',
@@ -209,7 +216,7 @@ export const single = (args) => (
   <SingleCheckboxForm {...args}></SingleCheckboxForm>
 );
 single.args = {
-  label: 'Select your preferred destinations',
+  label: 'Select your preferred options',
   helperText: 'Helper text for the group',
   errorMessage: 'Error message for the group',
   optionalText: ' (optional)',

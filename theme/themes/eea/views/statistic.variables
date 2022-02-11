@@ -6,6 +6,9 @@
          View
 --------------------*/
 
+@mobileStatisticWidth: 100%;
+@tabletStatisticWidth: inherit;
+
 @secondaryValueColor: @secondaryColor;
 @primaryLabelColor: @primaryColor;
 
@@ -30,8 +33,8 @@
 /* Value */
 @valueFont: @pageFont;
 @valueFontWeight: @normal;
-@valueLineHeight: 1em;
-@valueColor: @black;
+@valueLineHeight: 1.5em;
+@valueColor: @secondaryColor;
 @valueTextTransform: none;
 
 /* Label */
@@ -40,7 +43,7 @@
 @bottomLabelDistance: 0rem;
 @labelFont: @headerFont;
 @labelFontWeight: @bold;
-@labelColor: @textColor;
+@labelColor: @primaryColor;
 @labelLineHeight: @relativeLarge;
 @labelTextTransform: uppercase;
 
@@ -65,8 +68,8 @@
 --------------------*/
 
 /* Floated */
-@leftFloatedMargin: 0em 2em 1em 0em;
-@rightFloatedMargin: 0em 0em 1em 2em;
+@leftFloatedMargin: 1em;
+@rightFloatedMargin: 1em;
 
 /* Inverted */
 @invertedValueColor: @white;

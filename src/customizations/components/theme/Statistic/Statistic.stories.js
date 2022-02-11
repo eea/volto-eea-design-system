@@ -20,32 +20,8 @@ export default {
         },
       },
     },
-    floated: {
-      type: 'select',
-      options: ['left', 'right'],
-      description: 'sit to the left or right of other content',
-      table: {
-        type: {
-          summary: 'string',
-        },
-        defaultValue: {
-          summary: ' "" ',
-        },
-      },
-    },
     horizontal: {
       description: 'present its measurement horizontally',
-      table: {
-        type: {
-          summary: 'boolean',
-        },
-        defaultValue: {
-          summary: false,
-        },
-      },
-    },
-    inverted: {
-      description: 'formatted to fit on a dark background',
       table: {
         type: {
           summary: 'boolean',
@@ -63,13 +39,13 @@ const Template = (args) => (
     {args.elements &&
       args.elements.map((element, index) => (
         <Statistic
-          className="eeaStatistic"
+          className="eea-statistic"
           key={index}
           {...element}
         ></Statistic>
       ))}
     {!args.elements && (
-      <Statistic className="eeaStatistic" {...args}></Statistic>
+      <Statistic className="eea-statistic" {...args}></Statistic>
     )}
   </Statistic.Group>
 );
@@ -79,8 +55,6 @@ Default.args = {
   label: 'Statistic Label',
   value: 'Value',
   horizontal: false,
-  inverted: false,
-  floated: 'right',
   size: 'small',
 };
 

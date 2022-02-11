@@ -68,11 +68,12 @@
 @headerLineHeight : 1.25;
 @headerFontWeight : 700;
 
-@h1 : unit((32 / 16), rem);
-@h2 : unit((28 / 16), rem);
-@h3 : unit((21 / 16), rem);
-@h4 : unit((18 / 16), rem);
-@h5 : unit((16 / 16), rem);
+@h1 : unit((48 / 16), rem);
+@h2 : unit((40 / 16), rem);
+@h3 : unit((36 / 16), rem);
+@h4 : unit((24 / 16), rem);
+@h5 : unit((20 / 16), rem);
+@h5 : unit((18 / 16), rem);
 
 /*--------------
    Form Input
@@ -142,6 +143,7 @@
 @pageOverflowX       : hidden;
 
 @lineHeight          : 1.5;
+@mobileLineHeight    : 1.5;
 @textColor           : rgba(0, 0, 0, 0.87);
 
 /*-------------------
@@ -155,7 +157,7 @@
        Links
 --------------------*/
 
-@linkColor           : @blue;
+@linkColor           : @primaryColor;
 @linkUnderline       : none;
 @linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
 @linkHoverUnderline  : @linkUnderline;
@@ -216,7 +218,10 @@
         Grid
 --------------------*/
 
-@columnCount: 12;
+@columnCount     : 12;
+@mobileColumns   : 4;
+@tabletColumns   : 8;
+@desktopColumns  : 12;
 
 /*-------------------
       Container
@@ -255,10 +260,15 @@
 --------------------*/
 
 @mobileBreakpoint            : 480px;
-@tabletBreakpoint            : 768px;
+@tabletBreakpoint            : 834px;
 @computerBreakpoint          : 1025px;
 @largeMonitorBreakpoint      : 1200px;
 @widescreenMonitorBreakpoint : 1920px;
+
+/* Paddings for breakpoints */
+@mobilePadding  : 30px;
+@tabletPadding  : 40px;
+@desktopPadding : 140px;
 
 /*-------------------
       Site Colors
@@ -282,7 +292,7 @@
 
 // Secondary Colors - Darker to lighter
 @japaneseIndigo   : #2E3E4C;
-@policeBlue       : #3D5265;
+@deepBlue         : #3D5265;
 @UCLABlue         : #54728C;
 @weldonBlue       : #7495B2;
 @lightSteelBlue   : #ACCAE5;
@@ -296,34 +306,34 @@
 
 
 /*---  Colors  ---*/
-@orange           : #FA5C2A; // Palette: reddishOrange
-@yellow           : #F6A808; // Palette: goldenRod
-@olive            : #B5CC18;
-@green            : #51AA55; // Palette: darkPastelGreen
-@teal             : #517776; // Palette: slate
-@blue             : #007EB1; // Palette: Plone (tealBlue/cerulean)
-@violet           : #6435C9;
-@purple           : #A333C8;
-@pink             : #E40166; // Palette: darkHotPink
-@red              : @pink;
-@brown            : #826A6A; // Palette: reddishGrey
-@grey             : #68778D; // Palette: blueishGrey
-//@black            : #252525; // Palette: darkishGrey
+@orange           : #FF9933;
+@yellow           : #F2EB49; 
+@olive            : #78AB66;
+@green            : #007B6C;
+@teal             : #00928F;
+@blue             : #0065A4;
+@violet           : #6667AB;
+@purple           : #A530B8;
+@pink             : #F255D0;
+@red              : #B83230;
+@brown            : #AB8766;
+@grey             : #808285;
+@black            : #000000;
 
 /*---  Light Colors  ---*/
-@lightRed         : #FF695E;
-@lightOrange      : #FF851B;
-@lightYellow      : #FFE21F;
-@lightOlive       : #C9EAB1; // Palette: lightSage
-@lightGreen       : #2ECC40;
-@lightTeal        : #6DFFFF;
-@lightBlue        : #54C8FF;
-@lightViolet      : #A291FB;
-@lightPurple      : #DC73FF;
-@lightPink        : #FF8EDF;
-@lightBrown       : #D67C1C;
-@lightGrey        : #878F93;
-@lightBlack       : #545454;
+@lightRed         : #FF8180;
+@lightOrange      : #FFBF80;
+@lightYellow      : #FDFFB2;
+@lightOlive       : #B5CCAD;
+@lightGreen       : #B9E8E2;
+@lightTeal        : #76C4BC;
+@lightBlue        : #75C9DB;
+@lightViolet      : #BFC0FF;
+@lightPurple      : #DE99FF;
+@lightPink        : #FFBFF1;
+@lightBrown       : #D9C2AD;
+@lightGrey        : #E6E7E8;
+@lightBlack       : #2E3E4C;
 
 /*---   Neutrals  ---*/
 @fullBlack        : #000000;
@@ -390,19 +400,13 @@
 @lightGreyBorderColor : #EDF1F2; // breadcrumbs background
 @sidebarToggleButtonHighlightColor: @grey;
 
-/* EEA IMS Palette */
-@blue: #004B87;
-@lightBlue: #086ca3;
-@darkBlue: #274357;
-@lightGrey: #999;
-@lighterGray: #cccccc;
-@darkGrey: #666;
-@purple: #8e004d;
-@green: #00888A;
-@lightGreen: #027572;
-//@black: #333;
-@pureBlack: #000;
-@grayPrint: #bbb;
+/*--- Progress Colors ---*/
+@progressBarFrom0to30    : #75C9DB;
+@progressBarFrom30to40   : #0065A4;
+@progressBarFrom40to60   : #0065A4;
+@progressBarFrom60to70   : #00928F;
+@progressBarFrom70to90   : #00928F;
+@progressBarFrom90to100  : #007B6C;
 
 /*-------------------
      Alpha Colors
@@ -573,7 +577,7 @@
 
 @circularRadius                : 500rem;
 
-@borderColor               : @greyBorderColor;
+@borderColor               : @silverGray;
 @strongBorderColor         : rgba(34, 36, 38, 0.22);
 @internalBorderColor       : rgba(34, 36, 38, 0.1);
 @selectedBorderColor       : rgba(34, 36, 38, 0.35);
@@ -783,6 +787,33 @@
 @relative64px : unit( (64 / @emSize), em);
 
 /* Columns */
+@oneMobile     : (1 / @mobileColumns * 100%);
+@twoMobile     : (2 / @mobileColumns * 100%);
+@threeMobile   : (3 / @mobileColumns * 100%);
+@fourMobile    : (4 / @mobileColumns * 100%);
+
+@oneTablet     : (1 / @tabletColumns * 100%);
+@twoTablet     : (2 / @tabletColumns * 100%);
+@threeTablet   : (3 / @tabletColumns * 100%);
+@fourTablet    : (4 / @tabletColumns * 100%);
+@fiveTablet    : (5 / @tabletColumns * 100%);
+@sixTablet     : (6 / @tabletColumns * 100%);
+@sevenTablet   : (7 / @tabletColumns * 100%);
+@eightTablet   : (8 / @tabletColumns * 100%);
+
+@oneDesktop     : (1 / @desktopColumns * 100%);
+@twoDesktop     : (2 / @desktopColumns * 100%);
+@threeDesktop   : (3 / @desktopColumns * 100%);
+@fourDesktop    : (4 / @desktopColumns * 100%);
+@fiveDesktop    : (5 / @desktopColumns * 100%);
+@sixDesktop     : (6 / @desktopColumns * 100%);
+@sevenDesktop   : (7 / @desktopColumns * 100%);
+@eightDesktop   : (8 / @desktopColumns * 100%);
+@nineDesktop    : (9 / @desktopColumns * 100%);
+@tenDesktop     : (10 / @desktopColumns * 100%);
+@elevenDesktop  : (11 / @desktopColumns * 100%);
+@twelveDesktop  : (12 / @desktopColumns * 100%);
+
 @oneWide        : (1 / @columnCount * 100%);
 @twoWide        : (2 / @columnCount * 100%);
 @threeWide      : (3 / @columnCount * 100%);

@@ -15,14 +15,14 @@
 /* Close Icon */
 @closeOpacity: 0.8;
 @closeSize: 1.25em;
-@closeColor: @white;
+@closeColor: @black;
 
 @closeHitbox: 2.25rem;
 @closeDistance: 0.25rem;
 @closeHitBoxOffset: (@closeHitbox - 1rem) / 2;
 @closePadding: @closeHitBoxOffset 0rem 0rem 0rem;
-@closeTop: -(@closeDistance + @closeHitbox);
-@closeRight: -(@closeDistance + @closeHitbox);
+@closeTop: 11px;
+@closeRight: 8px;
 
 /* Header */
 @headerMargin: 0em;

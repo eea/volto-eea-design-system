@@ -2,18 +2,13 @@
          Theme Overrides
 *******************************/
 
-.ui.statistic.eeaStatistic {
-  > .value {
-    color: @secondaryValueColor !important;
-    font-family: @valueFont !important;
-    font-weight: @valueFontWeight;
-  }
+/* Full width statistics for mobile */
+.ui.statistic {
+  width: @mobileStatisticWidth;
+}
 
-  > .label {
-    margin-top: @topLabelDistance !important;
-    color: @primaryLabelColor !important;
-    font-family: @labelFont;
-    font-weight: @labelFontWeight;
-    text-transform: @labelTextTransform !important;
+@media only screen and (min-width: @mobileBreakpoint) {
+  .ui.statistic {
+    width: @tabletStatisticWidth;
   }
 }

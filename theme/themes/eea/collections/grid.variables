@@ -16,7 +16,8 @@
 
 @minWidth: 320px;
 
-@gutterWidth: 2rem;
+//@gutterWidth: 2rem;
+@gutterWidth: 20px;
 @rowSpacing: 2rem;
 
 @tableWidth: ~"calc(100% + "@gutterWidth~")";

@@ -33,11 +33,11 @@ for instance `lemon icon` not `lemon outline icon` since there is only one lemon
 @font-face {
   font-display: swap;
   font-family: 'Icons';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: @normal;
   src: @fallbackSRC;
   src: @src;
-  font-style: normal;
-  font-weight: @normal;
-  font-variant: normal;
   text-decoration: inherit;
   text-transform: none;
 }

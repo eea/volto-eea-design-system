@@ -129,7 +129,9 @@ export default {
   },
 };
 
-const Template = (args) => <Segment className="eeaSegment" {...args}></Segment>;
+const Template = (args) => (
+  <Segment className="eea-segment" {...args}></Segment>
+);
 
 export const Default = Template.bind({});
 Default.args = {

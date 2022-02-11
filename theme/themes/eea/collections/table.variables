@@ -47,7 +47,7 @@
 @headerBackground: @silverGray;
 @headerAlign: inherit;
 @headerVerticalAlign: inherit;
-@headerColor: @policeBlue;
+@headerColor: @deepBlue;
 @headerVerticalPadding: @relativeSmall;
 @headerHorizontalPadding: @cellHorizontalPadding;
 @headerFontStyle: none;

@@ -33,7 +33,7 @@ export default {
 //Primary button
 export const Primary = (args) => {
   return (
-    <Button className="eeaPrimaryButton" disabled={args.disabled}>
+    <Button primary disabled={args.disabled}>
       {args.label}
     </Button>
   );
@@ -50,7 +50,7 @@ Primary.parameters = {
 //secondary Button
 export const Secondary = (args) => {
   return (
-    <Button className="eeaSecondaryButton" disabled={args.disabled}>
+    <Button secondary disabled={args.disabled}>
       {args.label}
     </Button>
   );
@@ -68,7 +68,7 @@ Secondary.parameters = {
 export const SecondaryInverted = (args) => {
   return (
     <Segment inverted compact>
-      <Button className="eeaSecondaryButtonInverted" disabled={args.disabled}>
+      <Button className="eea-button-white" secondary disabled={args.disabled}>
         {args.label}
       </Button>
     </Segment>
@@ -89,7 +89,7 @@ export const CallToAction = (args) => {
     <Button
       icon
       labelPosition="right"
-      className="eeaActionButton"
+      className="eea-button-action"
       disabled={args.disabled}
     >
       {args.label}
@@ -141,7 +141,7 @@ CallToAction.argTypes = {
 //Text Button
 export const Text = (args) => {
   return (
-    <Button className="eeaTextButton" disabled={args.disabled}>
+    <Button className="eea-button-text" disabled={args.disabled}>
       {args.label}
     </Button>
   );
@@ -158,7 +158,7 @@ Text.parameters = {
 //Cancel Button
 export const Cancel = (args) => {
   return (
-    <Button className="eeaCancelButton" disabled={args.disabled}>
+    <Button className="eea-button-cancel" disabled={args.disabled}>
       {args.label}
     </Button>
   );

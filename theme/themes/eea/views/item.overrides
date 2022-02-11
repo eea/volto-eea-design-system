@@ -2,14 +2,7 @@
          Theme Overrides
 *******************************/
 
-.ui.items .item .content {
-  .header {
-    font-family: @itemHeaderFont !important;
-  }
-
-  .meta,
-  .description,
-  .extra {
-    font-family: @itemFont;
-  }
+/* Align item image left with text */
+.ui.items:not(.unstackable) > .item > .image {
+  margin: @imageMargin;
 }

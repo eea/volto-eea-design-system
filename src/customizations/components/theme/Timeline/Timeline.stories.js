@@ -1,5 +1,5 @@
 import React from 'react';
-import Timeline from 'react-timeline-semantic-ui';
+import Timeline from './Timeline';
 
 export default {
   title: 'Components/Timeline',
@@ -9,27 +9,28 @@ export default {
 
 function TimelineEEA({ items }) {
   return (
-    <div className="eeaTimeline">
+    <>
       {items.map((item, index) => (
         <Timeline {...item} key={index}></Timeline>
       ))}
-    </div>
+    </>
   );
 }
 
 const Template = (args) => (
-  <div className="eeaTimeline">
+  <div className="eea-timeline">
     <Timeline {...args}></Timeline>
   </div>
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  direction: 'right',
+  direction: 'left',
   icon: 'user',
+  time: 'Date and time',
   title: 'Title',
   description: 'description',
-  color: 'red',
+  color: 'blue',
   tags: [],
   lineHeight: 1,
 };
@@ -37,102 +38,121 @@ Default.args = {
 Default.argTypes = {
   direction: {
     description: 'side of the timeline in whick item appears',
-    type: {
-      summary: 'string',
-    },
-    defaultValue: {
-      summary: ' "" ',
+    table: {
+      type: {
+        summary: 'string',
+      },
+      defaultValue: {
+        summary: ' "" ',
+      },
     },
   },
   icon: {
     description: 'timeline item icon',
-    type: {
-      summary: 'string',
-    },
-    defaultValue: {
-      summary: ' "" ',
+    table: {
+      type: {
+        summary: 'string',
+      },
+      defaultValue: {
+        summary: ' "" ',
+      },
     },
   },
   title: {
     description: 'timeline item heading',
-    type: {
-      summary: 'string',
-    },
-    defaultValue: {
-      summary: ' "" ',
+    table: {
+      type: {
+        summary: 'string',
+      },
+      defaultValue: {
+        summary: ' "" ',
+      },
     },
   },
   description: {
     description: 'timeline item main content',
-    type: {
-      summary: 'string',
-    },
-    defaultValue: {
-      summary: ' "" ',
+    table: {
+      type: {
+        summary: 'string',
+      },
+      defaultValue: {
+        summary: ' "" ',
+      },
     },
   },
   color: {
     description: 'timeline item color',
-    type: {
-      summary: 'string',
-    },
-    defaultValue: {
-      summary: ' "" ',
+    table: {
+      type: {
+        summary: 'string',
+      },
+      defaultValue: {
+        summary: ' "" ',
+      },
     },
   },
   tags: {
     description: 'timeline item content tags',
-    type: {
-      summary: 'array',
-    },
-    defaultValue: {
-      summary: ' "" ',
+    table: {
+      type: {
+        summary: 'array',
+      },
+      defaultValue: {
+        summary: ' "" ',
+      },
     },
   },
   lineHeight: {
     description:
       'The height of middle line going through icons. The number refers to the number of timeline cards',
-    type: {
-      summary: 'number',
-    },
-    defaultValue: {
-      summary: ' "" ',
+    table: {
+      type: {
+        summary: 'number',
+      },
+      defaultValue: {
+        summary: ' "" ',
+      },
     },
   },
 };
 
-export const Multiple = (args) => <TimelineEEA {...args}></TimelineEEA>;
+export const Multiple = (args) => (
+  <div className="eea-timeline">
+    <TimelineEEA {...args}></TimelineEEA>
+  </div>
+);
+
 Multiple.args = {
   items: [
     {
       direction: 'left',
-      icon: 'user',
+      icon: 'time',
       time: 'Date and time',
       title: 'Title 1',
       description: 'description 1',
-      color: 'red',
+      color: 'blue',
       tags: [],
-      lineHeight: 3,
-    },
-    {
-      direction: 'right',
-      icon: 'user',
-      time: 'Date and time',
-      title: 'Title 2',
-      description: 'description 2',
-      color: 'yellow',
-      tags: [],
-      lineHeight: 3,
+      lineHeight: 2,
     },
     {
       direction: 'left',
-      icon: 'user',
+      icon: 'check circle',
+      time: 'Date and time',
+      title: 'Title 2',
+      description: 'description 2',
+      color: 'green',
+      tags: [],
+      lineHeight: 2,
+    },
+    {
+      direction: 'left',
+      icon: 'minus circle',
       time: 'Date and time',
       title: 'Title 3',
       description: 'description 3',
-      color: 'violet',
+      color: 'teal',
       tags: [],
-      lineHeight: 3,
+      lineHeight: 2,
     },
   ],
 };
@@ -140,11 +160,13 @@ Multiple.args = {
 Multiple.argTypes = {
   items: {
     description: 'array of different timeline item objects',
-    type: {
-      summary: 'array',
-    },
-    defaultValue: {
-      summary: ' "" ',
+    table: {
+      type: {
+        summary: 'array',
+      },
+      defaultValue: {
+        summary: ' "" ',
+      },
     },
   },
 };

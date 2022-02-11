@@ -56,11 +56,11 @@ export default {
 };
 
 export const ButtonPopup = (args) => (
-  <Segment className="storybookComponents">
+  <Segment placeholder>
     <Popup
       {...args}
       trigger={
-        <Button icon labelPosition="right" className="eeaActionButton">
+        <Button icon labelPosition="right" className="action">
           Info Popup
           <Icon name="info" />
         </Button>
@@ -75,7 +75,7 @@ ButtonPopup.args = {
 };
 
 export const ImagePopup = (args) => (
-  <Segment className="storybookComponents">
+  <Segment placeholder>
     <Popup
       {...args}
       trigger={
