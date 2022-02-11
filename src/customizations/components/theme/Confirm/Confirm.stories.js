@@ -72,7 +72,6 @@ function ConfirmContent({
         Show Confirmation
       </Button>
       <Confirm
-        className="eea-modal"
         open={open}
         header={confirmHeader}
         onCancel={closeConfirm}

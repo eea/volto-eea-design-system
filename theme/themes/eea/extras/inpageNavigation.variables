@@ -1,0 +1,15 @@
+/*******************************
+        Inpage Navigation
+*******************************/
+
+@tabletNavWidth       : 2.813rem;
+@tabletNavHeight      : 2.813rem;
+@computerNavWidth     : 3.438rem;
+@computerNavHeight    : 3.438rem;
+@navBottom            : 1.875rem;
+@mobileNavRight       : @mobilePadding;
+@tabletNavRight       : @tabletPadding;
+@computerNavRight     : @computerPadding;
+@navBackground        : @darkCerulean;
+@navColor             : @white;
+@navFontWeight        : @bold;

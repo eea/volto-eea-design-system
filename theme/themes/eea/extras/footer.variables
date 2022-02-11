@@ -1,0 +1,104 @@
+/*******************************
+            Footer
+*******************************/
+
+@footerBackgroundGrandient          : linear-gradient(180deg, #009591 -1.72%, @japaneseIndigo 61.15%);
+
+/* Visual */
+@visualBackgroundImage              : url(../assets/images/Footer/Extras/abstract-visual.svg);
+@visualBackgroundPosition           : center;
+@visualBackgroundSize               : 200% 200%;
+@visualWidth                        : 100%;
+@mobileVisualPadding                : 3rem 0 1rem;
+@computerVisualPadding              : 5rem 0 3rem;
+
+/* Theme Sites */
+@mobileThemeSitesPadding            : 0;
+@computerThemeSitesPadding          : 0rem 0 2rem;
+
+/* Theme Sites Header */
+@headerFontWeight                   : @bold;
+@mobileHeaderMarginBottom           : 1.25rem;
+@tabletHeaderMarginBottom           : 2.5rem;
+@computerHeaderMarginBottom         : 3.75rem;
+@mobileHeaderFontSize               : 0.688rem;
+@tabletHeaderFontSize               : @h5;
+@computerHeaderFontSize             : @h3;
+
+/* Subfooter with logo and contact info */
+@mobileItemMarginTop                : 1rem;
+@tabletItemMarginTop                : 2rem;
+@computerItemMarginTop              : 4rem;
+
+/* Subfooter Item Header */
+@itemHeaderFontWeight               : @bold;
+@mobileItemHeaderMarginBottom       : 0.625rem;
+@mobileItemHeaderFontSize           : 0.688rem;
+@tabletItemHeaderMarginBottom       : 0.938rem;
+@tabletItemHeaderFontSize           : 1.375rem;
+@computerItemHeaderMarginBottom     : 1.563rem;
+@computerItemHeaderFontSize         : @h3;
+
+/* Site Logo */
+@tabletSiteLogoWidth                : 192px;
+@computerSiteLogoWidth              : 283px;
+
+/* Site Logo Description */
+@mobileDescriptionMargin             : 5px 0 0 10px;
+@computerDescriptionMargin           : 5px 0 0 25px;
+@mobileDescriptionFontSize           : 0.5rem;
+@tabletDescriptionFontSize           : 1rem;
+@mobileDescriptionLineHeight         : 0.563rem;
+@tabletDescriptionLineHeight         : 1.188rem;
+
+/* EIONET Logo */
+@eionetMarginTop: 2rem;
+
+@mobileEionetLogoWidth               : 37px;
+@tabletEionetLogoWidth               : 65px;
+@computerEionetLogoWidth             : 80px;
+@mobileEionetLogoMarginLeft          : 0.75rem;
+@tabletEionetLogoMarginLeft          : 0.625rem;
+@computerEionetLogoMarginLeft        : 1.563rem;
+@mobileEionetLogoMarginRight         : 0.5rem;
+@computerEionetLogoMarginRight       : 1.25rem;
+
+/* eIONET Logo Description */
+@eionetDescriptionFontWeight         : @bold;
+@mobileEionetDescriptionPaddingTop   : 0.125rem;
+@tabletEionetDescriptionPaddingTop   : 0.313rem;
+@mobileEionetDescriptionFontSize     : 0.5rem;
+@tabetEionetDescriptionFontSize      : 1rem;
+@computerEionetDescriptionFontSize   : 1.063rem;
+@mobileEionetDescriptionLineHeight   : 0.625rem;
+@tabletEionetDescriptionLineHeight   : 1.5rem;
+@computerEionetDescriptionLineHeight : 1.8rem;
+
+/* Contact Info */
+@contactMargin                      : 1rem 0;
+@mobileContactFontSize              : 0.563rem;
+@tabletContactFontSize              : 0.875rem;
+@computerContactFontSize            : 1rem;
+@tabletContactIconMarginRight       : 0.938rem;
+@tabletContactIconFontSize          : 1.375rem;
+@computerContactIconFontSize        : 1.563rem;
+
+/* Address */
+@mobileAdressFontSize               : 0.5rem;
+@tabletAddressFontSize              : 0.875rem;
+
+/* Social Icons */
+@socialIconColor                    : @white;
+@mobileSocialIconSize               : 1.2rem;
+@tabletSocialIconSize               : 1.8rem;
+@computerSocialIconSize             : 2rem;
+
+/* Footer Menu */
+@mobileMenuMargin                   : 0;
+@tabletMenuMargin                   : 2rem auto 0;
+@tabletMenuWidth                    : 500px;
+@menuLinkColor                      : @white;
+@menuFontWeight                     : 100;
+@mobileMenuFontSize                 : 0.438rem;
+@tabletMenuFontSize                 : 0.688rem;
+@computerMenuFontSize               : 1rem;

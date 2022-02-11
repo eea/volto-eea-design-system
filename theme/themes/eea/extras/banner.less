@@ -1,0 +1,116 @@
+@type: 'extra';
+@element: 'banner';
+
+@import (multiple) '../../theme.config';
+
+/*-------------------
+      BANNER
+--------------------*/
+
+.eea-page-banner {
+  width: 100%;
+  color: @white;
+  background: @bannerBackgroundColor;
+
+  .image {
+    background-image: @imageURL;
+    background-repeat: @imageBackgroundRepeat;
+    background-size: @imageBackgroundSize;
+    background-position: @imageBackgroundPosition;
+
+    .gradient {
+      background: @backgroundGradient;
+      opacity: @backgroundGradientOpacity;
+
+      .content {
+        padding: @mobileContentPadding;
+
+        .ui.grid {
+          align-items: end;
+        }
+
+        .title {
+          max-width: @titleMaxWidth;
+          margin: @mobileTitleMargin;
+          font-size: @mobileTitleFontSize;
+          font-weight: @titleFontWeight;
+          line-height: @mobileTitleLineHeight;
+        }
+
+        .metadata {
+          font-size: @mobileMetadataFontSize;
+          line-height: @mobileMetadataLineHeight;
+          font-weight: @metadataFontWeight;
+        }
+
+        .actions.mobile.hidden {
+          float: right;
+
+          div {
+            display: flex;
+            margin: 3px 0;
+          }
+        
+          i.icon {
+            margin: 0 5px 5px 0;
+          }
+        }
+
+        .actions.mobile.only {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          margin-top: -15px;
+        }
+      }
+    }
+  }
+}
+
+.content .row div {
+  padding: 0;
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+
+  .eea-page-banner .image .gradient {
+
+    .content {
+      padding: @tabletContentPadding;
+
+      .title {
+        font-size: @tabletTitleFontSize;
+        font-weight: @titleFontWeight;
+        margin: @tabletTitleMargin;
+        line-height: @tabletTitleLineHeight ;
+      }
+
+      .metadata {
+        font-size: @tabletMetadataFontSize;
+        line-height: @tabletMetadataLineHeight;
+      }
+    }
+
+  }
+
+  .content .row {
+    display: flex;
+    align-items: end;
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+
+  .eea-page-banner .image .gradient {
+
+    .content {
+      padding: @computerContentPadding;
+
+      .title {
+        font-size: @computerTitleFontSize;
+        margin: @computerTitleMargin;
+        line-height: @computerTitleLineHeight;
+      }
+    }
+  }
+}

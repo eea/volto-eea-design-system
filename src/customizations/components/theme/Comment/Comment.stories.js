@@ -1,5 +1,6 @@
 import React from 'react';
-import CommentEEA from './Comment';
+import { Comment, Header } from 'semantic-ui-react';
+import eeaIcon from '../../theme/../../../../theme/themes/eea/assets/images/eea_icon.png';
 
 export default {
   title: 'Components/Comment',
@@ -45,6 +46,47 @@ export default {
   },
 };
 
+function CommentEEA({ title, comments, threaded, minimal, size }) {
+  return (
+    <Comment.Group threaded={threaded} minimal={minimal} size={size}>
+      <Header dividing>{title}</Header>
+
+      {comments.map((comment, comIndex) => (
+        <Comment key={comIndex}>
+          <Comment.Avatar src={comment.src} alt="user avatar" />
+          <Comment.Content>
+            <Comment.Author as="a">{comment.author}</Comment.Author>
+            <Comment.Metadata>
+              <div>{comment.time}</div>
+            </Comment.Metadata>
+            <Comment.Text>{comment.text}</Comment.Text>
+            <Comment.Actions>
+              <Comment.Action>Reply</Comment.Action>
+            </Comment.Actions>
+          </Comment.Content>
+          <Comment.Group>
+            {comment.replies.map((reply, repIndex) => (
+              <Comment key={repIndex}>
+                <Comment.Avatar src={comment.src} alt="user avatar" />
+                <Comment.Content>
+                  <Comment.Author as="a">{reply.author}</Comment.Author>
+                  <Comment.Metadata>
+                    <div>{reply.time}</div>
+                  </Comment.Metadata>
+                  <Comment.Text>{reply.text}</Comment.Text>
+                  <Comment.Actions>
+                    <Comment.Action>Reply</Comment.Action>
+                  </Comment.Actions>
+                </Comment.Content>
+              </Comment>
+            ))}
+          </Comment.Group>
+        </Comment>
+      ))}
+    </Comment.Group>
+  );
+}
+
 const Template = (args) => <CommentEEA {...args}></CommentEEA>;
 
 export const Default = Template.bind({});
@@ -55,14 +97,13 @@ Default.args = {
   size: 'large',
   comments: [
     {
-      src:
-        '../../theme/../../../../theme/themes/eea/assets/images/eea_icon.png',
+      src: eeaIcon,
       author: 'User 1',
       time: 'Message timestamp',
       text: 'Message Content',
       replies: [
         {
-          src: 'eea_icon.png',
+          src: eeaIcon,
           author: 'User 4',
           time: 'Message timestamp',
           text: 'Message Content',
@@ -70,15 +111,15 @@ Default.args = {
       ],
     },
     {
-      src: 'eea_icon.png',
+      src: eeaIcon,
       author: 'User 2',
       time: 'Message timestamp',
       text: 'Message Content',
       replies: [],
     },
     {
-      src: 'eea_icon.png',
-      author: 'User 2',
+      src: eeaIcon,
+      author: 'User 3',
       time: 'Message timestamp',
       text: 'Message Content',
       replies: [],

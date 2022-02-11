@@ -2,7 +2,7 @@
               Tab
 *******************************/
 
-@headerSize: @h3;
+@headerSize: @h4;
 @headerSizeResponsive: @fontSize;
 @contentSize: @fontSize;
 

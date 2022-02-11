@@ -46,7 +46,7 @@ function Timeline({
   const height = isMobile ? `${lineHeight * 350}px` : `${lineHeight * 250}px`;
 
   return (
-    <div>
+    <div className="eea timeline">
       <div
         className="Timeline-line"
         style={{ height, background: lineColor }}
