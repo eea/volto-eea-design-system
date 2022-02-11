@@ -8,8 +8,8 @@ function Blockquote({ children, ...rest }) {
   );
 }
 
-Blockquote.Content = ({ children, as, ...rest }) =>
-  as ? <as {...rest}>{children}</as> : children;
+Blockquote.Content = ({ children, as: As, ...rest }) =>
+  As ? <As {...rest}>{children}</As> : children;
 
 Blockquote.Meta = ({ children }) => <div className="meta">{children}</div>;
 
