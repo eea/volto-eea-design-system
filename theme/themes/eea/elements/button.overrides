@@ -23,6 +23,7 @@
   }
 }
 
+/* Primary Button Border */
 .ui.button.primary,
 .ui.buttons.primary {
   border: @buttonBorder @primaryColor;
@@ -38,7 +39,7 @@
 .ui.button.secondary,
 .ui.buttons.secondary {
   border: @buttonBorder @primaryButtonColor;
-  background-color: @white;
+  background-color: @secondaryButtonBackrgound;
   .text-color(@white);
 
   &:hover,
@@ -50,17 +51,16 @@
 }
 
 /* Secondary Button Inverted */
-button.ui.button.eea-button-white,
-button.ui.buttons.eea-button-white {
-  border: @buttonBorder @white;
-  background-color: transparent;
-  color: @white;
+.ui.button.inverted.secondary,
+.ui.buttons.inverted.secondary {
+  border: @buttonBorder @secondaryButtonColor;
+  color: @secondaryButtonColor;
 
   &:hover,
   &:active,
   &:focus {
-    background-color: @white;
-    .text-color(@white);
+    background-color: @secondaryButtonColor;
+    color: @primaryColor;
   }
 }
 
@@ -80,47 +80,29 @@ button.ui.buttons.eea-button-white {
   }
 }
 
-button.ui.eea-button-action.button[class*='right labeled'].icon.button {
-  padding-right: 3em !important;
+.ui.button.action[class*='right labeled'].icon.button {
+  padding-right: 3em !important;  // to apply to theme button paddings - button.less:856
 
   i {
-    margin-right: 5px !important;
+    margin-right: 5px !important; // to apply to theme button paddings - button.less:693
   }
 }
 
-button.ui.icon.right.labeled.button.eea-button-action > .icon {
-  background-color: transparent;
-}
-
-/* Cancel Button */
-button.ui.button.eea-button-cancel,
-button.ui.buttons.eea-button-cancel {
-  border: @buttonBorder @silverGray;
-  background-color: @silverGray;
-  color: @black;
-
-  &:hover,
-  &:active,
-  &:focus {
-    border: @buttonBorder @midGray;
-    background-color: @midGray;
-    color: @black;
-  }
-}
 
 /* Text Button */
-button.ui.eea-button-text.button,
-button.ui.eea-button-text.buttons {
-  border: none !important;
-  background-color: transparent;
+button.ui.button.text,
+button.ui.buttons.text,
+p.ui.button {
+  border: none;
+  background-color: @textButtonBackground;
   color: @primaryColor;
 
   &:hover,
   &:active,
   &:focus {
-    border: none !important;
-    background-color: transparent;
-    color: @secondaryButtonColorHover;
+    border: none;
+    background-color: @textButtonBackground;
+    color: @primaryColorHover;
   }
 }
 

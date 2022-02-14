@@ -64,11 +64,11 @@ Secondary.parameters = {
   hideNoControlsWarning: true,
 };
 
-//Secondary inverted button
+//secondary Button Inverted
 export const SecondaryInverted = (args) => {
   return (
     <Segment inverted compact>
-      <Button className="eea-button-white" secondary disabled={args.disabled}>
+      <Button secondary inverted disabled={args.disabled}>
         {args.label}
       </Button>
     </Segment>
@@ -138,10 +138,10 @@ CallToAction.argTypes = {
   },
 };
 
-//Text Button
+//Text Button - can also play with text class
 export const Text = (args) => {
   return (
-    <Button className="eea-button-text" disabled={args.disabled}>
+    <Button as="p" disabled={args.disabled}>
       {args.label}
     </Button>
   );
@@ -154,6 +154,7 @@ Text.parameters = {
   controls: { exclude: ['animated', 'variant'] },
   hideNoControlsWarning: true,
 };
+
 
 //Cancel Button
 export const Cancel = (args) => {
