@@ -11,14 +11,23 @@
 /* Button */
 @buttonFontSize: @fontSize;
 
+/* Primary Button */
 @primaryButtonColor: @primaryColor;
 @primaryButtonColorHover: @darkMidnightBlue;
+
+/* Secondary Button */
+@secondaryButtonBackrgound: transparent;
+@secondaryButtonColor: @white;
 @secondaryButtonColorHover : @darkMidnightBlue;
+@secondaryBorder: @buttonBorder @primaryColor;
+@secondaryBorderHover: @buttonBorder @darkMidnightBlue;
+
+/* Action Button */
 @actionButtonButtonColor: @secondaryColor;
 @actionButtonButtonColorHover: @steelBlue;
 
-@secondaryBorder: @buttonBorder @primaryColor;
-@secondaryBorderHover: @buttonBorder @darkMidnightBlue;
+/* Text Button */
+@textButtonBackground: transparent;
 
 @verticalMargin: 0em;
 @horizontalMargin: 0.25em;
@@ -189,7 +198,7 @@
 
 /* Labeled Icon */
 @labeledIconWidth: 1em + (@verticalPadding * 2);
-@labeledIconBackgroundColor: rgba(0, 0, 0, 0.05);
+@labeledIconBackgroundColor: none;
 @labeledIconPadding: (@horizontalPadding + @labeledIconWidth);
 @labeledIconBorder: transparent;
 @labeledIconColor: '';
