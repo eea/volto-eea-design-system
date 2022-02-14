@@ -8,7 +8,7 @@ const AUTHOR = 'President Juncker';
 const IMG = 'https://react.semantic-ui.com/images/avatar/large/matthew.png';
 
 export default {
-  title: 'Components/Blockquote (Edw model)',
+  title: 'Components/Blockquote',
   component: Blockquote,
   argTypes: {
     content: {
