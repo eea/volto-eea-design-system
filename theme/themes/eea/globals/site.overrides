@@ -325,6 +325,10 @@ img#eea-logo {
   justify-content: center;
   background-color: @darkCyan;
 
+  .eea-header-search-action{
+    display: contents;
+  }
+
   img {
     width: 24px;
   }
