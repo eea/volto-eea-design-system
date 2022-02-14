@@ -8,10 +8,12 @@
 /* Quote */
 @quoteColor      : @secondaryColor;
 @quoteMargin     : @relative12px @relative30px;
+@quoteGap        : @relative12px;
 @quoteColor      : @japaneseIndigo;
 @quoteFontSize   : @h4;
 
-/* Author */
-@authorMarginTop : @relative16px;
-@authorWeight    : @bold;
-@authorFontSize  : @h5;
+/* Meta */
+@metaMargin    : 0;
+@metaWeight    : @bold;
+@metaFontSize  : @h5;
+@metaAlignSelf : left;
