@@ -276,7 +276,7 @@ img#eea-logo {
     position: inherit;
     left: 0;
     display: block;
-    width: 22px;
+    width: 16px;
     height: 2px;
     margin: 2px;
     background: #ffffff;
@@ -331,7 +331,7 @@ img#eea-logo {
 
   span {
     position: absolute;
-    width: 22px;
+    width: 16px;
     height: 2px;
     background-color: #ffffff;
     border-radius: 9px;
@@ -1093,4 +1093,55 @@ a.menu-link:hover {
 
 ul.mega-menu.mega-menu--multiLevel > li:last-child {
   margin-bottom: 50px;
+}
+
+//** MEGA MENU REVISIT **//
+
+#eea-mega-menu-wrap {
+
+  .ui.vertical.menu{
+    background: linear-gradient(180deg, #0065a4 39.58%, #043570 100%);
+    border: none;
+  }
+
+  .ui.dropdown {
+    border: none !important;
+
+    .active {
+      border:none;
+    }
+  }
+
+  .ui.menu .dropdown.item .menu {
+    background: linear-gradient(180deg, #0065a4 39.58%, #043570 100%);;
+    border: none;
+  }
+
+  background: linear-gradient(180deg, #0065a4 39.58%, #043570 100%);
+    border: none;
+
+  .ui.vertical.menu .dropdown.item .menu{
+    top:0 !important;
+    margin-top: 0 !important;
+  }
+
+  .ui.vertical.menu .item > .menu.hidden {
+    display: none;
+  }
+
+  
+}
+
+#desktop-menu{
+    display: none;
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  #desktop-menu{
+    display: block;
+  }
+
+  #mobile-menu{
+    display: none;
+  }
 }
