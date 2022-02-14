@@ -11,7 +11,7 @@ function Blockquote({ citation, author }) {
     <div className="eea blockquote">
       <blockquote className="quote">
         {citation}
-        <div className="author">{author}</div>
+        <div className="meta">{author}</div>
       </blockquote>
     </div>
   );
