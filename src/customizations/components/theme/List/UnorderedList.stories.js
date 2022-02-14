@@ -2,34 +2,55 @@ import React from 'react';
 import { List } from 'semantic-ui-react';
 
 export default {
-  title: 'Components/List/UnorderedList',
+  title: 'Components/List/Unordered list',
   component: List,
   argTypes: {
-    size: {
-      control: {
-        type: 'inline-radio',
+    animated: {
+      description:
+        'a list can animate to set the current item apart from the list',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
       },
-      options: ['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive'],
+    },
+    divided: {
+      description: 'a list can show divisions between conten',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    horizontal: {
+      description: 'a list can be formatted to have items appear horizontally',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    items: {
+      description: 'array of list content',
+      table: {
+        type: { summary: 'object' },
+        defaultValue: { summary: ' "" ' },
+      },
     },
   },
 };
 
-function UnorderedList(items, selection, animated, divided, size, horizontal) {
+function UnorderedList(animated, divided, horizontal, items) {
   return (
     <List
       bulleted
-      selection={selection}
       animated={animated}
       divided={divided}
-      size={size}
       horizontal={horizontal}
     >
       {items.map((item, index) => (
         <List.Item key={index}>
           {item.content}
-          <List.List selection={selection}>
+          <List.List role="list">
             {item.subList.map((sub, subIndex) => (
-              <List.Item key={subIndex} as="a">
+              <List.Item key={subIndex} as="a" role="listitem">
                 {sub.content}
               </List.Item>
             ))}
@@ -40,18 +61,19 @@ function UnorderedList(items, selection, animated, divided, size, horizontal) {
   );
 }
 
-export const Unordered = (args) => {
+export const Default = (args) => {
   return UnorderedList(
-    args.items,
-    args.selection,
     args.animated,
     args.divided,
-    args.size,
     args.horizontal,
+    args.items,
   );
 };
 
-Unordered.args = {
+Default.args = {
+  animated: false,
+  divided: false,
+  horizontal: false,
   items: [
     {
       header: 'header 1',
@@ -86,9 +108,4 @@ Unordered.args = {
       ],
     },
   ],
-  selection: false,
-  animated: false,
-  divided: false,
-  size: 'small',
-  horizontal: false,
 };

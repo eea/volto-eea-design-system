@@ -8,50 +8,58 @@ export default {
     pointing: {
       control: { type: 'inline-radio' },
       options: [false, true, 'below', 'left', 'right'],
+      description: 'a label can point to content next to it',
+      table: {
+        type: {
+          summary: 'boolean | string',
+        },
+        defaultValue: {
+          summary: false,
+        },
+      },
     },
-    attached: {
-      control: { type: 'inline-radio' },
-      options: [
-        'top',
-        'bottom',
-        'top right',
-        'top left',
-        'bottom left',
-        'bottom right',
-      ],
+    content: {
+      description: 'primary content',
+      table: {
+        type: {
+          summary: 'custom',
+        },
+        defaultValue: {
+          summary: '',
+        },
+      },
     },
   },
-  decorators: [
-    (Story) => (
-      <div style={{ margin: '3em' }}>
-        <Story />
-      </div>
-    ),
-  ],
 };
 
 const Template = (args) => <Label {...args}></Label>;
 
 export const Default = Template.bind({});
 Default.args = {
-  children: ['Label'],
+  content: 'Label',
+  pointing: false,
 };
 
-export const Playground = Template.bind({});
-Playground.args = {
-  children: ['Label'],
-  color: 'blue',
-  pointing: true,
-  tag: false,
-  ribbon: false,
-  floating: false,
-  attached: 'top left',
+export const MediumImportance = (args) => (
+  <Label className="medium" {...args}></Label>
+);
+MediumImportance.args = {
+  content: 'Label',
+  pointing: false,
 };
 
-export const Link = Template.bind({});
-Link.args = {
-  children: ['Label'],
-  as: 'a',
-  href: 'https://react.semantic-ui.com/elements/label/#types-basic',
-  color: 'blue',
+export const HighImportance = (args) => (
+  <Label className="high" {...args}></Label>
+);
+HighImportance.args = {
+  content: 'Label',
+  pointing: false,
+};
+
+export const Highlight = (args) => (
+  <Label className="highlight" {...args}></Label>
+);
+Highlight.args = {
+  content: 'Label',
+  pointing: false,
 };

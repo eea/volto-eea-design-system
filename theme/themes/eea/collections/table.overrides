@@ -2,6 +2,50 @@
          Theme Overrides
 *******************************/
 
+.ui.table.eea-table {
+  border: @defaultBorderRadius;
+  border-radius: @tableBorderRadius;
+
+  thead {
+    tr th {
+      border-bottom: @headerBorder;
+      background-color: @headerBackground;
+      border-radius: @tableBorderRadius;
+      color: @headerColor;
+      font-size: @h3;
+    }
+
+    tr:first-child > th:first-child,
+    tr:first-child > th:last-child {
+      border-radius: @tableBorderRadius;
+    }
+  }
+
+  tbody {
+    tr td {
+      font-size: @fontSize;
+    }
+  }
+}
+
+//Active Header on sorting table
+.ui.sortable.table.eea-table thead th {
+  background-color: @headerBackground;
+  color: @headerColor;
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: @headerColor;
+  }
+}
+
+.ui.celled.table.eea-table tr td,
+.ui.celled.table.eea-table tr th {
+  border-left: 1px solid @secondaryColor;
+}
+/*******************************************************/
+
 .ui.table {
   th.selected,
   td.selected {
@@ -38,103 +82,3 @@
 .ui.table tr:first-child > th:only-child {
   border-radius: @borderRadius @borderRadius 0em 0em;
 }
-
-/*-------------------
-      FOOTER IMS overrides
---------------------*/
-
-//.first-footer {
-//  .ui.table {
-//    width: auto;
-//    max-width: 100% !important;
-//    border: none !important;
-//    background: none !important;
-//    border-collapse: collapse !important;
-//    font-size: 1em;
-//
-//    tr td {
-//      padding: 0.2em;
-//      border-top: none !important;
-//    }
-//    @media only screen and (max-width: 860px) {
-//      &:not(.unstackable) .table-link-description {
-//        font-weight: normal !important;
-//      }
-//
-//      &:not(.unstackable) tr {
-//        padding: 0em !important;
-//        box-shadow: none !important;
-//      }
-//
-//      &:not(.unstackable) tr td {
-//        padding: 0em !important;
-//      }
-//
-//      &:not(.unstackable) tr td.table-link-description {
-//        margin-bottom: 1em !important;
-//      }
-//
-//      &:not(.unstackable) tr.right-row {
-//        display: flex !important;
-//        flex-direction: column;
-//      }
-//    }
-//
-//    &:first-child,
-//    &:last-child {
-//      margin: 0em !important;
-//    }
-//  }
-//
-//  .ui.grid {
-//    margin: 0 !important;
-//  }
-//
-//  .two-tables {
-//    display: flex;
-//    max-width: 1500px;
-//    flex-direction: row;
-//    flex-wrap: wrap;
-//    justify-content: space-around;
-//    margin: 0 auto;
-//    font-size: 12px;
-//    @media only screen and (max-width: 603px) {
-//      flex-direction: column;
-//      line-height: 1;
-//    }
-//  }
-//
-//  .left-table,
-//  .right-table {
-//    .table-link-title,
-//    .table-link-description {
-//      @media only screen and (max-width: 860px) {
-//        display: block;
-//        width: 100%;
-//        text-align: center !important;
-//      }
-//    }
-//
-//    .table-link-title {
-//      font-weight: bold;
-//    }
-//  }
-//
-//  .left-table .table-link-title {
-//    text-align: right;
-//  }
-//
-//  .left-table .table-link-description {
-//    @media screen and (min-width: 860px) {
-//      padding-left: 1em !important;
-//    }
-//  }
-//
-//  .right-table .table-link-description {
-//    text-align: right;
-//    @media screen and (min-width: 860px) {
-//      order: 1;
-//      padding-right: 1em !important;
-//    }
-//  }
-//}

@@ -6,6 +6,9 @@
          View
 --------------------*/
 
+@cardBorder: 1px solid @midGray;
+@background: @white;
+
 /* Shadow */
 @shadowDistance: 1px;
 @shadowBoxShadow: 0px @shadowDistance 3px 0px @solidBorderColor;
@@ -13,7 +16,6 @@
 /* Card */
 @fontFamily: @pageFont;
 @display: flex;
-@background: @white;
 @borderRadius: @defaultBorderRadius;
 @margin: 1em 0em;
 @minHeight: 0px;
@@ -21,11 +23,8 @@
 @width: 290px;
 @borderWidth: 1px;
 @borderShadow: 0px 0px 0px @borderWidth @solidBorderColor;
-@boxShadow:
-  @shadowBoxShadow,
-  @borderShadow
-;
-@border: none;
+@boxShadow: @eeaGlobalShadow;
+@border: 1px solid @midGray;
 @zIndex: '';
 @transition:
   box-shadow @defaultDuration @defaultEasing,
@@ -79,7 +78,7 @@
 /* Metadata */
 @metaFontSize: @relativeMedium;
 @metaSpacing: 0.3em;
-@metaColor: @lightTextColor;
+@metaColor: @oldSilver;
 
 /* Icons */
 @actionOpacity: 0.75;
@@ -132,11 +131,11 @@
 @extraMargin: 0em 0em;
 @extraPadding: 0.75em 1em;
 @extraBoxShadow: none;
-@extraColor: @lightTextColor;
+@extraColor: @primaryColor;
 @extraTransition: color @defaultDuration @defaultEasing;
 
 /* Extra Links */
-@extraLinkColor: @unselectedTextColor;
+@extraLinkColor: @linkColor;
 @extraLinkHoverColor: @linkHoverColor;
 
 /* Buttons */

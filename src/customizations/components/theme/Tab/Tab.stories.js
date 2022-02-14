@@ -10,37 +10,27 @@ export default {
     },
   },
   argTypes: {
-    //   tabular: {
-    //     control: { type: 'inline-radio' },
-    //     options: [true, 'left','right'],
-    //   },
+    panes: {
+      description: 'tab names and content array',
+      table: {
+        type: {
+          summary: 'object',
+        },
+        defaultValue: {
+          summary: ' "" ',
+        },
+      },
+    },
   },
 };
 
-function TabContent({
-  panes,
-  pointing,
-  secondary,
-  text,
-  attached,
-  tabular,
-  borderless,
-  color,
-  vertical,
-}) {
+function TabContent({ panes, text, attached, tabular, borderless, vertical }) {
   return (
     <Tab
       panes={panes}
-      menu={{
-        color,
-        pointing: pointing,
-        secondary: secondary,
-        text: text,
-        attached: attached,
-        tabular: tabular,
-        borderless: borderless,
-        vertical: vertical,
-      }}
+      className="eea-tab"
+      renderActiveOnly={false}
+      menu={{ secondary: true, pointing: true, vertical: vertical }}
     ></Tab>
   );
 }
@@ -52,40 +42,52 @@ Default.args = {
   panes: [
     {
       menuItem: 'Tab 1',
-      render: () => <Tab.Pane>Tab 1 Content</Tab.Pane>,
+      pane: 'Tab 1 Content',
     },
     {
       menuItem: 'Tab 2',
-      render: () => <Tab.Pane>Tab 2 Content</Tab.Pane>,
+      pane: 'Tab 2 Content',
     },
     {
       menuItem: 'Tab 3',
-      render: () => <Tab.Pane>Tab 3 Content</Tab.Pane>,
+      pane: 'Tab 3 Content',
+    },
+    {
+      menuItem: 'Tab 4',
+      pane: 'Tab 4 Content',
     },
   ],
 };
 
-export const Playground = Template.bind({});
-Playground.args = {
+export const Vertical = Template.bind({});
+Vertical.args = {
+  vertical: true,
   panes: [
     {
       menuItem: 'Tab 1',
-      render: () => <Tab.Pane>Tab 1 Content</Tab.Pane>,
+      pane: 'Tab 1 Content',
     },
     {
       menuItem: 'Tab 2',
-      render: () => <Tab.Pane>Tab 2 Content</Tab.Pane>,
+      pane: 'Tab 2 Content',
     },
     {
       menuItem: 'Tab 3',
-      render: () => <Tab.Pane>Tab 3 Content</Tab.Pane>,
+      pane: 'Tab 3 Content',
     },
   ],
-  pointing: false,
-  secondary: false,
-  text: false,
-  attached: false,
-  tabular: false,
-  borderless: false,
-  vertical: false,
+};
+
+Vertical.argTypes = {
+  vertical: {
+    description: 'vertical tab',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: {
+        summary: false,
+      },
+    },
+  },
 };

@@ -2,6 +2,10 @@
               Tab
 *******************************/
 
+@headerSize: @h3;
+@headerSizeResponsive: @fontSize;
+@contentSize: @fontSize;
+
 /* Loading */
 @loadingMinHeight: 250px;
 @loadingContentPosition: relative;

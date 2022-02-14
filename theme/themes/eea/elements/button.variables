@@ -7,6 +7,19 @@
 --------------------*/
 
 /* Button */
+@buttonFontSize: @fontSize;
+
+@primaryButtonColor: @primaryColor;
+@primaryButtonColorHover: @darkMidnightBlue;
+@secondaryButtonColorHover : @darkMidnightBlue;
+@actionButtonButtonColor: @secondaryColor;
+@actionButtonButtonColorHover: @steelBlue;
+
+@secondaryBorder: @eeaButtonBorder @primaryColor;
+@secondaryBorderHover: @eeaButtonBorder @darkMidnightBlue;
+
+@buttonPadings: @relative12px @relative30px;
+
 @verticalMargin: 0em;
 @horizontalMargin: 0.25em;
 @backgroundColor: #E0E1E2;
@@ -28,6 +41,7 @@
 @invertedTextShadow: @textShadow;
 @borderRadius: @defaultBorderRadius;
 @verticalAlign: baseline;
+
 
 /* Internal Shadow */
 @shadowDistance: 0em;

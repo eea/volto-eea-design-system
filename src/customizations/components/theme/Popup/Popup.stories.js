@@ -1,11 +1,22 @@
 import { React } from 'react';
-import { Button, Segment, Popup, Image } from 'semantic-ui-react';
+import { Button, Segment, Popup, Image, Icon } from 'semantic-ui-react';
 import EUflag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/europe-flag.svg';
 
 export default {
   title: 'Components/Popup',
   component: Popup,
   argTypes: {
+    content: {
+      description: 'popup text',
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: {
+          summary: ' "" ',
+        },
+      },
+    },
     position: {
       options: [
         'top left',
@@ -18,17 +29,43 @@ export default {
         'bottom right',
       ],
       control: { type: 'select' },
+      description: 'Popup position around its trigger.',
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: {
+          summary: 'top center',
+        },
+      },
     },
     size: {
       options: ['mini', 'tiny', 'small', 'large', 'huge'],
       control: { type: 'select' },
+      description: 'Popup size.',
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: {
+          summary: 'small',
+        },
+      },
     },
   },
 };
 
 export const ButtonPopup = (args) => (
-  <Segment className="storybookComponents">
-    <Popup {...args} trigger={<Button icon="info" label="Information" />} />
+  <Segment placeholder>
+    <Popup
+      {...args}
+      trigger={
+        <Button icon labelPosition="right" className="action">
+          Info Popup
+          <Icon name="info" />
+        </Button>
+      }
+    />
   </Segment>
 );
 ButtonPopup.args = {
@@ -38,7 +75,7 @@ ButtonPopup.args = {
 };
 
 export const ImagePopup = (args) => (
-  <Segment className="storybookComponents">
+  <Segment placeholder>
     <Popup
       {...args}
       trigger={

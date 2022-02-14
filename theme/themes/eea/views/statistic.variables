@@ -6,6 +6,12 @@
          View
 --------------------*/
 
+@mobileStatisticWidth: 100%;
+@tabletStatisticWidth: inherit;
+
+@secondaryValueColor: @secondaryColor;
+@primaryLabelColor: @primaryColor;
+
 @verticalMargin: 1em;
 @margin: @verticalMargin 0em;
 @textAlign: center;
@@ -27,17 +33,17 @@
 /* Value */
 @valueFont: @pageFont;
 @valueFontWeight: @normal;
-@valueLineHeight: 1em;
-@valueColor: @black;
-@valueTextTransform: uppercase;
+@valueLineHeight: 1.5em;
+@valueColor: @secondaryColor;
+@valueTextTransform: none;
 
 /* Label */
 @labelSize: @relativeMedium;
-@topLabelDistance: 0rem;
+@topLabelDistance: 1rem;
 @bottomLabelDistance: 0rem;
 @labelFont: @headerFont;
 @labelFontWeight: @bold;
-@labelColor: @textColor;
+@labelColor: @primaryColor;
 @labelLineHeight: @relativeLarge;
 @labelTextTransform: uppercase;
 
@@ -62,8 +68,8 @@
 --------------------*/
 
 /* Floated */
-@leftFloatedMargin: 0em 2em 1em 0em;
-@rightFloatedMargin: 0em 0em 1em 2em;
+@leftFloatedMargin: 1em;
+@rightFloatedMargin: 1em;
 
 /* Inverted */
 @invertedValueColor: @white;

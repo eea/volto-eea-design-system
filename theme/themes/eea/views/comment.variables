@@ -46,8 +46,8 @@
 
 /* Author */
 @authorFontSize: 1em;
-@authorColor: @textColor;
-@authorHoverColor: @linkHoverColor;
+@authorColor: @secondaryColor;
+@authorHoverColor: @secondaryColorDarken;
 @authorFontWeight: @bold;
 
 /* Metadata */
@@ -55,7 +55,7 @@
 @metadataFontSize: 0.875em;
 @metadataSpacing: 0.5em;
 @metadataContentSpacing: 0.5em;
-@metadataColor: @lightTextColor;
+@metadataColor: @black;
 
 /* Text */
 @textFontSize: 1em;
@@ -66,7 +66,7 @@
 /* Actions */
 @actionFontSize: 0.875em;
 @actionContentDistance: 0.75em;
-@actionLinkColor: @unselectedTextColor;
+@actionLinkColor: @black;
 @actionLinkHoverColor: @hoveredTextColor;
 
 /* Reply */

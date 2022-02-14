@@ -1,27 +1,26 @@
 import React, { useState } from 'react';
 import { Accordion, Icon } from 'semantic-ui-react';
 
-export function AccordionEEA({ content, variant, ...args }) {
-  const [activeIndex, setActiveIndex] = useState(0);
+export function AccordionEEA({ content, ...args }) {
+  const [activeIndex, setActiveIndex] = useState();
 
   const toggleOpenAccordion = (e, titleProps) => {
     const { index } = titleProps;
-    const { activeIndex2 } = activeIndex;
-    const newIndex = activeIndex2 === index ? -1 : index;
+    const newIndex = activeIndex === index ? -1 : index;
 
     setActiveIndex(newIndex);
   };
 
   return (
-    <Accordion className={variant}>
+    <Accordion className="eea-accordion" {...args}>
       {content.map((item, index) => (
-        <div key={index}>
+        <div className="eea-accordion-item" key={index}>
           <Accordion.Title
             active={activeIndex === index}
             index={index}
             onClick={toggleOpenAccordion}
           >
-            <Icon name="dropdown" />
+            <Icon name="chevron circle down" />
             {item.title}
           </Accordion.Title>
           <Accordion.Content active={activeIndex === index}>

@@ -23,8 +23,8 @@ export const Breadcrumb = injectIntl(({ children, ...args }) => {
   );
 });
 
-export default {
-  title: 'Components/Breadcrumb/Breadcrumb 1',
-  component: Breadcrumb,
-  argTypes: {},
-};
+// export default {
+//   title: 'Components/Breadcrumb/Breadcrumb 1',
+//   component: Breadcrumb,
+//   argTypes: {},
+// };

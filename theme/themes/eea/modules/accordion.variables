@@ -3,14 +3,17 @@
 *******************************/
 
 @boxShadow: none;
+@itemsMargin: @relative8px 0;
 
 /* Title */
 @titleFont: @headerFont;
 @titlePadding: 0.5em 0em;
 @titleFontSize: 1em;
 @titleColor: @textColor;
+@backrgoundColor: @silverGray;
 
 /* Icon */
+@iconColor: @secondaryColor;
 @iconOpacity: 1;
 @iconFontSize: 1em;
 @iconFloat: none;
@@ -32,7 +35,8 @@
 
 /* Content */
 @contentMargin: '';
-@contentPadding: 0.5em 0em 1em;
+@contentPadding: @relative16px @relative64px;
+@contentBckground: #F9F9F9;
 
 /*-------------------
        Coupling
@@ -63,6 +67,7 @@
 /* Content */
 @styledContentMargin: 0em;
 @styledContentPadding: 0.5em 1em 1.5em;
+@contentBorder: @relative2px solid @secondaryColor;
 
 /* Child Content */
 @styledChildContentMargin: 0em;

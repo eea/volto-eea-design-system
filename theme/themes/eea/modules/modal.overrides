@@ -2,6 +2,30 @@
          Theme Overrides
 *******************************/
 
+/* Modal and confirm */
+.ui.modal.eea-modal {
+  border-radius: @borderRadius;
+
+  .header {
+    border: @border;
+  }
+
+  .actions {
+    border: @border;
+    background-color: @background;
+  }
+
+  .content {
+    padding: 1rem 1.5rem;
+  }
+
+  .close {
+    top: @closeTop;
+    right: @closeRight;
+    color: @closeColor;
+  }
+}
+
 .ui.modal > .actions:after {
   display: block;
   height: 0;
