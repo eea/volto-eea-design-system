@@ -4,6 +4,8 @@
 name: Node.js CI
 
 on:
+  push:
+    branches: [ develop-itml ]
   pull_request:
     branches: [ develop ]
     paths:
