@@ -17,11 +17,7 @@ function TimelineEEA({ items }) {
   );
 }
 
-const Template = (args) => (
-  <div className="eea-timeline">
-    <Timeline {...args}></Timeline>
-  </div>
-);
+const Template = (args) => <Timeline {...args}></Timeline>;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -116,11 +112,7 @@ Default.argTypes = {
   },
 };
 
-export const Multiple = (args) => (
-  <div className="eea-timeline">
-    <TimelineEEA {...args}></TimelineEEA>
-  </div>
-);
+export const Multiple = (args) => <TimelineEEA {...args}></TimelineEEA>;
 
 Multiple.args = {
   items: [

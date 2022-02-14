@@ -1,4 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+Blockquote.propTypes = {
+  citation: PropTypes.string,
+  author: PropTypes.string,
+};
 
 function Blockquote({ citation, author }) {
   return (

@@ -11,50 +11,33 @@
 }
 
 /* Global Button Styles */
-button.ui.button,
-button.ui.buttons .button,
-button.ui.buttons {
-  padding: @buttonPadings;
-  border: @eeaButtonBorder;
-
-  /* Plain grey button as template */
-  border-color: @silverGray;
-  background-color: @silverGray;
-  border-radius: @borderRadius;
-  color: @black;
-  font-family: @pageFont;
-  font-size: @buttonFontSize;
-  font-weight: 500;
+.ui.button,
+.ui.buttons .button,
+.ui.buttons {
+  border: @buttonBorder @backgroundColor;
 
   &:hover,
   &:active,
   &:focus {
-    border-color: @midGray;
-    background-color: @midGray;
-    color: @black;
+    border-color: @hoverBackgroundColor;
   }
 }
 
-/* Primary Button */
-button.ui.button.primary,
-button.ui.buttons.eea-button.primary {
-  border: @eeaButtonBorder @primaryButtonColor;
-  background-color: @primaryButtonColor;
-  .text-color(@primaryButtonColor);
+.ui.button.primary,
+.ui.buttons.primary {
+  border: @buttonBorder @primaryColor;
 
   &:hover,
   &:active,
   &:focus {
-    border: @eeaButtonBorder @primaryButtonColorHover;
-    background-color: @primaryButtonColorHover;
-    .text-color(@primaryButtonColorHover);
+    border: @buttonBorder @primaryColorHover;
   }
 }
 
 /* Secondary Button */
-button.ui.button.secondary,
-button.ui.buttons.secondary {
-  border: @eeaButtonBorder @primaryButtonColor;
+.ui.button.secondary,
+.ui.buttons.secondary {
+  border: @buttonBorder @primaryButtonColor;
   background-color: @white;
   .text-color(@white);
 
@@ -69,7 +52,7 @@ button.ui.buttons.secondary {
 /* Secondary Button Inverted */
 button.ui.button.eea-button-white,
 button.ui.buttons.eea-button-white {
-  border: @eeaButtonBorder @white;
+  border: @buttonBorder @white;
   background-color: transparent;
   color: @white;
 
@@ -82,9 +65,8 @@ button.ui.buttons.eea-button-white {
 }
 
 /* Call to action Button */
-button.ui.eea-button-action.button,
-button.ui.eea-button-action.buttons {
-  border: @eeaButtonBorder @actionButtonButtonColor;
+.ui.button.action {
+  border: @buttonBorder @actionButtonButtonColor;
   background-color: @actionButtonButtonColor;
   .text-color(@actionButtonButtonColor);
   text-transform: uppercase;
@@ -92,7 +74,7 @@ button.ui.eea-button-action.buttons {
   &:hover,
   &:active,
   &:focus {
-    border: @eeaButtonBorder @secondaryColorDarken;
+    border: @buttonBorder @secondaryColorDarken;
     background-color: @secondaryColorDarken;
     .text-color(@secondaryColorDarken);
   }
@@ -113,14 +95,14 @@ button.ui.icon.right.labeled.button.eea-button-action > .icon {
 /* Cancel Button */
 button.ui.button.eea-button-cancel,
 button.ui.buttons.eea-button-cancel {
-  border: @eeaButtonBorder @silverGray;
+  border: @buttonBorder @silverGray;
   background-color: @silverGray;
   color: @black;
 
   &:hover,
   &:active,
   &:focus {
-    border: @eeaButtonBorder @midGray;
+    border: @buttonBorder @midGray;
     background-color: @midGray;
     color: @black;
   }

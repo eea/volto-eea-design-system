@@ -85,7 +85,6 @@ function ModalEEA({
   return (
     <Modal
       closeIcon
-      className="eea-modal"
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
@@ -99,9 +98,7 @@ function ModalEEA({
         <Modal.Description>{content}</Modal.Description>
       </Modal.Content>
       <Modal.Actions>
-        <Button onClick={() => setOpen(false)} className="eea-button-cancel">
-          No
-        </Button>
+        <Button onClick={() => setOpen(false)}>No</Button>
         <Button onClick={() => setOpen(false)} primary>
           Yes
         </Button>
@@ -136,13 +133,4 @@ Default.argTypes = {
       },
     },
   },
-};
-
-export const Playground = Template.bind({});
-Playground.args = {
-  trigger: trigger,
-  header: 'Modal Header',
-  content: 'Modal Content',
-  size: 'mini',
-  dimmer: true,
 };

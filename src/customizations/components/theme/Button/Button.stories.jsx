@@ -89,7 +89,7 @@ export const CallToAction = (args) => {
     <Button
       icon
       labelPosition="right"
-      className="eea-button-action"
+      className="action"
       disabled={args.disabled}
     >
       {args.label}
@@ -157,11 +157,7 @@ Text.parameters = {
 
 //Cancel Button
 export const Cancel = (args) => {
-  return (
-    <Button className="eea-button-cancel" disabled={args.disabled}>
-      {args.label}
-    </Button>
-  );
+  return <Button disabled={args.disabled}>{args.label}</Button>;
 };
 Cancel.args = {
   label: 'Cancel Button',
@@ -171,21 +167,3 @@ Cancel.parameters = {
   controls: { exclude: ['animated', 'variant'] },
   hideNoControlsWarning: true,
 };
-
-// export const Playground = (args) => {
-//   return ButtonContent(
-//     args.animated,
-//     args.variant,
-//     args.label,
-//     args.icon,
-//     args.content,
-//   );
-// };
-
-// Playground.args = {
-//   label: 'Playground',
-//   animated: false,
-//   variant: 'default',
-//   icon: false,
-//   content: '2048',
-// };

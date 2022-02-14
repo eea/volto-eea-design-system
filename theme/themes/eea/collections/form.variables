@@ -26,6 +26,7 @@
 @labelFontWeight: normal;
 @labelTextTransform: none;
 @labelColor: @textColor;
+@formErrorLabelColor: @white;
 
 /* Input */
 @inputFont: @pageFont;

@@ -36,7 +36,7 @@
   color @defaultDuration @defaultEasing
 ;
 @itemFontWeight: @normal;
-@itemTextColor: @grey;
+@itemTextColor: @black;
 
 /* Divider */
 @dividerSize: 1px;
@@ -249,7 +249,7 @@
 @secondaryMenuSubMenuItemPadding: @relative7px @secondarySubMenuHorizontalPadding;
 
 /* Pointing */
-@secondaryPointingBorderWidth: 4px;
+@secondaryPointingBorderWidth: 3px;
 @secondaryPointingBorderColor: @borderColor;
 @secondaryPointingItemVerticalPadding: @relativeTiny;
 @secondaryPointingItemHorizontalPadding: @relativeMini;
@@ -258,8 +258,8 @@
 
 @secondaryPointingHoverTextColor: @textColor;
 
-@secondaryPointingActiveBorderColor: @pink;
-@secondaryPointingActiveTextColor: @black;
+@secondaryPointingActiveBorderColor: @secondaryColor;
+@secondaryPointingActiveTextColor: @secondaryColor;
 @secondaryPointingActiveFontWeight: @normal;
 
 @secondaryPointingActiveDropdownBorderColor: transparent;
