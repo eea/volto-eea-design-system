@@ -1,6 +1,6 @@
 import React from 'react';
 import { Breadcrumb, Container, Image } from 'semantic-ui-react';
-import homeSVG from '../../../../../theme/themes/eea/assets/images/home-icon.svg';
+import homeSVG from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/home-icon.svg';
 
 export default {
   title: 'Components/Breadcrumb',
