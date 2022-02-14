@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from '@plone/volto/components';
+import Header from './Header';
 //import { Segment } from 'semantic-ui-react';
 import Wrapper from '@plone/volto/storybook';
 
