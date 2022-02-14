@@ -54,7 +54,7 @@ function TableOfContents(items, selection, animated, divided, horizontal) {
       horizontal={horizontal}
     >
       {items.map((item, index) => (
-        <List.Item key={index}>
+        <List.Item as="a" key={index}>
           {item.content}
           <List.List role="list">
             {item.subList.map((sub, subIndex) => (

@@ -6,7 +6,7 @@
          View
 --------------------*/
 
-@listFont: @pageFont;
+@listFontWeight: @bold;
 
 /* List */
 @listStyleType: none;
@@ -60,6 +60,7 @@
 
 /* Description */
 @itemDescriptionColor: rgba(0, 0, 0, 0.7);
+@itemDescriptionMarginTop: 0.5rem 0;
 
 /* Link */
 @itemLinkColor: @linkColor;
@@ -166,21 +167,21 @@
 
 @bulletOpacity: 1;
 @bulletCharacter: '•';
-@bulletColor: @secondaryColor;
-@bulletLinkColor: @textColor;
+@bulletColor: @primaryColor;
+@bulletLinkColor: @primaryColor;
 @bulletVerticalAlign: top;
 @bulletChildDistance: @bulletDistance;
 
 /* Horizontal Bullets */
-@horizontalBulletColor: @textColor;
+@horizontalBulletColor: @primaryColor;
 @horizontalBulletSpacing: @bulletDistance + 0.5em;
 
 /* Ordered List */
 @orderedCountName: ordered;
 @orderedCountContent: counters(ordered, ".") " ";
-@orderedCountColor: @textColor;
+@orderedCountColor: @primaryColor;
 @orderedCountDistance: 1.25rem;
-@orderedCountOpacity: 0.8;
+@orderedCountOpacity: 1;
 @orderedCountTextAlign: right;
 @orderedCountVerticalAlign: middle;
 
