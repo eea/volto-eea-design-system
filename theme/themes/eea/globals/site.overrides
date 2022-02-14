@@ -2,6 +2,14 @@
         Global Overrides
 *******************************/
 
+/* Heading size adjustment */
+@media only screen and (min-width: @tabletBreakpoint) {
+  h1 { font-size: unit((48 / 16), rem); } 
+  h2 { font-size: unit((40 / 16), rem); }
+  h3 { font-size: unit((36 / 16), rem); }
+  h4 { font-size: unit((24 / 16), rem); }
+}
+
 /*-------------------
       HEADER
 --------------------*/
