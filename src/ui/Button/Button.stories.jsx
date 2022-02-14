@@ -155,7 +155,6 @@ Text.parameters = {
   hideNoControlsWarning: true,
 };
 
-
 //Cancel Button
 export const Cancel = (args) => {
   return <Button disabled={args.disabled}>{args.label}</Button>;

@@ -15,4 +15,3 @@ export Logo from './Logo/Logo';
 export Pullquote from './Pullquote/Pullquote';
 
 export Timeline from './Timeline/Timeline';
-
