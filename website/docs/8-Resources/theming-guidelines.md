@@ -1,3 +1,8 @@
+---
+title: Theming Guidelines
+description: Several rules and guidelines for developers of the EEA Design System
+hide_table_of_contents: false
+---
 ## Theming best practices
 
 ### Style directly the SUI components without introducing new markup or classes
