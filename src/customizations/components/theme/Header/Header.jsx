@@ -185,68 +185,67 @@ class Header extends Component {
 
     return (
       <div className="eea-header">
-        <div className="eea-top-header">
-          <Container>
-            <div id="eea-official-union" className="eea-top-header-item">
-              <Image src={eeaFlag} alt="eea flag"></Image>
-
-              <Dropdown
-                text="An official website of the European Union | How do you Know?"
-                icon="chevron down"
-                aria-label="dropdown"
-              >
-                <Dropdown.Menu id="eea-official-union-dropdown" role="group">
-                  <div>
-                    <p>
-                      All official European Union website addresses are in the{' '}
-                      <b>europa.eu</b> domain.
-                    </p>
-                    <a
-                      href="https://europa.eu/european-union/contact/institutions-bodies_en"
-                      target="_blank"
-                      rel="noreferrer"
-                      role="option"
-                      aria-selected="false"
-                    >
-                      See all EU institutions and bodies
-                    </a>
-                  </div>
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
-
-            <div id="eea-official-union-mobile" className="eea-top-header-item">
-              <Image src={eeaFlag} alt="eea flag"></Image>
-
-              <Dropdown
-                text="An official EU website"
-                icon="chevron down"
-                aria-label="dropdown"
-              >
-                <Dropdown.Menu
-                  id="eea-official-union-dropdown-mobile"
-                  role="group"
-                >
-                  <div role="option" aria-selected="false">
-                    <p>
-                      All official European Union website addresses are in the{' '}
-                      <b>europa.eu</b> domain.
-                    </p>
-                    <a
-                      href="https://europa.eu/european-union/contact/institutions-bodies_en"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      See all EU institutions and bodies
-                    </a>
-                  </div>
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
+        <Header.TopHeader>
+          <Header.TopItem id="eea-official-union">
+            <Image src={eeaFlag} alt="eea flag"></Image>
 
             <Dropdown
+              text="An official website of the European Union | How do you Know?"
+              icon="chevron down"
+              aria-label="dropdown"
+            >
+              <Dropdown.Menu id="eea-official-union-dropdown" role="group">
+                <div>
+                  <p>
+                    All official European Union website addresses are in the{' '}
+                    <b>europa.eu</b> domain.
+                  </p>
+                  <a
+                    href="https://europa.eu/european-union/contact/institutions-bodies_en"
+                    target="_blank"
+                    rel="noreferrer"
+                    role="option"
+                    aria-selected="false"
+                  >
+                    See all EU institutions and bodies
+                  </a>
+                </div>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Header.TopItem>
+
+          <Header.TopItem id="eea-official-union-mobile">
+            <Image src={eeaFlag} alt="eea flag"></Image>
+
+            <Dropdown
+              text="An official EU website"
+              icon="chevron down"
+              aria-label="dropdown"
+            >
+              <Dropdown.Menu
+                id="eea-official-union-dropdown-mobile"
+                role="group"
+              >
+                <div role="option" aria-selected="false">
+                  <p>
+                    All official European Union website addresses are in the{' '}
+                    <b>europa.eu</b> domain.
+                  </p>
+                  <a
+                    href="https://europa.eu/european-union/contact/institutions-bodies_en"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    See all EU institutions and bodies
+                  </a>
+                </div>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Header.TopItem>
+
+          <Header.TopItem>
+            <Dropdown
               id="eea-top-header-theme-sites"
-              className="eea-top-header-item"
               text="Environmental information systems"
               icon="chevron down"
               aria-label="dropdown"
@@ -329,40 +328,37 @@ class Header extends Component {
                 </div>
               </Dropdown.Menu>
             </Dropdown>
+          </Header.TopItem>
 
-            <Dropdown
-              id="eea-top-header-language-dropdown"
-              className="eea-top-header-item"
-              text={`${this.state.language.toUpperCase()}`}
-              icon={
-                <Image
-                  src={globeIcon}
-                  alt="language dropdown globe icon"
-                ></Image>
-              }
-              aria-label="dropdown"
-            >
-              <Dropdown.Menu>
-                {languagesList.map((item, index) => (
-                  <Dropdown.Item
-                    key={index}
-                    text={
-                      <span>
-                        {item.name}
-                        <span className="country-code">
-                          {item.code.toUpperCase()}
-                        </span>
+          <Dropdown
+            id="eea-top-header-language-dropdown"
+            className="eea-top-header-item"
+            text={`${this.state.language.toUpperCase()}`}
+            icon={
+              <Image src={globeIcon} alt="language dropdown globe icon"></Image>
+            }
+            aria-label="dropdown"
+          >
+            <Dropdown.Menu>
+              {languagesList.map((item, index) => (
+                <Dropdown.Item
+                  key={index}
+                  text={
+                    <span>
+                      {item.name}
+                      <span className="country-code">
+                        {item.code.toUpperCase()}
                       </span>
-                    }
-                    onClick={this.onLanguageSelection}
-                  ></Dropdown.Item>
-                ))}
-              </Dropdown.Menu>
-            </Dropdown>
-          </Container>
-        </div>
+                    </span>
+                  }
+                  onClick={this.onLanguageSelection}
+                ></Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
+        </Header.TopHeader>
 
-        <div className="eea-main-header">
+        <Header.Main>
           <Container>
             <Grid.Row>
               <Col desktop="4" tablet="5" mobile="3">
@@ -433,11 +429,31 @@ class Header extends Component {
           </Container>
           {this.state.activeSearch && <HeaderSearchPopUp></HeaderSearchPopUp>}
           {this.state.activeMenu && <HeaderMenuPopUp></HeaderMenuPopUp>}
-        </div>
+        </Header.Main>
       </div>
     );
   }
 }
+
+const TopHeader = (props) => (
+  <div className="eea-top-header">
+    <Container>{props.children}</Container>
+  </div>
+);
+
+Header.TopHeader = TopHeader;
+
+const TopItem = (props) => (
+  <div className="eea-top-header-item" id={props.id}>
+    {props.children}
+  </div>
+);
+
+Header.TopItem = TopItem;
+
+const Main = (props) => <div className="eea-main-header">{props.children}</div>;
+
+Header.Main = Main;
 
 export default connect((state) => ({
   token: state.userSession.token,

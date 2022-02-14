@@ -1,6 +1,6 @@
 import React from 'react';
 import { Comment, Header } from 'semantic-ui-react';
-import eeaIcon from '../../theme/../../../../theme/themes/eea/assets/images/eea_icon.png';
+import eeaIcon from '../../../../theme/themes/eea/assets/images/eea_icon.png';
 
 export default {
   title: 'Components/Comment',
