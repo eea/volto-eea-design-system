@@ -11,7 +11,7 @@ Banner.propTypes = {
 function Banner({ title, info, image }) {
   return (
     <div className="eea-page-banner">
-      <div className={image ? 'image' : null}>
+      <div className={image ? 'image' : null}></div>
         <div className="gradient">
           <Container>
             <div className="content">
@@ -45,7 +45,6 @@ function Banner({ title, info, image }) {
             </div>
           </Container>
         </div>
-      </div>
     </div>
   );
 }

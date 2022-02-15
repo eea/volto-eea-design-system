@@ -6,15 +6,6 @@ export default {
   title: 'Components/Comment',
   component: CommentEEA,
   argTypes: {
-    size: {
-      control: { type: 'select' },
-      options: ['mini', 'tine', 'small', 'large', 'big', 'huge', 'massive'],
-      description: 'comment section size',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'large' },
-      },
-    },
     title: {
       description: 'comment section header',
       table: {
@@ -94,7 +85,6 @@ Default.args = {
   title: 'Comments Header',
   threaded: false,
   minimal: false,
-  size: 'large',
   comments: [
     {
       src: eeaIcon,

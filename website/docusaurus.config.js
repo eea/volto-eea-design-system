@@ -4,7 +4,7 @@ module.exports = {
   title: 'EEA Design System',
   tagline: 'EEA Design System package',
   url: 'https://eea.github.io/',
-  deploymentBranch: 'develop',
+  deploymentBranch: 'develop-itml',
   baseUrl: '/volto-eea-design-system/',
   trailingSlash: true,
   // url: 'http://localhost:3005',

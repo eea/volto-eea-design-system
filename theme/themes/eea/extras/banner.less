@@ -11,59 +11,62 @@
   width: 100%;
   color: @white;
   background: @bannerBackgroundColor;
+  position: relative;
 
+  .gradient {
+    background: @backgroundGradient;
+    opacity: @backgroundGradientOpacity;
+
+    .content {
+      padding: @mobileContentPadding;
+
+      .ui.grid {
+        align-items: end;
+      }
+
+      .title {
+        max-width: @titleMaxWidth;
+        margin: @mobileTitleMargin;
+        font-size: @mobileTitleFontSize;
+        font-weight: @titleFontWeight;
+        line-height: @mobileTitleLineHeight;
+      }
+
+      .metadata {
+        font-size: @mobileMetadataFontSize;
+        line-height: @mobileMetadataLineHeight;
+        font-weight: @metadataFontWeight;
+      }
+
+      .actions.mobile.hidden {
+        float: right;
+
+        div {
+          display: flex;
+          margin: 3px 0;
+        }
+      
+        i.icon {
+          margin: 0 5px 5px 0;
+        }
+      }
+
+      .actions.mobile.only {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: -15px;
+      }
+    }
+  }
   .image {
     background-image: @imageURL;
     background-repeat: @imageBackgroundRepeat;
     background-size: @imageBackgroundSize;
     background-position: @imageBackgroundPosition;
-
-    .gradient {
-      background: @backgroundGradient;
-      opacity: @backgroundGradientOpacity;
-
-      .content {
-        padding: @mobileContentPadding;
-
-        .ui.grid {
-          align-items: end;
-        }
-
-        .title {
-          max-width: @titleMaxWidth;
-          margin: @mobileTitleMargin;
-          font-size: @mobileTitleFontSize;
-          font-weight: @titleFontWeight;
-          line-height: @mobileTitleLineHeight;
-        }
-
-        .metadata {
-          font-size: @mobileMetadataFontSize;
-          line-height: @mobileMetadataLineHeight;
-          font-weight: @metadataFontWeight;
-        }
-
-        .actions.mobile.hidden {
-          float: right;
-
-          div {
-            display: flex;
-            margin: 3px 0;
-          }
-        
-          i.icon {
-            margin: 0 5px 5px 0;
-          }
-        }
-
-        .actions.mobile.only {
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-          margin-top: -15px;
-        }
-      }
-    }
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -73,7 +76,7 @@
 
 @media only screen and (min-width: @tabletBreakpoint) {
 
-  .eea-page-banner .image .gradient {
+  .eea-page-banner .gradient {
 
     .content {
       padding: @tabletContentPadding;
@@ -101,7 +104,7 @@
 
 @media only screen and (min-width: @computerBreakpoint) {
 
-  .eea-page-banner .image .gradient {
+  .eea-page-banner .gradient {
 
     .content {
       padding: @computerContentPadding;
