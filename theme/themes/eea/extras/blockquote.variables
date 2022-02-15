@@ -10,10 +10,11 @@
 @quoteMargin     : @relative12px @relative30px;
 @quoteGap        : @relative12px;
 @quoteColor      : @japaneseIndigo;
-@quoteFontSize   : @h4;
+@quoteFontSize   : @h5;
+@quoteFontWeight : 700; 
 
 /* Meta */
 @metaMargin    : 0;
-@metaWeight    : @bold;
+@metaWeight    : 400;
 @metaFontSize  : @h5;
 @metaAlignSelf : left;
