@@ -29,10 +29,6 @@
         border-radius: @defaultBorderRadius;
         font-size: @relative14px;
       }
-  
-      .content .header {
-        min-width: 132px;
-      }
     }
   
     .Timeline-line {
@@ -178,29 +174,10 @@
   .eea.timeline .ui.grid .row {
     padding-bottom: 0;
   }
-  
-  .eea.timeline .ui.grid .row > div:nth-child(1),
-  .eea.timeline .ui.grid .row > div:nth-child(4),
-  .eea.timeline .ui.grid .row > div:nth-child(5) {
-    display: none;
-  }
-  
-  /* Content column */
-  .eea.timeline .ui.grid .row > div:nth-child(2) {
-    width: 80% !important;
-  
-    .card {
-      margin-top: 7px;
-    }
-  }
-  
-  /* Icon and line column */
-  .eea.timeline .ui.grid .row > div:nth-child(3) {
-    width: 20% !important;
-  }
+
   
   /* Custom vertical line */
-  .eea.timeline .ui.grid .row > div:nth-child(3):after {
+  .eea.timeline .ui.grid .row > div:nth-child(2):after {
     position: absolute;
     z-index: -1;
     top: 0;
@@ -213,11 +190,11 @@
   
   /* Icon resizing on mobile */
   @media only screen and (max-width: @mobileBreakpoint) {
-    .eea.timeline .ui.grid .row > div:nth-child(3) i.icon {
+    .eea.timeline .ui.grid .row > div:nth-child(2) i.icon {
       font-size: 1.2rem;
     }
   
-    .eea.timeline .ui.grid .row > div:nth-child(2) {
+    .eea.timeline .ui.grid .row > div:nth-child(1) {
       .card {
         margin-top: 0;
       }
