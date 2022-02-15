@@ -3,81 +3,55 @@
 *******************************/
 
 div.eea-breadcrumb .ui.breadcrumb {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: end;
-  padding-right: 0;
-  padding-left: 0;
-
   .section {
-    padding: 0 5px;
-  }
+    padding: @mobileBreadcrumbPadding;
+    font-size: @mobileBreadcrumbFontSize;
+    font-weight: @activeFontWeight;
 
-  a.section {
-    color: @primaryColor;
-    font-size: 7px;
+    /* Max breadcrumb length to be decided */
+    //max-width: 150px;
+    //white-space: nowrap;
+    //overflow: hidden;
+    //text-overflow: ellipsis;
 
     img {
-      width: 7.5px;
+      width: @mobileBreadcrumbIconSize;
+      margin-bottom: -1px; //To align as the design
     }
   }
 
-  .section.active {
-    font-size: 7px;
-    font-weight: @activeFontWeight;
-  }
-
-  .icon.divider {
-    color: @deepBlue;
-  }
-
-  .home.icon {
-    margin-right: 0;
-  }
-
-  i.icon {
-    font-size: 7px;
+  i.icon.divider {
+    font-size: @mobileBreadcrumbFontSize;
   }
 
   a:first-child {
-    padding: 0 5px 0 0;
+    padding: 0 0.469rem 0 0;
   }
 
-  @media only screen and (min-width: @tabletBreakpoint) {
-    padding-right: 0;
-    padding-left: 0;
-  }
 }
-@media only screen and (min-width: @mobileBreakpoint + 1) {
+@media only screen and (min-width: @tabletBreakpoint) {
   div.eea-breadcrumb .ui.breadcrumb {
-    a.section {
-      color: @primaryColor;
-      font-size: @linkSize;
+
+    .section {
+      padding: @tabletBreadcrumbPadding;
+      font-size: @tabletBreadcrumbFontSize;
+      font-weight: @activeFontWeight;
 
       img {
-        width: 12px;
+        width: @tabletBreadcrumbIconSize;
       }
     }
 
-    .section.active {
-      font-size: @linkSize;
-      font-weight: @activeFontWeight;
-    }
-
-    i.icon {
-      font-size: 12px;
-    }
-
-    .section {
-      padding: 0 7.5px;
+    i.icon.divider {
+      font-size: @tabletBreadcrumbIconSize;
     }
   }
 }
 
-@media only screen and (min-width: @tabletBreakpoint + 1) {
+@media only screen and (min-width: @computerBreakpoint) {
   div.eea-breadcrumb .ui.breadcrumb {
     .section {
-      padding: 0 10px;
+      padding: @computerBreadcrumbPadding;
     }
   }
 }

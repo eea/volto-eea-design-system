@@ -8,28 +8,15 @@
     format('truetype');
 }
 
-//Ckeckbox
-.ui.checkbox.eea-checkbox label {
-  font-family: @pageFont;
-  font-size: @fontSize;
-}
-
-.ui.checkbox.eea-checkbox label {
-  &:before {
-    border: 2px solid @oldSilver !important;
-    border-radius: @defaultBorderRadius;
-    box-shadow: none;
-  }
-}
-
-.ui.checkbox.eea-checkbox {
+/* Checkbox */
+.ui.checkbox {
   margin-bottom: @bottomMargin;
 
   input {
     &:checked ~ label {
       &:after {
         background-color: @primaryColor;
-        color: @white;
+        font-family: Checkbox;
       }
     }
   }
@@ -41,57 +28,23 @@
   opacity: @disabledCheckboxOpacity;
 }
 
-.ui.checkbox {
-  input {
-    &:checked ~ label {
-      &:after {
-        color: @white !important;
-      }
-    }
-  }
-}
-
-//Error Checkbox
-.error .ui.checkbox.eea-checkbox {
+/* Error checkbox must have negative background */
+.error .ui.checkbox {
   input {
     &:checked ~ label {
       &:after {
         background-color: @negativeColor;
-        color: @white;
       }
     }
   }
 }
 
 //Radio Button
-.ui.radio.checkbox.eea-radio label {
-  font-family: @pageFont;
-  font-size: @fontSize;
-}
-
-.ui.radio.checkbox.eea-radio label {
-  &:before {
-    border: 2px solid @oldSilver;
-    box-shadow: none;
-  }
-}
-
-.ui.radio.checkbox.eea-radio &:checked ~ label {
-  &:before {
-    border: 2px solid @primaryColor;
-    box-shadow: none;
-  }
-}
-
-.ui.radio.checkbox.eea-radio {
-  margin-bottom: @bottomMargin;
-
+.ui.radio.checkbox {
   input {
     &:checked ~ label {
       &:after {
-        border: 2px solid @primaryColor;
         background-color: @primaryColor;
-        color: @white;
       }
     }
   }

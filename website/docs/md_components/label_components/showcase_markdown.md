@@ -2,7 +2,7 @@ import Iframe from '../iframe_component.mdx';
 
 ## Low Importance
 
-<Iframe id='components-label--low-importance' > </Iframe>
+<Iframe id='components-label--default' > </Iframe>
 
 ## Medium Importance
 

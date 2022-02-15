@@ -1,0 +1,40 @@
+/*******************************
+            Page Banner
+*******************************/
+
+@bannerBackgroundColor   : @primaryColor;
+
+/* Background Image */
+@imageURL                : url(../assets/images/banner.png);
+@imageBackgroundRepeat   : no-repeat;
+@imageBackgroundSize     : cover;
+@imageBackgroundPosition : center;
+
+/* Gradient */
+@backgroundGradient        : linear-gradient(0deg, rgb(20, 33, 44, 90%) 24%, rgba(0, 36, 78, 0) 80%);
+@backgroundGradientOpacity : 0.9;
+
+/* Content */
+@mobileContentPadding      : 100px 0 20px;
+@tabletContentPadding      : 200px 0 20px;
+@computerContentPadding    : 250px 0 20px;
+
+/* Title */
+@titleFontWeight           : @bold;
+@titleMaxWidth             : 650px;
+@mobileTitleFontSize       : 1.25rem;
+@tabletTitleFontSize       : 2.25rem;
+@computerTitleFontSize     : 3rem;
+@mobileTitleLineHeight     : 1.375rem;
+@tabletTitleLineHeight     : 2.75rem;
+@computerTitleLineHeight   : 3.5rem;
+@mobileTitleMargin         : 0 0 8px 0;
+@tabletTitleMargin         : 0 0 13px 0;
+@computerTitleMargin       : 0 0 18px 0;
+
+/* Metadata */
+@metadataFontWeight        : @bold;
+@mobileMetadataFontSize    : 7px;
+@tabletMetadataFontSize    : 14px;
+@mobileMetadataLineHeight  : 8px;
+@tabletMetadataLineHeight  : 16px;
