@@ -7,18 +7,20 @@
 
 /* Title */
 @titleFont: @headerFont;
-@titlePadding: 0.5em 0em;
-@titleFontSize: 1em;
+@titlePadding: 1rem 1.563rem;
+@titleFontSize: 1.125rem;
 @titleColor: @textColor;
-@backrgoundColor: @silverGray;
+@titleBorderBottom: @1px solid @silverGray;
+@titleColorHover: @darkCyan;
 
 /* Icon */
-@iconColor: @secondaryColor;
+@iconColor: @oldSilver;
+@iconColorActive: @white;
 @iconOpacity: 1;
-@iconFontSize: 1em;
+@iconFontSize: 1.563rem;
 @iconFloat: none;
-@iconWidth: 1.25em;
-@iconHeight: 1em;
+@iconWidth: 1.563rem;
+@iconHeight: 1.563rem;
 @iconDisplay: inline-block;
 @iconMargin: 0em 0.25rem 0em 0rem;
 @iconPadding: 0em;
@@ -28,15 +30,20 @@
 ;
 @iconVerticalAlign: baseline;
 @iconTransform: none;
+@iconColorHover: @darkCyan;
+@iconInactive: '\f078'; // Icon of closed accordion
+@iconActive: '\f077'; // Icon of open accordion
+@iconOrder: 1; // Icon after text of the title
 
 /* Child Accordion */
 @childAccordionMargin: 1em 0em 0em;
 @childAccordionPadding: 0em;
 
 /* Content */
-@contentMargin: '';
-@contentPadding: @relative16px @relative64px;
-@contentBckground: #F9F9F9;
+@contentMargin: 0;
+@contentPaddingBottom: 1.563rem;
+@contentPadding: 1rem @contentPaddingBottom;
+@contentBackground: #F9F9F9;
 
 /*-------------------
        Coupling
@@ -53,6 +60,9 @@
 --------------------*/
 
 @activeIconTransform: none;
+@activeTitleBackground: @darkCyan;
+@activeTitleColor: @white;
+@activeTitleBorderBottom: 0;
 
 /*-------------------
       Variations
