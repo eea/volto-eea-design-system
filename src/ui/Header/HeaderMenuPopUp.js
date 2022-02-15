@@ -8,6 +8,7 @@ function HeaderMenuPopUp() {
   // const [secondLevelClickActive, setSecondLevelClickActive] = useState(-1);
 
   const [showSubMenu, setShowSubMenu] = useState('');
+  const [showSubMenuL2, setShowSubMenuL2] = useState('');
 
   // const onMenuItemClick = (e) => {
   //   e.preventDefault();
@@ -33,7 +34,18 @@ function HeaderMenuPopUp() {
   // };
 
   const onSubMenuHandle = (id) => {
-    setShowSubMenu(id);
+    if (id !== showSubMenu) {
+      setShowSubMenuL2('');
+      setShowSubMenu(id);
+    }
+  };
+
+  const onSubMenuL2Handle = (id) => {
+    if (showSubMenuL2 === id) {
+      setShowSubMenuL2('');
+    } else {
+      setShowSubMenuL2(id);
+    }
   };
 
   // const items = [
@@ -217,14 +229,13 @@ function HeaderMenuPopUp() {
                 simple
               >
                 {item.items.length > 0 ? (
-                  <Dropdown.Menu fluid>
+                  <Dropdown.Menu>
                     {item.items.map((itemL2) => (
-                      <>
+                      <div key={itemL2['@id']}>
                         {itemL2.items.length > 0 ? (
                           <Dropdown
                             item
                             text={itemL2.title}
-                            key={item['@id']}
                             pointing="bottom"
                             simple
                           >
@@ -243,7 +254,7 @@ function HeaderMenuPopUp() {
                             key={itemL2['@id']}
                           ></Dropdown.Item>
                         )}
-                      </>
+                      </div>
                     ))}
                   </Dropdown.Menu>
                 ) : (
@@ -252,6 +263,44 @@ function HeaderMenuPopUp() {
               </Dropdown>
             ))}
           </Menu>
+
+          {/* <Menu vertical id="mobile-menu">
+            {menuItems.map((item) => (
+              <Menu.Item
+                onClick={() => {
+                  onSubMenuHandle(item['@id']);
+                }}
+                key={item['@id']}
+              >
+                {item.title}
+                {item.items.length > 0 ? (
+                  <Menu.Menu
+                    className={item['@id'] === showSubMenu ? 'show' : 'hidden'}
+                  >
+                    {item.items.map((itemL2) => (
+                      <Menu.Item key={itemL2['@id']}>
+                        {itemL2.items.length > 0 ? ( 
+                          <Dropdown text={itemL2.title} selection>
+                            <Dropdown.Menu>
+                              {itemL2.items.map((itemL3) => (
+                                <Dropdown.Item key={itemL3['@id']}>
+                                  {itemL3.title}
+                                </Dropdown.Item>
+                              ))}
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        ) : (
+                          <>{itemL2.title}</>
+                        )}
+                      </Menu.Item>
+                    ))}
+                  </Menu.Menu>
+                ) : (
+                  <></>
+                )}
+              </Menu.Item>
+            ))}
+          </Menu> */}
 
           <Menu vertical id="mobile-menu">
             {menuItems.map((item) => (
@@ -269,15 +318,30 @@ function HeaderMenuPopUp() {
                     {item.items.map((itemL2) => (
                       <Menu.Item key={itemL2['@id']}>
                         {itemL2.items.length > 0 ? (
-                          <Dropdown text={itemL2.title} selection>
-                            <Dropdown.Menu>
-                              {itemL2.items.map((itemL3) => (
-                                <Dropdown.Item key={itemL3['@id']}>
-                                  {itemL3.title}
-                                </Dropdown.Item>
-                              ))}
-                            </Dropdown.Menu>
-                          </Dropdown>
+                          <Menu vertical>
+                            <Menu.Item
+                              as="div"
+                              onClick={() => {
+                                onSubMenuL2Handle(itemL2['@id']);
+                              }}
+                            >
+                              {itemL2.title}
+                              <Menu.Menu
+                                className={
+                                  itemL2['@id'] === showSubMenuL2 &&
+                                  item['@id'] === showSubMenu
+                                    ? 'show'
+                                    : 'hidden'
+                                }
+                              >
+                                {itemL2.items.map((itemL3) => (
+                                  <Menu.Item key={itemL3['@id']}>
+                                    {itemL3.title}
+                                  </Menu.Item>
+                                ))}
+                              </Menu.Menu>
+                            </Menu.Item>
+                          </Menu>
                         ) : (
                           <>{itemL2.title}</>
                         )}
