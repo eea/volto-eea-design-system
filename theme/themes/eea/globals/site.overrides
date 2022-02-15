@@ -1112,7 +1112,7 @@ ul.mega-menu.mega-menu--multiLevel > li:last-child {
 #eea-mega-menu-wrap {
 
   .ui.vertical.menu{
-    background: linear-gradient(180deg, #0065a4 39.58%, #043570 100%);
+    background: transparent;
     border: none;
   }
 
@@ -1125,12 +1125,10 @@ ul.mega-menu.mega-menu--multiLevel > li:last-child {
   }
 
   .ui.menu .dropdown.item .menu {
-    background: linear-gradient(180deg, #0065a4 39.58%, #043570 100%);;
+    background: transparent;
     border: none;
   }
 
-  background: linear-gradient(180deg, #0065a4 39.58%, #043570 100%);
-    border: none;
 
   .ui.vertical.menu .dropdown.item .menu{
     top:0 !important;

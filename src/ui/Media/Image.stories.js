@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image } from 'semantic-ui-react';
+import banner from '../../../theme/themes/eea/assets/images/banner.png';
 
 export default {
   title: 'Components/Media Container/Image',
@@ -60,13 +61,13 @@ export default {
 export const Default = (args) => <Image {...args} alt="image" />;
 
 Default.args = {
-  src: 'https://www.eea.europa.eu/logo.jpg',
+  src: banner,
 };
 
 export const Link = (args) => <Image {...args} alt="link image" />;
 
 Link.args = {
-  src: 'https://www.eea.europa.eu/logo.jpg',
+  src: banner,
   size: 'small',
   as: 'a',
   href: 'https://www.eea.europa.eu/logo.jpg',
@@ -161,7 +162,7 @@ Link.storyName = 'Link Image';
 export const Playground = (args) => <Image {...args} alt="playground image" />;
 
 Playground.args = {
-  src: 'https://www.eea.europa.eu/logo.jpg',
+  src: banner,
   size: 'small',
   hidden: false,
   disabled: false,
