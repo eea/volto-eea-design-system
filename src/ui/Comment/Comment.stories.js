@@ -1,6 +1,5 @@
 import React from 'react';
 import { Comment, Header } from 'semantic-ui-react';
-import eeaIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/eea_icon.png';
 
 export default {
   title: 'Components/Comment',
@@ -87,13 +86,13 @@ Default.args = {
   minimal: false,
   comments: [
     {
-      src: eeaIcon,
+      src: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
       author: 'User 1',
       time: 'Message timestamp',
       text: 'Message Content',
       replies: [
         {
-          src: eeaIcon,
+          src: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
           author: 'User 4',
           time: 'Message timestamp',
           text: 'Message Content',
@@ -101,14 +100,14 @@ Default.args = {
       ],
     },
     {
-      src: eeaIcon,
+      src: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
       author: 'User 2',
       time: 'Message timestamp',
       text: 'Message Content',
       replies: [],
     },
     {
-      src: eeaIcon,
+      src: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
       author: 'User 3',
       time: 'Message timestamp',
       text: 'Message Content',
