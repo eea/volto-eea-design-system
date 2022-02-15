@@ -38,8 +38,9 @@ jobs:
           cd website
           yarn
           yarn build
+          cd ..
           git add . 
-          git diff --staged --quiet || git commit -m "Autobuild of docusaurus docs"
+          git commit -m "Autobuild of docusaurus docs"
           git push
 
     - uses: convictional/trigger-workflow-and-wait@v1.3.0
