@@ -1,8 +1,6 @@
 import React from 'react';
 import Pullquote from './Pullquote';
-import { Container, Image } from 'semantic-ui-react';
-
-const IMG = 'https://react.semantic-ui.com/images/avatar/large/matthew.png';
+import { Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Pullquote',
