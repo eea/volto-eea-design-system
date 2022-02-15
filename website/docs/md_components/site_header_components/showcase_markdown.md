@@ -1,3 +1,3 @@
 import Iframe from '../iframe_component.mdx';
 
-<Iframe id='layout-header--default' style="height:400px!important" > </Iframe>
+<Iframe id='layout-header--default' height="900" > </Iframe>

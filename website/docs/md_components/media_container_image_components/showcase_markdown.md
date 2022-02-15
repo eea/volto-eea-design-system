@@ -2,8 +2,6 @@ import Iframe from '../iframe_component.mdx';
 
 ## Image
 
-<Iframe id='components-media-container-image--default' > </Iframe>
+<Iframe id='components-media-container-image--default' height="500"> </Iframe>
 
-## Link Image
 
-<Iframe id='components-media-container-image--link' > </Iframe>
