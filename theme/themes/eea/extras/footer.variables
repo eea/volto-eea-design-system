@@ -22,8 +22,8 @@
 @tabletHeaderMarginBottom           : 2.5rem;
 @computerHeaderMarginBottom         : 3.75rem;
 @mobileHeaderFontSize               : 0.688rem;
-@tabletHeaderFontSize               : @h5;
-@computerHeaderFontSize             : @h3;
+@tabletHeaderFontSize               : 1.25rem;
+@computerHeaderFontSize             : 2.25rem;
 
 /* Subfooter with logo and contact info */
 @mobileItemMarginTop                : 1rem;
@@ -37,7 +37,7 @@
 @tabletItemHeaderMarginBottom       : 0.938rem;
 @tabletItemHeaderFontSize           : 1.375rem;
 @computerItemHeaderMarginBottom     : 1.563rem;
-@computerItemHeaderFontSize         : @h3;
+@computerItemHeaderFontSize         : 2.25rem;
 
 /* Site Logo */
 @tabletSiteLogoWidth                : 192px;
