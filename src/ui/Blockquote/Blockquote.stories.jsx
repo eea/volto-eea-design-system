@@ -6,6 +6,7 @@ const CITATION =
   'An interconnected grid will help deliver the ultimate goal of the Energy Union, to make sure affordable, secure and sustainable energy, and also growth across the EU.';
 const AUTHOR = 'President Juncker';
 const IMG = 'https://react.semantic-ui.com/images/avatar/large/matthew.png';
+const IMG_FLOAT = 'right';
 
 export default {
   title: 'Components/Blockquote',
@@ -52,7 +53,7 @@ Reversed.args = {
 export const BlockquoteWithImage = (args) => (
   <Blockquote>
     <Blockquote.Content>
-      <Image src={args.imgSrc} size="tiny" />
+      <Image src={args.imgSrc} size="tiny" alt="blockquote content image" />
       {args.content}
     </Blockquote.Content>
     <Blockquote.Meta>{args.meta}</Blockquote.Meta>
@@ -68,7 +69,7 @@ BlockquoteWithImage.args = {
 export const BlockquoteWithImageAside = (args) => (
   <Blockquote>
     <Blockquote.Content as="div">
-      <Image src={args.imgSrc} size="tiny" floated="right" />
+      <Image src={args.imgSrc} size="tiny" floated={args.imgFloat} alt="blockquote content image" />
       {args.content}
     </Blockquote.Content>
     <Blockquote.Meta>{args.meta}</Blockquote.Meta>
@@ -79,4 +80,5 @@ BlockquoteWithImageAside.args = {
   content: CITATION,
   meta: AUTHOR,
   imgSrc: IMG,
+  imgFloat: IMG_FLOAT
 };
