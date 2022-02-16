@@ -65,8 +65,10 @@ pipeline {
         allOf {
           environment name: 'CHANGE_ID', value: ''
           anyOf {
-           not { changelog '.*^Automated release [0-9\\.]+$' }
-           not { changelog '.*^Autobuild of docusaurus docs$' }
+            allOf {
+              not { changelog '.*^Automated release [0-9\\.]+$' }
+              not { changelog '.*^Autobuild of docusaurus docs$'}
+            }
            branch 'master'
           }
         }
@@ -114,8 +116,10 @@ pipeline {
         allOf {
           environment name: 'CHANGE_ID', value: ''
           anyOf {
-           not { changelog '.*^Automated release [0-9\\.]+$' }
-           not { changelog '.*^Autobuild of docusaurus docs$' }
+            allOf {
+              not { changelog '.*^Automated release [0-9\\.]+$' }
+              not { changelog '.*^Autobuild of docusaurus docs$' }
+            }
            branch 'master'
           }
         }
