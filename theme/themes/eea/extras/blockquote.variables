@@ -17,4 +17,4 @@
 @metaMargin    : 0;
 @metaWeight    : 400;
 @metaFontSize  : @h5;
-@metaAlignSelf : left;
+@metaAlignSelf : start;
