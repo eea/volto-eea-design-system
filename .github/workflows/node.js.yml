@@ -38,7 +38,7 @@ jobs:
           cd website
           yarn
           yarn build
-          git add . 
+          git add docs 
           git diff --staged --quiet || git commit -m "Autobuild of docusaurus docs"
           git push
 
