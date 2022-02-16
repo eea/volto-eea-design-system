@@ -2,15 +2,24 @@
          Theme Overrides
 *******************************/
 
-.ui.message .content {
-  font-size: @12px;
+/* Text size and weight */
+.ui.message p {
+  font-size: @messageFontSize;
+  font-weight: @messageFontWeight;
 }
 
-.ui.icon.message > .icon:not(.close) {
-  align-self: flex-start;
-  margin-top: -7px;
+/* Text color for non state messages */
+.ui.message:not(.success):not(.error):not(.warning):not(.info):not(.negative):not(.positive) {
+  color: @messageColor;
 }
 
-.ui.attached.message {
-  margin: 0;
+/* Align icon next to header */
+.ui.icon.message {
+  align-items: @messageItemsAlign;
+}
+
+/* Icon margin to align with header text size */
+div.ui.icon.message > .icon,
+div.ui.icon.message > .icon:not(.close) {
+  margin: @iconMargin;
 }

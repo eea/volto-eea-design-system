@@ -2,7 +2,6 @@
             Message
 *******************************/
 
-// @textColor
 
 /*-------------------
        Elements
@@ -13,17 +12,15 @@
 @verticalPadding: 1em;
 @horizontalPadding: 1.5em;
 @padding: @verticalPadding @horizontalPadding;
-@background: #F8F8F9;
+@background: #F2F2F2;
 @lineHeightOffset: ((@lineHeight - 1em) / 2);
+@messageItemsAlign: flex-start;
 
-@borderRadius: 0;
+@borderRadius: @defaultBorderRadius;
 @borderWidth: 0;
 @borderShadow: 0px 0px 0px @borderWidth @strongBorderColor inset;
 @shadowShadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-@boxShadow:
-  @borderShadow,
-  @shadowShadow
-;
+@boxShadow: none;
 
 @transition:
   opacity @defaultDuration @defaultEasing,
@@ -33,7 +30,7 @@
 ;
 
 /* Header */
-@headerFontSize: @relativeLarge;
+@headerFontSize: 13px;
 @headerFontWeight: @bold;
 @headerDisplay: block;
 @headerDistance: 0rem;
@@ -41,8 +38,11 @@
 @headerParagraphDistance: 0.15em;
 
 /* Paragraph */
-@messageTextOpacity: 0.85;
-@messageParagraphMargin: 0.75em;
+@messageTextOpacity: 1;
+@messageParagraphMargin: 0;
+@messageColor: @black;
+@messageFontSize: 13px;
+@messageFontWeight: @bold;
 
 /* List */
 @listOpacity: 0.85;
@@ -66,7 +66,8 @@
 --------------------*/
 
 /* Icon Message */
-@iconSize: 2em;
+@iconMargin: 0.09rem 0.6rem 0 0;
+@iconSize: 1rem;
 @iconOpacity: 0.8;
 @iconContentDistance: 0rem;
 @iconVerticalAlign: top;
@@ -133,27 +134,10 @@
 ;
 
 /* Warning / Positive / Negative / Info */
-@positiveBoxShadow:
-  0px 0px 0px @borderWidth @positiveBorderColor inset,
-  @shadowShadow
-;
-@negativeBoxShadow:
-  0px 0px 0px @borderWidth @negativeBorderColor inset,
-  @shadowShadow
-;
-@infoBoxShadow:
-  0px 0px 0px @borderWidth @infoBorderColor inset,
-  @shadowShadow
-;
-@warningBoxShadow:
-  0px 0px 0px @borderWidth @warningBorderColor inset,
-  @shadowShadow
-;
-@errorBoxShadow:
-  0px 0px 0px @borderWidth @errorBorderColor inset,
-  @shadowShadow
-;
-@successBoxShadow:
-  0px 0px 0px @borderWidth @successBorderColor inset,
-  @shadowShadow
-;
+@positiveBoxShadow: none;
+@negativeBoxShadow: none;
+@infoBoxShadow: none;
+@warningBoxShadow: none;
+@errorBoxShadow: none;
+@successBoxShadow: none;
+

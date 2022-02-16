@@ -1,16 +1,33 @@
 /*******************************
          Theme Overrides
 *******************************/
-@maxWidth: 1400px;
 
 /* All Sizes */
-.ui.container {
+div.ui.container {
   display: block;
-  width: auto !important;
+  width: 100% !important;
   max-width: @maxWidth !important;
+  padding-right: @mobilePadding;
+  padding-left: @mobilePadding;
+
+  margin: auto !important;
   transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+  div.ui.container {
+    padding-right: @tabletPadding;
+    padding-left: @tabletPadding;
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  div.ui.container {
+    padding-right: @computerPadding;
+    padding-left: @computerPadding;
+  }
 }
 
 .contentWidth(@offset) {
@@ -35,7 +52,6 @@
     }
   }
   @media only screen and (min-width: @computerBreakpoint + @offset) and (max-width: @largestSmallMonitor + @offset) {
-
     [class*='mobile only']:not(.computer),
     [class*='tablet only']:not(.computer),
     [class*='computer hidden'],

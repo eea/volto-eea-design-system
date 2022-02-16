@@ -1,18 +1,16 @@
 # This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Node.js CI
+name: Storybook & Docusaurus CI deployment
 
 on:
   push:
-    branches: [ github_actions ]
-    paths:
-     - website/**
+    branches: [ develop-itml ]
   pull_request:
-    branches: [ github_actions ]
+    branches: [ develop ]
     paths:
      - website/**
-    
+
 
 jobs:
   build:
@@ -26,17 +24,33 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
     - name: Use Node.js ${{ matrix.node-version }} to build docusaurus website
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
     - name: Push Docusaurus build changes
       run: |
-           cd website
-           yarn
-           yarn build
-           git config user.name github-actions
-           git config user.email github-actions@github.com
-           git add ../docs
-           git diff --staged --quiet || git commit -m "Autobuild of docusaurus docs"
-           git push
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git fetch
+          cd website
+          yarn
+          yarn build
+          cd ..
+          git add . 
+          git commit -m "Autobuild of docusaurus docs"
+          git push
+
+    - uses: convictional/trigger-workflow-and-wait@v1.3.0
+      with:
+        github_token: ${{ secrets.PAT_TOKEN }}
+        owner: 'eea'
+        repo: 'volto-kitkat-frontend'
+        ref: 'develop-itml'
+        workflow_file_name: node.js.yml
+    - name: Deploy Storybook changes
+      run: |
+          echo "Deploy Storybook changes"
+          sleep 1s

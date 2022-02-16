@@ -1,0 +1,14 @@
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
+export function getUrl() {
+  const { siteConfig } = useDocusaurusContext();
+  const { customFields } = siteConfig;
+  return customFields.storyBookUrl;
+}
+
+<div className="frameWrapper">
+  <iframe style={{height:(props.height?props.height:300)+'px'}}
+    src={getUrl() + '/iframe.html?id=' + props.id}
+    title="description"
+  ></iframe>
+</div>

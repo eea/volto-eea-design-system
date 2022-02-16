@@ -21,6 +21,12 @@
 @mobileMenuNavItemJustifyContent: center;
 @mobileMenuNavItemLineHeight: 1.25;
 
+/* Checkbox */
+@checkboxBorderUnchecked: 1px solid @oldSilver;
+@checkboxBorderChecked: 1px solid @darkCerulean;
+@checkboxColor: @white;
+@checkboxBoxShadow: none;
+
 /*-------------------
       login.less
 --------------------*/

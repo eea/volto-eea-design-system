@@ -2,6 +2,109 @@
          Theme Overrides
 *******************************/
 
+//Color for button text depends on background
+.text-color(@backColor) when (lightness(@backColor) >= 40%) {
+  color: @primaryButtonColor;
+}
+.text-color(@backColor) when (lightness(@backColor) < 40%) {
+  color: @white;
+}
+
+/* Global Button Styles */
+.ui.button,
+.ui.buttons .button,
+.ui.buttons {
+  border: @buttonBorder @backgroundColor;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: @hoverBackgroundColor;
+  }
+}
+
+/* Primary Button Border */
+.ui.button.primary,
+.ui.buttons.primary {
+  border: @buttonBorder @primaryColor;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border: @buttonBorder @primaryColorHover;
+  }
+}
+
+/* Secondary Button */
+.ui.button.secondary,
+.ui.buttons.secondary {
+  border: @buttonBorder @primaryButtonColor;
+  background-color: @secondaryButtonBackrgound;
+  .text-color(@white);
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: @primaryButtonColor;
+    .text-color(@primaryButtonColor);
+  }
+}
+
+/* Secondary Button Inverted */
+.ui.button.inverted.secondary,
+.ui.buttons.inverted.secondary {
+  border: @buttonBorder @secondaryButtonColor;
+  color: @secondaryButtonColor;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: @secondaryButtonColor;
+    color: @primaryColor;
+  }
+}
+
+/* Call to action Button */
+.ui.button.action {
+  border: @buttonBorder @actionButtonButtonColor;
+  background-color: @actionButtonButtonColor;
+  .text-color(@actionButtonButtonColor);
+  text-transform: uppercase;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border: @buttonBorder @secondaryColorDarken;
+    background-color: @secondaryColorDarken;
+    .text-color(@secondaryColorDarken);
+  }
+}
+
+.ui.button.action[class*='right labeled'].icon.button {
+  padding-right: 3em !important; // to apply to theme button paddings - button.less:856
+
+  i {
+    margin-right: 5px !important; // to apply to theme button paddings - button.less:693
+  }
+}
+
+/* Text Button */
+button.ui.button.text,
+button.ui.buttons.text,
+p.ui.button {
+  border: none;
+  background-color: @textButtonBackground;
+  color: @primaryColor;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border: none;
+    background-color: @textButtonBackground;
+    color: @primaryColorHover;
+  }
+}
+
 .ui.circular.icon.button {
   padding: 0.75em 0.25em 0;
 

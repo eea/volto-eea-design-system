@@ -4,28 +4,36 @@ module.exports = {
   title: 'EEA Design System',
   tagline: 'EEA Design System package',
   url: 'https://eea.github.io/',
-  deploymentBranch: 'develop',
+  deploymentBranch: 'develop-itml',
   baseUrl: '/volto-eea-design-system/',
   trailingSlash: true,
-  onBrokenLinks: 'throw',
+  // url: 'http://localhost:3005',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/eea_icon.png',
   organizationName: 'eea', // Usually your GitHub org/user name.
   projectName: 'volto-eea-design-system', // Usually your repo name.
+  customFields: {
+    storyBookUrl: 'https://eea.github.io/volto-kitkat-frontend/',
+  },
   themeConfig: {
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+    },
     navbar: {
       title: 'EEA Design System',
       logo: {
         alt: 'EEA Design System Logo',
-        src: 'img/logo.svg',
+        src: 'img/eea_icon.png',
       },
       items: [
-        {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'EEA Component Library',
-        },
+        // {
+        //   type: 'doc',
+        //   docId: 'intro',
+        //   position: 'left',
+        //   label: 'EEA Component Library',
+        // },
         {
           href: 'https://github.com/eea/volto-eea-design-system',
           label: 'GitHub',
@@ -59,8 +67,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/eea/volto-eea-design-system/edit/develop/website/',
+          exclude: ['**/md_components/**'],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

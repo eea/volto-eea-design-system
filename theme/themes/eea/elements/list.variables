@@ -6,12 +6,15 @@
          View
 --------------------*/
 
+@listFontWeight: @bold;
+
 /* List */
 @listStyleType: none;
 @listStylePosition: outside;
 @margin: 1em 0em;
 @verticalPadding: 0em;
 @horizontalPadding: 0em;
+@bulletSize: @relative30px;
 
 /* List Item */
 @itemVerticalPadding: @relative3px;
@@ -57,6 +60,7 @@
 
 /* Description */
 @itemDescriptionColor: rgba(0, 0, 0, 0.7);
+@itemDescriptionMarginTop: 0.5rem 0;
 
 /* Link */
 @itemLinkColor: @linkColor;
@@ -156,26 +160,28 @@
 @animatedListIndent: 1em;
 
 /* Bulleted */
+
+@bulletSize: @relative30px;
 @bulletDistance: 1.25rem;
 @bulletOffset: -@bulletDistance;
 
 @bulletOpacity: 1;
 @bulletCharacter: '•';
-@bulletColor: inherit;
-@bulletLinkColor: @textColor;
+@bulletColor: @primaryColor;
+@bulletLinkColor: @primaryColor;
 @bulletVerticalAlign: top;
 @bulletChildDistance: @bulletDistance;
 
 /* Horizontal Bullets */
-@horizontalBulletColor: @textColor;
+@horizontalBulletColor: @primaryColor;
 @horizontalBulletSpacing: @bulletDistance + 0.5em;
 
 /* Ordered List */
 @orderedCountName: ordered;
 @orderedCountContent: counters(ordered, ".") " ";
-@orderedCountColor: @textColor;
+@orderedCountColor: @primaryColor;
 @orderedCountDistance: 1.25rem;
-@orderedCountOpacity: 0.8;
+@orderedCountOpacity: 1;
 @orderedCountTextAlign: right;
 @orderedCountVerticalAlign: middle;
 

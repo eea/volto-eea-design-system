@@ -1,0 +1,20 @@
+/*******************************
+            Blockquote
+*******************************/
+/* Body */
+@blockquoteBorderLeft : 10px solid @secondaryColor;
+@childrenBorderLeft   : none;
+
+/* Quote */
+@quoteColor      : @secondaryColor;
+@quoteMargin     : @relative12px @relative30px;
+@quoteGap        : @relative12px;
+@quoteColor      : @japaneseIndigo;
+@quoteFontSize   : @h5;
+@quoteFontWeight : 700; 
+
+/* Meta */
+@metaMargin    : 0;
+@metaWeight    : 400;
+@metaFontSize  : @h5;
+@metaAlignSelf : left;

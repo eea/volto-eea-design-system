@@ -1,3 +1,14 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+/* Full width statistics for mobile */
+.ui.statistic {
+  width: @mobileStatisticWidth;
+}
+
+@media only screen and (min-width: @mobileBreakpoint) {
+  .ui.statistic {
+    width: @tabletStatisticWidth;
+  }
+}

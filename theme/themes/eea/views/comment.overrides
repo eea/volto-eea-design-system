@@ -1,7 +1,3 @@
 /*******************************
          Theme Overrides
 *******************************/
-
-.ui.comments .comment .avatar.circular img {
-  border-radius: 50%;
-}

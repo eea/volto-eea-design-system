@@ -1,3 +1,8 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+/* Align item image left with text */
+.ui.items:not(.unstackable) > .item > .image {
+  margin: @imageMargin;
+}

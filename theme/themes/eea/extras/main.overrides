@@ -20,3 +20,12 @@
     margin-left: 0 !important;
   }
 }
+
+// Checkbox box-shadow override from pastanaga
+.ui.checkbox {
+  label {
+    &:before {
+      box-shadow: @checkboxBoxShadow;
+    }
+  }
+}
