@@ -5,7 +5,7 @@ name: Storybook & Docusaurus CI deployment
 
 on:
   push:
-    branches: [ develop-itml ]
+    branches: [ github_actions ]
   pull_request:
     branches: [ develop ]
     paths:
@@ -39,7 +39,7 @@ jobs:
           yarn
           yarn build
           cd ..
-          git add . 
+          git add docs 
           git commit -m "Autobuild of docusaurus docs"
           git push
 
