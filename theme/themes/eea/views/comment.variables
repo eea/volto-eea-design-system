@@ -45,34 +45,34 @@
 @contentMargin: @avatarWidth + @avatarSpacing;
 
 /* Author */
-@authorFontSize: 1em;
-@authorColor: @textColor;
-@authorHoverColor: @linkHoverColor;
+@authorFontSize: 1rem;
+@authorColor: @secondaryColor;
+@authorHoverColor: @secondaryColorDarken;
 @authorFontWeight: @bold;
 
 /* Metadata */
 @metadataDisplay: inline-block;
-@metadataFontSize: 0.875em;
+@metadataFontSize: 0.875rem;
 @metadataSpacing: 0.5em;
 @metadataContentSpacing: 0.5em;
-@metadataColor: @lightTextColor;
+@metadataColor: @black;
 
 /* Text */
-@textFontSize: 1em;
+@textFontSize: 1rem;
 @textMargin: 0.25em 0em 0.5em;
 @textWordWrap: break-word;
 @textLineHeight: 1.3;
 
 /* Actions */
-@actionFontSize: 0.875em;
+@actionFontSize: 0.875rem;
 @actionContentDistance: 0.75em;
-@actionLinkColor: @unselectedTextColor;
+@actionLinkColor: @black;
 @actionLinkHoverColor: @hoveredTextColor;
 
 /* Reply */
 @replyDistance: 1em;
 @replyHeight: 12em;
-@replyFontSize: 1em;
+@replyFontSize: 1rem;
 
 @commentReplyDistance: @replyDistance;
 

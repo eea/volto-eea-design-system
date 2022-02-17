@@ -21,7 +21,7 @@
 @textAlign: left;
 @background: @inputBackground;
 @borderWidth: 1px;
-@border: @borderWidth solid @borderColor;
+@border: @borderWidth solid @midGray;
 @boxShadow: none;
 
 @borderRadius: @defaultBorderRadius;

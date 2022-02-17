@@ -2,6 +2,16 @@
          Theme Overrides
 *******************************/
 
+/* Chackbox label must be white on error without affecting @formErrorColor varible */
+.ui.form .fields.error .field .checkbox label:after,
+.ui.form .field.error .checkbox label:after,
+.ui.form .fields.error .field .checkbox .box:after,
+.ui.form .field.error .checkbox .box:after {
+  color: @formErrorLabelColor;
+}
+
+/******************************************************/
+
 .ui.form .inline.field {
   margin: 0;
 }
@@ -38,9 +48,8 @@
 .ui.form .ui.input input[type='time'],
 .ui.form .ui.input input[type='text'],
 .ui.form .ui.input input[type='file'],
-.ui.form .ui.input input[type='url'],
-.ui.form textarea {
-  height: 60px;
+.ui.form .ui.input input[type='url'] {
+  height: 48px !important;
   border-width: 0 0 @1px 0;
   border-radius: 0;
 

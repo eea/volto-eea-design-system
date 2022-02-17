@@ -2,42 +2,23 @@
          Theme Overrides
 *******************************/
 
-.ui.inverted.list > a.item {
-  text-decoration: underline;
+/* All list items must be bold */
+.ui.list > .item:before,
+.ui.list .item {
+  font-weight: @listFontWeight;
 }
 
-.ui.inverted.list .item a:not(.ui) {
-  color: @white !important;
+/* Description List */
+div.ui.list .list > .item .description,
+div.ui.list > .item .description {
+  margin: @itemDescriptionMarginTop;
 }
 
-.ui.grid > .row > .navigation.column {
-  margin-top: unit(-@relativeBig * 1.5, em);
-
-  .menu {
-    flex-wrap: wrap;
-  }
-}
-
-.header .tools.column .list .item {
-  color: @grey;
-  font-size: @13px;
-  font-weight: 100;
-}
-
-.ui.bulleted.list {
-  .item.header-three {
-    margin-left: @16px;
-  }
-
-  .item.header-four {
-    margin-left: @32px;
-  }
-
-  .item.header-five {
-    margin-left: @48px;
-  }
-
-  .item.header-six {
-    margin-left: @64px;
-  }
+/* Unordered list */
+.ui.bulleted.list .list > .item:before,
+.ui.bulleted.list .list > a.item:before,
+.ui.bulleted.list > .item:before,
+.ui.bulleted.list > a.item:before,
+ul.ui.list li:before {
+  font-size: @bulletSize;
 }

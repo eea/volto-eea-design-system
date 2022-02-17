@@ -4,21 +4,23 @@ module.exports = {
   title: 'EEA Design System',
   tagline: 'EEA Design System package',
   url: 'https://eea.github.io/',
-  deploymentBranch: 'develop',
+  deploymentBranch: 'develop-itml',
   baseUrl: '/volto-eea-design-system/',
   trailingSlash: true,
-  //url: 'http://localhost:3005',
-  baseUrl: '/eea-design-system/',
-  //baseUrl: '/',
+  // url: 'http://localhost:3005',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/eea_icon.png',
   organizationName: 'eea', // Usually your GitHub org/user name.
   projectName: 'volto-eea-design-system', // Usually your repo name.
   customFields: {
-    storyBookUrl: 'http://192.168.30.188:6006',
+    storyBookUrl: 'https://eea.github.io/volto-kitkat-frontend/',
   },
   themeConfig: {
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+    },
     navbar: {
       title: 'EEA Design System',
       logo: {

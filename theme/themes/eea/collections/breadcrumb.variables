@@ -10,9 +10,21 @@
 @display: inline-block;
 @verticalAlign: middle;
 
-@dividerSpacing: @10px;
+@mobileBreadcrumbFontSize: @7px;
+@tabletBreadcrumbFontSize: @12px;
+
+@mobileBreadcrumbPadding: 0;
+@tabletBreadcrumbPadding: 0 @7px;
+@computerBreadcrumbPadding: 0 @10px;
+
+/* Icon */
+@mobileBreadcrumbIconSize: 0.469rem;
+@tabletBreadcrumbIconSize: @12px;
+
+/* Divider */
+@dividerSpacing: @5px;
 @dividerOpacity: 0.7;
-@dividerColor: @teal;
+@dividerColor: @deepBlue;
 
 @dividerSize: @relativeSmall;
 @dividerVerticalAlign: baseline;

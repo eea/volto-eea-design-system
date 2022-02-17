@@ -2,25 +2,57 @@
          Theme Overrides
 *******************************/
 
-/* Dropdown Icon */
-.ui.accordion .title .dropdown.icon,
-.ui.accordion .accordion .title .dropdown.icon {
-  float: right;
+.ui.accordion {
+  margin: @itemsMargin;
+  transition: @styledTitleTransition;
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: @titleBorderBottom;
+
+    &:hover {
+      color: @titleColorHover;
+
+      i.icon {
+        color: @iconColorHover;
+      }
+    }
+
+    i.icon {
+      display: flex;
+      align-items: center;
+      order: @iconOrder;
+      color: @iconColor;
+      font-size: @iconFontSize;
+
+      &:before {
+        content: @iconInactive;
+      }
+    }
+  }
+
+  .active.title {
+    border-bottom: @activeTitleBorderBottom;
+    background-color: @activeTitleBackground;
+    color: @activeTitleColor;
+
+    i.icon {
+      color: @iconColorActive;
+
+      &:before {
+        content: @iconActive;
+      }
+    }
+  }
+
+  .content {
+    background: @contentBackground;
+  }
 }
 
-.ui.accordion .title .dropdown.icon:before,
-.ui.accordion .accordion .title .dropdown.icon:before {
-  content: '\e904';
-}
-
-.ui.accordion .active.title .dropdown.icon:before,
-.ui.accordion .accordion .active.title .dropdown.icon:before {
-  content: '\e9ce';
-}
-
-.ui.styled.accordion .title,
-.ui.styled.accordion .accordion .title {
-  background: @darkWhite;
-  font-size: @12px;
-  text-transform: uppercase;
+/* All content padding are equal including last child */
+.ui.accordion:not(.styled) .title ~ .content:not(.ui):last-child {
+  padding-bottom: @contentPaddingBottom;
 }

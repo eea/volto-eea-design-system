@@ -2,26 +2,54 @@
         Theme Overrides
 *******************************/
 
-.ui.breadcrumb {
-  display: flex;
-  align-items: center;
-  padding-right: 1rem;
-  padding-left: 1rem;
+div.eea-breadcrumb .ui.breadcrumb {
+  .section {
+    padding: @mobileBreadcrumbPadding;
+    font-size: @mobileBreadcrumbFontSize;
+    font-weight: @activeFontWeight;
 
-  a.section {
-    color: #0074a3;
+    /* Max breadcrumb length to be decided */
+    //max-width: 150px;
+    //white-space: nowrap;
+    //overflow: hidden;
+    //text-overflow: ellipsis;
+
+    img {
+      width: @mobileBreadcrumbIconSize;
+      margin-bottom: -1px; //To align as the design
+    }
   }
 
-  .section.active {
-    color: #4e7372;
+  i.icon.divider {
+    font-size: @mobileBreadcrumbFontSize;
   }
 
-  .home.icon {
-    margin-right: 0;
+  a:first-child {
+    padding: 0 0.469rem 0 0;
   }
+}
+@media only screen and (min-width: @tabletBreakpoint) {
+  div.eea-breadcrumb .ui.breadcrumb {
+    .section {
+      padding: @tabletBreadcrumbPadding;
+      font-size: @tabletBreadcrumbFontSize;
+      font-weight: @activeFontWeight;
 
-  @media only screen and (min-width: @tabletBreakpoint) {
-    padding-right: 0;
-    padding-left: 0;
+      img {
+        width: @tabletBreadcrumbIconSize;
+      }
+    }
+
+    i.icon.divider {
+      font-size: @tabletBreadcrumbIconSize;
+    }
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  div.eea-breadcrumb .ui.breadcrumb {
+    .section {
+      padding: @computerBreadcrumbPadding;
+    }
   }
 }
