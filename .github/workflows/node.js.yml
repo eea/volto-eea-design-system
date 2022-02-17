@@ -40,7 +40,7 @@ jobs:
           yarn
           yarn build
           cd ..
-          git add docs 
+          git add website docs 
           git commit -m "Autobuild of docusaurus docs"
           git push
 
