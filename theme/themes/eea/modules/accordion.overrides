@@ -2,8 +2,6 @@
          Theme Overrides
 *******************************/
 
-
-
 .ui.accordion {
   margin: @itemsMargin;
   transition: @styledTitleTransition;
@@ -25,9 +23,10 @@
     i.icon {
       display: flex;
       align-items: center;
+      order: @iconOrder;
       color: @iconColor;
       font-size: @iconFontSize;
-      order: @iconOrder;
+
       &:before {
         content: @iconInactive;
       }
@@ -38,8 +37,10 @@
     border-bottom: @activeTitleBorderBottom;
     background-color: @activeTitleBackground;
     color: @activeTitleColor;
+
     i.icon {
       color: @iconColorActive;
+
       &:before {
         content: @iconActive;
       }

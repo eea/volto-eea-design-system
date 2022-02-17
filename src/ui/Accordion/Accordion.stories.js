@@ -133,9 +133,7 @@ function AccordionContainer({ ...args }) {
   );
 }
 
-const Template = (args) => (
-  <AccordionContainer {...args}></AccordionContainer>
-);
+const Template = (args) => <AccordionContainer {...args}></AccordionContainer>;
 
 export const Default = Template.bind({});
 Default.args = {

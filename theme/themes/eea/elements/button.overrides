@@ -81,13 +81,12 @@
 }
 
 .ui.button.action[class*='right labeled'].icon.button {
-  padding-right: 3em !important;  // to apply to theme button paddings - button.less:856
+  padding-right: 3em !important; // to apply to theme button paddings - button.less:856
 
   i {
     margin-right: 5px !important; // to apply to theme button paddings - button.less:693
   }
 }
-
 
 /* Text Button */
 button.ui.button.text,
@@ -132,13 +131,13 @@ p.ui.button {
     color: @searchButtonColor;
   }
 }
-.ui.labeled.icon.button.search > .icon {
-    font-size: @searchButtonFontSize;
-    left: @searchButtonIconLeft;
-    background: @searchButtonBackground;
-    opacity: @searchButtonIconOpacity;
-}
 
+.ui.labeled.icon.button.search > .icon {
+  left: @searchButtonIconLeft;
+  background: @searchButtonBackground;
+  font-size: @searchButtonFontSize;
+  opacity: @searchButtonIconOpacity;
+}
 
 .searchbox.field > .ui.action.input > .icon.button {
   padding-top: 0;

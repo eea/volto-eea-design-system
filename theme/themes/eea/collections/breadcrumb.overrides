@@ -27,11 +27,9 @@ div.eea-breadcrumb .ui.breadcrumb {
   a:first-child {
     padding: 0 0.469rem 0 0;
   }
-
 }
 @media only screen and (min-width: @tabletBreakpoint) {
   div.eea-breadcrumb .ui.breadcrumb {
-
     .section {
       padding: @tabletBreadcrumbPadding;
       font-size: @tabletBreadcrumbFontSize;

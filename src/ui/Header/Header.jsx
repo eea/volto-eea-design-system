@@ -220,9 +220,7 @@ class Header extends Component {
               icon="chevron down"
               aria-label="dropdown"
             >
-              <Dropdown.Menu
-                role="group"
-              >
+              <Dropdown.Menu role="group">
                 <div role="option" aria-selected="false">
                   <p>
                     All official European Union website addresses are in the{' '}
@@ -250,75 +248,43 @@ class Header extends Component {
             >
               <Dropdown.Menu role="group">
                 <div className="list">
-                  <div
-                    className="site"
-                    role="option"
-                    aria-selected="false"
-                  >
+                  <div className="site" role="option" aria-selected="false">
                     <a href="/#" target="_blank">
                       Biodiversity Information System for Europe
                     </a>
                   </div>
-                  <div
-                    className="site"
-                    role="option"
-                    aria-selected="false"
-                  >
+                  <div className="site" role="option" aria-selected="false">
                     <a href="/#" target="_blank">
                       Climate Adaptation Platform
                     </a>
                   </div>
-                  <div
-                    className="site"
-                    role="option"
-                    aria-selected="false"
-                  >
+                  <div className="site" role="option" aria-selected="false">
                     <a href="/#" target="_blank">
                       Copernicus in situ component
                     </a>
                     <br />
                   </div>
-                  <div
-                    className="site"
-                    role="option"
-                    aria-selected="false"
-                  >
+                  <div className="site" role="option" aria-selected="false">
                     <a href="/#" target="_blank">
                       European Industrial Emissions Portal
                     </a>
                   </div>
-                  <div
-                    className="site"
-                    role="option"
-                    aria-selected="false"
-                  >
+                  <div className="site" role="option" aria-selected="false">
                     <a href="/#" target="_blank">
                       Forest Information System for Europe
                     </a>
                   </div>
-                  <div
-                    className="site"
-                    role="option"
-                    aria-selected="false"
-                  >
+                  <div className="site" role="option" aria-selected="false">
                     <a href="/#" target="_blank">
                       Information Platform for Chemical Monitoring
                     </a>
                   </div>
-                  <div
-                    className="site"
-                    role="option"
-                    aria-selected="false"
-                  >
+                  <div className="site" role="option" aria-selected="false">
                     <a href="/#" target="_blank">
                       Marine Water Information System for Europe
                     </a>
                   </div>
-                  <div
-                    className="site"
-                    role="option"
-                    aria-selected="false"
-                  >
+                  <div className="site" role="option" aria-selected="false">
                     <a href="/#" target="_blank">
                       Fresh Water Information System for Europe
                     </a>

@@ -39,7 +39,6 @@ textarea {
   }
 }
 
-
 /* Search Input */
 .ui.fluid.icon.input.search {
   input {
@@ -64,6 +63,7 @@ textarea {
       border-bottom: 3px solid !important;
       font-size: 48px;
     }
+
     i.icon {
       font-size: 48px;
     }
