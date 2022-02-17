@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Icon, Grid } from 'semantic-ui-react';
+import { Container, Icon, Button, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 Banner.propTypes = {
@@ -8,10 +8,13 @@ Banner.propTypes = {
   image: PropTypes.bool,
 };
 
-function Banner({ title, info, image }) {
+function Banner({ title, info, image, actions }) {
   return (
     <div className="eea-page-banner">
-      <div className={image ? 'image' : null}></div>
+      <div
+        className={image ? 'image' : null}
+        style={{ backgroundImage: `url(${image})` }}
+      ></div>
       <div className="gradient">
         <Container>
           <div className="content">
@@ -21,25 +24,7 @@ function Banner({ title, info, image }) {
                 <p className="metadata">{info}</p>
               </Grid.Column>
               <Grid.Column mobile={2} tablet={3} computer={3}>
-                <div className="actions mobile hidden">
-                  <div className="bookmark">
-                    <Icon name="bookmark outline"></Icon>
-                    Bookmark
-                  </div>
-                  <div className="download">
-                    <Icon name="download"></Icon>
-                    Download
-                  </div>
-                </div>
-
-                <div className="actions mobile only">
-                  <div className="bookmark">
-                    <Icon name="bookmark outline"></Icon>
-                  </div>
-                  <div className="download">
-                    <Icon name="download"></Icon>
-                  </div>
-                </div>
+                {actions}
               </Grid.Column>
             </Grid>
           </div>
@@ -48,5 +33,16 @@ function Banner({ title, info, image }) {
     </div>
   );
 }
+
+Banner.Action = function ({ id, title, icon, onClick, className }) {
+  return (
+    <div className="actions">
+      <Button className={className} as="div" basic onClick={onClick}>
+        <Icon name={icon}></Icon>
+        <span className="mobile hidden">{title}</span>
+      </Button>
+    </div>
+  );
+};
 
 export default Banner;
