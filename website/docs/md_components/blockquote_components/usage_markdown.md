@@ -6,7 +6,7 @@ The blockquotes component is used to capture users' attention of an excerpt, tes
 - limit the quote to no longer than 80 characters
 - use the image variant to add a portrait of the quoted person
 
-### Dont's
+### Don'ts
 
 - do not apply more than two blockquotes components on the webpage
 - for the image variant, do not use a photoshopped composition of images

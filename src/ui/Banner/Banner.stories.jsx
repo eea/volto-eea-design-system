@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from './Banner';
+// eslint-disable-next-line import/no-unresolved
 import imgUrl from 'ui-assets/images/banner.png';
 
 export default {
