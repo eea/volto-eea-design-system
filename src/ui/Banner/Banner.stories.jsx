@@ -32,7 +32,7 @@ export default {
 };
 
 const Template = (args) => (
-  <Banner {...args} image={args.image ? imgUrl : null}>
+  <Banner {...args} image_url={args.image ? imgUrl : null}>
     <Banner.Content
       actions={
         <>
