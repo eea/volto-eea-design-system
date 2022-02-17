@@ -1,0 +1,52 @@
+/*-------------------
+      HEADER
+--------------------*/
+
+/* Heights */
+@mobileTopSectionHeight: @18px;
+@tabletTopSectionHeight: @30px;
+@computerTopSectionHeight: @33px;
+
+@mobileMainSectionHeight: 56px;
+@tabletMainSectionHeight: 117px;
+@computerMainSectionHeight: 160px;
+
+/* Top */
+@topSectionBackground: @silverGray;
+@topSectionItemColor: @japaneseIndigo;
+@topSectionItemFontWeight: @bold;
+@mobileTopSectionItemFontSize: 8px;
+@tabletTopSectionItemFontSize: 12px;
+
+/* Dropdown */
+@mobileDropdownMenuMarginTop: 3px;
+@tabletDropdownMenuMarginTop: 7px;
+@dropdownFontSize: 12px;
+@dropdownFontWeight: 700;
+/* Dropdown Menu */
+@dropdownMenuLeft: auto;
+@dropdownMenuRight: 0;
+
+// Official Union
+@officialUnionGap: 12px;
+@mobileOfficialUnionPadding: 5px;
+@tabletOfficialUnionPadding: 12px;
+// Theme Sites
+@themeSitesMenuWidth: 205px;
+@themeSitesMenuPadding: 5px;
+@themeSitesMenuSiteMargin: 5px 0;
+@themeSitesMenuSiteLinkColor: @japaneseIndigo;
+@themeSitesMenuSiteLinkFontWeight: 400;
+// Language
+
+/* Main Section */
+@headerMainSectionBackground: @white;
+
+/* Logo */
+@logoWidth: 100%;
+@mobileLogoMaxWidth: 122px;
+@tabletLogoMaxWidth: 252px;
+@computerLogoMaxWidth: 348px;
+@mobileLogoMarginTop: 9px;
+@tabletLogoMarginTop: 15px;
+@computerLogoMarginTop: 20px;
