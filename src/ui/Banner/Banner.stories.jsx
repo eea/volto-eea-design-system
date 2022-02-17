@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from './Banner';
 // eslint-disable-next-line import/no-unresolved
-import imgUrl from 'ui-assets/images/banner.png';
+import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/banner.png';
 
 export default {
   title: 'Components/Page Header',
