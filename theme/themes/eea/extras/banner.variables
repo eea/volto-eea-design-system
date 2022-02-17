@@ -5,7 +5,7 @@
 @bannerBackgroundColor   : @primaryColor;
 
 /* Background Image */
-@imageURL                : url(../assets/images/banner.png);
+// @imageURL                : url(../assets/images/banner.png);
 @imageBackgroundRepeat   : no-repeat;
 @imageBackgroundSize     : cover;
 @imageBackgroundPosition : center;

@@ -1,6 +1,5 @@
 import React from 'react';
 import Blockquote from './Blockquote';
-import { Image } from 'semantic-ui-react';
 
 const CITATION =
   'An interconnected grid will help deliver the ultimate goal of the Energy Union, to make sure affordable, secure and sustainable energy, and also growth across the EU.';
