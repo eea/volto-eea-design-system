@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'semantic-ui-react';
-import banner from '../../../theme/themes/eea/assets/images/banner.png';
+import banner from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/banner.png';
 
 export default {
   title: 'Components/Media Container/Image',
