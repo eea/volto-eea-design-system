@@ -8,7 +8,7 @@ Banner.propTypes = {
   image: PropTypes.bool,
 };
 
-function Banner({ title, info, image, actions }) {
+function Banner({ image, children }) {
   return (
     <div className="eea-page-banner">
       <div
@@ -16,19 +16,7 @@ function Banner({ title, info, image, actions }) {
         style={{ backgroundImage: `url(${image})` }}
       ></div>
       <div className="gradient">
-        <Container>
-          <div className="content">
-            <Grid>
-              <Grid.Column mobile={10} tablet={9} computer={9}>
-                <p className="title">{title}</p>
-                <p className="metadata">{info}</p>
-              </Grid.Column>
-              <Grid.Column mobile={2} tablet={3} computer={3}>
-                {actions}
-              </Grid.Column>
-            </Grid>
-          </div>
-        </Container>
+        <Container>{children}</Container>
       </div>
     </div>
   );
@@ -37,7 +25,7 @@ function Banner({ title, info, image, actions }) {
 Banner.Action = function ({ id, title, icon, onClick, className }) {
   return (
     <div className="actions">
-      <Button className={className} as="div" basic onClick={onClick}>
+      <Button className={className} basic onClick={onClick}>
         <Icon name={icon}></Icon>
         <span className="mobile hidden">{title}</span>
       </Button>
@@ -45,4 +33,21 @@ Banner.Action = function ({ id, title, icon, onClick, className }) {
   );
 };
 
+Banner.Content = ({ children, actions }) => {
+  return (
+    <div className="content">
+      <Grid>
+        <Grid.Column mobile={10} tablet={9} computer={9}>
+          {children}
+        </Grid.Column>
+        <Grid.Column mobile={2} tablet={3} computer={3}>
+          {actions}
+        </Grid.Column>
+      </Grid>
+    </div>
+  );
+};
+
+Banner.Title = ({ children }) => <p className="title">{children}</p>;
+Banner.Metadata = ({ children }) => <p className="metadata">{children}</p>;
 export default Banner;

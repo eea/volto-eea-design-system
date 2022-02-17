@@ -31,20 +31,27 @@ export default {
 };
 
 const Template = (args) => (
-  <Banner
-    {...args}
-    image={args.image ? imgUrl : null}
-    actions={
-      <>
-        <Banner.Action
-          icon="bookmark outline"
-          title="Bookmark"
-          className="bookmark"
-        />
-        <Banner.Action icon="download" title="Download" className="download" />
-      </>
-    }
-  ></Banner>
+  <Banner {...args} image={args.image ? imgUrl : null}>
+    <Banner.Content
+      actions={
+        <>
+          <Banner.Action
+            icon="bookmark outline"
+            title="Bookmark"
+            className="bookmark"
+          />
+          <Banner.Action
+            icon="download"
+            title="Download"
+            className="download"
+          />
+        </>
+      }
+    >
+      <Banner.Title>{args.title}</Banner.Title>
+      <Banner.Metadata>{args.info}</Banner.Metadata>
+    </Banner.Content>
+  </Banner>
 );
 
 export const Default = Template.bind({});
