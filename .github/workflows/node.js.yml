@@ -5,12 +5,11 @@ name: Storybook & Docusaurus CI deployment
 
 on:
   push:
-    branches-ignore: [ master ]
-  pull_request:
-    branches: [ develop ]
+    branches: [ develop-itml ]
     paths:
-     - website/**
-
+      - src/**
+      - theme/**
+      - website/**
 
 jobs:
   build:

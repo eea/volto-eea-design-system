@@ -8,12 +8,12 @@ Banner.propTypes = {
   image: PropTypes.bool,
 };
 
-function Banner({ image, children }) {
+function Banner({ image_url, image, children }) {
   return (
     <div className="eea-page-banner">
       <div
-        className={image ? 'image' : null}
-        style={{ backgroundImage: `url(${image})` }}
+        className="image"
+        style={image ? { backgroundImage: `url(${image_url})` } : {}}
       ></div>
       <div className="gradient">
         <Container>{children}</Container>
