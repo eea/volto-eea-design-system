@@ -34,7 +34,9 @@ jobs:
       run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
+          git pull
           git fetch
+          npx auto-changelog --commit-limit false  --unreleased --stdout  --template templates/eea.hbs 
           npx auto-changelog --commit-limit false  --unreleased --stdout  --template templates/eea.hbs > website/docs/2-whatsnew.md
           git status
           cat website/docs/2-whatsnew.md
