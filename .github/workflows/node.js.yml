@@ -35,6 +35,7 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git fetch
+          git log --pretty=format:%B
           npx auto-changelog --commit-limit false --unreleased-only --stdout  --template templates/eea.hbs
           npx auto-changelog --commit-limit false  --unreleased --stdout 
           npx auto-changelog --commit-limit false  --unreleased --stdout  --template templates/eea.hbs > website/docs/2-whatsnew.md
