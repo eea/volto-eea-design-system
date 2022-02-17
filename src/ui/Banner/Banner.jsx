@@ -50,4 +50,5 @@ Banner.Content = ({ children, actions }) => {
 
 Banner.Title = ({ children }) => <p className="title">{children}</p>;
 Banner.Metadata = ({ children }) => <p className="metadata">{children}</p>;
+
 export default Banner;
