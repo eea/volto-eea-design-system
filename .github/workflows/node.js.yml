@@ -37,6 +37,7 @@ jobs:
           git pull
           git fetch
           git checkout github_actions
+          npm install -g auto-changelog
           npx auto-changelog --commit-limit false  --unreleased --stdout  --template templates/eea.hbs 
           npx auto-changelog --commit-limit false  --unreleased --stdout  --template templates/eea.hbs > website/docs/2-whatsnew.md
           git status
