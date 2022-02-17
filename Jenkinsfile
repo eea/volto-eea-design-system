@@ -10,6 +10,16 @@ pipeline {
 
   stages {
 
+    stage('Test') {
+      steps {
+        node(label: 'docker') {
+          println env.BUILD_URL
+          println env.JOB_URL
+          sh '''env'''
+        }
+      }
+    }
+    
     stage('Release') {
       when {
         allOf {
