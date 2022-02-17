@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from './Banner';
+import imgUrl from 'ui-assets/images/banner.png';
 
 export default {
   title: 'Components/Page Header',
@@ -29,7 +30,29 @@ export default {
   },
 };
 
-const Template = (args) => <Banner {...args}></Banner>;
+const Template = (args) => (
+  <Banner {...args} image={args.image ? imgUrl : null}>
+    <Banner.Content
+      actions={
+        <>
+          <Banner.Action
+            icon="bookmark outline"
+            title="Bookmark"
+            className="bookmark"
+          />
+          <Banner.Action
+            icon="download"
+            title="Download"
+            className="download"
+          />
+        </>
+      }
+    >
+      <Banner.Title>{args.title}</Banner.Title>
+      <Banner.Metadata>{args.info}</Banner.Metadata>
+    </Banner.Content>
+  </Banner>
+);
 
 export const Default = Template.bind({});
 Default.args = {

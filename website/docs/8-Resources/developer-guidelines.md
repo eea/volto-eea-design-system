@@ -48,6 +48,7 @@ following practical guidelines.
   linting and Prettier integration
 - Use best practice naming conventions, follow the closed library style
   (semantic-ui-less, semantic-ui-react).
+- Configure editor to use Unix line endings (a must!).
 
 ### Naming
 
@@ -64,7 +65,9 @@ following practical guidelines.
 ### Other
 
 - Make components generic and flexible. Don't hardcode values, make them props.
-- Avoid inline styles
+- Avoid using inline styles. Inline styles can be used in special cases in case
+  the style is derived from properties, for example setting background images
+  or visibility of elements.
 - Don't place components inside `src/customizations`. That's a special Volto
   location. Components should be worked on in `src/components`. Only components
   that override builtin Volto components need to be placed in
