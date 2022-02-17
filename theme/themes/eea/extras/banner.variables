@@ -20,7 +20,7 @@
 
 /* Title */
 @titleFontWeight           : @bold;
-@titleMaxWidth             : 650px;
+@titleMaxWidth             : 100%;
 @mobileTitleFontSize       : 1.25rem;
 @tabletTitleFontSize       : 2.25rem;
 @computerTitleFontSize     : 3rem;
