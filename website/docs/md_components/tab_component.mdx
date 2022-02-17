@@ -14,7 +14,10 @@ export function getValues(args) {
   return values;
 }
 
-<Tabs defaultValue="usage" values={getValues(props)}>
+<Tabs
+  defaultValue="usage"
+  values={getValues(props)}
+>
   <TabItem value="usage">{props.usage}</TabItem>
   <TabItem value="showcase">{props.showcase}</TabItem>
   <TabItem value="api">{props.api}</TabItem>

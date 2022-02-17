@@ -3,9 +3,6 @@
 *******************************/
 @dropdownTextColor: #636363;
 
-// Pastanaga variable
-@inputFontWeight: normal;
-
 /*-------------------
        Element
 --------------------*/
@@ -14,9 +11,7 @@
   box-shadow @defaultDuration @defaultEasing,
   width @defaultDuration @defaultEasing
 ;
-@borderRadius: @defaultBorderRadius;
-@borderWidth: 1px;
-@border: @borderWidth solid @midGray;
+@borderRadius: 0;
 
 @raisedShadow: 0px 2px 3px 0px @borderColor;
 

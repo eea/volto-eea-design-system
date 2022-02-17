@@ -1,132 +1,34 @@
 /*******************************
          Theme Overrides
 *******************************/
+
 @font-face {
-  font-display: swap;
   font-family: 'Checkbox';
   src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBD8AAAC8AAAAYGNtYXAYVtCJAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5Zn4huwUAAAF4AAABYGhlYWQGPe1ZAAAC2AAAADZoaGVhB30DyAAAAxAAAAAkaG10eBBKAEUAAAM0AAAAHGxvY2EAmgESAAADUAAAABBtYXhwAAkALwAAA2AAAAAgbmFtZSC8IugAAAOAAAABknBvc3QAAwAAAAAFFAAAACAAAwMTAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADoAgPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6AL//f//AAAAAAAg6AD//f//AAH/4xgEAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAEUAUQO7AvgAGgAAARQHAQYjIicBJjU0PwE2MzIfAQE2MzIfARYVA7sQ/hQQFhcQ/uMQEE4QFxcQqAF2EBcXEE4QAnMWEP4UEBABHRAXFhBOEBCoAXcQEE4QFwAAAAABAAABbgMlAkkAFAAAARUUBwYjISInJj0BNDc2MyEyFxYVAyUQEBf9SRcQEBAQFwK3FxAQAhJtFxAQEBAXbRcQEBAQFwAAAAABAAAASQMlA24ALAAAARUUBwYrARUUBwYrASInJj0BIyInJj0BNDc2OwE1NDc2OwEyFxYdATMyFxYVAyUQEBfuEBAXbhYQEO4XEBAQEBfuEBAWbhcQEO4XEBACEm0XEBDuFxAQEBAX7hAQF20XEBDuFxAQEBAX7hAQFwAAAQAAAAIAAHRSzT9fDzz1AAsEAAAAAADRsdR3AAAAANGx1HcAAAAAA7sDbgAAAAgAAgAAAAAAAAABAAADwP/AAAAEAAAAAAADuwABAAAAAAAAAAAAAAAAAAAABwQAAAAAAAAAAAAAAAIAAAAEAABFAyUAAAMlAAAAAAAAAAoAFAAeAE4AcgCwAAEAAAAHAC0AAQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAOAK4AAQAAAAAAAQAIAAAAAQAAAAAAAgAHAGkAAQAAAAAAAwAIADkAAQAAAAAABAAIAH4AAQAAAAAABQALABgAAQAAAAAABgAIAFEAAQAAAAAACgAaAJYAAwABBAkAAQAQAAgAAwABBAkAAgAOAHAAAwABBAkAAwAQAEEAAwABBAkABAAQAIYAAwABBAkABQAWACMAAwABBAkABgAQAFkAAwABBAkACgA0ALBDaGVja2JveABDAGgAZQBjAGsAYgBvAHhWZXJzaW9uIDIuMABWAGUAcgBzAGkAbwBuACAAMgAuADBDaGVja2JveABDAGgAZQBjAGsAYgBvAHhDaGVja2JveABDAGgAZQBjAGsAYgBvAHhSZWd1bGFyAFIAZQBnAHUAbABhAHJDaGVja2JveABDAGgAZQBjAGsAYgBvAHhGb250IGdlbmVyYXRlZCBieSBJY29Nb29uLgBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)
     format('truetype');
 }
 
-//Ckeckbox
-.ui.checkbox.eea-checkbox label {
-  font-family: @pageFont;
-  font-size: @fontSize;
+/* Checkmark */
+.ui.checkbox label:after,
+.ui.checkbox .box:after {
+  font-family: 'Checkbox';
 }
 
-.ui.checkbox.eea-checkbox label {
-  &:before {
-    border: 2px solid @oldSilver !important;
-    border-radius: @defaultBorderRadius;
-    box-shadow: none;
-  }
+/* Checked */
+.ui.checkbox input:checked ~ .box:after,
+.ui.checkbox input:checked ~ label:after {
+  content: '\e800';
 }
 
-.ui.checkbox.eea-checkbox {
-  margin-bottom: @bottomMargin;
-
-  input {
-    &:checked ~ label {
-      &:after {
-        background-color: @primaryColor;
-        color: @white;
-      }
-    }
-  }
+/* Indeterminate */
+.ui.checkbox input:indeterminate ~ .box:after,
+.ui.checkbox input:indeterminate ~ label:after {
+  content: '\e801';
+  font-size: @12px;
 }
 
-/* Helper text for disabled element */
-.ui.disabled.checkbox.eea-checkbox + label,
-.ui.disabled.radio.checkbox.eea-radio + label {
-  opacity: @disabledCheckboxOpacity;
-}
-
-.ui.checkbox {
-  input {
-    &:checked ~ label {
-      &:after {
-        color: @white !important;
-      }
-    }
-  }
-}
-
-//Error Checkbox
-.error .ui.checkbox.eea-checkbox {
-  input {
-    &:checked ~ label {
-      &:after {
-        background-color: @negativeColor;
-        color: @white;
-      }
-    }
-  }
-}
-
-//Radio Button
-.ui.radio.checkbox.eea-radio label {
-  font-family: @pageFont;
-  font-size: @fontSize;
-}
-
-.ui.radio.checkbox.eea-radio label {
-  &:before {
-    border: 2px solid @oldSilver;
-    box-shadow: none;
-  }
-}
-
-.ui.radio.checkbox.eea-radio &:checked ~ label {
-  &:before {
-    border: 2px solid @primaryColor;
-    box-shadow: none;
-  }
-}
-
-.ui.radio.checkbox.eea-radio {
-  margin-bottom: @bottomMargin;
-
-  input {
-    &:checked ~ label {
-      &:after {
-        border: 2px solid @primaryColor;
-        background-color: @primaryColor;
-        color: @white;
-      }
-    }
-  }
-}
-
-.ui.radio.checkbox {
-  input {
-    &:checked ~ label {
-      &:after {
-        color: @primaryColor !important;
-      }
-    }
-  }
-}
-
-.ui.radio.checkbox input:focus:checked ~ .box:after,
-.ui.radio.checkbox input:focus:checked ~ label:after {
-  background-color: @primaryColor !important;
-}
-
-//Error Radio Button
-.error .ui.radio.checkbox {
-  input {
-    &:checked ~ label {
-      &:after {
-        border: 2px solid @negativeColor !important;
-        background-color: @negativeColor !important;
-      }
-    }
-  }
-}
-
-.error .checkbox:not(.toggle):not(.slider) .box:before,
-.error .checkbox:not(.toggle):not(.slider) label:before,
-.error .field .checkbox:not(.toggle):not(.slider) .box:before,
-.error .field .checkbox:not(.toggle):not(.slider) label:before {
-  border-color: @negativeColor !important;
-}
+/*  UTF Reference
+.check:before { content: '\e800'; }
+.dash:before  { content: '\e801'; }
+.plus:before { content: '\e802'; }
+*/

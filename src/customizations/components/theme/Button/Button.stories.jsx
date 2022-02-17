@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Icon, Segment } from 'semantic-ui-react';
+import { Button, Icon } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Button',
@@ -10,182 +10,67 @@ export default {
     },
   },
   argTypes: {
-    label: { description: 'button label' },
-    disabled: {
-      description: 'button disabled',
-      table: {
-        defaultValue: {
-          summary: 'false',
-        },
-      },
-    },
     animated: {
       options: [false, true, 'fade', 'vertical'],
       control: { type: 'inline-radio' },
     },
     variant: {
-      options: ['default', 'eeaPrimaryButton', 'eeaSecondaryButton'],
+      options: ['default', 'primary', 'secondary'],
       control: { type: 'inline-radio' },
     },
   },
 };
 
-//Primary button
-export const Primary = (args) => {
-  return (
-    <Button primary disabled={args.disabled}>
-      {args.label}
-    </Button>
-  );
-};
-Primary.args = {
-  label: 'Primary Button',
-  disabled: false,
-};
-Primary.parameters = {
-  controls: { exclude: ['animated', 'variant'] },
-  hideNoControlsWarning: true,
-};
-
-//secondary Button
-export const Secondary = (args) => {
-  return (
-    <Button secondary disabled={args.disabled}>
-      {args.label}
-    </Button>
-  );
-};
-Secondary.args = {
-  label: 'Secondary Button',
-  disabled: false,
-};
-Secondary.parameters = {
-  controls: { exclude: ['animated', 'variant'] },
-  hideNoControlsWarning: true,
-};
-
-//Secondary inverted button
-export const SecondaryInverted = (args) => {
-  return (
-    <Segment inverted compact>
-      <Button className="eea-button-white" secondary disabled={args.disabled}>
-        {args.label}
+function ButtonContent(animated, variant, label, icon, content) {
+  if (animated) {
+    return (
+      <Button animated={animated} className={variant}>
+        <Button.Content visible>
+          {label} {animated}
+        </Button.Content>
+        <Button.Content hidden>
+          <Icon name="arrow right" />
+        </Button.Content>
       </Button>
-    </Segment>
-  );
+    );
+  } else if (!animated && icon) {
+    return (
+      <Button
+        className={variant}
+        content="Like"
+        icon="heart"
+        label={{ as: 'a', basic: true, content: content }}
+        labelPosition="right"
+      />
+    );
+  } else {
+    return <Button className={variant}>{label}</Button>;
+  }
+}
+
+export const Default = (args) => {
+  return <Button>Default</Button>;
 };
-SecondaryInverted.args = {
-  label: 'Secondary Button',
-  disabled: false,
-};
-SecondaryInverted.parameters = {
+Default.args = {};
+Default.parameters = {
   controls: { exclude: ['animated', 'variant'] },
   hideNoControlsWarning: true,
 };
 
-//Call to action button
-export const CallToAction = (args) => {
-  return (
-    <Button
-      icon
-      labelPosition="right"
-      className="eea-button-action"
-      disabled={args.disabled}
-    >
-      {args.label}
-      <Icon name={args.icon} />
-    </Button>
+export const Playground = (args) => {
+  return ButtonContent(
+    args.animated,
+    args.variant,
+    args.label,
+    args.icon,
+    args.content,
   );
 };
-CallToAction.args = {
-  label: 'Call to action Button',
-  icon: 'chevron right',
-  disabled: false,
-};
-CallToAction.parameters = {
-  controls: { exclude: ['animated', 'variant'] },
-  hideNoControlsWarning: true,
-};
-CallToAction.argTypes = {
-  label: {
-    name: 'button label',
-    type: { name: 'string', required: true },
-  },
-  icon: {
-    name: 'button icon',
-    type: { name: 'string', required: false },
-    defaultValue: 'chevron  right',
-    options: [
-      'chevron right',
-      'arrow right',
-      'sign-in',
-      'sign-out',
-      'play',
-      'stop',
-      'pause',
-      'download',
-      'upload',
-      'print',
-      'copy',
-      'edit',
-      'ellipsis',
-    ],
-    control: { type: 'select' },
-    description: 'button icon',
-    table: {
-      defaultValue: { summary: 'chevron right' },
-    },
-  },
-};
 
-//Text Button
-export const Text = (args) => {
-  return (
-    <Button className="eea-button-text" disabled={args.disabled}>
-      {args.label}
-    </Button>
-  );
+Playground.args = {
+  label: 'Playground',
+  animated: false,
+  variant: 'default',
+  icon: false,
+  content: '2048',
 };
-Text.args = {
-  label: 'Text Button',
-  disabled: false,
-};
-Text.parameters = {
-  controls: { exclude: ['animated', 'variant'] },
-  hideNoControlsWarning: true,
-};
-
-//Cancel Button
-export const Cancel = (args) => {
-  return (
-    <Button className="eea-button-cancel" disabled={args.disabled}>
-      {args.label}
-    </Button>
-  );
-};
-Cancel.args = {
-  label: 'Cancel Button',
-  disabled: false,
-};
-Cancel.parameters = {
-  controls: { exclude: ['animated', 'variant'] },
-  hideNoControlsWarning: true,
-};
-
-// export const Playground = (args) => {
-//   return ButtonContent(
-//     args.animated,
-//     args.variant,
-//     args.label,
-//     args.icon,
-//     args.content,
-//   );
-// };
-
-// Playground.args = {
-//   label: 'Playground',
-//   animated: false,
-//   variant: 'default',
-//   icon: false,
-//   content: '2048',
-// };

@@ -6,19 +6,17 @@
        Element
 --------------------*/
 
-@poppupPadings: @relative12px @relative30px;
-
 @zIndex: 1900;
 @background: @white;
 
 @maxWidth: 250px;
 @borderColor: @solidBorderColor;
 @borderWidth: 1px;
-@boxShadow: @eeaGlobalShadow;
+@boxShadow: @floatingShadow;
 @color: @textColor;
 
-@verticalPadding: 0.75rem;
-@horizontalPadding: 1.875rem;
+@verticalPadding: 0.833em;
+@horizontalPadding: 1em;
 @fontWeight: @normal;
 @fontStyle: @normal;
 @borderRadius: @defaultBorderRadius;

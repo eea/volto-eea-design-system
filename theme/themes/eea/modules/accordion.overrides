@@ -2,81 +2,25 @@
          Theme Overrides
 *******************************/
 
-div.ui.accordion.eea-accordion .eea-accordion-item {
-  margin: @itemsMargin;
-  font-family: @titleFont;
-  transition: @styledTitleTransition;
-
-  .title {
-    display: flex;
-    align-items: center;
-    padding: 10px 19px;
-    background-color: @backrgoundColor;
-    font-family: @titleFont;
-    font-size: @h3;
-
-    i.icon {
-      display: flex;
-      width: 31px;
-      height: 31px;
-      align-items: center;
-      justify-content: center;
-      margin-right: 18px;
-      color: @iconColor;
-      font-size: 25px !important;
-      transition: @iconTransition;
-    }
-  }
-
-  div.content {
-    padding: 12px 24px;
-    border-top: @contentBorder;
-    background: @contentBckground;
-    font-family: @titleFont;
-    font-size: @fontSize;
-  }
+/* Dropdown Icon */
+.ui.accordion .title .dropdown.icon,
+.ui.accordion .accordion .title .dropdown.icon {
+  float: right;
 }
 
-/* Active accordion arrow */
-.ui.accordion.eea-accordion .eea-accordion-item .active.title i.icon {
-  transform: rotate(180deg);
+.ui.accordion .title .dropdown.icon:before,
+.ui.accordion .accordion .title .dropdown.icon:before {
+  content: '\e904';
 }
 
-/* Accordion content padding for unstyled */
-div.ui.accordion.eea-accordion:not(.styled)
-  .accordion
-  .title
-  ~ .content:not(.ui),
-div.ui.accordion.eea-accordion:not(.styled) .title ~ .content:not(.ui) {
-  padding: 12px 24px;
+.ui.accordion .active.title .dropdown.icon:before,
+.ui.accordion .accordion .active.title .dropdown.icon:before {
+  content: '\e9ce';
 }
 
-@media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {
-  div.ui.accordion.eea-accordion .eea-accordion-item div.content,
-  div.ui.accordion.eea-accordion:not(.styled)
-    .accordion
-    .title
-    ~ .content:not(.ui),
-  div.ui.accordion.eea-accordion:not(.styled) .title ~ .content:not(.ui) {
-    padding: 12px 34px;
-  }
-
-  div.ui.accordion.eea-accordion .eea-accordion-item .title {
-    padding: 11px 25px;
-  }
-}
-
-@media only screen and (min-width: @tabletBreakpoint + 1) {
-  div.ui.accordion.eea-accordion .eea-accordion-item div.content,
-  div.ui.accordion.eea-accordion:not(.styled)
-    .accordion
-    .title
-    ~ .content:not(.ui),
-  div.ui.accordion.eea-accordion:not(.styled) .title ~ .content:not(.ui) {
-    padding: 12px 74px;
-  }
-
-  div.ui.accordion.eea-accordion .eea-accordion-item .title {
-    padding: 12px 25px;
-  }
+.ui.styled.accordion .title,
+.ui.styled.accordion .accordion .title {
+  background: @darkWhite;
+  font-size: @12px;
+  text-transform: uppercase;
 }

@@ -2,41 +2,8 @@
          Theme Overrides
 *******************************/
 
-.ui.input {
-  max-width: @inputMaxWidth !important;
-}
-
-.ui.input.fluid {
-  max-width: 100% !important;
-}
-
 .ui.input input {
-  height: auto !important;
-  border: @border !important;
-  border-radius: @borderRadius !important;
-  font-family: @pageFont !important;
   font-weight: @inputFontWeight;
-
-  &:active,
-  &:focus {
-    border: 2px solid @deepBlue !important;
-  }
-}
-
-.ui.input.error input {
-  border: 2px solid @negativeBorderColor !important;
-}
-
-textarea {
-  border: @border !important;
-  border-radius: @borderRadius !important;
-  font-family: @pageFont !important;
-  font-weight: @inputFontWeight;
-
-  &:active,
-  &:focus {
-    border: 2px solid @deepBlue !important;
-  }
 }
 
 .inline.field {

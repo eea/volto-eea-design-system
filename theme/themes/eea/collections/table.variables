@@ -2,10 +2,6 @@
              Table
 *******************************/
 
-
-
-@tableBorderRadius: @defaultBorderRadius;
-
 /*-------------------
        Element
 --------------------*/
@@ -42,12 +38,12 @@
 @cellBorder: 1px solid @internalBorderColor;
 
 /* Table Header */
-@headerBorder: 1px solid @secondaryColor;
+@headerBorder: 1px solid @internalBorderColor;
 @headerDivider: none;
-@headerBackground: @silverGray;
+@headerBackground: @headerWhite;
 @headerAlign: inherit;
 @headerVerticalAlign: inherit;
-@headerColor: @deepBlue;
+@headerColor: @lightGrey;
 @headerVerticalPadding: @relativeSmall;
 @headerHorizontalPadding: @cellHorizontalPadding;
 @headerFontStyle: none;

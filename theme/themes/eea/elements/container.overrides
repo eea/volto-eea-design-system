@@ -1,33 +1,16 @@
 /*******************************
          Theme Overrides
 *******************************/
+@maxWidth: 1400px;
 
 /* All Sizes */
-div.ui.container {
+.ui.container {
   display: block;
-  width: 100% !important;
+  width: auto !important;
   max-width: @maxWidth !important;
-  padding-right: @mobilePadding;
-  padding-left: @mobilePadding;
-
-  margin: auto !important;
   transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-}
-
-@media only screen and (min-width: @mobileBreakpoint + 1) and (max-width: @tabletBreakpoint) {
-  div.ui.container {
-    padding-right: @tabletPadding;
-    padding-left: @tabletPadding;
-  }
-}
-
-@media only screen and (min-width: @tabletBreakpoint + 1) {
-  div.ui.container {
-    padding-right: @desktopPadding;
-    padding-left: @desktopPadding;
-  }
 }
 
 .contentWidth(@offset) {

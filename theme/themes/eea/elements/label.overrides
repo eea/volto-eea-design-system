@@ -3,17 +3,7 @@
 *******************************/
 
 .ui.label {
-  font-size: @labelFontSize;
-}
-
-.ui.label.medium {
-  background-color: @mediumImportanceBackground;
-}
-
-.ui.label.high {
-  background-color: @highImportanceBackground;
-}
-
-.ui.label.highlight {
-  background-color: @highlightImportanceBackground;
+  .icon.right {
+    margin: 0 0 0 0.75em;
+  }
 }

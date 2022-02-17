@@ -2,128 +2,15 @@
          Theme Overrides
 *******************************/
 
-div.ui.message {
-  padding: @padding;
-  background: @background;
-  border-radius: @borderRadius;
-  box-shadow: @boxShadow;
-
-  .header,
-  .header:not(.ui) {
-    font-family: @pageFont;
-    font-size: @headerFontSize;
-    font-weight: @headerFontWeight;
-  }
-
-  p {
-    margin-top: 0;
-    color: @messageColor;
-    font-size: @messageFontSize;
-    font-weight: @headerFontWeight;
-  }
+.ui.message .content {
+  font-size: @12px;
 }
 
-/* Icon next to header */
-div.ui.icon.message {
-  align-items: @iconAlign;
+.ui.icon.message > .icon:not(.close) {
+  align-self: flex-start;
+  margin-top: -7px;
 }
 
-div.ui.icon.message > .icon,
-div.ui.icon.message > .icon:not(.close) {
-  margin-top: 2px;
-  font-size: @iconSize;
-}
-
-div.ui.message .content {
-  font-size: @messageFontSize;
-}
-
-div.ui.attached.message {
+.ui.attached.message {
   margin: 0;
-}
-
-/* Success message */
-div.ui.attached.success.message,
-div.ui.success.message {
-  background: @successBackground;
-  box-shadow: @successBoxShadow;
-
-  .header,
-  .header:not(.ui) {
-    color: @successColor;
-  }
-
-  .content p {
-    color: @successColor;
-    font-weight: @headerFontWeight;
-  }
-
-  .icon,
-  .icon:not(.close) {
-    color: @successColor;
-  }
-}
-
-/* Warning Message */
-div.ui.warning.message {
-  background: @warningBackground;
-  box-shadow: @warningBoxShadow;
-
-  .header,
-  .header:not(.ui) {
-    color: @warningColor;
-  }
-
-  .content p {
-    color: @warningColor;
-    font-weight: @headerFontWeight;
-  }
-
-  .icon,
-  .icon:not(.close) {
-    color: @warningColor;
-  }
-}
-
-/* Error Message */
-div.ui.error.message,
-div.ui.negative.message {
-  background: @errorBackground;
-  box-shadow: @errorBoxShadow;
-
-  .header,
-  .header:not(.ui) {
-    color: @errorColor;
-  }
-
-  .content p {
-    color: @errorColor;
-    font-weight: @headerFontWeight;
-  }
-
-  .icon,
-  .icon:not(.close) {
-    color: @errorColor;
-  }
-}
-
-/* Info message */
-div.ui.info.message {
-  background: @infoBackground;
-  box-shadow: @infoBoxShadow;
-
-  .header,
-  .header:not(.ui) {
-    color: @infoColor;
-  }
-
-  .content p {
-    color: @infoColor;
-    font-weight: @headerFontWeight;
-  }
-
-  .icon,
-  .icon:not(.close) {
-    color: @infoColor;
-  }
 }

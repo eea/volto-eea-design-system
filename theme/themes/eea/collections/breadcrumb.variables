@@ -6,8 +6,6 @@
      Breadcrumb
 --------------------*/
 
-@linkSize: 12px;
-
 @verticalMargin: 0em;
 @display: inline-block;
 @verticalAlign: middle;

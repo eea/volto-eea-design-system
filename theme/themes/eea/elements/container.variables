@@ -6,14 +6,9 @@
        Element
 --------------------*/
 
-//Breakpoints
-@mobile:    ~"(max-width: @mobileBreakpoint)";
-@tablet:    ~"(min-width: @tabletMinBreakpoint) and (max-width: @tabletBreakpoint)";
-@desktop:   ~"(min-width: @computerMinBreakpoint)";
-
 /* Minimum Gutter is used to determine  the maximum container width for a given device */
 
-@maxWidth: 1400px;
+@maxWidth: 100%;
 
 /* Devices */
 @mobileMinimumGutter: 0em;

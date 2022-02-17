@@ -11,7 +11,7 @@
 @firstMargin: 0em 0em (@labelHeight + @verticalSpacing);
 @lastMargin: 0em 0em (@labelHeight);
 
-@background: rgba(0,0,0,.1);
+@background: @strongTransparentBlack;
 @border: none;
 @boxShadow: none;
 @padding: 0em;
@@ -20,8 +20,8 @@
 /* Bar */
 @barPosition: relative;
 @barHeight: 1.75em;
-@barBackground: @secondaryColor;
-@barBorderRadius: @defaultBorderRadius;
+@barBackground: #888888;
+@barBorderRadius: @borderRadius;
 @barTransitionEasing: @defaultEasing;
 @barTransitionDuration: @defaultDuration;
 @barTransition:
@@ -65,12 +65,12 @@
         Types
 --------------------*/
 
-@indicatingFirstColor: @progressBarFrom0to30;
-@indicatingSecondColor: @progressBarFrom30to40;
-@indicatingThirdColor: @progressBarFrom40to60;
-@indicatingFourthColor: @progressBarFrom60to70;
-@indicatingFifthColor: @progressBarFrom70to90;
-@indicatingSixthColor: @progressBarFrom90to100;
+@indicatingFirstColor: #D95C5C;
+@indicatingSecondColor: #EFBC72;
+@indicatingThirdColor: #E6BB48;
+@indicatingFourthColor: #DDC928;
+@indicatingFifthColor: #B4D95C;
+@indicatingSixthColor: #66DA81;
 
 @indicatingFirstLabelColor: @textColor;
 @indicatingSecondLabelColor: @textColor;

@@ -10,7 +10,7 @@
 @borderWidth: 1px;
 @border: @borderWidth solid @borderColor;
 
-@boxShadow: @eeaGlobalShadow;
+@boxShadow: @subtleShadow;
 @verticalPadding: 1em;
 @horizontalPadding: 1em;
 @padding: @verticalPadding @horizontalPadding;
@@ -18,7 +18,7 @@
 @verticalMargin: 1rem;
 @horizontalMargin: 0em;
 @margin: @verticalMargin @horizontalMargin;
-@borderRadius: @defaultBorderRadius;
+@borderRadius: 0;
 
 /*-------------------
        Group
@@ -127,8 +127,8 @@
 @coloredBorderSize: 2px;
 
 /* Ordinality */
-@secondaryBackground: @deepBlue;
-@secondaryColor: @white;
+@secondaryBackground: @tealBackground;
+@secondaryColor: @teal;
 
 @tertiaryBackground:  @midWhite;
 @tertiaryColor: @mutedTextColor;

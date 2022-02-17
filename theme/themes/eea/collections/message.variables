@@ -2,6 +2,7 @@
             Message
 *******************************/
 
+// @textColor
 
 /*-------------------
        Elements
@@ -12,14 +13,17 @@
 @verticalPadding: 1em;
 @horizontalPadding: 1.5em;
 @padding: @verticalPadding @horizontalPadding;
-@background: #F2F2F2;
+@background: #F8F8F9;
 @lineHeightOffset: ((@lineHeight - 1em) / 2);
 
-@borderRadius: @defaultBorderRadius;
+@borderRadius: 0;
 @borderWidth: 0;
 @borderShadow: 0px 0px 0px @borderWidth @strongBorderColor inset;
 @shadowShadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-@boxShadow: none;
+@boxShadow:
+  @borderShadow,
+  @shadowShadow
+;
 
 @transition:
   opacity @defaultDuration @defaultEasing,
@@ -29,7 +33,7 @@
 ;
 
 /* Header */
-@headerFontSize: 13px;
+@headerFontSize: @relativeLarge;
 @headerFontWeight: @bold;
 @headerDisplay: block;
 @headerDistance: 0rem;
@@ -38,9 +42,7 @@
 
 /* Paragraph */
 @messageTextOpacity: 0.85;
-@messageParagraphMargin: 0;
-@messageColor: @black;
-@messageFontSize: 13px;
+@messageParagraphMargin: 0.75em;
 
 /* List */
 @listOpacity: 0.85;
@@ -64,8 +66,7 @@
 --------------------*/
 
 /* Icon Message */
-@iconAlign: flex-start;
-@iconSize: 1rem;
+@iconSize: 2em;
 @iconOpacity: 0.8;
 @iconContentDistance: 0rem;
 @iconVerticalAlign: top;
@@ -136,18 +137,23 @@
   0px 0px 0px @borderWidth @positiveBorderColor inset,
   @shadowShadow
 ;
-
-@negativeBoxShadow: none;
-@infoBoxShadow: none;
-@infoBackground: #EEF2FA;
-@infoColor: #2E5AAC;
-@warningBoxShadow: none;
-@warningBackground: #FFF4EC;
-@warningColor: #B95000;
-@errorBoxShadow: none;
-@errorBackground: #FEEFEF;
-@errorColor: #DA1414;
-@successBoxShadow: none;
-@successBackground: #EDF9F0;
-@successColor: #287D3C;
-
+@negativeBoxShadow:
+  0px 0px 0px @borderWidth @negativeBorderColor inset,
+  @shadowShadow
+;
+@infoBoxShadow:
+  0px 0px 0px @borderWidth @infoBorderColor inset,
+  @shadowShadow
+;
+@warningBoxShadow:
+  0px 0px 0px @borderWidth @warningBorderColor inset,
+  @shadowShadow
+;
+@errorBoxShadow:
+  0px 0px 0px @borderWidth @errorBorderColor inset,
+  @shadowShadow
+;
+@successBoxShadow:
+  0px 0px 0px @borderWidth @successBorderColor inset,
+  @shadowShadow
+;

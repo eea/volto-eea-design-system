@@ -2,43 +2,6 @@
          Theme Overrides
 *******************************/
 
-.ui.list .item {
-  font-family: @pageFont;
-  font-size: @fontSize;
-}
-
-.ui.list > .item:before {
-  font-weight: @itemHeaderFontWeight;
-}
-
-//Description List
-div.ui.list .list > .item .description,
-div.ui.list > .item .description {
-  margin-top: @relative8px;
-}
-
-div.ui.list .list > .item i.icon,
-div.ui.list > .item i.icon {
-  color: @bulletColor;
-}
-
-//Ordered list
-div.ui.ordered.list .list > .item:before,
-div.ui.ordered.list > .item:before,
-ol.ui.list li:before {
-  color: @bulletColor;
-}
-
-//Unordered list
-div.ui.bulleted.list .list > .item:before,
-div.ui.bulleted.list .list > a.item:before,
-div.ui.bulleted.list > .item:before,
-div.ui.bulleted.list > a.item:before,
-ul.ui.list li:before {
-  color: @bulletColor;
-  font-size: @bulletSize;
-}
-
 .ui.inverted.list > a.item {
   text-decoration: underline;
 }
