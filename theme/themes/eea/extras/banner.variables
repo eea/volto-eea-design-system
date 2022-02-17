@@ -50,4 +50,4 @@
 // Button Icon
 @bannerActionButtonIconOpacity           : 1;
 @mobileBannerActionButtonMargin          : 0;
-@tabletBannerActionButtonMargin          : 0 5px 5px 0;;
+@tabletBannerActionButtonMargin          : 0 0.313rem 0.313rem 0;
