@@ -11,20 +11,36 @@
 }
 
 .ui.input input {
-  height: auto !important;
+  height: 43px !important;
   border: @border !important;
   border-radius: @borderRadius !important;
   font-family: @pageFont !important;
   font-weight: @inputFontWeight;
+  width: 348px !important;
 
   &:active,
   &:focus {
-    border: 2px solid @deepBlue !important;
+    border: 2px solid @green !important;
+    color: @black !important;
+  }
+}
+
+.required.field {
+  .ui.labeled.input::after {
+    content: "*" !important;
   }
 }
 
 .ui.input.error input {
   border: 2px solid @negativeBorderColor !important;
+}
+
+.ui.labeled.input .ui.label.label {
+  color: @black;
+  background-color: @white;
+  width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 textarea {
