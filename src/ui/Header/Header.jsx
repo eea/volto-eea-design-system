@@ -14,8 +14,6 @@ import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
 import Logo from '../Logo/Logo';
 
-import { Col } from '../Grid/Col';
-
 //import { Logo, Navigation } from '@plone/volto/components';
 
 /**
@@ -186,7 +184,7 @@ class Header extends Component {
     return (
       <div className="eea-header">
         <Header.TopHeader>
-          <Header.TopItem id="eea-official-union">
+          <Header.TopItem className="official-union mobile or lower hidden">
             <Image src={eeaFlag} alt="eea flag"></Image>
 
             <Dropdown
@@ -214,7 +212,7 @@ class Header extends Component {
             </Dropdown>
           </Header.TopItem>
 
-          <Header.TopItem id="eea-official-union-mobile">
+          <Header.TopItem className="official-union mobile only">
             <Image src={eeaFlag} alt="eea flag"></Image>
 
             <Dropdown
@@ -222,10 +220,7 @@ class Header extends Component {
               icon="chevron down"
               aria-label="dropdown"
             >
-              <Dropdown.Menu
-                id="eea-official-union-dropdown-mobile"
-                role="group"
-              >
+              <Dropdown.Menu role="group">
                 <div role="option" aria-selected="false">
                   <p>
                     All official European Union website addresses are in the{' '}
@@ -245,86 +240,54 @@ class Header extends Component {
 
           <Header.TopItem>
             <Dropdown
-              id="eea-top-header-theme-sites"
+              id="theme-sites"
+              className="tablet or lower hidden"
               text="Environmental information systems"
               icon="chevron down"
               aria-label="dropdown"
             >
-              <Dropdown.Menu id="eea-theme-sites-dropdown" role="group">
-                <div id="eea-theme-sites-list">
-                  <div
-                    className="eea-theme-site-item"
-                    role="option"
-                    aria-selected="false"
-                  >
-                    <a href="/#" target="_blank">
+              <Dropdown.Menu role="group">
+                <div className="wrapper">
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       Biodiversity Information System for Europe
                     </a>
-                  </div>
-                  <div
-                    className="eea-theme-site-item"
-                    role="option"
-                    aria-selected="false"
-                  >
-                    <a href="/#" target="_blank">
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       Climate Adaptation Platform
                     </a>
-                  </div>
-                  <div
-                    className="eea-theme-site-item"
-                    role="option"
-                    aria-selected="false"
-                  >
-                    <a href="/#" target="_blank">
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       Copernicus in situ component
                     </a>
-                    <br />
-                  </div>
-                  <div
-                    className="eea-theme-site-item"
-                    role="option"
-                    aria-selected="false"
-                  >
-                    <a href="/#" target="_blank">
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       European Industrial Emissions Portal
                     </a>
-                  </div>
-                  <div
-                    className="eea-theme-site-item"
-                    role="option"
-                    aria-selected="false"
-                  >
-                    <a href="/#" target="_blank">
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       Forest Information System for Europe
                     </a>
-                  </div>
-                  <div
-                    className="eea-theme-site-item"
-                    role="option"
-                    aria-selected="false"
-                  >
-                    <a href="/#" target="_blank">
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       Information Platform for Chemical Monitoring
                     </a>
-                  </div>
-                  <div
-                    className="eea-theme-site-item"
-                    role="option"
-                    aria-selected="false"
-                  >
-                    <a href="/#" target="_blank">
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       Marine Water Information System for Europe
                     </a>
-                  </div>
-                  <div
-                    className="eea-theme-site-item"
-                    role="option"
-                    aria-selected="false"
-                  >
-                    <a href="/#" target="_blank">
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       Fresh Water Information System for Europe
                     </a>
-                  </div>
+                  </Dropdown.Item>
                 </div>
               </Dropdown.Menu>
             </Dropdown>
@@ -360,12 +323,11 @@ class Header extends Component {
 
         <Header.Main>
           <Container>
-            <Grid.Row>
-              <Col desktop="4" tablet="5" mobile="3">
-                {/* <Image src={logo} id="eea-logo" alt="eea logo"></Image> */}
-                <Logo id="eea-logo"></Logo>
-              </Col>
-              <Col desktop="8" tablet="3" mobile="1">
+            <Grid>
+              <Grid.Column mobile={8} tablet={8} computer={4}>
+                <Logo id="logo"></Logo>
+              </Grid.Column>
+              <Grid.Column mobile={4} tablet={4} computer={8}>
                 <div className="eea-main-header-menu">
                   {!this.state.activeSearch && !this.state.activeMenu && (
                     <Menu className="eea-main-menu" text>
@@ -424,8 +386,8 @@ class Header extends Component {
                     <span></span>
                   </div>
                 </div>
-              </Col>
-            </Grid.Row>
+              </Grid.Column>
+            </Grid>
           </Container>
           {this.state.activeSearch && <HeaderSearchPopUp></HeaderSearchPopUp>}
           {this.state.activeMenu && <HeaderMenuPopUp></HeaderMenuPopUp>}
@@ -444,7 +406,7 @@ const TopHeader = (props) => (
 Header.TopHeader = TopHeader;
 
 const TopItem = (props) => (
-  <div className="eea-top-header-item" id={props.id}>
+  <div className={`eea-top-header-item ${props.className}`} id={props.id}>
     {props.children}
   </div>
 );

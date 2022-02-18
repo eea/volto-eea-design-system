@@ -8,7 +8,7 @@ The blockquotes component is used to capture users' attention of an excerpt, tes
 
 ### Don'ts
 
-- do not apply more than 2 blockquotes components in the webpage
+- do not apply more than two blockquotes components on the webpage
 - for the image variant, do not use a photoshopped composition of images
 
 ### When to use
@@ -17,4 +17,4 @@ The blockquotes component is used to capture users' attention of an excerpt, tes
 
 ### When not to use
 
-- for the purpose of emphasising text style
+- to emphasize text style

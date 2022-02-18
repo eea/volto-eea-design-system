@@ -16,7 +16,7 @@
 @primaryButtonColorHover: @darkMidnightBlue;
 
 /* Secondary Button */
-@secondaryButtonBackrgound: transparent;
+@secondaryButtonBackground: transparent;
 @secondaryButtonColor: @white;
 @secondaryButtonColorHover : @darkMidnightBlue;
 @secondaryBorder: @buttonBorder @primaryColor;
@@ -28,6 +28,14 @@
 
 /* Text Button */
 @textButtonBackground: transparent;
+
+/* Search Button */
+@searchButtonBackground: transparent;
+@searchButtonColor: @white;
+@searchButtonFontSize: 1.125rem;
+@searchButtonBorderRadius: 0.625rem;
+@searchButtonIconLeft: 1.25rem;
+@searchButtonIconOpacity: 0.625rem;
 
 @verticalMargin: 0em;
 @horizontalMargin: 0.25em;

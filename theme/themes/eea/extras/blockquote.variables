@@ -2,19 +2,26 @@
             Blockquote
 *******************************/
 /* Body */
-@blockquoteBorderLeft : 10px solid @secondaryColor;
-@childrenBorderLeft   : none;
+@mobileBlockquoteBorderLeft : @5px solid @secondaryColor;
+@tabletBlockquoteBorderLeft : @10px solid @secondaryColor;
+@childrenBorderLeft         : none;
 
 /* Quote */
-@quoteColor      : @secondaryColor;
-@quoteMargin     : @relative12px @relative30px;
-@quoteGap        : @relative12px;
-@quoteColor      : @japaneseIndigo;
-@quoteFontSize   : @h5;
-@quoteFontWeight : 700; 
+@quoteColor            : @secondaryColor;
+@mobileQuoteMargin     : 0.75rem 0.625rem;
+@tabletQuoteMargin     : 0.75rem 1rem;
+@computerQuoteMargin   : 0.75rem 1.25rem;
+@quoteGap              : 0.75rem;
+@quoteColor            : @japaneseIndigo;
+@mobileQuoteFontSize   : 0.688rem;
+@tabletQuoteFontSize   : @h6;
+@computerQuoteFontSize : @h5;
+@quoteFontWeight       : 700; 
 
 /* Meta */
-@metaMargin    : 0;
-@metaWeight    : 400;
-@metaFontSize  : @h5;
-@metaAlignSelf : start;
+@metaMargin           : 0;
+@metaWeight           : 400;
+@mobileMetaFontSize   : 0.688rem;
+@tabletMetaFontSize   : @h6;
+@computerMetaFontSize : @h5;
+@metaAlignSelf        : start;

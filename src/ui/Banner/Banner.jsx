@@ -5,15 +5,15 @@ import PropTypes from 'prop-types';
 Banner.propTypes = {
   title: PropTypes.string,
   info: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.bool,
 };
 
-function Banner({ image, children }) {
+function Banner({ image_url, image, children }) {
   return (
     <div className="eea-page-banner">
       <div
-        className={image ? 'image' : null}
-        style={{ backgroundImage: `url(${image})` }}
+        className="image"
+        style={image ? { backgroundImage: `url(${image_url})` } : {}}
       ></div>
       <div className="gradient">
         <Container>{children}</Container>
@@ -24,8 +24,8 @@ function Banner({ image, children }) {
 
 Banner.Action = function ({ id, title, icon, onClick, className }) {
   return (
-    <div className="actions">
-      <Button className={className} basic onClick={onClick}>
+    <div className="action">
+      <Button className={className} basic inverted onClick={onClick}>
         <Icon name={icon}></Icon>
         <span className="mobile hidden">{title}</span>
       </Button>
@@ -40,7 +40,7 @@ Banner.Content = ({ children, actions }) => {
         <Grid.Column mobile={10} tablet={9} computer={9}>
           {children}
         </Grid.Column>
-        <Grid.Column mobile={2} tablet={3} computer={3}>
+        <Grid.Column mobile={2} tablet={3} computer={3} className="actions">
           {actions}
         </Grid.Column>
       </Grid>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from './Banner';
+// eslint-disable-next-line import/no-unresolved
 import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/banner.png';
 
 export default {
@@ -31,7 +32,7 @@ export default {
 };
 
 const Template = (args) => (
-  <Banner {...args} image={args.image ? imgUrl : null}>
+  <Banner {...args} image_url={args.image ? imgUrl : null}>
     <Banner.Content
       actions={
         <>
