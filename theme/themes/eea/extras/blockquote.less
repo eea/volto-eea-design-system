@@ -8,22 +8,45 @@
 *******************************/
 
 .eea.blockquote {
-  border-left: @blockquoteBorderLeft;
+  border-left: @mobileBlockquoteBorderLeft;
 
   .quote {
     display: flex;
     flex-direction: column;
-    margin: @quoteMargin;
+    margin: @mobileQuoteMargin;
     gap: @quoteGap;
     color: @quoteColor;
-    font-size: @quoteFontSize;
+    font-size: @mobileQuoteFontSize;
     font-weight: @quoteFontWeight;
 
     .meta {
       margin: @metaMargin;
-      font-size: @metaFontSize;
+      font-size: @mobileMetaFontSize;
       font-weight: @metaWeight;
       align-self: @metaAlignSelf;
+    }
+  }
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .eea.blockquote {
+    border-left: @tabletBlockquoteBorderLeft;
+    .quote {
+      margin: @tabletQuoteMargin;
+      font-size: @tabletQuoteFontSize;
+      .meta {
+        font-size: @tabletMetaFontSize;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  .eea.blockquote .quote {
+    margin: @computerQuoteMargin;
+    font-size: @computerQuoteFontSize;
+    .meta {
+      font-size: @computerMetaFontSize;
     }
   }
 }
