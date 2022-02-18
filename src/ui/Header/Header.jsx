@@ -14,8 +14,6 @@ import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
 import Logo from '../Logo/Logo';
 
-//import { Logo, Navigation } from '@plone/volto/components';
-
 /**
  * Header component class.
  * @class Header
@@ -29,7 +27,10 @@ class Header extends Component {
    */
   static propTypes = {
     token: PropTypes.string,
-    pathname: PropTypes.string.isRequired,
+    pathname: PropTypes.string,
+    languages: PropTypes.array,
+    linksDropdown: PropTypes.object,
+    menuItems: PropTypes.array,
   };
 
   /**
@@ -121,66 +122,6 @@ class Header extends Component {
   }
 
   render() {
-    const items = [
-      {
-        key: 'item 1',
-        name: 'Item 1',
-        active: false,
-      },
-      {
-        key: 'item 2',
-        name: 'Item 2',
-        active: false,
-      },
-      {
-        key: 'item 3',
-        name: 'Item 3',
-        active: false,
-      },
-      {
-        key: 'item 4',
-        name: 'Item 4',
-        active: false,
-      },
-      {
-        key: 'item 5',
-        name: 'Item 5',
-        active: false,
-      },
-    ];
-
-    const languagesList = [
-      { name: 'Albanian', code: 'sq' },
-      { name: 'Български', code: 'bg' },
-      { name: 'Bosnian', code: 'bs' },
-      { name: 'čeština', code: 'cs' },
-      { name: 'Hrvatski', code: 'hr' },
-      { name: 'dansk', code: 'da' },
-      { name: 'Nederlands', code: 'nl' },
-      { name: 'ελληνικά', code: 'el' },
-      { name: 'English', code: 'en' },
-      { name: 'eesti', code: 'et' },
-      { name: 'Suomi', code: 'fi' },
-      { name: 'Français', code: 'fr' },
-      { name: 'Deutsch', code: 'de' },
-      { name: 'magyar', code: 'hu' },
-      { name: 'Íslenska', code: 'is' },
-      { name: 'italiano', code: 'it' },
-      { name: 'Latviešu', code: 'lv' },
-      { name: 'lietuvių', code: 'lt' },
-      { name: 'Macedonian', code: 'mk' },
-      { name: 'Malti', code: 'mt' },
-      { name: 'Norsk', code: 'no' },
-      { name: 'polski', code: 'pl' },
-      { name: 'Português', code: 'pt' },
-      { name: 'Română', code: 'ro' },
-      { name: 'slovenčina', code: 'sk' },
-      { name: 'Slovenščina', code: 'sl' },
-      { name: 'Español', code: 'es' },
-      { name: 'Svenska', code: 'sv' },
-      { name: 'Türkçe', code: 'tr' },
-    ];
-
     return (
       <div className="eea-header">
         <Header.TopHeader>
@@ -238,87 +179,66 @@ class Header extends Component {
             </Dropdown>
           </Header.TopItem>
 
-          <Header.TopItem>
+          {this.props.linksDropdown && (
+            <Header.TopItem>
+              <Dropdown
+                id="theme-sites"
+                className="tablet or lower hidden"
+                text={this.props.linksDropdown.title}
+                icon="chevron down"
+                aria-label="dropdown"
+              >
+                <Dropdown.Menu role="group">
+                  <div className="wrapper">
+                    {this.props.linksDropdown.links.map((item, index) => (
+                      <Dropdown.Item key={index}>
+                        <a
+                          href={item.href}
+                          className="site"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {item.title}
+                        </a>
+                      </Dropdown.Item>
+                    ))}
+                  </div>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Header.TopItem>
+          )}
+
+          {this.props.languages && (
             <Dropdown
-              id="theme-sites"
-              className="tablet or lower hidden"
-              text="Environmental information systems"
-              icon="chevron down"
+              id="eea-top-header-language-dropdown"
+              className="eea-top-header-item"
+              text={`${this.state.language.toUpperCase()}`}
+              icon={
+                <Image
+                  src={globeIcon}
+                  alt="language dropdown globe icon"
+                ></Image>
+              }
               aria-label="dropdown"
             >
-              <Dropdown.Menu role="group">
-                <div className="wrapper">
-                  <Dropdown.Item>
-                    <a href="/#" className="site" target="_blank">
-                      Biodiversity Information System for Europe
-                    </a>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <a href="/#" className="site" target="_blank">
-                      Climate Adaptation Platform
-                    </a>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <a href="/#" className="site" target="_blank">
-                      Copernicus in situ component
-                    </a>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <a href="/#" className="site" target="_blank">
-                      European Industrial Emissions Portal
-                    </a>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <a href="/#" className="site" target="_blank">
-                      Forest Information System for Europe
-                    </a>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <a href="/#" className="site" target="_blank">
-                      Information Platform for Chemical Monitoring
-                    </a>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <a href="/#" className="site" target="_blank">
-                      Marine Water Information System for Europe
-                    </a>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <a href="/#" className="site" target="_blank">
-                      Fresh Water Information System for Europe
-                    </a>
-                  </Dropdown.Item>
-                </div>
+              <Dropdown.Menu>
+                {this.props.languages.map((item, index) => (
+                  <Dropdown.Item
+                    key={index}
+                    text={
+                      <span>
+                        {item.name}
+                        <span className="country-code">
+                          {item.code.toUpperCase()}
+                        </span>
+                      </span>
+                    }
+                    onClick={this.onLanguageSelection}
+                  ></Dropdown.Item>
+                ))}
               </Dropdown.Menu>
             </Dropdown>
-          </Header.TopItem>
-
-          <Dropdown
-            id="eea-top-header-language-dropdown"
-            className="eea-top-header-item"
-            text={`${this.state.language.toUpperCase()}`}
-            icon={
-              <Image src={globeIcon} alt="language dropdown globe icon"></Image>
-            }
-            aria-label="dropdown"
-          >
-            <Dropdown.Menu>
-              {languagesList.map((item, index) => (
-                <Dropdown.Item
-                  key={index}
-                  text={
-                    <span>
-                      {item.name}
-                      <span className="country-code">
-                        {item.code.toUpperCase()}
-                      </span>
-                    </span>
-                  }
-                  onClick={this.onLanguageSelection}
-                ></Dropdown.Item>
-              ))}
-            </Dropdown.Menu>
-          </Dropdown>
+          )}
         </Header.TopHeader>
 
         <Header.Main>
@@ -329,21 +249,23 @@ class Header extends Component {
               </Grid.Column>
               <Grid.Column mobile={4} tablet={4} computer={8}>
                 <div className="eea-main-header-menu">
-                  {!this.state.activeSearch && !this.state.activeMenu && (
-                    <Menu className="eea-main-menu" text>
-                      {items.map((item) => (
-                        <Menu.Item
-                          className="eea-main-menu-item"
-                          name={item.key}
-                          onClick={this.menuOnClick}
-                          active={this.state.activeItem === item.key}
-                          key={item.key}
-                        >
-                          {item.name}
-                        </Menu.Item>
-                      ))}
-                    </Menu>
-                  )}
+                  {!this.state.activeSearch &&
+                    !this.state.activeMenu &&
+                    this.props.menuItems && (
+                      <Menu className="eea-main-menu" text>
+                        {this.props.menuItems.map((item) => (
+                          <Menu.Item
+                            className="eea-main-menu-item"
+                            name={item.key}
+                            onClick={this.menuOnClick}
+                            active={this.state.activeItem === item.key}
+                            key={item.key}
+                          >
+                            {item.name}
+                          </Menu.Item>
+                        ))}
+                      </Menu>
+                    )}
                   {this.state.activeMenu && (
                     <div
                       className="eea-header-burger-action desktop"
