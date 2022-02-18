@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 Banner.propTypes = {
   title: PropTypes.string,
   info: PropTypes.string,
-  image: PropTypes.bool,
+  image: PropTypes.string,
 };
 
 function Banner({ image, children }) {
