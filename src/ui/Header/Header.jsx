@@ -247,48 +247,47 @@ class Header extends Component {
               aria-label="dropdown"
             >
               <Dropdown.Menu role="group">
-                <div className="list">
-                  <div className="site" role="option" aria-selected="false">
-                    <a href="/#" target="_blank">
+                <div className="wrapper">
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       Biodiversity Information System for Europe
                     </a>
-                  </div>
-                  <div className="site" role="option" aria-selected="false">
-                    <a href="/#" target="_blank">
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       Climate Adaptation Platform
                     </a>
-                  </div>
-                  <div className="site" role="option" aria-selected="false">
-                    <a href="/#" target="_blank">
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       Copernicus in situ component
                     </a>
-                    <br />
-                  </div>
-                  <div className="site" role="option" aria-selected="false">
-                    <a href="/#" target="_blank">
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       European Industrial Emissions Portal
                     </a>
-                  </div>
-                  <div className="site" role="option" aria-selected="false">
-                    <a href="/#" target="_blank">
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       Forest Information System for Europe
                     </a>
-                  </div>
-                  <div className="site" role="option" aria-selected="false">
-                    <a href="/#" target="_blank">
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       Information Platform for Chemical Monitoring
                     </a>
-                  </div>
-                  <div className="site" role="option" aria-selected="false">
-                    <a href="/#" target="_blank">
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       Marine Water Information System for Europe
                     </a>
-                  </div>
-                  <div className="site" role="option" aria-selected="false">
-                    <a href="/#" target="_blank">
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <a href="/#" className="site" target="_blank">
                       Fresh Water Information System for Europe
                     </a>
-                  </div>
+                  </Dropdown.Item>
                 </div>
               </Dropdown.Menu>
             </Dropdown>
