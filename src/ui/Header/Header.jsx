@@ -95,7 +95,7 @@ class Header extends Component {
     });
   };
 
-  burgerOnClick = () => {
+  mobileBurgerOnClick = () => {
     if (this.state.activeSearch === true) {
       this.setState({ activeSearch: false });
     }
@@ -107,6 +107,11 @@ class Header extends Component {
       this.setState({ burger: '' });
       this.setState({ activeMenu: false });
     }
+  };
+
+  desktopBurgerOnClick = () => {
+    this.setState({ activeMenu: false });
+    this.setState({ activeItem: '' });
   };
 
   componentDidUpdate() {
@@ -241,64 +246,69 @@ class Header extends Component {
           )}
         </Header.TopHeader>
 
-        <Header.Main>
-          <Container>
-            <Grid>
-              <Grid.Column mobile={8} tablet={8} computer={4}>
-                <Logo id="logo"></Logo>
-              </Grid.Column>
-              <Grid.Column mobile={4} tablet={4} computer={8}>
-                <div className="eea-main-header-menu">
-                  {!this.state.activeSearch &&
-                    !this.state.activeMenu &&
-                    this.props.menuItems && (
-                      <Menu className="eea-main-menu" text>
-                        {this.props.menuItems.map((item) => (
-                          <Menu.Item
-                            className="eea-main-menu-item"
-                            name={item.key}
-                            onClick={this.menuOnClick}
-                            active={this.state.activeItem === item.key}
-                            key={item.key}
-                          >
-                            {item.name}
-                          </Menu.Item>
-                        ))}
-                      </Menu>
-                    )}
-                  {this.state.activeMenu && (
+        <Header.Main
+          activeSearch={this.state.activeSearch}
+          activeMenu={this.state.activeMenu}
+        >
+          <Grid>
+            <Grid.Column mobile={8} tablet={8} computer={4}>
+              <Logo id="logo"></Logo>
+            </Grid.Column>
+            <Grid.Column mobile={4} tablet={4} computer={8}>
+              <div className="eea-main-header-menu">
+                {!this.state.activeSearch &&
+                  !this.state.activeMenu &&
+                  this.props.menuItems && (
+                    <Menu className="eea-main-menu" text>
+                      {this.props.menuItems.map((item) => (
+                        <Menu.Item
+                          className="eea-main-menu-item"
+                          name={item.key}
+                          onClick={this.menuOnClick}
+                          active={this.state.activeItem === item.key}
+                          key={item.key}
+                        >
+                          {item.name}
+                        </Menu.Item>
+                      ))}
+                    </Menu>
+                  )}
+                {this.state.activeMenu && (
+                  <Header.BurgerAction
+                    className="desktop"
+                    onClick={this.desktopBurgerOnClick}
+                  >
+                    <span></span>
+                    <span></span>
+                  </Header.BurgerAction>
+                )}
+                <div className="eea-header-search-action ">
+                  {!this.state.activeSearch ? (
+                    <Image
+                      src={searchIcon}
+                      alt="search icon"
+                      onClick={this.searchOnClick}
+                    ></Image>
+                  ) : (
                     <div
-                      className="eea-header-burger-action desktop"
+                      onClick={this.searchOnClick}
+                      className="eea-header-search-action "
                       role="none"
-                      onClick={() => {
-                        this.setState({ activeMenu: false });
-                        this.setState({ activeItem: '' });
-                      }}
                     >
                       <span></span>
                       <span></span>
                     </div>
                   )}
-                  <div className="eea-header-search-action ">
-                    {!this.state.activeSearch ? (
-                      <Image
-                        src={searchIcon}
-                        alt="search icon"
-                        onClick={this.searchOnClick}
-                      ></Image>
-                    ) : (
-                      <div
-                        onClick={this.searchOnClick}
-                        className="eea-header-search-action "
-                        role="none"
-                      >
-                        <span></span>
-                        <span></span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div
+                </div>
+                <Header.BurgerAction
+                  className={`mobile ${this.state.burger}`}
+                  onClick={this.mobileBurgerOnClick}
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </Header.BurgerAction>
+                {/* <div
                     className={`eea-header-burger-action mobile ${this.state.burger}`}
                     role="none"
                     onClick={this.burgerOnClick}
@@ -306,13 +316,10 @@ class Header extends Component {
                     <span></span>
                     <span></span>
                     <span></span>
-                  </div>
-                </div>
-              </Grid.Column>
-            </Grid>
-          </Container>
-          {this.state.activeSearch && <HeaderSearchPopUp></HeaderSearchPopUp>}
-          {this.state.activeMenu && <HeaderMenuPopUp></HeaderMenuPopUp>}
+                  </div> */}
+              </div>
+            </Grid.Column>
+          </Grid>
         </Header.Main>
       </div>
     );
@@ -335,9 +342,27 @@ const TopItem = (props) => (
 
 Header.TopItem = TopItem;
 
-const Main = (props) => <div className="eea-main-header">{props.children}</div>;
+const Main = (props) => (
+  <div className="eea-main-header">
+    <Container>{props.children}</Container>
+    {props.activeSearch && <HeaderSearchPopUp />}
+    {props.activeMenu && <HeaderMenuPopUp />}
+  </div>
+);
 
 Header.Main = Main;
+
+const BurgerAction = (props) => (
+  <div
+    className={`eea-header-burger-action ${props.className}`}
+    role="none"
+    onClick={props.onClick}
+  >
+    {props.children}
+  </div>
+);
+
+Header.BurgerAction = BurgerAction;
 
 export default connect((state) => ({
   token: state.userSession.token,
