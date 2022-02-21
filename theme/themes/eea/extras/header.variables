@@ -15,6 +15,7 @@
 @tabletPopUpHeight           : calc(100vh - (@tabletTopSectionHeight + @tabletMainSectionHeight));
 @computerPopUpHeight         : calc(100vh - (@computerTopSectionHeight + @computerMainSectionHeight));
 
+
 /* Top */
 @topSectionBackground                 : @silverGray;
 @topSectionItemColor                  : @japaneseIndigo;
@@ -43,6 +44,8 @@
 @tabletOfficialUnionPadding           : 12px;
 @mobileOfficialUnionMaxWidth          : 110px;
 @tabletOfficialUnionMaxWidth          : 373px;
+@mobileOfficialUnionImageWidth        : 10px;
+@tabletOfficialUnionImageWidth        : 17px;
 // Theme Sites
 @themeSitesMenuWidth                  : 210px;
 //@themeSitesMenuSiteMargin           : 5px 0;
@@ -78,3 +81,28 @@
 @mainMenuItemPlaceSelf                : flex-end;
 @mainMenuItemActiveColor              : @secondaryColor;
 @mainMenuItemActiveBorder             : 3px solid @secondaryColor;
+
+/* Mega menu and Search popup */
+@mobilePopupMarginTop   : 50px;
+@tabletPopupMarginTop   : 100px;
+@computerPopupMarginTop : 200px;
+
+/* Mega menu */
+@megaMenuBackgroundGradient: linear-gradient(180deg, @mediumPersianBlue 39.58%, #043570 100%);
+
+/* Menu link and toggle */
+@mobileMegaMenuColor            : @white;
+@megaMenuLinkPadding            : 0 1.25rem;
+@toggleMenuFirstPadding         : 0;
+@toggleMenuSecondPadding        : 0 1.25rem;
+@toggleMenuThirdPadding         : 0 2.5rem;
+@mobileMegaMenuFontSize         : 1.125rem;
+@tabletMegaMenuFontSize         : @h1;
+@computerMegaMenuMarginBottom   : 1rem;
+@computerMegaMenuFirstFontSize  : 3rem;
+@computerMegaMenuSecondFontSize : 2.5rem;
+@computerMegaMenuThirdFontSize  : 2.25rem;
+@mobileMegaMenuLineHeight       : 2.5rem;
+@tabletMegaMenuLineHeight       : 3rem;
+@computerMegaMenuLineHeight     : 4.5rem;
+@megaMenuIconAfterFontSize      : 1.875rem;
