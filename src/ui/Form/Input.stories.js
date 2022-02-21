@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Form } from 'semantic-ui-react';
+import { Input, Form, Message } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Forms/Input',
@@ -29,7 +29,7 @@ export default {
         defaultValue: { summary: ' "" ' },
       },
     },
-    labeltext: {
+    label: {
       description: 'Label text',
       table: {
         type: { summary: 'string' },
@@ -43,24 +43,39 @@ export default {
         defaultValue: { summary: false },
       },
     },
+    required: {
+      description: 'form field is required',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
   },
 };
 
 const Template = (args) => (
   <Form>
-    <Form.Field>
+    <Form.Field required={args.required}>
       <Input {...args} id="temp-id" />
-      <label htmlFor="temp-id">{args.labeltext}</label>
+      {args.error && (
+        <Message
+          negative
+          content="This is a mandatory field"
+          size="mini"
+          icon="exclamation circle"
+        />
+      )}
     </Form.Field>
   </Form>
 );
 
 export const StandardInput = Template.bind({});
 StandardInput.args = {
-  labeltext: 'Input label',
+  label: 'Input label',
   placeholder: 'Placeholder',
   type: 'text',
   fluid: false,
+  required: false,
 };
 
 StandardInput.parameters = {
@@ -72,11 +87,12 @@ StandardInput.parameters = {
 
 export const DisabledInput = Template.bind({});
 DisabledInput.args = {
-  labeltext: 'Input label',
+  label: 'Input label',
   placeholder: 'Placeholder',
   type: 'text',
   disabled: true,
   fluid: false,
+  required: false,
 };
 DisabledInput.argTypes = {
   fluid: {
@@ -105,11 +121,12 @@ DisabledInput.parameters = {
 
 export const LoadingInput = Template.bind({});
 LoadingInput.args = {
-  labeltext: 'Input label',
+  label: 'Input label',
   placeholder: 'Placeholder',
   type: 'text',
   loading: true,
   fluid: false,
+  required: false,
 };
 LoadingInput.argTypes = {
   loading: {
@@ -130,11 +147,12 @@ LoadingInput.parameters = {
 
 export const ErrorInput = Template.bind({});
 ErrorInput.args = {
-  labeltext: 'Input label',
+  label: 'Input label',
   placeholder: 'Placeholder',
   type: 'text',
   error: true,
   fluid: false,
+  required: false,
 };
 ErrorInput.argTypes = {
   error: {

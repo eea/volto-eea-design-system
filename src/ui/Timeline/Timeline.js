@@ -40,7 +40,6 @@ function Timeline({
   );
 
   const left = direction === 'left' ? card : '';
-  const right = direction === 'right' ? card : '';
   const isMobile = window.innerWidth <= 768;
   const iconSize = isMobile ? 'small' : 'large';
   const height = isMobile ? `${lineHeight * 350}px` : `${lineHeight * 250}px`;
@@ -53,8 +52,7 @@ function Timeline({
       />
       <Grid>
         <Grid.Row>
-          <Grid.Column width={2} />
-          <Grid.Column width={5}>{left}</Grid.Column>
+          <Grid.Column width={10}>{left}</Grid.Column>
           <Grid.Column width={2}>
             <Icon
               name={icon}
@@ -68,8 +66,6 @@ function Timeline({
               }}
             />
           </Grid.Column>
-          <Grid.Column width={5}>{right}</Grid.Column>
-          <Grid.Column width={2} />
         </Grid.Row>
       </Grid>
     </div>

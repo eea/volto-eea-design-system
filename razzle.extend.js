@@ -11,6 +11,8 @@ const modify = (config, { target, dev }, webpack) => {
   const themesPath = `${projectRootPath}/node_modules/@eeacms/volto-eea-design-system/theme/themes`;
 
   config.resolve.alias['eea-volto-themes'] = themesPath;
+  config.resolve.alias['ui-theme'] = `${themesPath}/eea/`;
+  config.resolve.alias['ui-assets'] = `${themesPath}/eea/assets`;
 
   return config;
 };

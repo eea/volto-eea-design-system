@@ -39,7 +39,7 @@
 .ui.button.secondary,
 .ui.buttons.secondary {
   border: @buttonBorder @primaryButtonColor;
-  background-color: @secondaryButtonBackrgound;
+  background-color: @secondaryButtonBackground;
   .text-color(@white);
 
   &:hover,
@@ -111,6 +111,32 @@ p.ui.button {
   .icon {
     font-size: 2em;
   }
+}
+
+/* Advanced Search Button */
+.ui.button.search {
+  box-sizing: border-box;
+  border: @buttonBorder @white;
+  background: @searchButtonBackground;
+  border-radius: @searchButtonBorderRadius;
+  color: @searchButtonColor;
+  font-size: @searchButtonFontSize;
+
+  &:active,
+  &:visited,
+  &:focus,
+  &:hover {
+    border: @buttonBorder @white;
+    background: @searchButtonBackground;
+    color: @searchButtonColor;
+  }
+}
+
+.ui.labeled.icon.button.search > .icon {
+  left: @searchButtonIconLeft;
+  background: @searchButtonBackground;
+  font-size: @searchButtonFontSize;
+  opacity: @searchButtonIconOpacity;
 }
 
 .searchbox.field > .ui.action.input > .icon.button {

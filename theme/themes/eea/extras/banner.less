@@ -38,29 +38,35 @@
         font-weight: @metadataFontWeight;
       }
 
-      .actions.mobile.hidden {
-        float: right;
-
-        div {
-          display: flex;
-          margin: 3px 0;
-        }
-      
-        i.icon {
-          margin: 0 5px 5px 0;
-        }
-      }
-
-      .actions.mobile.only {
+      .actions {
         display: flex;
-        align-items: center;
         justify-content: flex-end;
-        margin-top: -15px;
+        align-items: @mobileActionsAlignItems;
+
+        .action {
+          .ui.basic.inverted.button {
+            /* used basic inverted button for minimun overrides on box-shadow and active state background */
+            box-shadow: @bannerActionButtonBoxShadow !important;
+  
+            &:active {
+              background-color: @bannerActionButtonActiveBackgroundColor !important;
+            }
+
+            span {
+              font-size: @tabletBannerActionButtonFontSize;
+            }
+
+            i.icon {
+              opacity: @bannerActionButtonIconOpacity;
+              margin: @mobileBannerActionButtonMargin;
+              font-size: @mobileBannerActionButtonFontSize;
+            }
+          }
+        }
       }
     }
   }
   .image {
-    background-image: @imageURL;
     background-repeat: @imageBackgroundRepeat;
     background-size: @imageBackgroundSize;
     background-position: @imageBackgroundPosition;
@@ -70,14 +76,8 @@
   }
 }
 
-.content .row div {
-  padding: 0;
-}
-
 @media only screen and (min-width: @tabletBreakpoint) {
-
   .eea-page-banner .gradient {
-
     .content {
       padding: @tabletContentPadding;
 
@@ -85,27 +85,29 @@
         font-size: @tabletTitleFontSize;
         font-weight: @titleFontWeight;
         margin: @tabletTitleMargin;
-        line-height: @tabletTitleLineHeight ;
+        line-height: @tabletTitleLineHeight;
       }
 
       .metadata {
         font-size: @tabletMetadataFontSize;
         line-height: @tabletMetadataLineHeight;
       }
+
+      .actions {
+        align-items: @tabletActionsAlignItems;
+        flex-direction: @tabletActionsFlexDirection;
+
+        .action .ui.basic.inverted.button i.icon {
+          margin: @tabletBannerActionButtonMargin;
+          font-size: @tabletBannerActionButtonFontSize;
+        }
+      }
     }
-
-  }
-
-  .content .row {
-    display: flex;
-    align-items: end;
   }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
-
   .eea-page-banner .gradient {
-
     .content {
       padding: @computerContentPadding;
 

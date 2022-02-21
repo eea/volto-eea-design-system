@@ -49,7 +49,7 @@
 .ui.form .ui.input input[type='text'],
 .ui.form .ui.input input[type='file'],
 .ui.form .ui.input input[type='url'] {
-  height: 48px !important;
+  height: 43px !important;
   border-width: 0 0 @1px 0;
   border-radius: 0;
 
