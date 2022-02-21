@@ -8,11 +8,11 @@
 *******************************/
 
 
-.eea-header {
+.eea.header {
   background: @white;
 
   /* Top header section */
-  .eea-top-header {
+  .top.bar {
     display: flex;
     align-items: center;
     height: @mobileTopSectionHeight;
@@ -24,7 +24,7 @@
         justify-content: space-between;
         z-index: 999999;
     }
-    .eea-top-header-item {
+    .item {
         display: flex;
         align-items: center;
         color: @topSectionItemColor;
@@ -42,13 +42,29 @@
         font-weight: @dropdownFontWeight;
 
         .menu {
-            margin-top: @mobileDropdownMenuMarginTop;
-            left: auto;
-            right: 0;
+          margin-top: @mobileDropdownMenuMarginTop;
+          left: @dropdownMenuLeft;
+          right: @dropdownMenuRight;
+
+          .wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: @dropdownMenuWrapperGap;
+            white-space: @dropdownMenuContentWhiteSpace;
+            margin: @dropdownMenuWrapperMargin;
+
+            .item {
+              &:hover {
+                background: @dropdownMenuItemBackgroundColorHover;
+                color: @dropdownMenuItemColorHover;
+                cursor: pointer;
+              }
+            }
+          }
         } 
     }
 
-    /* Official union dropdown */
+    /* Official union dropdowns */
     .official-union {
         display: flex;
         gap: @officialUnionGap;
@@ -56,78 +72,104 @@
     .official-union.mobile.or.lower.hidden {
         .ui.dropdown .menu {
             padding: @tabletOfficialUnionPadding;
-            margin-left: -47px;
           
-            div {
-              max-width: 373px;
+            .content {
+              max-width: @tabletOfficialUnionMaxWidth;
             }
           
             p,
             a {
               font-size: @dropdownFontSize;
               font-weight: @dropdownFontWeight;
-              white-space: pre-wrap;
+              white-space: @dropdownMenuContentWhiteSpace;
             }
         }
     }
     .official-union.mobile.only {
 
-        img {
-          width: 17px;
-        }
+      img {
+        width: 17px;
+      }
         
-        .ui.dropdown {
-            font-size: @mobileTopSectionItemFontSize;
+      .ui.dropdown {
+          font-size: @mobileTopSectionItemFontSize;
 
-            .menu {     
-                margin-left: -30px;
-                padding: @mobileOfficialUnionPadding;
+        .menu {
+            padding: @mobileOfficialUnionPadding;
 
-                div {
-                    max-width: 215px !important; 
+          .content {
+              max-width: @mobileOfficialUnionMaxWidth; 
+  
+            p,
+            a {
+              font-size: @mobileDropdownMenuContentFontSize ;
+              font-weight: @dropdownMenuContentFontWeight;
+              white-space: @dropdownMenuContentWhiteSpace;
+            }
         
-                    p,
-                    a {
-                        font-size: 12px;
-                        font-weight: 400;
-                        white-space: pre-wrap;
-                    }
-                
-                    i.icon,
-                    i.icons {
-                        font-size: @mobileTopSectionItemFontSize;
-                    }
-                }
-            } 
-        }
+            i.icon,
+            i.icons {
+                font-size: @mobileTopSectionItemFontSize;
+            }
+          }
+        } 
+      }
     }
 
     /* Theme sites dropdown */
-    #theme-sites.ui.dropdown {
+    #theme-sites.ui.dropdown .menu {
 
-        .list {
-            width: @themeSitesMenuWidth;
-            padding: @themeSitesMenuPadding;
-            white-space: pre-wrap;
+      .wrapper {
+        width: @themeSitesMenuWidth;
 
-            .site {
-                margin: @themeSitesMenuSiteMargin;
+        .item {
+          padding: @themeSitesMenuItemPadding;
 
-                a {
-                    color: @themeSitesMenuSiteLinkColor;
-                    font-weight: @themeSitesMenuSiteLinkFontWeight;
-                }
-                
-                a:hover {
-                    color: #4183c4;
-                }
+          &:hover {
+            a.site {
+              color: @white;
             }
+          }
+
+          a.site {
+              color: @themeSitesMenuSiteLinkColor;
+              font-weight: @themeSitesMenuSiteLinkFontWeight;
+          }
         }
+      }
+    }
+
+    /* Language dropdown */
+    #language-switcher {
+      font-size: @mobileLanguageFontSize;
+    
+      img {
+        width: 10px;
+      }
+      .menu {
+        top: @mobileLanguageMenuTop;
+        color: @japaneseIndigo;
+
+        .wrapper {
+
+          .item {   
+            justify-content: flex-end;
+            padding: @languageMenuPadding;
+            font-weight: @languageMenuItemFontWeight;
+            font-size: @mobileLanguageFontSize;
+
+            span.country-code {
+              margin-left: @mobileLanguageCountryCodeMarginLeft;
+              font-weight: @mobileLanguageCountryCodeFontWeight;
+            }
+          }
+        }
+      }
     }
   }
 
   /* Main header section */
-  .eea-main-header {
+  .main.bar {
     .ui.container {
       display: flex;
       align-items: center;
@@ -156,98 +198,56 @@
         max-width: @mobileLogoMaxWidth;
         margin-top: @mobileLogoMarginTop;
       }
+
+      .main-menu {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        width: 100%;
+
+        .item {
+          color: @mainMenuItemColor;
+          font-size: @mainMenuItemFontSize;
+          font-weight: @mainMenuItemFontWeight;
+          place-self: @mainMenuItemPlaceSelf;
+        }
+
+        .item.active {
+          color: @mainMenuItemActiveColor;
+          border-bottom: @mainMenuItemActiveBorder;
+        }
+      }
     }
 
 
     /* Search Box */
     #search-box {
+      position: relative;
+      z-index: 99999;
+      overflow: scroll;
+      width: 100%;
+      height: @mobilePopUpHeight;
+      background: linear-gradient(340.97deg, @darkCerulean 9.19%, #009591 77.47%);
+    
+      .ui.container {
+        height: 100%;
+        align-items: baseline;
+      }
+      .wrapper {
         position: relative;
-        z-index: 99999;
-        overflow: scroll;
         width: 100%;
-        height: calc(100vh - 74px);
-        background: linear-gradient(340.97deg, @darkCerulean 9.19%, #009591 77.47%);
-      
-        .ui.container {
-          height: 100%;
-          align-items: baseline;
-        }
-        .wrapper {
-            position: relative;
-            width: 100%;
-            margin: 135px 0 0 0;
+        margin: 135px 0 0 0;
 
-            .eea-advanced-search-button {
-                display: flex;
-                justify-content: center;
-                padding: 119px 0 0 0;
-            }
+        .eea-advanced-search-button {
+            display: flex;
+            justify-content: center;
+            padding: 119px 0 0 0;
         }
       }
+    }
   }
 }
 
-#eea-top-header-language-dropdown {
-  display: flex;
-  border-radius: @defaultBorderRadius;
-  font-size: 10px;
-  font-weight: 700;
-
-  img {
-    width: 50%;
-  }
-}
-
-#eea-top-header-language-dropdown .menu {
-  top: 10px;
-  left: -134px;
-  width: 164px;
-  border-radius: @defaultBorderRadius;
-  color: @japaneseIndigo;
-}
-
-#eea-top-header-language-dropdown .menu > .item {
-  text-align: end;
-
-  span.country-code {
-    margin-left: 3px;
-    font-weight: bold;
-  }
-}
-
-#eea-top-header-language-dropdown .menu > .item:hover {
-  background: none !important;
-}
-
-#eea-top-header-language-dropdown .menu > .item span.text {
-  padding: 5px;
-
-  &:hover {
-    background-color: #2e3e4c;
-    color: #ffffff;
-  }
-}
-
-.eea-main-header-menu {
-  display: flex;
-  width: 100%;
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-
-.eea-main-menu.ui.text.menu {
-  display: none;
-}
-
-.eea-main-menu-item {
-  color: @deepBlue;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.eea-top-header-language-dropdown .menu .option .text {
-  font-size: 12px;
-}
 
 
 
@@ -384,25 +384,36 @@ Header Actions - Burger and Search Icons
 
 
 
-
-
-
-
-
 @media only screen and (min-width: @tabletBreakpoint) {
-    .eea-header {
-        .eea-top-header {
-            height: @tabletTopSectionHeight;
+    .eea.header {
+        .top.bar {
+          height: @tabletTopSectionHeight;
 
-            .eea-top-header-item {
-                font-size: @tabletTopSectionItemFontSize;
+          .item {
+              font-size: @tabletTopSectionItemFontSize;
+          }
+
+          .ui.dropdown .menu {
+              margin-top: @tabletDropdownMenuMarginTop;
+          }
+
+          /* Language dropdown */
+          #language-switcher {
+            font-size: @tabletLanguageFontSize;
+
+            img {
+              width: 19px;
             }
 
-            .ui.dropdown .menu {
-                margin-top: @tabletDropdownMenuMarginTop;
+            .menu {
+              top: @tabletLanguageMenuTop;
+              .wrapper .item {
+                font-size: @tabletLanguageFontSize;
+              }
             }
+          }
         }
-        .eea-main-header {
+        .main.bar {
             .ui.container {
                 height: 117px;
 
@@ -414,12 +425,12 @@ Header Actions - Burger and Search Icons
 
             /* Search box */
             #search-box {
-                height: calc(100vh - 140px);
+                height: @tabletPopUpHeight;
             }
         }
     }
 
-  .eea-main-menu.ui.text.menu {
+  .text.menu {
     display: none;
   }
 
@@ -451,54 +462,47 @@ Header Actions - Burger and Search Icons
       height: 4px;
     }
   }
-
-
-
-
-  #eea-top-header-language-dropdown {
-    font-size: 14px;
-  }
-
-  #eea-top-header-language-dropdown .menu {
-    top: 18px;
-    left: -127px;
-  }
-
-  .eea-top-header-language-dropdown .menu .option .text {
-    font-size: 1rem;
-  }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
-    .eea-header {
-        .eea-top-header {
-            height: @computerTopSectionHeight;
-        }
-
-        .eea-main-header {
-            .ui.container {
-              height: 160px;
-              #logo {
-                max-width: @computerLogoMaxWidth;
-                margin-top: @computerLogoMarginTop;
-              }
-            }
-
-            /* Search box */
-            #search-box {
-                height: calc(100vh - 192px);
-
-                .wrapper {
-                    margin: 280px 0 0 0;
-
-                    .eea-advanced-search-button {
-                        justify-content: flex-end;
-                        padding: 74px 0 0 0;
-                    }
-                }
-            }
-        }
+  .eea.header {
+    .top.bar {
+      height: @computerTopSectionHeight;
     }
+
+    .main.bar {
+      .ui.container {
+        height: 160px;
+
+        #logo {
+          max-width: @computerLogoMaxWidth;
+          margin-top: @computerLogoMarginTop;
+        }
+
+        .ui.text.menu {
+          display: flex;
+          width: 88%;
+          max-height: 20px;
+          justify-content: space-between;
+          margin: 0;
+        }
+      }
+
+      /* Search box */
+      #search-box {
+        height: @computerPopUpHeight;
+
+        .wrapper {
+          margin: 280px 0 0 0;
+
+          .eea-advanced-search-button {
+            justify-content: flex-end;
+            padding: 74px 0 0 0;
+          }
+        }
+      }
+    }
+  }
 
   .eea-header-burger-action.mobile {
     display: none;
@@ -508,13 +512,6 @@ Header Actions - Burger and Search Icons
     }
   }
 
-  .eea-main-menu.ui.text.menu {
-    display: flex;
-    width: 88%;
-    max-height: 20px;
-    justify-content: space-between;
-    margin: 0;
-  }
 
   .eea-header-burger-action.desktop {
     display: flex;
@@ -537,6 +534,10 @@ Header Actions - Burger and Search Icons
   }
 }
 
+
+
+
+
 /************************
       MEGA MENU
 ************************/
@@ -546,7 +547,7 @@ Header Actions - Burger and Search Icons
   z-index: 9999;
   overflow: scroll;
   width: 100%;
-  height: calc(100vh - 74px);
+  height: @mobilePopUpHeight;
   background: linear-gradient(180deg, #0065a4 39.58%, #043570 100%);
 
   .ui.container {
@@ -767,7 +768,7 @@ a.menu-link:hover {
 }
 @media only screen and (max-width: @largestMobileScreen) {
   #eea-mega-menu-wrap {
-    height: calc(100vh - 140px);
+    height: @tabletPopUpHeight;
   }
 
   .nav.eea-nav {
@@ -1036,7 +1037,7 @@ a.menu-link:hover {
   }
 
   #eea-mega-menu-wrap {
-    height: calc(100vh - 192px);
+    height: @computerPopUpHeight;
   }
 }
 
