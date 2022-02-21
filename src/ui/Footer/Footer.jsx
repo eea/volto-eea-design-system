@@ -6,11 +6,6 @@
 import React, { Component } from 'react';
 import { Icon, Image, Grid, Container } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-//import ThemeSites from './ThemeSites.js';
-//import Actions from './Actions.js';
-
-//import AbstractImg from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/abstract-visual.svg';
-//import EULogo from '../../../../../theme/themes/eea/assets/images/Footer/EULogo.png';
 import EIONETLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/EIONETLogo.png';
 import EEALogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/EEA-Logo-white.svg';
 
