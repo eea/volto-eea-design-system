@@ -96,19 +96,6 @@ export default {
         },
       },
     },
-    size: {
-      control: { type: 'inline-radio' },
-      options: ['small', 'large'],
-      description: 'table size',
-      table: {
-        type: {
-          summary: 'string',
-        },
-        defaultValue: {
-          summary: 'large',
-        },
-      },
-    },
     textAlign: {
       control: { type: 'inline-radio' },
       options: ['left', 'center', 'right'],
@@ -148,20 +135,17 @@ function TableContent({
   striped,
   collapsing,
   compact,
-  size,
   textAlign,
   verticalAlign,
 }) {
   return (
     <Table
-      className="eea-table"
       celled={celled}
       singleLine={singleLine}
       fixed={fixed}
       striped={striped}
       collapsing={collapsing}
       compact={compact}
-      size={size}
       unstackable
     >
       <Table.Header>
@@ -205,7 +189,6 @@ Default.args = {
   striped: false,
   collapsing: false,
   compact: false,
-  size: 'large',
   textAlign: 'center',
   verticalAlign: 'middle',
   headers: [
@@ -254,7 +237,6 @@ function SortableTableContent({
   striped,
   collapsing,
   compact,
-  size,
   textAlign,
   verticalAlign,
 }) {
@@ -268,14 +250,12 @@ function SortableTableContent({
 
   return (
     <Table
-      className="eea-table"
       celled={celled}
       singleLine={singleLine}
       fixed={fixed}
       striped={striped}
       collapsing={collapsing}
       compact={compact}
-      size={size}
       stackable
       sortable
     >
@@ -329,7 +309,6 @@ Sortable.args = {
   striped: false,
   collapsing: false,
   compact: false,
-  size: 'large',
   textAlign: 'center',
   verticalAlign: 'middle',
   headers: [
