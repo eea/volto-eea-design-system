@@ -249,6 +249,7 @@ class Header extends Component {
         <Header.Main
           activeSearch={this.state.activeSearch}
           activeMenu={this.state.activeMenu}
+          menuItems={this.props.menuItems}
         >
           <Grid>
             <Grid.Column mobile={8} tablet={8} computer={4}>
@@ -263,12 +264,12 @@ class Header extends Component {
                       {this.props.menuItems.map((item) => (
                         <Menu.Item
                           className="eea-main-menu-item"
-                          name={item.key}
+                          name={item['@id']}
                           onClick={this.menuOnClick}
                           active={this.state.activeItem === item.key}
-                          key={item.key}
+                          key={item['@id']}
                         >
-                          {item.name}
+                          {item.title}
                         </Menu.Item>
                       ))}
                     </Menu>
@@ -346,7 +347,7 @@ const Main = (props) => (
   <div className="eea-main-header">
     <Container>{props.children}</Container>
     {props.activeSearch && <HeaderSearchPopUp />}
-    {props.activeMenu && <HeaderMenuPopUp />}
+    {props.activeMenu && <HeaderMenuPopUp menuItems={props.menuItems} />}
   </div>
 );
 
