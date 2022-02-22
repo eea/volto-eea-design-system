@@ -488,6 +488,10 @@ Header Actions - Burger and Search Icons
      margin: 0;
      list-style: none;
      position: relative;
+
+     >li a {
+      padding: 0;
+    }
    }
    
    nav ul li {
@@ -498,7 +502,7 @@ Header Actions - Burger and Search Icons
    
    nav a {
     color: @mobileMegaMenuColor;
-    display: block;
+    display: flex;
     padding: @megaMenuLinkPadding;
     line-height: @mobileMegaMenuLineHeight;
    }
@@ -625,15 +629,14 @@ Header Actions - Burger and Search Icons
           }
         }  
       }
-        .sub.third {
-          left: 50%;
-          width: 50%;
-          li > a {
+      .sub.third {
+        left: 50%;
+        width: 50%;
+        li > a {
           max-width: 100%;
         }
       }
     }
-     
   }
 
   
