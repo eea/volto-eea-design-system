@@ -82,6 +82,9 @@ class Header extends Component {
   }
 
   menuOnClick = (e, x) => {
+    if (this.state.activeSearch === true) {
+      this.setState({ activeSearch: false });
+    }
     this.setState({ activeItem: x.name });
     this.setState({ activeMenu: true });
   };
@@ -264,22 +267,20 @@ class Header extends Component {
             </Grid.Column>
             <Grid.Column mobile={4} tablet={4} computer={8}>
               <div className="main-menu">
-                {!this.state.activeSearch &&
-                  !this.state.activeMenu &&
-                  this.props.menuItems && (
-                    <Menu className="eea-main-menu tablet or lower hidden" text>
-                      {this.props.menuItems.map((item) => (
-                        <Menu.Item
-                          name={item.key}
-                          onClick={this.menuOnClick}
-                          active={this.state.activeItem === item.key}
-                          key={item['@id']}
-                        >
-                          {item.title}
-                        </Menu.Item>
-                      ))}
-                    </Menu>
-                  )}
+                {!this.state.activeMenu && this.props.menuItems && (
+                  <Menu className="eea-main-menu tablet or lower hidden" text>
+                    {this.props.menuItems.map((item) => (
+                      <Menu.Item
+                        name={item['@id']}
+                        onClick={this.menuOnClick}
+                        active={this.state.activeItem === item.key}
+                        key={item['@id']}
+                      >
+                        {item.title}
+                      </Menu.Item>
+                    ))}
+                  </Menu>
+                )}
                 {this.state.activeMenu && (
                   <Header.BurgerAction
                     className="desktop"
