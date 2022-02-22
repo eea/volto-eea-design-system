@@ -8,196 +8,109 @@
 *******************************/
 
 .eea.timeline {
+    max-width: @timelineMaxWidth;
     text-align: @timelineAlign;
   
     i.icon {
-      box-shadow: none !important;
+      box-shadow: @timelineIconBoxShadow;
+      margin: @timelineIcoMargin;
+      font-size: @mobileTimelineIconFontSize;
     }
   
-    .ui.grid .row .column {
-      .card {
-        border: @timelineBorder;
-        box-shadow: @timelineBoxShadow;
-      }
-  
-      .content .ui.divider {
-        display: none;
-      }
-  
-      .content .label {
-        padding: 0.5rem;
-        border-radius: @defaultBorderRadius;
-        font-size: @relative14px;
+    .ui.grid .row {
+      padding-bottom: 0; //always zero for continuous line
+
+      .column {
+        .card {
+          border: @timelineBorder;
+          box-shadow: @timelineBoxShadow;
+          margin-top: @modileCardMarginTop;
+        }
+    
+        .content .label {
+          padding: @timelineLabelPadding;
+          border-radius: @timelineLabelBorderRadius;
+          font-size: @timelineLabelFontSize;
+        }
       }
     }
-  
-    .Timeline-line {
-      background: @silverGray !important;
-    }
-  }
-  
-  .eea.timeline .ui.cards > .card > .content > .header:not(.ui),
-  .eea.timeline .ui.card > .content > .header:not(.ui) {
-    overflow: unset;
-    text-overflow: unset;
   }
   
   /* Timeline Colors */
   .eea.timeline .ui.grid .row .column {
-    i.icon.blue {
-      background-color: @timelineBlue !important;
-    }
-  
     .blue .content .label {
       background-color: @timelineBlue;
-      color: @white;
-    }
-  
-    i.icon.green {
-      background-color: @timelineGreen !important;
     }
   
     .green .content .label {
       background-color: @timelineGreen;
-      color: @white;
-    }
-  
-    i.icon.grey {
-      background-color: @timelineGrey !important;
     }
   
     .grey .content .label {
       background-color: @timelineGrey;
-      color: @white;
     }
-  
-    i.icon.orange {
-      background-color: @timelineOrange !important;
-    }
-  
+
     .orange .content .label {
       background-color: @timelineOrange;
-      color: @white;
     }
-  
-    i.icon.red {
-      background-color: @timelineRed !important;
-    }
-  
+
     .red .content .label {
       background-color: @timelineRed;
-      color: @white;
     }
-  
-    i.icon.yellow {
-      background-color: @timelineYellow !important;
+
+    .yellow .content .label {
+      background-color: @timelineYellow;
     }
   
     .yellow .content .label {
       background-color: @timelineYellow;
-      color: @white;
     }
-  
-    i.icon.yellow {
-      background-color: @timelineYellow !important;
-    }
-  
-    .yellow .content .label {
-      background-color: @timelineYellow;
-      color: @white;
-    }
-  
-    i.icon.olive {
-      background-color: @timelineOlive !important;
-    }
-  
+
     .olive .content .label {
       background-color: @timelineOlive;
-      color: @white;
     }
-  
-    i.icon.teal {
-      background-color: @timelineTeal !important;
-    }
-  
+
     .teal .content .label {
       background-color: @timelineTeal;
-      color: @white;
     }
-  
-    i.icon.violet {
-      background-color: @timelineViolet !important;
-    }
-  
+
     .violet .content .label {
       background-color: @timelineViolet;
-      color: @white;
     }
-  
-    i.icon.purple {
-      background-color: @timelinePurple !important;
-    }
-  
+
     .purple .content .label {
       background-color: @timelinePurple;
-      color: @white;
     }
-  
-    i.icon.pink {
-      background-color: @timelinePink !important;
-    }
-  
+
     .pink .content .label {
       background-color: @timelinePink;
-      color: @white;
     }
-  
-    i.icon.brown {
-      background-color: @timelineBrown !important;
-    }
-  
+
     .brown .content .label {
       background-color: @timelineBrown;
-      color: @white;
     }
-  }
-  
-  /* Timiline responsiveness and general fixes */
-  .eea.timeline {
-    max-width: 500px;
-  }
-  
-  .Timeline-line {
-    display: none;
-  }
-  
-  .eea.timeline .ui.grid .row {
-    padding-bottom: 0;
   }
 
   
   /* Custom vertical line */
-  .eea.timeline .ui.grid .row > div:nth-child(2):after {
+  .eea.timeline .ui.grid .row > .line:after {
     position: absolute;
     z-index: -1;
     top: 0;
     bottom: 0;
     left: 50%;
-    border-left: 2px solid @silverGray;
     content: '';
     transform: translate(-50%);
+    border-left: @timelineLineBorderLeft;
   }
   
-  /* Icon resizing on mobile */
-  @media only screen and (max-width: @mobileBreakpoint) {
-    .eea.timeline .ui.grid .row > div:nth-child(2) i.icon {
-      font-size: 1.2rem;
+
+  @media only screen and (min-width: @tabletBreakpoint) {
+    .eea.timeline .ui.grid .row > .line i.icon {
+      font-size: @tabletTimelineIconFontSize;
     }
   
-    .eea.timeline .ui.grid .row > div:nth-child(1) {
-      .card {
-        margin-top: 0;
-      }
+    .eea.timeline .ui.grid .row .column .card {
+      margin-top: @tabletCardMarginTop;
     }
-
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Card, Label, Icon, Divider } from 'semantic-ui-react';
+import { Grid, Card, Label, Icon } from 'semantic-ui-react';
 
 function Timeline({
   direction,
@@ -11,7 +11,6 @@ function Timeline({
   tags,
   labelColor,
   lineHeight = 4,
-  lineColor = 'grey',
   color = 'grey',
 }) {
   const textAlign = direction === 'left' ? 'right' : 'left';
@@ -29,7 +28,6 @@ function Timeline({
         </Label>
         <Card.Header>{title}</Card.Header>
         <Card.Description>{description}</Card.Description>
-        <Divider />
         <Label.Group color={color}>
           {tags.map((tag, i) => (
             <Label key={i.toString()}>{tag}</Label>
@@ -42,29 +40,14 @@ function Timeline({
   const left = direction === 'left' ? card : '';
   const isMobile = window.innerWidth <= 768;
   const iconSize = isMobile ? 'small' : 'large';
-  const height = isMobile ? `${lineHeight * 350}px` : `${lineHeight * 250}px`;
 
   return (
     <div className="eea timeline">
-      <div
-        className="Timeline-line"
-        style={{ height, background: lineColor }}
-      />
       <Grid>
         <Grid.Row>
           <Grid.Column width={10}>{left}</Grid.Column>
-          <Grid.Column width={2}>
-            <Icon
-              name={icon}
-              size={iconSize}
-              color={color}
-              inverted
-              circular
-              style={{
-                margin: 'auto',
-                boxShadow: `0 0 0 0.1em ${lineColor} inset`,
-              }}
-            />
+          <Grid.Column width={2} className="line">
+            <Icon name={icon} size={iconSize} color={color} inverted circular />
           </Grid.Column>
         </Grid.Row>
       </Grid>
