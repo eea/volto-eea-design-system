@@ -264,23 +264,6 @@ Header Actions - Burger and Search Icons
     align-items: center;
     justify-content: center;
     background-color: @mediumPersianBlue;
-  
-    span {
-      position: absolute;
-      width: 22px;
-      height: 4px;
-      background-color: #ffffff;
-      border-radius: 9px;
-      cursor: pointer;
-    }
-  
-    span:first-child {
-      transform: rotate(45deg);
-    }
-  
-    span:last-child {
-      transform: rotate(135deg);
-    }
   }
   
   .eea-header-burger-action.desktop {
@@ -299,50 +282,6 @@ Header Actions - Burger and Search Icons
     -moz-transition: 0.5s ease-in-out;
     -o-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
-  
-    span {
-      position: inherit;
-      left: 0;
-      display: block;
-      width: 16px;
-      height: 2px;
-      margin: 2px;
-      background: #ffffff;
-      border-radius: 9px;
-      opacity: 1;
-      -webkit-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      transform: rotate(0deg);
-      -webkit-transition: 0.25s ease-in-out;
-      -moz-transition: 0.25s ease-in-out;
-      -o-transition: 0.25s ease-in-out;
-      transition: 0.25s ease-in-out;
-    }
-  }
-  
-  .eea-header-burger-action.mobile.open span {
-    position: absolute;
-    left: inherit;
-  }
-  
-  .eea-header-burger-action.mobile.open span:nth-child(1) {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-  
-  .eea-header-burger-action.mobile.open span:nth-child(2) {
-    width: 0%;
-    opacity: 0;
-  }
-  
-  .eea-header-burger-action.mobile.open span:nth-child(3) {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
   }
   
   .eea-header-search-action {
@@ -352,30 +291,16 @@ Header Actions - Burger and Search Icons
     align-items: center;
     justify-content: center;
     background-color: @darkCyan;
-  
-    .eea-header-search-action{
-      display: contents;
-    }
-  
-    img {
-      width: 24px;
-    }
-  
-    span {
-      position: absolute;
-      width: 16px;
-      height: 2px;
-      background-color: #ffffff;
-      border-radius: 9px;
-      cursor: pointer;
-    }
-  
-    span:first-child {
-      transform: rotate(45deg);
-    }
-  
-    span:last-child {
-      transform: rotate(135deg);
+  }
+
+  .eea-header-burger-action,.eea-header-search-action,.eea-header-burger-action.mobile {
+    i.icon {
+      margin:0;
+      color: @white;
+      font-size: 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -438,25 +363,16 @@ Header Actions - Burger and Search Icons
   .eea-header-burger-action.mobile {
     width: 66px;
     height: 117px;
-
-    span {
-      width: 30px;
-      height: 4px;
-      margin: 4px;
-    }
   }
 
   .eea-header-search-action {
     width: 66px;
     height: 117px;
+  }
 
-    img {
-      width: 45px;
-    }
-
-    span {
-      width: 30px;
-      height: 4px;
+  .eea-header-burger-action,.eea-header-search-action,.eea-header-search-action.mobile {
+    i.icon {
+      font-size: 2em !important;
     }
   }
 }
@@ -503,9 +419,11 @@ Header Actions - Burger and Search Icons
 
   .eea-header-burger-action.mobile {
     display: none;
+  }
 
-    span {
-      width: 44.21px;
+  .eea-header-burger-action,.eea-header-search-action {
+    i.icon {
+      font-size: 3em !important;
     }
   }
 
@@ -514,20 +432,11 @@ Header Actions - Burger and Search Icons
     display: flex;
     width: 72px;
     height: 160px;
-
-    span {
-      width: 44.21px;
-    }
   }
 
   .eea-header-search-action {
     width: 72px;
     height: 160px;
-
-    span {
-      width: 44.21px;
-      height: 4px;
-    }
   }
 }
 

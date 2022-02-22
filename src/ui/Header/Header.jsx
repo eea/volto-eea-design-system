@@ -4,11 +4,17 @@
  */
 
 import React, { Component } from 'react';
-import { Container, Dropdown, Image, Menu, Grid } from 'semantic-ui-react';
+import {
+  Container,
+  Dropdown,
+  Image,
+  Menu,
+  Grid,
+  Icon,
+} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
-import searchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search.png';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/globeIcon.png';
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
@@ -279,45 +285,24 @@ class Header extends Component {
                     className="desktop"
                     onClick={this.desktopBurgerOnClick}
                   >
-                    <span></span>
-                    <span></span>
+                    <Icon name="close" />
                   </Header.BurgerAction>
                 )}
-                <div className="eea-header-search-action ">
-                  {!this.state.activeSearch ? (
-                    <Image
-                      src={searchIcon}
-                      alt="search icon"
-                      onClick={this.searchOnClick}
-                    ></Image>
-                  ) : (
-                    <div
-                      onClick={this.searchOnClick}
-                      className="eea-header-search-action "
-                      role="none"
-                    >
-                      <span></span>
-                      <span></span>
-                    </div>
-                  )}
+                <div
+                  className="eea-header-search-action "
+                  onClick={this.searchOnClick}
+                  role="none"
+                >
+                  <Icon name={!this.state.activeSearch ? 'search' : 'close'} />
                 </div>
                 <Header.BurgerAction
                   className={`mobile ${this.state.burger}`}
                   onClick={this.mobileBurgerOnClick}
                 >
-                  <span></span>
-                  <span></span>
-                  <span></span>
+                  <Icon
+                    name={this.state.burger === 'open' ? 'close' : 'bars'}
+                  ></Icon>
                 </Header.BurgerAction>
-                {/* <div
-                    className={`eea-header-burger-action mobile ${this.state.burger}`}
-                    role="none"
-                    onClick={this.burgerOnClick}
-                  >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div> */}
               </div>
             </Grid.Column>
           </Grid>
