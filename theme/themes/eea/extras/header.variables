@@ -3,50 +3,106 @@
 --------------------*/
 
 /* Heights */
-@mobileTopSectionHeight: @18px;
-@tabletTopSectionHeight: @30px;
-@computerTopSectionHeight: @33px;
+@mobileTopSectionHeight      : 14px;
+@tabletTopSectionHeight      : 30px;
+@computerTopSectionHeight    : 33px;
 
-@mobileMainSectionHeight: 56px;
-@tabletMainSectionHeight: 117px;
-@computerMainSectionHeight: 160px;
+@mobileMainSectionHeight     : 56px;
+@tabletMainSectionHeight     : 117px;
+@computerMainSectionHeight   : 160px;
+
+@mobilePopUpHeight           : calc(100vh - (@mobileTopSectionHeight + @mobileMainSectionHeight));
+@tabletPopUpHeight           : calc(100vh - (@tabletTopSectionHeight + @tabletMainSectionHeight));
+@computerPopUpHeight         : calc(100vh - (@computerTopSectionHeight + @computerMainSectionHeight));
+
 
 /* Top */
-@topSectionBackground: @silverGray;
-@topSectionItemColor: @japaneseIndigo;
-@topSectionItemFontWeight: @bold;
-@mobileTopSectionItemFontSize: 8px;
-@tabletTopSectionItemFontSize: 12px;
+@topSectionBackground                 : @silverGray;
+@topSectionItemColor                  : @japaneseIndigo;
+@topSectionItemFontWeight             : @bold;
+@mobileTopSectionItemFontSize         : 8px;
+@tabletTopSectionItemFontSize         : 12px;
 
 /* Dropdown */
-@mobileDropdownMenuMarginTop: 3px;
-@tabletDropdownMenuMarginTop: 7px;
-@dropdownFontSize: 12px;
-@dropdownFontWeight: 700;
+@mobileDropdownMenuMarginTop          : 3px;
+@tabletDropdownMenuMarginTop          : 7px;
+@dropdownFontSize                     : 12px;
+@dropdownFontWeight                   : @bold;
 /* Dropdown Menu */
-@dropdownMenuLeft: auto;
-@dropdownMenuRight: 0;
-
+@dropdownMenuLeft                     : auto;
+@dropdownMenuRight                    : 0;
+@dropdownMenuWrapperGap               : 5px;
+@dropdownMenuWrapperMargin            : 5px 0;
+@dropdownMenuContentWhiteSpace        : pre-wrap;
+@dropdownMenuContentFontWeight        : @normal;
+@mobileDropdownMenuContentFontSize    : 12px;
+@dropdownMenuItemColorHover           : @white;
+@dropdownMenuItemBackgroundColorHover : @japaneseIndigo;
 // Official Union
-@officialUnionGap: 12px;
-@mobileOfficialUnionPadding: 5px;
-@tabletOfficialUnionPadding: 12px;
+@officialUnionGap                     : 12px;
+@mobileOfficialUnionPadding           : 5px;
+@tabletOfficialUnionPadding           : 12px;
+@mobileOfficialUnionMaxWidth          : 110px;
+@tabletOfficialUnionMaxWidth          : 373px;
+@mobileOfficialUnionImageWidth        : 10px;
+@tabletOfficialUnionImageWidth        : 17px;
 // Theme Sites
-@themeSitesMenuWidth: 205px;
-@themeSitesMenuPadding: 5px;
-@themeSitesMenuSiteMargin: 5px 0;
-@themeSitesMenuSiteLinkColor: @japaneseIndigo;
-@themeSitesMenuSiteLinkFontWeight: 400;
+@themeSitesMenuWidth                  : 210px;
+//@themeSitesMenuSiteMargin           : 5px 0;
+@themeSitesMenuSiteLinkColor          : @japaneseIndigo;
+@themeSitesMenuSiteLinkFontWeight     : @normal;
+@themeSitesMenuItemPadding            : 2px 5px;
 // Language
+@mobileLanguageFontSize               : 10px;
+@tabletLanguageFontSize               : 14px;
+@mobileLanguageMenuTop                : 12px;
+@tabletLanguageMenuTop                : 18px;
+@languageMenuPadding                  : 2px 20px;
+@languageMenuItemFontWeight           : @normal;
+@mobileLanguageCountryCodeMarginLeft  : 3px;
+@mobileLanguageCountryCodeFontWeight  : @bold;
 
 /* Main Section */
-@headerMainSectionBackground: @white;
+@headerMainSectionBackground          : @white;
 
 /* Logo */
-@logoWidth: 100%;
-@mobileLogoMaxWidth: 122px;
-@tabletLogoMaxWidth: 252px;
-@computerLogoMaxWidth: 348px;
-@mobileLogoMarginTop: 9px;
-@tabletLogoMarginTop: 15px;
-@computerLogoMarginTop: 20px;
+@logoWidth                            : 100%;
+@mobileLogoMaxWidth                   : 122px;
+@tabletLogoMaxWidth                   : 252px;
+@computerLogoMaxWidth                 : 348px;
+@mobileLogoMarginTop                  : 9px;
+@tabletLogoMarginTop                  : 15px;
+@computerLogoMarginTop                : 20px;
+
+/* Main menu */
+@mainMenuItemColor                    : @deepBlue;
+@mainMenuItemFontSize                 : 18px;
+@mainMenuItemFontWeight               : 500;
+@mainMenuItemPlaceSelf                : flex-end;
+@mainMenuItemActiveColor              : @secondaryColor;
+@mainMenuItemActiveBorder             : 3px solid @secondaryColor;
+
+/* Mega menu and Search popup */
+@mobilePopupMarginTop   : 50px;
+@tabletPopupMarginTop   : 100px;
+@computerPopupMarginTop : 200px;
+
+/* Mega menu */
+@megaMenuBackgroundGradient: linear-gradient(180deg, @mediumPersianBlue 39.58%, #043570 100%);
+
+/* Menu link and toggle */
+@mobileMegaMenuColor            : @white;
+@megaMenuLinkPadding            : 0 1.25rem;
+@toggleMenuFirstPadding         : 0;
+@toggleMenuSecondPadding        : 0 1.25rem;
+@toggleMenuThirdPadding         : 0 2.5rem;
+@mobileMegaMenuFontSize         : 1.125rem;
+@tabletMegaMenuFontSize         : @h1;
+@computerMegaMenuMarginBottom   : 1rem;
+@computerMegaMenuFirstFontSize  : 3rem;
+@computerMegaMenuSecondFontSize : 2.5rem;
+@computerMegaMenuThirdFontSize  : 2.25rem;
+@mobileMegaMenuLineHeight       : 2.5rem;
+@tabletMegaMenuLineHeight       : 3rem;
+@computerMegaMenuLineHeight     : 4.5rem;
+@megaMenuIconAfterFontSize      : 1.875rem;

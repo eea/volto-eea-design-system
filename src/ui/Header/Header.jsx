@@ -128,7 +128,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="eea-header">
+      <div className="eea header">
         <Header.TopHeader>
           <Header.TopItem className="official-union mobile or lower hidden">
             <Image src={eeaFlag} alt="eea flag"></Image>
@@ -139,7 +139,7 @@ class Header extends Component {
               aria-label="dropdown"
             >
               <Dropdown.Menu id="eea-official-union-dropdown" role="group">
-                <div>
+                <div className="content">
                   <p>
                     All official European Union website addresses are in the{' '}
                     <b>europa.eu</b> domain.
@@ -167,7 +167,7 @@ class Header extends Component {
               aria-label="dropdown"
             >
               <Dropdown.Menu role="group">
-                <div role="option" aria-selected="false">
+                <div role="option" aria-selected="false" className="content">
                   <p>
                     All official European Union website addresses are in the{' '}
                     <b>europa.eu</b> domain.
@@ -215,8 +215,8 @@ class Header extends Component {
 
           {this.props.languages && (
             <Dropdown
-              id="eea-top-header-language-dropdown"
-              className="eea-top-header-item"
+              id="language-switcher"
+              className="item"
               text={`${this.state.language.toUpperCase()}`}
               icon={
                 <Image
@@ -227,25 +227,26 @@ class Header extends Component {
               aria-label="dropdown"
             >
               <Dropdown.Menu>
-                {this.props.languages.map((item, index) => (
-                  <Dropdown.Item
-                    key={index}
-                    text={
-                      <span>
-                        {item.name}
-                        <span className="country-code">
-                          {item.code.toUpperCase()}
+                <div className="wrapper">
+                  {this.props.languages.map((item, index) => (
+                    <Dropdown.Item
+                      key={index}
+                      text={
+                        <span>
+                          {item.name}
+                          <span className="country-code">
+                            {item.code.toUpperCase()}
+                          </span>
                         </span>
-                      </span>
-                    }
-                    onClick={this.onLanguageSelection}
-                  ></Dropdown.Item>
-                ))}
+                      }
+                      onClick={this.onLanguageSelection}
+                    ></Dropdown.Item>
+                  ))}
+                </div>
               </Dropdown.Menu>
             </Dropdown>
           )}
         </Header.TopHeader>
-
         <Header.Main
           activeSearch={this.state.activeSearch}
           activeMenu={this.state.activeMenu}
@@ -256,15 +257,14 @@ class Header extends Component {
               <Logo id="logo"></Logo>
             </Grid.Column>
             <Grid.Column mobile={4} tablet={4} computer={8}>
-              <div className="eea-main-header-menu">
+              <div className="main-menu">
                 {!this.state.activeSearch &&
                   !this.state.activeMenu &&
                   this.props.menuItems && (
-                    <Menu className="eea-main-menu" text>
+                    <Menu className="eea-main-menu tablet or lower hidden" text>
                       {this.props.menuItems.map((item) => (
                         <Menu.Item
-                          className="eea-main-menu-item"
-                          name={item['@id']}
+                          name={item.key}
                           onClick={this.menuOnClick}
                           active={this.state.activeItem === item.key}
                           key={item['@id']}
@@ -328,7 +328,7 @@ class Header extends Component {
 }
 
 const TopHeader = (props) => (
-  <div className="eea-top-header">
+  <div className="top bar">
     <Container>{props.children}</Container>
   </div>
 );
@@ -336,7 +336,7 @@ const TopHeader = (props) => (
 Header.TopHeader = TopHeader;
 
 const TopItem = (props) => (
-  <div className={`eea-top-header-item ${props.className}`} id={props.id}>
+  <div className={`item ${props.className}`} id={props.id}>
     {props.children}
   </div>
 );
@@ -344,7 +344,7 @@ const TopItem = (props) => (
 Header.TopItem = TopItem;
 
 const Main = (props) => (
-  <div className="eea-main-header">
+  <div className="main bar">
     <Container>{props.children}</Container>
     {props.activeSearch && <HeaderSearchPopUp />}
     {props.activeMenu && <HeaderMenuPopUp menuItems={props.menuItems} />}
