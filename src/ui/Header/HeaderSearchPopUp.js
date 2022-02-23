@@ -12,7 +12,7 @@ function HeaderSearchPopUp() {
             placeholder="Search..."
             fluid
           />
-          <div className="eea-advanced-search-button">
+          <div className="action">
             <Button icon labelPosition="left" className="search">
               <Icon name="search" />
               Advanced Search

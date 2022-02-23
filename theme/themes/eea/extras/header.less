@@ -77,11 +77,16 @@
               max-width: @tabletOfficialUnionMaxWidth;
             }
           
-            p,
-            a {
-              font-size: @dropdownFontSize;
-              font-weight: @dropdownFontWeight;
+            p {
+              font-size: @officialUnionMenuFontSize ;
+              font-weight: @officialUnionTextFontWeight;
               white-space: @dropdownMenuContentWhiteSpace;
+            }
+            a {
+              font-size: @officialUnionMenuFontSize;
+              font-weight: @officialUnionLinkFontWeight;
+              white-space: @dropdownMenuContentWhiteSpace;
+              color: @officialUnionLinkColor;
             }
         }
     }
@@ -227,7 +232,7 @@
       overflow: scroll;
       width: 100%;
       height: @mobilePopUpHeight;
-      background: linear-gradient(340.97deg, @darkCerulean 9.19%, #009591 77.47%);
+      background: @searchBoxBackgroundGradient;
     
       .ui.container {
         height: 100%;
@@ -236,12 +241,14 @@
       .wrapper {
         position: relative;
         width: 100%;
-        margin: 135px 0 0 0;
+        margin-top: @mobilePopupMarginTop;
+        display: flex;
+        flex-direction: column;
+        gap: @searchBoxWrapperGap;
 
-        .eea-advanced-search-button {
-            display: flex;
-            justify-content: center;
-            padding: 119px 0 0 0;
+        .action {
+          display: flex;
+          justify-content: center;
         }
       }
     }
@@ -249,17 +256,12 @@
 }
 
 
-
-
-
-
-
 /***************************************
 Header Actions - Burger and Search Icons
 ***************************************/
 .eea-header-burger-action {
     display: flex;
-    width: 30px;
+    width: @mobileActionsBoxWidth;
     height: @mobileMainSectionHeight;
     align-items: center;
     justify-content: center;
@@ -286,14 +288,18 @@ Header Actions - Burger and Search Icons
   
   .eea-header-search-action {
     display: flex;
-    width: 30px;
+    width: @mobileActionsBoxWidth;
     height: @mobileMainSectionHeight;
     align-items: center;
     justify-content: center;
     background-color: @darkCyan;
+
   }
 
   .eea-header-burger-action,.eea-header-search-action,.eea-header-burger-action.mobile {
+    img {
+      width: 60%;
+    }
     i.icon {
       margin:0;
       color: @white;
@@ -308,48 +314,51 @@ Header Actions - Burger and Search Icons
 
 @media only screen and (min-width: @tabletBreakpoint) {
     .eea.header {
-        .top.bar {
-          height: @tabletTopSectionHeight;
+      .top.bar {
+        height: @tabletTopSectionHeight;
 
-          .item {
-              font-size: @tabletTopSectionItemFontSize;
+        .item {
+          font-size: @tabletTopSectionItemFontSize;
+        }
+
+        .ui.dropdown .menu {
+          margin-top: @tabletDropdownMenuMarginTop;
+        }
+
+        /* Language dropdown */
+        #language-switcher {
+          font-size: @tabletLanguageFontSize;
+
+          img {
+            width: 19px;
           }
 
-          .ui.dropdown .menu {
-              margin-top: @tabletDropdownMenuMarginTop;
-          }
-
-          /* Language dropdown */
-          #language-switcher {
-            font-size: @tabletLanguageFontSize;
-
-            img {
-              width: 19px;
-            }
-
-            .menu {
-              top: @tabletLanguageMenuTop;
-              .wrapper .item {
-                font-size: @tabletLanguageFontSize;
-              }
+          .menu {
+            top: @tabletLanguageMenuTop;
+            .wrapper .item {
+              font-size: @tabletLanguageFontSize;
             }
           }
         }
-        .main.bar {
-            .ui.container {
-                height: 117px;
+      }
+      .main.bar {
+        .ui.container {
+          height: 117px;
 
-                #logo {
-                    max-width: @tabletLogoMaxWidth;
-                    margin-top: @tabletLogoMarginTop;
-                }
-            }
-
-            /* Search box */
-            #search-box {
-                height: @tabletPopUpHeight;
-            }
+          #logo {
+            max-width: @tabletLogoMaxWidth;
+            margin-top: @tabletLogoMarginTop;
+          }
         }
+
+        /* Search box */
+        #search-box {
+          height: @tabletPopUpHeight;
+          .wrapper {
+            margin-top: @tabletPopupMarginTop;
+          }
+        }
+      }
     }
 
   .text.menu {
@@ -406,11 +415,10 @@ Header Actions - Burger and Search Icons
         height: @computerPopUpHeight;
 
         .wrapper {
-          margin: 280px 0 0 0;
+          margin-top: @computerPopupMarginTop;
 
-          .eea-advanced-search-button {
+          .action {
             justify-content: flex-end;
-            padding: 74px 0 0 0;
           }
         }
       }
@@ -514,6 +522,7 @@ Header Actions - Burger and Search Icons
    }
    
    nav ul li:hover > ul { display: inherit; }
+   nav ul li:hover > a span { text-decoration: underline; }
    
    nav ul ul li {
      float: none;
@@ -554,8 +563,7 @@ Header Actions - Burger and Search Icons
       color: @mobileMegaMenuColor;
       line-height: @mobileMegaMenuLineHeight;
     }
-   
-   
+
     [id^=drop]:checked + ul { 
       display: block;
     }
