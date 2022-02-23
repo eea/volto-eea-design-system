@@ -13,6 +13,175 @@ Although we value an aesthetically pleasing use of color, clear communication is
 
 The color system is designed to generate themes that meet WCAG 2.1 compliant contrast ratios. This makes things easier to find, identify, and interact with. It also makes the whole experience more accessible for visitors who are color blind or who have low vision. However, you should never convey information using color alone.
 
+
+## Main brand colors 
+
+This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity. A primary color is the color displayed most frequently across your screens and components. 
+
+<div style={{width:'100%',float:'left'}}>
+    <table style={{width:30+'%',float:'left'}} >
+        <tbody>
+            <tr>
+                <td style={{backgroundColor:'#007B6C',width:200+'px',height:150+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#007B6C</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+    <table style={{width:30+'%',float:'left'}} >
+        <tbody>
+            <tr>
+                <td style={{backgroundColor:'#004B7F',width:200+'px',height:150+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#004B7F</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<br />
+
+### Accents 		 
+
+Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette. Not all colors have to be used - sometimes a simple color scheme works best 
+
+<div style={{width:'100%',float:'left'}}>
+    <h3>Light</h3>    
+    <table style={{width:30+'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#00928F',width:200+'px',height:150+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#00928F</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+    <table style={{width:30+'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#0065A4',width:200+'px',height:150+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0065A4</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<br />
+
+<div style={{width:'100%',float:'left'}}>
+    <h3>Dark</h3>    
+    <table style={{width:30+'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#00665A',width:200+'px',height:150+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#00665A</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+    <table style={{width:30+'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#0A3D61',width:200+'px',height:150+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0A3D61</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<br />
+
+## Secondary color  
+
+A secondary color provides more ways to accent and distinguish your website. Having a secondary color is optional and should be applied sparingly to selected parts of your UI. 
+
+
+<div style={{width:'100%',float:'left'}}>
+    <table style={{width:30+'%',float:'left'}} >
+        <tbody>
+            <tr>
+                <td style={{backgroundColor:'#2E3E4C',width:200+'px',height:150+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#2E3E4C</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table> 
+</div>
+
+<br />
+
+Secondary colors are best for:  
+
+- Floating action buttons 
+
+- Selection controls, like sliders and switches 
+
+- Highlighting selected text 
+
+- Progress bars 
+
+- Links and headlines 
+
+ 
+
+ 
+
+ 
+
+## Grays 
+
+Use as the text color for dark-on-light designs, or as the background for inverted designs. 
+ 
+
+## Background 
+
+Use this color as the background for your dark-on-light designs, or the text color of an inverted design. 
+
+### Error color  
+ <div style={{width:'100%',float:'left'}}>
+    <table style={{width:30+'%',float:'left'}} >
+        <tbody>
+            <tr>
+                <td style={{backgroundColor:'#B83230',width:200+'px',height:150+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#B83230</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table> 
+</div>
+
+<br />
+
+### Warning  color  
+ <div style={{width:'100%',float:'left'}}>
+    <table style={{width:30+'%',float:'left'}} >
+        <tbody>
+            <tr>
+                <td style={{backgroundColor:'#EBA33D',width:200+'px',height:150+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#EBA33D</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table> 
+</div>
+
+<br />
+
+## Tools for creating color palettes 
+
+[Colors for maps](https://colorbrewer2.org)
+
+https://color.adobe.com/create/color-wheel 
+
+https://coolors.co/  
+
+https://carto.com/carto-colors/ 
+
 ## Primary Colors
 <table style={{width:30+'%',float:'left'}} >
     <tbody>
@@ -155,7 +324,29 @@ The color system is designed to generate themes that meet WCAG 2.1 compliant con
             <td style={{color:'black',backgroundColor:'#FFFFFF',width:200+'px',height:150+'px',textAlign:'center'}}>
                 <div style={{width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>White <br />  #FFFFFF</div>
             </td>            
-        </tr>        
+        </tr>            
+    </tbody>
+</table>
+
+<table style={{width:30+'%',float:'left'}} >
+<heading><h3>Warning</h3></heading>
+    <tbody>        
+        <tr>
+                <td style={{backgroundColor:'#B83230',width:200+'px',height:150+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Deep Saffron <br /> #B83230</div>
+                </td>            
+            </tr>          
+    </tbody>
+</table>
+
+<table style={{width:30+'%',float:'left'}} >
+<heading><h3>Error</h3></heading>
+    <tbody>
+        <tr>
+                <td style={{backgroundColor:'#EBA33D',width:200+'px',height:150+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Golden Gate Bridge<br /> #EBA33D</div>
+                </td>            
+            </tr>      
     </tbody>
 </table>
 
