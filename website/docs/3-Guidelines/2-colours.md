@@ -187,31 +187,31 @@ https://carto.com/carto-colors/
     <tbody>
      <tr style={{border:'none'}}>
            <td style={{border:'none',width:200+'px',padding:'0px 0px 0px 10px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#00665A',color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Bottle Green  <br />
+                <div style={{backgroundColor:'#00665A',color:'white',fontSize:'14px',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Bottle Green  <br />
                 #00665A</div>
             </td>            
         </tr>
         <tr style={{border:'none'}}>
            <td style={{backgroundColor:'#007B6C',width:200+'px',height:150+'px',textAlign:'center',border:'20px solid #007B6C',borderTop:'10px',borderBottom:'10px' }}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Pine Green  <br />
+                <div style={{color:'white',width:100+'%',fontSize:'14px',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Pine Green (Primary) <br />
                 #007B6C</div>
             </td>            
         </tr>
         <tr style={{border:'none'}}>
            <td style={{border:'none',width:200+'px',padding:'0px 0px 0px 10px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#00928F',color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Dark Cyan <br />
+                <div style={{backgroundColor:'#00928F',fontSize:'14px',color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Dark Cyan <br />
                 #00928F</div>
             </td>
         </tr>
         <tr style={{border:'none'}}>
            <td style={{border:'none',padding:'0px 0px 0px 10px',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#74CBC8',color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Pearl Aqua  <br />
+                <div style={{backgroundColor:'#74CBC8',fontSize:'14px',color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Pearl Aqua  <br />
                 #74CBC8</div>
             </td>
         </tr>
         <tr style={{border:'none'}}>
            <td style={{border:'none',padding:'0px 0px 0px 10px',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#AEDFE8',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Powder Blue <br />
+                <div style={{backgroundColor:'#AEDFE8',fontSize:'14px',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Powder Blue <br />
                 #AEDFE8</div>
             </td>
         </tr>
@@ -222,31 +222,31 @@ https://carto.com/carto-colors/
     <tbody>     
         <tr style={{border:'none'}}>
            <td style={{border:'none',padding:'0px 0px 0px 10px',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#0A3D61',color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Dark Midnight Blue <br />
+                <div style={{backgroundColor:'#0A3D61',color:'white',fontSize:'14px',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Dark Midnight Blue <br />
                 #0A3D61</div>
             </td>            
         </tr>   
         <tr style={{border:'none'}}>
            <td style={{backgroundColor:'#004B7F',width:200+'px',height:150+'px',textAlign:'center',border:'20px solid #004B7F',borderTop:'10px',borderBottom:'10px'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Dark Cerulean <br />
+                <div style={{color:'white',fontSize:'14px',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Dark Cerulean (Primary) <br />
                 #004B7F</div>
             </td>            
         </tr>
         <tr style={{border:'none'}}>
            <td style={{border:'none',padding:'0px 0px 0px 10px',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#0065A4',color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Medium Persian Blue <br />
+                <div style={{backgroundColor:'#0065A4',color:'white',fontSize:'14px',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Medium Persian Blue <br />
                 #0065A4</div>
             </td>
         </tr>
         <tr style={{border:'none'}}>
            <td style={{border:'none',padding:'0px 0px 0px 10px',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#478EA5',color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Steel Blue <br />
+                <div style={{backgroundColor:'#478EA5',color:'white',fontSize:'14px',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Steel Blue <br />
                 #478EA5</div>
             </td>
         </tr>
         <tr style={{border:'none'}}>
            <td style={{border:'none',padding:'0px 0px 0px 10px',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#75C9DB',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Mid Blue <br />
+                <div style={{backgroundColor:'#75C9DB',width:100+'%',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Mid Blue <br />
                 #75C9DB</div>
             </td>
         </tr>
@@ -262,31 +262,31 @@ https://carto.com/carto-colors/
     <tbody>
         <tr>
             <td style={{backgroundColor:'#2E3E4C',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Japanese Indigo <br />
+                <div style={{color:'white',fontSize:'14px',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Japanese Indigo <br />
                 #2E3E4C</div>
             </td>            
         </tr>
         <tr>
            <td style={{backgroundColor:'#3D5265',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Deep Blue  <br />
+                <div style={{color:'white',fontSize:'14px',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Deep Blue  <br />
                 #3D5265</div>
             </td>            
         </tr>
         <tr>
            <td style={{backgroundColor:'#54728C',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>UCLA Blue <br />
+                <div style={{color:'white',fontSize:'14px',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>UCLA Blue <br />
                 #54728C</div>
             </td>
         </tr>
         <tr>
            <td style={{backgroundColor:'#7495B2',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Weldon Blue  <br />
+                <div style={{color:'white',fontSize:'14px',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Weldon Blue  <br />
                 #7495B2</div>
             </td>
         </tr>
         <tr>
            <td style={{backgroundColor:'#ACCAE5',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Light Steel Blue  <br />
+                <div style={{width:100+'%',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Light Steel Blue  <br />
                 #ACCAE5</div>
             </td>
         </tr>
@@ -298,31 +298,31 @@ https://carto.com/carto-colors/
     <tbody>
         <tr>
             <td style={{backgroundColor:'#000000',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Black  <br />
+                <div style={{color:'white',fontSize:'14px',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Black  <br />
                 #000000</div>
             </td>            
         </tr>
         <tr>
            <td style={{backgroundColor:'#808285',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Old Silver  <br />
+                <div style={{width:100+'%',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Old Silver  <br />
                 #808285</div>
             </td>            
         </tr>
         <tr>
            <td style={{backgroundColor:'#BCBEC0',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Mid Gray  <br />
+                <div style={{width:100+'%',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Mid Gray  <br />
                 #BCBEC0</div>
             </td>
         </tr>
         <tr>
            <td style={{backgroundColor:'#E6E7E8',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Silver Gray  <br />
+                <div style={{width:100+'%',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Silver Gray  <br />
                 #E6E7E8</div>
             </td>
         </tr>
         <tr>
            <td style={{backgroundColor:'#F9F9F9',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Ghost White <br />
+                <div style={{width:100+'%',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Ghost White <br />
                 #F9F9F9</div>
             </td>
         </tr>
@@ -334,7 +334,7 @@ https://carto.com/carto-colors/
     <tbody>
         <tr>
             <td style={{color:'black',backgroundColor:'#FFFFFF',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>White <br />  #FFFFFF</div>
+                <div style={{width:100+'%',height:150+'px',fontSize:'14px',display:'flex',flexDirection:'column',justifyContent:'center'}}>White <br />  #FFFFFF</div>
             </td>            
         </tr>            
     </tbody>
@@ -345,7 +345,7 @@ https://carto.com/carto-colors/
     <tbody>        
         <tr>
                 <td style={{backgroundColor:'#B83230',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Deep Saffron <br /> #B83230</div>
+                    <div style={{color:'white',fontSize:'14px',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Deep Saffron <br /> #B83230</div>
                 </td>            
             </tr>          
     </tbody>
@@ -356,7 +356,7 @@ https://carto.com/carto-colors/
     <tbody>
         <tr>
                 <td style={{backgroundColor:'#EBA33D',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Golden Gate Bridge<br /> #EBA33D</div>
+                    <div style={{color:'white',fontSize:'14px',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Golden Gate Bridge<br /> #EBA33D</div>
                 </td>            
             </tr>      
     </tbody>
