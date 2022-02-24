@@ -93,31 +93,157 @@ const languagesList = [
   { name: 'Türkçe', code: 'tr' },
 ];
 
-const items = [
+const menuItems = [
   {
-    key: 'item 1',
-    name: 'Item 1',
-    active: false,
+    '@id': 'item1',
+    items: [
+      {
+        '@id': 'section1',
+        description: '',
+        items: [],
+        review_state: null,
+        title: 'Section 1',
+      },
+      {
+        '@id': 'section2',
+        description: '',
+        items: [
+          {
+            '@id': 'page1',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Page 1',
+          },
+        ],
+        review_state: null,
+        title: 'Section 2',
+      },
+      {
+        '@id': 'section3',
+        description: '',
+        items: [],
+        review_state: null,
+        title: 'Section 3',
+      },
+    ],
+    review_state: null,
+    title: 'Item 1',
   },
   {
-    key: 'item 2',
-    name: 'Item 2',
-    active: false,
+    '@id': 'item2',
+    items: [
+      {
+        '@id': 'section1',
+        description: '',
+        items: [],
+        review_state: null,
+        title: 'Section 1',
+      },
+      {
+        '@id': 'section2',
+        description: '',
+        items: [
+          {
+            '@id': 'page1',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Page 1',
+          },
+          {
+            '@id': 'page2',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Page 2',
+          },
+        ],
+        review_state: null,
+        title: 'Section 2',
+      },
+      {
+        '@id': 'section3',
+        description: '',
+        items: [],
+        review_state: null,
+        title: 'Section 3',
+      },
+    ],
+    review_state: null,
+    title: 'Item 2',
   },
   {
-    key: 'item 3',
-    name: 'Item 3',
-    active: false,
+    '@id': 'item3',
+    items: [
+      {
+        '@id': 'section1',
+        description: '',
+        items: [
+          {
+            '@id': 'page1',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Page 1',
+          },
+          {
+            '@id': 'page2',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Page 2',
+          },
+        ],
+        review_state: null,
+        title: 'Section 1',
+      },
+      {
+        '@id': 'section2',
+        description: '',
+        items: [
+          {
+            '@id': 'page1',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Page 1',
+          },
+          {
+            '@id': 'page2',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Page 2',
+          },
+        ],
+        review_state: null,
+        title: 'Section 2',
+      },
+      {
+        '@id': 'section3',
+        description: '',
+        items: [],
+        review_state: null,
+        title: 'Section 3',
+      },
+    ],
+    review_state: null,
+    title: 'Item 3',
   },
   {
-    key: 'item 4',
-    name: 'Item 4',
-    active: false,
+    '@id': 'item4',
+    description: '',
+    items: [],
+    review_state: null,
+    title: 'Item 4',
   },
   {
-    key: 'item 5',
-    name: 'Item 5',
-    active: false,
+    '@id': 'item5',
+    description: '',
+    items: [],
+    review_state: null,
+    title: 'Item 5',
   },
 ];
 
@@ -127,5 +253,5 @@ export const Default = Template.bind({});
 Default.args = {
   linksDropdown: { title: 'Environmental information systems', links: links },
   languages: languagesList,
-  menuItems: items,
+  menuItems: menuItems,
 };

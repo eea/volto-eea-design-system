@@ -4,11 +4,17 @@
  */
 
 import React, { Component } from 'react';
-import { Container, Dropdown, Image, Menu, Grid } from 'semantic-ui-react';
+import {
+  Container,
+  Dropdown,
+  Image,
+  Menu,
+  Grid,
+  Icon,
+} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
-import searchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search.png';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/globeIcon.png';
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
@@ -76,6 +82,9 @@ class Header extends Component {
   }
 
   menuOnClick = (e, x) => {
+    if (this.state.activeSearch === true) {
+      this.setState({ activeSearch: false });
+    }
     this.setState({ activeItem: x.name });
     this.setState({ activeMenu: true });
   };
@@ -95,7 +104,7 @@ class Header extends Component {
     });
   };
 
-  burgerOnClick = () => {
+  mobileBurgerOnClick = () => {
     if (this.state.activeSearch === true) {
       this.setState({ activeSearch: false });
     }
@@ -107,6 +116,11 @@ class Header extends Component {
       this.setState({ burger: '' });
       this.setState({ activeMenu: false });
     }
+  };
+
+  desktopBurgerOnClick = () => {
+    this.setState({ activeMenu: false });
+    this.setState({ activeItem: '' });
   };
 
   componentDidUpdate() {
@@ -123,7 +137,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="eea-header">
+      <div className="eea header">
         <Header.TopHeader>
           <Header.TopItem className="official-union mobile or lower hidden">
             <Image src={eeaFlag} alt="eea flag"></Image>
@@ -134,7 +148,7 @@ class Header extends Component {
               aria-label="dropdown"
             >
               <Dropdown.Menu id="eea-official-union-dropdown" role="group">
-                <div>
+                <div className="content">
                   <p>
                     All official European Union website addresses are in the{' '}
                     <b>europa.eu</b> domain.
@@ -162,7 +176,7 @@ class Header extends Component {
               aria-label="dropdown"
             >
               <Dropdown.Menu role="group">
-                <div role="option" aria-selected="false">
+                <div role="option" aria-selected="false" className="content">
                   <p>
                     All official European Union website addresses are in the{' '}
                     <b>europa.eu</b> domain.
@@ -210,8 +224,8 @@ class Header extends Component {
 
           {this.props.languages && (
             <Dropdown
-              id="eea-top-header-language-dropdown"
-              className="eea-top-header-item"
+              id="language-switcher"
+              className="item"
               text={`${this.state.language.toUpperCase()}`}
               icon={
                 <Image
@@ -222,97 +236,77 @@ class Header extends Component {
               aria-label="dropdown"
             >
               <Dropdown.Menu>
-                {this.props.languages.map((item, index) => (
-                  <Dropdown.Item
-                    key={index}
-                    text={
-                      <span>
-                        {item.name}
-                        <span className="country-code">
-                          {item.code.toUpperCase()}
+                <div className="wrapper">
+                  {this.props.languages.map((item, index) => (
+                    <Dropdown.Item
+                      key={index}
+                      text={
+                        <span>
+                          {item.name}
+                          <span className="country-code">
+                            {item.code.toUpperCase()}
+                          </span>
                         </span>
-                      </span>
-                    }
-                    onClick={this.onLanguageSelection}
-                  ></Dropdown.Item>
-                ))}
+                      }
+                      onClick={this.onLanguageSelection}
+                    ></Dropdown.Item>
+                  ))}
+                </div>
               </Dropdown.Menu>
             </Dropdown>
           )}
         </Header.TopHeader>
-
-        <Header.Main>
-          <Container>
-            <Grid>
-              <Grid.Column mobile={8} tablet={8} computer={4}>
-                <Logo id="logo"></Logo>
-              </Grid.Column>
-              <Grid.Column mobile={4} tablet={4} computer={8}>
-                <div className="eea-main-header-menu">
-                  {!this.state.activeSearch &&
-                    !this.state.activeMenu &&
-                    this.props.menuItems && (
-                      <Menu className="eea-main-menu" text>
-                        {this.props.menuItems.map((item) => (
-                          <Menu.Item
-                            className="eea-main-menu-item"
-                            name={item.key}
-                            onClick={this.menuOnClick}
-                            active={this.state.activeItem === item.key}
-                            key={item.key}
-                          >
-                            {item.name}
-                          </Menu.Item>
-                        ))}
-                      </Menu>
-                    )}
-                  {this.state.activeMenu && (
-                    <div
-                      className="eea-header-burger-action desktop"
-                      role="none"
-                      onClick={() => {
-                        this.setState({ activeMenu: false });
-                        this.setState({ activeItem: '' });
-                      }}
-                    >
-                      <span></span>
-                      <span></span>
-                    </div>
-                  )}
-                  <div className="eea-header-search-action ">
-                    {!this.state.activeSearch ? (
-                      <Image
-                        src={searchIcon}
-                        alt="search icon"
-                        onClick={this.searchOnClick}
-                      ></Image>
-                    ) : (
-                      <div
-                        onClick={this.searchOnClick}
-                        className="eea-header-search-action "
-                        role="none"
+        <Header.Main
+          activeSearch={this.state.activeSearch}
+          activeMenu={this.state.activeMenu}
+          menuItems={this.props.menuItems}
+        >
+          <Grid>
+            <Grid.Column mobile={8} tablet={8} computer={4}>
+              <Logo id="logo"></Logo>
+            </Grid.Column>
+            <Grid.Column mobile={4} tablet={4} computer={8}>
+              <div className="main-menu">
+                {!this.state.activeMenu && this.props.menuItems && (
+                  <Menu className="eea-main-menu tablet or lower hidden" text>
+                    {this.props.menuItems.map((item) => (
+                      <Menu.Item
+                        name={item['@id']}
+                        onClick={this.menuOnClick}
+                        active={this.state.activeItem === item.key}
+                        key={item['@id']}
                       >
-                        <span></span>
-                        <span></span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div
-                    className={`eea-header-burger-action mobile ${this.state.burger}`}
-                    role="none"
-                    onClick={this.burgerOnClick}
+                        {item.title}
+                      </Menu.Item>
+                    ))}
+                  </Menu>
+                )}
+                {this.state.activeMenu && (
+                  <Header.BurgerAction
+                    className="desktop"
+                    onClick={this.desktopBurgerOnClick}
                   >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
+                    <Icon name="close" />
+                  </Header.BurgerAction>
+                )}
+                <div
+                  className="eea-header-search-action "
+                  onClick={this.searchOnClick}
+                  role="none"
+                >
+                  <Icon name={!this.state.activeSearch ? 'search' : 'close'} />
                 </div>
-              </Grid.Column>
-            </Grid>
-          </Container>
-          {this.state.activeSearch && <HeaderSearchPopUp></HeaderSearchPopUp>}
-          {this.state.activeMenu && <HeaderMenuPopUp></HeaderMenuPopUp>}
+                <Header.BurgerAction
+                  className={`mobile ${this.state.burger}`}
+                  onClick={this.mobileBurgerOnClick}
+                >
+                  <Icon
+                    name={this.state.burger === 'open' ? 'close' : 'bars'}
+                  ></Icon>
+                </Header.BurgerAction>
+              </div>
+            </Grid.Column>
+          </Grid>
         </Header.Main>
       </div>
     );
@@ -320,7 +314,7 @@ class Header extends Component {
 }
 
 const TopHeader = (props) => (
-  <div className="eea-top-header">
+  <div className="top bar">
     <Container>{props.children}</Container>
   </div>
 );
@@ -328,16 +322,34 @@ const TopHeader = (props) => (
 Header.TopHeader = TopHeader;
 
 const TopItem = (props) => (
-  <div className={`eea-top-header-item ${props.className}`} id={props.id}>
+  <div className={`item ${props.className}`} id={props.id}>
     {props.children}
   </div>
 );
 
 Header.TopItem = TopItem;
 
-const Main = (props) => <div className="eea-main-header">{props.children}</div>;
+const Main = (props) => (
+  <div className="main bar">
+    <Container>{props.children}</Container>
+    {props.activeSearch && <HeaderSearchPopUp />}
+    {props.activeMenu && <HeaderMenuPopUp menuItems={props.menuItems} />}
+  </div>
+);
 
 Header.Main = Main;
+
+const BurgerAction = (props) => (
+  <div
+    className={`eea-header-burger-action ${props.className}`}
+    role="none"
+    onClick={props.onClick}
+  >
+    {props.children}
+  </div>
+);
+
+Header.BurgerAction = BurgerAction;
 
 export default connect((state) => ({
   token: state.userSession.token,

@@ -2,13 +2,32 @@
             Timeline
 *******************************/
 
-@timelineAlign: center;
-@timelineBoxShadow: @eeaGlobalShadow;
-@timelineBorder: none;
+@timelineMaxWidth  : 500px;
+@timelineAlign     : center;
+@timelineBoxShadow : @eeaGlobalShadow;
+@timelineBorder    : none;
+
+/* Content Card */
+@modileCardMarginTop : 0.25rem;
+@tabletCardMarginTop : 0.5rem;
+
+/* Icon */
+@mobileTimelineIconFontSize : 1.2rem;
+@tabletTimelineIconFontSize : 1.5rem;
+@timelineIconBoxShadow      : @eeaGlobalShadow;
+@timelineIcoMargin          : auto;
+
+/* Label */
+@timelineLabelPadding      : 0.5rem;
+@timelineLabelBorderRadius : @defaultBorderRadius;
+@timelineLabelFontSize     : 0.875rem;
+
+/* Line */
+@timelineLineBorderLeft    : @2px solid @silverGray;
 
 /* Colors */
-@timelineBlue   : @darkCerulean;
-@timelineGreen  : @pineGreen;
+@timelineBlue   : @blue;
+@timelineGreen  : @green;
 @timelineGrey   : @midGray;
 @timelineRed    : @red;
 @timelineOrange : @orange;
