@@ -45,13 +45,18 @@
 @dropdownMenuItemColorHover           : @white;
 @dropdownMenuItemBackgroundColorHover : @japaneseIndigo;
 // Official Union
-@officialUnionGap                     : @headerSmallFontSize;
+@officialUnionGap                     : 0.75rem;
+@officialUnionMenuFontSize            : @headerMediumFontSize;
+@officialUnionTextFontWeight          : @normal;
+@officialUnionLinkFontWeight          : @bold;
+@officialUnionLinkColor               : @japaneseIndigo;
 @mobileOfficialUnionPadding           : 0.313rem;
 @tabletOfficialUnionPadding           : 0.75rem;
 @mobileOfficialUnionMaxWidth          : 110px;
 @tabletOfficialUnionMaxWidth          : 373px;
-@mobileOfficialUnionImageWidth        : 10px;
+@mobileOfficialUnionImageWidth        : 11px;
 @tabletOfficialUnionImageWidth        : 17px;
+
 // Theme Sites
 @themeSitesMenuWidth                  : 210px;
 @themeSitesMenuSiteLinkColor          : @japaneseIndigo;
@@ -87,6 +92,9 @@
 @mainMenuItemActiveColor              : @secondaryColor;
 @mainMenuItemActiveBorder             : 3px solid @secondaryColor;
 
+/* Actions (Mega menu & Search) */
+@mobileActionsBoxWidth: 30px;
+
 /* Mega menu and Search popup */
 @mobilePopupMarginTop   : 50px;
 @tabletPopupMarginTop   : 100px;
@@ -111,3 +119,8 @@
 @tabletMegaMenuLineHeight       : 3rem;
 @computerMegaMenuLineHeight     : 4.5rem;
 @megaMenuIconAfterFontSize      : 1.875rem;
+
+/* Search box */
+@searchBoxBackgroundGradient : linear-gradient(340.97deg, @darkCerulean 9.19%, #009591 77.47%);
+
+@searchBoxWrapperGap : 75px;

@@ -15,7 +15,9 @@ function HeaderMenuPopUp({ menuItems }) {
                     {item.title}
                   </label>
                 )}
-                <a href="/#">{item.title}</a>
+                <a href="/#">
+                  <span>{item.title}</span>
+                </a>
                 {item.items.length > 0 && (
                   <input type="checkbox" id={`drop-${item['@id']}`} />
                 )}
@@ -32,7 +34,9 @@ function HeaderMenuPopUp({ menuItems }) {
                             {section.title}
                           </label>
                         )}
-                        <a href="/#">{section.title}</a>
+                        <a href="/#">
+                          <span>{section.title}</span>
+                        </a>
                         {section.items.length > 0 && (
                           <input
                             type="checkbox"
@@ -44,7 +48,9 @@ function HeaderMenuPopUp({ menuItems }) {
                           <ul className="sub third">
                             {section.items.map((page) => (
                               <li key={page['@id']}>
-                                <a href="/#">{page.title}</a>
+                                <a href="/#">
+                                  <span>{page.title}</span>
+                                </a>
                               </li>
                             ))}
                           </ul>
