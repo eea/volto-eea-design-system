@@ -5,11 +5,6 @@
 
 import React from 'react';
 import { Container } from 'semantic-ui-react';
-//import ThemeSites from './ThemeSites.js';
-//import Actions from './Actions.js';
-
-//import AbstractImg from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/abstract-visual.svg';
-//import EULogo from '../../../../../theme/themes/eea/assets/images/Footer/EULogo.png';
 
 import FooterSites from '@eeacms/volto-eea-design-system/ui/Footer/FooterSites';
 import FooterActions from '@eeacms/volto-eea-design-system/ui/Footer/FooterActions';
