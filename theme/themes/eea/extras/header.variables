@@ -94,6 +94,8 @@
 
 /* Actions (Mega menu & Search) */
 @mobileActionsBoxWidth: 30px;
+@tabletActionsBoxWidth: 66px;
+@computerActionsBoxWidth: 72px;
 
 /* Mega menu and Search popup */
 @mobilePopupMarginTop   : 50px;
@@ -106,19 +108,26 @@
 /* Menu link and toggle */
 @mobileMegaMenuColor            : @white;
 @megaMenuLinkPadding            : 0 1.25rem;
+@megaMenuWordBreak              : break-word;
 @toggleMenuFirstPadding         : 0;
 @toggleMenuSecondPadding        : 0 1.25rem;
 @toggleMenuThirdPadding         : 0 2.5rem;
+
+// Font sizes and line heights
 @mobileMegaMenuFontSize         : 1.125rem;
 @tabletMegaMenuFontSize         : @h1;
 @computerMegaMenuMarginBottom   : 1rem;
+
 @computerMegaMenuFirstFontSize  : 3rem;
 @computerMegaMenuSecondFontSize : 2.5rem;
 @computerMegaMenuThirdFontSize  : 2.25rem;
-@mobileMegaMenuLineHeight       : 2.5rem;
-@tabletMegaMenuLineHeight       : 3rem;
-@computerMegaMenuLineHeight     : 4.5rem;
-@megaMenuIconAfterFontSize      : 1.875rem;
+
+@mobileMegaMenuLineHeight         : 2.5rem;
+@tabletMegaMenuLineHeight         : 3rem;
+//@computerMegaMenuLineHeight     : 4.5rem;
+@megaMenuIconAfterColor           : @white;
+@tabletMegaMenuIconAfterFontSize  : 1rem;
+@computerMegaMenuIconAfterFontSize: 1.875rem;
 
 /* Search box */
 @searchBoxBackgroundGradient : linear-gradient(340.97deg, @darkCerulean 9.19%, #009591 77.47%);
