@@ -283,7 +283,7 @@ class Header extends Component {
                     onClick={this.desktopBurgerOnClick}
                   >
                     {/* <Icon name="close" /> */}
-                    <Image src={closeIcon} />
+                    <Image src={closeIcon} alt="menu close icon" />
                   </Header.BurgerAction>
                 )}
                 <div
@@ -298,6 +298,7 @@ class Header extends Component {
                         ? `${searchIcon}`
                         : `${closeIcon}`
                     }
+                    alt="search button open/close"
                   />
                 </div>
                 <Header.BurgerAction
@@ -313,6 +314,7 @@ class Header extends Component {
                         ? `${closeIcon}`
                         : `${burgerIcon}`
                     }
+                    alt="menu icon open/close"
                   />
                 </Header.BurgerAction>
               </div>
