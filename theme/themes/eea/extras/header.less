@@ -606,7 +606,7 @@ Header Actions - Burger and Search Icons
           justify-content: space-between;
           align-items: baseline;
 
-          &:after { 
+          &.hasSubMenu:after { 
             content: '\f054';
             font-family: 'Icons';
             font-size: @tabletMegaMenuIconAfterFontSize;
@@ -633,7 +633,7 @@ Header Actions - Burger and Search Icons
           justify-content: space-between;
           align-items: baseline;
 
-          &:after { 
+          &.hasSubMenu:after { 
             content: '\f054';
             font-family: 'Icons';
             font-size: @tabletMegaMenuIconAfterFontSize;
@@ -670,7 +670,7 @@ Header Actions - Burger and Search Icons
         > li {
           font-size: @computerMegaMenuFirstFontSize;
           margin-bottom: 2rem;
-          &:after {
+          &.hasSubMenu:after {
             font-size: @computerMegaMenuIconAfterFontSize;
           }
         }
@@ -678,7 +678,7 @@ Header Actions - Burger and Search Icons
       .sub.second li {
         font-size: @computerMegaMenuSecondFontSize;
         margin-bottom: 1.7rem;
-        &:after { 
+        &.hasSubMenu:after { 
           font-size: @computerMegaMenuIconAfterFontSize;
         }
       }
