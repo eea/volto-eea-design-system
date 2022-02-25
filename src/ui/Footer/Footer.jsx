@@ -6,11 +6,6 @@
 import React, { Component } from 'react';
 import { Icon, Image, Grid, Container } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-//import ThemeSites from './ThemeSites.js';
-//import Actions from './Actions.js';
-
-//import AbstractImg from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/abstract-visual.svg';
-//import EULogo from '../../../../../theme/themes/eea/assets/images/Footer/EULogo.png';
 import EIONETLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/EIONETLogo.png';
 import EEALogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/EEA-Logo-white.svg';
 
@@ -31,7 +26,7 @@ class Footer extends Component {
               {this.props.header && (
                 <Footer.Header>{this.props.header}</Footer.Header>
               )}
-              {this.props.sites.length > 0 && (
+              {this.props.sites && (
                 <Footer.Sites sites={this.props.sites}></Footer.Sites>
               )}
             </div>
@@ -61,19 +56,19 @@ class Footer extends Component {
                 <Grid.Column mobile={6} tablet={5} computer={4}>
                   <div className="item">
                     {this.props.contacts && (
-                      <Footer.Contact
+                      <Footer.Contacts
                         contacts={this.props.contacts}
-                      ></Footer.Contact>
+                      ></Footer.Contacts>
                     )}
 
-                    {this.props.social.length > 0 && (
+                    {this.props.social > 0 && (
                       <Footer.Social social={this.props.social}></Footer.Social>
                     )}
                   </div>
                 </Grid.Column>
               </Grid>
               <Grid.Row>
-                {this.props.actions.length > 0 && (
+                {this.props.actions > 0 && (
                   <Footer.Actions actions={this.props.actions} />
                 )}
               </Grid.Row>
@@ -132,7 +127,7 @@ const Social = (props) => (
 
 Footer.Social = Social;
 
-const Contact = (props) => (
+const Contacts = (props) => (
   <>
     <p className="header">{props.contacts.header}</p>
     {props.contacts.contacts.length > 0 &&
@@ -148,7 +143,7 @@ const Contact = (props) => (
   </>
 );
 
-Footer.Contact = Contact;
+Footer.Contacts = Contacts;
 
 /**
  * Property types.

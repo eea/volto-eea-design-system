@@ -11,12 +11,12 @@
 }
 
 .ui.input input {
+  width: 348px !important;
   height: 43px !important;
   border: @border !important;
   border-radius: @borderRadius !important;
   font-family: @pageFont !important;
   font-weight: @inputFontWeight;
-  width: 348px !important;
 
   &:active,
   &:focus {
@@ -27,7 +27,7 @@
 
 .required.field {
   .ui.labeled.input::after {
-    content: "*" !important;
+    content: '*' !important;
   }
 }
 
@@ -36,10 +36,10 @@
 }
 
 .ui.labeled.input .ui.label.label {
-  color: @black;
-  background-color: @white;
-  width: 130px;
   overflow: hidden;
+  width: 130px;
+  background-color: @white;
+  color: @black;
   text-overflow: ellipsis;
 }
 
@@ -58,11 +58,12 @@ textarea {
 /* Search Input */
 .ui.fluid.icon.input.search {
   input {
+    height: 70px !important;
     padding: 18.5px;
     border: none !important;
     border-bottom: 2px solid !important;
     background: transparent;
-    color: @white;
+    color: @white !important;
     font-size: 18px;
   }
 
@@ -81,7 +82,7 @@ textarea {
     }
 
     i.icon {
-      font-size: 48px;
+      font-size: 40px;
     }
   }
 }
