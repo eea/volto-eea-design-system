@@ -137,9 +137,9 @@ const Template = (args) => <AccordionContainer {...args}></AccordionContainer>;
 
 export const Default = Template.bind({});
 Default.args = {
-  toggle1: 'Accordion Title 1',
-  toggle2: 'Accordion Title 2',
-  toggle3: 'Accordion Title 3',
+  toggle1: 'Water and marine environment',
+  toggle2: 'Resource efficiency and waste',
+  toggle3: 'Air pollution',
   content1: [
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nisi mauris enim felis eget id sed tristique. At laoreet ligula pretium, pulvinar. Accumsan egestas ultricies erat sed. Eget non quis libero, odio elementum lectus lectus ullamcorper elit. In quam pulvinar amet, habitasse mi lorem nunc. Sed sed elementum est purus elementum eget. Elementum tortor at nulla nunc, tempor rhoncus, bibendum. Massa mauris, mauris, vel elementum adipiscing.',
   ],

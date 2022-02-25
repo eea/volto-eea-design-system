@@ -47,6 +47,9 @@
 @imageDistance: 0.5em;
 @imageAlign: top;
 
+/* Item */
+@itemColor: @primaryColor;
+
 /* Content */
 @contentDistance: 0.5em;
 @contentLineHeight: @itemLineHeight;

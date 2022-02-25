@@ -314,9 +314,9 @@
 @orange           : #FF9933;
 @yellow           : #F2EB49; 
 @olive            : #78AB66;
-@green            : #007B6C;
+@green            : @pineGreen;
 @teal             : #00928F;
-@blue             : #0065A4;
+@blue             : @darkCerulean;
 @violet           : #6667AB;
 @purple           : #A530B8;
 @pink             : #F255D0;

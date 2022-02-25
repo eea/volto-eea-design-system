@@ -11,7 +11,8 @@
 }
 
 .ui.input input {
-  height: auto !important;
+  width: 348px !important;
+  height: 43px !important;
   border: @border !important;
   border-radius: @borderRadius !important;
   font-family: @pageFont !important;
@@ -19,12 +20,27 @@
 
   &:active,
   &:focus {
-    border: 2px solid @deepBlue !important;
+    border: 2px solid @green !important;
+    color: @black !important;
+  }
+}
+
+.required.field {
+  .ui.labeled.input::after {
+    content: '*' !important;
   }
 }
 
 .ui.input.error input {
   border: 2px solid @negativeBorderColor !important;
+}
+
+.ui.labeled.input .ui.label.label {
+  overflow: hidden;
+  width: 130px;
+  background-color: @white;
+  color: @black;
+  text-overflow: ellipsis;
 }
 
 textarea {
@@ -39,6 +55,39 @@ textarea {
   }
 }
 
+/* Search Input */
+.ui.fluid.icon.input.search {
+  input {
+    height: 70px !important;
+    padding: 18.5px;
+    border: none !important;
+    border-bottom: 2px solid !important;
+    background: transparent;
+    color: @white !important;
+    font-size: 18px;
+  }
+
+  i.icon {
+    color: @white;
+    font-size: 18px;
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  .ui.fluid.icon.input.search {
+    input {
+      border-bottom: 3px solid !important;
+      font-size: 48px;
+    }
+
+    i.icon {
+      font-size: 40px;
+    }
+  }
+}
+
+/*****************************************************************/
 .inline.field {
   .wrapper {
     display: flex;

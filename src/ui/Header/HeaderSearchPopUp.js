@@ -3,17 +3,17 @@ import { Container, Input, Button, Icon } from 'semantic-ui-react';
 
 function HeaderSearchPopUp() {
   return (
-    <div id="eea-search-box">
+    <div id="search-box">
       <Container>
-        <div className="eea-search-body">
+        <div className="wrapper">
           <Input
-            id="eea-search-input"
+            className="search"
             icon="search"
             placeholder="Search..."
             fluid
           />
-          <div className="eea-advanced-search-button">
-            <Button icon labelPosition="left">
+          <div className="action">
+            <Button icon labelPosition="left" className="search">
               <Icon name="search" />
               Advanced Search
             </Button>
