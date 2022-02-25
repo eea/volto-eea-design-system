@@ -110,21 +110,28 @@
 @megaMenuLinkPadding            : 0 1.25rem;
 @megaMenuWordBreak              : break-word;
 @toggleMenuFirstPadding         : 0;
-@toggleMenuSecondPadding        : 0 1.25rem;
-@toggleMenuThirdPadding         : 0 2.5rem;
+@mobileToggleMenuFirstPadding   : 0.5rem 0;
+@mobileToggleMenuSecondPadding  : 0.5rem 1.25rem;
+@mobileToggleMenuThirdPadding   : 0.5rem 2.5rem;
+
+@megaMenuLiAlignItems           : center;
+
+@mobileMegaMenuMarginBottom     : 0.5rem;
+@tabletMegaMenuMarginBottom     : 1rem;
+@computerMegaMenuMarginBottom   : 2rem;
 
 // Font sizes and line heights
 @mobileMegaMenuFontSize         : 1.125rem;
 @tabletMegaMenuFontSize         : @h1;
-@computerMegaMenuMarginBottom   : 1rem;
 
 @computerMegaMenuFirstFontSize  : 3rem;
 @computerMegaMenuSecondFontSize : 2.5rem;
 @computerMegaMenuThirdFontSize  : 2.25rem;
 
-@mobileMegaMenuLineHeight         : 2.5rem;
-@tabletMegaMenuLineHeight         : 3rem;
-//@computerMegaMenuLineHeight     : 4.5rem;
+@megaMenuLineHeight             : 1.2;
+
+// Icon
+@megaMenuAfterIcon                : '\f054';
 @megaMenuIconAfterColor           : @white;
 @tabletMegaMenuIconAfterFontSize  : 1rem;
 @computerMegaMenuIconAfterFontSize: 1.875rem;

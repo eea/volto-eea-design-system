@@ -7,7 +7,6 @@
             Header
 *******************************/
 
-
 .eea.header {
   background: @white;
 
@@ -259,26 +258,28 @@
 /***************************************
 Header Actions - Burger and Search Icons
 ***************************************/
-.eea-header-burger-action {
+.burger-action {
     display: flex;
-    width: @mobileActionsBoxWidth;
-    height: @mobileMainSectionHeight;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    width: @mobileActionsBoxWidth;
+    height: @mobileMainSectionHeight;
     background-color: @mediumPersianBlue;
   }
   
-  .eea-header-burger-action.desktop {
+  .burger-action.desktop {
     display: none;
   }
   
-  .eea-header-burger-action.mobile {
+  .burger-action.mobile {
     display: flex;
     flex-direction: column;
     cursor: pointer;
   }
   
-  .eea-header-search-action {
+  .search-action {
+    cursor: pointer;
     display: flex;
     width: @mobileActionsBoxWidth;
     height: @mobileMainSectionHeight;
@@ -288,7 +289,7 @@ Header Actions - Burger and Search Icons
 
   }
 
-  .eea-header-burger-action,.eea-header-search-action,.eea-header-burger-action.mobile {
+  .burger-action,.search-action,.burger-action.mobile {
     img {
       width: 60%;
     }
@@ -358,13 +359,13 @@ Header Actions - Burger and Search Icons
     display: none;
   }
 
-  .eea-header-burger-action.mobile {
+  .burger-action.mobile {
     display: flex;
   }
 
   /* Action Boxes */
-  .eea-header-burger-action.mobile,
-  .eea-header-search-action {
+  .burger-action.mobile,
+  .search-action {
     width: @tabletActionsBoxWidth;
     height: @tabletMainSectionHeight;
   }
@@ -409,17 +410,17 @@ Header Actions - Burger and Search Icons
     }
   }
 
-  .eea-header-burger-action.mobile {
+  .burger-action.mobile {
     display: none;
   }
 
-  .eea-header-burger-action.desktop {
+  .burger-action.desktop {
     display: flex;
     width: @computerActionsBoxWidth;
     height: @computerMainSectionHeight;
   }
 
-  .eea-header-search-action {
+  .search-action {
     width: @computerActionsBoxWidth;
     height: @computerMainSectionHeight;
   }
@@ -430,9 +431,6 @@ Header Actions - Burger and Search Icons
     display: none;
   }
 }
-
-
-
 
 /************************
       MEGA MENU
@@ -479,16 +477,15 @@ Header Actions - Burger and Search Icons
    }
    
    nav ul li {
-     margin: 0px;
      display: inline-block;
      font-size: @mobileMegaMenuFontSize;
    }
    
    nav a {
-    color: @mobileMegaMenuColor;
     display: flex;
+    color: @mobileMegaMenuColor;
     padding: @megaMenuLinkPadding;
-    line-height: @mobileMegaMenuLineHeight;
+    line-height: @megaMenuLineHeight;
     word-break: @megaMenuWordBreak;
    }
    
@@ -514,12 +511,6 @@ Header Actions - Burger and Search Icons
      left: 0;
    }
    
-  //  li > a:after { 
-  //   content: "\f054";
-  //   font-family: 'Icons';
-  //   font-size: @megaMenuIconAfterFontSize;
-  // }
-   
    li > a:only-child:after { 
     content: ""; 
   }
@@ -542,25 +533,29 @@ Header Actions - Burger and Search Icons
       display: block;
       padding: @toggleMenuFirstPadding;
       color: @mobileMegaMenuColor;
-      line-height: @mobileMegaMenuLineHeight;
+      line-height: @megaMenuLineHeight;
     }
 
     [id^=drop]:checked + ul { 
       display: block;
     }
    
-     nav ul li {
-       display: block;
-       width: 100%;
-     }
+    nav ul li {
+      display: block;
+      width: 100%;
+    }
    
+    nav .menu > li > .toggle,
+    nav .menu > li > a {
+      padding: @mobileToggleMenuFirstPadding;
+    }
     nav ul ul .toggle,
     nav ul ul a { 
-      padding: @toggleMenuSecondPadding;
+      padding: @mobileToggleMenuSecondPadding;
     }
    
     nav ul ul ul a { 
-      padding: @toggleMenuThirdPadding;
+      padding: @mobileToggleMenuThirdPadding;
     }
    
    
@@ -604,10 +599,11 @@ Header Actions - Burger and Search Icons
           width: 100%;
           display: flex;
           justify-content: space-between;
-          align-items: baseline;
+          align-items: @megaMenuLiAlignItems;
+          margin-bottom: @tabletMegaMenuMarginBottom;
 
           &.hasSubMenu:after { 
-            content: '\f054';
+            content: @megaMenuAfterIcon;
             font-family: 'Icons';
             font-size: @tabletMegaMenuIconAfterFontSize;
             color: @white;
@@ -615,9 +611,8 @@ Header Actions - Burger and Search Icons
           a {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
+            align-items: @megaMenuLiAlignItems ;
             max-width: 100%;
-            line-height: @tabletMegaMenuLineHeight;
             padding-left: 2rem;
           }
         }
@@ -631,10 +626,11 @@ Header Actions - Burger and Search Icons
           width: 100%;
           display: flex;
           justify-content: space-between;
-          align-items: baseline;
+          align-items: @megaMenuLiAlignItems;
+          margin-bottom: @tabletMegaMenuMarginBottom;
 
           &.hasSubMenu:after { 
-            content: '\f054';
+            content: @megaMenuAfterIcon;
             font-family: 'Icons';
             font-size: @tabletMegaMenuIconAfterFontSize;
             color: @megaMenuIconAfterColor;
@@ -650,6 +646,7 @@ Header Actions - Burger and Search Icons
         width: 100%;
         min-height: 50vh;
         li {
+          margin-bottom: @tabletMegaMenuMarginBottom;
           > a {
             max-width: 100%;
           }
@@ -669,7 +666,7 @@ Header Actions - Burger and Search Icons
       .menu {
         > li {
           font-size: @computerMegaMenuFirstFontSize;
-          margin-bottom: 2rem;
+          margin-bottom: @computerMegaMenuMarginBottom;
           &.hasSubMenu:after {
             font-size: @computerMegaMenuIconAfterFontSize;
           }
@@ -677,14 +674,14 @@ Header Actions - Burger and Search Icons
       }
       .sub.second li {
         font-size: @computerMegaMenuSecondFontSize;
-        margin-bottom: 1.7rem;
+        margin-bottom: @computerMegaMenuMarginBottom;;
         &.hasSubMenu:after { 
           font-size: @computerMegaMenuIconAfterFontSize;
         }
       }
       .sub.third li {
         font-size: @computerMegaMenuThirdFontSize;
-        margin-bottom: 1.5rem;
+        margin-bottom: @computerMegaMenuMarginBottom;;
       }
     }
   }
