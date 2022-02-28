@@ -71,7 +71,6 @@ textarea {
     color: @white;
     font-size: 18px;
     opacity: 1;
-    line-height: @lineHeightSearchIcon
   }
 }
 

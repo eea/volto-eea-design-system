@@ -15,7 +15,6 @@
 
 @lineHeight: @inputLineHeight;
 @lineHeightOffset: ((@lineHeight - 1em) / 2);
-@lineHeightSearchIcon: @inputLineHeight - 0.5;
 
 @padding: (@verticalPadding - @lineHeightOffset) @horizontalPadding;
 
