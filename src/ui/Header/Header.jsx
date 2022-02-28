@@ -271,10 +271,10 @@ class Header extends Component {
                   <Menu className="eea-main-menu tablet or lower hidden" text>
                     {this.props.menuItems.map((item) => (
                       <Menu.Item
-                        name={item['@id']}
+                        name={item['@id'] || item.url}
                         onClick={this.menuOnClick}
                         active={this.state.activeItem === item.key}
-                        key={item['@id']}
+                        key={item['@id'] || item.url}
                       >
                         {item.title}
                       </Menu.Item>

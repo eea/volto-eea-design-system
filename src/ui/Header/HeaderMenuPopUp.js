@@ -9,42 +9,56 @@ function HeaderMenuPopUp({ menuItems }) {
           <ul className="menu">
             {menuItems.map((item) => (
               //first tier
-              <li key={item['@id']}>
+              <li key={item['@id'] || item.url}>
                 {item.items.length > 0 && (
-                  <label htmlFor={`drop-${item['@id']}`} className="toggle">
+                  <label
+                    htmlFor={`drop-${item['@id'] || item.url}`}
+                    className="toggle"
+                  >
                     {item.title}
                   </label>
                 )}
-                <a href="/#">{item.title}</a>
+                <a href={item['@id'] || item.url}>{item.title}</a>
                 {item.items.length > 0 && (
-                  <input type="checkbox" id={`drop-${item['@id']}`} />
+                  <input
+                    type="checkbox"
+                    id={`drop-${item['@id'] || item.url}`}
+                  />
                 )}
                 {item.items.length > 0 && (
                   //second tier
                   <ul className="sub second">
                     {item.items.map((section) => (
-                      <li key={section['@id']}>
+                      <li key={section['@id'] || section.url}>
                         {section.items.length > 0 && (
                           <label
-                            htmlFor={`drop-${item['@id']}-${section['@id']}`}
+                            htmlFor={`drop-${item['@id'] || item.url}-${
+                              section['@id'] || section.url
+                            }`}
                             className="toggle"
                           >
                             {section.title}
                           </label>
                         )}
-                        <a href="/#">{section.title}</a>
+                        <a href={section['@id'] || section.url}>
+                          {section.title}
+                        </a>
                         {section.items.length > 0 && (
                           <input
                             type="checkbox"
-                            id={`drop-${item['@id']}-${section['@id']}`}
+                            id={`drop-${item['@id'] || item.url}-${
+                              section['@id'] || section.url
+                            }`}
                           ></input>
                         )}
                         {section.items.length > 0 && (
                           //third tier
                           <ul className="sub third">
                             {section.items.map((page) => (
-                              <li key={page['@id']}>
-                                <a href="/#">{page.title}</a>
+                              <li key={page['@id'] || page.url}>
+                                <a href={page['@id'] || page.url}>
+                                  {page.title}
+                                </a>
                               </li>
                             ))}
                           </ul>
