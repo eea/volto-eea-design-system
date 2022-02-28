@@ -103,7 +103,7 @@
 @computerPopupMarginTop : 200px;
 
 /* Mega menu */
-@megaMenuBackgroundGradient: linear-gradient(180deg, @mediumPersianBlue 39.58%, #043570 100%);
+@megaMenuBackgroundGradient: linear-gradient(166.78deg, @darkCerulean 39.52%, @darkCyan 118.9%);;
 
 /* Menu link and toggle */
 @mobileMegaMenuColor            : @white;
