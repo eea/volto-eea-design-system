@@ -1,5 +1,8 @@
 const applyConfig = (config) => {
-  config.blocks.blocksConfig.accordion.semanticIcon = 'dropdown';
+  // Apply accordion block customization
+  if (config.blocks.blocksConfig.accordion) {
+    config.blocks.blocksConfig.accordion.semanticIcon = 'dropdown';
+  }
 
   return config;
 };
