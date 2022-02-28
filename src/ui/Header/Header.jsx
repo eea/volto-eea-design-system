@@ -4,18 +4,14 @@
  */
 
 import React, { Component } from 'react';
-import {
-  Container,
-  Dropdown,
-  Image,
-  Menu,
-  Grid,
-  Icon,
-} from 'semantic-ui-react';
+import { Container, Dropdown, Image, Menu, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
-import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/globeIcon.png';
+import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
+import closeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/close-line.svg';
+import searchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search-line.svg';
+import burgerIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/menu-line.svg';
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
 import Logo from '../Logo/Logo';
@@ -286,23 +282,40 @@ class Header extends Component {
                     className="desktop"
                     onClick={this.desktopBurgerOnClick}
                   >
-                    <Icon name="close" />
+                    {/* <Icon name="close" /> */}
+                    <Image src={closeIcon} alt="menu close icon" />
                   </Header.BurgerAction>
                 )}
                 <div
-                  className="eea-header-search-action "
+                  className="eea-header-search-action"
                   onClick={this.searchOnClick}
                   role="none"
                 >
-                  <Icon name={!this.state.activeSearch ? 'search' : 'close'} />
+                  {/* <Icon name={!this.state.activeSearch ? 'search' : 'close'} /> */}
+                  <Image
+                    src={
+                      !this.state.activeSearch
+                        ? `${searchIcon}`
+                        : `${closeIcon}`
+                    }
+                    alt="search button open/close"
+                  />
                 </div>
                 <Header.BurgerAction
                   className={`mobile ${this.state.burger}`}
                   onClick={this.mobileBurgerOnClick}
                 >
-                  <Icon
+                  {/* <Icon
                     name={this.state.burger === 'open' ? 'close' : 'bars'}
-                  ></Icon>
+                  ></Icon> */}
+                  <Image
+                    src={
+                      this.state.burger === 'open'
+                        ? `${closeIcon}`
+                        : `${burgerIcon}`
+                    }
+                    alt="menu icon open/close"
+                  />
                 </Header.BurgerAction>
               </div>
             </Grid.Column>

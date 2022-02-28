@@ -48,7 +48,7 @@
 @headerVerticalPadding: @relativeSmall;
 @headerHorizontalPadding: @cellHorizontalPadding;
 @headerFontStyle: none;
-@headerFontWeight: @normal;
+@headerFontWeight: @bold;
 @headerTextTransform: inherit;
 @headerBoxShadow: none;
 @headerFontSize: @h5;

@@ -9,13 +9,18 @@ function HeaderMenuPopUp({ menuItems }) {
           <ul className="menu">
             {menuItems.map((item) => (
               //first tier
-              <li key={item['@id']}>
+              <li
+                key={item['@id']}
+                className={item.items.length > 0 ? 'hasSubMenu' : null}
+              >
                 {item.items.length > 0 && (
                   <label htmlFor={`drop-${item['@id']}`} className="toggle">
                     {item.title}
                   </label>
                 )}
-                <a href="/#">{item.title}</a>
+                <a href="/#">
+                  <span>{item.title}</span>
+                </a>
                 {item.items.length > 0 && (
                   <input type="checkbox" id={`drop-${item['@id']}`} />
                 )}
@@ -23,7 +28,12 @@ function HeaderMenuPopUp({ menuItems }) {
                   //second tier
                   <ul className="sub second">
                     {item.items.map((section) => (
-                      <li key={section['@id']}>
+                      <li
+                        key={section['@id']}
+                        className={
+                          section.items.length > 0 ? 'hasSubMenu' : null
+                        }
+                      >
                         {section.items.length > 0 && (
                           <label
                             htmlFor={`drop-${item['@id']}-${section['@id']}`}
@@ -32,7 +42,9 @@ function HeaderMenuPopUp({ menuItems }) {
                             {section.title}
                           </label>
                         )}
-                        <a href="/#">{section.title}</a>
+                        <a href="/#">
+                          <span>{section.title}</span>
+                        </a>
                         {section.items.length > 0 && (
                           <input
                             type="checkbox"
@@ -44,7 +56,9 @@ function HeaderMenuPopUp({ menuItems }) {
                           <ul className="sub third">
                             {section.items.map((page) => (
                               <li key={page['@id']}>
-                                <a href="/#">{page.title}</a>
+                                <a href="/#">
+                                  <span>{page.title}</span>
+                                </a>
                               </li>
                             ))}
                           </ul>

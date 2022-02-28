@@ -77,11 +77,16 @@
               max-width: @tabletOfficialUnionMaxWidth;
             }
           
-            p,
-            a {
-              font-size: @dropdownFontSize;
-              font-weight: @dropdownFontWeight;
+            p {
+              font-size: @officialUnionMenuFontSize ;
+              font-weight: @officialUnionTextFontWeight;
               white-space: @dropdownMenuContentWhiteSpace;
+            }
+            a {
+              font-size: @officialUnionMenuFontSize;
+              font-weight: @officialUnionLinkFontWeight;
+              white-space: @dropdownMenuContentWhiteSpace;
+              color: @officialUnionLinkColor;
             }
         }
     }
@@ -227,7 +232,7 @@
       overflow: scroll;
       width: 100%;
       height: @mobilePopUpHeight;
-      background: linear-gradient(340.97deg, @darkCerulean 9.19%, #009591 77.47%);
+      background: @searchBoxBackgroundGradient;
     
       .ui.container {
         height: 100%;
@@ -236,12 +241,14 @@
       .wrapper {
         position: relative;
         width: 100%;
-        margin: 135px 0 0 0;
+        margin-top: @mobilePopupMarginTop;
+        display: flex;
+        flex-direction: column;
+        gap: @searchBoxWrapperGap;
 
-        .eea-advanced-search-button {
-            display: flex;
-            justify-content: center;
-            padding: 119px 0 0 0;
+        .action {
+          display: flex;
+          justify-content: center;
         }
       }
     }
@@ -249,17 +256,12 @@
 }
 
 
-
-
-
-
-
 /***************************************
 Header Actions - Burger and Search Icons
 ***************************************/
 .eea-header-burger-action {
     display: flex;
-    width: 30px;
+    width: @mobileActionsBoxWidth;
     height: @mobileMainSectionHeight;
     align-items: center;
     justify-content: center;
@@ -274,26 +276,23 @@ Header Actions - Burger and Search Icons
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
   }
   
   .eea-header-search-action {
     display: flex;
-    width: 30px;
+    width: @mobileActionsBoxWidth;
     height: @mobileMainSectionHeight;
     align-items: center;
     justify-content: center;
     background-color: @darkCyan;
+
   }
 
   .eea-header-burger-action,.eea-header-search-action,.eea-header-burger-action.mobile {
+    img {
+      width: 60%;
+    }
+    // icon to be used
     i.icon {
       margin:0;
       color: @white;
@@ -308,48 +307,51 @@ Header Actions - Burger and Search Icons
 
 @media only screen and (min-width: @tabletBreakpoint) {
     .eea.header {
-        .top.bar {
-          height: @tabletTopSectionHeight;
+      .top.bar {
+        height: @tabletTopSectionHeight;
 
-          .item {
-              font-size: @tabletTopSectionItemFontSize;
+        .item {
+          font-size: @tabletTopSectionItemFontSize;
+        }
+
+        .ui.dropdown .menu {
+          margin-top: @tabletDropdownMenuMarginTop;
+        }
+
+        /* Language dropdown */
+        #language-switcher {
+          font-size: @tabletLanguageFontSize;
+
+          img {
+            width: 19px;
           }
 
-          .ui.dropdown .menu {
-              margin-top: @tabletDropdownMenuMarginTop;
-          }
-
-          /* Language dropdown */
-          #language-switcher {
-            font-size: @tabletLanguageFontSize;
-
-            img {
-              width: 19px;
-            }
-
-            .menu {
-              top: @tabletLanguageMenuTop;
-              .wrapper .item {
-                font-size: @tabletLanguageFontSize;
-              }
+          .menu {
+            top: @tabletLanguageMenuTop;
+            .wrapper .item {
+              font-size: @tabletLanguageFontSize;
             }
           }
         }
-        .main.bar {
-            .ui.container {
-                height: 117px;
+      }
+      .main.bar {
+        .ui.container {
+          height: 117px;
 
-                #logo {
-                    max-width: @tabletLogoMaxWidth;
-                    margin-top: @tabletLogoMarginTop;
-                }
-            }
-
-            /* Search box */
-            #search-box {
-                height: @tabletPopUpHeight;
-            }
+          #logo {
+            max-width: @tabletLogoMaxWidth;
+            margin-top: @tabletLogoMarginTop;
+          }
         }
+
+        /* Search box */
+        #search-box {
+          height: @tabletPopUpHeight;
+          .wrapper {
+            margin-top: @tabletPopupMarginTop;
+          }
+        }
+      }
     }
 
   .text.menu {
@@ -360,20 +362,11 @@ Header Actions - Burger and Search Icons
     display: flex;
   }
 
-  .eea-header-burger-action.mobile {
-    width: 66px;
-    height: 117px;
-  }
-
+  /* Action Boxes */
+  .eea-header-burger-action.mobile,
   .eea-header-search-action {
-    width: 66px;
-    height: 117px;
-  }
-
-  .eea-header-burger-action,.eea-header-search-action,.eea-header-search-action.mobile {
-    i.icon {
-      font-size: 2em !important;
-    }
+    width: @tabletActionsBoxWidth;
+    height: @tabletMainSectionHeight;
   }
 }
 
@@ -406,11 +399,10 @@ Header Actions - Burger and Search Icons
         height: @computerPopUpHeight;
 
         .wrapper {
-          margin: 280px 0 0 0;
+          margin-top: @computerPopupMarginTop;
 
-          .eea-advanced-search-button {
+          .action {
             justify-content: flex-end;
-            padding: 74px 0 0 0;
           }
         }
       }
@@ -421,22 +413,15 @@ Header Actions - Burger and Search Icons
     display: none;
   }
 
-  .eea-header-burger-action,.eea-header-search-action {
-    i.icon {
-      font-size: 3em !important;
-    }
-  }
-
-
   .eea-header-burger-action.desktop {
     display: flex;
-    width: 72px;
-    height: 160px;
+    width: @computerActionsBoxWidth;
+    height: @computerMainSectionHeight;
   }
 
   .eea-header-search-action {
-    width: 72px;
-    height: 160px;
+    width: @computerActionsBoxWidth;
+    height: @computerMainSectionHeight;
   }
 }
 
@@ -458,7 +443,6 @@ Header Actions - Burger and Search Icons
   z-index: 9999;
   overflow: scroll;
   width: 100%;
-  height: @mobilePopUpHeight;
   background: @megaMenuBackgroundGradient;
 
   .ui.container {
@@ -505,6 +489,7 @@ Header Actions - Burger and Search Icons
     display: flex;
     padding: @megaMenuLinkPadding;
     line-height: @mobileMegaMenuLineHeight;
+    word-break: @megaMenuWordBreak;
    }
    
    nav ul ul {
@@ -513,7 +498,12 @@ Header Actions - Burger and Search Icons
      top: 0;
    }
    
-   nav ul li:hover > ul { display: inherit; }
+   nav ul li:hover > ul,
+   nav ul li:active > ul { 
+     display: inherit; 
+     display: flex;
+     flex-direction: column;
+    }
    
    nav ul ul li {
      float: none;
@@ -524,18 +514,18 @@ Header Actions - Burger and Search Icons
      left: 0;
    }
    
-   li > a:after { 
-    content: "\f054";
-    font-family: 'Icons';
-    font-size: @megaMenuIconAfterFontSize;
-  }
+  //  li > a:after { 
+  //   content: "\f054";
+  //   font-family: 'Icons';
+  //   font-size: @megaMenuIconAfterFontSize;
+  // }
    
    li > a:only-child:after { 
     content: ""; 
   }
    
   @media all and (max-width : @largestMobileScreen) {
-    height: @tabletPopUpHeight;
+    height: @mobilePopUpHeight;
     nav {
       margin-top: @mobilePopupMarginTop
     }
@@ -554,8 +544,7 @@ Header Actions - Burger and Search Icons
       color: @mobileMegaMenuColor;
       line-height: @mobileMegaMenuLineHeight;
     }
-   
-   
+
     [id^=drop]:checked + ul { 
       display: block;
     }
@@ -606,36 +595,69 @@ Header Actions - Burger and Search Icons
    
    
   @media all and (min-width : @tabletBreakpoint) {
+    height: @tabletPopUpHeight;
     nav {
-      .menu, ul li {
-        width: 100%;
+      .menu {
+        width: 33.33%;
         font-size: @tabletMegaMenuFontSize;
-        margin-bottom: @computerMegaMenuMarginBottom;
-        a {
-         display: flex;
-         justify-content: space-between;
-         max-width: 30%;
-         line-height: @tabletMegaMenuLineHeight;
+        > li {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+
+          &.hasSubMenu:after { 
+            content: '\f054';
+            font-family: 'Icons';
+            font-size: @tabletMegaMenuIconAfterFontSize;
+            color: @white;
+          }
+          a {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            max-width: 100%;
+            line-height: @tabletMegaMenuLineHeight;
+            padding-left: 2rem;
+          }
         }
+
       }
       
       .sub.second {
-        width: 66.66%;
-        left: 33.33%;
-        li {
-         width: 100%;
+        width: 100%;
+        left: 100%;
+        > li {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+
+          &.hasSubMenu:after { 
+            content: '\f054';
+            font-family: 'Icons';
+            font-size: @tabletMegaMenuIconAfterFontSize;
+            color: @megaMenuIconAfterColor;
+          }
          a {
-           max-width: 45%;
+           max-width: 100%;
+           padding-left: 2rem;
           }
         }  
       }
       .sub.third {
-        left: 50%;
-        width: 50%;
-        li > a {
-          max-width: 100%;
+        left: 100%;
+        width: 100%;
+        min-height: 50vh;
+        li {
+          > a {
+            max-width: 100%;
+          }
         }
       }
+    }
+    ul li:hover > a span { 
+      text-decoration: underline;
     }
   }
 
@@ -644,19 +666,25 @@ Header Actions - Burger and Search Icons
     height: @computerPopUpHeight;
     nav {
       margin-top: @computerPopupMarginTop;
-    
-      .menu, ul li {
-        font-size: @computerMegaMenuFirstFontSize;
-        margin-bottom: @computerMegaMenuMarginBottom;
-        a {
-          line-height: @computerMegaMenuLineHeight;
+      .menu {
+        > li {
+          font-size: @computerMegaMenuFirstFontSize;
+          margin-bottom: 2rem;
+          &.hasSubMenu:after {
+            font-size: @computerMegaMenuIconAfterFontSize;
+          }
         }
       }
       .sub.second li {
         font-size: @computerMegaMenuSecondFontSize;
+        margin-bottom: 1.7rem;
+        &.hasSubMenu:after { 
+          font-size: @computerMegaMenuIconAfterFontSize;
+        }
       }
       .sub.third li {
         font-size: @computerMegaMenuThirdFontSize;
+        margin-bottom: 1.5rem;
       }
     }
   }
