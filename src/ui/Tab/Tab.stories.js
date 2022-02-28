@@ -24,13 +24,27 @@ export default {
   },
 };
 
-function TabContent({ panes, text, attached, tabular, borderless, vertical }) {
+function TabContent({
+  panes,
+  text,
+  attached,
+  borderless,
+  vertical,
+  fluid,
+  grid,
+}) {
   return (
     <Tab
       panes={panes}
       className="eea-tab"
       renderActiveOnly={false}
-      menu={{ secondary: true, pointing: true, vertical: vertical }}
+      menu={{
+        secondary: true,
+        pointing: true,
+        vertical: vertical,
+        fluid: fluid,
+      }}
+      grid={grid}
     ></Tab>
   );
 }
@@ -62,6 +76,8 @@ Default.args = {
 export const Vertical = Template.bind({});
 Vertical.args = {
   vertical: true,
+  fluid: true,
+  grid: { paneWidth: 9, tabWidth: 2 },
   panes: [
     {
       menuItem: 'Tab 1',
@@ -75,6 +91,10 @@ Vertical.args = {
       menuItem: 'Tab 3',
       pane: 'Tab 3 Content',
     },
+    {
+      menuItem: 'Tab 4',
+      pane: 'Tab 4 Content',
+    },
   ],
 };
 
@@ -87,6 +107,29 @@ Vertical.argTypes = {
       },
       defaultValue: {
         summary: false,
+      },
+    },
+  },
+  fluid: {
+    description: 'fluid tabs',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: {
+        summary: false,
+      },
+    },
+  },
+  grid: {
+    description:
+      'Shorthand props for the Grid. Only applicable to vertical menus',
+    table: {
+      type: {
+        summary: 'object',
+      },
+      defaultValue: {
+        summary: '{ paneWidth: 12, tabWidth: 4 }',
       },
     },
   },
