@@ -20,10 +20,10 @@ export default {
   argTypes: {},
 };
 
-const Template = (actions, sites, social, contacts) => (
+const Template = (args) => (
   <Footer>
     <Footer.Header>The EEA also contributes to</Footer.Header>
-    <Footer.Sites sites={sites} />
+    <Footer.Sites sites={args.sites} />
     <Footer.SubFooter>
       <div className="subfooter">
         <Grid>
@@ -48,14 +48,14 @@ const Template = (actions, sites, social, contacts) => (
           </Grid.Column>
           <Grid.Column mobile={6} tablet={5} computer={4}>
             <div className="item">
-              <Footer.Contact contacts={contacts} />
+              <Footer.Contact contacts={args.contacts} />
 
-              <Footer.Social social={social} />
+              <Footer.Social social={args.social} />
             </div>
           </Grid.Column>
         </Grid>
         <Grid.Row>
-          <Footer.Actions actions={actions} />
+          <Footer.Actions actions={args.actions} />
         </Grid.Row>
       </div>
     </Footer.SubFooter>
@@ -63,42 +63,43 @@ const Template = (actions, sites, social, contacts) => (
 );
 
 export const Default = Template.bind({});
-Default.actions = [
-  { link: '/#', title: 'CMS Login', copy: false },
-  { link: '/#', title: 'Sitemap', copy: false },
-  { link: '/#', title: 'Privacy', copy: false },
-  { link: '/#', title: 'Copyright', copy: true },
-];
-Default.sites = [
-  { link: '/#', src: Logo1, alt: 'Biodiversity' },
-  { link: '/#', src: Logo2, alt: 'Climate and energy in the EU' },
-  { link: '/#', src: Logo3, alt: 'Copernicus in situ' },
-  {
-    link: '/#',
-    src: Logo4,
-    alt: 'Information platform for chemical monitoring',
-  },
-  { link: '/#', src: Logo5, alt: 'WISE freshwater' },
-  { link: '/#', src: Logo6, alt: 'Forest information system for europe' },
-  { link: '/#', src: Logo7, alt: 'Climate adapt' },
-  { link: '/#', src: Logo8, alt: 'Copernicus land monitoring service' },
-  { link: '/#', src: Logo9, alt: 'European industrial emissions portal' },
-  { link: '/#', src: Logo10, alt: 'WISE marine' },
-];
-
-Default.social = [
-  { name: 'twitter', link: '/#' },
-  { name: 'facebook', link: '/#' },
-  { name: 'linkedin', link: '/#' },
-  { name: 'youtube', link: '/#' },
-  { name: 'rss', link: '/#' },
-];
-
-Default.contacts = {
-  header: 'Contact Us',
-  contacts: [
-    { icon: 'comment outline', text: 'Ask your question' },
-    { icon: 'envelope outline', text: 'Sign up to our newsletter' },
+Default.args = {
+  header: 'The EEA also contributes to',
+  actions: [
+    { link: '/#', title: 'CMS Login', copy: false },
+    { link: '/#', title: 'Sitemap', copy: false },
+    { link: '/#', title: 'Privacy', copy: false },
+    { link: '/#', title: 'Copyright', copy: true },
   ],
-  address: 'Kongens Nytorv 6 1050 Copenhagen K (+45) 33 36 71 00',
+  sites: [
+    { link: '/#', src: Logo1, alt: 'Biodiversity' },
+    { link: '/#', src: Logo2, alt: 'Climate and energy in the EU' },
+    { link: '/#', src: Logo3, alt: 'Copernicus in situ' },
+    {
+      link: '/#',
+      src: Logo4,
+      alt: 'Information platform for chemical monitoring',
+    },
+    { link: '/#', src: Logo5, alt: 'WISE freshwater' },
+    { link: '/#', src: Logo6, alt: 'Forest information system for europe' },
+    { link: '/#', src: Logo7, alt: 'Climate adapt' },
+    { link: '/#', src: Logo8, alt: 'Copernicus land monitoring service' },
+    { link: '/#', src: Logo9, alt: 'European industrial emissions portal' },
+    { link: '/#', src: Logo10, alt: 'WISE marine' },
+  ],
+  social: [
+    { name: 'twitter', link: '/#' },
+    { name: 'facebook', link: '/#' },
+    { name: 'linkedin', link: '/#' },
+    { name: 'youtube', link: '/#' },
+    { name: 'rss', link: '/#' },
+  ],
+  contacts: {
+    header: 'Contact Us',
+    contacts: [
+      { icon: 'comment outline', text: 'Ask your question' },
+      { icon: 'envelope outline', text: 'Sign up to our newsletter' },
+    ],
+    address: 'Kongens Nytorv 6 1050 Copenhagen K (+45) 33 36 71 00',
+  },
 };
