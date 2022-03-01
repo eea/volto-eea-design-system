@@ -13,7 +13,7 @@ const Contact = (props) => {
         props.contacts.contacts.map((contact, index) => (
           <div className="contact" key={index}>
             <Icon name={contact.icon} size="big"></Icon>
-            {contact.text}
+            <a href={contact.link}>{contact.text}</a>
           </div>
         ))}
       {props.contacts.address && (
