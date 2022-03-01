@@ -30,4 +30,4 @@
 /*-------------------
       login.less
 --------------------*/
-@loginContainerMaxWidth: 376px !important;
+@loginContainerMaxWidth: 680px !important;
