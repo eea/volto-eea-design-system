@@ -1,4 +1,11 @@
+import BlockquoteElement from './ui/Blockquote/Blockquote';
+
 const applyConfig = (config) => {
+  // Apply blockquote slate customization
+  if (config.settings.slate) {
+    config.settings.slate.elements['blockquote'] = BlockquoteElement;
+  }
+
   return config;
 };
 

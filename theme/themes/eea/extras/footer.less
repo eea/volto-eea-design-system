@@ -140,18 +140,67 @@ footer {
               font-size: @tabletDescriptionFontSize;
               line-height: @tabletDescriptionLineHeight;
             }
-          }
+            .subfooter {
+              .item {
+                margin-top: @tabletItemMarginTop;
 
-          .eionet.logo {
-            img {
-              width: @tabletEionetLogoWidth;
-              margin-left: @tabletEionetLogoMarginLeft;
-            }
+                .site.logo {
+                  img {
+                    width: @tabletSiteLogoWidth;
+                    display: inline-block;
+                  }
+                  .description {
+                    font-size: @tabletDescriptionFontSize;
+                    line-height: @tabletDescriptionLineHeight;
+                  }
+                }
 
-            .description {
-              padding-top: @tabletEionetDescriptionPaddingTop;
-              font-size: @tabetEionetDescriptionFontSize;
-              line-height: @tabletEionetDescriptionLineHeight;
+                .eionet.logo {
+                  img {
+                    width: @tabletEionetLogoWidth;
+                    margin-left: @tabletEionetLogoMarginLeft;
+                  }
+
+                  .description {
+                    padding-top: @tabletEionetDescriptionPaddingTop;
+                    font-size: @tabetEionetDescriptionFontSize;
+                    line-height: @tabletEionetDescriptionLineHeight;
+                  }
+                }
+
+                .header {
+                  margin-bottom: @tabletItemHeaderMarginBottom;
+                  font-size: @tabletItemHeaderFontSize;
+                }
+
+                .contact {
+                  font-size: @tabletContactFontSize;
+
+                  i.big.icon {
+                    margin-right: @tabletContactIconMarginRight;
+                    font-size: @tabletContactIconFontSize;
+                  }
+                  a {
+                    color: @menuLinkColor;
+                  }
+                }
+
+                .address {
+                  font-size: @tabletAddressFontSize;
+                }
+
+                .social a i.icon {
+                  font-size: @tabletSocialIconSize;
+                }
+              }
+              .menu {
+                width: @tabletMenuWidth;
+                margin: @tabletMenuMargin;
+
+                a {
+                  font-size: @tabletMenuFontSize;
+                }
+              }
             }
           }
 
