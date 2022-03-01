@@ -11,17 +11,17 @@ const Contact = ({ children, contacts, header, address }) =>
       {contacts?.map((contact, index) => (
         <div className="contact" key={index}>
           <Icon name={contact.icon} size="big"></Icon>
-          {contact.text}
+          <a href={contact.link}>{contact.text}</a>
         </div>
       ))}
       {address && <p className="address">{address}</p>}
     </>
   );
+
 Contact.propTypes = {
-  contacts: PropTypes.shape({
-    header: PropTypes.string,
-    contacts: PropTypes.array,
-  }),
+  contacts: PropTypes.array,
+  header: PropTypes.string,
+  address: PropTypes.string,
 };
 
 export default Contact;
