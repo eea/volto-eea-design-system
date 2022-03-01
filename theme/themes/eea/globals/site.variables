@@ -458,32 +458,32 @@
 --------------------*/
 
 /* Positive */
-@positiveColor           : #287D3C; //
-@positiveBackgroundColor : #EDF9F0; //
-@positiveBorderColor     : #EDF9F0; //
-@positiveHeaderColor     : #287D3C; //
-@positiveTextColor       : #287D3C; //
+@positiveColor           : @pineGreen;
+@positiveBackgroundColor : #EDF9F0;
+@positiveBorderColor     : #EDF9F0;
+@positiveHeaderColor     : @pineGreen;
+@positiveTextColor       : @pineGreen;
 
 /* Negative */
-@negativeColor           : #DA1414; //
-@negativeBackgroundColor : #FEEFEF; //
-@negativeBorderColor     : #FEEFEF; //
-@negativeHeaderColor     : #DA1414; //
-@negativeTextColor       : #DA1414; //
+@negativeColor           : @red;
+@negativeBackgroundColor : #FEEFEF;
+@negativeBorderColor     : #FEEFEF;
+@negativeHeaderColor     : @red;
+@negativeTextColor       : @red;
 
 /* Info */
-@infoColor              : #2E5AAC; //
-@infoBackgroundColor    : #EEF2FA; //
-@infoBorderColor        : #EEF2FA; //
-@infoHeaderColor        : #2E5AAC; //
-@infoTextColor          : #2E5AAC; //
+@infoColor              : @mediumPersianBlue;
+@infoBackgroundColor    : #EEF2FA;
+@infoBorderColor        : #EEF2FA;
+@infoHeaderColor        : @mediumPersianBlue;
+@infoTextColor          : @mediumPersianBlue;
 
 /* Warning */
-@warningColor           : #B95000; //
-@warningBorderColor     : #FFF4EC; //
-@warningBackgroundColor : #FFF4EC; //
-@warningHeaderColor     : #B95000; //
-@warningTextColor       : #B95000; //
+@warningColor           : #EBA33D;
+@warningBorderColor     : #FFF4EC;
+@warningBackgroundColor : #FFF4EC;
+@warningHeaderColor     : #EBA33D;
+@warningTextColor       : #EBA33D;
 
 /*-------------------
         Paths

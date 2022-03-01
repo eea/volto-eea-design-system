@@ -8,11 +8,10 @@
 --------------------*/
 
 @verticalMargin: 1em;
-@verticalPadding: 1.5em;
-@verticalPadding: 1em;
-@horizontalPadding: 1.5em;
+@verticalPadding: 0.5rem;
+@horizontalPadding: 1rem;
 @padding: @verticalPadding @horizontalPadding;
-@background: #F2F2F2;
+@background: transparent;
 @lineHeightOffset: ((@lineHeight - 1em) / 2);
 @messageItemsAlign: flex-start;
 
@@ -30,7 +29,7 @@
 ;
 
 /* Header */
-@headerFontSize: 13px;
+@headerFontSize: 0.875rem;
 @headerFontWeight: @bold;
 @headerDisplay: block;
 @headerDistance: 0rem;
@@ -41,7 +40,7 @@
 @messageTextOpacity: 1;
 @messageParagraphMargin: 0;
 @messageColor: @black;
-@messageFontSize: 13px;
+@messageFontSize: 0.875rem;
 @messageFontWeight: @bold;
 
 /* List */
@@ -68,7 +67,7 @@
 /* Icon Message */
 @iconMargin: 0.09rem 0.6rem 0 0;
 @iconSize: 1rem;
-@iconOpacity: 0.8;
+@iconOpacity: 1;
 @iconContentDistance: 0rem;
 @iconVerticalAlign: top;
 
