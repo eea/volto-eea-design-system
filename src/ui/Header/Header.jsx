@@ -287,7 +287,7 @@ class Header extends Component {
                   </Header.BurgerAction>
                 )}
                 <div
-                  className="eea-header-search-action"
+                  className="search-action"
                   onClick={this.searchOnClick}
                   role="none"
                 >
@@ -354,7 +354,7 @@ Header.Main = Main;
 
 const BurgerAction = (props) => (
   <div
-    className={`eea-header-burger-action ${props.className}`}
+    className={`burger-action ${props.className}`}
     role="none"
     onClick={props.onClick}
   >
