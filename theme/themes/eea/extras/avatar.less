@@ -1,0 +1,96 @@
+@type: 'extra';
+@element: 'avatar';
+
+@import (multiple) '../../theme.config';
+
+/*-------------------
+      AVATAR
+--------------------*/
+
+.eea.avatar.big {
+  width: @avatarWidthBig;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: @avatarWrapperWidth;
+
+    .image-wrapper {
+      width: @avatarImageWrapperWidth;
+      display: flex;
+      justify-content: center;
+
+      .image {
+        height: @avatarImageHeightBig;
+        width: @avatarImageWidthBig;
+        border-radius: @avatarImageBorderRadius;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    .content-wrapper {
+      width: @avatarContentWrapperWidth;
+      .content {
+        margin-top: @avatarContentMarginTop;
+        .title {
+          font-weight: @avatarContentTitleFontWeight;
+          text-align: center;
+          font-size: @avatarContentTitleFontSize;
+          line-height: @avatarContentTitleLineHeight;
+          letter-spacing: @avatarContentTitleLetterSpacing;
+          margin-bottom: @avatarContentTitleMarginBottom;
+        }
+        .metadata {
+          text-align: center;
+          font-size: @avatarMetadataFontSize;
+          font-weight: @avatarMetadataFontWeight;
+          margin-top: @avatarMetadataMarginTop;
+        }
+      }
+    }
+  }
+}
+
+.eea.avatar.small {
+  width: @avatarWidthSmall;
+  .wrapper {
+    width: @avatarWrapperWidth;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .image-wrapper {
+      width: @avatarImageWrapperWidth;
+      display: flex;
+      justify-content: center;
+
+      .image {
+        height: @avatarImageHeightSmall;
+        width: @avatarImageWidthSmall;
+        border-radius: @avatarImageBorderRadius;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+
+    .content-wrapper {
+      width: @avatarContentWrapperWidth;
+      .content {
+        margin-top: @avatarContentMarginTopSmall;
+        .title {
+          font-weight: @avatarContentTitleFontWeightSmall;
+          text-align: center;
+          font-size: @avatarContentTitleFontSizeSmall;
+          line-height: @avatarContentTitleLineHeightSmall;
+          letter-spacing: @avatarContentTitleLetterSpacing;
+          margin-bottom: @avatarContentTitleMarginBottom;
+        }
+        .metadata {
+          text-align: center;
+          font-size: @avatarMetadataFontSizeSmall;
+          font-weight: @avatarMetadataFontWeightSmall;
+        }
+      }
+    }
+  }
+}

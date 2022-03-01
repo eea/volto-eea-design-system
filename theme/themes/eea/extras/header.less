@@ -16,113 +16,110 @@
     align-items: center;
     height: @mobileTopSectionHeight;
     background: @topSectionBackground;
-  
+
     .ui.container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 999999;
     }
     .item {
-        display: flex;
-        align-items: center;
-        color: @topSectionItemColor;
-        font-weight: @topSectionItemFontWeight;
-        font-size: @mobileTopSectionItemFontSize;
-
+      display: flex;
+      align-items: center;
+      color: @topSectionItemColor;
+      font-weight: @topSectionItemFontWeight;
+      font-size: @mobileTopSectionItemFontSize;
     }
     .ui.dropdown {
-        border: none !important;
-        height: auto !important;
-        border-radius: @defaultBorderRadius;
-        color: @topSectionItemColor;
+      border: none !important;
+      height: auto !important;
+      border-radius: @defaultBorderRadius;
+      color: @topSectionItemColor;
 
-        font-size: @dropdownFontSize;
-        font-weight: @dropdownFontWeight;
+      font-size: @dropdownFontSize;
+      font-weight: @dropdownFontWeight;
 
-        .menu {
-          margin-top: @mobileDropdownMenuMarginTop;
-          left: @dropdownMenuLeft;
-          right: @dropdownMenuRight;
+      .menu {
+        margin-top: @mobileDropdownMenuMarginTop;
+        left: @dropdownMenuLeft;
+        right: @dropdownMenuRight;
 
-          .wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: @dropdownMenuWrapperGap;
-            white-space: @dropdownMenuContentWhiteSpace;
-            margin: @dropdownMenuWrapperMargin;
+        .wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: @dropdownMenuWrapperGap;
+          white-space: @dropdownMenuContentWhiteSpace;
+          margin: @dropdownMenuWrapperMargin;
 
-            .item {
-              &:hover {
-                background: @dropdownMenuItemBackgroundColorHover;
-                color: @dropdownMenuItemColorHover;
-                cursor: pointer;
-              }
+          .item {
+            &:hover {
+              background: @dropdownMenuItemBackgroundColorHover;
+              color: @dropdownMenuItemColorHover;
+              cursor: pointer;
             }
           }
-        } 
+        }
+      }
     }
 
     /* Official union dropdowns */
     .official-union {
-        display: flex;
-        gap: @officialUnionGap;
+      display: flex;
+      gap: @officialUnionGap;
     }
     .official-union.mobile.or.lower.hidden {
-        .ui.dropdown .menu {
-            padding: @tabletOfficialUnionPadding;
-          
-            .content {
-              max-width: @tabletOfficialUnionMaxWidth;
-            }
-          
-            p {
-              font-size: @officialUnionMenuFontSize ;
-              font-weight: @officialUnionTextFontWeight;
-              white-space: @dropdownMenuContentWhiteSpace;
-            }
-            a {
-              font-size: @officialUnionMenuFontSize;
-              font-weight: @officialUnionLinkFontWeight;
-              white-space: @dropdownMenuContentWhiteSpace;
-              color: @officialUnionLinkColor;
-            }
+      .ui.dropdown .menu {
+        padding: @tabletOfficialUnionPadding;
+
+        .content {
+          max-width: @tabletOfficialUnionMaxWidth;
         }
+
+        p {
+          font-size: @officialUnionMenuFontSize;
+          font-weight: @officialUnionTextFontWeight;
+          white-space: @dropdownMenuContentWhiteSpace;
+        }
+        a {
+          font-size: @officialUnionMenuFontSize;
+          font-weight: @officialUnionLinkFontWeight;
+          white-space: @dropdownMenuContentWhiteSpace;
+          color: @officialUnionLinkColor;
+        }
+      }
     }
     .official-union.mobile.only {
-
       img {
         width: @tabletOfficialUnionImageWidth;
       }
-        
+
       .ui.dropdown {
-          font-size: @mobileTopSectionItemFontSize;
+        font-size: @mobileTopSectionItemFontSize;
 
         .menu {
-            padding: @mobileOfficialUnionPadding;
+          padding: @mobileOfficialUnionPadding;
 
           .content {
-              max-width: @mobileOfficialUnionMaxWidth; 
-  
+            max-width: @mobileOfficialUnionMaxWidth;
+
             p,
             a {
-              font-size: @mobileDropdownMenuContentFontSize ;
+              font-size: @mobileDropdownMenuContentFontSize;
               font-weight: @dropdownMenuContentFontWeight;
               white-space: @dropdownMenuContentWhiteSpace;
             }
-        
+
             i.icon,
             i.icons {
-                font-size: @mobileTopSectionItemFontSize;
+              font-size: @mobileTopSectionItemFontSize;
             }
           }
-        } 
+        }
       }
     }
 
     /* Theme sites dropdown */
     #theme-sites.ui.dropdown .menu {
-
       .wrapper {
         width: @themeSitesMenuWidth;
 
@@ -136,8 +133,8 @@
           }
 
           a.site {
-              color: @themeSitesMenuSiteLinkColor;
-              font-weight: @themeSitesMenuSiteLinkFontWeight;
+            color: @themeSitesMenuSiteLinkColor;
+            font-weight: @themeSitesMenuSiteLinkFontWeight;
           }
         }
       }
@@ -146,7 +143,7 @@
     /* Language dropdown */
     #language-switcher {
       font-size: @mobileLanguageFontSize;
-    
+
       img {
         width: @mobileOfficialUnionImageWidth;
       }
@@ -155,8 +152,7 @@
         color: @japaneseIndigo;
 
         .wrapper {
-
-          .item {   
+          .item {
             justify-content: flex-end;
             padding: @languageMenuPadding;
             font-weight: @languageMenuItemFontWeight;
@@ -179,7 +175,7 @@
       align-items: center;
       justify-content: space-between;
       height: @mobileMainSectionHeight;
-  
+
       .ui.grid {
         /* All margins and paddings removed for main header */
         width: 100%;
@@ -187,11 +183,11 @@
         margin-bottom: 0;
         margin-left: 0;
         margin-right: 0;
-  
+
         div:first-child {
           padding-left: 0;
         }
-  
+
         div:last-child {
           padding-right: 0;
         }
@@ -223,7 +219,6 @@
       }
     }
 
-
     /* Search Box */
     #search-box {
       position: relative;
@@ -232,7 +227,7 @@
       width: 100%;
       height: @mobilePopUpHeight;
       background: @searchBoxBackgroundGradient;
-    
+
       .ui.container {
         height: 100%;
         align-items: baseline;
@@ -254,106 +249,104 @@
   }
 }
 
-
 /***************************************
 Header Actions - Burger and Search Icons
 ***************************************/
 .burger-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: @mobileActionsBoxWidth;
+  height: @mobileMainSectionHeight;
+  background-color: @darkCerulean;
+}
+
+.burger-action.desktop {
+  display: none;
+}
+
+.burger-action.mobile {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.search-action {
+  cursor: pointer;
+  display: flex;
+  width: @mobileActionsBoxWidth;
+  height: @mobileMainSectionHeight;
+  align-items: center;
+  justify-content: center;
+  background-color: @darkCyan;
+}
+
+.burger-action,
+.search-action,
+.burger-action.mobile {
+  img {
+    width: 60%;
+  }
+  // icon to be used
+  i.icon {
+    margin: 0;
+    color: @white;
+    font-size: 1em;
     display: flex;
-    align-items: center;
     justify-content: center;
-    cursor: pointer;
-    width: @mobileActionsBoxWidth;
-    height: @mobileMainSectionHeight;
-    background-color: @darkCerulean;
-  }
-  
-  .burger-action.desktop {
-    display: none;
-  }
-  
-  .burger-action.mobile {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  
-  .search-action {
-    cursor: pointer;
-    display: flex;
-    width: @mobileActionsBoxWidth;
-    height: @mobileMainSectionHeight;
     align-items: center;
-    justify-content: center;
-    background-color: @darkCyan;
-
   }
-
-  .burger-action,.search-action,.burger-action.mobile {
-    img {
-      width: 60%;
-    }
-    // icon to be used
-    i.icon {
-      margin:0;
-      color: @white;
-      font-size: 1em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-
-
+}
 
 @media only screen and (min-width: @tabletBreakpoint) {
-    .eea.header {
-      .top.bar {
-        height: @tabletTopSectionHeight;
+  .eea.header {
+    .top.bar {
+      height: @tabletTopSectionHeight;
 
-        .item {
-          font-size: @tabletTopSectionItemFontSize;
-        }
-
-        .ui.dropdown .menu {
-          margin-top: @tabletDropdownMenuMarginTop;
-        }
-
-        /* Language dropdown */
-        #language-switcher {
-          font-size: @tabletLanguageFontSize;
-
-          img {
-            width: 19px;
-          }
-
-          .menu {
-            top: @tabletLanguageMenuTop;
-            .wrapper .item {
-              font-size: @tabletLanguageFontSize;
-            }
-          }
-        }
+      .item {
+        font-size: @tabletTopSectionItemFontSize;
       }
-      .main.bar {
-        .ui.container {
-          height: 117px;
 
-          #logo {
-            max-width: @tabletLogoMaxWidth;
-            margin-top: @tabletLogoMarginTop;
-          }
+      .ui.dropdown .menu {
+        margin-top: @tabletDropdownMenuMarginTop;
+      }
+
+      /* Language dropdown */
+      #language-switcher {
+        font-size: @tabletLanguageFontSize;
+
+        img {
+          width: 19px;
         }
 
-        /* Search box */
-        #search-box {
-          height: @tabletPopUpHeight;
-          .wrapper {
-            margin-top: @tabletPopupMarginTop;
+        .menu {
+          top: @tabletLanguageMenuTop;
+          .wrapper .item {
+            font-size: @tabletLanguageFontSize;
           }
         }
       }
     }
+    .main.bar {
+      .ui.container {
+        height: 117px;
+
+        #logo {
+          max-width: @tabletLogoMaxWidth;
+          margin-top: @tabletLogoMarginTop;
+        }
+      }
+
+      /* Search box */
+      #search-box {
+        height: @tabletPopUpHeight;
+        .wrapper {
+          margin-top: @tabletPopupMarginTop;
+        }
+      }
+    }
+  }
 
   .text.menu {
     display: none;
@@ -448,87 +441,89 @@ Header Actions - Burger and Search Icons
     align-items: baseline;
   }
 
-  .toggle, [id^=drop] {
+  .toggle,
+  [id^='drop'] {
     display: none;
-   }
-   nav {
-     margin: 0;
-     padding: 0;
-     width: 100%;
-     margin-top: @tabletPopupMarginTop;
-   }
-   
-   nav:after {
-     content: "";
-     display: table;
-     clear: both;
-   }
-   
-   nav ul {
-     float: left;
-     padding: 0;
-     margin: 0;
-     list-style: none;
-     position: relative;
+  }
+  nav {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: @tabletPopupMarginTop;
+  }
 
-     >li a {
+  nav:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  nav ul {
+    float: left;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+
+    > li a {
       padding: 0;
     }
-   }
-   
-   nav ul li {
-     display: inline-block;
-     font-size: @mobileMegaMenuFontSize;
-   }
-   
-   nav a {
+  }
+
+  nav ul li {
+    display: inline-block;
+    font-size: @mobileMegaMenuFontSize;
+  }
+
+  nav a {
     display: flex;
     color: @mobileMegaMenuColor;
     padding: @megaMenuLinkPadding;
     line-height: @megaMenuLineHeight;
     word-break: @megaMenuWordBreak;
-   }
-   
-   nav ul ul {
-     display: none;
-     position: absolute;
-     top: 0;
-   }
-   
-   nav ul li:hover > ul,
-   nav ul li:active > ul { 
-     display: inherit; 
-     display: flex;
-     flex-direction: column;
-    }
-   
-   nav ul ul li {
-     float: none;
-     display: list-item;
-   }
-   
-   nav ul ul ul li {
-     left: 0;
-   }
-   
-   li > a:only-child:after { 
-    content: ""; 
   }
-   
-  @media all and (max-width : @largestMobileScreen) {
+
+  nav ul ul {
+    display: none;
+    position: absolute;
+    top: 0;
+  }
+
+  nav ul li:hover > ul,
+  nav ul li:active > ul {
+    display: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav ul ul li {
+    float: none;
+    display: list-item;
+  }
+
+  nav ul ul ul li {
+    left: 0;
+  }
+
+  li > a:only-child:after {
+    content: '';
+  }
+
+  @media all and (max-width: @largestMobileScreen) {
     height: @mobilePopUpHeight;
     nav {
-      margin-top: @mobilePopupMarginTop
+      margin-top: @mobilePopupMarginTop;
     }
-    .menu, li {
+    .menu,
+    li {
       width: 100%;
     }
-   
+
     .toggle + a,
-    .menu { 
+    .menu {
       display: none;
     }
-   
+
     .toggle {
       display: block;
       padding: @toggleMenuFirstPadding;
@@ -536,50 +531,49 @@ Header Actions - Burger and Search Icons
       line-height: @megaMenuLineHeight;
     }
 
-    [id^=drop]:checked + ul { 
+    [id^='drop']:checked + ul {
       display: block;
     }
-   
+
     nav ul li {
       display: block;
       width: 100%;
     }
-   
+
     nav .menu > li > .toggle,
     nav .menu > li > a {
       padding: @mobileToggleMenuFirstPadding;
     }
     nav ul ul .toggle,
-    nav ul ul a { 
+    nav ul ul a {
       padding: @mobileToggleMenuSecondPadding;
     }
-   
-    nav ul ul ul a { 
+
+    nav ul ul ul a {
       padding: @mobileToggleMenuThirdPadding;
     }
-   
-   
+
     nav ul ul {
       float: none;
       position: static;
       color: @mobileMegaMenuColor;
     }
-   
+
     nav ul ul li:hover > ul,
-    nav ul li:hover > ul { 
+    nav ul li:hover > ul {
       display: none;
     }
-   
+
     nav ul ul li {
       display: block;
       width: 100%;
     }
-   
-    nav ul ul ul li { 
+
+    nav ul ul ul li {
       position: static;
     }
   }
-   
+
   .menu {
     display: flex;
     flex-direction: column;
@@ -587,9 +581,8 @@ Header Actions - Burger and Search Icons
   .sub {
     left: 100%;
   }
-   
-   
-  @media all and (min-width : @tabletBreakpoint) {
+
+  @media all and (min-width: @tabletBreakpoint) {
     height: @tabletPopUpHeight;
     nav {
       .menu {
@@ -602,7 +595,7 @@ Header Actions - Burger and Search Icons
           align-items: @megaMenuLiAlignItems;
           margin-bottom: @tabletMegaMenuMarginBottom;
 
-          &.hasSubMenu:after { 
+          &.hasSubMenu:after {
             content: @megaMenuAfterIcon;
             font-family: 'Icons';
             font-size: @tabletMegaMenuIconAfterFontSize;
@@ -611,14 +604,13 @@ Header Actions - Burger and Search Icons
           a {
             display: flex;
             justify-content: space-between;
-            align-items: @megaMenuLiAlignItems ;
+            align-items: @megaMenuLiAlignItems;
             max-width: 100%;
             padding-left: 2rem;
           }
         }
-
       }
-      
+
       .sub.second {
         width: 100%;
         left: 100%;
@@ -629,17 +621,17 @@ Header Actions - Burger and Search Icons
           align-items: @megaMenuLiAlignItems;
           margin-bottom: @tabletMegaMenuMarginBottom;
 
-          &.hasSubMenu:after { 
+          &.hasSubMenu:after {
             content: @megaMenuAfterIcon;
             font-family: 'Icons';
             font-size: @tabletMegaMenuIconAfterFontSize;
             color: @megaMenuIconAfterColor;
           }
-         a {
-           max-width: 100%;
-           padding-left: 2rem;
+          a {
+            max-width: 100%;
+            padding-left: 2rem;
           }
-        }  
+        }
       }
       .sub.third {
         left: 100%;
@@ -653,12 +645,11 @@ Header Actions - Burger and Search Icons
         }
       }
     }
-    ul li:hover > a span { 
+    ul li:hover > a span {
       text-decoration: underline;
     }
   }
 
-  
   @media only screen and (min-width: @computerBreakpoint) {
     height: @computerPopUpHeight;
     nav {
@@ -674,14 +665,14 @@ Header Actions - Burger and Search Icons
       }
       .sub.second li {
         font-size: @computerMegaMenuSecondFontSize;
-        margin-bottom: @computerMegaMenuMarginBottom;;
-        &.hasSubMenu:after { 
+        margin-bottom: @computerMegaMenuMarginBottom;
+        &.hasSubMenu:after {
           font-size: @computerMegaMenuIconAfterFontSize;
         }
       }
       .sub.third li {
         font-size: @computerMegaMenuThirdFontSize;
-        margin-bottom: @computerMegaMenuMarginBottom;;
+        margin-bottom: @computerMegaMenuMarginBottom;
       }
     }
   }
