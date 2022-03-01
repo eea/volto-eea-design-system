@@ -32,15 +32,11 @@ const Footer = (props) => {
 };
 
 Footer.Actions = FooterActions;
-
-Footer.Sites = FooterSites;
-
-Footer.Header = FooterHeader;
-Footer.SubFooter = SubFooter;
-
-Footer.Social = Social;
-
 Footer.Contact = Contact;
+Footer.Header = FooterHeader;
+Footer.Sites = FooterSites;
+Footer.Social = Social;
+Footer.SubFooter = SubFooter;
 
 /**
  * Property types.

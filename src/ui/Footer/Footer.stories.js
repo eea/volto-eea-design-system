@@ -48,8 +48,11 @@ const Template = (args) => (
           </Grid.Column>
           <Grid.Column mobile={6} tablet={5} computer={4}>
             <div className="item">
-              <Footer.Contact contacts={args.contacts} />
-
+              <Footer.Contact
+                contacts={args.contacts}
+                header={args.contactHeader}
+                address={args.address}
+              />
               <Footer.Social social={args.social} />
             </div>
           </Grid.Column>
@@ -94,12 +97,10 @@ Default.args = {
     { name: 'youtube', link: '/#' },
     { name: 'rss', link: '/#' },
   ],
-  contacts: {
-    header: 'Contact Us',
-    contacts: [
-      { icon: 'comment outline', text: 'Ask your question' },
-      { icon: 'envelope outline', text: 'Sign up to our newsletter' },
-    ],
-    address: 'Kongens Nytorv 6 1050 Copenhagen K (+45) 33 36 71 00',
-  },
+  contactHeader: 'Contact Us',
+  contacts: [
+    { icon: 'comment outline', text: 'Ask your question' },
+    { icon: 'envelope outline', text: 'Sign up to our newsletter' },
+  ],
+  address: 'Kongens Nytorv 6 1050 Copenhagen K (+45) 33 36 71 00',
 };

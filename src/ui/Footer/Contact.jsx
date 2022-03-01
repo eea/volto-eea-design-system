@@ -2,32 +2,26 @@ import React from 'react';
 import { Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
-const Contact = (props) => {
-  if (props.children) {
-    return <div>{props.children}</div>;
-  }
-  return (
+const Contact = ({ children, contacts, header, address }) =>
+  children?.length ? (
+    children
+  ) : (
     <>
-      <p className="header">{props.contacts.header}</p>
-      {props.contacts.contacts.length > 0 &&
-        props.contacts.contacts.map((contact, index) => (
-          <div className="contact" key={index}>
-            <Icon name={contact.icon} size="big"></Icon>
-            {contact.text}
-          </div>
-        ))}
-      {props.contacts.address && (
-        <p className="address">{props.contacts.address}</p>
-      )}
+      <p className="header">{header}</p>
+      {contacts?.map((contact, index) => (
+        <div className="contact" key={index}>
+          <Icon name={contact.icon} size="big"></Icon>
+          <a href={contact.link}>{contact.text}</a>
+        </div>
+      ))}
+      {address && <p className="address">{address}</p>}
     </>
   );
-};
 
 Contact.propTypes = {
-  contacts: PropTypes.shape({
-    header: PropTypes.string,
-    contacts: PropTypes.array,
-  }),
+  contacts: PropTypes.array,
+  header: PropTypes.string,
+  address: PropTypes.string,
 };
 
 export default Contact;
