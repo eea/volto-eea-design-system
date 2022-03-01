@@ -1,18 +1,18 @@
 import React from 'react';
 import Footer from './Footer';
 import { Grid, Image } from 'semantic-ui-react';
-import Logo1 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group.svg';
-import Logo2 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group-3.svg';
-import Logo3 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group-154.svg';
-import Logo4 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group-95.svg';
-import Logo5 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group-2.svg';
-import Logo6 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group-98.svg';
-import Logo7 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group-5.svg';
-import Logo8 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group-96.svg';
-import Logo9 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group-4.svg';
-import Logo10 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group-1.svg';
-import EIONETLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/EIONETLogo.png';
-import EEALogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/EEA-Logo-white.svg';
+import Logo1 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/bise.svg';
+import Logo2 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/energy.svg';
+import Logo3 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/insitu.svg';
+import Logo4 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/ipchem.svg';
+import Logo5 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/freshwater.svg';
+import Logo6 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/fise.svg';
+import Logo7 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/cca.svg';
+import Logo8 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/copernicus.svg';
+import Logo9 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/industry.svg';
+import Logo10 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/marine.svg';
+import EIONETLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EIONETLogo.png';
+import EEALogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EEA-Logo-white.svg';
 
 export default {
   title: 'Layout/Footer',
