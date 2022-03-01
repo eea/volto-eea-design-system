@@ -42,7 +42,8 @@ following practical guidelines.
 
 ### Basic Rules
 
-- One React component per file. Use JSX syntax.
+- In principle, one React component per file. When using subcomponents or
+  related components, you can place them in the same file.
 - Use [Volto's eslint
   configuration](https://github.com/plone/volto/blob/master/.eslintrc) for
   linting and Prettier integration
