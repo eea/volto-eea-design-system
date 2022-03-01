@@ -1,5 +1,5 @@
 ---
-title: Colours
+title: Colors
 order: 2
 ---
 
@@ -172,13 +172,15 @@ Use this color as the background for your dark-on-light designs, or the text col
 
 <br />
 
-## Tools for creating color palettes 
-
-[Colors for maps](https://colorbrewer2.org)
+### Tools for creating color palettes 
 
 https://color.adobe.com/create/color-wheel 
 
 https://coolors.co/  
+
+### Tools for Map colors
+
+https://colorbrewer2.org
 
 https://carto.com/carto-colors/ 
 
