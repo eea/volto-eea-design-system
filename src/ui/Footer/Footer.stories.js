@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from './Footer';
-
+import { Grid, Image } from 'semantic-ui-react';
 import Logo1 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group.svg';
 import Logo2 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group-3.svg';
 import Logo3 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group-154.svg';
@@ -11,6 +11,8 @@ import Logo7 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/im
 import Logo8 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group-96.svg';
 import Logo9 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group-4.svg';
 import Logo10 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/Extras/Group-1.svg';
+import EIONETLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/EIONETLogo.png';
+import EEALogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Footer/EEA-Logo-white.svg';
 
 export default {
   title: 'Layout/Footer',
@@ -18,7 +20,47 @@ export default {
   argTypes: {},
 };
 
-const Template = (args) => <Footer {...args}></Footer>;
+const Template = (args) => (
+  <Footer>
+    <Footer.Header>The EEA also contributes to</Footer.Header>
+    <Footer.Sites sites={args.sites} />
+    <Footer.SubFooter>
+      <div className="subfooter">
+        <Grid>
+          <Grid.Column mobile={6} tablet={7} computer={8}>
+            <div className="item">
+              <div className="site logo">
+                <Image src={EEALogo} alt="EEA Logo"></Image>
+                <p className="description">An agency of the European Union</p>
+              </div>
+
+              <div className="eionet logo">
+                <Image src={EIONETLogo} alt="EIONET Logo"></Image>
+                <p className="description">
+                  European Environment
+                  <br />
+                  Information and
+                  <br />
+                  Observation Network
+                </p>
+              </div>
+            </div>
+          </Grid.Column>
+          <Grid.Column mobile={6} tablet={5} computer={4}>
+            <div className="item">
+              <Footer.Contact contacts={args.contacts} />
+
+              <Footer.Social social={args.social} />
+            </div>
+          </Grid.Column>
+        </Grid>
+        <Grid.Row>
+          <Footer.Actions actions={args.actions} />
+        </Grid.Row>
+      </div>
+    </Footer.SubFooter>
+  </Footer>
+);
 
 export const Default = Template.bind({});
 Default.args = {
