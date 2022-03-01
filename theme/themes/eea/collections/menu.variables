@@ -6,12 +6,6 @@
       Collection
 --------------------*/
 
-@paginationBorder: @eeaMenuBorder @silverGray;
-@pagginationItemColor: @deepBlue;
-@pagginationItemBackground: transparent;
-@activeColor: @secondaryColor;
-@activeItemBorder: @eeaMenuBorder @secondaryColor;
-
 /* Menu */
 @verticalMargin: @medium;
 @horizontalMargin: 0em;
@@ -222,7 +216,7 @@
 @secondaryItemHorizontalPadding: @relativeSmall;
 @secondaryItemPadding: @relativeMini @relativeSmall;
 @secondaryItemBorderRadius: @defaultBorderRadius;
-@secondaryItemTransition: color @defaultDuration @defaultEasing;
+@secondaryItemTransition: none;
 @secondaryItemColor: @unselectedTextColor;
 
 @secondaryHoverItemBackground: @transparentBlack;
@@ -249,9 +243,11 @@
 @secondaryMenuSubMenuItemPadding: @relative7px @secondarySubMenuHorizontalPadding;
 
 /* Pointing */
-@secondaryPointingBorderWidth: 3px;
-@secondaryPointingBorderColor: @borderColor;
+@secondaryPointingBorderWidth: @1px;
+@secondaryPointingActiveBorderWidth: @3px;
+@secondaryPointingBorderColor: @midGray;
 @secondaryPointingItemVerticalPadding: @relativeTiny;
+@secondaryPointingItemActiveVerticalPadding: unit((@relativeTiny - @1px), rem);
 @secondaryPointingItemHorizontalPadding: @relativeMini;
 // Pastanaga custom
 @secondaryPointingItemTextTransform: uppercase;
@@ -339,7 +335,9 @@
 
 
 /* Pagination */
-@paginationMinWidth: 3em;
+@paginationWidth: 100%;
+@paginationColor: @deepBlue;
+@paginationMinWidth: 2em;
 @paginationActiveBackground: @transparentBlack;
 @paginationActiveTextColor: @selectedTextColor;
 
@@ -365,6 +363,7 @@
 
 @textMenuActiveItemFontWeight: @normal;
 @textMenuActiveItemColor: @selectedTextColor;
+@secondaryPointingctiveItemMarginBottom: @2px;
 
 @textMenuHeaderSize: @relativeSmall;
 @textMenuHeaderColor: @darkTextColor;

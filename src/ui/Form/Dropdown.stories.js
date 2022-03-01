@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dropdown, Form } from 'semantic-ui-react';
+import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
 
 export default {
   title: 'Components/Forms/Dropdown',
@@ -55,16 +56,21 @@ const listOptions = [
   },
 ];
 
-const Template = (args) => (
+const Template = ({ label, error, required, ...args }) => (
   <Form>
-    <Form.Field>
+    <FormFieldWrapper
+      label={label}
+      error={error}
+      required={required}
+      columns={label ? 2 : 0}
+    >
       <Dropdown
         className="eea-dropdown"
         selection
         {...args}
         aria-label="item"
       ></Dropdown>
-    </Form.Field>
+    </FormFieldWrapper>
   </Form>
 );
 
@@ -77,6 +83,8 @@ export const Playground = Template.bind({});
 Playground.args = {
   placeholder: 'Select Option',
   options: listOptions,
+  label: 'Dropdown Label',
+  required: true,
   search: false,
   multiple: false,
   clearable: false,
@@ -87,6 +95,74 @@ Playground.args = {
 };
 
 Playground.argTypes = {
+  search: {
+    description: ' search through a large list of choice',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
+  },
+  multiple: {
+    description: 'allow multiple selections',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
+  },
+  clearable: {
+    description: 'remove some selection',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
+  },
+  inline: {
+    description: 'format dropdown to appear inline in other content',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
+  },
+  floating: {
+    description: 'dropdown menu can appear to be floating below an element',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
+  },
+  disabled: {
+    description: 'disable dropdown',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
+  },
+  fluid: {
+    description: 'takes the full width of its parent',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
+  },
+};
+
+export const ErrorDropdown = Template.bind({});
+ErrorDropdown.args = {
+  placeholder: 'Select Option',
+  options: listOptions,
+  label: 'Dropdown Label',
+  error: true,
+  required: true,
+  search: false,
+  multiple: false,
+  clearable: false,
+  inline: false,
+  floating: false,
+  disabled: false,
+  fluid: false,
+};
+
+ErrorDropdown.argTypes = {
   search: {
     description: ' search through a large list of choice',
     table: {

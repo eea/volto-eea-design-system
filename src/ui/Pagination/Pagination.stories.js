@@ -70,13 +70,7 @@ export default {
   },
 };
 
-const Template = (args) => <Pagination className="eea-pagination" {...args} />;
-
-// export const Default = Template.bind({});
-// Default.args = {
-//   defaultActivePage: 5,
-//   totalPages: 10,
-// };
+const Template = (args) => <Pagination pointing secondary {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

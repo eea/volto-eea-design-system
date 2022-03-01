@@ -1,5 +1,6 @@
 import React from 'react';
-import { Input, Form, Message } from 'semantic-ui-react';
+import { Input, Form } from 'semantic-ui-react';
+import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
 
 export default {
   title: 'Components/Forms/Input',
@@ -53,21 +54,26 @@ export default {
   },
 };
 
-const Template = (args) => (
+const Template = ({ label, error, required, ...rest }) => (
   <Form>
-    <Form.Field required={args.required}>
-      <Input {...args} id="temp-id" />
-      {args.error && (
-        <Message
-          negative
-          content="This is a mandatory field"
-          size="mini"
-          icon="exclamation circle"
-        />
-      )}
-    </Form.Field>
+    <FormFieldWrapper
+      error={error}
+      label={label}
+      required={required}
+      columns={label ? 2 : 0}
+    >
+      <Input {...rest} id="temp-id" />
+    </FormFieldWrapper>
   </Form>
 );
+
+export const Default = Template.bind({});
+Default.args = {
+  placeholder: 'Placeholder',
+  type: 'text',
+  fluid: false,
+  required: false,
+};
 
 export const StandardInput = Template.bind({});
 StandardInput.args = {

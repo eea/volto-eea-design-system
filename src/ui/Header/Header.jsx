@@ -267,10 +267,10 @@ class Header extends Component {
                   <Menu className="eea-main-menu tablet or lower hidden" text>
                     {this.props.menuItems.map((item) => (
                       <Menu.Item
-                        name={item['@id']}
+                        name={item['@id'] || item.url}
                         onClick={this.menuOnClick}
                         active={this.state.activeItem === item.key}
-                        key={item['@id']}
+                        key={item['@id'] || item.url}
                       >
                         {item.title}
                       </Menu.Item>
@@ -287,7 +287,7 @@ class Header extends Component {
                   </Header.BurgerAction>
                 )}
                 <div
-                  className="eea-header-search-action"
+                  className="search-action"
                   onClick={this.searchOnClick}
                   role="none"
                 >
@@ -354,7 +354,7 @@ Header.Main = Main;
 
 const BurgerAction = (props) => (
   <div
-    className={`eea-header-burger-action ${props.className}`}
+    className={`burger-action ${props.className}`}
     role="none"
     onClick={props.onClick}
   >
