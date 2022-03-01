@@ -29,6 +29,6 @@ div.ui.icon.message > .icon:not(.close) {
 .ui.error.message,
 .ui.info.message,
 .ui.positive.message,
-.ui.negative.message, {
+.ui.negative.message {
   background: @background;
 }
