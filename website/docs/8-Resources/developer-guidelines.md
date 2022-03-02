@@ -115,6 +115,9 @@ import someImage from '@eeacms/volto-eea-design-system/../theme/assets/someFile.
 6. Volto configuration registry
 5. Side-effect imports (such as importing a css or less file)
 
+- DRY. Code that is repeated, and in particular code that is closely situated,
+  is should be a target of this rule.
+
 ## Storybook
 
 - Place stories next to components
