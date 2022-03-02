@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from './Header';
-//import { Segment } from 'semantic-ui-react';
-import Wrapper from '@plone/volto/storybook';
+import { Container, Dropdown, Image, Menu, Grid } from 'semantic-ui-react';
+import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
 
 export default {
   title: 'Layout/Header',
-  cocmponent: Header,
+  component: Header,
   argTypes: {
     linksDropdown: {
       description: 'links dropdown content',
@@ -29,26 +29,8 @@ export default {
       },
     },
   },
-  decorators: [
-    (Story) => (
-      <Wrapper location={{ pathname: '/folder2/folder21/doc212' }}>
-        <>
-          <Story />
-        </>
-      </Wrapper>
-    ),
-  ],
+  decorators: [(Story) => <Story />],
 };
-
-// export const Default = injectIntl(({ children, ...args }) => {
-//     return (
-//       <Wrapper location={{ pathname: '/folder2/folder21/doc212' }}>
-//         <Segment className="portal-footer">
-//           <Header />
-//         </Segment>
-//       </Wrapper>
-//     );
-//   });
 
 const links = [
   { title: 'Biodiversity Information System for Europe', href: '/#' },
@@ -255,7 +237,82 @@ const menuItems = [
   },
 ];
 
-const Template = (args) => <Header {...args} />;
+const Template = (args) => {
+  const EUInstitutions = () => (
+    <Dropdown.Menu id="eea-official-union-dropdown" role="group">
+      <div className="content">
+        <p>
+          All official European Union website addresses are in the{' '}
+          <b>europa.eu</b> domain.
+        </p>
+        <a
+          href="https://europa.eu/european-union/contact/institutions-bodies_en"
+          target="_blank"
+          rel="noreferrer"
+          role="option"
+          aria-selected="false"
+        >
+          See all EU institutions and bodies
+        </a>
+      </div>
+    </Dropdown.Menu>
+  );
+
+  return (
+    <Header {...args}>
+      <Header.TopHeader>
+        <Header.TopItem className="official-union mobile or lower hidden">
+          <Image src={eeaFlag} alt="eea flag"></Image>
+          <Dropdown
+            text="An official website of the European Union | How do you Know?"
+            icon="chevron down"
+            aria-label="dropdown"
+          >
+            <EUInstitutions />
+          </Dropdown>
+        </Header.TopItem>
+
+        <Header.TopItem className="official-union mobile only">
+          <Image src={eeaFlag} alt="eea flag"></Image>
+          <Dropdown
+            text="An official EU website"
+            icon="chevron down"
+            aria-label="dropdown"
+          >
+            <EUInstitutions />
+          </Dropdown>
+        </Header.TopItem>
+
+        <Header.TopItem>
+          <Dropdown
+            id="theme-sites"
+            className="tablet or lower hidden"
+            text={this.props.linksDropdown.title}
+            icon="chevron down"
+            aria-label="dropdown"
+          >
+            <Dropdown.Menu role="group">
+              <div className="wrapper">
+                {this.props.linksDropdown.links.map((item, index) => (
+                  <Dropdown.Item key={index}>
+                    <a
+                      href={item.href}
+                      className="site"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {item.title}
+                    </a>
+                  </Dropdown.Item>
+                ))}
+              </div>
+            </Dropdown.Menu>
+          </Dropdown>
+        </Header.TopItem>
+      </Header.TopHeader>
+    </Header>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {
