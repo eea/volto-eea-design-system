@@ -1,3 +1,22 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+.ui.loader:after,.ui.loader:before {
+    display:none;
+}
+
+.ui.text.loader {
+    width: 205px !important;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 72px 30px 0px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: (@medium + @textDistance);
+    font-size: @bigFontSize;
+    font-weight: @loaderTextFontWeight;
+}
+
+
