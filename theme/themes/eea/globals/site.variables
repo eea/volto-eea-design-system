@@ -467,7 +467,7 @@
 /* Negative */
 @negativeColor           : @red;
 @negativeBackgroundColor : #FEEFEF;
-@negativeBorderColor     : #FEEFEF;
+@negativeBorderColor     : @red; //#FEEFEF;
 @negativeHeaderColor     : @red;
 @negativeTextColor       : @red;
 

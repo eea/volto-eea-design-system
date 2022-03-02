@@ -23,8 +23,8 @@
 }
 
 /* Helper text for disabled element */
-.ui.disabled.checkbox.eea-checkbox + label,
-.ui.disabled.radio.checkbox.eea-radio + label {
+.ui.disabled.checkbox + label,
+.ui.disabled.radio.checkbox + label {
   opacity: @disabledCheckboxOpacity;
 }
 
@@ -44,17 +44,7 @@
   input {
     &:checked ~ label {
       &:after {
-        background-color: @primaryColor;
-      }
-    }
-  }
-}
-
-.ui.radio.checkbox {
-  input {
-    &:checked ~ label {
-      &:after {
-        color: @primaryColor !important;
+        background-color: @bulletColor;
       }
     }
   }
@@ -62,7 +52,7 @@
 
 .ui.radio.checkbox input:focus:checked ~ .box:after,
 .ui.radio.checkbox input:focus:checked ~ label:after {
-  background-color: @primaryColor !important;
+  background-color: @bulletColor;
 }
 
 //Error Radio Button
@@ -70,16 +60,8 @@
   input {
     &:checked ~ label {
       &:after {
-        border: 2px solid @negativeColor !important;
-        background-color: @negativeColor !important;
+        background-color: @negativeColor;
       }
     }
   }
-}
-
-.error .checkbox:not(.toggle):not(.slider) .box:before,
-.error .checkbox:not(.toggle):not(.slider) label:before,
-.error .field .checkbox:not(.toggle):not(.slider) .box:before,
-.error .field .checkbox:not(.toggle):not(.slider) label:before {
-  border-color: @negativeColor !important;
 }
