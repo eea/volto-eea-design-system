@@ -12,6 +12,10 @@
     justify-content: space-between;
     border-bottom: @titleBorderBottom;
 
+    .icon {
+      flex-shrink: 0;
+    }
+
     &:hover {
       color: @titleColorHover;
 
@@ -26,6 +30,7 @@
       order: @iconOrder;
       color: @iconColor;
       font-size: @iconFontSize;
+      line-height: @iconFontSize;
 
       &:before {
         content: @iconInactive;
@@ -55,4 +60,16 @@
 /* All content padding are equal including last child */
 .ui.accordion:not(.styled) .title ~ .content:not(.ui):last-child {
   padding-bottom: @contentPaddingBottom;
+}
+
+/*******************************
+            Types
+*******************************/
+
+/*--------------
+     Styled
+---------------*/
+
+.ui.styled.accordion .active.title input {
+  color: @styledActiveTitleColor;
 }

@@ -8,109 +8,107 @@
 *******************************/
 
 .eea.timeline {
-    max-width: @timelineMaxWidth;
-    text-align: @timelineAlign;
-  
-    i.icon {
-      box-shadow: @timelineIconBoxShadow;
-      margin: @timelineIcoMargin;
-      font-size: @mobileTimelineIconFontSize;
-    }
-  
-    .ui.grid .row {
-      padding-bottom: 0; //always zero for continuous line
+  max-width: @timelineMaxWidth;
+  text-align: @timelineAlign;
 
-      .column {
-        .card {
-          border: @timelineBorder;
-          box-shadow: @timelineBoxShadow;
-          margin-top: @modileCardMarginTop;
-        }
-    
-        .content .label {
-          padding: @timelineLabelPadding;
-          border-radius: @timelineLabelBorderRadius;
-          font-size: @timelineLabelFontSize;
-        }
+  i.icon {
+    box-shadow: @timelineIconBoxShadow;
+    margin: @timelineIcoMargin;
+    font-size: @mobileTimelineIconFontSize;
+  }
+
+  .ui.grid .row {
+    padding-bottom: 0; //always zero for continuous line
+
+    .column {
+      .card {
+        border: @timelineBorder;
+        box-shadow: @timelineBoxShadow;
+        margin-top: @modileCardMarginTop;
+      }
+
+      .content .label {
+        padding: @timelineLabelPadding;
+        border-radius: @timelineLabelBorderRadius;
+        font-size: @timelineLabelFontSize;
       }
     }
   }
-  
-  /* Timeline Colors */
-  .eea.timeline .ui.grid .row .column {
-    .blue .content .label {
-      background-color: @timelineBlue;
-    }
-  
-    .green .content .label {
-      background-color: @timelineGreen;
-    }
-  
-    .grey .content .label {
-      background-color: @timelineGrey;
-    }
+}
 
-    .orange .content .label {
-      background-color: @timelineOrange;
-    }
-
-    .red .content .label {
-      background-color: @timelineRed;
-    }
-
-    .yellow .content .label {
-      background-color: @timelineYellow;
-    }
-  
-    .yellow .content .label {
-      background-color: @timelineYellow;
-    }
-
-    .olive .content .label {
-      background-color: @timelineOlive;
-    }
-
-    .teal .content .label {
-      background-color: @timelineTeal;
-    }
-
-    .violet .content .label {
-      background-color: @timelineViolet;
-    }
-
-    .purple .content .label {
-      background-color: @timelinePurple;
-    }
-
-    .pink .content .label {
-      background-color: @timelinePink;
-    }
-
-    .brown .content .label {
-      background-color: @timelineBrown;
-    }
+/* Timeline Colors */
+.eea.timeline .ui.grid .row .column {
+  .blue .content .label {
+    background-color: @timelineBlue;
   }
 
-  
-  /* Custom vertical line */
-  .eea.timeline .ui.grid .row > .line:after {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    content: '';
-    transform: translate(-50%);
-    border-left: @timelineLineBorderLeft;
+  .green .content .label {
+    background-color: @timelineGreen;
   }
-  
 
-  @media only screen and (min-width: @tabletBreakpoint) {
-    .eea.timeline .ui.grid .row > .line i.icon {
-      font-size: @tabletTimelineIconFontSize;
-    }
-  
-    .eea.timeline .ui.grid .row .column .card {
-      margin-top: @tabletCardMarginTop;
-    }
+  .grey .content .label {
+    background-color: @timelineGrey;
   }
+
+  .orange .content .label {
+    background-color: @timelineOrange;
+  }
+
+  .red .content .label {
+    background-color: @timelineRed;
+  }
+
+  .yellow .content .label {
+    background-color: @timelineYellow;
+  }
+
+  .yellow .content .label {
+    background-color: @timelineYellow;
+  }
+
+  .olive .content .label {
+    background-color: @timelineOlive;
+  }
+
+  .teal .content .label {
+    background-color: @timelineTeal;
+  }
+
+  .violet .content .label {
+    background-color: @timelineViolet;
+  }
+
+  .purple .content .label {
+    background-color: @timelinePurple;
+  }
+
+  .pink .content .label {
+    background-color: @timelinePink;
+  }
+
+  .brown .content .label {
+    background-color: @timelineBrown;
+  }
+}
+
+/* Custom vertical line */
+.eea.timeline .ui.grid .row > .line:after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  transform: translate(-50%);
+  border-left: @timelineLineBorderLeft;
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .eea.timeline .ui.grid .row > .line i.icon {
+    font-size: @tabletTimelineIconFontSize;
+  }
+
+  .eea.timeline .ui.grid .row .column .card {
+    margin-top: @tabletCardMarginTop;
+  }
+}

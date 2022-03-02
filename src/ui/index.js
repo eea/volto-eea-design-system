@@ -1,5 +1,3 @@
-const { default: Tags } = require("./Tags/Tags");
-
 export Banner from './Banner/Banner';
 
 export Blockquote from './Blockquote/Blockquote';
