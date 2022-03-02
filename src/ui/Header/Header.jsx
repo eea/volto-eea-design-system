@@ -3,8 +3,8 @@
  * @module components/theme/Header/Header
  */
 
-import React, { Component } from 'react';
-import { Container, Dropdown, Image, Menu, Grid } from 'semantic-ui-react';
+import React from 'react'; // , { Component }
+import { Container, Image, Menu, Grid } from 'semantic-ui-react'; // Dropdown,
 
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
@@ -74,7 +74,6 @@ function Header({ children }) {
 //      <Header.TopHeader>
 //        <Header.TopItem className="official-union mobile or lower hidden">
 //          <Image src={eeaFlag} alt="eea flag"></Image>
-
 //          <Dropdown
 //            text="An official website of the European Union | How do you Know?"
 //            icon="chevron down"
@@ -99,10 +98,8 @@ function Header({ children }) {
 //            </Dropdown.Menu>
 //          </Dropdown>
 //        </Header.TopItem>
-
 //        <Header.TopItem className="official-union mobile only">
 //          <Image src={eeaFlag} alt="eea flag"></Image>
-
 //          <Dropdown
 //            text="An official EU website"
 //            icon="chevron down"
@@ -125,7 +122,6 @@ function Header({ children }) {
 //            </Dropdown.Menu>
 //          </Dropdown>
 //        </Header.TopItem>
-
 //        {this.props.linksDropdown && (
 //          <Header.TopItem>
 //            <Dropdown
@@ -154,7 +150,6 @@ function Header({ children }) {
 //            </Dropdown>
 //          </Header.TopItem>
 //        )}
-
 //        {this.props.languages && (
 //          <Dropdown
 //            id="language-switcher"
