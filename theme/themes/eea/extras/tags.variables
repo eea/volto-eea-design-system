@@ -28,7 +28,7 @@
 @tagsTagNameLineHeight     : 0.812rem;
 
 /* Tags Colors */
-@tagsTagDefaultColor       : #007b6c;
-@tagsTagTealColor          : #2e6173;
-@tagsTagBlueDarkColor      : #004b7f;
+@tagsTagDefaultColor       : @pineGreen;
+@tagsTagTealColor          : @metallicBlue;
+@tagsTagBlueDarkColor      : @darkCerulean;
 @tagsTagBlueLightColor     : #3c8eb2;
