@@ -17,3 +17,9 @@ export Logo from './Logo/Logo';
 export Pullquote from './Pullquote/Pullquote';
 
 export Timeline from './Timeline/Timeline';
+
+export Avatar from './Avatar/Avatar';
+
+export Testimonial from './Testimonial/Testimonial';
+
+export AvatarGrid from './AvatarGrid/AvatarGrid';
