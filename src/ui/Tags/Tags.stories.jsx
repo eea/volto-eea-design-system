@@ -52,9 +52,9 @@ Default.args = {
   title: 'tags',
   direction: 'right',
   tags: [
-    { category: 'subcategory1', href: '#', class: '' },
-    { category: 'subcategory2', href: '#', class: 'teal' },
-    { category: 'subcategory3', href: '#', class: 'blue-dark' },
-    { category: 'subcategory4', href: '#', class: 'blue-light' },
+    { category: '# subcategory 1', href: '#', class: '' },
+    { category: '# subcategory 2', href: '#', class: 'teal' },
+    { category: '# subcategory 3', href: '#', class: 'blue-dark' },
+    { category: '# subcategory 4', href: '#', class: 'blue-light' },
   ],
 };
