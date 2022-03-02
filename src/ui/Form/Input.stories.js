@@ -60,7 +60,7 @@ const Template = ({ label, error, required, ...rest }) => (
       error={error}
       label={label}
       required={required}
-      columns={label ? 2 : 0}
+      columns={label ? 1 : 0}
     >
       <Input {...rest} id="temp-id" />
     </FormFieldWrapper>
@@ -84,6 +84,23 @@ StandardInput.args = {
   required: false,
 };
 
+StandardInput.argTypes = {
+  label: {
+    description: 'input label',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: '' },
+    },
+  },
+  required: {
+    description: 'a field can show that is mandatory',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
+  },
+};
+
 StandardInput.parameters = {
   controls: {
     exclude: ['onChange', 'onFocus'],
@@ -103,6 +120,20 @@ DisabledInput.args = {
 DisabledInput.argTypes = {
   fluid: {
     description: 'take on the size of its container',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
+  },
+  label: {
+    description: 'input label',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: '' },
+    },
+  },
+  required: {
+    description: 'a field can show that is mandatory',
     table: {
       type: { summary: 'boolean' },
       defaultValue: { summary: false },
@@ -143,6 +174,20 @@ LoadingInput.argTypes = {
       defaultValue: { summary: true },
     },
   },
+  label: {
+    description: 'input label',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: '' },
+    },
+  },
+  required: {
+    description: 'a field can show that is mandatory',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
+  },
 };
 LoadingInput.parameters = {
   controls: {
@@ -166,6 +211,20 @@ ErrorInput.argTypes = {
     table: {
       type: { summary: 'boolean' },
       defaultValue: { summary: true },
+    },
+  },
+  label: {
+    description: 'input label',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: '' },
+    },
+  },
+  required: {
+    description: 'a field can show that is mandatory',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
     },
   },
 };

@@ -121,3 +121,25 @@
     }
   }
 }
+
+/* form field wrapper */
+
+.required.eea.fieldWrapper .ui.label::after {
+  content:'*';
+}
+
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .required.eea.fieldWrapper {
+
+    .row {
+      &::after {
+        content:'*';
+      }
+    }
+
+    .ui.label::after {
+      content:'';
+    }
+  }
+}

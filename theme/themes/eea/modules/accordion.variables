@@ -3,7 +3,7 @@
 *******************************/
 
 @boxShadow: none;
-@itemsMargin: @relative8px 0;
+@itemsMargin: 0;
 
 /* Title */
 @titleFont: @headerFont;
@@ -22,7 +22,7 @@
 @iconWidth: 1.563rem;
 @iconHeight: 1.563rem;
 @iconDisplay: inline-block;
-@iconMargin: 0em 0.25rem 0em 0rem;
+@iconMargin: 0em 0.25rem 0em 0.25rem;
 @iconPadding: 0em;
 @iconTransition:
   transform @defaultDuration @defaultEasing,
@@ -76,7 +76,7 @@
 
 /* Content */
 @styledContentMargin: 0em;
-@styledContentPadding: 0.5em 1em 1.5em;
+@styledContentPadding: @contentPadding;
 @contentBorder: @relative2px solid @secondaryColor;
 
 /* Child Content */
@@ -87,7 +87,7 @@
 @styledTitleMargin: 0em;
 @styledTitlePadding: 0.75em 1em;
 @styledTitleFontWeight: @normal;
-@styledTitleColor: @teal;
+@styledTitleColor: @titleColor;
 @styledTitleTransition: background-color @defaultDuration @defaultEasing;
 @styledTitleBorder: none;
 @styledTitleTransition:
@@ -96,10 +96,10 @@
 ;
 
 /* Styled Title States */
-@styledTitleHoverBackground: @darkWhite;
+@styledTitleHoverBackground: transparent;
 @styledTitleHoverColor: @teal;
-@styledActiveTitleBackground: @darkWhite;
-@styledActiveTitleColor: @teal;
+@styledActiveTitleBackground: @teal;
+@styledActiveTitleColor: @white;
 
 /* Styled Child Title States */
 @styledHoverChildTitleBackground: @styledTitleHoverBackground;
