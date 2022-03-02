@@ -62,6 +62,19 @@ following practical guidelines.
   for root components of a directory, use index.jsx as the filename and use the
   directory name as the component name.
 - Use camelCase for prop names, or PascalCase if the prop value is a React component.
+- Imports should be sorted in the following order:
+
+1. Base libraries (react, semantic-ui, redux, other major third-party
+   dependencies)
+2. Dependencies from Volto
+2. Dependencies from other EEA addons
+3. Dependencies from current package, referenced by absolute path name
+   (namespace)
+4. Relative dependencies
+5. Static resources
+6. Volto configuration registry
+5. Side-effect imports (such as importing a css or less file)
+
 
 ### Other
 
@@ -109,6 +122,7 @@ import someImage from '@eeacms/volto-eea-design-system/../theme/assets/someFile.
   to ensure a consistent look and feel. One place to document these constraints
   is in the control options we have in Storybook.
 
+##
 
 [1]: https://github.com/eea/volto-eea-design-system/blob/40f78e362ca607ef3893fff3d03c8ed1b4447c11/src/customizations/components/theme/Logo/Logo.jsx#L13
 [2]: https://github.com/eea/volto-eea-design-system/blob/40f78e362ca607ef3893fff3d03c8ed1b4447c11/src/customizations/components/theme/Footer/theme-sites.js
