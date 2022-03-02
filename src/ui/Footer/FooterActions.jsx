@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FooterActions = (props) => {
   if (props.children) {
@@ -9,10 +10,10 @@ const FooterActions = (props) => {
     <div className="menu">
       {props.actions &&
         props.actions.map((action, index) => (
-          <a href={action.link} key={index}>
+          <Link to={action.link} key={index}>
             {action.copy && <>&copy;</>}
             {action.title}
-          </a>
+          </Link>
         ))}
     </div>
   );
