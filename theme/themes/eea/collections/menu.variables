@@ -349,7 +349,7 @@
 
 
 /* Text */
-@textMenuItemSpacing: @relative7px;
+@textMenuItemSpacing: @relative20px;
 @textMenuMargin: @relativeMedium -(@textMenuItemSpacing);
 @textMenuItemColor: @mutedTextColor;
 @textMenuItemFontWeight: @normal;
