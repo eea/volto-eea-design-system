@@ -14,7 +14,7 @@ All notable changes to this project will be documented in this file. Dates are d
   {{/if}}
 
   {{! List commits with `Breaking change: ` somewhere in the message }}
-  {{#commit-list commits heading='#### :boom: Breaking Change' subject='(^Breaking change[:(]|^breaking[:(])'}}
+  {{#commit-list commits heading='#### :boom: Breaking Change' subject='(^Breaking change[:(]|^breaking[:(]|^BREAKING CHANGE[:(]|^BREAKING[:(])'}}
     - {{subject}} [`{{shorthash}}`]({{href}})
   {{/commit-list}}
 
@@ -28,7 +28,7 @@ All notable changes to this project will be documented in this file. Dates are d
     - {{subject}} [`{{shorthash}}`]({{href}})
   {{/commit-list}}
 
-  {{#commit-list commits heading='#### :nail_care: Enhancements' subject='(^enhancement[:(]|^change[:(]|^refactor[:(])' }}
+  {{#commit-list commits heading='#### :nail_care: Enhancements' subject='(^enhancement[:(]|^change[:(]|^refactor[:(]|^perf[:(])' }}
     - {{subject}} [`{{shorthash}}`]({{href}})
   {{/commit-list}}
 
@@ -41,7 +41,7 @@ All notable changes to this project will be documented in this file. Dates are d
   {{/commit-list}}
 
 
-  {{#commit-list commits heading='#### :hammer_and_wrench: Others' exclude='^Breaking change:|^breaking:|^feat[:(]|^fix[:(]|^enhancement[:(]|^change[:(]|^chore[:(]|^docs[:(]|^doc[:(]|^Autobuild|^Automated|^\[JENKINS\]|^\[YARN\]|^refactor[:(]|^style[:(]' }}
+  {{#commit-list commits heading='#### :hammer_and_wrench: Others' exclude='^Breaking change[:(]|^breaking[:(]|^BREAKING CHANGE[:(]|^BREAKING[:(]|^feat[:(]|^fix[:(]|^enhancement[:(]|^change[:(]|^chore[:(]|^docs[:(]|^doc[:(]|^Autobuild|^Automated|^\[JENKINS\]|^\[YARN\]|^refactor[:(]|^style[:(]' }}
     - {{subject}} [`{{shorthash}}`]({{href}})
   {{/commit-list}}
   
