@@ -9,64 +9,53 @@
 
 .eea.tags {
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: right;
-  width: 100%;
-  height: 50px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
+  width: @tagsBodyWidth;
+  height: @tagsBodyHeight;
+  font-family: @tagsfontName;
+  font-style: @tagsFontStyle;
+  line-height: @tagsLineHeight;
+  letter-spacing: @tagsLetterSpacing;
 
   .title {
-    height: 21px;
     text-align: right;
-    letter-spacing: -0.015em;
-    color: #808285;
-    margin-right: 31px;
-    font-size: 18px;
+    height: @tagsLineHeight;
+    color: @tagsTitleFontColor;
+    margin-right: @tagsTitleMargin;
+    font-weight: @tagsFontWeight;
+    font-size: @tagsFontSize;
   }
 
   .tag {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 12px;
-    height: 32px;
     text-align: center;
-    background: #007b6c;
-    border-radius: 15px;
-    margin-right: 23px;
-
-    .hash {      
-      left: 46.94%;
-      right: 52.29%;
-      top: 51.94%;
-      bottom: 47.82%;
-
-      background: #FFFFFF;
-    }
+    padding: @tagsTagPadding;
+    height: @tagsTagHeight;
+    border-radius: @TagsTagBorderRadius;
+    margin: @tagsTagMargin;
+    background: @tagsTagDefaultColor;
 
     .name {
-      font-size: 11px;
-      line-height: 13px;
       text-align: center;
-      letter-spacing: -0.015em;
-      color: #ffffff;
+      font-size: @tagsTagNameFontSize;
+      line-height: @tagsTagNameLineHeight;
+      color: @tagsTagNameFontColor;
     }
   }
 
   .tag.teal {
-    background: #2e6173;
+    background: @tagsTagTealColor;
   }
 
   .tag.blue-dark {
-    background: #004b7f;
+    background: @tagsTagBlueDarkColor;
   }
 
   .tag.blue-light {
-    background: #3c8eb2;
+    background: @tagsTagBlueLightColor;
   }
 }
 

@@ -3,7 +3,7 @@ import React from 'react';
 function Tags({ children, ...rest }) {
   return (
     <div {...rest} className={'eea tags ' + rest.className}>
-      {children}
+      <div>{children}</div>
     </div>
   );
 }
@@ -16,7 +16,7 @@ Tags.Title = ({ children, ...rest }) => (
 
 Tags.Tag = ({ children, ...rest }) => (
   <a {...rest} className={'tag ' + rest.className}>
-    <span className="name">#{children}</span>
+    <span className="name">#&nbsp;{children}</span>
   </a>
 );
 
