@@ -44,8 +44,7 @@ following practical guidelines.
 
 - In principle, one React component per file. When using subcomponents or
   related components, you can place them in the same file.
-- Use [Volto's eslint
-  configuration](https://github.com/plone/volto/blob/master/.eslintrc) for
+- Use [Volto's eslint configuration][eslint] for
   linting and Prettier integration
 - Use best practice naming conventions, follow the closed library style
   (semantic-ui-less, semantic-ui-react).
@@ -74,6 +73,10 @@ following practical guidelines.
 5. Static resources
 6. Volto configuration registry
 5. Side-effect imports (such as importing a css or less file)
+
+- Variables should precisely reflect their value and intended use. For example,
+  `activeMenu` does not reflect the type of value: is it the active menu name
+  or "[menu is active][6]"?
 
 
 ### Other
@@ -104,7 +107,7 @@ import someImage from '@eeacms/volto-eea-design-system/../theme/assets/someFile.
   flexible so that they are ready to be integrated with Volto. [Bad example][5]
 - Subcomponents. Large composite components (for example the Footer) should be
   abstracted and split into multiple
-  [subcomponents](https://react.semantic-ui.com/#sub-components). See the
+  [subcomponents][subs]. See the
   SemanticUI Card or Modal as example. The Footer could be implemented as
   `Footer` as wrapper component, `Footer.Section` etc.
 
@@ -129,3 +132,6 @@ import someImage from '@eeacms/volto-eea-design-system/../theme/assets/someFile.
 [3]: https://github.com/eea/volto-eea-design-system/blob/40f78e362ca607ef3893fff3d03c8ed1b4447c11/src/customizations/components/theme/Accordion/Accordion.js#L4
 [4]: https://github.com/eea/volto-eea-design-system/blob/40f78e362ca607ef3893fff3d03c8ed1b4447c11/src/customizations/components/theme/Comment/Comment.js#L3-L4
 [5]: https://github.com/eea/volto-eea-design-system/blob/40f78e362ca607ef3893fff3d03c8ed1b4447c11/src/customizations/components/theme/Navigation/Navigation.jsx
+[6]: https://github.com/eea/volto-eea-design-system/blob/f524325b2671abfb2aa538fa61759bcd7e7f0797/src/ui/Header/Header.jsx#L73
+[eslint]: https://github.com/plone/volto/blob/master/.eslintrc
+[subs]: https://react.semantic-ui.com/#sub-components
