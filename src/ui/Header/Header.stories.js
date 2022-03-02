@@ -1,33 +1,37 @@
 import React from 'react';
 import Header from './Header';
-import { Container, Dropdown, Image, Menu, Grid } from 'semantic-ui-react';
+import { Dropdown, Image } from 'semantic-ui-react';
+import { Logo } from '@eeacms/volto-eea-design-system/ui';
+// , Container, Menu, Grid
+
+import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
 
 export default {
   title: 'Layout/Header',
   component: Header,
   argTypes: {
-    linksDropdown: {
-      description: 'links dropdown content',
-      table: {
-        type: { summary: 'array' },
-        defaultValue: { summary: '' },
-      },
-    },
-    languages: {
-      description: 'language list',
-      table: {
-        type: { summary: 'array' },
-        defaultValue: { summary: '' },
-      },
-    },
-    menuItems: {
-      description: 'items for the header menu',
-      table: {
-        type: { summary: 'array' },
-        defaultValue: { summary: '' },
-      },
-    },
+    // linksDropdown: {
+    //   description: 'links dropdown content',
+    //   table: {
+    //     type: { summary: 'array' },
+    //     defaultValue: { summary: '' },
+    //   },
+    // },
+    // languages: {
+    //   description: 'language list',
+    //   table: {
+    //     type: { summary: 'array' },
+    //     defaultValue: { summary: '' },
+    //   },
+    // },
+    // menuItems: {
+    //   description: 'items for the header menu',
+    //   table: {
+    //     type: { summary: 'array' },
+    //     defaultValue: { summary: '' },
+    //   },
+    // },
   },
   decorators: [(Story) => <Story />],
 };
@@ -43,7 +47,7 @@ const links = [
   { title: 'Fresh Water Information System for Europe', href: '/#' },
 ];
 
-const languagesList = [
+const languages = [
   { name: 'Albanian', code: 'sq' },
   { name: 'Български', code: 'bg' },
   { name: 'Bosnian', code: 'bs' },
@@ -238,85 +242,94 @@ const menuItems = [
 ];
 
 const Template = (args) => {
-  const EUInstitutions = () => (
-    <Dropdown.Menu id="eea-official-union-dropdown" role="group">
-      <div className="content">
-        <p>
-          All official European Union website addresses are in the{' '}
-          <b>europa.eu</b> domain.
-        </p>
-        <a
-          href="https://europa.eu/european-union/contact/institutions-bodies_en"
-          target="_blank"
-          rel="noreferrer"
-          role="option"
-          aria-selected="false"
-        >
-          See all EU institutions and bodies
-        </a>
-      </div>
-    </Dropdown.Menu>
-  );
+  const { languages, links, linksMenuTitle } = args;
+
+  const [language, setLanguage] = React.useState('en');
 
   return (
     <Header {...args}>
       <Header.TopHeader>
         <Header.TopItem className="official-union mobile or lower hidden">
           <Image src={eeaFlag} alt="eea flag"></Image>
-          <Dropdown
-            text="An official website of the European Union | How do you Know?"
-            icon="chevron down"
-            aria-label="dropdown"
-          >
-            <EUInstitutions />
-          </Dropdown>
-        </Header.TopItem>
 
-        <Header.TopItem className="official-union mobile only">
-          <Image src={eeaFlag} alt="eea flag"></Image>
-          <Dropdown
-            text="An official EU website"
+          <Header.TopDropdownMenu
+            text="An official website of the European Union | How do you Know?"
+            mobileText="An official EU website"
             icon="chevron down"
             aria-label="dropdown"
           >
-            <EUInstitutions />
-          </Dropdown>
+            <div className="content">
+              <p>
+                All official European Union website addresses are in the{' '}
+                <b>europa.eu</b> domain.
+              </p>
+              <a
+                href="https://europa.eu/european-union/contact/institutions-bodies_en"
+                target="_blank"
+                rel="noreferrer"
+                role="option"
+                aria-selected="false"
+              >
+                See all EU institutions and bodies
+              </a>
+            </div>
+          </Header.TopDropdownMenu>
         </Header.TopItem>
 
         <Header.TopItem>
-          <Dropdown
+          <Header.TopDropdownMenu
             id="theme-sites"
             className="tablet or lower hidden"
-            text={this.props.linksDropdown.title}
-            icon="chevron down"
-            aria-label="dropdown"
+            text={linksMenuTitle}
           >
-            <Dropdown.Menu role="group">
-              <div className="wrapper">
-                {this.props.linksDropdown.links.map((item, index) => (
-                  <Dropdown.Item key={index}>
-                    <a
-                      href={item.href}
-                      className="site"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {item.title}
-                    </a>
-                  </Dropdown.Item>
-                ))}
-              </div>
-            </Dropdown.Menu>
-          </Dropdown>
+            {links.map((item, index) => (
+              <Dropdown.Item key={index}>
+                <a
+                  href={item.href}
+                  className="site"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {item.title}
+                </a>
+              </Dropdown.Item>
+            ))}
+          </Header.TopDropdownMenu>
         </Header.TopItem>
+
+        <Header.TopDropdownMenu
+          id="language-switcher"
+          className="item"
+          text={`${language.toUpperCase()}`}
+          icon={
+            <Image src={globeIcon} alt="language dropdown globe icon"></Image>
+          }
+        >
+          {languages.map((item, index) => (
+            <Dropdown.Item
+              key={index}
+              text={
+                <span>
+                  {item.name}
+                  <span className="country-code">
+                    {item.code.toUpperCase()}
+                  </span>
+                </span>
+              }
+              onClick={() => setLanguage(item.code)}
+            ></Dropdown.Item>
+          ))}
+        </Header.TopDropdownMenu>
       </Header.TopHeader>
+      <Header.Main logo={<Logo />}></Header.Main>
     </Header>
   );
 };
 
 export const Default = Template.bind({});
 Default.args = {
-  linksDropdown: { title: 'Environmental information systems', links: links },
-  languages: languagesList,
-  menuItems: menuItems,
+  linksMenuTitle: 'Environmental information systems',
+  links,
+  languages,
+  menuItems,
 };
