@@ -1,6 +1,6 @@
 import React from 'react';
-import Wrapper from '@plone/volto/storybook';
 import LogoEEA from './Logo';
+import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea-logo.svg';
 
 export default {
   title: 'Components/Logo',
@@ -9,10 +9,12 @@ export default {
 };
 
 export const Logo = (args) => {
-  return (
-    <Wrapper location={{ pathname: '/folder2/folder21/doc212' }}>
-      <LogoEEA {...args} />
-    </Wrapper>
-  );
+  return <LogoEEA {...args} />;
 };
-Logo.args = {};
+
+Logo.args = {
+  title: 'Site',
+  alt: 'European Environment Agency',
+  url: 'https://eea.europa.eu',
+  src: LogoImage,
+};
