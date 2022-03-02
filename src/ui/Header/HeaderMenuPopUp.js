@@ -9,7 +9,10 @@ function HeaderMenuPopUp({ menuItems }) {
           <ul className="menu">
             {menuItems.map((item) => (
               //first tier
-              <li key={item['@id'] || item.url}>
+              <li
+                key={item['@id'] || item.url}
+                className={item.items.length > 0 ? 'hasSubMenu' : null}
+              >
                 {item.items.length > 0 && (
                   <label
                     htmlFor={`drop-${item['@id'] || item.url}`}
@@ -29,7 +32,12 @@ function HeaderMenuPopUp({ menuItems }) {
                   //second tier
                   <ul className="sub second">
                     {item.items.map((section) => (
-                      <li key={section['@id'] || section.url}>
+                      <li
+                        key={section['@id'] || section.url}
+                        className={
+                          section.items.length > 0 ? 'hasSubMenu' : null
+                        }
+                      >
                         {section.items.length > 0 && (
                           <label
                             htmlFor={`drop-${item['@id'] || item.url}-${
