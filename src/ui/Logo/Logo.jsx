@@ -5,23 +5,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { defineMessages, useIntl } from 'react-intl';
 import { Image } from 'semantic-ui-react';
-import { useSelector } from 'react-redux';
-import config from '@plone/volto/registry';
-
-import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea-logo.svg';
-
-const messages = defineMessages({
-  site: {
-    id: 'Site',
-    defaultMessage: 'Site',
-  },
-  eeasite: {
-    id: 'European Environment Agency',
-    defaultMessage: 'European Environment Agency',
-  },
-});
 
 /**
  * Logo component class.
@@ -29,17 +13,13 @@ const messages = defineMessages({
  * @param {Object} intl Intl object
  * @returns {string} Markup of the component.
  */
-const Logo = ({ id }) => {
-  const lang = useSelector((state) => state.intl.locale);
-  const intl = useIntl();
-  const url = config.settings.isMultilingual ? `/${lang}` : '/';
-
+const Logo = ({ src, id, url, alt, title }) => {
   return (
-    <Link to={url} title={intl.formatMessage(messages.site)}>
+    <Link to={url} title={title}>
       <Image
-        src={LogoImage}
-        alt={intl.formatMessage(messages.eeasite)}
-        title={intl.formatMessage(messages.eeasite)}
+        src={src}
+        alt={alt}
+        title={title}
         //height={64}
         className="eea-logo"
         id={id}
