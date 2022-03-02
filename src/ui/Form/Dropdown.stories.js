@@ -62,7 +62,7 @@ const Template = ({ label, error, required, ...args }) => (
       label={label}
       error={error}
       required={required}
-      columns={label ? 2 : 0}
+      columns={label ? 1 : 0}
     >
       <Dropdown
         className="eea-dropdown"
@@ -144,6 +144,20 @@ Playground.argTypes = {
       defaultValue: { summary: false },
     },
   },
+  label: {
+    description: 'dropdown label',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: '' },
+    },
+  },
+  required: {
+    description: 'a field can show that is mandatory',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
+  },
 };
 
 export const ErrorDropdown = Template.bind({});
@@ -210,6 +224,27 @@ ErrorDropdown.argTypes = {
     table: {
       type: { summary: 'boolean' },
       defaultValue: { summary: false },
+    },
+  },
+  label: {
+    description: 'dropdown label',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: '' },
+    },
+  },
+  required: {
+    description: 'a field can show that is mandatory',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
+  },
+  error: {
+    description: 'display error message along with message',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: '' },
     },
   },
 };
