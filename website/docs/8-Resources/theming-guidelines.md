@@ -280,5 +280,6 @@ If the card is `flex` based and the parent `wrapper` is flex as well, consider a
 
 ### Code formatting
 
-CSS and less files should be formatted using prettier. Indent space will be
+- CSS and less files should be formatted using prettier. Indent space will be
 2 spaces.
+- Files should be edited as Unix files, with LF line endings.
