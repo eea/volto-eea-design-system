@@ -4,7 +4,6 @@
  */
 
 import React from 'react'; // , { Component }
-import ReactDOM from 'react-dom';
 import cx from 'classnames';
 import { Container, Image, Menu, Grid, Dropdown } from 'semantic-ui-react'; // Dropdown,
 
@@ -61,9 +60,6 @@ const TopDropdownMenu = ({
   );
 };
 
-const Portal = ({ children, domNode }) =>
-  domNode ? ReactDOM.createPortal(children, domNode) : null;
-
 const Main = ({ logo, menuItems }) => {
   const [activeItem, setActiveItem] = React.useState('');
   const [menuIsActive, setMenuIsActive] = React.useState(false);
@@ -117,81 +113,71 @@ const Main = ({ logo, menuItems }) => {
   const node = React.useRef();
 
   return (
-    <>
-      <div className="main bar" ref={node}>
-        <Container>
-          <Grid>
-            <Grid.Column mobile={8} tablet={8} computer={4}>
-              {logo}
-            </Grid.Column>
-            <Grid.Column mobile={4} tablet={4} computer={8}>
-              <div className="main-menu">
-                {!menuIsActive && menuItems && (
-                  <Menu className="eea-main-menu tablet or lower hidden" text>
-                    {menuItems.map((item) => (
-                      <Menu.Item
-                        name={item['@id'] || item.url}
-                        onClick={menuOnClick}
-                        active={activeItem === item.key}
-                        key={item['@id'] || item.url}
-                      >
-                        {item.title}
-                      </Menu.Item>
-                    ))}
-                  </Menu>
-                )}
-                {menuIsActive && (
-                  <Header.BurgerAction
-                    className="desktop"
-                    onClick={desktopBurgerOnClick}
-                  >
-                    {/* <Icon name="close" /> */}
-                    <Image src={closeIcon} alt="menu close icon" />
-                  </Header.BurgerAction>
-                )}
-                <div
-                  className="search-action"
-                  onClick={searchOnClick}
-                  role="none"
-                >
-                  {/* <Icon name={!state.activeSearch ? 'search' : 'close'} /> */}
-                  <Image
-                    src={!searchIsActive ? `${searchIcon}` : `${closeIcon}`}
-                    alt="search button open/close"
-                  />
-                </div>
+    <div className="main bar" ref={node}>
+      <Container>
+        <Grid>
+          <Grid.Column mobile={8} tablet={8} computer={4}>
+            {logo}
+          </Grid.Column>
+          <Grid.Column mobile={4} tablet={4} computer={8}>
+            <div className="main-menu">
+              {!menuIsActive && menuItems && (
+                <Menu className="eea-main-menu tablet or lower hidden" text>
+                  {menuItems.map((item) => (
+                    <Menu.Item
+                      name={item['@id'] || item.url}
+                      onClick={menuOnClick}
+                      active={activeItem === item.key}
+                      key={item['@id'] || item.url}
+                    >
+                      {item.title}
+                    </Menu.Item>
+                  ))}
+                </Menu>
+              )}
+              {menuIsActive && (
                 <Header.BurgerAction
-                  className={`mobile ${burger}`}
-                  onClick={mobileBurgerOnClick}
+                  className="desktop"
+                  onClick={desktopBurgerOnClick}
                 >
-                  {/* <Icon
+                  {/* <Icon name="close" /> */}
+                  <Image src={closeIcon} alt="menu close icon" />
+                </Header.BurgerAction>
+              )}
+              <div
+                className="search-action"
+                onClick={searchOnClick}
+                role="none"
+              >
+                {/* <Icon name={!state.activeSearch ? 'search' : 'close'} /> */}
+                <Image
+                  src={!searchIsActive ? `${searchIcon}` : `${closeIcon}`}
+                  alt="search button open/close"
+                />
+              </div>
+              <Header.BurgerAction
+                className={`mobile ${burger}`}
+                onClick={mobileBurgerOnClick}
+              >
+                {/* <Icon
                   name={this.state.burger === 'open' ? 'close' : 'bars'}
                 ></Icon> */}
-                  <Image
-                    src={burger === 'open' ? `${closeIcon}` : `${burgerIcon}`}
-                    alt="menu icon open/close"
-                  />
-                </Header.BurgerAction>
-              </div>
-            </Grid.Column>
-          </Grid>
-        </Container>
-      </div>
-      {searchIsActive && (
-        <HeaderSearchPopUp onClose={() => setSearchIsActive(false)} />
-      )}
+                <Image
+                  src={burger === 'open' ? `${closeIcon}` : `${burgerIcon}`}
+                  alt="menu icon open/close"
+                />
+              </Header.BurgerAction>
+            </div>
+          </Grid.Column>
+        </Grid>
+      </Container>
+      {searchIsActive && <HeaderSearchPopUp onClose={searchOnClick} />}
       {menuIsActive && (
-        <HeaderMenuPopUp
-          menuItems={menuItems}
-          onClose={() => setMenuIsActive(false)}
-        />
+        <HeaderMenuPopUp menuItems={menuItems} onClose={mobileBurgerOnClick} />
       )}
-    </>
+    </div>
   );
 };
-
-// <Portal domNode={node.current}>
-// </Portal>
 
 const BurgerAction = (props) => (
   <div
