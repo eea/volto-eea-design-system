@@ -1,9 +1,15 @@
 import React from 'react';
 import { Container, Input, Button, Icon } from 'semantic-ui-react';
 
-function HeaderSearchPopUp() {
+import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
+
+function HeaderSearchPopUp({ onClose }) {
+  const nodeRef = React.useRef();
+
+  useClickOutside({ nodeRef, callback: onClose });
+
   return (
-    <div id="search-box">
+    <div id="search-box" ref={nodeRef}>
       <Container>
         <div className="wrapper">
           <Input

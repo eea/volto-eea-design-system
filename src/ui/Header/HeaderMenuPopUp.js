@@ -1,9 +1,15 @@
 import React from 'react';
 import { Container } from 'semantic-ui-react';
 
-function HeaderMenuPopUp({ menuItems }) {
+import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
+
+function HeaderMenuPopUp({ menuItems, onClose }) {
+  const nodeRef = React.useRef();
+
+  useClickOutside({ nodeRef, callback: onClose });
+
   return (
-    <div id="mega-menu">
+    <div id="mega-menu" ref={nodeRef}>
       <Container>
         <nav>
           <ul className="menu">
