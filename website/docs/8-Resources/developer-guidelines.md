@@ -49,6 +49,7 @@ following practical guidelines.
 - Use best practice naming conventions, follow the closed library style
   (semantic-ui-less, semantic-ui-react).
 - Configure editor to use Unix line endings (a must!).
+- New components should be written as functional components, rather then class-based.
 
 ### Naming
 
@@ -117,6 +118,7 @@ import someImage from '@eeacms/volto-eea-design-system/../theme/assets/someFile.
 
 - DRY. Code that is repeated, and in particular code that is closely situated,
   is should be a target of this rule.
+- Use the classnames package for classNames prop operations
 
 ## Storybook
 
