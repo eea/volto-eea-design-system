@@ -43,7 +43,7 @@ const InlineTemplate = (args) => (
 
 export const Inline = InlineTemplate.bind({});
 Inline.args = {
-  avatarTitle: 'Joe Doe',
+  avatarTitle: 'Jane Doe',
   avatarInfo: 'EEA Analyst',
   title: 'Amet - Lorem ipsum dolor sit amet',
   quote:
