@@ -61,3 +61,15 @@
 .ui.accordion:not(.styled) .title ~ .content:not(.ui):last-child {
   padding-bottom: @contentPaddingBottom;
 }
+
+/*******************************
+            Types
+*******************************/
+
+/*--------------
+     Styled
+---------------*/
+
+.ui.styled.accordion .active.title input {
+  color: @styledActiveTitleColor;
+}
