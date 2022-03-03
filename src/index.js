@@ -1,4 +1,6 @@
-import BlockquoteElement from './ui/Blockquote/Blockquote';
+import { BlockquoteElement } from './ui/Blockquote/Blockquote';
+import Cards from './ui/Card/Cards';
+import { getCardSchema, getSchemaExtender } from './ui/Card/schema';
 
 const applyConfig = (config) => {
   // Apply accordion block customization
@@ -7,6 +9,18 @@ const applyConfig = (config) => {
   // Apply blockquote slate customization
   if (config.settings.slate) {
     config.settings.slate.elements['blockquote'] = BlockquoteElement;
+  }
+  // Apply volto-block-image-cards custom display
+  if (config.blocks.blocksConfig.imagecards) {
+    config.blocks.blocksConfig.imagecards.blockRenderers = {
+      ...config.blocks.blocksConfig.imagecards.blockRenderers,
+      cards_grid: {
+        title: 'Cards grid',
+        view: Cards,
+        schema: getCardSchema,
+        schemaExtender: getSchemaExtender,
+      },
+    };
   }
 
   return config;
