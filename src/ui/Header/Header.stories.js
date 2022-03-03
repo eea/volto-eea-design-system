@@ -2,8 +2,8 @@ import React from 'react';
 import Header from './Header';
 import { Dropdown, Image } from 'semantic-ui-react';
 import { Logo } from '@eeacms/volto-eea-design-system/ui';
-// , Container, Menu, Grid
 
+import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea-logo.svg';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
 
@@ -34,6 +34,13 @@ export default {
     // },
   },
   decorators: [(Story) => <Story />],
+};
+
+const logoProps = {
+  title: 'Site',
+  alt: 'European Environment Agency',
+  url: 'https://eea.europa.eu',
+  src: LogoImage,
 };
 
 const links = [
@@ -242,7 +249,7 @@ const menuItems = [
 ];
 
 const Template = (args) => {
-  const { languages, links, linksMenuTitle } = args;
+  const { languages, links, linksMenuTitle, menuItems } = args;
 
   const [language, setLanguage] = React.useState('en');
 
@@ -321,7 +328,10 @@ const Template = (args) => {
           ))}
         </Header.TopDropdownMenu>
       </Header.TopHeader>
-      <Header.Main logo={<Logo />}></Header.Main>
+      <Header.Main
+        logo={<Logo {...logoProps} />}
+        menuItems={menuItems}
+      ></Header.Main>
     </Header>
   );
 };
