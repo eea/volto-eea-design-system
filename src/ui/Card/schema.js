@@ -22,11 +22,11 @@ export const getCardSchema = () => ({
       title: 'Title',
     },
     meta: {
-      widget: 'slate_richtext',
+      widget: 'textarea',
       title: 'Meta data',
     },
     text: {
-      widget: 'slate_richtext',
+      widget: 'textarea',
       title: 'Text',
     },
     link: {
@@ -42,7 +42,7 @@ export const getCardSchema = () => ({
       title: 'Image',
     },
     copyright: {
-      widget: 'slate_richtext',
+      widget: 'textarea',
       title: 'Copyright',
     },
   },

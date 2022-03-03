@@ -2,7 +2,6 @@ import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/defau
 import React from 'react';
 import { Card, Icon } from 'semantic-ui-react';
 import { UniversalLink } from '@plone/volto/components';
-import { serializeNodes } from 'volto-slate/editor/render';
 
 import { getScaleUrl, getPath } from '@eeacms/volto-eea-design-system/utils';
 
@@ -33,10 +32,8 @@ const Cards = ({ data }) => {
     <>
       <Card.Content>
         <Card.Header>{item.title ? item.title : item.id}</Card.Header>
-        {item.meta && <Card.Meta>{serializeNodes(item.meta)}</Card.Meta>}
-        {item.text && (
-          <Card.Description>{serializeNodes(item.text)}</Card.Description>
-        )}
+        {item.meta && <Card.Meta>{item.meta}</Card.Meta>}
+        {item.text && <Card.Description>{item.text}</Card.Description>}
       </Card.Content>
       {item.link && (
         <Card.Content extra>
