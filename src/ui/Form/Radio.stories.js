@@ -99,7 +99,6 @@ function RadioForm({
       ) : null}
       <Form.Field error={invalid}>
         <Radio
-          className="eea-radio"
           label="Option 1"
           name="radioGroup"
           value="1"
@@ -111,7 +110,6 @@ function RadioForm({
       </Form.Field>
       <Form.Field error={invalid}>
         <Radio
-          className="eea-radio"
           label="Option 2"
           name="radioGroup"
           value="2"
@@ -123,7 +121,6 @@ function RadioForm({
       </Form.Field>
       <Form.Field error={invalid}>
         <Radio
-          className="eea-radio"
           label="Option 3 (disabled)"
           disabled
           name="radioGroup"
@@ -167,7 +164,6 @@ function Binary({
       ) : null}
       <Form.Field error={invalid}>
         <Radio
-          className="eea-radio"
           label="Yes"
           name="radioGroup"
           value="yes"
@@ -179,7 +175,6 @@ function Binary({
       </Form.Field>
       <Form.Field error={invalid}>
         <Radio
-          className="eea-radio"
           label="No"
           name="radioGroup"
           value="no"

@@ -3,7 +3,7 @@
 *******************************/
 
 /* Big */
-@avatarWidthBig                 : 257px;
+@avatarWidthBig                 : 100%;
 @avatarWrapperWidth             : 100%;
 @avatarImageWrapperWidth        : 100%;
 @avatarImageHeightBig           : 150px;
@@ -22,13 +22,13 @@
 
 
 /* Small */
-@avatarWidthSmall                       : 151.83px;
+@avatarWidthSmall                       : 100%;
 @avatarImageHeightSmall                 : 130px;
 @avatarImageWidthSmall                  : 130px;
-@avatarContentMarginTopSmall            : 8.35px;
+@avatarContentMarginTopSmall            : 20px;
 @avatarContentTitleFontWeightSmall      : 500;
 @avatarContentTitleFontSizeSmall        : 20px;
 @avatarContentTitleLineHeightSmall      : 30px;
-@avatarMetadataFontSizeSmall            : 18px;
+@avatarMetadataFontSizeSmall            : 16px;
 @avatarMetadataFontWeightSmall          : 300;
 @avatarMetadataMarginTop                : 8.84px;
