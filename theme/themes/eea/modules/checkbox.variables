@@ -91,7 +91,7 @@
 @bulletTop: 1px;
 @bulletLeft: 0px;
 @bulletScale: (0.55);
-@bulletColor: @textColor;
+@bulletColor: @primaryColor;
 @bulletRadius: @circularRadius;
 
 @radioFocusBackground: @checkboxFocusBackground;

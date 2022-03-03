@@ -23,3 +23,12 @@ div.ui.icon.message > .icon,
 div.ui.icon.message > .icon:not(.close) {
   margin: @iconMargin;
 }
+
+.ui.success.message,
+.ui.warning.message,
+.ui.error.message,
+.ui.info.message,
+.ui.positive.message,
+.ui.negative.message {
+  background: @background;
+}
