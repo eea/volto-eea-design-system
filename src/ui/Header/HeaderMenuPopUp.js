@@ -38,7 +38,6 @@ const ItemsList = ({ items, level = 0 }) => (
         <Item item={item} />
 
         {item.items.length > 0 && (
-          //second tier
           <ItemsList items={item.items} level={level + 1} />
         )}
       </li>
