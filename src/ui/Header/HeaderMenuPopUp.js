@@ -9,7 +9,10 @@ function HeaderMenuPopUp({ menuItems }) {
           <ul className="menu">
             {menuItems.map((item) => (
               //first tier
-              <li key={item['@id'] || item.url}>
+              <li
+                key={item['@id'] || item.url}
+                className={item.items.length > 0 ? 'hasSubMenu' : null}
+              >
                 {item.items.length > 0 && (
                   <label
                     htmlFor={`drop-${item['@id'] || item.url}`}
@@ -18,7 +21,9 @@ function HeaderMenuPopUp({ menuItems }) {
                     {item.title}
                   </label>
                 )}
-                <a href={item['@id'] || item.url}>{item.title}</a>
+                <a href={item['@id'] || item.url}>
+                  <span>{item.title}</span>
+                </a>
                 {item.items.length > 0 && (
                   <input
                     type="checkbox"
@@ -29,7 +34,12 @@ function HeaderMenuPopUp({ menuItems }) {
                   //second tier
                   <ul className="sub second">
                     {item.items.map((section) => (
-                      <li key={section['@id'] || section.url}>
+                      <li
+                        key={section['@id'] || section.url}
+                        className={
+                          section.items.length > 0 ? 'hasSubMenu' : null
+                        }
+                      >
                         {section.items.length > 0 && (
                           <label
                             htmlFor={`drop-${item['@id'] || item.url}-${
@@ -37,11 +47,11 @@ function HeaderMenuPopUp({ menuItems }) {
                             }`}
                             className="toggle"
                           >
-                            {section.title}
+                            <span>{section.title}</span>
                           </label>
                         )}
                         <a href={section['@id'] || section.url}>
-                          {section.title}
+                          <span>{section.title}</span>
                         </a>
                         {section.items.length > 0 && (
                           <input
@@ -57,7 +67,7 @@ function HeaderMenuPopUp({ menuItems }) {
                             {section.items.map((page) => (
                               <li key={page['@id'] || page.url}>
                                 <a href={page['@id'] || page.url}>
-                                  {page.title}
+                                  <span>{page.title}</span>
                                 </a>
                               </li>
                             ))}

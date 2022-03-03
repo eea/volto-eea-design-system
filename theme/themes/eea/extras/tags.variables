@@ -1,3 +1,34 @@
 /*******************************
-            Blockquote
+            Tags
 *******************************/
+
+/* Body */
+@tagsBodyWidth             : 100%;
+@tagsBodyHeight            : 3.125rem;
+@tagsfontName              : @fontName;
+@tagsFontStyle             : @normal;
+@tagsFontWeight            : 500;
+@tagsFontSize              : 1.125rem;
+@tagsLineHeight            : 1rem;
+@tagsLetterSpacing         : -0.015rem;
+
+/* Tags Title */
+@tagsTitleFontColor        : #808285;
+@tagsTitleMargin           : 2rem;
+
+/* Tags */
+@tagsTagPadding            : 0.625rem 0.75rem;
+@tagsTagHeight             : 2rem;
+@TagsTagBorderRadius       : 15px;
+@tagsTagMargin             : 0 1.4375rem 0 0;
+
+/* Tags Tag text */
+@tagsTagNameFontSize       : 0.7rem;
+@tagsTagNameFontColor      : #ffffff;
+@tagsTagNameLineHeight     : 0.812rem;
+
+/* Tags Colors */
+@tagsTagDefaultColor       : @pineGreen;
+@tagsTagTealColor          : @metallicBlue;
+@tagsTagBlueDarkColor      : @darkCerulean;
+@tagsTagBlueLightColor     : #3c8eb2;
