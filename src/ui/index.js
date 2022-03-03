@@ -6,6 +6,8 @@ export Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 
 export Tags from './Tags/Tags';
 
+export Content from './Content/Content';
+
 export Footer from './Footer/Footer';
 
 export Header from './Header/Header';
