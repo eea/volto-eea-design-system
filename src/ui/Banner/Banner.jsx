@@ -10,7 +10,7 @@ Banner.propTypes = {
 
 function Banner({ image_url, image, children }) {
   return (
-    <div className="eea-page-banner">
+    <div className="eea banner">
       <div
         className="image"
         style={image ? { backgroundImage: `url(${image_url})` } : {}}
