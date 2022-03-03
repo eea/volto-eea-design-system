@@ -17,6 +17,7 @@
 @tabletQuoteFontSize   : @h6;
 @computerQuoteFontSize : @h5;
 @quoteFontWeight       : 700;
+@slateQuoteFontWeight  : 400;
 
 /* Meta */
 @metaMargin           : 0;
