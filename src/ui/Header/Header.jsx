@@ -14,11 +14,6 @@ import burgerIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/asse
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
 
-// import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
-// import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
-// import Logo from '../Logo/Logo';
-// import PropTypes from 'prop-types';
-
 function Header({ children }) {
   return <div className="eea header">{children}</div>;
 }
@@ -29,7 +24,7 @@ const TopHeader = ({ children }) => (
   </div>
 );
 
-const TopItem = ({ children, className = 'header-top-item', id }) => (
+const TopItem = ({ children, className, id }) => (
   <div className={cx('item', 'header-top-item', className)} id={id}>
     {children}
   </div>
@@ -57,7 +52,7 @@ const TopDropdownMenu = ({
       aria-label="dropdown"
     >
       <Dropdown.Menu role="group">
-        <div className="wrapper">{children}</div>
+        <div className="wrapper content">{children}</div>
       </Dropdown.Menu>
     </Dropdown>
   );
@@ -201,73 +196,3 @@ Header.TopHeader = TopHeader;
 Header.TopItem = TopItem;
 
 export default Header;
-
-//      <Header.Main
-//        activeSearch={this.state.activeSearch}
-//        activeMenu={this.state.activeMenu}
-//        menuItems={this.props.menuItems}
-//      >
-//        <Grid>
-//          <Grid.Column mobile={8} tablet={8} computer={4}>
-//            <Logo id="logo"></Logo>
-//          </Grid.Column>
-//          <Grid.Column mobile={4} tablet={4} computer={8}>
-//            <div className="main-menu">
-//              {!this.state.activeMenu && this.props.menuItems && (
-//                <Menu className="eea-main-menu tablet or lower hidden" text>
-//                  {this.props.menuItems.map((item) => (
-//                    <Menu.Item
-//                      name={item['@id'] || item.url}
-//                      onClick={this.menuOnClick}
-//                      active={this.state.activeItem === item.key}
-//                      key={item['@id'] || item.url}
-//                    >
-//                      {item.title}
-//                    </Menu.Item>
-//                  ))}
-//                </Menu>
-//              )}
-//              {this.state.activeMenu && (
-//                <Header.BurgerAction
-//                  className="desktop"
-//                  onClick={this.desktopBurgerOnClick}
-//                >
-//                  {/* <Icon name="close" /> */}
-//                  <Image src={closeIcon} alt="menu close icon" />
-//                </Header.BurgerAction>
-//              )}
-//              <div
-//                className="search-action"
-//                onClick={this.searchOnClick}
-//                role="none"
-//              >
-//                {/* <Icon name={!this.state.activeSearch ? 'search' : 'close'} /> */}
-//                <Image
-//                  src={
-//                    !this.state.activeSearch
-//                      ? `${searchIcon}`
-//                      : `${closeIcon}`
-//                  }
-//                  alt="search button open/close"
-//                />
-//              </div>
-//              <Header.BurgerAction
-//                className={`mobile ${this.state.burger}`}
-//                onClick={this.mobileBurgerOnClick}
-//              >
-//                {/* <Icon
-//                  name={this.state.burger === 'open' ? 'close' : 'bars'}
-//                ></Icon> */}
-//                <Image
-//                  src={
-//                    this.state.burger === 'open'
-//                      ? `${closeIcon}`
-//                      : `${burgerIcon}`
-//                  }
-//                  alt="menu icon open/close"
-//                />
-//              </Header.BurgerAction>
-//            </div>
-//          </Grid.Column>
-//        </Grid>
-//      </Header.Main>

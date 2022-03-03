@@ -256,7 +256,7 @@ const Template = (args) => {
   return (
     <Header {...args}>
       <Header.TopHeader>
-        <Header.TopItem className="official-union mobile or lower hidden">
+        <Header.TopItem className="official-union">
           <Image src={eeaFlag} alt="eea flag"></Image>
 
           <Header.TopDropdownMenu
@@ -264,6 +264,7 @@ const Template = (args) => {
             mobileText="An official EU website"
             icon="chevron down"
             aria-label="dropdown"
+            className=""
           >
             <div className="content">
               <p>
