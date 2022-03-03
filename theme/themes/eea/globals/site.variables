@@ -54,7 +54,6 @@
 
 @primaryColor         : @darkCerulean;
 @secondaryColor       : @pineGreen;
-@secondaryColorDarken : darken(@secondaryColor, 5%);
 
 @lightPrimaryColor    : @steelBlue;
 @lightSecondaryColor  : @pearlAqua;
