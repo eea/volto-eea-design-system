@@ -38,22 +38,18 @@ const TopDropdownMenu = ({
   mobileText,
   icon,
 }) => {
-  // TODO: in original implementation "wrapper" class was also available with
-  // "content" class
   const Component = ({ mobileText }) => (
     <Dropdown
       id={id}
       className={cx(className, {
         'mobile or lower hidden': !mobileText,
         'mobile only': !!mobileText,
-      })} // !!mobileText
+      })}
       text={text}
       icon={icon || 'chevron down'}
       aria-label="dropdown"
     >
-      <Dropdown.Menu role="group">
-        <div className="wrapper content">{children}</div>
-      </Dropdown.Menu>
+      <Dropdown.Menu role="group">{children}</Dropdown.Menu>
     </Dropdown>
   );
   return (

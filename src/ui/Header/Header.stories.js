@@ -258,7 +258,6 @@ const Template = (args) => {
       <Header.TopHeader>
         <Header.TopItem className="official-union">
           <Image src={eeaFlag} alt="eea flag"></Image>
-
           <Header.TopDropdownMenu
             text="An official website of the European Union | How do you Know?"
             mobileText="An official EU website"
@@ -290,18 +289,20 @@ const Template = (args) => {
             className="tablet or lower hidden"
             text={linksMenuTitle}
           >
-            {links.map((item, index) => (
-              <Dropdown.Item key={index}>
-                <a
-                  href={item.href}
-                  className="site"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {item.title}
-                </a>
-              </Dropdown.Item>
-            ))}
+            <div className="wrapper">
+              {links.map((item, index) => (
+                <Dropdown.Item key={index}>
+                  <a
+                    href={item.href}
+                    className="site"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {item.title}
+                  </a>
+                </Dropdown.Item>
+              ))}
+            </div>
           </Header.TopDropdownMenu>
         </Header.TopItem>
 
