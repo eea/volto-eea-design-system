@@ -111,6 +111,9 @@ const Main = ({ logo, menuItems }) => {
   }, [searchIsActive, burger, menuIsActive]);
 
   const node = React.useRef();
+  const searchButtonRef = React.useRef();
+  const desktopMenuBurgerRef = React.useRef();
+  const mobileMenuBurgerRef = React.useRef();
 
   return (
     <div className="main bar" ref={node}>
@@ -139,6 +142,7 @@ const Main = ({ logo, menuItems }) => {
                 <Header.BurgerAction
                   className="desktop"
                   onClick={desktopBurgerOnClick}
+                  ref={desktopMenuBurgerRef}
                 >
                   {/* <Icon name="close" /> */}
                   <Image src={closeIcon} alt="menu close icon" />
@@ -148,6 +152,7 @@ const Main = ({ logo, menuItems }) => {
                 className="search-action"
                 onClick={searchOnClick}
                 role="none"
+                ref={searchButtonRef}
               >
                 {/* <Icon name={!state.activeSearch ? 'search' : 'close'} /> */}
                 <Image
@@ -158,6 +163,7 @@ const Main = ({ logo, menuItems }) => {
               <Header.BurgerAction
                 className={`mobile ${burger}`}
                 onClick={mobileBurgerOnClick}
+                ref={mobileMenuBurgerRef}
               >
                 {/* <Icon
                   name={this.state.burger === 'open' ? 'close' : 'bars'}
@@ -171,23 +177,33 @@ const Main = ({ logo, menuItems }) => {
           </Grid.Column>
         </Grid>
       </Container>
-      {searchIsActive && <HeaderSearchPopUp onClose={searchOnClick} />}
+      {searchIsActive && (
+        <HeaderSearchPopUp
+          onClose={searchOnClick}
+          triggerRefs={[searchButtonRef]}
+        />
+      )}
       {menuIsActive && (
-        <HeaderMenuPopUp menuItems={menuItems} onClose={mobileBurgerOnClick} />
+        <HeaderMenuPopUp
+          menuItems={menuItems}
+          onClose={mobileBurgerOnClick}
+          triggerRefs={[mobileMenuBurgerRef, desktopMenuBurgerRef]}
+        />
       )}
     </div>
   );
 };
 
-const BurgerAction = (props) => (
+const BurgerAction = React.forwardRef((props, ref) => (
   <div
+    ref={ref}
     className={`burger-action ${props.className}`}
     role="none"
     onClick={props.onClick}
   >
     {props.children}
   </div>
-);
+));
 
 Header.BurgerAction = BurgerAction;
 Header.Main = Main;

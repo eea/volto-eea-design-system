@@ -4,13 +4,18 @@ import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 /**
  * Call the callback when a click happens outside the referenced element
  */
-export default function useClickOutside({ nodeRef, callback }) {
+export default function useClickOutside({ targetRefs = [], callback }) {
   const handleClickOutside = React.useCallback(
     (e) => {
-      if (nodeRef.current && doesNodeContainClick(nodeRef.current, e)) return;
+      const isInsideTarget =
+        targetRefs.findIndex(
+          (nodeRef) =>
+            nodeRef.current && doesNodeContainClick(nodeRef.current, e),
+        ) > -1;
+      if (isInsideTarget) return;
       callback();
     },
-    [callback, nodeRef],
+    [callback, targetRefs],
   );
 
   React.useEffect(() => {

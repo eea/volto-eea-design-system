@@ -45,10 +45,9 @@ const ItemsList = ({ items, level = 0 }) => (
   </ul>
 );
 
-function HeaderMenuPopUp({ menuItems, onClose }) {
+function HeaderMenuPopUp({ menuItems, onClose, triggerRefs }) {
   const nodeRef = React.useRef();
-
-  useClickOutside({ nodeRef, callback: onClose });
+  useClickOutside({ targetRefs: [nodeRef, ...triggerRefs], callback: onClose });
 
   return (
     <div id="mega-menu" ref={nodeRef}>
