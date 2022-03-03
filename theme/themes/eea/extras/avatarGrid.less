@@ -8,18 +8,18 @@
 --------------------*/
 
 .eea.avatar-grid {
-  width: 100%;
+  width: @avatarGridWidth;
   .wrapper {
-    width: 100%;
+    width: @avatarGridWrapperWidth;
     .content {
-      width: 100%;
+      width: @avatarGridContentWidth;
       display: flex;
       flex-direction: column;
 
       .grid-title {
-        width: 100%;
-        font-weight: 700;
-        font-size: 36px;
+        width: @avatarGridContentTitleWidth;
+        font-weight: @avatarGridContentTitleFontWeight;
+        font-size: @avatarGridContentTitleFontSize;
         text-align: center;
       }
 
@@ -30,12 +30,12 @@
       .avatar.group {
         display: flex;
         justify-content: center;
-        width: 100%;
-        margin-top: 67.54px;
+        width: @avatarGroupWidth;
+        margin-top: @avatarGroupMarginTop;
 
         .avatar-wrapper {
-          padding-left: 32px;
-          padding-right: 32px;
+          padding-left: @avatarGroupWrapperPaddingRight;
+          padding-right: @avatarGroupWrapperPaddingRight;
         }
       }
     }

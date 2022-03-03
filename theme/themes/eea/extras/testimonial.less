@@ -8,21 +8,20 @@
 --------------------*/
 
 .eea.testimonial {
-  width: 100%;
+  width: @testimonialWidth;
 
   .avatar-wrapper {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 100%;
+    height: @testimonialAvatarWrapperHeight;
   }
 
   .content .title {
-    margin: 0 2rem;
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 150%;
-    letter-spacing: -0.015em;
-    color: #3d5265;
+    margin: @testimonialContentTitleMarginVertical @testimonialContentTitleMarginHorizontal;
+    font-weight: @testimonialContentTitleFontWeight;
+    font-size: @testimonialContentTitleFontSize;    
+    letter-spacing: @testimonialContentTitleLetterSpacing;
+    color: @testimonialContentTitleColor;
   }
 }
