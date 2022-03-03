@@ -50,6 +50,9 @@ following practical guidelines.
   (semantic-ui-less, semantic-ui-react).
 - Configure editor to use Unix line endings (a must!).
 - New components should be written as functional components, rather then class-based.
+- Components should not have minimal exposure to anything business-logic
+  related. Text, labels, values, urls, etc should be provided only by the
+  stories. Having these "hardcoded" in the components is a smell.
 
 ### Naming
 
