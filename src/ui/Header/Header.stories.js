@@ -333,6 +333,11 @@ const Template = (args) => {
       <Header.Main
         logo={<Logo {...logoProps} />}
         menuItems={menuItems}
+        renderMenuItem={(item) => (
+          <a onClick={(e) => e.preventDefault()} href={item['@id'] || item.url}>
+            {item.title}
+          </a>
+        )}
       ></Header.Main>
     </Header>
   );

@@ -6,23 +6,21 @@ import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
 const levels = ['first', 'second', 'third'];
 
-const Item = ({ item }) => (
+const Item = ({ item, renderMenuItem }) => (
   <>
     {item.items.length > 0 && (
       <label htmlFor={`drop-${item['@id'] || item.url}`} className="toggle">
         {item.title}
       </label>
     )}
-    <a href={item['@id'] || item.url}>
-      <span>{item.title}</span>
-    </a>
+    {renderMenuItem(item)}
     {item.items.length > 0 && (
       <input type="checkbox" id={`drop-${item['@id'] || item.url}`} />
     )}
   </>
 );
 
-const ItemsList = ({ items, level = 0 }) => (
+const ItemsList = ({ items, renderMenuItem, level = 0 }) => (
   <ul
     className={cx(
       level === 0 ? 'menu' : 'sub',
@@ -35,17 +33,21 @@ const ItemsList = ({ items, level = 0 }) => (
         key={item['@id'] || item.url}
         className={cx({ hasSubMenu: item.items?.length > 0 })}
       >
-        <Item item={item} />
+        <Item item={item} renderMenuItem={renderMenuItem} />
 
         {item.items.length > 0 && (
-          <ItemsList items={item.items} level={level + 1} />
+          <ItemsList
+            items={item.items}
+            level={level + 1}
+            renderMenuItem={renderMenuItem}
+          />
         )}
       </li>
     ))}
   </ul>
 );
 
-function HeaderMenuPopUp({ menuItems, onClose, triggerRefs }) {
+function HeaderMenuPopUp({ menuItems, onClose, triggerRefs, renderMenuItem }) {
   const nodeRef = React.useRef();
   useClickOutside({ targetRefs: [nodeRef, ...triggerRefs], callback: onClose });
 
@@ -53,7 +55,7 @@ function HeaderMenuPopUp({ menuItems, onClose, triggerRefs }) {
     <div id="mega-menu" ref={nodeRef}>
       <Container>
         <nav>
-          <ItemsList items={menuItems} />
+          <ItemsList items={menuItems} renderMenuItem={renderMenuItem} />
         </nav>
       </Container>
     </div>

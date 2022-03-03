@@ -60,19 +60,19 @@ const TopDropdownMenu = ({
   );
 };
 
-const Main = ({ logo, menuItems }) => {
+const Main = ({ logo, menuItems, renderMenuItem }) => {
   const [activeItem, setActiveItem] = React.useState('');
   const [menuIsActive, setMenuIsActive] = React.useState(false);
   const [searchIsActive, setSearchIsActive] = React.useState(false);
   const [burger, setBurger] = React.useState('');
 
-  const menuOnClick = (e, x) => {
-    if (searchIsActive === true) {
-      setSearchIsActive(false);
-    }
-    setActiveItem(x.name);
-    setMenuIsActive(true);
-  };
+  // const menuOnClick = (e, x) => {
+  //   if (searchIsActive === true) {
+  //     setSearchIsActive(false);
+  //   }
+  //   setActiveItem(x.name);
+  //   setMenuIsActive(true);
+  // };
 
   const searchOnClick = (e, x) => {
     if (menuIsActive === true) {
@@ -129,11 +129,10 @@ const Main = ({ logo, menuItems }) => {
                   {menuItems.map((item) => (
                     <Menu.Item
                       name={item['@id'] || item.url}
-                      onClick={menuOnClick}
                       active={activeItem === item.key}
                       key={item['@id'] || item.url}
                     >
-                      {item.title}
+                      {renderMenuItem(item)}
                     </Menu.Item>
                   ))}
                 </Menu>
@@ -185,6 +184,7 @@ const Main = ({ logo, menuItems }) => {
       )}
       {menuIsActive && (
         <HeaderMenuPopUp
+          renderMenuItem={renderMenuItem}
           menuItems={menuItems}
           onClose={mobileBurgerOnClick}
           triggerRefs={[mobileMenuBurgerRef, desktopMenuBurgerRef]}
