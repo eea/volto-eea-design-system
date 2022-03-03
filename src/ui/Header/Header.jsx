@@ -32,18 +32,18 @@ const TopItem = ({ children, className, id }) => (
 
 const TopDropdownMenu = ({
   children,
-  id,
   className,
-  text,
-  mobileText,
   icon,
+  id,
+  mobileText,
+  text,
 }) => {
   const Component = ({ mobileText }) => (
     <Dropdown
       id={id}
       className={cx(className, {
         'mobile or lower hidden': !mobileText,
-        'mobile only': !!mobileText,
+        'mobile only': mobileText ?? false,
       })}
       text={text}
       icon={icon || 'chevron down'}

@@ -254,7 +254,7 @@ const Template = (args) => {
   const [language, setLanguage] = React.useState('en');
 
   return (
-    <Header {...args}>
+    <Header>
       <Header.TopHeader>
         <Header.TopItem className="official-union">
           <Image src={eeaFlag} alt="eea flag"></Image>
