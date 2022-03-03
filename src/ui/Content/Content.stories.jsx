@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import Content from './Content';
 import Tags from '../Tags/Tags';
-import { Dropdown, Image } from 'semantic-ui-react';
+import { Accordion, Button, Dropdown, Icon, Image } from 'semantic-ui-react';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
-
-import { Accordion, Icon } from 'semantic-ui-react';
 
 const CONTENT = `
 Elit suspendisse a viverra consequat euismod. Leo ultricies enim pharetra viverra mi cursus lobortis nisl, ornare. Eu imperdiet tincidunt fames commodo. Sit mauris blandit ultrices magnis cras odio consequat, eu. Nibh est massa arcu sollicitudin.
@@ -46,10 +44,10 @@ Default.args = {
   tag: { category: '# faq 1', href: '#' },
 };
 
-function LanguageSelector({ ...args}) {
+function LanguageSelector({ ...args }) {
   const [language, setLanguage] = useState('EN');
   const onLanguageSelection = (e, data) => {
-    const {language} = data;
+    const { language } = data;
     setLanguage(language);
   };
   return (
@@ -81,7 +79,6 @@ function LanguageSelector({ ...args}) {
   );
 }
 
-
 function AccordionContainer({ ...args }) {
   const [activeIndex, setActiveIndex] = useState();
 
@@ -104,10 +101,10 @@ function AccordionContainer({ ...args }) {
       </Accordion.Title>
       <Accordion.Content active={activeIndex === 0}>
         <Content>
-          <Content.Head>
+          <Content.Info>
             <div>{args.date}</div>
             <LanguageSelector {...args}></LanguageSelector>
-          </Content.Head>
+          </Content.Info>
           <Content.Content>{args.content}</Content.Content>
           <Content.Actions>
             <Tags className="left">
@@ -116,7 +113,12 @@ function AccordionContainer({ ...args }) {
                 {args.tag.category}
               </Tags.Tag>
             </Tags>
-            {'BUTTONS BUTTONS BUTTONS BUTTONS BUTTONS'}
+            <Button>
+              <Icon name="download"></Icon>
+            </Button>
+            <Button>
+              <Icon name="share alternate"></Icon>
+            </Button>
           </Content.Actions>
         </Content>
       </Accordion.Content>
@@ -124,7 +126,9 @@ function AccordionContainer({ ...args }) {
   );
 }
 
-const AccordionTemplate = (args) => <AccordionContainer {...args}></AccordionContainer>;
+const AccordionTemplate = (args) => (
+  <AccordionContainer {...args}></AccordionContainer>
+);
 
 export const FAQContent = AccordionTemplate.bind({});
 
