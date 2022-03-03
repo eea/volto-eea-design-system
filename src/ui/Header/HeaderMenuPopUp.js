@@ -27,7 +27,9 @@ function HeaderMenuPopUp({ menuItems, onClose }) {
                     {item.title}
                   </label>
                 )}
-                <a href={item['@id'] || item.url}>{item.title}</a>
+                <a href={item['@id'] || item.url}>
+                  <span>{item.title}</span>
+                </a>
                 {item.items.length > 0 && (
                   <input
                     type="checkbox"
@@ -51,11 +53,11 @@ function HeaderMenuPopUp({ menuItems, onClose }) {
                             }`}
                             className="toggle"
                           >
-                            {section.title}
+                            <span>{section.title}</span>
                           </label>
                         )}
                         <a href={section['@id'] || section.url}>
-                          {section.title}
+                          <span>{section.title}</span>
                         </a>
                         {section.items.length > 0 && (
                           <input
@@ -71,7 +73,7 @@ function HeaderMenuPopUp({ menuItems, onClose }) {
                             {section.items.map((page) => (
                               <li key={page['@id'] || page.url}>
                                 <a href={page['@id'] || page.url}>
-                                  {page.title}
+                                  <span>{page.title}</span>
                                 </a>
                               </li>
                             ))}
