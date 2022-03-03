@@ -9,7 +9,7 @@
 
 @verticalMargin: 1em;
 @verticalPadding: 0.5rem;
-@horizontalPadding: 1rem;
+@horizontalPadding: 0;
 @padding: @verticalPadding @horizontalPadding;
 @background: transparent;
 @lineHeightOffset: ((@lineHeight - 1em) / 2);
