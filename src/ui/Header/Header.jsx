@@ -60,19 +60,17 @@ const TopDropdownMenu = ({
   );
 };
 
-const Main = ({ logo, menuItems, renderMenuItem }) => {
+const Main = ({ logo, menuItems, renderMenuItem, pathname }) => {
   const [activeItem, setActiveItem] = React.useState('');
   const [menuIsActive, setMenuIsActive] = React.useState(false);
   const [searchIsActive, setSearchIsActive] = React.useState(false);
   const [burger, setBurger] = React.useState('');
 
-  // const menuOnClick = (e, x) => {
-  //   if (searchIsActive === true) {
-  //     setSearchIsActive(false);
-  //   }
-  //   setActiveItem(x.name);
-  //   setMenuIsActive(true);
-  // };
+  React.useEffect(() => {
+    setMenuIsActive(false);
+    setSearchIsActive(false);
+    setBurger('');
+  }, [pathname]);
 
   const searchOnClick = (e, x) => {
     if (menuIsActive === true) {

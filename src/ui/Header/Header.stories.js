@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import { Dropdown, Image } from 'semantic-ui-react';
+import { Dropdown, Image, Segment } from 'semantic-ui-react';
 import { Logo } from '@eeacms/volto-eea-design-system/ui';
 
 import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea-logo.svg';
@@ -252,94 +252,107 @@ const Template = (args) => {
   const { languages, links, linksMenuTitle, menuItems } = args;
 
   const [language, setLanguage] = React.useState('en');
+  const [pathname, setPathname] = React.useState('/');
 
   return (
-    <Header>
-      <Header.TopHeader>
-        <Header.TopItem className="official-union">
-          <Image src={eeaFlag} alt="eea flag"></Image>
-          <Header.TopDropdownMenu
-            text="An official website of the European Union | How do you Know?"
-            mobileText="An official EU website"
-            icon="chevron down"
-            aria-label="dropdown"
-            className=""
-          >
-            <div className="content">
-              <p>
-                All official European Union website addresses are in the{' '}
-                <b>europa.eu</b> domain.
-              </p>
-              <a
-                href="https://europa.eu/european-union/contact/institutions-bodies_en"
-                target="_blank"
-                rel="noreferrer"
-                role="option"
-                aria-selected="false"
-              >
-                See all EU institutions and bodies
-              </a>
-            </div>
-          </Header.TopDropdownMenu>
-        </Header.TopItem>
+    <div>
+      <Header>
+        <Header.TopHeader>
+          <Header.TopItem className="official-union">
+            <Image src={eeaFlag} alt="eea flag"></Image>
+            <Header.TopDropdownMenu
+              text="An official website of the European Union | How do you Know?"
+              mobileText="An official EU website"
+              icon="chevron down"
+              aria-label="dropdown"
+              className=""
+            >
+              <div className="content">
+                <p>
+                  All official European Union website addresses are in the{' '}
+                  <b>europa.eu</b> domain.
+                </p>
+                <a
+                  href="https://europa.eu/european-union/contact/institutions-bodies_en"
+                  target="_blank"
+                  rel="noreferrer"
+                  role="option"
+                  aria-selected="false"
+                >
+                  See all EU institutions and bodies
+                </a>
+              </div>
+            </Header.TopDropdownMenu>
+          </Header.TopItem>
 
-        <Header.TopItem>
-          <Header.TopDropdownMenu
-            id="theme-sites"
-            className="tablet or lower hidden"
-            text={linksMenuTitle}
-          >
-            <div className="wrapper">
-              {links.map((item, index) => (
-                <Dropdown.Item key={index}>
-                  <a
-                    href={item.href}
-                    className="site"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {item.title}
-                  </a>
-                </Dropdown.Item>
-              ))}
-            </div>
-          </Header.TopDropdownMenu>
-        </Header.TopItem>
+          <Header.TopItem>
+            <Header.TopDropdownMenu
+              id="theme-sites"
+              className="tablet or lower hidden"
+              text={linksMenuTitle}
+            >
+              <div className="wrapper">
+                {links.map((item, index) => (
+                  <Dropdown.Item key={index}>
+                    <a
+                      href={item.href}
+                      className="site"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {item.title}
+                    </a>
+                  </Dropdown.Item>
+                ))}
+              </div>
+            </Header.TopDropdownMenu>
+          </Header.TopItem>
 
-        <Header.TopDropdownMenu
-          id="language-switcher"
-          className="item"
-          text={`${language.toUpperCase()}`}
-          icon={
-            <Image src={globeIcon} alt="language dropdown globe icon"></Image>
-          }
-        >
-          {languages.map((item, index) => (
-            <Dropdown.Item
-              key={index}
-              text={
-                <span>
-                  {item.name}
-                  <span className="country-code">
-                    {item.code.toUpperCase()}
+          <Header.TopDropdownMenu
+            id="language-switcher"
+            className="item"
+            text={`${language.toUpperCase()}`}
+            icon={
+              <Image src={globeIcon} alt="language dropdown globe icon"></Image>
+            }
+          >
+            {languages.map((item, index) => (
+              <Dropdown.Item
+                key={index}
+                text={
+                  <span>
+                    {item.name}
+                    <span className="country-code">
+                      {item.code.toUpperCase()}
+                    </span>
                   </span>
-                </span>
-              }
-              onClick={() => setLanguage(item.code)}
-            ></Dropdown.Item>
-          ))}
-        </Header.TopDropdownMenu>
-      </Header.TopHeader>
-      <Header.Main
-        logo={<Logo {...logoProps} />}
-        menuItems={menuItems}
-        renderMenuItem={(item) => (
-          <a onClick={(e) => e.preventDefault()} href={item['@id'] || item.url}>
-            {item.title}
-          </a>
-        )}
-      ></Header.Main>
-    </Header>
+                }
+                onClick={() => setLanguage(item.code)}
+              ></Dropdown.Item>
+            ))}
+          </Header.TopDropdownMenu>
+        </Header.TopHeader>
+        <Header.Main
+          pathname={pathname}
+          logo={<Logo {...logoProps} />}
+          menuItems={menuItems}
+          renderMenuItem={(item) => (
+            <a
+              onClick={(e) => {
+                const path = item['@id'] || item.url;
+                setPathname(path);
+                e.preventDefault();
+              }}
+              href={item['@id'] || item.url}
+            >
+              {item.title}
+            </a>
+          )}
+        ></Header.Main>
+      </Header>
+
+      <Segment>Current location: {pathname}</Segment>
+    </div>
   );
 };
 
