@@ -87,12 +87,7 @@ function CheckboxForm({
       </Form.Field>
       <Form.Field>{helperText}</Form.Field>
       {invalid ? (
-        <Message
-          icon="exclamation circle"
-          header="Error Message"
-          content={errorMessage}
-          negative
-        />
+        <Message icon="exclamation circle" content={errorMessage} negative />
       ) : null}
       <Form.Field error={invalid}>
         <Checkbox label="Option 1" defaultChecked id="field1"></Checkbox>

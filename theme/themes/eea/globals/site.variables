@@ -54,7 +54,6 @@
 
 @primaryColor         : @darkCerulean;
 @secondaryColor       : @pineGreen;
-@secondaryColorDarken : darken(@secondaryColor, 5%);
 
 @lightPrimaryColor    : @steelBlue;
 @lightSecondaryColor  : @pearlAqua;
@@ -258,12 +257,6 @@
      Breakpoints
 --------------------*/
 
-//@mobileBreakpoint            : 480px;
-//@tabletBreakpoint            : 835px;
-//@computerBreakpoint          : 1025px;
-//@largeMonitorBreakpoint      : 1200px;
-//@widescreenMonitorBreakpoint : 1920px;
-
 @mobileBreakpoint            : 320px;
 @tabletBreakpoint            : 480px;
 @computerBreakpoint          : 835px;
@@ -271,9 +264,9 @@
 @widescreenMonitorBreakpoint : 1200px;
 
 /* Paddings for breakpoints */
-@mobilePadding  : 30px;
-@tabletPadding  : 40px;
-@computerPadding : 140px;
+@mobilePadding  : 1.875rem;
+@tabletPadding  : 2.5rem;
+@computerPadding : 8.75rem;
 
 /*-------------------
       Site Colors
@@ -641,10 +634,10 @@
 
 
 /* Responsive */
-@largestMobileScreen : (@tabletBreakpoint - 1px);
-@largestTabletScreen : (@computerBreakpoint - 1px);
-@largestSmallMonitor : (@largeMonitorBreakpoint - 1px);
-@largestLargeMonitor : (@widescreenMonitorBreakpoint - 1px);
+@largestMobileScreen : (@tabletBreakpoint - @1px);
+@largestTabletScreen : (@computerBreakpoint - @1px);
+@largestSmallMonitor : (@largeMonitorBreakpoint - @1px);
+@largestLargeMonitor : (@widescreenMonitorBreakpoint - @1px);
 @mobileWidth: 1279px;
 
 

@@ -90,12 +90,7 @@ function RadioForm({
       </Form.Field>
       <Form.Field>{helperText}</Form.Field>
       {invalid ? (
-        <Message
-          icon="exclamation circle"
-          header="Error Message"
-          content={errorMessage}
-          negative
-        />
+        <Message icon="exclamation circle" content={errorMessage} negative />
       ) : null}
       <Form.Field error={invalid}>
         <Radio
