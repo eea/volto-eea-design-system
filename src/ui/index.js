@@ -23,3 +23,5 @@ export Avatar from './Avatar/Avatar';
 export Testimonial from './Testimonial/Testimonial';
 
 export AvatarGrid from './AvatarGrid/AvatarGrid';
+
+export KeyContent from './KeyContent/KeyContent';
