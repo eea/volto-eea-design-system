@@ -23,6 +23,7 @@
   }
 
   .row.info {
+    display: none;
     height: 31px;
     font-size: 14px;
     line-height: 14px;
@@ -48,10 +49,11 @@
     }
   }
 
-  #language-switcher {
+  .languages {
     display: inline-flex;
     font-size: 0.75rem;
     text-align: right;
+    align-items: center;
 
     img {
       display: inline-flex;
@@ -88,9 +90,15 @@
     line-height: 150%;
     color: #000000;
   }
+
   .row.actions {
+    display: none;
     padding: 0px;
     align-items: baseline;
+
+    i {
+      margin: 0;
+    }
 
     button {
       margin: 0;
@@ -108,6 +116,14 @@
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
+  .eea.content {
+    .row.actions {
+      display: flex;
+    }
+    .row.info {
+      display: flex;
+    }
+  }
 }
 
 .loadUIOverrides();

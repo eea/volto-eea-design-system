@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Content from './Content';
 import Tags from '../Tags/Tags';
-import { Accordion, Button, Dropdown, Icon, Image } from 'semantic-ui-react';
-import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
+import { Accordion, Button, Icon } from 'semantic-ui-react';
 
 const CONTENT = `
 Elit suspendisse a viverra consequat euismod. Leo ultricies enim pharetra viverra mi cursus lobortis nisl, ornare. Eu imperdiet tincidunt fames commodo. Sit mauris blandit ultrices magnis cras odio consequat, eu. Nibh est massa arcu sollicitudin.
@@ -40,44 +39,7 @@ export const Default = (args) => <Content>{args.content}</Content>;
 
 Default.args = {
   content: CONTENT,
-  tagTitle: 'Tags',
-  tag: { category: '# faq 1', href: '#' },
 };
-
-function LanguageSelector({ ...args }) {
-  const [language, setLanguage] = useState('EN');
-  const onLanguageSelection = (e, data) => {
-    const { language } = data;
-    setLanguage(language);
-  };
-  return (
-    <Dropdown
-      id="language-switcher"
-      className="item"
-      text={`${language.toUpperCase()}`}
-      icon={<Image src={globeIcon} alt="language dropdown globe icon"></Image>}
-      aria-label="dropdown"
-    >
-      <Dropdown.Menu>
-        <div className="wrapper">
-          {args.languages.map((item, index) => (
-            <Dropdown.Item
-              key={index}
-              language={item.key}
-              text={
-                <span>
-                  {item.text}
-                  <span className="country-code">{item.key.toUpperCase()}</span>
-                </span>
-              }
-              onClick={onLanguageSelection}
-            ></Dropdown.Item>
-          ))}
-        </div>
-      </Dropdown.Menu>
-    </Dropdown>
-  );
-}
 
 function AccordionContainer({ ...args }) {
   const [activeIndex, setActiveIndex] = useState();
@@ -102,8 +64,8 @@ function AccordionContainer({ ...args }) {
       <Accordion.Content active={activeIndex === 0}>
         <Content>
           <Content.Info>
-            <div>{args.date}</div>
-            <LanguageSelector {...args}></LanguageSelector>
+            {args.date}
+            <Content.Languages {...args.languageOptions}></Content.Languages>
           </Content.Info>
           <Content.Content>{args.content}</Content.Content>
           <Content.Actions>
@@ -138,35 +100,33 @@ FAQContent.args = {
   tag: { category: '# land use', href: '#', class: 'teal' },
   toggle: 'What is soil sealing and why is it important to monitor it?',
   content: CONTENT,
-  languages: [
-    { text: 'Albanian', key: 'sq' },
-    { text: 'Български', key: 'bg' },
-    { text: 'Bosnian', key: 'bs' },
-    { text: 'čeština', key: 'cs' },
-    { text: 'Hrvatski', key: 'hr' },
-    { text: 'dansk', key: 'da' },
-    { text: 'Nederlands', key: 'nl' },
-    { text: 'ελληνικά', key: 'el' },
-    { text: 'English', key: 'en' },
-    { text: 'eesti', key: 'et' },
-    { text: 'Suomi', key: 'fi' },
-    { text: 'Français', key: 'fr' },
-    { text: 'Deutsch', key: 'de' },
-    { text: 'magyar', key: 'hu' },
-    { text: 'Íslenska', key: 'is' },
-    { text: 'italiano', key: 'it' },
-    { text: 'Latviešu', key: 'lv' },
-    { text: 'lietuvių', key: 'lt' },
-    { text: 'Macedonian', key: 'mk' },
-    { text: 'Malti', key: 'mt' },
-    { text: 'Norsk', key: 'no' },
-    { text: 'polski', key: 'pl' },
-    { text: 'Português', key: 'pt' },
-    { text: 'Română', key: 'ro' },
-    { text: 'slovenčina', key: 'sk' },
-    { text: 'Slovenščina', key: 'sl' },
-    { text: 'Español', key: 'es' },
-    { text: 'Svenska', key: 'sv' },
-    { text: 'Türkçe', key: 'tr' },
-  ],
+  languageOptions: {
+    default: 'en',
+    languages: [
+      { text: 'Albanian', key: 'sq' },
+      { text: 'Български', key: 'bg' },
+      { text: 'Bosnian', key: 'bs' },
+      { text: 'čeština', key: 'cs' },
+      { text: 'Hrvatski', key: 'hr' },
+      { text: 'dansk', key: 'da' },
+      { text: 'Nederlands', key: 'nl' },
+      { text: 'ελληνικά', key: 'el' },
+      { text: 'English', key: 'en' },
+      { text: 'eesti', key: 'et' },
+      { text: 'Suomi', key: 'fi' },
+      { text: 'Français', key: 'fr' },
+      { text: 'Deutsch', key: 'de' },
+      { text: 'magyar', key: 'hu' },
+      { text: 'Íslenska', key: 'is' },
+      { text: 'italiano', key: 'it' },
+      { text: 'Latviešu', key: 'lv' },
+      { text: 'lietuvių', key: 'lt' },
+      { text: 'Macedonian', key: 'mk' },
+      { text: 'Malti', key: 'mt' },
+      { text: 'Norsk', key: 'no' },
+      { text: 'polski', key: 'pl' },
+      { text: 'Português', key: 'pt' },
+      { text: 'Română', key: 'ro' },
+    ],
+  },
 };
