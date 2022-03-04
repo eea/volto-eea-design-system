@@ -2,7 +2,7 @@
          Theme Overrides
 *******************************/
 
-.ui.cards > .card .meta, .ui.card .meta > .category {
+.ui.card .meta > .category {
   font-size: @metaFontSize;
 }
 
