@@ -49,7 +49,7 @@ export const Default = (args) => (
 );
 
 Default.args = {
-  title: 'tags',
+  title: 'tags:',
   direction: 'right',
   tags: [
     { category: '# subcategory 1', href: '#' },

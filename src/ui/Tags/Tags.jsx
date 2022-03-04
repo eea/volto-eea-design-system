@@ -10,7 +10,7 @@ function Tags({ children, ...rest }) {
 
 Tags.Title = ({ children, ...rest }) => (
   <span className="tags-title" {...rest}>
-    {children}:
+    {children}
   </span>
 );
 
