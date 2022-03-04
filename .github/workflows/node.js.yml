@@ -38,8 +38,8 @@ jobs:
           git pull
           git fetch
           npx auto-changelog --commit-limit false  --sort-commits subject --unreleased --stdout  --template templates/eea.hbs > temporary
-          rm website/docs/2-whatsnew.md
-          last_common=""; last_line=""; first="yes"; while read -r line; do this_common=$( echo $line | sed 's/\[.*\]\(.*\)$//' ); if [[ "$last_common" == "$this_common" ]]; then commit=$( echo $line | awk '{print $NF}'); last_line="$last_line, $commit"; else if [[ "$first" == "yes" ]]; then first="no"; else echo $last_line >> website/docs/2-whatsnew.md; fi; last_line=$line; last_common=$this_common; fi;  done < temporary; echo $last_line >> website/docs/2-whatsnew.md
+          echo -e "---\ntitle: What's new\nhide_table_of_contents: true\n---\n" > website/docs/2-whatsnew.md
+          last_common=""; last_line=""; while read -r line; do this_common=$( echo $line | sed 's/\[.*\]\(.*\)$//' ); if [[ "$last_common" == "$this_common" ]]; then commit=$( echo $line | awk '{print $NF}'); last_line="$last_line, $commit"; else echo $last_line >> website/docs/2-whatsnew.md; last_line=$line; last_common=$this_common; fi;  done < temporary; echo $last_line >> website/docs/2-whatsnew.md
           rm temporary
           cd website
           yarn
