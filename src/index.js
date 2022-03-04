@@ -9,18 +9,6 @@ const applyConfig = (config) => {
   if (config.settings.slate) {
     config.settings.slate.elements['blockquote'] = BlockquoteElement;
   }
-  // Apply volto-block-image-cards custom display
-  if (config.blocks.blocksConfig.imagecards) {
-    config.blocks.blocksConfig.imagecards.blockRenderers = {
-      ...config.blocks.blocksConfig.imagecards.blockRenderers,
-      cards_grid: {
-        title: 'Cards grid',
-        view: Cards,
-        schema: getCardSchema,
-        schemaExtender: getSchemaExtender,
-      },
-    };
-  }
 
   return config;
 };
