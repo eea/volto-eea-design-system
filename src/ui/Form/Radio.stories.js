@@ -92,7 +92,6 @@ function RadioForm({
       {invalid ? (
         <Message
           icon="exclamation circle"
-          header="Error Message"
           content={errorMessage}
           negative
         />
