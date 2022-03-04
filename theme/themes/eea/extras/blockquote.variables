@@ -12,6 +12,7 @@
 @tabletQuoteMargin     : 0.75rem 1rem;
 @computerQuoteMargin   : 0.75rem 1.25rem;
 @quoteGap              : 0.75rem;
+@slateQuoteGap         : 0.75rem / 2;
 @quoteColor            : @japaneseIndigo;
 @mobileQuoteFontSize   : 0.688rem;
 @tabletQuoteFontSize   : @h6;

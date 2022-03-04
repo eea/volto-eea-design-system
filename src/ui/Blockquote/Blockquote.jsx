@@ -10,7 +10,7 @@ function Blockquote({ children, className, ...rest }) {
 }
 
 function BlockquoteElement(props) {
-  return <Blockquote className="blockquote-slate" {...props} />;
+  return <Blockquote className="slate" {...props} />;
 }
 
 Blockquote.Content = ({ children, as: As, ...rest }) =>

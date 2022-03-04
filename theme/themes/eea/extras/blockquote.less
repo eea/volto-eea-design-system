@@ -7,8 +7,7 @@
             Blockquote
 *******************************/
 
-.eea.blockquote,
-.eea.blockquote-slate {
+.eea.blockquote {
   border-left: @mobileBlockquoteBorderLeft;
 
   .quote {
@@ -29,7 +28,7 @@
   }
 }
 
-.eea.blockquote-slate {
+.eea.slate.blockquote {
   .quote {
     display: block;
     flex-direction: unset;
@@ -39,14 +38,13 @@
     br {
       content: "";
       display: flex;
-      margin: @quoteGap/2 0;
+      margin: @slateQuoteGap 0;
     }
   }
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-  .eea.blockquote,
-  .eea.blockquote-slate {
+  .eea.blockquote {
     border-left: @tabletBlockquoteBorderLeft;
     .quote {
       margin: @tabletQuoteMargin;
@@ -59,8 +57,7 @@
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
-  .eea.blockquote .quote,
-  .eea.blockquote-slate .quote {
+  .eea.blockquote .quote {
     margin: @computerQuoteMargin;
     font-size: @computerQuoteFontSize;
     .meta {
