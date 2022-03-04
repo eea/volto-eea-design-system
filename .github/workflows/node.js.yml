@@ -10,6 +10,7 @@ on:
       - src/**
       - theme/**
       - website/**
+      - templates/**
 
 jobs:
   build:
