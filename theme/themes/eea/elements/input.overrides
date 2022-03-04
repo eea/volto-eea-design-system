@@ -3,36 +3,32 @@
 *******************************/
 
 .ui.input {
-  max-width: @inputMaxWidth !important;
+  width: 100%;
+  max-width: @inputMaxWidth;
 }
 
 .ui.input.fluid {
-  max-width: 100% !important;
+  max-width: 100%;
 }
 
 .ui.input input {
-  width: 348px !important;
-  height: 43px !important;
-  border: @border !important;
-  border-radius: @borderRadius !important;
-  font-family: @pageFont !important;
-  font-weight: @inputFontWeight;
+  border: @border;
 
   &:active,
   &:focus {
-    border: 2px solid @green !important;
-    color: @black !important;
+    border: 1px solid @green;
+    color: @black;
   }
 }
 
 .required.field {
   .ui.labeled.input::after {
-    content: '*' !important;
+    content: '*';
   }
 }
 
 .ui.input.error input {
-  border: 2px solid @negativeBorderColor !important;
+  border: 2px solid @negativeBorderColor;
 }
 
 .ui.labeled.input .ui.label.label {
@@ -45,13 +41,11 @@
 
 textarea {
   border: @border !important;
-  border-radius: @borderRadius !important;
-  font-family: @pageFont !important;
-  font-weight: @inputFontWeight;
+  border-radius: @borderRadius;
 
   &:active,
   &:focus {
-    border: 2px solid @deepBlue !important;
+    border: 2px solid @deepBlue;
   }
 }
 

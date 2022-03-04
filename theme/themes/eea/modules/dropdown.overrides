@@ -2,23 +2,20 @@
          Theme Overrides
 *******************************/
 .ui.dropdown {
-  max-width: @inputMaxWidth !important;
+  max-width: @inputMaxWidth;
 }
 
 .ui.dropdown.fluid {
-  max-width: 100% !important;
+  max-width: 100%;
 }
 
-.ui.dropdown {
-  height: 48px !important;
-  border: @border !important;
-  border-radius: @borderRadius !important;
-  font-family: @pageFont !important;
-  font-weight: @inputFontWeight;
+.ui.selection.dropdown {
+  border: @border;
+  border-bottom: @border;
 
   &:active,
   &:focus {
-    border: 2px solid @deepBlue !important;
+    border: 1px solid @deepBlue;
   }
 }
 
@@ -26,12 +23,8 @@
   color: @black;
 }
 
-.ui.dropdown.active {
-  border: 2px solid @deepBlue !important;
-}
-
 .ui.dropdown.error {
-  border: 2px solid @negativeBorderColor !important;
+  border: 2px solid @negativeBorderColor;
 }
 
 .ui.dropdown.right {
@@ -50,66 +43,13 @@
   font-size: 1em;
 }
 
-.ui.selection.dropdown {
-  border-bottom: 1px solid @borderColor;
-}
-
 .ui.selection.dropdown:not(.multiple) {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.ui.active.selection.dropdown {
-  border: none;
-  border-bottom: 1px dotted #b8c6c8;
-}
-
-.ui.selection.active.dropdown .menu {
-  border: none;
-  margin-top: 1px;
-
-  &:hover {
-    border: none;
-  }
-
-  &:last-child {
-    border-bottom: 1px solid @blue;
-  }
-}
-
-.ui.form .ui.dropdown:not(.multiple):not(.search) .menu .selected.item:after {
-  content: '\e929';
-  float: right;
+i.icon.dropdown:before {
+  content: '\f078';
   font-family: 'Icons';
-}
-
-.ui.form .ui.dropdown .menu .item:hover:after {
-  color: @dropdownTextColor;
-  content: '\e929';
-  float: right;
-  font-family: 'Icons';
-}
-
-.ui.dropdown.multiple .menu .selected.item:hover {
-  background: @subtleTransparentBlack;
-}
-
-.ui.dropdown.multiple .menu .item .label ~ .text {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-}
-
-.ui.dropdown.multiple .menu .item:hover:after {
-  position: absolute;
-  top: 50%;
-  right: 0.5em;
-  margin-top: -0.5em;
-  float: none;
-}
-
-.ui.dropdown .menu.left {
-  right: 0;
-  left: auto;
 }

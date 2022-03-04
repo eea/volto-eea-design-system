@@ -33,7 +33,8 @@
 @inputWidth: 100%;
 @inputFontSize: 1em;
 @inputPadding: (@inputVerticalPadding + ((1em - @inputLineHeight) / 2)) @inputHorizontalPadding;
-@inputBorder: 1px solid @borderColor;
+@inputBorderColor : rgba(0, 0, 0, 0.32);
+@inputBorder: 1px solid @inputBorderColor;
 @inputBorderRadius: @absoluteBorderRadius;
 @inputColor: @textColor;
 @inputTransition:
@@ -194,3 +195,13 @@
 --------------------*/
 
 @inlineFieldsMargin: 0em 1em 0em 0em;
+
+/*-------------------
+    Field Wrapper
+--------------------*/
+
+@fieldWrapperLabelBackground: transparent;
+@fieldWrapperLabelColor: @textColor;
+@fieldWrapperLabelPadding: unit((@inputVerticalPadding + @1px), rem) 0;
+
+

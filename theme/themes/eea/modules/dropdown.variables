@@ -1,7 +1,7 @@
 /*******************************
             Dropdown
 *******************************/
-@dropdownTextColor: #636363;
+@dropdownTextColor: @textColor;
 
 // Pastanaga variable
 @inputFontWeight: normal;
@@ -305,7 +305,7 @@
 
 /* Selected */
 @selectedBackground: none;
-@selectedColor: @blue;
+@selectedColor: @secondaryColor;
 
 /* Error */
 @errorLabelBackground: #EACBCB;
