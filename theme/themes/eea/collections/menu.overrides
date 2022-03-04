@@ -2,32 +2,55 @@
          Theme Overrides
 *******************************/
 
-/* Pagination */
+/* Pagination and Tabs */
 .ui.pagination.pointing.secondary {
   display: flex;
   width: @paginationWidth;
   justify-content: center;
 }
 
-.ui.pagination.menu a.item {
+.ui.pagination.pointing.secondary.menu .item {
   color: @paginationColor;
+  font-size: @paginationFontSize;
 }
 
-/* Active Item custom border design */
-.ui.secondary.pointing.menu .active.item {
+
+/* Pagination active item custom border design */
+.ui.pagination.pointing.secondary.menu a.active.item {
   padding: @secondaryPointingItemActiveVerticalPadding
     @secondaryPointingItemHorizontalPadding;
-  border-bottom: @secondaryPointingActiveBorderWidth solid;
+  border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
   margin-bottom: -@secondaryPointingctiveItemMarginBottom;
+  color: @secondaryPointingActiveTextColor;
 }
 
-/* Hover Item */
-.ui.secondary.pointing.menu .item:hover {
+/* Tab active item custom border design */
+.ui.secondary.pointing.menu:not(.vertical) a.item {
+  padding: @tabSecondaryPointingItemActiveVerticalPadding
+  @secondaryPointingItemHorizontalPadding;
+  margin: @secondaryPointingItemMargin;
+}
+.ui.secondary.pointing.menu:not(.vertical) a.active.item,
+.ui.secondary.pointing.menu:not(.vertical) a.item:active {
+  padding: @tabSecondaryPointingItemActiveVerticalPadding
+    @secondaryPointingItemHorizontalPadding;
+  border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
+  margin-bottom: -@secondaryPointingctiveItemMarginBottom;
+  color: @secondaryPointingActiveTextColor;
+}
+
+/* Hover Item Pagination */
+.ui.pagination.pointing.secondary.menu a.item:hover {
   padding: @secondaryPointingItemActiveVerticalPadding
     @secondaryPointingItemHorizontalPadding;
   border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
   margin-bottom: -@secondaryPointingctiveItemMarginBottom;
   color: @paginationColor;
+}
+
+.ui.pagination.pointing.secondary.menu a.item[type='ellipsisItem']:hover {
+  border-bottom: none;
+  border-bottom: @1px;
 }
 
 /**********************************************************************/
