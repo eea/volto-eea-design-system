@@ -13,8 +13,6 @@ export default function useClickOutside({ targetRefs = [], callback }) {
             nodeRef.current && doesNodeContainClick(nodeRef.current, e),
         ) > -1;
 
-      console.log('clickoutside', isInsideTarget);
-
       if (isInsideTarget) return;
       callback();
     },
