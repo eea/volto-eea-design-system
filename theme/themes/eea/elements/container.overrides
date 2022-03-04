@@ -3,14 +3,11 @@
 *******************************/
 
 /* All Sizes */
-div.ui.container {
+.ui.container {
   display: block;
-  width: 100% !important;
-  max-width: @maxWidth !important;
+  width: 100%;
   padding-right: @mobilePadding;
   padding-left: @mobilePadding;
-
-  margin: auto !important;
   transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
@@ -23,14 +20,14 @@ div.ui.container {
 }
 
 @media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
-  div.ui.container {
+  .ui.container {
     padding-right: @tabletPadding;
     padding-left: @tabletPadding;
   }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
-  div.ui.container {
+  .ui.container {
     padding-right: @computerPadding;
     padding-left: @computerPadding;
   }
