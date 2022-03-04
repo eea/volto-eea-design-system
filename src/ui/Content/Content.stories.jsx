@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Content from './Content';
-import Tags from '../Tags/Tags';
+import Tag from '../Tag/Tag';
 import { Accordion, Button, Icon } from 'semantic-ui-react';
 
 const CONTENT = `
@@ -21,8 +21,19 @@ export default {
       description: 'This is the FAQ Answer',
       type: { name: 'string', required: true },
     },
-    tag: {
+    tagOptions: {
       description: 'category tags',
+      table: {
+        type: {
+          summary: 'Object',
+        },
+        defaultValue: {
+          summary: ' "" ',
+        },
+      },
+    },
+    languageOptions: {
+      description: 'language options',
       table: {
         type: {
           summary: 'Object',
@@ -69,12 +80,15 @@ function AccordionContainer({ ...args }) {
           </Content.Info>
           <Content.Content>{args.content}</Content.Content>
           <Content.Actions>
-            <Tags className="left">
-              <Tags.Title>{args.tagTitle}</Tags.Title>
-              <Tags.Tag className={args.tag.class} href={args.tag.href}>
-                {args.tag.category}
-              </Tags.Tag>
-            </Tags>
+            <Tag className="left">
+              <Tag.Title>{args.tagOptions.title}</Tag.Title>
+              <Tag.Tag
+                className={args.tagOptions.tag.class}
+                href={args.tagOptions.tag.href}
+              >
+                {args.tagOptions.tag.category}
+              </Tag.Tag>
+            </Tag>
             <Button>
               <Icon name="download"></Icon>
             </Button>
@@ -96,10 +110,12 @@ export const FAQContent = AccordionTemplate.bind({});
 
 FAQContent.args = {
   date: '21 SEP 2020',
-  tagTitle: 'Tags',
-  tag: { category: '# land use', href: '#', class: 'teal' },
   toggle: 'What is soil sealing and why is it important to monitor it?',
   content: CONTENT,
+  tagOptions: {
+    title: 'Tags',
+    tag: { category: '# land use', href: '#', class: 'teal' },
+  },
   languageOptions: {
     default: 'en',
     languages: [
