@@ -11,27 +11,23 @@ export default {
   title: 'Layout/Header',
   component: Header,
   argTypes: {
-    // linksDropdown: {
-    //   description: 'links dropdown content',
-    //   table: {
-    //     type: { summary: 'array' },
-    //     defaultValue: { summary: '' },
-    //   },
-    // },
-    // languages: {
-    //   description: 'language list',
-    //   table: {
-    //     type: { summary: 'array' },
-    //     defaultValue: { summary: '' },
-    //   },
-    // },
-    // menuItems: {
-    //   description: 'items for the header menu',
-    //   table: {
-    //     type: { summary: 'array' },
-    //     defaultValue: { summary: '' },
-    //   },
-    // },
+    links: {
+      table: {
+        disable: true,
+      },
+    },
+    languages: {
+      table: {
+        disable: true,
+      },
+    },
+    menuItems: {
+      description: 'items for the header menu',
+      table: {
+        type: { summary: 'array' },
+        defaultValue: { summary: '' },
+      },
+    },
   },
   decorators: [(Story) => <Story />],
 };
