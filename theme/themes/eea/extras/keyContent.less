@@ -1,0 +1,36 @@
+@type: 'extra';
+@element: 'keyContent';
+
+@import (multiple) '../../theme.config';
+
+.eea.key-content {
+  background-color: @keyContentBackgroundColor;
+
+  .title {
+    text-align: center;
+    font-weight: @keyContentTitleFontWeight;
+    font-size: @keyContentTitleFontSize;
+  }
+
+  .ui.bulleted.list {
+    margin-left: @keyContentListMarginLeft;
+  }
+
+  .item {
+    margin-left: 74.85px;
+    margin-bottom: 34.07px;
+  }
+
+  .item::before {
+    color: @keyContentListItemBeforeColor;
+    margin-left: @keyContentListItemBeforeMarginLeft;
+  }
+}
+
+.eea.key-content.colored {
+  .title {
+    text-align: left;
+    color: @keyContentColoredTitleColor;
+    margin-left: @keyContentColoredTitleMarginLeft;
+  }
+}
