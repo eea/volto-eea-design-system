@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Tags({ children, ...rest }) {
+function Tag({ children, ...rest }) {
   return (
     <div {...rest} className={`eea tags ${rest.className || ''}`}>
       <div>{children}</div>
@@ -8,16 +8,16 @@ function Tags({ children, ...rest }) {
   );
 }
 
-Tags.Title = ({ children, ...rest }) => (
+Tag.Title = ({ children, ...rest }) => (
   <span className="tags-title" {...rest}>
     {children}
   </span>
 );
 
-Tags.Tag = ({ children, ...rest }) => (
+Tag.Tag = ({ children, ...rest }) => (
   <a {...rest} className={`tag ${rest.className || ''}`}>
     <span className="name">{children}</span>
   </a>
 );
 
-export default Tags;
+export default Tag;

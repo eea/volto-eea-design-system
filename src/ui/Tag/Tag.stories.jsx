@@ -1,19 +1,19 @@
 import React from 'react';
-import Tags from './Tags';
+import Tag from './Tag';
 
 export default {
-  title: 'Components/Tags',
-  component: Tags,
+  title: 'Components/Tag',
+  component: Tag,
   argTypes: {
     title: {
       name: 'title',
-      description: 'Tags main text',
+      description: 'Tag main text',
       type: { name: 'string', required: true },
     },
     direction: {
       control: { type: 'select' },
       options: ['right', 'left'],
-      description: 'tags container direction',
+      description: 'tag container direction',
       table: {
         type: {
           summary: 'string',
@@ -24,7 +24,7 @@ export default {
       },
     },
     tags: {
-      description: 'category tags',
+      description: 'category tag',
       table: {
         type: {
           summary: 'Object',
@@ -38,14 +38,14 @@ export default {
 };
 
 export const Default = (args) => (
-  <Tags className={args.direction}>
-    <Tags.Title>{args.title}</Tags.Title>
+  <Tag className={args.direction}>
+    <Tag.Title>{args.title}</Tag.Title>
     {args.tags.map((tag) => [
-      <Tags.Tag className={tag.class} href={tag.href}>
+      <Tag.Tag className={tag.class} href={tag.href}>
         {tag.category}
-      </Tags.Tag>,
+      </Tag.Tag>,
     ])}
-  </Tags>
+  </Tag>
 );
 
 Default.args = {

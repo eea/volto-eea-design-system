@@ -4,7 +4,7 @@ export Blockquote from './Blockquote/Blockquote';
 
 export Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 
-export Tags from './Tags/Tags';
+export Tag from './Tag/Tag';
 
 export Footer from './Footer/Footer';
 
