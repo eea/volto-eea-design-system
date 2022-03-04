@@ -83,7 +83,7 @@
 @inputBackground        : @white;
 @inputVerticalPadding   : @relative12px;
 /* This adjusts the default form input across all elements */
-@inputHorizontalPadding : 0;
+@inputHorizontalPadding : @relative18px;
 @inputPadding           : @inputVerticalPadding @inputHorizontalPadding;
 
 /* Input Text Color */
@@ -103,7 +103,7 @@
 @focusedFormBorderColor: #85B7D9;
 
 /* Used on dropdowns, other larger blocks */
-@focusedFormMutedBorderColor: #96C8DA;
+@focusedFormMutedBorderColor: @secondaryColor;
 
 /*-------------------
         Sizes
@@ -459,7 +459,7 @@
 
 /* Negative */
 @negativeColor           : @red;
-@negativeBackgroundColor : #FEEFEF;
+@negativeBackgroundColor : @white;
 @negativeBorderColor     : @red; //#FEEFEF;
 @negativeHeaderColor     : @red;
 @negativeTextColor       : @red;
