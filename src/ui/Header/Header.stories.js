@@ -332,18 +332,38 @@ const Template = (args) => {
           pathname={pathname}
           logo={<Logo {...logoProps} />}
           menuItems={menuItems}
-          renderMenuItem={(item) => (
-            <a
-              onClick={(e) => {
-                const path = item['@id'] || item.url;
-                setPathname(path);
-                e.preventDefault();
-              }}
-              href={item['@id'] || item.url}
-            >
-              {item.title}
-            </a>
-          )}
+          renderMenuItem={(item, options = {}) => {
+            const { onClick } = options;
+            return (
+              <a
+                onClick={(e) => {
+                  const path = item['@id'] || item.url;
+                  setPathname(path);
+                  e.preventDefault();
+                  onClick && onClick(e, item);
+                }}
+                href={item['@id'] || item.url}
+              >
+                {item.title}
+              </a>
+            );
+          }}
+          renderGlobalMenuItem={(item, options = {}) => {
+            const { onClick } = options;
+            return (
+              <a
+                onClick={(e) => {
+                  // const path = item['@id'] || item.url;
+                  // setPathname(path);
+                  e.preventDefault();
+                  onClick && onClick(e, item);
+                }}
+                href={item['@id'] || item.url}
+              >
+                {item.title}
+              </a>
+            );
+          }}
         ></Header.Main>
       </Header>
 

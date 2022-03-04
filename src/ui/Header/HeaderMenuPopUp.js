@@ -20,7 +20,7 @@ const Item = ({ item, renderMenuItem }) => (
   </>
 );
 
-const ItemsList = ({ items, renderMenuItem, level = 0 }) => (
+const ItemsList = ({ items, renderMenuItem, level = 0, activeItem }) => (
   <ul
     className={cx(
       level === 0 ? 'menu' : 'sub',
@@ -31,7 +31,10 @@ const ItemsList = ({ items, renderMenuItem, level = 0 }) => (
     {items.map((item) => (
       <li
         key={item['@id'] || item.url}
-        className={cx({ hasSubMenu: item.items?.length > 0 })}
+        className={cx({
+          hasSubMenu: item.items?.length > 0,
+          active: (item['@id'] || item.url) === activeItem,
+        })}
       >
         <Item item={item} renderMenuItem={renderMenuItem} />
 
@@ -40,6 +43,7 @@ const ItemsList = ({ items, renderMenuItem, level = 0 }) => (
             items={item.items}
             level={level + 1}
             renderMenuItem={renderMenuItem}
+            activeItem={activeItem}
           />
         )}
       </li>
@@ -47,7 +51,13 @@ const ItemsList = ({ items, renderMenuItem, level = 0 }) => (
   </ul>
 );
 
-function HeaderMenuPopUp({ menuItems, onClose, triggerRefs, renderMenuItem }) {
+function HeaderMenuPopUp({
+  menuItems,
+  onClose,
+  triggerRefs,
+  renderMenuItem,
+  activeItem,
+}) {
   const nodeRef = React.useRef();
   useClickOutside({ targetRefs: [nodeRef, ...triggerRefs], callback: onClose });
 
@@ -55,7 +65,11 @@ function HeaderMenuPopUp({ menuItems, onClose, triggerRefs, renderMenuItem }) {
     <div id="mega-menu" ref={nodeRef}>
       <Container>
         <nav>
-          <ItemsList items={menuItems} renderMenuItem={renderMenuItem} />
+          <ItemsList
+            items={menuItems}
+            renderMenuItem={renderMenuItem}
+            activeItem={activeItem}
+          />
         </nav>
       </Container>
     </div>

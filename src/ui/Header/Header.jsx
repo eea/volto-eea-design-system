@@ -60,7 +60,13 @@ const TopDropdownMenu = ({
   );
 };
 
-const Main = ({ logo, menuItems, renderMenuItem, pathname }) => {
+const Main = ({
+  logo,
+  menuItems,
+  renderMenuItem,
+  renderGlobalMenuItem,
+  pathname,
+}) => {
   const [activeItem, setActiveItem] = React.useState('');
   const [menuIsActive, setMenuIsActive] = React.useState(false);
   const [searchIsActive, setSearchIsActive] = React.useState(false);
@@ -100,6 +106,12 @@ const Main = ({ logo, menuItems, renderMenuItem, pathname }) => {
     setActiveItem('');
   };
 
+  const menuOnClick = (e, item) => {
+    if (searchIsActive) setSearchIsActive(false);
+    setActiveItem(item['@id'] || item.url);
+    setMenuIsActive(true);
+  };
+
   React.useEffect(() => {
     if (searchIsActive || burger === 'open' || menuIsActive) {
       document.body.style.overflow = 'hidden';
@@ -130,7 +142,9 @@ const Main = ({ logo, menuItems, renderMenuItem, pathname }) => {
                       active={activeItem === item.key}
                       key={item['@id'] || item.url}
                     >
-                      {renderMenuItem(item)}
+                      {renderGlobalMenuItem(item, {
+                        onClick: menuOnClick,
+                      })}
                     </Menu.Item>
                   ))}
                 </Menu>
@@ -183,6 +197,7 @@ const Main = ({ logo, menuItems, renderMenuItem, pathname }) => {
       {menuIsActive && (
         <HeaderMenuPopUp
           renderMenuItem={renderMenuItem}
+          activeItem={activeItem}
           menuItems={menuItems}
           onClose={mobileBurgerOnClick}
           triggerRefs={[mobileMenuBurgerRef, desktopMenuBurgerRef]}

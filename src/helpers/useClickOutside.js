@@ -12,13 +12,16 @@ export default function useClickOutside({ targetRefs = [], callback }) {
           (nodeRef) =>
             nodeRef.current && doesNodeContainClick(nodeRef.current, e),
         ) > -1;
+
+      console.log('clickoutside', isInsideTarget);
+
       if (isInsideTarget) return;
       callback();
     },
     [callback, targetRefs],
   );
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     document.addEventListener('mousedown', handleClickOutside, false);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside, false);
