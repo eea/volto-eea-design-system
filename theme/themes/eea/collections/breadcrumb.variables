@@ -20,6 +20,7 @@
 /* Icon */
 @mobileBreadcrumbIconSize: 0.469rem;
 @tabletBreadcrumbIconSize: @12px;
+@breadcrumbFirstChildPadding: 0 0.469rem 0 0;
 
 /* Divider */
 @dividerSpacing: @5px;
@@ -44,6 +45,5 @@
 /*-------------------
        States
 --------------------*/
-
 
 @activeFontWeight: @normal;

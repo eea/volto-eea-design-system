@@ -2,11 +2,10 @@
         Theme Overrides
 *******************************/
 
-div.eea-breadcrumb .ui.breadcrumb {
+.ui.breadcrumb {
   .section {
     padding: @mobileBreadcrumbPadding;
     font-size: @mobileBreadcrumbFontSize;
-    font-weight: @activeFontWeight;
 
     /* Max breadcrumb length to be decided */
     //max-width: 150px;
@@ -16,7 +15,7 @@ div.eea-breadcrumb .ui.breadcrumb {
 
     img {
       width: @mobileBreadcrumbIconSize;
-      margin-bottom: -1px; //To align as the design
+      margin-bottom: -@1px; //To align as the design
     }
   }
 
@@ -25,15 +24,14 @@ div.eea-breadcrumb .ui.breadcrumb {
   }
 
   a:first-child {
-    padding: 0 0.469rem 0 0;
+    padding: @breadcrumbFirstChildPadding;
   }
 }
 @media only screen and (min-width: @tabletBreakpoint) {
-  div.eea-breadcrumb .ui.breadcrumb {
+  .ui.breadcrumb {
     .section {
       padding: @tabletBreadcrumbPadding;
       font-size: @tabletBreadcrumbFontSize;
-      font-weight: @activeFontWeight;
 
       img {
         width: @tabletBreadcrumbIconSize;
@@ -47,7 +45,7 @@ div.eea-breadcrumb .ui.breadcrumb {
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
-  div.eea-breadcrumb .ui.breadcrumb {
+  .ui.breadcrumb {
     .section {
       padding: @computerBreadcrumbPadding;
     }
