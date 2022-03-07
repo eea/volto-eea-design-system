@@ -15,6 +15,7 @@
 
 #toolbar .pastanaga-menu .ui.container {
   padding: @profileSectionPadding;
+  overflow: @profileSectionOverflow;
 }
 
 @media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
