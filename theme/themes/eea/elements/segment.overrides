@@ -6,11 +6,3 @@
   display: flex;
   align-items: center;
 }
-
-#toolbar {
-   .pastanaga-menu {
-      .ui.raised.segments {
-        width: @profileRaisedSegmentWidth;
-      }
-   }
-}
