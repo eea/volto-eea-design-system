@@ -94,6 +94,8 @@
 
 /* Raised */
 @raisedBoxShadow: @floatingShadow;
+// Fixme: The parent width is 100% which is applied to all raised segment.
+@profileRaisedSegmentWidth: 80%;
 
 /* Padded */
 @paddedSegmentPadding: 1.5em;

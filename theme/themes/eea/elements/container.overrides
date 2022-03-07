@@ -13,6 +13,10 @@
     margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
+div.profile .ui.container {
+  padding: @profileSectionPadding;
+}
+
 @media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
   .ui.container {
     padding-right: @tabletPadding;
