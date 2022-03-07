@@ -74,15 +74,27 @@ textarea {
   }
 }
 
+.ui.fluid.icon.input.search > input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.ui.fluid.icon.input.search > input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.ui.fluid.icon.input.search > input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
 @media only screen and (min-width: @computerBreakpoint) {
   .ui.fluid.icon.input.search {
     input {
       border-bottom: 3px solid !important;
-      font-size: 48px;
+      font-size: 40px;
     }
 
     i.icon {
-      font-size: 40px;
+      font-size: 38px;
     }
   }
 }
