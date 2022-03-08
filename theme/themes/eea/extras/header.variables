@@ -28,7 +28,6 @@
 @topSectionItemFontWeight             : @bold;
 @mobileTopSectionItemFontSize         : @headerMinyFontSize;
 @tabletTopSectionItemFontSize         : @headerSmallFontSize;
-@topSectionZindex                     : 1;
 
 /* Dropdown */
 @mobileDropdownMenuMarginTop          : 0.188rem;
