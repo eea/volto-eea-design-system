@@ -54,12 +54,12 @@ export default {
   },
 };
 
-const Template = ({ label, error, required, ...rest }) => (
+const Template = ({ label, error, ...rest }) => (
   <Form>
     <FormFieldWrapper
       error={error}
       label={label}
-      required={required}
+      required={rest.required}
       columns={label ? 1 : 0}
     >
       <Input {...rest} id="temp-id" />
