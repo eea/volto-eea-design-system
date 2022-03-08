@@ -1,0 +1,24 @@
+/*-------------------
+  Publication Card
+--------------------*/
+
+@publicationCardtextColor: @white;
+@publicationCardMargin: 10px 0;
+@publicationCardHeight: 268px;
+
+/* Colors */
+@publicationCardBackgroundColor: #BCBEC0;
+@publicationCardDescripitonColor: #3D5265;
+
+/* Descripiton */
+@cardDescripitonHeight: auto;
+@cardDescripitonMaxHeight: 135px;
+@computerCardDescripitonHeight: auto;
+@cardDescripitonPadding: 20px;
+@cardDescripitonWidth: 100%;
+
+@cardDescripitonTagFontSize: 12px;
+@cardDescripitonTagFontWeight: 400;
+@cardDescripitonTextFontSize: 16px;
+@cardDescripitonTextFontWeight: 700;
+
