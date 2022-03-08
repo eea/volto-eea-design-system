@@ -2,6 +2,11 @@
          Theme Overrides
 *******************************/
 
+.ui.inverted.statistics,
+.ui.inverted.statistic {
+  background: @statisticInvertedBackground;
+}
+
 /* Full width statistics for mobile */
 .ui.statistic {
   width: @mobileStatisticWidth;
