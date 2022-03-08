@@ -5,13 +5,6 @@ export default {
   title: 'Components/List/Table of contents',
   component: List,
   argTypes: {
-    selection: {
-      description: 'a selection list formats list items as possible choices',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
     animated: {
       description:
         'a list can animate to set the current item apart from the list',
@@ -44,11 +37,10 @@ export default {
   },
 };
 
-function TableOfContents(items, selection, animated, divided, horizontal) {
+function TableOfContents(items, animated, divided, horizontal) {
   return (
     <List
       ordered
-      selection={selection}
       animated={animated}
       divided={divided}
       horizontal={horizontal}
@@ -72,7 +64,6 @@ function TableOfContents(items, selection, animated, divided, horizontal) {
 export const Default = (args) => {
   return TableOfContents(
     args.items,
-    args.selection,
     args.animated,
     args.divided,
     args.horizontal,
@@ -114,7 +105,6 @@ Default.args = {
       ],
     },
   ],
-  selection: false,
   animated: false,
   divided: false,
   horizontal: false,
