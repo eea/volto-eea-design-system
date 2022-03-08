@@ -2,6 +2,16 @@
          Tab Overrides
 *******************************/
 
+.ui.pointing.secondary.menu {
+  a.item {
+    font-size: @headerSize;
+  }
+
+  a.item:hover {
+    color: @tabActiveItemHoverColor;
+  }
+}
+
 div.eea-tab {
   a.item {
     font-size: @headerSize;
@@ -19,8 +29,8 @@ div.eea-tab {
       color: @secondaryColor !important;
 
       &:hover {
-        border-color: @secondaryColorDarken;
-        color: @secondaryColorDarken;
+        border-color: @secondaryColorHover;
+        color: @secondaryColorHover;
       }
     }
   }

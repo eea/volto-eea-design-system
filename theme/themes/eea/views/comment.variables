@@ -47,7 +47,7 @@
 /* Author */
 @authorFontSize: 1rem;
 @authorColor: @secondaryColor;
-@authorHoverColor: @secondaryColorDarken;
+@authorHoverColor: @secondaryColorHover;
 @authorFontWeight: @bold;
 
 /* Metadata */
