@@ -399,12 +399,12 @@
 @sidebarToggleButtonHighlightColor: @grey;
 
 /*--- Progress Colors ---*/
-@progressBarFrom0to30    : #75C9DB;
-@progressBarFrom30to40   : #0065A4;
-@progressBarFrom40to60   : #0065A4;
-@progressBarFrom60to70   : #00928F;
-@progressBarFrom70to90   : #00928F;
-@progressBarFrom90to100  : #007B6C;
+@progressBarFrom0to30    : @midBlue;
+@progressBarFrom30to40   : @mediumPersianBlue;
+@progressBarFrom40to60   : @mediumPersianBlue;
+@progressBarFrom60to70   : @darkCyan;
+@progressBarFrom70to90   : @darkCyan;
+@progressBarFrom90to100  : @pineGreen;
 
 /*-------------------
      Alpha Colors
