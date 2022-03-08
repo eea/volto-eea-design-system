@@ -64,7 +64,7 @@ const Template = (args) => (
             <Breadcrumb.Divider icon={`${args.icon}`} key={index} />
           ),
           index < sections.length - 1 ? (
-            <Link key={section.href} to={section.href} className="section">
+            <Link key={section.key} to={section.href} className="section">
               {section.content}{' '}
             </Link>
           ) : (
