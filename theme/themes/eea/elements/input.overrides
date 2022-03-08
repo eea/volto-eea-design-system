@@ -3,7 +3,6 @@
 *******************************/
 
 .ui.input {
-  width: 100%;
   max-width: @inputMaxWidth;
 }
 
@@ -16,40 +15,30 @@
 
   &:active,
   &:focus {
-    border: 1px solid @green;
-    color: @black;
-  }
-}
-
-.required.field {
-  .ui.labeled.input::after {
-    content: '*';
+    border: @borderWidth solid @secondaryColor;
+    color: @textColor;
   }
 }
 
 .ui.input.error input {
-  border: 2px solid @negativeBorderColor;
+  border: @borderWidth solid @negativeBorderColor;
 }
 
-.ui.labeled.input .ui.label.label {
-  overflow: hidden;
-  width: 130px;
-  background-color: @white;
-  color: @black;
-  text-overflow: ellipsis;
-}
-
+/* Textarea */
 textarea {
-  border: @border !important;
-  border-radius: @borderRadius;
+  max-width: @inputMaxWidth;
 
   &:active,
   &:focus {
-    border: 2px solid @deepBlue;
+    border: @borderWidth solid @secondaryColor;
   }
 }
 
-/* Search Input */
+textarea.fluid {
+  max-width: 100%;
+}
+
+/* Search Input - to be updated */
 .ui.fluid.icon.input.search {
   input {
     height: 70px !important;
@@ -91,94 +80,4 @@ textarea {
       font-size: 38px;
     }
   }
-}
-
-/*****************************************************************/
-.inline.field {
-  .wrapper {
-    display: flex;
-    min-height: 60px;
-    align-items: center;
-    border-bottom: 1px solid @lightGreyBorderColor;
-  }
-
-  &.required .wrapper {
-    > label[for]::after,
-    .ui.label::after {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      margin-left: 5px;
-      background-color: @pink;
-      border-radius: 50%;
-      content: '';
-    }
-  }
-
-  &.text {
-    .toolbar {
-      display: block;
-      margin-top: 18px;
-    }
-  }
-
-  &.textarea {
-    .wrapper,
-    .toolbar {
-      display: block;
-      margin-top: 18px;
-    }
-
-    textarea {
-      min-height: 60px;
-      padding: 0;
-      margin-top: 18px;
-    }
-  }
-
-  &.wysiwyg {
-    .wrapper,
-    .toolbar {
-      display: block;
-      margin-top: 18px;
-    }
-
-    .DraftEditor-root {
-      min-height: 60px;
-      margin-top: 18px;
-    }
-  }
-
-  .ui.checkbox ~ .ui.basic.label {
-    border: 0;
-  }
-}
-
-.ui.form .searchbox.field {
-  display: flex;
-  padding-left: 1em;
-  border-left: 1px solid @purpleBackground;
-
-  .ui.input input {
-    width: 106px;
-    height: auto;
-    line-height: initial;
-  }
-
-  button {
-    padding: 0;
-    border: 0;
-    background: transparent;
-    color: @blue;
-    cursor: pointer;
-    text-align: initial;
-
-    &:focus {
-      outline: none;
-    }
-  }
-}
-
-.transparent {
-  line-height: initial;
 }

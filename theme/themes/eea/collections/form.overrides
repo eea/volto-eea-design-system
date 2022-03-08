@@ -31,23 +31,26 @@
 }
 
 .field-wrapper .ui.message {
-  margin: 0;
+  margin: @formMessageMargin;
 }
 
-.required.eea.field-wrapper .ui.label::after {
-  content: '*';
+/* Required span for input label */
+.requred-input {
+  display: none;
+}
+
+.required .requred-input {
+  display: inline-block;
+  margin-left: @requiredMarginLeft;
+  color: @requiredColor;
+}
+
+.input {
+  min-width: @mobileInputMinWidth;
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-  .required.eea.field-wrapper {
-    .row {
-      &::after {
-        content: '*';
-      }
-    }
-
-    .ui.label::after {
-      content: '';
-    }
+  .input {
+    min-width: @tabletInputMinWidth;
   }
 }

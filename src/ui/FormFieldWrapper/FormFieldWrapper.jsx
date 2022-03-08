@@ -18,12 +18,17 @@ function FormFieldWrapper({
       <Grid>
         <Grid.Row verticalAlign="top">
           {columns === 1 && (
-            <Grid.Column computer="1" tablet="2" mobile="12">
-              {label.length > 0 && <Label>{label}</Label>}
+            <Grid.Column computer="2" tablet="2" mobile="12">
+              {label.length > 0 && (
+                <Label>
+                  {label}
+                  <span className="requred-input">*</span>
+                </Label>
+              )}
             </Grid.Column>
           )}
           <Grid.Column
-            computer={columns === 1 ? '11' : '12'}
+            computer={columns === 1 ? '10' : '12'}
             tablet="10"
             mobile="12"
           >
