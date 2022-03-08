@@ -55,14 +55,16 @@
 @primaryColor         : @darkCerulean;
 @secondaryColor       : @pineGreen;
 
-@lightPrimaryColor    : @steelBlue;
-@lightSecondaryColor  : @pearlAqua;
+@lightPrimaryColor    : @darkCyan;
+@lightSecondaryColor  : @mediumPersianBlue;
+
+@darkPrimaryColor     : @bottleGreen;
+@darkSecondaryColor   : @darkMidnightBlue;
 
 /*--------------
   Page Heading
 ---------------*/
 
-@lightSecondaryColor : @lightBlack;
 @headerLineHeight : 1.25;
 @headerFontWeight : 700;
 
@@ -183,7 +185,7 @@
 @thumbHoverBackground: rgba(128, 135, 139, 0.8);
 
 /* Inverted */
-@statisticInvertedBackground: @metallicBlue;
+@statisticInvertedBackground: @bottleGreen;
 @trackInvertedBackground: rgba(255, 255, 255, 0.1);
 @thumbInvertedBackground: rgba(255, 255, 255, 0.25);
 @thumbInvertedInactiveBackground: rgba(255, 255, 255, 0.15);
@@ -276,7 +278,7 @@
 /*---  EEA Colors  ---*/
 
 // Green Colors - Darker to lighter
-@metallicBlue     : #2E6173;
+@bottleGreen      : #00665A;
 @pineGreen        : #007B6C;
 @darkCyan         : #00928F;
 @pearlAqua        : #74CBC8;
@@ -305,7 +307,7 @@
 
 
 /*---  Colors  ---*/
-@orange           : #FF9933;
+@orange           : #EBA33D;
 @yellow           : #F2EB49; 
 @olive            : #78AB66;
 @green            : @pineGreen;
