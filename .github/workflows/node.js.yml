@@ -10,6 +10,7 @@ on:
       - src/**
       - theme/**
       - website/**
+      - templates/**
 
 jobs:
   build:
@@ -50,7 +51,7 @@ jobs:
         github_token: ${{ secrets.PAT_TOKEN }}
         owner: 'eea'
         repo: 'volto-kitkat-frontend'
-        ref: 'develop-itml'
+        ref: 'develop'
         workflow_file_name: node.js.yml
     - name: Deploy Storybook changes
       run: |
