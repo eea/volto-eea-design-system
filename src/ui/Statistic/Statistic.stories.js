@@ -39,13 +39,12 @@ const Template = (args) => (
     {args.elements &&
       args.elements.map((element, index) => (
         <Statistic
-          className="eea-statistic"
           key={index}
           {...element}
         ></Statistic>
       ))}
     {!args.elements && (
-      <Statistic className="eea-statistic" {...args}></Statistic>
+      <Statistic {...args}></Statistic>
     )}
   </Statistic.Group>
 );
