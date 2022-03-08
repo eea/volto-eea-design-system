@@ -10,10 +10,10 @@
 }
 
 .ui.pagination.pointing.secondary.menu .item {
+  justify-content: center;
   color: @paginationColor;
   font-size: @paginationFontSize;
 }
-
 
 /* Pagination active item custom border design */
 .ui.pagination.pointing.secondary.menu a.active.item {
@@ -24,22 +24,7 @@
   color: @secondaryPointingActiveTextColor;
 }
 
-/* Tab active item custom border design */
-.ui.secondary.pointing.menu:not(.vertical) a.item {
-  padding: @tabSecondaryPointingItemActiveVerticalPadding
-  @secondaryPointingItemHorizontalPadding;
-  margin: @secondaryPointingItemMargin;
-}
-.ui.secondary.pointing.menu:not(.vertical) a.active.item,
-.ui.secondary.pointing.menu:not(.vertical) a.item:active {
-  padding: @tabSecondaryPointingItemActiveVerticalPadding
-    @secondaryPointingItemHorizontalPadding;
-  border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
-  margin-bottom: -@secondaryPointingctiveItemMarginBottom;
-  color: @secondaryPointingActiveTextColor;
-}
-
-/* Hover Item Pagination */
+/* Hover item pagination */
 .ui.pagination.pointing.secondary.menu a.item:hover {
   padding: @secondaryPointingItemActiveVerticalPadding
     @secondaryPointingItemHorizontalPadding;
@@ -48,9 +33,26 @@
   color: @paginationColor;
 }
 
+/* Hover ellipsis item pagination */
 .ui.pagination.pointing.secondary.menu a.item[type='ellipsisItem']:hover {
+  padding: 0.7625rem 0;
   border-bottom: none;
-  border-bottom: @1px;
+}
+
+/* Tab active item custom border design */
+.ui.secondary.pointing.menu:not(.vertical):not(.pagination) a.item {
+  padding: @tabSecondaryPointingItemActiveVerticalPadding
+    @secondaryPointingItemHorizontalPadding;
+  margin: @secondaryPointingItemMargin;
+}
+
+.ui.secondary.pointing.menu:not(.vertical):not(.pagination) a.active.item,
+.ui.secondary.pointing.menu:not(.vertical):not(.pagination) a.item:active {
+  padding: @tabSecondaryPointingItemActiveVerticalPadding
+    @secondaryPointingItemHorizontalPadding;
+  border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
+  margin-bottom: -@secondaryPointingctiveItemMarginBottom;
+  color: @secondaryPointingActiveTextColor;
 }
 
 /**********************************************************************/
