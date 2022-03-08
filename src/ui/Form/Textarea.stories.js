@@ -29,12 +29,12 @@ export default {
   },
 };
 
-const Template = ({ label, error, required, ...args }) => (
+const Template = ({ label, error, ...args }) => (
   <Form>
     <FormFieldWrapper
       label={label}
       error={error}
-      required={required}
+      required={args.required}
       columns={label ? 1 : 0}
     >
       <TextArea {...args}></TextArea>
