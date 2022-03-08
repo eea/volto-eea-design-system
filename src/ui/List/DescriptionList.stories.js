@@ -48,19 +48,9 @@ export default {
   },
 };
 
-function DescriptionList(
-  items,
-  floated,
-  animated,
-  divided,
-  horizontal,
-) {
+function DescriptionList(items, floated, animated, divided, horizontal) {
   return (
-    <List
-      animated={animated}
-      divided={divided}
-      horizontal={horizontal}
-    >
+    <List animated={animated} divided={divided} horizontal={horizontal}>
       {items.map((item, index) => (
         <List.Item key={index}>
           <List.Content>

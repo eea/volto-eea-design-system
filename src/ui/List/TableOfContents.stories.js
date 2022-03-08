@@ -39,12 +39,7 @@ export default {
 
 function TableOfContents(items, animated, divided, horizontal) {
   return (
-    <List
-      ordered
-      animated={animated}
-      divided={divided}
-      horizontal={horizontal}
-    >
+    <List ordered animated={animated} divided={divided} horizontal={horizontal}>
       {items.map((item, index) => (
         <List.Item as="a" key={index}>
           {item.content}
