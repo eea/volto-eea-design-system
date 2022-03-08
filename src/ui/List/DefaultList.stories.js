@@ -12,7 +12,6 @@ const Template = (args) => <List {...args}></List>;
 export const Default = Template.bind({});
 Default.args = {
   floated: 'left',
-  selection: false,
   animated: false,
   divided: false,
   horizontal: false,
