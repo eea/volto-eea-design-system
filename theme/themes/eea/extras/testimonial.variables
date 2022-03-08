@@ -1,0 +1,13 @@
+/*******************************
+            Testimonial
+*******************************/
+
+
+@testimonialWidth                           : 100%;
+@testimonialAvatarWrapperHeight             : 100%;
+@testimonialContentTitleMarginVertical      : 0;
+@testimonialContentTitleMarginHorizontal    : 2rem;
+@testimonialContentTitleFontWeight          : 500;
+@testimonialContentTitleFontSize            : 36px;
+@testimonialContentTitleLetterSpacing       : -0.015em;
+@testimonialContentTitleColor               : @deepBlue;

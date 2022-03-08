@@ -35,7 +35,7 @@ const Template = ({ label, error, required, ...args }) => (
       label={label}
       error={error}
       required={required}
-      columns={label ? 2 : 0}
+      columns={label ? 1 : 0}
     >
       <TextArea {...args}></TextArea>
     </FormFieldWrapper>
@@ -56,6 +56,23 @@ LabeledTextArea.args = {
   required: true,
 };
 
+LabeledTextArea.argTypes = {
+  label: {
+    description: 'textarea label',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  required: {
+    description: 'a field can show that is mandatory',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
+  },
+};
+
 export const ErrorTextArea = Template.bind({});
 ErrorTextArea.args = {
   placeholder: 'Type here...',
@@ -63,4 +80,28 @@ ErrorTextArea.args = {
   label: 'Textarea Label',
   error: true,
   required: true,
+};
+
+ErrorTextArea.argTypes = {
+  label: {
+    description: 'textarea label',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  required: {
+    description: 'a field can show that is mandatory',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
+  },
+  error: {
+    description: 'display error message along with message',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: '' },
+    },
+  },
 };
