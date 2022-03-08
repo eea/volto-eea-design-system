@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextArea, Form } from 'semantic-ui-react';
+import { TextArea, Form, Container } from 'semantic-ui-react';
 import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
 
 export default {
@@ -30,16 +30,18 @@ export default {
 };
 
 const Template = ({ label, error, ...args }) => (
-  <Form>
-    <FormFieldWrapper
-      label={label}
-      error={error}
-      required={args.required}
-      columns={label ? 1 : 0}
-    >
-      <TextArea {...args}></TextArea>
-    </FormFieldWrapper>
-  </Form>
+  <Container>
+    <Form>
+      <FormFieldWrapper
+        label={label}
+        error={error}
+        required={args.required}
+        columns={label ? 1 : 0}
+      >
+        <TextArea {...args}></TextArea>
+      </FormFieldWrapper>
+    </Form>
+  </Container>
 );
 
 export const Default = Template.bind({});
@@ -52,7 +54,7 @@ export const LabeledTextArea = Template.bind({});
 LabeledTextArea.args = {
   placeholder: 'Type here...',
   rows: 3,
-  label: 'Textarea Label',
+  label: 'Textarea',
   required: true,
 };
 
@@ -77,7 +79,7 @@ export const ErrorTextArea = Template.bind({});
 ErrorTextArea.args = {
   placeholder: 'Type here...',
   rows: 3,
-  label: 'Textarea Label',
+  label: 'Textarea',
   error: true,
   required: true,
 };

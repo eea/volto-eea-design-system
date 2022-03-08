@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Form } from 'semantic-ui-react';
+import { Input, Form, Container } from 'semantic-ui-react';
 import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
 
 export default {
@@ -55,16 +55,18 @@ export default {
 };
 
 const Template = ({ label, error, ...rest }) => (
-  <Form>
-    <FormFieldWrapper
-      error={error}
-      label={label}
-      required={rest.required}
-      columns={label ? 1 : 0}
-    >
-      <Input {...rest} id="temp-id" />
-    </FormFieldWrapper>
-  </Form>
+  <Container>
+    <Form>
+      <FormFieldWrapper
+        error={error}
+        label={label}
+        required={rest.required}
+        columns={label ? 1 : 0}
+      >
+        <Input {...rest} id="temp-id" />
+      </FormFieldWrapper>
+    </Form>
+  </Container>
 );
 
 export const Default = Template.bind({});
