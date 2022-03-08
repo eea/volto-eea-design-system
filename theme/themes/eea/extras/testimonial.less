@@ -1,0 +1,28 @@
+@type: 'extra';
+@element: 'testimonial';
+
+@import (multiple) '../../theme.config';
+
+/*-------------------
+      TESTIMONIAL
+--------------------*/
+
+.eea.testimonial {
+  width: @testimonialWidth;
+
+  .avatar-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: @testimonialAvatarWrapperHeight;
+  }
+
+  .content .title {
+    margin: @testimonialContentTitleMarginVertical
+      @testimonialContentTitleMarginHorizontal;
+    font-weight: @testimonialContentTitleFontWeight;
+    font-size: @testimonialContentTitleFontSize;
+    letter-spacing: @testimonialContentTitleLetterSpacing;
+    color: @testimonialContentTitleColor;
+  }
+}

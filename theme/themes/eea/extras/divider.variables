@@ -1,0 +1,9 @@
+/*******************************
+            Divider
+*******************************/
+
+
+@dividerWidth           : 100%;
+@dividerBorderColor     : @darkCyan;  
+@dividerBorderSize      : @1px;
+@dividerBorderTop       : @dividerBorderSize solid @dividerBorderColor;

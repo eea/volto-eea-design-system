@@ -54,7 +54,6 @@
 
 @primaryColor         : @darkCerulean;
 @secondaryColor       : @pineGreen;
-@secondaryColorDarken : darken(@secondaryColor, 5%);
 
 @lightPrimaryColor    : @steelBlue;
 @lightSecondaryColor  : @pearlAqua;
@@ -258,12 +257,6 @@
      Breakpoints
 --------------------*/
 
-//@mobileBreakpoint            : 480px;
-//@tabletBreakpoint            : 835px;
-//@computerBreakpoint          : 1025px;
-//@largeMonitorBreakpoint      : 1200px;
-//@widescreenMonitorBreakpoint : 1920px;
-
 @mobileBreakpoint            : 320px;
 @tabletBreakpoint            : 480px;
 @computerBreakpoint          : 835px;
@@ -271,9 +264,9 @@
 @widescreenMonitorBreakpoint : 1200px;
 
 /* Paddings for breakpoints */
-@mobilePadding  : 30px;
-@tabletPadding  : 40px;
-@computerPadding : 140px;
+@mobilePadding  : 1.875rem;
+@tabletPadding  : 2.5rem;
+@computerPadding : 8.75rem;
 
 /*-------------------
       Site Colors
@@ -458,32 +451,32 @@
 --------------------*/
 
 /* Positive */
-@positiveColor           : #287D3C; //
-@positiveBackgroundColor : #EDF9F0; //
-@positiveBorderColor     : #EDF9F0; //
-@positiveHeaderColor     : #287D3C; //
-@positiveTextColor       : #287D3C; //
+@positiveColor           : @pineGreen;
+@positiveBackgroundColor : #EDF9F0;
+@positiveBorderColor     : #EDF9F0;
+@positiveHeaderColor     : @pineGreen;
+@positiveTextColor       : @pineGreen;
 
 /* Negative */
-@negativeColor           : #DA1414; //
-@negativeBackgroundColor : #FEEFEF; //
-@negativeBorderColor     : #FEEFEF; //
-@negativeHeaderColor     : #DA1414; //
-@negativeTextColor       : #DA1414; //
+@negativeColor           : @red;
+@negativeBackgroundColor : #FEEFEF;
+@negativeBorderColor     : @red; //#FEEFEF;
+@negativeHeaderColor     : @red;
+@negativeTextColor       : @red;
 
 /* Info */
-@infoColor              : #2E5AAC; //
-@infoBackgroundColor    : #EEF2FA; //
-@infoBorderColor        : #EEF2FA; //
-@infoHeaderColor        : #2E5AAC; //
-@infoTextColor          : #2E5AAC; //
+@infoColor              : @mediumPersianBlue;
+@infoBackgroundColor    : #EEF2FA;
+@infoBorderColor        : #EEF2FA;
+@infoHeaderColor        : @mediumPersianBlue;
+@infoTextColor          : @mediumPersianBlue;
 
 /* Warning */
-@warningColor           : #B95000; //
-@warningBorderColor     : #FFF4EC; //
-@warningBackgroundColor : #FFF4EC; //
-@warningHeaderColor     : #B95000; //
-@warningTextColor       : #B95000; //
+@warningColor           : #EBA33D;
+@warningBorderColor     : #FFF4EC;
+@warningBackgroundColor : #FFF4EC;
+@warningHeaderColor     : #EBA33D;
+@warningTextColor       : #EBA33D;
 
 /*-------------------
         Paths
@@ -641,10 +634,10 @@
 
 
 /* Responsive */
-@largestMobileScreen : (@tabletBreakpoint - 1px);
-@largestTabletScreen : (@computerBreakpoint - 1px);
-@largestSmallMonitor : (@largeMonitorBreakpoint - 1px);
-@largestLargeMonitor : (@widescreenMonitorBreakpoint - 1px);
+@largestMobileScreen : (@tabletBreakpoint - @1px);
+@largestTabletScreen : (@computerBreakpoint - @1px);
+@largestSmallMonitor : (@largeMonitorBreakpoint - @1px);
+@largestLargeMonitor : (@widescreenMonitorBreakpoint - @1px);
 @mobileWidth: 1279px;
 
 

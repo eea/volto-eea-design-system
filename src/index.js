@@ -1,4 +1,4 @@
-import BlockquoteElement from './ui/Blockquote/Blockquote';
+import { BlockquoteElement } from './ui/Blockquote/Blockquote';
 
 const applyConfig = (config) => {
   // Apply accordion block customization

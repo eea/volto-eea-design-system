@@ -8,41 +8,41 @@
 *******************************/
 
 .eea.pullquote {
-    padding: @pullquotePadding;
-    margin: @pullquoteMobileMargin;
-    word-break: @contentWordBreak;
-    hyphens: @contentWordBreakHyphens;
-        .content {
-            margin: @contentMargin;
-            .author {
-                text-align: @authorTextAlign;
-            }
-        }
-    i.icon {
-        font-size: @quoteIconSize;
-        color: @quoteIconColor;
+  padding: @pullquotePadding;
+  margin: @pullquoteMobileMargin;
+  word-break: @contentWordBreak;
+  hyphens: @contentWordBreakHyphens;
+  .content {
+    margin: @contentMargin;
+    .author {
+      text-align: @authorTextAlign;
     }
-    .quote.right {
-        float: @quoteDownIconFloat;
-    }
+  }
+  i.icon {
+    font-size: @quoteIconSize;
+    color: @quoteIconColor;
+  }
+  .quote.right {
+    float: @quoteDownIconFloat;
+  }
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-    .eea.pullquote {
-        .content {
-            margin: @pullquoteMargin;
-        }
+  .eea.pullquote {
+    .content {
+      margin: @pullquoteMargin;
     }
-    .eea.pullquote.left {
-        width: @maxWidthOnFloat;
-        padding: @paddingLeftFloat;
-        float: left;
-    }
-    .eea.pullquote.right {
-        width: @maxWidthOnFloat;
-        padding: @paddingRightFloat;
-        float: right;
-    }
+  }
+  .eea.pullquote.left {
+    width: @maxWidthOnFloat;
+    padding: @paddingLeftFloat;
+    float: left;
+  }
+  .eea.pullquote.right {
+    width: @maxWidthOnFloat;
+    padding: @paddingRightFloat;
+    float: right;
+  }
 }
 
 .loadUIOverrides();

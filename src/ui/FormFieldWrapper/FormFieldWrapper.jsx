@@ -17,33 +17,28 @@ function FormFieldWrapper({
     >
       <Grid>
         <Grid.Row verticalAlign="top">
-          {columns === 2 && (
-            <Grid.Column computer={2} tablet={3} mobile={12}>
+          {columns === 1 && (
+            <Grid.Column computer="1" tablet="2" mobile="12">
               {label.length > 0 && <Label>{label}</Label>}
             </Grid.Column>
           )}
           <Grid.Column
-            computer={columns === 2 ? 8 : 12}
-            tablet={7}
-            mobile={12}
+            computer={columns === 1 ? '4' : '12'}
+            tablet="6"
+            mobile="12"
             className={`eea fieldWrapper item`}
           >
             {children}
-          </Grid.Column>
-        </Grid.Row>
-        {error && (
-          <Grid.Row verticalAlign="middle">
-            <Grid.Column computer={columns === 2 ? 2 : 0}></Grid.Column>
-            <Grid.Column computer={columns === 2 ? 8 : 12}>
+            {error && (
               <Message
                 negative
                 content="This is a mandatory field"
                 size="mini"
                 icon="exclamation circle"
               />
-            </Grid.Column>
-          </Grid.Row>
-        )}
+            )}
+          </Grid.Column>
+        </Grid.Row>
       </Grid>
     </Form.Field>
   );
