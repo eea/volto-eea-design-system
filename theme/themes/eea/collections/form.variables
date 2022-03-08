@@ -77,6 +77,9 @@
 @inlinePromptMargin: -0.25em 0em -0.5em 0.5em;
 @inlinePromptBorderWidth: 1px;
 
+/* Message */
+@formMessageMargin: 0;
+
 /*-------------------
         States
 --------------------*/
@@ -87,7 +90,7 @@
 /* Input Focus */
 @inputFocusBackground: @inputBackground;
 @inputFocusBorderColor: @focusedFormBorderColor;
-@inputFocusColor: @selectedTextColor;
+@inputFocusColor: @textColor;
 @inputFocusBoxShadow: @inputFocusPointerSize 0em 0em 0em @selectedBorderColor inset;
 @inputFocusBorderRadius: @inputBorderRadius;
 
@@ -120,9 +123,9 @@
 @inputErrorBoxShadow: none;
 
 /* Dropdown Error */
-@dropdownErrorHoverBackground: #FBE7E7;
+@dropdownErrorHoverBackground: @white;
 @dropdownErrorSelectedBackground: @dropdownErrorHoverBackground;
-@dropdownErrorActiveBackground: #FDCFCF;
+@dropdownErrorActiveBackground: @white;
 @dropdownErrorLabelBackground: #EACBCB;
 @dropdownErrorLabelColor: @errorTextColor;
 
@@ -150,10 +153,11 @@
 
 /* Required */
 @requiredContent: '*';
-@requiredColor: @negativeColor;
+@requiredColor: rgba(0, 0, 0, 0.32);
 @requiredVerticalOffset: -0.2em;
 @requiredDistance: 0.2em;
 @requiredMargin: @requiredVerticalOffset 0em 0em @requiredDistance;
+@requiredMarginLeft: 0.25rem;
 
 /* Inverted */
 @invertedInputBackground: @inputBackground;

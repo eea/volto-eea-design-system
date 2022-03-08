@@ -11,20 +11,19 @@
 
 .ui.selection.dropdown {
   border: @border;
-  border-bottom: @border;
 
   &:active,
   &:focus {
-    border: 1px solid @deepBlue;
+    border: @borderWidth solid @secondaryColor;
   }
 }
 
-.ui.dropdown.eea-dropdown .divider {
+.ui.dropdown .divider {
   color: @black;
 }
 
 .ui.dropdown.error {
-  border: 2px solid @negativeBorderColor;
+  border: @borderWidth solid @negativeBorderColor;
 }
 
 .ui.dropdown.right {
@@ -37,10 +36,9 @@
 }
 
 .ui.selection.dropdown:not(.multiple):not(.search) > .dropdown.icon {
-  position: static;
-  /* custom padding for dropdowns */
-  padding: 10px 0;
-  font-size: 1em;
+  position: @selectionIconPosition;
+  padding: @selectionIconPadding;
+  font-size: @selectionIconFontSize;
 }
 
 .ui.selection.dropdown:not(.multiple) {
@@ -50,6 +48,6 @@
 }
 
 i.icon.dropdown:before {
-  content: '\f078';
+  content: @dropdownIconContent;
   font-family: 'Icons';
 }

@@ -15,7 +15,7 @@
   width @defaultDuration @defaultEasing
 ;
 @borderRadius: @defaultBorderRadius;
-@borderWidth: 1px;
+@borderWidth: @1px;
 @border: @borderWidth solid @midGray;
 
 @raisedShadow: 0px 2px 3px 0px @borderColor;
@@ -25,6 +25,7 @@
 --------------------*/
 
 /* Icon */
+@dropdownIconContent: '\f078';
 @dropdownIconSize: 0;
 @dropdownIconMargin: 0;
 
@@ -218,6 +219,10 @@
 
 @selectionVisibleConnectingBorder: 0em;
 @selectionVisibleIconOpacity: 1;
+
+@selectionIconPosition: static;
+@selectionIconPadding: 0.625rem 0;
+@selectionIconFontSize: 1rem;
 
 /*--------------
      Search

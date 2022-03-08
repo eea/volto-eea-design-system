@@ -7,6 +7,7 @@
 --------------------*/
 
 @fontName          : 'Roboto';
+@secondaryFontName : 'Archivo';
 @fontSmoothing     : antialiased;
 
 @headerFont        : @fontName, Arial, 'Helvetica Neue', Helvetica, sans-serif;
@@ -79,7 +80,10 @@
    Form Input
 ---------------*/
 /* Max width for inputs with no fluid class */
-@inputMaxWidth: 400px;
+@inputMaxWidth: 360px;
+/* Min width for inputs with no fluid class */
+@mobileInputMinWidth: 100%;
+@tabletInputMinWidth: 360px;
 
 /* This adjusts the default form input across all elements */
 @inputBackground        : @white;
@@ -102,7 +106,7 @@
 --------------------*/
 
 /* Used on inputs, textarea etc */
-@focusedFormBorderColor: #85B7D9;
+@focusedFormBorderColor: @secondaryColor;
 
 /* Used on dropdowns, other larger blocks */
 @focusedFormMutedBorderColor: @secondaryColor;
@@ -144,7 +148,7 @@
 
 @lineHeight          : 1.5;
 @mobileLineHeight    : 1.5;
-@textColor           : rgba(0, 0, 0, 0.87);
+@textColor           : rgba(0, 0, 0, 1);
 
 /*-------------------
       Paragraph
