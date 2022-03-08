@@ -10,7 +10,7 @@ import { Breadcrumb, Container, Image, Segment } from 'semantic-ui-react';
 
 import homeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/home-icon.svg';
 
-const Breadcrumbs = ({ root, sections = [], icon }) => {
+const Breadcrumbs = ({ root, sections = [], icon, size = 'tiny' }) => {
   return (
     <Segment
       role="navigation"
@@ -19,7 +19,7 @@ const Breadcrumbs = ({ root, sections = [], icon }) => {
       attached
     >
       <Container>
-        <Breadcrumb>
+        <Breadcrumb size={size}>
           <Link to={root || '/'} className="section" title={'Home'}>
             <Image src={homeIcon} alt="home" />
           </Link>
@@ -51,6 +51,7 @@ Breadcrumbs.propTypes = {
       key: PropTypes.string,
     }),
   ).isRequired,
+  size: PropTypes.string,
 };
 
 export const BreadcrumbsComponent = Breadcrumbs;
