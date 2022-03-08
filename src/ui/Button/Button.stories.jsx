@@ -98,7 +98,7 @@ export const CallToAction = (args) => {
   );
 };
 CallToAction.args = {
-  label: 'Call to action Button',
+  label: 'CALL TO ACTION BUTTON',
   icon: 'chevron right',
   disabled: false,
 };
