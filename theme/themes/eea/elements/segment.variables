@@ -94,9 +94,6 @@
 
 /* Raised */
 @raisedBoxShadow: @floatingShadow;
-//Fixme: Needs to be adaptive according to outer container widths
-@computerProfileSectionWidth: 78%;
-@mobileProfileSectionWidth: 100%;
 
 /* Padded */
 @paddedSegmentPadding: 1.5em;
