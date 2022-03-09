@@ -32,10 +32,18 @@ export default {
         defaultValue: { summary: 3 },
       },
     },
+    fluid: {
+      description:
+        'add/remove class fluid to make the text area take the size of the container',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
   },
 };
 
-const Template = ({ label, error, ...args }) => (
+const Template = ({ label, error, fluid, ...args }) => (
   <Container>
     <Form>
       <FormFieldWrapper
@@ -44,7 +52,7 @@ const Template = ({ label, error, ...args }) => (
         required={args.required}
         columns={label ? 1 : 0}
       >
-        <TextArea {...args}></TextArea>
+        <TextArea {...args} className={fluid ? 'fluid' : null}></TextArea>
       </FormFieldWrapper>
     </Form>
   </Container>
@@ -54,6 +62,7 @@ export const Default = Template.bind({});
 Default.args = {
   placeholder: 'Type here...',
   rows: 3,
+  fluid: false,
 };
 
 export const LabeledTextArea = Template.bind({});
@@ -62,6 +71,7 @@ LabeledTextArea.args = {
   rows: 3,
   label: 'Textarea',
   required: true,
+  fluid: false,
 };
 
 LabeledTextArea.argTypes = {
@@ -88,6 +98,7 @@ ErrorTextArea.args = {
   label: 'Textarea',
   error: true,
   required: true,
+  fluid: false,
 };
 
 ErrorTextArea.argTypes = {
