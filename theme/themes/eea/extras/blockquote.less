@@ -28,6 +28,21 @@
   }
 }
 
+.eea.slate.blockquote {
+  .quote {
+    display: block;
+    flex-direction: unset;
+    gap: unset;
+    font-weight: @slateQuoteFontWeight;
+
+    br {
+      content: "";
+      display: flex;
+      margin: @slateQuoteGap 0;
+    }
+  }
+}
+
 @media only screen and (min-width: @tabletBreakpoint) {
   .eea.blockquote {
     border-left: @tabletBlockquoteBorderLeft;
