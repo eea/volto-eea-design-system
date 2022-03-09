@@ -8,48 +8,48 @@
 --------------------*/
 
 .eea.publication.card {
-    color: @publicationCardtextColor;
-    //position: relative;
-    height: @publicationCardHeight;
-    background-color: @publicationCardBackgroundColor;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  color: @publicationCardtextColor;
+  //position: relative;
+  height: @publicationCardHeight;
+  background-color: @publicationCardBackgroundColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    .header{
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        height: calc(100% - @cardDescripitonMaxHeight);
+  .header {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: calc(100% - @cardDescripitonMaxHeight);
+  }
+
+  .descripiton {
+    background-color: @publicationCardDescripitonColor;
+    height: @cardDescripitonHeight;
+    padding: @cardDescripitonPadding;
+    //position: absolute;
+    //bottom: 0;
+    width: @cardDescripitonWidth;
+    max-height: @cardDescripitonMaxHeight;
+
+    .tag {
+      font-size: @cardDescripitonTagFontSize;
+      font-weight: @cardDescripitonTagFontWeight;
     }
 
-    .descripiton {
-        background-color: @publicationCardDescripitonColor;
-        height: @cardDescripitonHeight;
-        padding: @cardDescripitonPadding;
-        //position: absolute;
-        //bottom: 0;
-        width: @cardDescripitonWidth;
-        max-height: @cardDescripitonMaxHeight;
-
-        .tag {
-            font-size: @cardDescripitonTagFontSize;
-            font-weight: @cardDescripitonTagFontWeight;
-        }
-
-        .text {
-            font-size: @cardDescripitonTextFontSize;
-            font-weight: @cardDescripitonTextFontWeight;
-        }
+    .text {
+      font-size: @cardDescripitonTextFontSize;
+      font-weight: @cardDescripitonTextFontWeight;
     }
+  }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
-    .eea.publication.card {
-        margin: @publicationCardMargin;
+  .eea.publication.card {
+    margin: @publicationCardMargin;
 
-        .descripiton {
-            height: @computerCardDescripitonHeight;
-        }
+    .descripiton {
+      height: @computerCardDescripitonHeight;
     }
   }
+}
