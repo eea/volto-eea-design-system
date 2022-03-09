@@ -8,9 +8,15 @@ export default {
   argTypes: {
     onChange: {
       action: 'Text Area changed',
+      table: {
+        disable: true,
+      },
     },
     onInput: {
       action: 'Input entered',
+      table: {
+        disable: true,
+      },
     },
     placeholder: {
       description: 'placeholder text',
