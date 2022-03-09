@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Dropdown, Image } from 'semantic-ui-react';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 
-
 function Content({ children, ...rest }) {
   return (
     <div {...rest} className={`eea content ${rest.className || ''}`}>
@@ -29,7 +28,7 @@ Content.Actions = ({ children, ...rest }) => (
   </div>
 );
 
-Content.Languages = ({ children, ...rest }) => {
+Content.Languages = function Languages({ children, ...rest }) {
   const [language, setLanguage] = useState(rest.default);
   const onLanguageSelection = (e, data) => {
     const { language } = data;
@@ -61,6 +60,6 @@ Content.Languages = ({ children, ...rest }) => {
       </Dropdown.Menu>
     </Dropdown>
   );
-}
+};
 
 export default Content;

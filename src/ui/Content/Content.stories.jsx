@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Content from './Content';
-import Tag from '../Tag/Tag';
+import Tags from '../Tags/Tags';
 import { Accordion, Button, Icon } from 'semantic-ui-react';
 
 const CONTENT = `
@@ -80,15 +80,15 @@ function AccordionContainer({ ...args }) {
           </Content.Info>
           <Content.Content>{args.content}</Content.Content>
           <Content.Actions>
-            <Tag className="left">
-              <Tag.Title>{args.tagOptions.title}</Tag.Title>
-              <Tag.Tag
+            <Tags className="left">
+              <Tags.Title>{args.tagOptions.title}</Tags.Title>
+              <Tags.Tag
                 className={args.tagOptions.tag.class}
                 href={args.tagOptions.tag.href}
               >
                 {args.tagOptions.tag.category}
-              </Tag.Tag>
-            </Tag>
+              </Tags.Tag>
+            </Tags>
             <Button>
               <Icon name="download"></Icon>
             </Button>
