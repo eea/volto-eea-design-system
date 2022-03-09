@@ -4,7 +4,6 @@
 
 /* All Sizes */
 .ui.container {
-  display: block;
   width: 100%;
   padding-right: @mobilePadding;
   padding-left: @mobilePadding;

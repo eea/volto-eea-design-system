@@ -29,6 +29,6 @@
 
 /* Tags Colors */
 @tagsTagDefaultColor       : @pineGreen;
-@tagsTagTealColor          : @metallicBlue;
+@tagsTagTealColor          : @darkMidnightBlue;
 @tagsTagBlueDarkColor      : @darkCerulean;
 @tagsTagBlueLightColor     : #3c8eb2;
