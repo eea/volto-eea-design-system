@@ -8,17 +8,17 @@
 
 /* Colors */
 @publicationCardBackgroundColor: #BCBEC0;
-@publicationCardDescripitonColor: #3D5265;
+@publicationCardDescriptionColor: #3D5265;
 
-/* Descripiton */
-@cardDescripitonHeight: auto;
-@cardDescripitonMaxHeight: 135px;
-@computerCardDescripitonHeight: auto;
-@cardDescripitonPadding: 20px;
-@cardDescripitonWidth: 100%;
+/* Description */
+@cardDescriptionHeight: auto;
+@cardDescriptionMaxHeight: 135px;
+@computerCardDescriptionHeight: auto;
+@cardDescriptionPadding: 20px;
+@cardDescriptionWidth: 100%;
 
-@cardDescripitonTagFontSize: 12px;
-@cardDescripitonTagFontWeight: 400;
-@cardDescripitonTextFontSize: 16px;
-@cardDescripitonTextFontWeight: 700;
+@cardDescriptionTagFontSize: 12px;
+@cardDescriptionTagFontWeight: 400;
+@cardDescriptionTextFontSize: 16px;
+@cardDescriptionTextFontWeight: 700;
 
