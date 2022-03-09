@@ -1,0 +1,90 @@
+@type: 'extra';
+@element: 'tag';
+
+@import (multiple) '../../theme.config';
+
+/*******************************
+            Tag
+*******************************/
+
+.tag {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: @tagHeight;
+  border-radius: @tagBorderRadius;
+  margin: @tagMargin;
+  background: @tagDefaultColor;
+  font-size: @tagNameFontSize;
+  font-weight: @tagNameFontWeight;
+  line-height: @tagNameLineHeight;
+
+  .icon {
+    width: unset;
+    height: unset;
+    margin: @tagHashtagMargin;
+    font-size: @tagHashtagFontSize;
+    font-weight: @tagNameFontWeight;
+    display: inline-flex;
+    color: @tagNameFontColor;
+  }
+
+  .name {
+    color: @tagNameFontColor;
+    letter-spacing: @tagNameLetterSpacing;
+  }
+}
+
+.tag.pine-green {
+  background: @tagPineGreen;
+  padding: 0.625rem 0.75rem;
+  .icon {
+    color: @tagNameFontColorWithBackground;
+  }
+  .name {
+    color: @tagNameFontColorWithBackground;
+  }
+}
+
+.tag.teal {
+  background: @tagTealColor;
+  padding: 0.625rem 0.75rem;
+  .icon {
+    color: @tagNameFontColorWithBackground;
+  }
+  .name {
+    color: @tagNameFontColorWithBackground;
+  }
+}
+
+.tag.blue-dark {
+  background: @tagBlueDarkColor;
+  padding: 0.625rem 0.75rem;
+  .icon {
+    color: @tagNameFontColorWithBackground;
+  }
+  .name {
+    color: @tagNameFontColorWithBackground;
+  }
+}
+
+.tag.blue-light {
+  background: @tagBlueLightColor;
+  padding: 0.625rem 0.75rem;
+  .icon {
+    color: @tagNameFontColorWithBackground;
+  }
+  .name {
+    color: @tagNameFontColorWithBackground;
+  }
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+}
+
+.loadUIOverrides();

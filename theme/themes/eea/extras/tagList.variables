@@ -1,0 +1,16 @@
+/*******************************
+            Tags
+*******************************/
+
+/* Body */
+@tagsBodyWidth             : 100%;
+
+/* Tags Title */
+@tagsTitleFontColor        : @japaneseIndigo;
+@tagsTitleMargin           : 1rem;
+@tagsFontWeight            : 400;
+@tagsfontName              : @fontName;
+@tagsFontStyle             : @normal;
+@tagsFontSize              : 1.125rem;
+@tagsLineHeight            : 1.312rem;
+@tagsLetterSpacing         : -0.015rem;

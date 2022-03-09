@@ -1,18 +1,17 @@
 @type: 'extra';
-@element: 'tags';
+@element: 'tagList';
 
 @import (multiple) '../../theme.config';
 
 /*******************************
-            Tags
+            Tag
 *******************************/
 
-.eea.tags {
+.tags {
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: right;
   width: @tagsBodyWidth;
-  height: @tagsBodyHeight;
   font-family: @tagsfontName;
   font-style: @tagsFontStyle;
   line-height: @tagsLineHeight;
@@ -27,35 +26,11 @@
     font-size: @tagsFontSize;
   }
 
-  .tag {
+  .tags-content {
+    line-height: @tagsLineHeight;
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: @tagsTagPadding;
-    height: @tagsTagHeight;
-    border-radius: @TagsTagBorderRadius;
-    margin: @tagsTagMargin;
-    background: @tagsTagDefaultColor;
-    .name {
-      text-align: center;
-      font-size: @tagsTagNameFontSize;
-      line-height: @tagsTagNameLineHeight;
-      color: @tagsTagNameFontColor;
-    }
   }
 
-  .tag.teal {
-    background: @tagsTagTealColor;
-  }
-
-  .tag.blue-dark {
-    background: @tagsTagBlueDarkColor;
-  }
-
-  .tag.blue-light {
-    background: @tagsTagBlueLightColor;
-  }
 }
 
 .eea.tags.left {

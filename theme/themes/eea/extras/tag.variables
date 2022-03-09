@@ -1,0 +1,28 @@
+/*******************************
+            Tags
+*******************************/
+
+/* Tags */
+@tagPadding            : 0.625rem 0.75rem;
+@tagHeight             : 1.312rem;
+@tagBorderRadius       : 15px;
+@tagMargin             : 0 0.937rem 0 0;
+
+/* Tag Icon */
+@tagHashtagFontSize    : 0.675rem;
+@tagHashtagMargin      : 0 0.2rem 0 0;
+
+/* Tag text */
+@tagNameFontSize       : 1rem;
+@tagNameFontColor      : @japaneseIndigo;
+@tagNameFontColorWithBackground : #ffffff;
+@tagNameFontWeight     : 500;
+@tagNameLineHeight     : 1.312rem;
+@tagNameLetterSpacing  : -0.015em;
+
+/* Tags Colors */
+@tagDefaultColor       : transparent;
+@tagPineGreen          : @pineGreen;
+@tagTealColor          : @metallicBlue;
+@tagBlueDarkColor      : @darkCerulean;
+@tagBlueLightColor     : #3c8eb2;
