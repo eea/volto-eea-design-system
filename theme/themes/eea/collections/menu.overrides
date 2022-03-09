@@ -14,7 +14,6 @@
   font-size: @paginationFontSize;
 }
 
-
 /* Pagination active item custom border design */
 .ui.pagination.pointing.secondary.menu a.active.item {
   padding: @secondaryPointingItemActiveVerticalPadding
@@ -27,9 +26,10 @@
 /* Tab active item custom border design */
 .ui.secondary.pointing.menu:not(.vertical) a.item {
   padding: @tabSecondaryPointingItemActiveVerticalPadding
-  @secondaryPointingItemHorizontalPadding;
+    @secondaryPointingItemHorizontalPadding;
   margin: @secondaryPointingItemMargin;
 }
+
 .ui.secondary.pointing.menu:not(.vertical) a.active.item,
 .ui.secondary.pointing.menu:not(.vertical) a.item:active {
   padding: @tabSecondaryPointingItemActiveVerticalPadding
