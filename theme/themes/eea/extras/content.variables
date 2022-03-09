@@ -1,34 +1,44 @@
 /*******************************
-            Tags
+            Content
 *******************************/
 
-/* Body */
-@tagsBodyWidth             : 100%;
-@tagsBodyHeight            : 3.125rem;
-@tagsfontName              : @fontName;
-@tagsFontStyle             : @normal;
-@tagsFontWeight            : 500;
-@tagsFontSize              : 1.125rem;
-@tagsLineHeight            : 1rem;
-@tagsLetterSpacing         : -0.015rem;
+/* Content row */
+@contentRowWidth           : 100%;
+@contentRowMobileMargin    : 0;
+@contentRowDesktopMargin   : 1.25rem;
+@contentRowMobilePadding   : 0;
+@contentRowLetterSpacing   : -0.015em;
+@contentFontSize           : 1rem;
+@contentFontWeight         : 400;
+@contentFontStyle          : normal;
 
-/* Tags Title */
-@tagsTitleFontColor        : #808285;
-@tagsTitleMargin           : 2rem;
+/* Content Info */
+@contentInfoHeight         : 1.5rem;
+@contentInfoLineHeight     : 1.5rem;
 
-/* Tags */
-@tagsTagPadding            : 0.625rem 0.75rem;
-@tagsTagHeight             : 2rem;
-@TagsTagBorderRadius       : 15px;
-@tagsTagMargin             : 0 1.4375rem 0 0;
+/* Content Language */
+@contentInfoLangFontSize   : 1.125rem;
+@contentInfoLangFontWeight : bold;
+@contentInfoLangImgPadding : 0;
+@contentInfoLangImgMargin  : 0;
+@contentInfoLangImgWidth   : 1.125rem;
 
-/* Tags Tag text */
-@tagsTagNameFontSize       : 0.7rem;
-@tagsTagNameFontColor      : #ffffff;
-@tagsTagNameLineHeight     : 0.812rem;
+@contentInfoLangItemPadding : 0.125rem 1.25rem;
+@contentInfoItemFontWeight : normal;
+@contentInfoItemFontSize   : 0.75rem;
+@contentInfoItemMarginL    : 0.312rem;
 
-/* Tags Colors */
-@tagsTagDefaultColor       : @pineGreen;
-@tagsTagTealColor          : @metallicBlue;
-@tagsTagBlueDarkColor      : @darkCerulean;
-@tagsTagBlueLightColor     : #3c8eb2;
+
+/* Content content */
+@contentContentLineHeight  : 1.5rem;
+
+/* Content Actions */
+@contentActionPadding      : 0;
+@contentActionButtonMargin : 0 0 0 0.812rem;
+@contentActionButtonFontSize : 1.312rem;
+@contentActionButtonBackground : transparent;
+@contentActionButtonIconMargin : 0;
+
+/* Content Colors */
+@contentInfoTextColor      : @japaneseIndigo;
+@contentContentTextColor   : @black;

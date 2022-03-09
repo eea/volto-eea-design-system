@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Content from './Content';
-import Tags from '../Tags/Tags';
+import TagList from '../TagList/TagList';
+import Tag from '../Tag/Tag';
 import { Accordion, Button, Icon } from 'semantic-ui-react';
 
 const CONTENT = `
@@ -69,10 +70,32 @@ function AccordionContainer({ ...args }) {
         index={0}
         onClick={toggleOpenAccordion}
       >
-        {args.toggle}
+        {args.accordionToggle1}
         <Icon name="chevron down" />
       </Accordion.Title>
       <Accordion.Content active={activeIndex === 0}>
+        {CONTENT}
+      </Accordion.Content>
+      <Accordion.Title
+        active={activeIndex === 1}
+        index={1}
+        onClick={toggleOpenAccordion}
+      >
+        {args.accordionToggle2}
+        <Icon name="chevron down" />
+      </Accordion.Title>
+      <Accordion.Content active={activeIndex === 1}>
+        {CONTENT}
+      </Accordion.Content>
+      <Accordion.Title
+        active={activeIndex === 2}
+        index={2}
+        onClick={toggleOpenAccordion}
+      >
+        {args.toggle}
+        <Icon name="chevron down" />
+      </Accordion.Title>
+      <Accordion.Content active={activeIndex === 2}>
         <Content>
           <Content.Info>
             {args.date}
@@ -80,15 +103,16 @@ function AccordionContainer({ ...args }) {
           </Content.Info>
           <Content.Content>{args.content}</Content.Content>
           <Content.Actions>
-            <Tags className="left">
-              <Tags.Title>{args.tagOptions.title}</Tags.Title>
-              <Tags.Tag
-                className={args.tagOptions.tag.class}
-                href={args.tagOptions.tag.href}
-              >
-                {args.tagOptions.tag.category}
-              </Tags.Tag>
-            </Tags>
+            <TagList className="left">
+              <TagList.Title>{args.tagOptions.title}</TagList.Title>
+              <TagList.Content>
+                {args.tagOptions.tags.map((tag) => [
+                  <Tag className={tag.class} href={tag.href}>
+                    {tag.category}
+                  </Tag>,
+                ])}
+              </TagList.Content>
+            </TagList>
             <Button>
               <Icon name="download"></Icon>
             </Button>
@@ -110,11 +134,16 @@ export const FAQContent = AccordionTemplate.bind({});
 
 FAQContent.args = {
   date: '21 SEP 2020',
+  accordionToggle1: 'Older Versions',
+  accordionToggle2: 'Permalinks',
   toggle: 'What is soil sealing and why is it important to monitor it?',
   content: CONTENT,
   tagOptions: {
-    title: 'Tags',
-    tag: { category: '# land use', href: '#', class: 'teal' },
+    title: 'Tags:',
+    tags: [
+      { category: 'land use', href: '#' },
+      { category: 'land use', href: '#' },
+    ],
   },
   languageOptions: {
     default: 'en',
