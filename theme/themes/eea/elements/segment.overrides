@@ -6,3 +6,13 @@
   display: flex;
   align-items: center;
 }
+
+.profile .ui.segments.raised {
+  width: @computerProfileSectionWidth;
+}
+
+@media only screen and (max-width: @largestMobileScreen) {
+  .profile .ui.segments.raised {
+  width: @mobileProfileSectionWidth;
+}
+}
