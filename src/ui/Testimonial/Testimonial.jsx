@@ -6,8 +6,7 @@ import Pullquote from '../Pullquote/Pullquote';
 import { Grid } from 'semantic-ui-react';
 
 Testimonial.propTypes = {
-  title: PropTypes.string,
-  info: PropTypes.string,
+  title: PropTypes.string,  
 };
 
 function Testimonial({ children, ...rest }) {
