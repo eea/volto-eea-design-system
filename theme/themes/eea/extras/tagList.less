@@ -1,0 +1,46 @@
+@type: 'extra';
+@element: 'tagList';
+
+@import (multiple) '../../theme.config';
+
+/*******************************
+            Tag
+*******************************/
+
+.tags {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  width: @tagsBodyWidth;
+  font-family: @tagsfontName;
+  font-style: @tagsFontStyle;
+  line-height: @tagsLineHeight;
+  letter-spacing: @tagsLetterSpacing;
+
+  .tags-title {
+    text-align: right;
+    height: @tagsLineHeight;
+    color: @tagsTitleFontColor;
+    margin-right: @tagsTitleMargin;
+    font-weight: @tagsFontWeight;
+    font-size: @tagsFontSize;
+  }
+
+  .tags-content {
+    line-height: @tagsLineHeight;
+    display: inline-flex;
+  }
+
+}
+
+.eea.tags.left {
+  justify-content: left;
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+}
+
+.loadUIOverrides();

@@ -1,23 +1,13 @@
 import React from 'react';
+import { Icon } from 'semantic-ui-react';
 
 function Tag({ children, ...rest }) {
   return (
-    <div {...rest} className={`eea tags ${rest.className || ''}`}>
-      <div>{children}</div>
-    </div>
+    <a {...rest} className={`tag ${rest.className || ''}`}>
+      <Icon className={`icon`} name="hashtag" />
+      <span className="name">{children}</span>
+    </a>
   );
 }
-
-Tag.Title = ({ children, ...rest }) => (
-  <span className="tags-title" {...rest}>
-    {children}
-  </span>
-);
-
-Tag.Tag = ({ children, ...rest }) => (
-  <a {...rest} className={`tag ${rest.className || ''}`}>
-    <span className="name">{children}</span>
-  </a>
-);
 
 export default Tag;

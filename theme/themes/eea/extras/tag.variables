@@ -2,33 +2,27 @@
             Tags
 *******************************/
 
-/* Body */
-@tagsBodyWidth             : 100%;
-@tagsBodyHeight            : 3.125rem;
-@tagsfontName              : @fontName;
-@tagsFontStyle             : @normal;
-@tagsFontWeight            : 500;
-@tagsFontSize              : 1.125rem;
-@tagsLineHeight            : 1rem;
-@tagsLetterSpacing         : -0.015rem;
-
-/* Tags Title */
-@tagsTitleFontColor        : #808285;
-@tagsTitleMargin           : 2rem;
-
 /* Tags */
-@tagsTagPadding            : 0.625rem 0.75rem;
-@tagsTagHeight             : 2rem;
-@TagsTagBorderRadius       : 15px;
-@tagsTagMargin             : 0 1.4375rem 0 0;
+@tagPadding            : 0.625rem 0.75rem;
+@tagHeight             : 1.312rem;
+@tagBorderRadius       : 15px;
+@tagMargin             : 0 0.937rem 0 0;
 
-/* Tags Tag text */
-@tagsTagNameFontSize       : 0.7rem;
-@tagsTagNameFontColor      : #ffffff;
-@tagsTagNameLineHeight     : 0.812rem;
+/* Tag Icon */
+@tagHashtagFontSize    : 0.675rem;
+@tagHashtagMargin      : 0 0.2rem 0 0;
+
+/* Tag text */
+@tagNameFontSize       : 1rem;
+@tagNameFontColor      : @japaneseIndigo;
+@tagNameFontColorWithBackground : #ffffff;
+@tagNameFontWeight     : 500;
+@tagNameLineHeight     : 1.312rem;
+@tagNameLetterSpacing  : -0.015em;
 
 /* Tags Colors */
-@tagsTagDefaultColor       : @pineGreen;
-@tagsTagTealColor          : @metallicBlue;
-@tagsTagBlueDarkColor      : @darkCerulean;
-@tagsTagBlueLightColor     : #3c8eb2;
+@tagDefaultColor       : transparent;
+@tagPineGreen          : @pineGreen;
+@tagTealColor          : @metallicBlue;
+@tagBlueDarkColor      : @darkCerulean;
+@tagBlueLightColor     : #3c8eb2;

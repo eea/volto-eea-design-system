@@ -10,27 +10,16 @@ export default {
       description: 'Tag main text',
       type: { name: 'string', required: true },
     },
-    direction: {
+    background: {
       control: { type: 'select' },
-      options: ['right', 'left'],
-      description: 'tag container direction',
+      options: ['default', 'pine-green', 'teal', 'blue-dark', 'blue-light'],
+      description: 'tag background',
       table: {
         type: {
           summary: 'string',
         },
         defaultValue: {
-          summary: 'right',
-        },
-      },
-    },
-    tags: {
-      description: 'category tag',
-      table: {
-        type: {
-          summary: 'Object',
-        },
-        defaultValue: {
-          summary: ' "" ',
+          summary: 'default',
         },
       },
     },
@@ -38,23 +27,12 @@ export default {
 };
 
 export const Default = (args) => (
-  <Tag className={args.direction}>
-    <Tag.Title>{args.title}</Tag.Title>
-    {args.tags.map((tag) => [
-      <Tag.Tag className={tag.class} href={tag.href}>
-        {tag.category}
-      </Tag.Tag>,
-    ])}
+  <Tag className={args.background} href={args.href}>
+    {args.title}
   </Tag>
 );
 
 Default.args = {
-  title: 'tags:',
-  direction: 'right',
-  tags: [
-    { category: '# subcategory 1', href: '#' },
-    { category: '# subcategory 2', href: '#', class: 'teal' },
-    { category: '# subcategory 3', href: '#', class: 'blue-dark' },
-    { category: '# subcategory 4', href: '#', class: 'blue-light' },
-  ],
+  title: 'subcategory 1',
+  link: '/#',
 };
