@@ -1,5 +1,6 @@
 import React from 'react';
 import RelatedContent from './RelatedContent';
+import { Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Related Content',
@@ -20,9 +21,16 @@ export default {
 };
 
 const Template = (args) => (
-  <div>
-    <RelatedContent {...args}></RelatedContent>
-  </div>
+  <Container>
+    <RelatedContent>
+      <RelatedContent.Grid
+        publicationCards={args.publicationCards}
+      ></RelatedContent.Grid>
+      <RelatedContent.Button showButton={args.showButton}>
+        {args.buttonText}
+      </RelatedContent.Button>
+    </RelatedContent>
+  </Container>
 );
 
 export const DefaultEven = Template.bind({});
@@ -53,6 +61,8 @@ DefaultEven.args = {
       href: '/#',
     },
   ],
+  buttonText: 'See All',
+  showButton: true,
 };
 
 export const DefaultOdd = Template.bind({});
@@ -77,4 +87,6 @@ DefaultOdd.args = {
       href: '/#',
     },
   ],
+  buttonText: 'See All',
+  showButton: true,
 };
