@@ -1,27 +1,15 @@
 import React from 'react';
 import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react';
-import loaderImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/loaderImage.png';
 
 export default {
   title: 'Components/Loader',
   component: Loader,
   argTypes: {
-    image: {
-      description: "path or url of loader's image",
+    content: {
+      description: 'loader primary content',
       table: {
         type: {
-          summary: 'string',
-        },
-        defaultValue: {
-          summary: '',
-        },
-      },
-    },
-    text: {
-      description: 'text to appear in loader',
-      table: {
-        type: {
-          summary: 'string',
+          summary: 'custom',
         },
         defaultValue: {
           summary: '',
@@ -34,10 +22,7 @@ export default {
 const Template = (args) => (
   <Segment>
     <Dimmer active>
-      <Loader>
-        <Image src={args.image} alt="EEA loader logo" />
-        <p>{args.text}</p>
-      </Loader>
+      <Loader {...args} />
     </Dimmer>
 
     <Image
@@ -49,6 +34,5 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  image: loaderImage,
-  text: 'Loading...',
+  content: 'Loading...',
 };

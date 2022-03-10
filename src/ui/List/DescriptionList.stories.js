@@ -16,13 +16,6 @@ export default {
         defaultValue: { summary: false },
       },
     },
-    selection: {
-      description: 'a selection list formats list items as possible choices',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
     animated: {
       description:
         'a list can animate to set the current item apart from the list',
@@ -55,21 +48,9 @@ export default {
   },
 };
 
-function DescriptionList(
-  items,
-  floated,
-  selection,
-  animated,
-  divided,
-  horizontal,
-) {
+function DescriptionList(items, floated, animated, divided, horizontal) {
   return (
-    <List
-      selection={selection}
-      animated={animated}
-      divided={divided}
-      horizontal={horizontal}
-    >
+    <List animated={animated} divided={divided} horizontal={horizontal}>
       {items.map((item, index) => (
         <List.Item key={index}>
           <List.Content>
@@ -88,7 +69,6 @@ export const Default = (args) => {
   return DescriptionList(
     args.items,
     args.floated,
-    args.selection,
     args.animated,
     args.divided,
     args.horizontal,
@@ -97,7 +77,6 @@ export const Default = (args) => {
 
 Default.args = {
   floated: 'right',
-  selection: false,
   animated: false,
   divided: false,
   horizontal: false,
