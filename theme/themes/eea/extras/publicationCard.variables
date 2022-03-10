@@ -4,7 +4,9 @@
 
 @publicationCardtextColor: @white;
 @publicationCardMargin: 10px 0;
-@publicationCardHeight: 268px;
+@publicationCardMobileHeight: 286px;
+@publicationCardTabletHeight: 352px;
+@publicationCardComputerHeight: 268px;
 
 /* Colors */
 @publicationCardBackgroundColor: #BCBEC0;

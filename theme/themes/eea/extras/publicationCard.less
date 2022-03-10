@@ -9,8 +9,8 @@
 
 .eea.publication.card {
     color: @publicationCardtextColor;
-    //position: relative;
-    height: @publicationCardHeight;
+    margin: @publicationCardMargin;
+    height: @publicationCardMobileHeight;
     background-color: @publicationCardBackgroundColor;
     display: flex;
     flex-direction: column;
@@ -34,8 +34,6 @@
         background-color: @publicationCardDescriptionColor;
         height: @cardDescriptionHeight;
         padding: @cardDescriptionPadding;
-        //position: absolute;
-        //bottom: 0;
         width: @cardDescriptionWidth;
         max-height: @cardDescriptionMaxHeight;
 
@@ -51,9 +49,20 @@
     }
 }
 
+@media only screen and (min-width: @tabletBreakpoint) {
+    .eea.publication.card {
+        height: @publicationCardTabletHeight;
+
+        .description {
+            height: @computerCardDescriptionHeight;
+        }
+    }
+  }
+
 @media only screen and (min-width: @computerBreakpoint) {
     .eea.publication.card {
-        margin: @publicationCardMargin;
+
+        height: @publicationCardComputerHeight;
 
         .description {
             height: @computerCardDescriptionHeight;
