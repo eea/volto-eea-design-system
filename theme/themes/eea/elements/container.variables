@@ -64,4 +64,3 @@
 
 /* Section */
 @profileSectionPadding: 0px;
-@profileSectionOverflow: auto;

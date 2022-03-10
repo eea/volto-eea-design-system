@@ -19,7 +19,6 @@ div.ui.container {
 // TODO fix issue of large container padding and then remove this fix
 #toolbar .pastanaga-menu .ui.container {
   padding: @profileSectionPadding;
-  overflow: @profileSectionOverflow;
 }
 
 @media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
