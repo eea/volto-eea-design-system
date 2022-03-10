@@ -33,7 +33,7 @@
 /* Action Button */
 @actionButtonColor: @white;
 @actionButtonBackground: @darkCyan;
-@actionButtonBackgroundHover: @metallicBlue;
+@actionButtonBackgroundHover: @darkMidnightBlue;
 @actionButtonBackgroundActive: @pineGreen;
 
 /* Text Button */
@@ -290,6 +290,10 @@
 /* Basic Group */
 @basicGroupBorder: @basicBorderSize solid @borderColor;
 @basicGroupBoxShadow: none;
+
+/* Circular */
+@circularButtonPadding: 0.75em 0.25em 0;
+@circularButtonIconFontSize: 2rem;
 
 /*-------------------
       Variations
