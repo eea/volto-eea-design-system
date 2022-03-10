@@ -15,8 +15,15 @@ export default {
         defaultValue: { summary: '' },
       },
     },
-    descripiton: {
+    description: {
       description: 'publication description',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: '' },
+      },
+    },
+    href: {
+      description: 'publication link url',
       table: {
         type: { summary: 'string' },
         defaultValue: { summary: '' },
@@ -31,23 +38,25 @@ const Template = (args) => (
       image_url={args.image ? imageUrl : null}
       image={args.image}
     />
-    <PublicationCard.Info descripiton={args.descripiton} tag={args.tag} />
+    <PublicationCard.Info description={args.description} tag={args.tag} />
   </PublicationCard>
 );
 
 export const Default = Template.bind({});
 Default.args = {
   tag: 'Publication',
-  descripiton:
+  description:
     'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+  href: '/#',
 };
 
 export const PublicationCardWithImage = Template.bind({});
 PublicationCardWithImage.args = {
   tag: 'Publication',
-  descripiton:
+  description:
     'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
   image: true,
+  href: '/#',
 };
 PublicationCardWithImage.argTypes = {
   image: {

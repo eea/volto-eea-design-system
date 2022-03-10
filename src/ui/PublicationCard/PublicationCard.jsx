@@ -1,7 +1,11 @@
 import React from 'react';
 
 function PublicationCard({ children, ...rest }) {
-  return <div className="eea publication card">{children}</div>;
+  return (
+    <div className="eea publication card">
+      <a href={rest.href}>{children}</a>
+    </div>
+  );
 }
 
 PublicationCard.Header = ({ children, ...rest }) => (
@@ -14,9 +18,9 @@ PublicationCard.Header = ({ children, ...rest }) => (
 );
 
 PublicationCard.Info = ({ children, ...rest }) => (
-  <div className="descripiton">
+  <div className="description">
     <div className="tag">#{rest.tag}</div>
-    <p className="text">{rest.descripiton}</p>
+    <p className="text">{rest.description}</p>
   </div>
 );
 
