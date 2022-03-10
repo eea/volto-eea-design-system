@@ -46,23 +46,8 @@ function RelatedContent({ publicationCards }) {
               ))}
         </Grid>
 
-        {/* mobile grid */}
-        <Grid className="mobile only" columns={1}>
-          {cards.map((item, index) => (
-            <Grid.Column key={index}>
-              <PublicationCard {...item}>
-                <PublicationCard.Header></PublicationCard.Header>
-                <PublicationCard.Info
-                  description={item.description}
-                  tag={item.tag}
-                ></PublicationCard.Info>
-              </PublicationCard>
-            </Grid.Column>
-          ))}
-        </Grid>
-
-        {/* tablet grid */}
-        <Grid className="tablet only">
+        {/* tablet & mobile grid */}
+        <Grid className="tablet only mobile only">
           {cards.map((item, index) => (
             <Grid.Column
               key={index}
@@ -71,6 +56,7 @@ function RelatedContent({ publicationCards }) {
                   ? '12'
                   : '6'
               }
+              mobile={12}
             >
               <PublicationCard {...item}>
                 <PublicationCard.Header></PublicationCard.Header>
