@@ -11,6 +11,7 @@
     color: @publicationCardtextColor;
     margin: @publicationCardMargin;
     height: @publicationCardMobileHeight;
+    width: @publicationCardWidth;
     background-color: @publicationCardBackgroundColor;
     display: flex;
     flex-direction: column;
@@ -27,12 +28,12 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        height: calc(100% - @cardDescriptionMaxHeight);
+        height: calc(100% - @mobileCardDescriptionHeight);
     }
 
     .description {
         background-color: @publicationCardDescriptionColor;
-        height: @cardDescriptionHeight;
+        height: @mobileCardDescriptionHeight;
         padding: @cardDescriptionPadding;
         width: @cardDescriptionWidth;
         max-height: @cardDescriptionMaxHeight;
@@ -45,6 +46,11 @@
         .text {
             font-size: @cardDescriptionTextFontSize;
             font-weight: @cardDescriptionTextFontWeight;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
     }
 }
@@ -53,8 +59,12 @@
     .eea.publication.card {
         height: @publicationCardTabletHeight;
 
+        .header {
+            height: calc(100% - @tabletCardDescriptionHeight);
+        }
+
         .description {
-            height: @computerCardDescriptionHeight;
+            height: @tabletCardDescriptionHeight;
         }
     }
   }
@@ -63,6 +73,10 @@
     .eea.publication.card {
 
         height: @publicationCardComputerHeight;
+
+        .header {
+            height: calc(100% - @computerCardDescriptionHeight);
+        }
 
         .description {
             height: @computerCardDescriptionHeight;

@@ -7,15 +7,17 @@
 @publicationCardMobileHeight: 286px;
 @publicationCardTabletHeight: 352px;
 @publicationCardComputerHeight: 268px;
+@publicationCardWidth: auto;
 
 /* Colors */
 @publicationCardBackgroundColor: #BCBEC0;
 @publicationCardDescriptionColor: #3D5265;
 
 /* Description */
-@cardDescriptionHeight: auto;
 @cardDescriptionMaxHeight: 135px;
-@computerCardDescriptionHeight: auto;
+@mobileCardDescriptionHeight: 135px;
+@tabletCardDescriptionHeight: 105px;
+@computerCardDescriptionHeight: 108px;
 @cardDescriptionPadding: 20px;
 @cardDescriptionWidth: 100%;
 
