@@ -138,6 +138,18 @@
 @hugeSize        : (28 / @emSize);
 @massiveSize     : (32 / @emSize);
 
+/*-------------------
+  Paddings & Margins
+--------------------*/
+@squareTiny      : @tiny @tiny;
+@squareSmall     : @small @small;
+@squareMedium    : @medium @medium;
+@squareLarge     : @large @large;
+
+@rectangleTiny   : @tiny @small;
+@rectangleSmall  : @small @medium;
+@rectangleMedium : @medium @large;
+@rectangleLarge  : @large @big;
 
 /*-------------------
         Page
@@ -548,7 +560,7 @@
 @unselectedTextColor         : rgba(0, 0, 0, 0.4);
 @hoveredTextColor            : rgba(0, 0, 0, 0.8);
 @pressedTextColor            : rgba(0, 0, 0, 0.9);
-@selectedTextColor           : @white;
+@selectedTextColor           : @lightGrey;
 @disabledTextColor           : rgba(0, 0, 0, 0.2);
 
 @invertedTextColor           : rgba(255, 255, 255, 0.9);

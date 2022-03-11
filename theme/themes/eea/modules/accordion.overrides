@@ -12,19 +12,19 @@
     justify-content: space-between;
     border-bottom: @titleBorderBottom;
 
-    .icon {
+    i {
       flex-shrink: 0;
     }
 
     &:hover {
       color: @titleColorHover;
 
-      i.icon {
+      i {
         color: @iconColorHover;
       }
     }
 
-    i.icon {
+    i {
       display: flex;
       align-items: center;
       order: @iconOrder;
@@ -34,6 +34,7 @@
 
       &:before {
         content: @iconInactive;
+        font-size: 3rem;
       }
     }
   }
@@ -43,7 +44,7 @@
     background-color: @activeTitleBackground;
     color: @activeTitleColor;
 
-    i.icon {
+    i {
       color: @iconColorActive;
 
       &:before {
