@@ -223,7 +223,7 @@
     #search-box {
       position: relative;
       z-index: 99999;
-      overflow: scroll;
+      overflow: auto;
       width: 100%;
       height: @mobilePopUpHeight;
       background: @searchBoxBackgroundGradient;
@@ -432,7 +432,7 @@ Header Actions - Burger and Search Icons
 #mega-menu {
   position: relative;
   z-index: 9999;
-  overflow: scroll;
+  overflow: auto;
   width: 100%;
   background: @megaMenuBackgroundGradient;
 
@@ -472,7 +472,7 @@ Header Actions - Burger and Search Icons
 
   nav ul li {
     display: inline-block;
-    font-size: @mobileMegaMenuFontSize;
+    font-size: @megaMenuFontSize;
   }
 
   nav a {
@@ -587,7 +587,7 @@ Header Actions - Burger and Search Icons
     nav {
       .menu {
         width: 33.33%;
-        font-size: @tabletMegaMenuFontSize;
+        font-size: @megaMenuFontSize;
         > li {
           width: 100%;
           display: flex;
@@ -598,7 +598,7 @@ Header Actions - Burger and Search Icons
           &.hasSubMenu:after {
             content: @megaMenuAfterIcon;
             font-family: 'Icons';
-            font-size: @tabletMegaMenuIconAfterFontSize;
+            //font-size: @tabletMegaMenuIconAfterFontSize;
             color: @white;
           }
           a {
@@ -624,7 +624,7 @@ Header Actions - Burger and Search Icons
           &.hasSubMenu:after {
             content: @megaMenuAfterIcon;
             font-family: 'Icons';
-            font-size: @tabletMegaMenuIconAfterFontSize;
+            //font-size: @tabletMegaMenuIconAfterFontSize;
             color: @megaMenuIconAfterColor;
           }
           a {
@@ -656,7 +656,7 @@ Header Actions - Burger and Search Icons
       margin-top: @computerPopupMarginTop;
       .menu {
         > li {
-          font-size: @computerMegaMenuFirstFontSize;
+          //font-size: @computerMegaMenuFirstFontSize;
           margin-bottom: @computerMegaMenuMarginBottom;
           &.hasSubMenu:after {
             font-size: @computerMegaMenuIconAfterFontSize;
@@ -664,14 +664,14 @@ Header Actions - Burger and Search Icons
         }
       }
       .sub.second li {
-        font-size: @computerMegaMenuSecondFontSize;
+        //font-size: @computerMegaMenuSecondFontSize;
         margin-bottom: @computerMegaMenuMarginBottom;
         &.hasSubMenu:after {
           font-size: @computerMegaMenuIconAfterFontSize;
         }
       }
       .sub.third li {
-        font-size: @computerMegaMenuThirdFontSize;
+        //font-size: @computerMegaMenuThirdFontSize;
         margin-bottom: @computerMegaMenuMarginBottom;
       }
     }

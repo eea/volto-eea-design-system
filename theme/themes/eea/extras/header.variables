@@ -99,9 +99,9 @@
 @computerActionsBoxWidth: 72px;
 
 /* Mega menu and Search popup */
-@mobilePopupMarginTop   : 50px;
-@tabletPopupMarginTop   : 100px;
-@computerPopupMarginTop : 200px;
+@mobilePopupMarginTop   : 5vh;
+@tabletPopupMarginTop   : 10vh;
+@computerPopupMarginTop : 20vh;
 
 /* Mega menu */
 @megaMenuBackgroundGradient: linear-gradient(166.78deg, @darkCerulean 39.52%, @darkCyan 118.9%);;
@@ -117,17 +117,19 @@
 
 @megaMenuLiAlignItems           : center;
 
-@mobileMegaMenuMarginBottom     : 0.5rem;
-@tabletMegaMenuMarginBottom     : 1rem;
-@computerMegaMenuMarginBottom   : 2rem;
+@mobileMegaMenuMarginBottom     : 0.25em;
+@tabletMegaMenuMarginBottom     : 0.4em;
+@computerMegaMenuMarginBottom   : 0.6em;
 
 // Font sizes and line heights
-@mobileMegaMenuFontSize         : 1.125rem;
-@tabletMegaMenuFontSize         : @h1;
+@megaMenuFontSize: ~"min(max(1.125rem, 3.5vw), 2.5rem)";
 
-@computerMegaMenuFirstFontSize  : 3rem;
-@computerMegaMenuSecondFontSize : 2.5rem;
-@computerMegaMenuThirdFontSize  : 2.25rem;
+////////@mobileMegaMenuFontSize         : 1.125rem;
+////////@tabletMegaMenuFontSize         : @h1;
+
+////////@computerMegaMenuFirstFontSize  : 3rem;
+////////@computerMegaMenuSecondFontSize : 2.5rem;
+////////@computerMegaMenuThirdFontSize  : 2.25rem;
 
 @megaMenuLineHeight             : 1.2;
 

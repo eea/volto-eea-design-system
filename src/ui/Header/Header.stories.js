@@ -36,6 +36,7 @@ const logoProps = {
   title: 'Site',
   alt: 'European Environment Agency',
   url: 'https://eea.europa.eu',
+  id: 'logo',
   src: LogoImage,
 };
 
@@ -312,20 +313,22 @@ const Template = (args) => {
               <Image src={globeIcon} alt="language dropdown globe icon"></Image>
             }
           >
-            {languages.map((item, index) => (
-              <Dropdown.Item
-                key={index}
-                text={
-                  <span>
-                    {item.name}
-                    <span className="country-code">
-                      {item.code.toUpperCase()}
+            <div className="wrapper">
+              {languages.map((item, index) => (
+                <Dropdown.Item
+                  key={index}
+                  text={
+                    <span>
+                      {item.name}
+                      <span className="country-code">
+                        {item.code.toUpperCase()}
+                      </span>
                     </span>
-                  </span>
-                }
-                onClick={() => setLanguage(item.code)}
-              ></Dropdown.Item>
-            ))}
+                  }
+                  onClick={() => setLanguage(item.code)}
+                ></Dropdown.Item>
+              ))}
+            </div>
           </Header.TopDropdownMenu>
         </Header.TopHeader>
         <Header.Main
