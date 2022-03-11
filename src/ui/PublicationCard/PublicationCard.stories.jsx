@@ -35,13 +35,14 @@ export default {
 
 const Template = (args) => (
   <Container>
-  <PublicationCard {...args}>
-    <PublicationCard.Header
-      image_url={args.image ? imageUrl : null}
-      image={args.image}
-    />
-    <PublicationCard.Info description={args.description} tag={args.tag} />
-  </PublicationCard></Container>
+    <PublicationCard {...args}>
+      <PublicationCard.Header
+        image_url={args.image ? imageUrl : null}
+        image={args.image}
+      />
+      <PublicationCard.Info description={args.description} tag={args.tag} />
+    </PublicationCard>
+  </Container>
 );
 
 export const Default = Template.bind({});
