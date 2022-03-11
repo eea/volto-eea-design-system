@@ -20,7 +20,7 @@ PublicationCard.Header = ({ children, ...rest }) => (
 PublicationCard.Info = ({ children, ...rest }) => (
   <div className="description">
     <div className="tag">#{rest.tag}</div>
-    <p className="text">{rest.description}</p>
+    <div className="text">{rest.description}</div>
   </div>
 );
 

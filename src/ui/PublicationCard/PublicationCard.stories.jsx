@@ -1,5 +1,6 @@
 import React from 'react';
 import PublicationCard from './PublicationCard';
+import { Container } from 'semantic-ui-react';
 
 const imageUrl =
   'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini';
@@ -33,13 +34,14 @@ export default {
 };
 
 const Template = (args) => (
+  <Container>
   <PublicationCard {...args}>
     <PublicationCard.Header
       image_url={args.image ? imageUrl : null}
       image={args.image}
     />
     <PublicationCard.Info description={args.description} tag={args.tag} />
-  </PublicationCard>
+  </PublicationCard></Container>
 );
 
 export const Default = Template.bind({});
@@ -47,6 +49,14 @@ Default.args = {
   tag: 'Publication',
   description:
     'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+  href: '/#',
+};
+
+export const DefaultWithLongDescription = Template.bind({});
+DefaultWithLongDescription.args = {
+  tag: 'Publication',
+  description:
+    'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
   href: '/#',
 };
 
