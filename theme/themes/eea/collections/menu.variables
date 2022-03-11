@@ -247,10 +247,10 @@
 @secondaryPointingActiveBorderWidth: @3px;
 @secondaryPointingBorderColor: @midGray;
 @secondaryPointingItemMargin: 0 1.25rem;
-@secondaryPointingItemVerticalPadding: @relativeTiny;
+@secondaryPointingItemVerticalPadding: @medium;
 @secondaryPointingItemActiveVerticalPadding: unit((@relativeTiny - @3px), rem);
 @tabSecondaryPointingItemActiveVerticalPadding: unit((@relativeTiny), rem);
-@secondaryPointingItemHorizontalPadding: 0;
+@secondaryPointingItemHorizontalPadding: @large;
 // Pastanaga custom
 @secondaryPointingItemTextTransform: uppercase;
 
