@@ -26,11 +26,11 @@
   /* Icon align fix */
   > div > i.icon,
   i.icons {
-    height: 25px;
-    width: 100%;
-    margin-right: 0;
-    font-size: 22px;
-    margin-top: -17px;
+    height: @inpageNavigationIconHeight;
+    width: @inpageNavigationIconWidth;
+    margin-right: @inpageNavigationIconMarginRight;
+    font-size: @inpageNavigationIconFontSize;
+    margin-top: @inpageNavigationIconMarginTop;
   }
 
   &.hidden {
@@ -52,8 +52,8 @@
     font-size: @computerNavFontSize;
   }
   .text {
-    height: 38%;
-    margin-top: -10px;
-    font-size: 16px;
+    height: @inpageNavigationTextHeight;
+    margin-top: @inpageNavigationTextMarginTop;
+    font-size: @inpageNavigationTextFontSize;
   }
 }

@@ -19,3 +19,16 @@
 /* Font Sizes */
 @tabletNavIconFontSize: 1.313rem;
 @computerNavFontSize  : 14px;
+
+/* Desktop Icon */
+@inpageNavigationIconHeight : 25px;
+@inpageNavigationIconWidth : 100%;
+@inpageNavigationIconMarginRight : 0;
+@inpageNavigationIconFontSize : 22px;
+@inpageNavigationIconMarginTop : -17px;
+
+
+/* Text */
+@inpageNavigationTextHeight: 38%;
+@inpageNavigationTextMarginTop : -10px;
+@inpageNavigationTextFontSize : 16px;
