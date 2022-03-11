@@ -42,7 +42,7 @@
 @headerBorder: 1px solid @secondaryColor;
 @headerDivider: none;
 @headerBackground: @white;
-@headerAlign: inherit;
+@headerAlign: center;
 @headerVerticalAlign: bottom;
 @headerColor: @deepBlue;
 @headerVerticalPadding: @relativeSmall;

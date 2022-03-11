@@ -7,6 +7,7 @@
 --------------------*/
 
 @fontName          : 'Roboto';
+@secondaryFontName : 'Archivo';
 @fontSmoothing     : antialiased;
 
 @headerFont        : @fontName, Arial, 'Helvetica Neue', Helvetica, sans-serif;
@@ -55,14 +56,16 @@
 @primaryColor         : @darkCerulean;
 @secondaryColor       : @pineGreen;
 
-@lightPrimaryColor    : @steelBlue;
-@lightSecondaryColor  : @pearlAqua;
+@lightPrimaryColor    : @darkCyan;
+@lightSecondaryColor  : @mediumPersianBlue;
+
+@darkPrimaryColor     : @bottleGreen;
+@darkSecondaryColor   : @darkMidnightBlue;
 
 /*--------------
   Page Heading
 ---------------*/
 
-@lightSecondaryColor : @lightBlack;
 @headerLineHeight : 1.25;
 @headerFontWeight : 700;
 
@@ -77,13 +80,16 @@
    Form Input
 ---------------*/
 /* Max width for inputs with no fluid class */
-@inputMaxWidth: 400px;
+@inputMaxWidth: 360px;
+/* Min width for inputs with no fluid class */
+@mobileInputMinWidth: 100%;
+@tabletInputMinWidth: 360px;
 
 /* This adjusts the default form input across all elements */
 @inputBackground        : @white;
 @inputVerticalPadding   : @relative12px;
 /* This adjusts the default form input across all elements */
-@inputHorizontalPadding : 0;
+@inputHorizontalPadding : @relative18px;
 @inputPadding           : @inputVerticalPadding @inputHorizontalPadding;
 
 /* Input Text Color */
@@ -100,10 +106,10 @@
 --------------------*/
 
 /* Used on inputs, textarea etc */
-@focusedFormBorderColor: #85B7D9;
+@focusedFormBorderColor: @secondaryColor;
 
 /* Used on dropdowns, other larger blocks */
-@focusedFormMutedBorderColor: #96C8DA;
+@focusedFormMutedBorderColor: @secondaryColor;
 
 /*-------------------
         Sizes
@@ -142,7 +148,7 @@
 
 @lineHeight          : 1.5;
 @mobileLineHeight    : 1.5;
-@textColor           : rgba(0, 0, 0, 0.87);
+@textColor           : rgba(0, 0, 0, 1);
 
 /*-------------------
       Paragraph
@@ -183,6 +189,7 @@
 @thumbHoverBackground: rgba(128, 135, 139, 0.8);
 
 /* Inverted */
+@statisticInvertedBackground: @bottleGreen;
 @trackInvertedBackground: rgba(255, 255, 255, 0.1);
 @thumbInvertedBackground: rgba(255, 255, 255, 0.25);
 @thumbInvertedInactiveBackground: rgba(255, 255, 255, 0.15);
@@ -275,11 +282,11 @@
 /*---  EEA Colors  ---*/
 
 // Green Colors - Darker to lighter
-@metallicBlue     : #2E6173;
+@bottleGreen      : #00665A;
 @pineGreen        : #007B6C;
 @darkCyan         : #00928F;
 @pearlAqua        : #74CBC8;
-@powderBlue       : #AEDFE8; 
+@powderBlue       : #AEDFE8;
 
 // Blue Colors - Darker to lighter
 @darkMidnightBlue   : #0A3D61;
@@ -304,8 +311,8 @@
 
 
 /*---  Colors  ---*/
-@orange           : #FF9933;
-@yellow           : #F2EB49; 
+@orange           : #EBA33D;
+@yellow           : #F2EB49;
 @olive            : #78AB66;
 @green            : @pineGreen;
 @teal             : #00928F;
@@ -399,12 +406,12 @@
 @sidebarToggleButtonHighlightColor: @grey;
 
 /*--- Progress Colors ---*/
-@progressBarFrom0to30    : #75C9DB;
-@progressBarFrom30to40   : #0065A4;
-@progressBarFrom40to60   : #0065A4;
-@progressBarFrom60to70   : #00928F;
-@progressBarFrom70to90   : #00928F;
-@progressBarFrom90to100  : #007B6C;
+@progressBarFrom0to30    : @midBlue;
+@progressBarFrom30to40   : @mediumPersianBlue;
+@progressBarFrom40to60   : @mediumPersianBlue;
+@progressBarFrom60to70   : @darkCyan;
+@progressBarFrom70to90   : @darkCyan;
+@progressBarFrom90to100  : @pineGreen;
 
 /*-------------------
      Alpha Colors
@@ -459,7 +466,7 @@
 
 /* Negative */
 @negativeColor           : @red;
-@negativeBackgroundColor : #FEEFEF;
+@negativeBackgroundColor : @white;
 @negativeBorderColor     : @red; //#FEEFEF;
 @negativeHeaderColor     : @red;
 @negativeTextColor       : @red;
@@ -541,7 +548,7 @@
 @unselectedTextColor         : rgba(0, 0, 0, 0.4);
 @hoveredTextColor            : rgba(0, 0, 0, 0.8);
 @pressedTextColor            : rgba(0, 0, 0, 0.9);
-@selectedTextColor           : @white;
+@selectedTextColor           : rgba(0, 0, 0, 0.95);
 @disabledTextColor           : rgba(0, 0, 0, 0.2);
 
 @invertedTextColor           : rgba(255, 255, 255, 0.9);

@@ -17,7 +17,7 @@
 
 /* Devices */
 @mobileMinimumGutter: 0em;
-@mobileWidth: auto;
+@mobileWidth: 100%;
 @mobileGutter: 1rem;
 
 @tabletMinimumGutter: (@emSize  * 1);
@@ -64,4 +64,3 @@
 
 /* Section */
 @profileSectionPadding: 0px;
-@profileSectionOverflow: auto;

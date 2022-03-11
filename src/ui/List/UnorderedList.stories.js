@@ -14,7 +14,7 @@ export default {
       },
     },
     divided: {
-      description: 'a list can show divisions between conten',
+      description: 'a list can show divisions between content',
       table: {
         type: { summary: 'boolean' },
         defaultValue: { summary: false },
@@ -45,18 +45,10 @@ function UnorderedList(animated, divided, horizontal, items) {
       divided={divided}
       horizontal={horizontal}
     >
-      {items.map((item, index) => (
-        <List.Item key={index}>
-          {item.content}
-          <List.List role="list">
-            {item.subList.map((sub, subIndex) => (
-              <List.Item key={subIndex} as="a" role="listitem">
-                {sub.content}
-              </List.Item>
-            ))}
-          </List.List>
-        </List.Item>
-      ))}
+      {items &&
+        items.map((item, index) => (
+          <List.Item key={index}>{item.content}</List.Item>
+        ))}
     </List>
   );
 }
@@ -78,34 +70,18 @@ Default.args = {
     {
       header: 'header 1',
       content: 'Content 1',
-      subList: [
-        { header: 'Sub header 1', content: 'content' },
-        { header: 'Sub header ', content: 'content' },
-      ],
     },
     {
       header: 'header 2',
       content: 'Content 2',
-      subList: [
-        { header: 'Sub header 1', content: 'content' },
-        { header: 'Sub header ', content: 'content' },
-      ],
     },
     {
       header: 'header 3',
       content: 'Content 3',
-      subList: [
-        { header: 'Sub header 1', content: 'content' },
-        { header: 'Sub header ', content: 'content' },
-      ],
     },
     {
       header: 'header 4',
       content: 'Content 4',
-      subList: [
-        { header: 'Sub header 1', content: 'content' },
-        { header: 'Sub header ', content: 'content' },
-      ],
     },
   ],
 };
