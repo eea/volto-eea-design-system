@@ -47,7 +47,7 @@ class InpageNavigation extends Component {
           </div>
           <div className="tablet or lower hidden">
             <Icon name="chevron up" />
-            <div className='text'>Top</div>
+            <div className="text">Top</div>
           </div>
         </div>
       </Container>
