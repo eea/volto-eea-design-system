@@ -138,18 +138,25 @@
 @hugeSize        : (28 / @emSize);
 @massiveSize     : (32 / @emSize);
 
-/*-------------------
-  Paddings & Margins
---------------------*/
-@squareTiny      : @tiny @tiny;
-@squareSmall     : @small @small;
-@squareMedium    : @medium @medium;
-@squareLarge     : @large @large;
+/*--------------------------
+  Gaps / Paddings / Margins
+---------------------------*/
 
-@rectangleTiny   : @tiny @small;
-@rectangleSmall  : @small @medium;
-@rectangleMedium : @medium @large;
-@rectangleLarge  : @large @big;
+@tinyGap         : unit((12 / @emSize), rem);
+@mediumGap       : unit((16 / @emSize), rem);
+@largeGap        : unit((20 / @emSize), rem);
+@bigGap          : unit((24 / @emSize), rem);
+@hugeGap         : unit((28 / @emSize), rem);
+
+@squareTiny      : @tinyGap @tinyGap;
+@squareMedium    : @mediumGap @mediumGap;
+@squareLarge     : @largeGap @largeGap;
+@squareBig       : @bigGap @bigGap;
+
+@rectangleTiny   : @tinyGap @mediumGap;
+@rectangleMedium : @mediumGap @largeGap;
+@rectangleLarge  : @largeGap @bigGap;
+@rectangleBig    : @bigGap @hugeGap;
 
 /*-------------------
         Page
