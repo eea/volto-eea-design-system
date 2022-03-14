@@ -64,6 +64,51 @@ Secondary.parameters = {
   hideNoControlsWarning: true,
 };
 
+//secondary Button with icon
+export const SecondaryWithIcon = (args) => {
+  return (
+    <Button
+      secondary
+      disabled={args.disabled}
+      icon={<Icon className={args.icon}></Icon>}
+      labelPosition={args.labelPosition}
+      content={args.label}
+    />
+  );
+};
+SecondaryWithIcon.args = {
+  label: 'Secondary Button',
+  disabled: false,
+  icon: 'ri-chat-3-line',
+  labelPosition: 'right',
+};
+
+SecondaryWithIcon.argTypes = {
+  labelPosition: {
+    options: ['left', 'right'],
+    control: { type: 'inline-radio' },
+    description: 'button icon position',
+    table: {
+      defaultValue: { summary: '' },
+    },
+  },
+  icon: {
+    name: 'button icon',
+    type: { name: 'string', required: false },
+    defaultValue: 'chevron  right',
+    options: ['ri-chat-1-line', 'ri-chat-2-line', 'ri-chat-3-line'],
+    control: { type: 'select' },
+    description: 'button icon',
+    table: {
+      defaultValue: { summary: 'ri-chat-3-line' },
+    },
+  },
+};
+SecondaryWithIcon.parameters = {
+  controls: { exclude: ['animated', 'variant'] },
+  hideNoControlsWarning: true,
+};
+
 //secondary Button Inverted
 export const SecondaryInverted = (args) => {
   return (

@@ -59,6 +59,19 @@
     background-color: @secondaryButtonColor;
     color: @secondaryButtonColorHover;
   }
+
+  &.icon.button i{
+    font-size: 1.5rem;
+    opacity:1;
+  }
+}
+
+.ui.button.secondary[class*='right labeled'].icon.button {
+  padding-right: 3em !important; // to apply to theme button paddings - button.less:856
+}
+
+.ui.button.secondary[class*='left labeled'].icon.button {
+  padding-left: 3em !important; // to apply to theme button paddings - button.less:856
 }
 
 .ui.disabled.secondary.button,
