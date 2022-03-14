@@ -7,7 +7,7 @@
 --------------------*/
 
 @cardBorder: 1px solid @midGray;
-@background: @white;
+@background: @darkCerulean;
 
 /* Shadow */
 @shadowDistance: 1px;
@@ -73,7 +73,7 @@
 @headerFontWeight: @bold;
 @headerFontSize: @relativeBig;
 @headerLineHeightOffset: -(@lineHeight - 1em) / 2;
-@headerColor: @darkTextColor;
+@headerColor: @white;
 
 /* Metadata */
 @metaFontSize: @relativeMedium;
@@ -92,8 +92,8 @@
 @likeActiveColor: #FF2733;
 
 /* Links */
-@contentLinkColor: '';
-@contentLinkHoverColor: '';
+@contentLinkColor: @white;
+@contentLinkHoverColor: @white;
 @contentLinkTransition: color @defaultDuration @defaultEasing;
 
 @headerLinkColor: @headerColor;
@@ -104,7 +104,7 @@
 
 /* Description */
 @descriptionDistance: 0.5em;
-@descriptionColor: rgba(0, 0, 0, 0.68);
+@descriptionColor: @white;
 
 /* Content Image */
 @contentImageWidth: '';
@@ -135,8 +135,8 @@
 @extraTransition: color @defaultDuration @defaultEasing;
 
 /* Extra Links */
-@extraLinkColor: @linkColor;
-@extraLinkHoverColor: @linkHoverColor;
+@extraLinkColor: @white;
+@extraLinkHoverColor: @white;
 
 /* Buttons */
 @buttonMargin: 0px -@borderWidth;

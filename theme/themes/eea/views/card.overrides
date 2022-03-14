@@ -13,3 +13,11 @@
 .ui.right.card {
   margin-left: auto;
 }
+
+.ui.card .extra.content a{
+  font-weight:700;
+}
+
+.ui.card .extra.content a:hover{
+  text-decoration:underline;
+}
