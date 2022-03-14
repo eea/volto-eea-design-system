@@ -69,7 +69,7 @@ const Template = (args) => (
       />
     )}
     <Card.Content>
-      <Card.Header>{args.title}</Card.Header>      
+      <Card.Header>{args.title}</Card.Header>
       <Card.Description>{args.description}</Card.Description>
     </Card.Content>
     {args.links !== null &&
@@ -88,13 +88,13 @@ const Template = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   //src: 'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-  title: 'Lorem Ipsum', 
-  description: 'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+  title: 'Lorem Ipsum',
+  description:
+    'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
   hasImage: true,
   fluid: false,
   links: [{ linkName: 'Link 1' }],
 };
-
 
 const GridTemplate = (args) => (
   <Grid>
@@ -110,7 +110,7 @@ const GridTemplate = (args) => (
             />
           )}
           <Card.Content>
-            <Card.Header>{card.title}</Card.Header>            
+            <Card.Header>{card.title}</Card.Header>
             <Card.Description>{card.description}</Card.Description>
           </Card.Content>
           {card.links !== null &&
@@ -126,7 +126,6 @@ const GridTemplate = (args) => (
         </Card>
       </Grid.Column>
     ))}
-
   </Grid>
 );
 
@@ -135,26 +134,27 @@ CardGrid.args = {
   cards: [
     {
       title: 'Lorem Ipsum',
-      description: 'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+      description:
+        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: true,
       fluid: true,
       links: [{ linkName: 'Link 1' }],
     },
     {
       title: 'Suspendisse iaculis feugiat',
-      description: 'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+      description:
+        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: true,
       fluid: true,
       links: [{ linkName: 'Link 1' }],
-    }, {
+    },
+    {
       title: 'Eget tellus blandit aenean mattis.',
-      description: 'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+      description:
+        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: false,
       fluid: true,
       links: [{ linkName: 'Link 1' }],
-    }
-  ]
-
-
+    },
+  ],
 };
-
