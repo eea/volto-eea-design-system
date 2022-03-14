@@ -138,6 +138,25 @@
 @hugeSize        : (28 / @emSize);
 @massiveSize     : (32 / @emSize);
 
+/*--------------------------
+  Gaps / Paddings / Margins
+---------------------------*/
+
+@tinyGap         : unit((12 / @emSize), rem);
+@mediumGap       : unit((16 / @emSize), rem);
+@largeGap        : unit((20 / @emSize), rem);
+@bigGap          : unit((24 / @emSize), rem);
+@hugeGap         : unit((28 / @emSize), rem);
+
+@squareTiny      : @tinyGap @tinyGap;
+@squareMedium    : @mediumGap @mediumGap;
+@squareLarge     : @largeGap @largeGap;
+@squareBig       : @bigGap @bigGap;
+
+@rectangleTiny   : @tinyGap @mediumGap;
+@rectangleMedium : @mediumGap @largeGap;
+@rectangleLarge  : @largeGap @bigGap;
+@rectangleBig    : @bigGap @hugeGap;
 
 /*-------------------
         Page
@@ -548,7 +567,7 @@
 @unselectedTextColor         : rgba(0, 0, 0, 0.4);
 @hoveredTextColor            : rgba(0, 0, 0, 0.8);
 @pressedTextColor            : rgba(0, 0, 0, 0.9);
-@selectedTextColor           : @white;
+@selectedTextColor           : @lightGrey;
 @disabledTextColor           : rgba(0, 0, 0, 0.2);
 
 @invertedTextColor           : rgba(255, 255, 255, 0.9);
