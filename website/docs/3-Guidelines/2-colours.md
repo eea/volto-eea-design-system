@@ -1,5 +1,5 @@
 ---
-title: Colors
+title: Colours
 order: 2
 ---
 
@@ -96,9 +96,9 @@ Accent colors can be used to bring attention to design elements by contrasting w
 
 <br />
 
-## Secondary color  
+## Supplementary color  
 
-A secondary color provides more ways to accent and distinguish your website. Having a secondary color is optional and should be applied sparingly to selected parts of your UI. 
+A supplementary color provides more ways to accent and distinguish your website. Having a supplementary color is optional and should be applied sparingly to selected parts of your UI. 
 
 
 <div style={{width:'100%',float:'left'}}>
@@ -115,7 +115,7 @@ A secondary color provides more ways to accent and distinguish your website. Hav
 
 <br />
 
-Secondary colors are best for:  
+Supplementary colors are best for:  
 
 - Floating action buttons 
 
@@ -172,19 +172,17 @@ Use this color as the background for your dark-on-light designs, or the text col
 
 <br />
 
-### Tools for creating color palettes 
+## Tools for creating color palettes 
+
+[Colors for maps](https://colorbrewer2.org)
 
 https://color.adobe.com/create/color-wheel 
 
 https://coolors.co/  
 
-### Tools for Map colors
-
-https://colorbrewer2.org
-
 https://carto.com/carto-colors/ 
 
-## Primary Colors
+## Main brand colors
 <table style={{width:30+'%',float:'left'}} >
     <tbody>
      <tr style={{border:'none'}}>
@@ -195,7 +193,7 @@ https://carto.com/carto-colors/
         </tr>
         <tr style={{border:'none'}}>
            <td style={{backgroundColor:'#007B6C',width:200+'px',height:150+'px',textAlign:'center',border:'20px solid #007B6C',borderTop:'10px',borderBottom:'10px' }}>
-                <div style={{color:'white',width:100+'%',fontSize:'14px',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Pine Green (Primary) <br />
+                <div style={{color:'white',width:100+'%',fontSize:'14px',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Pine Green (Secondary) <br />
                 #007B6C</div>
             </td>            
         </tr>
@@ -260,7 +258,7 @@ https://carto.com/carto-colors/
 
 
 <table style={{width:30+'%',float:'left'}} >
-<heading><h3>Secondary</h3></heading>
+<heading><h3>Supplementary</h3></heading>
     <tbody>
         <tr>
             <td style={{backgroundColor:'#2E3E4C',width:200+'px',height:150+'px',textAlign:'center'}}>
@@ -343,7 +341,7 @@ https://carto.com/carto-colors/
 </table>
 
 <table style={{width:30+'%',float:'left'}} >
-<heading><h3>Warning</h3></heading>
+<heading><h3>Error</h3></heading>
     <tbody>        
         <tr>
                 <td style={{backgroundColor:'#B83230',width:200+'px',height:150+'px',textAlign:'center'}}>
@@ -354,7 +352,7 @@ https://carto.com/carto-colors/
 </table>
 
 <table style={{width:30+'%',float:'left'}} >
-<heading><h3>Error</h3></heading>
+<heading><h3>Warning</h3></heading>
     <tbody>
         <tr>
                 <td style={{backgroundColor:'#EBA33D',width:200+'px',height:150+'px',textAlign:'center'}}>
