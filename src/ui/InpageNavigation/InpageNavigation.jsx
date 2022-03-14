@@ -32,7 +32,7 @@ class InpageNavigation extends Component {
   onInpageNavigationClick = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   };
 
