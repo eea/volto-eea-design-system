@@ -170,6 +170,8 @@
 
   /* Main header section */
   .main.bar {
+    scrollbar-gutter: stable;
+
     .ui.container {
       display: flex;
       align-items: center;
@@ -472,6 +474,7 @@ Header Actions - Burger and Search Icons
 
   nav ul li {
     display: inline-block;
+    font-size: @mobileMegaMenuFontSize;
     font-size: @megaMenuFontSize;
   }
 
@@ -587,6 +590,7 @@ Header Actions - Burger and Search Icons
     nav {
       .menu {
         width: 33.33%;
+        font-size: @tabletMegaMenuFontSize;
         font-size: @megaMenuFontSize;
         > li {
           width: 100%;
@@ -597,8 +601,7 @@ Header Actions - Burger and Search Icons
 
           &.hasSubMenu:after {
             content: @megaMenuAfterIcon;
-            font-family: 'Icons';
-            //font-size: @tabletMegaMenuIconAfterFontSize;
+            font-family: @megaMenuIconFontFamily;
             color: @white;
           }
           a {
@@ -623,8 +626,7 @@ Header Actions - Burger and Search Icons
 
           &.hasSubMenu:after {
             content: @megaMenuAfterIcon;
-            font-family: 'Icons';
-            //font-size: @tabletMegaMenuIconAfterFontSize;
+            font-family: @megaMenuIconFontFamily;
             color: @megaMenuIconAfterColor;
           }
           a {
@@ -656,7 +658,6 @@ Header Actions - Burger and Search Icons
       margin-top: @computerPopupMarginTop;
       .menu {
         > li {
-          //font-size: @computerMegaMenuFirstFontSize;
           margin-bottom: @computerMegaMenuMarginBottom;
           &.hasSubMenu:after {
             font-size: @computerMegaMenuIconAfterFontSize;
@@ -664,14 +665,12 @@ Header Actions - Burger and Search Icons
         }
       }
       .sub.second li {
-        //font-size: @computerMegaMenuSecondFontSize;
         margin-bottom: @computerMegaMenuMarginBottom;
         &.hasSubMenu:after {
           font-size: @computerMegaMenuIconAfterFontSize;
         }
       }
       .sub.third li {
-        //font-size: @computerMegaMenuThirdFontSize;
         margin-bottom: @computerMegaMenuMarginBottom;
       }
     }
