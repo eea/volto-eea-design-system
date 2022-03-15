@@ -305,7 +305,7 @@
 @pineGreen        : #007B6C;
 @darkCyan         : #00928F;
 @pearlAqua        : #74CBC8;
-@powderBlue       : #AEDFE8; 
+@powderBlue       : #AEDFE8;
 
 // Blue Colors - Darker to lighter
 @darkMidnightBlue   : #0A3D61;
@@ -331,7 +331,7 @@
 
 /*---  Colors  ---*/
 @orange           : #EBA33D;
-@yellow           : #F2EB49; 
+@yellow           : #F2EB49;
 @olive            : #78AB66;
 @green            : @pineGreen;
 @teal             : #00928F;
@@ -567,7 +567,7 @@
 @unselectedTextColor         : rgba(0, 0, 0, 0.4);
 @hoveredTextColor            : rgba(0, 0, 0, 0.8);
 @pressedTextColor            : rgba(0, 0, 0, 0.9);
-@selectedTextColor           : @lightGrey;
+@selectedTextColor           : rgba(0, 0, 0, 0.95);
 @disabledTextColor           : rgba(0, 0, 0, 0.2);
 
 @invertedTextColor           : rgba(255, 255, 255, 0.9);
