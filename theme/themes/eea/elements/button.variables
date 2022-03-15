@@ -33,7 +33,7 @@
 /* Action Button */
 @actionButtonColor: @white;
 @actionButtonBackground: @darkCyan;
-@actionButtonBackgroundHover: @darkMidnightBlue;
+@actionButtonBackgroundHover: #2E6173;
 @actionButtonBackgroundActive: @pineGreen;
 
 /* Text Button */

@@ -97,7 +97,7 @@ function AccordionContainer({ ...args }) {
         onClick={toggleOpenAccordion}
       >
         {args.toggle1}
-        <Icon name="chevron down" />
+        <Icon className="ri-arrow-down-s-line" />
       </Accordion.Title>
       <Accordion.Content active={activeIndex === 0}>
         {args.content1.length > 0 &&
@@ -110,7 +110,7 @@ function AccordionContainer({ ...args }) {
         onClick={toggleOpenAccordion}
       >
         {args.toggle2}
-        <Icon name="chevron down" />
+        <Icon className="ri-arrow-down-s-line" />
       </Accordion.Title>
       <Accordion.Content active={activeIndex === 1}>
         {args.content2.length > 0 &&
@@ -123,7 +123,7 @@ function AccordionContainer({ ...args }) {
         onClick={toggleOpenAccordion}
       >
         {args.toggle3}
-        <Icon name="chevron down" />
+        <Icon className="ri-arrow-down-s-line" />
       </Accordion.Title>
       <Accordion.Content active={activeIndex === 2}>
         {args.content3.length > 0 &&

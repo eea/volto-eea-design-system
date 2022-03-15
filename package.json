@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-eea-design-system",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "@eeacms/volto-eea-design-system: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
@@ -20,7 +20,8 @@
     "@eeacms/volto-corsproxy"
   ],
   "dependencies": {
-    "@eeacms/volto-corsproxy": "*"
+    "@eeacms/volto-corsproxy": "*",
+    "remixicon": "2.5.0"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.5",

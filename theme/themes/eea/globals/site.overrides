@@ -20,3 +20,8 @@
     font-size: unit((24 / 16), rem);
   }
 }
+
+[class^='ri-'],
+[class*=' ri-'] {
+  fill: currentColor;
+}

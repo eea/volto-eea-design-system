@@ -30,7 +30,7 @@
   color @defaultDuration @defaultEasing
 ;
 @itemFontWeight: @normal;
-@itemTextColor: @black;
+@itemTextColor: @deepBlue;
 
 /* Divider */
 @dividerSize: 1px;
@@ -247,10 +247,10 @@
 @secondaryPointingActiveBorderWidth: @3px;
 @secondaryPointingBorderColor: @midGray;
 @secondaryPointingItemMargin: 0 1.25rem;
-@secondaryPointingItemVerticalPadding: @relativeTiny;
+@secondaryPointingItemVerticalPadding: @tinyGap;
 @secondaryPointingItemActiveVerticalPadding: unit((@relativeTiny - @3px), rem);
 @tabSecondaryPointingItemActiveVerticalPadding: unit((@relativeTiny), rem);
-@secondaryPointingItemHorizontalPadding: 0;
+@secondaryPointingItemHorizontalPadding: @largeGap;
 // Pastanaga custom
 @secondaryPointingItemTextTransform: uppercase;
 

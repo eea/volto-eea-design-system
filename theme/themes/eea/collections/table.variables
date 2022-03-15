@@ -42,8 +42,8 @@
 @headerBorder: 1px solid @secondaryColor;
 @headerDivider: none;
 @headerBackground: @white;
-@headerAlign: center;
-@headerVerticalAlign: bottom;
+@headerAlign: inherit;
+@headerVerticalAlign: inherit;
 @headerColor: @deepBlue;
 @headerVerticalPadding: @relativeSmall;
 @headerHorizontalPadding: @cellHorizontalPadding;
