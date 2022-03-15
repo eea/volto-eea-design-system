@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Input, Button, Icon } from 'semantic-ui-react';
+import { Container, Input } from 'semantic-ui-react';
 
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
