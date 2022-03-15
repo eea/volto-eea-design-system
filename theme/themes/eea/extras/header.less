@@ -208,10 +208,13 @@
         width: 100%;
 
         .item {
-          color: @mainMenuItemColor;
-          font-size: @mainMenuItemFontSize;
-          font-weight: @mainMenuItemFontWeight;
           place-self: @mainMenuItemPlaceSelf;
+          a {
+            color: @mainMenuItemColor;
+            font-size: @headerLargeFontSize; // fallback font size
+            font-size: @mainMenuItemFontSize;
+            font-weight: @mainMenuItemFontWeight;
+          }
         }
 
         .item.active {
@@ -237,7 +240,7 @@
       .wrapper {
         position: relative;
         width: 100%;
-        margin-top: @mobilePopupMarginTop;
+        margin: @mobilePopupMarginTop 0;
         display: flex;
         flex-direction: column;
         gap: @searchBoxWrapperGap;
@@ -344,7 +347,7 @@ Header Actions - Burger and Search Icons
       #search-box {
         height: @tabletPopUpHeight;
         .wrapper {
-          margin-top: @tabletPopupMarginTop;
+          margin: @tabletPopupMarginTop 0;
         }
       }
     }
@@ -395,7 +398,7 @@ Header Actions - Burger and Search Icons
         height: @computerPopUpHeight;
 
         .wrapper {
-          margin-top: @computerPopupMarginTop;
+          margin: @computerPopupMarginTop 0;
 
           .action {
             justify-content: flex-end;
@@ -451,7 +454,7 @@ Header Actions - Burger and Search Icons
     margin: 0;
     padding: 0;
     width: 100%;
-    margin-top: @tabletPopupMarginTop;
+    margin: @tabletPopupMarginTop 0;
   }
 
   nav:after {
@@ -515,7 +518,7 @@ Header Actions - Burger and Search Icons
   @media all and (max-width: @largestMobileScreen) {
     height: @mobilePopUpHeight;
     nav {
-      margin-top: @mobilePopupMarginTop;
+      margin: @mobilePopupMarginTop 0;
     }
     .menu,
     li {
@@ -655,19 +658,19 @@ Header Actions - Burger and Search Icons
   @media only screen and (min-width: @computerBreakpoint) {
     height: @computerPopUpHeight;
     nav {
-      margin-top: @computerPopupMarginTop;
+      margin: @computerPopupMarginTop 0;
       .menu {
         > li {
           margin-bottom: @computerMegaMenuMarginBottom;
           &.hasSubMenu:after {
-            font-size: @computerMegaMenuIconAfterFontSize;
+            font-size: @megaMenuFontSize;
           }
         }
       }
       .sub.second li {
         margin-bottom: @computerMegaMenuMarginBottom;
         &.hasSubMenu:after {
-          font-size: @computerMegaMenuIconAfterFontSize;
+          font-size: @megaMenuFontSize;
         }
       }
       .sub.third li {

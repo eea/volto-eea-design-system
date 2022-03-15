@@ -87,7 +87,7 @@
 
 /* Main menu */
 @mainMenuItemColor                    : @deepBlue;
-@mainMenuItemFontSize                 : ~"min(max(0.875rem, 1.5vw), 1.125rem)"; //headerLargeFontSize
+@mainMenuItemFontSize                 : ~"min(max(0.875rem, 1.5vw), 1.125rem)";
 @mainMenuItemFontWeight               : 500;
 @mainMenuItemPlaceSelf                : flex-end;
 @mainMenuItemActiveColor              : @secondaryColor;
@@ -104,7 +104,7 @@
 @computerPopupMarginTop : 18vh;
 
 /* Mega menu */
-@megaMenuBackgroundGradient: linear-gradient(166.78deg, @darkCerulean 39.52%, @darkCyan 118.9%);;
+@megaMenuBackgroundGradient: linear-gradient(166.78deg, @darkCerulean 39.52%, @darkCyan 118.9%);
 
 /* Menu link and toggle */
 @mobileMegaMenuColor            : @white;
@@ -122,7 +122,7 @@
 @computerMegaMenuMarginBottom   : 0.6em;
 
 // Font sizes and line heights
-@megaMenuFontSize: ~"min(max(1.125rem, 3.5vw), 2.5rem)";
+@megaMenuFontSize: ~"min(max(1.125rem, 3.5vw), 2.2rem)";
 
 /* Fallback font sizes for ie and opera mini */
 @mobileMegaMenuFontSize         : 1.125rem;

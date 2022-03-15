@@ -14,16 +14,16 @@ function HeaderSearchPopUp({ onClose, triggerRefs = [] }) {
         <div className="wrapper">
           <Input
             className="search"
-            icon="search"
+            icon={{ className: 'ri-search-line', link: true }}
             placeholder="Search..."
             fluid
           />
-          <div className="action">
+          {/* <div className="action">
             <Button icon labelPosition="left" className="search">
               <Icon name="search" />
               Advanced Search
             </Button>
-          </div>
+          </div> */}
         </div>
       </Container>
     </div>

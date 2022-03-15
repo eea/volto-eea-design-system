@@ -41,12 +41,12 @@ textarea.fluid {
 /* Search Input - to be updated */
 .ui.fluid.icon.input.search {
   input {
-    height: 70px !important;
+    height: 70px;
     padding: 18.5px;
-    border: none !important;
-    border-bottom: 2px solid !important;
+    border: none;
+    border-bottom: 2px solid;
     background: transparent;
-    color: @white !important;
+    color: @white;
     font-size: 18px;
   }
 
