@@ -23,6 +23,6 @@
 /* Tags Colors */
 @tagDefaultColor       : transparent;
 @tagPineGreen          : @pineGreen;
-@tagTealColor          : @metallicBlue;
+@tagTealColor          : @bottleGreen;
 @tagBlueDarkColor      : @darkCerulean;
 @tagBlueLightColor     : #3c8eb2;
