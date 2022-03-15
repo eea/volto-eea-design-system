@@ -20,7 +20,8 @@
     "@eeacms/volto-corsproxy"
   ],
   "dependencies": {
-    "@eeacms/volto-corsproxy": "*"
+    "@eeacms/volto-corsproxy": "*",
+    "remixicon": "2.5.0"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.5",
