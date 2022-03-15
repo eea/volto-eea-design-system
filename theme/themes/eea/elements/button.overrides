@@ -26,57 +26,82 @@
 /* Primary Button Border */
 .ui.button.primary,
 .ui.buttons.primary {
-  border: @buttonBorder @primaryColor;
+  border: @buttonBorder @primaryButtonColor;
 
   &:hover,
-  &:active,
   &:focus {
     border: @buttonBorder @primaryColorHover;
   }
+
+  &:active {
+    border: @buttonBorder @primaryButtonBackgroundActive;
+    background: @primaryButtonBackgroundActive;
+  }
+}
+
+.ui.disabled.primary.button,
+.ui.button.primary:disabled {
+  border: @buttonBorder @primaryButtonDisabledBackground;
+  background: @primaryButtonDisabledBackground;
+  opacity: @buttonDisabledOpacity !important;
 }
 
 /* Secondary Button */
 .ui.button.secondary,
 .ui.buttons.secondary {
-  border: @buttonBorder @primaryButtonColor;
-  background-color: @secondaryButtonBackground;
-  .text-color(@white);
-
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: @primaryButtonColor;
-    .text-color(@primaryButtonColor);
-  }
-}
-
-/* Secondary Button Inverted */
-.ui.button.inverted.secondary,
-.ui.buttons.inverted.secondary {
   border: @buttonBorder @secondaryButtonColor;
+  background-color: @secondaryButtonBackground;
   color: @secondaryButtonColor;
 
   &:hover,
   &:active,
   &:focus {
     background-color: @secondaryButtonColor;
-    color: @primaryColor;
+    color: @secondaryButtonColorHover;
   }
 }
 
-/* Call to action Button */
-.ui.button.action {
-  border: @buttonBorder @actionButtonButtonColor;
-  background-color: @actionButtonButtonColor;
-  .text-color(@actionButtonButtonColor);
-  text-transform: uppercase;
+.ui.disabled.secondary.button,
+.ui.button.secondary:disabled {
+  border: @buttonBorder @secondaryButtonDisabledColor;
+  color: @secondaryButtonDisabledColor;
+  opacity: @buttonDisabledOpacity !important;
+}
+
+/* Secondary Button Inverted */
+.ui.button.inverted.secondary,
+.ui.buttons.inverted.secondary {
+  border: @buttonBorder @secondaryButtonInvertedColor;
+  color: @secondaryButtonInvertedColor;
 
   &:hover,
   &:active,
   &:focus {
-    border: @buttonBorder @secondaryColorDarken;
-    background-color: @secondaryColorDarken;
-    .text-color(@secondaryColorDarken);
+    background-color: @secondaryButtonInvertedColor;
+    color: @japaneseIndigo;
+  }
+}
+
+ui.inverted.secondary.buttons .button,
+.ui.inverted.secondary.button {
+  box-shadow: none !important; // to override the important box shadow - button.less:3271
+}
+
+/* Call to action Button */
+.ui.button.action {
+  border: @buttonBorder @actionButtonBackground;
+  background-color: @actionButtonBackground;
+  color: @actionButtonColor;
+
+  &:hover,
+  &:focus {
+    border: @buttonBorder @actionButtonBackgroundHover;
+    background-color: @actionButtonBackgroundHover;
+  }
+
+  &:active {
+    border: @buttonBorder @actionButtonBackgroundActive;
+    background: @actionButtonBackgroundActive;
   }
 }
 
@@ -106,14 +131,14 @@ p.ui.button {
 }
 
 .ui.circular.icon.button {
-  padding: 0.75em 0.25em 0;
+  padding: @circularButtonPadding;
 
   .icon {
-    font-size: 2em;
+    font-size: @circularButtonIconFontSize;
   }
 }
 
-/* Advanced Search Button */
+/* Advanced Search Button - to be deleted*/
 .ui.button.search {
   box-sizing: border-box;
   border: @buttonBorder @white;
@@ -130,6 +155,10 @@ p.ui.button {
     background: @searchButtonBackground;
     color: @searchButtonColor;
   }
+}
+
+.ui.icon.left.labeled.button.search {
+  padding-left: 3.375em !important;
 }
 
 .ui.labeled.icon.button.search > .icon {
@@ -155,14 +184,6 @@ p.ui.button {
   }
 }
 
-#main {
-  .ui.basic.buttons .button,
-  .ui.basic.button {
-    -webkit-box-shadow: 0px 0px 0px @basicBorderSize transparent inset !important;
-    box-shadow: 0px 0px 0px @basicBorderSize transparent inset !important;
-  }
-}
-
 .ui.basic.button {
   padding: 0;
   border: 0;
@@ -172,44 +193,5 @@ p.ui.button {
 
   &:focus {
     outline: none;
-  }
-}
-
-.ui.basic.primary.button,
-.ui.basic.secondary.button {
-  box-shadow: none !important;
-
-  &:hover,
-  &:active {
-    background: transparent !important;
-    box-shadow: none !important;
-  }
-}
-
-.ui.basic.secondary.button {
-  color: @brown !important;
-}
-
-.ui.noborder.button {
-  padding: 0 !important;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  text-align: initial;
-
-  &:focus {
-    outline: none;
-  }
-}
-
-.ui.noborder.button:not(.icon) > .icon:not(.button):not(.dropdown) {
-  margin: 0;
-}
-
-.ui.button.gallery {
-  background-color: transparent;
-
-  .icon.circled {
-    margin: 0;
   }
 }

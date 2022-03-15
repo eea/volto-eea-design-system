@@ -2,6 +2,8 @@
               Tab
 *******************************/
 
+@tabActiveItemHoverColor: @secondaryColor;
+
 @headerSize: @h4;
 @headerSizeResponsive: @fontSize;
 @contentSize: @fontSize;

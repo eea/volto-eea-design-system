@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Radio, Form, Message } from 'semantic-ui-react';
+import { Radio, Form, Message, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Forms/Radio',
@@ -12,6 +12,9 @@ export default {
   argTypes: {
     onChange: {
       action: 'checkbox value changed',
+      table: {
+        disable: true,
+      },
     },
     label: {
       description: 'Label of the form group',
@@ -79,59 +82,56 @@ function RadioForm({
 
   const handleChange = (e, { value }) => setActive(value);
   return (
-    <Form>
-      <Form.Field>
-        {label}
-        {required ? (
-          <span style={{ color: 'red' }}>{requiredText}</span>
-        ) : (
-          <span>{optionalText}</span>
-        )}
-      </Form.Field>
-      <Form.Field>{helperText}</Form.Field>
-      {invalid ? (
-        <Message
-          icon="exclamation circle"
-          header="Error Message"
-          content={errorMessage}
-          negative
-        />
-      ) : null}
-      <Form.Field error={invalid}>
-        <Radio
-          label="Option 1"
-          name="radioGroup"
-          value="1"
-          checked={active === '1'}
-          onChange={handleChange}
-          id="field1"
-        ></Radio>
-        <label htmlFor="field1">Helper text for option 1</label>
-      </Form.Field>
-      <Form.Field error={invalid}>
-        <Radio
-          label="Option 2"
-          name="radioGroup"
-          value="2"
-          checked={active === '2'}
-          onChange={handleChange}
-          id="field2"
-        ></Radio>
-        <label htmlFor="field2">Helper text for option 2</label>
-      </Form.Field>
-      <Form.Field error={invalid}>
-        <Radio
-          label="Option 3 (disabled)"
-          disabled
-          name="radioGroup"
-          value="3"
-          checked={active === '3'}
-          onChange={handleChange}
-          id="field3"
-        ></Radio>
-        <label htmlFor="field3">Helper text for option 3</label>
-      </Form.Field>
-    </Form>
+    <Container>
+      <Form>
+        <Form.Field>
+          {label}
+          {required ? (
+            <span style={{ color: 'red' }}>{requiredText}</span>
+          ) : (
+            <span>{optionalText}</span>
+          )}
+        </Form.Field>
+        <Form.Field>{helperText}</Form.Field>
+        {invalid ? (
+          <Message icon="exclamation circle" content={errorMessage} negative />
+        ) : null}
+        <Form.Field error={invalid}>
+          <Radio
+            label="Option 1"
+            name="radioGroup"
+            value="1"
+            checked={active === '1'}
+            onChange={handleChange}
+            id="field1"
+          ></Radio>
+          <label htmlFor="field1">Helper text for option 1</label>
+        </Form.Field>
+        <Form.Field error={invalid}>
+          <Radio
+            label="Option 2"
+            name="radioGroup"
+            value="2"
+            checked={active === '2'}
+            onChange={handleChange}
+            id="field2"
+          ></Radio>
+          <label htmlFor="field2">Helper text for option 2</label>
+        </Form.Field>
+        <Form.Field error={invalid}>
+          <Radio
+            label="Option 3 (disabled)"
+            disabled
+            name="radioGroup"
+            value="3"
+            checked={active === '3'}
+            onChange={handleChange}
+            id="field3"
+          ></Radio>
+          <label htmlFor="field3">Helper text for option 3</label>
+        </Form.Field>
+      </Form>
+    </Container>
   );
 }
 
@@ -148,43 +148,45 @@ function Binary({
 
   const handleChange = (e, { value }) => setActive(value);
   return (
-    <Form>
-      <Form.Field>
-        {label}
-        {required ? (
-          <span style={{ color: 'red' }}>{requiredText}</span>
-        ) : (
-          <span>{optionalText}</span>
-        )}
-      </Form.Field>
-      <Form.Field>{helperText}</Form.Field>
+    <Container>
+      <Form>
+        <Form.Field>
+          {label}
+          {required ? (
+            <span style={{ color: 'red' }}>{requiredText}</span>
+          ) : (
+            <span>{optionalText}</span>
+          )}
+        </Form.Field>
+        <Form.Field>{helperText}</Form.Field>
 
-      {invalid ? (
-        <Message header="Error Message" content={errorMessage} negative />
-      ) : null}
-      <Form.Field error={invalid}>
-        <Radio
-          label="Yes"
-          name="radioGroup"
-          value="yes"
-          checked={active === 'yes'}
-          onChange={handleChange}
-          id="radio-yes"
-        ></Radio>
-        <label htmlFor="radio-yes"> </label>
-      </Form.Field>
-      <Form.Field error={invalid}>
-        <Radio
-          label="No"
-          name="radioGroup"
-          value="no"
-          checked={active === 'no'}
-          onChange={handleChange}
-          id="radio-no"
-        ></Radio>
-        <label htmlFor="radio-no"> </label>
-      </Form.Field>
-    </Form>
+        {invalid ? (
+          <Message header="Error Message" content={errorMessage} negative />
+        ) : null}
+        <Form.Field error={invalid}>
+          <Radio
+            label="Yes"
+            name="radioGroup"
+            value="yes"
+            checked={active === 'yes'}
+            onChange={handleChange}
+            id="radio-yes"
+          ></Radio>
+          <label htmlFor="radio-yes"> </label>
+        </Form.Field>
+        <Form.Field error={invalid}>
+          <Radio
+            label="No"
+            name="radioGroup"
+            value="no"
+            checked={active === 'no'}
+            onChange={handleChange}
+            id="radio-no"
+          ></Radio>
+          <label htmlFor="radio-no"> </label>
+        </Form.Field>
+      </Form>
+    </Container>
   );
 }
 
