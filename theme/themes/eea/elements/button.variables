@@ -6,25 +6,35 @@
        Element
 --------------------*/
 
-@buttonBorder: @relative2px solid;
+
 
 /* Button */
-@buttonFontSize: @fontSize;
+@buttonBorder: @relative2px solid;
+@buttonDisabledOpacity: 1;
 
 /* Primary Button */
 @primaryButtonColor: @primaryColor;
 @primaryButtonColorHover: @darkMidnightBlue;
+@primaryButtonBackgroundActive: @mediumPersianBlue;
+@primaryButtonDisabledBackground: @midBlue;
 
 /* Secondary Button */
 @secondaryButtonBackground: transparent;
-@secondaryButtonColor: @white;
-@secondaryButtonColorHover : @darkMidnightBlue;
-@secondaryBorder: @buttonBorder @primaryColor;
+@secondaryButtonColor: @darkMidnightBlue;
+@secondaryButtonColorHover : @white;
+@secondaryBorder: @buttonBorder @darkMidnightBlue;
 @secondaryBorderHover: @buttonBorder @darkMidnightBlue;
+@secondaryButtonDisabledColor: @weldonBlue;
+
+/* Secondary Button Inverted */
+@secondaryButtonInvertedColor: @white;
+@secondaryButtonInvertedColorHover: @darkMidnightBlue;
 
 /* Action Button */
-@actionButtonButtonColor: @secondaryColor;
-@actionButtonButtonColorHover: @steelBlue;
+@actionButtonColor: @white;
+@actionButtonBackground: @darkCyan;
+@actionButtonBackgroundHover: #2E6173;
+@actionButtonBackgroundActive: @pineGreen;
 
 /* Text Button */
 @textButtonBackground: transparent;
@@ -280,6 +290,10 @@
 /* Basic Group */
 @basicGroupBorder: @basicBorderSize solid @borderColor;
 @basicGroupBoxShadow: none;
+
+/* Circular */
+@circularButtonPadding: 0.75em 0.25em 0;
+@circularButtonIconFontSize: 2rem;
 
 /*-------------------
       Variations

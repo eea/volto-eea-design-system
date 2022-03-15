@@ -84,14 +84,14 @@
 /* Uses px to avoid rounding issues with circles */
 
 @radioSize: 20px;
-@radioTop: 1px;
+@radioTop: 0;
 @radioLeft: 0px;
 @radioLabelDistance: @labelDistance;
 
-@bulletTop: 1px;
+@bulletTop: 0;
 @bulletLeft: 0px;
-@bulletScale: (0.55);
-@bulletColor: @textColor;
+@bulletScale: (0.558);
+@bulletColor: @primaryColor;
 @bulletRadius: @circularRadius;
 
 @radioFocusBackground: @checkboxFocusBackground;

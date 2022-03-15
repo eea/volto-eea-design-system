@@ -7,6 +7,7 @@
 --------------------*/
 
 @fontName          : 'Roboto';
+@secondaryFontName : 'Archivo';
 @fontSmoothing     : antialiased;
 
 @headerFont        : @fontName, Arial, 'Helvetica Neue', Helvetica, sans-serif;
@@ -54,16 +55,17 @@
 
 @primaryColor         : @darkCerulean;
 @secondaryColor       : @pineGreen;
-@secondaryColorDarken : darken(@secondaryColor, 5%);
 
-@lightPrimaryColor    : @steelBlue;
-@lightSecondaryColor  : @pearlAqua;
+@lightPrimaryColor    : @darkCyan;
+@lightSecondaryColor  : @mediumPersianBlue;
+
+@darkPrimaryColor     : @bottleGreen;
+@darkSecondaryColor   : @darkMidnightBlue;
 
 /*--------------
   Page Heading
 ---------------*/
 
-@lightSecondaryColor : @lightBlack;
 @headerLineHeight : 1.25;
 @headerFontWeight : 700;
 
@@ -78,13 +80,16 @@
    Form Input
 ---------------*/
 /* Max width for inputs with no fluid class */
-@inputMaxWidth: 400px;
+@inputMaxWidth: 360px;
+/* Min width for inputs with no fluid class */
+@mobileInputMinWidth: 100%;
+@tabletInputMinWidth: 360px;
 
 /* This adjusts the default form input across all elements */
 @inputBackground        : @white;
 @inputVerticalPadding   : @relative12px;
 /* This adjusts the default form input across all elements */
-@inputHorizontalPadding : 0;
+@inputHorizontalPadding : @relative18px;
 @inputPadding           : @inputVerticalPadding @inputHorizontalPadding;
 
 /* Input Text Color */
@@ -101,10 +106,10 @@
 --------------------*/
 
 /* Used on inputs, textarea etc */
-@focusedFormBorderColor: #85B7D9;
+@focusedFormBorderColor: @secondaryColor;
 
 /* Used on dropdowns, other larger blocks */
-@focusedFormMutedBorderColor: #96C8DA;
+@focusedFormMutedBorderColor: @secondaryColor;
 
 /*-------------------
         Sizes
@@ -133,6 +138,25 @@
 @hugeSize        : (28 / @emSize);
 @massiveSize     : (32 / @emSize);
 
+/*--------------------------
+  Gaps / Paddings / Margins
+---------------------------*/
+
+@tinyGap         : unit((12 / @emSize), rem);
+@mediumGap       : unit((16 / @emSize), rem);
+@largeGap        : unit((20 / @emSize), rem);
+@bigGap          : unit((24 / @emSize), rem);
+@hugeGap         : unit((28 / @emSize), rem);
+
+@squareTiny      : @tinyGap @tinyGap;
+@squareMedium    : @mediumGap @mediumGap;
+@squareLarge     : @largeGap @largeGap;
+@squareBig       : @bigGap @bigGap;
+
+@rectangleTiny   : @tinyGap @mediumGap;
+@rectangleMedium : @mediumGap @largeGap;
+@rectangleLarge  : @largeGap @bigGap;
+@rectangleBig    : @bigGap @hugeGap;
 
 /*-------------------
         Page
@@ -143,7 +167,7 @@
 
 @lineHeight          : 1.5;
 @mobileLineHeight    : 1.5;
-@textColor           : rgba(0, 0, 0, 0.87);
+@textColor           : rgba(0, 0, 0, 1);
 
 /*-------------------
       Paragraph
@@ -184,6 +208,7 @@
 @thumbHoverBackground: rgba(128, 135, 139, 0.8);
 
 /* Inverted */
+@statisticInvertedBackground: @bottleGreen;
 @trackInvertedBackground: rgba(255, 255, 255, 0.1);
 @thumbInvertedBackground: rgba(255, 255, 255, 0.25);
 @thumbInvertedInactiveBackground: rgba(255, 255, 255, 0.15);
@@ -258,12 +283,6 @@
      Breakpoints
 --------------------*/
 
-//@mobileBreakpoint            : 480px;
-//@tabletBreakpoint            : 835px;
-//@computerBreakpoint          : 1025px;
-//@largeMonitorBreakpoint      : 1200px;
-//@widescreenMonitorBreakpoint : 1920px;
-
 @mobileBreakpoint            : 320px;
 @tabletBreakpoint            : 480px;
 @computerBreakpoint          : 835px;
@@ -271,9 +290,9 @@
 @widescreenMonitorBreakpoint : 1200px;
 
 /* Paddings for breakpoints */
-@mobilePadding  : 30px;
-@tabletPadding  : 40px;
-@computerPadding : 140px;
+@mobilePadding  : 1.875rem;
+@tabletPadding  : 2.5rem;
+@computerPadding : 8.75rem;
 
 /*-------------------
       Site Colors
@@ -282,11 +301,11 @@
 /*---  EEA Colors  ---*/
 
 // Green Colors - Darker to lighter
-@metallicBlue     : #2E6173;
+@bottleGreen      : #00665A;
 @pineGreen        : #007B6C;
 @darkCyan         : #00928F;
 @pearlAqua        : #74CBC8;
-@powderBlue       : #AEDFE8; 
+@powderBlue       : #AEDFE8;
 
 // Blue Colors - Darker to lighter
 @darkMidnightBlue   : #0A3D61;
@@ -311,8 +330,8 @@
 
 
 /*---  Colors  ---*/
-@orange           : #FF9933;
-@yellow           : #F2EB49; 
+@orange           : #EBA33D;
+@yellow           : #F2EB49;
 @olive            : #78AB66;
 @green            : @pineGreen;
 @teal             : #00928F;
@@ -406,12 +425,12 @@
 @sidebarToggleButtonHighlightColor: @grey;
 
 /*--- Progress Colors ---*/
-@progressBarFrom0to30    : #75C9DB;
-@progressBarFrom30to40   : #0065A4;
-@progressBarFrom40to60   : #0065A4;
-@progressBarFrom60to70   : #00928F;
-@progressBarFrom70to90   : #00928F;
-@progressBarFrom90to100  : #007B6C;
+@progressBarFrom0to30    : @midBlue;
+@progressBarFrom30to40   : @mediumPersianBlue;
+@progressBarFrom40to60   : @mediumPersianBlue;
+@progressBarFrom60to70   : @darkCyan;
+@progressBarFrom70to90   : @darkCyan;
+@progressBarFrom90to100  : @pineGreen;
 
 /*-------------------
      Alpha Colors
@@ -458,32 +477,32 @@
 --------------------*/
 
 /* Positive */
-@positiveColor           : #287D3C; //
-@positiveBackgroundColor : #EDF9F0; //
-@positiveBorderColor     : #EDF9F0; //
-@positiveHeaderColor     : #287D3C; //
-@positiveTextColor       : #287D3C; //
+@positiveColor           : @pineGreen;
+@positiveBackgroundColor : #EDF9F0;
+@positiveBorderColor     : #EDF9F0;
+@positiveHeaderColor     : @pineGreen;
+@positiveTextColor       : @pineGreen;
 
 /* Negative */
-@negativeColor           : #DA1414; //
-@negativeBackgroundColor : #FEEFEF; //
-@negativeBorderColor     : #FEEFEF; //
-@negativeHeaderColor     : #DA1414; //
-@negativeTextColor       : #DA1414; //
+@negativeColor           : @red;
+@negativeBackgroundColor : @white;
+@negativeBorderColor     : @red; //#FEEFEF;
+@negativeHeaderColor     : @red;
+@negativeTextColor       : @red;
 
 /* Info */
-@infoColor              : #2E5AAC; //
-@infoBackgroundColor    : #EEF2FA; //
-@infoBorderColor        : #EEF2FA; //
-@infoHeaderColor        : #2E5AAC; //
-@infoTextColor          : #2E5AAC; //
+@infoColor              : @mediumPersianBlue;
+@infoBackgroundColor    : #EEF2FA;
+@infoBorderColor        : #EEF2FA;
+@infoHeaderColor        : @mediumPersianBlue;
+@infoTextColor          : @mediumPersianBlue;
 
 /* Warning */
-@warningColor           : #B95000; //
-@warningBorderColor     : #FFF4EC; //
-@warningBackgroundColor : #FFF4EC; //
-@warningHeaderColor     : #B95000; //
-@warningTextColor       : #B95000; //
+@warningColor           : #EBA33D;
+@warningBorderColor     : #FFF4EC;
+@warningBackgroundColor : #FFF4EC;
+@warningHeaderColor     : #EBA33D;
+@warningTextColor       : #EBA33D;
 
 /*-------------------
         Paths
@@ -548,7 +567,7 @@
 @unselectedTextColor         : rgba(0, 0, 0, 0.4);
 @hoveredTextColor            : rgba(0, 0, 0, 0.8);
 @pressedTextColor            : rgba(0, 0, 0, 0.9);
-@selectedTextColor           : @white;
+@selectedTextColor           : rgba(0, 0, 0, 0.95);
 @disabledTextColor           : rgba(0, 0, 0, 0.2);
 
 @invertedTextColor           : rgba(255, 255, 255, 0.9);
@@ -641,10 +660,10 @@
 
 
 /* Responsive */
-@largestMobileScreen : (@tabletBreakpoint - 1px);
-@largestTabletScreen : (@computerBreakpoint - 1px);
-@largestSmallMonitor : (@largeMonitorBreakpoint - 1px);
-@largestLargeMonitor : (@widescreenMonitorBreakpoint - 1px);
+@largestMobileScreen : (@tabletBreakpoint - @1px);
+@largestTabletScreen : (@computerBreakpoint - @1px);
+@largestSmallMonitor : (@largeMonitorBreakpoint - @1px);
+@largestLargeMonitor : (@widescreenMonitorBreakpoint - @1px);
 @mobileWidth: 1279px;
 
 

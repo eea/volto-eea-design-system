@@ -42,6 +42,7 @@
 /* Site Logo */
 @tabletSiteLogoWidth                : 192px;
 @computerSiteLogoWidth              : 283px;
+@tabletSiteLogoDisplay              : inline-block;
 
 /* Site Logo Description */
 @mobileDescriptionMargin             : 5px 0 0 10px;
