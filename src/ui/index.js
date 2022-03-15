@@ -27,3 +27,5 @@ export AvatarGrid from './AvatarGrid/AvatarGrid';
 export KeyContent from './KeyContent/KeyContent';
 
 export PublicationCard from './PublicationCard/PublicationCard';
+
+export ContentBox from './ContentBox/ContentBox';

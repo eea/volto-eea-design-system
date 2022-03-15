@@ -1,0 +1,20 @@
+/*******************************
+            Content Box
+*******************************/
+
+/* Container */
+@contentBoxWidth : 100%;
+@contentBoxBackgroundColor : @deepBlue;
+@contentBoxColor : @white;
+
+/* Title */
+@contentBoxTitlePaddingTop : 54px;
+@contentBoxTitleFontWeight : 700;
+@contentBoxTitleFontSize : 36px;
+
+
+/* Body */
+@contentBoxBodyPaddingTop : 24px;
+@contentBoxBodyFontWeight : 400;
+@contentBoxBodyFontSize : 24px;
+@contentBoxBodyPaddingBottom : 60px;

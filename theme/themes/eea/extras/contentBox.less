@@ -1,0 +1,27 @@
+@type: 'extra';
+@element: 'contentBox';
+
+@import (multiple) '../../theme.config';
+
+/*-------------------
+      CONTENT BOX
+--------------------*/
+
+.eea.contentbox {
+  width: @contentBoxWidth;
+  background-color: @contentBoxBackgroundColor;
+  color: @contentBoxColor;
+
+  .title.wrapper {
+    padding-top: @contentBoxTitlePaddingTop;
+    font-weight: @contentBoxTitleFontWeight;
+    font-size: @contentBoxTitleFontSize;
+  }
+
+  .body.wrapper {
+    padding-top: @contentBoxBodyPaddingTop;
+    font-weight: @contentBoxBodyFontWeight;
+    font-size: @contentBoxBodyFontSize;
+    padding-bottom: @contentBoxBodyPaddingBottom;
+  }
+}
