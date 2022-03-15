@@ -25,7 +25,7 @@
 
 @contentInfoLangItemPadding : 0.125rem 1.25rem;
 @contentInfoItemFontWeight : normal;
-@contentInfoItemFontSize   : 0.75rem;
+@contentInfoItemFontSize   : 0.875rem;
 @contentInfoItemMarginL    : 0.312rem;
 
 

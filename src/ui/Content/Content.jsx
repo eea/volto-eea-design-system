@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dropdown, Image } from 'semantic-ui-react';
+import { Dropdown, Image, Grid } from 'semantic-ui-react';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 
 function Content({ children, ...rest }) {
@@ -42,20 +42,25 @@ Content.Languages = function Languages({ children, ...rest }) {
       aria-label="dropdown"
     >
       <Dropdown.Menu>
-        <div className="wrapper">
-          {rest.languages.map((item, index) => (
-            <Dropdown.Item
-              key={index}
-              language={item.key}
-              text={
-                <span>
-                  {item.text}
-                  <span className="country-code">{item.key.toUpperCase()}</span>
-                </span>
-              }
-              onClick={onLanguageSelection}
-            ></Dropdown.Item>
-          ))}
+        <div className="language wrapper">
+          <Grid columns={2}>
+            {rest.languages.map((item, index) => (
+              <Grid.Column key={index}>
+                <Dropdown.Item
+                  language={item.key}
+                  text={
+                    <span>
+                      {item.text}
+                      <span className="country-code">
+                        {item.key.toUpperCase()}
+                      </span>
+                    </span>
+                  }
+                  onClick={onLanguageSelection}
+                ></Dropdown.Item>
+              </Grid.Column>
+            ))}
+          </Grid>
         </div>
       </Dropdown.Menu>
     </Dropdown>

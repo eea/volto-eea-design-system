@@ -106,8 +106,8 @@ function AccordionContainer({ ...args }) {
             <TagList className="left">
               <TagList.Title>{args.tagOptions.title}</TagList.Title>
               <TagList.Content>
-                {args.tagOptions.tags.map((tag) => [
-                  <Tag className={tag.class} href={tag.href}>
+                {args.tagOptions.tags.map((tag, index) => [
+                  <Tag className={tag.class} href={tag.href} key={index}>
                     {tag.category}
                   </Tag>,
                 ])}

@@ -78,6 +78,27 @@
             font-weight: @contentInfoLangFontWeight;
           }
         }
+
+        &.language{
+          max-width: 260px;
+          .ui.column.grid {
+            margin-top: 0;
+            margin-bottom: 0;
+
+            .column {
+              padding-top: 0;
+              padding-bottom: 0;
+            }
+
+            .column:nth-child(odd){
+              padding-right: 0;
+            }
+
+            .column:nth-child(even){
+              padding-left: 0;
+            }
+          }
+        }
       }
     }
   }
