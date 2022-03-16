@@ -1,13 +1,13 @@
 @type: 'extra';
-@element: 'content';
+@element: 'faqContent';
 
 @import (multiple) '../../theme.config';
 
 /*******************************
-            Content
+            FAQ Content
 *******************************/
 
-.eea.content {
+.eea.faqContent {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -20,20 +20,20 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: @contentRowMobileMargin;
-    width: @contentRowWidth;
-    padding: @contentRowMobilePadding;
-    letter-spacing: @contentRowLetterSpacing;
+    margin-bottom: @faqContentRowMobileMargin;
+    width: @faqContentRowWidth;
+    padding: @faqContentRowMobilePadding;
+    letter-spacing: @faqContentRowLetterSpacing;
   }
 
   .row.info {
     display: none;
-    height: @contentInfoHeight;
-    font-size: @contentFontSize;
-    font-weight: @contentFontWeight;
-    font-style: @contentFontStyle;
-    line-height: @contentInfoLineHeight;
-    color: @contentInfoTextColor;
+    height: @faqContentInfoHeight;
+    font-size: @faqContentFontSize;
+    font-weight: @faqContentFontWeight;
+    font-style: @faqContentFontStyle;
+    line-height: @faqContentInfoLineHeight;
+    color: @faqContentInfoTextColor;
     
   }
 
@@ -47,35 +47,35 @@
     display: inline-flex;
     text-align: right;
     align-items: center;
-    font-size: @contentInfoLangFontSize;
-    font-weight: @contentInfoLangFontWeight;
-    color: @contentInfoTextColor;
+    font-size: @faqContentInfoLangFontSize;
+    font-weight: @faqContentInfoLangFontWeight;
+    color: @faqContentInfoTextColor;
 
     .image {
       display: inline-flex;
-      padding: @contentInfoLangImgPadding;
-      margin: @contentInfoLangImgMargin;
-      width: @contentInfoLangImgWidth;
+      padding: @faqContentInfoLangImgPadding;
+      margin: @faqContentInfoLangImgMargin;
+      width: @faqContentInfoLangImgWidth;
     }
     .menu {
-      color: @contentInfoTextColor;
+      color: @faqContentInfoTextColor;
       right: 0;
       left: unset;
 
       .wrapper {
         .item {
           justify-content: flex-end;
-          padding: @contentInfoLangItemPadding;
-          font-weight: @contentInfoItemFontWeight;
-          font-size: @contentInfoItemFontSize;
+          padding: @faqContentInfoLangItemPadding;
+          font-weight: @faqContentInfoItemFontWeight;
+          font-size: @faqContentInfoItemFontSize;
           &:hover {
-            background: @contentInfoTextColor;
+            background: @faqContentInfoTextColor;
             color: @white;
             cursor: pointer;
           }
           span.country-code {
-            margin-left: @contentInfoItemMarginL;
-            font-weight: @contentInfoLangFontWeight;
+            margin-left: @faqContentInfoItemMarginL;
+            font-weight: @faqContentInfoLangFontWeight;
           }
         }
 
@@ -104,49 +104,49 @@
   }
 
   .row.content {
-    font-size: @contentFontSize;
-    font-style: @contentFontStyle;
-    font-weight: @contentFontWeight;
-    line-height: @contentContentLineHeight;
-    color:  @contentContentTextColor;
+    font-size: @faqContentFontSize;
+    font-style: @faqContentFontStyle;
+    font-weight: @faqContentFontWeight;
+    line-height: @faqContentContentLineHeight;
+    color:  @faqContentContentTextColor;
   }
 
   .row.actions {
     display: none;
     align-items: center;
-    padding: @contentActionPadding;
+    padding: @faqContentActionPadding;
 
     .button {
-      padding: @contentActionPadding;
+      padding: @faqContentActionPadding;
       width: unset;
       height: unset;
-      background-color: @contentActionButtonBackground;
-      margin: @contentActionButtonMargin;
-      font-size: @contentActionButtonFontSize;
+      background-color: @faqContentActionButtonBackground;
+      margin: @faqContentActionButtonMargin;
+      font-size: @faqContentActionButtonFontSize;
       color: @japaneseIndigo;
       border: none;
       .icon {
-        margin: @contentActionButtonIconMargin;
+        margin: @faqContentActionButtonIconMargin;
       }
     }
   }
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-  .eea.content {
+  .eea.faqContent {
     .row {
-      margin: @contentRowMobileMargin;
+      margin: @faqContentRowMobileMargin;
     }
   }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
-  .eea.content {
+  .eea.faqContent {
     .row {
-      margin-bottom: @contentRowDesktopMargin;
+      margin-bottom: @faqContentRowDesktopMargin;
     }
     :last-child.row {
-      margin-bottom: @contentRowMobileMargin;
+      margin-bottom: @faqContentRowMobileMargin;
     }
     .row.actions {
       display: flex;

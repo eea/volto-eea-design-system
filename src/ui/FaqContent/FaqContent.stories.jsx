@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Content from './Content';
+import FaqContent from './FaqContent';
 import TagList from '../TagList/TagList';
 import Tag from '../Tag/Tag';
 import { Accordion, Button, Icon } from 'semantic-ui-react';
@@ -14,8 +14,8 @@ Vitae, ultrices nunc justo, molestie. Eu sit nunc condimentum habitant facilisis
 `;
 
 export default {
-  title: 'Components/Content',
-  component: Content,
+  title: 'Components/FAQ Content',
+  component: FaqContent,
   argTypes: {
     content: {
       name: 'content',
@@ -90,13 +90,15 @@ function AccordionContainer({ ...args }) {
         <Icon name="chevron down" />
       </Accordion.Title>
       <Accordion.Content active={activeIndex === 2}>
-        <Content>
-          <Content.Info>
+        <FaqContent>
+          <FaqContent.Info>
             {args.date}
-            <Content.Languages {...args.languageOptions}></Content.Languages>
-          </Content.Info>
-          <Content.Content>{args.content}</Content.Content>
-          <Content.Actions>
+            <FaqContent.Languages
+              {...args.languageOptions}
+            ></FaqContent.Languages>
+          </FaqContent.Info>
+          <FaqContent.Content>{args.content}</FaqContent.Content>
+          <FaqContent.Actions>
             <TagList className="left">
               <TagList.Title>{args.tagOptions.title}</TagList.Title>
               <TagList.Content>
@@ -113,8 +115,8 @@ function AccordionContainer({ ...args }) {
             <Button>
               <Icon name="share alternate"></Icon>
             </Button>
-          </Content.Actions>
-        </Content>
+          </FaqContent.Actions>
+        </FaqContent>
       </Accordion.Content>
     </Accordion>
   );
@@ -124,9 +126,9 @@ const AccordionTemplate = (args) => (
   <AccordionContainer {...args}></AccordionContainer>
 );
 
-export const FAQContent = AccordionTemplate.bind({});
+export const Default = AccordionTemplate.bind({});
 
-FAQContent.args = {
+Default.args = {
   date: '21 SEP 2020',
   toggle: 'What is soil sealing and why is it important to monitor it?',
   content: CONTENT,

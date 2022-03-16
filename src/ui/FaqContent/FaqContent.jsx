@@ -2,33 +2,33 @@ import React, { useState } from 'react';
 import { Dropdown, Image, Grid } from 'semantic-ui-react';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 
-function Content({ children, ...rest }) {
+function FaqContent({ children, ...rest }) {
   return (
-    <div {...rest} className={`eea content ${rest.className || ''}`}>
+    <div {...rest} className={`eea faqContent ${rest.className || ''}`}>
       {children}
     </div>
   );
 }
 
-Content.Info = ({ children, ...rest }) => (
+FaqContent.Info = ({ children, ...rest }) => (
   <div {...rest} className={`row info ${rest.className || ''}`}>
     {children}
   </div>
 );
 
-Content.Content = ({ children, ...rest }) => (
+FaqContent.Content = ({ children, ...rest }) => (
   <div {...rest} className={`row content ${rest.className || ''}`}>
     {children}
   </div>
 );
 
-Content.Actions = ({ children, ...rest }) => (
+FaqContent.Actions = ({ children, ...rest }) => (
   <div {...rest} className={`row actions ${rest.className || ''}`}>
     {children}
   </div>
 );
 
-Content.Languages = function Languages({ children, ...rest }) {
+FaqContent.Languages = function Languages({ children, ...rest }) {
   const [language, setLanguage] = useState(rest.default);
   const onLanguageSelection = (e, data) => {
     const { language } = data;
@@ -67,4 +67,4 @@ Content.Languages = function Languages({ children, ...rest }) {
   );
 };
 
-export default Content;
+export default FaqContent;

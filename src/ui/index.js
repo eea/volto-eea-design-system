@@ -8,7 +8,7 @@ export Tag from './Tag/Tag';
 
 export TagList from './TagList/TagList';
 
-export Content from './Content/Content';
+export FaqContent from './FaqContent/FaqContent';
 
 export Footer from './Footer/Footer';
 
