@@ -22,6 +22,28 @@ export default {
       description: 'This is the FAQ Answer',
       type: { name: 'string', required: true },
     },
+    date: {
+      description: 'faq content date',
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: {
+          summary: ' "" ',
+        },
+      },
+    },
+    toggle: {
+      description: 'accordion title',
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: {
+          summary: ' "" ',
+        },
+      },
+    },
     tagOptions: {
       description: 'category tags',
       table: {
@@ -59,28 +81,6 @@ function AccordionContainer({ ...args }) {
 
   return (
     <Accordion>
-      <Accordion.Title
-        active={activeIndex === 0}
-        index={0}
-        onClick={toggleOpenAccordion}
-      >
-        {args.accordionToggle1}
-        <Icon name="chevron down" />
-      </Accordion.Title>
-      <Accordion.Content active={activeIndex === 0}>
-        {CONTENT}
-      </Accordion.Content>
-      <Accordion.Title
-        active={activeIndex === 1}
-        index={1}
-        onClick={toggleOpenAccordion}
-      >
-        {args.accordionToggle2}
-        <Icon name="chevron down" />
-      </Accordion.Title>
-      <Accordion.Content active={activeIndex === 1}>
-        {CONTENT}
-      </Accordion.Content>
       <Accordion.Title
         active={activeIndex === 2}
         index={2}
@@ -128,8 +128,6 @@ export const FAQContent = AccordionTemplate.bind({});
 
 FAQContent.args = {
   date: '21 SEP 2020',
-  accordionToggle1: 'Older Versions',
-  accordionToggle2: 'Permalinks',
   toggle: 'What is soil sealing and why is it important to monitor it?',
   content: CONTENT,
   tagOptions: {
