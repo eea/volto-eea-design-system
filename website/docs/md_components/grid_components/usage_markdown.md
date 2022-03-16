@@ -34,7 +34,7 @@ On mobile, at a breakpoint of 480px, this layout grid uses 20px gutters.
 
 <br />
 
-On tablet, at a breakpoint of 7687px, this layout grid uses 20px gutters.  
+On tablet, at a breakpoint of 768px, this layout grid uses 20px gutters.  
 ![](../static/tablet-mid-grid.png)   
 
 <br />
