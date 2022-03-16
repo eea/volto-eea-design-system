@@ -49,7 +49,7 @@ export const Default = DefaultTemplate.bind({});
 Default.args = {
     filterText: 'Filters',
     clearText: 'clear',
-    resultCount: 50,
+    resultCount: '50 Results',
     filters: [
         { 'label': 'Checkbox 1', 'id': 1 },
         { 'label': 'Checkbox 2', 'id': 2 },
