@@ -36,7 +36,6 @@ function TabContent({
   return (
     <Tab
       panes={panes}
-      className="eea-tab"
       renderActiveOnly={false}
       menu={{
         secondary: true,
@@ -77,7 +76,7 @@ export const Vertical = Template.bind({});
 Vertical.args = {
   vertical: true,
   fluid: true,
-  grid: { paneWidth: 9, tabWidth: 2 },
+  grid: { paneWidth: 8, tabWidth: 3 },
   panes: [
     {
       menuItem: 'Tab 1',

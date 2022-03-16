@@ -53,29 +53,25 @@ export default {
 //const Template = (args) => <Breadcrumb {...args}></Breadcrumb>;
 
 const Template = (args) => (
-  <div className="eea-breadcrumb">
-    <Container>
-      <Breadcrumb>
-        <Breadcrumb.Section key="home" href={args.root}>
-          <Image src={homeSVG} alt="home" />
-        </Breadcrumb.Section>
-        {args.sections.map((section, index, sections) => [
-          index !== 0 && (
-            <Breadcrumb.Divider icon={`${args.icon}`} key={index} />
-          ),
-          index < sections.length - 1 ? (
-            <Link key={section.href} to={section.href} className="section">
-              {section.content}{' '}
-            </Link>
-          ) : (
-            <Breadcrumb.Section key={section.key} active>
-              {section.content}{' '}
-            </Breadcrumb.Section>
-          ),
-        ])}
-      </Breadcrumb>
-    </Container>
-  </div>
+  <Container>
+    <Breadcrumb>
+      <Breadcrumb.Section key="home" href={args.root}>
+        <Image src={homeSVG} alt="home" />
+      </Breadcrumb.Section>
+      {args.sections.map((section, index, sections) => [
+        index !== 0 && <Breadcrumb.Divider icon={`${args.icon}`} key={index} />,
+        index < sections.length - 1 ? (
+          <Link key={section.href} to={section.href} className="section">
+            {section.content}{' '}
+          </Link>
+        ) : (
+          <Breadcrumb.Section key={section.key} active>
+            {section.content}{' '}
+          </Breadcrumb.Section>
+        ),
+      ])}
+    </Breadcrumb>
+  </Container>
 );
 
 export const Default = Template.bind({});

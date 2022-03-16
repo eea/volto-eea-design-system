@@ -10,6 +10,11 @@
   Import this file into your LESS project to use Semantic UI without build tools
 */
 
+/* Remix Icons */
+& {
+  @import (less) 'remixicon/fonts/remixicon.css';
+}
+
 /* Global */
 & {
   @import '~semantic-ui-less/definitions/globals/reset';
@@ -250,4 +255,12 @@
 
 & {
   @import '@eeacms/volto-eea-design-system/../theme/themes/eea/extras/faqContent';
+}
+
+& {
+  @import '@eeacms/volto-eea-design-system/../theme/themes/eea/extras/keyContent';
+}
+
+& {
+  @import '@eeacms/volto-eea-design-system/../theme/themes/eea/extras/publicationCard';
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox, Form, Message } from 'semantic-ui-react';
+import { Checkbox, Form, Message, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Forms/Checkbox',
@@ -10,9 +10,6 @@ export default {
     },
   },
   argTypes: {
-    onChange: {
-      action: 'checkbox value changed',
-    },
     label: {
       description: 'Label of the form group',
       table: {
@@ -76,37 +73,34 @@ function CheckboxForm({
   required,
 }) {
   return (
-    <Form>
-      <Form.Field>
-        {label}
-        {required ? (
-          <span style={{ color: 'red' }}>{requiredText}</span>
-        ) : (
-          <span>{optionalText}</span>
-        )}
-      </Form.Field>
-      <Form.Field>{helperText}</Form.Field>
-      {invalid ? (
-        <Message
-          icon="exclamation circle"
-          header="Error Message"
-          content={errorMessage}
-          negative
-        />
-      ) : null}
-      <Form.Field error={invalid}>
-        <Checkbox label="Option 1" defaultChecked id="field1"></Checkbox>
-        <label htmlFor="field1">Helper text for option 1</label>
-      </Form.Field>
-      <Form.Field error={invalid}>
-        <Checkbox label="Option 2" id="field2"></Checkbox>
-        <label htmlFor="field2">Helper text for option 2</label>
-      </Form.Field>
-      <Form.Field error={invalid}>
-        <Checkbox label="Option 3 (disabled)" disabled id="field3"></Checkbox>
-        <label htmlFor="field3">Helper text for option 3</label>
-      </Form.Field>
-    </Form>
+    <Container>
+      <Form>
+        <Form.Field>
+          {label}
+          {required ? (
+            <span style={{ color: 'red' }}>{requiredText}</span>
+          ) : (
+            <span>{optionalText}</span>
+          )}
+        </Form.Field>
+        <Form.Field>{helperText}</Form.Field>
+        {invalid ? (
+          <Message icon="exclamation circle" content={errorMessage} negative />
+        ) : null}
+        <Form.Field error={invalid}>
+          <Checkbox label="Option 1" defaultChecked id="field1"></Checkbox>
+          <label htmlFor="field1">Helper text for option 1</label>
+        </Form.Field>
+        <Form.Field error={invalid}>
+          <Checkbox label="Option 2" id="field2"></Checkbox>
+          <label htmlFor="field2">Helper text for option 2</label>
+        </Form.Field>
+        <Form.Field error={invalid}>
+          <Checkbox label="Option 3 (disabled)" disabled id="field3"></Checkbox>
+          <label htmlFor="field3">Helper text for option 3</label>
+        </Form.Field>
+      </Form>
+    </Container>
   );
 }
 
@@ -120,25 +114,27 @@ function SingleCheckboxForm({
   required,
 }) {
   return (
-    <Form>
-      <Form.Field>
-        {label}
-        {required ? (
-          <span style={{ color: 'red' }}>{requiredText}</span>
-        ) : (
-          <span>{optionalText}</span>
-        )}
-      </Form.Field>
-      <Form.Field>{helperText}</Form.Field>
+    <Container>
+      <Form>
+        <Form.Field>
+          {label}
+          {required ? (
+            <span style={{ color: 'red' }}>{requiredText}</span>
+          ) : (
+            <span>{optionalText}</span>
+          )}
+        </Form.Field>
+        <Form.Field>{helperText}</Form.Field>
 
-      <Form.Field error={invalid}>
-        <Checkbox label="Option 1" defaultChecked id="field4"></Checkbox>
-        <label htmlFor="field4">Helper text for option 1</label>
-      </Form.Field>
-      {invalid ? (
-        <Message header="Error Message" content={errorMessage} negative />
-      ) : null}
-    </Form>
+        <Form.Field error={invalid}>
+          <Checkbox label="Option 1" defaultChecked id="field4"></Checkbox>
+          <label htmlFor="field4">Helper text for option 1</label>
+        </Form.Field>
+        {invalid ? (
+          <Message header="Error Message" content={errorMessage} negative />
+        ) : null}
+      </Form>
+    </Container>
   );
 }
 

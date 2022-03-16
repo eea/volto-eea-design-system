@@ -28,7 +28,7 @@ export const GridExamples = (args) => (
   <Grid>
     <Grid.Row columns="two">{getColumns(2, '12/2')}</Grid.Row>
     <Grid.Row columns="three">{getColumns(3, '12/3')}</Grid.Row>
-    <Grid.Row columns="four">
+    <Grid.Row>
       <Grid.Column width="three">{getDiv('12/4')}</Grid.Column>
       <Grid.Column width="six">{getDiv('12/2')}</Grid.Column>
       <Grid.Column width="three">{getDiv('12/4')}</Grid.Column>

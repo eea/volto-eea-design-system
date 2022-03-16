@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Form } from 'semantic-ui-react';
+import { Input, Form, Container } from 'semantic-ui-react';
 import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
 
 export default {
@@ -19,19 +19,18 @@ export default {
     },
     onChange: {
       action: 'input changed',
+      table: {
+        disable: true,
+      },
     },
     onFocus: {
       action: 'input focus',
+      table: {
+        disable: true,
+      },
     },
     placeholder: {
       description: 'placeholder text',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: ' "" ' },
-      },
-    },
-    label: {
-      description: 'Label text',
       table: {
         type: { summary: 'string' },
         defaultValue: { summary: ' "" ' },
@@ -54,17 +53,19 @@ export default {
   },
 };
 
-const Template = ({ label, error, required, ...rest }) => (
-  <Form>
-    <FormFieldWrapper
-      error={error}
-      label={label}
-      required={required}
-      columns={label ? 1 : 0}
-    >
-      <Input {...rest} id="temp-id" />
-    </FormFieldWrapper>
-  </Form>
+const Template = ({ label, error, ...rest }) => (
+  <Container>
+    <Form>
+      <FormFieldWrapper
+        error={error}
+        label={label}
+        required={rest.required}
+        columns={label ? 1 : 0}
+      >
+        <Input {...rest} id="temp-id" />
+      </FormFieldWrapper>
+    </Form>
+  </Container>
 );
 
 export const Default = Template.bind({});
@@ -98,13 +99,6 @@ StandardInput.argTypes = {
       type: { summary: 'boolean' },
       defaultValue: { summary: false },
     },
-  },
-};
-
-StandardInput.parameters = {
-  controls: {
-    exclude: ['onChange', 'onFocus'],
-    hideNoControlsWarning: true,
   },
 };
 
@@ -148,11 +142,12 @@ DisabledInput.argTypes = {
       defaultValue: { summary: true },
     },
   },
-};
-DisabledInput.parameters = {
-  controls: {
-    exclude: ['onChange', 'onFocus'],
-    hideNoControlsWarning: true,
+  label: {
+    description: 'input label',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: '' },
+    },
   },
 };
 
@@ -189,12 +184,6 @@ LoadingInput.argTypes = {
     },
   },
 };
-LoadingInput.parameters = {
-  controls: {
-    exclude: ['onChange', 'onFocus'],
-    hideNoControlsWarning: true,
-  },
-};
 
 export const ErrorInput = Template.bind({});
 ErrorInput.args = {
@@ -226,11 +215,5 @@ ErrorInput.argTypes = {
       type: { summary: 'boolean' },
       defaultValue: { summary: false },
     },
-  },
-};
-ErrorInput.parameters = {
-  controls: {
-    exclude: ['onChange', 'onFocus'],
-    hideNoControlsWarning: true,
   },
 };

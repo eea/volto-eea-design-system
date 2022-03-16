@@ -1,0 +1,18 @@
+/*******************************
+            Key Content
+*******************************/
+
+@keyContentBackgroundColor : #f9f9f9;
+
+/* Title */
+@keyContentTitleFontWeight: 700; 
+@keyContentTitleFontSize : 36px;
+
+/* List */
+@keyContentListMarginLeft: 0;
+@keyContentListItemBeforeColor :  @darkCyan;
+@keyContentListItemBeforeMarginLeft : -38.84px;
+
+/* Colored Title */
+@keyContentColoredTitleColor : @darkCyan;
+@keyContentColoredTitleMarginLeft : 74.85px;

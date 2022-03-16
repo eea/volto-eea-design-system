@@ -54,9 +54,7 @@ const content = (
   </p>
 );
 
-const Template = (args) => (
-  <Container className="eea-container" {...args}></Container>
-);
+const Template = (args) => <Container {...args}></Container>;
 
 export const Default = Template.bind({});
 Default.args = {

@@ -30,7 +30,7 @@
   color @defaultDuration @defaultEasing
 ;
 @itemFontWeight: @normal;
-@itemTextColor: @black;
+@itemTextColor: @deepBlue;
 
 /* Divider */
 @dividerSize: 1px;
@@ -246,9 +246,11 @@
 @secondaryPointingBorderWidth: @1px;
 @secondaryPointingActiveBorderWidth: @3px;
 @secondaryPointingBorderColor: @midGray;
-@secondaryPointingItemVerticalPadding: @relativeTiny;
-@secondaryPointingItemActiveVerticalPadding: unit((@relativeTiny - @1px), rem);
-@secondaryPointingItemHorizontalPadding: @relativeMini;
+@secondaryPointingItemMargin: 0 1.25rem;
+@secondaryPointingItemVerticalPadding: @tinyGap;
+@secondaryPointingItemActiveVerticalPadding: unit((@relativeTiny - @3px), rem);
+@tabSecondaryPointingItemActiveVerticalPadding: unit((@relativeTiny), rem);
+@secondaryPointingItemHorizontalPadding: @largeGap;
 // Pastanaga custom
 @secondaryPointingItemTextTransform: uppercase;
 
@@ -335,6 +337,7 @@
 
 
 /* Pagination */
+@paginationFontSize: 0.875rem;
 @paginationWidth: 100%;
 @paginationColor: @deepBlue;
 @paginationMinWidth: 2em;
