@@ -9,8 +9,12 @@
   .title {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: @titleJustifyContent;
     border-bottom: @titleBorderBottom;
+
+    &.align-arrow-left {
+      justify-content: flex-start;
+    }
 
     i {
       flex-shrink: 0;
@@ -26,15 +30,18 @@
 
     i {
       display: flex;
+      width: @iconWidth;
+      height: @iconHeight;
       align-items: center;
       order: @iconOrder;
+      margin: @iconMargin;
       color: @iconColor;
       font-size: @iconFontSize;
       line-height: @iconFontSize;
 
       &:before {
         content: @iconInactive;
-        font-size: 3rem;
+        font-size: @iconFontSize;
       }
     }
   }
