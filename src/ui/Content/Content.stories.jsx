@@ -47,12 +47,6 @@ export default {
   },
 };
 
-export const Default = (args) => <Content>{args.content}</Content>;
-
-Default.args = {
-  content: CONTENT,
-};
-
 function AccordionContainer({ ...args }) {
   const [activeIndex, setActiveIndex] = useState();
 
