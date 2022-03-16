@@ -15,16 +15,46 @@
   .content {
     margin: @contentMargin;
     .author {
+      color: @authorTextColor;
       text-align: @authorTextAlign;
+      font-weight: @authorFontWeight;
+      font-size: @authorFontSize;
+      line-height: @authorLineHeight;
+      letter-spacing: @authorLetterSpacing;
+      margin: @authorMargin;
+    }
+
+    .meta {
+      text-align: @metaTextAlign;
+      font-weight: @metaFontWeight;
+      font-size: @metaFontSize;
+      line-height: @metaLineHeight;
+      letter-spacing: @metaLetterSpacing;
     }
   }
   i.icon {
     font-size: @quoteIconSize;
     color: @quoteIconColor;
   }
-  .quote.right {
-    float: @quoteDownIconFloat;
+
+  .quotes.wrapper {
+    display: flex;
+
+    i.icon {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    i.icomn:first-child {
+      align-self:flex-start
+    }
+
+    i.icon:last-child {
+      align-self: flex-end;
+    }
+    
   }
+
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {

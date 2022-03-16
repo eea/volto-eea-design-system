@@ -3,10 +3,10 @@
 *******************************/
 
 /* Body */
-@pullquotePadding       : @relative10px 0 @relative50px;
+@pullquotePadding       : @relative10px  @relative10px;
 @pullquoteMobileMargin  : 0;
-@pullquoteMargin        : 0 2rem;
-@maxWidthOnFloat        : 400px;
+@pullquoteMargin        : 0;
+@maxWidthOnFloat        : 50%;
 @paddingLeftFloat       : 0 1.5rem 1rem 0;
 @paddingRightFloat      : 0 0 1rem 1.5rem;
 @contentWordBreak       : break-word;
@@ -16,7 +16,20 @@
 @contentMargin: 0;
 
 /* Author */
+@authorTextColor: @darkCyan;
 @authorTextAlign: right;
+@authorFontWeight   : 700;
+@authorFontSize     : 20px;
+@authorLineHeight   : 30px;
+@authorLetterSpacing: -0.015em;
+@authorMargin: 0;
+
+/* Metadata */
+@metaTextAlign: right;
+@metaFontWeight: 300;
+@metaFontSize: 16px;
+@metaLineHeight: 24px;
+@metaLetterSpacing: -0.015em;
 
 /* Icon */
 @quoteIconSize      : 2rem;
