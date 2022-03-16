@@ -269,6 +269,9 @@
 @secondaryVerticalPointingItemMargin: 0em -@secondaryPointingBorderWidth 0em 0em;
 
 
+@secondaryPointingItemBorderBottom: @1px solid @midGray;
+@secondaryPointingItemMaxWidth: 15.626rem; 
+
 /* Inverted Secondary */
 @secondaryInvertedColor: @invertedLightTextColor;
 
