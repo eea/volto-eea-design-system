@@ -612,7 +612,7 @@ Header Actions - Burger and Search Icons
             justify-content: space-between;
             align-items: @megaMenuLiAlignItems;
             max-width: 100%;
-            padding-left: 2rem;
+            padding-left: 1rem;
           }
         }
       }
@@ -634,7 +634,7 @@ Header Actions - Burger and Search Icons
           }
           a {
             max-width: 100%;
-            padding-left: 2rem;
+            padding-left: 1rem;
           }
         }
       }
@@ -665,12 +665,18 @@ Header Actions - Burger and Search Icons
           &.hasSubMenu:after {
             font-size: @megaMenuFontSize;
           }
+          a {
+            padding-left: 2rem;
+          }
         }
       }
       .sub.second li {
         margin-bottom: @computerMegaMenuMarginBottom;
         &.hasSubMenu:after {
           font-size: @megaMenuFontSize;
+        }
+        a {
+          padding-left: 2rem;
         }
       }
       .sub.third li {
