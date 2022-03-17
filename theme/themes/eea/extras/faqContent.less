@@ -20,14 +20,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: @faqContentRowMobileMargin;
+    margin-bottom: @faqContentRowMobileMarginBottom;
     width: @faqContentRowWidth;
     padding: @faqContentRowMobilePadding;
     letter-spacing: @faqContentRowLetterSpacing;
   }
 
   .row.info {
-    display: none;
+    display: flex;
     height: @faqContentInfoHeight;
     font-size: @faqContentFontSize;
     font-weight: @faqContentFontWeight;
@@ -41,6 +41,10 @@
     border: none !important;
     height: auto !important;
     border-radius: 0;
+
+    .divider {
+      color: @faqContentInfoTextColor;
+    }
   }
 
   .languages {
@@ -80,7 +84,9 @@
         }
 
         &.language{
-          max-width: 260px;
+          max-width: @faqContentInfoLangWidth;
+          padding: @faqContentInfoLangPadding;
+          
           .ui.column.grid {
             margin-top: 0;
             margin-bottom: 0;
@@ -112,9 +118,10 @@
   }
 
   .row.actions {
-    display: none;
+    display: flex;
     align-items: center;
     padding: @faqContentActionPadding;
+    margin-top: @faqContentActionMobileMarginTop;
 
     .button {
       padding: @faqContentActionPadding;
@@ -135,7 +142,7 @@
 @media only screen and (min-width: @tabletBreakpoint) {
   .eea.faqContent {
     .row {
-      margin: @faqContentRowMobileMargin;
+      margin-bottom: @faqContentRowTabletMarginBottom;
     }
   }
 }
@@ -143,13 +150,14 @@
 @media only screen and (min-width: @computerBreakpoint) {
   .eea.faqContent {
     .row {
-      margin-bottom: @faqContentRowDesktopMargin;
+      margin-bottom: @faqContentRowDesktopMarginBottom;
     }
     :last-child.row {
-      margin-bottom: @faqContentRowMobileMargin;
+      margin-bottom: @faqContentRowTabletMarginBottom;
     }
     .row.actions {
       display: flex;
+      margin-top: @faqContentActionDesktopMarginTop;
     }
     .row.info {
       display: flex;

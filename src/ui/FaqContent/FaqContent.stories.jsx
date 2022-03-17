@@ -87,7 +87,7 @@ function AccordionContainer({ ...args }) {
         onClick={toggleOpenAccordion}
       >
         {args.toggle}
-        <Icon name="chevron down" />
+        <Icon className="ri-arrow-down-s-line" />
       </Accordion.Title>
       <Accordion.Content active={activeIndex === 2}>
         <FaqContent>
