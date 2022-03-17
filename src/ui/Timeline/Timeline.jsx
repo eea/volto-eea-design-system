@@ -36,7 +36,7 @@ Timeline.Content = (args) => (
 
 Timeline.Icon = (args) => (
   <Grid.Column width={2} className="line">
-    <Icon name={args.icon} color={args.color} inverted circular />
+    <Icon className={args.icon} color={args.color} inverted circular />
   </Grid.Column>
 );
 
