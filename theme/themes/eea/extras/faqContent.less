@@ -44,6 +44,8 @@
 
     .divider {
       color: @faqContentInfoTextColor;
+      font-size: @faqContentFontSize;
+      font-weight: @faqContentFontWeight;
     }
   }
 
@@ -165,6 +167,11 @@
     }
     .row.info {
       display: flex;
+    }
+
+    .dropdown .divider {
+      font-size: inherit;
+      font-weight: inherit;
     }
   }
 }
