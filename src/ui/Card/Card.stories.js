@@ -10,6 +10,7 @@ export default {
     },
   },
   argTypes: {
+    imgUrl: 'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
     hasImage: {
       description: 'true if card contains image',
       table: {
@@ -62,7 +63,7 @@ const Template = (args) => (
   <Card fluid={args.fluid}>
     {args.hasImage && (
       <Image
-        src="https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large"
+        src={args.imgUrl}
         wrapped
         ui={false}
         alt="card image"
@@ -87,7 +88,7 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  //src: 'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+  imgUrl: 'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
   title: 'Lorem Ipsum',
   description:
     'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
@@ -103,7 +104,7 @@ const GridTemplate = (args) => (
         <Card fluid={card.fluid}>
           {card.hasImage && (
             <Image
-              src="https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large"
+              src={card.imgUrl}
               wrapped
               ui={false}
               alt="card image"
@@ -134,6 +135,7 @@ CardGrid.args = {
   cards: [
     {
       title: 'Lorem Ipsum',
+      imgUrl: 'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: true,
@@ -142,6 +144,7 @@ CardGrid.args = {
     },
     {
       title: 'Suspendisse iaculis feugiat',
+      imgUrl: 'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: true,
