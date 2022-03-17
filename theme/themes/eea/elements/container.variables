@@ -17,7 +17,7 @@
 
 /* Devices */
 @mobileMinimumGutter: 0em;
-@mobileWidth: 100%;
+@mobileWidth: auto;
 @mobileGutter: 1rem;
 
 @tabletMinimumGutter: (@emSize  * 1);
