@@ -119,7 +119,7 @@
 
   .row.actions {
     display: flex;
-    align-items: center;
+    align-items: end;
     padding: @faqContentActionPadding;
     margin-top: @faqContentActionMobileMarginTop;
 
@@ -143,6 +143,10 @@
   .eea.faqContent {
     .row {
       margin-bottom: @faqContentRowTabletMarginBottom;
+    }
+
+    .row.actions {
+      align-items: center;
     }
   }
 }
