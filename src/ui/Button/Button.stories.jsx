@@ -80,7 +80,7 @@ SecondaryWithIcon.args = {
   label: 'Secondary Button',
   disabled: false,
   icon: 'ri-chat-3-line',
-  labelPosition: 'right',
+  labelPosition: 'left',
 };
 
 SecondaryWithIcon.argTypes = {
