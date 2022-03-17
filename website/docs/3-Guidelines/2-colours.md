@@ -1,5 +1,5 @@
 ---
-title: Colours
+title: Colors
 order: 2
 ---
 
