@@ -21,6 +21,9 @@
 @cardDescriptionPadding: 20px;
 @cardDescriptionWidth: 100%;
 
+@cardDescriptionTextLineClampMobile: 3;
+@cardDescriptionTextLineClampTablet: 2;
+
 @cardDescriptionTagFontSize: 12px;
 @cardDescriptionTagFontWeight: 400;
 @cardDescriptionTextFontSize: 16px;
