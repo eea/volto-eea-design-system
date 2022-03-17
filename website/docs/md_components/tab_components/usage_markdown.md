@@ -21,6 +21,6 @@ Consider if it is better to:
 -	use a table of contents to let users navigate quickly to specific sections of content
 
 ### Tab labels
-- use short tab labels to appear in a single row. In expeptions, they can use a second line if needed, with truncated text. Alternatively, you can use scrollable tabs to allow room for longer titles
+- use short tab labels to appear in a single row. In exceptions, they can use a second line if needed, with a tab max widht of 250px. Alternatively, you can use scrollable tabs to allow room for longer titles
 - don’t truncate labels unless required, as truncated text can impede comprehension
 - tab labels should consist of 1 – 2 words: Labels on tabs should clearly describe their function or destination within 2 words at most. Constraining yourself to 1 – 2 words will also help you in thinking more about selecting the best words for your tab labels.
