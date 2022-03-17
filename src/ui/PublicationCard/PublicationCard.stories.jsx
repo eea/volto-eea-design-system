@@ -23,13 +23,6 @@ export default {
         defaultValue: { summary: '' },
       },
     },
-    href: {
-      description: 'publication link url',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: '' },
-      },
-    },
   },
 };
 
@@ -50,7 +43,6 @@ Default.args = {
   tag: 'Publication',
   description:
     'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-  href: '/#',
 };
 
 export const DefaultWithLongDescription = Template.bind({});
@@ -58,7 +50,6 @@ DefaultWithLongDescription.args = {
   tag: 'Publication',
   description:
     'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
-  href: '/#',
 };
 
 export const PublicationCardWithImage = Template.bind({});
@@ -67,7 +58,6 @@ PublicationCardWithImage.args = {
   description:
     'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
   image: true,
-  href: '/#',
 };
 PublicationCardWithImage.argTypes = {
   image: {

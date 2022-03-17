@@ -17,13 +17,6 @@
     flex-direction: column;
     justify-content: space-between;
 
-    a {
-        display: contents;
-        text-decoration: none;
-        color: @publicationCardtextColor;
-        cursor: pointer;
-    }
-
     .header{
         background-repeat: no-repeat;
         background-position: center;
@@ -49,7 +42,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 2;
+            -webkit-line-clamp: @cardDescriptionTextLineClampMobile;
             -webkit-box-orient: vertical;
         }
     }
@@ -65,6 +58,10 @@
 
         .description {
             height: @tabletCardDescriptionHeight;
+
+            .text {
+                -webkit-line-clamp: @cardDescriptionTextLineClampTablet;
+            }
         }
     }
   }
