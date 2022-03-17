@@ -13,6 +13,7 @@
 @titleColor: @textColor;
 @titleBorderBottom: @1px solid @silverGray;
 @titleColorHover: @secondaryColor;
+@titleJustifyContent: space-between;
 
 /* Icon */
 @iconColor: @oldSilver;
