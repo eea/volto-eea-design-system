@@ -33,7 +33,30 @@
       .arrow {
         cursor: pointer;
         color: #3d5265;
-        font-size: 16px;
+
+        i {
+          display: flex;
+          width: auto;
+          height: 1.4rem;
+          align-items: center;
+          order: 1;
+          margin: 0em;
+          color: #808285;
+          font-size: 3rem;
+          line-height: 3rem;
+
+          &:before {
+            content: @iconInactive;
+          }
+        }
+      }
+
+      .arrow.up {
+        i {
+          &:before {
+            content: @iconActive;
+          }
+        }
       }
 
       .clear {
@@ -42,6 +65,17 @@
         font-size: 16px;
       }
       background-color: #f9f9f9;
+    }
+  }
+
+  .selected.wrapper {
+    padding-top: 20px;
+    padding-bottom: 24.12px;
+    .ui.label {
+      margin-bottom: 4px;
+    }
+    .ui.label:first-child {
+      margin-left: 2px;
     }
   }
 }

@@ -40,17 +40,17 @@ const Menu = ({ children, ...rest }) => {
             <div className='wrapper'>
                 <div className='filter title'>{rest.filterText}</div>
                 <div className={`arrow ${context.active ? 'up' : ''} `} onClick={() => context.setActive(!context.active)}><Icon className="ri-arrow-down-s-line" /></div>
-                <div className={`clear ${context.active ? '' : 'hidden'}`} onClick={() => context.clearFilters()}>{rest.clearText}</div>
+                <div className={`clear ${context.selected.length > 0 ? '' : 'hidden'}`} onClick={() => context.clearFilters()}>{rest.clearText}</div>
             </div>
-            <div className={`results ${context.active ? '' : 'hidden'}`}>{rest.resultCount}</div>
+            <div className={`results ${context.selected.length > 0 ? '' : 'hidden'}`}>{rest.resultCount}</div>
         </div>
     );
 };
 
 const Active = ({ children, ...rest }) => {
-    const context = useContext(FilterContext);    
+    const context = useContext(FilterContext);
     return (
-        <div className={`selected wrapper ${context.active ? '' : 'hidden'}`}>
+        <div className={`selected wrapper`}>
             {context.selected.length > 0 && context.selected.map((active) => (
                 <Label>{active}<Icon name='delete' onClick={() => context.removeFilter(active)} /></Label>
             ))}

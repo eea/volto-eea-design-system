@@ -1,0 +1,7 @@
+
+
+
+
+@iconInactive: "\ea4e"; // Icon of closed accordion
+@iconActive: "\ea78"; // Icon of open accordion
+@iconFontSize: 3rem;
