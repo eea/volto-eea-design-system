@@ -16,9 +16,6 @@ const Template = (args) => (
         showButton={args.showButton}
         buttonText={args.buttonText}
       ></RelatedContent.Grid>
-      {/* <RelatedContent.Button showButton={args.showButton}>
-        {args.buttonText}
-      </RelatedContent.Button> */}
     </RelatedContent>
   </Container>
 );
