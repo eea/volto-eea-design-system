@@ -1,7 +1,40 @@
+/*******************************
+            FaQ Filter
+*******************************/
 
 
+/* Top Menu */
+@menuRowResultsPaddingTop : 8px;
+@menuRowResultsPaddingSides : 11px;
+@menuRowResultsPaddingBottom : 6px;
+@menuRowResultsColor : @pineGreen;
+@menuRowResultsFontWeight : 700;
+@menuRowResultsFontSize : 16px;
 
+@menuRowWrapperPaddingTop : 8px;
+@menuRowWrapperPaddingSides : 11px;
+@menuRowWrapperPaddingBottom : 6px;
+@menuRowWrapperBackgroundColor : #f9f9f9; 
 
-@iconInactive: "\ea4e"; // Icon of closed accordion
-@iconActive: "\ea78"; // Icon of open accordion
-@iconFontSize: 3rem;
+@menuRowFilterTitleColor : @deepBlue;
+@menuRowFilterTitleFontWeight : 700;
+@menuRowFilterTitleFontSize : 16px;
+
+@menuRowArrowColor: @deepBlue;
+@menuRowArrowIconHeight : 1.4rem;
+@menuRowArrowIconInactive: "\ea4e"; // Icon of closed accordion
+@menuRowArrowIconActive: "\ea78"; // Icon of open accordion
+@menuRowArrowIconFontSize: 3rem;
+@menuRowArrowIconLineHeight : 3rem;
+@menuRowArrowIconColor : @oldSilver;
+@menuRowArrowIconMargin : 0em;
+@menuRowArrowIconOrder :1;
+
+@menuRowClearColor : @deepBlue;
+@menuRowClearFontWeight : 400;
+@menuRowClearFontSize : 16px;
+
+@selectedWrapperPaddingTop : 20px;
+@selectedWrapperPaddingBottom : 24.12px;
+@selectedUiLabelMarginBottom : 4px;
+@selectedUiLavelFirstChildMarginLeft : 2px;

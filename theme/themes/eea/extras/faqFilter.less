@@ -15,38 +15,40 @@
     display: flex;
 
     .results {
-      padding: 8px 11px 6px;
-      color: #007b6c;
-      font-weight: 700;
-      font-size: 16px;
+      padding: @menuRowResultsPaddingTop @menuRowResultsPaddingSides
+        @menuRowResultsPaddingBottom;
+      color: @menuRowResultsColor;
+      font-weight: @menuRowResultsFontWeight;
+      font-size: @menuRowResultsFontSize;
     }
 
     .wrapper {
-      padding: 8px 11px 6px;
+      padding: @menuRowWrapperPaddingTop @menuRowWrapperPaddingSides
+        @menuRowWrapperPaddingBottom;
       display: flex;
 
       .filter.title {
-        color: #3d5265;
-        font-weight: 700;
-        font-size: 16px;
+        color: @menuRowFilterTitleColor;
+        font-weight: @menuRowFilterTitleFontWeight;
+        font-size: @menuRowFilterTitleFontSize;
       }
       .arrow {
         cursor: pointer;
-        color: #3d5265;
+        color: @menuRowArrowColor;
 
         i {
           display: flex;
           width: auto;
-          height: 1.4rem;
+          height: @menuRowArrowIconHeight;
           align-items: center;
-          order: 1;
-          margin: 0em;
-          color: #808285;
-          font-size: 3rem;
-          line-height: 3rem;
+          order: @menuRowArrowIconOrder;
+          margin: @menuRowArrowIconMargin;
+          color: @menuRowArrowIconColor;
+          font-size: @menuRowArrowIconFontSize;
+          line-height: @menuRowArrowIconLineHeight;
 
           &:before {
-            content: @iconInactive;
+            content: @menuRowArrowIconInactive;
           }
         }
       }
@@ -54,28 +56,28 @@
       .arrow.up {
         i {
           &:before {
-            content: @iconActive;
+            content: @menuRowArrowIconActive;
           }
         }
       }
 
       .clear {
-        color: #3d5265;
-        font-weight: 400;
-        font-size: 16px;
+        color: @menuRowClearColor;
+        font-weight: @menuRowClearFontWeight;
+        font-size: @menuRowClearFontSize;
       }
-      background-color: #f9f9f9;
+      background-color: @menuRowWrapperBackgroundColor;
     }
   }
 
   .selected.wrapper {
-    padding-top: 20px;
-    padding-bottom: 24.12px;
+    padding-top: @selectedWrapperPaddingTop;
+    padding-bottom: @selectedWrapperPaddingBottom;
     .ui.label {
-      margin-bottom: 4px;
+      margin-bottom: @selectedUiLabelMarginBottom;
     }
     .ui.label:first-child {
-      margin-left: 2px;
+      margin-left: @selectedUiLavelFirstChildMarginLeft;
     }
   }
 }
