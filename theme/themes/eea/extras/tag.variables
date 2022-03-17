@@ -3,7 +3,7 @@
 *******************************/
 
 /* Tags */
-@tagPadding            : 0.625rem 0.75rem;
+@tagPadding            : 1rem 0.75rem;
 @tagHeight             : 1.312rem;
 @tagBorderRadius       : 15px;
 @tagMargin             : 0 0.937rem 0 0;
