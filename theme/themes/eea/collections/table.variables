@@ -1,10 +1,7 @@
 /*******************************
              Table
 *******************************/
-
-
-
-@tableBorderRadius: @defaultBorderRadius;
+@tableHoverBackgroundColor: #F9F9F9;
 
 /*-------------------
        Element
@@ -23,7 +20,7 @@
 @background: @white;
 @color: @textColor;
 @borderWidth: 1px;
-@border: @borderWidth solid @borderColor;
+@border: 0;
 @boxShadow: none;
 @textAlign: left;
 
@@ -32,28 +29,29 @@
 ---------------*/
 
 /* Table Row */
-@rowBorder: 1px solid @internalBorderColor;
+@rowBorder: 1px solid @midGray;
 
 /* Table Cell */
 @cellVerticalPadding: @relativeMini;
 @cellHorizontalPadding: @relativeMini;
 @cellVerticalAlign: inherit;
-@cellTextAlign: inherit;
-@cellBorder: 1px solid @internalBorderColor;
+@cellTextAlign: center;
+@cellBorder: 1px solid @secondaryColor;
 
 /* Table Header */
 @headerBorder: 1px solid @secondaryColor;
 @headerDivider: none;
-@headerBackground: @silverGray;
+@headerBackground: @white;
 @headerAlign: inherit;
 @headerVerticalAlign: inherit;
 @headerColor: @deepBlue;
 @headerVerticalPadding: @relativeSmall;
 @headerHorizontalPadding: @cellHorizontalPadding;
 @headerFontStyle: none;
-@headerFontWeight: @normal;
-@headerTextTransform: uppercase;
+@headerFontWeight: @bold;
+@headerTextTransform: inherit;
 @headerBoxShadow: none;
+@headerFontSize: @h5;
 
 /* Table Footer */
 @footerBoxShadow: none;
@@ -176,9 +174,9 @@
 
 /* Sortable */
 @sortableBackground: '';
-@sortableColor: @textColor;
+@sortableColor: @headerColor;
 
-@sortableBorder: 1px solid @borderColor;
+@sortableBorder: none;
 @sortableIconWidth: auto;
 @sortableIconDistance: 0.5em;
 @sortableIconOpacity: 0.8;
@@ -187,14 +185,14 @@
 @sortableIconDescending: '\f0d7';
 @sortableDisabledColor: @disabledTextColor;
 
-@sortableHoverBackground: @transparentBlack;
+@sortableHoverBackground: @tableHoverBackgroundColor;
 @sortableHoverColor: @hoveredTextColor;
 
-@sortableActiveBackground: @transparentBlack;
-@sortableActiveColor: @selectedTextColor;
+@sortableActiveBackground: @tableHoverBackgroundColor;
+@sortableActiveColor: @headerColor;
 
-@sortableActiveHoverBackground: @transparentBlack;
-@sortableActiveHoverColor: @selectedTextColor;
+@sortableActiveHoverBackground: @tableHoverBackgroundColor;
+@sortableActiveHoverColor: @headerColor;
 
 @sortableInvertedBorderColor: transparent;
 @sortableInvertedHoverBackground: @transparentWhite @subtleGradient;

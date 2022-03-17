@@ -1,3 +1,21 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+/* avoid long links from spilling outside of card body area */
+.ui.cards > .card > .extra,
+.ui.card > .extra {
+  word-break: break-all;
+}
+
+.ui.card .meta > .category {
+  font-size: @metaFontSize;
+}
+
+.ui.left.card {
+  margin-right: auto;
+}
+
+.ui.right.card {
+  margin-left: auto;
+}

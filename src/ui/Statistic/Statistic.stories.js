@@ -38,15 +38,9 @@ const Template = (args) => (
   <Statistic.Group {...args}>
     {args.elements &&
       args.elements.map((element, index) => (
-        <Statistic
-          className="eea-statistic"
-          key={index}
-          {...element}
-        ></Statistic>
+        <Statistic key={index} {...element}></Statistic>
       ))}
-    {!args.elements && (
-      <Statistic className="eea-statistic" {...args}></Statistic>
-    )}
+    {!args.elements && <Statistic {...args}></Statistic>}
   </Statistic.Group>
 );
 

@@ -9,26 +9,39 @@
   .title {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: @titleJustifyContent;
     border-bottom: @titleBorderBottom;
+
+    &.align-arrow-left {
+      justify-content: flex-start;
+    }
+
+    i {
+      flex-shrink: 0;
+    }
 
     &:hover {
       color: @titleColorHover;
 
-      i.icon {
+      i {
         color: @iconColorHover;
       }
     }
 
-    i.icon {
+    i {
       display: flex;
+      width: @iconWidth;
+      height: @iconHeight;
       align-items: center;
       order: @iconOrder;
+      margin: @iconMargin;
       color: @iconColor;
       font-size: @iconFontSize;
+      line-height: @iconFontSize;
 
       &:before {
         content: @iconInactive;
+        font-size: @iconFontSize;
       }
     }
   }
@@ -38,7 +51,7 @@
     background-color: @activeTitleBackground;
     color: @activeTitleColor;
 
-    i.icon {
+    i {
       color: @iconColorActive;
 
       &:before {
@@ -55,4 +68,16 @@
 /* All content padding are equal including last child */
 .ui.accordion:not(.styled) .title ~ .content:not(.ui):last-child {
   padding-bottom: @contentPaddingBottom;
+}
+
+/*******************************
+            Types
+*******************************/
+
+/*--------------
+     Styled
+---------------*/
+
+.ui.styled.accordion .active.title input {
+  color: @styledActiveTitleColor;
 }

@@ -1,407 +1,76 @@
-import React, { useState } from 'react';
-import { Container, Menu, Dropdown } from 'semantic-ui-react';
+import React from 'react';
+import { Container } from 'semantic-ui-react';
+import cx from 'classnames';
 
-function HeaderMenuPopUp() {
-  // const [firstLevelHoverActive, setFirstLevelHoverActive] = useState(-1);
-  // const [firstLevelClickActive, setFirstLevelClickActive] = useState(-1);
-  // const [secondLevelHoverActive, setSecondLevelHoverActive] = useState(-1);
-  // const [secondLevelClickActive, setSecondLevelClickActive] = useState(-1);
+import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
-  const [showSubMenu, setShowSubMenu] = useState('');
-  const [showSubMenuL2, setShowSubMenuL2] = useState('');
+const levels = ['first', 'second', 'third'];
 
-  // const onMenuItemClick = (e) => {
-  //   e.preventDefault();
-  // };
+const Item = ({ item, renderMenuItem }) => (
+  <>
+    {item.items.length > 0 && (
+      <label htmlFor={`drop-${item['@id'] || item.url}`} className="toggle">
+        {item.title}
+      </label>
+    )}
+    {renderMenuItem(item)}
+    {item.items.length > 0 && (
+      <input type="checkbox" id={`drop-${item['@id'] || item.url}`} />
+    )}
+  </>
+);
 
-  // const onMenuListItemClick = (level,itemIndex,sectionIndex) => {
-  //   console.log(level);
-  //   console.log(itemIndex);
-  //   console.log(sectionIndex);
-  //   // if (level === 1) {
-  //   //   setFirstLevelClickActive(firstLevelClickActive === index ? -1 : index);
-  //   // } else {
-  //   //   setSecondLevelClickActive(secondLevelClickActive === index ? -1 : index);
-  //   // }
-  // }
+const ItemsList = ({ items, renderMenuItem, level = 0, activeItem }) => (
+  <ul
+    className={cx(
+      level === 0 ? 'menu' : 'sub',
+      levels[level],
+      `level-${level}`,
+    )}
+  >
+    {items.map((item) => (
+      <li
+        key={item['@id'] || item.url}
+        className={cx({
+          hasSubMenu: item.items?.length > 0,
+          active: (item['@id'] || item.url) === activeItem,
+        })}
+      >
+        <Item item={item} renderMenuItem={renderMenuItem} />
 
-  // const onMenuLevelOneClick = (index) => {
-  //   setFirstLevelClickActive(index);
-  // };
+        {item.items.length > 0 && (
+          <ItemsList
+            items={item.items}
+            level={level + 1}
+            renderMenuItem={renderMenuItem}
+            activeItem={activeItem}
+          />
+        )}
+      </li>
+    ))}
+  </ul>
+);
 
-  // const onMenuLevelTwoClick = (index) => {
-  //   setSecondLevelClickActive(index);
-  // };
-
-  const onSubMenuHandle = (id) => {
-    if (id !== showSubMenu) {
-      setShowSubMenuL2('');
-      setShowSubMenu(id);
-    }
-  };
-
-  const onSubMenuL2Handle = (id) => {
-    if (showSubMenuL2 === id) {
-      setShowSubMenuL2('');
-    } else {
-      setShowSubMenuL2(id);
-    }
-  };
-
-  // const items = [
-  //   {
-  //     name: 'Item 1',
-  //     sections: [
-  //       { name: 'Section 1', pages: ['Page 1', 'Page 2', 'Page 3'] },
-  //       { name: 'Section 2', pages: ['Page 1', 'Page 2', 'Page 3', 'Page 4'] },
-  //       { name: 'Section 3', pages: [] },
-  //     ],
-  //   },
-  //   {
-  //     name: 'Item 2',
-  //     sections: [
-  //       { name: 'Section 1', pages: [] },
-  //       { name: 'Section 2', pages: [] },
-  //     ],
-  //   },
-  //   {
-  //     name: 'Item 3',
-  //     sections: [
-  //       { name: 'Section 1', pages: [] },
-  //       { name: 'Section 2', pages: [] },
-  //     ],
-  //   },
-  //   { name: 'Item 4', sections: [] },
-  //   { name: 'Item 5', sections: [] },
-  // ];
-
-  const menuItems = [
-    {
-      '@id': 'item1',
-      items: [
-        {
-          '@id': 'section1',
-          description: '',
-          items: [],
-          review_state: null,
-          title: 'Section 1',
-        },
-        {
-          '@id': 'section2',
-          description: '',
-          items: [
-            {
-              '@id': 'page1',
-              description: '',
-              items: [],
-              review_state: null,
-              title: 'Page 1',
-            },
-          ],
-          review_state: null,
-          title: 'Section 2',
-        },
-        {
-          '@id': 'section3',
-          description: '',
-          items: [],
-          review_state: null,
-          title: 'Section 3',
-        },
-      ],
-      review_state: null,
-      title: 'Item 1',
-    },
-    {
-      '@id': 'item2',
-      items: [
-        {
-          '@id': 'section1',
-          description: '',
-          items: [],
-          review_state: null,
-          title: 'Section 1',
-        },
-        {
-          '@id': 'section2',
-          description: '',
-          items: [
-            {
-              '@id': 'page1',
-              description: '',
-              items: [],
-              review_state: null,
-              title: 'Page 1',
-            },
-            {
-              '@id': 'page2',
-              description: '',
-              items: [],
-              review_state: null,
-              title: 'Page 2',
-            },
-          ],
-          review_state: null,
-          title: 'Section 2',
-        },
-        {
-          '@id': 'section3',
-          description: '',
-          items: [],
-          review_state: null,
-          title: 'Section 3',
-        },
-      ],
-      review_state: null,
-      title: 'Item 2',
-    },
-    {
-      '@id': 'item3',
-      items: [
-        {
-          '@id': 'section1',
-          description: '',
-          items: [
-            {
-              '@id': 'page1',
-              description: '',
-              items: [],
-              review_state: null,
-              title: 'Page 1',
-            },
-            {
-              '@id': 'page2',
-              description: '',
-              items: [],
-              review_state: null,
-              title: 'Page 2',
-            },
-          ],
-          review_state: null,
-          title: 'Section 1',
-        },
-        {
-          '@id': 'section2',
-          description: '',
-          items: [
-            {
-              '@id': 'page1',
-              description: '',
-              items: [],
-              review_state: null,
-              title: 'Page 1',
-            },
-            {
-              '@id': 'page2',
-              description: '',
-              items: [],
-              review_state: null,
-              title: 'Page 2',
-            },
-          ],
-          review_state: null,
-          title: 'Section 2',
-        },
-        {
-          '@id': 'section3',
-          description: '',
-          items: [],
-          review_state: null,
-          title: 'Section 3',
-        },
-      ],
-      review_state: null,
-      title: 'Item 3',
-    },
-  ];
+function HeaderMenuPopUp({
+  menuItems,
+  onClose,
+  triggerRefs,
+  renderMenuItem,
+  activeItem,
+}) {
+  const nodeRef = React.useRef();
+  useClickOutside({ targetRefs: [nodeRef, ...triggerRefs], callback: onClose });
 
   return (
-    <div id="eea-mega-menu-wrap">
+    <div id="mega-menu" ref={nodeRef}>
       <Container>
-        <nav className="eea-nav">
-          <Menu vertical id="desktop-menu">
-            {menuItems.map((item) => (
-              <Dropdown item text={item.title} key={item['@id']} simple>
-                {item.items.length > 0 ? (
-                  <Dropdown.Menu>
-                    {item.items.map((itemL2) => (
-                      <div key={itemL2['@id']}>
-                        {itemL2.items.length > 0 ? (
-                          <Dropdown item text={itemL2.title} simple>
-                            <Dropdown.Menu>
-                              {itemL2.items.map((itemL3) => (
-                                <Dropdown.Item
-                                  text={itemL3.title}
-                                  key={itemL3['@id']}
-                                ></Dropdown.Item>
-                              ))}
-                            </Dropdown.Menu>
-                          </Dropdown>
-                        ) : (
-                          <Dropdown.Item
-                            text={itemL2.title}
-                            key={itemL2['@id']}
-                          ></Dropdown.Item>
-                        )}
-                      </div>
-                    ))}
-                  </Dropdown.Menu>
-                ) : (
-                  <></>
-                )}
-              </Dropdown>
-            ))}
-          </Menu>
-
-          <Menu vertical id="mobile-menu">
-            {menuItems.map((item) => (
-              <Menu.Item
-                onClick={() => {
-                  onSubMenuHandle(item['@id']);
-                }}
-                key={item['@id']}
-              >
-                {item.title}
-                {item.items.length > 0 ? (
-                  <Menu.Menu
-                    className={item['@id'] === showSubMenu ? 'show' : 'hidden'}
-                  >
-                    {item.items.map((itemL2) => (
-                      <Menu.Item key={itemL2['@id']}>
-                        {itemL2.items.length > 0 ? (
-                          <Menu vertical>
-                            <Menu.Item
-                              as="li"
-                              onClick={() => {
-                                onSubMenuL2Handle(itemL2['@id']);
-                              }}
-                            >
-                              {itemL2.title}
-                              <Menu.Menu
-                                className={
-                                  itemL2['@id'] === showSubMenuL2 &&
-                                  item['@id'] === showSubMenu
-                                    ? 'show'
-                                    : 'hidden'
-                                }
-                              >
-                                {itemL2.items.map((itemL3) => (
-                                  <Menu.Item key={itemL3['@id']}>
-                                    {itemL3.title}
-                                  </Menu.Item>
-                                ))}
-                              </Menu.Menu>
-                            </Menu.Item>
-                          </Menu>
-                        ) : (
-                          <>{itemL2.title}</>
-                        )}
-                      </Menu.Item>
-                    ))}
-                  </Menu.Menu>
-                ) : (
-                  <></>
-                )}
-              </Menu.Item>
-            ))}
-          </Menu>
+        <nav>
+          <ItemsList
+            items={menuItems}
+            renderMenuItem={renderMenuItem}
+            activeItem={activeItem}
+          />
         </nav>
-
-        {/* <nav className="eea-nav">
-          <ul className="menu menu-bar">
-            <li>
-              <a
-                href="/#"
-                className="menu-link menu-bar-link"
-                aria-haspopup="true"
-                id="trigger"
-                onClick={onMenuItemClick}
-              >
-                Mobile trigger
-              </a>
-              <ul
-                className="mega-menu mega-menu--multiLevel"
-                id="first-section-link"
-              >
-                {items.length > 0 &&
-                  items.map((item, itemIndex) => (
-                    <li
-                      key={itemIndex}
-                      className={
-                        firstLevelHoverActive === itemIndex ||
-                        firstLevelClickActive === itemIndex
-                          ? 'active-level'
-                          : null
-                      }
-                      onMouseEnter={() => {
-                        setFirstLevelHoverActive(itemIndex);
-                      }}
-                      onMouseLeave={() => setFirstLevelHoverActive(-1)}
-                      onTouchStart={() => onMenuLevelOneClick(itemIndex)}
-                    >
-                      <a
-                        href="/#"
-                        className="menu-link mega-menu-link mega-menu-first-level"
-                        aria-haspopup={item.sections.length > 0}
-                        onClick={onMenuItemClick}
-                      >
-                        {item.name}
-                      </a>
-                      {item.sections.length > 0 && (
-                        <ul className="menu menu-list">
-                          {item.sections.map((section, sectionIndex) => (
-                            <li
-                              key={sectionIndex}
-                              className={
-                                secondLevelHoverActive === sectionIndex ||
-                                secondLevelClickActive === sectionIndex
-                                  ? 'active-level'
-                                  : null
-                              }
-                              onMouseEnter={() =>
-                                setSecondLevelHoverActive(sectionIndex)
-                              }
-                              onMouseLeave={() => setSecondLevelHoverActive(-1)}
-                              onTouchStart={() =>
-                                onMenuLevelTwoClick(sectionIndex)
-                              }
-                            >
-                              <a
-                                href="/#"
-                                className="menu-link menu-list-link mega-menu-second-level"
-                                aria-haspopup={section.pages.length > 0}
-                                onClick={onMenuItemClick}
-                              >
-                                {section.name}
-                              </a>
-                              {section.pages.length > 0 && (
-                                <ul className="menu menu-list">
-                                  {section.pages.map((page, pageIndex) => (
-                                    <li key={pageIndex}>
-                                      <a
-                                        href="/#"
-                                        className="menu-link menu-list-link mega-menu-third-level"
-                                        onClick={onMenuItemClick}
-                                      >
-                                        {page}
-                                      </a>
-                                    </li>
-                                  ))}
-                                </ul>
-                              )}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
-                  ))}
-                <br />
-                <br />
-                <br />
-              </ul>
-            </li>
-          </ul>
-        </nav> */}
       </Container>
     </div>
   );

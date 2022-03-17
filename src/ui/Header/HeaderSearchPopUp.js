@@ -1,9 +1,15 @@
 import React from 'react';
 import { Container, Input, Button, Icon } from 'semantic-ui-react';
 
-function HeaderSearchPopUp() {
+import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
+
+function HeaderSearchPopUp({ onClose, triggerRefs = [] }) {
+  const nodeRef = React.useRef();
+
+  useClickOutside({ targetRefs: [nodeRef, ...triggerRefs], callback: onClose });
+
   return (
-    <div id="search-box">
+    <div id="search-box" ref={nodeRef}>
       <Container>
         <div className="wrapper">
           <Input
@@ -12,7 +18,7 @@ function HeaderSearchPopUp() {
             placeholder="Search..."
             fluid
           />
-          <div className="eea-advanced-search-button">
+          <div className="action">
             <Button icon labelPosition="left" className="search">
               <Icon name="search" />
               Advanced Search

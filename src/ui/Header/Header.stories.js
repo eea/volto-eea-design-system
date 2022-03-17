@@ -1,24 +1,24 @@
 import React from 'react';
 import Header from './Header';
-//import { Segment } from 'semantic-ui-react';
-import Wrapper from '@plone/volto/storybook';
+import { Dropdown, Image, Segment } from 'semantic-ui-react';
+import { Logo } from '@eeacms/volto-eea-design-system/ui';
+
+import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea-logo.svg';
+import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
+import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
 
 export default {
   title: 'Layout/Header',
-  cocmponent: Header,
+  component: Header,
   argTypes: {
-    linksDropdown: {
-      description: 'links dropdown content',
+    links: {
       table: {
-        type: { summary: 'array' },
-        defaultValue: { summary: '' },
+        disable: true,
       },
     },
     languages: {
-      description: 'language list',
       table: {
-        type: { summary: 'array' },
-        defaultValue: { summary: '' },
+        disable: true,
       },
     },
     menuItems: {
@@ -29,26 +29,15 @@ export default {
       },
     },
   },
-  decorators: [
-    (Story) => (
-      <Wrapper location={{ pathname: '/folder2/folder21/doc212' }}>
-        <>
-          <Story />
-        </>
-      </Wrapper>
-    ),
-  ],
+  decorators: [(Story) => <Story />],
 };
 
-// export const Default = injectIntl(({ children, ...args }) => {
-//     return (
-//       <Wrapper location={{ pathname: '/folder2/folder21/doc212' }}>
-//         <Segment className="portal-footer">
-//           <Header />
-//         </Segment>
-//       </Wrapper>
-//     );
-//   });
+const logoProps = {
+  title: 'Site',
+  alt: 'European Environment Agency',
+  url: 'https://eea.europa.eu',
+  src: LogoImage,
+};
 
 const links = [
   { title: 'Biodiversity Information System for Europe', href: '/#' },
@@ -61,7 +50,7 @@ const links = [
   { title: 'Fresh Water Information System for Europe', href: '/#' },
 ];
 
-const languagesList = [
+const languages = [
   { name: 'Albanian', code: 'sq' },
   { name: 'Български', code: 'bg' },
   { name: 'Bosnian', code: 'bs' },
@@ -93,39 +82,300 @@ const languagesList = [
   { name: 'Türkçe', code: 'tr' },
 ];
 
-const items = [
+const menuItems = [
   {
-    key: 'item 1',
-    name: 'Item 1',
-    active: false,
+    '@id': 'item1',
+    items: [
+      {
+        '@id': 'section1',
+        description: '',
+        items: [],
+        review_state: null,
+        title: 'Section 1',
+      },
+      {
+        '@id': 'section2',
+        description: '',
+        items: [
+          {
+            '@id': 'page1',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Page 1',
+          },
+        ],
+        review_state: null,
+        title: 'Section 2',
+      },
+      {
+        '@id': 'section3',
+        description: '',
+        items: [],
+        review_state: null,
+        title: 'Section 3',
+      },
+    ],
+    review_state: null,
+    title: 'Item 1',
   },
   {
-    key: 'item 2',
-    name: 'Item 2',
-    active: false,
+    '@id': 'item2',
+    items: [
+      {
+        '@id': 'section1',
+        description: '',
+        items: [],
+        review_state: null,
+        title: 'Section 1',
+      },
+      {
+        '@id': 'section2',
+        description: '',
+        items: [
+          {
+            '@id': 'page1',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Page 1',
+          },
+          {
+            '@id': 'page2',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Page 2',
+          },
+        ],
+        review_state: null,
+        title: 'Section 2',
+      },
+      {
+        '@id': 'section3',
+        description: '',
+        items: [],
+        review_state: null,
+        title: 'Section 3',
+      },
+    ],
+    review_state: null,
+    title: 'Item 2',
   },
   {
-    key: 'item 3',
-    name: 'Item 3',
-    active: false,
+    '@id': 'Topics',
+    items: [
+      {
+        '@id': 'Air-and-climate',
+        description: '',
+        items: [
+          {
+            '@id': 'Air-pollution-sources',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Air pollution sources',
+          },
+          {
+            '@id': 'Air-quality-and-COVID-19',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Air quality and COVID-19',
+          },
+        ],
+        review_state: null,
+        title: 'Air and climate',
+      },
+      {
+        '@id': 'Nature',
+        description: '',
+        items: [
+          {
+            '@id': 'An-introduction-to-habitats',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'An introduction to habitats',
+          },
+          {
+            '@id': 'EUNIS',
+            description: '',
+            items: [],
+            review_state: null,
+            title:
+              'Find species, habitat types and protected sites across Europe (EUNIS)',
+          },
+        ],
+        review_state: null,
+        title: 'Nature',
+      },
+      {
+        '@id': 'Sustainability-and-well-being',
+        description: '',
+        items: [],
+        review_state: null,
+        title: 'Sustainability and well-being',
+      },
+      {
+        '@id': 'Economic-sectors',
+        description: '',
+        items: [],
+        review_state: null,
+        title: 'Economic sectors',
+      },
+    ],
+    review_state: null,
+    title: 'Topics',
   },
   {
-    key: 'item 4',
-    name: 'Item 4',
-    active: false,
+    '@id': 'item4',
+    description: '',
+    items: [],
+    review_state: null,
+    title: 'Item 4',
   },
   {
-    key: 'item 5',
-    name: 'Item 5',
-    active: false,
+    '@id': 'item5',
+    description: '',
+    items: [],
+    review_state: null,
+    title: 'Item 5',
   },
 ];
 
-const Template = (args) => <Header {...args} />;
+const Template = (args) => {
+  const { languages, links, linksMenuTitle, menuItems } = args;
+
+  const [language, setLanguage] = React.useState('en');
+  const [pathname, setPathname] = React.useState('/');
+
+  return (
+    <div>
+      <Header>
+        <Header.TopHeader>
+          <Header.TopItem className="official-union">
+            <Image src={eeaFlag} alt="eea flag"></Image>
+            <Header.TopDropdownMenu
+              text="An official website of the European Union | How do you Know?"
+              mobileText="An official EU website"
+              icon="chevron down"
+              aria-label="dropdown"
+              className=""
+            >
+              <div className="content">
+                <p>
+                  All official European Union website addresses are in the{' '}
+                  <b>europa.eu</b> domain.
+                </p>
+                <a
+                  href="https://europa.eu/european-union/contact/institutions-bodies_en"
+                  target="_blank"
+                  rel="noreferrer"
+                  role="option"
+                  aria-selected="false"
+                >
+                  See all EU institutions and bodies
+                </a>
+              </div>
+            </Header.TopDropdownMenu>
+          </Header.TopItem>
+
+          <Header.TopItem>
+            <Header.TopDropdownMenu
+              id="theme-sites"
+              className="tablet or lower hidden"
+              text={linksMenuTitle}
+            >
+              <div className="wrapper">
+                {links.map((item, index) => (
+                  <Dropdown.Item key={index}>
+                    <a
+                      href={item.href}
+                      className="site"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {item.title}
+                    </a>
+                  </Dropdown.Item>
+                ))}
+              </div>
+            </Header.TopDropdownMenu>
+          </Header.TopItem>
+
+          <Header.TopDropdownMenu
+            id="language-switcher"
+            className="item"
+            text={`${language.toUpperCase()}`}
+            icon={
+              <Image src={globeIcon} alt="language dropdown globe icon"></Image>
+            }
+          >
+            {languages.map((item, index) => (
+              <Dropdown.Item
+                key={index}
+                text={
+                  <span>
+                    {item.name}
+                    <span className="country-code">
+                      {item.code.toUpperCase()}
+                    </span>
+                  </span>
+                }
+                onClick={() => setLanguage(item.code)}
+              ></Dropdown.Item>
+            ))}
+          </Header.TopDropdownMenu>
+        </Header.TopHeader>
+        <Header.Main
+          pathname={pathname}
+          logo={<Logo {...logoProps} />}
+          menuItems={menuItems}
+          renderMenuItem={(item, options = {}) => {
+            const { onClick } = options;
+            return (
+              <a
+                onClick={(e) => {
+                  const path = item['@id'] || item.url;
+                  setPathname(path);
+                  e.preventDefault();
+                  onClick && onClick(e, item);
+                }}
+                href={item['@id'] || item.url}
+              >
+                {item.title}
+              </a>
+            );
+          }}
+          renderGlobalMenuItem={(item, options = {}) => {
+            const { onClick } = options;
+            return (
+              <a
+                onClick={(e) => {
+                  // const path = item['@id'] || item.url;
+                  // setPathname(path);
+                  e.preventDefault();
+                  onClick && onClick(e, item);
+                }}
+                href={item['@id'] || item.url}
+              >
+                {item.title}
+              </a>
+            );
+          }}
+        ></Header.Main>
+      </Header>
+
+      <Segment>Current location: {pathname}</Segment>
+    </div>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {
-  linksDropdown: { title: 'Environmental information systems', links: links },
-  languages: languagesList,
-  menuItems: items,
+  linksMenuTitle: 'Environmental information systems',
+  links,
+  languages,
+  menuItems,
 };

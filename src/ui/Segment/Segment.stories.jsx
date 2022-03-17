@@ -130,12 +130,26 @@ export default {
 };
 
 const Template = (args) => (
-  <Segment className="eea-segment" {...args}></Segment>
+  <div className="eea">
+    <Segment className="eea-segment" {...args}>
+      {args.children[0]}
+    </Segment>
+    <Segment className="eea-segment" {...args}>
+      {args.children[1]}
+    </Segment>
+    <Segment className="eea-segment" {...args}>
+      {args.children[2]}
+    </Segment>
+  </div>
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  children: ['Content'],
+  children: [
+    'Te eum doming eirmod, nominati pertinacia argumentum ad his.',
+    'Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id.',
+    'Pellentesque habitant morbi tristique senectus.',
+  ],
   basic: false,
   circular: false,
   compact: false,

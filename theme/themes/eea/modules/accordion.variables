@@ -3,26 +3,28 @@
 *******************************/
 
 @boxShadow: none;
-@itemsMargin: @relative8px 0;
+@itemsMargin: 0;
 
 /* Title */
 @titleFont: @headerFont;
 @titlePadding: 1rem 1.563rem;
+@titlePadding: @rectangleMedium;
 @titleFontSize: 1.125rem;
 @titleColor: @textColor;
 @titleBorderBottom: @1px solid @silverGray;
-@titleColorHover: @darkCyan;
+@titleColorHover: @secondaryColor;
+@titleJustifyContent: space-between;
 
 /* Icon */
 @iconColor: @oldSilver;
 @iconColorActive: @white;
 @iconOpacity: 1;
-@iconFontSize: 1.563rem;
+@iconFontSize: 3rem;
 @iconFloat: none;
-@iconWidth: 1.563rem;
-@iconHeight: 1.563rem;
+@iconWidth: auto;
+@iconHeight: 1rem;
 @iconDisplay: inline-block;
-@iconMargin: 0em 0.25rem 0em 0rem;
+@iconMargin: 0em;
 @iconPadding: 0em;
 @iconTransition:
   transform @defaultDuration @defaultEasing,
@@ -30,9 +32,9 @@
 ;
 @iconVerticalAlign: baseline;
 @iconTransform: none;
-@iconColorHover: @darkCyan;
-@iconInactive: '\f078'; // Icon of closed accordion
-@iconActive: '\f077'; // Icon of open accordion
+@iconColorHover: @secondaryColor;
+@iconInactive: "\ea4e"; // Icon of closed accordion
+@iconActive: "\EA78"; // Icon of open accordion
 @iconOrder: 1; // Icon after text of the title
 
 /* Child Accordion */
@@ -42,7 +44,7 @@
 /* Content */
 @contentMargin: 0;
 @contentPaddingBottom: 1.563rem;
-@contentPadding: 1rem @contentPaddingBottom;
+@contentPadding: @squareMedium;
 @contentBackground: #F9F9F9;
 
 /*-------------------
@@ -60,7 +62,7 @@
 --------------------*/
 
 @activeIconTransform: none;
-@activeTitleBackground: @darkCyan;
+@activeTitleBackground: @secondaryColor;
 @activeTitleColor: @white;
 @activeTitleBorderBottom: 0;
 
@@ -76,7 +78,7 @@
 
 /* Content */
 @styledContentMargin: 0em;
-@styledContentPadding: 0.5em 1em 1.5em;
+@styledContentPadding: @contentPadding;
 @contentBorder: @relative2px solid @secondaryColor;
 
 /* Child Content */
@@ -87,7 +89,7 @@
 @styledTitleMargin: 0em;
 @styledTitlePadding: 0.75em 1em;
 @styledTitleFontWeight: @normal;
-@styledTitleColor: @teal;
+@styledTitleColor: @titleColor;
 @styledTitleTransition: background-color @defaultDuration @defaultEasing;
 @styledTitleBorder: none;
 @styledTitleTransition:
@@ -96,10 +98,10 @@
 ;
 
 /* Styled Title States */
-@styledTitleHoverBackground: @darkWhite;
+@styledTitleHoverBackground: transparent;
 @styledTitleHoverColor: @teal;
-@styledActiveTitleBackground: @darkWhite;
-@styledActiveTitleColor: @teal;
+@styledActiveTitleBackground: @teal;
+@styledActiveTitleColor: @white;
 
 /* Styled Child Title States */
 @styledHoverChildTitleBackground: @styledTitleHoverBackground;

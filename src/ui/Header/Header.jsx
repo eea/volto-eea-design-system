@@ -3,342 +3,225 @@
  * @module components/theme/Header/Header
  */
 
-import React, { Component } from 'react';
-import { Container, Dropdown, Image, Menu, Grid } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
-import searchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search.png';
-import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/globeIcon.png';
+import React from 'react'; // , { Component }
+import cx from 'classnames';
+import { Container, Image, Menu, Grid, Dropdown } from 'semantic-ui-react'; // Dropdown,
+
+import closeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/close-line.svg';
+import searchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search-line.svg';
+import burgerIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/menu-line.svg';
+
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
-import Logo from '../Logo/Logo';
 
-/**
- * Header component class.
- * @class Header
- * @extends Component
- */
-class Header extends Component {
-  /**
-   * Property types.
-   * @property {Object} propTypes Property types.
-   * @static
-   */
-  static propTypes = {
-    token: PropTypes.string,
-    pathname: PropTypes.string,
-    languages: PropTypes.array,
-    linksDropdown: PropTypes.object,
-    menuItems: PropTypes.array,
-  };
+function Header({ children }) {
+  return <div className="eea header">{children}</div>;
+}
 
-  /**
-   * Default properties.
-   * @property {Object} defaultProps Default properties.
-   * @static
-   */
-  static defaultProps = {
-    token: null,
-  };
+const TopHeader = ({ children }) => (
+  <div className="top bar">
+    <Container>{children}</Container>
+  </div>
+);
 
-  /**
-   * Render method.
-   * @method render
-   * @returns {string} Markup for the component.
-   */
-  // render() {
-  //   return (
-  //     <Segment basic className="header-wrapper" role="banner">
-  //       <Container>
-  //         <div className="header">
-  //           <div className="logo-nav-wrapper">
-  //             <div className="logo">
-  //               <Logo />
-  //             </div>
-  //             <Navigation pathname={this.props.pathname} />
-  //           </div>
-  //         </div>
-  //       </Container>
-  //     </Segment>
-  //   );
-  // }
+const TopItem = ({ children, className, id }) => (
+  <div className={cx('item', 'header-top-item', className)} id={id}>
+    {children}
+  </div>
+);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeItem: '',
-      activeMenu: false,
-      activeSearch: false,
-      language: 'en',
-      burger: '',
-    };
-  }
+const TopDropdownMenu = ({
+  children,
+  className,
+  icon,
+  id,
+  mobileText,
+  text,
+}) => {
+  const Component = ({ mobileText }) => (
+    <Dropdown
+      id={id}
+      className={cx(className, {
+        'mobile or lower hidden': !mobileText,
+        'mobile only': mobileText ?? false,
+      })}
+      text={text}
+      icon={icon || 'chevron down'}
+      aria-label="dropdown"
+    >
+      <Dropdown.Menu role="group">{children}</Dropdown.Menu>
+    </Dropdown>
+  );
+  return (
+    <>
+      <Component />
+      {mobileText && <Component mobileText={mobileText} />}
+    </>
+  );
+};
 
-  menuOnClick = (e, x) => {
-    this.setState({ activeItem: x.name });
-    this.setState({ activeMenu: true });
-  };
+const Main = ({
+  logo,
+  menuItems,
+  renderMenuItem,
+  renderGlobalMenuItem,
+  pathname,
+}) => {
+  const [activeItem, setActiveItem] = React.useState('');
+  const [menuIsActive, setMenuIsActive] = React.useState(false);
+  const [searchIsActive, setSearchIsActive] = React.useState(false);
+  const [burger, setBurger] = React.useState('');
 
-  searchOnClick = (e, x) => {
-    if (this.state.activeMenu === true) {
-      this.setState({ burger: '' });
-      this.setState({ activeMenu: false });
+  React.useEffect(() => {
+    setMenuIsActive(false);
+    setSearchIsActive(false);
+    setBurger('');
+  }, [pathname]);
+
+  const searchOnClick = (e, x) => {
+    if (menuIsActive === true) {
+      setBurger('');
+      setMenuIsActive(false);
     }
-    this.setState({ activeSearch: !this.state.activeSearch });
-    this.setState({ activeItem: '' });
+    setSearchIsActive(!searchIsActive);
+    setActiveItem('');
   };
 
-  onLanguageSelection = (e, data) => {
-    this.setState({
-      language: data.text.props.children[1].props.children,
-    });
-  };
-
-  burgerOnClick = () => {
-    if (this.state.activeSearch === true) {
-      this.setState({ activeSearch: false });
+  const mobileBurgerOnClick = () => {
+    if (searchIsActive === true) {
+      setSearchIsActive(false);
     }
 
-    if (this.state.burger === '') {
-      this.setState({ burger: 'open' });
-      this.setState({ activeMenu: true });
+    if (burger === '') {
+      setBurger('open');
+      setMenuIsActive(true);
     } else {
-      this.setState({ burger: '' });
-      this.setState({ activeMenu: false });
+      setBurger('');
+      setMenuIsActive(false);
     }
   };
 
-  componentDidUpdate() {
-    if (
-      this.state.activeSearch ||
-      this.state.burger === 'open' ||
-      this.state.activeMenu
-    ) {
+  const desktopBurgerOnClick = () => {
+    setMenuIsActive(false);
+    setActiveItem('');
+  };
+
+  const menuOnClick = (e, item) => {
+    if (searchIsActive) setSearchIsActive(false);
+    setActiveItem(item['@id'] || item.url);
+    setMenuIsActive(true);
+  };
+
+  React.useEffect(() => {
+    if (searchIsActive || burger === 'open' || menuIsActive) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-  }
+  }, [searchIsActive, burger, menuIsActive]);
 
-  render() {
-    return (
-      <div className="eea-header">
-        <Header.TopHeader>
-          <Header.TopItem className="official-union mobile or lower hidden">
-            <Image src={eeaFlag} alt="eea flag"></Image>
+  const node = React.useRef();
+  const searchButtonRef = React.useRef();
+  const desktopMenuBurgerRef = React.useRef();
+  const mobileMenuBurgerRef = React.useRef();
 
-            <Dropdown
-              text="An official website of the European Union | How do you Know?"
-              icon="chevron down"
-              aria-label="dropdown"
-            >
-              <Dropdown.Menu id="eea-official-union-dropdown" role="group">
-                <div>
-                  <p>
-                    All official European Union website addresses are in the{' '}
-                    <b>europa.eu</b> domain.
-                  </p>
-                  <a
-                    href="https://europa.eu/european-union/contact/institutions-bodies_en"
-                    target="_blank"
-                    rel="noreferrer"
-                    role="option"
-                    aria-selected="false"
-                  >
-                    See all EU institutions and bodies
-                  </a>
-                </div>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Header.TopItem>
-
-          <Header.TopItem className="official-union mobile only">
-            <Image src={eeaFlag} alt="eea flag"></Image>
-
-            <Dropdown
-              text="An official EU website"
-              icon="chevron down"
-              aria-label="dropdown"
-            >
-              <Dropdown.Menu role="group">
-                <div role="option" aria-selected="false">
-                  <p>
-                    All official European Union website addresses are in the{' '}
-                    <b>europa.eu</b> domain.
-                  </p>
-                  <a
-                    href="https://europa.eu/european-union/contact/institutions-bodies_en"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    See all EU institutions and bodies
-                  </a>
-                </div>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Header.TopItem>
-
-          {this.props.linksDropdown && (
-            <Header.TopItem>
-              <Dropdown
-                id="theme-sites"
-                className="tablet or lower hidden"
-                text={this.props.linksDropdown.title}
-                icon="chevron down"
-                aria-label="dropdown"
-              >
-                <Dropdown.Menu role="group">
-                  <div className="wrapper">
-                    {this.props.linksDropdown.links.map((item, index) => (
-                      <Dropdown.Item key={index}>
-                        <a
-                          href={item.href}
-                          className="site"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          {item.title}
-                        </a>
-                      </Dropdown.Item>
-                    ))}
-                  </div>
-                </Dropdown.Menu>
-              </Dropdown>
-            </Header.TopItem>
-          )}
-
-          {this.props.languages && (
-            <Dropdown
-              id="eea-top-header-language-dropdown"
-              className="eea-top-header-item"
-              text={`${this.state.language.toUpperCase()}`}
-              icon={
-                <Image
-                  src={globeIcon}
-                  alt="language dropdown globe icon"
-                ></Image>
-              }
-              aria-label="dropdown"
-            >
-              <Dropdown.Menu>
-                {this.props.languages.map((item, index) => (
-                  <Dropdown.Item
-                    key={index}
-                    text={
-                      <span>
-                        {item.name}
-                        <span className="country-code">
-                          {item.code.toUpperCase()}
-                        </span>
-                      </span>
-                    }
-                    onClick={this.onLanguageSelection}
-                  ></Dropdown.Item>
-                ))}
-              </Dropdown.Menu>
-            </Dropdown>
-          )}
-        </Header.TopHeader>
-
-        <Header.Main>
-          <Container>
-            <Grid>
-              <Grid.Column mobile={8} tablet={8} computer={4}>
-                <Logo id="logo"></Logo>
-              </Grid.Column>
-              <Grid.Column mobile={4} tablet={4} computer={8}>
-                <div className="eea-main-header-menu">
-                  {!this.state.activeSearch &&
-                    !this.state.activeMenu &&
-                    this.props.menuItems && (
-                      <Menu className="eea-main-menu" text>
-                        {this.props.menuItems.map((item) => (
-                          <Menu.Item
-                            className="eea-main-menu-item"
-                            name={item.key}
-                            onClick={this.menuOnClick}
-                            active={this.state.activeItem === item.key}
-                            key={item.key}
-                          >
-                            {item.name}
-                          </Menu.Item>
-                        ))}
-                      </Menu>
-                    )}
-                  {this.state.activeMenu && (
-                    <div
-                      className="eea-header-burger-action desktop"
-                      role="none"
-                      onClick={() => {
-                        this.setState({ activeMenu: false });
-                        this.setState({ activeItem: '' });
-                      }}
+  return (
+    <div className="main bar" ref={node}>
+      <Container>
+        <Grid>
+          <Grid.Column mobile={8} tablet={8} computer={4}>
+            {logo}
+          </Grid.Column>
+          <Grid.Column mobile={4} tablet={4} computer={8}>
+            <div className="main-menu">
+              {!menuIsActive && menuItems && (
+                <Menu className="eea-main-menu tablet or lower hidden" text>
+                  {menuItems.map((item) => (
+                    <Menu.Item
+                      name={item['@id'] || item.url}
+                      active={activeItem === item.key}
+                      key={item['@id'] || item.url}
                     >
-                      <span></span>
-                      <span></span>
-                    </div>
-                  )}
-                  <div className="eea-header-search-action ">
-                    {!this.state.activeSearch ? (
-                      <Image
-                        src={searchIcon}
-                        alt="search icon"
-                        onClick={this.searchOnClick}
-                      ></Image>
-                    ) : (
-                      <div
-                        onClick={this.searchOnClick}
-                        className="eea-header-search-action "
-                        role="none"
-                      >
-                        <span></span>
-                        <span></span>
-                      </div>
-                    )}
-                  </div>
+                      {renderGlobalMenuItem(item, {
+                        onClick: menuOnClick,
+                      })}
+                    </Menu.Item>
+                  ))}
+                </Menu>
+              )}
+              {menuIsActive && (
+                <Header.BurgerAction
+                  className="desktop"
+                  onClick={desktopBurgerOnClick}
+                  ref={desktopMenuBurgerRef}
+                >
+                  {/* <Icon name="close" /> */}
+                  <Image src={closeIcon} alt="menu close icon" />
+                </Header.BurgerAction>
+              )}
+              <div
+                className="search-action"
+                onClick={searchOnClick}
+                role="none"
+                ref={searchButtonRef}
+              >
+                {/* <Icon name={!state.activeSearch ? 'search' : 'close'} /> */}
+                <Image
+                  src={!searchIsActive ? `${searchIcon}` : `${closeIcon}`}
+                  alt="search button open/close"
+                />
+              </div>
+              <Header.BurgerAction
+                className={`mobile ${burger}`}
+                onClick={mobileBurgerOnClick}
+                ref={mobileMenuBurgerRef}
+              >
+                {/* <Icon
+                  name={this.state.burger === 'open' ? 'close' : 'bars'}
+                ></Icon> */}
+                <Image
+                  src={burger === 'open' ? `${closeIcon}` : `${burgerIcon}`}
+                  alt="menu icon open/close"
+                />
+              </Header.BurgerAction>
+            </div>
+          </Grid.Column>
+        </Grid>
+      </Container>
+      {searchIsActive && (
+        <HeaderSearchPopUp
+          onClose={searchOnClick}
+          triggerRefs={[searchButtonRef]}
+        />
+      )}
+      {menuIsActive && (
+        <HeaderMenuPopUp
+          renderMenuItem={renderMenuItem}
+          activeItem={activeItem}
+          menuItems={menuItems}
+          onClose={mobileBurgerOnClick}
+          triggerRefs={[mobileMenuBurgerRef, desktopMenuBurgerRef]}
+        />
+      )}
+    </div>
+  );
+};
 
-                  <div
-                    className={`eea-header-burger-action mobile ${this.state.burger}`}
-                    role="none"
-                    onClick={this.burgerOnClick}
-                  >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </div>
-              </Grid.Column>
-            </Grid>
-          </Container>
-          {this.state.activeSearch && <HeaderSearchPopUp></HeaderSearchPopUp>}
-          {this.state.activeMenu && <HeaderMenuPopUp></HeaderMenuPopUp>}
-        </Header.Main>
-      </div>
-    );
-  }
-}
-
-const TopHeader = (props) => (
-  <div className="eea-top-header">
-    <Container>{props.children}</Container>
-  </div>
-);
-
-Header.TopHeader = TopHeader;
-
-const TopItem = (props) => (
-  <div className={`eea-top-header-item ${props.className}`} id={props.id}>
+const BurgerAction = React.forwardRef((props, ref) => (
+  <div
+    ref={ref}
+    className={`burger-action ${props.className}`}
+    role="none"
+    onClick={props.onClick}
+  >
     {props.children}
   </div>
-);
+));
 
+Header.BurgerAction = BurgerAction;
+Header.Main = Main;
+Header.TopDropdownMenu = TopDropdownMenu;
+Header.TopHeader = TopHeader;
 Header.TopItem = TopItem;
 
-const Main = (props) => <div className="eea-main-header">{props.children}</div>;
-
-Header.Main = Main;
-
-export default connect((state) => ({
-  token: state.userSession.token,
-}))(Header);
+export default Header;

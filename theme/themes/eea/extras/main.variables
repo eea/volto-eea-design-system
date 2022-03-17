@@ -1,5 +1,5 @@
 // #2749 Pastanaga  text block readability enhancements
-@reduceTextElementsSize: true;
+@reduceTextElementsSize: false;
 @textElementsMaxWidth: 800px;
 @textElementsParentSelector: .content-area;
 @textElementsSelectors: e("h1, h2, h3:not(.relatedItems-header), h4, h5, h6,
@@ -30,4 +30,4 @@
 /*-------------------
       login.less
 --------------------*/
-@loginContainerMaxWidth: 376px !important;
+@loginContainerMaxWidth: 680px !important;

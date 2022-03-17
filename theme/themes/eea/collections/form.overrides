@@ -2,7 +2,7 @@
          Theme Overrides
 *******************************/
 
-/* Chackbox label must be white on error without affecting @formErrorColor varible */
+/* Checkbox label must be white on error without affecting @formErrorColor variable */
 .ui.form .fields.error .field .checkbox label:after,
 .ui.form .field.error .checkbox label:after,
 .ui.form .fields.error .field .checkbox .box:after,
@@ -10,114 +10,47 @@
   color: @formErrorLabelColor;
 }
 
-/******************************************************/
+/* form field wrapper */
+.field-wrapper .ui.label {
+  padding: @fieldWrapperLabelPadding;
+  background: @fieldWrapperLabelBackground;
+  color: @fieldWrapperLabelColor;
 
-.ui.form .inline.field {
-  margin: 0;
+  /*
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  */
 }
 
-.ui.form .inline.field.help .wrapper {
-  border-bottom: none;
+.field-wrapper .ui.message {
+  margin: @formMessageMargin;
 }
 
-.ui.form .inline.field.help {
-  padding-bottom: @15px;
+/* Required span for input label */
+.requred-input {
+  display: none;
 }
 
-.ui.form .inline.field .help {
-  padding-top: @10px;
-  padding-bottom: @10px;
-  border-bottom: 1px solid @lightGreyBorderColor;
+.required .requred-input {
+  display: inline-block;
+  margin-left: @requiredMarginLeft;
+  color: @requiredColor;
 }
 
-.ui.form p.help {
-  color: #878f93;
-  font-size: @14px;
-  font-weight: normal;
-  line-height: initial;
+.field-wrapper .input {
+  min-width: @mobileInputMinWidth;
 }
 
-.ui.form .ui.input input:not([type]),
-.ui.form .ui.input input[type='date'],
-.ui.form .ui.input input[type='datetime-local'],
-.ui.form .ui.input input[type='email'],
-.ui.form .ui.input input[type='number'],
-.ui.form .ui.input input[type='password'],
-.ui.form .ui.input input[type='search'],
-.ui.form .ui.input input[type='tel'],
-.ui.form .ui.input input[type='time'],
-.ui.form .ui.input input[type='text'],
-.ui.form .ui.input input[type='file'],
-.ui.form .ui.input input[type='url'] {
-  height: 43px !important;
-  border-width: 0 0 @1px 0;
-  border-radius: 0;
-
-  &:focus {
-    border-radius: 0;
-  }
-}
-
-.ui.form .field > .selection.dropdown {
-  height: 60px;
-}
-
-.ui.form .DraftEditor-root {
-  border-bottom: @inputBorder;
-}
-
-// From the original, due to the wrapper around label
-.ui.form .field .wrapper > label {
-  display: block;
-  margin: @labelMargin;
-  color: @labelColor;
-  font-size: @labelFontSize;
-  font-weight: @labelFontWeight;
-  hyphens: auto;
-  text-transform: @labelTextTransform;
-}
-
-.ui.form .toolbar {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  display: flex;
-  height: 60px;
-  align-items: center;
-  margin-right: 1rem;
-
-  .item {
-    cursor: pointer;
-  }
-}
-
-.ui.form .field .ui.basic.button.delete-button {
-  padding: 0;
-  border: none;
-  margin-left: 10px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-
-  &:hover,
-  &:focus {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    color: #e40166 !important;
-  }
-}
-
-.ui.form .inline.field .link-form-container {
-  .wrapper {
-    display: flex;
-    border-bottom: 1px solid @lightGreyBorderColor;
-
-    .ui.input.input-anchorlink-theme {
-      vertical-align: unset;
-
-      input {
-        height: unset;
-      }
-    }
+@media only screen and (min-width: @tabletBreakpoint) {
+  .field-wrapper .input {
+    min-width: @tabletInputMinWidth;
   }
 }

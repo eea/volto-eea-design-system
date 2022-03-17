@@ -42,13 +42,17 @@ following practical guidelines.
 
 ### Basic Rules
 
-- One React component per file. Use JSX syntax.
-- Use [Volto's eslint
-  configuration](https://github.com/plone/volto/blob/master/.eslintrc) for
+- In principle, one React component per file. When using subcomponents or
+  related components, you can place them in the same file.
+- Use [Volto's eslint configuration][eslint] for
   linting and Prettier integration
 - Use best practice naming conventions, follow the closed library style
   (semantic-ui-less, semantic-ui-react).
 - Configure editor to use Unix line endings (a must!).
+- New components should be written as functional components, rather then class-based.
+- Components should not have minimal exposure to anything business-logic
+  related. Text, labels, values, urls, etc should be provided only by the
+  stories. Having these "hardcoded" in the components is a smell.
 
 ### Naming
 
@@ -61,6 +65,10 @@ following practical guidelines.
   for root components of a directory, use index.jsx as the filename and use the
   directory name as the component name.
 - Use camelCase for prop names, or PascalCase if the prop value is a React component.
+- Variables should precisely reflect their value and intended use. For example,
+  `activeMenu` does not reflect the type of value: is it the active menu name
+  or "[menu is active][6]"?
+
 
 ### Other
 
@@ -90,9 +98,30 @@ import someImage from '@eeacms/volto-eea-design-system/../theme/assets/someFile.
   flexible so that they are ready to be integrated with Volto. [Bad example][5]
 - Subcomponents. Large composite components (for example the Footer) should be
   abstracted and split into multiple
-  [subcomponents](https://react.semantic-ui.com/#sub-components). See the
+  [subcomponents][subs]. See the
   SemanticUI Card or Modal as example. The Footer could be implemented as
   `Footer` as wrapper component, `Footer.Section` etc.
+- Provide an abstraction level in your components that favours short JSX code
+  passages and high level structures. A single component that renders more then
+  50 lines of JSX code has a smell and should be considered to be refactored.
+  Code that is not fully visible in a single screen is hard to be read,
+  understood and maintained in the future.
+- Imports should be sorted in the following order:
+
+1. Base libraries (react, semantic-ui, redux, other major third-party
+   dependencies)
+2. Dependencies from Volto
+2. Dependencies from other EEA addons
+3. Dependencies from current package, referenced by absolute path name
+   (namespace)
+4. Relative dependencies
+5. Static resources
+6. Volto configuration registry
+5. Side-effect imports (such as importing a css or less file)
+
+- DRY. Code that is repeated, and in particular code that is closely situated,
+  is should be a target of this rule.
+- Use the classnames package for classNames prop operations
 
 ## Storybook
 
@@ -108,9 +137,13 @@ import someImage from '@eeacms/volto-eea-design-system/../theme/assets/someFile.
   to ensure a consistent look and feel. One place to document these constraints
   is in the control options we have in Storybook.
 
+##
 
 [1]: https://github.com/eea/volto-eea-design-system/blob/40f78e362ca607ef3893fff3d03c8ed1b4447c11/src/customizations/components/theme/Logo/Logo.jsx#L13
 [2]: https://github.com/eea/volto-eea-design-system/blob/40f78e362ca607ef3893fff3d03c8ed1b4447c11/src/customizations/components/theme/Footer/theme-sites.js
 [3]: https://github.com/eea/volto-eea-design-system/blob/40f78e362ca607ef3893fff3d03c8ed1b4447c11/src/customizations/components/theme/Accordion/Accordion.js#L4
 [4]: https://github.com/eea/volto-eea-design-system/blob/40f78e362ca607ef3893fff3d03c8ed1b4447c11/src/customizations/components/theme/Comment/Comment.js#L3-L4
 [5]: https://github.com/eea/volto-eea-design-system/blob/40f78e362ca607ef3893fff3d03c8ed1b4447c11/src/customizations/components/theme/Navigation/Navigation.jsx
+[6]: https://github.com/eea/volto-eea-design-system/blob/f524325b2671abfb2aa538fa61759bcd7e7f0797/src/ui/Header/Header.jsx#L73
+[eslint]: https://github.com/plone/volto/blob/master/.eslintrc
+[subs]: https://react.semantic-ui.com/#sub-components

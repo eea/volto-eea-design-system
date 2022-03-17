@@ -1,5 +1,6 @@
 import React from 'react';
-import { Input, Form, Message } from 'semantic-ui-react';
+import { Input, Form, Container } from 'semantic-ui-react';
+import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
 
 export default {
   title: 'Components/Forms/Input',
@@ -18,19 +19,18 @@ export default {
     },
     onChange: {
       action: 'input changed',
+      table: {
+        disable: true,
+      },
     },
     onFocus: {
       action: 'input focus',
+      table: {
+        disable: true,
+      },
     },
     placeholder: {
       description: 'placeholder text',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: ' "" ' },
-      },
-    },
-    label: {
-      description: 'Label text',
       table: {
         type: { summary: 'string' },
         defaultValue: { summary: ' "" ' },
@@ -53,21 +53,28 @@ export default {
   },
 };
 
-const Template = (args) => (
-  <Form>
-    <Form.Field required={args.required}>
-      <Input {...args} id="temp-id" />
-      {args.error && (
-        <Message
-          negative
-          content="This is a mandatory field"
-          size="mini"
-          icon="exclamation circle"
-        />
-      )}
-    </Form.Field>
-  </Form>
+const Template = ({ label, error, ...rest }) => (
+  <Container>
+    <Form>
+      <FormFieldWrapper
+        error={error}
+        label={label}
+        required={rest.required}
+        columns={label ? 1 : 0}
+      >
+        <Input {...rest} id="temp-id" />
+      </FormFieldWrapper>
+    </Form>
+  </Container>
 );
+
+export const Default = Template.bind({});
+Default.args = {
+  placeholder: 'Placeholder',
+  type: 'text',
+  fluid: false,
+  required: false,
+};
 
 export const StandardInput = Template.bind({});
 StandardInput.args = {
@@ -78,10 +85,20 @@ StandardInput.args = {
   required: false,
 };
 
-StandardInput.parameters = {
-  controls: {
-    exclude: ['onChange', 'onFocus'],
-    hideNoControlsWarning: true,
+StandardInput.argTypes = {
+  label: {
+    description: 'input label',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: '' },
+    },
+  },
+  required: {
+    description: 'a field can show that is mandatory',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
   },
 };
 
@@ -102,6 +119,20 @@ DisabledInput.argTypes = {
       defaultValue: { summary: false },
     },
   },
+  label: {
+    description: 'input label',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: '' },
+    },
+  },
+  required: {
+    description: 'a field can show that is mandatory',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
+  },
 };
 DisabledInput.argTypes = {
   disabled: {
@@ -111,11 +142,12 @@ DisabledInput.argTypes = {
       defaultValue: { summary: true },
     },
   },
-};
-DisabledInput.parameters = {
-  controls: {
-    exclude: ['onChange', 'onFocus'],
-    hideNoControlsWarning: true,
+  label: {
+    description: 'input label',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: '' },
+    },
   },
 };
 
@@ -137,11 +169,19 @@ LoadingInput.argTypes = {
       defaultValue: { summary: true },
     },
   },
-};
-LoadingInput.parameters = {
-  controls: {
-    exclude: ['onChange', 'onFocus'],
-    hideNoControlsWarning: true,
+  label: {
+    description: 'input label',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: '' },
+    },
+  },
+  required: {
+    description: 'a field can show that is mandatory',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
   },
 };
 
@@ -162,10 +202,18 @@ ErrorInput.argTypes = {
       defaultValue: { summary: true },
     },
   },
-};
-ErrorInput.parameters = {
-  controls: {
-    exclude: ['onChange', 'onFocus'],
-    hideNoControlsWarning: true,
+  label: {
+    description: 'input label',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: '' },
+    },
+  },
+  required: {
+    description: 'a field can show that is mandatory',
+    table: {
+      type: { summary: 'boolean' },
+      defaultValue: { summary: false },
+    },
   },
 };
