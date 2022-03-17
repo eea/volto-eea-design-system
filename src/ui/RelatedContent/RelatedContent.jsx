@@ -60,20 +60,17 @@ RelatedContent.Grid = ({ children, ...rest }) => {
               </PublicationCard>
             </Grid.Column>
           ))}
-    </>
-  );
-};
 
-RelatedContent.Button = ({ children, ...rest }) => {
-  if (!rest.showButton) return null;
-  return (
-    <Grid.Row className={!rest.showButton ? 'hidden' : null}>
-      <Grid.Column>
-        <div className="button-wrapper">
-          <Button secondary>{children}</Button>
-        </div>
-      </Grid.Column>
-    </Grid.Row>
+      {rest.showButton && rest.publicationCards.length > 4 && (
+        <Grid.Row className={!rest.showButton ? 'hidden' : null}>
+          <Grid.Column>
+            <div className="button-wrapper">
+              <Button secondary>{rest.buttonText}</Button>
+            </div>
+          </Grid.Column>
+        </Grid.Row>
+      )}
+    </>
   );
 };
 

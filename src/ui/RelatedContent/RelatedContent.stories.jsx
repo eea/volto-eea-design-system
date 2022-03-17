@@ -13,10 +13,12 @@ const Template = (args) => (
     <RelatedContent>
       <RelatedContent.Grid
         publicationCards={args.publicationCards}
+        showButton={args.showButton}
+        buttonText={args.buttonText}
       ></RelatedContent.Grid>
-      <RelatedContent.Button showButton={args.showButton}>
+      {/* <RelatedContent.Button showButton={args.showButton}>
         {args.buttonText}
-      </RelatedContent.Button>
+      </RelatedContent.Button> */}
     </RelatedContent>
   </Container>
 );
@@ -28,24 +30,25 @@ DefaultEven.args = {
       tag: 'Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-      href: '/#',
     },
     {
       tag: 'Publication',
       description: 'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
-      href: '/#',
     },
     {
       tag: 'Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. ',
-      href: '/#',
     },
     {
       tag: 'Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
-      href: '/#',
+    },
+    {
+      tag: 'Publication',
+      description:
+        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
     },
   ],
   buttonText: 'See All',
@@ -95,18 +98,15 @@ DefaultOdd.args = {
       tag: 'Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-      href: '/#',
     },
     {
       tag: 'Publication',
       description: 'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
-      href: '/#',
     },
     {
       tag: 'Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
-      href: '/#',
     },
   ],
   buttonText: 'See All',
@@ -153,10 +153,9 @@ const TabTemplate = (args) => (
   <RelatedContent>
     <RelatedContent.Grid
       publicationCards={args.publicationCards}
+      showButton={args.showButton}
+      buttonText={args.buttonText}
     ></RelatedContent.Grid>
-    <RelatedContent.Button showButton={args.showButton}>
-      {args.buttonText}
-    </RelatedContent.Button>
   </RelatedContent>
 );
 
@@ -201,7 +200,6 @@ RelatedContentInTab.args = {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-          href: '/#',
         },
       ],
       buttonText: 'See All',
@@ -214,13 +212,11 @@ RelatedContentInTab.args = {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-          href: '/#',
         },
         {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
-          href: '/#',
         },
       ],
       buttonText: 'See All',
@@ -233,19 +229,16 @@ RelatedContentInTab.args = {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-          href: '/#',
         },
         {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
-          href: '/#',
         },
         {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. ',
-          href: '/#',
         },
       ],
       buttonText: 'See All',
@@ -258,25 +251,26 @@ RelatedContentInTab.args = {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-          href: '/#',
         },
         {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
-          href: '/#',
         },
         {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. ',
-          href: '/#',
         },
         {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
-          href: '/#',
+        },
+        {
+          tag: 'Publication',
+          description:
+            'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
         },
       ],
       buttonText: 'See All',
