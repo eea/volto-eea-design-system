@@ -9,7 +9,8 @@
 
 .tags {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: right;
   width: @tagsBodyWidth;
   font-family: @tagsfontName;
@@ -29,6 +30,14 @@
   .tags-content {
     line-height: @tagsLineHeight;
     display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    & > * {
+      margin-bottom: 3px;
+      margin-top: 3px;
+    }
   }
 
 }
@@ -38,6 +47,20 @@
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
+
+  .tags {
+    flex-direction: row;
+    align-items: center;
+
+    .tags-content {
+      flex-direction: inherit;
+
+      & > * {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
