@@ -15,7 +15,7 @@
   input {
     &:checked ~ label {
       &:after {
-        // background-color: @primaryColor;
+        background-color: @primaryColor;
         font-family: Checkbox;
       }
     }

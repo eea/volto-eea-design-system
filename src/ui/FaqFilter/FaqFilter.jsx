@@ -9,10 +9,10 @@ const FaqFilter = ({ children, ...rest }) => {
 
   const toggleFilter = (data) => {
     if (data.checked) {
-      setSelected((oldArray) => [...oldArray, data.label]);
+      setSelected((oldArray) => [...oldArray, data.value]);
     } else {
       setSelected((oldArray) =>
-        oldArray.filter((filter) => filter !== data.label),
+        oldArray.filter((filter) => filter !== data.value),
       );
     }
   };
@@ -80,8 +80,8 @@ const Active = ({ children, ...rest }) => {
   return (
     <div className={`selected wrapper`}>
       {context.selected.length > 0 &&
-        context.selected.map((active) => (
-          <Label>
+        context.selected.map((active, index) => (
+          <Label id={index}>
             {active}
             <Icon name="delete" onClick={() => context.removeFilter(active)} />
           </Label>
@@ -99,7 +99,8 @@ const Filters = ({ children, ...rest }) => {
         {rest.filters.map((filter) => (
           <Grid.Column mobile={12} tablet={4} computer={4}>
             <Checkbox
-              label={filter.label}
+              label={`${filter.label} (${filter.count})`}
+              value={filter.label}
               id={filter.id}
               checked={context.selected.indexOf(filter.label) > -1}
               onChange={(e, d) => context.toggleFilter(d)}
