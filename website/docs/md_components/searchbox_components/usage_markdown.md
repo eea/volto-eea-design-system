@@ -4,7 +4,6 @@ Search is also users' escape hatch when they are stuck in navigation. When they 
 
 ### Do's 
 
-- **input fields should be visible.** It is not recommended to hide search inputs behind a button or Icon click. This leads to reduced visibility of the search element, and increased interaction cost in the form of an extra click. 
 - **use placeholder text.** Placeholder text provides context as to what can be searched and describes the action of the input
 
 - **use a magnifying glass icon.** The magnifying glass is universally recognized as a symbol for search and one which users can easily identify 
