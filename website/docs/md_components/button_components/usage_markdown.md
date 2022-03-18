@@ -12,15 +12,15 @@ Use for basic and successful actions. They direct the user’s attention to the 
 
 ### Don'ts
 
-- don't assign an action that should be assigned for a CTA or other variations of buttons
+- don't assign an action that should be assigned for a CTA (Call To Action) or other variations of buttons
 - don't use an icon when it is not relevant or necessary to the action
 
 ### When not to use
 
-- do not use for navigation
-- do not use for downloads
-- do not use when the primary action is negative - use secondary button
-- do not use when the action can't be undone, such as delete
+- don't use for navigation
+- don't use for downloads
+- don't use when the primary action is negative - use secondary button
+- don't use when the action can't be undone, such as delete
 
 ## Secondary Button
 
@@ -28,14 +28,14 @@ Use for medium-emphasis actions. They contain actions that are important but are
 
 ### Do's
 
-- ensure the button functions an action, such as "Cancel", "Delete," "Remove" or "Replace" as the secondary action next to the primary button
+- ensure the button performs an action, such as "Cancel", "Delete," "Remove" or "Replace" as the secondary action next to the primary button
 - use an icon only when it is necessary
 
 ### Don'ts
 
-- do not use for primary positive actions – such as Submit, Send, Accept, Apply or navigation
-- do not use on its own
-- do not use for navigation
+- don't use for primary positive actions – such as Submit, Send, Accept, Apply or navigation
+- don't use on its own
+- don't use for navigation
 - don't use an icon when it is not relevant or necessary to the action
 
 ## Text link Button
