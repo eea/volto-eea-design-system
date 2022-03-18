@@ -1,5 +1,5 @@
 ---
-title: Colours
+title: Colors
 order: 2
 ---
 
@@ -96,7 +96,7 @@ Accent colors can be used to bring attention to design elements by contrasting w
 
 <br />
 
-## Supplementary color  
+### Supplementary color  
 
 A supplementary color provides more ways to accent and distinguish your website. Having a supplementary color is optional and should be applied sparingly to selected parts of your UI. 
 
@@ -125,7 +125,7 @@ Supplementary colors are best for:
 
 - Progress bars 
 
-- Links and headlines 
+
 
  
 
@@ -133,12 +133,12 @@ Supplementary colors are best for:
 
  
 
-## Grays 
+### Grays 
 
 Use as the text color for dark-on-light designs, or as the background for inverted designs. 
  
 
-## Background 
+### Background 
 
 Use this color as the background for your dark-on-light designs, or the text color of an inverted design. 
 
@@ -172,13 +172,30 @@ Use this color as the background for your dark-on-light designs, or the text col
 
 <br />
 
-## Tools for creating color palettes 
+### Links color
+ <div style={{width:'100%',float:'left'}}>
+    <table style={{width:30+'%',float:'left'}} >
+        <tbody>
+            <tr>
+                <td style={{backgroundColor:'#0065A4',width:200+'px',height:150+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0065A4</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table> 
+</div>
 
-[Colors for maps](https://colorbrewer2.org)
+<br />
+
+### Tools for creating color palettes 
 
 https://color.adobe.com/create/color-wheel 
 
 https://coolors.co/  
+
+**Colors for maps**
+
+https://colorbrewer2.org
 
 https://carto.com/carto-colors/ 
 
