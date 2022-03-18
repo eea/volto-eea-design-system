@@ -8,7 +8,7 @@ A text field is an input that can be used on a form, sign-in or any place where 
 - order input fields logically, matching real-world task succession and interactions
 - always label each text area with a short, descriptive title, placed above the text area
 - indicate whether the input field is optional or mandatory
-- make use of helper text if there are further directions or hints the users may need in completing their goal (example: _Must be at least 6 characters and contain a number and a special character_)
+- make use of helper text if there are further directions or hints the users may need in completing their goal (example: Must be at least 6 characters and contain a number and a special character)
 - allow copy/paste for ease of use
 - if a character counter is necessary, place it below the text area
 - match the text field area to the expected size of the input - make it wide enough for the user to see their entire entry
