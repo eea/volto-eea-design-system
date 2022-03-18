@@ -37,6 +37,8 @@
 @tabletMetadataFontSize    : 0.875rem;
 @mobileMetadataLineHeight  : 0.5rem;
 @tabletMetadataLineHeight  : 1rem;
+// Metadata field
+@metadataFieldDividerContent: ' | ';
 
 /* Actions */
 @mobileActionsAlignItems                 : center;
