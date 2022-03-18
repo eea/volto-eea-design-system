@@ -74,6 +74,7 @@ textarea.fluid {
       padding: @rectangleTiny;
       font-size: 18px;
     }
+
     i.icon {
       font-size: 18px;
     }
@@ -83,9 +84,9 @@ textarea.fluid {
 @media only screen and (min-width: @computerBreakpoint) {
   .ui.fluid.icon.input.search {
     input {
+      padding: @rectangleMedium;
       border-bottom: 3px solid;
       font-size: 40px;
-      padding: @rectangleMedium;
     }
 
     i.icon {

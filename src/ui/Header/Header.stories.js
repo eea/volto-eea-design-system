@@ -36,7 +36,6 @@ const logoProps = {
   title: 'Site',
   alt: 'European Environment Agency',
   url: 'https://eea.europa.eu',
-  id: 'logo',
   src: LogoImage,
 };
 
@@ -267,7 +266,7 @@ const Template = (args) => {
               <div className="content">
                 <p>
                   All official European Union website addresses are in the{' '}
-                  <b>europa.eu</b> domain.
+                  europa.eu domain.
                 </p>
                 <a
                   href="https://europa.eu/european-union/contact/institutions-bodies_en"

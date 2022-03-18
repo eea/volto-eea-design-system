@@ -43,6 +43,7 @@
 @dropdownMenuContentWhiteSpace        : pre-wrap;
 @dropdownMenuContentFontWeight        : @normal;
 @mobileDropdownMenuContentFontSize    : @headerSmallFontSize;
+@desktopDropdownMenuContentFontSize   : @headerSmallFontSize;
 @dropdownMenuItemColorHover           : @white;
 @dropdownMenuItemBackgroundColorHover : @japaneseIndigo;
 // Official Union
@@ -55,8 +56,9 @@
 @tabletOfficialUnionPadding           : 0.75rem;
 @mobileOfficialUnionMaxWidth          : 110px;
 @tabletOfficialUnionMaxWidth          : 373px;
-@mobileOfficialUnionImageWidth        : 11px;
-@tabletOfficialUnionImageWidth        : 17px;
+//@mobileOfficialUnionImageWidth        : 11px;
+@mobileOfficialUnionImageWidth        : 16px;
+@tabletOfficialUnionImageWidth        : 33px;
 
 // Theme Sites
 @themeSitesMenuWidth                  : 210px;

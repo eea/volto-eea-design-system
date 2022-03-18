@@ -22,6 +22,7 @@
       align-items: center;
       justify-content: space-between;
       z-index: @topSectionZindex;
+      width: 100% !important; // Semantic has auto
     }
     .item {
       display: flex;
@@ -62,35 +63,12 @@
       }
     }
 
-    /* Official union dropdowns */
     .official-union {
       display: flex;
       gap: @officialUnionGap;
-    }
-    .official-union.mobile.or.lower.hidden {
-      .ui.dropdown .menu {
-        padding: @tabletOfficialUnionPadding;
 
-        .content {
-          max-width: @tabletOfficialUnionMaxWidth;
-        }
-
-        p {
-          font-size: @officialUnionMenuFontSize;
-          font-weight: @officialUnionTextFontWeight;
-          white-space: @dropdownMenuContentWhiteSpace;
-        }
-        a {
-          font-size: @officialUnionMenuFontSize;
-          font-weight: @officialUnionLinkFontWeight;
-          white-space: @dropdownMenuContentWhiteSpace;
-          color: @officialUnionLinkColor;
-        }
-      }
-    }
-    .official-union.mobile.only {
       img {
-        width: @tabletOfficialUnionImageWidth;
+        width: @mobileOfficialUnionImageWidth;
       }
 
       .ui.dropdown {
@@ -102,11 +80,16 @@
           .content {
             max-width: @mobileOfficialUnionMaxWidth;
 
-            p,
+            p {
+              font-size: @mobileDropdownMenuContentFontSize;
+              font-weight: @officialUnionTextFontWeight;
+              white-space: @dropdownMenuContentWhiteSpace;
+            }
             a {
               font-size: @mobileDropdownMenuContentFontSize;
-              font-weight: @dropdownMenuContentFontWeight;
-              white-space: @dropdownMenuContentWhiteSpace;
+              font-weight: @officialUnionLinkFontWeight;
+              white-space: @dropdownMenuContentWhiteSpace; 
+              color: @officialUnionLinkColor;
             }
 
             i.icon,
@@ -195,7 +178,7 @@
         }
       }
 
-      #logo {
+      .eea-logo {
         width: @logoWidth;
         max-width: @mobileLogoMaxWidth;
         margin-top: @mobileLogoMarginTop;
@@ -317,6 +300,29 @@ Header Actions - Burger and Search Icons
         margin-top: @tabletDropdownMenuMarginTop;
       }
 
+      .official-union {
+        img {
+          width: @tabletOfficialUnionImageWidth;
+        }
+        .ui.dropdown {
+          font-size: @tabletTopSectionItemFontSize;
+          .menu {
+            padding: @tabletOfficialUnionPadding;
+    
+            .content {
+              max-width: @tabletOfficialUnionMaxWidth;
+
+              p {
+                font-size: @officialUnionMenuFontSize;
+              }
+              a {
+                font-size: @officialUnionMenuFontSize;
+              }
+            }
+          }
+        }
+      }
+
       /* Language dropdown */
       #language-switcher {
         font-size: @tabletLanguageFontSize;
@@ -337,7 +343,7 @@ Header Actions - Burger and Search Icons
       .ui.container {
         height: 117px;
 
-        #logo {
+        .eea-logo {
           max-width: @tabletLogoMaxWidth;
           margin-top: @tabletLogoMarginTop;
         }
@@ -379,7 +385,7 @@ Header Actions - Burger and Search Icons
       .ui.container {
         height: 160px;
 
-        #logo {
+        .eea-logo {
           max-width: @computerLogoMaxWidth;
           margin-top: @computerLogoMarginTop;
         }
