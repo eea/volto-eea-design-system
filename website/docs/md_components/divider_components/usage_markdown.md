@@ -20,15 +20,15 @@ Too many lines can overload the screen with visual noise and create unnecessary 
 
 ### When to use 
 
-- when whitespace is not enough of a separator. 
+- when whitespace is not enough of a separator
 
-- in lists, separate items to show they are individual and unrelated items when each item is long and otherwise difficult to scan. 
+- in lists, separate items to show they are individual and unrelated items when each item is long and otherwise difficult to scan
 
 - in layouts, when background color changes (e.g. from Gray 100 to White) 
 
 ### When not to use 
 
-- for surrounding an item, use a border instead. 
+- for surrounding an item, use a border instead
 
 - for grouping content, use a card or table 
 
