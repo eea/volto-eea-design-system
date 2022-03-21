@@ -50,7 +50,7 @@ class InpageNavigation extends Component {
           </div>
           <div className="tablet or lower hidden">
             <Icon className="ri-arrow-up-s-line" />
-            <div className="text">TOP</div>
+            <div className="text">top</div>
           </div>
         </div>
       </Container>

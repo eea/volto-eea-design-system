@@ -12,48 +12,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   width: @tabletNavWidth;
   height: @tabletNavHeight;
   bottom: @navBottom;
-  right: @mobileNavRight;
+  right: @navRight;
   background-color: @navBackground;
   border-radius: @circularRadius;
   color: @navColor;
   font-weight: @navFontWeight;
 
-  cursor: pointer;
-
   /* Icon align fix */
   > div > i.icon,
   i.icons {
-    height: @inpageNavigationIconHeight;
-    width: @inpageNavigationIconWidth;
+    line-height: @mobileInpageNavigationIconLineHeight;
+    //width: @inpageNavigationIconWidth;
     margin-right: @inpageNavigationIconMarginRight;
-    font-size: @inpageNavigationIconFontSize;
-    //margin-top: @inpageNavigationIconMarginTop;
-  }
-
-  &.hidden {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: @tabletBreakpoint) {
-  #inpage-navigation {
-    right: @tabletNavRight;
+    font-size: @mobileInpageNavigationIconFontSize;
   }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
   #inpage-navigation {
-    right: @computerNavRight;
     width: @computerNavWidth;
     height: @computerNavHeight;
-    font-size: @computerNavFontSize;
+
+    > div > i.icon,
+    i.icons {
+      line-height: @computerInpageNavigationIconLineHeight;
+      font-size: @computerInpageNavigationIconFontSize;
+    }
   }
   .text {
-    height: @inpageNavigationTextHeight;
-    //margin-top: @inpageNavigationTextMarginTop;
+    margin-top: @inpageNavigationTextMarginTop;
     font-size: @inpageNavigationTextFontSize;
+    font-weight: @inpageNavigationTextFontWeight;
+    text-align: @inpageNavigationTextAlign;
+    font-variant: @inpageNavigationTextFontVariant;
   }
 }

@@ -2,10 +2,8 @@
         Inpage Navigation
 *******************************/
 
-@navBottom            : 1.875rem;
-@mobileNavRight       : @mobilePadding;
-@tabletNavRight       : @tabletPadding;
-@computerNavRight     : @computerPadding;
+@navBottom            : @largeGap;
+@navRight             : @largeGap;
 @navBackground        : @darkCerulean;
 @navColor             : @white;
 @navFontWeight        : @bold;
@@ -13,22 +11,20 @@
 /* Inpage navigation size */
 @tabletNavWidth       : 2.25rem;
 @tabletNavHeight      : 2.25rem;
-@computerNavWidth     : 3.438rem;
-@computerNavHeight    : 3.438rem;
-
-/* Font Sizes */
-@tabletNavIconFontSize: 1.313rem;
-@computerNavFontSize  : 14px;
+@computerNavWidth     : 3.125rem;
+@computerNavHeight    : 3.125rem;
 
 /* Desktop Icon */
-@inpageNavigationIconHeight : 25px;
 @inpageNavigationIconWidth : 100%;
 @inpageNavigationIconMarginRight : 0;
-@inpageNavigationIconFontSize : 2rem;
-//@inpageNavigationIconMarginTop : -17px;
-
+@mobileInpageNavigationIconLineHeight : 2.75rem;
+@computerInpageNavigationIconLineHeight : 1.5rem;
+@mobileInpageNavigationIconFontSize : 2rem;
+@computerInpageNavigationIconFontSize : 1.9rem;
 
 /* Text */
-@inpageNavigationTextHeight: 38%;
-//@inpageNavigationTextMarginTop : -10px;
-@inpageNavigationTextFontSize : 16px;
+@inpageNavigationTextMarginTop : -22px;
+@inpageNavigationTextFontSize : 1.125rem;
+@inpageNavigationTextFontWeight : 900;
+@inpageNavigationTextAlign : center;
+@inpageNavigationTextFontVariant: small-caps;
