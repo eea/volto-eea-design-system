@@ -9,40 +9,22 @@
 
 .eea.pullquote {
   padding: @pullquotePadding;
-  margin: @pullquoteMobileMargin;
+  margin: @pullquoteMargin;
   word-break: @contentWordBreak;
   hyphens: @contentWordBreakHyphens;
-  .content {
-    margin: @contentMargin;
-    .author {
-      color: @authorTextColor;
-      text-align: @authorTextAlign;
-      font-weight: @authorFontWeight;
-      font-size: @authorFontSize;
-      line-height: @authorLineHeight;
-      letter-spacing: @authorLetterSpacing;
-      margin: @authorMargin;
-    }
-
-    .meta {
-      text-align: @metaTextAlign;
-      font-weight: @metaFontWeight;
-      font-size: @metaFontSize;
-      line-height: @metaLineHeight;
-      letter-spacing: @metaLetterSpacing;
-    }
-  }
-  i.icon {
-    font-size: @quoteIconSize;
-    color: @quoteIconColor;
-  }
 
   .quotes.wrapper {
     display: flex;
 
+    .quote {
+      padding: @mobileQuotePadding;
+    }
+
     i.icon {
       display: flex;
       align-items: flex-end;
+      font-size: 1.8rem;
+      color: @quoteIconColor;
     }
 
     i.icomn:first-child {
@@ -51,28 +33,44 @@
 
     i.icon:last-child {
       align-self: flex-end;
-    }
-    
+    } 
   }
 
+  .author {
+    color: @authorTextColor;
+    text-align: @authorTextAlign;
+    font-weight: @authorFontWeight;
+    font-size: @authorFontSize;
+    margin: @authorMargin;
+  }
+
+  .meta {
+    text-align: @metaTextAlign;
+    font-weight: @metaFontWeight;
+    font-size: @metaFontSize;
+  }
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
   .eea.pullquote {
-    .content {
-      margin: @pullquoteMargin;
+    .quotes.wrapper {
+      .quote {
+        padding :@tabletQuotePadding;
+      }
+
+      i.icon {
+        font-size: @quoteIconSize;
+      }
     }
   }
   .eea.pullquote.left {
     width: @maxWidthOnFloat;
-    padding: @paddingLeftFloat;
+    padding: @pullquoteFloatLeftPadding;
     float: left;
   }
   .eea.pullquote.right {
     width: @maxWidthOnFloat;
-    padding: @paddingRightFloat;
+    padding: @pullquoteFloatRightPadding;
     float: right;
   }
 }
-
-.loadUIOverrides();
