@@ -28,6 +28,7 @@
 @metaFontSize        : 1rem;
 
 /* Icon */
-@quoteIconSize      : 3rem;
-@quoteIconColor     : @secondaryColor;
-@quoteDownIconFloat : right;
+@mobileQuoteIconSize : 2rem;
+@tabletQuoteIconSize : 3rem;
+@quoteIconColor      : @secondaryColor;
+@quoteDownIconFloat  : right;
