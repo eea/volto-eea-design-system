@@ -5,7 +5,6 @@
 
 import React from 'react'; // , { Component }
 import cx from 'classnames';
-import { useSelector } from 'react-redux';
 import { Container, Image, Menu, Grid, Dropdown } from 'semantic-ui-react'; // Dropdown,
 
 import closeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/close-line.svg';
@@ -38,9 +37,8 @@ const TopDropdownMenu = ({
   id,
   mobileText,
   text,
+  width,
 }) => {
-  const width = useSelector((state) => state.screen?.width);
-
   const isMobile = width < 480;
 
   const Component = ({ mobileText }) => (
