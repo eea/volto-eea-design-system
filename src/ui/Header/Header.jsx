@@ -38,6 +38,22 @@ const TopDropdownMenu = ({
   mobileText,
   text,
 }) => {
+  const [width, setWidth] = React.useState(
+    typeof window !== 'undefined' && window.innerWidth,
+  );
+  const isMobile = width < 480;
+
+  React.useEffect(() => {
+    window.addEventListener('resize', () => {
+      setWidth(window.innerWidth);
+    });
+    return () => {
+      window.removeEventListener('resize', () => {
+        setWidth(window.innerWidth);
+      });
+    };
+  }, []);
+
   const Component = ({ mobileText }) => (
     <Dropdown
       id={id}
@@ -52,14 +68,9 @@ const TopDropdownMenu = ({
       <Dropdown.Menu role="group">{children}</Dropdown.Menu>
     </Dropdown>
   );
-  if (typeof window !== 'undefined') {
-    const resolution = window?.innerWidth;
-    const isMobile = resolution < 480;
-    return (
-      <>{isMobile ? <Component mobileText={mobileText} /> : <Component />}</>
-    );
-  }
-  return null;
+  return (
+    <>{isMobile ? <Component mobileText={mobileText} /> : <Component />}</>
+  );
 };
 
 const Main = ({
