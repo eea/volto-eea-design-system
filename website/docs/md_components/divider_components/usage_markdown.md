@@ -20,17 +20,17 @@ Too many lines can overload the screen with visual noise and create unnecessary 
 
 ### When to use 
 
-- When whitespace is not enough of a separator. 
+- when whitespace is not enough of a separator
 
-- In lists, separate items to show they are individual and unrelated items when each item is long and otherwise difficult to scan. 
+- in lists, separate items to show they are individual and unrelated items when each item is long and otherwise difficult to scan
 
-- In layouts, when background color changes (e.g. from Gray 100 to White) 
+- in layouts, when background color changes (e.g. from Gray 100 to White) 
 
 ### When not to use 
 
-- For surrounding an item, use a border instead. 
+- for surrounding an item, use a border instead
 
-- For grouping content, use a card or table 
+- for grouping content, use a card or table 
 
 **Color Contrast** is another effective type of visual divider. Contrast is one of the key factors influencing scannability and visual hierarchy of the page or screen. With all that, color contrast can effective separate different option, items, or interactive zones, that means work as a visual divider.  
 
