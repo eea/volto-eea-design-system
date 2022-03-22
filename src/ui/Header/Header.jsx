@@ -37,9 +37,9 @@ const TopDropdownMenu = ({
   id,
   mobileText,
   text,
-  width,
+  viewportWidth,
 }) => {
-  const isMobile = width < 480;
+  const isMobile = viewportWidth < 480;
 
   const Component = ({ mobileText }) => (
     <Dropdown
