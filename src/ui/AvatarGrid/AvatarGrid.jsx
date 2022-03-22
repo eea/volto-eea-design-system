@@ -30,10 +30,10 @@ AvatarGrid.Group = ({ children, ...rest }) => {
   return (
     <div className="avatar group">
       <Grid>
-        {avatars.map((avatar) => (
-          <Grid.Column mobile={12} tablet={4} computer={4}>
+        {avatars.map((avatar,index) => (
+          <Grid.Column key={index} mobile={12} tablet={4} computer={4}>
             <div className="avatar-wrapper">
-              <Avatar {...rest} image_url={avatar.image_url} avatarSize="big">
+              <Avatar {...rest} image_url={avatar.image_url} avatarsize="big">
                 <Avatar.Content>
                   <Avatar.Title>{avatar.title}</Avatar.Title>
                   <Avatar.Metadata>{avatar.metadata}</Avatar.Metadata>

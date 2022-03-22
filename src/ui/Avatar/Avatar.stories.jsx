@@ -31,7 +31,7 @@ export default {
 };
 
 const DefaultTemplate = (args) => (
-  <Avatar avatarSize="big" {...args} image_url={imgUrl}>
+  <Avatar avatarsize="big" {...args} image_url={imgUrl}>
     <Avatar.Content>
       <Avatar.Title>{args.title}</Avatar.Title>
       <Avatar.Metadata>{args.info}</Avatar.Metadata>
@@ -46,7 +46,7 @@ Default.args = {
 };
 
 const SmallTemplate = (args) => (
-  <Avatar avatarSize="small" {...args} image_url={imgUrl}>
+  <Avatar avatarsize="small" {...args} image_url={imgUrl}>
     <Avatar.Content>
       <Avatar.Title>{args.title}</Avatar.Title>
       <Avatar.Metadata>{args.info}</Avatar.Metadata>
