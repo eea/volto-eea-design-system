@@ -54,7 +54,7 @@ const TopDropdownMenu = ({
   );
   if (typeof window !== 'undefined') {
     const resolution = window?.innerWidth;
-    const isMobile = resolution <= 480;
+    const isMobile = resolution < 480;
     return (
       <>{isMobile ? <Component mobileText={mobileText} /> : <Component />}</>
     );
