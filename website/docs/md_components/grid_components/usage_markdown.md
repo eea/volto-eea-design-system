@@ -15,12 +15,12 @@ On mobile, at a breakpoint of 480px, this layout grid uses 4 columns.
 
 <br />
 
-On tablet, at a breakpoint of 834px, this layout grid uses 8 columns.
+On tablet, at a breakpoint of 835px, this layout grid uses 8 columns.
 
 ![](../static/tablet-mid-grid.png)   
 
 <br /> 
-On desktop, at a breakpoint of 1024px, this layout grid uses 12 columns.
+On desktop, at a breakpoint of 1025px, this layout grid uses 12 columns.
 
 ![](../static/desktop-mid-grid.png)
 
@@ -34,12 +34,12 @@ On mobile, at a breakpoint of 480px, this layout grid uses 20px gutters.
 
 <br />
 
-On tablet, at a breakpoint of 7687px, this layout grid uses 20px gutters.  
+On tablet, at a breakpoint of 835px, this layout grid uses 20px gutters.  
 ![](../static/tablet-mid-grid.png)   
 
 <br />
 
-On desktop, at a breakpoint of 1024px, this layout grid uses 20px gutters.   
+On desktop, at a breakpoint of 1025px, this layout grid uses 20px gutters.   
 ![](../static/desktop-mid-grid.png)   
 
 
@@ -65,24 +65,24 @@ Each breakpoint range determines the number of columns, and recommended margins 
     <tbody>
         <tr>
             <td style={{fontWeight:'bold'}}>Mobile</td>
-            <td>320-480</td>
+            <td>320-480px</td>
             <td>4</td>
-            <td>20</td>
-            <td>30</td>
+            <td>20px or 1.25rem</td>
+            <td>30px or 1.875rem</td>
         </tr>
         <tr>
             <td style={{fontWeight:'bold'}}>Tablet</td>
-            <td>481-768</td>
-            <td>8</td>
-            <td>20</td>
-            <td>40</td>
+            <td>481-835px</td>
+            <td>8 </td>
+            <td>20px or 1.25rem</td>
+            <td>40px or 2.5rem</td>
         </tr>
         <tr>
             <td style={{fontWeight:'bold'}}>Desktop</td>
-            <td>1025 and above</td>
+            <td>1025px and above</td>
             <td>12</td>
-            <td>20</td>
-            <td>140</td>
+            <td>20px or 1.25rem</td>
+            <td>140px or 8.75rem</td>
         </tr>
     </tbody>
 </table>
