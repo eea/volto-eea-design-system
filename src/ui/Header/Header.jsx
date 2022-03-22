@@ -52,12 +52,14 @@ const TopDropdownMenu = ({
       <Dropdown.Menu role="group">{children}</Dropdown.Menu>
     </Dropdown>
   );
-  return (
-    <>
-      <Component />
-      {mobileText && <Component mobileText={mobileText} />}
-    </>
-  );
+  if (typeof window !== 'undefined') {
+    const resolution = window?.innerWidth;
+    const isMobile = resolution >= 320 && resolution <= 480;
+    return (
+      <>{isMobile ? <Component mobileText={mobileText} /> : <Component />}</>
+    );
+  }
+  return null;
 };
 
 const Main = ({
