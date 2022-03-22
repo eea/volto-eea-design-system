@@ -2,7 +2,7 @@
             Footer
 *******************************/
 
-@footerBackgroundGrandient          : linear-gradient(180deg, #009591 -1.72%, @japaneseIndigo 61.15%);
+@footerBackgroundGrandient           : linear-gradient(220.4deg, #009591 8.29%, #2E3E4C 56.3%, #212D38 89.06%);
 
 /* Wrapper */
 @wrapperBackgroundImage              : url(../assets/images/Footer/Extras/footervisual.svg);
