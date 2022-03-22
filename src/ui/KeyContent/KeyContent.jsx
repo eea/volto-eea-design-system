@@ -14,7 +14,7 @@ function KeyContent({ children, ...rest }) {
   );
 }
 
-KeyContent.Title = ({ children }) => <p className="title">{children}</p>;
+KeyContent.Title = ({ children }) => <h2 className="title">{children}</h2>;
 KeyContent.List = ({ children, ...rest }) => (
   <List bulleted horizontal={false} items={rest.items}></List>
 );

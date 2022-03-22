@@ -4,26 +4,26 @@
 @import (multiple) '../../theme.config';
 
 .eea.key-content {
-  background-color: @keyContentBackgroundColor;
-
   .title {
     text-align: center;
-    font-weight: @keyContentTitleFontWeight;
-    font-size: @keyContentTitleFontSize;
   }
 
   .ui.bulleted.list {
-    margin-left: @keyContentListMarginLeft;
+    display: flex;
+    flex-direction: column;
+    gap: @keyContentListGap;
   }
 
   .item {
-    margin-left: 74.85px;
-    margin-bottom: 34.07px;
+    color: @keyContentItemColor;
+    font-size: @keyContentItemFontSize;
+    margin-left: @keyContentItemMarginLeft;
   }
 
-  .item::before {
-    color: @keyContentListItemBeforeColor;
-    margin-left: @keyContentListItemBeforeMarginLeft;
+  .ui.bulleted.list > .item::before {
+    color: @keyContentListBulletColor;
+    font-size: @keyContentListBulletFontSize;
+    margin-left: -2rem;
   }
 }
 
@@ -31,6 +31,6 @@
   .title {
     text-align: left;
     color: @keyContentColoredTitleColor;
-    margin-left: @keyContentColoredTitleMarginLeft;
+    margin-left: @keyContentTitleMarginLeft;
   }
 }
