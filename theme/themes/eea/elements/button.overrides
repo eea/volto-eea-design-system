@@ -2,14 +2,6 @@
          Theme Overrides
 *******************************/
 
-//Color for button text depends on background
-.text-color(@backColor) when (lightness(@backColor) >= 40%) {
-  color: @primaryButtonColor;
-}
-.text-color(@backColor) when (lightness(@backColor) < 40%) {
-  color: @white;
-}
-
 /* Global Button Styles */
 .ui.button,
 .ui.buttons .button,
