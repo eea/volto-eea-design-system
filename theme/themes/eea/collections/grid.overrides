@@ -9,3 +9,9 @@
   background: @primaryColor;
   color: @white;
 }
+
+.ui[class*="any reversed"].grid,
+.ui[class*="any reversed"].grid > .row,
+.ui.grid > [class*="any reversed"].row {
+  flex-direction: row-reverse;
+}
