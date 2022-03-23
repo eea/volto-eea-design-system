@@ -2,14 +2,41 @@
          Theme Overrides
 *******************************/
 
-/* avoid long links from spilling outside of card body area */
+/* Avoid long links from spilling outside of card body area */
 .ui.cards > .card > .extra,
 .ui.card > .extra {
-  word-break: break-all;
+  font-size: @extraLinkFontSize;
+  word-break: @extraLinkWordBreak;
+}
+
+/* Cards must have same height */
+.ui.card {
+  height: 100%;
+}
+
+.ui.cards > .card > .image,
+.ui.card > .image {
+  overflow: @cardImageOverflow;
+  height: @cardImageHeight;
+
+  img {
+    width: @imageWidth;
+    height: @imageHeight;
+    object-fit: @imageObjectFit;
+    object-position: @imageObjectPosition;
+  }
 }
 
 .ui.card .meta > .category {
   font-size: @metaFontSize;
+}
+
+.ui.card .extra.content a {
+  font-weight: @contentLinkFontWeight;
+
+  &:hover {
+    text-decoration: @contentLinkTextDecoration;
+  }
 }
 
 .ui.left.card {
@@ -18,12 +45,4 @@
 
 .ui.right.card {
   margin-left: auto;
-}
-
-.ui.card .extra.content a {
-  font-weight: 700;
-}
-
-.ui.card .extra.content a:hover {
-  text-decoration: underline;
 }

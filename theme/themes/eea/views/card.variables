@@ -51,11 +51,17 @@
 
 
 /* Image */
+@cardImageHeight: 200px;
+@cardImageOverflow: hidden;
 @imageBackground: @transparentBlack;
 @imagePadding: 0em;
 @imageBorder: none;
 @imageBoxShadow: none;
 @imageBorder: none;
+@imageHeight: 100%;
+@imageWidth: 100%;
+@imageObjectFit: cover;
+@imageObjectPosition: center;
 
 /* Content */
 @contentDivider: @borderWidth solid @internalBorderColor;
@@ -71,7 +77,7 @@
 /* Header */
 @headerMargin: '';
 @headerFontWeight: @bold;
-@headerFontSize: @relativeBig;
+@headerFontSize: 1.125rem;
 @headerLineHeightOffset: -(@lineHeight - 1em) / 2;
 @headerColor: @white;
 
@@ -94,7 +100,9 @@
 /* Links */
 @contentLinkColor: @white;
 @contentLinkHoverColor: @white;
+@contentLinkFontWeight: @bold;
 @contentLinkTransition: color @defaultDuration @defaultEasing;
+@contentLinkTextDecoration: underline;
 
 @headerLinkColor: @headerColor;
 @headerLinkHoverColor: @linkHoverColor;
@@ -122,7 +130,7 @@
 @dimmerColor: '';
 
 /* Additional Content */
-@extraDivider: 1px solid rgba(0, 0, 0, 0.05);
+@extraDivider: none;
 @extraBackground: none;
 @extraPosition: static;
 @extraWidth: auto;
@@ -137,6 +145,8 @@
 /* Extra Links */
 @extraLinkColor: @white;
 @extraLinkHoverColor: @white;
+@extraLinkWordBreak: break-all;
+@extraLinkFontSize: 0.875rem;
 
 /* Buttons */
 @buttonMargin: 0px -@borderWidth;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Icon, Grid } from 'semantic-ui-react';
+import { Card, Image, Grid } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Card',
@@ -10,7 +10,8 @@ export default {
     },
   },
   argTypes: {
-    imgUrl: 'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+    imgUrl:
+      'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
     hasImage: {
       description: 'true if card contains image',
       table: {
@@ -62,12 +63,7 @@ export default {
 const Template = (args) => (
   <Card fluid={args.fluid}>
     {args.hasImage && (
-      <Image
-        src={args.imgUrl}
-        wrapped
-        ui={false}
-        alt="card image"
-      />
+      <Image src={args.imgUrl} wrapped ui={false} alt="card image" />
     )}
     <Card.Content>
       <Card.Header>{args.title}</Card.Header>
@@ -76,11 +72,7 @@ const Template = (args) => (
     {args.links !== null &&
       args.links.map((item, index) => (
         <Card.Content extra key={index}>
-          <a href="/#">
-            {' '}
-            <Icon name={item.icon} />
-            {item.linkName}
-          </a>
+          <a href="/#">{item.linkName}</a>
         </Card.Content>
       ))}
   </Card>
@@ -88,7 +80,8 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  imgUrl: 'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+  imgUrl:
+    'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
   title: 'Lorem Ipsum',
   description:
     'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
@@ -103,12 +96,7 @@ const GridTemplate = (args) => (
       <Grid.Column mobile={12} tablet={6} computer={2}>
         <Card fluid={card.fluid}>
           {card.hasImage && (
-            <Image
-              src={card.imgUrl}
-              wrapped
-              ui={false}
-              alt="card image"
-            />
+            <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
           )}
           <Card.Content>
             <Card.Header>{card.title}</Card.Header>
@@ -117,11 +105,7 @@ const GridTemplate = (args) => (
           {card.links !== null &&
             card.links.map((item, index) => (
               <Card.Content extra key={index}>
-                <a href="/#">
-                  {' '}
-                  <Icon name={item.icon} />
-                  {item.linkName}
-                </a>
+                <a href="/#">{item.linkName}</a>
               </Card.Content>
             ))}
         </Card>
@@ -135,7 +119,8 @@ CardGrid.args = {
   cards: [
     {
       title: 'Lorem Ipsum',
-      imgUrl: 'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      imgUrl:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: true,
@@ -144,7 +129,8 @@ CardGrid.args = {
     },
     {
       title: 'Suspendisse iaculis feugiat',
-      imgUrl: 'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      imgUrl:
+        'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: true,
