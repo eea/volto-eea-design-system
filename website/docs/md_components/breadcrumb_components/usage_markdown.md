@@ -7,6 +7,7 @@ The Breadcrumb informs the users on their current location relative to the homep
 ### Don'ts
 
 - use long labels which creates visual clutter
+- breadcrumb links cannot exceed 220px in length else they will be truncated
 
 ### When to use
 
