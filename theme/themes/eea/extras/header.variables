@@ -26,7 +26,7 @@
 @topSectionBackground                 : @silverGray;
 @topSectionItemColor                  : @japaneseIndigo;
 @topSectionItemFontWeight             : @bold;
-@mobileTopSectionItemFontSize         : @headerMinyFontSize;
+@mobileTopSectionItemFontSize         : @headerSmallFontSize;
 @tabletTopSectionItemFontSize         : @headerSmallFontSize;
 @topSectionZindex                     : 1;
 
