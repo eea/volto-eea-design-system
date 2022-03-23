@@ -244,19 +244,24 @@ const menuItems = [
   },
 ];
 
+const debounce = (func) => {
+  let timer;
+  return (event) => {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(func, 50, event);
+  };
+};
+
 const Template = (args) => {
   const [viewportWidth, setWidth] = React.useState(
     typeof window !== 'undefined' && window.innerWidth,
   );
   React.useEffect(() => {
-    window.addEventListener('resize', () => {
-      setWidth(window.innerWidth);
-    });
-    return () => {
-      window.removeEventListener('resize', () => {
-        setWidth(window.innerWidth);
-      });
-    };
+    const handleWindowResize = window.addEventListener('resize', () =>
+      debounce(setWidth(window.innerWidth)),
+    );
+
+    return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
   const { languages, links, linksMenuTitle, menuItems } = args;

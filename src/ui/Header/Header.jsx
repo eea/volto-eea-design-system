@@ -44,10 +44,7 @@ const TopDropdownMenu = ({
   const Component = ({ mobileText }) => (
     <Dropdown
       id={id}
-      className={cx(className, {
-        'mobile or lower hidden': !mobileText ?? false,
-        'mobile only': mobileText ?? false,
-      })}
+      className={className}
       text={mobileText || text}
       icon={icon || 'chevron down'}
       aria-label="dropdown"
