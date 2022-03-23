@@ -37,14 +37,14 @@ const TopDropdownMenu = ({
   id,
   mobileText,
   text,
+  viewportWidth,
 }) => {
+  const isMobile = viewportWidth < 480;
+
   const Component = ({ mobileText }) => (
     <Dropdown
       id={id}
-      className={cx(className, {
-        'mobile or lower hidden': !mobileText ?? false,
-        'mobile only': mobileText ?? false,
-      })}
+      className={className}
       text={mobileText || text}
       icon={icon || 'chevron down'}
       aria-label="dropdown"
@@ -52,14 +52,9 @@ const TopDropdownMenu = ({
       <Dropdown.Menu role="group">{children}</Dropdown.Menu>
     </Dropdown>
   );
-  if (typeof window !== 'undefined') {
-    const resolution = window?.innerWidth;
-    const isMobile = resolution < 480;
-    return (
-      <>{isMobile ? <Component mobileText={mobileText} /> : <Component />}</>
-    );
-  }
-  return null;
+  return (
+    <>{isMobile ? <Component mobileText={mobileText} /> : <Component />}</>
+  );
 };
 
 const Main = ({
