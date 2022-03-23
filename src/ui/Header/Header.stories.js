@@ -245,6 +245,20 @@ const menuItems = [
 ];
 
 const Template = (args) => {
+  const [viewportWidth, setWidth] = React.useState(
+    typeof window !== 'undefined' && window.innerWidth,
+  );
+  React.useEffect(() => {
+    window.addEventListener('resize', () => {
+      setWidth(window.innerWidth);
+    });
+    return () => {
+      window.removeEventListener('resize', () => {
+        setWidth(window.innerWidth);
+      });
+    };
+  }, []);
+
   const { languages, links, linksMenuTitle, menuItems } = args;
 
   const [language, setLanguage] = React.useState('en');
@@ -262,6 +276,7 @@ const Template = (args) => {
               icon="chevron down"
               aria-label="dropdown"
               className=""
+              viewportWidth={viewportWidth}
             >
               <div className="content">
                 <p>
@@ -286,6 +301,7 @@ const Template = (args) => {
               id="theme-sites"
               className="tablet or lower hidden"
               text={linksMenuTitle}
+              viewportWidth={viewportWidth}
             >
               <div className="wrapper">
                 {links.map((item, index) => (
@@ -308,9 +324,11 @@ const Template = (args) => {
             id="language-switcher"
             className="item"
             text={`${language.toUpperCase()}`}
+            mobileText={`${language.toUpperCase()}`}
             icon={
               <Image src={globeIcon} alt="language dropdown globe icon"></Image>
             }
+            viewportWidth={viewportWidth}
           >
             <div className="wrapper">
               {languages.map((item, index) => (
