@@ -81,3 +81,39 @@
 .ui.styled.accordion .active.title input {
   color: @styledActiveTitleColor;
 }
+
+/* Read More Variation */
+
+.ui.accordion.read.more {
+  .title {
+    color: @readMoreVariantColor;
+
+    i {
+      color: @readMoreVariantColor;
+    }
+
+    &:hover {
+      color: @readMoreVariantColor;
+
+      i {
+        color: @readMoreVariantColor;
+      }
+    }
+  }
+
+  .active.title {
+    background-color: @readMoreVariantActiveColor;
+    color: @white;
+
+    i {
+      color: @readMoreVariantActiveColor;
+    }
+  }
+
+  .content {
+    .read.more.link {
+      color: @mediumPersianBlue;
+      float: right;
+    }
+  }
+}

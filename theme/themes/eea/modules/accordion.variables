@@ -112,3 +112,11 @@
 /* Inverted */
 @invertedTitleColor: @invertedTextColor;
 
+
+
+/* Read More Variant */
+
+@readMoreVariantColor : @white;
+@readMoreVariantActiveColor : @deepBlue;
+@readMoreVariantActiveBackgroundColor : @deepBlue; 
+@readMoreVariantLinkItemoColor: @mediumPersianBlue;
