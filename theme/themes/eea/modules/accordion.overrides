@@ -81,5 +81,3 @@
 .ui.styled.accordion .active.title input {
   color: @styledActiveTitleColor;
 }
-
-
