@@ -1,0 +1,7 @@
+/*-------------------
+      LABEL
+--------------------*/
+
+/* Danger */
+@labelRedBackgroundColor        : '#b83230';
+@labelColor                     : '#FFFFFF';
