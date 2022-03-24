@@ -90,12 +90,18 @@ const Template = (args) => (
       }
     >
       <Banner.Title>{args.title}</Banner.Title>
-      {args.metadata &&
-      <Banner.Metadata>
-        <>{args.metadata.map((meta,index) => (
-          <Banner.MetadataField {...meta}></Banner.MetadataField>
-        ))}</>
-      </Banner.Metadata>}
+      {args.metadata && (
+        <Banner.Metadata>
+          <>
+            {args.metadata.map((meta, index) => (
+              <Banner.MetadataField
+                {...meta}
+                key={index}
+              ></Banner.MetadataField>
+            ))}
+          </>
+        </Banner.Metadata>
+      )}
     </Banner.Content>
   </Banner>
 );
@@ -104,10 +110,10 @@ export const Default = Template.bind({});
 Default.args = {
   title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   metadata: [
-    {hidden:false,value:'Briefing',type:""},
-    {hidden:false,value:'Published Date',type:""},
-    {hidden:false,value:'Modified Date',type:""},
-    {hidden:false,value:'5 min read',type:""},
+    { hidden: false, value: 'Briefing', type: '' },
+    { hidden: false, value: 'Published Date', type: '' },
+    { hidden: false, value: 'Modified Date', type: '' },
+    { hidden: false, value: '5 min read', type: '' },
   ],
   image: true,
   hideShareButton: false,
