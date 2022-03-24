@@ -3,4 +3,5 @@
 @readMoreVariantActiveBackgroundColor : @deepBlue; 
 @readMoreVariantLinkItemoColor: @mediumPersianBlue;
 
+@readMoreVariantLinkWrapperWidth:100%;
 @readMoreVariantLinkWrapperHeight: 10px;

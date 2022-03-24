@@ -10,75 +10,9 @@ export default {
             handles: ['click'],
         },
     },
-    argTypes: {
-        readMoreVariant: {
-            description: 'Adds variant class',
-            table: {
-                type: {
-                    summary: 'boolean',
-                },
-                defaultValue: {
-                    summary: false,
-                },
-            },
-        },
-        toggle1: {
-            description: 'Text of the Content Accordion toggler',
-            table: {
-                type: {
-                    summary: 'string',
-                },
-                defaultValue: {
-                    summary: '""',
-                },
-            },
-        },
-        toggle2: {
-            description: 'Text of the Content Accordion toggler',
-            table: {
-                type: {
-                    summary: 'string',
-                },
-                defaultValue: {
-                    summary: '""',
-                },
-            },
-        },
-        toggle3: {
-            description: 'Text of the ContentAccordion toggler',
-            table: {
-                type: {
-                    summary: 'string',
-                },
-                defaultValue: {
-                    summary: '""',
-                },
-            },
-        },
-        content1: {
-            description: 'Text of the hidden content',
-            table: {
-                type: {
-                    summary: 'array',
-                },
-                defaultValue: {
-                    summary: '""',
-                },
-            },
-        },
-        content2: {
-            description: 'Text of the hidden content',
-            table: {
-                type: {
-                    summary: 'array',
-                },
-                defaultValue: {
-                    summary: '""',
-                },
-            },
-        },
-        content3: {
-            description: 'Text of the hidden content',
+    argTypes: {        
+        content: {
+            description: 'Accordion Content Items',
             table: {
                 type: {
                     summary: 'array',
@@ -137,18 +71,18 @@ Default.args = {
     content: [
         {
             title: 'Water and marine environment',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nisi mauris enim felis eget id sed tristique. At laoreet ligula pretium, pulvinar. Accumsan egestas ultricies erat sed. Eget non quis libero, odio elementum lectus lectus ullamcorper elit. In quam pulvinar amet, habitasse mi lorem nunc. Sed sed elementum est purus elementum eget. Elementum tortor at nulla nunc, tempor rhoncus, bibendum. Massa mauris, mauris, vel elementum adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nisi mauris enim felis eget id sed tristique. At laoreet ligula pretium, pulvinar. Accumsan egestas ultricies erat sed. Eget non quis libero, odio elementum lectus lectus ullamcorper elit. In quam pulvinar amet, habitasse mi lorem nunc. Sed sed elementum est purus elementum eget. Elementum tortor at nulla nunc, tempor rhoncus, bibendum. Massa mauris, mauris, vel elementum adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nisi mauris enim felis eget id sed tristique. At laoreet ligula pretium, pulvinar. Accumsan egestas ultricies erat sed. Eget non quis libero, odio elementum lectus lectus ullamcorper elit. In quam pulvinar amet, habitasse mi lorem nunc. Sed sed elementum est purus elementum eget. Elementum tortor at nulla nunc, tempor rhoncus, bibendum. Massa mauris, mauris, vel elementum adipiscing.',
+            linkText: 'Read More',
+            linkUrl: '#'
+        },
+        {
+            title: 'Resource efficiency and waste',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nisi mauris enim felis eget id sed tristique. At laoreet ligula pretium, pulvinar. Accumsan egestas ultricies erat sed. Eget non quis libero, odio elementum lectus lectus ullamcorper elit. In quam pulvinar amet, habitasse mi lorem nunc. Sed sed elementum est purus elementum eget. Elementum tortor at nulla nunc, tempor rhoncus, bibendum. Massa mauris, mauris, vel elementum adipiscing.',
             linkText: 'Read More',
             linkUrl: '#'
         },
         {
-            title: 'Water and marine environment',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nisi mauris enim felis eget id sed tristique. At laoreet ligula pretium, pulvinar. Accumsan egestas ultricies erat sed. Eget non quis libero, odio elementum lectus lectus ullamcorper elit. In quam pulvinar amet, habitasse mi lorem nunc. Sed sed elementum est purus elementum eget. Elementum tortor at nulla nunc, tempor rhoncus, bibendum. Massa mauris, mauris, vel elementum adipiscing.',
-            linkText: 'Read More',
-            linkUrl: '#'
-        },
-        {
-            title: 'Water and marine environment',
+            title: 'Air pollution',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nisi mauris enim felis eget id sed tristique. At laoreet ligula pretium, pulvinar. Accumsan egestas ultricies erat sed. Eget non quis libero, odio elementum lectus lectus ullamcorper elit. In quam pulvinar amet, habitasse mi lorem nunc. Sed sed elementum est purus elementum eget. Elementum tortor at nulla nunc, tempor rhoncus, bibendum. Massa mauris, mauris, vel elementum adipiscing.',
             linkText: 'Read More',
             linkUrl: '#'

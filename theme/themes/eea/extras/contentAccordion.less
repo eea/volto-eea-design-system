@@ -36,10 +36,13 @@
   }
 
   .content {
-    .read.more.link {
-      color: @mediumPersianBlue;
-      float: right;
-      margin-bottom: 10px;
+    .read.more.link.wrapper {
+      width: @readMoreVariantLinkWrapperWidth;
+      height: @readMoreVariantLinkWrapperHeight;
+      .read.more.link {
+        color: @mediumPersianBlue;
+        float: right;        
+      }
     }
   }
 }
