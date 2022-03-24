@@ -15,11 +15,11 @@ export default {
         type: { summary: 'string' },
       },
     },
-    info: {
-      description: 'banner secondary info',
+    metadata: {
+      description: 'banner metadata',
       table: {
         defaultValue: { summary: '""' },
-        type: { summary: 'string' },
+        type: { summary: 'object' },
       },
     },
     image: {
@@ -90,7 +90,12 @@ const Template = (args) => (
       }
     >
       <Banner.Title>{args.title}</Banner.Title>
-      <Banner.Metadata>{args.info}</Banner.Metadata>
+      {args.metadata &&
+      <Banner.Metadata>
+        <>{args.metadata.map((meta,index) => (
+          <Banner.MetadataField {...meta}></Banner.MetadataField>
+        ))}</>
+      </Banner.Metadata>}
     </Banner.Content>
   </Banner>
 );
@@ -98,7 +103,12 @@ const Template = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  info: 'Briefing | Published Date | Modified Date | 5 min read',
+  metadata: [
+    {hidden:false,value:'Briefing',type:""},
+    {hidden:false,value:'Published Date',type:""},
+    {hidden:false,value:'Modified Date',type:""},
+    {hidden:false,value:'5 min read',type:""},
+  ],
   image: true,
   hideShareButton: false,
   hideDownloadButton: false,

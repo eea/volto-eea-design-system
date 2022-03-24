@@ -51,4 +51,9 @@ Banner.Content = ({ children, actions }) => {
 Banner.Title = ({ children }) => <p className="title">{children}</p>;
 Banner.Metadata = ({ children }) => <p className="metadata">{children}</p>;
 
+Banner.MetadataField = ({ hidden, type = 'text', label, value, title }) => {
+  if (hidden || !value) return '';
+  return <span className="field">{value}</span>;
+};
+
 export default Banner;
