@@ -3,10 +3,10 @@
 --------------------*/
 
 @publicationCardtextColor: @white;
-@publicationCardMargin: 10px 0;
-@publicationCardMobileHeight: 286px;
-@publicationCardTabletHeight: 352px;
-@publicationCardComputerHeight: 268px;
+@publicationCardMargin: 0.625rem 0;
+@publicationCardMobileHeight: 285px;
+@publicationCardTabletHeight: 350px;
+@publicationCardComputerHeight: 270px;
 @publicationCardWidth: auto;
 
 /* Colors */
@@ -17,7 +17,7 @@
 @cardDescriptionMaxHeight: 135px;
 @mobileCardDescriptionHeight: 135px;
 @tabletCardDescriptionHeight: 105px;
-@computerCardDescriptionHeight: 108px;
+@computerCardDescriptionHeight: 110px;
 @cardDescriptionPadding: @largeGap;
 @cardDescriptionWidth: 100%;
 
