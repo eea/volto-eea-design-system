@@ -1,0 +1,6 @@
+@readMoreVariantColor : @deepBlue;
+@readMoreVariantActiveColor : @white;
+@readMoreVariantActiveBackgroundColor : @deepBlue; 
+@readMoreVariantLinkItemoColor: @mediumPersianBlue;
+
+@readMoreVariantLinkWrapperHeight: 10px;

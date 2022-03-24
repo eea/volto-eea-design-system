@@ -1,0 +1,45 @@
+@type: 'extra';
+@element: 'contentAccordion';
+
+@import (multiple) '../../theme.config';
+
+/*----------------------------
+    CONTENT ACCORDION
+-----------------------------*/
+
+/* Read More Variation */
+
+.ui.accordion.read.more {
+  .title {
+    color: @readMoreVariantColor;
+
+    i {
+      color: @readMoreVariantColor;
+    }
+
+    &:hover {
+      color: @readMoreVariantColor;
+
+      i {
+        color: @readMoreVariantColor;
+      }
+    }
+  }
+
+  .active.title {
+    background-color: @readMoreVariantActiveBackgroundColor;
+    color: @readMoreVariantActiveColor;
+
+    i {
+      color: @readMoreVariantActiveColor;
+    }
+  }
+
+  .content {
+    .read.more.link {
+      color: @mediumPersianBlue;
+      float: right;
+      margin-bottom: 10px;
+    }
+  }
+}
