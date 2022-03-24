@@ -17,3 +17,7 @@
 .ui.label.highlight {
   background-color: @highlightImportanceBackground;
 }
+
+.ui.label.icon {
+  color: @white;
+}

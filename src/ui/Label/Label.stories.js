@@ -1,5 +1,5 @@
 import React from 'react';
-import { Label } from 'semantic-ui-react';
+import { Label } from './Label';
 
 export default {
   title: 'Components/Label',
@@ -61,5 +61,11 @@ export const Highlight = (args) => (
 );
 Highlight.args = {
   content: 'Label',
+  pointing: false,
+};
+
+export const IconLabel = (args) => <Label className="icon" {...args}></Label>;
+IconLabel.args = {
+  icon: 'mail',
   pointing: false,
 };
