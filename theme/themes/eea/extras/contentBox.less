@@ -7,21 +7,20 @@
       CONTENT BOX
 --------------------*/
 
-.eea.contentbox {
+.eea.content-box {
   width: @contentBoxWidth;
   background-color: @contentBoxBackgroundColor;
   color: @contentBoxColor;
+  margin-bottom: @mediumGap;
 
-  .title.wrapper {
-    padding-top: @contentBoxTitlePaddingTop;
-    font-weight: @contentBoxTitleFontWeight;
-    font-size: @contentBoxTitleFontSize;
-  }
-
-  .body.wrapper {
-    padding-top: @contentBoxBodyPaddingTop;
-    font-weight: @contentBoxBodyFontWeight;
-    font-size: @contentBoxBodyFontSize;
-    padding-bottom: @contentBoxBodyPaddingBottom;
+  position: relative;
+  margin-right: -50vw;
+  margin-left: -50vw;
+  right: 50%;
+  left: 50%;
+  
+  .ui.container {
+    padding-top: @contentBoxContainerMarginTop;
+    padding-bottom: @contentBoxContainerMarginBottom;
   }
 }
