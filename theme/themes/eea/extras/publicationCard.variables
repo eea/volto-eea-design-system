@@ -10,22 +10,22 @@
 @publicationCardWidth: auto;
 
 /* Colors */
-@publicationCardBackgroundColor: #BCBEC0;
-@publicationCardDescriptionColor: #3D5265;
+@publicationCardBackgroundColor: @midGray;
+@publicationCardDescriptionColor: @deepBlue;
 
 /* Description */
 @cardDescriptionMaxHeight: 135px;
 @mobileCardDescriptionHeight: 135px;
 @tabletCardDescriptionHeight: 105px;
 @computerCardDescriptionHeight: 108px;
-@cardDescriptionPadding: 20px;
+@cardDescriptionPadding: @largeGap;
 @cardDescriptionWidth: 100%;
 
 @cardDescriptionTextLineClampMobile: 3;
 @cardDescriptionTextLineClampTablet: 2;
 
-@cardDescriptionTagFontSize: 12px;
+@cardDescriptionTagFontSize: 0.75rem;
 @cardDescriptionTagFontWeight: 400;
-@cardDescriptionTextFontSize: 16px;
+@cardDescriptionTextFontSize: 1rem;
 @cardDescriptionTextFontWeight: 700;
 
