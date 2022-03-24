@@ -6,21 +6,21 @@ Use for basic and successful actions. They direct the user’s attention to the 
 
 ### Do's
 
-- Make sure the button‘s microcopy represents the action such as “Submit“ or “Register“
-- Use an icon only when it is necessary
-- Use to perform a new action, task, move to next step
+- make sure the button‘s microcopy represents the action such as “Submit“ or “Register“
+- use an icon only when it is necessary
+- use to perform a new action, task, move to next step
 
 ### Don'ts
 
-- Don't assign an action that should be assigned for a CTA or other variations of buttons
-- Don't use an icon when it is not relevant or necessary to the action
+- don't assign an action that should be assigned for a CTA (Call To Action) or other variations of buttons
+- don't use an icon when it is not relevant or necessary to the action
 
 ### When not to use
 
-- Do not use for navigation
-- Do not use for downloads
-- Do not use when the primary action is negative - use secondary button
-- Do not use when the action can't be undone, such as delete
+- don't use for navigation
+- don't use for downloads
+- don't use when the primary action is negative - use secondary button
+- don't use when the action can't be undone, such as delete
 
 ## Secondary Button
 
@@ -28,15 +28,15 @@ Use for medium-emphasis actions. They contain actions that are important but are
 
 ### Do's
 
-- Ensure the button functions an action, such as "Cancel", "Delete," "Remove" or "Replace" as the secondary action next to the primary button
-- Use an icon only when it is necessary
+- ensure the button performs an action, such as "Cancel", "Delete," "Remove" or "Replace" as the secondary action next to the primary button
+- use an icon only when it is necessary
 
 ### Don'ts
 
-- Do not use for primary positive actions – such as Submit, Send, Accept, Apply or navigation
-- Do not use on its own
-- Do not use for navigation
-- Don't use an icon when it is not relevant or necessary to the action
+- don't use for primary positive actions – such as Submit, Send, Accept, Apply or navigation
+- don't use on its own
+- don't use for navigation
+- don't use an icon when it is not relevant or necessary to the action
 
 ## Text link Button
 

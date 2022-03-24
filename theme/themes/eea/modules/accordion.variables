@@ -13,17 +13,18 @@
 @titleColor: @textColor;
 @titleBorderBottom: @1px solid @silverGray;
 @titleColorHover: @secondaryColor;
+@titleJustifyContent: space-between;
 
 /* Icon */
 @iconColor: @oldSilver;
 @iconColorActive: @white;
 @iconOpacity: 1;
-@iconFontSize: 1.563rem;
+@iconFontSize: 3rem;
 @iconFloat: none;
-@iconWidth: 1.563rem;
-@iconHeight: 1.563rem;
+@iconWidth: auto;
+@iconHeight: 1rem;
 @iconDisplay: inline-block;
-@iconMargin: 0em 0.25rem 0em 0.25rem;
+@iconMargin: 0em;
 @iconPadding: 0em;
 @iconTransition:
   transform @defaultDuration @defaultEasing,

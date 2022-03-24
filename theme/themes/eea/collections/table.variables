@@ -43,7 +43,7 @@
 @headerDivider: none;
 @headerBackground: @white;
 @headerAlign: inherit;
-@headerVerticalAlign: bottom;
+@headerVerticalAlign: inherit;
 @headerColor: @deepBlue;
 @headerVerticalPadding: @relativeSmall;
 @headerHorizontalPadding: @cellHorizontalPadding;
