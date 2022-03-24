@@ -10,7 +10,8 @@
 
 /* Item */
 @keyContentItemColor : @japaneseIndigo;
-@keyContentItemFontSize : 1.25rem;
+@mobileKeyContentItemFontSize : 1rem;
+@computerKeyContentItemFontSize: 1.25rem;
 @keyContentItemMarginLeft : @hugeGap;
 
 /* Bullet */

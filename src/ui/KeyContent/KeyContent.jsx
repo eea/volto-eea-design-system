@@ -8,7 +8,7 @@ KeyContent.propTypes = {
 
 function KeyContent({ children, ...rest }) {
   return (
-    <div className={`eea key-content ${rest.variant}`} {...rest}>
+    <div className="eea key-content" {...rest}>
       {children}
     </div>
   );

@@ -5,7 +5,9 @@
 
 .eea.key-content {
   .title {
-    text-align: center;
+    text-align: left;
+    color: @keyContentColoredTitleColor;
+    margin-left: @keyContentTitleMarginLeft;
   }
 
   .ui.bulleted.list {
@@ -16,7 +18,7 @@
 
   .item {
     color: @keyContentItemColor;
-    font-size: @keyContentItemFontSize;
+    font-size: @mobileKeyContentItemFontSize;
     margin-left: @keyContentItemMarginLeft;
   }
 
@@ -27,10 +29,10 @@
   }
 }
 
-.eea.key-content.colored {
-  .title {
-    text-align: left;
-    color: @keyContentColoredTitleColor;
-    margin-left: @keyContentTitleMarginLeft;
+@media only screen and (min-width: @computerBreakpoint) {
+  .eea.key-content {
+    .item {
+      font-size: @computerKeyContentItemFontSize;
+    }
   }
 }
