@@ -22,6 +22,7 @@
       align-items: center;
       justify-content: space-between;
       z-index: @topSectionZindex;
+      width: 100% !important; // Semantic has auto
     }
     .item {
       display: flex;
@@ -66,31 +67,9 @@
     .official-union {
       display: flex;
       gap: @officialUnionGap;
-    }
-    .official-union.mobile.or.lower.hidden {
-      .ui.dropdown .menu {
-        padding: @tabletOfficialUnionPadding;
 
-        .content {
-          max-width: @tabletOfficialUnionMaxWidth;
-        }
-
-        p {
-          font-size: @officialUnionMenuFontSize;
-          font-weight: @officialUnionTextFontWeight;
-          white-space: @dropdownMenuContentWhiteSpace;
-        }
-        a {
-          font-size: @officialUnionMenuFontSize;
-          font-weight: @officialUnionLinkFontWeight;
-          white-space: @dropdownMenuContentWhiteSpace;
-          color: @officialUnionLinkColor;
-        }
-      }
-    }
-    .official-union.mobile.only {
       img {
-        width: @tabletOfficialUnionImageWidth;
+        width: @mobileOfficialUnionImageWidth;
       }
 
       .ui.dropdown {
@@ -102,11 +81,16 @@
           .content {
             max-width: @mobileOfficialUnionMaxWidth;
 
-            p,
+            p {
+              font-size: @mobileDropdownMenuContentFontSize;
+              font-weight: @officialUnionTextFontWeight;
+              white-space: @dropdownMenuContentWhiteSpace;
+            }
             a {
               font-size: @mobileDropdownMenuContentFontSize;
-              font-weight: @dropdownMenuContentFontWeight;
+              font-weight: @officialUnionLinkFontWeight;
               white-space: @dropdownMenuContentWhiteSpace;
+              color: @officialUnionLinkColor;
             }
 
             i.icon,
@@ -170,6 +154,8 @@
 
   /* Main header section */
   .main.bar {
+    scrollbar-gutter: stable;
+
     .ui.container {
       display: flex;
       align-items: center;
@@ -193,7 +179,7 @@
         }
       }
 
-      #logo {
+      .eea-logo {
         width: @logoWidth;
         max-width: @mobileLogoMaxWidth;
         margin-top: @mobileLogoMarginTop;
@@ -206,10 +192,13 @@
         width: 100%;
 
         .item {
-          color: @mainMenuItemColor;
-          font-size: @mainMenuItemFontSize;
-          font-weight: @mainMenuItemFontWeight;
           place-self: @mainMenuItemPlaceSelf;
+          a {
+            color: @mainMenuItemColor;
+            font-size: @headerLargeFontSize; // fallback font size
+            font-size: @mainMenuItemFontSize;
+            font-weight: @mainMenuItemFontWeight;
+          }
         }
 
         .item.active {
@@ -223,7 +212,7 @@
     #search-box {
       position: relative;
       z-index: 99999;
-      overflow: scroll;
+      overflow: auto;
       width: 100%;
       height: @mobilePopUpHeight;
       background: @searchBoxBackgroundGradient;
@@ -235,7 +224,7 @@
       .wrapper {
         position: relative;
         width: 100%;
-        margin-top: @mobilePopupMarginTop;
+        margin: @mobilePopupMarginTop 0;
         display: flex;
         flex-direction: column;
         gap: @searchBoxWrapperGap;
@@ -312,6 +301,29 @@ Header Actions - Burger and Search Icons
         margin-top: @tabletDropdownMenuMarginTop;
       }
 
+      .official-union {
+        img {
+          width: @tabletOfficialUnionImageWidth;
+        }
+        .ui.dropdown {
+          font-size: @tabletTopSectionItemFontSize;
+          .menu {
+            padding: @tabletOfficialUnionPadding;
+
+            .content {
+              max-width: @tabletOfficialUnionMaxWidth;
+
+              p {
+                font-size: @officialUnionMenuFontSize;
+              }
+              a {
+                font-size: @officialUnionMenuFontSize;
+              }
+            }
+          }
+        }
+      }
+
       /* Language dropdown */
       #language-switcher {
         font-size: @tabletLanguageFontSize;
@@ -332,7 +344,7 @@ Header Actions - Burger and Search Icons
       .ui.container {
         height: 117px;
 
-        #logo {
+        .eea-logo {
           max-width: @tabletLogoMaxWidth;
           margin-top: @tabletLogoMarginTop;
         }
@@ -342,7 +354,7 @@ Header Actions - Burger and Search Icons
       #search-box {
         height: @tabletPopUpHeight;
         .wrapper {
-          margin-top: @tabletPopupMarginTop;
+          margin: @tabletPopupMarginTop 0;
         }
       }
     }
@@ -374,7 +386,7 @@ Header Actions - Burger and Search Icons
       .ui.container {
         height: 160px;
 
-        #logo {
+        .eea-logo {
           max-width: @computerLogoMaxWidth;
           margin-top: @computerLogoMarginTop;
         }
@@ -393,7 +405,7 @@ Header Actions - Burger and Search Icons
         height: @computerPopUpHeight;
 
         .wrapper {
-          margin-top: @computerPopupMarginTop;
+          margin: @computerPopupMarginTop 0;
 
           .action {
             justify-content: flex-end;
@@ -432,7 +444,7 @@ Header Actions - Burger and Search Icons
 #mega-menu {
   position: relative;
   z-index: 9999;
-  overflow: scroll;
+  overflow: auto;
   width: 100%;
   background: @megaMenuBackgroundGradient;
 
@@ -446,10 +458,9 @@ Header Actions - Burger and Search Icons
     display: none;
   }
   nav {
-    margin: 0;
+    margin: @tabletPopupMarginTop 0;
     padding: 0;
     width: 100%;
-    margin-top: @tabletPopupMarginTop;
   }
 
   nav:after {
@@ -472,7 +483,7 @@ Header Actions - Burger and Search Icons
 
   nav ul li {
     display: inline-block;
-    font-size: @mobileMegaMenuFontSize;
+    font-size: @megaMenuFontSize;
   }
 
   nav a {
@@ -512,7 +523,7 @@ Header Actions - Burger and Search Icons
   @media all and (max-width: @largestMobileScreen) {
     height: @mobilePopUpHeight;
     nav {
-      margin-top: @mobilePopupMarginTop;
+      margin: @mobilePopupMarginTop 0;
     }
     .menu,
     li {
@@ -587,7 +598,7 @@ Header Actions - Burger and Search Icons
     nav {
       .menu {
         width: 33.33%;
-        font-size: @tabletMegaMenuFontSize;
+        font-size: @megaMenuFontSize;
         > li {
           width: 100%;
           display: flex;
@@ -597,8 +608,7 @@ Header Actions - Burger and Search Icons
 
           &.hasSubMenu:after {
             content: @megaMenuAfterIcon;
-            font-family: 'Icons';
-            font-size: @tabletMegaMenuIconAfterFontSize;
+            font-family: @megaMenuIconFontFamily;
             color: @white;
           }
           a {
@@ -606,7 +616,7 @@ Header Actions - Burger and Search Icons
             justify-content: space-between;
             align-items: @megaMenuLiAlignItems;
             max-width: 100%;
-            padding-left: 2rem;
+            padding-left: 1rem;
           }
         }
       }
@@ -623,13 +633,12 @@ Header Actions - Burger and Search Icons
 
           &.hasSubMenu:after {
             content: @megaMenuAfterIcon;
-            font-family: 'Icons';
-            font-size: @tabletMegaMenuIconAfterFontSize;
+            font-family: @megaMenuIconFontFamily;
             color: @megaMenuIconAfterColor;
           }
           a {
             max-width: 100%;
-            padding-left: 2rem;
+            padding-left: 1rem;
           }
         }
       }
@@ -653,25 +662,28 @@ Header Actions - Burger and Search Icons
   @media only screen and (min-width: @computerBreakpoint) {
     height: @computerPopUpHeight;
     nav {
-      margin-top: @computerPopupMarginTop;
+      margin: @computerPopupMarginTop 0;
       .menu {
         > li {
-          font-size: @computerMegaMenuFirstFontSize;
           margin-bottom: @computerMegaMenuMarginBottom;
           &.hasSubMenu:after {
-            font-size: @computerMegaMenuIconAfterFontSize;
+            font-size: @megaMenuFontSize;
+          }
+          a {
+            padding-left: 2rem;
           }
         }
       }
       .sub.second li {
-        font-size: @computerMegaMenuSecondFontSize;
         margin-bottom: @computerMegaMenuMarginBottom;
         &.hasSubMenu:after {
-          font-size: @computerMegaMenuIconAfterFontSize;
+          font-size: @megaMenuFontSize;
+        }
+        a {
+          padding-left: 2rem;
         }
       }
       .sub.third li {
-        font-size: @computerMegaMenuThirdFontSize;
         margin-bottom: @computerMegaMenuMarginBottom;
       }
     }
