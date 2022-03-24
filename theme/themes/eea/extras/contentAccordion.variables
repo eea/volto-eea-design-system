@@ -1,7 +1,7 @@
-@readMoreVariantColor : @deepBlue;
-@readMoreVariantActiveColor : @white;
-@readMoreVariantActiveBackgroundColor : @deepBlue; 
-@readMoreVariantLinkItemoColor: @mediumPersianBlue;
+@contentAccordionColor : @deepBlue;
+@contentAccordionActiveColor : @white;
+@contentAccordionActiveBackgroundColor : @deepBlue; 
+@contentAccordionLinkItemoColor: @mediumPersianBlue;
 
-@readMoreVariantLinkWrapperWidth:100%;
-@readMoreVariantLinkWrapperHeight: 10px;
+@contentAccordionLinkWrapperWidth:100%;
+@contentAccordionLinkWrapperHeight: 10px;
