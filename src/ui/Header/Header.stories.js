@@ -244,7 +244,26 @@ const menuItems = [
   },
 ];
 
+const debounce = (func) => {
+  let timer;
+  return (event) => {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(func, 50, event);
+  };
+};
+
 const Template = (args) => {
+  const [viewportWidth, setWidth] = React.useState(
+    typeof window !== 'undefined' && window.innerWidth,
+  );
+  React.useEffect(() => {
+    const handleWindowResize = window.addEventListener('resize', () =>
+      debounce(setWidth(window.innerWidth)),
+    );
+
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
+
   const { languages, links, linksMenuTitle, menuItems } = args;
 
   const [language, setLanguage] = React.useState('en');
@@ -262,11 +281,12 @@ const Template = (args) => {
               icon="chevron down"
               aria-label="dropdown"
               className=""
+              viewportWidth={viewportWidth}
             >
               <div className="content">
                 <p>
                   All official European Union website addresses are in the{' '}
-                  <b>europa.eu</b> domain.
+                  europa.eu domain.
                 </p>
                 <a
                   href="https://europa.eu/european-union/contact/institutions-bodies_en"
@@ -286,6 +306,7 @@ const Template = (args) => {
               id="theme-sites"
               className="tablet or lower hidden"
               text={linksMenuTitle}
+              viewportWidth={viewportWidth}
             >
               <div className="wrapper">
                 {links.map((item, index) => (
@@ -308,24 +329,28 @@ const Template = (args) => {
             id="language-switcher"
             className="item"
             text={`${language.toUpperCase()}`}
+            mobileText={`${language.toUpperCase()}`}
             icon={
               <Image src={globeIcon} alt="language dropdown globe icon"></Image>
             }
+            viewportWidth={viewportWidth}
           >
-            {languages.map((item, index) => (
-              <Dropdown.Item
-                key={index}
-                text={
-                  <span>
-                    {item.name}
-                    <span className="country-code">
-                      {item.code.toUpperCase()}
+            <div className="wrapper">
+              {languages.map((item, index) => (
+                <Dropdown.Item
+                  key={index}
+                  text={
+                    <span>
+                      {item.name}
+                      <span className="country-code">
+                        {item.code.toUpperCase()}
+                      </span>
                     </span>
-                  </span>
-                }
-                onClick={() => setLanguage(item.code)}
-              ></Dropdown.Item>
-            ))}
+                  }
+                  onClick={() => setLanguage(item.code)}
+                ></Dropdown.Item>
+              ))}
+            </div>
           </Header.TopDropdownMenu>
         </Header.TopHeader>
         <Header.Main
