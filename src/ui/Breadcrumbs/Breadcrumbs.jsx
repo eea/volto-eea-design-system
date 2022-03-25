@@ -10,7 +10,12 @@ import { Breadcrumb, Container, Image, Icon, Segment } from 'semantic-ui-react';
 
 import homeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/home-icon.svg';
 
-const Breadcrumbs = ({ root, sections = [], icon = 'ri-arrow-right-s-line', size = 'tiny' }) => {
+const Breadcrumbs = ({
+  root,
+  sections = [],
+  icon = 'ri-arrow-right-s-line',
+  size = 'tiny',
+}) => {
   return sections.length > 0 ? (
     <Segment
       role="navigation"
