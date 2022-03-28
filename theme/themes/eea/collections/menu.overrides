@@ -60,14 +60,15 @@
 .ui.secondary.pointing.menu:not(.vertical) {
   position: relative;
   overflow: auto; // Horizontal scolling of links
-  height: 2rem; //  height ensures that scrollable region has keyboard access
+  height: auto; //  height ensures that scrollable region has keyboard access
   padding-bottom: @2px; // Leave room for the active border item
   border-bottom: none; // Border comes from before pseudo-element
   margin-right: 0em;
   margin-left: 0em;
 
   a.item {
-    border-bottom: @1px solid @midGray;
+    max-width: @secondaryPointingItemMaxWidth;
+    border-bottom: @secondaryPointingItemBorderBottom;
   }
 }
 

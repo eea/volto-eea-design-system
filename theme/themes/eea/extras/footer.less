@@ -49,43 +49,110 @@ footer {
           }
         }
 
-        .eionet.logo {
-          display: flex;
-          align-items: center;
-          margin-top: @eionetMarginTop;
+    .wrapper {
+        width: @wrapperWidth;
+        padding: @mobileWrapperPadding;
+        background-image: @wrapperBackgroundImage;
+        background-position: @wrapperBackgroundPosition;
+        background-size: @mobileWrapperBackgroundSize;
 
-          img {
-            width: @mobileEionetLogoWidth;
-            margin-left: @mobileEionetLogoMarginLeft;
-            margin-right: @mobileEionetLogoMarginRight;
-          }
+        .theme-sites {
+            padding: @mobileThemeSitesPadding;
 
-          .description {
-            padding-top: @mobileEionetDescriptionPaddingTop;
-            font-size: @mobileEionetDescriptionFontSize;
-            line-height: @mobileEionetDescriptionLineHeight;
-            font-weight: @eionetDescriptionFontWeight;
-          }
-        }
+            .header {
+                font-weight: @headerFontWeight;
+                font-size: @mobileHeaderFontSize;
+                margin-bottom: @mobileHeaderMarginBottom;
+                text-align: center;
+            }
 
         .header {
           margin-bottom: @mobileItemHeaderMarginBottom;
           font-size: @mobileItemHeaderFontSize;
           font-weight: @itemHeaderFontWeight;
         }
+        .subfooter {
+            .item {
+                margin-top: @mobileItemMarginTop;
 
-        .contact {
-          display: flex;
-          align-items: center;
-          margin: @contactMargin;
-          font-size: @mobileContactFontSize;
+                .site.logo {
+                    .description {
+                        margin: @mobileDescriptionMargin;
+                        font-size: @mobileDescriptionFontSize;
+                        line-height: @mobileDescriptionLineHeight;
+                    }
+                }
 
-          a {
-            color: @menuLinkColor;
-          }
-        }
-        .address {
-          font-size: @mobileAdressFontSize;
+                .eionet.logo {
+                    display: flex;
+                    align-items: center;
+                    margin-top: @mobileEionetMarginTop;
+
+                    img {
+                        width: @mobileEionetLogoWidth;
+                        margin-left: @mobileEionetLogoMarginLeft;
+                        margin-right: @mobileEionetLogoMarginRight;
+                    }
+
+                    .description {
+                        padding-top: @mobileEionetDescriptionPaddingTop;
+                        font-size: @mobileEionetDescriptionFontSize;
+                        line-height: @mobileEionetDescriptionLineHeight;
+                        font-weight: @eionetDescriptionFontWeight;
+                    }
+                }
+
+                .header {
+                    margin-bottom: @mobileItemHeaderMarginBottom;
+                    font-size: @mobileItemHeaderFontSize;
+                    font-weight: @itemHeaderFontWeight;
+                }
+
+                .contact {
+                    display: flex;
+                    align-items: center;
+                    margin: @mobileContactMargin;
+                    font-size: @mobileContactFontSize;
+
+                    a {
+                        color: @menuLinkColor;
+                    }
+                }
+                .address {
+                    font-size: @mobileAdressFontSize;
+                }
+
+                .social a {
+                    color: @socialIconColor;  
+
+                    &:active,
+                    &:hover {
+                      color: @socialIconColor;
+                    }
+
+                    i.icon {
+                        font-size: @mobileSocialIconSize;
+                    }
+                }
+            }
+            .menu {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                margin: @mobileMenuMargin;
+              
+                a {
+                  color: @menuLinkColor;
+                  font-weight: @menuFontWeight;
+                  font-size: @mobileMenuFontSize;
+                  cursor: pointer;
+              
+                  &:hover,
+                  &:active {
+                    color: @menuLinkColor;
+                  }
+                }
+            }
         }
 
         .social a {
@@ -124,26 +191,73 @@ footer {
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-  footer {
-    .visual {
-      .theme-sites {
-        .header {
-          font-size: @tabletHeaderFontSize;
-          margin-bottom: @tabletHeaderMarginBottom;
-        }
-      }
-      .subfooter {
-        .item {
-          margin-top: @tabletItemMarginTop;
-
-          .site.logo {
-            img {
-              width: @tabletSiteLogoWidth;
-              display: @tabletSiteLogoDisplay;
+    footer {
+        .wrapper {
+            .theme-sites {
+                .header {
+                    font-size: @tabletHeaderFontSize;
+                    margin-bottom: @tabletHeaderMarginBottom;
+                }
             }
-            .description {
-              font-size: @tabletDescriptionFontSize;
-              line-height: @tabletDescriptionLineHeight;
+            .subfooter {
+                .item {
+                    margin-top: @tabletItemMarginTop;
+
+                    .site.logo {
+                        img {
+                            width: @tabletSiteLogoWidth;
+                            display: @tabletSiteLogoDisplay;
+                        }
+                        .description {
+                            font-size: @tabletDescriptionFontSize;
+                            line-height: @tabletDescriptionLineHeight;
+                        }
+                    }
+
+                    .eionet.logo {
+                        img {
+                            width: @tabletEionetLogoWidth;
+                            margin-left: @tabletEionetLogoMarginLeft;
+                        }
+
+                        .description {
+                            padding-top: @tabletEionetDescriptionPaddingTop;
+                            font-size: @tabetEionetDescriptionFontSize;
+                            line-height: @tabletEionetDescriptionLineHeight;
+                        }
+                    }
+
+                    .header {
+                        margin-bottom: @tabletItemHeaderMarginBottom;
+                        font-size: @tabletItemHeaderFontSize;
+                    }
+
+                    .contact {
+                        font-size: @tabletContactFontSize;
+                        margin: @tabletContactMargin;
+
+                        i.big.icon {
+                            margin-right: @tabletContactIconMarginRight;
+                            font-size: @tabletContactIconFontSize;
+                        }
+                    }
+
+                    .address {
+                        font-size: @tabletAddressFontSize;
+                    }
+
+                    .social a i.icon {
+                        font-size: @tabletSocialIconSize;
+                    }
+                }
+                .menu {
+                    width: @tabletMenuWidth;
+                    margin: @tabletMenuMargin;
+                
+                    a {
+                      font-size: @tabletMenuFontSize;
+                    }
+                }
             }
           }
 
@@ -200,8 +314,9 @@ footer {
     .visual {
       padding: @computerVisualPadding;
 
-      .theme-sites {
-        padding: @computerThemeSitesPadding;
+        .wrapper {
+            padding: @computerWrapperPadding;
+            background-size: @computerWrapperBackgroundSize;
 
         .header {
           font-size: @computerHeaderFontSize;
@@ -232,18 +347,62 @@ footer {
               font-size: @computerEionetDescriptionFontSize;
               line-height: @computerEionetDescriptionLineHeight;
             }
-          }
+            .subfooter {
+                .item {
+                    margin-top: @computerItemMarginTop;
 
-          .header {
-            margin-bottom: @computerItemHeaderMarginBottom;
-            font-size: @computerItemHeaderFontSize;
-          }
+                    .site.logo {
+                        img {
+                            width: @computerSiteLogoWidth;
+                        }
+                        .description {
+                            margin: @computerDescriptionMargin;
+                        }
+                        
+                    }
 
-          .contact {
-            font-size: @computerContactFontSize;
+                    .eionet.logo {
+                        margin-top: @computerEionetMarginTop;
 
-            i.big.icon {
-              font-size: @computerContactIconFontSize;
+                        img {
+                            width: @computerEionetLogoWidth;
+                            margin-left: @computerEionetLogoMarginLeft;
+                            margin-right: @computerEionetLogoMarginRight;
+                        }
+
+                        .description {
+                            font-size: @computerEionetDescriptionFontSize;
+                            line-height: @computerEionetDescriptionLineHeight;
+                        }
+                    }
+                    
+                    .header {
+                        margin-bottom: @computerItemHeaderMarginBottom;
+                        font-size: @computerItemHeaderFontSize;
+                    }
+
+                    .contact {
+                        font-size: @computerContactFontSize;
+                        margin: @computerContactMargin;
+
+                        i.big.icon {
+                            font-size: @computerContactIconFontSize;
+                        }
+                    }
+
+                    .social a i.icon {
+                        font-size: @computerSocialIconSize;
+                    }
+                }
+                .menu {
+                    justify-content: flex-end;
+                    width: 100%;
+                
+                    a {
+                      padding-left: 3rem;
+                      font-size: @computerMenuFontSize;
+                    }
+                }
             }
           }
 
