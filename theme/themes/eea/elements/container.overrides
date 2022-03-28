@@ -4,13 +4,17 @@
 
 /* All Sizes */
 .ui.container {
-  display: block;
   width: 100%;
   padding-right: @mobilePadding;
   padding-left: @mobilePadding;
   transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+// TODO fix issue of large container padding and then remove this fix
+#toolbar .pastanaga-menu .ui.container {
+  padding: @profileSectionPadding;
 }
 
 @media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {

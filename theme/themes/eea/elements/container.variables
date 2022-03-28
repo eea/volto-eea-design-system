@@ -61,3 +61,6 @@
 @textFontFamily: @pageFont;
 @textLineHeight: 1.5;
 @textSize: @large;
+
+/* Section */
+@profileSectionPadding: 0px;

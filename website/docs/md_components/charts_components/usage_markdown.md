@@ -6,13 +6,13 @@ More information can be referenced here https://www.eea.europa.eu/data-and-maps/
 
 ### Use the interactive chart if: 
 
-- You want to give the user the possibility to visually filter data  
+- you want to give the user the possibility to visually filter data  
 
-- You want the user to gain insights before filtering large datasets 
+- you want the user to gain insights before filtering large datasets 
 
 
 ### Do not use the interactive chart if: 
 
-- You want to visualize data without using it for filtering
+- you want to visualize data without using it for filtering
 
-- You are not using the visual filter bar
+- you are not using the visual filter bar

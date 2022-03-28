@@ -12,6 +12,9 @@ export default {
   argTypes: {
     onChange: {
       action: 'checkbox value changed',
+      table: {
+        disable: true,
+      },
     },
     label: {
       description: 'Label of the form group',

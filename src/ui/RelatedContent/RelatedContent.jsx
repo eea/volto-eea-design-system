@@ -1,8 +1,13 @@
 import React from 'react';
 import { Grid, Container } from 'semantic-ui-react';
+import PublicationCard from '../PublicationCard/PublicationCard';
 
-function RelatedContent({ items }) {
-  const rows = items.reduce(function (rows, key, index) {
+function RelatedContent({ publicationCards }) {
+  let cards = publicationCards;
+  if (publicationCards.length > 4) {
+    cards = cards.slice(0, 4);
+  }
+  const rows = cards.reduce(function (rows, key, index) {
     return (
       (index % 2 === 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) &&
       rows
@@ -12,42 +17,68 @@ function RelatedContent({ items }) {
   return (
     <div className="related-content-wrapper">
       <Container>
-        <h3 style={{ color: '#0A3D61' }}>Related Content</h3>
-
         {/* desktop grid */}
         <Grid columns={2} className="tablet or lower hidden">
-          {items.length > 2
+          {cards.length > 2
             ? rows.map((row, rowIndex) => (
                 <Grid.Column key={rowIndex} stretched>
-                  {row.map((item, index) => item)}
+                  {row.map((item, index) => (
+                    <PublicationCard {...item} key={index}>
+                      <PublicationCard.Header></PublicationCard.Header>
+                      <PublicationCard.Info
+                        description={item.description}
+                        tag={item.tag}
+                      ></PublicationCard.Info>
+                    </PublicationCard>
+                  ))}
                 </Grid.Column>
               ))
-            : items.map((item, index) => (
+            : cards.map((item, index) => (
                 <Grid.Column key={index} stretched>
-                  {item}
+                  <PublicationCard {...item}>
+                    <PublicationCard.Header></PublicationCard.Header>
+                    <PublicationCard.Info
+                      description={item.description}
+                      tag={item.tag}
+                    ></PublicationCard.Info>
+                  </PublicationCard>
                 </Grid.Column>
               ))}
         </Grid>
 
         {/* mobile grid */}
         <Grid className="mobile only" columns={1}>
-          {items.map((item, index) => (
-            <Grid.Column key={index}>{item}</Grid.Column>
+          {cards.map((item, index) => (
+            <Grid.Column key={index}>
+              <PublicationCard {...item}>
+                <PublicationCard.Header></PublicationCard.Header>
+                <PublicationCard.Info
+                  description={item.description}
+                  tag={item.tag}
+                ></PublicationCard.Info>
+              </PublicationCard>
+            </Grid.Column>
           ))}
         </Grid>
 
         {/* tablet grid */}
         <Grid className="tablet only">
-          {items.map((item, index) => (
+          {cards.map((item, index) => (
             <Grid.Column
               key={index}
               tablet={
-                items.length % 2 !== 0 && index === items.length - 1
+                cards.length % 2 !== 0 && index === cards.length - 1
                   ? '12'
                   : '6'
               }
             >
-              {item}
+              <PublicationCard {...item}>
+                <PublicationCard.Header></PublicationCard.Header>
+                <PublicationCard.Info
+                  description={item.description}
+                  tag={item.tag}
+                ></PublicationCard.Info>
+              </PublicationCard>
             </Grid.Column>
           ))}
         </Grid>
