@@ -4,14 +4,12 @@
 
 /* FAQ Content row */
 @faqContentRowWidth           : 100%;
-@faqContentRowMobileMarginBottom    : 0.625rem;
-@faqContentRowTabletMarginBottom    : 0.625rem;
-@faqContentRowDesktopMarginBottom   : 1.25rem;
+@mobileFaqContentRowMarginBottom    : @tinyGap;
+@tabletFaqContentRowMarginBottom    : @tinyGap;
+@computerFaqContentRowMarginBottom  : @largeGap;
 @faqContentRowMobilePadding   : 0;
-@faqContentRowLetterSpacing   : -0.015em;
 @faqContentFontSize           : 1rem;
 @faqContentFontWeight         : 400;
-@faqContentFontStyle          : normal;
 
 /* FAQ Content Info */
 @faqContentInfoHeight         : 1.5rem;
@@ -19,18 +17,18 @@
 
 /* FAQ Content Language */
 @faqContentInfoLangFontSize   : 1.125rem;
-@faqContentInfoLangFontWeight : bold;
+@faqContentInfoLangFontWeight : @bold;
 @faqContentInfoLangImgPadding : 0;
 @faqContentInfoLangImgMargin  : 0;
 @faqContentInfoLangImgWidth   : 1.125rem;
 
 @faqContentInfoLangItemPadding : 0.125rem 0.25rem;
-@faqContentInfoItemFontWeight : normal;
+@faqContentInfoItemFontWeight : @normal;
 @faqContentInfoItemFontSize   : 0.875rem;
-@faqContentInfoItemMarginL    : 0.312rem;
+@faqContentInfoItemMarginLeft : 0.312rem;
 
 @faqContentInfoLangWidth: 260px;
-@faqContentInfoLangPadding: 4px;
+@faqContentInfoLangPadding: 0.375rem;
 
 
 /* FAQ Content content */

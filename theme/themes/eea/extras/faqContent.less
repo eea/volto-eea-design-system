@@ -20,10 +20,9 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: @faqContentRowMobileMarginBottom;
+    margin-bottom: @mobileFaqContentRowMarginBottom;
     width: @faqContentRowWidth;
     padding: @faqContentRowMobilePadding;
-    letter-spacing: @faqContentRowLetterSpacing;
   }
 
   .row.info {
@@ -31,7 +30,6 @@
     height: @faqContentInfoHeight;
     font-size: @faqContentFontSize;
     font-weight: @faqContentFontWeight;
-    font-style: @faqContentFontStyle;
     line-height: @faqContentInfoLineHeight;
     color: @faqContentInfoTextColor;
     
@@ -80,12 +78,12 @@
             cursor: pointer;
           }
           span.country-code {
-            margin-left: @faqContentInfoItemMarginL;
+            margin-left: @faqContentInfoItemMarginLeft;
             font-weight: @faqContentInfoLangFontWeight;
           }
         }
 
-        &.language{
+        &.language {
           max-width: @faqContentInfoLangWidth;
           padding: @faqContentInfoLangPadding;
           
@@ -113,7 +111,6 @@
 
   .row.content {
     font-size: @faqContentFontSize;
-    font-style: @faqContentFontStyle;
     font-weight: @faqContentFontWeight;
     line-height: @faqContentContentLineHeight;
     color:  @faqContentContentTextColor;
@@ -144,7 +141,7 @@
 @media only screen and (min-width: @tabletBreakpoint) {
   .eea.faqContent {
     .row {
-      margin-bottom: @faqContentRowTabletMarginBottom;
+      margin-bottom: @tabletFaqContentRowMarginBottom;
     }
 
     .row.actions {
@@ -156,10 +153,10 @@
 @media only screen and (min-width: @computerBreakpoint) {
   .eea.faqContent {
     .row {
-      margin-bottom: @faqContentRowDesktopMarginBottom;
+      margin-bottom: @computerFaqContentRowMarginBottom;
     }
     :last-child.row {
-      margin-bottom: @faqContentRowTabletMarginBottom;
+      margin-bottom: @tabletFaqContentRowMarginBottom;
     }
     .row.actions {
       display: flex;
@@ -175,5 +172,3 @@
     }
   }
 }
-
-.loadUIOverrides();
