@@ -8,46 +8,11 @@
 --------------------*/
 
 footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: @footerBackgroundGrandient;
-  color: @white;
-
-  .visual {
-    width: @visualWidth;
-    padding: @mobileVisualPadding;
-    background-image: @visualBackgroundImage;
-    background-position: @visualBackgroundPosition;
-    background-size: @visualBackgroundSize;
-
-    .theme-sites {
-      padding: @mobileThemeSitesPadding;
-
-      .header {
-        font-weight: @headerFontWeight;
-        font-size: @mobileHeaderFontSize;
-        margin-bottom: @mobileHeaderMarginBottom;
-        text-align: center;
-      }
-
-      .logos .logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-    .subfooter {
-      .item {
-        margin-top: @mobileItemMarginTop;
-
-        .site.logo {
-          .description {
-            margin: @mobileDescriptionMargin;
-            font-size: @mobileDescriptionFontSize;
-            line-height: @mobileDescriptionLineHeight;
-          }
-        }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: @footerBackgroundGrandient;
+    color: @white;
 
     .wrapper {
         width: @wrapperWidth;
@@ -66,10 +31,11 @@ footer {
                 text-align: center;
             }
 
-        .header {
-          margin-bottom: @mobileItemHeaderMarginBottom;
-          font-size: @mobileItemHeaderFontSize;
-          font-weight: @itemHeaderFontWeight;
+            .logos .logo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
         .subfooter {
             .item {
@@ -154,40 +120,7 @@ footer {
                 }
             }
         }
-
-        .social a {
-          color: @socialIconColor;
-
-          &:active,
-          &:hover {
-            color: @socialIconColor;
-          }
-
-          i.icon {
-            font-size: @mobileSocialIconSize;
-          }
-        }
-      }
-      .menu {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        margin: @mobileMenuMargin;
-
-        a {
-          color: @menuLinkColor;
-          font-weight: @menuFontWeight;
-          font-size: @mobileMenuFontSize;
-          cursor: pointer;
-
-          &:hover,
-          &:active {
-            color: @menuLinkColor;
-          }
-        }
-      }
     }
-  }
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
@@ -259,93 +192,24 @@ footer {
                     }
                 }
             }
-          }
-
-          .eionet.logo {
-            img {
-              width: @tabletEionetLogoWidth;
-              margin-left: @tabletEionetLogoMarginLeft;
-            }
-
-            .description {
-              padding-top: @tabletEionetDescriptionPaddingTop;
-              font-size: @tabetEionetDescriptionFontSize;
-              line-height: @tabletEionetDescriptionLineHeight;
-            }
-          }
-
-          .header {
-            margin-bottom: @tabletItemHeaderMarginBottom;
-            font-size: @tabletItemHeaderFontSize;
-          }
-
-          .contact {
-            font-size: @tabletContactFontSize;
-
-            i.big.icon {
-              margin-right: @tabletContactIconMarginRight;
-              font-size: @tabletContactIconFontSize;
-            }
-          }
-
-          .address {
-            font-size: @tabletAddressFontSize;
-          }
-
-          .social a i.icon {
-            font-size: @tabletSocialIconSize;
-          }
         }
-        .menu {
-          width: @tabletMenuWidth;
-          margin: @tabletMenuMargin;
-
-          a {
-            font-size: @tabletMenuFontSize;
-          }
-        }
-      }
     }
-  }
 }
-
+  
 @media only screen and (min-width: @computerBreakpoint) {
-  footer {
-    .visual {
-      padding: @computerVisualPadding;
+    footer {
 
         .wrapper {
             padding: @computerWrapperPadding;
             background-size: @computerWrapperBackgroundSize;
 
-        .header {
-          font-size: @computerHeaderFontSize;
-          margin-bottom: @computerHeaderMarginBottom;
-        }
-      }
-      .subfooter {
-        .item {
-          margin-top: @computerItemMarginTop;
+            .theme-sites {
+                padding: @computerThemeSitesPadding;
 
-          .site.logo {
-            img {
-              width: @computerSiteLogoWidth;
-            }
-            .description {
-              margin: @computerDescriptionMargin;
-            }
-          }
-
-          .eionet.logo {
-            img {
-              width: @computerEionetLogoWidth;
-              margin-left: @computerEionetLogoMarginLeft;
-              margin-right: @computerEionetLogoMarginRight;
-            }
-
-            .description {
-              font-size: @computerEionetDescriptionFontSize;
-              line-height: @computerEionetDescriptionLineHeight;
+                .header {
+                    font-size: @computerHeaderFontSize;
+                    margin-bottom: @computerHeaderMarginBottom;
+                }
             }
             .subfooter {
                 .item {
@@ -404,22 +268,6 @@ footer {
                     }
                 }
             }
-          }
-
-          .social a i.icon {
-            font-size: @computerSocialIconSize;
-          }
         }
-        .menu {
-          justify-content: flex-end;
-          width: 100%;
-
-          a {
-            padding-left: 3rem;
-            font-size: @computerMenuFontSize;
-          }
-        }
-      }
     }
-  }
 }
