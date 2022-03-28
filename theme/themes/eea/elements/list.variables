@@ -189,6 +189,7 @@
 
 @orderedChildCountDistance: 1em;
 @orderedChildCountOffset: -2em;
+@orderedGrandchildCountOffset: -2.8em;
 
 @orderedInvertedCountColor: @invertedLightTextColor;
 
