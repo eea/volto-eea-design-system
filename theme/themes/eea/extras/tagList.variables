@@ -9,12 +9,5 @@
 @tagsTitleFontColor        : @japaneseIndigo;
 @tagsTitleMargin           : 1rem;
 @tagsFontWeight            : 400;
-@tagsfontName              : @fontName;
-@tagsFontStyle             : @normal;
 @tagsFontSize              : 1.125rem;
 @tagsLineHeight            : 1.312rem;
-@tagsLetterSpacing         : -0.015rem;
-
-/* Tags Content*/
-@tagsListMarginTopMobile: 5px;
-@tagsListMarginTopTablet: 0;
