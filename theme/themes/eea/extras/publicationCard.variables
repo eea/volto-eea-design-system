@@ -4,25 +4,18 @@
 
 @publicationCardtextColor: @white;
 @publicationCardMargin: 10px 0;
-@publicationCardMobileHeight: 286px;
-@publicationCardTabletHeight: 352px;
-@publicationCardComputerHeight: 268px;
-@publicationCardWidth: auto;
+@publicationCardHeight: 268px;
 
 /* Colors */
 @publicationCardBackgroundColor: #BCBEC0;
 @publicationCardDescriptionColor: #3D5265;
 
 /* Description */
+@cardDescriptionHeight: auto;
 @cardDescriptionMaxHeight: 135px;
-@mobileCardDescriptionHeight: 135px;
-@tabletCardDescriptionHeight: 105px;
-@computerCardDescriptionHeight: 108px;
+@computerCardDescriptionHeight: auto;
 @cardDescriptionPadding: 20px;
 @cardDescriptionWidth: 100%;
-
-@cardDescriptionTextLineClampMobile: 3;
-@cardDescriptionTextLineClampTablet: 2;
 
 @cardDescriptionTagFontSize: 12px;
 @cardDescriptionTagFontWeight: 400;

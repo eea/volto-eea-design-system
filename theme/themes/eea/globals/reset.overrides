@@ -315,6 +315,10 @@ fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
+.profile fieldset.invisible {
+  min-width: @profileFormFieldsetMinWidth;
+}
+
 /**
  * 1. Correct the text wrapping in Edge and IE.
  * 2. Correct the color inheritance from `fieldset` elements in IE.

@@ -1,3 +1,6 @@
 /*******************************
              Reset
 *******************************/
+
+// The form fieldset in profile should take the width of parent
+@profileFormFieldsetMinWidth: 0;

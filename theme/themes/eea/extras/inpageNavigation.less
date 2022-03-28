@@ -12,22 +12,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   width: @tabletNavWidth;
   height: @tabletNavHeight;
   bottom: @navBottom;
-  right: @mobileNavRight;
+  right: @navRight;
   background-color: @navBackground;
   border-radius: @circularRadius;
   color: @navColor;
   font-weight: @navFontWeight;
 
-  cursor: pointer;
-
   /* Icon align fix */
   > div > i.icon,
   i.icons {
-    height: 100%;
-    margin-right: 0;
+    line-height: @mobileInpageNavigationIconLineHeight;
+    margin-right: @inpageNavigationIconMarginRight;
+    font-size: @mobileInpageNavigationIconFontSize;
   }
 
   &.hidden {
@@ -35,17 +35,23 @@
   }
 }
 
-@media only screen and (min-width: @tabletBreakpoint) {
-  #inpage-navigation {
-    right: @tabletNavRight;
-  }
-}
-
 @media only screen and (min-width: @computerBreakpoint) {
   #inpage-navigation {
-    right: @computerNavRight;
     width: @computerNavWidth;
     height: @computerNavHeight;
-    font-size: @computerNavFontSize;
+
+    > div > i.icon,
+    i.icons {
+      line-height: @computerInpageNavigationIconLineHeight;
+      font-size: @computerInpageNavigationIconFontSize;
+    }
+
+    .text {
+      margin-top: @inpageNavigationTextMarginTop;
+      font-size: @inpageNavigationTextFontSize;
+      font-weight: @inpageNavigationTextFontWeight;
+      text-align: @inpageNavigationTextAlign;
+      font-variant: @inpageNavigationTextFontVariant;
+    }
   }
 }

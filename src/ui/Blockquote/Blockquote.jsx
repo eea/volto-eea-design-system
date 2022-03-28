@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Blockquote({ children, ...rest }) {
+function Blockquote({ children, className, ...rest }) {
   return (
     <div className="eea blockquote" {...rest}>
       <blockquote className="quote">{children}</blockquote>

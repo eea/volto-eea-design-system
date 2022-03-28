@@ -45,12 +45,12 @@
   color: @requiredColor;
 }
 
-.input {
+.field-wrapper .input {
   min-width: @mobileInputMinWidth;
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-  .input {
+  .field-wrapper .input {
     min-width: @tabletInputMinWidth;
   }
 }
