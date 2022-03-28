@@ -1,0 +1,64 @@
+@type: 'extra';
+@element: 'downloadLabeledIcon';
+
+@import (multiple) '../../theme.config';
+
+/*******************************
+        Download Labeled Icon
+*******************************/
+.eea.download.labeled.icon {
+  .label {
+    font-size: 14px;
+    color: @deepBlue;
+    cursor: pointer;
+  }
+  .icon.wrapper {
+    width: 68px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    .icon {
+      cursor: pointer;
+      font-size: @downloadLabeledIconIconFontSize;
+      color: @mediumPersianBlue;
+      display: flex;
+      width: @iconWidth;
+      height: @downloadLabeledIconWrapperIconHeight;
+      align-items: center;
+    }
+  }
+
+  .link.wrapper {
+    position: absolute;
+    cursor: pointer;
+    background-color: @downloadLabeledIconLinkWrapperBackgroundColor;
+    z-index: @downloadLabeledIconLinkWrapperZIndex;
+    margin-right: @downloadLabeledIconLinkWrapperMarginRight;
+    width: @downloadLabeledIconLinkWrapperWidth;
+    padding-left: @downloadLabeledIconLinkWrapperPaddingLeft;
+    padding-top: @downloadLabeledIconLinkWrapperPaddingTop;
+    ul {
+      list-style-type: none;
+      margin-block-start: @downloadLabeledIconUlMarginBlockStart;
+      padding-inline-start: @downloadLabeledIconUlPaddingInlineStart;
+      a {
+        display: flex;
+        justify-content: space-around;
+        font-weight: @downloadLabeledIconALinkontWeight;
+        font-size: @downloadLabeledIconLinkFontSize;
+        .icon {
+          font-size: @downloadLabeledIconLinkIconFontSize;
+        }
+      }
+      a:hover {
+        color: @downloadLabeledIconALinkColorHover;
+      }
+      li:hover {
+        background-color: @downloadLabeledIconLiHover;
+      }
+    }
+  }
+  .link.wrapper.hidden {
+    display: none;
+  }
+}

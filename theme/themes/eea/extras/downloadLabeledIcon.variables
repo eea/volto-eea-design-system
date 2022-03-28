@@ -1,0 +1,32 @@
+/*******************************
+        Download Labeled Icon
+*******************************/
+
+/* Extra */
+@downloadLabeledIconWrapperWidth: 100%;
+@downloadLabeledIconWrapperBorderTop: 0px;
+@downloadLabeledIconWrapperColor: @white;
+@downloadLabeledIconWrapperFontSize: 14px;
+
+/* Icon */
+@downloadLabeledIconIconFontSize: 25px;
+@downloadLabeledIconWrapperIconHeight: 20px;
+
+/* Link Wrapper */
+@downloadLabeledIconLinkWrapperBackgroundColor: #f9f9f9;
+@downloadLabeledIconLinkWrapperZIndex: 1;
+@downloadLabeledIconLinkWrapperMarginRight: 2.1em;
+@downloadLabeledIconLinkWrapperWidth: 5em;
+@downloadLabeledIconLinkWrapperPaddingLeft: 9px;
+@downloadLabeledIconLinkWrapperPaddingTop: 5px;
+
+/* List */
+@downloadLabeledIconUlMarginBlockStart: 0;
+@downloadLabeledIconUlPaddingInlineStart: 0px;
+@downloadLabeledIconLiHover: @deepBlue;
+
+/* Link */
+@downloadLabeledIconALinkontWeight: 700;
+@downloadLabeledIconLinkFontSize: 14px;
+@downloadLabeledIconLinkIconFontSize: 16px;
+@downloadLabeledIconALinkColorHover: @white;
