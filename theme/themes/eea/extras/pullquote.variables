@@ -3,22 +3,32 @@
 *******************************/
 
 /* Body */
-@pullquotePadding       : @relative10px 0 @relative50px;
-@pullquoteMobileMargin  : 0;
-@pullquoteMargin        : 0 2rem;
-@maxWidthOnFloat        : 400px;
-@paddingLeftFloat       : 0 1.5rem 1rem 0;
-@paddingRightFloat      : 0 0 1rem 1.5rem;
-@contentWordBreak       : break-word;
-@contentWordBreakHyphens: manual;
+@pullquotePadding           : @largeGap 0;
+@pullquoteFloatLeftPadding  : @largeGap @largeGap @largeGap 0;
+@pullquoteFloatRightPadding : @largeGap 0 @largeGap @largeGap;
+@pullquoteMargin            : 0;
+@maxWidthOnFloat            : 50%;
+@contentWordBreak           : break-word;
+@contentWordBreakHyphens    : manual;
 
-/* Content */
-@contentMargin: 0;
+/* Quote paragraph */
+@mobileQuotePadding  : 0;
+@tabletQuotePadding  : 0.5rem 0 1rem;
 
 /* Author */
-@authorTextAlign: right;
+@authorTextColor     : @darkCyan;
+@authorTextAlign     : right;
+@authorFontWeight    : @bold;
+@authorFontSize      : 1.25rem;
+@authorMargin        : 0;
+
+/* Metadata */
+@metaTextAlign       : right;
+@metaFontWeight      : @normal;
+@metaFontSize        : 1rem;
 
 /* Icon */
-@quoteIconSize      : 2rem;
-@quoteIconColor     : @secondaryColor;
-@quoteDownIconFloat : right;
+@mobileQuoteIconSize : 2rem;
+@tabletQuoteIconSize : 3rem;
+@quoteIconColor      : @secondaryColor;
+@quoteDownIconFloat  : right;
