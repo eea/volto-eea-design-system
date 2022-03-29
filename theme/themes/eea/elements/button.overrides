@@ -87,7 +87,7 @@
   }
 }
 
-ui.inverted.secondary.buttons .button,
+.ui.inverted.secondary.buttons .button,
 .ui.inverted.secondary.button {
   box-shadow: none !important; // to override the important box shadow - button.less:3271
 }
