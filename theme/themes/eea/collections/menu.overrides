@@ -15,13 +15,13 @@
 
 .ui.pagination.pointing.secondary.menu .item {
   justify-content: center;
-  color: @paginationColor;
+  padding: @squareTiny;
   font-size: @paginationFontSize;
 }
 
 /* Pagination active item custom border design */
 .ui.pagination.pointing.secondary.menu a.active.item {
-  padding: (@medium - @1px) @large;
+  padding: (@tinyGap - @1px) @tinyGap;
   border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
   margin-bottom: -@secondaryPointingctiveItemMarginBottom;
   color: @secondaryPointingActiveTextColor;
@@ -33,7 +33,7 @@
 
 /* Hover item pagination */
 .ui.pagination.pointing.secondary.menu a.item:hover {
-  padding: (@medium - @1px) @large;
+  padding: (@tinyGap - @1px) @tinyGap;
   border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
   margin-bottom: -@secondaryPointingctiveItemMarginBottom;
   color: @paginationColor;
@@ -41,15 +41,16 @@
 
 /* Hover ellipsis item pagination */
 .ui.pagination.pointing.secondary.menu a.item[type='ellipsisItem']:hover {
-  padding: @squareLarge;
+  padding: @squareTiny;
   border-bottom: none; // Not clickable so no border
-  margin: @1px 0; // Adjust to no border
+  margin: 0.031rem 0; // Adjust to no border
 }
 
 /* Tab active item custom border design */
 .ui.secondary.pointing.menu:not(.vertical):not(.pagination) a.active.item,
 .ui.secondary.pointing.menu:not(.vertical):not(.pagination) a.item:active {
-  padding: (@medium - @1px) @large;
+  padding: (@secondaryPointingItemVerticalPadding - @1px)
+    @secondaryPointingItemHorizontalPadding;
   border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
   margin-bottom: -@secondaryPointingctiveItemMarginBottom;
   color: @secondaryPointingActiveTextColor;
@@ -58,14 +59,16 @@
 /* Menu items custom border for responsive issues */
 .ui.secondary.pointing.menu:not(.vertical) {
   position: relative;
-  overflow: auto;
-  padding-bottom: @2px;
-  border-bottom: none;
+  overflow: auto; // Horizontal scolling of links
+  height: auto; //  height ensures that scrollable region has keyboard access
+  padding-bottom: @2px; // Leave room for the active border item
+  border-bottom: none; // Border comes from before pseudo-element
   margin-right: 0em;
   margin-left: 0em;
 
   a.item {
-    border-bottom: @1px solid @midGray;
+    max-width: @secondaryPointingItemMaxWidth;
+    border-bottom: @secondaryPointingItemBorderBottom;
   }
 }
 

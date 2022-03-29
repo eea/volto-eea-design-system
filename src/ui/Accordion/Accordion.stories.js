@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Accordion } from 'semantic-ui-react';
+import { Accordion, Icon } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Accordion',
@@ -97,7 +97,7 @@ function AccordionContainer({ ...args }) {
         onClick={toggleOpenAccordion}
       >
         {args.toggle1}
-        <i className="ri-arrow-down-s-line"></i>
+        <Icon className="ri-arrow-down-s-line" />
       </Accordion.Title>
       <Accordion.Content active={activeIndex === 0}>
         {args.content1.length > 0 &&
@@ -110,7 +110,7 @@ function AccordionContainer({ ...args }) {
         onClick={toggleOpenAccordion}
       >
         {args.toggle2}
-        <i className="ri-arrow-down-s-line"></i>
+        <Icon className="ri-arrow-down-s-line" />
       </Accordion.Title>
       <Accordion.Content active={activeIndex === 1}>
         {args.content2.length > 0 &&
@@ -123,7 +123,7 @@ function AccordionContainer({ ...args }) {
         onClick={toggleOpenAccordion}
       >
         {args.toggle3}
-        <i className="ri-arrow-down-s-line"></i>
+        <Icon className="ri-arrow-down-s-line" />
       </Accordion.Title>
       <Accordion.Content active={activeIndex === 2}>
         {args.content3.length > 0 &&

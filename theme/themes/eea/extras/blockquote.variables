@@ -27,3 +27,9 @@
 @tabletMetaFontSize   : @h6;
 @computerMetaFontSize : @h5;
 @metaAlignSelf        : start;
+
+/* Callout */
+@calloutBorder        : none;
+@calloutBoxShadow     : none;
+@calloutBorderRadius  : 0;
+@calloutPadding       : 0;

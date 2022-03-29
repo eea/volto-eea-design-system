@@ -7,6 +7,17 @@
             Blockquote
 *******************************/
 
+blockquote.callout, p.callout {
+  border: @calloutBorder;
+  box-shadow: @calloutBoxShadow;
+  border-radius: @calloutBorderRadius;
+  padding-top: @calloutPadding;
+  padding-bottom: @calloutPadding;
+  border-left: @mobileBlockquoteBorderLeft;
+  color: @quoteColor;
+  font-size: @mobileQuoteFontSize;
+}
+
 .eea.blockquote {
   border-left: @mobileBlockquoteBorderLeft;
 
@@ -36,7 +47,7 @@
     font-weight: @slateQuoteFontWeight;
 
     br {
-      content: "";
+      content: '';
       display: flex;
       margin: @slateQuoteGap 0;
     }
@@ -44,6 +55,11 @@
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
+  blockquote.callout, p.callout {
+    border-left: @tabletBlockquoteBorderLeft;
+    font-size: @tabletQuoteFontSize;
+  }
+
   .eea.blockquote {
     border-left: @tabletBlockquoteBorderLeft;
     .quote {
@@ -57,6 +73,10 @@
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
+  blockquote.callout, p.callout {
+    font-size: @computerQuoteFontSize;
+  }
+
   .eea.blockquote .quote {
     margin: @computerQuoteMargin;
     font-size: @computerQuoteFontSize;
