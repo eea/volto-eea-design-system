@@ -15,7 +15,7 @@
     background-color: @publicationCardBackgroundColor;
     color: @publicationCardtextColor;
     margin: @publicationCardMargin;
-    height: @publicationCardMobileHeight;
+    height: @mobilePublicationCardHeight;
 
     .header{
         background-repeat: no-repeat;
@@ -34,6 +34,8 @@
         .tag {
             font-size: @cardDescriptionTagFontSize;
             font-weight: @cardDescriptionTagFontWeight;
+            padding: @cardDescriptionTagPadding;
+            line-height: @cardDescriptionTagLineHeight;
         }
 
         .text {
@@ -42,7 +44,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: @cardDescriptionTextLineClampMobile;
+            -webkit-line-clamp: @mobileCardDescriptionTextLineClamp;
             -webkit-box-orient: vertical;
         }
     }
@@ -50,7 +52,7 @@
 
 @media only screen and (min-width: @tabletBreakpoint) {
     .eea.publication.card {
-        height: @publicationCardTabletHeight;
+        height: @tabletPublicationCardHeight;
 
         .header {
             height: calc(100% - @tabletCardDescriptionHeight);
@@ -60,7 +62,7 @@
             height: @tabletCardDescriptionHeight;
 
             .text {
-                -webkit-line-clamp: @cardDescriptionTextLineClampTablet;
+                -webkit-line-clamp: @tabletCardDescriptionTextLineClamp;
             }
         }
     }
@@ -69,7 +71,7 @@
 @media only screen and (min-width: @computerBreakpoint) {
     .eea.publication.card {
 
-        height: @publicationCardComputerHeight;
+        height: @computerPublicationCardHeight;
 
         .header {
             height: calc(100% - @computerCardDescriptionHeight);
