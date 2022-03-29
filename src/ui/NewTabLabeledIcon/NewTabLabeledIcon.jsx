@@ -3,16 +3,16 @@ import { Icon } from 'semantic-ui-react';
 
 function NewTabLabeledIcon({ children, ...rest }) {
     return <div className='eea new tab labeled icon'>
-        {children}
+        <a target="_blank" href={rest.link}>{children}</a>
     </div>
 }
 
 NewTabLabeledIcon.Label = ({ children, ...rest }) => {
-    return <div className='label' onClick={() => context.setHidden(!context.hidden)}>{children}</div>
+    return <div className='label'>{children}</div>
 };
 
 NewTabLabeledIcon.Icon = ({ children, ...rest }) => {
-    return <div className='icon wrapper' onClick={() => context.setHidden(!context.hidden)}><Icon className={rest.icon} /></div>
+    return <div className='icon wrapper'><Icon className={rest.icon} /></div>
 };
 
 export default NewTabLabeledIcon;

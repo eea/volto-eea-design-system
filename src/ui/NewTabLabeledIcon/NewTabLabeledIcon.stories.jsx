@@ -13,6 +13,13 @@ export default {
                 type: { summary: 'string' },
             },
         },
+        link: {
+            description: 'New Tab Link',
+            table: {
+                defaultValue: { summary: '""' },
+                type: { summary: 'string' },
+            },
+        },
         icon: {
             description: 'New Tab Icon',
             table: {
@@ -33,5 +40,6 @@ const DefaultTemplate = (args) => (
 export const Default = DefaultTemplate.bind({});
 Default.args = {
     label: 'Open in new Tab',
+    link: '/#',
     icon: "ri-share-box-fill"
 };
