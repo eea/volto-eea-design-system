@@ -2,6 +2,14 @@
         Download Labeled Icon
 *******************************/
 
+/* Body */
+@downloadLabeledIconWidth: 62px;
+
+/* Label */
+@downloadLabeledIconLabelWidth: 100%;
+@downloadLabeledIconLabelFontSize: 14px;
+@downloadLabeledIconLabelColor: @deepBlue;
+
 /* Extra */
 @downloadLabeledIconWrapperWidth: 100%;
 @downloadLabeledIconWrapperBorderTop: 0px;
@@ -11,14 +19,18 @@
 /* Icon */
 @downloadLabeledIconIconFontSize: 25px;
 @downloadLabeledIconWrapperIconHeight: 20px;
+@downloadLabeledIconIconWidth: 19px;
 
 /* Link Wrapper */
 @downloadLabeledIconLinkWrapperBackgroundColor: #f9f9f9;
 @downloadLabeledIconLinkWrapperZIndex: 1;
 @downloadLabeledIconLinkWrapperMarginRight: 2.1em;
-@downloadLabeledIconLinkWrapperWidth: 5em;
+@downloadLabeledIconLinkWrapperWidth: 4em;
 @downloadLabeledIconLinkWrapperPaddingLeft: 9px;
 @downloadLabeledIconLinkWrapperPaddingTop: 5px;
+
+/* Dropdown */
+@downloadLabeledIconDropdownWIdth: 100%;
 
 /* List */
 @downloadLabeledIconUlMarginBlockStart: 0;
@@ -26,7 +38,8 @@
 @downloadLabeledIconLiHover: @deepBlue;
 
 /* Link */
-@downloadLabeledIconALinkontWeight: 700;
+@downloadLabeledIconALinkFontWeight: 700;
 @downloadLabeledIconLinkFontSize: 14px;
 @downloadLabeledIconLinkIconFontSize: 16px;
+@downloadLabeledIconLinkIconLineHeight: 20px;
 @downloadLabeledIconALinkColorHover: @white;

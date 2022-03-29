@@ -41,8 +41,8 @@ const DefaultTemplate = (args) => (
 export const Default = DefaultTemplate.bind({});
 Default.args = {
     label: 'Download',
-    icon: "ri-download-line",
-    downloadIcon: 'ri-download-line',
+    icon: "ri-download-2-fill",
+    downloadIcon: 'ri-download-2-fill',
     links: [
         { linkName: 'PDF', href: '#' },
         { linkName: 'SVG', href: '#' },

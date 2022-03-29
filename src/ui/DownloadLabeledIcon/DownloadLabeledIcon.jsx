@@ -1,4 +1,4 @@
-import React, { useState, useContext, createContext } from 'react';
+ import React, { useState, useContext, createContext } from 'react';
 import { Icon } from 'semantic-ui-react';
 
 const DownloadContext = createContext();
