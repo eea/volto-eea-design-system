@@ -4,42 +4,33 @@
 
 .ui.breadcrumb {
   .section {
-    padding: @mobileBreadcrumbPadding;
-    font-size: @mobileBreadcrumbFontSize;
+    overflow: hidden;
 
-    /* Max breadcrumb length to be decided */
-    //max-width: 150px;
-    //white-space: nowrap;
-    //overflow: hidden;
-    //text-overflow: ellipsis;
+    /* Max breadcrumb length */
+    max-width: @breadcrumbItemMaxWidth;
+    padding: @mobileBreadcrumbPadding;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     img {
-      width: @mobileBreadcrumbIconSize;
-      margin-bottom: -@1px; //To align as the design
+      width: @breadcrumbImgWidth;
     }
   }
 
-  i.icon.divider {
-    font-size: @mobileBreadcrumbFontSize;
+  i.icon {
+    width: @breadcrumbIconWidth;
+    font-size: @breadcrumbIconFontSize;
   }
 
   a:first-child {
     padding: @breadcrumbFirstChildPadding;
   }
 }
+
 @media only screen and (min-width: @tabletBreakpoint) {
   .ui.breadcrumb {
     .section {
       padding: @tabletBreadcrumbPadding;
-      font-size: @tabletBreadcrumbFontSize;
-
-      img {
-        width: @tabletBreadcrumbIconSize;
-      }
-    }
-
-    i.icon.divider {
-      font-size: @tabletBreadcrumbIconSize;
     }
   }
 }
