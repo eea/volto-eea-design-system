@@ -8,39 +8,41 @@
 -----------------------------*/
 
 /* Read More Variation */
-
-.ui.accordion.read.more {
+.ui.accordion.contents {
   .title {
-    color: @contentAccordionColor;
+    color: @contentsAccordionColor;
+    font-weight: @contentsAccordionFontWeight;
 
     i {
-      color: @contentAccordionColor;
+      color: @contentsAccordionColor;
     }
 
     &:hover {
-      color: @contentAccordionColor;
+      color: @contentsAccordionColor;
 
       i {
-        color: @contentAccordionColor;
+        color: @contentsAccordionColor;
       }
     }
   }
 
   .active.title {
-    background-color: @contentAccordionActiveBackgroundColor;
-    color: @contentAccordionActiveColor;
+    background-color: @contentsAccordionActiveBackgroundColor;
+    color: @contentsAccordionActiveColor;
 
     i {
-      color: @contentAccordionActiveColor;
+      color: @contentsAccordionActiveColor;
     }
   }
 
   .content {
-    .read.more.link.wrapper {
-      width: @contentAccordionLinkWrapperWidth;
-      height: @contentAccordionLinkWrapperHeight;
-      .read.more.link {
-        color: @mediumPersianBlue;
+    .read-more.wrapper {
+      width: @contentsAccordionLinkWrapperWidth;
+      height: @contentsAccordionLinkWrapperHeight;
+
+      a {
+        color: @contentsAccordionLinkColor;
+        font-weight: @contentsAccordionLinkFontWeight;
         float: right;
       }
     }

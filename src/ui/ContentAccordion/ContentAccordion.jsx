@@ -2,7 +2,7 @@ import React from 'react';
 import { Accordion } from 'semantic-ui-react';
 
 function ContentAccordion({ children, ...rest }) {
-  return <Accordion className="eea read more">{children}</Accordion>;
+  return <Accordion className="eea contents">{children}</Accordion>;
 }
 
 ContentAccordion.Title = ({ children, ...rest }) => {
@@ -27,11 +27,9 @@ ContentAccordion.Description = ({ children }) => {
 
 ContentAccordion.Link = ({ children, ...rest }) => {
   return (
-    <p className="read more link wrapper">
-      <a href={rest.linkUrl} className="read more link">
-        {children}
-      </a>
-    </p>
+    <div className="read-more wrapper">
+      <a href={rest.linkUrl}>{children}</a>
+    </div>
   );
 };
 
