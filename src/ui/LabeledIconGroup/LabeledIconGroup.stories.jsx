@@ -20,6 +20,13 @@ export default {
         defaultValue: { summary: ' "" ' },
       },
     },
+    language: {
+      description: 'LanguageLabeledIcon Component Contents',
+      table: {
+        type: { summary: 'Object' },
+        defaultValue: { summary: ' "" ' },
+      },
+    },
   },
 };
 
@@ -30,6 +37,7 @@ const DefaultTemplate = (args) => (
       <LabeledIconGroup.NewTab {...args.newTab}>
         {args.newTab.label}
       </LabeledIconGroup.NewTab>
+      <LabeledIconGroup.Language {...args.language}></LabeledIconGroup.Language>
     </LabeledIconGroup>
   </div>
 );
@@ -49,6 +57,18 @@ Default.args = {
       { linkName: 'PDF', href: '/#' },
       { linkName: 'SVG', href: '/#' },
       { linkName: 'PNG', href: '/#' },
+    ],
+  },
+  language: {
+    title: 'Repost Language',
+    icon: <i class="ri-global-line"></i>,
+    items: [
+      { text: 'English', key: 'EN' },
+      { text: 'Russian', key: 'Ru' },
+      { text: 'Russian', key: 'Ru' },
+      { text: 'Russian', key: 'Ru' },
+      { text: 'Russian', key: 'Ru' },
+      { text: 'Russian', key: 'Ru' },
     ],
   },
 };

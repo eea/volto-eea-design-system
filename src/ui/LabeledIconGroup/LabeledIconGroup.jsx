@@ -1,6 +1,7 @@
 import React from 'react';
 import NewTabLabeledIcon from '../NewTabLabeledIcon/NewTabLabeledIcon';
 import DownloadLabeledIcon from '../DownloadLabeledIcon/DownloadLabeledIcon';
+import LanguageLabeledIcon from '../LanguageLabeledIcon/LanguageLabeledIcon';
 
 function LabeledIconGroup({ children, ...rest }) {
   return (
@@ -31,6 +32,20 @@ LabeledIconGroup.NewTab = ({ children, ...rest }) => {
         <NewTabLabeledIcon.Icon {...rest}>{rest.icon}</NewTabLabeledIcon.Icon>
         <NewTabLabeledIcon.Label>{rest.label}</NewTabLabeledIcon.Label>
       </NewTabLabeledIcon>
+    </div>
+  );
+};
+
+LabeledIconGroup.Language = ({ children, ...rest }) => {
+  return (
+    <div className="group wrapper">
+      <LanguageLabeledIcon {...rest}>
+        <LanguageLabeledIcon.Icon icon={rest.icon}></LanguageLabeledIcon.Icon>
+        <LanguageLabeledIcon.Label>{rest.title}</LanguageLabeledIcon.Label>
+        <LanguageLabeledIcon.Dropdown
+          items={rest.items}
+        ></LanguageLabeledIcon.Dropdown>
+      </LanguageLabeledIcon>
     </div>
   );
 };

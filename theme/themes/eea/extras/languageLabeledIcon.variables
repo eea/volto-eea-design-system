@@ -2,3 +2,41 @@
       Language Labeled Icon
 *******************************/
 
+/* Body  */
+@languageLabeledIconWidth : 110px;
+
+/* Icon Wrapper  */
+@languageLabeledIconIconWrapperFontSize : 14px;
+@languageLabeledIconIconWrapperFontWeight : 400;
+@languageLabeledIconIconWrapperColor : @deepBlue;
+
+/* Icon  */
+@languageLabeledIconIconWrapperIconColor : @mediumPersianBlue;
+@languageLabeledIconIconWrapperIconMarginRight : 3px;
+@languageLabeledIconIconWrapperIconFontSize : 1.5rem;
+
+/* Label  */
+@languageLabeledIconLabelColor : @deepBlue;
+@languageLabeledIconLabelFontSize : 14px;
+@languageLabeledIconLabelFontWeight: 400;
+
+/* Dropdown  */
+@languageLabeledIconDropdownBackgroundColor : #f9f9f9;
+
+/* Link  */
+@languageLabeledIconDropdowLinkWrapperWidth : 180px;
+
+
+/* List  */
+@languageLabeledIconLabelUlMargin :0;
+@languageLabeledIconLabelUlColor : @japaneseIndigo;
+@languageLabeledIconLabelUlPaddingTop : 10px; 
+@languageLabeledIconLabelUlPaddingRight : 0;
+@languageLabeledIconLabelUlPaddingBottom : 10px;
+@languageLabeledIconLabelUlPaddingLeft : 0;
+@languageLabeledIconLabelUlPadding : @languageLabeledIconLabelUlPaddingTop @languageLabeledIconLabelUlPaddingRight @languageLabeledIconLabelUlPaddingBottom @languageLabeledIconLabelUlPaddingLeft;
+
+/* List Item  */
+@languageLabeledIconLabelUlLiColor :@white;
+@languageLabeledIconLabelUlLiBackgroundColor :  @japaneseIndigo;
+@languageLabeledIconLabelUlLiSpanFontWeight : 700;
