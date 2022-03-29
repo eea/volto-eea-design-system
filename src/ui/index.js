@@ -31,3 +31,5 @@ export PublicationCard from './PublicationCard/PublicationCard';
 export DownloadLabeledIcon from './DownloadLabeledIcon/DownloadLabeledIcon';
 
 export NewTabLabeledIcon from './NewTabLabeledIcon/NewTabLabeledIcon';
+
+export LabeledIconGroup from './LabeledIconGroup/LabeledIconGroup';
