@@ -46,8 +46,8 @@ Default.args = {
   icon: 'ri-download-2-fill',
   downloadIcon: 'ri-download-2-fill',
   links: [
-    { linkName: 'PDF', href: '#' },
-    { linkName: 'SVG', href: '#' },
-    { linkName: 'PNG', href: '#' },
+    { linkName: 'PDF', href: '/#' },
+    { linkName: 'SVG', href: '/#' },
+    { linkName: 'PNG', href: '/#' },
   ],
 };
