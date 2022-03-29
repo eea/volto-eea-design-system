@@ -33,3 +33,5 @@ export DownloadLabeledIcon from './DownloadLabeledIcon/DownloadLabeledIcon';
 export NewTabLabeledIcon from './NewTabLabeledIcon/NewTabLabeledIcon';
 
 export LabeledIconGroup from './LabeledIconGroup/LabeledIconGroup';
+
+export LanguageLabeledIcon from './LanguageLabeledIcon/LanguageLabeledIcon';
