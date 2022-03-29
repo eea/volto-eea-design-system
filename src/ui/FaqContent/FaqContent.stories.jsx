@@ -80,7 +80,7 @@ function AccordionContainer({ ...args }) {
   };
 
   return (
-    <Accordion>
+    <Accordion className="faq">
       <Accordion.Title
         active={activeIndex === 2}
         index={2}
@@ -110,10 +110,10 @@ function AccordionContainer({ ...args }) {
               </TagList.Content>
             </TagList>
             <Button>
-              <Icon name="download"></Icon>
+            <Icon className="ri-download-2-line"></Icon>
             </Button>
             <Button>
-              <Icon name="share alternate"></Icon>
+            <Icon className="ri-share-fill"></Icon>
             </Button>
           </FaqContent.Actions>
         </FaqContent>
