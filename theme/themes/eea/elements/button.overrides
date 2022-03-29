@@ -52,9 +52,9 @@
     color: @secondaryButtonColorHover;
   }
 
-  &.icon.button i{
+  &.icon.button i {
     font-size: 1.5rem;
-    opacity:1;
+    opacity: 1;
   }
 }
 
