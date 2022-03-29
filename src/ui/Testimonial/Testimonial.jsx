@@ -23,7 +23,7 @@ Testimonial.Avatar = ({ children, ...rest }) => {
   return (
     <Grid.Column mobile={12} tablet={2} computer={2}>
       <div className="avatar-wrapper">
-        <Avatar {...rest} image_url={rest.image_url} avatarSize="small">
+        <Avatar {...rest} image_url={rest.image_url} avatarsize="small">
           <Avatar.Content>
             <Avatar.Title>{rest.title}</Avatar.Title>
             <Avatar.Metadata>{rest.metadata}</Avatar.Metadata>

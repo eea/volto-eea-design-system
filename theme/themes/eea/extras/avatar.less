@@ -7,91 +7,72 @@
       AVATAR
 --------------------*/
 
-.eea.avatar.big {
-  width: @avatarWidthBig;
+.eea.avatar {
+  width: @avatarWidth;
   .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: @avatarWrapperGap;
     width: @avatarWrapperWidth;
+  }
+}
 
-    .image-wrapper {
-      width: @avatarImageWrapperWidth;
-      display: flex;
-      justify-content: center;
+.eea.avatar .image-wrapper {
+  width: @avatarImageWrapperWidth;
+  display: flex;
+  justify-content: center;
 
-      .image {
-        height: @avatarImageHeightBig;
-        width: @avatarImageWidthBig;
-        border-radius: @avatarImageBorderRadius;
-        background-position: center;
-        background-size: contain;
-      }
+  .image {
+    border-radius: @avatarImageBorderRadius;
+    background-size: @avatarImageBackgroundSize;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.eea.avatar .content-wrapper {
+  width: @avatarContentWrapperWidth;
+  .title {
+    text-align: center;
+    font-weight: @avatarContentTitleFontWeight;
+    font-size: @avatarContentTitleFontSize;
+    margin-bottom: @avatarContentTitleMarginBottom;
+  }
+  .metadata {
+    text-align: center;
+  }
+}
+
+.eea.avatar.big {
+  .image-wrapper {
+    .image {
+      height: @avatarBigImageHeight;
+      width: @avatarBigImageWidth;
     }
-    .content-wrapper {
-      width: @avatarContentWrapperWidth;
-      .content {
-        margin-top: @avatarContentMarginTop;
-        .title {
-          font-weight: @avatarContentTitleFontWeight;
-          text-align: center;
-          font-size: @avatarContentTitleFontSize;
-          line-height: @avatarContentTitleLineHeight;
-          letter-spacing: @avatarContentTitleLetterSpacing;
-          margin-bottom: @avatarContentTitleMarginBottom;
-        }
-        .metadata {
-          text-align: center;
-          font-size: @avatarMetadataFontSize;
-          font-weight: @avatarMetadataFontWeight;
-          margin-top: @avatarMetadataMarginTop;
-        }
-      }
-    }
+  }
+  .content-wrapper {
+    .metadata {
+      font-size: @avatarBigMetadataFontSize;
+      font-weight: @avatarBigMetadataFontWeight;
+    } 
   }
 }
 
 .eea.avatar.small {
-  width: @avatarWidthSmall;
-  .wrapper {
-    width: @avatarWrapperWidth;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    .image-wrapper {
-      width: @avatarImageWrapperWidth;
-      display: flex;
-      justify-content: center;
-
-      .image {
-        height: @avatarImageHeightSmall;
-        width: @avatarImageWidthSmall;
-        border-radius: @avatarImageBorderRadius;
-        background-position: center;
-        background-size: contain;
-      }
+  .image-wrapper {
+    .image {
+      height: @avatarSmallImageHeight;
+      width: @avatarSmallImageWidth;
     }
-
-    .content-wrapper {
-      width: @avatarContentWrapperWidth;
-      .content {
-        margin-top: @avatarContentMarginTopSmall;
-        .title {
-          font-weight: @avatarContentTitleFontWeightSmall;
-          color: @darkCyan;
-          text-align: center;
-          font-size: @avatarContentTitleFontSizeSmall;
-          line-height: @avatarContentTitleLineHeightSmall;
-          letter-spacing: @avatarContentTitleLetterSpacing;
-          margin-bottom: @avatarContentTitleMarginBottom;
-        }
-        .metadata {
-          text-align: center;
-          font-size: @avatarMetadataFontSizeSmall;
-          font-weight: @avatarMetadataFontWeightSmall;
-        }
-      }
+  }
+  .content-wrapper {
+    .title {
+      color: @avatarSmallTitleColor;
+    }
+    .metadata {
+      font-size: @avatarSmallMetadataFontSize;
+      font-weight: @avatarSmallMetadataFontWeight;
     }
   }
 }

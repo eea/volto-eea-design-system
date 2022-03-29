@@ -8,7 +8,7 @@ Avatar.propTypes = {
 
 function Avatar({ image_url, children, ...rest }) {
   return (
-    <div className={`eea avatar  ${rest.avatarSize}`} {...rest}>
+    <div className={`eea avatar  ${rest.avatarsize}`} {...rest}>
       <div className="wrapper">
         <div className="image-wrapper">
           <div
