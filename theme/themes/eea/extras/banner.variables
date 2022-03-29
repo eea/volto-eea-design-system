@@ -2,7 +2,7 @@
             Page Banner
 *******************************/
 
-@bannerBackgroundColor   : @primaryColor;
+@bannerBackgroundColor   : @darkCyan;
 
 /* Background Image */
 @imageBackgroundRepeat   : no-repeat;
@@ -14,9 +14,13 @@
 @backgroundGradientOpacity : 0.9;
 
 /* Content */
-@mobileContentPadding      : 6.25rem 0 1.25rem;
-@tabletContentPadding      : 12.5rem 0 1.25rem;
-@computerContentPadding    : 15.625rem 0 1.25rem;
+@mobileContentPadding      : 1rem 0 1.25rem;
+@tabletContentPadding      : 3rem 0 1.25rem;
+@computerContentPadding    : 5rem 0 1.25rem;
+
+@mobileContentPaddingWithImage      : 6.25rem 0 1.25rem;
+@tabletContentPaddingWithImage      : 12.5rem 0 1.25rem;
+@computerContentPaddingWithImage    : 15.625rem 0 1.25rem;
 
 /* Title */
 @titleFontWeight           : @bold;

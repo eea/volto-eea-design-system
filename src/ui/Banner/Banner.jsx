@@ -11,11 +11,12 @@ function Banner({ image_url, image, children }) {
   return (
     <div className="eea banner">
       <div
-        className="image"
+        className={image ? 'image' : ''}
         style={image ? { backgroundImage: `url(${image_url})` } : {}}
-      ></div>
-      <div className="gradient">
-        <Container>{children}</Container>
+      >
+        <div className="gradient">
+          <Container>{children}</Container>
+        </div>
       </div>
     </div>
   );
