@@ -110,10 +110,10 @@ function AccordionContainer({ ...args }) {
               </TagList.Content>
             </TagList>
             <Button>
-            <Icon className="ri-download-2-line"></Icon>
+              <Icon className="ri-download-2-line"></Icon>
             </Button>
             <Button>
-            <Icon className="ri-share-fill"></Icon>
+              <Icon className="ri-share-fill"></Icon>
             </Button>
           </FaqContent.Actions>
         </FaqContent>
