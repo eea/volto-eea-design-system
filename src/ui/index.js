@@ -29,3 +29,5 @@ export KeyContent from './KeyContent/KeyContent';
 export PublicationCard from './PublicationCard/PublicationCard';
 
 export DownloadLabeledIcon from './DownloadLabeledIcon/DownloadLabeledIcon';
+
+export NewTabLabeledIcon from './NewTabLabeledIcon/NewTabLabeledIcon';

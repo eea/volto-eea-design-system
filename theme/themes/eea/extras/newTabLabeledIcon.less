@@ -1,0 +1,74 @@
+@type: 'extra';
+@element: 'newTabLabeledIcon';
+
+@import (multiple) '../../theme.config';
+
+/*******************************
+        Download Labeled Icon
+*******************************/
+.eea.new.tab.labeled.icon {
+  width: @newTabLabeledIconWidth;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .label {
+    width: @newTabLabeledIconLabelWidth;
+    font-size: @newTabLabeledIconLabelFontSize;
+    color: @newTabLabeledIconLabelColor;
+    cursor: pointer;
+  }
+  .icon.wrapper {
+    width: @newTabLabeledIconIconWrapperWidth;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    .icon {
+      cursor: pointer;
+      font-size: @newTabLabeledIconIconFontSize;
+      color: @mediumPersianBlue;
+      display: flex;
+      width: @newTabLabeledIconIconWidth;
+      height: @newTabLabeledIconWrapperIconHeight;
+      align-items: center;
+    }
+  }
+
+  .dropdown {
+    width: @newTabLabeledIconDropdownWIdth;
+
+    .link.wrapper {
+      position: absolute;
+      cursor: pointer;
+      background-color: @newTabLabeledIconLinkWrapperBackgroundColor;
+      z-index: @newTabLabeledIconLinkWrapperZIndex;
+      margin-right: @newTabLabeledIconLinkWrapperMarginRight;
+      width: @newTabLabeledIconLinkWrapperWidth;
+      padding-left: @newTabLabeledIconLinkWrapperPaddingLeft;
+      padding-top: @newTabLabeledIconLinkWrapperPaddingTop;
+      ul {
+        list-style-type: none;
+        margin-block-start: @newTabLabeledIconUlMarginBlockStart;
+        padding-inline-start: @newTabLabeledIconUlPaddingInlineStart;
+        a {
+          display: flex;
+          justify-content: space-around;
+          font-weight: @newTabLabeledIconALinkFontWeight;
+          font-size: @newTabLabeledIconLinkFontSize;
+          .icon {
+            font-size: @newTabLabeledIconLinkIconFontSize;
+            line-height: @newTabLabeledIconLinkIconLineHeight;
+          }
+        }
+        a:hover {
+          color: @newTabLabeledIconALinkColorHover;
+        }
+        li:hover {
+          background-color: @newTabLabeledIconLiHover;
+        }
+      }
+    }
+    .link.wrapper.hidden {
+      display: none;
+    }
+  }
+}

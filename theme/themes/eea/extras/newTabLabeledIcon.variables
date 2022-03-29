@@ -1,0 +1,48 @@
+/*******************************
+        Download Labeled Icon
+*******************************/
+
+/* Body */
+@newTabLabeledIconWidth: 103px;
+
+/* Label */
+@newTabLabeledIconLabelWidth: 100%;
+@newTabLabeledIconLabelFontSize: 14px;
+@newTabLabeledIconLabelColor: @deepBlue;
+
+/* Extra */
+@newTabLabeledIconWrapperWidth: 100%;
+@newTabLabeledIconWrapperBorderTop: 0px;
+@newTabLabeledIconWrapperColor: @white;
+@newTabLabeledIconWrapperFontSize: 14px;
+
+/* Icon Wrapper */
+@newTabLabeledIconIconWrapperWidth: 100%;
+
+/* Icon */
+@newTabLabeledIconIconFontSize: 25px;
+@newTabLabeledIconWrapperIconHeight: 20px;
+@newTabLabeledIconIconWidth: 19px;
+
+/* Link Wrapper */
+@newTabLabeledIconLinkWrapperBackgroundColor: #f9f9f9;
+@newTabLabeledIconLinkWrapperZIndex: 1;
+@newTabLabeledIconLinkWrapperMarginRight: 2.1em;
+@newTabLabeledIconLinkWrapperWidth: 4em;
+@newTabLabeledIconLinkWrapperPaddingLeft: 9px;
+@newTabLabeledIconLinkWrapperPaddingTop: 5px;
+
+/* Dropdown */
+@newTabLabeledIconDropdownWIdth: 100%;
+
+/* List */
+@newTabLabeledIconUlMarginBlockStart: 0;
+@newTabLabeledIconUlPaddingInlineStart: 0px;
+@newTabLabeledIconLiHover: @deepBlue;
+
+/* Link */
+@newTabLabeledIconALinkFontWeight: 700;
+@newTabLabeledIconLinkFontSize: 14px;
+@newTabLabeledIconLinkIconFontSize: 16px;
+@newTabLabeledIconLinkIconLineHeight: 20px;
+@newTabLabeledIconALinkColorHover: @white;
