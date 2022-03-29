@@ -21,8 +21,8 @@
 @avatarBigMetadataFontWeight    : @normal;
 
 /* Small */
-@avatarSmallImageHeight         : 150px;
-@avatarSmallImageWidth          : 150px;
+@avatarSmallImageHeight         : 135px;
+@avatarSmallImageWidth          : 135px;
 @avatarSmallTitleColor          : @secondaryColor;
 @avatarSmallMetadataFontSize    : 1rem;
 @avatarSmallMetadataFontWeight  : 300;

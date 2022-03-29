@@ -8,7 +8,14 @@
 --------------------*/
 
 .eea.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: @testimonialGap;
   width: @testimonialWidth;
+
+  .eea.pullquote {
+    padding: 1.25rem 0 0;
+  }
 
   .avatar-wrapper {
     display: flex;
@@ -17,12 +24,37 @@
     height: @testimonialAvatarWrapperHeight;
   }
 
-  .content .title {
-    margin: @testimonialContentTitleMarginVertical
-      @testimonialContentTitleMarginHorizontal;
-    font-weight: @testimonialContentTitleFontWeight;
-    font-size: @testimonialContentTitleFontSize;
-    letter-spacing: @testimonialContentTitleLetterSpacing;
-    color: @testimonialContentTitleColor;
+  .eea.avatar .wrapper {
+    flex-direction: row-reverse;
+    align-items: center;
   }
 }
+
+.eea.testimonial .content h3.title {
+  margin: @testimonialContentTitleMarginVertical
+    @mobileTestimonialContentTitleMarginHorizontal;
+  font-weight: @testimonialContentTitleFontWeight;
+  color: @testimonialContentTitleColor;
+}
+
+.eea.testimonial .ui.grid div:first-child {
+  order: 1;
+}
+
+
+@media only screen and (min-width: @tabletBreakpoint) {
+
+  .eea.testimonial   .eea.avatar .wrapper {
+    flex-direction: column;
+  }
+  
+  .eea.testimonial .content h3.title {
+    margin: @testimonialContentTitleMarginVertical
+      @tabletTestimonialContentTitleMarginHorizontal;
+  }
+
+  .eea.testimonial .ui.grid div:first-child {
+    order: 0;
+  }
+}
+

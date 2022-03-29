@@ -6,7 +6,7 @@ import Pullquote from '../Pullquote/Pullquote';
 import { Grid } from 'semantic-ui-react';
 
 Testimonial.propTypes = {
-  title: PropTypes.string,  
+  title: PropTypes.string,
 };
 
 function Testimonial({ children, ...rest }) {
@@ -21,7 +21,7 @@ function Testimonial({ children, ...rest }) {
 
 Testimonial.Avatar = ({ children, ...rest }) => {
   return (
-    <Grid.Column mobile={12} tablet={2} computer={2}>
+    <Grid.Column mobile={12} tablet={3} computer={2}>
       <div className="avatar-wrapper">
         <Avatar {...rest} image_url={rest.image_url} avatarsize="small">
           <Avatar.Content>
@@ -36,13 +36,13 @@ Testimonial.Avatar = ({ children, ...rest }) => {
 
 Testimonial.Content = ({ children }) => {
   return (
-    <Grid.Column mobile={12} tablet={10} computer={10}>
+    <Grid.Column mobile={12} tablet={9} computer={10}>
       <div className="content">{children}</div>
     </Grid.Column>
   );
 };
 
-Testimonial.Title = ({ children }) => <p className="title">{children}</p>;
+Testimonial.Title = ({ children }) => <h3 className="title">{children}</h3>;
 Testimonial.Pullquote = ({ children, ...rest }) => (
   <Pullquote quotePosition="none">
     <Pullquote.Quote>{children}</Pullquote.Quote>
