@@ -1,0 +1,72 @@
+@type: 'extra';
+@element: 'languageLabeledIcon';
+
+@import (multiple) '../../theme.config';
+
+/*******************************
+      Language Labeled Icon
+*******************************/
+
+.eea.language.labeled.icon {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+
+    .icon.wrapper {
+        font-size: 14px;
+        font-weight: 400;
+        color: #3D5265;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        i {
+            color:#0065A4;
+            margin-right: 3px;
+            font-size: 1.5rem;
+        }
+        
+    }
+
+    .label {
+        color: #3D5265;
+        font-size: 14px;
+        font-weight: 400;
+        cursor: pointer;
+    }
+
+    .dropdown {
+
+        background-color: #F9F9F9;
+
+        .link.wrapper {
+            display: flex;
+
+            &.hidden {
+                display: none;
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                color: #2E3E4C;
+                padding: 10px 0 10px 0;
+
+                li{
+                    padding: 5px;
+                    cursor: pointer;
+                }
+
+                li:hover {
+                    color: white;
+                    background-color: #2E3E4C;
+                }
+
+                li span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
