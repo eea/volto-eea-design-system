@@ -2,39 +2,44 @@
             FaQ Filter
 *******************************/
 
+@menuRowBackgroundColor : #f9f9f9; 
 
-/* Top Menu */
-@menuRowResultsPaddingTop : 8px;
-@menuRowResultsPaddingSides : 11px;
-@menuRowResultsPaddingBottom : 6px;
-@menuRowResultsColor : @pineGreen;
-@menuRowResultsFontWeight : 700;
-@menuRowResultsFontSize : 16px;
+/* Results */
+@menuRowResultsTitlePadding : @tinyGap;
+@menuRowResultsColor        : @secondaryColor;
+@menuRowResultsFontWeight   : 700;
+@menuRowResultsFontSize     : 1rem;
 
-@menuRowWrapperPaddingTop : 8px;
-@menuRowWrapperPaddingSides : 11px;
-@menuRowWrapperPaddingBottom : 6px;
-@menuRowWrapperBackgroundColor : #f9f9f9; 
+/* Icon */
+@menuRowArrowColor          : @deepBlue;
+@menuRowArrowIconHeight     : 1.4rem;
+@menuRowArrowIconInactive   : "\ea4e"; // Icon of closed accordion
+@menuRowArrowIconActive     : "\ea78"; // Icon of open accordion
+@menuRowArrowIconFontSize   : 2.2rem;
+@menuRowArrowIconLineHeight : 2.2rem;
+@menuRowArrowIconColor      : @deepBlue;
+@menuRowArrowIconMargin     : 0em;
+@menuRowArrowIconOrder      : 1;
 
-@menuRowFilterTitleColor : @deepBlue;
+/* Clear Action */
+@menuRowClearColor          : @deepBlue;
+@menuRowClearFontWeight     : 400;
+@menuRowClearFontSize       : 1rem;
+@menuRowClearPadding        : 0 0.5rem;
+
+/* Wrapper */
+@menuRowWrapperPaddingLeft  : @mediumGap;
+
+/* Label */
+@menuRowLabelMargin             : @tinyGap (@tinyGap / 2);
+@menuRowLabelIconMargin         : 0 0 0 0.6rem;
+@menuRowLabelIconBeforeFontSize : 1.2rem;
+@menuRowLabelIconBeforeFloat    : right;
+
+/* Filters */
+@menuRowFilterPadding         : @largeGap @mediumGap;
+@menuRowFilterTitleColor      : @deepBlue;
 @menuRowFilterTitleFontWeight : 700;
-@menuRowFilterTitleFontSize : 16px;
-
-@menuRowArrowColor: @deepBlue;
-@menuRowArrowIconHeight : 1.4rem;
-@menuRowArrowIconInactive: "\ea4e"; // Icon of closed accordion
-@menuRowArrowIconActive: "\ea78"; // Icon of open accordion
-@menuRowArrowIconFontSize: 3rem;
-@menuRowArrowIconLineHeight : 3rem;
-@menuRowArrowIconColor : @oldSilver;
-@menuRowArrowIconMargin : 0em;
-@menuRowArrowIconOrder :1;
-
-@menuRowClearColor : @deepBlue;
-@menuRowClearFontWeight : 400;
-@menuRowClearFontSize : 16px;
-
-@selectedWrapperPaddingTop : 20px;
-@selectedWrapperPaddingBottom : 24.12px;
-@selectedUiLabelMarginBottom : 4px;
-@selectedUiLavelFirstChildMarginLeft : 2px;
+@menuRowFilterTitleFontSize   : 1rem;
+@menuRowFilterRowPadding      : (@mediumGap / 2) @mediumGap;
+@menuRowFiltersCheckboxMargin : 0;

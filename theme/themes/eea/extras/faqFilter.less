@@ -15,17 +15,15 @@
     display: flex;
 
     .results {
-      padding: @menuRowResultsPaddingTop @menuRowResultsPaddingSides
-        @menuRowResultsPaddingBottom;
+      padding: @menuRowResultsTitlePadding;
       color: @menuRowResultsColor;
       font-weight: @menuRowResultsFontWeight;
       font-size: @menuRowResultsFontSize;
     }
 
     .wrapper {
-      padding: @menuRowWrapperPaddingTop @menuRowWrapperPaddingSides
-        @menuRowWrapperPaddingBottom;
       display: flex;
+      padding: @menuRowResultsTitlePadding;
 
       .filter.title {
         color: @menuRowFilterTitleColor;
@@ -39,8 +37,8 @@
         i {
           display: flex;
           width: auto;
-          height: @menuRowArrowIconHeight;
           align-items: center;
+          height: @menuRowArrowIconHeight;
           order: @menuRowArrowIconOrder;
           margin: @menuRowArrowIconMargin;
           color: @menuRowArrowIconColor;
@@ -62,22 +60,46 @@
       }
 
       .clear {
+        cursor: pointer;
         color: @menuRowClearColor;
         font-weight: @menuRowClearFontWeight;
         font-size: @menuRowClearFontSize;
+        padding: @menuRowClearPadding;
       }
-      background-color: @menuRowWrapperBackgroundColor;
+      background-color: @menuRowBackgroundColor;
     }
   }
+}
 
-  .selected.wrapper {
-    padding-top: @selectedWrapperPaddingTop;
-    padding-bottom: @selectedWrapperPaddingBottom;
-    .ui.label {
-      margin-bottom: @selectedUiLabelMarginBottom;
+.eea.faq.filter.box .selected.wrapper {
+  padding-left: @menuRowWrapperPaddingLeft;
+  background-color: @menuRowBackgroundColor;
+
+  .ui.label {
+    margin: @menuRowLabelMargin;
+
+    > .icon {
+      width: auto;
+      cursor: pointer;
+      margin: @menuRowLabelIconMargin;
+
+      &:before {
+        font-size: @menuRowLabelIconBeforeFontSize;
+        float: @menuRowLabelIconBeforeFloat;
+      }
     }
-    .ui.label:first-child {
-      margin-left: @selectedUiLavelFirstChildMarginLeft;
+  }
+}
+
+.eea.faq.filter.box .filters {
+  background-color: @menuRowBackgroundColor;
+  padding: @menuRowFilterPadding;
+
+  .ui.grid > .column:not(.row) {
+    padding: @menuRowFilterRowPadding;
+
+    .ui.checkbox {
+      margin-bottom: @menuRowFiltersCheckboxMargin;
     }
   }
 }

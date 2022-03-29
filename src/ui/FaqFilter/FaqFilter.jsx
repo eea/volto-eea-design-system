@@ -83,7 +83,10 @@ const Active = ({ children, ...rest }) => {
         context.selected.map((active, index) => (
           <Label key={active}>
             {active}
-            <Icon name="delete" onClick={() => context.removeFilter(active)} />
+            <Icon
+              className="ri-close-line"
+              onClick={() => context.removeFilter(active)}
+            />
           </Label>
         ))}
     </div>
@@ -94,10 +97,10 @@ const Filters = ({ children, ...rest }) => {
   const context = useContext(FilterContext);
 
   return (
-    <div className={`${context.active ? '' : 'hidden'}`}>
+    <div className={`filters ${context.active ? '' : 'hidden'}`}>
       <Grid>
         {rest.filters.map((filter) => (
-          <Grid.Column mobile={12} tablet={4} computer={4} key={filter.id}>
+          <Grid.Column mobile={12} tablet={6} computer={4} key={filter.id}>
             <Checkbox
               label={`${filter.label} (${filter.count})`}
               value={filter.label}
