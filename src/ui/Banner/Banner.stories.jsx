@@ -64,7 +64,7 @@ const Template = (args) => (
               }
               content={() => (
                 <>
-                  <p>Share:</p>
+                  <p>Share to:</p>
                   <div className="actions">
                     <Banner.Action icon="ri-facebook-fill" />
                     <Banner.Action icon="ri-twitter-fill" />
