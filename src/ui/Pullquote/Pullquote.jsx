@@ -11,24 +11,33 @@ Pullquote.propTypes = {
 function Pullquote({ children, ...rest }) {
   return (
     <blockquote className={`eea pullquote ${rest.quotePosition}`}>
-      <Icon name="quote left"></Icon>
       <div className="content">{children}</div>
-      <Icon className="quote right" name="quote right"></Icon>
     </blockquote>
   );
 }
 
-Pullquote.Quote = ({ children, as: As, ...rest }) =>
-  As ? (
-    <As className="quote" {...rest}>
-      {children}
-    </As>
-  ) : (
-    <h4 className="quote">{children}</h4>
-  );
+Pullquote.Quote = ({ children, as: As, ...rest }) => (
+  <div className="quotes wrapper">
+    <Icon className="ri-double-quotes-l"></Icon>
+    {As ? (
+      <As className="quote" {...rest}>
+        {children}
+      </As>
+    ) : (
+      <p className="quote">{children}</p>
+    )}
+    <Icon className="ri-double-quotes-r"></Icon>
+  </div>
+);
 
 Pullquote.Author = ({ children, ...rest }) => (
   <p className="author" {...rest}>
+    {children}
+  </p>
+);
+
+Pullquote.Metadata = ({ children, ...rest }) => (
+  <p className="meta" {...rest}>
     {children}
   </p>
 );
