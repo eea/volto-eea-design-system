@@ -8,34 +8,26 @@
 --------------------*/
 
 .eea.publication.card {
-  color: @publicationCardtextColor;
-  //position: relative;
-  height: @publicationCardHeight;
-  background-color: @publicationCardBackgroundColor;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: @publicationCardWidth;
+  background-color: @publicationCardBackgroundColor;
+  color: @publicationCardtextColor;
+  margin: @publicationCardMargin;
+  height: @publicationCardMobileHeight;
 
-  a {
-    display: contents;
-    text-decoration: none;
-    color: @publicationCardtextColor;
-    cursor: pointer;
-  }
-
-  .header {
+  .header{
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    height: calc(100% - @cardDescriptionMaxHeight);
+    height: calc(100% - @mobileCardDescriptionHeight);
   }
 
   .description {
     background-color: @publicationCardDescriptionColor;
-    height: @cardDescriptionHeight;
+    height: @mobileCardDescriptionHeight;
     padding: @cardDescriptionPadding;
-    //position: absolute;
-    //bottom: 0;
     width: @cardDescriptionWidth;
     max-height: @cardDescriptionMaxHeight;
 
@@ -47,16 +39,44 @@
     .text {
       font-size: @cardDescriptionTextFontSize;
       font-weight: @cardDescriptionTextFontWeight;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: @cardDescriptionTextLineClampMobile;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .eea.publication.card {
+    height: @publicationCardTabletHeight;
+
+    .header {
+      height: calc(100% - @tabletCardDescriptionHeight);
+    }
+
+    .description {
+      height: @tabletCardDescriptionHeight;
+
+      .text {
+        -webkit-line-clamp: @cardDescriptionTextLineClampTablet;
+      }
     }
   }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
   .eea.publication.card {
-    margin: @publicationCardMargin;
+    height: @publicationCardComputerHeight;
+
+    .header {
+      height: calc(100% - @computerCardDescriptionHeight);
+    }
 
     .description {
       height: @computerCardDescriptionHeight;
     }
   }
 }
+
