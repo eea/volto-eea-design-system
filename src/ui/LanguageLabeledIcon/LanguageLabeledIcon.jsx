@@ -68,12 +68,12 @@ const Dropdown = ({ children, ...rest }) => {
           {first.map((item, index) => (
             <li key={index}>
               <div
-                onClick={() => context.setLanguage(item.key.toUpperCase())}
+                onClick={() => context.setLanguage(item.code.toUpperCase())}
                 onKeyDown={() => context.setHidden(!context.hidden)}
                 role="button"
                 tabIndex={0}
               >
-                {item.text} <span>{item.key}</span>
+                {item.name} <span>{item.code}</span>
               </div>
             </li>
           ))}
@@ -82,12 +82,12 @@ const Dropdown = ({ children, ...rest }) => {
           {second.map((item, index) => (
             <li key={index}>
               <div
-                onClick={() => context.setLanguage(item.key.toUpperCase())}
+                onClick={() => context.setLanguage(item.code.toUpperCase())}
                 onKeyDown={() => context.setHidden(!context.hidden)}
                 role="button"
                 tabIndex={0}
               >
-                {item.text} <span>{item.key}</span>
+                {item.name} <span>{item.code}</span>
               </div>
             </li>
           ))}

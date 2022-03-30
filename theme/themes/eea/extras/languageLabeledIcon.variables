@@ -24,7 +24,7 @@
 @languageLabeledIconDropdownBackgroundColor : #f9f9f9;
 
 /* Link  */
-@languageLabeledIconDropdowLinkWrapperWidth : 180px;
+@languageLabeledIconDropdowLinkWrapperWidth : max-content;
 
 
 /* List  */

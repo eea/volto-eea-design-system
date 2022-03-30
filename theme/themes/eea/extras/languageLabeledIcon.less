@@ -36,11 +36,14 @@
   }
 
   .dropdown {
-    background-color: @languageLabeledIconDropdownBackgroundColor;
 
     .link.wrapper {
+      background-color: @languageLabeledIconDropdownBackgroundColor;
       display: flex;
       width: @languageLabeledIconDropdowLinkWrapperWidth;
+      position: absolute;
+      z-index: 1;
+      transform: translate(-50%,0);
 
       &.hidden {
         display: none;

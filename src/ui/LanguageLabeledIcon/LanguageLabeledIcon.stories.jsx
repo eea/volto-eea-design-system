@@ -1,5 +1,6 @@
 import React from 'react';
 import LanguageLabeledIcon from './LanguageLabeledIcon';
+import { Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Labeled Icons/Language',
@@ -8,13 +9,15 @@ export default {
 };
 
 const Template = (args) => (
-  <LanguageLabeledIcon {...args}>
-    <LanguageLabeledIcon.Icon icon={args.icon}></LanguageLabeledIcon.Icon>
-    <LanguageLabeledIcon.Label>{args.title}</LanguageLabeledIcon.Label>
-    <LanguageLabeledIcon.Dropdown
-      items={args.items}
-    ></LanguageLabeledIcon.Dropdown>
-  </LanguageLabeledIcon>
+  <Container>
+    <LanguageLabeledIcon {...args}>
+      <LanguageLabeledIcon.Icon icon={args.icon}></LanguageLabeledIcon.Icon>
+      <LanguageLabeledIcon.Label>{args.title}</LanguageLabeledIcon.Label>
+      <LanguageLabeledIcon.Dropdown
+        items={args.items}
+      ></LanguageLabeledIcon.Dropdown>
+    </LanguageLabeledIcon>
+  </Container>
 );
 
 export const Default = Template.bind({});
@@ -22,11 +25,11 @@ Default.args = {
   title: 'Repost Language',
   icon: <i className="ri-global-line"></i>,
   items: [
-    { text: 'English', key: 'EN' },
-    { text: 'Russian', key: 'Ru' },
-    { text: 'Russian', key: 'Ru' },
-    { text: 'Russian', key: 'Ru' },
-    { text: 'Russian', key: 'Ru' },
-    { text: 'Russian', key: 'Ru' },
+    { name: 'English', code: 'en' },
+    { name: 'eesti', code: 'et' },
+    { name: 'Suomi', code: 'fi' },
+    { name: 'Français', code: 'fr' },
+    { name: 'Deutsch', code: 'de' },
+    { name: 'magyar', code: 'hu' },
   ],
 };

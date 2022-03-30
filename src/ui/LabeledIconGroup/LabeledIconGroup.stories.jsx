@@ -63,12 +63,12 @@ Default.args = {
     title: 'Repost Language',
     icon: <i className="ri-global-line"></i>,
     items: [
-      { text: 'English', key: 'EN' },
-      { text: 'Russian', key: 'Ru' },
-      { text: 'Russian', key: 'Ru' },
-      { text: 'Russian', key: 'Ru' },
-      { text: 'Russian', key: 'Ru' },
-      { text: 'Russian', key: 'Ru' },
+      { name: 'English', code: 'en' },
+      { name: 'eesti', code: 'et' },
+      { name: 'Suomi', code: 'fi' },
+      { name: 'Français', code: 'fr' },
+      { name: 'Deutsch', code: 'de' },
+      { name: 'magyar', code: 'hu' },
     ],
   },
 };
