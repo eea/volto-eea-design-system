@@ -33,7 +33,7 @@
 /* List */
 @downloadLabeledIconUlMargin: 0.25rem 0;
 @downloadLabeledIconUlPaddingInlineStart: 0px;
-@downloadLabeledIconLiHover: @deepBlue;
+@downloadLabeledIconLiHover: @japaneseIndigo;
 
 /* Link */
 @downloadLabeledIconALinkFontWeight: 700;
@@ -41,4 +41,5 @@
 @downloadLabeledIconLinkIconFontSize: 1rem;
 @downloadLabeledIconLinkIconPadding: 0.125rem 0;
 @downloadLabeledIconLinkIconLineHeight: 1.25rem;
+@downloadLabeledIconALinkColor: @japaneseIndigo;
 @downloadLabeledIconALinkColorHover: @white;
