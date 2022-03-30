@@ -2,15 +2,16 @@
             Footer
 *******************************/
 
-@footerBackgroundGrandient          : linear-gradient(180deg, #009591 -1.72%, @japaneseIndigo 61.15%);
+@footerBackgroundGrandient           : linear-gradient(220.4deg, #009591 8.29%, #2E3E4C 56.3%, #212D38 89.06%);
 
-/* Visual */
-@visualBackgroundImage              : url(../assets/images/Footer/Extras/abstract-visual.svg);
-@visualBackgroundPosition           : center;
-@visualBackgroundSize               : 200% 200%;
-@visualWidth                        : 100%;
-@mobileVisualPadding                : 3rem 0 1rem;
-@computerVisualPadding              : 5rem 0 3rem;
+/* Wrapper */
+@wrapperBackgroundImage              : url(../assets/images/Footer/Extras/footervisual.svg);
+@wrapperBackgroundPosition           : left;
+@mobileWrapperBackgroundSize         : cover;
+@computerWrapperBackgroundSize       : 100% 100%;
+@wrapperWidth                        : 100%;
+@mobileWrapperPadding                : 3rem 0 1rem;
+@computerWrapperPadding              : 5rem 0 3rem;
 
 /* Theme Sites */
 @mobileThemeSitesPadding            : 0;
@@ -53,7 +54,8 @@
 @tabletDescriptionLineHeight         : 1.188rem;
 
 /* EIONET Logo */
-@eionetMarginTop: 2rem;
+@mobileEionetMarginTop: .5rem;
+@computerEionetMarginTop: 2rem;
 
 @mobileEionetLogoWidth               : 37px;
 @tabletEionetLogoWidth               : 65px;
@@ -76,7 +78,9 @@
 @computerEionetDescriptionLineHeight : 1.8rem;
 
 /* Contact Info */
-@contactMargin                      : 1rem 0;
+@mobileContactMargin                : 0.3rem 0;
+@tabletContactMargin                : 0.6rem 0;
+@computerContactMargin              : 1rem 0;
 @mobileContactFontSize              : 0.563rem;
 @tabletContactFontSize              : 0.875rem;
 @computerContactFontSize            : 1rem;
@@ -90,12 +94,12 @@
 
 /* Social Icons */
 @socialIconColor                    : @white;
-@mobileSocialIconSize               : 1.2rem;
+@mobileSocialIconSize               : 0.9rem;
 @tabletSocialIconSize               : 1.8rem;
 @computerSocialIconSize             : 2rem;
 
 /* Footer Menu */
-@mobileMenuMargin                   : 0;
+@mobileMenuMargin                   : 1rem auto 0;
 @tabletMenuMargin                   : 2rem auto 0;
 @tabletMenuWidth                    : 500px;
 @menuLinkColor                      : @white;
