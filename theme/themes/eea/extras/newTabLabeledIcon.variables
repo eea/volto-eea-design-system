@@ -1,48 +1,23 @@
 /*******************************
-        Download Labeled Icon
+        New Tab Labeled Icon
 *******************************/
 
 /* Body */
-@newTabLabeledIconWidth: 103px;
+@newTabLabeledIconWidth: min-content;
+@newTabLabeledIconMinWidth: 7rem;
+@newTabLabeledIconTextAlign: center;
 
 /* Label */
 @newTabLabeledIconLabelWidth: 100%;
-@newTabLabeledIconLabelFontSize: 14px;
+@newTabLabeledIconLabelFontSize: 0.875rem;
 @newTabLabeledIconLabelColor: @deepBlue;
-
-/* Extra */
-@newTabLabeledIconWrapperWidth: 100%;
-@newTabLabeledIconWrapperBorderTop: 0px;
-@newTabLabeledIconWrapperColor: @white;
-@newTabLabeledIconWrapperFontSize: 14px;
+@newTabLabeledIconColor: @mediumPersianBlue;
 
 /* Icon Wrapper */
 @newTabLabeledIconIconWrapperWidth: 100%;
+@newTabLabeledIconWrapperPadding: 0.5rem;
 
 /* Icon */
-@newTabLabeledIconIconFontSize: 25px;
-@newTabLabeledIconWrapperIconHeight: 20px;
-@newTabLabeledIconIconWidth: 19px;
-
-/* Link Wrapper */
-@newTabLabeledIconLinkWrapperBackgroundColor: #f9f9f9;
-@newTabLabeledIconLinkWrapperZIndex: 1;
-@newTabLabeledIconLinkWrapperMarginRight: 2.1em;
-@newTabLabeledIconLinkWrapperWidth: 4em;
-@newTabLabeledIconLinkWrapperPaddingLeft: 9px;
-@newTabLabeledIconLinkWrapperPaddingTop: 5px;
-
-/* Dropdown */
-@newTabLabeledIconDropdownWIdth: 100%;
-
-/* List */
-@newTabLabeledIconUlMarginBlockStart: 0;
-@newTabLabeledIconUlPaddingInlineStart: 0px;
-@newTabLabeledIconLiHover: @deepBlue;
-
-/* Link */
-@newTabLabeledIconALinkFontWeight: 700;
-@newTabLabeledIconLinkFontSize: 14px;
-@newTabLabeledIconLinkIconFontSize: 16px;
-@newTabLabeledIconLinkIconLineHeight: 20px;
-@newTabLabeledIconALinkColorHover: @white;
+@newTabLabeledIconIconFontSize: 1.563rem;
+@newTabLabeledIconWrapperIconHeight: 1.25rem;
+@newTabLabeledIconIconWidth: 1.25rem;
