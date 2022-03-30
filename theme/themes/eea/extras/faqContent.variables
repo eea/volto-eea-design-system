@@ -36,8 +36,8 @@
 
 /* FAQ Content Actions */
 @faqContentActionPadding      : 0;
-@faqContentActionButtonMargin : 0 0 0 0.812rem;
-@faqContentActionButtonFontSize : 1.312rem;
+@faqContentActionButtonMargin : 0 0 0 0.22rem;
+@faqContentActionButtonFontSize : 1.5rem;
 @faqContentActionButtonBackground : transparent;
 @faqContentActionButtonIconMargin : 0;
 @faqContentActionMobileMarginTop: 0.625rem;

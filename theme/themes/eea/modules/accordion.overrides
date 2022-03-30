@@ -65,6 +65,16 @@
   }
 }
 
+.ui.accordion.faq {
+  .content {
+    background: @white;
+  }
+
+  > .content {
+    border-bottom: @1px solid @secondaryColor;
+  }
+}
+
 /* All content padding are equal including last child */
 .ui.accordion:not(.styled) .title ~ .content:not(.ui):last-child {
   padding-bottom: @contentPaddingBottom;
