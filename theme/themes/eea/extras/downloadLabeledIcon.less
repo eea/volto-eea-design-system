@@ -7,10 +7,13 @@
         Download Labeled Icon
 *******************************/
 .eea.download.labeled.icon {
-  width: @downloadLabeledIconWidth;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  width: @downloadLabeledIconWidth;
+  min-width: @downloadLabeledIconMinWidth;
+  text-align: @downloadLabeledIconTextAlign;
+
   .label {
     width: @downloadLabeledIconLabelWidth;
     font-size: @downloadLabeledIconLabelFontSize;
@@ -18,11 +21,12 @@
     cursor: pointer;
   }
   .icon.wrapper {
-    width: 100%;
     text-align: center;
     display: flex;
     justify-content: center;
-    padding: 8px;
+    width: @downloadLabeledIconWrapperWidth;
+    padding: @downloadLabeledIconWrapperPadding;
+
     .icon {
       cursor: pointer;
       font-size: @downloadLabeledIconIconFontSize;
@@ -35,6 +39,7 @@
   }
 
   .dropdown {
+    position: relative;
     width: @downloadLabeledIconDropdownWIdth;
 
     .link.wrapper {
@@ -42,18 +47,19 @@
       cursor: pointer;
       background-color: @downloadLabeledIconLinkWrapperBackgroundColor;
       z-index: @downloadLabeledIconLinkWrapperZIndex;
-      margin-right: @downloadLabeledIconLinkWrapperMarginRight;
       width: @downloadLabeledIconLinkWrapperWidth;
-      padding-top: @downloadLabeledIconLinkWrapperPaddingTop;
+
       ul {
         list-style-type: none;
-        margin-block-start: @downloadLabeledIconUlMarginBlockStart;
+        margin: @downloadLabeledIconUlMargin;
         padding-inline-start: @downloadLabeledIconUlPaddingInlineStart;
+
         a {
           display: flex;
-          justify-content: space-around;
+          justify-content: center;
           font-weight: @downloadLabeledIconALinkFontWeight;
           font-size: @downloadLabeledIconLinkFontSize;
+          padding: @downloadLabeledIconLinkIconPadding;
           .icon {
             font-size: @downloadLabeledIconLinkIconFontSize;
             line-height: @downloadLabeledIconLinkIconLineHeight;

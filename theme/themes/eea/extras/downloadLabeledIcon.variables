@@ -3,43 +3,41 @@
 *******************************/
 
 /* Body */
-@downloadLabeledIconWidth: 62px;
+@downloadLabeledIconWidth: min-content;
+@downloadLabeledIconMinWidth: 5rem;
+@downloadLabeledIconTextAlign: center;
 
 /* Label */
 @downloadLabeledIconLabelWidth: 100%;
-@downloadLabeledIconLabelFontSize: 14px;
+@downloadLabeledIconLabelFontSize: 0.875rem;
 @downloadLabeledIconLabelColor: @deepBlue;
 
-/* Extra */
+/* Wrapper */
 @downloadLabeledIconWrapperWidth: 100%;
-@downloadLabeledIconWrapperBorderTop: 0px;
-@downloadLabeledIconWrapperColor: @white;
-@downloadLabeledIconWrapperFontSize: 14px;
+@downloadLabeledIconWrapperPadding: 0.5rem;
 
 /* Icon */
-@downloadLabeledIconIconFontSize: 25px;
-@downloadLabeledIconWrapperIconHeight: 20px;
-@downloadLabeledIconIconWidth: 19px;
+@downloadLabeledIconIconFontSize: 1.563rem;
+@downloadLabeledIconWrapperIconHeight: 1.25rem;
+@downloadLabeledIconIconWidth: 1.25rem;
 
 /* Link Wrapper */
 @downloadLabeledIconLinkWrapperBackgroundColor: #f9f9f9;
 @downloadLabeledIconLinkWrapperZIndex: 1;
-@downloadLabeledIconLinkWrapperMarginRight: 2.1em;
-@downloadLabeledIconLinkWrapperWidth: 4em;
-@downloadLabeledIconLinkWrapperPaddingLeft: 9px;
-@downloadLabeledIconLinkWrapperPaddingTop: 5px;
+@downloadLabeledIconLinkWrapperWidth: 100%;
 
 /* Dropdown */
 @downloadLabeledIconDropdownWIdth: 100%;
 
 /* List */
-@downloadLabeledIconUlMarginBlockStart: 0;
+@downloadLabeledIconUlMargin: 0.25rem 0;
 @downloadLabeledIconUlPaddingInlineStart: 0px;
 @downloadLabeledIconLiHover: @deepBlue;
 
 /* Link */
 @downloadLabeledIconALinkFontWeight: 700;
-@downloadLabeledIconLinkFontSize: 14px;
-@downloadLabeledIconLinkIconFontSize: 16px;
-@downloadLabeledIconLinkIconLineHeight: 20px;
+@downloadLabeledIconLinkFontSize: 0.875rem;
+@downloadLabeledIconLinkIconFontSize: 1rem;
+@downloadLabeledIconLinkIconPadding: 0.125rem 0;
+@downloadLabeledIconLinkIconLineHeight: 1.25rem;
 @downloadLabeledIconALinkColorHover: @white;
