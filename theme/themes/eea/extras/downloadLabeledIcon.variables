@@ -20,6 +20,7 @@
 @downloadLabeledIconIconFontSize: 1.563rem;
 @downloadLabeledIconWrapperIconHeight: 1.25rem;
 @downloadLabeledIconIconWidth: 1.25rem;
+@downloadLabeledIconColor: @mediumPersianBlue;
 
 /* Link Wrapper */
 @downloadLabeledIconLinkWrapperBackgroundColor: #f9f9f9;
