@@ -112,3 +112,7 @@
 /* Inverted */
 @invertedTitleColor: @invertedTextColor;
 
+/* FaQ */
+@faqContentBackground: @white;
+@faqContentBorderBottom: @1px solid @secondaryColor;
+

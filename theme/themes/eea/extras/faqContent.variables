@@ -10,10 +10,12 @@
 @faqContentRowMobilePadding   : 0;
 @faqContentFontSize           : 1rem;
 @faqContentFontWeight         : 400;
+@faqContentLineHeight         : 1.5rem;
 
 /* FAQ Content Info */
 @faqContentInfoHeight         : 1.5rem;
 @faqContentInfoLineHeight     : 1.5rem;
+@faqContentInfoTextColor      : @japaneseIndigo;
 
 /* FAQ Content Language */
 @faqContentInfoLangFontSize   : 1.125rem;
@@ -27,22 +29,14 @@
 @faqContentInfoItemFontSize   : 0.875rem;
 @faqContentInfoItemMarginLeft : 0.312rem;
 
-@faqContentInfoLangWidth: 260px;
-@faqContentInfoLangPadding: 0.375rem;
-
-
-/* FAQ Content content */
-@faqContentContentLineHeight  : 1.5rem;
+@faqContentInfoLangWidth      : 260px;
+@faqContentInfoLangPadding    : 0.375rem;
 
 /* FAQ Content Actions */
-@faqContentActionPadding      : 0;
-@faqContentActionButtonMargin : 0 0 0 0.22rem;
-@faqContentActionButtonFontSize : 1.5rem;
+@faqContentActionPadding          : 0;
+@faqContentActionButtonMargin     : 0 0 0 0.22rem;
+@faqContentActionButtonFontSize   : 1.5rem;
 @faqContentActionButtonBackground : transparent;
 @faqContentActionButtonIconMargin : 0;
-@faqContentActionMobileMarginTop: 0.625rem;
-@faqContentActionDesktopMarginTop: 0;
-
-/* FAQ Content Colors */
-@faqContentInfoTextColor      : @japaneseIndigo;
-@faqContentContentTextColor   : @black;
+@faqContentActionMobileMarginTop  : 0.625rem;
+@faqContentActionDesktopMarginTop : 0;

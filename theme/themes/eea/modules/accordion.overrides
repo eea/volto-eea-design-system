@@ -65,13 +65,14 @@
   }
 }
 
+/* Faq accordion */
 .ui.accordion.faq {
   .content {
-    background: @white;
+    background: @faqContentBackground;
   }
 
   > .content {
-    border-bottom: @1px solid @secondaryColor;
+    border-bottom: @faqContentBorderBottom;
   }
 }
 

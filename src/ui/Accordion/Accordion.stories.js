@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import Content from '../FaqContent/FaqContent';
-import TagList from '../TagList/TagList';
-import Tag from '../Tag/Tag';
-import { Accordion, Icon, Button } from 'semantic-ui-react';
+import { Accordion, Icon } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Accordion',
@@ -182,7 +179,7 @@ function FAQAccordionContainer({ ...args }) {
         onClick={toggleOpenAccordion}
       >
         {args.accordionToggle1}
-        <Icon name="chevron down" />
+        <Icon className="ri-arrow-down-s-line" />
       </Accordion.Title>
       <Accordion.Content active={activeIndex === 0}>
         {FAQ_CONTENT}
@@ -193,7 +190,7 @@ function FAQAccordionContainer({ ...args }) {
         onClick={toggleOpenAccordion}
       >
         {args.accordionToggle2}
-        <Icon name="chevron down" />
+        <Icon className="ri-arrow-down-s-line" />
       </Accordion.Title>
       <Accordion.Content active={activeIndex === 1}>
         {FAQ_CONTENT}
@@ -203,35 +200,11 @@ function FAQAccordionContainer({ ...args }) {
         index={2}
         onClick={toggleOpenAccordion}
       >
-        {args.toggle}
-        <Icon name="chevron down" />
+        {args.accordionToggle3}
+        <Icon className="ri-arrow-down-s-line" />
       </Accordion.Title>
       <Accordion.Content active={activeIndex === 2}>
-        <Content>
-          <Content.Info>
-            {args.date}
-            <Content.Languages {...args.languageOptions}></Content.Languages>
-          </Content.Info>
-          <Content.Content>{args.content}</Content.Content>
-          <Content.Actions>
-            <TagList className="left">
-              <TagList.Title>{args.tagOptions.title}</TagList.Title>
-              <TagList.Content>
-                {args.tagOptions.tags.map((tag, index) => [
-                  <Tag className={tag.class} href={tag.href} key={index}>
-                    {tag.category}
-                  </Tag>,
-                ])}
-              </TagList.Content>
-            </TagList>
-            <Button>
-              <Icon className="ri-download-2-line"></Icon>
-            </Button>
-            <Button>
-              <Icon className="ri-share-fill"></Icon>
-            </Button>
-          </Content.Actions>
-        </Content>
+        {FAQ_CONTENT}
       </Accordion.Content>
     </Accordion>
   );
@@ -244,45 +217,8 @@ const FAQAccordionTemplate = (args) => (
 export const FAQAccordion = FAQAccordionTemplate.bind({});
 
 FAQAccordion.args = {
-  date: '21 SEP 2020',
   accordionToggle1: 'Older Versions',
   accordionToggle2: 'Permalinks',
-  toggle: 'What is soil sealing and why is it important to monitor it?',
+  accordionToggle3: 'Air pollution',
   content: FAQ_CONTENT,
-  tagOptions: {
-    title: 'Tags:',
-    tags: [
-      { category: 'land use', href: '#' },
-      { category: 'land use', href: '#' },
-    ],
-  },
-  languageOptions: {
-    default: 'en',
-    languages: [
-      { text: 'Albanian', key: 'sq' },
-      { text: 'Български', key: 'bg' },
-      { text: 'Bosnian', key: 'bs' },
-      { text: 'čeština', key: 'cs' },
-      { text: 'Hrvatski', key: 'hr' },
-      { text: 'dansk', key: 'da' },
-      { text: 'Nederlands', key: 'nl' },
-      { text: 'ελληνικά', key: 'el' },
-      { text: 'English', key: 'en' },
-      { text: 'eesti', key: 'et' },
-      { text: 'Suomi', key: 'fi' },
-      { text: 'Français', key: 'fr' },
-      { text: 'Deutsch', key: 'de' },
-      { text: 'magyar', key: 'hu' },
-      { text: 'Íslenska', key: 'is' },
-      { text: 'italiano', key: 'it' },
-      { text: 'Latviešu', key: 'lv' },
-      { text: 'lietuvių', key: 'lt' },
-      { text: 'Macedonian', key: 'mk' },
-      { text: 'Malti', key: 'mt' },
-      { text: 'Norsk', key: 'no' },
-      { text: 'polski', key: 'pl' },
-      { text: 'Português', key: 'pt' },
-      { text: 'Română', key: 'ro' },
-    ],
-  },
 };
