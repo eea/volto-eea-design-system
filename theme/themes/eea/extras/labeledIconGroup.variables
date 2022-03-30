@@ -5,5 +5,5 @@
 
 @labeledIconGroupWidth : 100%;
 
-@labeledIconGroupWrapperMarginLeft: 10px;
-@labeledIconGroupWrapperMarginRight: 10px;
+@labeledIconGroupWrapperMarginLeft: 0.25rem;
+@labeledIconGroupWrapperMarginRight: 0.25rem;
