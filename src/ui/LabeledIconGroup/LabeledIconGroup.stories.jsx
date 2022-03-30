@@ -6,7 +6,7 @@ export default {
   title: 'Components/Labeled Icons/Group',
   component: LabeledIconGroup,
   argTypes: {
-    newTab: {
+    tab: {
       description: 'NewTabLabeledIcon Component Contents',
       table: {
         type: { summary: 'Object' },
@@ -34,8 +34,8 @@ const DefaultTemplate = (args) => (
   <div>
     <LabeledIconGroup {...args}>
       <LabeledIconGroup.Download {...args.download}></LabeledIconGroup.Download>
-      <LabeledIconGroup.NewTab {...args.newTab}>
-        {args.newTab.label}
+      <LabeledIconGroup.NewTab {...args.tab}>
+        {args.tab.label}
       </LabeledIconGroup.NewTab>
       <LabeledIconGroup.Language {...args.language}></LabeledIconGroup.Language>
     </LabeledIconGroup>
@@ -44,7 +44,7 @@ const DefaultTemplate = (args) => (
 
 export const Default = DefaultTemplate.bind({});
 Default.args = {
-  newTab: {
+  tab: {
     label: 'Open in new Tab',
     link: '/#',
     icon: 'ri-share-box-fill',
@@ -61,7 +61,7 @@ Default.args = {
   },
   language: {
     title: 'Repost Language',
-    icon: <i class="ri-global-line"></i>,
+    icon: <i className="ri-global-line"></i>,
     items: [
       { text: 'English', key: 'EN' },
       { text: 'Russian', key: 'Ru' },
