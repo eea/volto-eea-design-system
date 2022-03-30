@@ -133,6 +133,35 @@
   }
 }
 
+.ui.popup.share-popup {
+  padding: @sharePopupPadding;
+  filter: @sharePopupFilter;
+
+  p {
+      font-size: @sharePopupFontSize;
+      font-weight: @sharePopupFontWeight;
+      line-height: @sharePopupLineHeight;
+  }
+
+  .actions {
+      flex-flow: column;
+      align-items: center;
+      i.icon {
+          color: @sharePopupActionsIconColor;
+      }
+
+      .action {
+          display:flex;
+          justify-content:center
+      }
+
+      .ui.button:not(.icon) > .icon:not(.button):not(.dropdown) {
+        margin: @sharePopupActionsIconMargin;
+      }
+  }
+
+}
+
 @media only screen and (min-width: @tabletBreakpoint) {
   .eea.faqContent {
     .row {
@@ -142,6 +171,21 @@
     .row.actions {
       align-items: center;
     }
+  }
+
+  .ui.popup.share-popup {
+    min-width: @tabletSharePopupMinWidth;
+
+    .actions{
+        flex-flow: row;
+        display: flex;
+        justify-content: space-between;
+
+        .action {
+            display:inherit;
+        }
+    }
+
   }
 }
 

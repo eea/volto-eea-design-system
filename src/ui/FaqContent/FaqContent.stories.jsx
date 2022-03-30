@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FaqContent from './FaqContent';
 import TagList from '../TagList/TagList';
 import Tag from '../Tag/Tag';
-import { Accordion, Button, Icon } from 'semantic-ui-react';
+import { Accordion, Button, Icon, Popup } from 'semantic-ui-react';
 
 const CONTENT = `
 Elit suspendisse a viverra consequat euismod. Leo ultricies enim pharetra viverra mi cursus lobortis nisl, ornare. Eu imperdiet tincidunt fames commodo. Sit mauris blandit ultrices magnis cras odio consequat, eu. Nibh est massa arcu sollicitudin.
@@ -112,9 +112,29 @@ function AccordionContainer({ ...args }) {
             <Button>
               <Icon className="ri-download-2-line"></Icon>
             </Button>
-            <Button>
-              <Icon className="ri-share-fill"></Icon>
-            </Button>
+            <Popup
+              className="share-popup"
+              trigger={
+                <Button>
+                  <Icon className="ri-share-fill"></Icon>
+                </Button>
+              }
+              content={() => (
+                <>
+                  <p>Share to:</p>
+                  <div className="actions">
+                    <Icon className="ri-facebook-fill" />
+                    <Icon className="ri-twitter-fill" />
+                    <Icon className="ri-linkedin-fill" />
+                    <Icon className="blogger b" />
+                    <Icon className="ri-reddit-line" />
+                    <Icon className="stumbleupon circle" />
+                  </div>
+                </>
+              )}
+              basic
+              on="click"
+            />
           </FaqContent.Actions>
         </FaqContent>
       </Accordion.Content>
