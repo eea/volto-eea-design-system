@@ -369,7 +369,7 @@ const Template = (args) => {
                 }}
                 href={item['@id'] || item.url}
               >
-                {item.title}
+                <span className={'item'}>{item.title}</span>
               </a>
             );
           }}
