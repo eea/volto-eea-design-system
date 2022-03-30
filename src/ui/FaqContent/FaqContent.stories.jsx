@@ -122,14 +122,14 @@ function AccordionContainer({ ...args }) {
               content={() => (
                 <>
                   <p>Share to:</p>
-                  <div className="actions">
-                    <Icon className="ri-facebook-fill" />
-                    <Icon className="ri-twitter-fill" />
-                    <Icon className="ri-linkedin-fill" />
-                    <Icon className="blogger b" />
-                    <Icon className="ri-reddit-line" />
-                    <Icon className="stumbleupon circle" />
-                  </div>
+                  <FaqContent.Actions>
+                    <FaqContent.Action icon="ri-facebook-fill" />
+                    <FaqContent.Action icon="ri-twitter-fill" />
+                    <FaqContent.Action icon="ri-linkedin-fill" />
+                    <FaqContent.Action icon="blogger b" />
+                    <FaqContent.Action icon="ri-reddit-line" />
+                    <FaqContent.Action icon="stumbleupon circle" />
+                  </FaqContent.Actions>
                 </>
               )}
               basic

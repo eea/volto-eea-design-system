@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dropdown, Image, Grid } from 'semantic-ui-react';
+import { Dropdown, Image, Grid, Button, Icon } from 'semantic-ui-react';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 
 function FaqContent({ children, ...rest }) {
@@ -27,6 +27,17 @@ FaqContent.Actions = ({ children, ...rest }) => (
     {children}
   </div>
 );
+
+FaqContent.Action = function ({ id, title, icon, onClick, className, color }) {
+  return (
+    <div className="action">
+      <Button className={className} basic inverted onClick={onClick}>
+        <Icon className={icon} color={color}></Icon>
+        <span className="mobile hidden">{title}</span>
+      </Button>
+    </div>
+  );
+};
 
 FaqContent.Languages = function Languages({ children, ...rest }) {
   const [language, setLanguage] = useState(rest.default);
