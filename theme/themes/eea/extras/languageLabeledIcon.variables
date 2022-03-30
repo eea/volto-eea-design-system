@@ -3,40 +3,39 @@
 *******************************/
 
 /* Body  */
-@languageLabeledIconWidth : 110px;
+@languageLabeledIconWidth : min-content;
+@languageLabeledIconMinWidth: 7rem;
+@languageLabeledIconTextAlign: center;
 
 /* Icon Wrapper  */
-@languageLabeledIconIconWrapperFontSize : 14px;
+@languageLabeledIconIconWrapperFontSize : 0.875rem;
 @languageLabeledIconIconWrapperFontWeight : 400;
 @languageLabeledIconIconWrapperColor : @deepBlue;
 
 /* Icon  */
-@languageLabeledIconIconWrapperIconColor : @mediumPersianBlue;
-@languageLabeledIconIconWrapperIconMarginRight : 3px;
-@languageLabeledIconIconWrapperIconFontSize : 1.5rem;
+@languageLabeledIconIconWrapperIconColor: @mediumPersianBlue;
+@languageLabeledIconIconWrapperIconMarginRight: 0.25rem;
+@languageLabeledIconIconWrapperIconFontSize: 1.5rem;
 
 /* Label  */
-@languageLabeledIconLabelColor : @deepBlue;
-@languageLabeledIconLabelFontSize : 14px;
+@languageLabeledIconLabelColor: @deepBlue;
+@languageLabeledIconLabelFontSize: 0.875rem;
 @languageLabeledIconLabelFontWeight: 400;
 
 /* Dropdown  */
-@languageLabeledIconDropdownBackgroundColor : #f9f9f9;
+@languageLabeledIconDropdownBackgroundColor: #f9f9f9;
 
 /* Link  */
-@languageLabeledIconDropdowLinkWrapperWidth : max-content;
+@languageLabeledIconDropdowLinkWrapperWidth: max-content;
 
 
 /* List  */
-@languageLabeledIconLabelUlMargin :0;
-@languageLabeledIconLabelUlColor : @japaneseIndigo;
-@languageLabeledIconLabelUlPaddingTop : 10px; 
-@languageLabeledIconLabelUlPaddingRight : 0;
-@languageLabeledIconLabelUlPaddingBottom : 10px;
-@languageLabeledIconLabelUlPaddingLeft : 0;
-@languageLabeledIconLabelUlPadding : @languageLabeledIconLabelUlPaddingTop @languageLabeledIconLabelUlPaddingRight @languageLabeledIconLabelUlPaddingBottom @languageLabeledIconLabelUlPaddingLeft;
+@languageLabeledIconLabelUlMargin:0;
+@languageLabeledIconLabelUlColor: @japaneseIndigo;
+@languageLabeledIconLabelUlPadding: 0.25rem;
 
 /* List Item  */
-@languageLabeledIconLabelUlLiColor :@white;
-@languageLabeledIconLabelUlLiBackgroundColor :  @japaneseIndigo;
-@languageLabeledIconLabelUlLiSpanFontWeight : 700;
+@languageLabeledIconLabelUlLiPadding: 0.125rem 0.313rem;
+@languageLabeledIconLabelUlLiColor: @white;
+@languageLabeledIconLabelUlLiBackgroundColor: @japaneseIndigo;
+@languageLabeledIconLabelUlLiSpanFontWeight: 700;
