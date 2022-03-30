@@ -43,7 +43,10 @@
       .metadata {
         font-size: @mobileMetadataFontSize;
         line-height: @mobileMetadataLineHeight;
-        font-weight: @metadataFontWeight;
+
+        .field.type {
+          font-weight: @metadataTypeFontWeight;
+        }
 
         span.field:not(:last-child)::after {
           content: @metadataFieldDividerContent;

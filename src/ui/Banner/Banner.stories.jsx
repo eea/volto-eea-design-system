@@ -110,9 +110,9 @@ export const Default = Template.bind({});
 Default.args = {
   title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   metadata: [
-    { hidden: false, value: 'Briefing', type: '' },
-    { hidden: false, value: 'Published Date', type: '' },
-    { hidden: false, value: 'Modified Date', type: '' },
+    { hidden: false, value: 'Briefing', type: 'type' },
+    { hidden: false, value: 'Published Date', type: 'date' },
+    { hidden: false, value: 'Modified Date', type: 'date' },
     { hidden: false, value: '5 min read', type: '' },
   ],
   image: true,

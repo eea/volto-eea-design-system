@@ -36,7 +36,7 @@
 @computerTitleMargin       : 0 0 1.125rem 0;
 
 /* Metadata */
-@metadataFontWeight        : @bold;
+@metadataTypeFontWeight    : @bold;
 @mobileMetadataFontSize    : 0.438rem;
 @tabletMetadataFontSize    : 0.875rem;
 @mobileMetadataLineHeight  : 0.5rem;
