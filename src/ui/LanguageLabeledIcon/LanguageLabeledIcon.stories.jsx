@@ -1,5 +1,6 @@
 import React from 'react';
 import LanguageLabeledIcon from './LanguageLabeledIcon';
+import LabeledIconGroup from '../LabeledIconGroup/LabeledIconGroup';
 
 export default {
   title: 'Components/Labeled Icons/Language',
@@ -30,19 +31,21 @@ export default {
 };
 
 const Template = (args) => (
-  <LanguageLabeledIcon
-    {...args}
-    trigger={
-      <div>
-        <LanguageLabeledIcon.Icon icon={args.icon}></LanguageLabeledIcon.Icon>
-        <LanguageLabeledIcon.Label>{args.label}</LanguageLabeledIcon.Label>
-      </div>
-    }
-  >
-    <LanguageLabeledIcon.Dropdown
-      items={args.items}
-    ></LanguageLabeledIcon.Dropdown>
-  </LanguageLabeledIcon>
+  <LabeledIconGroup>
+    <LanguageLabeledIcon
+      {...args}
+      trigger={
+        <div>
+          <LanguageLabeledIcon.Icon icon={args.icon}></LanguageLabeledIcon.Icon>
+          <LanguageLabeledIcon.Label>{args.label}</LanguageLabeledIcon.Label>
+        </div>
+      }
+    >
+      <LanguageLabeledIcon.Dropdown
+        items={args.items}
+      ></LanguageLabeledIcon.Dropdown>
+    </LanguageLabeledIcon>
+  </LabeledIconGroup>
 );
 
 export const Default = Template.bind({});

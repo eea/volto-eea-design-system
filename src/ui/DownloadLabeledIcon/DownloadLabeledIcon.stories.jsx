@@ -1,6 +1,6 @@
 import React from 'react';
 import DownloadLabeledIcon from './DownloadLabeledIcon';
-// eslint-disable-next-line import/no-unresolved
+import LabeledIconGroup from '../LabeledIconGroup/LabeledIconGroup';
 
 export default {
   title: 'Components/Labeled Icons/Download',
@@ -38,19 +38,21 @@ export default {
 };
 
 const DefaultTemplate = (args) => (
-  <DownloadLabeledIcon
-    {...args}
-    trigger={
-      <div>
-        <DownloadLabeledIcon.Icon {...args}>
-          {args.icon}
-        </DownloadLabeledIcon.Icon>
-        <DownloadLabeledIcon.Label>{args.label}</DownloadLabeledIcon.Label>
-      </div>
-    }
-  >
-    <DownloadLabeledIcon.Dropdown {...args}></DownloadLabeledIcon.Dropdown>
-  </DownloadLabeledIcon>
+  <LabeledIconGroup>
+    <DownloadLabeledIcon
+      {...args}
+      trigger={
+        <div>
+          <DownloadLabeledIcon.Icon {...args}>
+            {args.icon}
+          </DownloadLabeledIcon.Icon>
+          <DownloadLabeledIcon.Label>{args.label}</DownloadLabeledIcon.Label>
+        </div>
+      }
+    >
+      <DownloadLabeledIcon.Dropdown {...args}></DownloadLabeledIcon.Dropdown>
+    </DownloadLabeledIcon>
+  </LabeledIconGroup>
 );
 
 export const Default = DefaultTemplate.bind({});

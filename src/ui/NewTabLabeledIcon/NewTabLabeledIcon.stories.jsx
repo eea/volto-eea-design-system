@@ -1,6 +1,6 @@
 import React from 'react';
 import NewTabLabeledIcon from './NewTabLabeledIcon';
-// eslint-disable-next-line import/no-unresolved
+import LabeledIconGroup from '../LabeledIconGroup/LabeledIconGroup';
 
 export default {
   title: 'Components/Labeled Icons/New Tab',
@@ -31,12 +31,14 @@ export default {
 };
 
 const DefaultTemplate = (args) => (
-  <NewTabLabeledIcon {...args}>
-    <NewTabLabeledIcon.Icon {...args} e>
-      {args.icon}
-    </NewTabLabeledIcon.Icon>
-    <NewTabLabeledIcon.Label>{args.label}</NewTabLabeledIcon.Label>
-  </NewTabLabeledIcon>
+  <LabeledIconGroup>
+    <NewTabLabeledIcon {...args}>
+      <NewTabLabeledIcon.Icon {...args} e>
+        {args.icon}
+      </NewTabLabeledIcon.Icon>
+      <NewTabLabeledIcon.Label>{args.label}</NewTabLabeledIcon.Label>
+    </NewTabLabeledIcon>
+  </LabeledIconGroup>
 );
 
 export const Default = DefaultTemplate.bind({});
