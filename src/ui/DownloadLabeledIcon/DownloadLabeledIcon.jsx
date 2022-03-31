@@ -1,51 +1,37 @@
-import React, { useState, useContext, createContext } from 'react';
-import { Icon } from 'semantic-ui-react';
+import React from 'react';
+import { Icon, Popup } from 'semantic-ui-react';
 
-const DownloadContext = createContext();
 function DownloadLabeledIcon({ children, ...rest }) {
-  const [hidden, setHidden] = useState(true);
   return (
-    <DownloadContext.Provider value={{ hidden: hidden, setHidden: setHidden }}>
-      <div className="eea download labeled icon">{children}</div>
-    </DownloadContext.Provider>
+    <div className="eea download labeled icon">
+      <Popup
+        className="download-popup"
+        trigger={rest.trigger}
+        content={children}
+        basic
+        on="click"
+        position="bottom center"
+      />
+    </div>
   );
 }
 
 const Label = ({ children, ...rest }) => {
-  const context = useContext(DownloadContext);
-  return (
-    <div
-      className="label"
-      onClick={() => context.setHidden(!context.hidden)}
-      role="button"
-      tabIndex={0}
-      onKeyDown={() => context.setHidden(!context.hidden)}
-    >
-      {children}
-    </div>
-  );
+  return <div className="label">{children}</div>;
 };
 
 const IconItem = ({ children, ...rest }) => {
-  const context = useContext(DownloadContext);
   return (
-    <div
-      className="icon wrapper"
-      onClick={() => context.setHidden(!context.hidden)}
-      onKeyDown={() => context.setHidden(!context.hidden)}
-      role="button"
-      tabIndex={0}
-    >
+    <div className="icon wrapper">
       <Icon className={rest.icon} />
     </div>
   );
 };
 
 const Dropdown = ({ children, ...rest }) => {
-  const context = useContext(DownloadContext);
   return (
     <div className="dropdown">
-      <div className={`link wrapper ${context.hidden ? 'hidden' : ''}`}>
+      <div className="link wrapper">
         <ul>
           {rest.links !== null &&
             rest.links.map((item, index) => (

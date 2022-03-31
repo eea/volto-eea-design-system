@@ -20,6 +20,13 @@ export default {
         type: { summary: 'string' },
       },
     },
+    downloadIcon: {
+      description: 'Download option Icon',
+      table: {
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
+      },
+    },
     links: {
       description: 'array of list content',
       table: {
@@ -31,11 +38,17 @@ export default {
 };
 
 const DefaultTemplate = (args) => (
-  <DownloadLabeledIcon {...args}>
-    <DownloadLabeledIcon.Icon {...args} e>
-      {args.icon}
-    </DownloadLabeledIcon.Icon>
-    <DownloadLabeledIcon.Label>{args.label}</DownloadLabeledIcon.Label>
+  <DownloadLabeledIcon
+    {...args}
+    trigger={
+      <div>
+        <DownloadLabeledIcon.Icon {...args}>
+          {args.icon}
+        </DownloadLabeledIcon.Icon>
+        <DownloadLabeledIcon.Label>{args.label}</DownloadLabeledIcon.Label>
+      </div>
+    }
+  >
     <DownloadLabeledIcon.Dropdown {...args}></DownloadLabeledIcon.Dropdown>
   </DownloadLabeledIcon>
 );
