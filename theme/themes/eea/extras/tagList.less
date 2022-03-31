@@ -13,10 +13,7 @@
   align-items: flex-start;
   justify-content: right;
   width: @tagsBodyWidth;
-  font-family: @tagsfontName;
-  font-style: @tagsFontStyle;
   line-height: @tagsLineHeight;
-  letter-spacing: @tagsLetterSpacing;
 
   .tags-title {
     text-align: right;
@@ -33,12 +30,7 @@
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
-
-    & > * {
-      margin-top: @tagsListMarginTopMobile;
-    }
   }
-
 }
 
 .tags.left {
@@ -53,15 +45,6 @@
 
     .tags-content {
       flex-direction: inherit;
-
-      & > * {
-        margin-top: @tagsListMarginTopTablet;
-      }
     }
   }
 }
-
-@media only screen and (min-width: @computerBreakpoint) {
-}
-
-.loadUIOverrides();

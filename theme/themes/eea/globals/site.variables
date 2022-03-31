@@ -69,10 +69,10 @@
 @headerLineHeight : 1.25;
 @headerFontWeight : 700;
 
-@h1 : unit((30 / 16), rem);
-@h2 : unit((24 / 16), rem);
-@h3 : unit((20 / 16), rem);
-@h4 : unit((18 / 16), rem);
+@h1 : unit((48 / 16), rem);
+@h2 : unit((40 / 16), rem);
+@h3 : unit((36 / 16), rem);
+@h4 : unit((24 / 16), rem);
 @h5 : unit((20 / 16), rem);
 @h6 : unit((18 / 16), rem);
 

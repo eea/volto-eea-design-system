@@ -10,27 +10,10 @@ export default {
       description: 'Tag main text',
       type: { name: 'string', required: true },
     },
-    background: {
-      control: { type: 'select' },
-      options: ['default', 'pine-green', 'teal', 'blue-dark', 'blue-light'],
-      description: 'tag background',
-      table: {
-        type: {
-          summary: 'string',
-        },
-        defaultValue: {
-          summary: 'default',
-        },
-      },
-    },
   },
 };
 
-export const Default = (args) => (
-  <Tag className={args.background} href={args.href}>
-    {args.title}
-  </Tag>
-);
+export const Default = (args) => <Tag href={args.href}>{args.title}</Tag>;
 
 Default.args = {
   title: 'subcategory 1',

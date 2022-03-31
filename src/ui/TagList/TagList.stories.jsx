@@ -57,7 +57,7 @@ Default.args = {
   tags: [
     { category: 'land use 1', href: '#' },
     { category: 'land use 2', href: '#' },
-    { category: 'land use 3', href: '#', class: 'teal' },
-    { category: 'land use 4', href: '#', class: 'blue-light' },
+    { category: 'land use 3', href: '#' },
+    { category: 'land use 4', href: '#' },
   ],
 };

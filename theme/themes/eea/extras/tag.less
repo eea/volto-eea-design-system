@@ -14,8 +14,8 @@
   justify-content: center;
   text-align: center;
   height: @tagHeight;
-  border-radius: @tagBorderRadius;
   margin: @tagMargin;
+  padding: @tagPadding;
   background: @tagDefaultColor;
   font-size: @tagNameFontSize;
   font-weight: @tagNameFontWeight;
@@ -33,58 +33,5 @@
 
   .name {
     color: @tagNameFontColor;
-    letter-spacing: @tagNameLetterSpacing;
   }
 }
-
-.tag.pine-green {
-  background: @tagPineGreen;
-  padding: @tagPadding ;
-  .icon {
-    color: @tagNameFontColorWithBackground;
-  }
-  .name {
-    color: @tagNameFontColorWithBackground;
-  }
-}
-
-.tag.teal {
-  background: @tagTealColor;
-  padding: @tagPadding ;
-  .icon {
-    color: @tagNameFontColorWithBackground;
-  }
-  .name {
-    color: @tagNameFontColorWithBackground;
-  }
-}
-
-.tag.blue-dark {
-  background: @tagBlueDarkColor;
-  padding: @tagPadding ;
-  .icon {
-    color: @tagNameFontColorWithBackground;
-  }
-  .name {
-    color: @tagNameFontColorWithBackground;
-  }
-}
-
-.tag.blue-light {
-  background: @tagBlueLightColor;
-  padding: @tagPadding ;
-  .icon {
-    color: @tagNameFontColorWithBackground;
-  }
-  .name {
-    color: @tagNameFontColorWithBackground;
-  }
-}
-
-@media only screen and (min-width: @tabletBreakpoint) {
-}
-
-@media only screen and (min-width: @computerBreakpoint) {
-}
-
-.loadUIOverrides();
