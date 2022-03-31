@@ -60,7 +60,7 @@ Default.args = {
     ],
   },
   language: {
-    title: 'Repost Language',
+    label: 'Repost Language',
     icon: <i className="ri-global-line"></i>,
     items: [
       { name: 'English', code: 'en' },

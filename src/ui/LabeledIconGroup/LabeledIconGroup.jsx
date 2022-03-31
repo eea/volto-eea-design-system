@@ -14,11 +14,17 @@ function LabeledIconGroup({ children, ...rest }) {
 LabeledIconGroup.Download = ({ children, ...rest }) => {
   return (
     <div className="group wrapper">
-      <DownloadLabeledIcon {...rest}>
-        <DownloadLabeledIcon.Icon {...rest}>
-          {rest.icon}
-        </DownloadLabeledIcon.Icon>
-        <DownloadLabeledIcon.Label>{rest.label}</DownloadLabeledIcon.Label>
+      <DownloadLabeledIcon
+        {...rest}
+        trigger={
+          <div>
+            <DownloadLabeledIcon.Icon {...rest}>
+              {rest.icon}
+            </DownloadLabeledIcon.Icon>
+            <DownloadLabeledIcon.Label>{rest.label}</DownloadLabeledIcon.Label>
+          </div>
+        }
+      >
         <DownloadLabeledIcon.Dropdown {...rest}></DownloadLabeledIcon.Dropdown>
       </DownloadLabeledIcon>
     </div>
@@ -39,9 +45,17 @@ LabeledIconGroup.NewTab = ({ children, ...rest }) => {
 LabeledIconGroup.Language = ({ children, ...rest }) => {
   return (
     <div className="group wrapper">
-      <LanguageLabeledIcon {...rest}>
-        <LanguageLabeledIcon.Icon icon={rest.icon}></LanguageLabeledIcon.Icon>
-        <LanguageLabeledIcon.Label>{rest.title}</LanguageLabeledIcon.Label>
+      <LanguageLabeledIcon
+        {...rest}
+        trigger={
+          <div>
+            <LanguageLabeledIcon.Icon
+              icon={rest.icon}
+            ></LanguageLabeledIcon.Icon>
+            <LanguageLabeledIcon.Label>{rest.label}</LanguageLabeledIcon.Label>
+          </div>
+        }
+      >
         <LanguageLabeledIcon.Dropdown
           items={rest.items}
         ></LanguageLabeledIcon.Dropdown>
