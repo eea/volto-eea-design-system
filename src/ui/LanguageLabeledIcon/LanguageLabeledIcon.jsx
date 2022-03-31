@@ -1,37 +1,33 @@
 import React, { useState, useContext, createContext } from 'react';
+import { Popup } from 'semantic-ui-react';
 
 const LanguageContext = createContext();
 
 function LanguageLabeledIcon({ children, ...rest }) {
-  const [hidden, seHidden] = useState(true);
   const [language, setLanguage] = useState('EN');
   return (
     <LanguageContext.Provider
       value={{
-        hidden: hidden,
-        setHidden: seHidden,
         language: language,
         setLanguage: setLanguage,
       }}
     >
-      <div className="eea language labeled icon">{children}</div>
+      <div className="eea language labeled icon">
+        <Popup
+          className="language-popup"
+          trigger={rest.trigger}
+          content={children}
+          basic
+          on="click"
+          position="bottom center"
+        />
+      </div>
     </LanguageContext.Provider>
   );
 }
 
 const Label = ({ children, ...rest }) => {
-  const context = useContext(LanguageContext);
-  return (
-    <div
-      className="label"
-      onClick={() => context.setHidden(!context.hidden)}
-      onKeyDown={() => context.setHidden(!context.hidden)}
-      role="button"
-      tabIndex={0}
-    >
-      {children}
-    </div>
-  );
+  return <div className="label">{children}</div>;
 };
 
 LanguageLabeledIcon.Label = Label;
@@ -39,13 +35,7 @@ LanguageLabeledIcon.Label = Label;
 const Icon = ({ children, ...rest }) => {
   const context = useContext(LanguageContext);
   return (
-    <div
-      className="icon wrapper"
-      onClick={() => context.setHidden(!context.hidden)}
-      onKeyDown={() => context.setHidden(!context.hidden)}
-      role="button"
-      tabIndex={0}
-    >
+    <div className="icon wrapper">
       {rest.icon}
       <span>{context.language}</span>
     </div>
@@ -63,7 +53,7 @@ const Dropdown = ({ children, ...rest }) => {
 
   return (
     <div className="dropdown">
-      <div className={`link wrapper ${context.hidden ? 'hidden' : ''}`}>
+      <div className={`link wrapper`}>
         <ul>
           {first.map((item, index) => (
             <li key={index}>

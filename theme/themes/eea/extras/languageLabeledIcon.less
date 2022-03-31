@@ -18,6 +18,7 @@
   .icon.wrapper {
     cursor: pointer;
     display: flex;
+    justify-content: center;
     align-items: center;
     font-size: @languageLabeledIconIconWrapperFontSize;
     font-weight: @languageLabeledIconIconWrapperFontWeight;
@@ -36,16 +37,20 @@
     font-weight: @languageLabeledIconLabelFontWeight;
     cursor: pointer;
   }
+}
+
+.ui.popup.language-popup {
+  margin: 0;
+  padding: 0;
+  border: none;
 
   .dropdown {
 
     .link.wrapper {
       display: flex;  
-      position: absolute;
       width: @languageLabeledIconDropdowLinkWrapperWidth;
       background-color: @languageLabeledIconDropdownBackgroundColor;
       z-index: 1;
-      transform: translate(-50%,0);
 
       &.hidden {
         display: none;
