@@ -50,16 +50,19 @@
 @tabletActionsAlignItems                 : flex-end;
 @tabletActionsFlexDirection              : column;
 // Action
-@tabletActionsActionMinWidth             : 90px;
+@tabletActionsActionMinWidth             : 95px;
 // Button
 @mobileBannerActionButtonFontSize        : 0.75rem;
 @tabletBannerActionButtonFontSize        : 0.875rem;
 @bannerActionButtonBoxShadow             : none;
 @bannerActionButtonActiveBackgroundColor : transparent;
-// Button Icon
-@bannerActionButtonIconOpacity           : 1;
 @mobileBannerActionButtonMargin          : 0;
-@tabletBannerActionButtonMargin          : 0 0.313rem 0.313rem 0;
+@tabletBannerActionButtonMargin          : 0 0.313rem 0 0;
+// Button Icon
+@bannerActionButtonIconVerticalAlign     : text-bottom;
+@bannerActionButtonIconOpacity           : 1;
+@mobileBannerActionButtonIconFontSize    : 1rem;
+@tabletBannerActionButtonIconFontSize    : 1.1rem;
 
 /* Share Popup */
 @sharePopupPadding: @tinyGap;

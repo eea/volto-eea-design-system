@@ -81,7 +81,7 @@ const Template = (args) => (
           )}
           {!args.hideDownloadButton && (
             <Banner.Action
-              icon="download"
+              icon="ri-download-2-line"
               title="Download"
               className="download"
             />
