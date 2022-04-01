@@ -11,7 +11,7 @@
    background-color: @highImportanceBackground;
 
     &::before {
-      background-color: @highImportanceBackground;
+      background-color: @highImportanceBackground !important;
    }
  }
 
@@ -19,7 +19,7 @@
    background-color: @mediumImportanceBackground;
 
    &::before {
-     background-color: @mediumImportanceBackground;
+     background-color: @mediumImportanceBackground !important;
    }
  }
 
@@ -27,7 +27,7 @@
    background-color: @highlightImportanceBackground;
 
    &::before {
-     background-color: @highlightImportanceBackground;
+     background-color: @highlightImportanceBackground !important;
    }
  }
 
@@ -35,6 +35,6 @@
    background-color: @lowImportanceBackground;
 
    &::before {
-     background-color: @lowImportanceBackground;
+     background-color: @lowImportanceBackground !important;
    }
  }
