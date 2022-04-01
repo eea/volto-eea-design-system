@@ -1,3 +1,40 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+.ui.popup {
+  font-size: @tooltipFontSize;
+  color: @white;
+}
+
+ .ui.popup.high {
+   background-color: @highImportanceBackground;
+
+    &::before {
+      background-color: @highImportanceBackground;
+   }
+ }
+
+ .ui.popup.medium {
+   background-color: @mediumImportanceBackground;
+
+   &::before {
+     background-color: @mediumImportanceBackground;
+   }
+ }
+
+ .ui.popup.highlight {
+   background-color: @highlightImportanceBackground;
+
+   &::before {
+     background-color: @highlightImportanceBackground;
+   }
+ }
+
+ .ui.popup.low {
+   background-color: @lowImportanceBackground;
+
+   &::before {
+     background-color: @lowImportanceBackground;
+   }
+ }
