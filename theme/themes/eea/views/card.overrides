@@ -19,3 +19,66 @@
 .ui.right.card {
   margin-left: auto;
 }
+
+.eea.card.avatar {
+  border: none;
+  width: @avatarWidth;
+  .content {
+    border-top: none;
+    justify-content: center;
+    .image {
+      background-color: @white;
+      display: flex;
+      justify-content: center;
+    }
+    .header {
+      text-align: center;
+      font-weight: @avatarContentTitleFontWeight;
+      font-size: @avatarContentTitleFontSize;
+      margin-bottom: @avatarContentTitleMarginBottom;
+    }
+    .description {
+      text-align: center;
+    }
+  }
+}
+
+.eea.card.avatar.big {
+  .image {
+    background-color: @white;
+    display: flex;
+    justify-content: center;
+    img {
+      height: @avatarBigImageHeight;
+      width: @avatarBigImageWidth;
+      border-radius: 50%;
+    }
+  }
+
+  .description {
+    font-size: @avatarBigMetadataFontSize;
+    font-weight: @avatarBigMetadataFontWeight;
+  }
+}
+
+.eea.avatar.small {
+  .image {
+    background-color: @white;
+    display: flex;
+    justify-content: center;
+    img {
+      display: flex;
+      height: @avatarSmallImageHeight;
+      width: @avatarSmallImageWidth;
+      border-radius: 50%;
+    }
+  }
+
+  .header {
+    color: @avatarSmallTitleColor;
+  }
+  .description {
+    font-size: @avatarSmallMetadataFontSize;
+    font-weight: @avatarSmallMetadataFontWeight;
+  }
+}

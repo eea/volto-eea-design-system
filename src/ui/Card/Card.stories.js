@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Image, Icon } from 'semantic-ui-react';
+import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/avatar.png';
 
 export default {
   title: 'Components/Card',
@@ -64,6 +65,11 @@ export default {
         defaultValue: { summary: ' "" ' },
       },
     },
+    avatarVariant: {
+      options: ['big', 'small'],
+      control: { type: 'inline-radio' },
+      defaultValue: 'big' ,
+    },
   },
 };
 
@@ -104,4 +110,30 @@ Default.args = {
   hasImage: true,
   fluid: false,
   links: [{ linkName: 'Link 1', icon: 'linkify' }],
+};
+
+
+const AvatarTemplate = (args) => (
+  <Card className={`eea avatar ${args.avatarVariant}`} fluid={args.fluid}>
+    <Image
+      src={args.src}
+      wrapped
+      ui={false}
+      alt="card image"
+    />
+    <Card.Content>
+      <Card.Header>{args.title}</Card.Header>
+      <Card.Description>{args.description}</Card.Description>
+    </Card.Content>
+  </Card>
+);
+
+export const Avatar = AvatarTemplate.bind({});
+Avatar.args = {
+  avatarVariant: ['big', 'small'],
+  src: imgUrl,
+  title: 'Lorem Ipsum',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  hasImage: true,
+  fluid: false
 };
