@@ -22,6 +22,7 @@
 @borderWidth: 0;
 @border: none;
 
+@labelLineHeight: inherit;
 @lineHeightOffset: -(@verticalPadding / 2);
 
 @labelTransitionDuration: @defaultDuration;
