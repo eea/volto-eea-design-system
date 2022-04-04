@@ -1,0 +1,22 @@
+/*******************************
+            Tags
+*******************************/
+
+/* Tags */
+@tagPadding            : @mediumGap 0;
+@tagHeight             : 1.25rem;
+@tagMargin             : 0 @mediumGap 0 0;
+
+/* Tag Icon */
+@tagHashtagFontSize    : 0.75rem;
+@tagHashtagMargin      : 0 0.2rem 0 0;
+
+/* Tag text */
+@tagNameFontSize       : 1rem;
+@tagNameFontColor      : @japaneseIndigo;
+@tagNameFontColorWithBackground : @white;
+@tagNameFontWeight     : 500;
+@tagNameLineHeight     : 1.25rem;
+
+/* Tags Colors */
+@tagDefaultColor       : transparent;
