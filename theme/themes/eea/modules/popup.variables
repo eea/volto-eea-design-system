@@ -102,6 +102,11 @@
 @tooltipArrowCenterBackground: @arrowCenterBackground;
 @tooltipArrowBottomBackground: @arrowBottomBackground;
 
+/* Link */
+@textDecoration: underline;
+@noTextDecoration: none;
+@cursor: pointer;
+
 /*-------------------
        Coupling
 --------------------*/

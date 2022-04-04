@@ -4,37 +4,80 @@
 
 .ui.popup {
   font-size: @tooltipFontSize;
-  color: @white;
 }
 
- .ui.popup.high {
-   background-color: @highImportanceBackground;
+.ui.popup.high {
+  background-color: @highImportanceBackground;
+  color: @tooltipInvertedColor;
 
-    &::before {
-      background-color: @highImportanceBackground !important;
-   }
- }
+  &::before {
+    background-color: @highImportanceBackground !important;
+  }
 
- .ui.popup.medium {
-   background-color: @mediumImportanceBackground;
+  a {
+    color: @tooltipInvertedColor;
+    text-decoration: @textDecoration;
 
-   &::before {
-     background-color: @mediumImportanceBackground !important;
-   }
- }
+    &:hover {
+      text-decoration: @noTextDecoration;
+    }
+  }
+}
 
- .ui.popup.highlight {
-   background-color: @highlightImportanceBackground;
+.ui.popup.medium {
+  background-color: @mediumImportanceBackground;
+  color: @tooltipInvertedColor;
 
-   &::before {
-     background-color: @highlightImportanceBackground !important;
-   }
- }
+  &::before {
+    background-color: @mediumImportanceBackground !important;
+  }
 
- .ui.popup.low {
-   background-color: @lowImportanceBackground;
+  a {
+    color: @tooltipInvertedColor;
+    text-decoration: @textDecoration;
 
-   &::before {
-     background-color: @lowImportanceBackground !important;
-   }
- }
+    &:hover {
+      text-decoration: @noTextDecoration;
+    }
+  }
+}
+
+.ui.popup.highlight {
+  background-color: @highlightImportanceBackground;
+  color: @tooltipInvertedColor;
+
+  &::before {
+    background-color: @highlightImportanceBackground !important;
+  }
+
+  a {
+    color: @tooltipInvertedColor;
+    text-decoration: @textDecoration;
+
+    &:hover {
+      text-decoration: @noTextDecoration;
+    }
+  }
+}
+
+.ui.popup.low {
+  background-color: @lowImportanceBackground;
+  color: @tooltipInvertedColor;
+
+  &::before {
+    background-color: @lowImportanceBackground !important;
+  }
+
+  a {
+    color: @tooltipInvertedColor;
+    text-decoration: @textDecoration;
+
+    &:hover {
+      text-decoration: @noTextDecoration;
+    }
+  }
+}
+
+.with-popup {
+  cursor: @cursor;
+}
