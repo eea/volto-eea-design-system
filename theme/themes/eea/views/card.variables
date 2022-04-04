@@ -7,7 +7,15 @@
 --------------------*/
 
 @cardBorder: 1px solid @midGray;
-@background: @darkCerulean;
+@background: @white;
+
+/* Inverted */
+@invertedBackground: @darkCerulean;
+@invertedHeaderColor: @white;
+@invertedDescriptionColor: @white;
+@invertedExtraLinkColor: @white;
+@invertedExtraLinkHoverColor: @white;
+@invertedMetaColor: @white;
 
 /* Shadow */
 @shadowDistance: 1px;
@@ -79,7 +87,7 @@
 @headerFontWeight: @bold;
 @headerFontSize: 1.125rem;
 @headerLineHeightOffset: -(@lineHeight - 1em) / 2;
-@headerColor: @white;
+@headerColor: @black;
 
 /* Metadata */
 @metaFontSize: @relativeMedium;
@@ -112,7 +120,7 @@
 
 /* Description */
 @descriptionDistance: 0.5em;
-@descriptionColor: @white;
+@descriptionColor: @black;
 
 /* Content Image */
 @contentImageWidth: '';
@@ -143,8 +151,8 @@
 @extraTransition: color @defaultDuration @defaultEasing;
 
 /* Extra Links */
-@extraLinkColor: @white;
-@extraLinkHoverColor: @white;
+@extraLinkColor: @linkColor;
+@extraLinkHoverColor: @linkHoverColor;
 @extraLinkWordBreak: break-all;
 @extraLinkFontSize: 0.875rem;
 

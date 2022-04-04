@@ -2,6 +2,31 @@
          Theme Overrides
 *******************************/
 
+/* Inverted Card */
+.ui.card.inverted {
+  background: @invertedBackground;
+
+  > .content > .header {
+    color: @invertedHeaderColor;
+  }
+
+  > .content > .description {
+    color: @invertedDescriptionColor;
+  }
+
+  > .extra.content a:not(.ui) {
+    color: @invertedExtraLinkColor;
+
+    &:hover {
+      color: @invertedExtraLinkHoverColor;
+    }
+  }
+
+  > .content > .meta {
+    color: @invertedMetaColor;
+  }
+}
+
 /* Avoid long links from spilling outside of card body area */
 .ui.cards > .card > .extra,
 .ui.card > .extra {

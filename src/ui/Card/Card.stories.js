@@ -61,7 +61,7 @@ export default {
 };
 
 const Template = (args) => (
-  <Card fluid={args.fluid}>
+  <Card fluid={args.fluid} className="inverted">
     {args.hasImage && (
       <Image src={args.imgUrl} wrapped ui={false} alt="card image" />
     )}
@@ -94,7 +94,7 @@ const GridTemplate = (args) => (
   <Grid>
     {args.cards.map((card) => (
       <Grid.Column mobile={12} tablet={6} computer={2}>
-        <Card fluid={card.fluid}>
+        <Card fluid={card.fluid} className="inverted">
           {card.hasImage && (
             <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
           )}
