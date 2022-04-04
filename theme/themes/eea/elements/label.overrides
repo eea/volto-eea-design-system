@@ -4,6 +4,7 @@
 
 .ui.label {
   font-size: @labelFontSize;
+  line-height: @labelLineHeight;
 }
 
 .ui.label.medium {
