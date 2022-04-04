@@ -65,6 +65,7 @@ const Main = ({
   pathname,
 }) => {
   const [activeItem, setActiveItem] = React.useState('');
+  console.log('active in content', activeItem);
   const [menuIsActive, setMenuIsActive] = React.useState(false);
   const [searchIsActive, setSearchIsActive] = React.useState(false);
   const [burger, setBurger] = React.useState('');
@@ -132,18 +133,34 @@ const Main = ({
           <Grid.Column mobile={4} tablet={4} computer={8}>
             <div className="main-menu">
               {!menuIsActive && menuItems && (
-                <Menu className="eea-main-menu tablet or lower hidden" text>
-                  {menuItems.map((item) => (
-                    <Menu.Item
-                      name={item['@id'] || item.url}
-                      active={activeItem === item.key}
-                      key={item['@id'] || item.url}
-                    >
-                      {renderGlobalMenuItem(item, {
-                        onClick: menuOnClick,
-                      })}
-                    </Menu.Item>
-                  ))}
+                <Menu
+                  className="eea-main-menu tablet or lower hidden"
+                  text
+                  activeIndex={2}
+                >
+                  {menuItems.map((item) => {
+                    const url = item['@id'] || item.url;
+                    const hasUrl = (url && url !== '') || pathname === '';
+                    return (
+                      <Menu.Item
+                        name={item['@id'] || item.url}
+                        key={item['@id'] || item.url}
+                        active={hasUrl && pathname.indexOf(url) !== -1}
+                      >
+                        {console.log('activeItem', activeItem)}
+                        {console.log('path?', activeItem || pathname)}
+                        {console.log(
+                          'active',
+                          hasUrl && pathname.indexOf(url) !== -1,
+                        )}
+                        {console.log('pathname', pathname)}
+                        {console.log('item', item)}
+                        {renderGlobalMenuItem(item, {
+                          onClick: menuOnClick,
+                        })}
+                      </Menu.Item>
+                    );
+                  })}
                 </Menu>
               )}
               {menuIsActive && (
