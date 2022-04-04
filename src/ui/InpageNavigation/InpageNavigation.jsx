@@ -30,7 +30,10 @@ class InpageNavigation extends Component {
   }
 
   onInpageNavigationClick = () => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   render() {
@@ -43,11 +46,11 @@ class InpageNavigation extends Component {
           className={this.state.removeClass}
         >
           <div className="mobile tablet only">
-            <Icon name="chevron up" />
+            <Icon className="ri-arrow-up-s-line" />
           </div>
           <div className="tablet or lower hidden">
-            <Icon name="chevron up" />
-            <span>Top</span>
+            <Icon className="ri-arrow-up-s-line" />
+            <div className="text">top</div>
           </div>
         </div>
       </Container>
