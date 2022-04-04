@@ -1,5 +1,5 @@
 ---
-title: EEA Component Library
+title: EEA Design System (under development)
 hide_table_of_contents: true
 ---
 
