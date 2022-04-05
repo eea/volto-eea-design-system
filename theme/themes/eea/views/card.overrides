@@ -72,6 +72,11 @@
   margin-left: auto;
 }
 
+
+/*******************************
+            Avatar
+*******************************/
+
 .eea.card.avatar {
   border: none;
   width: @avatarWidth;

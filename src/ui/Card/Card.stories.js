@@ -171,8 +171,8 @@ const AvatarTemplate = (args) => (
 
 export const Avatar = AvatarTemplate.bind({});
 Avatar.args = {
-  avatarVariant: ['big', 'small'],
-  src: imgUrl,
+  avatarVariant: 'big',
+  src:  'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png', 
   title: 'Lorem Ipsum',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   hasImage: true,

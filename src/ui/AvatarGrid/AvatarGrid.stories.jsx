@@ -48,19 +48,19 @@ Default.args = {
   showTitle: true,
   avatars: [
     {
-      image_url: imgUrl,
-      title: 'Lorem ipsum',
-      metadata: 'Urna auctor pharetra aenean sed gravida quam',
+      src: 'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
+      title: 'Lorem Ipsum',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
-      image_url: imgUrl,
-      title: 'Lorem ipsum',
-      metadata: 'Duis vel eu placerat proin diam id enim suspendisse erat',
+      src: 'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
+      title: 'Lorem Ipsum',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
-      image_url: imgUrl,
-      title: 'Lorem ipsum',
-      metadata: 'Egetisi gravida pellentesque volutpat diamon',
+      src: 'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
+      title: 'Lorem Ipsum',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
   ],
 };

@@ -30,9 +30,9 @@ export default {
 const InlineTemplate = (args) => (
   <Testimonial {...args}>
     <Testimonial.Avatar
-      image_url={imgUrl}
+      src={imgUrl}
       title={args.avatarTitle}
-      metadata={args.avatarInfo}
+      description={args.avatarInfo}
     ></Testimonial.Avatar>
     <Testimonial.Content>
       <Testimonial.Title>{args.title}</Testimonial.Title>
