@@ -7,36 +7,30 @@
   Publication Card
 --------------------*/
 
-.eea.publication.card {
-    color: @publicationCardtextColor;
-    margin: @publicationCardMargin;
-    height: @publicationCardMobileHeight;
-    width: @publicationCardWidth;
-    background-color: @publicationCardBackgroundColor;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.ui.card.publication {
 
-    .header{
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        height: calc(100% - @mobileCardDescriptionHeight);
+    width: @mobilePublicationCardWidth;
+    border: none;
+
+    .image {
+        height: @mobilePublicationcardImageHeight;
+        flex-grow: 1;
     }
 
-    .description {
+    .content {
         background-color: @publicationCardDescriptionColor;
-        height: @mobileCardDescriptionHeight;
-        padding: @cardDescriptionPadding;
-        width: @cardDescriptionWidth;
-        max-height: @cardDescriptionMaxHeight;
+        padding: @cardContentPadding;
+        max-height: @cardContentMaxHeight;
+        height: @mobileCardContentHeight;
 
-        .tag {
-            font-size: @cardDescriptionTagFontSize;
-            font-weight: @cardDescriptionTagFontWeight;
+        .meta {
+            font-size: @cardMetaFontSize;
+            font-weight: @cardMetaTagFontWeight;
+            color: @publicationCardtextColor;
         }
 
-        .text {
+        .description {
+            margin-top:0;
             font-size: @cardDescriptionTextFontSize;
             font-weight: @cardDescriptionTextFontWeight;
             overflow: hidden;
@@ -44,22 +38,26 @@
             display: -webkit-box;
             -webkit-line-clamp: @cardDescriptionTextLineClampMobile;
             -webkit-box-orient: vertical;
+            color: @publicationCardtextColor;
         }
     }
+
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-    .eea.publication.card {
-        height: @publicationCardTabletHeight;
 
-        .header {
-            height: calc(100% - @tabletCardDescriptionHeight);
+    .ui.card.publication {
+        width: @tabletPublicationCardWidth;
+
+        .image {
+            height: @tabletPublicationcardImageHeight;
         }
 
-        .description {
-            height: @tabletCardDescriptionHeight;
+        .content {
+            max-height: @tabletCardContentMaxHeight;
+            height: @tabletCardContentHeight;
 
-            .text {
+            .description {
                 -webkit-line-clamp: @cardDescriptionTextLineClampTablet;
             }
         }
@@ -67,16 +65,12 @@
   }
 
 @media only screen and (min-width: @computerBreakpoint) {
-    .eea.publication.card {
 
-        height: @publicationCardComputerHeight;
+    .ui.card.publication {
+        width: @computerPublicationCardWidth;
 
-        .header {
-            height: calc(100% - @computerCardDescriptionHeight);
-        }
-
-        .description {
-            height: @computerCardDescriptionHeight;
+        .image {
+            height: @computerPublicationcardImageHeight;
         }
     }
   }

@@ -2,29 +2,33 @@
   Publication Card
 --------------------*/
 
-@publicationCardtextColor: @white;
-@publicationCardMargin: 10px 0;
-@publicationCardMobileHeight: 286px;
-@publicationCardTabletHeight: 352px;
-@publicationCardComputerHeight: 268px;
-@publicationCardWidth: auto;
+@mobilePublicationCardWidth: 300px;
+@tabletPublicationCardWidth: 660px;
+@computerPublicationCardWidth: 530px;
+
+/* Image */
+@mobilePublicationcardImageHeight: 150px;
+@tabletPublicationcardImageHeight: 250px;
+@computerPublicationcardImageHeight: 160px;
 
 /* Colors */
 @publicationCardBackgroundColor: #BCBEC0;
 @publicationCardDescriptionColor: #3D5265;
+@publicationCardtextColor: @white;
+
+/*  Content */
+@cardContentPadding: 20px;
+@cardContentMaxHeight: 135px;
+@mobileCardContentHeight: 135px;
+@tabletCardContentMaxHeight: 110px;
+@tabletCardContentHeight: 110px;
 
 /* Description */
-@cardDescriptionMaxHeight: 135px;
-@mobileCardDescriptionHeight: 135px;
-@tabletCardDescriptionHeight: 105px;
-@computerCardDescriptionHeight: 108px;
-@cardDescriptionPadding: 20px;
-@cardDescriptionWidth: 100%;
-
 @cardDescriptionTextLineClampMobile: 3;
 @cardDescriptionTextLineClampTablet: 2;
-
-@cardDescriptionTagFontSize: 12px;
-@cardDescriptionTagFontWeight: 400;
 @cardDescriptionTextFontSize: 16px;
 @cardDescriptionTextFontWeight: 700;
+
+/* Meta */
+@cardMetaFontSize: 12px;
+@cardMetaTagFontWeight: 400;
