@@ -7,76 +7,70 @@
   Publication Card
 --------------------*/
 
-.eea.publication.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: @publicationCardWidth;
-  background-color: @publicationCardBackgroundColor;
-  color: @publicationCardtextColor;
-  margin: @publicationCardMargin;
-  height: @publicationCardMobileHeight;
+.ui.card.publication {
 
-  .header{
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    height: calc(100% - @mobileCardDescriptionHeight);
-  }
+    width: @mobilePublicationCardWidth;
+    border: none;
 
-  .description {
-    background-color: @publicationCardDescriptionColor;
-    height: @mobileCardDescriptionHeight;
-    padding: @cardDescriptionPadding;
-    width: @cardDescriptionWidth;
-    max-height: @cardDescriptionMaxHeight;
-
-    .tag {
-      font-size: @cardDescriptionTagFontSize;
-      font-weight: @cardDescriptionTagFontWeight;
+    .image {
+        height: @mobilePublicationcardImageHeight;
+        flex-grow: 1;
     }
 
-    .text {
-      font-size: @cardDescriptionTextFontSize;
-      font-weight: @cardDescriptionTextFontWeight;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: @cardDescriptionTextLineClampMobile;
-      -webkit-box-orient: vertical;
+    .content {
+        background-color: @publicationCardDescriptionColor;
+        padding: @cardContentPadding;
+        max-height: @cardContentMaxHeight;
+        height: @mobileCardContentHeight;
+
+        .meta {
+            font-size: @cardMetaFontSize;
+            font-weight: @cardMetaTagFontWeight;
+            color: @publicationCardtextColor;
+        }
+
+        .description {
+            margin-top:0;
+            font-size: @cardDescriptionTextFontSize;
+            font-weight: @cardDescriptionTextFontWeight;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: @cardDescriptionTextLineClampMobile;
+            -webkit-box-orient: vertical;
+            color: @publicationCardtextColor;
+        }
     }
-  }
+
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-  .eea.publication.card {
-    height: @publicationCardTabletHeight;
 
-    .header {
-      height: calc(100% - @tabletCardDescriptionHeight);
-    }
+    .ui.card.publication {
+        width: @tabletPublicationCardWidth;
 
-    .description {
-      height: @tabletCardDescriptionHeight;
+        .image {
+            height: @tabletPublicationcardImageHeight;
+        }
 
-      .text {
-        -webkit-line-clamp: @cardDescriptionTextLineClampTablet;
-      }
+        .content {
+            max-height: @tabletCardContentMaxHeight;
+            height: @tabletCardContentHeight;
+
+            .description {
+                -webkit-line-clamp: @cardDescriptionTextLineClampTablet;
+            }
+        }
     }
   }
-}
 
 @media only screen and (min-width: @computerBreakpoint) {
-  .eea.publication.card {
-    height: @publicationCardComputerHeight;
 
-    .header {
-      height: calc(100% - @computerCardDescriptionHeight);
-    }
+    .ui.card.publication {
+        width: @computerPublicationCardWidth;
 
-    .description {
-      height: @computerCardDescriptionHeight;
+        .image {
+            height: @computerPublicationcardImageHeight;
+        }
     }
   }
-}
-
