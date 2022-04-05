@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Grid } from 'semantic-ui-react';
+import { Card, Image, Grid, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Card',
@@ -60,7 +60,7 @@ export default {
     avatarVariant: {
       options: ['big', 'small'],
       control: { type: 'inline-radio' },
-      defaultValue: 'big' ,
+      defaultValue: 'big',
     },
   },
 };
@@ -153,28 +153,25 @@ CardGrid.args = {
   ],
 };
 
-
 const AvatarTemplate = (args) => (
-  <Card className={`eea avatar ${args.avatarVariant}`} fluid={args.fluid}>
-    <Image
-      src={args.src}
-      wrapped
-      ui={false}
-      alt="card image"
-    />
-    <Card.Content>
-      <Card.Header>{args.title}</Card.Header>
-      <Card.Description>{args.description}</Card.Description>
-    </Card.Content>
-  </Card>
+  <Container>
+    <Card className={`eea avatar ${args.avatarVariant}`} fluid={args.fluid}>
+      <Image src={args.src} wrapped ui={false} alt="card image" />
+      <Card.Content>
+        <Card.Header>{args.title}</Card.Header>
+        <Card.Description>{args.description}</Card.Description>
+      </Card.Content>
+    </Card>
+  </Container>
 );
 
 export const Avatar = AvatarTemplate.bind({});
 Avatar.args = {
   avatarVariant: 'big',
-  src:  'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png', 
+  src:
+    'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
   title: 'Lorem Ipsum',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   hasImage: true,
-  fluid: false
+  fluid: false,
 };

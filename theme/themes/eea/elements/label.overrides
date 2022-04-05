@@ -13,7 +13,9 @@
   span[aria-describedby='footnote-label'] {
     color: @color;
   }
-  .footnote-edit-node::after, .citation-item::after {
+
+  .footnote-edit-node::after,
+  .citation-item::after {
     color: @color;
   }
 }
@@ -24,7 +26,9 @@
   span[aria-describedby='footnote-label'] {
     color: @color;
   }
-  .footnote-edit-node::after, .citation-item::after {
+
+  .footnote-edit-node::after,
+  .citation-item::after {
     color: @color;
   }
 }
@@ -35,7 +39,9 @@
   span[aria-describedby='footnote-label'] {
     color: @color;
   }
-  .footnote-edit-node::after, .citation-item::after {
+
+  .footnote-edit-node::after,
+  .citation-item::after {
     color: @color;
   }
 }

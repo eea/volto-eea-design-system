@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Container, Card, Image } from 'semantic-ui-react';
+import { Grid, Card, Image } from 'semantic-ui-react';
 
 AvatarGrid.propTypes = {
   title: PropTypes.string,
@@ -33,12 +33,7 @@ AvatarGrid.Group = ({ children, ...rest }) => {
           <Grid.Column key={index} mobile={12} tablet={4} computer={4}>
             <div className="avatar-wrapper">
               <Card className={`eea avatar big`} fluid={avatar.fluid}>
-                <Image
-                  src={avatar.src}
-                  wrapped
-                  ui={false}
-                  alt="card image"
-                />
+                <Image src={avatar.src} wrapped ui={false} alt="card image" />
                 <Card.Content>
                   <Card.Header>{avatar.title}</Card.Header>
                   <Card.Description>{avatar.description}</Card.Description>

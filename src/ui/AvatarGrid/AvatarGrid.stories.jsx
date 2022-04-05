@@ -1,7 +1,7 @@
 import React from 'react';
 // eslint-disable-next-line import/no-unresolved
-import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/avatar.png';
 import AvatarGrid from './AvatarGrid';
+import { Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Avatar Grid',
@@ -32,14 +32,16 @@ export default {
 };
 
 const GridTemplate = (args) => (
-  <AvatarGrid>
-    <AvatarGrid.Content>
-      <AvatarGrid.Title showTitle={args.showTitle}>
-        {args.title}
-      </AvatarGrid.Title>
-      <AvatarGrid.Group avatars={args.avatars}></AvatarGrid.Group>
-    </AvatarGrid.Content>
-  </AvatarGrid>
+  <Container>
+    <AvatarGrid>
+      <AvatarGrid.Content>
+        <AvatarGrid.Title showTitle={args.showTitle}>
+          {args.title}
+        </AvatarGrid.Title>
+        <AvatarGrid.Group avatars={args.avatars}></AvatarGrid.Group>
+      </AvatarGrid.Content>
+    </AvatarGrid>
+  </Container>
 );
 
 export const Default = GridTemplate.bind({});
@@ -48,17 +50,20 @@ Default.args = {
   showTitle: true,
   avatars: [
     {
-      src: 'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
+      src:
+        'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
       title: 'Lorem Ipsum',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
-      src: 'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
+      src:
+        'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
       title: 'Lorem Ipsum',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
-      src: 'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
+      src:
+        'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
       title: 'Lorem Ipsum',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
