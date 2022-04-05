@@ -1,0 +1,50 @@
+@type: 'extra';
+@element: 'tagList';
+
+@import (multiple) '../../theme.config';
+
+/*******************************
+            Tag
+*******************************/
+
+.tags {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: right;
+  width: @tagsBodyWidth;
+  line-height: @tagsLineHeight;
+
+  .tags-title {
+    text-align: right;
+    height: @tagsLineHeight;
+    color: @tagsTitleFontColor;
+    margin-right: @tagsTitleMargin;
+    font-weight: @tagsFontWeight;
+    font-size: @tagsFontSize;
+  }
+
+  .tags-content {
+    line-height: @tagsLineHeight;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+
+.tags.left {
+  justify-content: left;
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+
+  .tags {
+    flex-direction: row;
+    align-items: center;
+
+    .tags-content {
+      flex-direction: inherit;
+    }
+  }
+}
