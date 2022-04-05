@@ -2,6 +2,9 @@ import React from 'react';
 import RelatedContent from './RelatedContent';
 import { Container, Tab } from 'semantic-ui-react';
 
+const imageUrl =
+  'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini';
+
 export default {
   title: 'Components/Related Content',
   component: RelatedContent,
@@ -27,25 +30,30 @@ DefaultEven.args = {
       tag: 'Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+      image: imageUrl,
     },
     {
       tag: 'Publication',
       description: 'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
+      image: imageUrl,
     },
     {
       tag: 'Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. ',
+      image: imageUrl,
     },
     {
       tag: 'Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
+      image: imageUrl,
     },
     {
       tag: 'Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+      image: imageUrl,
     },
   ],
   buttonText: 'See All',
@@ -95,15 +103,18 @@ DefaultOdd.args = {
       tag: 'Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+      image: imageUrl,
     },
     {
       tag: 'Publication',
       description: 'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
+      image: imageUrl,
     },
     {
       tag: 'Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
+      image: imageUrl,
     },
   ],
   buttonText: 'See All',
@@ -197,6 +208,7 @@ RelatedContentInTab.args = {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+          image: imageUrl,
         },
       ],
       buttonText: 'See All',
@@ -209,11 +221,13 @@ RelatedContentInTab.args = {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+          image: imageUrl,
         },
         {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
+          image: imageUrl,
         },
       ],
       buttonText: 'See All',
@@ -226,16 +240,19 @@ RelatedContentInTab.args = {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+          image: imageUrl,
         },
         {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
+          image: imageUrl,
         },
         {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. ',
+          image: imageUrl,
         },
       ],
       buttonText: 'See All',
@@ -248,26 +265,31 @@ RelatedContentInTab.args = {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+          image: imageUrl,
         },
         {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
+          image: imageUrl,
         },
         {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. ',
+          image: imageUrl,
         },
         {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
+          image: imageUrl,
         },
         {
           tag: 'Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+          image: imageUrl,
         },
       ],
       buttonText: 'See All',

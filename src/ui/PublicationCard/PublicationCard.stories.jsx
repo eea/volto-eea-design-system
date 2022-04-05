@@ -26,7 +26,7 @@ export default {
 };
 
 const Template = (args) => (
-  <Card {...args} className="publication">
+  <Card className="publication">
     <Image src={args.image} wrapped ui={false} alt="card image" />
     <Card.Content>
       <Card.Meta>{args.tag}</Card.Meta>
