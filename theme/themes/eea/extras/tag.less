@@ -1,0 +1,37 @@
+@type: 'extra';
+@element: 'tag';
+
+@import (multiple) '../../theme.config';
+
+/*******************************
+            Tag
+*******************************/
+
+.tag {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: @tagHeight;
+  margin: @tagMargin;
+  padding: @tagPadding;
+  background: @tagDefaultColor;
+  font-size: @tagNameFontSize;
+  font-weight: @tagNameFontWeight;
+  line-height: @tagNameLineHeight;
+
+  .icon {
+    width: unset;
+    height: unset;
+    margin: @tagHashtagMargin;
+    font-size: @tagHashtagFontSize;
+    font-weight: @tagNameFontWeight;
+    display: inline-flex;
+    color: @tagNameFontColor;
+  }
+
+  .name {
+    color: @tagNameFontColor;
+  }
+}

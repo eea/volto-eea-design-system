@@ -12,4 +12,19 @@
   tbody tr:hover {
     background-color: @tableHoverBackgroundColor;
   }
+
+  tr th {
+    padding: @headerVerticalPadding @headerHorizontalPadding;
+    border-bottom: @headerBorder;
+    border-left: @headerDivider;
+    background: @headerBackground;
+    color: @headerColor;
+    cursor: auto;
+    font-size: @headerFontSize;
+    font-style: @headerFontStyle;
+    font-weight: @headerFontWeight;
+    text-align: @headerAlign;
+    text-transform: @headerTextTransform;
+    vertical-align: @headerVerticalAlign;
+  }
 }

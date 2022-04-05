@@ -1,9 +1,10 @@
 import React from 'react';
+import cx from 'classnames';
 import { Grid, Card, Label, Icon } from 'semantic-ui-react';
-function Timeline({ children, ...rest }) {
+function Timeline({ children, reversed }) {
   return (
     <div className="eea timeline">
-      <Grid>
+      <Grid className={cx({ 'any reversed': reversed })}>
         <Grid.Row>{children}</Grid.Row>
       </Grid>
     </div>
