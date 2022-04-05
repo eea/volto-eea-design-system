@@ -2,7 +2,7 @@
             Page Banner
 *******************************/
 
-@bannerBackgroundColor   : @primaryColor;
+@bannerBackgroundColor   : @darkCyan;
 
 /* Background Image */
 @imageBackgroundRepeat   : no-repeat;
@@ -10,13 +10,18 @@
 @imageBackgroundPosition : center;
 
 /* Gradient */
-@backgroundGradient        : linear-gradient(0deg, rgb(20, 33, 44, 90%) 24%, rgba(0, 36, 78, 0) 80%);
-@backgroundGradientOpacity : 0.9;
+@backgroundGradient           : linear-gradient(8deg, #0c1b28b3 32%, rgba(0, 36, 78, 0) 80%);
+@backgroundGradientWithImage  : linear-gradient(0deg, rgb(20, 33, 44, 90%) 24%, rgba(0, 36, 78, 0) 80%);
+@backgroundGradientOpacity    : 0.9;
 
 /* Content */
-@mobileContentPadding      : 6.25rem 0 1.25rem;
-@tabletContentPadding      : 12.5rem 0 1.25rem;
-@computerContentPadding    : 15.625rem 0 1.25rem;
+@mobileContentPadding      : 1rem 0 1.25rem;
+@tabletContentPadding      : 3rem 0 1.25rem;
+@computerContentPadding    : 5rem 0 1.25rem;
+
+@mobileContentPaddingWithImage      : 6.25rem 0 1.25rem;
+@tabletContentPaddingWithImage      : 12.5rem 0 1.25rem;
+@computerContentPaddingWithImage    : 15.625rem 0 1.25rem;
 
 /* Title */
 @titleFontWeight           : @bold;
@@ -32,22 +37,41 @@
 @computerTitleMargin       : 0 0 1.125rem 0;
 
 /* Metadata */
-@metadataFontWeight        : @bold;
+@metadataTypeFontWeight    : @bold;
 @mobileMetadataFontSize    : 0.438rem;
 @tabletMetadataFontSize    : 0.875rem;
 @mobileMetadataLineHeight  : 0.5rem;
 @tabletMetadataLineHeight  : 1rem;
+// Metadata field
+@metadataFieldDividerContent: ' | ';
 
 /* Actions */
 @mobileActionsAlignItems                 : center;
 @tabletActionsAlignItems                 : flex-end;
 @tabletActionsFlexDirection              : column;
+// Action
+@tabletActionsActionMinWidth             : 95px;
 // Button
 @mobileBannerActionButtonFontSize        : 0.75rem;
 @tabletBannerActionButtonFontSize        : 0.875rem;
 @bannerActionButtonBoxShadow             : none;
 @bannerActionButtonActiveBackgroundColor : transparent;
-// Button Icon
-@bannerActionButtonIconOpacity           : 1;
 @mobileBannerActionButtonMargin          : 0;
-@tabletBannerActionButtonMargin          : 0 0.313rem 0.313rem 0;
+@tabletBannerActionButtonMargin          : 0 0.313rem 0 0;
+// Button Icon
+@bannerActionButtonIconVerticalAlign     : text-bottom;
+@bannerActionButtonIconOpacity           : 1;
+@mobileBannerActionButtonIconFontSize    : 1rem;
+@tabletBannerActionButtonIconFontSize    : 1.1rem;
+
+/* Share Popup */
+@sharePopupPadding: @tinyGap;
+@sharePopupFilter:  drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+@tabletSharePopupMinWidth: 120px;
+// Text
+@sharePopupFontSize: 0.875rem;
+@sharePopupFontWeight: 500;
+@sharePopupLineHeight: 1rem;
+// Actions
+@sharePopupActionsIconColor: @pineGreen;
+@sharePopupActionsIconMargin: 0;

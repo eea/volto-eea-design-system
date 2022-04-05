@@ -12,11 +12,13 @@
 @tabletQuoteMargin     : 0.75rem 1rem;
 @computerQuoteMargin   : 0.75rem 1.25rem;
 @quoteGap              : 0.75rem;
+@slateQuoteGap         : 0.75rem / 2;
 @quoteColor            : @japaneseIndigo;
 @mobileQuoteFontSize   : 0.688rem;
 @tabletQuoteFontSize   : @h6;
 @computerQuoteFontSize : @h5;
 @quoteFontWeight       : 700;
+@slateQuoteFontWeight  : 400;
 
 /* Meta */
 @metaMargin           : 0;
@@ -25,3 +27,9 @@
 @tabletMetaFontSize   : @h6;
 @computerMetaFontSize : @h5;
 @metaAlignSelf        : start;
+
+/* Callout */
+@calloutBorder        : none;
+@calloutBoxShadow     : none;
+@calloutBorderRadius  : 0;
+@calloutPadding       : 0;

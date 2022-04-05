@@ -4,16 +4,38 @@
 
 .ui.label {
   font-size: @labelFontSize;
+  line-height: @labelLineHeight;
 }
 
 .ui.label.medium {
   background-color: @mediumImportanceBackground;
+
+  span[aria-describedby='footnote-label'] {
+    color: @color;
+  }
+  .footnote-edit-node::after, .citation-item::after {
+    color: @color;
+  }
 }
 
 .ui.label.high {
   background-color: @highImportanceBackground;
+
+  span[aria-describedby='footnote-label'] {
+    color: @color;
+  }
+  .footnote-edit-node::after, .citation-item::after {
+    color: @color;
+  }
 }
 
 .ui.label.highlight {
   background-color: @highlightImportanceBackground;
+
+  span[aria-describedby='footnote-label'] {
+    color: @color;
+  }
+  .footnote-edit-node::after, .citation-item::after {
+    color: @color;
+  }
 }

@@ -69,10 +69,10 @@
 @headerLineHeight : 1.25;
 @headerFontWeight : 700;
 
-@h1 : unit((30 / 16), rem);
-@h2 : unit((24 / 16), rem);
-@h3 : unit((20 / 16), rem);
-@h4 : unit((18 / 16), rem);
+@h1 : unit((48 / 16), rem);
+@h2 : unit((40 / 16), rem);
+@h3 : unit((36 / 16), rem);
+@h4 : unit((24 / 16), rem);
 @h5 : unit((20 / 16), rem);
 @h6 : unit((18 / 16), rem);
 
@@ -138,6 +138,25 @@
 @hugeSize        : (28 / @emSize);
 @massiveSize     : (32 / @emSize);
 
+/*--------------------------
+  Gaps / Paddings / Margins
+---------------------------*/
+
+@tinyGap         : unit((12 / @emSize), rem);
+@mediumGap       : unit((16 / @emSize), rem);
+@largeGap        : unit((20 / @emSize), rem);
+@bigGap          : unit((24 / @emSize), rem);
+@hugeGap         : unit((28 / @emSize), rem);
+
+@squareTiny      : @tinyGap @tinyGap;
+@squareMedium    : @mediumGap @mediumGap;
+@squareLarge     : @largeGap @largeGap;
+@squareBig       : @bigGap @bigGap;
+
+@rectangleTiny   : @tinyGap @mediumGap;
+@rectangleMedium : @mediumGap @largeGap;
+@rectangleLarge  : @largeGap @bigGap;
+@rectangleBig    : @bigGap @hugeGap;
 
 /*-------------------
         Page
@@ -286,7 +305,7 @@
 @pineGreen        : #007B6C;
 @darkCyan         : #00928F;
 @pearlAqua        : #74CBC8;
-@powderBlue       : #AEDFE8; 
+@powderBlue       : #AEDFE8;
 
 // Blue Colors - Darker to lighter
 @darkMidnightBlue   : #0A3D61;
@@ -312,7 +331,7 @@
 
 /*---  Colors  ---*/
 @orange           : #EBA33D;
-@yellow           : #F2EB49; 
+@yellow           : #F2EB49;
 @olive            : #78AB66;
 @green            : @pineGreen;
 @teal             : #00928F;
@@ -548,7 +567,7 @@
 @unselectedTextColor         : rgba(0, 0, 0, 0.4);
 @hoveredTextColor            : rgba(0, 0, 0, 0.8);
 @pressedTextColor            : rgba(0, 0, 0, 0.9);
-@selectedTextColor           : @white;
+@selectedTextColor           : rgba(0, 0, 0, 0.95);
 @disabledTextColor           : rgba(0, 0, 0, 0.2);
 
 @invertedTextColor           : rgba(255, 255, 255, 0.9);
