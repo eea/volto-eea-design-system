@@ -26,17 +26,17 @@
   }
 }
 
-.ui.basic.button {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  text-align: initial;
-
-  &:focus {
-    outline: none;
-  }
-}
+//.ui.basic.button {
+//  padding: 0;
+//  border: 0;
+//  background: transparent;
+//  cursor: pointer;
+//  text-align: initial;
+//
+//  &:focus {
+//    outline: none;
+//  }
+//}
 
 .ui.basic.primary.button,
 .ui.basic.secondary.button {
@@ -76,6 +76,20 @@
 /*******************************
       EEA Theme Overrides
 *******************************/
+
+// ensure circular button gets the border color of the current text color
+// and acts as a circular button
+.ui.circular.icon.button {
+  padding: @circularButtonPadding;
+  line-height: @circularButtonLineHeight;
+  border-width: @circularButtonBorderWidth;
+  border-color: @circularButtonBorderColor;
+}
+
+// toolbar yes and cancel icons go outside the button area with default line height
+#toolbar .toolbar-content button, #toolbar .toolbar button {
+  line-height: @toolbarButtonLineHeight;
+}
 
 //Color for button text depends on background
 .text-color(@backColor) when (lightness(@backColor) >= 40%) {
@@ -124,8 +138,8 @@
 }
 
 /* Secondary Button */
-.ui.button.secondary,
-.ui.buttons.secondary {
+.ui.button.secondary:not(.basic),
+.ui.buttons.secondary:not(.basic) {
   border: @buttonBorder @secondaryButtonColor;
   background-color: @secondaryButtonBackground;
   color: @secondaryButtonColor;

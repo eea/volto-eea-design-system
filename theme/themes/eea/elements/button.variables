@@ -92,7 +92,7 @@
 @iconTransition: opacity @defaultDuration @defaultEasing;
 @iconVerticalAlign: '';
 
-@iconMargin: 0em @iconDistance 0em -(@iconDistance / 2);
+@iconMargin: 0; // 0 means there is no margin between the icon and the button
 @rightIconMargin: 0em -(@iconDistance / 2) 0em @iconDistance;
 
 /* Loader */
@@ -292,8 +292,11 @@
 @basicGroupBoxShadow: none;
 
 /* Circular */
-@circularButtonPadding: 0.75em 0.25em 0;
-@circularButtonIconFontSize: 2rem;
+@circularButtonBorderWidth: 2px;
+@circularButtonBorderColor: currentColor;
+@circularButtonPadding: 0.25em;
+@circularButtonIconFontSize: 1.375em;
+@circularButtonLineHeight: 1;
 
 /*-------------------
       Variations
@@ -403,3 +406,6 @@
 @animationEasing: ease;
 @fadeScaleHigh: 1.5;
 @fadeScaleLow: 0.75;
+
+/* Pastanaga Toolbar Button */
+@toolbarButtonLineHeight: 0.75;
