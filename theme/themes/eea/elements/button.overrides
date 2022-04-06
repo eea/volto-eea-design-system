@@ -1,5 +1,80 @@
 /*******************************
-         Theme Overrides
+      Pastanaga Theme Overrides
+*******************************/
+
+.ui.circular.icon.button {
+  padding: @circularButtonPadding;
+
+  .icon {
+    font-size: @circularButtonIconFontSize;
+  }
+}
+
+.searchbox.field > .ui.action.input > .icon.button {
+  padding-top: 0;
+  padding-right: 0;
+  background: none;
+  color: @blue;
+  line-height: 1.6;
+
+  &:hover {
+    background: none;
+  }
+
+  .icon {
+    font-weight: bold;
+  }
+}
+
+.ui.basic.button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: initial;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.ui.basic.primary.button,
+.ui.basic.secondary.button {
+  box-shadow: none !important;
+
+  &:hover,
+  &:active {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+}
+
+.ui.noborder.button {
+  padding: 0 !important;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: initial;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.ui.noborder.button:not(.icon) > .icon:not(.button):not(.dropdown) {
+  margin: 0;
+}
+
+.ui.button.gallery {
+  background-color: transparent;
+
+  .icon.circled {
+    margin: 0;
+  }
+}
+
+/*******************************
+      EEA Theme Overrides
 *******************************/
 
 //Color for button text depends on background
@@ -26,8 +101,8 @@
 //}
 
 /* Primary Button Border */
-.ui.button.primary,
-.ui.buttons.primary {
+.ui.button:not(.basic).primary,
+.ui.buttons.primary:not(.basic) {
   border: @buttonBorder @primaryButtonColor;
 
   &:hover,
@@ -84,7 +159,7 @@
   }
 }
 
-ui.inverted.secondary.buttons .button,
+.ui.inverted.secondary.buttons .button,
 .ui.inverted.secondary.button {
   box-shadow: none !important; // to override the important box shadow - button.less:3271
 }
@@ -132,14 +207,6 @@ p.ui.button {
   }
 }
 
-.ui.circular.icon.button {
-  padding: @circularButtonPadding;
-
-  .icon {
-    font-size: @circularButtonIconFontSize;
-  }
-}
-
 /* Advanced Search Button - to be deleted*/
 .ui.button.search {
   box-sizing: border-box;
@@ -168,32 +235,4 @@ p.ui.button {
   background: @searchButtonBackground;
   font-size: @searchButtonFontSize;
   opacity: @searchButtonIconOpacity;
-}
-
-.searchbox.field > .ui.action.input > .icon.button {
-  padding-top: 0;
-  padding-right: 0;
-  background: none;
-  color: @blue;
-  line-height: 1.6;
-
-  &:hover {
-    background: none;
-  }
-
-  .icon {
-    font-weight: bold;
-  }
-}
-
-.ui.basic.button {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  text-align: initial;
-
-  &:focus {
-    outline: none;
-  }
 }
