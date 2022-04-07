@@ -9,13 +9,13 @@
 }
 
 /* Checkbox */
-.ui.checkbox {
+.ui.checkbox:not(.toggle) {
   margin-bottom: @bottomMargin;
 
   input {
     &:checked ~ label {
       &:after {
-        // background-color: @primaryColor;
+        background-color: @primaryColor;
         font-family: Checkbox;
       }
     }

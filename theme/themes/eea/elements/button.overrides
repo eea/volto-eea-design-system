@@ -11,17 +11,19 @@
 }
 
 /* Global Button Styles */
-.ui.button,
-.ui.buttons .button,
-.ui.buttons {
-  border: @buttonBorder @backgroundColor;
-
-  &:hover,
-  &:active,
-  &:focus {
-    border-color: @hoverBackgroundColor;
-  }
-}
+// 147629 to remove later, basic buttons don't need borders, svg buttons are
+// basic and volto ui has elements that are highlighted because of it
+//.ui.button,
+//.ui.buttons .button,
+//.ui.buttons {
+//  border: @buttonBorder @backgroundColor;
+//
+//  &:hover,
+//  &:active,
+//  &:focus {
+//    border-color: @hoverBackgroundColor;
+//  }
+//}
 
 /* Primary Button Border */
 .ui.button.primary,

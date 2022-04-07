@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from './Banner';
 // eslint-disable-next-line import/no-unresolved
 import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/banner.png';
+import { Popup } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Page Header',
@@ -14,15 +15,29 @@ export default {
         type: { summary: 'string' },
       },
     },
-    info: {
-      description: 'banner secondary info',
+    metadata: {
+      description: 'banner metadata',
       table: {
         defaultValue: { summary: '""' },
-        type: { summary: 'string' },
+        type: { summary: 'object' },
       },
     },
     image: {
       description: 'set or unset banner image',
+      table: {
+        defaultValue: { summary: '""' },
+        type: { summary: 'boolean' },
+      },
+    },
+    hideShareButton: {
+      description: 'hide/show share button',
+      table: {
+        defaultValue: { summary: '""' },
+        type: { summary: 'boolean' },
+      },
+    },
+    hideDownloadButton: {
+      description: 'hide/show download button',
       table: {
         defaultValue: { summary: '""' },
         type: { summary: 'boolean' },
@@ -36,21 +51,57 @@ const Template = (args) => (
     <Banner.Content
       actions={
         <>
-          <Banner.Action
-            icon="bookmark outline"
-            title="Bookmark"
-            className="bookmark"
-          />
-          <Banner.Action
-            icon="download"
-            title="Download"
-            className="download"
-          />
+          {' '}
+          {!args.hideShareButton && (
+            <Popup
+              className="share-popup"
+              trigger={
+                <Banner.Action
+                  icon="ri-share-fill"
+                  title="Share"
+                  className="share"
+                />
+              }
+              content={() => (
+                <>
+                  <p>Share to:</p>
+                  <div className="actions">
+                    <Banner.Action icon="ri-facebook-fill" />
+                    <Banner.Action icon="ri-twitter-fill" />
+                    <Banner.Action icon="ri-linkedin-fill" />
+                    <Banner.Action icon="blogger b" />
+                    <Banner.Action icon="ri-reddit-line" />
+                    <Banner.Action icon="stumbleupon circle" />
+                  </div>
+                </>
+              )}
+              position="top center"
+              basic
+            />
+          )}
+          {!args.hideDownloadButton && (
+            <Banner.Action
+              icon="ri-download-2-line"
+              title="Download"
+              className="download"
+            />
+          )}
         </>
       }
     >
       <Banner.Title>{args.title}</Banner.Title>
-      <Banner.Metadata>{args.info}</Banner.Metadata>
+      {args.metadata && (
+        <Banner.Metadata>
+          <>
+            {args.metadata.map((meta, index) => (
+              <Banner.MetadataField
+                {...meta}
+                key={index}
+              ></Banner.MetadataField>
+            ))}
+          </>
+        </Banner.Metadata>
+      )}
     </Banner.Content>
   </Banner>
 );
@@ -58,6 +109,13 @@ const Template = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  info: 'Briefing | Published Date | Modified Date | 5 min read',
+  metadata: [
+    { hidden: false, value: 'Briefing', type: 'type' },
+    { hidden: false, value: 'Published Date', type: 'date' },
+    { hidden: false, value: 'Modified Date', type: 'date' },
+    { hidden: false, value: '5 min read', type: '' },
+  ],
   image: true,
+  hideShareButton: false,
+  hideDownloadButton: false,
 };
