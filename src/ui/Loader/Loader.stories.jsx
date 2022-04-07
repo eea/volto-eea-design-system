@@ -19,7 +19,7 @@ export default {
   },
 };
 
-const Template = (args) => (
+const DefaultTemplate = (args) => (
   <Segment>
     <Dimmer active>
       <Loader {...args} />
@@ -32,7 +32,25 @@ const Template = (args) => (
   </Segment>
 );
 
-export const Default = Template.bind({});
+const FullPageTemplate = (args) => (
+  <Segment>
+    <Dimmer active>
+      <Loader {...args} className="eea-loader" />
+    </Dimmer>
+
+    <Image
+      src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png"
+      alt="paragraph"
+    />
+  </Segment>
+);
+
+export const Default = DefaultTemplate.bind({});
 Default.args = {
+  content: 'Loading...',
+};
+
+export const FullPageLoader = FullPageTemplate.bind({});
+FullPageLoader.args = {
   content: 'Loading...',
 };
