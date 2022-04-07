@@ -86,7 +86,16 @@
   border-color: @circularButtonBorderColor;
 }
 
-// toolbar yes and cancel icons go outside the button area with default line height
+// remove border shadow when we use basic icon buttons as the icons usually
+// contain visual elements that do not require any borders
+// ui basic green icon button would give the icon a green color without any
+// bg or border
+.ui.basic.icon.button {
+  box-shadow: none !important;
+}
+
+// toolbar yes and cancel icons go outside the button area with default line
+// height
 #toolbar .toolbar-content button, #toolbar .toolbar button {
   line-height: @toolbarButtonLineHeight;
 }
