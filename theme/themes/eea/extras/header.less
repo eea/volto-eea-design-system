@@ -501,6 +501,11 @@ Header Actions - Burger and Search Icons
     top: 0;
   }
 
+  // show second level nav when first level is visible
+  .active > .second {
+    display: block;
+  }
+
   nav ul li:hover > ul,
   nav ul li:active > ul {
     display: inherit;
@@ -656,7 +661,8 @@ Header Actions - Burger and Search Icons
         }
       }
     }
-    .active .item,
+    // underline active span element not just on hover
+    .active > a .item,
     ul li:hover > a .item {
       text-decoration: underline;
     }

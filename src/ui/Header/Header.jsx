@@ -133,17 +133,21 @@ const Main = ({
             <div className="main-menu">
               {!menuIsActive && menuItems && (
                 <Menu className="eea-main-menu tablet or lower hidden" text>
-                  {menuItems.map((item) => (
-                    <Menu.Item
-                      name={item['@id'] || item.url}
-                      active={activeItem === item.key}
-                      key={item['@id'] || item.url}
-                    >
-                      {renderGlobalMenuItem(item, {
-                        onClick: menuOnClick,
-                      })}
-                    </Menu.Item>
-                  ))}
+                  {menuItems.map((item) => {
+                    const url = item['@id'] || item.url;
+                    const hasUrl = (url && url !== '') || pathname === '';
+                    return (
+                      <Menu.Item
+                        name={item['@id'] || item.url}
+                        key={item['@id'] || item.url}
+                        active={hasUrl && pathname.indexOf(url) !== -1}
+                      >
+                        {renderGlobalMenuItem(item, {
+                          onClick: menuOnClick,
+                        })}
+                      </Menu.Item>
+                    );
+                  })}
                 </Menu>
               )}
               {menuIsActive && (
