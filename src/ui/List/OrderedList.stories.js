@@ -2,7 +2,7 @@ import React from 'react';
 import { List } from 'semantic-ui-react';
 
 export default {
-  title: 'Components/List/Table of contents',
+  title: 'Components/List/Ordered List',
   component: List,
   argTypes: {
     animated: {
@@ -47,6 +47,20 @@ function TableOfContents(items, animated, divided, horizontal) {
             {item.subList.map((sub, subIndex) => (
               <List.Item key={subIndex} as="a" role="listitem">
                 {sub.content}
+                <List.List role="list">
+                  {sub.subList && sub.subList.map((sub1, subIndex) => (
+                    <List.Item key={subIndex} as="a" role="listitem">
+                      <span>{sub1.content}</span>
+                      <List.List role="list">
+                        {sub1.subList && sub1.subList.map((sub2, subIndex) => (
+                          <List.Item key={subIndex} as="a" role="listitem">
+                            <span className='inner text'>{sub2.content}</span>
+                          </List.Item>
+                        ))}
+                      </List.List>
+                    </List.Item>
+                  ))}
+                </List.List>
               </List.Item>
             ))}
           </List.List>
@@ -79,7 +93,17 @@ Default.args = {
       header: 'header 2',
       content: 'Content 2',
       subList: [
-        { header: 'Sub header 1', content: 'content' },
+        {
+          header: 'Sub header 1', content: 'content', subList: [
+            {
+              header: 'Sub header 1', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit', subList: [
+                { header: 'Sub header 1', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit' },
+                { header: 'Sub header ', content: 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' },
+              ]
+            },
+            { header: 'Sub header ', content: 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' },
+          ],
+        },
         { header: 'Sub header ', content: 'content' },
       ],
     },
