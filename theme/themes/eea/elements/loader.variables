@@ -26,9 +26,8 @@
 
 /* Text */
 @textDistance: @relativeMini;
-@loaderTextColor: #035997;
-@invertedLoaderTextColor: #035997;
-@loaderTextFontWeight: 700;
+@loaderTextColor: @textColor;
+@invertedLoaderTextColor: @invertedTextColor;
 
 
 /*-------------------
