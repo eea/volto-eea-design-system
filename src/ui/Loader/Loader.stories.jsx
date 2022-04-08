@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react';
+import { Loader, Segment } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Loader',
@@ -21,18 +21,29 @@ export default {
 
 const Template = (args) => (
   <Segment>
-    <Dimmer active>
-      <Loader {...args} />
-    </Dimmer>
-
-    <Image
-      src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png"
-      alt="paragraph"
-    />
+    <Loader {...args} inline="centered" />
   </Segment>
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  content: 'Loading...',
+  active: true,
+  content: '',
+  size: 'mini',
+};
+
+Default.argTypes = {
+  size: {
+    options: [
+      'mini',
+      'tiny',
+      'small',
+      'medium',
+      'large',
+      'big',
+      'huge',
+      'massive',
+    ],
+    control: { type: 'select' },
+  },
 };
