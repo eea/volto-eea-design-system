@@ -26,17 +26,17 @@
   }
 }
 
-//.ui.basic.button {
-//  padding: 0;
-//  border: 0;
-//  background: transparent;
-//  cursor: pointer;
-//  text-align: initial;
-//
-//  &:focus {
-//    outline: none;
-//  }
-//}
+.ui.basic.button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: initial;
+
+  &:focus {
+    outline: none;
+  }
+}
 
 .ui.basic.primary.button,
 .ui.basic.secondary.button {
@@ -92,6 +92,7 @@
 // bg or border
 .ui.basic.icon.button {
   box-shadow: none !important;
+  padding: 0;
 }
 
 // toolbar yes and cancel icons go outside the button area with default line
