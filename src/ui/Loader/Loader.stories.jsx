@@ -19,17 +19,13 @@ export default {
   },
 };
 
-const Template = (args) => (
-  <Segment>
-    <Loader {...args} inline="centered" />
-  </Segment>
-);
+const Template = (args) => <Loader {...args} inline="centered" />;
 
 export const Default = Template.bind({});
 Default.args = {
   active: true,
   content: '',
-  size: 'mini',
+  size: 'medium',
 };
 
 Default.argTypes = {
