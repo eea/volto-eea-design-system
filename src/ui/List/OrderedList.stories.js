@@ -43,27 +43,30 @@ function TableOfContents(items, animated, divided, horizontal) {
       {items.map((item, index) => (
         <List.Item as="a" key={index}>
           {item.content}
-          <List.List role="list">
-            {item.subList.map((sub, subIndex) => (
-              <List.Item key={subIndex} as="a" role="listitem">
-                {sub.content}
-                <List.List role="list">
-                  {sub.subList && sub.subList.map((sub1, subIndex) => (
-                    <List.Item key={subIndex} as="a" role="listitem">
-                      <span>{sub1.content}</span>
-                      <List.List role="list">
-                        {sub1.subList && sub1.subList.map((sub2, subIndex) => (
-                          <List.Item key={subIndex} as="a" role="listitem">
-                            <span className='inner text'>{sub2.content}</span>
-                          </List.Item>
-                        ))}
-                      </List.List>
-                    </List.Item>
-                  ))}
-                </List.List>
-              </List.Item>
-            ))}
-          </List.List>
+          {item.subList &&
+            <List.List role="list">
+              {item.subList.map((sub, subIndex) => (
+                <List.Item key={subIndex} as="a" role="listitem">
+                  {sub.content}
+                  {sub.subList &&
+                    <List.List role="list">
+                      {sub.subList.map((sub1, subIndex) => (
+                        <List.Item key={subIndex} as="a" role="listitem">
+                          <span>{sub1.content}</span>
+                          {sub1.subList &&
+                            <List.List role="list">
+                              {sub1.subList.map((sub2, subIndex) => (
+                                <List.Item key={subIndex} as="a" role="listitem">
+                                  <span className='inner text'>{sub2.content}</span>
+                                </List.Item>
+                              ))}
+                            </List.List>}
+                        </List.Item>
+                      ))}
+                    </List.List>}
+                </List.Item>
+              ))}
+            </List.List>}
         </List.Item>
       ))}
     </List>
