@@ -241,7 +241,7 @@
 @basicBackground: transparent none;
 @basicFontWeight: @normal;
 @basicBorder: 1px solid @borderColor;
-@basicBoxShadow: 0px 0px 0px @basicBorderSize @textColor inset;
+@basicBoxShadow: none; // remove basic box shadow by default
 @basicLoadingColor: @offWhite;
 @basicTextTransform: none;
 

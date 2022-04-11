@@ -9,6 +9,14 @@
 @cardBorder: 1px solid @midGray;
 @background: @white;
 
+/* Inverted */
+@invertedBackground: @darkCerulean;
+@invertedHeaderColor: @white;
+@invertedDescriptionColor: @white;
+@invertedExtraLinkColor: @white;
+@invertedExtraLinkHoverColor: @white;
+@invertedMetaColor: @white;
+
 /* Shadow */
 @shadowDistance: 1px;
 @shadowBoxShadow: 0px @shadowDistance 3px 0px @solidBorderColor;
@@ -24,7 +32,7 @@
 @borderWidth: 1px;
 @borderShadow: 0px 0px 0px @borderWidth @solidBorderColor;
 @boxShadow: @eeaGlobalShadow;
-@border: 1px solid @midGray;
+@border: none;
 @zIndex: '';
 @transition:
   box-shadow @defaultDuration @defaultEasing,
@@ -51,11 +59,17 @@
 
 
 /* Image */
+@cardImageHeight: 200px;
+@cardImageOverflow: hidden;
 @imageBackground: @transparentBlack;
 @imagePadding: 0em;
 @imageBorder: none;
 @imageBoxShadow: none;
 @imageBorder: none;
+@imageHeight: 100%;
+@imageWidth: 100%;
+@imageObjectFit: cover;
+@imageObjectPosition: center;
 
 /* Content */
 @contentDivider: @borderWidth solid @internalBorderColor;
@@ -71,9 +85,9 @@
 /* Header */
 @headerMargin: '';
 @headerFontWeight: @bold;
-@headerFontSize: @relativeBig;
+@headerFontSize: 1.125rem;
 @headerLineHeightOffset: -(@lineHeight - 1em) / 2;
-@headerColor: @darkTextColor;
+@headerColor: @black;
 
 /* Metadata */
 @metaFontSize: @relativeMedium;
@@ -92,9 +106,11 @@
 @likeActiveColor: #FF2733;
 
 /* Links */
-@contentLinkColor: '';
-@contentLinkHoverColor: '';
+@contentLinkColor: @white;
+@contentLinkHoverColor: @white;
+@contentLinkFontWeight: @bold;
 @contentLinkTransition: color @defaultDuration @defaultEasing;
+@contentLinkTextDecoration: underline;
 
 @headerLinkColor: @headerColor;
 @headerLinkHoverColor: @linkHoverColor;
@@ -104,7 +120,7 @@
 
 /* Description */
 @descriptionDistance: 0.5em;
-@descriptionColor: rgba(0, 0, 0, 0.68);
+@descriptionColor: @black;
 
 /* Content Image */
 @contentImageWidth: '';
@@ -122,7 +138,7 @@
 @dimmerColor: '';
 
 /* Additional Content */
-@extraDivider: 1px solid rgba(0, 0, 0, 0.05);
+@extraDivider: none;
 @extraBackground: none;
 @extraPosition: static;
 @extraWidth: auto;
@@ -137,6 +153,8 @@
 /* Extra Links */
 @extraLinkColor: @linkColor;
 @extraLinkHoverColor: @linkHoverColor;
+@extraLinkWordBreak: break-all;
+@extraLinkFontSize: 0.875rem;
 
 /* Buttons */
 @buttonMargin: 0px -@borderWidth;

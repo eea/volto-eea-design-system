@@ -1,3 +1,83 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+.ui.popup {
+  font-size: @tooltipFontSize;
+}
+
+.ui.popup.high {
+  background-color: @highImportanceBackground;
+  color: @tooltipInvertedColor;
+
+  &::before {
+    background-color: @highImportanceBackground !important;
+  }
+
+  a {
+    color: @tooltipInvertedColor;
+    text-decoration: @textDecoration;
+
+    &:hover {
+      text-decoration: @noTextDecoration;
+    }
+  }
+}
+
+.ui.popup.medium {
+  background-color: @mediumImportanceBackground;
+  color: @tooltipInvertedColor;
+
+  &::before {
+    background-color: @mediumImportanceBackground !important;
+  }
+
+  a {
+    color: @tooltipInvertedColor;
+    text-decoration: @textDecoration;
+
+    &:hover {
+      text-decoration: @noTextDecoration;
+    }
+  }
+}
+
+.ui.popup.highlight {
+  background-color: @highlightImportanceBackground;
+  color: @tooltipInvertedColor;
+
+  &::before {
+    background-color: @highlightImportanceBackground !important;
+  }
+
+  a {
+    color: @tooltipInvertedColor;
+    text-decoration: @textDecoration;
+
+    &:hover {
+      text-decoration: @noTextDecoration;
+    }
+  }
+}
+
+.ui.popup.low {
+  background-color: @lowImportanceBackground;
+  color: @tooltipInvertedColor;
+
+  &::before {
+    background-color: @lowImportanceBackground !important;
+  }
+
+  a {
+    color: @tooltipInvertedColor;
+    text-decoration: @textDecoration;
+
+    &:hover {
+      text-decoration: @noTextDecoration;
+    }
+  }
+}
+
+.with-popup {
+  cursor: @cursor;
+}
