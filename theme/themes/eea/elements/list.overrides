@@ -23,10 +23,12 @@ ul.ui.list li:before {
   font-size: @bulletSize;
 }
 
+// Third layer margin fix
 .ui.ordered.list .list .list > .item:before {
   margin-left: @orderedGrandchildCountOffset;
 }
 
-.inner.text {
-  margin-left: 1rem;
+// Fourth layer margin fix
+.ui.ordered.list .list .list .list > .item:before {
+  margin-left: @orderedGreatGrandchildCountOffset;
 }

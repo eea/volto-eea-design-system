@@ -22,7 +22,7 @@
 @itemLineHeight: @relativeBig;
 
 /* Sub List */
-@childListPadding: 0.75em 0em 0.25em 0.5em;
+@childListPadding: 0.5em 0em 0.25em 0.5em;
 @childListIndent: 1em;
 
 /* Sub List Item */
@@ -190,6 +190,7 @@
 @orderedChildCountDistance: 1em;
 @orderedChildCountOffset: -2em;
 @orderedGrandchildCountOffset: -2.8em;
+@orderedGreatGrandchildCountOffset: -3.8em;
 
 @orderedInvertedCountColor: @invertedLightTextColor;
 
