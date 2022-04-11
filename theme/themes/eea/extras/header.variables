@@ -26,7 +26,7 @@
 @topSectionBackground                 : @silverGray;
 @topSectionItemColor                  : @japaneseIndigo;
 @topSectionItemFontWeight             : @bold;
-@mobileTopSectionItemFontSize         : @headerMinyFontSize;
+@mobileTopSectionItemFontSize         : @headerSmallFontSize;
 @tabletTopSectionItemFontSize         : @headerSmallFontSize;
 @topSectionZindex                     : 1;
 
@@ -43,6 +43,7 @@
 @dropdownMenuContentWhiteSpace        : pre-wrap;
 @dropdownMenuContentFontWeight        : @normal;
 @mobileDropdownMenuContentFontSize    : @headerSmallFontSize;
+@desktopDropdownMenuContentFontSize   : @headerSmallFontSize;
 @dropdownMenuItemColorHover           : @white;
 @dropdownMenuItemBackgroundColorHover : @japaneseIndigo;
 // Official Union
@@ -55,8 +56,9 @@
 @tabletOfficialUnionPadding           : 0.75rem;
 @mobileOfficialUnionMaxWidth          : 110px;
 @tabletOfficialUnionMaxWidth          : 373px;
-@mobileOfficialUnionImageWidth        : 11px;
-@tabletOfficialUnionImageWidth        : 17px;
+//@mobileOfficialUnionImageWidth        : 11px;
+@mobileOfficialUnionImageWidth        : 16px;
+@tabletOfficialUnionImageWidth        : 33px;
 
 // Theme Sites
 @themeSitesMenuWidth                  : 210px;
@@ -87,7 +89,7 @@
 
 /* Main menu */
 @mainMenuItemColor                    : @deepBlue;
-@mainMenuItemFontSize                 : @headerLargeFontSize;
+@mainMenuItemFontSize                 : ~"min(max(0.875rem, 1.5vw), 1.125rem)";
 @mainMenuItemFontWeight               : 500;
 @mainMenuItemPlaceSelf                : flex-end;
 @mainMenuItemActiveColor              : @secondaryColor;
@@ -99,12 +101,12 @@
 @computerActionsBoxWidth: 72px;
 
 /* Mega menu and Search popup */
-@mobilePopupMarginTop   : 50px;
-@tabletPopupMarginTop   : 100px;
-@computerPopupMarginTop : 200px;
+@mobilePopupMarginTop   : 5vh;
+@tabletPopupMarginTop   : 10vh;
+@computerPopupMarginTop : 18vh;
 
 /* Mega menu */
-@megaMenuBackgroundGradient: linear-gradient(166.78deg, @darkCerulean 39.52%, @darkCyan 118.9%);;
+@megaMenuBackgroundGradient: linear-gradient(166.78deg, @darkCerulean 39.52%, @darkCyan 118.9%);
 
 /* Menu link and toggle */
 @mobileMegaMenuColor            : @white;
@@ -117,22 +119,26 @@
 
 @megaMenuLiAlignItems           : center;
 
-@mobileMegaMenuMarginBottom     : 0.5rem;
-@tabletMegaMenuMarginBottom     : 1rem;
-@computerMegaMenuMarginBottom   : 2rem;
+@mobileMegaMenuMarginBottom     : 0.25em;
+@tabletMegaMenuMarginBottom     : 0.4em;
+@computerMegaMenuMarginBottom   : 0.6em;
 
 // Font sizes and line heights
+@megaMenuFontSize: ~"min(max(1.125rem, 3.5vw), 2.2rem)";
+
+/* Fallback font sizes for ie and opera mini */
 @mobileMegaMenuFontSize         : 1.125rem;
 @tabletMegaMenuFontSize         : @h1;
 
-@computerMegaMenuFirstFontSize  : 3rem;
-@computerMegaMenuSecondFontSize : 2.5rem;
-@computerMegaMenuThirdFontSize  : 2.25rem;
+////////@computerMegaMenuFirstFontSize  : 3rem;
+////////@computerMegaMenuSecondFontSize : 2.5rem;
+////////@computerMegaMenuThirdFontSize  : 2.25rem;
 
 @megaMenuLineHeight             : 1.2;
 
 // Icon
-@megaMenuAfterIcon                : '\f054';
+@megaMenuIconFontFamily           : 'remixicon';
+@megaMenuAfterIcon                : "\EA6E";
 @megaMenuIconAfterColor           : @white;
 @tabletMegaMenuIconAfterFontSize  : 1rem;
 @computerMegaMenuIconAfterFontSize: 1.875rem;

@@ -9,7 +9,7 @@
 }
 
 /* Checkbox */
-.ui.checkbox {
+.ui.checkbox:not(.toggle) {
   margin-bottom: @bottomMargin;
 
   input {

@@ -10,28 +10,28 @@
 @display: inline-block;
 @verticalAlign: middle;
 
-@mobileBreadcrumbFontSize: @7px;
-@tabletBreadcrumbFontSize: @12px;
-
 @mobileBreadcrumbPadding: 0;
 @tabletBreadcrumbPadding: 0 @7px;
 @computerBreadcrumbPadding: 0 @10px;
 
+@breadcrumbItemMaxWidth: 220px;
+
 /* Icon */
-@mobileBreadcrumbIconSize: 0.469rem;
-@tabletBreadcrumbIconSize: @12px;
+@breadcrumbImgWidth: @12px;
+@breadcrumbIconFontSize: 1.2rem;
+@breadcrumbIconWidth: 1rem;
 @breadcrumbFirstChildPadding: 0 0.469rem 0 0;
 
 /* Divider */
 @dividerSpacing: @5px;
-@dividerOpacity: 0.7;
+@dividerOpacity: 1;
 @dividerColor: @deepBlue;
 
 @dividerSize: @relativeSmall;
-@dividerVerticalAlign: baseline;
+@dividerVerticalAlign: sub;
 
-@iconDividerSize: @relativeTiny;
-@iconDividerVerticalAlign: baseline;
+@iconDividerSize: 0.75rem;
+@iconDividerVerticalAlign: sub;
 
 @sectionMargin: 0em;
 @sectionPadding: 0em;
