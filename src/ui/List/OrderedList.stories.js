@@ -40,34 +40,47 @@ export default {
 function OrderedList(items, animated, divided, horizontal) {
   return (
     <Container>
-      <List as="ul" ordered animated={animated} divided={divided} horizontal={horizontal}>
+      <List
+        as="ul"
+        ordered
+        animated={animated}
+        divided={divided}
+        horizontal={horizontal}
+      >
         {items.map((item, index) => (
           <List.Item as="a" key={index}>
             {item.content}
-            {item.subList &&
+            {item.subList && (
               <List.List role="list">
                 {item.subList.map((sub, subIndex) => (
                   <List.Item key={subIndex} as="a" role="listitem">
                     {sub.content}
-                    {sub.subList &&
+                    {sub.subList && (
                       <List.List role="list">
                         {sub.subList.map((sub1, subIndex) => (
                           <List.Item key={subIndex} as="a" role="listitem">
                             {sub1.content}
-                            {sub1.subList &&
+                            {sub1.subList && (
                               <List.List role="list">
                                 {sub1.subList.map((sub2, subIndex) => (
-                                  <List.Item key={subIndex} as="a" role="listitem">
+                                  <List.Item
+                                    key={subIndex}
+                                    as="a"
+                                    role="listitem"
+                                  >
                                     {sub2.content}
                                   </List.Item>
                                 ))}
-                              </List.List>}
+                              </List.List>
+                            )}
                           </List.Item>
                         ))}
-                      </List.List>}
+                      </List.List>
+                    )}
                   </List.Item>
                 ))}
-              </List.List>}
+              </List.List>
+            )}
           </List.Item>
         ))}
       </List>
@@ -76,12 +89,7 @@ function OrderedList(items, animated, divided, horizontal) {
 }
 
 export const Default = (args) => {
-  return OrderedList(
-    args.items,
-    args.animated,
-    args.divided,
-    args.horizontal,
-  );
+  return OrderedList(args.items, args.animated, args.divided, args.horizontal);
 };
 
 Default.args = {
@@ -90,11 +98,13 @@ Default.args = {
       header: 'header 1',
       content: 'Content 1',
       subList: [
-        { 
-          header: 'Sub header 1', content: 'Content second level', subList: [
+        {
+          header: 'Sub header 1',
+          content: 'Content second level',
+          subList: [
             { header: 'Sub header 1', content: 'Content third level' },
             { header: 'Sub header ', content: 'Content third level' },
-          ]
+          ],
         },
         { header: 'Sub header ', content: 'Content second level' },
       ],
@@ -104,12 +114,16 @@ Default.args = {
       content: 'Content 2',
       subList: [
         {
-          header: 'Sub header 1', content: 'Content second level', subList: [
+          header: 'Sub header 1',
+          content: 'Content second level',
+          subList: [
             {
-              header: 'Sub header 1', content: 'Content third level', subList: [
+              header: 'Sub header 1',
+              content: 'Content third level',
+              subList: [
                 { header: 'Sub header 1', content: 'Content fourth level' },
                 { header: 'Sub header ', content: 'Content fourth level' },
-              ]
+              ],
             },
             { header: 'Sub header ', content: 'Content third level' },
           ],
