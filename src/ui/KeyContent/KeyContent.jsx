@@ -16,7 +16,13 @@ function KeyContent({ children, ...rest }) {
 
 KeyContent.Title = ({ children }) => <h2 className="title">{children}</h2>;
 KeyContent.List = ({ children, ...rest }) => (
-  <List bulleted horizontal={false} items={rest.items}></List>
+  <List as="ul" bulleted horizontal={false}>
+    {rest.items.map((item, index) => (
+      <List.Item as="li" className="item" key={index}>
+        {item}
+      </List.Item>
+    ))}
+  </List>
 );
 
 export default KeyContent;
