@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from 'semantic-ui-react';
+import { List, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/List/Description list',
@@ -50,18 +50,20 @@ export default {
 
 function DescriptionList(items, floated, animated, divided, horizontal) {
   return (
-    <List animated={animated} divided={divided} horizontal={horizontal}>
-      {items.map((item, index) => (
-        <List.Item key={index}>
-          <List.Content>
-            <List.Header>{item.header}</List.Header>
-            <List.Description floated={floated}>
-              {item.content}
-            </List.Description>
-          </List.Content>
-        </List.Item>
-      ))}
-    </List>
+    <Container>
+      <List animated={animated} divided={divided} horizontal={horizontal}>
+        {items.map((item, index) => (
+          <List.Item key={index}>
+            <List.Content>
+              <List.Header>{item.header}</List.Header>
+              <List.Description floated={floated}>
+                {item.content}
+              </List.Description>
+            </List.Content>
+          </List.Item>
+        ))}
+      </List>
+    </Container>
   );
 }
 
@@ -81,9 +83,9 @@ Default.args = {
   divided: false,
   horizontal: false,
   items: [
-    { header: 'Header 1', content: 'Content 1' },
-    { header: 'Header 2', content: 'Content 2' },
-    { header: 'Header 3', content: 'Content 3' },
-    { header: 'Header 4', content: 'Content 4' },
+    { header: 'Header 1', content: 'Description content 1' },
+    { header: 'Header 2', content: 'Description content 2' },
+    { header: 'Header 3', content: 'Description content 3' },
+    { header: 'Header 4', content: 'Description content 4' },
   ],
 };
