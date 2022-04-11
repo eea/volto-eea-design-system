@@ -20,13 +20,6 @@ export default {
         defaultValue: { summary: false },
       },
     },
-    horizontal: {
-      description: 'a list can be formatted to have items appear horizontally',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
     items: {
       description: 'array of list content',
       table: {
@@ -40,13 +33,7 @@ export default {
 function OrderedList(items, animated, divided, horizontal) {
   return (
     <Container>
-      <List
-        as="ul"
-        ordered
-        animated={animated}
-        divided={divided}
-        horizontal={horizontal}
-      >
+      <List as="ul" ordered animated={animated} divided={divided}>
         {items.map((item, index) => (
           <List.Item as="a" key={index}>
             {item.content}
@@ -89,7 +76,7 @@ function OrderedList(items, animated, divided, horizontal) {
 }
 
 export const Default = (args) => {
-  return OrderedList(args.items, args.animated, args.divided, args.horizontal);
+  return OrderedList(args.items, args.animated, args.divided);
 };
 
 Default.args = {
@@ -150,5 +137,4 @@ Default.args = {
   ],
   animated: false,
   divided: false,
-  horizontal: false,
 };

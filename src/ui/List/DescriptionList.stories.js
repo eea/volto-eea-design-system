@@ -31,13 +31,6 @@ export default {
         defaultValue: { summary: false },
       },
     },
-    horizontal: {
-      description: 'a list can be formatted to have items appear horizontally',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
     items: {
       description: 'array of list content',
       table: {
@@ -48,10 +41,10 @@ export default {
   },
 };
 
-function DescriptionList(items, floated, animated, divided, horizontal) {
+function DescriptionList(items, floated, animated, divided) {
   return (
     <Container>
-      <List animated={animated} divided={divided} horizontal={horizontal}>
+      <List animated={animated} divided={divided}>
         {items.map((item, index) => (
           <List.Item key={index}>
             <List.Content>
@@ -68,20 +61,13 @@ function DescriptionList(items, floated, animated, divided, horizontal) {
 }
 
 export const Default = (args) => {
-  return DescriptionList(
-    args.items,
-    args.floated,
-    args.animated,
-    args.divided,
-    args.horizontal,
-  );
+  return DescriptionList(args.items, args.floated, args.animated, args.divided);
 };
 
 Default.args = {
   floated: 'right',
   animated: false,
   divided: false,
-  horizontal: false,
   items: [
     { header: 'Header 1', content: 'Description content 1' },
     { header: 'Header 2', content: 'Description content 2' },
