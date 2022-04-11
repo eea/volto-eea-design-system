@@ -35,7 +35,7 @@ export default {
       description: 'controls the state of the toggle',
       table: {
         type: { summary: 'boolean' },
-        defaultValue: { summary: true },
+        defaultValue: { summary: false },
       },
     },
   },
@@ -57,4 +57,12 @@ Default.args = {
   label: 'Toggle label',
   name: 'example',
   disabled: false,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  id: 'disabled',
+  label: 'Disabled Toggle',
+  name: 'disabled',
+  disabled: true,
 };
