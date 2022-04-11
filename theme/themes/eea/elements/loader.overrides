@@ -14,6 +14,7 @@
   padding: @eeaLoaderPadding;
   min-width: @eeaLoaderMinWidth;
   max-width: @eeaLoaderMaxWidth;
+  color: @eeaLoaderTextColor;
   background: @eeaLoaderBackground;
   background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0)), url('../assets/images/loaderImage.png');
   background-position: @eeaLoaderBackgroundPosition;
@@ -22,7 +23,6 @@
   font-size: @bigFontSize;
   font-weight: @eeaLoaderTextFontWeight;
   animation: loaderPulse ease-out 2.5s infinite;
-  color: @eeaLoaderTextColor;
 }
 
 @keyframes loaderPulse {

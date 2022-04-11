@@ -28,9 +28,6 @@
 @textDistance: @relativeMini;
 @loaderTextColor: @textColor;
 @invertedLoaderTextColor: @invertedTextColor;
-@eeaLoaderTextColor: #035997;
-@eeaLoaderTextFontWeight: 700;
-
 
 /*-------------------
         States
@@ -47,14 +44,16 @@
 @inlineMargin: 0em;
 
 /*-------------------
-      Eea Loader
+      EEA Loader
 --------------------*/
-@eeaLoaderPadding: 8rem 2rem 1.5rem 2rem;
-@eeaLoaderMinWidth: 200px;
-@eeaLoaderMaxWidth: 220px;
-@eeaLoaderBackground: rgba(255, 255, 255);
-@eeaLoaderBackgroundPosition: center 30px;
-@eeaLoaderBorderRadius: 72px 30px 0px 32px;
+@eeaLoaderPadding: 8.5rem 2rem 1.5rem 2rem;
+@eeaLoaderMinWidth: 190px;
+@eeaLoaderMaxWidth: 210px;
+@eeaLoaderBackground: @white;
+@eeaLoaderBackgroundPosition: center 1.5rem;
+@eeaLoaderBorderRadius: 4.5rem 2rem 0 2rem;
+@eeaLoaderTextColor: @primaryColor;
+@eeaLoaderTextFontWeight: @bold;
 
 /* Exact Sizes (Avoids Rounding Errors) */
 @mini    : @14px;
