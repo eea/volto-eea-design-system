@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from 'semantic-ui-react';
+import { List, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/List/Unordered list',
@@ -39,17 +39,22 @@ export default {
 
 function UnorderedList(animated, divided, horizontal, items) {
   return (
-    <List
-      bulleted
-      animated={animated}
-      divided={divided}
-      horizontal={horizontal}
-    >
-      {items &&
-        items.map((item, index) => (
-          <List.Item key={index}>{item.content}</List.Item>
-        ))}
-    </List>
+    <Container>
+      <List
+        bulleted
+        animated={animated}
+        divided={divided}
+        horizontal={horizontal}
+        as="ul"
+      >
+        {items &&
+          items.map((item, index) => (
+            <List.Item as="li" key={index}>
+              {item.content}
+            </List.Item>
+          ))}
+      </List>
+    </Container>
   );
 }
 
