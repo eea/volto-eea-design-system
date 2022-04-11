@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from 'semantic-ui-react';
+import { List, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/List',
@@ -7,7 +7,11 @@ export default {
   argTypes: {},
 };
 
-const Template = (args) => <List {...args}></List>;
+const Template = (args) => (
+  <Container>
+    <List {...args}></List>
+  </Container>
+);
 
 export const Default = Template.bind({});
 Default.args = {
