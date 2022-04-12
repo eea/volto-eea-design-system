@@ -8,4 +8,4 @@ Labels, Tags, or Badges are all types of classification component that help to c
 ### Don'ts
 - if your tags aren’t interactive, disable hover, focus, and active styles
 - don’t mix interactive and static tags
-- Don’t overdo it. If everything on a page is called out as important, nothing commands unique attention.
+- don’t overdo it. If everything on a page is called out as important, nothing commands unique attention.
