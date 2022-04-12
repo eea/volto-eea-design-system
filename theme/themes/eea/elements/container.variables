@@ -64,3 +64,4 @@
 
 /* Section */
 @profileSectionPadding: 0px;
+@dxTypeSectionMarginTop: 30px;

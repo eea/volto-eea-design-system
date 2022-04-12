@@ -17,6 +17,11 @@
   padding: @profileSectionPadding;
 }
 
+// TODO fix dropdown overlapping with parent container
+.ui.container.types-control-panel article#content {
+    margin-top: @dxTypeSectionMarginTop;
+}
+
 @media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
   .ui.container {
     padding-right: @tabletPadding;

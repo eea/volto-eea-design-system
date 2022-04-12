@@ -46,6 +46,12 @@
   margin: 0.031rem 0; // Adjust to no border
 }
 
+/* DX types menu dropdown  */
+.ui.container.types-control-panel .menu.transition.visible.left {
+  top: auto;
+  bottom: @dxPanelDropdownBottom;
+}
+
 /* Tab active item custom border design */
 .ui.secondary.pointing.menu:not(.vertical):not(.pagination) a.active.item,
 .ui.secondary.pointing.menu:not(.vertical):not(.pagination) a.item:active {
