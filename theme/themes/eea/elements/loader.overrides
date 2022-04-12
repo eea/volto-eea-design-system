@@ -9,42 +9,192 @@
 
 .ui.text.loader.eea-loader {
   display: flex;
+  min-width: @eeaLoaderMinWidth;
+  max-width: @eeaLoaderMaxWidth;
   align-items: end;
   justify-content: center;
   padding: @eeaLoaderPadding;
-  min-width: @eeaLoaderMinWidth;
-  max-width: @eeaLoaderMaxWidth;
-  color: @eeaLoaderTextColor;
+  animation: loaderPulse ease-out 2.5s infinite;
   background: @eeaLoaderBackground;
-  background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0)), url('../assets/images/loaderImage.png');
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    url('../assets/images/loaderImage.png');
   background-position: @eeaLoaderBackgroundPosition;
   background-repeat: no-repeat;
   border-radius: @eeaLoaderBorderRadius;
+  color: @eeaLoaderTextColor;
   font-size: @bigFontSize;
   font-weight: @eeaLoaderTextFontWeight;
-  animation: loaderPulse ease-out 2.5s infinite;
 }
 
 @keyframes loaderPulse {
-  0% {background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0)), url('../assets/images/loaderImage.png');}
-  5% {background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0)), url('../assets/images/loaderImage.png');}
-  10% {background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0)), url('../assets/images/loaderImage.png');}
-  15% {background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('../assets/images/loaderImage.png');}
-  20% {background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('../assets/images/loaderImage.png');}
-  25% {background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('../assets/images/loaderImage.png');}
-  30% {background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('../assets/images/loaderImage.png');}
-  35% {background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('../assets/images/loaderImage.png');}
-  40% {background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('../assets/images/loaderImage.png');}
-  45% {background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../assets/images/loaderImage.png');}
-  50% {background-image: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.8)), url('../assets/images/loaderImage.png');}
-  55% {background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../assets/images/loaderImage.png');}
-  60% {background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('../assets/images/loaderImage.png');}
-  65% {background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('../assets/images/loaderImage.png');}
-  70% {background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('../assets/images/loaderImage.png');}
-  75% {background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('../assets/images/loaderImage.png');}
-  80% {background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('../assets/images/loaderImage.png');}
-  85% {background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('../assets/images/loaderImage.png');}
-  90% {background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0)), url('../assets/images/loaderImage.png');}
-  95% {background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0)), url('../assets/images/loaderImage.png');}
-  100% {background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0)), url('../assets/images/loaderImage.png');}
+  0% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  5% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  10% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  15% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  20% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  25% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.3)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  30% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.4)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  35% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  40% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.6)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  45% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.7)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  50% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.75),
+        rgba(255, 255, 255, 0.8)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  55% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.7)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  60% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.6)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  65% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  70% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.4)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  75% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.3)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  80% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  85% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  90% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  95% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
+
+  100% {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      ),
+      url('../assets/images/loaderImage.png');
+  }
 }
