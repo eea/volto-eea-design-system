@@ -132,7 +132,7 @@
       display: flex;
       width: @avatarSmallImageWidth;
       height: @avatarSmallImageHeight;
-      border-radius: 50%;
+      border-radius: @avatarImageBorderRadius;
     }
   }
 
