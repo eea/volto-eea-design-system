@@ -28,6 +28,12 @@ Smaller elements, such as icons, can align to a 4px grid, while typography can f
 | gap-10             | 40px             | 2.5rem       |
 | gap-11             | 44px             | 2.75rem      |
 | gap-12             | 48px             | 3rem         |
+| gap-13             | 52px             | 3.25rem      |
+| gap-14             | 56px             | 3.5rem       |
+| gap-15             | 60px             | 3.75rem      |
 | gap-16             | 64px             | 4rem         |
+| gap-17             | 68px             | 4.25rem      |
+| gap-18             | 72px             | 4.5rem       |
+| gap-19             | 76px             | 4.75rem      |
 | gap-20             | 80px             | 5rem         |
 
