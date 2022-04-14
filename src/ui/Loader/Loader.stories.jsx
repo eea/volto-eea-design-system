@@ -1,5 +1,5 @@
 import React from 'react';
-import { Loader } from 'semantic-ui-react';
+import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Loader',
@@ -19,9 +19,22 @@ export default {
   },
 };
 
-const Template = (args) => <Loader {...args} inline="centered" />;
+const DefaultTemplate = (args) => <Loader {...args} inline="centered" />;
 
-export const Default = Template.bind({});
+const FullPageTemplate = (args) => (
+  <Segment>
+    <Dimmer active>
+      <Loader {...args} className="eea-loader" />
+    </Dimmer>
+
+    <Image
+      src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png"
+      alt="paragraph"
+    />
+  </Segment>
+);
+
+export const Default = DefaultTemplate.bind({});
 Default.args = {
   active: true,
   content: '',
@@ -42,4 +55,9 @@ Default.argTypes = {
     ],
     control: { type: 'select' },
   },
+};
+
+export const FullPageLoader = FullPageTemplate.bind({});
+FullPageLoader.args = {
+  content: 'Loading...',
 };
