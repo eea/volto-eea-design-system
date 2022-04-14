@@ -80,15 +80,15 @@
 // and acts as a circular button
 .ui.circular.icon.button {
   padding: @circularButtonPadding;
-  line-height: @circularButtonLineHeight;
   border-width: @circularButtonBorderWidth;
   border-color: @circularButtonBorderColor;
+  line-height: @circularButtonLineHeight;
 }
-
 
 // toolbar yes and cancel icons go outside the button area with default line
 // height
-#toolbar .toolbar-content button, #toolbar .toolbar button {
+#toolbar .toolbar-content button,
+#toolbar .toolbar button {
   line-height: @toolbarButtonLineHeight;
 }
 
