@@ -9,39 +9,41 @@
 
 .ui.label.medium {
   background-color: @mediumImportanceBackground;
-
-  span[aria-describedby='footnote-label'] {
-    color: @color;
-  }
-
-  .footnote-edit-node::after,
-  .citation-item::after {
-    color: @color;
-  }
 }
 
 .ui.label.high {
   background-color: @highImportanceBackground;
-
-  span[aria-describedby='footnote-label'] {
-    color: @color;
-  }
-
-  .footnote-edit-node::after,
-  .citation-item::after {
-    color: @color;
-  }
 }
 
 .ui.label.highlight {
   background-color: @highlightImportanceBackground;
+}
 
+// Custom variations and combinations in slate
+.ui.label.medium, .ui.label.high, .ui.label.highlight {
+  a {
+    color: @color;
+    opacity: @labelOpacity;
+    text-decoration: @labelTextDecoration;
+    &:hover {
+      text-decoration: @labelNoTextDecoration;
+    }
+  }
+  .slate-editor-link {
+    color: @color;
+    text-decoration: @labelTextDecoration;
+  }
   span[aria-describedby='footnote-label'] {
     color: @color;
   }
+  .footnote-edit-node, .citation-item {
+    background: @labelNoBackground;
 
-  .footnote-edit-node::after,
-  .citation-item::after {
-    color: @color;
+    &::after {
+      color: @color;
+    }
+  }
+  .metadata.mention.edit, .metadata.mention.empty {
+    background: @labelNoBackground;
   }
 }
