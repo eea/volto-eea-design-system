@@ -26,7 +26,7 @@
   }
 }
 
-.ui.basic.button {
+.ui.basic.icon.button {
   padding: 0;
   border: 0;
   background: transparent;
@@ -38,8 +38,8 @@
   }
 }
 
-.ui.basic.primary.button,
-.ui.basic.secondary.button {
+.ui.basic.icon.primary.button,
+.ui.basic.icon.secondary.button {
   box-shadow: none !important;
 
   &:hover,
@@ -76,7 +76,6 @@
 /*******************************
       EEA Theme Overrides
 *******************************/
-
 // ensure circular button gets the border color of the current text color
 // and acts as a circular button
 .ui.circular.icon.button {
@@ -86,14 +85,6 @@
   border-color: @circularButtonBorderColor;
 }
 
-// remove border shadow when we use basic icon buttons as the icons usually
-// contain visual elements that do not require any borders
-// ui basic green icon button would give the icon a green color without any
-// bg or border
-.ui.basic.icon.button {
-  box-shadow: none !important;
-  padding: 0;
-}
 
 // toolbar yes and cancel icons go outside the button area with default line
 // height
@@ -101,119 +92,7 @@
   line-height: @toolbarButtonLineHeight;
 }
 
-//Color for button text depends on background
-.text-color(@backColor) when (lightness(@backColor) >= 40%) {
-  color: @primaryButtonColor;
-}
-.text-color(@backColor) when (lightness(@backColor) < 40%) {
-  color: @white;
-}
-
 /* Global Button Styles */
-// 147629 to remove later, basic buttons don't need borders, svg buttons are
-// basic and volto ui has elements that are highlighted because of it
-//.ui.button,
-//.ui.buttons .button,
-//.ui.buttons {
-//  border: @buttonBorder @backgroundColor;
-//
-//  &:hover,
-//  &:active,
-//  &:focus {
-//    border-color: @hoverBackgroundColor;
-//  }
-//}
-
-/* Primary Button Border */
-.ui.button:not(.basic).primary,
-.ui.buttons.primary:not(.basic) {
-  border: @buttonBorder @primaryButtonColor;
-
-  &:hover,
-  &:focus {
-    border: @buttonBorder @primaryColorHover;
-  }
-
-  &:active {
-    border: @buttonBorder @primaryButtonBackgroundActive;
-    background: @primaryButtonBackgroundActive;
-  }
-}
-
-.ui.disabled.primary.button,
-.ui.button.primary:disabled {
-  border: @buttonBorder @primaryButtonDisabledBackground;
-  background: @primaryButtonDisabledBackground;
-  opacity: @buttonDisabledOpacity !important;
-}
-
-/* Secondary Button */
-.ui.button.secondary:not(.basic),
-.ui.buttons.secondary:not(.basic) {
-  border: @buttonBorder @secondaryButtonColor;
-  background-color: @secondaryButtonBackground;
-  color: @secondaryButtonColor;
-
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: @secondaryButtonColor;
-    color: @secondaryButtonColorHover;
-  }
-}
-
-.ui.disabled.secondary.button,
-.ui.button.secondary:disabled {
-  border: @buttonBorder @secondaryButtonDisabledColor;
-  color: @secondaryButtonDisabledColor;
-  opacity: @buttonDisabledOpacity !important;
-}
-
-/* Secondary Button Inverted */
-.ui.button.inverted.secondary,
-.ui.buttons.inverted.secondary {
-  border: @buttonBorder @secondaryButtonInvertedColor;
-  color: @secondaryButtonInvertedColor;
-
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: @secondaryButtonInvertedColor;
-    color: @japaneseIndigo;
-  }
-}
-
-.ui.inverted.secondary.buttons .button,
-.ui.inverted.secondary.button {
-  box-shadow: none !important; // to override the important box shadow - button.less:3271
-}
-
-/* Call to action Button */
-.ui.button.action {
-  border: @buttonBorder @actionButtonBackground;
-  background-color: @actionButtonBackground;
-  color: @actionButtonColor;
-
-  &:hover,
-  &:focus {
-    border: @buttonBorder @actionButtonBackgroundHover;
-    background-color: @actionButtonBackgroundHover;
-  }
-
-  &:active {
-    border: @buttonBorder @actionButtonBackgroundActive;
-    background: @actionButtonBackgroundActive;
-  }
-}
-
-.ui.button.action[class*='right labeled'].icon.button {
-  padding-right: 3em !important; // to apply to theme button paddings - button.less:856
-
-  i {
-    margin-right: 5px !important; // to apply to theme button paddings - button.less:693
-  }
-}
-
 /* Text Button */
 button.ui.button.text,
 button.ui.buttons.text,

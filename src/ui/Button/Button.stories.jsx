@@ -86,15 +86,15 @@ SecondaryInverted.parameters = {
 //Call to action button
 export const CallToAction = (args) => {
   return (
-    <Button
-      icon
-      labelPosition="right"
-      className="action"
-      disabled={args.disabled}
-    >
-      {args.label}
-      <Icon name={args.icon} />
-    </Button>
+    <div className='eea'>
+      <Button
+        className="secondary"
+        disabled={args.disabled}
+      >
+        {args.label}
+        <Icon name={args.icon} />
+      </Button>
+    </div>
   );
 };
 CallToAction.args = {
