@@ -13,6 +13,7 @@
 @mobileKeyContentItemFontSize : 1rem;
 @computerKeyContentItemFontSize: 1.25rem;
 @keyContentItemMarginLeft : @hugeGap;
+@keyContentItemMarginLeftNegative: -2rem;
 
 /* Bullet */
 @keyContentListBulletColor :  @secondaryColor;
