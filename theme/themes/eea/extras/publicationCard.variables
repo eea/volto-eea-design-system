@@ -3,22 +3,31 @@
 --------------------*/
 
 @publicationCardtextColor: @white;
-@publicationCardMargin: 10px 0;
-@publicationCardHeight: 268px;
+@publicationCardMargin: 0.625rem 0;
+@mobilePublicationCardHeight: 285px;
+@tabletPublicationCardHeight: 350px;
+@computerPublicationCardHeight: 270px;
+@publicationCardWidth: auto;
 
 /* Colors */
-@publicationCardBackgroundColor: #BCBEC0;
-@publicationCardDescriptionColor: #3D5265;
+@publicationCardBackgroundColor: @midGray;
+@publicationCardDescriptionColor: @deepBlue;
 
 /* Description */
-@cardDescriptionHeight: auto;
 @cardDescriptionMaxHeight: 135px;
-@computerCardDescriptionHeight: auto;
-@cardDescriptionPadding: 20px;
+@mobileCardDescriptionHeight: 135px;
+@tabletCardDescriptionHeight: 105px;
+@computerCardDescriptionHeight: 110px;
+@cardDescriptionPadding: @largeGap;
 @cardDescriptionWidth: 100%;
-
-@cardDescriptionTagFontSize: 12px;
-@cardDescriptionTagFontWeight: 400;
-@cardDescriptionTextFontSize: 16px;
+@mobileCardDescriptionTextLineClamp: 3;
+@tabletCardDescriptionTextLineClamp: 2;
+@cardDescriptionTextFontSize: 1rem;
 @cardDescriptionTextFontWeight: 700;
+
+/* Tag */
+@cardDescriptionTagFontSize: 0.75rem;
+@cardDescriptionTagFontWeight: 400;
+@cardDescriptionTagPadding: 0;
+@cardDescriptionTagLineHeight: 2;
 

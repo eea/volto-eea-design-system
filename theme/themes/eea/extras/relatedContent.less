@@ -1,0 +1,23 @@
+@type: 'extra';
+@element: 'relatedContent';
+
+@import (multiple) '../../theme.config';
+
+/*-------------------
+  Related Content
+--------------------*/
+
+.related-content-wrapper {
+    .button-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+    .related-content-wrapper {
+        .button-wrapper {
+            justify-content: right;
+        }
+    }
+}
