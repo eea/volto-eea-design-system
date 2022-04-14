@@ -19,18 +19,7 @@ export default {
   },
 };
 
-const DefaultTemplate = (args) => (
-  <Segment>
-    <Dimmer active>
-      <Loader {...args} />
-    </Dimmer>
-
-    <Image
-      src="https://react.semantic-ui.com/images/wireframe/short-paragraph.png"
-      alt="paragraph"
-    />
-  </Segment>
-);
+const DefaultTemplate = (args) => <Loader {...args} inline="centered" />;
 
 const FullPageTemplate = (args) => (
   <Segment>
@@ -47,7 +36,25 @@ const FullPageTemplate = (args) => (
 
 export const Default = DefaultTemplate.bind({});
 Default.args = {
-  content: 'Loading...',
+  active: true,
+  content: '',
+  size: 'medium',
+};
+
+Default.argTypes = {
+  size: {
+    options: [
+      'mini',
+      'tiny',
+      'small',
+      'medium',
+      'large',
+      'big',
+      'huge',
+      'massive',
+    ],
+    control: { type: 'select' },
+  },
 };
 
 export const FullPageLoader = FullPageTemplate.bind({});
