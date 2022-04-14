@@ -29,7 +29,6 @@
 @loaderTextColor: @textColor;
 @invertedLoaderTextColor: @invertedTextColor;
 
-
 /*-------------------
         States
 --------------------*/
@@ -43,6 +42,18 @@
 
 @inlineVerticalAlign: middle;
 @inlineMargin: 0em;
+
+/*-------------------
+      EEA Loader
+--------------------*/
+@eeaLoaderPadding: 8.5rem 2rem 1.5rem 2rem;
+@eeaLoaderMinWidth: 190px;
+@eeaLoaderMaxWidth: 210px;
+@eeaLoaderBackground: @white;
+@eeaLoaderBackgroundPosition: center 1.5rem;
+@eeaLoaderBorderRadius: 4.5rem 2rem 0 2rem;
+@eeaLoaderTextColor: @primaryColor;
+@eeaLoaderTextFontWeight: @bold;
 
 /* Exact Sizes (Avoids Rounding Errors) */
 @mini    : @14px;
