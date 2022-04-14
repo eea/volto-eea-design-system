@@ -1,7 +1,7 @@
 import React from 'react';
 // eslint-disable-next-line import/no-unresolved
-import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/avatar.png';
 import AvatarGrid from './AvatarGrid';
+import { Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Avatar Grid',
@@ -32,14 +32,16 @@ export default {
 };
 
 const GridTemplate = (args) => (
-  <AvatarGrid>
-    <AvatarGrid.Content>
-      <AvatarGrid.Title showTitle={args.showTitle}>
-        {args.title}
-      </AvatarGrid.Title>
-      <AvatarGrid.Group avatars={args.avatars}></AvatarGrid.Group>
-    </AvatarGrid.Content>
-  </AvatarGrid>
+  <Container>
+    <AvatarGrid>
+      <AvatarGrid.Content>
+        <AvatarGrid.Title showTitle={args.showTitle}>
+          {args.title}
+        </AvatarGrid.Title>
+        <AvatarGrid.Group avatars={args.avatars}></AvatarGrid.Group>
+      </AvatarGrid.Content>
+    </AvatarGrid>
+  </Container>
 );
 
 export const Default = GridTemplate.bind({});
@@ -48,19 +50,22 @@ Default.args = {
   showTitle: true,
   avatars: [
     {
-      image_url: imgUrl,
-      title: 'Lorem ipsum',
-      metadata: 'Urna auctor pharetra aenean sed gravida quam',
+      src:
+        'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
+      title: 'Lorem Ipsum',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
-      image_url: imgUrl,
-      title: 'Lorem ipsum',
-      metadata: 'Duis vel eu placerat proin diam id enim suspendisse erat',
+      src:
+        'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
+      title: 'Lorem Ipsum',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
-      image_url: imgUrl,
-      title: 'Lorem ipsum',
-      metadata: 'Egetisi gravida pellentesque volutpat diamon',
+      src:
+        'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
+      title: 'Lorem Ipsum',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
   ],
 };

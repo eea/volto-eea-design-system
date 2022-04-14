@@ -90,14 +90,12 @@
 
     .gradient {
       background-image: @backgroundGradientWithImage;
-      
+
       .content {
         padding: @mobileContentPaddingWithImage;
       }
     }
   }
-
-
 }
 
 /*Share Popup*/
@@ -107,27 +105,26 @@
   filter: @sharePopupFilter;
 
   p {
-      font-size: @sharePopupFontSize;
-      font-weight: @sharePopupFontWeight;
-      line-height: @sharePopupLineHeight;
+    font-size: @sharePopupFontSize;
+    font-weight: @sharePopupFontWeight;
+    line-height: @sharePopupLineHeight;
   }
 
   .actions {
-      flex-flow: column;
-      i.icon {
-          color: @sharePopupActionsIconColor;
-      }
+    flex-flow: column;
+    i.icon {
+      color: @sharePopupActionsIconColor;
+    }
 
-      .action {
-          display:flex;
-          justify-content:center
-      }
+    .action {
+      display: flex;
+      justify-content: center;
+    }
 
-      .ui.button:not(.icon) > .icon:not(.button):not(.dropdown) {
-        margin: @sharePopupActionsIconMargin;
-      }
+    .ui.button:not(.icon) > .icon:not(.button):not(.dropdown) {
+      margin: @sharePopupActionsIconMargin;
+    }
   }
-
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
@@ -135,30 +132,30 @@
     .gradient {
       .content {
         padding: @tabletContentPadding;
-  
+
         .title {
           font-size: @tabletTitleFontSize;
           font-weight: @titleFontWeight;
           margin: @tabletTitleMargin;
           line-height: @tabletTitleLineHeight;
         }
-  
+
         .metadata {
           font-size: @tabletMetadataFontSize;
           line-height: @tabletMetadataLineHeight;
         }
-  
+
         .actions {
           align-items: @tabletActionsAlignItems;
           flex-direction: @tabletActionsFlexDirection;
-  
+
           .action {
-            min-width:@tabletActionsActionMinWidth;
-  
+            min-width: @tabletActionsActionMinWidth;
+
             .ui.basic.inverted.button i.icon {
-                margin: @tabletBannerActionButtonMargin;
-                font-size: @tabletBannerActionButtonIconFontSize;
-                vertical-align: @bannerActionButtonIconVerticalAlign;
+              margin: @tabletBannerActionButtonMargin;
+              font-size: @tabletBannerActionButtonIconFontSize;
+              vertical-align: @bannerActionButtonIconVerticalAlign;
             }
           }
         }
@@ -174,32 +171,28 @@
   .ui.popup.share-popup {
     min-width: @tabletSharePopupMinWidth;
 
-    .actions{
-        flex-flow: row;
-        display: flex;
-        justify-content: space-between;
+    .actions {
+      flex-flow: row;
+      display: flex;
+      justify-content: space-between;
 
-        .action {
-            display:inherit;
-        }
+      .action {
+        display: inherit;
+      }
     }
-
   }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
-
   .eea.banner {
-
     .image {
-
       .gradient .content {
         padding: @computerContentPaddingWithImage;
       }
     }
 
     .gradient .content {
-      padding: @computerContentPadding ;
+      padding: @computerContentPadding;
 
       .title {
         font-size: @computerTitleFontSize;
@@ -207,7 +200,5 @@
         line-height: @computerTitleLineHeight;
       }
     }
-
   }
-
 }

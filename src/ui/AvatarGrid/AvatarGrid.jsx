@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Avatar from '../Avatar/Avatar';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Card, Image } from 'semantic-ui-react';
 
 AvatarGrid.propTypes = {
   title: PropTypes.string,
@@ -20,25 +19,26 @@ AvatarGrid.Content = ({ children }) => {
 };
 
 AvatarGrid.Title = ({ children, ...rest }) => (
-  <p className={`grid-title  ${rest.showTitle ? '' : 'hidden'}`}>{children}</p>
+  <h3 className={`grid-title  ${rest.showTitle ? '' : 'hidden'}`}>
+    {children}
+  </h3>
 );
 AvatarGrid.Group = ({ children, ...rest }) => {
   let avatars = rest.avatars;
-  if (rest.avatars.length > 3) {
-    avatars = avatars.slice(0, 3);
-  }
+
   return (
     <div className="avatar group">
       <Grid>
-        {avatars.map((avatar) => (
-          <Grid.Column mobile={12} tablet={4} computer={4}>
+        {avatars.map((avatar, index) => (
+          <Grid.Column key={index} mobile={12} tablet={4} computer={4}>
             <div className="avatar-wrapper">
-              <Avatar {...rest} image_url={avatar.image_url} avatarSize="big">
-                <Avatar.Content>
-                  <Avatar.Title>{avatar.title}</Avatar.Title>
-                  <Avatar.Metadata>{avatar.metadata}</Avatar.Metadata>
-                </Avatar.Content>
-              </Avatar>
+              <Card className={`eea avatar big`} fluid={avatar.fluid}>
+                <Image src={avatar.src} wrapped ui={false} alt="card image" />
+                <Card.Content>
+                  <Card.Header>{avatar.title}</Card.Header>
+                  <Card.Description>{avatar.description}</Card.Description>
+                </Card.Content>
+              </Card>
             </div>
           </Grid.Column>
         ))}
