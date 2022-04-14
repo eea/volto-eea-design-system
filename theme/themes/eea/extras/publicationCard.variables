@@ -2,32 +2,33 @@
   Publication Card
 --------------------*/
 
-@publicationCardtextColor: @white;
-@publicationCardMargin: 0.625rem 0;
-@mobilePublicationCardHeight: 285px;
-@tabletPublicationCardHeight: 350px;
-@computerPublicationCardHeight: 270px;
-@publicationCardWidth: auto;
+@mobilePublicationCardWidth: 300px;
+@tabletPublicationCardWidth: 660px;
+@computerPublicationCardWidth: 530px;
+
+/* Image */
+@mobilePublicationcardImageHeight: 150px;
+@tabletPublicationcardImageHeight: 250px;
+@computerPublicationcardImageHeight: 160px;
 
 /* Colors */
-@publicationCardBackgroundColor: @midGray;
-@publicationCardDescriptionColor: @deepBlue;
+@publicationCardBackgroundColor: #BCBEC0;
+@publicationCardDescriptionColor: #3D5265;
+@publicationCardtextColor: @white;
+
+/*  Content */
+@cardContentPadding: 20px;
+@cardContentMaxHeight: 135px;
+@mobileCardContentHeight: 135px;
+@tabletCardContentMaxHeight: 110px;
+@tabletCardContentHeight: 110px;
 
 /* Description */
-@cardDescriptionMaxHeight: 135px;
-@mobileCardDescriptionHeight: 135px;
-@tabletCardDescriptionHeight: 105px;
-@computerCardDescriptionHeight: 110px;
-@cardDescriptionPadding: @largeGap;
-@cardDescriptionWidth: 100%;
-@mobileCardDescriptionTextLineClamp: 3;
-@tabletCardDescriptionTextLineClamp: 2;
-@cardDescriptionTextFontSize: 1rem;
+@cardDescriptionTextLineClampMobile: 3;
+@cardDescriptionTextLineClampTablet: 2;
+@cardDescriptionTextFontSize: 16px;
 @cardDescriptionTextFontWeight: 700;
 
-/* Tag */
-@cardDescriptionTagFontSize: 0.75rem;
-@cardDescriptionTagFontWeight: 400;
-@cardDescriptionTagPadding: 0;
-@cardDescriptionTagLineHeight: 2;
-
+/* Meta */
+@cardMetaFontSize: 12px;
+@cardMetaTagFontWeight: 400;

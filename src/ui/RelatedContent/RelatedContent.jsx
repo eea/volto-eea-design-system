@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grid, Button } from 'semantic-ui-react';
-import PublicationCard from '../PublicationCard/PublicationCard';
+import { Grid, Button, Card, Image } from 'semantic-ui-react';
 
 function RelatedContent({ children, ...rest }) {
   return (
@@ -33,13 +32,13 @@ RelatedContent.Grid = ({ children, ...rest }) => {
               mobile={12}
             >
               {row.map((item, index) => (
-                <PublicationCard {...item} key={index}>
-                  <PublicationCard.Header></PublicationCard.Header>
-                  <PublicationCard.Info
-                    description={item.description}
-                    tag={item.tag}
-                  ></PublicationCard.Info>
-                </PublicationCard>
+                <Card className="publication" key={index}>
+                  <Image src={item.image} wrapped ui={false} alt="card image" />
+                  <Card.Content>
+                    <Card.Meta>{item.tag}</Card.Meta>
+                    <Card.Description>{item.description}</Card.Description>
+                  </Card.Content>
+                </Card>
               ))}
             </Grid.Column>
           ))
@@ -51,29 +50,26 @@ RelatedContent.Grid = ({ children, ...rest }) => {
               tablet={12}
               mobile={12}
             >
-              <PublicationCard {...item}>
-                <PublicationCard.Header></PublicationCard.Header>
-                <PublicationCard.Info
-                  description={item.description}
-                  tag={item.tag}
-                ></PublicationCard.Info>
-              </PublicationCard>
+              <Card className="publication">
+                <Image src={item.image} wrapped ui={false} alt="card image" />
+                <Card.Content>
+                  <Card.Meta>{item.tag}</Card.Meta>
+                  <Card.Description>{item.description}</Card.Description>
+                </Card.Content>
+              </Card>
             </Grid.Column>
           ))}
-    </>
-  );
-};
 
-RelatedContent.Button = ({ children, ...rest }) => {
-  if (!rest.showButton) return null;
-  return (
-    <Grid.Row className={!rest.showButton ? 'hidden' : null}>
-      <Grid.Column>
-        <div className="button-wrapper">
-          <Button secondary>{children}</Button>
-        </div>
-      </Grid.Column>
-    </Grid.Row>
+      {rest.showButton && rest.publicationCards.length > 4 && (
+        <Grid.Row className={!rest.showButton ? 'hidden' : null}>
+          <Grid.Column>
+            <div className="button-wrapper">
+              <Button secondary>{rest.buttonText}</Button>
+            </div>
+          </Grid.Column>
+        </Grid.Row>
+      )}
+    </>
   );
 };
 

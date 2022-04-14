@@ -1,23 +1,22 @@
 import React from 'react';
-import PublicationCard from './PublicationCard';
-import { Container } from 'semantic-ui-react';
+import { Card, Image } from 'semantic-ui-react';
 
 const imageUrl =
   'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini';
 
 export default {
-  title: 'Components/PublicationCard',
-  component: PublicationCard,
+  title: 'Components/Publication Card',
+  component: Card,
   argTypes: {
     tag: {
-      description: 'publication tags',
+      description: 'publication card tags',
       table: {
         type: { summary: 'string' },
         defaultValue: { summary: '' },
       },
     },
     description: {
-      description: 'publication description',
+      description: 'publication card description',
       table: {
         type: { summary: 'string' },
         defaultValue: { summary: '' },
@@ -27,44 +26,27 @@ export default {
 };
 
 const Template = (args) => (
-  <Container>
-    <PublicationCard {...args}>
-      <PublicationCard.Header
-        image_url={args.image ? imageUrl : null}
-        image={args.image}
-      />
-      <PublicationCard.Info description={args.description} tag={args.tag} />
-    </PublicationCard>
-  </Container>
+  <Card className="publication">
+    <Image src={args.image} wrapped ui={false} alt="card image" />
+    <Card.Content>
+      <Card.Meta>{args.tag}</Card.Meta>
+      <Card.Description>{args.description}</Card.Description>
+    </Card.Content>
+  </Card>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  tag: 'Publication',
+export const PublicationCard = Template.bind({});
+PublicationCard.args = {
+  tag: '#Publication',
   description:
     'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+  image: imageUrl,
 };
 
-export const DefaultWithLongDescription = Template.bind({});
-DefaultWithLongDescription.args = {
+export const PublicationCardWithLongDescription = Template.bind({});
+PublicationCardWithLongDescription.args = {
   tag: 'Publication',
   description:
     'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
-};
-
-export const PublicationCardWithImage = Template.bind({});
-PublicationCardWithImage.args = {
-  tag: 'Publication',
-  description:
-    'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-  image: true,
-};
-PublicationCardWithImage.argTypes = {
-  image: {
-    description: 'set or unset publication backgroung image',
-    table: {
-      type: { summary: 'boolean' },
-      defaultValue: { summary: 'false' },
-    },
-  },
+  image: imageUrl,
 };
