@@ -101,7 +101,7 @@ const GridTemplate = (args) => (
   <Container>
     <Grid>
       {args.cards.map((card) => (
-        <Grid.Column mobile={12} tablet={6} computer={2}>
+        <Grid.Column mobile={12} tablet={6} computer={4}>
           <Card fluid={card.fluid} className="primary">
             {card.hasImage && (
               <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
