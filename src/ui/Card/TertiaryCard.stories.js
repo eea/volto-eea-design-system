@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Image, Container } from 'semantic-ui-react';
 
 const imageUrl =
   'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini';
@@ -26,13 +26,15 @@ export default {
 };
 
 const Template = (args) => (
-  <Card className="publication tertiary">
-    <Image src={args.image} wrapped ui={false} alt="card image" />
-    <Card.Content>
-      <Card.Meta>{args.tag}</Card.Meta>
-      <Card.Description>{args.description}</Card.Description>
-    </Card.Content>
-  </Card>
+  <Container>
+    <Card className="publication tertiary">
+      <Image src={args.image} wrapped ui={false} alt="card image" />
+      <Card.Content>
+        <Card.Meta>{args.tag}</Card.Meta>
+        <Card.Description>{args.description}</Card.Description>
+      </Card.Content>
+    </Card>
+  </Container>
 );
 
 export const PublicationCard = Template.bind({});

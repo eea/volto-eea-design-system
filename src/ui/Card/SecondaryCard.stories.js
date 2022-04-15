@@ -68,18 +68,18 @@ export default {
 const Template = (args) => (
   <Container>
     <Card fluid={args.fluid} className="secondary">
-        {args.hasImage && (
+      {args.hasImage && (
         <Image src={args.imgUrl} wrapped ui={false} alt="card image" />
-        )}
-        <Card.Content>
+      )}
+      <Card.Content>
         <Card.Header>{args.title}</Card.Header>
         <Card.Description>{args.description}</Card.Description>
-        </Card.Content>
-        {args.links !== null &&
+      </Card.Content>
+      {args.links !== null &&
         args.links.map((item, index) => (
-            <Card.Content extra key={index}>
+          <Card.Content extra key={index}>
             <a href="/#">{item.linkName}</a>
-            </Card.Content>
+          </Card.Content>
         ))}
     </Card>
   </Container>
@@ -100,25 +100,25 @@ Default.args = {
 const GridTemplate = (args) => (
   <Container>
     <Grid>
-        {args.cards.map((card) => (
+      {args.cards.map((card) => (
         <Grid.Column mobile={12} tablet={6} computer={4}>
-            <Card fluid={card.fluid} className="secondary">
+          <Card fluid={card.fluid} className="secondary">
             {card.hasImage && (
-                <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
+              <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
             )}
             <Card.Content>
-                <Card.Header>{card.title}</Card.Header>
-                <Card.Description>{card.description}</Card.Description>
+              <Card.Header>{card.title}</Card.Header>
+              <Card.Description>{card.description}</Card.Description>
             </Card.Content>
             {card.links !== null &&
-                card.links.map((item, index) => (
+              card.links.map((item, index) => (
                 <Card.Content extra key={index}>
-                    <a href="/#">{item.linkName}</a>
+                  <a href="/#">{item.linkName}</a>
                 </Card.Content>
-                ))}
-            </Card>
+              ))}
+          </Card>
         </Grid.Column>
-        ))}
+      ))}
     </Grid>
   </Container>
 );

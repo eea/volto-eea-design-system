@@ -65,7 +65,6 @@ export default {
   },
 };
 
-
 const AvatarTemplate = (args) => (
   <Container>
     <Card className={`eea avatar ${args.avatarVariant}`} fluid={args.fluid}>

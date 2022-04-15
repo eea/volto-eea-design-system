@@ -66,21 +66,23 @@ export default {
 };
 
 const Template = (args) => (
-  <Card fluid={args.fluid} className="primary">
-    {args.hasImage && (
-      <Image src={args.imgUrl} wrapped ui={false} alt="card image" />
-    )}
-    <Card.Content>
-      <Card.Header>{args.title}</Card.Header>
-      <Card.Description>{args.description}</Card.Description>
-    </Card.Content>
-    {args.links !== null &&
-      args.links.map((item, index) => (
-        <Card.Content extra key={index}>
-          <a href="/#">{item.linkName}</a>
-        </Card.Content>
-      ))}
-  </Card>
+  <Container>
+    <Card fluid={args.fluid} className="primary">
+      {args.hasImage && (
+        <Image src={args.imgUrl} wrapped ui={false} alt="card image" />
+      )}
+      <Card.Content>
+        <Card.Header>{args.title}</Card.Header>
+        <Card.Description>{args.description}</Card.Description>
+      </Card.Content>
+      {args.links !== null &&
+        args.links.map((item, index) => (
+          <Card.Content extra key={index}>
+            <a href="/#">{item.linkName}</a>
+          </Card.Content>
+        ))}
+    </Card>
+  </Container>
 );
 
 export const Default = Template.bind({});
@@ -96,27 +98,29 @@ Default.args = {
 };
 
 const GridTemplate = (args) => (
-  <Grid>
-    {args.cards.map((card) => (
-      <Grid.Column mobile={12} tablet={6} computer={2}>
-        <Card fluid={card.fluid} className="primary">
-          {card.hasImage && (
-            <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
-          )}
-          <Card.Content>
-            <Card.Header>{card.title}</Card.Header>
-            <Card.Description>{card.description}</Card.Description>
-          </Card.Content>
-          {card.links !== null &&
-            card.links.map((item, index) => (
-              <Card.Content extra key={index}>
-                <a href="/#">{item.linkName}</a>
-              </Card.Content>
-            ))}
-        </Card>
-      </Grid.Column>
-    ))}
-  </Grid>
+  <Container>
+    <Grid>
+      {args.cards.map((card) => (
+        <Grid.Column mobile={12} tablet={6} computer={2}>
+          <Card fluid={card.fluid} className="primary">
+            {card.hasImage && (
+              <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
+            )}
+            <Card.Content>
+              <Card.Header>{card.title}</Card.Header>
+              <Card.Description>{card.description}</Card.Description>
+            </Card.Content>
+            {card.links !== null &&
+              card.links.map((item, index) => (
+                <Card.Content extra key={index}>
+                  <a href="/#">{item.linkName}</a>
+                </Card.Content>
+              ))}
+          </Card>
+        </Grid.Column>
+      ))}
+    </Grid>
+  </Container>
 );
 
 export const CardGrid = GridTemplate.bind({});
