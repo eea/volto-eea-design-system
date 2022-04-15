@@ -33,29 +33,40 @@ export default {
 function OrderedList(items, animated, divided, horizontal) {
   return (
     <Container>
-      <List as="ul" ordered animated={animated} divided={divided}>
+      <List as="ol" ordered animated={animated} divided={divided}>
         {items.map((item, index) => (
-          <List.Item as="a" key={index}>
-            {item.content}
+          <List.Item as="li" key={index} className="item">
+            <a href="/#">{item.content}</a>
             {item.subList && (
-              <List.List role="list">
+              <List.List role="list" as="ol" className="list">
                 {item.subList.map((sub, subIndex) => (
-                  <List.Item key={subIndex} as="a" role="listitem">
-                    {sub.content}
+                  <List.Item
+                    key={subIndex}
+                    as="li"
+                    role="listitem"
+                    className="item"
+                  >
+                    <a href="/#">{sub.content}</a>
                     {sub.subList && (
-                      <List.List role="list">
+                      <List.List role="list" as="ol" className="list">
                         {sub.subList.map((sub1, subIndex) => (
-                          <List.Item key={subIndex} as="a" role="listitem">
-                            {sub1.content}
+                          <List.Item
+                            key={subIndex}
+                            as="li"
+                            role="listitem"
+                            className="item"
+                          >
+                            <a href="/#">{sub1.content}</a>
                             {sub1.subList && (
-                              <List.List role="list">
+                              <List.List role="list" as="ol" className="list">
                                 {sub1.subList.map((sub2, subIndex) => (
                                   <List.Item
                                     key={subIndex}
-                                    as="a"
+                                    as="li"
                                     role="listitem"
+                                    className="item"
                                   >
-                                    {sub2.content}
+                                    <a href="/#">{sub2.content}</a>
                                   </List.Item>
                                 ))}
                               </List.List>
