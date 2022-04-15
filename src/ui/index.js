@@ -22,6 +22,8 @@ export Timeline from './Timeline/Timeline';
 
 export Testimonial from './Testimonial/Testimonial';
 
-export AvatarGrid from './AvatarGrid/AvatarGrid';
+export AvatarGrid from './Card/AvatarGrid/AvatarGrid';
 
 export KeyContent from './KeyContent/KeyContent';
+
+export RelatedContent from './Card/RelatedContent/RelatedContent';
