@@ -6,7 +6,7 @@ const imageUrl =
   'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini';
 
 export default {
-  title: 'Components/Related Content',
+  title: 'Components/Card/Tertiary',
   component: RelatedContent,
   argTypes: {},
 };

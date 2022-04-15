@@ -4,7 +4,7 @@ import AvatarGrid from './AvatarGrid';
 import { Container } from 'semantic-ui-react';
 
 export default {
-  title: 'Components/Avatar Grid',
+  title: 'Components/Card/Rounded Card',
   component: AvatarGrid,
   argTypes: {
     showTitle: {
@@ -44,8 +44,8 @@ const GridTemplate = (args) => (
   </Container>
 );
 
-export const Default = GridTemplate.bind({});
-Default.args = {
+export const RoundedGrid = GridTemplate.bind({});
+RoundedGrid.args = {
   title: 'Amet - Lorem ipsum dolor sit amet',
   showTitle: true,
   avatars: [
