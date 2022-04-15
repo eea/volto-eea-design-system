@@ -2,31 +2,6 @@
          Theme Overrides
 *******************************/
 
-/* Inverted Card */
-.ui.card.inverted {
-  background: @invertedBackground;
-
-  > .content > .header {
-    color: @invertedHeaderColor;
-  }
-
-  > .content > .description {
-    color: @invertedDescriptionColor;
-  }
-
-  > .extra.content a:not(.ui) {
-    color: @invertedExtraLinkColor;
-
-    &:hover {
-      color: @invertedExtraLinkHoverColor;
-    }
-  }
-
-  > .content > .meta {
-    color: @invertedMetaColor;
-  }
-}
-
 /* Avoid long links from spilling outside of card body area */
 .ui.cards > .card > .extra,
 .ui.card > .extra {
@@ -143,5 +118,152 @@
   .description {
     font-size: @avatarSmallMetadataFontSize;
     font-weight: @avatarSmallMetadataFontWeight;
+  }
+}
+
+/*******************************
+            Primary
+*******************************/
+
+.ui.card.primary {
+  background: @primaryBackground;
+}
+
+.ui.card.primary > .content > .header {
+  color: @primaryHeaderColor;
+}
+
+.ui.card.primary > .content > .description {
+  color: @primaryDescriptionColor;
+}
+
+.ui.card.primary > .extra.content a:not(.ui) {
+  color: @primaryExtraLinkColor;
+
+  &:hover {
+    color: @primaryExtraLinkHoverColor;
+  }
+}
+
+.ui.card.primary > .content > .meta {
+  color: @primaryMetaColor;
+}
+
+/*******************************
+            Secondary
+*******************************/
+
+.ui.card.secondary {
+  background: @secondaryBackground;
+}
+
+.ui.card.secondary > .content > .header {
+  color: @secondaryHeaderColor;
+}
+
+.ui.card.secondary > .content > .description {
+  color: @secondaryDescriptionColor;
+}
+
+.ui.card.secondary > .extra.content a:not(.ui) {
+  color: @secondaryExtraLinkColor;
+
+  &:hover {
+    color: @secondaryExtraLinkHoverColor;
+  }
+}
+
+.ui.card.secondary > .content > .meta {
+  color: @secondaryMetaColor;
+}
+
+/*******************************
+            Tertiary
+*******************************/
+.ui.card.tertiary {
+  background: @tertiaryBackground;
+}
+
+.ui.card.tertiary > .content > .header {
+  color: @tertiaryHeaderColor;
+}
+
+.ui.card.tertiary > .content > .description {
+  color: @tertiaryDescriptionColor;
+}
+
+.ui.card.tertiary > .extra.content a:not(.ui) {
+  color: @tertiaryExtraLinkColor;
+
+  &:hover {
+    color: @tertiaryExtraLinkHoverColor;
+  }
+}
+
+.ui.card.tertiary > .content > .meta {
+  color: @tertiaryMetaColor;
+}
+
+.ui.card.publication {
+  width: @mobilePublicationCardWidth;
+  border: none;
+
+  .image {
+    height: @mobilePublicationcardImageHeight;
+    flex-grow: 1;
+  }
+
+  .content {
+    height: @mobileCardContentHeight;
+    max-height: @cardContentMaxHeight;
+    padding: @cardContentPadding;
+    background-color: @publicationCardDescriptionColor;
+
+    .meta {
+      color: @publicationCardtextColor;
+      font-size: @cardMetaFontSize;
+      font-weight: @cardMetaTagFontWeight;
+    }
+
+    .description {
+      display: -webkit-box;
+      overflow: hidden;
+      margin-top: 0;
+      -webkit-box-orient: vertical;
+      color: @publicationCardtextColor;
+      font-size: @cardDescriptionTextFontSize;
+      font-weight: @cardDescriptionTextFontWeight;
+      -webkit-line-clamp: @cardDescriptionTextLineClampMobile;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .ui.card.publication {
+    width: @tabletPublicationCardWidth;
+
+    .image {
+      height: @tabletPublicationcardImageHeight;
+    }
+
+    .content {
+      height: @tabletCardContentHeight;
+      max-height: @tabletCardContentMaxHeight;
+
+      .description {
+        -webkit-line-clamp: @cardDescriptionTextLineClampTablet;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  .ui.card.publication {
+    width: @computerPublicationCardWidth;
+
+    .image {
+      height: @computerPublicationcardImageHeight;
+    }
   }
 }

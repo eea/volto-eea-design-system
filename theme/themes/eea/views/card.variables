@@ -9,14 +9,6 @@
 @cardBorder: 1px solid @midGray;
 @background: @white;
 
-/* Inverted */
-@invertedBackground: @darkCerulean;
-@invertedHeaderColor: @white;
-@invertedDescriptionColor: @white;
-@invertedExtraLinkColor: @white;
-@invertedExtraLinkHoverColor: @white;
-@invertedMetaColor: @white;
-
 /* Shadow */
 @shadowDistance: 1px;
 @shadowBoxShadow: 0px @shadowDistance 3px 0px @solidBorderColor;
@@ -240,7 +232,6 @@
 /*******************************
             Avatar
 *******************************/
-
 /* Global */
 @avatarWidth                    : 100%;
 @avatarWrapperWidth             : 100%;
@@ -265,3 +256,68 @@
 @avatarSmallTitleColor          : @secondaryColor;
 @avatarSmallMetadataFontSize    : 1rem;
 @avatarSmallMetadataFontWeight  : 300;
+
+
+/*******************************
+            Primary
+*******************************/
+@primaryBackground: @primaryColor;
+@primaryHeaderColor: @white;
+@primaryDescriptionColor: @white;
+@primaryExtraLinkColor: @white;
+@primaryExtraLinkHoverColor: @white;
+@primaryMetaColor: @white;
+
+/*******************************
+            Secondary
+*******************************/
+@secondaryBackground: @secondaryColor;
+@secondaryHeaderColor: @white;
+@secondaryDescriptionColor: @white;
+@secondaryExtraLinkColor: @white;
+@secondaryExtraLinkHoverColor: @white;
+@secondaryMetaColor: @white;
+
+/*******************************
+            Tertiary
+*******************************/
+@tertiaryBackground: #3D5265;
+@tertiaryHeaderColor: @white;
+@tertiaryDescriptionColor: @white;
+@tertiaryExtraLinkColor: @white;
+@tertiaryExtraLinkHoverColor: @white;
+@tertiaryMetaColor: @white;
+
+
+/*******************************
+            Publication
+*******************************/
+@mobilePublicationCardWidth: 300px;
+@tabletPublicationCardWidth: 660px;
+@computerPublicationCardWidth: 530px;
+
+/* Image */
+@mobilePublicationcardImageHeight: 150px;
+@tabletPublicationcardImageHeight: 250px;
+@computerPublicationcardImageHeight: 160px;
+
+/* Colors */
+@publicationCardDescriptionColor: #3D5265;
+@publicationCardtextColor: @white;
+
+/*  Content */
+@cardContentPadding: 20px;
+@cardContentMaxHeight: 135px;
+@mobileCardContentHeight: 135px;
+@tabletCardContentMaxHeight: 110px;
+@tabletCardContentHeight: 110px;
+
+/* Description */
+@cardDescriptionTextLineClampMobile: 3;
+@cardDescriptionTextLineClampTablet: 2;
+@cardDescriptionTextFontSize: 16px;
+@cardDescriptionTextFontWeight: 700;
+
+/* Meta */
+@cardMetaFontSize: 12px;
+@cardMetaTagFontWeight: 400;
