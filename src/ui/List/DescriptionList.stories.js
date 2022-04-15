@@ -44,16 +44,16 @@ export default {
 function DescriptionList(items, floated, animated, divided) {
   return (
     <Container>
-      <List animated={animated} divided={divided}>
+      <List animated={animated} divided={divided} as="dl">
         {items.map((item, index) => (
-          <List.Item key={index}>
-            <List.Content>
-              <List.Header>{item.header}</List.Header>
-              <List.Description floated={floated}>
-                {item.content}
-              </List.Description>
-            </List.Content>
-          </List.Item>
+          <React.Fragment key={index}>
+            <List.Header as="dt" className="item">
+              {item.header}
+            </List.Header>
+            <List.Description floated={floated} as="dd">
+              {item.content}
+            </List.Description>
+          </React.Fragment>
         ))}
       </List>
     </Container>
