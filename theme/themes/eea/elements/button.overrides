@@ -92,21 +92,31 @@
   line-height: @toolbarButtonLineHeight;
 }
 
+// Maps, Video and Image blocks use buttons without
+// icons, fix them in css for now
+#page-edit .basic.button {
+  padding: 0;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
 /* Global Button Styles */
 /* Text Button */
 button.ui.button.text,
 button.ui.buttons.text,
 p.ui.button {
-  border: none;
   background-color: @textButtonBackground;
   color: @primaryColor;
+  text-decoration: underline;
 
   &:hover,
   &:active,
   &:focus {
-    border: none;
-    background-color: @textButtonBackground;
     color: @primaryColorHover;
+  }
+
+  &:focus {
+    box-shadow: @textButtonFocusedBoxShadow;
   }
 }
 

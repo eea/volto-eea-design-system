@@ -38,6 +38,7 @@
 
 /* Text Button */
 @textButtonBackground: transparent;
+@textButtonFocusedBoxShadow: 0 0 0 2px @primaryColorHover inset;
 
 /* Search Button */
 @searchButtonBackground: transparent;
