@@ -47,7 +47,7 @@ PublicationCard.args = {
 
 export const PublicationCardWithLongDescription = Template.bind({});
 PublicationCardWithLongDescription.args = {
-  tag: 'Publication',
+  tag: '#Publication',
   description:
     'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
   image: imageUrl,

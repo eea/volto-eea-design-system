@@ -27,30 +27,30 @@ export const DefaultEven = Template.bind({});
 DefaultEven.args = {
   publicationCards: [
     {
-      tag: 'Publication',
+      tag: '#Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       image: imageUrl,
     },
     {
-      tag: 'Publication',
+      tag: '#Publication',
       description: 'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
       image: imageUrl,
     },
     {
-      tag: 'Publication',
+      tag: '#Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. ',
       image: imageUrl,
     },
     {
-      tag: 'Publication',
+      tag: '#Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
       image: imageUrl,
     },
     {
-      tag: 'Publication',
+      tag: '#Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       image: imageUrl,
@@ -100,18 +100,18 @@ export const DefaultOdd = Template.bind({});
 DefaultOdd.args = {
   publicationCards: [
     {
-      tag: 'Publication',
+      tag: '#Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       image: imageUrl,
     },
     {
-      tag: 'Publication',
+      tag: '#Publication',
       description: 'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
       image: imageUrl,
     },
     {
-      tag: 'Publication',
+      tag: '#Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
       image: imageUrl,
@@ -205,7 +205,7 @@ RelatedContentInTab.args = {
       menuItem: 'Briefings',
       publicationCards: [
         {
-          tag: 'Publication',
+          tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
           image: imageUrl,
@@ -218,13 +218,13 @@ RelatedContentInTab.args = {
       menuItem: 'News and articles',
       publicationCards: [
         {
-          tag: 'Publication',
+          tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
           image: imageUrl,
         },
         {
-          tag: 'Publication',
+          tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
           image: imageUrl,
@@ -237,19 +237,19 @@ RelatedContentInTab.args = {
       menuItem: 'Publications',
       publicationCards: [
         {
-          tag: 'Publication',
+          tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
           image: imageUrl,
         },
         {
-          tag: 'Publication',
+          tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
           image: imageUrl,
         },
         {
-          tag: 'Publication',
+          tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. ',
           image: imageUrl,
@@ -262,31 +262,31 @@ RelatedContentInTab.args = {
       menuItem: 'See also',
       publicationCards: [
         {
-          tag: 'Publication',
+          tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
           image: imageUrl,
         },
         {
-          tag: 'Publication',
+          tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
           image: imageUrl,
         },
         {
-          tag: 'Publication',
+          tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. ',
           image: imageUrl,
         },
         {
-          tag: 'Publication',
+          tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
           image: imageUrl,
         },
         {
-          tag: 'Publication',
+          tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
           image: imageUrl,
