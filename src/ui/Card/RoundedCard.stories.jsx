@@ -10,8 +10,6 @@ export default {
     },
   },
   argTypes: {
-    imgUrl:
-      'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
     hasImage: {
       description: 'true if card contains image',
       table: {
@@ -48,19 +46,26 @@ export default {
         defaultValue: { summary: false },
       },
     },
-    links: {
-      description: 'array with links to other content',
-      table: {
-        type: {
-          summary: 'Object',
-        },
-        defaultValue: { summary: ' "" ' },
-      },
-    },
     avatarVariant: {
       options: ['big', 'small'],
       control: { type: 'inline-radio' },
       defaultValue: 'big',
+      description: 'rounded card size class',
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: { summary: ' "" ' },
+      },
+    },
+    src: {
+      description: 'rounded card image url',
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: { summary: ' "" ' },
+      },
     },
   },
 };
@@ -68,7 +73,9 @@ export default {
 const AvatarTemplate = (args) => (
   <Container>
     <Card className={`eea avatar ${args.avatarVariant}`} fluid={args.fluid}>
-      <Image src={args.src} wrapped ui={false} alt="card image" />
+      {args.hasImage && (
+        <Image src={args.src} wrapped ui={false} alt="card image" />
+      )}
       <Card.Content>
         <Card.Header>{args.title}</Card.Header>
         <Card.Description>{args.description}</Card.Description>
