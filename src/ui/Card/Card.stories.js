@@ -10,64 +10,23 @@ export default {
     },
   },
   argTypes: {
-    imgUrl:
-      'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-    hasImage: {
-      description: 'true if card contains image',
-      table: {
-        type: {
-          summary: 'boolean',
-        },
-        defaultValue: { summary: true },
-      },
-    },
-    title: {
-      description: 'card header',
+    class: {
+      options: [null, 'primary', 'secondary', 'tertiary'],
+      control: { type: 'select' },
+      description: 'card variation class',
       table: {
         type: {
           summary: 'string',
         },
-        defaultValue: { summary: ' "" ' },
+        defaultValue: { summary: 'null' },
       },
-    },
-    description: {
-      description: 'card main content',
-      table: {
-        type: {
-          summary: 'string',
-        },
-        defaultValue: { summary: ' "" ' },
-      },
-    },
-    fluid: {
-      description: 'take up the width of its container',
-      table: {
-        type: {
-          summary: 'boolean',
-        },
-        defaultValue: { summary: false },
-      },
-    },
-    links: {
-      description: 'array with links to other content',
-      table: {
-        type: {
-          summary: 'Object',
-        },
-        defaultValue: { summary: ' "" ' },
-      },
-    },
-    avatarVariant: {
-      options: ['big', 'small'],
-      control: { type: 'inline-radio' },
-      defaultValue: 'big',
     },
   },
 };
 
 const Template = (args) => (
   <Container>
-    <Card fluid={args.fluid}>
+    <Card fluid={args.fluid} className={args.class}>
       {args.hasImage && (
         <Image src={args.imgUrl} wrapped ui={false} alt="card image" />
       )}
@@ -87,6 +46,7 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
+  class: null,
   imgUrl:
     'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
   title: 'Lorem Ipsum',
@@ -96,13 +56,62 @@ Default.args = {
   fluid: false,
   links: [{ linkName: 'Link 1' }],
 };
+Default.argTypes = {
+  imgUrl:
+    'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+  hasImage: {
+    description: 'true if card contains image',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: { summary: true },
+    },
+  },
+  title: {
+    description: 'card header',
+    table: {
+      type: {
+        summary: 'string',
+      },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  description: {
+    description: 'card main content',
+    table: {
+      type: {
+        summary: 'string',
+      },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  fluid: {
+    description: 'take up the width of its container',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: { summary: false },
+    },
+  },
+  links: {
+    description: 'array with links to other content',
+    table: {
+      type: {
+        summary: 'Object',
+      },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+};
 
 const GridTemplate = (args) => (
   <Container>
     <Grid>
       {args.cards.map((card) => (
         <Grid.Column mobile={12} tablet={6} computer={4}>
-          <Card fluid={card.fluid}>
+          <Card fluid={card.fluid} className={args.class}>
             {card.hasImage && (
               <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
             )}
@@ -125,6 +134,7 @@ const GridTemplate = (args) => (
 
 export const CardGrid = GridTemplate.bind({});
 CardGrid.args = {
+  class: null,
   cards: [
     {
       title: 'Lorem Ipsum',
@@ -155,4 +165,15 @@ CardGrid.args = {
       links: [{ linkName: 'Link 1' }],
     },
   ],
+};
+CardGrid.argTypes = {
+  cards: {
+    description: 'array with cards data',
+    table: {
+      type: {
+        summary: 'Object',
+      },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
 };
