@@ -9,7 +9,18 @@ export default {
 
 const Template = (args) => (
   <Container>
-    <List {...args}></List>
+    <List
+      floated={args.floated}
+      animated={args.animated}
+      divided={args.divided}
+      as="dl"
+    >
+      {args.items.map((item, index) => (
+        <List.Item className="item" key={index} as="dt">
+          {item}
+        </List.Item>
+      ))}
+    </List>
   </Container>
 );
 
