@@ -119,7 +119,7 @@ export const Labeled = (args) => {
       </Button>
 
       <Button
-        className={args.variant + ' icon labeled ' + args.icon_position}
+        className={args.variant + ' icon ' + args.icon_position ' labeled'}
         disabled={args.disabled}
       >
         {args.icon_position === ' left' && (
