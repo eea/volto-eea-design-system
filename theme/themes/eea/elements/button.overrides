@@ -112,6 +112,7 @@ p.ui.button {
   &:hover,
   &:active,
   &:focus {
+    background-color: @textButtonBackground;
     color: @primaryColorHover;
   }
 
@@ -137,6 +138,26 @@ p.ui.button {
     background: @searchButtonBackground;
     color: @searchButtonColor;
   }
+}
+
+/* Labeled and left and right icons on buttons */
+.ui.button:not(.icon) > .left.icon:not(.button):not(.dropdown),
+.ui.button:not(.icon) > .icon:not(.right) {
+  margin: @iconMargin;
+}
+
+/* Left Labeled */
+.ui.labeled.icon.buttons > .button > .icon,
+.ui.labeled.icon.button > .icon {
+  top: @labeledLeftTop;
+  left: @labeledLeftLeft;
+}
+
+/* Right Labeled */
+.ui[class*='right labeled'].icon.button > .icon {
+  top: @labeledRightTop;
+  right: @labeledRightRight;
+  left: @labeledRightLeft;
 }
 
 .ui.icon.left.labeled.button.search {
