@@ -67,7 +67,7 @@ export default {
 
 const AvatarTemplate = (args) => (
   <Container>
-    <Card className={`eea avatar ${args.avatarVariant}`} fluid={args.fluid}>
+    <Card className={`eea rounded ${args.avatarVariant}`} fluid={args.fluid}>
       <Image src={args.src} wrapped ui={false} alt="card image" />
       <Card.Content>
         <Card.Header>{args.title}</Card.Header>

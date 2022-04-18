@@ -230,35 +230,6 @@
 
 
 /*******************************
-            Avatar
-*******************************/
-/* Global */
-@avatarWidth                    : 100%;
-@avatarWrapperWidth             : 100%;
-@avatarWrapperGap               : @largeGap;
-@avatarContentWrapperWidth      : 100%;
-@avatarImageBorderRadius        : 50%;
-@avatarContentTitleMarginBottom : 0;
-@avatarImageWrapperWidth        : 100%;
-@avatarImageBackgroundSize      : cover;
-@avatarContentTitleFontWeight   : @bold;
-@avatarContentTitleFontSize     : 1.25rem;
-
-/* Big */
-@avatarBigImageHeight           : 173px;
-@avatarBigImageWidth            : 173px;
-@avatarBigMetadataFontSize      : 1.25rem;
-@avatarBigMetadataFontWeight    : @normal;
-
-/* Small */
-@avatarSmallImageHeight         : 150px;
-@avatarSmallImageWidth          : 150px;
-@avatarSmallTitleColor          : @secondaryColor;
-@avatarSmallMetadataFontSize    : 1rem;
-@avatarSmallMetadataFontWeight  : 300;
-
-
-/*******************************
             Primary
 *******************************/
 @primaryBackground: @primaryColor;
@@ -288,9 +259,36 @@
 @tertiaryExtraLinkHoverColor: @white;
 @tertiaryMetaColor: @white;
 
+/*******************************
+          Rounded Card
+*******************************/
+/* Global */
+@roundedWidth                    : 100%;
+@roundedWrapperWidth             : 100%;
+@roundedWrapperGap               : @largeGap;
+@roundedContentWrapperWidth      : 100%;
+@roundedImageBorderRadius        : @circularRadius;
+@roundedContentTitleMarginBottom : 0;
+@roundedImageWrapperWidth        : 100%;
+@roundedImageBackgroundSize      : cover;
+@roundedContentTitleFontWeight   : @bold;
+@roundedContentTitleFontSize     : 1.25rem;
+
+/* Big */
+@roundedBigImageHeight           : 173px;
+@roundedBigImageWidth            : 173px;
+@roundedBigMetadataFontSize      : 1.25rem;
+@roundedBigMetadataFontWeight    : @normal;
+
+/* Small */
+@roundedSmallImageHeight         : 150px;
+@roundedSmallImageWidth          : 150px;
+@roundedSmallTitleColor          : @secondaryColor;
+@roundedSmallMetadataFontSize    : 1rem;
+@roundedSmallMetadataFontWeight  : 300;
 
 /*******************************
-            Publication
+        Publication Card
 *******************************/
 @mobilePublicationCardWidth: 300px;
 @tabletPublicationCardWidth: 660px;

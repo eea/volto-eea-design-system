@@ -48,80 +48,6 @@
 }
 
 /*******************************
-            Avatar
-*******************************/
-
-.eea.card.avatar {
-  width: @avatarWidth;
-  border: none;
-
-  .content {
-    justify-content: center;
-    border-top: none;
-
-    .image {
-      display: flex;
-      justify-content: center;
-      background-color: @white;
-    }
-
-    .header {
-      margin-bottom: @avatarContentTitleMarginBottom;
-      font-size: @avatarContentTitleFontSize;
-      font-weight: @avatarContentTitleFontWeight;
-      text-align: center;
-    }
-
-    .description {
-      text-align: center;
-    }
-  }
-}
-
-.eea.card.avatar.big {
-  .image {
-    display: flex;
-    justify-content: center;
-    background-color: @white;
-
-    img {
-      width: @avatarBigImageWidth;
-      height: @avatarBigImageHeight;
-      border-radius: 50%;
-    }
-  }
-
-  .description {
-    font-size: @avatarBigMetadataFontSize;
-    font-weight: @avatarBigMetadataFontWeight;
-  }
-}
-
-.eea.avatar.small {
-  .image {
-    display: flex;
-    justify-content: center;
-    background-color: @white;
-
-    img {
-      display: flex;
-      width: @avatarSmallImageWidth;
-      height: @avatarSmallImageHeight;
-      border-radius: @avatarImageBorderRadius;
-    }
-  }
-
-  .header {
-    color: @avatarSmallTitleColor;
-  }
-
-  .description {
-    font-size: @avatarSmallMetadataFontSize;
-    font-weight: @avatarSmallMetadataFontWeight;
-  }
-}
-
-/*******************************
             Primary
 *******************************/
 
@@ -180,6 +106,7 @@
 /*******************************
             Tertiary
 *******************************/
+
 .ui.card.tertiary {
   background: @tertiaryBackground;
 }
@@ -203,6 +130,89 @@
 .ui.card.tertiary > .content > .meta {
   color: @tertiaryMetaColor;
 }
+
+/*******************************
+          Rounded Card
+*******************************/
+
+.ui.cards > .ui.card.rounded > .image,
+.ui.card.rounded  > .image {
+  height: auto;
+}
+
+.ui.card.rounded {
+  width: @roundedWidth;
+  border: none;
+
+  .content {
+    justify-content: center;
+    border-top: none;
+
+    .image {
+      display: flex;
+      justify-content: center;
+      background-color: @white;
+    }
+
+    .header {
+      margin-bottom: @roundedContentTitleMarginBottom;
+      font-size: @roundedContentTitleFontSize;
+      font-weight: @roundedContentTitleFontWeight;
+      text-align: center;
+    }
+
+    .description {
+      text-align: center;
+    }
+  }
+}
+
+.ui.card.rounded.big {
+  .image {
+    display: flex;
+    justify-content: center;
+    background-color: @white;
+
+    img {
+      width: @roundedBigImageWidth;
+      height: @roundedBigImageHeight;
+      border-radius: 50%;
+    }
+  }
+
+  .description {
+    font-size: @roundedBigMetadataFontSize;
+    font-weight: @roundedBigMetadataFontWeight;
+  }
+}
+
+.ui.rounded.small {
+  .image {
+    display: flex;
+    justify-content: center;
+    background-color: @white;
+
+    img {
+      display: flex;
+      width: @roundedSmallImageWidth;
+      height: @roundedSmallImageHeight;
+      border-radius: @roundedImageBorderRadius;
+    }
+  }
+
+  .header {
+    color: @roundedSmallTitleColor;
+  }
+
+  .description {
+    font-size: @roundedSmallMetadataFontSize;
+    font-weight: @roundedSmallMetadataFontWeight;
+  }
+}
+
+/*******************************
+        Publication Card
+*******************************/
 
 .ui.card.publication {
   width: @mobilePublicationCardWidth;
