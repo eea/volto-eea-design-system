@@ -56,11 +56,11 @@
 @primaryColor         : @darkCerulean;
 @secondaryColor       : @pineGreen;
 
-@lightPrimaryColor    : @darkCyan;
-@lightSecondaryColor  : @mediumPersianBlue;
+@lightPrimaryColor    : @mediumPersianBlue;
+@lightSecondaryColor  : @darkCyan;
 
-@darkPrimaryColor     : @bottleGreen;
-@darkSecondaryColor   : @darkMidnightBlue;
+@darkPrimaryColor     : @darkMidnightBlue;
+@darkSecondaryColor   : @bottleGreen;
 
 /*--------------
   Page Heading

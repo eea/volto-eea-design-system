@@ -127,8 +127,8 @@
 @coloredBorderSize: 2px;
 
 /* Ordinality */
-@secondaryBackground: @deepBlue;
-@secondaryColor: @white;
+@secondaryBackground: @tealBackground;
+@secondaryColor: @textColor;
 
 @tertiaryBackground:  @midWhite;
 @tertiaryColor: @mutedTextColor;

@@ -22,7 +22,12 @@
 @borderWidth: 0;
 @border: none;
 
+@labelLineHeight: inherit;
 @lineHeightOffset: -(@verticalPadding / 2);
+@labelTextDecoration: underline;
+@labelNoTextDecoration: none;
+@labelNoBackground: transparent;
+@labelOpacity: 1;
 
 @labelTransitionDuration: @defaultDuration;
 @labelTransitionEasing: @defaultEasing;

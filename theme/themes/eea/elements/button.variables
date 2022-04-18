@@ -38,6 +38,7 @@
 
 /* Text Button */
 @textButtonBackground: transparent;
+@textButtonFocusedBoxShadow: 0 0 0 2px @primaryColorHover inset;
 
 /* Search Button */
 @searchButtonBackground: transparent;
@@ -56,7 +57,7 @@
 
 /* Button defaults to using same height as input globally */
 @verticalPadding: @inputVerticalPadding;
-@horizontalPadding: 1.875em;
+@horizontalPadding: 1.75em;
 
 /* Text */
 @textTransform: none;
@@ -92,8 +93,8 @@
 @iconTransition: opacity @defaultDuration @defaultEasing;
 @iconVerticalAlign: '';
 
-@iconMargin: 0em @iconDistance 0em -(@iconDistance / 2);
-@rightIconMargin: 0em -(@iconDistance / 2) 0em @iconDistance;
+@iconMargin: 0 @iconDistance 0 -(@iconDistance / 2); // 0 means there is no margin between the icon and the button
+@rightIconMargin: 0 -(@iconDistance / 2) 0 @iconDistance;
 
 /* Loader */
 @invertedLoaderFillColor: rgba(0, 0, 0, 0.15);
@@ -213,11 +214,18 @@
 @labeledLabelBorderOffset: -@borderBoxShadowWidth;
 @labeledTagLabelSize: 1.85em; /* hypotenuse of triangle */
 @labeledIconMargin: 0em;
+/* Labeled left */
+@labeledLeftTop: 0;
+@labeledLeftLeft: 0.85em;
+/* Labeled Right */
+@labeledRightTop: 0;
+@labeledRightLeft: auto;
+@labeledRightRight: 0.85em;
 
 /* Labeled Icon */
 @labeledIconWidth: 1em + (@verticalPadding * 2);
 @labeledIconBackgroundColor: none;
-@labeledIconPadding: (@horizontalPadding + @labeledIconWidth);
+@labeledIconPadding: 3em; //(@horizontalPadding + @labeledIconWidth);
 @labeledIconBorder: transparent;
 @labeledIconColor: '';
 
@@ -241,7 +249,7 @@
 @basicBackground: transparent none;
 @basicFontWeight: @normal;
 @basicBorder: 1px solid @borderColor;
-@basicBoxShadow: 0px 0px 0px @basicBorderSize @textColor inset;
+@basicBoxShadow: none; // remove basic box shadow by default
 @basicLoadingColor: @offWhite;
 @basicTextTransform: none;
 
@@ -292,8 +300,11 @@
 @basicGroupBoxShadow: none;
 
 /* Circular */
-@circularButtonPadding: 0.75em 0.25em 0;
-@circularButtonIconFontSize: 2rem;
+@circularButtonBorderWidth: 2px;
+@circularButtonBorderColor: currentColor;
+@circularButtonPadding: 0.25em;
+@circularButtonIconFontSize: 1.375em;
+@circularButtonLineHeight: 1;
 
 /*-------------------
       Variations
@@ -403,3 +414,6 @@
 @animationEasing: ease;
 @fadeScaleHigh: 1.5;
 @fadeScaleLow: 0.75;
+
+/* Pastanaga Toolbar Button */
+@toolbarButtonLineHeight: 0.75;
