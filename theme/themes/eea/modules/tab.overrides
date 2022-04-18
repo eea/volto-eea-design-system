@@ -10,4 +10,29 @@
   a.item:hover {
     color: @tabActiveItemHoverColor;
   }
+
+}
+
+.ui.pointing.secondary.menu::-webkit-scrollbar {
+    height: @mobileTabScrollbarHeight;
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+
+  .ui.pointing.secondary.menu::-webkit-scrollbar {
+    height: @tabletTabScrollbarHeight;
+  }
+
+}
+
+@media only screen and (max-width: @largestMobileScreen) {
+
+  .ui.pointing.secondary.vertical.menu {
+
+    .item {
+      font-size: @largestMobileItemFontSize;
+      padding: @largestMobileItemPadding;
+    }
+
+  }
 }
