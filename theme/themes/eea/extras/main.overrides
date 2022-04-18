@@ -29,3 +29,12 @@
     }
   }
 }
+
+// Ensure Add block is visible with no blocks added on page load
+#page-add {
+  min-height: @pageAddMinHeight;
+}
+// added override for css found in volto-block-style/stretchStyleDefaultView.css
+.view-addview #main .content-area > main {
+  overflow: auto;
+}
