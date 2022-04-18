@@ -108,27 +108,12 @@ Inverted.parameters = {
 export const Labeled = (args) => {
   return (
     <div className="eea">
-      <Button className={args.variant} disabled={args.disabled}>
-        {args.icon_position === ' left' && (
-          <Icon name={args.icon + args.icon_position} />
-        )}
-        {args.label}
-        {args.icon_position !== ' left' && (
-          <Icon name={args.icon + args.icon_position} />
-        )}
-      </Button>
-
       <Button
         className={args.variant + ' icon ' + args.icon_position + ' labeled'}
         disabled={args.disabled}
       >
-        {args.icon_position === ' left' && (
-          <Icon name={args.icon + args.icon_position} />
-        )}
         {args.label}
-        {args.icon_position !== ' left' && (
-          <Icon name={args.icon + args.icon_position} />
-        )}
+        <Icon name={args.icon + args.icon_position} />
       </Button>
     </div>
   );
