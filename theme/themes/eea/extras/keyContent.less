@@ -4,33 +4,35 @@
 @import (multiple) '../../theme.config';
 
 .eea.key-content {
-  background-color: @keyContentBackgroundColor;
-
-  .title {
-    text-align: center;
-    font-weight: @keyContentTitleFontWeight;
-    font-size: @keyContentTitleFontSize;
-  }
-
-  .ui.bulleted.list {
-    margin-left: @keyContentListMarginLeft;
-  }
-
-  .item {
-    margin-left: 74.85px;
-    margin-bottom: 34.07px;
-  }
-
-  .item::before {
-    color: @keyContentListItemBeforeColor;
-    margin-left: @keyContentListItemBeforeMarginLeft;
-  }
-}
-
-.eea.key-content.colored {
   .title {
     text-align: left;
     color: @keyContentColoredTitleColor;
-    margin-left: @keyContentColoredTitleMarginLeft;
+    margin-left: @keyContentTitleMarginLeft;
+  }
+
+  .ui.bulleted.list {
+    display: flex;
+    flex-direction: column;
+    gap: @keyContentListGap;
+  }
+
+  .item {
+    color: @keyContentItemColor;
+    font-size: @mobileKeyContentItemFontSize;
+    margin-left: @keyContentItemMarginLeft;
+  }
+
+  .ui.bulleted.list > .item::before {
+    color: @keyContentListBulletColor;
+    font-size: @keyContentListBulletFontSize;
+    margin-left: @keyContentItemMarginLeftNegative;
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  .eea.key-content {
+    .item {
+      font-size: @computerKeyContentItemFontSize;
+    }
   }
 }

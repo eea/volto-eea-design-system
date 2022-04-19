@@ -73,7 +73,7 @@ const TemplateReversed = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  icon: 'user',
+  icon: 'ri-user-3-fill',
   time: 'Date and time',
   title: 'Title',
   description: 'description',
@@ -83,7 +83,7 @@ Default.args = {
 
 Default.argTypes = {
   icon: {
-    description: 'timeline item icon',
+    description: 'timeline item icon class',
     table: {
       type: {
         summary: 'string',
@@ -152,7 +152,7 @@ Default.argTypes = {
 
 export const DefaultReversed = TemplateReversed.bind({});
 DefaultReversed.args = {
-  icon: 'user',
+  icon: 'ri-user-3-fill',
   time: 'Date and time',
   title: 'Title',
   description: 'description',
@@ -162,7 +162,7 @@ DefaultReversed.args = {
 
 DefaultReversed.argTypes = {
   icon: {
-    description: 'timeline item icon',
+    description: 'timeline item icon class',
     table: {
       type: {
         summary: 'string',
@@ -234,7 +234,7 @@ export const Multiple = (args) => <TimelineEEA {...args}></TimelineEEA>;
 Multiple.args = {
   items: [
     {
-      icon: 'time',
+      icon: 'ri-time-line',
       time: 'Date and time',
       title: 'Title 1',
       description: 'description 1',
@@ -242,7 +242,7 @@ Multiple.args = {
       tags: [],
     },
     {
-      icon: 'check circle',
+      icon: 'ri-checkbox-circle-line',
       time: 'Date and time',
       title: 'Title 2',
       description: 'description 2',
@@ -250,11 +250,11 @@ Multiple.args = {
       tags: [],
     },
     {
-      icon: 'minus circle',
+      icon: 'ri-indeterminate-circle-line',
       time: 'Date and time',
       title: 'Title 3',
       description: 'description 3',
-      color: 'teal',
+      color: 'violet',
       tags: [],
     },
   ],
@@ -281,7 +281,7 @@ export const MultipleReversed = (args) => (
 MultipleReversed.args = {
   items: [
     {
-      icon: 'time',
+      icon: 'ri-time-line',
       time: 'Date and time',
       title: 'Title 1',
       description: 'description 1',
@@ -289,7 +289,7 @@ MultipleReversed.args = {
       tags: [],
     },
     {
-      icon: 'check circle',
+      icon: 'ri-checkbox-circle-line',
       time: 'Date and time',
       title: 'Title 2',
       description: 'description 2',
@@ -297,11 +297,11 @@ MultipleReversed.args = {
       tags: [],
     },
     {
-      icon: 'minus circle',
+      icon: 'ri-indeterminate-circle-line',
       time: 'Date and time',
       title: 'Title 3',
       description: 'description 3',
-      color: 'teal',
+      color: 'violet',
       tags: [],
     },
   ],
