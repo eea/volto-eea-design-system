@@ -32,7 +32,7 @@ AvatarGrid.Group = ({ children, ...rest }) => {
         {avatars.map((avatar, index) => (
           <Grid.Column key={index} mobile={12} tablet={4} computer={4}>
             <div className="avatar-wrapper">
-              <Card className={`eea avatar big`} fluid={avatar.fluid}>
+              <Card className={`eea rounded big`} fluid={avatar.fluid}>
                 <Image src={avatar.src} wrapped ui={false} alt="card image" />
                 <Card.Content>
                   <Card.Header>{avatar.title}</Card.Header>
