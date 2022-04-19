@@ -35,6 +35,6 @@
   min-height: @pageAddMinHeight;
 }
 // added override for css found in volto-block-style/stretchStyleDefaultView.css
-.view-addview #main .content-area > main {
-  overflow: auto;
+#main main {
+  overflow: inherit;
 }
