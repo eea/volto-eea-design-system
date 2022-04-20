@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Image, Container } from 'semantic-ui-react';
+import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/avatar.png';
 
 export default {
   title: 'Components/Card/Rounded Card',
@@ -87,8 +88,7 @@ const AvatarTemplate = (args) => (
 export const Default = AvatarTemplate.bind({});
 Default.args = {
   avatarVariant: 'big',
-  src:
-    '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/avatar.png',
+  src: imgUrl,
   title: 'Lorem Ipsum',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   hasImage: true,

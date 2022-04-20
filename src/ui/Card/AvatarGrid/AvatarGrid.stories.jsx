@@ -2,6 +2,7 @@ import React from 'react';
 // eslint-disable-next-line import/no-unresolved
 import AvatarGrid from './AvatarGrid';
 import { Container } from 'semantic-ui-react';
+import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/avatar.png';
 
 export default {
   title: 'Components/Card/Rounded Card',
@@ -50,20 +51,17 @@ RoundedGrid.args = {
   showTitle: true,
   avatars: [
     {
-      src:
-        '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/avatar.png',
+      src: imgUrl,
       title: 'Lorem Ipsum',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
-      src:
-        '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/avatar.png',
+      src: imgUrl,
       title: 'Lorem Ipsum',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
-      src:
-        '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/avatar.png',
+      src: imgUrl,
       title: 'Lorem Ipsum',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
