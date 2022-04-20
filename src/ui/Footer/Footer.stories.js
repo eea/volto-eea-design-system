@@ -12,7 +12,7 @@ import Logo8 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/lo
 import Logo9 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/industry.svg';
 import Logo10 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/marine.svg';
 import EIONETLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EIONETLogo.png';
-import EEALogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EEA-Logo-white.svg';
+import EEALogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EEA-Logo-White-2.svg';
 
 export default {
   title: 'Layout/Footer',

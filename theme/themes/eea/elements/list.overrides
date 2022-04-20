@@ -22,3 +22,7 @@ div.ui.list > .item .description {
 ul.ui.list li:before {
   font-size: @bulletSize;
 }
+
+.ui.ordered.list .list .list > .item:before {
+  margin-left: @orderedGrandchildCountOffset;
+}
