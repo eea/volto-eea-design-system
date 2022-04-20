@@ -38,14 +38,9 @@ export default {
 //Default Call To Action
 export const Default = (args) => {
   return (
-    <a
-      className={`ui button ${args.disabled ? 'disabled' : ''}`}
-      href={args.href}
-      target="_blank"
-      rel="noreferrer"
-    >
+    <Button as="a" disabled={args.disabled} href={args.href} target="_blank">
       {args.label}
-    </a>
+    </Button>
   );
 };
 Default.args = {
@@ -57,14 +52,15 @@ Default.args = {
 //Primary Call To Action
 export const Primary = (args) => {
   return (
-    <a
-      className={`ui button primary ${args.disabled ? 'disabled' : ''}`}
+    <Button
+      primary
+      as="a"
+      disabled={args.disabled}
       href={args.href}
       target="_blank"
-      rel="noreferrer"
     >
       {args.label}
-    </a>
+    </Button>
   );
 };
 Primary.args = {
@@ -76,14 +72,15 @@ Primary.args = {
 //Secondary Call To Action
 export const Secondary = (args) => {
   return (
-    <a
-      className={`ui button secondary ${args.disabled ? 'disabled' : ''}`}
+    <Button
+      secondary
+      as="a"
+      disabled={args.disabled}
       href={args.href}
       target="_blank"
-      rel="noreferrer"
     >
       {args.label}
-    </a>
+    </Button>
   );
 };
 Secondary.args = {
@@ -96,34 +93,35 @@ Secondary.args = {
 export const Inverted = (args) => {
   return (
     <Segment inverted compact>
-      <a
-        className={`ui button primary inverted ${
-          args.disabled ? 'disabled' : ''
-        }`}
+      <Button
+        primary
+        inverted
+        as="a"
+        disabled={args.disabled}
         href={args.href1}
         target="_blank"
-        rel="noreferrer"
       >
         {args.button1}
-      </a>
-      <a
-        className={`ui button secondary inverted ${
-          args.disabled ? 'disabled' : ''
-        }`}
+      </Button>
+      <Button
+        secondary
+        inverted
+        as="a"
+        disabled={args.disabled}
         href={args.href2}
         target="_blank"
-        rel="noreferrer"
       >
         {args.button2}
-      </a>
-      <a
-        className={`ui button inverted ${args.disabled ? 'disabled' : ''}`}
+      </Button>
+      <Button
+        inverted
+        as="a"
+        disabled={args.disabled}
         href={args.href3}
         target="_blank"
-        rel="noreferrer"
       >
         {args.button3}
-      </a>
+      </Button>
     </Segment>
   );
 };
@@ -145,17 +143,16 @@ Inverted.parameters = {
 export const Labeled = (args) => {
   return (
     <div className="eea">
-      <a
-        className={`ui button ${args.variant} icon ${
-          args.icon_position
-        } labeled ${args.disabled ? 'disabled' : ''}`}
+      <Button
+        className={args.variant + ' icon ' + args.icon_position + ' labeled'}
+        as="a"
+        disabled={args.disabled}
         href={args.href}
         target="_blank"
-        rel="noreferrer"
       >
         {args.label}
         <Icon name={args.icon} />
-      </a>
+      </Button>
     </div>
   );
 };
@@ -211,21 +208,4 @@ Labeled.argTypes = {
       type: { summary: 'string' },
     },
   },
-};
-
-//Text Call To Action
-export const Text = (args) => {
-  return (
-    <a href={args.href} target="_blank" rel="noreferrer">
-      {args.label}
-    </a>
-  );
-};
-Text.args = {
-  label: 'Text Call To Action',
-  href: '/#',
-};
-Text.parameters = {
-  controls: { exclude: ['disabled'] },
-  hideNoControlsWarning: true,
 };

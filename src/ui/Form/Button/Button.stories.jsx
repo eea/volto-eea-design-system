@@ -113,7 +113,7 @@ export const Labeled = (args) => {
         disabled={args.disabled}
       >
         {args.label}
-        <Icon name={args.icon + args.icon_position} />
+        <Icon name={args.icon} />
       </Button>
     </div>
   );
