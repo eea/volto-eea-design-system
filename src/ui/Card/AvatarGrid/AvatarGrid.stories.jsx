@@ -51,19 +51,19 @@ RoundedGrid.args = {
   avatars: [
     {
       src:
-        'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
+        '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/avatar.png',
       title: 'Lorem Ipsum',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
       src:
-        'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
+        '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/avatar.png',
       title: 'Lorem Ipsum',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
       src:
-        'static/media/src/addons/volto-eea-design-system/theme/themes/eea/assets/images/avatar.png',
+        '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/avatar.png',
       title: 'Lorem Ipsum',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
