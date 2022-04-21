@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Icon, Segment } from 'semantic-ui-react';
+import { Button, Icon, Container, Segment } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Call To Action',
@@ -38,9 +38,11 @@ export default {
 //Default Call To Action
 export const Default = (args) => {
   return (
-    <Button as="a" disabled={args.disabled} href={args.href} target="_blank">
-      {args.label}
-    </Button>
+    <Container>
+      <Button as="a" disabled={args.disabled} href={args.href} target="_blank">
+        {args.label}
+      </Button>
+    </Container>
   );
 };
 Default.args = {
@@ -52,15 +54,17 @@ Default.args = {
 //Primary Call To Action
 export const Primary = (args) => {
   return (
-    <Button
-      primary
-      as="a"
-      disabled={args.disabled}
-      href={args.href}
-      target="_blank"
-    >
-      {args.label}
-    </Button>
+    <Container>
+      <Button
+        primary
+        as="a"
+        disabled={args.disabled}
+        href={args.href}
+        target="_blank"
+      >
+        {args.label}
+      </Button>
+    </Container>
   );
 };
 Primary.args = {
@@ -72,15 +76,17 @@ Primary.args = {
 //Secondary Call To Action
 export const Secondary = (args) => {
   return (
-    <Button
-      secondary
-      as="a"
-      disabled={args.disabled}
-      href={args.href}
-      target="_blank"
-    >
-      {args.label}
-    </Button>
+    <Container>
+      <Button
+        secondary
+        as="a"
+        disabled={args.disabled}
+        href={args.href}
+        target="_blank"
+      >
+        {args.label}
+      </Button>
+    </Container>
   );
 };
 Secondary.args = {
@@ -92,37 +98,43 @@ Secondary.args = {
 //Inverted Call To Action
 export const Inverted = (args) => {
   return (
-    <Segment inverted compact>
-      <Button
-        primary
-        inverted
-        as="a"
-        disabled={args.disabled}
-        href={args.href1}
-        target="_blank"
-      >
-        {args.button1}
-      </Button>
-      <Button
-        secondary
-        inverted
-        as="a"
-        disabled={args.disabled}
-        href={args.href2}
-        target="_blank"
-      >
-        {args.button2}
-      </Button>
-      <Button
-        inverted
-        as="a"
-        disabled={args.disabled}
-        href={args.href3}
-        target="_blank"
-      >
-        {args.button3}
-      </Button>
-    </Segment>
+    <Container>
+      <Segment compact>
+        <Button
+          primary
+          inverted
+          as="a"
+          disabled={args.disabled}
+          href={args.href1}
+          target="_blank"
+        >
+          {args.button1}
+        </Button>
+      </Segment>
+      <Segment compact>
+        <Button
+          secondary
+          inverted
+          as="a"
+          disabled={args.disabled}
+          href={args.href2}
+          target="_blank"
+        >
+          {args.button2}
+        </Button>
+      </Segment>
+      <Segment inverted compact>
+        <Button
+          inverted
+          as="a"
+          disabled={args.disabled}
+          href={args.href3}
+          target="_blank"
+        >
+          {args.button3}
+        </Button>
+      </Segment>
+    </Container>
   );
 };
 Inverted.args = {
@@ -142,7 +154,7 @@ Inverted.parameters = {
 //Labeled Call To Action
 export const Labeled = (args) => {
   return (
-    <div className="eea">
+    <Container>
       <Button
         className={args.variant + ' icon ' + args.icon_position + ' labeled'}
         as="a"
@@ -153,7 +165,7 @@ export const Labeled = (args) => {
         {args.label}
         <Icon name={args.icon} />
       </Button>
-    </div>
+    </Container>
   );
 };
 Labeled.args = {
@@ -208,4 +220,20 @@ Labeled.argTypes = {
       type: { summary: 'string' },
     },
   },
+};
+
+//Text Button - can also play with text class
+export const Link = (args) => {
+  return (
+    <Container>
+      <a href={args.href}>{args.label}</a>
+    </Container>
+  );
+};
+Link.args = {
+  label: 'Link label',
+  href: '/#',
+};
+Link.parameters = {
+  hideNoControlsWarning: true,
 };
