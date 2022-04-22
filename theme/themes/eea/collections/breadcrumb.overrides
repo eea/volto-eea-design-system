@@ -1,4 +1,31 @@
 /*******************************
+    Pastanaga Theme Overrides
+*******************************/
+
+.ui.breadcrumb {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  //a.section {
+  //  color: #0074a3;
+  //}
+  //
+  //.section.active {
+  //  color: #4e7372;
+  //}
+
+  .home.icon {
+    margin-right: 0;
+  }
+
+  @media only screen and (min-width: @tabletBreakpoint) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+/*******************************
         Theme Overrides
 *******************************/
 
@@ -21,24 +48,5 @@
     width: @breadcrumbIconWidth;
     font-size: @breadcrumbIconFontSize;
   }
-
-  a:first-child {
-    padding: @breadcrumbFirstChildPadding;
-  }
 }
 
-@media only screen and (min-width: @tabletBreakpoint) {
-  .ui.breadcrumb {
-    .section {
-      padding: @tabletBreadcrumbPadding;
-    }
-  }
-}
-
-@media only screen and (min-width: @computerBreakpoint) {
-  .ui.breadcrumb {
-    .section {
-      padding: @computerBreadcrumbPadding;
-    }
-  }
-}
