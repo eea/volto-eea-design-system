@@ -1,5 +1,5 @@
 import React from 'react';
-import { Progress } from 'semantic-ui-react';
+import { Progress, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Progress',
@@ -57,7 +57,11 @@ export default {
   },
 };
 
-const Template = (args) => <Progress {...args}></Progress>;
+const Template = (args) => (
+  <Container>
+    <Progress {...args}></Progress>
+  </Container>
+);
 
 // export const Default = Template.bind({});
 // Default.args = {
@@ -150,7 +154,11 @@ ProgressWithValue.argTypes = {
   },
 };
 
-export const CustomColor = (args) => <Progress {...args}></Progress>;
+export const CustomColor = (args) => (
+  <Container>
+    <Progress {...args}></Progress>
+  </Container>
+);
 CustomColor.args = {
   value: 80,
   total: 100,
