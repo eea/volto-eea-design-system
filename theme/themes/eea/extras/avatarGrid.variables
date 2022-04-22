@@ -2,19 +2,15 @@
             Avatar Grid
 *******************************/
 
-@avatarGridWidth: 100%;
+@avatarGridWidth                    : 100%;
 @avatarGridWrapperWidth             : 100%;
 @avatarGridContentWidth             : 100%;
 
 /* Grid Title */
+@avatarGridContentTitleTextAlign    : center;
 @avatarGridContentTitleWidth        : 100%;
-@avatarGridContentTitleFontWeight   : 700;
-@avatarGridContentTitleFontSize     : 36px;
-@avatarGridContentTitleLineHeight   : 20px;
-
+@avatarGridContentTitleFontWeight   : @bold;
 
 /* Avatar Group */
 @avatarGroupWidth                   : 100%;
-@avatarGroupMarginTop               : 67.54px;
-@avatarGroupWrapperPaddingLeft      : 32px; 
-@avatarGroupWrapperPaddingRight     : 32px; 
+@avatarGroupMargin                  : @largeGap 0;

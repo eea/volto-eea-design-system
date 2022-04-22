@@ -4,7 +4,8 @@
 
 @tabActiveItemHoverColor: @secondaryColor;
 
-@headerSize: @h4;
+@mobileHeaderSize: 1.125rem;
+@tabletHeaderSize: @h4;
 @headerSizeResponsive: @fontSize;
 @contentSize: @fontSize;
 

@@ -2,17 +2,23 @@
             Key Content
 *******************************/
 
-@keyContentBackgroundColor : #f9f9f9;
 
 /* Title */
-@keyContentTitleFontWeight: 700; 
-@keyContentTitleFontSize : 36px;
 
 /* List */
-@keyContentListMarginLeft: 0;
-@keyContentListItemBeforeColor :  @darkCyan;
-@keyContentListItemBeforeMarginLeft : -38.84px;
+@keyContentListGap:  @largeGap;
+
+/* Item */
+@keyContentItemColor : @japaneseIndigo;
+@mobileKeyContentItemFontSize : 1rem;
+@computerKeyContentItemFontSize: 1.25rem;
+@keyContentItemMarginLeft : @hugeGap;
+@keyContentItemMarginLeftNegative: -2rem;
+
+/* Bullet */
+@keyContentListBulletColor :  @secondaryColor;
+@keyContentListBulletFontSize : 3rem;
 
 /* Colored Title */
 @keyContentColoredTitleColor : @darkCyan;
-@keyContentColoredTitleMarginLeft : 74.85px;
+@keyContentTitleMarginLeft : 2.8rem;
