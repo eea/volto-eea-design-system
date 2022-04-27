@@ -335,9 +335,10 @@ const Template = (args) => {
             }
             viewportWidth={viewportWidth}
           >
-            <div className="wrapper">
+            <ul className="wrapper language-list">
               {languages.map((item, index) => (
                 <Dropdown.Item
+                  as="li"
                   key={index}
                   text={
                     <span>
@@ -350,7 +351,7 @@ const Template = (args) => {
                   onClick={() => setLanguage(item.code)}
                 ></Dropdown.Item>
               ))}
-            </div>
+            </ul>
           </Header.TopDropdownMenu>
         </Header.TopHeader>
         <Header.Main
