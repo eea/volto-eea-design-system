@@ -22,3 +22,6 @@
 /* Scrollbar */
 @mobileTabScrollbarHeight: 0;
 @tabletTabScrollbarHeight: 0.3rem;
+
+/* Images */
+@verticalTabPaneImageMaxWidth: 100%;
