@@ -23,7 +23,7 @@ Testimonial.Avatar = ({ children, ...rest }) => {
   return (
     <Grid.Column mobile={12} tablet={3} computer={2}>
       <div className="avatar-wrapper">
-        <Card className={`eea avatar small`} fluid={rest.fluid}>
+        <Card className={`eea rounded small`} fluid={rest.fluid}>
           <Image src={rest.src} wrapped ui={false} alt="card image" />
           <Card.Content>
             <Card.Header>{rest.title}</Card.Header>
