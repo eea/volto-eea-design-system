@@ -53,11 +53,12 @@ FaqContent.Languages = function Languages({ children, ...rest }) {
       aria-label="dropdown"
     >
       <Dropdown.Menu>
-        <div className="language wrapper">
+        <ul className="language wrapper">
           <Grid columns={2}>
             {rest.languages.map((item, index) => (
               <Grid.Column key={index}>
                 <Dropdown.Item
+                  as="li"
                   language={item.key}
                   text={
                     <span>
@@ -72,7 +73,7 @@ FaqContent.Languages = function Languages({ children, ...rest }) {
               </Grid.Column>
             ))}
           </Grid>
-        </div>
+        </ul>
       </Dropdown.Menu>
     </Dropdown>
   );
