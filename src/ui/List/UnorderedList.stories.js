@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from 'semantic-ui-react';
+import { List, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/List/Unordered list',
@@ -20,13 +20,6 @@ export default {
         defaultValue: { summary: false },
       },
     },
-    horizontal: {
-      description: 'a list can be formatted to have items appear horizontally',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
     items: {
       description: 'array of list content',
       table: {
@@ -37,35 +30,28 @@ export default {
   },
 };
 
-function UnorderedList(animated, divided, horizontal, items) {
+function UnorderedList(animated, divided, items) {
   return (
-    <List
-      bulleted
-      animated={animated}
-      divided={divided}
-      horizontal={horizontal}
-    >
-      {items &&
-        items.map((item, index) => (
-          <List.Item key={index}>{item.content}</List.Item>
-        ))}
-    </List>
+    <Container>
+      <List bulleted animated={animated} divided={divided} as="ul">
+        {items &&
+          items.map((item, index) => (
+            <List.Item as="li" key={index}>
+              {item.content}
+            </List.Item>
+          ))}
+      </List>
+    </Container>
   );
 }
 
 export const Default = (args) => {
-  return UnorderedList(
-    args.animated,
-    args.divided,
-    args.horizontal,
-    args.items,
-  );
+  return UnorderedList(args.animated, args.divided, args.items);
 };
 
 Default.args = {
   animated: false,
   divided: false,
-  horizontal: false,
   items: [
     {
       header: 'header 1',

@@ -30,8 +30,8 @@
 @media only screen and (max-width: @largestMobileScreen) {
   .ui.pointing.secondary.vertical.menu {
     .item {
-      padding: @largestMobileItemPadding;
-      font-size: @largestMobileItemFontSize;
+      padding: @mobileItemPadding;
+      font-size: @mobileItemFontSize;
     }
   }
 }

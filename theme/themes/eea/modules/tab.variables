@@ -4,8 +4,8 @@
 
 @tabActiveItemHoverColor: @secondaryColor;
 
-@largestMobileItemFontSize: 1rem;
-@largestMobileItemPadding: 1rem 0.25rem;
+@mobileItemFontSize: 1rem;
+@mobileItemPadding: 1rem 0.25rem;
 
 @headerSize: @h4;
 @headerSizeResponsive: @fontSize;
