@@ -40,6 +40,7 @@
 @dropdownMenuRight                    : 0;
 @dropdownMenuWrapperGap               : 0.313rem;
 @dropdownMenuWrapperMargin            : 0.313rem 0;
+@dropdownMenuLanguageWrapperPaddingInlineStart : 0;
 @dropdownMenuContentWhiteSpace        : pre-wrap;
 @dropdownMenuContentFontWeight        : @normal;
 @mobileDropdownMenuContentFontSize    : @headerSmallFontSize;
