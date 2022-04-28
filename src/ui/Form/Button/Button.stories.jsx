@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Icon, Segment } from 'semantic-ui-react';
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Forms/Button',
   component: Button,
   parameters: {
     actions: {

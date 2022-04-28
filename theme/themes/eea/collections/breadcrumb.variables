@@ -7,7 +7,7 @@
 --------------------*/
 
 @verticalMargin: 0em;
-@display: inline-block;
+@display: flex;
 @verticalAlign: middle;
 
 @mobileBreadcrumbPadding: 0;
@@ -28,10 +28,10 @@
 @dividerColor: @deepBlue;
 
 @dividerSize: @relativeSmall;
-@dividerVerticalAlign: sub;
+@dividerVerticalAlign: baseline;
 
 @iconDividerSize: 0.75rem;
-@iconDividerVerticalAlign: sub;
+@iconDividerVerticalAlign: baseline;
 
 @sectionMargin: 0em;
 @sectionPadding: 0em;

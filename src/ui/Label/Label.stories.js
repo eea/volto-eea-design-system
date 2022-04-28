@@ -1,5 +1,5 @@
 import React from 'react';
-import { Label } from 'semantic-ui-react';
+import { Label, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Label',
@@ -32,7 +32,11 @@ export default {
   },
 };
 
-const Template = (args) => <Label {...args}></Label>;
+const Template = (args) => (
+  <Container>
+    <Label {...args}></Label>
+  </Container>
+);
 
 export const Default = Template.bind({});
 Default.args = {
@@ -41,7 +45,9 @@ Default.args = {
 };
 
 export const MediumImportance = (args) => (
-  <Label className="medium" {...args}></Label>
+  <Container>
+    <Label className="medium" {...args}></Label>
+  </Container>
 );
 MediumImportance.args = {
   content: 'Label',
@@ -49,7 +55,9 @@ MediumImportance.args = {
 };
 
 export const HighImportance = (args) => (
-  <Label className="high" {...args}></Label>
+  <Container>
+    <Label className="high" {...args}></Label>
+  </Container>
 );
 HighImportance.args = {
   content: 'Label',
@@ -57,7 +65,9 @@ HighImportance.args = {
 };
 
 export const Highlight = (args) => (
-  <Label className="highlight" {...args}></Label>
+  <Container>
+    <Label className="highlight" {...args}></Label>
+  </Container>
 );
 Highlight.args = {
   content: 'Label',
