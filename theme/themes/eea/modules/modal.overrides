@@ -1,3 +1,7 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+.ui.modal > :last-child {
+  overflow: hidden; // clear floats from modal
+}
