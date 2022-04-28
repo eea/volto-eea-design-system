@@ -50,7 +50,6 @@ const InlineTemplate = (args) => (
       </Testimonial.Content>
     </Testimonial>
   </Container>
-
 );
 
 export const Inline = InlineTemplate.bind({});
