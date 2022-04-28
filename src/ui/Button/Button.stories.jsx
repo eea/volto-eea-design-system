@@ -30,6 +30,19 @@ export default {
   },
 };
 
+//Default Button
+export const Default = (args) => {
+  return <Button disabled={args.disabled}>{args.label}</Button>;
+};
+Default.args = {
+  label: 'Default Button',
+  disabled: false,
+};
+Default.parameters = {
+  controls: { exclude: ['animated', 'variant'] },
+  hideNoControlsWarning: true,
+};
+
 //Primary button
 export const Primary = (args) => {
   return (
@@ -65,54 +78,68 @@ Secondary.parameters = {
 };
 
 //secondary Button Inverted
-export const SecondaryInverted = (args) => {
+export const Inverted = (args) => {
   return (
     <Segment inverted compact>
+      <Button primary inverted disabled={args.disabled}>
+        {args.button1}
+      </Button>
       <Button secondary inverted disabled={args.disabled}>
-        {args.label}
+        {args.button2}
+      </Button>
+      <Button inverted disabled={args.disabled}>
+        {args.button3}
       </Button>
     </Segment>
   );
 };
-SecondaryInverted.args = {
-  label: 'Secondary Button',
+Inverted.args = {
+  button1: 'Primary Inverted',
+  button2: 'Secondary Inverted',
+  button3: 'Default Inverted',
   disabled: false,
 };
-SecondaryInverted.parameters = {
-  controls: { exclude: ['animated', 'variant'] },
+Inverted.parameters = {
+  controls: { exclude: ['animated', 'variant', 'label'] },
   hideNoControlsWarning: true,
 };
 
 //Call to action button
-export const CallToAction = (args) => {
+export const Labeled = (args) => {
   return (
-    <Button
-      icon
-      labelPosition="right"
-      className="action"
-      disabled={args.disabled}
-    >
-      {args.label}
-      <Icon name={args.icon} />
-    </Button>
+    <div className="eea">
+      <Button
+        className={args.variant + ' icon ' + args.icon_position + ' labeled'}
+        disabled={args.disabled}
+      >
+        {args.label}
+        <Icon name={args.icon + args.icon_position} />
+      </Button>
+    </div>
   );
 };
-CallToAction.args = {
+Labeled.args = {
   label: 'CALL TO ACTION BUTTON',
   icon: 'chevron right',
   disabled: false,
 };
-CallToAction.parameters = {
-  controls: { exclude: ['animated', 'variant'] },
+Labeled.parameters = {
+  controls: { exclude: ['animated'] },
   hideNoControlsWarning: true,
 };
-CallToAction.argTypes = {
+Labeled.argTypes = {
+  variant: {
+    options: ['primary', 'secondary', 'default'],
+    control: { type: 'radio' },
+    defaultValue: 'secondary',
+  },
+
   label: {
-    name: 'button label',
-    type: { name: 'string', required: true },
+    name: 'label',
+    type: { name: 'string', required: false },
   },
   icon: {
-    name: 'button icon',
+    name: 'icon',
     type: { name: 'string', required: false },
     defaultValue: 'chevron  right',
     options: [
@@ -136,6 +163,12 @@ CallToAction.argTypes = {
       defaultValue: { summary: 'chevron right' },
     },
   },
+
+  icon_position: {
+    options: [' left', ' right'],
+    control: { type: 'radio' },
+    defaultValue: ' left',
+  },
 };
 
 //Text Button - can also play with text class
@@ -151,19 +184,6 @@ Text.args = {
   disabled: false,
 };
 Text.parameters = {
-  controls: { exclude: ['animated', 'variant'] },
-  hideNoControlsWarning: true,
-};
-
-//Cancel Button
-export const Cancel = (args) => {
-  return <Button disabled={args.disabled}>{args.label}</Button>;
-};
-Cancel.args = {
-  label: 'Cancel Button',
-  disabled: false,
-};
-Cancel.parameters = {
   controls: { exclude: ['animated', 'variant'] },
   hideNoControlsWarning: true,
 };

@@ -2,6 +2,7 @@ import React from 'react';
 // eslint-disable-next-line import/no-unresolved
 import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/avatar.png';
 import Testimonial from './Testimonial';
+import { Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Testimonial',
@@ -36,17 +37,20 @@ export default {
 };
 
 const InlineTemplate = (args) => (
-  <Testimonial {...args}>
-    <Testimonial.Avatar
-      image_url={args.avatarimage}
-      title={args.avatartitle}
-      metadata={args.avatarinfo}
-    ></Testimonial.Avatar>
-    <Testimonial.Content>
-      <Testimonial.Title>{args.title}</Testimonial.Title>
-      <Testimonial.Pullquote>{args.quote}</Testimonial.Pullquote>
-    </Testimonial.Content>
-  </Testimonial>
+  <Container>
+    <Testimonial {...args}>
+      <Testimonial.Avatar
+        src={imgUrl}
+        title={args.avatarTitle}
+        description={args.avatarInfo}
+      ></Testimonial.Avatar>
+      <Testimonial.Content>
+        <Testimonial.Title>{args.title}</Testimonial.Title>
+        <Testimonial.Pullquote>{args.quote}</Testimonial.Pullquote>
+      </Testimonial.Content>
+    </Testimonial>
+  </Container>
+
 );
 
 export const Inline = InlineTemplate.bind({});

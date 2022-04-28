@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Divider from '../Divider/Divider';
-import Avatar from '../Avatar/Avatar';
+
 import Pullquote from '../Pullquote/Pullquote';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Card, Image } from 'semantic-ui-react';
 
 Testimonial.propTypes = {
   title: PropTypes.string,
@@ -23,12 +23,13 @@ Testimonial.Avatar = ({ children, ...rest }) => {
   return (
     <Grid.Column mobile={12} tablet={3} computer={2}>
       <div className="avatar-wrapper">
-        <Avatar {...rest} image_url={rest.image_url} avatarsize="small">
-          <Avatar.Content>
-            <Avatar.Title>{rest.title}</Avatar.Title>
-            <Avatar.Metadata>{rest.metadata}</Avatar.Metadata>
-          </Avatar.Content>
-        </Avatar>
+        <Card className={`eea avatar small`} fluid={rest.fluid}>
+          <Image src={rest.src} wrapped ui={false} alt="card image" />
+          <Card.Content>
+            <Card.Header>{rest.title}</Card.Header>
+            <Card.Description>{rest.description}</Card.Description>
+          </Card.Content>
+        </Card>
       </div>
     </Grid.Column>
   );
