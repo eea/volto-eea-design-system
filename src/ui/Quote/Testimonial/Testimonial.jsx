@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Divider from '../Divider/Divider';
+import Divider from '../../Divider/Divider';
 
-import Quote from '../Quote/Quote';
+import Quote from '../Quote';
 import { Grid, Card, Image } from 'semantic-ui-react';
 
 Testimonial.propTypes = {

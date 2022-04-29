@@ -20,7 +20,7 @@ export Quote from './Quote/Quote';
 
 export Timeline from './Timeline/Timeline';
 
-export Testimonial from './Testimonial/Testimonial';
+export Testimonial from './Quote/Testimonial/Testimonial';
 
 export AvatarGrid from './Card/AvatarGrid/AvatarGrid';
 
