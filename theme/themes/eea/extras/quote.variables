@@ -1,12 +1,12 @@
 /*******************************
-            Pullquote
+            Quote
 *******************************/
 
 /* Body */
-@pullquotePadding           : @largeGap 0;
-@pullquoteFloatLeftPadding  : @largeGap @largeGap @largeGap 0;
-@pullquoteFloatRightPadding : @largeGap 0 @largeGap @largeGap;
-@pullquoteMargin            : 0;
+@quotePadding           : @largeGap 0;
+@quoteFloatLeftPadding  : @largeGap @largeGap @largeGap 0;
+@quoteFloatRightPadding : @largeGap 0 @largeGap @largeGap;
+@quoteMargin            : 0;
 @maxWidthOnFloat            : 50%;
 @contentWordBreak           : break-word;
 @contentWordBreakHyphens    : manual;

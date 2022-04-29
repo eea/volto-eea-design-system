@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Divider from '../Divider/Divider';
 
-import Pullquote from '../Pullquote/Pullquote';
+import Quote from '../Quote/Quote';
 import { Grid, Card, Image } from 'semantic-ui-react';
 
 Testimonial.propTypes = {
@@ -44,10 +44,10 @@ Testimonial.Content = ({ children }) => {
 };
 
 Testimonial.Title = ({ children }) => <h3 className="title">{children}</h3>;
-Testimonial.Pullquote = ({ children, ...rest }) => (
-  <Pullquote quotePosition="none">
-    <Pullquote.Quote>{children}</Pullquote.Quote>
-  </Pullquote>
+Testimonial.Quote = ({ children, ...rest }) => (
+  <Quote quotePosition="none">
+    <Quote.Quote>{children}</Quote.Quote>
+  </Quote>
 );
 
 export default Testimonial;

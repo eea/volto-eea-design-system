@@ -16,7 +16,7 @@ export InpageNavigation from './InpageNavigation/InpageNavigation';
 
 export Logo from './Logo/Logo';
 
-export Pullquote from './Pullquote/Pullquote';
+export Quote from './Quote/Quote';
 
 export Timeline from './Timeline/Timeline';
 

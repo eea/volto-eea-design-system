@@ -1,13 +1,13 @@
 import React from 'react';
-import Pullquote from './Pullquote';
+import Quote from './Quote';
 import { Container } from 'semantic-ui-react';
 
 export default {
-  title: 'Components/Pullquote',
-  component: Pullquote,
+  title: 'Components/Quote',
+  component: Quote,
   argTypes: {
     quote: {
-      description: 'Pullquote content',
+      description: 'Quote content',
       type: { name: 'string' },
       table: {
         defaultValue: { summary: '""' },
@@ -51,11 +51,11 @@ export default {
 export const Default = (args) => (
   <Container>
     <p>{args.content}</p>
-    <Pullquote quotePosition={args.quotePosition}>
-      <Pullquote.Quote>{args.quote}</Pullquote.Quote>
-      <Pullquote.Author>{args.source}</Pullquote.Author>
-      <Pullquote.Metadata>{args.metadata}</Pullquote.Metadata>
-    </Pullquote>
+    <Quote quotePosition={args.quotePosition}>
+      <Quote.Quote>{args.quote}</Quote.Quote>
+      <Quote.Author>{args.source}</Quote.Author>
+      <Quote.Metadata>{args.metadata}</Quote.Metadata>
+    </Quote>
     <p>{args.content}</p>
     <p>{args.content}</p>
     <p>{args.content}</p>
@@ -77,11 +77,11 @@ Default.args = {
 export const Reversed = (args) => (
   <Container>
     <p>{args.content}</p>
-    <Pullquote quotePosition={args.quotePosition}>
-      <Pullquote.Author>{args.source}</Pullquote.Author>
-      <Pullquote.Metadata>{args.metadata}</Pullquote.Metadata>
-      <Pullquote.Quote>{args.quote}</Pullquote.Quote>
-    </Pullquote>
+    <Quote quotePosition={args.quotePosition}>
+      <Quote.Author>{args.source}</Quote.Author>
+      <Quote.Metadata>{args.metadata}</Quote.Metadata>
+      <Quote.Quote>{args.quote}</Quote.Quote>
+    </Quote>
     <p>{args.content}</p>
     <p>{args.content}</p>
     <p>{args.content}</p>
