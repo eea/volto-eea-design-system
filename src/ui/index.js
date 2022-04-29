@@ -1,6 +1,6 @@
 export Banner from './Banner/Banner';
 
-export Blockquote from './Blockquote/Blockquote';
+export Callout from './Callout/Callout';
 
 export Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 

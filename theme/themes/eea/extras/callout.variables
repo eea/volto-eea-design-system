@@ -1,9 +1,9 @@
 /*******************************
-            Blockquote
+            Callout
 *******************************/
 /* Body */
-@mobileBlockquoteBorderLeft : @5px solid @secondaryColor;
-@tabletBlockquoteBorderLeft : @10px solid @secondaryColor;
+@mobileCalloutBorderLeft : @5px solid @secondaryColor;
+@tabletCalloutBorderLeft : @10px solid @secondaryColor;
 @childrenBorderLeft         : none;
 
 /* Quote */
@@ -19,14 +19,6 @@
 @computerQuoteFontSize : @h5;
 @quoteFontWeight       : 700;
 @slateQuoteFontWeight  : 400;
-
-/* Meta */
-@metaMargin           : 0;
-@metaWeight           : 400;
-@mobileMetaFontSize   : 0.688rem;
-@tabletMetaFontSize   : @h6;
-@computerMetaFontSize : @h5;
-@metaAlignSelf        : start;
 
 /* Callout */
 @calloutBorder        : none;
