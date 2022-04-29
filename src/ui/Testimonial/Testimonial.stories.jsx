@@ -46,7 +46,7 @@ const InlineTemplate = (args) => (
       ></Testimonial.Avatar>
       <Testimonial.Content>
         <Testimonial.Title>{args.title}</Testimonial.Title>
-        <Testimonial.Pullquote>{args.quote}</Testimonial.Pullquote>
+        <Testimonial.Quote>{args.quote}</Testimonial.Quote>
       </Testimonial.Content>
     </Testimonial>
   </Container>
