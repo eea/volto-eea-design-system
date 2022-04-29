@@ -15,12 +15,12 @@
 @mobileQuotePadding  : 0;
 @tabletQuotePadding  : 0.5rem 0 1rem;
 
-/* Author */
-@authorTextColor     : @darkCyan;
-@authorTextAlign     : right;
-@authorFontWeight    : @bold;
-@authorFontSize      : 1.25rem;
-@authorMargin        : 0;
+/* Source */
+@sourceTextColor     : @darkCyan;
+@sourceTextAlign     : right;
+@sourceFontWeight    : @bold;
+@sourceFontSize      : 1.25rem;
+@sourceMargin        : 0;
 
 /* Metadata */
 @metaTextAlign       : right;

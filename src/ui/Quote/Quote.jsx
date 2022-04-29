@@ -30,8 +30,8 @@ Quote.Quote = ({ children, as: As, ...rest }) => (
   </div>
 );
 
-Quote.Author = ({ children, ...rest }) => (
-  <p className="author" {...rest}>
+Quote.Source = ({ children, ...rest }) => (
+  <p className="source" {...rest}>
     {children}
   </p>
 );

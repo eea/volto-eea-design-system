@@ -53,7 +53,7 @@ export const Default = (args) => (
     <p>{args.content}</p>
     <Quote quotePosition={args.quotePosition}>
       <Quote.Quote>{args.quote}</Quote.Quote>
-      <Quote.Author>{args.source}</Quote.Author>
+      <Quote.Source>{args.source}</Quote.Source>
       <Quote.Metadata>{args.metadata}</Quote.Metadata>
     </Quote>
     <p>{args.content}</p>
@@ -78,7 +78,7 @@ export const Reversed = (args) => (
   <Container>
     <p>{args.content}</p>
     <Quote quotePosition={args.quotePosition}>
-      <Quote.Author>{args.source}</Quote.Author>
+      <Quote.Source>{args.source}</Quote.Source>
       <Quote.Metadata>{args.metadata}</Quote.Metadata>
       <Quote.Quote>{args.quote}</Quote.Quote>
     </Quote>
