@@ -24,7 +24,7 @@
     height: @testimonialAvatarWrapperHeight;
   }
 
-  .eea.avatar .wrapper {
+  .ui.card.rounded {
     flex-direction: row-reverse;
     align-items: center;
   }
@@ -44,7 +44,7 @@
 
 @media only screen and (min-width: @tabletBreakpoint) {
 
-  .eea.testimonial   .eea.avatar .wrapper {
+  .eea.testimonial .ui.card.rounded {
     flex-direction: column;
   }
   
@@ -55,6 +55,14 @@
 
   .eea.testimonial .ui.grid div:first-child {
     order: 0;
+  }
+}
+
+// Override image default size for mobile
+@media only screen and (max-width: @largestMobileScreen) {
+  .eea.testimonial .ui.card.rounded img {
+    width: @mobileCardImageWidth;
+    height: @mobileCardImageHeight;
   }
 }
 
