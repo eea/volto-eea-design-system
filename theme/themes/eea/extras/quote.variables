@@ -4,8 +4,8 @@
 
 /* Body */
 @quotePadding           : @largeGap 0;
-@quoteFloatLeftPadding  : @largeGap @largeGap @largeGap 0;
-@quoteFloatRightPadding : @largeGap 0 @largeGap @largeGap;
+@quoteFloatLeftPadding  : @largeGap @hugeGap @largeGap 0;
+@quoteFloatRightPadding : @largeGap 0 @largeGap @hugeGap;
 @quoteMargin            : 0;
 @maxWidthOnFloat            : 50%;
 @contentWordBreak           : break-word;
@@ -16,7 +16,7 @@
 @tabletQuotePadding  : 0.5rem 0 1rem;
 
 /* Source */
-@sourceTextColor     : @darkCyan;
+@sourceTextColor     : @secondaryColor;
 @sourceTextAlign     : right;
 @sourceFontWeight    : @bold;
 @sourceFontSize      : 1.25rem;
