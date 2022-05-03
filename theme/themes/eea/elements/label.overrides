@@ -7,19 +7,68 @@
   line-height: @labelLineHeight;
 }
 
+.ui.label.low {
+  background-color: @lowImportanceBackground;
+  border-color: @lowImportanceBackground;
+}
+
+.ui.label.basic.low {
+  color: @lowImportanceBasicTextColor;
+  background: none @white;
+}
+
+.ui.label.low:hover {
+  background-color: @lowImportanceHoverBackground;
+  border-color: @lowImportanceHoverBackground;
+}
+
 .ui.label.medium {
   background-color: @mediumImportanceBackground;
+  border-color: @mediumImportanceBackground;
+}
+
+.ui.label.basic.medium {
+  color: @mediumImportanceBasicTextColor;
+  background: none @white;
+}
+
+.ui.label.medium:hover {
+    background-color: @mediumImportanceHoverBackground;
+    border-color: @mediumImportanceHoverBackground;
 }
 
 .ui.label.high {
   background-color: @highImportanceBackground;
+  border-color: @highImportanceBackground;
+}
+
+.ui.label.basic.high {
+  color: @highImportanceBasicTextColor;
+  background: none @white;
+}
+
+.ui.label.high:hover {
+    background-color: @highImportanceHoverBackground;
+    border-color: @highImportanceHoverBackground;
 }
 
 .ui.label.highlight {
   background-color: @highlightImportanceBackground;
+  border-color: @highlightImportanceBackground;
+}
+
+.ui.label.basic.highlight {
+  color: @highlightImportanceBasicTextColor;
+  background: none @white;
+}
+
+.ui.label.highlight:hover {
+    background-color: @highlightImportanceHoverBackground;
+    border-color: @highlightImportanceHoverBackground;
 }
 
 // Custom variations and combinations in slate
+.ui.label.low,
 .ui.label.medium,
 .ui.label.high,
 .ui.label.highlight {
@@ -31,6 +80,10 @@
     &:hover {
       text-decoration: @labelNoTextDecoration;
     }
+  }
+
+  &:hover {
+    color: @importanceHoverTextColor;
   }
 
   .slate-editor-link {
