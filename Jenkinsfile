@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+  triggers {
+        issueCommentTrigger('[^>]*@eea-jenkins.*build.*')
+  }
+
   environment {
         GIT_NAME = "volto-eea-design-system"
         NAMESPACE = "@eeacms"
@@ -192,16 +196,97 @@ pipeline {
             unstash "xunit-reports"
             unstash "cypress-coverage"
             def scannerHome = tool 'SonarQubeScanner';
-            def nodeJS = tool 'NodeJS11';
+            def nodeJS = tool 'NodeJS';
             withSonarQubeEnv('Sonarqube') {
               sh '''sed -i "s#/opt/frontend/my-volto-project/src/addons/${GIT_NAME}/##g" xunit-reports/coverage/lcov.info'''
-              sh "export PATH=$PATH:${scannerHome}/bin:${nodeJS}/bin; sonar-scanner -Dsonar.javascript.lcov.reportPaths=./xunit-reports/coverage/lcov.info,./cypress-coverage/coverage/lcov.info -Dsonar.sources=./src -Dsonar.projectKey=$GIT_NAME-$BRANCH_NAME -Dsonar.projectVersion=$BRANCH_NAME-$BUILD_NUMBER"
+              sh "export PATH=${scannerHome}/bin:${nodeJS}/bin:$PATH; sonar-scanner -Dsonar.javascript.lcov.reportPaths=./xunit-reports/coverage/lcov.info,./cypress-coverage/coverage/lcov.info -Dsonar.sources=./src -Dsonar.projectKey=$GIT_NAME-$BRANCH_NAME -Dsonar.projectVersion=$BRANCH_NAME-$BUILD_NUMBER"
               sh '''try=2; while [ \$try -gt 0 ]; do curl -s -XPOST -u "${SONAR_AUTH_TOKEN}:" "${SONAR_HOST_URL}api/project_tags/set?project=${GIT_NAME}-${BRANCH_NAME}&tags=${SONARQUBE_TAGS},${BRANCH_NAME}" > set_tags_result; if [ \$(grep -ic error set_tags_result ) -eq 0 ]; then try=0; else cat set_tags_result; echo "... Will retry"; sleep 60; try=\$(( \$try - 1 )); fi; done'''
             }
           }
         }
       }
     }
+
+
+   stage('Pull Request COMMENT') {
+      when {
+        not { environment name: 'CHANGE_ID', value: '' }
+        not { environment name: 'GITHUB_COMMENT', value: '' }
+
+      }
+
+
+     parallel {
+       stage('Docusaurus') {
+           when {
+            expression {
+              env.GITHUB_COMMENT.contains("@eea-jenkins build all") || env.GITHUB_COMMENT.contains("@eea-jenkins build doc")
+              }
+           }
+
+
+          steps {
+            node(label: 'docker') {
+
+              script {
+                  checkout scm
+                  env.NODEJS_HOME = "${tool 'NodeJS'}"
+                  env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
+
+                  sh '''sed -i "s#url:.*#url: 'https://ci.eionet.europa.eu/',#" website/docusaurus.config.js'''
+                  sh '''BASEURL="$(echo $BUILD_URL | sed 's#https://ci.eionet.europa.eu##')${GIT_NAME}/"; sed -i "s#baseUrl:.*#baseUrl: '$BASEURL',#" website/docusaurus.config.js'''
+                  sh '''cat website/docusaurus.config.js'''
+                  sh '''cd website; yarn;yarn build;cd ..'''
+                  publishHTML (target : [allowMissing: false,
+                                   alwaysLinkToLastBuild: true,
+                                   keepAll: true,
+                                   reportDir: 'docs',
+                                   reportFiles: 'docs/intro/index.html',
+                                   reportName: "${GIT_NAME}",
+                                   reportTitles: 'Docusaurus'])
+
+                  pullRequest.comment("Docusaurus: ${BUILD_URL}${GIT_NAME}/")
+              }
+             }
+           }
+
+
+          }
+
+
+       stage('Storybook') {
+           when {
+            expression {
+              env.GITHUB_COMMENT.contains("@eea-jenkins build all") || env.GITHUB_COMMENT.contains("@eea-jenkins build story")
+              }
+           }
+
+          steps {
+            node(label: 'docker') {
+              script {
+                  env.NODEJS_HOME = "${tool 'NodeJS'}"
+                  env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
+
+                  sh '''rm -rf volto-kitkat-frontend'''
+
+                  sh '''git clone --branch develop https://github.com/eea/volto-kitkat-frontend.git'''
+
+                  withCredentials([string(credentialsId: 'volto-kitkat-frontend-chromatica', variable: 'CHROMATICA_TOKEN')]) {
+                      sh '''cd volto-kitkat-frontend; npm install -g mrs-developer chromatic; yarn develop; cd src/addons/$GIT_NAME; git fetch origin pull/${CHANGE_ID}/head:PR-${CHANGE_ID}; git checkout PR-${CHANGE_ID}; cd ../../..; yarn install; yarn build-storybook; npx chromatic --no-interactive --force-rebuild  --project-token=$CHROMATICA_TOKEN | tee chromatic.log; cd ..'''
+                      def STORY_URL = sh(script: '''grep "View your Storybook" volto-kitkat-frontend/chromatic.log | sed "s/.*https/https/" ''', returnStdout: true).trim()
+                      pullRequest.comment("StoryBook: ${STORY_URL}")
+                   }
+                   sh '''rm -rf volto-kitkat-frontend'''
+              }
+             }
+          }
+       }
+
+
+      }
+    }
+
+
 
     stage('Pull Request') {
       when {
