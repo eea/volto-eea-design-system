@@ -7,64 +7,119 @@
   line-height: @labelLineHeight;
 }
 
-.ui.label.low {
+.ui.low.labels .label,
+.ui.low.label {
   background-color: @lowImportanceBackground;
   border-color: @lowImportanceBackground;
 }
 
-.ui.label.basic.low {
-  color: @lowImportanceBasicTextColor;
-  background: none @white;
-}
-
-.ui.label.low:hover {
-  background-color: @lowImportanceHoverBackground;
-  border-color: @lowImportanceHoverBackground;
-}
-
-.ui.label.medium {
+.ui.medium.labels .label,
+.ui.medium.label {
   background-color: @mediumImportanceBackground;
   border-color: @mediumImportanceBackground;
 }
 
-.ui.label.basic.medium {
-  color: @mediumImportanceBasicTextColor;
-  background: none @white;
-}
-
-.ui.label.medium:hover {
-    background-color: @mediumImportanceHoverBackground;
-    border-color: @mediumImportanceHoverBackground;
-}
-
-.ui.label.high {
+.ui.high.labels .label,
+.ui.high.label {
   background-color: @highImportanceBackground;
   border-color: @highImportanceBackground;
 }
 
-.ui.label.basic.high {
-  color: @highImportanceBasicTextColor;
-  background: none @white;
-}
-
-.ui.label.high:hover {
-    background-color: @highImportanceHoverBackground;
-    border-color: @highImportanceHoverBackground;
-}
-
-.ui.label.highlight {
+.ui.highlight.labels .label,
+.ui.highlight.label {
   background-color: @highlightImportanceBackground;
   border-color: @highlightImportanceBackground;
 }
 
-.ui.label.basic.highlight {
-  color: @highlightImportanceBasicTextColor;
-  background: none @white;
+/* Link */
+.ui.low.labels .label:hover,
+a.ui.low.label:hover{
+  background-color: @lowImportanceHoverBackground;
+  border-color: @lowImportanceHoverBackground;
 }
 
-.ui.label.highlight:hover {
-    background-color: @highlightImportanceHoverBackground;
-    border-color: @highlightImportanceHoverBackground;
+.ui.medium.labels .label:hover,
+a.ui.medium.label:hover{
+  background-color: @mediumImportanceHoverBackground;
+  border-color: @mediumImportanceHoverBackground;
+}
+
+.ui.high.labels .label:hover,
+a.ui.high.label:hover{
+  background-color: @highImportanceHoverBackground;
+  border-color: @highImportanceHoverBackground;
+}
+
+.ui.highlight.labels .label:hover,
+a.ui.highlight.label:hover{
+  background-color: @highlightImportanceHoverBackground;
+  border-color: @highlightImportanceHoverBackground;
+}
+
+/* Ribbon */
+.ui.low.ribbon.label {
+  border-color: @lowImportanceBackground;
+}
+
+.ui.medium.ribbon.label {
+  border-color: @mediumImportanceBackground;
+}
+
+.ui.high.ribbon.label {
+  border-color: @highImportanceBackground;
+}
+
+.ui.highlight.ribbon.label {
+  border-color: @highlightImportanceBackground;
+}
+
+/* Basic */
+.ui.basic.low.label {
+  background: @white;
+  color: @lowImportanceBasicTextColor;
+  border-color: @lowImportanceBackground;
+}
+.ui.basic.low.labels a.label:hover,
+a.ui.basic.low.label:hover {
+  background-color: @white;
+  color: @lowImportanceHoverBackground;
+  border-color: @lowImportanceHoverBackground;
+}
+
+.ui.basic.medium.label {
+  background: @white;
+  color: @mediumImportanceBasicTextColor;
+  border-color: @mediumImportanceBackground;
+}
+.ui.basic.medium.labels a.label:hover,
+a.ui.basic.medium.label:hover {
+  background-color: @white;
+  color: @mediumImportanceHoverBackground;
+  border-color: @mediumImportanceHoverBackground;
+}
+
+.ui.basic.high.label {
+  background: @white;
+  color: @highImportanceBasicTextColor;
+  border-color: @highImportanceBackground;
+}
+.ui.basic.high.labels a.label:hover,
+a.ui.basic.high.label:hover {
+  background-color: @white;
+  color: @highImportanceHoverBackground;
+  border-color: @highImportanceHoverBackground;
+}
+
+.ui.basic.highlight.label {
+  background: @white;
+  color: @highlightImportanceBasicTextColor;
+  border-color: @highlightImportanceBackground;
+}
+.ui.basic.highlight.labels a.label:hover,
+a.ui.basic.highlight.label:hover {
+  background-color: @white;
+  color: @highlightImportanceHoverBackground;
+  border-color: @highlightImportanceHoverBackground;
 }
 
 // Custom variations and combinations in slate
