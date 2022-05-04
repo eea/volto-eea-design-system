@@ -323,3 +323,65 @@ Sortable.args = {
     { col1: 'Cell K', col2: 'Cell L', col3: 'Cell M' },
   ],
 };
+
+//*** Responsive Table ***//
+
+function ResponsiveTable({ headers, tableData }) {
+  return (
+    <Table className="responsive">
+      <Table.Header>
+        <Table.Row textAlign="center">
+          {headers.map((header) => (
+            <Table.HeaderCell key={header.key} textAlign="center">
+              {header.name}
+            </Table.HeaderCell>
+          ))}
+        </Table.Row>
+      </Table.Header>
+
+      <Table.Body>
+        {tableData.map(({ col1, col2, col3 }, rowIndex) => (
+          <Table.Row key={rowIndex}>
+            <Table.Cell data-label={headers[0].name}>{col1}</Table.Cell>
+            <Table.Cell data-label={headers[1].name}>{col2}</Table.Cell>
+            <Table.Cell data-label={headers[2].name}>{col3}</Table.Cell>
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </Table>
+  );
+}
+
+export const Responsive = (args) => (
+  <ResponsiveTable {...args}></ResponsiveTable>
+);
+
+Responsive.args = {
+  headers: [
+    { name: 'Header 1', key: 'col1' },
+    { name: 'Header 2', key: 'col2' },
+    { name: 'Header 3', key: 'col3' },
+  ],
+  tableData: [
+    { col1: 'Cell 1', col2: 'Cell 2', col3: 'Cell 3' },
+    { col1: 'Cell 4', col2: 'Cell 5', col3: 'Cell 6' },
+    { col1: 'Cell 7', col2: 'Cell 8', col3: 'Cell 9' },
+    { col1: 'Cell 10', col2: 'Cell 11', col3: 'Cell 12' },
+  ],
+};
+
+Responsive.parameters = {
+  controls: {
+    exclude: [
+      'singleLine',
+      'celled',
+      'fixed',
+      'striped',
+      'collapsing',
+      'compact',
+      'textAlign',
+      'verticalAlign',
+    ],
+  },
+  hideNoControlsWarning: true,
+};

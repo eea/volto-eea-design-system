@@ -247,3 +247,16 @@
 @small: 0.9em;
 @medium: 1em;
 @large: 1.1em;
+
+/* Responsive Table */
+@responsiveMobileCellHeaderFontWeight: @normal;
+@responsiveMobileCellHeaderClip: rect(0 0 0 0);
+@responsiveMobileHeaderHeight: 1px;
+@responsiveMobileHeaderMargin: -1px;
+@responsiveMobileHeaderPadding: 0;
+@responsiveMobileHeaderWidth: 0;
+
+@responsiveMobileCellTextAlign: right;
+@responsiveMobileCellDataLabelFloat: left;
+@responsiveMobileCellDataLabelFontWeigth: @bold;
+
