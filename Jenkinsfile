@@ -247,10 +247,10 @@ pipeline {
                                    reportName: "${GIT_NAME}",
                                    reportTitles: 'Docusaurus'])
 
-                         pullRequest.comment("### :heavy_check_mark: Docusaurus:\n${BUILD_URL}${GIT_NAME}/")
+                         pullRequest.comment("### :heavy_check_mark: Docusaurus:\n${BUILD_URL}${GIT_NAME}/\n\n:rocket: @${GITHUB_COMMENT_AUTHOR}")
                     }
                     else {
-                          pullRequest.comment("### :x: Docusaurus build FAILED\nCheck ${BUILD_URL} for details")
+                          pullRequest.comment("### :x: Docusaurus build FAILED\nCheck ${BUILD_URL} for details\n\n:fire: @${GITHUB_COMMENT_AUTHOR}")
                           currentBuild.result = 'FAILURE'
                     }                
 
@@ -283,11 +283,11 @@ pipeline {
                     def RETURN_STATUS = sh(script: '''cd volto-kitkat-frontend; npm install -g mrs-developer chromatic; yarn develop; cd src/addons/$GIT_NAME; git fetch origin pull/${CHANGE_ID}/head:PR-${CHANGE_ID}; git checkout PR-${CHANGE_ID}; cd ../../..; yarn install; yarn build-storybook; npx chromatic --no-interactive --force-rebuild  --project-token=$CHROMATICA_TOKEN | tee chromatic.log; cd ..''', returnStatus: true)
                     if ( RETURN_STATUS == 0 ) {
                       def STORY_URL = sh(script: '''grep "View your Storybook" volto-kitkat-frontend/chromatic.log | sed "s/.*https/https/" ''', returnStdout: true).trim()
-                      pullRequest.comment("### :heavy_check_mark: Storybook:\n${STORY_URL}")
+                      pullRequest.comment("### :heavy_check_mark: Storybook:\n${STORY_URL}\n\n:rocket: @${GITHUB_COMMENT_AUTHOR}")
                     }
                     else {
-                       pullRequest.comment("### :x: Storybook build FAILED\nCheck ${BUILD_URL} for details")
-                       currentBuild.result = 'FAILURE'                       
+                       pullRequest.comment("### :x: Storybook build FAILED\nCheck ${BUILD_URL} for details\n\n:fire: @${GITHUB_COMMENT_AUTHOR}")
+                       currentBuild.result = 'FAILURE'
                     }
                    }
                    sh '''rm -rf volto-kitkat-frontend'''
