@@ -50,7 +50,7 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Repost Language',
+  label: 'Language',
   icon: <i className="ri-global-line"></i>,
   items: [
     { name: 'English', code: 'en' },

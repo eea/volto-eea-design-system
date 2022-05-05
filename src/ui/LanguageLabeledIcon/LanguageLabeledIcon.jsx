@@ -63,7 +63,7 @@ const Dropdown = ({ children, ...rest }) => {
                 role="button"
                 tabIndex={0}
               >
-                {item.name} <span>{item.code}</span>
+                {item.name} <span>{item.code.toUpperCase()}</span>
               </div>
             </li>
           ))}
@@ -77,7 +77,7 @@ const Dropdown = ({ children, ...rest }) => {
                 role="button"
                 tabIndex={0}
               >
-                {item.name} <span>{item.code}</span>
+                {item.name} <span>{item.code.toUpperCase()}</span>
               </div>
             </li>
           ))}
