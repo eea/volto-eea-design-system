@@ -2,14 +2,41 @@
          Theme Overrides
 *******************************/
 
-/* avoid long links from spilling outside of card body area */
+/* Avoid long links from spilling outside of card body area */
 .ui.cards > .card > .extra,
 .ui.card > .extra {
-  word-break: break-all;
+  font-size: @extraLinkFontSize;
+  word-break: @extraLinkWordBreak;
+}
+
+/* Cards must have same height */
+.ui.card {
+  height: 100%;
+}
+
+.ui.cards > .card > .image,
+.ui.card > .image {
+  overflow: @cardImageOverflow;
+  height: @cardImageHeight;
+
+  img {
+    width: @imageWidth;
+    height: @imageHeight;
+    object-fit: @imageObjectFit;
+    object-position: @imageObjectPosition;
+  }
 }
 
 .ui.card .meta > .category {
   font-size: @metaFontSize;
+}
+
+.ui.card .extra.content a {
+  font-weight: @contentLinkFontWeight;
+
+  &:hover {
+    text-decoration: @contentLinkTextDecoration;
+  }
 }
 
 .ui.left.card {
@@ -18,4 +45,246 @@
 
 .ui.right.card {
   margin-left: auto;
+}
+
+/*******************************
+            Primary
+*******************************/
+
+.ui.card.primary {
+  background: @primaryBackground;
+}
+
+.ui.card.primary > .content > .header {
+  color: @primaryHeaderColor;
+}
+
+.ui.card.primary > .content > .description {
+  color: @primaryDescriptionColor;
+}
+
+.ui.card.primary > .extra.content a:not(.ui) {
+  color: @primaryExtraLinkColor;
+
+  &:hover {
+    color: @primaryExtraLinkHoverColor;
+  }
+}
+
+.ui.card.primary > .content > .meta {
+  color: @primaryMetaColor;
+}
+
+/*******************************
+            Secondary
+*******************************/
+
+.ui.card.secondary {
+  background: @secondaryBackground;
+}
+
+.ui.card.secondary > .content > .header {
+  color: @secondaryHeaderColor;
+}
+
+.ui.card.secondary > .content > .description {
+  color: @secondaryDescriptionColor;
+}
+
+.ui.card.secondary > .extra.content a:not(.ui) {
+  color: @secondaryExtraLinkColor;
+
+  &:hover {
+    color: @secondaryExtraLinkHoverColor;
+  }
+}
+
+.ui.card.secondary > .content > .meta {
+  color: @secondaryMetaColor;
+}
+
+/*******************************
+            Tertiary
+*******************************/
+
+.ui.card.tertiary {
+  background: @tertiaryBackground;
+}
+
+.ui.card.tertiary > .content > .header {
+  color: @tertiaryHeaderColor;
+}
+
+.ui.card.tertiary > .content > .description {
+  color: @tertiaryDescriptionColor;
+}
+
+.ui.card.tertiary > .extra.content a:not(.ui) {
+  color: @tertiaryExtraLinkColor;
+
+  &:hover {
+    color: @tertiaryExtraLinkHoverColor;
+  }
+}
+
+.ui.card.tertiary > .content > .meta {
+  color: @tertiaryMetaColor;
+}
+
+/*******************************
+          Rounded Card
+*******************************/
+
+.ui.cards > .ui.card.rounded > .image,
+.ui.card.rounded > .image {
+  height: auto;
+}
+
+.ui.card.rounded {
+  width: @roundedWidth;
+  border: none;
+
+  .content {
+    justify-content: center;
+    border-top: none;
+
+    .image {
+      display: flex;
+      justify-content: center;
+      background-color: @white;
+    }
+
+    .header {
+      margin-bottom: @roundedContentTitleMarginBottom;
+      font-size: @roundedContentTitleFontSize;
+      font-weight: @roundedContentTitleFontWeight;
+      text-align: center;
+    }
+
+    .description {
+      text-align: center;
+    }
+  }
+}
+
+.ui.card.rounded.big {
+  .image {
+    display: flex;
+    justify-content: center;
+    background-color: @white;
+
+    img {
+      width: @roundedBigImageWidth;
+      height: @roundedBigImageHeight;
+      border-radius: 50%;
+    }
+  }
+
+  .description {
+    font-size: @roundedBigMetadataFontSize;
+    font-weight: @roundedBigMetadataFontWeight;
+  }
+}
+
+.ui.rounded.small {
+  .image {
+    display: flex;
+    justify-content: center;
+    background-color: @white;
+
+    img {
+      display: flex;
+      width: @roundedSmallImageWidth;
+      height: @roundedSmallImageHeight;
+      border-radius: @roundedImageBorderRadius;
+    }
+  }
+
+  .header {
+    color: @roundedSmallTitleColor;
+  }
+
+  .description {
+    font-size: @roundedSmallMetadataFontSize;
+    font-weight: @roundedSmallMetadataFontWeight;
+  }
+}
+
+/*******************************
+        Publication Card
+*******************************/
+
+.ui.card.publication {
+  width: @mobilePublicationCardWidth;
+  border: none;
+
+  .image {
+    height: @mobilePublicationcardImageHeight;
+    flex-grow: 1;
+  }
+
+  .content {
+    height: @mobileCardContentHeight;
+    max-height: @cardContentMaxHeight;
+    padding: @cardContentPadding;
+    background-color: @publicationCardDescriptionColor;
+
+    .meta {
+      color: @publicationCardtextColor;
+      font-size: @cardMetaFontSize;
+      font-weight: @cardMetaTagFontWeight;
+    }
+
+    .description {
+      display: -webkit-box;
+      overflow: hidden;
+      margin-top: 0;
+      -webkit-box-orient: vertical;
+      color: @publicationCardtextColor;
+      font-size: @cardDescriptionTextFontSize;
+      font-weight: @cardDescriptionTextFontWeight;
+      -webkit-line-clamp: @cardDescriptionTextLineClampMobile;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .ui.card.publication {
+    width: @tabletPublicationCardWidth;
+
+    .image {
+      height: @tabletPublicationcardImageHeight;
+    }
+
+    .content {
+      height: @tabletCardContentHeight;
+      max-height: @tabletCardContentMaxHeight;
+
+      .description {
+        -webkit-line-clamp: @cardDescriptionTextLineClampTablet;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  .ui.card.publication {
+    width: @computerPublicationCardWidth;
+
+    .image {
+      height: @computerPublicationcardImageHeight;
+    }
+  }
+}
+
+.fluid-card-row {
+  display: grid;
+  justify-content: space-between;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  .ui.card {
+    margin: 0;
+  }
 }
