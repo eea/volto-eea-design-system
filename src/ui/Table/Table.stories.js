@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from 'semantic-ui-react';
+import { Table, Container } from 'semantic-ui-react';
 import _ from 'lodash';
 
 export default {
@@ -181,7 +181,11 @@ function TableContent({
   );
 }
 
-export const Default = (args) => <TableContent {...args}></TableContent>;
+export const Default = (args) => (
+  <Container>
+    <TableContent {...args}></TableContent>
+  </Container>
+);
 Default.args = {
   singleLine: false,
   celled: true,
@@ -300,7 +304,9 @@ function SortableTableContent({
 }
 
 export const Sortable = (args) => (
-  <SortableTableContent {...args}></SortableTableContent>
+  <Container>
+    <SortableTableContent {...args}></SortableTableContent>
+  </Container>
 );
 Sortable.args = {
   singleLine: false,
@@ -353,7 +359,9 @@ function ResponsiveTable({ headers, tableData }) {
 }
 
 export const Responsive = (args) => (
-  <ResponsiveTable {...args}></ResponsiveTable>
+  <Container>
+    <ResponsiveTable {...args}></ResponsiveTable>
+  </Container>
 );
 
 Responsive.args = {
