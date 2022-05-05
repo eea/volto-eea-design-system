@@ -14,6 +14,10 @@ div.ui.list > .item .description {
   margin: @itemDescriptionMarginTop;
 }
 
+dl dd {
+  margin-inline-start: @descriptionMarginInlineStart;
+}
+
 /* Unordered list */
 .ui.bulleted.list .list > .item:before,
 .ui.bulleted.list .list > a.item:before,
@@ -23,6 +27,12 @@ ul.ui.list li:before {
   font-size: @bulletSize;
 }
 
+// Third layer margin fix
 .ui.ordered.list .list .list > .item:before {
   margin-left: @orderedGrandchildCountOffset;
+}
+
+// Fourth layer margin fix
+.ui.ordered.list .list .list .list > .item:before {
+  margin-left: @orderedGreatGrandchildCountOffset;
 }
