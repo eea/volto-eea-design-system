@@ -60,15 +60,15 @@ Default.args = {
     ],
   },
   language: {
-    label: 'Repost Language',
+    label: 'Language',
     icon: <i className="ri-global-line"></i>,
     items: [
       { name: 'English', code: 'en' },
-      { name: 'eesti', code: 'et' },
+      { name: 'Eesti', code: 'et' },
       { name: 'Suomi', code: 'fi' },
       { name: 'Français', code: 'fr' },
       { name: 'Deutsch', code: 'de' },
-      { name: 'magyar', code: 'hu' },
+      { name: 'Magyar', code: 'hu' },
     ],
   },
 };
