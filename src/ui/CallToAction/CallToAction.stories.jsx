@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Icon, Segment } from 'semantic-ui-react';
+import { Button, Icon, Container, Segment } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Call To Action',
@@ -38,14 +38,11 @@ export default {
 //Default Call To Action
 export const Default = (args) => {
   return (
-    <a
-      className={`ui button ${args.disabled ? 'disabled' : ''}`}
-      href={args.href}
-      target="_blank"
-      rel="noreferrer"
-    >
-      {args.label}
-    </a>
+    <Container>
+      <Button as="a" disabled={args.disabled} href={args.href} target="_blank">
+        {args.label}
+      </Button>
+    </Container>
   );
 };
 Default.args = {
@@ -57,14 +54,17 @@ Default.args = {
 //Primary Call To Action
 export const Primary = (args) => {
   return (
-    <a
-      className={`ui button primary ${args.disabled ? 'disabled' : ''}`}
-      href={args.href}
-      target="_blank"
-      rel="noreferrer"
-    >
-      {args.label}
-    </a>
+    <Container>
+      <Button
+        primary
+        as="a"
+        disabled={args.disabled}
+        href={args.href}
+        target="_blank"
+      >
+        {args.label}
+      </Button>
+    </Container>
   );
 };
 Primary.args = {
@@ -76,14 +76,17 @@ Primary.args = {
 //Secondary Call To Action
 export const Secondary = (args) => {
   return (
-    <a
-      className={`ui button secondary ${args.disabled ? 'disabled' : ''}`}
-      href={args.href}
-      target="_blank"
-      rel="noreferrer"
-    >
-      {args.label}
-    </a>
+    <Container>
+      <Button
+        secondary
+        as="a"
+        disabled={args.disabled}
+        href={args.href}
+        target="_blank"
+      >
+        {args.label}
+      </Button>
+    </Container>
   );
 };
 Secondary.args = {
@@ -95,36 +98,43 @@ Secondary.args = {
 //Inverted Call To Action
 export const Inverted = (args) => {
   return (
-    <Segment inverted compact>
-      <a
-        className={`ui button primary inverted ${
-          args.disabled ? 'disabled' : ''
-        }`}
-        href={args.href1}
-        target="_blank"
-        rel="noreferrer"
-      >
-        {args.button1}
-      </a>
-      <a
-        className={`ui button secondary inverted ${
-          args.disabled ? 'disabled' : ''
-        }`}
-        href={args.href2}
-        target="_blank"
-        rel="noreferrer"
-      >
-        {args.button2}
-      </a>
-      <a
-        className={`ui button inverted ${args.disabled ? 'disabled' : ''}`}
-        href={args.href3}
-        target="_blank"
-        rel="noreferrer"
-      >
-        {args.button3}
-      </a>
-    </Segment>
+    <Container>
+      <Segment compact>
+        <Button
+          primary
+          inverted
+          as="a"
+          disabled={args.disabled}
+          href={args.href1}
+          target="_blank"
+        >
+          {args.button1}
+        </Button>
+      </Segment>
+      <Segment compact>
+        <Button
+          secondary
+          inverted
+          as="a"
+          disabled={args.disabled}
+          href={args.href2}
+          target="_blank"
+        >
+          {args.button2}
+        </Button>
+      </Segment>
+      <Segment inverted compact>
+        <Button
+          inverted
+          as="a"
+          disabled={args.disabled}
+          href={args.href3}
+          target="_blank"
+        >
+          {args.button3}
+        </Button>
+      </Segment>
+    </Container>
   );
 };
 Inverted.args = {
@@ -144,19 +154,18 @@ Inverted.parameters = {
 //Labeled Call To Action
 export const Labeled = (args) => {
   return (
-    <div className="eea">
-      <a
-        className={`ui button ${args.variant} icon ${
-          args.icon_position
-        } labeled ${args.disabled ? 'disabled' : ''}`}
+    <Container>
+      <Button
+        className={args.variant + ' icon ' + args.icon_position + ' labeled'}
+        as="a"
+        disabled={args.disabled}
         href={args.href}
         target="_blank"
-        rel="noreferrer"
       >
         {args.label}
         <Icon name={args.icon} />
-      </a>
-    </div>
+      </Button>
+    </Container>
   );
 };
 Labeled.args = {
@@ -213,19 +222,18 @@ Labeled.argTypes = {
   },
 };
 
-//Text Call To Action
-export const Text = (args) => {
+//Text Button - can also play with text class
+export const Link = (args) => {
   return (
-    <a href={args.href} target="_blank" rel="noreferrer">
-      {args.label}
-    </a>
+    <Container>
+      <a href={args.href}>{args.label}</a>
+    </Container>
   );
 };
-Text.args = {
-  label: 'Text Call To Action',
+Link.args = {
+  label: 'Link label',
   href: '/#',
 };
-Text.parameters = {
-  controls: { exclude: ['disabled'] },
+Link.parameters = {
   hideNoControlsWarning: true,
 };
