@@ -4,8 +4,10 @@
 
 @tabActiveItemHoverColor: @secondaryColor;
 
-@mobileHeaderSize: 1.125rem;
-@tabletHeaderSize: @h4;
+@mobileItemFontSize: 1rem;
+@mobileItemPadding: 1rem 0.25rem;
+
+@headerSize: @h4;
 @headerSizeResponsive: @fontSize;
 @contentSize: @fontSize;
 
@@ -16,3 +18,10 @@
 
 @loaderDistanceFromTop: 100px;
 @loaderSize: 2.5em;
+
+/* Scrollbar */
+@mobileTabScrollbarHeight: 0;
+@tabletTabScrollbarHeight: 0.3rem;
+
+/* Images */
+@verticalTabPaneImageMaxWidth: 100%;
