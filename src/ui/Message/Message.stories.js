@@ -7,7 +7,7 @@ export default {
   argTypes: {
     size: {
       control: { type: 'select' },
-      options: ['mini', 'tiny', 'small', '', 'large', 'big', 'huge', 'massive'],
+      options: ['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive'],
       description: 'message size',
       table: {
         type: {

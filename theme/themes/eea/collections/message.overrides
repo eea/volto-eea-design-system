@@ -4,7 +4,6 @@
 
 /* Text size and weight */
 .ui.message p {
-  font-size: @messageFontSize;
   font-weight: @messageFontWeight;
 }
 
@@ -22,6 +21,7 @@
 div.ui.icon.message > .icon,
 div.ui.icon.message > .icon:not(.close) {
   margin: @iconMargin;
+  line-height: @iconLineHeight;
 }
 
 .ui.success.message,

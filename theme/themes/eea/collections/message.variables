@@ -66,7 +66,8 @@
 
 /* Icon Message */
 @iconMargin: 0.09rem 0.6rem 0 0;
-@iconSize: 1rem;
+@iconSize: 1em;
+@iconLineHeight: 1.29;
 @iconOpacity: 1;
 @iconContentDistance: 0rem;
 @iconVerticalAlign: top;
