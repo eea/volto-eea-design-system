@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'semantic-ui-react';
 import Callout from './Callout';
 
 const CITATION =
@@ -17,9 +18,11 @@ export default {
 };
 
 export const Default = (args) => (
-  <Callout>
-    <Callout.Content>{args.content}</Callout.Content>
-  </Callout>
+  <Container>
+    <Callout>
+      <Callout.Content>{args.content}</Callout.Content>
+    </Callout>
+  </Container>
 );
 
 Default.args = {
