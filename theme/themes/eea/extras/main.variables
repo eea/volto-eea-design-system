@@ -27,6 +27,9 @@
 @checkboxColor: @white;
 @checkboxBoxShadow: none;
 
+/* Page Add */
+@pageAddMinHeight: 750px;
+
 /*-------------------
       login.less
 --------------------*/

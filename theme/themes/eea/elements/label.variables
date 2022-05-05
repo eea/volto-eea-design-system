@@ -22,7 +22,12 @@
 @borderWidth: 0;
 @border: none;
 
+@labelLineHeight: inherit;
 @lineHeightOffset: -(@verticalPadding / 2);
+@labelTextDecoration: underline;
+@labelNoTextDecoration: none;
+@labelNoBackground: transparent;
+@labelOpacity: 1;
 
 @labelTransitionDuration: @defaultDuration;
 @labelTransitionEasing: @defaultEasing;
@@ -151,7 +156,7 @@
 @lowImportanceBackground: @deepBlue;
 @mediumImportanceBackground: #346F83;
 @highImportanceBackground: #005293;
-@highlightImportanceBackground: #009591;
+@highlightImportanceBackground: @secondaryColor;
 
 @redTextColor: @white;
 @orangeTextColor: @white;
