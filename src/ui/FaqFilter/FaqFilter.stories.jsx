@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'semantic-ui-react';
 // eslint-disable-next-line import/no-unresolved
 import FaqFilter from './FaqFilter';
 
@@ -38,15 +39,17 @@ export default {
 };
 
 const DefaultTemplate = (args) => (
-  <FaqFilter>
-    <FaqFilter.Menu
-      filterText={args.filterText}
-      clearText={args.clearText}
-      resultCount={args.resultCount}
-    />
-    <FaqFilter.Active />
-    <FaqFilter.Filters filters={args.filters} />
-  </FaqFilter>
+  <Container>
+    <FaqFilter>
+      <FaqFilter.Menu
+        filterText={args.filterText}
+        clearText={args.clearText}
+        resultCount={args.resultCount}
+      />
+      <FaqFilter.Active />
+      <FaqFilter.Filters filters={args.filters} />
+    </FaqFilter>
+  </Container>
 );
 
 export const Default = DefaultTemplate.bind({});
