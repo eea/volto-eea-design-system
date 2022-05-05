@@ -9,40 +9,68 @@
 
 .eea.pullquote {
   padding: @pullquotePadding;
-  margin: @pullquoteMobileMargin;
+  margin: @pullquoteMargin;
   word-break: @contentWordBreak;
   hyphens: @contentWordBreakHyphens;
-  .content {
-    margin: @contentMargin;
-    .author {
-      text-align: @authorTextAlign;
+
+  .quotes.wrapper {
+    display: flex;
+
+    .quote {
+      padding: @mobileQuotePadding;
+    }
+
+    i.icon {
+      display: flex;
+      align-items: flex-end;
+      font-size: @mobileQuoteIconSize;
+      color: @quoteIconColor;
+    }
+
+    i.icomn:first-child {
+      align-self: flex-start;
+    }
+
+    i.icon:last-child {
+      align-self: flex-end;
     }
   }
-  i.icon {
-    font-size: @quoteIconSize;
-    color: @quoteIconColor;
+
+  .author {
+    color: @authorTextColor;
+    text-align: @authorTextAlign;
+    font-weight: @authorFontWeight;
+    font-size: @authorFontSize;
+    margin: @authorMargin;
   }
-  .quote.right {
-    float: @quoteDownIconFloat;
+
+  .meta {
+    text-align: @metaTextAlign;
+    font-weight: @metaFontWeight;
+    font-size: @metaFontSize;
   }
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
   .eea.pullquote {
-    .content {
-      margin: @pullquoteMargin;
+    .quotes.wrapper {
+      .quote {
+        padding: @tabletQuotePadding;
+      }
+
+      i.icon {
+        font-size: @tabletQuoteIconSize;
+      }
     }
   }
   .eea.pullquote.left {
     width: @maxWidthOnFloat;
-    padding: @paddingLeftFloat;
+    padding: @pullquoteFloatLeftPadding;
     float: left;
   }
   .eea.pullquote.right {
     width: @maxWidthOnFloat;
-    padding: @paddingRightFloat;
+    padding: @pullquoteFloatRightPadding;
     float: right;
   }
 }
-
-.loadUIOverrides();
