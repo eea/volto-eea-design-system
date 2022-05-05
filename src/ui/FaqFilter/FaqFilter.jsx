@@ -55,6 +55,7 @@ const Menu = ({ children, ...rest }) => {
           onKeyDown={() => context.setActive(!context.active)}
           role="button"
           tabIndex={0}
+          aria-label="arror icon"
         >
           <Icon className="ri-arrow-down-s-line" />
         </div>
