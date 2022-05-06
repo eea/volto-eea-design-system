@@ -235,9 +235,7 @@ pipeline {
 
                   sh '''sed -i "s#url:.*#url: 'https://ci.eionet.europa.eu/',#" website/docusaurus.config.js'''
                   sh '''BASEURL="$(echo $BUILD_URL | sed 's#https://ci.eionet.europa.eu##')${GIT_NAME}/"; sed -i "s#baseUrl:.*#baseUrl: '$BASEURL',#" website/docusaurus.config.js'''
-                  sh '''cat website/docusaurus.config.js'''
                   def RETURN_STATUS = sh(script: '''cd website; yarn;yarn build;cd ..''', returnStatus: true)
-                  
                   if ( RETURN_STATUS == 0 ) {
                          publishHTML (target : [allowMissing: false,
                                    alwaysLinkToLastBuild: true,
@@ -252,6 +250,7 @@ pipeline {
                     else {
                           pullRequest.comment("### :x: Docusaurus build FAILED\nCheck ${BUILD_URL} for details\n\n:fire: @${GITHUB_COMMENT_AUTHOR}")
                           currentBuild.result = 'FAILURE'
+                          error("Docusaurus build FAILED")
                     }                
 
               }
@@ -288,6 +287,7 @@ pipeline {
                     else {
                        pullRequest.comment("### :x: Storybook build FAILED\nCheck ${BUILD_URL} for details\n\n:fire: @${GITHUB_COMMENT_AUTHOR}")
                        currentBuild.result = 'FAILURE'
+                       error("Storybook build FAILED")
                     }
                    }
                    sh '''rm -rf volto-kitkat-frontend'''
