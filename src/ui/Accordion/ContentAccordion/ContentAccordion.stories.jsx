@@ -3,7 +3,7 @@ import { Icon } from 'semantic-ui-react';
 import ContentAccordion from './ContentAccordion';
 
 export default {
-  title: 'Components/Content Accordion',
+  title: 'Components/Accordion',
   component: ContentAccordion,
   parameters: {
     actions: {
@@ -66,8 +66,8 @@ const Template = (args) => (
   <ContentAccordionContainer {...args}></ContentAccordionContainer>
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const Contents = Template.bind({});
+Contents.args = {
   content: [
     {
       title: 'Water and marine environment',
