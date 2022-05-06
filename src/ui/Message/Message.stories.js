@@ -1,5 +1,5 @@
 import React from 'react';
-import { Message } from 'semantic-ui-react';
+import { Message, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Message',
@@ -43,7 +43,11 @@ export default {
   },
 };
 
-const Template = (args) => <Message {...args}></Message>;
+const Template = (args) => (
+  <Container>
+    <Message {...args}></Message>
+  </Container>
+);
 
 export const Default = Template.bind({});
 Default.args = {
