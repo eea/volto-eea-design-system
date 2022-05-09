@@ -236,8 +236,10 @@ pipeline {
                   sh '''sed -i "s#url:.*#url: 'https://ci.eionet.europa.eu/',#" website/docusaurus.config.js'''
                   sh '''BASEURL="$(echo $BUILD_URL | sed 's#https://ci.eionet.europa.eu##')${GIT_NAME}/"; sed -i "s#baseUrl:.*#baseUrl: '$BASEURL',#" website/docusaurus.config.js'''
                   sh '''cat website/docusaurus.config.js'''
-                  sh '''cd website; yarn;yarn build;cd ..'''
-                  publishHTML (target : [allowMissing: false,
+                  def RETURN_STATUS = sh(script: '''cd website; yarn;yarn build;cd ..''', returnStatus: true)
+                  
+                  if ( RETURN_STATUS == 0 ) {
+                         publishHTML (target : [allowMissing: false,
                                    alwaysLinkToLastBuild: true,
                                    keepAll: true,
                                    reportDir: 'docs',
@@ -245,7 +247,13 @@ pipeline {
                                    reportName: "${GIT_NAME}",
                                    reportTitles: 'Docusaurus'])
 
-                  pullRequest.comment("Docusaurus: ${BUILD_URL}${GIT_NAME}/")
+                         pullRequest.comment("### :heavy_check_mark: Docusaurus:\n${BUILD_URL}${GIT_NAME}/\n\n:rocket: @${GITHUB_COMMENT_AUTHOR}")
+                    }
+                    else {
+                          pullRequest.comment("### :x: Docusaurus build FAILED\nCheck ${BUILD_URL} for details\n\n:fire: @${GITHUB_COMMENT_AUTHOR}")
+                          currentBuild.result = 'FAILURE'
+                    }                
+
               }
              }
            }
@@ -272,9 +280,15 @@ pipeline {
                   sh '''git clone --branch develop https://github.com/eea/volto-kitkat-frontend.git'''
 
                   withCredentials([string(credentialsId: 'volto-kitkat-frontend-chromatica', variable: 'CHROMATICA_TOKEN')]) {
-                      sh '''cd volto-kitkat-frontend; npm install -g mrs-developer chromatic; yarn develop; cd src/addons/$GIT_NAME; git fetch origin pull/${CHANGE_ID}/head:PR-${CHANGE_ID}; git checkout PR-${CHANGE_ID}; cd ../../..; yarn install; yarn build-storybook; npx chromatic --no-interactive --force-rebuild  --project-token=$CHROMATICA_TOKEN | tee chromatic.log; cd ..'''
+                    def RETURN_STATUS = sh(script: '''cd volto-kitkat-frontend; npm install -g mrs-developer chromatic; yarn develop; cd src/addons/$GIT_NAME; git fetch origin pull/${CHANGE_ID}/head:PR-${CHANGE_ID}; git checkout PR-${CHANGE_ID}; cd ../../..; yarn install; yarn build-storybook; npx chromatic --no-interactive --force-rebuild  --project-token=$CHROMATICA_TOKEN | tee chromatic.log; cd ..''', returnStatus: true)
+                    if ( RETURN_STATUS == 0 ) {
                       def STORY_URL = sh(script: '''grep "View your Storybook" volto-kitkat-frontend/chromatic.log | sed "s/.*https/https/" ''', returnStdout: true).trim()
-                      pullRequest.comment("StoryBook: ${STORY_URL}")
+                      pullRequest.comment("### :heavy_check_mark: Storybook:\n${STORY_URL}\n\n:rocket: @${GITHUB_COMMENT_AUTHOR}")
+                    }
+                    else {
+                       pullRequest.comment("### :x: Storybook build FAILED\nCheck ${BUILD_URL} for details\n\n:fire: @${GITHUB_COMMENT_AUTHOR}")
+                       currentBuild.result = 'FAILURE'
+                    }
                    }
                    sh '''rm -rf volto-kitkat-frontend'''
               }
