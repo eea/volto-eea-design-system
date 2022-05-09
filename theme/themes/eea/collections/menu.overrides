@@ -3,7 +3,24 @@
 *******************************/
 
 /* Pagination and Tabs */
-.ui.pagination.pointing.secondary {
+
+.ui.pagination.menu {
+  border: none;
+  box-shadow: none;
+
+  a.item {
+
+    &.active {
+      background: none;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.ui.pagination.pointing.secondary, .ui.pagination {
   display: flex;
   width: @paginationWidth;
   justify-content: start;
@@ -13,14 +30,14 @@
   }
 }
 
-.ui.pagination.pointing.secondary.menu .item {
+.ui.pagination.pointing.secondary.menu .item, .ui.pagination.menu .item {
   justify-content: center;
   padding: @squareTiny;
   font-size: @paginationFontSize;
 }
 
 /* Pagination active item custom border design */
-.ui.pagination.pointing.secondary.menu a.active.item {
+.ui.pagination.pointing.secondary.menu a.active.item, .ui.pagination.menu a.active.item {
   padding: (@tinyGap - @1px) @tinyGap;
   border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
   margin-bottom: -@secondaryPointingctiveItemMarginBottom;
@@ -32,7 +49,7 @@
 }
 
 /* Hover item pagination */
-.ui.pagination.pointing.secondary.menu a.item:hover {
+.ui.pagination.pointing.secondary.menu a.item:hover, .ui.pagination.menu a.item:hover{
   padding: (@tinyGap - @1px) @tinyGap;
   border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
   margin-bottom: -@secondaryPointingctiveItemMarginBottom;
@@ -40,10 +57,11 @@
 }
 
 /* Hover ellipsis item pagination */
-.ui.pagination.pointing.secondary.menu a.item[type='ellipsisItem']:hover {
-  padding: @squareTiny;
-  border-bottom: none; // Not clickable so no border
-  margin: 0.031rem 0; // Adjust to no border
+.ui.pagination.pointing.secondary.menu a.item[type='ellipsisItem']:hover, .ui.pagination.menu a.item[type='ellipsisItem']:hover{
+  //padding: @squareTiny;
+  //border-bottom: none; // Not clickable so no border
+  border-bottom: @secondaryPointingActiveBorderWidth solid transparent;
+  //margin: 0.031rem 0; // Adjust to no border
 }
 
 /* Tab active item custom border design */
