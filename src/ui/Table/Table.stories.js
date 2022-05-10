@@ -334,7 +334,7 @@ Sortable.args = {
 
 function ResponsiveTable({ headers, tableData }) {
   return (
-    <Table className="responsive">
+    <Table celled className="responsive">
       <Table.Header>
         <Table.Row textAlign="center">
           {headers.map((header) => (
