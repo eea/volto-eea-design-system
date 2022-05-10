@@ -13,7 +13,8 @@
 
 /* Minimum Gutter is used to determine  the maximum container width for a given device */
 
-@maxWidth: 1400px;
+@maxWidth: 1086px;
+@emSize: 14px; // for calculation of container widths use default Semantic UI value instead of our base of 16px
 
 /* Devices */
 @mobileMinimumGutter: 0em;
@@ -63,4 +64,3 @@
 @textSize: @large;
 
 /* Section */
-@profileSectionPadding: 0px;
