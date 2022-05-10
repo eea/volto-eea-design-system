@@ -10,7 +10,7 @@ export default {
   component: Callout,
   argTypes: {
     content: {
-      name: 'citation',
+      name: 'content',
       description: 'Callout content',
       type: { name: 'string', required: true },
     },
