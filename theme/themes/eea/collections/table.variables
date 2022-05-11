@@ -52,6 +52,7 @@
 @headerTextTransform: inherit;
 @headerBoxShadow: none;
 @headerFontSize: @h5;
+@headerSortableWhiteSpace: normal;
 
 /* Table Footer */
 @footerBoxShadow: none;
@@ -258,5 +259,7 @@
 
 @responsiveMobileCellTextAlign: right;
 @responsiveMobileCellDataLabelFloat: left;
+@responsiveMobileCellDataLabelTextAlign: left;
+@responsiveMobileCellDataLabelMaxSize: 50%;
 @responsiveMobileCellDataLabelFontWeigth: @bold;
 

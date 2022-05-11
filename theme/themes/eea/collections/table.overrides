@@ -30,7 +30,12 @@
 
 }
 
-@media only screen and (max-width: @tabletBreakpoint) {
+// fix hiding of table header on mobile resolutions, by default whitespace is no wrap from table.less
+.ui.sortable.table thead th {
+  white-space: @headerSortableWhiteSpace;
+}
+
+@media only screen and (max-width: @mobileLandscapeBreakpoint) {
 
   .ui.table.responsive {
 
@@ -52,6 +57,7 @@
     td {
       display: block;
       text-align: @responsiveMobileCellTextAlign;
+      clear: both;
   
       &::before {
         /*
@@ -61,6 +67,8 @@
         content: attr(data-label);
         float: @responsiveMobileCellDataLabelFloat;
         font-weight: @responsiveMobileCellDataLabelFontWeigth;
+        text-align: @responsiveMobileCellDataLabelTextAlign;
+        max-width: @responsiveMobileCellDataLabelMaxSize;
       }
       
     }
