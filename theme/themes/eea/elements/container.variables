@@ -13,7 +13,7 @@
 
 /* Minimum Gutter is used to determine  the maximum container width for a given device */
 
-@maxWidth: 1120px; // for perfect division of 4 rows with 20px gaps
+@maxWidth: 100%;
 @scrollbarWidth: 16px;
 
 /* Devices */
