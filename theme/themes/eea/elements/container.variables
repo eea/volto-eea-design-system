@@ -13,15 +13,16 @@
 
 /* Minimum Gutter is used to determine  the maximum container width for a given device */
 
-@maxWidth: 1086px;
-@emSize: 14px; // for calculation of container widths use default Semantic UI value instead of our base of 16px
+@maxWidth: 1120px; // for perfect division of 4 rows with 20px gaps
+@scrollbarWidth: 16px;
 
 /* Devices */
 @mobileMinimumGutter: 0em;
 @mobileWidth: auto;
-@mobileGutter: 1rem;
+@mobileGutter: 1.25rem;
 
-@tabletMinimumGutter: (@emSize  * 1);
+@tabletEmSize: 14px;
+@tabletMinimumGutter: (@tabletEmSize  * 1);
 @tabletWidth: @tabletBreakpoint - (@tabletMinimumGutter * 2) - @scrollbarWidth;
 @tabletGutter: auto;
 
