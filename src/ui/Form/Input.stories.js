@@ -50,6 +50,13 @@ export default {
         defaultValue: { summary: false },
       },
     },
+    disabled: {
+      description: 'disabled',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: true },
+      },
+    },
   },
 };
 
@@ -76,16 +83,17 @@ Default.args = {
   required: false,
 };
 
-export const StandardInput = Template.bind({});
-StandardInput.args = {
+export const LabeledInput = Template.bind({});
+LabeledInput.args = {
   label: 'Input label',
   placeholder: 'Placeholder',
   type: 'text',
   fluid: false,
   required: false,
+  disabled: false,
 };
 
-StandardInput.argTypes = {
+LabeledInput.argTypes = {
   label: {
     description: 'input label',
     table: {
@@ -98,55 +106,6 @@ StandardInput.argTypes = {
     table: {
       type: { summary: 'boolean' },
       defaultValue: { summary: false },
-    },
-  },
-};
-
-export const DisabledInput = Template.bind({});
-DisabledInput.args = {
-  label: 'Input label',
-  placeholder: 'Placeholder',
-  type: 'text',
-  disabled: true,
-  fluid: false,
-  required: false,
-};
-DisabledInput.argTypes = {
-  fluid: {
-    description: 'take on the size of its container',
-    table: {
-      type: { summary: 'boolean' },
-      defaultValue: { summary: false },
-    },
-  },
-  label: {
-    description: 'input label',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: '' },
-    },
-  },
-  required: {
-    description: 'a field can show that is mandatory',
-    table: {
-      type: { summary: 'boolean' },
-      defaultValue: { summary: false },
-    },
-  },
-};
-DisabledInput.argTypes = {
-  disabled: {
-    description: 'disabled',
-    table: {
-      type: { summary: 'boolean' },
-      defaultValue: { summary: true },
-    },
-  },
-  label: {
-    description: 'input label',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: '' },
     },
   },
 };
@@ -159,6 +118,7 @@ LoadingInput.args = {
   loading: true,
   fluid: false,
   required: false,
+  disabled: false,
 };
 LoadingInput.argTypes = {
   loading: {
@@ -189,10 +149,11 @@ export const ErrorInput = Template.bind({});
 ErrorInput.args = {
   label: 'Input label',
   placeholder: 'Placeholder',
-  type: 'text',
   error: true,
+  type: 'text',
   fluid: false,
   required: false,
+  disabled: false,
 };
 ErrorInput.argTypes = {
   error: {
