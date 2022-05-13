@@ -288,3 +288,130 @@
     margin: 0;
   }
 }
+
+/*******************************
+        Carousel
+*******************************/
+
+.cards-carousel {
+  position: relative;
+
+  .title {
+    font-size: @mobileCarouselTitleFontSize;
+    font-weight: @carouselTitleFontWeight;
+    color: @carouselTitleColor;
+    margin: @carouselTitleMargin;
+  }
+
+  .ui.button.icon.slider-arrow {
+    padding: @carouselButtonPadding;
+    display: none;
+
+    .active, &:focus, &:hover {
+      background: transparent;
+    }
+
+    .icon {
+      color: @carouselButtonIconColor;
+      font-size: @carouselButtonIconFontSize;
+    }
+  }
+
+  .slick-arrow {
+    display: block !important;
+  }
+
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+
+  .slick-list {
+    margin: 0 -0.75em !important;
+  }
+  
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-slide {
+    display: flex;
+    height: auto;
+    flex: 1;
+    flex-direction: column;
+    padding: 15px 0.75em !important;
+
+    > div {
+      height: 100%;
+    }
+
+  }
+
+  .slider-arrow {
+    position: absolute;
+    top: 50%;
+    bottom: auto;
+    display: block;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    transform: translate(0, -50%);
+  }
+
+  .prev-arrow {
+    right: auto;
+    left: @carouselButtonDistance;
+  }
+
+  .next-arrow {
+    right: @carouselButtonDistance;
+    left: auto;
+  }
+
+  .slick-dots li button:before {
+    background-color: @carouselDotsBackgroundColor;
+    color: transparent;
+    border: @carouselDotsBorder;
+    border-radius: @carouselDotsBorderRadius;
+    opacity: @carouselDotsOpacity;
+    width: @mobileCarouselDotsWidth;
+    height: @mobileCarouselDotsHeight;
+  }
+
+  .slick-dots li.slick-active button:before {
+    background-color: @carouselDotsActiveBackgroundColor;
+    color: transparent;
+    
+  }
+
+  
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .cards-carousel {
+
+    .title {
+      font-size: @tabletCarouselTitleFontSize;
+    }
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  .cards-carousel {
+
+    .title {
+      font-size: @computerCarouselTitleFontSize;
+    }
+
+    .ui.button.icon.slider-arrow {
+      display: block;
+    }
+
+    .slick-dots li button:before {
+      width: inherit;
+      height: inherit;
+    }
+  }
+}
