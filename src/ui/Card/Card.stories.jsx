@@ -25,6 +25,15 @@ export default {
         defaultValue: { summary: 'null' },
       },
     },
+    cards: {
+      description: 'cards data',
+      table: {
+        type: {
+          summary: 'object',
+        },
+        defaultValue: { summary: '' },
+      },
+    },
   },
 };
 
@@ -108,6 +117,10 @@ Default.argTypes = {
       defaultValue: { summary: ' "" ' },
     },
   },
+};
+Default.parameters = {
+  controls: { exclude: ['cards'] },
+  hideNoControlsWarning: true,
 };
 
 const GridTemplate = (args) => (
@@ -404,4 +417,24 @@ CarouselCards.args = {
       links: [{ linkName: 'Link 1' }],
     },
   ],
+};
+CarouselCards.argTypes = {
+  title: {
+    description: 'carousel title',
+    table: {
+      type: {
+        summary: 'string',
+      },
+      defaultValue: { summary: '' },
+    },
+  },
+  settings: {
+    description: 'carousel slider settings',
+    table: {
+      type: {
+        summary: 'object',
+      },
+      defaultValue: { summary: '' },
+    },
+  },
 };
