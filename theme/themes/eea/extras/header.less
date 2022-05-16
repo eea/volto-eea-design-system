@@ -22,7 +22,6 @@
       align-items: center;
       justify-content: space-between;
       z-index: @topSectionZindex;
-      width: 100% !important; // Semantic has auto
     }
     .item {
       display: flex;
@@ -391,6 +390,7 @@ Header Actions - Burger and Search Icons
         }
 
         .ui.text.menu {
+          flex-wrap: wrap;
           display: flex;
           width: 88%;
           max-height: 20px;
