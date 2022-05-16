@@ -296,13 +296,6 @@
 .cards-carousel {
   position: relative;
 
-  .title {
-    font-size: @mobileCarouselTitleFontSize;
-    font-weight: @carouselTitleFontWeight;
-    color: @carouselTitleColor;
-    margin: @carouselTitleMargin;
-  }
-
   .ui.button.icon.slider-arrow {
     padding: @carouselButtonPadding;
     display: none;
@@ -389,21 +382,9 @@
   
 }
 
-@media only screen and (min-width: @tabletBreakpoint) {
-  .cards-carousel {
-
-    .title {
-      font-size: @tabletCarouselTitleFontSize;
-    }
-  }
-}
 
 @media only screen and (min-width: @computerBreakpoint) {
   .cards-carousel {
-
-    .title {
-      font-size: @computerCarouselTitleFontSize;
-    }
 
     .ui.button.icon.slider-arrow {
       display: block;
