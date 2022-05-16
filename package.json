@@ -21,7 +21,8 @@
   ],
   "dependencies": {
     "@eeacms/volto-corsproxy": "*",
-    "remixicon": "2.5.0"
+    "remixicon": "2.5.0",
+    "react-slick": "^0.28.1"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.5",
