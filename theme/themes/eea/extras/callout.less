@@ -1,10 +1,10 @@
 @type: 'extra';
-@element: 'blockquote';
+@element: 'callout';
 
 @import (multiple) '../../theme.config';
 
 /*******************************
-            Blockquote
+            Callout
 *******************************/
 
 blockquote.callout,
@@ -14,13 +14,20 @@ p.callout {
   border-radius: @calloutBorderRadius;
   padding-top: @calloutPadding;
   padding-bottom: @calloutPadding;
-  border-left: @mobileBlockquoteBorderLeft;
+  border-left: @mobileCalloutBorderLeft;
   color: @quoteColor;
   font-size: @mobileQuoteFontSize;
 }
 
-.eea.blockquote {
-  border-left: @mobileBlockquoteBorderLeft;
+.eea.callout {
+  border-left: @mobileCalloutBorderLeft;
+  border-right: @calloutBorder;
+  border-top: @calloutBorder;
+  border-bottom: @calloutBorder;
+  box-shadow: @calloutBoxShadow;
+  border-radius: @calloutBorderRadius;
+  padding-top: @calloutPadding;
+  padding-bottom: @calloutPadding;
 
   .quote {
     display: flex;
@@ -30,13 +37,6 @@ p.callout {
     color: @quoteColor;
     font-size: @mobileQuoteFontSize;
     font-weight: @quoteFontWeight;
-
-    .meta {
-      margin: @metaMargin;
-      font-size: @mobileMetaFontSize;
-      font-weight: @metaWeight;
-      align-self: @metaAlignSelf;
-    }
   }
 }
 
@@ -58,18 +58,15 @@ p.callout {
 @media only screen and (min-width: @tabletBreakpoint) {
   blockquote.callout,
   p.callout {
-    border-left: @tabletBlockquoteBorderLeft;
+    border-left: @tabletCalloutBorderLeft;
     font-size: @tabletQuoteFontSize;
   }
 
-  .eea.blockquote {
-    border-left: @tabletBlockquoteBorderLeft;
+  .eea.callout {
+    border-left: @tabletCalloutBorderLeft;
     .quote {
       margin: @tabletQuoteMargin;
       font-size: @tabletQuoteFontSize;
-      .meta {
-        font-size: @tabletMetaFontSize;
-      }
     }
   }
 }
@@ -80,12 +77,9 @@ p.callout {
     font-size: @computerQuoteFontSize;
   }
 
-  .eea.blockquote .quote {
+  .eea.callout .quote {
     margin: @computerQuoteMargin;
     font-size: @computerQuoteFontSize;
-    .meta {
-      font-size: @computerMetaFontSize;
-    }
   }
 }
 
