@@ -13,14 +13,16 @@
 
 /* Minimum Gutter is used to determine  the maximum container width for a given device */
 
-@maxWidth: 1400px;
+@maxWidth: 100%;
+@scrollbarWidth: 16px;
 
 /* Devices */
 @mobileMinimumGutter: 0em;
 @mobileWidth: auto;
-@mobileGutter: 1rem;
+@mobileGutter: 1.25rem;
 
-@tabletMinimumGutter: (@emSize  * 1);
+@tabletEmSize: 14px;
+@tabletMinimumGutter: (@tabletEmSize  * 1);
 @tabletWidth: @tabletBreakpoint - (@tabletMinimumGutter * 2) - @scrollbarWidth;
 @tabletGutter: auto;
 
@@ -63,4 +65,3 @@
 @textSize: @large;
 
 /* Section */
-@profileSectionPadding: 0px;
