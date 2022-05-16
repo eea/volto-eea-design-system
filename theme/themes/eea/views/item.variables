@@ -155,3 +155,44 @@
 /* Unstackable */
 @unstackableMobileImageWidth: 125px;
 
+/*-------------------
+      Default
+--------------------*/
+@defaultItemImageHeight: 100%;
+@tabletDefaultItemWidth: 35%;
+
+@defaultItemColor: @deepBlue;
+
+/* Extra */
+@mobileDefaultItemExtraMarginBottom: 24px;
+@tabletDefaultItemExtraMarginBottom: 40px;
+@computerDefaultItemExtraMarginBottom: 72px;
+@mobileDefaultItemExtraMarginTop: 0;
+
+/* Meta */
+@defaultItemMetaFontSize: 16px;
+@defaultItemMetaOpacity: 0.6;
+
+@defaultItemDateMetaFontSize: 18px;
+@defaultItemDateMetaOpacity: 1;
+@defaultItemDateMetaFontWeight: 400;
+
+/* Header */
+@defaultItemHeaderFontSize: 16px;
+@defaultItemHeaderFontWeight: 700;
+@mobileDefaultItemHeaderMarginBottom: 6px;
+@tabletDefaultItemHeaderMarginBottom: 14px;
+@computerDefaultItemHeaderMarginBottom: 20px;
+
+/* Description */
+@defaultItemDescriptionFontSize: 16px;
+@defaultItemDescriptionFontWeight: 400;
+
+/* Content */
+@tabletDeafultItemContentPadding: 1em;
+@computerDeafultItemContentPadding: 1.5em;
+
+
+
+
+
