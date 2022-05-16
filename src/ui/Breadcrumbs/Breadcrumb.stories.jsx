@@ -45,6 +45,9 @@ const Template = (args) => (
       <Breadcrumb.Section key="home" href={args.root}>
         <Image src={homeSVG} alt="home" />
       </Breadcrumb.Section>
+      <Breadcrumb.Divider>
+        <Icon className="ri-arrow-right-s-line"></Icon>
+      </Breadcrumb.Divider>
       {args.sections.map((section, index, sections) => [
         index !== 0 && (
           <Breadcrumb.Divider key={index}>

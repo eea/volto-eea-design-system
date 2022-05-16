@@ -22,6 +22,7 @@ const Breadcrumbs = ({
       aria-label={'breadcrumbs'}
       className="breadcrumbs"
       attached
+      vertical
     >
       <Container>
         <Breadcrumb size={size}>
