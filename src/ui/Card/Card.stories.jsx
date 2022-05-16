@@ -298,11 +298,10 @@ const Arrows = (props) => {
   );
 };
 
-function CarouselCardsContent({ title, settings, cards, ...rest }) {
+function CarouselCardsContent({ settings, cards, ...rest }) {
   const slider = React.useRef(null);
   return (
     <div className="cards-carousel">
-      <p className="title">{title}</p>
       <Slider {...settings} ref={slider}>
         {cards.map((card, index) => (
           <Card fluid={card.fluid} key={index} className={rest.class}>
@@ -362,7 +361,6 @@ CarouselCards.args = {
   },
   cards: [
     {
-      title: 'Lorem Ipsum',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
@@ -419,15 +417,6 @@ CarouselCards.args = {
   ],
 };
 CarouselCards.argTypes = {
-  title: {
-    description: 'carousel title',
-    table: {
-      type: {
-        summary: 'string',
-      },
-      defaultValue: { summary: '' },
-    },
-  },
   settings: {
     description: 'carousel slider settings',
     table: {
