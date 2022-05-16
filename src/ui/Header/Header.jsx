@@ -13,6 +13,11 @@ import burgerIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/asse
 
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
+import PropTypes from 'prop-types';
+
+Header.propTypes = {
+  transparency: PropTypes.bool,
+};
 
 function Header({ children }) {
   return <div className="eea header">{children}</div>;
@@ -63,6 +68,7 @@ const Main = ({
   renderMenuItem,
   renderGlobalMenuItem,
   pathname,
+  transparency,
 }) => {
   const [activeItem, setActiveItem] = React.useState('');
   const [menuIsActive, setMenuIsActive] = React.useState(false);
@@ -123,7 +129,10 @@ const Main = ({
   const mobileMenuBurgerRef = React.useRef();
 
   return (
-    <div className="main bar" ref={node}>
+    <div
+      className={transparency ? 'main bar transparency' : 'main bar'}
+      ref={node}
+    >
       <Container>
         <Grid>
           <Grid.Column mobile={8} tablet={8} computer={4}>

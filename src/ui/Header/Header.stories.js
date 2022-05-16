@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import { Dropdown, Image, Segment } from 'semantic-ui-react';
+import { Dropdown, Image, Segment, Container } from 'semantic-ui-react';
 import { Logo } from '@eeacms/volto-eea-design-system/ui';
 
 import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea-logo.svg';
@@ -26,6 +26,13 @@ export default {
       table: {
         type: { summary: 'array' },
         defaultValue: { summary: '' },
+      },
+    },
+    transparency: {
+      description: 'transparent main section',
+      table: {
+        defaultValue: { summary: '""' },
+        type: { summary: 'boolean' },
       },
     },
   },
@@ -270,7 +277,7 @@ const Template = (args) => {
   const [pathname, setPathname] = React.useState('/');
 
   return (
-    <div>
+    <>
       <Header>
         <Header.TopHeader>
           <Header.TopItem className="official-union">
@@ -354,6 +361,7 @@ const Template = (args) => {
           </Header.TopDropdownMenu>
         </Header.TopHeader>
         <Header.Main
+          transparency={args.transparency}
           pathname={pathname}
           logo={<Logo {...logoProps} />}
           menuItems={menuItems}
@@ -393,7 +401,145 @@ const Template = (args) => {
       </Header>
 
       <Segment>Current location: {pathname}</Segment>
-    </div>
+      <Container>
+        <h1>Page title</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+          Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+          aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+          imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede link
+          mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+          semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+          porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+          dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
+          ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+          ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+          Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+          aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+          imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede link
+          mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+          semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+          porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+          dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
+          ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+          ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+          Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+          aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+          imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede link
+          mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+          semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+          porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+          dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
+          ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+          ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+          Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+          aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+          imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede link
+          mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+          semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+          porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+          dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
+          ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+          ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+          Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+          aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+          imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede link
+          mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+          semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+          porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+          dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
+          ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+          ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+          Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+          aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+          imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede link
+          mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+          semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+          porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+          dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
+          ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+          ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+          Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+          aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+          imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede link
+          mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+          semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+          porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+          dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
+          ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+          ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+          Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+          aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+          imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede link
+          mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+          semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+          porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+          dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
+          ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+          ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+          Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+          aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+          imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede link
+          mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+          semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+          porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+          dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
+          ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+          ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+        </p>
+      </Container>
+    </>
   );
 };
 
@@ -403,4 +549,5 @@ Default.args = {
   links,
   languages,
   menuItems,
+  transparency: false,
 };
