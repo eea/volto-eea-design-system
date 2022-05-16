@@ -284,10 +284,15 @@
 --------------------*/
 
 @mobileBreakpoint            : 320px;
-@tabletBreakpoint            : 480px;
-@computerBreakpoint          : 835px;
-@largeMonitorBreakpoint      : 1025px;
-@widescreenMonitorBreakpoint : 1200px;
+@mobileLandscapeBreakpoint   : 480px;  // introduced for the design system
+@tabletBreakpoint            : 768px;
+@contentBreakpoint           : 835px; // introduced for the design system
+@computerBreakpoint          : 992px;
+@smallMonitorBreakpoint      : 1024px; // introduced for the design system
+@largeMonitorBreakpoint      : 1200px;
+@laptopMonitorBreakpoint     : 1280px; // introduced for the design system
+@siteBreakpoint              : 1400px; // introduced for the design system
+@widescreenMonitorBreakpoint : 1920px;
 
 /* Paddings for breakpoints */
 @mobilePadding  : 1.875rem;
@@ -428,9 +433,9 @@
 @progressBarFrom0to30    : @midBlue;
 @progressBarFrom30to40   : @mediumPersianBlue;
 @progressBarFrom40to60   : @mediumPersianBlue;
-@progressBarFrom60to70   : @darkCyan;
-@progressBarFrom70to90   : @darkCyan;
-@progressBarFrom90to100  : @pineGreen;
+@progressBarFrom60to70   : @pineGreen;
+@progressBarFrom70to90   : @pineGreen;
+@progressBarFrom90to100  : @bottleGreen;
 
 /*-------------------
      Alpha Colors
@@ -664,7 +669,6 @@
 @largestTabletScreen : (@computerBreakpoint - @1px);
 @largestSmallMonitor : (@largeMonitorBreakpoint - @1px);
 @largestLargeMonitor : (@widescreenMonitorBreakpoint - @1px);
-@mobileWidth: 1279px;
 
 
 /*-------------------

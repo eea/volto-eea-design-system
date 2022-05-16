@@ -100,6 +100,13 @@
   box-shadow: none !important;
 }
 
+// sidebar.less has original code
+// bump z-index of sidenav btn due to itml
+// .ui.secondary.pointing.menu:not(.vertical) overrides
+.ui.button.full-size-sidenav-btn {
+  z-index: 1;
+}
+
 /* Global Button Styles */
 /* Text Button */
 button.ui.button.text,
@@ -169,4 +176,83 @@ p.ui.button {
   background: @searchButtonBackground;
   font-size: @searchButtonFontSize;
   opacity: @searchButtonIconOpacity;
+}
+
+/************* Inverted Buttons *************/
+// Override the light colors with the defaults
+
+/* Primary - button.less - L:3128 */
+.ui.inverted.primary.buttons .button,
+.ui.inverted.primary.button {
+  box-shadow: 0px 0px 0px @invertedBorderSize @primaryColor inset !important;
+  color: @primaryColor;
+}
+
+.ui.inverted.primary.buttons .button:hover,
+.ui.inverted.primary.button:hover,
+.ui.inverted.primary.buttons .button:focus,
+.ui.inverted.primary.button:focus,
+.ui.inverted.primary.buttons .button.active,
+.ui.inverted.primary.button.active,
+.ui.inverted.primary.buttons .button:active,
+.ui.inverted.primary.button:active {
+  color: @invertedHoveredTextColor;
+}
+
+.ui.inverted.primary.buttons .button:hover,
+.ui.inverted.primary.button:hover {
+  background-color: @primaryColorHover;
+}
+
+.ui.inverted.primary.buttons .button:focus,
+.ui.inverted.primary.button:focus {
+  background-color: @primaryColorFocus;
+}
+
+.ui.inverted.primary.buttons .active.button,
+.ui.inverted.primary.active.button {
+  background-color: @primaryColorActive;
+}
+
+.ui.inverted.primary.buttons .button:active,
+.ui.inverted.primary.button:active {
+  background-color: @primaryColorDown;
+}
+
+/* Secondary - button.less - L:3128 */
+.ui.inverted.secondary.buttons .button,
+.ui.inverted.secondary.button {
+  box-shadow: 0px 0px 0px @invertedBorderSize @secondaryColor inset !important;
+  color: @secondaryColor;
+}
+
+.ui.inverted.secondary.buttons .button:hover,
+.ui.inverted.secondary.button:hover,
+.ui.inverted.secondary.buttons .button:focus,
+.ui.inverted.secondary.button:focus,
+.ui.inverted.secondary.buttons .button.active,
+.ui.inverted.secondary.button.active,
+.ui.inverted.secondary.buttons .button:active,
+.ui.inverted.secondary.button:active {
+  color: @invertedHoveredTextColor;
+}
+
+.ui.inverted.secondary.buttons .button:hover,
+.ui.inverted.secondary.button:hover {
+  background-color: @secondaryColorHover;
+}
+
+.ui.inverted.secondary.buttons .button:focus,
+.ui.inverted.secondary.button:focus {
+  background-color: @secondaryColorFocus;
+}
+
+.ui.inverted.secondary.buttons .active.button,
+.ui.inverted.secondary.active.button {
+  background-color: @secondaryColorActive;
+}
+
+.ui.inverted.secondary.buttons .button:active,
+.ui.inverted.secondary.button:active {
+  background-color: @secondaryColorDown;
 }
