@@ -26,6 +26,12 @@
   border-bottom: @borderWidth solid @negativeBorderColor;
 }
 
+// To override the white background that is used for error on inputs text
+.ui.form .field.error .ui.dropdown .menu .selected.item .text,
+.ui.form .field.error .ui.dropdown .menu .item:hover .text {
+  background: transparent;
+}
+
 .ui.dropdown.right {
   float: right;
 }
