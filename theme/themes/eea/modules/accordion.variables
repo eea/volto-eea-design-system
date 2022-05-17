@@ -99,8 +99,8 @@
 
 /* Styled Title States */
 @styledTitleHoverBackground: transparent;
-@styledTitleHoverColor: @teal;
-@styledActiveTitleBackground: @teal;
+@styledTitleHoverColor: @activeTitleBackground;
+@styledActiveTitleBackground: @activeTitleBackground;
 @styledActiveTitleColor: @white;
 
 /* Styled Child Title States */
