@@ -10,35 +10,31 @@ export default {
 
 function SingleItem({ header, image, description, meta, extra }) {
   return (
-    <Container>
-      <Item>
-        <Item.Image src={image} alt="item image" />
-        <Item.Content>
-          <Item.Header>{header}</Item.Header>
-          <Item.Meta>{meta}</Item.Meta>
-          <Item.Description>{description}</Item.Description>
-          <Item.Extra>{extra}</Item.Extra>
-        </Item.Content>
-      </Item>
-    </Container>
+    <Item>
+      <Item.Image src={image} alt="item image" />
+      <Item.Content>
+        <Item.Header>{header}</Item.Header>
+        <Item.Meta>{meta}</Item.Meta>
+        <Item.Description>{description}</Item.Description>
+        <Item.Extra>{extra}</Item.Extra>
+      </Item.Content>
+    </Item>
   );
 }
 
 function SingleItemDefault({ header, image, description, meta, dateMeta }) {
   return (
-    <Container>
-      <Item className="default">
-        <Item.Image src={image} alt="item image" />
-        <Item.Content>
-          <Item.Extra>
-            <Item.Meta>{meta}</Item.Meta>
-            <Item.Meta className="date">{dateMeta}</Item.Meta>
-          </Item.Extra>
-          <Item.Header>{header}</Item.Header>
-          <Item.Description>{description}</Item.Description>
-        </Item.Content>
-      </Item>
-    </Container>
+    <Item className="default">
+      <Item.Image src={image} alt="item image" />
+      <Item.Content>
+        <Item.Extra>
+          <Item.Meta>{meta}</Item.Meta>
+          <Item.Meta className="date">{dateMeta}</Item.Meta>
+        </Item.Extra>
+        <Item.Header>{header}</Item.Header>
+        <Item.Description>{description}</Item.Description>
+      </Item.Content>
+    </Item>
   );
 }
 
@@ -113,9 +109,11 @@ Default.argTypes = {
 };
 
 export const DefaultItem = (args) => (
-  <Item.Group>
-    <SingleItem {...args}></SingleItem>
-  </Item.Group>
+  <Container>
+    <Item.Group>
+      <SingleItem {...args}></SingleItem>
+    </Item.Group>
+  </Container>
 );
 DefaultItem.args = {
   header: 'Header',
@@ -165,7 +163,11 @@ DefaultItem.argTypes = {
 
 DefaultItem.storyName = 'Featured Item';
 
-const Template = (args) => <ItemGroup {...args}></ItemGroup>;
+const Template = (args) => (
+  <Container>
+    <ItemGroup {...args}></ItemGroup>
+  </Container>
+);
 
 export const DefaultGroup = Template.bind({});
 DefaultGroup.args = {
