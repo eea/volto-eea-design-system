@@ -1,13 +1,13 @@
 import React from 'react';
-import Pullquote from './Pullquote';
+import Quote from './Quote';
 import { Container } from 'semantic-ui-react';
 
 export default {
-  title: 'Components/Pullquote',
-  component: Pullquote,
+  title: 'Components/Quote',
+  component: Quote,
   argTypes: {
     quote: {
-      description: 'Pullquote content',
+      description: 'Quote content',
       type: { name: 'string' },
       table: {
         defaultValue: { summary: '""' },
@@ -20,8 +20,8 @@ export default {
         defaultValue: { summary: '""' },
       },
     },
-    metadata: {
-      description: 'quote metadata',
+    sourceInfo: {
+      description: 'quote source info',
       type: { name: 'string' },
       table: {
         defaultValue: { summary: '""' },
@@ -51,11 +51,11 @@ export default {
 export const Default = (args) => (
   <Container>
     <p>{args.content}</p>
-    <Pullquote quotePosition={args.quotePosition}>
-      <Pullquote.Quote>{args.quote}</Pullquote.Quote>
-      <Pullquote.Author>{args.source}</Pullquote.Author>
-      <Pullquote.Metadata>{args.metadata}</Pullquote.Metadata>
-    </Pullquote>
+    <Quote quotePosition={args.quotePosition}>
+      <Quote.Quote>{args.quote}</Quote.Quote>
+      <Quote.Source>{args.source}</Quote.Source>
+      <Quote.SourceInfo>{args.sourceInfo}</Quote.SourceInfo>
+    </Quote>
     <p>{args.content}</p>
     <p>{args.content}</p>
     <p>{args.content}</p>
@@ -68,7 +68,7 @@ Default.args = {
   quote:
     'Nulla viverra magna curabitur leo nisl scelerisque. Velit fusce sed sem ut. Molestie fermentum congue nunc cras posuere orci. Duis eu ultrices nisi, est a pellentesque eget tellus mauris. Amet, tortor quis pellentesque suspendisse convallis lacinia. Aliquam.',
   source: 'Arthur Abbott',
-  metadata: 'EEA Analyst',
+  sourceInfo: 'EEA Analyst',
   content:
     'Cursus turpis massa tincidunt dui ut ornare lectus sit amet. Venenatis tellus in metus vulputate eu. Sagittis id consectetur purus ut. Ultricies mi eget mauris pharetra et ultrices. Eu lobortis elementum nibh tellus molestie nunc non blandit massa. Mattis pellentesque id nibh tortor id aliquet. Amet nisl purus in mollis nunc. Quisque non tellus orci ac auctor augue mauris. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget.',
   quotePosition: 'left',
@@ -77,11 +77,11 @@ Default.args = {
 export const Reversed = (args) => (
   <Container>
     <p>{args.content}</p>
-    <Pullquote quotePosition={args.quotePosition}>
-      <Pullquote.Author>{args.source}</Pullquote.Author>
-      <Pullquote.Metadata>{args.metadata}</Pullquote.Metadata>
-      <Pullquote.Quote>{args.quote}</Pullquote.Quote>
-    </Pullquote>
+    <Quote quotePosition={args.quotePosition}>
+      <Quote.Source>{args.source}</Quote.Source>
+      <Quote.SourceInfo>{args.sourceInfo}</Quote.SourceInfo>
+      <Quote.Quote>{args.quote}</Quote.Quote>
+    </Quote>
     <p>{args.content}</p>
     <p>{args.content}</p>
     <p>{args.content}</p>
@@ -94,7 +94,7 @@ Reversed.args = {
   quote:
     'Nulla viverra magna curabitur leo nisl scelerisque. Velit fusce sed sem ut. Molestie fermentum congue nunc cras posuere orci. Duis eu ultrices nisi, est a pellentesque eget tellus mauris. Amet, tortor quis pellentesque suspendisse convallis lacinia. Aliquam.',
   source: 'Arthur Abbott',
-  metadata: 'EEA Analyst',
+  sourceInfo: 'EEA Analyst',
   content:
     'Cursus turpis massa tincidunt dui ut ornare lectus sit amet. Venenatis tellus in metus vulputate eu. Sagittis id consectetur purus ut. Ultricies mi eget mauris pharetra et ultrices. Eu lobortis elementum nibh tellus molestie nunc non blandit massa. Mattis pellentesque id nibh tortor id aliquet. Amet nisl purus in mollis nunc. Quisque non tellus orci ac auctor augue mauris. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget.',
   quotePosition: 'left',
