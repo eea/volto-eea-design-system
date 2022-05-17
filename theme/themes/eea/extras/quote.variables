@@ -1,0 +1,34 @@
+/*******************************
+            Quote
+*******************************/
+
+/* Body */
+@quotePadding           : @largeGap 0;
+@quoteFloatLeftPadding  : @largeGap @hugeGap @largeGap 0;
+@quoteFloatRightPadding : @largeGap 0 @largeGap @hugeGap;
+@quoteMargin            : 0;
+@maxWidthOnFloat            : 50%;
+@contentWordBreak           : break-word;
+@contentWordBreakHyphens    : manual;
+
+/* Quote paragraph */
+@mobileQuotePadding  : 0;
+@tabletQuotePadding  : 0.5rem 0 1rem;
+
+/* Source */
+@sourceTextColor     : @secondaryColor;
+@sourceTextAlign     : right;
+@sourceFontWeight    : @bold;
+@sourceFontSize      : 1.25rem;
+@sourceMargin        : 0;
+
+/* Source Info */
+@sourceInfoTextAlign       : right;
+@sourceInfoFontWeight      : @normal;
+@sourceInfoFontSize        : 1rem;
+
+/* Icon */
+@mobileQuoteIconSize : 2rem;
+@tabletQuoteIconSize : 3rem;
+@quoteIconColor      : @secondaryColor;
+@quoteDownIconFloat  : right;
