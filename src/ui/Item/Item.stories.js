@@ -10,31 +10,35 @@ export default {
 
 function SingleItem({ header, image, description, meta, extra }) {
   return (
-    <Item>
-      <Item.Image src={image} alt="item image" />
-      <Item.Content>
-        <Item.Header>{header}</Item.Header>
-        <Item.Meta>{meta}</Item.Meta>
-        <Item.Description>{description}</Item.Description>
-        <Item.Extra>{extra}</Item.Extra>
-      </Item.Content>
-    </Item>
+    <Container>
+      <Item>
+        <Item.Image src={image} alt="item image" />
+        <Item.Content>
+          <Item.Header>{header}</Item.Header>
+          <Item.Meta>{meta}</Item.Meta>
+          <Item.Description>{description}</Item.Description>
+          <Item.Extra>{extra}</Item.Extra>
+        </Item.Content>
+      </Item>
+    </Container>
   );
 }
 
 function SingleItemDefault({ header, image, description, meta, dateMeta }) {
   return (
-    <Item className="default">
-      <Item.Image src={image} alt="item image" />
-      <Item.Content>
-        <Item.Extra>
-          <Item.Meta>{meta}</Item.Meta>
-          <Item.Meta className="date">{dateMeta}</Item.Meta>
-        </Item.Extra>
-        <Item.Header>{header}</Item.Header>
-        <Item.Description>{description}</Item.Description>
-      </Item.Content>
-    </Item>
+    <Container>
+      <Item className="default">
+        <Item.Image src={image} alt="item image" />
+        <Item.Content>
+          <Item.Extra>
+            <Item.Meta>{meta}</Item.Meta>
+            <Item.Meta className="date">{dateMeta}</Item.Meta>
+          </Item.Extra>
+          <Item.Header>{header}</Item.Header>
+          <Item.Description>{description}</Item.Description>
+        </Item.Content>
+      </Item>
+    </Container>
   );
 }
 

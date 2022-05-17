@@ -165,28 +165,32 @@
 @defaultItemColor: @deepBlue;
 
 /* Extra */
-@mobileDefaultItemExtraMarginBottom: 24px;
-@tabletDefaultItemExtraMarginBottom: 40px;
-@computerDefaultItemExtraMarginBottom: 72px;
+@mobileDefaultItemExtraMarginBottom: 1.5rem;
+@tabletDefaultItemExtraMarginBottom: 2.5rem;
+@computerDefaultItemExtraMarginBottom: 4.5rem;
 @mobileDefaultItemExtraMarginTop: 0;
 
 /* Meta */
-@defaultItemMetaFontSize: 16px;
-@defaultItemMetaOpacity: 0.6;
+@defaultItemMetaFontSize: 1rem;
+@defaultItemMetaOpacity: 1;
+@defaultItemMetaFontWeight: 100;
 
-@defaultItemDateMetaFontSize: 18px;
+@defaultItemDateMetaFontSize: 1.125rem;
 @defaultItemDateMetaOpacity: 1;
 @defaultItemDateMetaFontWeight: 400;
 
 /* Header */
-@defaultItemHeaderFontSize: 16px;
+@mobileDefaultItemHeaderFontSize: 1.125rem;
+@tabletDefaultItemHeaderFontSize: 1rem;
+@desktopDefaultItemHeaderFontSize: 1.5rem;
 @defaultItemHeaderFontWeight: 700;
-@mobileDefaultItemHeaderMarginBottom: 6px;
-@tabletDefaultItemHeaderMarginBottom: 14px;
-@computerDefaultItemHeaderMarginBottom: 20px;
+@mobileDefaultItemHeaderMarginBottom: 0.375rem;
+@tabletDefaultItemHeaderMarginBottom: 0.875rem;
+@computerDefaultItemHeaderMarginBottom: 1.25rem;
 
 /* Description */
-@defaultItemDescriptionFontSize: 16px;
+@mobileDefaultItemDescriptionFontSize: 1rem;
+@desktopDefaultItemDescriptionFontSize: 1.25rem;
 @defaultItemDescriptionFontWeight: 400;
 
 /* Content */
