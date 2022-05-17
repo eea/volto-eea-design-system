@@ -7,57 +7,65 @@
   margin: @imageMargin;
 }
 
-.ui.items .item.default {
+.ui.items {
 
-  background-color: @defaultItemBackgroundColor;
-
-  .image {
-
-    img {
-      object-fit: cover;
-      height: @defaultItemImageHeight ;
-    }
-
+  &:not(.unstackable) > .item.default > .content {
+    padding: @mobileDefaultItemContentPadding;
   }
 
-  .content {
+  .item.default {
 
-    .extra {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: @mobileDefaultItemExtraMarginBottom;
-      margin-top: @mobileDefaultItemExtraMarginTop;
-
-      .meta {
-
-        opacity: @defaultItemMetaOpacity;
-        color: @defaultItemColor;
-        font-size: @defaultItemMetaFontSize;
-
-        &.date {
-          opacity: @defaultItemDateMetaOpacity;
-          font-weight: @defaultItemDateMetaFontWeight;
-          font-size: @defaultItemDateMetaFontSize;
+    background-color: @defaultItemBackgroundColor;
+  
+    .image {
+  
+      img {
+        object-fit: cover;
+        height: @defaultItemImageHeight ;
+        border-radius: 0;
+      }
+  
+    }
+  
+    .content {
+  
+      .extra {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: @mobileDefaultItemExtraMarginBottom;
+        margin-top: @mobileDefaultItemExtraMarginTop;
+  
+        .meta {
+  
+          opacity: @defaultItemMetaOpacity;
+          color: @defaultItemColor;
+          font-size: @defaultItemMetaFontSize;
+  
+          &.date {
+            opacity: @defaultItemDateMetaOpacity;
+            font-weight: @defaultItemDateMetaFontWeight;
+            font-size: @defaultItemDateMetaFontSize;
+          }
         }
+  
+        &:after {
+          display: none;
+        }
+        
       }
-
-      &:after {
-        display: none;
+  
+      .header {
+        font-size: @defaultItemHeaderFontSize;
+        font-weight: @defaultItemHeaderFontWeight;
+        color: @defaultItemColor;
+        margin-bottom: @mobileDefaultItemHeaderMarginBottom;
       }
-      
-    }
-
-    .header {
-      font-size: @defaultItemHeaderFontSize;
-      font-weight: @defaultItemHeaderFontWeight;
-      color: @defaultItemColor;
-      margin-bottom: @mobileDefaultItemHeaderMarginBottom;
-    }
-
-    .description {
-      font-size: @defaultItemDescriptionFontSize;
-      font-weight: @defaultItemDescriptionFontWeight;
-      color: @defaultItemColor;
+  
+      .description {
+        font-size: @defaultItemDescriptionFontSize;
+        font-weight: @defaultItemDescriptionFontWeight;
+        color: @defaultItemColor;
+      }
     }
   }
 }
@@ -71,7 +79,7 @@
     }
   
     .content {
-      padding: @tabletDeafultItemContentPadding;
+      padding: @tabletDefaultItemContentPadding;
   
       .extra {
         margin-bottom: @tabletDefaultItemExtraMarginBottom;
@@ -93,7 +101,7 @@
   
     .content {
 
-      padding: @computerDeafultItemContentPadding;
+      padding: @computerDefaultItemContentPadding;
   
       .extra {
         margin-bottom: @computerDefaultItemExtraMarginBottom;       

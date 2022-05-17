@@ -190,8 +190,9 @@
 @defaultItemDescriptionFontWeight: 400;
 
 /* Content */
-@tabletDeafultItemContentPadding: 1em;
-@computerDeafultItemContentPadding: 1.5em;
+@mobileDefaultItemContentPadding: 1.5em;
+@tabletDefaultItemContentPadding: 1em;
+@computerDefaultItemContentPadding: 1.5em;
 
 
 
