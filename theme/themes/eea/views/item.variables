@@ -161,6 +161,7 @@
 @defaultItemImageHeight: 100%;
 @tabletDefaultItemWidth: 35%;
 
+@defaultItemBackgroundColor: @white;
 @defaultItemColor: @deepBlue;
 
 /* Extra */

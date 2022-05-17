@@ -9,6 +9,8 @@
 
 .ui.items .item.default {
 
+  background-color: @defaultItemBackgroundColor;
+
   .image {
 
     img {
