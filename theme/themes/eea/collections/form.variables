@@ -123,9 +123,9 @@
 @inputErrorBoxShadow: none;
 
 /* Dropdown Error */
-@dropdownErrorHoverBackground: @white;
+@dropdownErrorHoverBackground: rgba(0, 0, 0, 0.05);
 @dropdownErrorSelectedBackground: @dropdownErrorHoverBackground;
-@dropdownErrorActiveBackground: @white;
+@dropdownErrorActiveBackground: rgba(0, 0, 0, 0.05);
 @dropdownErrorLabelBackground: #EACBCB;
 @dropdownErrorLabelColor: @errorTextColor;
 
