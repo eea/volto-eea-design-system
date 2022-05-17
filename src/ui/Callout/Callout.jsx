@@ -1,14 +1,12 @@
 import React from 'react';
 
-function Callout({ children, className, ...rest }) {
+function Callout({ children, as, bold, ...rest }) {
+  const As = as || 'div';
   return (
-    <div className="eea callout" {...rest}>
-      <blockquote className="quote">{children}</blockquote>
-    </div>
+    <As className="eea callout" {...rest}>
+      {bold ? <strong>{children}</strong> : children}
+    </As>
   );
 }
-
-Callout.Content = ({ children, as: As, ...rest }) =>
-  As ? <As {...rest}>{children}</As> : children;
 
 export default Callout;

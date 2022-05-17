@@ -4,23 +4,15 @@
 /* Body */
 @mobileCalloutBorderLeft : @5px solid @secondaryColor;
 @tabletCalloutBorderLeft : @10px solid @secondaryColor;
-@childrenBorderLeft         : none;
 
-/* Quote */
-@quoteColor            : @secondaryColor;
-@mobileQuoteMargin     : 0.75rem 0.625rem;
-@tabletQuoteMargin     : 0.75rem 1rem;
-@computerQuoteMargin   : 0.75rem 1.25rem;
-@quoteGap              : 0.75rem;
-@slateQuoteGap         : 0.75rem / 2;
+/* Text */
 @quoteColor            : @japaneseIndigo;
-@mobileQuoteFontSize   : 0.688rem;
+@mobileQuoteFontSize   : 1rem;
 @tabletQuoteFontSize   : @h6;
 @computerQuoteFontSize : @h5;
-@quoteFontWeight       : 700;
-@slateQuoteFontWeight  : 400;
+@quoteFontWeight       : 400;
 
-/* Callout */
+/* Layout */
 @calloutBorder        : none;
 @calloutBoxShadow     : none;
 @calloutBorderRadius  : 0;

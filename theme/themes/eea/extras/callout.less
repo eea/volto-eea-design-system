@@ -7,78 +7,35 @@
             Callout
 *******************************/
 
+p.callout,
 blockquote.callout,
-p.callout {
+.eea.callout {
   border: @calloutBorder;
   box-shadow: @calloutBoxShadow;
   border-radius: @calloutBorderRadius;
   padding-top: @calloutPadding;
   padding-bottom: @calloutPadding;
   border-left: @mobileCalloutBorderLeft;
+  border-right: @calloutBorder;
+  border-top: @calloutBorder;
+  border-bottom: @calloutBorder;
   color: @quoteColor;
   font-size: @mobileQuoteFontSize;
 }
 
-.eea.callout {
-  border-left: @mobileCalloutBorderLeft;
-  border-right: @calloutBorder;
-  border-top: @calloutBorder;
-  border-bottom: @calloutBorder;
-  box-shadow: @calloutBoxShadow;
-  border-radius: @calloutBorderRadius;
-  padding-top: @calloutPadding;
-  padding-bottom: @calloutPadding;
-
-  .quote {
-    display: flex;
-    flex-direction: column;
-    margin: @mobileQuoteMargin;
-    gap: @quoteGap;
-    color: @quoteColor;
-    font-size: @mobileQuoteFontSize;
-    font-weight: @quoteFontWeight;
-  }
-}
-
-.eea.slate.blockquote {
-  .quote {
-    display: block;
-    flex-direction: unset;
-    gap: unset;
-    font-weight: @slateQuoteFontWeight;
-
-    br {
-      content: '';
-      display: flex;
-      margin: @slateQuoteGap 0;
-    }
-  }
-}
-
 @media only screen and (min-width: @tabletBreakpoint) {
+  p.callout,
   blockquote.callout,
-  p.callout {
-    border-left: @tabletCalloutBorderLeft;
-    font-size: @tabletQuoteFontSize;
-  }
-
   .eea.callout {
     border-left: @tabletCalloutBorderLeft;
-    .quote {
-      margin: @tabletQuoteMargin;
-      font-size: @tabletQuoteFontSize;
-    }
+    font-size: @tabletQuoteFontSize;
   }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
+  p.callout,
   blockquote.callout,
-  p.callout {
-    font-size: @computerQuoteFontSize;
-  }
-
-  .eea.callout .quote {
-    margin: @computerQuoteMargin;
+  .eea.callout {
     font-size: @computerQuoteFontSize;
   }
 }
