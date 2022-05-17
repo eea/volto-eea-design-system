@@ -1,15 +1,15 @@
 @type: 'extra';
-@element: 'pullquote';
+@element: 'quote';
 
 @import (multiple) '../../theme.config';
 
 /*******************************
-            Pullquote
+            Quote
 *******************************/
 
-.eea.pullquote {
-  padding: @pullquotePadding;
-  margin: @pullquoteMargin;
+.eea.quote {
+  padding: @quotePadding;
+  margin: @quoteMargin;
   word-break: @contentWordBreak;
   hyphens: @contentWordBreakHyphens;
 
@@ -36,23 +36,23 @@
     }
   }
 
-  .author {
-    color: @authorTextColor;
-    text-align: @authorTextAlign;
-    font-weight: @authorFontWeight;
-    font-size: @authorFontSize;
-    margin: @authorMargin;
+  .source {
+    color: @sourceTextColor;
+    text-align: @sourceTextAlign;
+    font-weight: @sourceFontWeight;
+    font-size: @sourceFontSize;
+    margin: @sourceMargin;
   }
 
-  .meta {
-    text-align: @metaTextAlign;
-    font-weight: @metaFontWeight;
-    font-size: @metaFontSize;
+  .info {
+    text-align: @sourceInfoTextAlign;
+    font-weight: @sourceInfoFontWeight;
+    font-size: @sourceInfoFontSize;
   }
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-  .eea.pullquote {
+  .eea.quote {
     .quotes.wrapper {
       .quote {
         padding: @tabletQuotePadding;
@@ -63,14 +63,14 @@
       }
     }
   }
-  .eea.pullquote.left {
+  .eea.quote.left {
     width: @maxWidthOnFloat;
-    padding: @pullquoteFloatLeftPadding;
+    padding: @quoteFloatLeftPadding;
     float: left;
   }
-  .eea.pullquote.right {
+  .eea.quote.right {
     width: @maxWidthOnFloat;
-    padding: @pullquoteFloatRightPadding;
+    padding: @quoteFloatRightPadding;
     float: right;
   }
 }

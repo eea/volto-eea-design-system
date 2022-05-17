@@ -1,0 +1,43 @@
+@type: 'extra';
+@element: 'callout';
+
+@import (multiple) '../../theme.config';
+
+/*******************************
+            Callout
+*******************************/
+
+p.callout,
+blockquote.callout,
+.eea.callout {
+  border: @calloutBorder;
+  box-shadow: @calloutBoxShadow;
+  border-radius: @calloutBorderRadius;
+  padding-top: @calloutPadding;
+  padding-bottom: @calloutPadding;
+  border-left: @mobileCalloutBorderLeft;
+  border-right: @calloutBorder;
+  border-top: @calloutBorder;
+  border-bottom: @calloutBorder;
+  color: @quoteColor;
+  font-size: @mobileQuoteFontSize;
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  p.callout,
+  blockquote.callout,
+  .eea.callout {
+    border-left: @tabletCalloutBorderLeft;
+    font-size: @tabletQuoteFontSize;
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  p.callout,
+  blockquote.callout,
+  .eea.callout {
+    font-size: @computerQuoteFontSize;
+  }
+}
+
+.loadUIOverrides();

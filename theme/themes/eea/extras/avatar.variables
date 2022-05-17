@@ -1,0 +1,28 @@
+/*******************************
+            Avatar
+*******************************/
+
+/* Global */
+@avatarWidth                    : 100%;
+@avatarWrapperWidth             : 100%;
+@avatarWrapperGap               : @largeGap;
+@avatarContentWrapperWidth      : 100%;
+@avatarImageBorderRadius        : 50%;
+@avatarContentTitleMarginBottom : 0;
+@avatarImageWrapperWidth        : 100%;
+@avatarImageBackgroundSize      : cover;
+@avatarContentTitleFontWeight   : @bold;
+@avatarContentTitleFontSize     : 1.25rem;
+
+/* Big */
+@avatarBigImageHeight           : 173px;
+@avatarBigImageWidth            : 173px;
+@avatarBigMetadataFontSize      : 1.25rem;
+@avatarBigMetadataFontWeight    : @normal;
+
+/* Small */
+@avatarSmallImageHeight         : 135px;
+@avatarSmallImageWidth          : 135px;
+@avatarSmallTitleColor          : @secondaryColor;
+@avatarSmallMetadataFontSize    : 1rem;
+@avatarSmallMetadataFontWeight  : 300;
