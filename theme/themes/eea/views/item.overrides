@@ -6,3 +6,8 @@
 .ui.items:not(.unstackable) > .item > .image {
   margin: @imageMargin;
 }
+
+.item .default.image {
+  width: 50px;
+  height: auto;
+}
