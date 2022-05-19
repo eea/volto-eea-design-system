@@ -27,6 +27,10 @@
   }
 }
 
+.ui.card .meta {
+  padding-bottom: @metaPaddingBottom;
+}
+
 .ui.card .meta > .category {
   font-size: @metaFontSize;
 }
@@ -59,6 +63,8 @@
   color: @primaryHeaderColor;
 }
 
+.ui.card.primary > .content a,
+.ui.card.primary > .content a:hover,
 .ui.card.primary > .content > .description {
   color: @primaryDescriptionColor;
 }
@@ -71,7 +77,8 @@
   }
 }
 
-.ui.card.primary > .content > .meta {
+.ui.card.primary > .content > .meta,
+.ui.card.primary > .content > .meta a {
   color: @primaryMetaColor;
 }
 
@@ -83,6 +90,8 @@
   background: @secondaryBackground;
 }
 
+.ui.card.secondary > .content a,
+.ui.card.secondary > .content a:hover,
 .ui.card.secondary > .content > .header {
   color: @secondaryHeaderColor;
 }
@@ -99,7 +108,8 @@
   }
 }
 
-.ui.card.secondary > .content > .meta {
+.ui.card.secondary > .content > .meta,
+.ui.card.secondary > .content > .meta a {
   color: @secondaryMetaColor;
 }
 
@@ -111,6 +121,8 @@
   background: @tertiaryBackground;
 }
 
+.ui.card.tertiary > .content a,
+.ui.card.tertiary > .content a:hover,
 .ui.card.tertiary > .content > .header {
   color: @tertiaryHeaderColor;
 }
@@ -127,7 +139,8 @@
   }
 }
 
-.ui.card.tertiary > .content > .meta {
+.ui.card.tertiary > .content > .meta,
+.ui.card.tertiary > .content > .meta a {
   color: @tertiaryMetaColor;
 }
 
@@ -229,7 +242,8 @@
     padding: @cardContentPadding;
     background-color: @publicationCardDescriptionColor;
 
-    .meta {
+    .meta,
+    .meta a {
       color: @publicationCardtextColor;
       font-size: @cardMetaFontSize;
       font-weight: @cardMetaTagFontWeight;
@@ -296,103 +310,88 @@
 .cards-carousel {
   position: relative;
 
-  .ui.button.icon.slider-arrow {
-    padding: @carouselButtonPadding;
-    display: none;
-
-    .active, &:focus, &:hover {
-      background: transparent;
-    }
-
-    .icon {
-      color: @carouselButtonIconColor;
-      font-size: @carouselButtonIconFontSize;
-    }
-  }
-
-  .slick-arrow {
-    display: block !important;
-  }
-
-  .slick-prev,
-  .slick-next {
-    display: none !important;
-  }
-
   .slick-list {
-    margin: 0 -0.75em !important;
+    margin: @slickListMargin;
   }
   
   .slick-track {
     display: flex;
+    gap: @slickTrackGap;
+    margin: @slickTrackMargin;
   }
 
-  .slick-slide {
-    display: flex;
-    height: auto;
-    flex: 1;
-    flex-direction: column;
-    padding: 15px 0.75em !important;
+  // No need to customize carousel 
+  // slides when importing cards
+  /*
+    .slick-slide {
+      display: flex;
+      height: auto;
+      flex: 1;
+      flex-direction: column;
+      padding: 15px 0.75em !important;
 
-    > div {
-      height: 100%;
+      > div {
+        height: 100%;
+      }
     }
-
-  }
-
-  .slider-arrow {
-    position: absolute;
-    top: 50%;
-    bottom: auto;
-    display: block;
-    padding: 0;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    outline: none;
-    transform: translate(0, -50%);
-  }
-
-  .prev-arrow {
-    right: auto;
-    left: @carouselButtonDistance;
-  }
-
-  .next-arrow {
-    right: @carouselButtonDistance;
-    left: auto;
-  }
-
-  .slick-dots li button:before {
-    background-color: @carouselDotsBackgroundColor;
-    color: transparent;
-    border: @carouselDotsBorder;
-    border-radius: @carouselDotsBorderRadius;
-    opacity: @carouselDotsOpacity;
-    width: @mobileCarouselDotsWidth;
-    height: @mobileCarouselDotsHeight;
-  }
-
-  .slick-dots li.slick-active button:before {
-    background-color: @carouselDotsActiveBackgroundColor;
-    color: transparent;
-    
-  }
-
-  
+  */
 }
 
+/* Carousel arrows */
+.cards-carousel .ui.button.icon.slider-arrow {
+  padding: @carouselButtonPadding;
+
+  .active, &:focus, &:hover {
+    background: transparent;
+  }
+
+  .icon {
+    color: @carouselButtonIconColor;
+    font-size: @carouselButtonIconFontSize;
+  }
+}
+
+.cards-carousel .slider-arrow {
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  transform: translate(0, -50%);
+}
+
+.cards-carousel .prev-arrow {
+  right: auto;
+  left: @carouselButtonDistance;
+}
+
+.cards-carousel .next-arrow {
+  right: @carouselButtonDistance;
+  left: auto;
+} 
+
+/* Custom carousel pagination bullets */
+.cards-carousel .slick-dots li button:before {
+  background-color: @carouselDotsBackgroundColor;
+  color: transparent;
+  border: @carouselDotsBorder;
+  border-radius: @carouselDotsBorderRadius;
+  opacity: @carouselDotsOpacity;
+  width: @mobileCarouselDotsWidth;
+  height: @mobileCarouselDotsHeight;
+}
+
+.cards-carousel .slick-dots li.slick-active button:before {
+  background-color: @carouselDotsActiveBackgroundColor;
+  color: transparent;  
+}
 
 @media only screen and (min-width: @computerBreakpoint) {
-  .cards-carousel {
-
-    .ui.button.icon.slider-arrow {
-      display: block;
-    }
-
-    .slick-dots li button:before {
-      width: inherit;
-      height: inherit;
-    }
+  .cards-carousel .slick-dots li button:before {
+    width: inherit;
+    height: inherit;
   }
 }

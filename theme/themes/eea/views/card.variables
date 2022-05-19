@@ -79,12 +79,13 @@
 @headerFontWeight: @bold;
 @headerFontSize: 1.125rem;
 @headerLineHeightOffset: -(@lineHeight - 1em) / 2;
-@headerColor: @black;
+@headerColor: @deepBlue;
 
 /* Metadata */
 @metaFontSize: @relativeMedium;
 @metaSpacing: 0.3em;
-@metaColor: @oldSilver;
+@metaPaddingBottom: 1.25rem;
+@metaColor: @deepBlue;
 
 /* Icons */
 @actionOpacity: 0.75;
@@ -98,8 +99,8 @@
 @likeActiveColor: #FF2733;
 
 /* Links */
-@contentLinkColor: @white;
-@contentLinkHoverColor: @white;
+@contentLinkColor: @deepBlue;
+@contentLinkHoverColor: @deepBlue;
 @contentLinkFontWeight: @bold;
 @contentLinkTransition: color @defaultDuration @defaultEasing;
 @contentLinkTextDecoration: underline;
@@ -107,8 +108,8 @@
 @headerLinkColor: @headerColor;
 @headerLinkHoverColor: @linkHoverColor;
 
-@metaLinkColor: @lightTextColor;
-@metaLinkHoverColor: @textColor;
+@metaLinkColor: @deepBlue;
+@metaLinkHoverColor: @deepBlue;
 
 /* Description */
 @descriptionDistance: 0.5em;
@@ -331,10 +332,9 @@
 
 /* Button */
 @carouselButtonPadding: 0;
-@carouselButtonIconColor: @black;
+@carouselButtonIconColor: @deepBlue;
 @carouselButtonIconFontSize: 3.125rem;
 @carouselButtonDistance: -3.5rem;
-
 
 /* Dots */
 @carouselDotsFontSize: 0.75rem;
@@ -345,5 +345,11 @@
 @carouselDotsActiveBackgroundColor: @darkCerulean;
 @mobileCarouselDotsWidth: 0.875rem;
 @mobileCarouselDotsHeight: 0.875rem;
+
+/* Slick wrapper */
+@slickListMargin: 0 -0.75em;
+@slickTrackGap: 1.25rem;
+@slickTrackMargin: 1rem 0;
+
 
 

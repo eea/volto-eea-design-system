@@ -272,7 +272,7 @@ const Arrows = (props) => {
     <>
       <Button
         aria-label="Previous slide"
-        className="slider-arrow prev-arrow"
+        className="slider-arrow prev-arrow tablet or lower hidden"
         icon
         onClick={() => {
           if (slider.current) {
@@ -284,7 +284,7 @@ const Arrows = (props) => {
       </Button>
       <Button
         aria-label="Next slide"
-        className="slider-arrow next-arrow"
+        className="slider-arrow next-arrow tablet or lower hidden"
         icon
         onClick={() => {
           if (slider.current) {
@@ -306,12 +306,22 @@ function CarouselCardsContent({ settings, cards, ...rest }) {
         {cards.map((card, index) => (
           <Card fluid={card.fluid} key={index} className={rest.class}>
             {card.hasImage && (
-              <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
+              <Image
+                as="a"
+                href="/#"
+                src={card.imgUrl}
+                wrapped
+                ui={false}
+                alt="card image"
+              />
             )}
             <Card.Content>
-              <Card.Meta>{card.meta}</Card.Meta>
-              {/* <Card.Header>{card.title}</Card.Header> */}
-              <Card.Description>{card.description}</Card.Description>
+              <Card.Meta>
+                <a href="/#">{card.meta}</a>
+              </Card.Meta>
+              <Card.Header>
+                <a href="/#">{card.title}</a>
+              </Card.Header>
             </Card.Content>
             {/* {card.links !== null &&
               card.links.map((item, index) => (
@@ -335,19 +345,20 @@ const CarouselCardsTemplate = (args) => (
 
 export const CarouselCards = CarouselCardsTemplate.bind({});
 CarouselCards.args = {
-  title: 'Our news',
   class: null,
   settings: {
     dots: true,
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
+    arrows: false,
     responsive: [
       {
         breakpoint: tabletBreakpoint,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
       {
@@ -355,64 +366,51 @@ CarouselCards.args = {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
     ],
   },
   cards: [
     {
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
-      title: 'Lorem Ipsum',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
-      title: 'Lorem Ipsum',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
-      title: 'Lorem Ipsum',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
-      title: 'Lorem Ipsum',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
   ],
 };
