@@ -4,10 +4,18 @@
 
 
 @testimonialWidth                           : 100%;
+@testimonialGap                             : @largeGap;
 @testimonialAvatarWrapperHeight             : 100%;
-@testimonialContentTitleMarginVertical      : 0;
-@testimonialContentTitleMarginHorizontal    : 2rem;
-@testimonialContentTitleFontWeight          : 500;
-@testimonialContentTitleFontSize            : 36px;
-@testimonialContentTitleLetterSpacing       : -0.015em;
-@testimonialContentTitleColor               : @deepBlue;
+
+/* Pullquote */
+
+/* Title */
+@testimonialContentTitleMarginVertical         : 0;
+@mobileTestimonialContentTitleMarginHorizontal : 0;
+@tabletTestimonialContentTitleMarginHorizontal : 3.125rem;
+@testimonialContentTitleFontWeight             : 500;
+@testimonialContentTitleColor                  : @deepBlue;
+
+/* Image */
+@mobileCardImageWidth  : 100px;
+@mobileCardImageHeight : 100px;

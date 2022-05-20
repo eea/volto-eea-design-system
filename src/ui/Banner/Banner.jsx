@@ -25,7 +25,7 @@ function Banner({ image_url, image, children }) {
 Banner.Action = function ({ id, title, icon, onClick, className, color }) {
   return (
     <div className="action">
-      <Button className={className} basic inverted onClick={onClick}>
+      <Button className={className} basic icon inverted onClick={onClick}>
         <Icon className={icon} color={color}></Icon>
         <span className="mobile hidden">{title}</span>
       </Button>

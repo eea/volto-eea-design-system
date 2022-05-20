@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Icon, Segment } from 'semantic-ui-react';
+import { Button, Icon, Container, Segment } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Forms/Button',
@@ -32,7 +32,11 @@ export default {
 
 //Default Button
 export const Default = (args) => {
-  return <Button disabled={args.disabled}>{args.label}</Button>;
+  return (
+    <Container>
+      <Button disabled={args.disabled}>{args.label}</Button>
+    </Container>
+  );
 };
 Default.args = {
   label: 'Default Button',
@@ -46,9 +50,11 @@ Default.parameters = {
 //Primary button
 export const Primary = (args) => {
   return (
-    <Button primary disabled={args.disabled}>
-      {args.label}
-    </Button>
+    <Container>
+      <Button primary disabled={args.disabled}>
+        {args.label}
+      </Button>
+    </Container>
   );
 };
 Primary.args = {
@@ -63,9 +69,11 @@ Primary.parameters = {
 //secondary Button
 export const Secondary = (args) => {
   return (
-    <Button secondary disabled={args.disabled}>
-      {args.label}
-    </Button>
+    <Container>
+      <Button secondary disabled={args.disabled}>
+        {args.label}
+      </Button>
+    </Container>
   );
 };
 Secondary.args = {
@@ -80,17 +88,23 @@ Secondary.parameters = {
 //secondary Button Inverted
 export const Inverted = (args) => {
   return (
-    <Segment inverted compact>
-      <Button primary inverted disabled={args.disabled}>
-        {args.button1}
-      </Button>
-      <Button secondary inverted disabled={args.disabled}>
-        {args.button2}
-      </Button>
-      <Button inverted disabled={args.disabled}>
-        {args.button3}
-      </Button>
-    </Segment>
+    <Container>
+      <Segment compact>
+        <Button primary inverted disabled={args.disabled}>
+          {args.button1}
+        </Button>
+      </Segment>
+      <Segment compact>
+        <Button secondary inverted disabled={args.disabled}>
+          {args.button2}
+        </Button>
+      </Segment>
+      <Segment inverted compact>
+        <Button inverted disabled={args.disabled}>
+          {args.button3}
+        </Button>
+      </Segment>
+    </Container>
   );
 };
 Inverted.args = {
@@ -107,15 +121,15 @@ Inverted.parameters = {
 //Call to action button
 export const Labeled = (args) => {
   return (
-    <div className="eea">
+    <Container>
       <Button
         className={args.variant + ' icon ' + args.icon_position + ' labeled'}
         disabled={args.disabled}
       >
         {args.label}
-        <Icon name={args.icon + args.icon_position} />
+        <Icon name={args.icon} />
       </Button>
-    </div>
+    </Container>
   );
 };
 Labeled.args = {
@@ -171,12 +185,14 @@ Labeled.argTypes = {
   },
 };
 
-//Text Button - can also play with text class
+//Text Button
 export const Text = (args) => {
   return (
-    <Button as="p" disabled={args.disabled}>
-      {args.label}
-    </Button>
+    <Container>
+      <Button as="p" disabled={args.disabled}>
+        {args.label}
+      </Button>
+    </Container>
   );
 };
 Text.args = {
