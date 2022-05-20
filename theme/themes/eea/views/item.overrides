@@ -11,3 +11,23 @@
   width: 50px;
   height: auto;
 }
+
+// 
+@media only screen and (max-width: @largestMobileScreen) {
+  .ui.items.row > .item {
+    flex-direction: row;
+  }
+  
+  /*
+  .ui.items.row > .item > .image,
+  .ui.items.row > .item > .image > img {
+    max-width: none !important;
+    max-height: none !important;
+    width: inherit !important;
+  }
+  */
+  
+  .ui.items.row > .item > .image + .content {
+    padding: 0em 0em 0em @mobileContentImageDistance;
+  }
+}

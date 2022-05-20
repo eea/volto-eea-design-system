@@ -10,26 +10,7 @@ import Knowledge from '@eeacms/volto-eea-design-system/../theme/themes/eea/asset
 export default {
   title: 'Components/Item/Item group with icons',
   component: Item,
-  argTypes: {
-    imageSize: {
-      control: { type: 'select' },
-      options: ['mini', 'default', 'tiny', 'small'],
-      description: 'Content can specify its vertical alignment',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: ' "" ' },
-      },
-    },
-    verticalAlign: {
-      control: { type: 'select' },
-      options: ['top', 'middle', 'bottom'],
-      description: 'An image can vary in size',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: ' "" ' },
-      },
-    },
-  },
+  argTypes: {},
 };
 
 function SingleItem({ image, imageSize, description, verticalAlign }) {
@@ -45,7 +26,7 @@ function SingleItem({ image, imageSize, description, verticalAlign }) {
 // Single item
 export const DefaultItem = (args) => (
   <Container>
-    <Item.Group relaxed>
+    <Item.Group unstackable className="row">
       <SingleItem {...args}></SingleItem>
     </Item.Group>
   </Container>
@@ -60,6 +41,24 @@ DefaultItem.args = {
 DefaultItem.argTypes = {
   image: {
     description: 'Path or Url of the image',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  imageSize: {
+    control: { type: 'select' },
+    options: ['mini', 'default', 'tiny', 'small'],
+    description: 'Content can specify its vertical alignment',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  verticalAlign: {
+    control: { type: 'select' },
+    options: ['top', 'middle', 'bottom'],
+    description: 'An image can vary in size',
     table: {
       type: { summary: 'string' },
       defaultValue: { summary: ' "" ' },
@@ -80,14 +79,14 @@ function ItemGroup({ imageSize, verticalAlign, ColumnLeft, ColumnRight }) {
       <Grid>
         <Grid.Row>
           <Grid.Column mobile={12} tablet={6} computer={6}>
-            <Item.Group relaxed unstackable>
+            <Item.Group className="row">
               {ColumnLeft.map((item) => (
                 <SingleItem key={item.childKey} {...item}></SingleItem>
               ))}
             </Item.Group>
           </Grid.Column>
           <Grid.Column mobile={12} tablet={6} computer={6}>
-            <Item.Group relaxed unstackable>
+            <Item.Group className="row">
               {ColumnRight.map((item) => (
                 <SingleItem key={item.childKey} {...item}></SingleItem>
               ))}
