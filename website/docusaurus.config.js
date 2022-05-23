@@ -2,7 +2,7 @@
 
 module.exports = {
   title: 'EEA Design System',
-  tagline: 'Consistent user experience for our digital products',
+  tagline: 'Creating a consistent user experience for our digital products',
   url: 'https://eea.github.io/',
   deploymentBranch: 'develop-itml',
   baseUrl: '/volto-eea-design-system/',
