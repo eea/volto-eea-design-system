@@ -24,16 +24,16 @@
 /* Responsive */
 @itemSpacing: 1em;
 @imageWidth: 175px;
-@contentImageDistance: 1.5em;
+@contentImageDistance: 2rem;
 
 @tabletItemSpacing: 1em;
 @tabletImageWidth: 150px;
-@tabletContentImageDistance: 1em;
+@tabletContentImageDistance: 2rem;
 
 @mobileItemSpacing: 2em;
 @mobileImageWidth: auto;
 @mobileImageMaxHeight: 250px;
-@mobileContentImageDistance: 1.5em;
+@mobileContentImageDistance: 1.5rem;
 
 
 /*-------------------
@@ -51,6 +51,10 @@
 @imageBorderRadius: 0.125rem;
 @imageBoxShadow: none;
 @imageBorder: none;
+
+/* Default Image */
+@defaultImageWidth: 50px;
+@defaultImageHeight: auto;
 
 /* Content */
 @contentDisplay: block;
@@ -154,4 +158,9 @@
 
 /* Unstackable */
 @unstackableMobileImageWidth: 125px;
+
+/* Row */
+@mobileRowItemMargin  : 1rem 0;
+@tabletRowItemMargin  : 1.5rem 0;
+@desktopRowItemMargin : 2rem 0;
 

@@ -79,14 +79,14 @@ function ItemGroup({ imageSize, verticalAlign, ColumnLeft, ColumnRight }) {
       <Grid>
         <Grid.Row>
           <Grid.Column mobile={12} tablet={6} computer={6}>
-            <Item.Group className="row">
+            <Item.Group unstackable className="row">
               {ColumnLeft.map((item) => (
                 <SingleItem key={item.childKey} {...item}></SingleItem>
               ))}
             </Item.Group>
           </Grid.Column>
           <Grid.Column mobile={12} tablet={6} computer={6}>
-            <Item.Group className="row">
+            <Item.Group unstackable className="row">
               {ColumnRight.map((item) => (
                 <SingleItem key={item.childKey} {...item}></SingleItem>
               ))}
