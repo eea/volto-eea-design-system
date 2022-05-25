@@ -33,7 +33,7 @@ const ItemsList = ({ items, renderMenuItem, level = 0, activeItem }) => (
         key={item['@id'] || item.url}
         className={cx({
           hasSubMenu: item.items?.length > 0,
-          active: (item['@id'] || item.url) === activeItem,
+          // active: (item['@id'] || item.url) === activeItem,
         })}
       >
         <Item item={item} renderMenuItem={renderMenuItem} />
