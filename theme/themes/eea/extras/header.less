@@ -7,6 +7,11 @@
             Header
 *******************************/
 
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
 .eea.header {
   /* So child can have position sticky */
   display: initial;
@@ -23,7 +28,6 @@
       align-items: center;
       justify-content: space-between;
       z-index: @topSectionZindex;
-      width: 100% !important; //override semantic auto to display content with space between them
     }
     .item {
       display: flex;
@@ -163,8 +167,6 @@
   .main.bar {
     scrollbar-gutter: stable;
     background: @headerMainSectionBackground;
-    position: @headerMainSectionPosition;
-    top: @headerMainSectionTop;
 
     .ui.container {
       display: flex;
@@ -245,6 +247,12 @@
         }
       }
     }
+  }
+}
+
+@media all and (max-width: @largestMobileScreen) {
+  .eea.header .top.bar .ui.container {
+    width: 100% !important; //override semantic auto to display content with space between them   
   }
 }
 

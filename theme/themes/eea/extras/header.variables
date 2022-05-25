@@ -78,8 +78,6 @@
 
 /* Main Section */
 @headerMainSectionBackground          : @white;
-@headerMainSectionPosition            : sticky;
-@headerMainSectionTop                 : 0;
 @headerMainSectionTransparency        : rgba(255, 255, 255, 0.1);
 
 /* Logo */

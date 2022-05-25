@@ -17,6 +17,7 @@ import PropTypes from 'prop-types';
 
 Header.propTypes = {
   transparency: PropTypes.bool,
+  sticky: PropTypes.bool,
 };
 
 function Header({ children }) {
@@ -69,6 +70,7 @@ const Main = ({
   renderGlobalMenuItem,
   pathname,
   transparency,
+  sticky,
 }) => {
   const [activeItem, setActiveItem] = React.useState('');
   const [menuIsActive, setMenuIsActive] = React.useState(false);
@@ -130,7 +132,9 @@ const Main = ({
 
   return (
     <div
-      className={transparency ? 'main bar transparency' : 'main bar'}
+      className={`main bar ${transparency ? 'transparency' : ''} ${
+        sticky ? 'sticky' : ''
+      }`}
       ref={node}
     >
       <Container>

@@ -35,6 +35,13 @@ export default {
         type: { summary: 'boolean' },
       },
     },
+    sticky: {
+      description: 'make main section sticky',
+      table: {
+        defaultValue: { summary: '""' },
+        type: { summary: 'boolean' },
+      },
+    },
   },
   decorators: [(Story) => <Story />],
 };
@@ -363,6 +370,7 @@ const Template = (args) => {
         </Header.TopHeader>
         <Header.Main
           transparency={args.transparency}
+          sticky={args.sticky}
           pathname={pathname}
           logo={<Logo {...logoProps} />}
           menuItems={menuItems}
@@ -551,4 +559,5 @@ Default.args = {
   languages,
   menuItems,
   transparency: false,
+  sticky: false,
 };
