@@ -27,3 +27,5 @@ export AvatarGrid from './Card/AvatarGrid/AvatarGrid';
 export KeyContent from './KeyContent/KeyContent';
 
 export RelatedContent from './Card/RelatedContent/RelatedContent';
+
+export Hero from './Hero/Hero';

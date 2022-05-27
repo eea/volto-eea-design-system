@@ -57,6 +57,7 @@
 
 @primaryColor         : @darkCerulean;
 @secondaryColor       : @pineGreen;
+@tertiaryColor        : @deepBlue;
 
 @lightPrimaryColor    : @mediumPersianBlue;
 @lightSecondaryColor  : @darkCyan;

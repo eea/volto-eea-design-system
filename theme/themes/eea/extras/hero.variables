@@ -1,0 +1,27 @@
+/*******************************
+            Hero
+*******************************/
+
+/* Hero block */
+@mobileHeroBlockMinHeight : 417px;
+@tabletHeroBlockMinHeight : 465px;
+@desktopHeroBlockMinHeight: 665px;
+
+@heroBlockPosition: relative;
+
+/* Background Image */
+@heroBlockImageBackgroundRepeat   : no-repeat;
+@heroBlockImageBackgroundSize     : cover;
+@heroBlockImageBackgroundPosition : center;
+
+/* Body */
+@mobileHeroBlockBodyGap  : @size-3;
+@tabletHeroBlockBodyGap  : @size-5;
+@desktopHeroBlockBodyGap : @size-7;
+
+/* Text */
+@heroBlockTextFontWeight       : @bold;
+@heroBlockTextLineHeight       : @font-lineheight-0;
+@mobileHeroBlockTextFontSize   : @font-size-4;
+@tabletHeroBlockTextFontSize   : @font-size-5;
+@desktopHeroBlockTextFontSize  : @font-size-7;
