@@ -14,10 +14,13 @@
 @heroBlockImageBackgroundSize     : cover;
 @heroBlockImageBackgroundPosition : center;
 
+/* Wrapper */
+@heroBlockWrapperPadding : @gap-20;
+
 /* Body */
-@mobileHeroBlockBodyGap  : @size-3;
-@tabletHeroBlockBodyGap  : @size-5;
-@desktopHeroBlockBodyGap : @size-7;
+@mobileHeroBlockBodyGap  : @gap-6;
+@tabletHeroBlockBodyGap  : @gap-8;
+@desktopHeroBlockBodyGap : @gap-10;
 
 /* Text */
 @heroBlockTextFontWeight       : @bold;
