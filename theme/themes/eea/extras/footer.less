@@ -21,38 +21,13 @@ footer {
     background-position: @wrapperBackgroundPosition;
     background-size: @mobileWrapperBackgroundSize;
 
-    .theme-sites {
-      padding: @mobileThemeSitesPadding;
-
-      .header {
-        font-weight: @headerFontWeight;
-        font-size: @mobileHeaderFontSize;
-        margin-bottom: @mobileHeaderMarginBottom;
-        text-align: center;
-      }
-
-      .logos .logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
     .subfooter {
       .item {
         margin-top: @mobileItemMarginTop;
 
-        .site.logo {
-          .description {
-            margin: @mobileDescriptionMargin;
-            font-size: @mobileDescriptionFontSize;
-            line-height: @mobileDescriptionLineHeight;
-          }
-        }
-
         .eionet.logo {
           display: flex;
           align-items: center;
-          margin-top: @mobileEionetMarginTop;
 
           img {
             width: @mobileEionetLogoWidth;
@@ -70,20 +45,10 @@ footer {
 
         .header {
           margin-bottom: @mobileItemHeaderMarginBottom;
-          font-size: @mobileItemHeaderFontSize;
-          font-weight: @itemHeaderFontWeight;
+          font-size: @mobileFooterTitleFontSize;
+          font-weight: @footerTitleFontWeight;
         }
 
-        .contact {
-          display: flex;
-          align-items: center;
-          margin: @mobileContactMargin;
-          font-size: @mobileContactFontSize;
-
-          a {
-            color: @menuLinkColor;
-          }
-        }
         .address {
           font-size: @mobileAdressFontSize;
         }
@@ -101,24 +66,52 @@ footer {
           }
         }
       }
-      .menu {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        margin: @mobileMenuMargin;
+    }
+  }
+}
 
-        a {
-          color: @menuLinkColor;
-          font-weight: @menuFontWeight;
-          font-size: @mobileMenuFontSize;
-          cursor: pointer;
+footer .theme-sites {
+  padding: @mobileThemeSitesPadding;
 
-          &:hover,
-          &:active {
-            color: @menuLinkColor;
-          }
-        }
-      }
+  .header {
+    font-weight: @footerTitleFontWeight;
+    text-align: center;
+  }
+
+  .logos .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.subfooter .contact {
+  display: flex;
+  align-items: center;
+  margin: @mobileContactMargin;
+  font-size: @mobileContactFontSize;
+
+  a {
+    color: @menuLinkColor;
+  }
+}
+
+.subfooter .menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: @mobileMenuWidth;
+  margin: @mobileMenuMargin;
+
+  a {
+    color: @menuLinkColor;
+    font-weight: @menuFontWeight;
+    font-size: @mobileMenuFontSize;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      color: @menuLinkColor;
     }
   }
 }
@@ -126,12 +119,7 @@ footer {
 @media only screen and (min-width: @tabletBreakpoint) {
   footer {
     .wrapper {
-      .theme-sites {
-        .header {
-          font-size: @tabletHeaderFontSize;
-          margin-bottom: @tabletHeaderMarginBottom;
-        }
-      }
+      
       .subfooter {
         .item {
           margin-top: @tabletItemMarginTop;
@@ -140,10 +128,6 @@ footer {
             img {
               width: @tabletSiteLogoWidth;
               display: @tabletSiteLogoDisplay;
-            }
-            .description {
-              font-size: @tabletDescriptionFontSize;
-              line-height: @tabletDescriptionLineHeight;
             }
           }
 
@@ -162,17 +146,7 @@ footer {
 
           .header {
             margin-bottom: @tabletItemHeaderMarginBottom;
-            font-size: @tabletItemHeaderFontSize;
-          }
-
-          .contact {
-            font-size: @tabletContactFontSize;
-            margin: @tabletContactMargin;
-
-            i.big.icon {
-              margin-right: @tabletContactIconMarginRight;
-              font-size: @tabletContactIconFontSize;
-            }
+            font-size: @tabletFooterTitleFontSize;
           }
 
           .address {
@@ -183,16 +157,29 @@ footer {
             font-size: @tabletSocialIconSize;
           }
         }
-        .menu {
-          width: @tabletMenuWidth;
-          margin: @tabletMenuMargin;
-
-          a {
-            font-size: @tabletMenuFontSize;
-          }
-        }
       }
     }
+  }
+
+  footer .theme-sites {
+    .header {
+      font-size: @tabletFooterTitleFontSize;
+    }
+  }
+
+  .subfooter .contact {
+    font-size: @tabletContactFontSize;
+    margin: @tabletContactMargin;
+
+    i.big.icon {
+      margin-right: @tabletContactIconMarginRight;
+      font-size: @tabletContactIconFontSize;
+    }
+  }
+
+  .subfooter .menu {
+    width: @tabletMenuWidth;
+    margin: @tabletMenuMargin;
   }
 }
 
@@ -202,14 +189,6 @@ footer {
       padding: @computerWrapperPadding;
       background-size: @computerWrapperBackgroundSize;
 
-      .theme-sites {
-        padding: @computerThemeSitesPadding;
-
-        .header {
-          font-size: @computerHeaderFontSize;
-          margin-bottom: @computerHeaderMarginBottom;
-        }
-      }
       .subfooter {
         .item {
           margin-top: @computerItemMarginTop;
@@ -218,14 +197,9 @@ footer {
             img {
               width: @computerSiteLogoWidth;
             }
-            .description {
-              margin: @computerDescriptionMargin;
-            }
           }
 
           .eionet.logo {
-            margin-top: @computerEionetMarginTop;
-
             img {
               width: @computerEionetLogoWidth;
               margin-left: @computerEionetLogoMarginLeft;
@@ -240,32 +214,40 @@ footer {
 
           .header {
             margin-bottom: @computerItemHeaderMarginBottom;
-            font-size: @computerItemHeaderFontSize;
-          }
-
-          .contact {
-            font-size: @computerContactFontSize;
-            margin: @computerContactMargin;
-
-            i.big.icon {
-              font-size: @computerContactIconFontSize;
-            }
+            font-size: @desktopFooterTitleFontSize;
           }
 
           .social a i.icon {
             font-size: @computerSocialIconSize;
           }
         }
-        .menu {
-          justify-content: flex-end;
-          width: 100%;
-
-          a {
-            padding-left: 3rem;
-            font-size: @computerMenuFontSize;
-          }
-        }
       }
     }
   }
+
+  footer .theme-sites {
+    padding: @computerThemeSitesPadding;
+
+    .header {
+      font-size: @desktopFooterTitleFontSize;
+    }
+  }
+
+  .subfooter .contact {
+    font-size: @computerContactFontSize;
+    margin: @computerContactMargin;
+
+    i.big.icon {
+      font-size: @computerContactIconFontSize;
+    }
+  }
+
+  .subfooter .menu {
+    width: @desktopMenuWidth;
+  
+    a {
+      font-size: @computerMenuFontSize;
+    }
+  }
+  
 }

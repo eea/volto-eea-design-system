@@ -2,7 +2,13 @@
             Footer
 *******************************/
 
-@footerBackgroundGrandient           : linear-gradient(220.4deg, #009591 8.29%, #2E3E4C 56.3%, #212D38 89.06%);
+@footerBackgroundGrandient: linear-gradient(220.4deg, #009591 8.29%, #2E3E4C 56.3%, #212D38 89.06%);
+
+/* Titles */
+@footerTitleFontWeight     : @font-weight-7;
+@mobileFooterTitleFontSize : @font-size-3;
+@tabletFooterTitleFontSize : @font-size-4;
+@desktopFooterTitleFontSize: @font-size-6;
 
 /* Wrapper */
 @wrapperBackgroundImage              : url(../assets/images/Footer/Extras/footervisual.svg);
@@ -14,17 +20,8 @@
 @computerWrapperPadding              : 5rem 0 3rem;
 
 /* Theme Sites */
-@mobileThemeSitesPadding            : 0;
-@computerThemeSitesPadding          : 0rem 0 2rem;
-
-/* Theme Sites Header */
-@headerFontWeight                   : @bold;
-@mobileHeaderMarginBottom           : 1.25rem;
-@tabletHeaderMarginBottom           : 2.5rem;
-@computerHeaderMarginBottom         : 3.75rem;
-@mobileHeaderFontSize               : 0.688rem;
-@tabletHeaderFontSize               : 1.25rem;
-@computerHeaderFontSize             : 2.25rem;
+@mobileThemeSitesPadding            : @gap-2 0 @gap-8;
+@computerThemeSitesPadding          : @gap-4 0 @gap-8;
 
 /* Subfooter with logo and contact info */
 @mobileItemMarginTop                : 1rem;
@@ -32,37 +29,26 @@
 @computerItemMarginTop              : 4rem;
 
 /* Subfooter Item Header */
-@itemHeaderFontWeight               : @bold;
 @mobileItemHeaderMarginBottom       : 0.625rem;
-@mobileItemHeaderFontSize           : 0.688rem;
 @tabletItemHeaderMarginBottom       : 0.938rem;
-@tabletItemHeaderFontSize           : 1.375rem;
 @computerItemHeaderMarginBottom     : 1.563rem;
-@computerItemHeaderFontSize         : 2.25rem;
 
 /* Site Logo */
 @tabletSiteLogoWidth                : 192px;
 @computerSiteLogoWidth              : 283px;
 @tabletSiteLogoDisplay              : inline-block;
 
-/* Site Logo Description */
-@mobileDescriptionMargin             : 5px 0 0 10px;
-@computerDescriptionMargin           : 5px 0 0 25px;
-@mobileDescriptionFontSize           : 0.5rem;
-@tabletDescriptionFontSize           : 1rem;
-@mobileDescriptionLineHeight         : 0.563rem;
-@tabletDescriptionLineHeight         : 1.188rem;
-
 /* EIONET Logo */
-@mobileEionetMarginTop: .5rem;
-@computerEionetMarginTop: 2rem;
+@mobileEionetMarginTop: 0rem;
+@computerEionetMarginTop: 0rem;
 
-@mobileEionetLogoWidth               : 37px;
-@tabletEionetLogoWidth               : 65px;
-@computerEionetLogoWidth             : 80px;
-@mobileEionetLogoMarginLeft          : 0.75rem;
+@mobileEionetLogoWidth               : 42px;
+@tabletEionetLogoWidth               : 60px;
+@computerEionetLogoWidth             : 66px;
+
+@mobileEionetLogoMarginLeft          : 0;
 @tabletEionetLogoMarginLeft          : 0.625rem;
-@computerEionetLogoMarginLeft        : 1.563rem;
+@computerEionetLogoMarginLeft        : 0;
 @mobileEionetLogoMarginRight         : 0.5rem;
 @computerEionetLogoMarginRight       : 1.25rem;
 
@@ -72,10 +58,10 @@
 @tabletEionetDescriptionPaddingTop   : 0.313rem;
 @mobileEionetDescriptionFontSize     : 0.5rem;
 @tabetEionetDescriptionFontSize      : 1rem;
-@computerEionetDescriptionFontSize   : 1.063rem;
+@computerEionetDescriptionFontSize   : 12px;
 @mobileEionetDescriptionLineHeight   : 0.625rem;
 @tabletEionetDescriptionLineHeight   : 1.5rem;
-@computerEionetDescriptionLineHeight : 1.8rem;
+@computerEionetDescriptionLineHeight : 1.5;
 
 /* Contact Info */
 @mobileContactMargin                : 0.3rem 0;
@@ -99,11 +85,13 @@
 @computerSocialIconSize             : 2rem;
 
 /* Footer Menu */
-@mobileMenuMargin                   : 1rem auto 0;
-@tabletMenuMargin                   : 2rem auto 0;
-@tabletMenuWidth                    : 500px;
+@mobileMenuMargin                   : @gap-8 auto 0;
+@tabletMenuMargin                   : @gap-13 auto 0;
+@desktopMenuMargin                  : @gap-20 auto 0;
+@mobileMenuWidth                    : 100%;
+@tabletMenuWidth                    : 350px;
+@desktopMenuWidth                   : 500px;
 @menuLinkColor                      : @white;
-@menuFontWeight                     : 100;
-@mobileMenuFontSize                 : 0.438rem;
-@tabletMenuFontSize                 : 0.688rem;
-@computerMenuFontSize               : 1rem;
+@menuFontWeight                     : @font-weight-3;
+@mobileMenuFontSize                 : @font-size-0;
+@computerMenuFontSize               : @font-size-1;

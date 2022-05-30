@@ -1,16 +1,16 @@
 import React from 'react';
 import Footer from './Footer';
 import { Grid, Image } from 'semantic-ui-react';
-import Logo1 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/bise.svg';
-import Logo2 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/energy.svg';
-import Logo3 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/insitu.svg';
-import Logo4 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/ipchem.svg';
-import Logo5 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/freshwater.svg';
-import Logo6 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/fise.svg';
-import Logo7 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/cca.svg';
-import Logo8 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/copernicus.svg';
-import Logo9 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/industry.svg';
-import Logo10 from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/marine.svg';
+import Bise from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/bise.svg';
+import Energy from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/energy.svg';
+import Insitu from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/insitu.svg';
+import Ipchem from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/ipchem.svg';
+import Freshwater from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/freshwater.svg';
+import Fise from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/fise.svg';
+import Cca from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/cca.svg';
+import Copernicus from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/copernicus.svg';
+import Industry from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/industry.svg';
+import Marine from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/marine.svg';
 import EIONETLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EIONETLogo.png';
 import EEALogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EEA-Logo-White-2.svg';
 
@@ -27,26 +27,38 @@ const Template = (args) => (
     <Footer.SubFooter>
       <div className="subfooter">
         <Grid>
-          <Grid.Column mobile={6} tablet={7} computer={8}>
+          <Grid.Column mobile={12} tablet={5} computer={6}>
             <div className="item">
-              <div className="site logo">
-                <Image src={EEALogo} alt="EEA Logo"></Image>
-                <p className="description">An agency of the European Union</p>
-              </div>
+              <p className="header text-center">Managed by</p>
 
-              <div className="eionet logo">
-                <Image src={EIONETLogo} alt="EIONET Logo"></Image>
-                <p className="description">
-                  European Environment
-                  <br />
-                  Information and
-                  <br />
-                  Observation Network
-                </p>
-              </div>
+              <Grid>
+                <Grid.Column mobile={6} tablet={12} computer={5}>
+                  <div className="site logo">
+                    <Image src={EEALogo} alt="EEA Logo"></Image>
+                  </div>
+                </Grid.Column>
+                <Grid.Column mobile={6} tablet={12} computer={7}>
+                  <div className="eionet logo">
+                    <Image src={EIONETLogo} alt="EIONET Logo"></Image>
+                    <p className="description">
+                      European Environment
+                      <br />
+                      Information and
+                      <br />
+                      Observation Network
+                    </p>
+                  </div>
+                </Grid.Column>
+              </Grid>
             </div>
           </Grid.Column>
-          <Grid.Column mobile={6} tablet={5} computer={4}>
+          <Grid.Column
+            mobile={6}
+            tablet={2}
+            computer={2}
+            className="mobile hidden"
+          ></Grid.Column>
+          <Grid.Column mobile={12} tablet={5} computer={4}>
             <div className="item">
               <Footer.Contact
                 contacts={args.contacts}
@@ -75,26 +87,27 @@ Default.args = {
     { link: '/#', title: 'Copyright', copy: true },
   ],
   sites: [
-    { link: '/#', src: Logo1, alt: 'Biodiversity' },
-    { link: '/#', src: Logo2, alt: 'Climate and energy in the EU' },
-    { link: '/#', src: Logo3, alt: 'Copernicus in situ' },
+    { link: '/#', src: Marine, alt: 'WISE marine' },
+    { link: '/#', src: Bise, alt: 'Biodiversity' },
     {
       link: '/#',
-      src: Logo4,
+      src: Ipchem,
       alt: 'Information platform for chemical monitoring',
     },
-    { link: '/#', src: Logo5, alt: 'WISE freshwater' },
-    { link: '/#', src: Logo6, alt: 'Forest information system for europe' },
-    { link: '/#', src: Logo7, alt: 'Climate adapt' },
-    { link: '/#', src: Logo8, alt: 'Copernicus land monitoring service' },
-    { link: '/#', src: Logo9, alt: 'European industrial emissions portal' },
-    { link: '/#', src: Logo10, alt: 'WISE marine' },
+    { link: '/#', src: Industry, alt: 'European industrial emissions portal' },
+    { link: '/#', src: Insitu, alt: 'Copernicus in situ' },
+    { link: '/#', src: Freshwater, alt: 'WISE freshwater' },
+    { link: '/#', src: Fise, alt: 'Forest information system for europe' },
+    { link: '/#', src: Cca, alt: 'Climate adapt' },
+    { link: '/#', src: Energy, alt: 'Climate and energy in the EU' },
+    { link: '/#', src: Copernicus, alt: 'Copernicus land monitoring service' },
   ],
   social: [
     { name: 'twitter', link: '/#' },
     { name: 'facebook', link: '/#' },
     { name: 'linkedin', link: '/#' },
     { name: 'youtube', link: '/#' },
+    { name: 'instagram', link: '/#' },
     { name: 'rss', link: '/#' },
   ],
   contactHeader: 'Contact Us',
