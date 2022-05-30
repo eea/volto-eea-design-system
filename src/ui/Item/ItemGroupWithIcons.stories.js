@@ -17,7 +17,7 @@ function SingleItem({ image, imageSize, description, verticalAlign }) {
   return (
     <Item>
       {/* <Item.Image size={imageSize == 'default' ? '' : imageSize} src={image} alt="item image" /> */}
-      <Item.Image size={imageSize} src={image} alt="item image" />
+      <Item.Image className={`ui ${imageSize}`} src={image} alt="item image" />
       <Item.Content verticalAlign={verticalAlign}>{description}</Item.Content>
     </Item>
   );
@@ -32,23 +32,16 @@ export const DefaultItem = (args) => (
   </Container>
 );
 DefaultItem.args = {
-  image: GlobeEco,
   imageSize: 'default',
   verticalAlign: 'middle',
+  image: GlobeEco,
   description:
     'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
 };
 DefaultItem.argTypes = {
-  image: {
-    description: 'Path or Url of the image',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: ' "" ' },
-    },
-  },
   imageSize: {
     control: { type: 'select' },
-    options: ['mini', 'default', 'tiny', 'small'],
+    options: ['mini', 'tile', 'tiny', 'small'],
     description: 'Content can specify its vertical alignment',
     table: {
       type: { summary: 'string' },
@@ -59,6 +52,13 @@ DefaultItem.argTypes = {
     control: { type: 'select' },
     options: ['top', 'middle', 'bottom'],
     description: 'An image can vary in size',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  image: {
+    description: 'Path or Url of the image',
     table: {
       type: { summary: 'string' },
       defaultValue: { summary: ' "" ' },
@@ -81,14 +81,24 @@ function ItemGroup({ imageSize, verticalAlign, ColumnLeft, ColumnRight }) {
           <Grid.Column mobile={12} tablet={6} computer={6}>
             <Item.Group unstackable className="row">
               {ColumnLeft.map((item) => (
-                <SingleItem key={item.childKey} {...item}></SingleItem>
+                <SingleItem
+                  key={item.childKey}
+                  {...item}
+                  imageSize={imageSize}
+                  verticalAlign={verticalAlign}
+                ></SingleItem>
               ))}
             </Item.Group>
           </Grid.Column>
           <Grid.Column mobile={12} tablet={6} computer={6}>
             <Item.Group unstackable className="row">
               {ColumnRight.map((item) => (
-                <SingleItem key={item.childKey} {...item}></SingleItem>
+                <SingleItem
+                  key={item.childKey}
+                  {...item}
+                  imageSize={imageSize}
+                  verticalAlign={verticalAlign}
+                ></SingleItem>
               ))}
             </Item.Group>
           </Grid.Column>
@@ -103,28 +113,24 @@ const Template = (args) => <ItemGroup {...args}></ItemGroup>;
 // Group of items
 export const DefaultGroup = Template.bind({});
 DefaultGroup.args = {
+  imageSize: 'mini',
+  verticalAlign: 'middle',
   ColumnLeft: [
     {
       childKey: 0,
       image: GlobeEco,
-      imageSize: 'default',
-      verticalAlign: 'middle',
       description:
         'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
     },
     {
       childKey: 1,
       image: Sustainable,
-      imageSize: 'default',
-      verticalAlign: 'middle',
       description:
         'Supply input on solutions to the sustainability challenges of today – and tomorrow.  ',
     },
     {
       childKey: 2,
       image: DataAnalytics,
-      imageSize: 'default',
-      verticalAlign: 'middle',
       description:
         'Leverage the data and technology to support the EU’s decision-making processes concerning the environment and climate',
     },
@@ -133,18 +139,34 @@ DefaultGroup.args = {
     {
       childKey: 0,
       image: Network,
-      imageSize: 'default',
-      verticalAlign: 'middle',
       description:
         'Build stronger networks and partnerships with state and regional governments and organisations.',
     },
     {
       childKey: 1,
       image: Knowledge,
-      imageSize: 'default',
-      verticalAlign: 'middle',
       description:
         'Strengthen the EU’s knowledge capacity and help secure the resources needed to create a sustainable Europe.',
     },
   ],
+};
+DefaultGroup.argTypes = {
+  imageSize: {
+    control: { type: 'select' },
+    options: ['mini', 'tile', 'tiny', 'small'],
+    description: 'Content can specify its vertical alignment',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  verticalAlign: {
+    control: { type: 'select' },
+    options: ['top', 'middle', 'bottom'],
+    description: 'An image can vary in size',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
 };

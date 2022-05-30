@@ -52,9 +52,9 @@
 @imageBoxShadow: none;
 @imageBorder: none;
 
-/* Default Image */
-@defaultImageWidth: 50px;
-@defaultImageHeight: auto;
+/* Tile image size */
+@tileImageWidth: 50px;
+@tileImageHeight: auto;
 
 /* Content */
 @contentDisplay: block;

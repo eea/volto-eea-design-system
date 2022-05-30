@@ -7,9 +7,9 @@
   margin: @imageMargin;
 }
 
-.item .default.image {
-  width: @defaultImageWidth;
-  height: @defaultImageHeight;
+.item .tile.image {
+  width: @tileImageWidth;
+  height: @tileImageHeight;
 }
 
 .ui.items.row > .item {
