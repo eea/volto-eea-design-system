@@ -53,8 +53,8 @@ export default {
         },
       },
     },
-    clean: {
-      description: 'Remove margins from divider',
+    fitted: {
+      description: 'Remove space above or below the divider',
       table: {
         type: {
           summary: 'boolean',
@@ -67,7 +67,7 @@ export default {
   },
 };
 
-function Template({ hidden, color, section, short, clean }) {
+function Template({ hidden, color, section, short, fitted }) {
   return (
     <Container>
       <p>
@@ -84,7 +84,8 @@ function Template({ hidden, color, section, short, clean }) {
         section={section}
         className={`${color === 'default' ? '' : color} ${
           short ? 'short' : ''
-        } ${clean ? 'clean' : ''}`}
+        } `}
+        fitted={fitted}
       />
       <p>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
@@ -105,5 +106,5 @@ Default.args = {
   hidden: false,
   section: false,
   short: false,
-  clean: false,
+  fitted: false,
 };

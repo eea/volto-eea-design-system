@@ -22,10 +22,6 @@
   margin-inline: @shortMarginInline;
 }
 
-.ui.divider.clean {
-  margin-block: 0;
-}
-
 // Color variations
 .ui.divider.green,
 .ui.divider.green:not(.vertical):not(.horizontal) {
