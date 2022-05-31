@@ -93,7 +93,9 @@ function Template({ hidden, color, section, short, fitted }) {
       <Divider
         hidden={hidden}
         section={section}
-        className={`${color === 'default' ? '' : color}${short ? 'short' : ''}`}
+        className={`${color === 'default' ? '' : color} ${
+          short ? 'short' : ''
+        }`}
         fitted={fitted}
       />
       <p>

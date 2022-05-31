@@ -8,11 +8,9 @@
 }
 
 .ui.horizontal.divider.primary,.ui.horizontal.divider.secondary,.ui.horizontal.divider.tertiary  {
-
   & > * {
-    padding: 0 15px;
+    padding: 0 @space-4;
   }
-  
 }
 
 .ui.horizontal.divider.primary:before,
