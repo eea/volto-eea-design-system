@@ -22,14 +22,14 @@ export default {
 
 const Template = (args) => (
   <Footer>
-    <Footer.Header>The EEA also contributes to</Footer.Header>
+    <Footer.Header>{args.header}</Footer.Header>
     <Footer.Sites sites={args.sites} />
     <Footer.SubFooter>
       <div className="subfooter">
         <Grid>
           <Grid.Column mobile={12} tablet={5} computer={6}>
             <div className="item">
-              <p className="header text-center">Managed by</p>
+              <p className="header text-center">{args.logosHeader}</p>
 
               <Grid>
                 <Grid.Column mobile={6} tablet={12} computer={5}>
@@ -73,6 +73,8 @@ const Template = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   header: 'The EEA also contributes to',
+  logosHeader: 'Managed by',
+  contactHeader: 'Contact Us',
   actions: [
     { link: '/#', title: 'CMS Login', copy: false },
     { link: '/#', title: 'Sitemap', copy: false },
@@ -103,7 +105,6 @@ Default.args = {
     { icon: 'ri-instagram-fill', link: '/#' },
     { icon: 'ri-rss-fill', link: '/#' },
   ],
-  contactHeader: 'Contact Us',
   contacts: [
     { icon: 'ri-chat-1-line', text: 'Ask your question' },
     { icon: 'ri-mail-line', text: 'Sign up to our newsletter' },
