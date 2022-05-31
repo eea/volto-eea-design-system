@@ -1,0 +1,10 @@
+position: 4 # float position is supported
+label: 'Publications'
+collapsible: true # make the category collapsible
+collapsed: true # keep the category open by default
+className: red
+link:
+  type: generated-index
+  title: Publications
+#customProps:
+#  description: This description can be used in the swizzled DocCard

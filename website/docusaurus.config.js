@@ -19,7 +19,7 @@ module.exports = {
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
-      disableSwitch: true,
+      disableSwitch: false,
     },
     navbar: {
       title: 'EEA Design System',
@@ -28,12 +28,30 @@ module.exports = {
         src: 'img/eea_icon.png',
       },
       items: [
-        // {
-        //   type: 'doc',
-        //   docId: 'intro',
-        //   position: 'left',
-        //   label: 'EEA Component Library',
-        // },
+        {
+          to: 'docs/category/components',
+          label: 'Components',
+          activeBaseRegex: 'docs/(webdev|category)/(Components|components)',
+          position: 'left',
+        },
+        {
+          to: 'docs/webcontent/intro',
+          label: 'Web content',
+          activeBaseRegex: 'docs/(category/web-content|webcontent)',
+          position: 'left',
+        },
+        {
+          to: 'docs/pubguide/intro',
+          label: 'Publications',
+          activeBaseRegex: 'docs/(category/publications|pubguide)',
+          position: 'left',
+        },
+        {
+          to: 'docs/dataguide/intro',
+          label: 'Maps and charts',
+          activeBaseRegex: 'docs/(dataguide|category/maps-and-charts)',
+          position: 'left',
+        },
         {
           href: 'https://github.com/eea/volto-eea-design-system',
           label: 'GitHub',

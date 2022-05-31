@@ -5,23 +5,25 @@ import styles from './HomepageFeatures.module.css';
 const FeatureList = [
   {
     title: 'Web developer',
-    link: '/volto-eea-design-system/docs/intro',
+    link: '/volto-eea-design-system/docs/category/web-development',
     Svg: require('../../static/img/undraw_proud_coder_re_exuy.svg').default,
     description: <>Design system for web developers</>,
   },
   {
     title: 'Web designer',
-    link: '/volto-eea-design-system/docs/intro',
+    link: '/volto-eea-design-system/docs/category/web-development',
     Svg: require('../../static/img/undraw_static_website_re_x70h.svg').default,
     description: <>Design system for web designers</>,
   },
   {
     title: 'Web content creator',
+    link: '/volto-eea-design-system/docs/category/web-content',
     Svg: require('../../static/img/undraw_add_post_re_174w.svg').default,
     description: <>Tips and tricks for writing for the web</>,
   },
   {
     title: 'Publication writer',
+    link: '/volto-eea-design-system/docs/category/publications',
     Svg: require('../../static/img/undraw_education_f8ru.svg').default,
     description: <>Writing manual for publications</>,
   },

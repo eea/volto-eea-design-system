@@ -1,0 +1,10 @@
+position: 5 # float position is supported
+label: 'Components'
+collapsible: true # make the category collapsible
+collapsed: true # keep the category open by default
+className: red
+link:
+  type: generated-index
+  title: Components
+#customProps:
+#  description: This description can be used in the swizzled DocCard
