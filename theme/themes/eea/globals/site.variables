@@ -57,6 +57,7 @@
 
 @primaryColor         : @darkCerulean;
 @secondaryColor       : @pineGreen;
+@tertiaryColor        : @deepBlue;
 
 @lightPrimaryColor    : @mediumPersianBlue;
 @lightSecondaryColor  : @darkCyan;
@@ -71,12 +72,12 @@
 @headerLineHeight : 1.25;
 @headerFontWeight : 700;
 
-@h1 : unit((48 / 16), rem);
-@h2 : unit((40 / 16), rem);
-@h3 : unit((36 / 16), rem);
-@h4 : unit((24 / 16), rem);
-@h5 : unit((20 / 16), rem);
-@h6 : unit((18 / 16), rem);
+@h1 : unit((48 / @fontSize), rem);
+@h2 : unit((40 / @fontSize), rem);
+@h3 : unit((36 / @fontSize), rem);
+@h4 : unit((24 / @fontSize), rem);
+@h5 : unit((20 / @fontSize), rem);
+@h6 : unit((18 / @fontSize), rem);
 
 /*--------------
    Form Input
@@ -750,6 +751,15 @@
 @62px : unit( (62 / @emSize), rem);
 @63px : unit( (63 / @emSize), rem);
 @64px : unit( (64 / @emSize), rem);
+// extra sizes
+@68px : unit( (68 / @emSize), em);
+@72px : unit( (72 / @emSize), em);
+@76px : unit( (76 / @emSize), em);
+@80px : unit( (80 / @emSize), rem);
+@96px : unit( (96 / @emSize), rem);
+@112px : unit( (112 / @emSize), rem);
+@128px : unit( (128 / @emSize), rem);
+@140px : unit( (140 / @emSize), rem);
 
 @relative1px  : unit( (1 / @emSize), em);
 @relative2px  : unit( (2 / @emSize), em);
@@ -815,6 +825,15 @@
 @relative62px : unit( (62 / @emSize), em);
 @relative63px : unit( (63 / @emSize), em);
 @relative64px : unit( (64 / @emSize), em);
+// extra sizes
+@relative68px : unit( (68 / @emSize), em);
+@relative72px : unit( (72 / @emSize), em);
+@relative76px : unit( (76 / @emSize), em);
+@relative80px : unit( (80 / @emSize), em);
+@relative96px : unit( (96 / @emSize), em);
+@relative112px : unit( (112 / @emSize), em);
+@relative128px : unit( (128 / @emSize), em);
+@relative140px : unit( (140 / @emSize), em);
 
 /* Columns */
 @oneMobile     : (1 / @mobileColumns * 100%);

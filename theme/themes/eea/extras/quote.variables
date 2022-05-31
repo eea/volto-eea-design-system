@@ -22,10 +22,10 @@
 @sourceFontSize      : 1.25rem;
 @sourceMargin        : 0;
 
-/* Source Info */
-@sourceInfoTextAlign       : right;
-@sourceInfoFontWeight      : @normal;
-@sourceInfoFontSize        : 1rem;
+/* Extra info */
+@extraTextAlign      : right;
+@extraFontWeight     : @normal;
+@extraFontSize       : 1rem;
 
 /* Icon */
 @mobileQuoteIconSize : 2rem;
