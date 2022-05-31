@@ -4,14 +4,14 @@ import { Grid, Image } from 'semantic-ui-react';
 import Bise from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/bise.svg';
 import Energy from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/energy.svg';
 import Insitu from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/insitu.svg';
-import Ipchem from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/ipchem.svg';
+import ClimateHealth from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/climate-health.svg';
 import Freshwater from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/freshwater.svg';
 import Fise from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/fise.svg';
 import Cca from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/cca.svg';
 import Copernicus from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/copernicus.svg';
 import Industry from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/industry.svg';
 import Marine from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/marine.svg';
-import EIONETLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EIONETLogo.png';
+import EIONETLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eionet-full.svg';
 import EEALogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EEA-Logo-White-2.svg';
 
 export default {
@@ -40,13 +40,13 @@ const Template = (args) => (
                 <Grid.Column mobile={6} tablet={12} computer={7}>
                   <div className="eionet logo">
                     <Image src={EIONETLogo} alt="EIONET Logo"></Image>
-                    <p className="description">
+                    {/* <p className="description">
                       European Environment
                       <br />
                       Information and
                       <br />
                       Observation Network
-                    </p>
+                    </p> */}
                   </div>
                 </Grid.Column>
               </Grid>
@@ -91,7 +91,7 @@ Default.args = {
     { link: '/#', src: Bise, alt: 'Biodiversity' },
     {
       link: '/#',
-      src: Ipchem,
+      src: ClimateHealth,
       alt: 'Information platform for chemical monitoring',
     },
     { link: '/#', src: Industry, alt: 'European industrial emissions portal' },
@@ -112,8 +112,8 @@ Default.args = {
   ],
   contactHeader: 'Contact Us',
   contacts: [
-    { icon: 'comment outline', text: 'Ask your question' },
-    { icon: 'envelope outline', text: 'Sign up to our newsletter' },
+    { icon: 'ri-chat-1-line', text: 'Ask your question' },
+    { icon: 'ri-mail-line', text: 'Sign up to our newsletter' },
   ],
   address: 'Kongens Nytorv 6 1050 Copenhagen K (+45) 33 36 71 00',
 };
