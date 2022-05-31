@@ -40,13 +40,6 @@ const Template = (args) => (
                 <Grid.Column mobile={6} tablet={12} computer={7}>
                   <div className="eionet logo">
                     <Image src={EIONETLogo} alt="EIONET Logo"></Image>
-                    {/* <p className="description">
-                      European Environment
-                      <br />
-                      Information and
-                      <br />
-                      Observation Network
-                    </p> */}
                   </div>
                 </Grid.Column>
               </Grid>

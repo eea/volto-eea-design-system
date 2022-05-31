@@ -28,7 +28,6 @@ footer .theme-sites {
 
   .header {
     font-weight: @footerTitleFontWeight;
-    text-align: center;
   }
 
   .logos .logo {
@@ -49,24 +48,7 @@ footer .theme-sites {
     margin-bottom: @mobileItemHeaderMarginBottom;
     font-size: @mobileFooterTitleFontSize;
     font-weight: @footerTitleFontWeight;
-  }
-}
-
-.eionet.logo {
-  display: flex;
-  align-items: center;
-
-  img {
-    //width: @mobileEionetLogoWidth;
-    margin-left: @mobileEionetLogoMarginLeft;
-    margin-right: @mobileEionetLogoMarginRight;
-  }
-
-  .description {
-    padding-top: @mobileEionetDescriptionPaddingTop;
-    font-size: @mobileEionetDescriptionFontSize;
-    line-height: @mobileEionetDescriptionLineHeight;
-    font-weight: @eionetDescriptionFontWeight;
+    text-align: center;
   }
 }
 
@@ -83,6 +65,11 @@ footer .theme-sites {
 
   a {
     color: @menuLinkColor;
+  }
+
+  i.big.icon {
+    margin-right: @mobileContactIconMarginRight;
+    font-size: @mobileContactIconFontSize;
   }
 }
 
@@ -146,8 +133,8 @@ footer .theme-sites {
     }
 
     .header {
-      margin-bottom: @tabletItemHeaderMarginBottom;
       font-size: @tabletFooterTitleFontSize;
+      text-align: left;
     }
 
     .social a i.icon {
@@ -157,28 +144,12 @@ footer .theme-sites {
 
   .eionet.logo {
     img {
-      //width: @tabletEionetLogoWidth;
       margin-left: @tabletEionetLogoMarginLeft;
-    }
-
-    .description {
-      padding-top: @tabletEionetDescriptionPaddingTop;
-      font-size: @tabetEionetDescriptionFontSize;
-      line-height: @tabletEionetDescriptionLineHeight;
     }
   }
 
   .subfooter .contact-block {
     margin-inline: @tabletContactBlockMarginInline;
-  }
-
-  .subfooter .contact {
-    margin: @tabletContactMargin;
-
-    i.big.icon {
-      margin-right: @tabletContactIconMarginRight;
-      font-size: @tabletContactIconFontSize;
-    }
   }
 
   .subfooter .social {
@@ -224,19 +195,6 @@ footer .theme-sites {
 
     .social a i.icon {
       font-size: @computerSocialIconSize;
-    }
-  }
-
-  .eionet.logo {
-    img {
-      //width: @computerEionetLogoWidth;
-      margin-left: @computerEionetLogoMarginLeft;
-      margin-right: @computerEionetLogoMarginRight;
-    }
-
-    .description {
-      font-size: @computerEionetDescriptionFontSize;
-      line-height: @computerEionetDescriptionLineHeight;
     }
   }
 
