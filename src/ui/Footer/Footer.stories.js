@@ -103,12 +103,12 @@ Default.args = {
     { link: '/#', src: Copernicus, alt: 'Copernicus land monitoring service' },
   ],
   social: [
-    { name: 'twitter', link: '/#' },
-    { name: 'facebook', link: '/#' },
-    { name: 'linkedin', link: '/#' },
-    { name: 'youtube', link: '/#' },
-    { name: 'instagram', link: '/#' },
-    { name: 'rss', link: '/#' },
+    { icon: 'ri-twitter-fill', link: '/#' },
+    { icon: 'ri-facebook-box-fill', link: '/#' },
+    { icon: 'ri-linkedin-fill', link: '/#' },
+    { icon: 'ri-youtube-fill', link: '/#' },
+    { icon: 'ri-instagram-fill', link: '/#' },
+    { icon: 'ri-rss-fill', link: '/#' },
   ],
   contactHeader: 'Contact Us',
   contacts: [

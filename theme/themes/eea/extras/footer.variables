@@ -20,8 +20,8 @@
 @computerWrapperPadding              : 5rem 0 3rem;
 
 /* Theme Sites */
-@mobileThemeSitesPadding            : @gap-2 0 @gap-8;
-@computerThemeSitesPadding          : @gap-4 0 @gap-8;
+@mobileThemeSitesPadding            : @space-2 0 @space-8;
+@computerThemeSitesPadding          : @space-4 0 @space-8;
 
 /* Subfooter with logo and contact info */
 @mobileItemMarginTop                : 1rem;
@@ -83,15 +83,15 @@
 @socialIconColor                    : @white;
 @mobileSocialJustifyContent         : space-around;
 @tabletSocialJustifyContent         : start;
-@tabletSocialGap                    : 4px; // replace with token after merge
+@tabletSocialGap                    : @space-1;
 @mobileSocialIconSize               : @font-size-5;
 @tabletSocialIconSize               : @font-size-4;
 @computerSocialIconSize             : @font-size-5;
 
 /* Footer Menu */
-@mobileMenuMargin                   : @gap-8 auto 0;  // update
-@tabletMenuMargin                   : @gap-13 auto 0; // update
-@desktopMenuMargin                  : @gap-20 auto 0; // update
+@mobileMenuMargin                   : @space-8 auto 0;  // update
+@tabletMenuMargin                   : @space-13 auto 0; // update
+@desktopMenuMargin                  : @space-20 auto 0; // update
 @mobileMenuWidth                    : 100%;
 @tabletMenuWidth                    : 350px;
 @desktopMenuWidth                   : 500px;
