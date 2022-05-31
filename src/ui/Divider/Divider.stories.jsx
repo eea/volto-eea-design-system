@@ -6,7 +6,7 @@ export default {
   component: Divider,
   argTypes: {
     color: {
-      options: ['default', 'green', 'primary', 'secondary'],
+      options: ['default', 'primary', 'secondary', 'tertiary'],
       control: { type: 'select' },
       description: 'Variations of the divider',
       table: {
@@ -82,9 +82,7 @@ function Template({ hidden, color, section, short, fitted }) {
       <Divider
         hidden={hidden}
         section={section}
-        className={`${color === 'default' ? '' : color} ${
-          short ? 'short' : ''
-        } `}
+        className={`${color === 'default' ? '' : color}${short ? 'short' : ''}`}
         fitted={fitted}
       />
       <p>

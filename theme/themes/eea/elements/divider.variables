@@ -57,6 +57,6 @@
 @shortMarginInline: auto;
 
 /* Color */
-@dividerGreen     : @darkCyan;
 @dividerPrimary   : @primaryColor;
 @dividerSecondary : @secondaryColor;
+@dividerTertiary  : @tertiaryColor;

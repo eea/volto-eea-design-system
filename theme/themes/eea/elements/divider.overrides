@@ -22,16 +22,6 @@
   margin-inline: @shortMarginInline;
 }
 
-// Color variations
-.ui.divider.green,
-.ui.divider.green:not(.vertical):not(.horizontal) {
-  border-top-color: @dividerGreen;
-}
-.ui.vertical.divider.green:before,
-.ui.vertical.divider.green:after {
-  border-left-color: @dividerGreen;
-}
-
 .ui.divider.primary,
 .ui.divider.primary:not(.vertical):not(.horizontal) {
   border-top-color: @dividerPrimary;
@@ -48,4 +38,13 @@
 .ui.vertical.divider.secondary:before,
 .ui.vertical.divider.secondary:after {
   border-left-color: @dividerSecondary;
+}
+
+.ui.divider.tertiary,
+.ui.divider.tertiary:not(.vertical):not(.horizontal) {
+  border-top-color: @dividerTertiary;
+}
+.ui.vertical.divider.tertiary:before,
+.ui.vertical.divider.tertiary:after {
+  border-left-color: @dividerTertiary;
 }
