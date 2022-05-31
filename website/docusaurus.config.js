@@ -35,19 +35,19 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/webcontent/intro',
+          to: 'docs/category/web-content',
           label: 'Web content',
           activeBaseRegex: 'docs/(category/web-content|webcontent)',
           position: 'left',
         },
         {
-          to: 'docs/pubguide/intro',
+          to: 'docs/category/publications',
           label: 'Publications',
           activeBaseRegex: 'docs/(category/publications|pubguide)',
           position: 'left',
         },
         {
-          to: 'docs/dataguide/intro',
+          to: 'docs/category/maps-and-charts',
           label: 'Maps and charts',
           activeBaseRegex: 'docs/(dataguide|category/maps-and-charts)',
           position: 'left',

@@ -1,9 +1,7 @@
 ---
-title: EEA Design System (under development)
+title: Introduction
 hide_table_of_contents: true
 ---
-
-## Welcome to the EEA Design System
 
 We created the EEA Design System (EEA-DS) to standardize the visual language and user experience of the EEA’s online applications. 
 
