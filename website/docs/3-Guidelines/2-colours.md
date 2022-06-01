@@ -3,202 +3,896 @@ title: Colors
 order: 2
 ---
 
-## Principles
-
 ## Communication is key
 
-Although we value an aesthetically pleasing use of color, clear communication is our focus. We use colors to support the purpose of the content, communicating things like hierarchy of information, interactive states, and the difference between distinct elements.  
+Although we value an aesthetically pleasing use of color, clear communication is our focus. We use colors to support the purpose of the content, communicating things like hierarchy of information, interactive states, and the difference between distinct elements.
 
-## Colors follow accessibility guidelines
+## Accessibility
 
-The color system is designed to generate themes that meet WCAG 2.1 compliant contrast ratios. This makes things easier to find, identify, and interact with. It also makes the whole experience more accessible for visitors who are color blind or who have low vision. However, you should never convey information using color alone.
+Accessibility is crucial and AA colour contrast must be achieved. It is up to the designer to ensure these standards are met but please refer to the accessibility guide for support. The color system is designed to generate themes that meet WCAG 2.1 compliant contrast ratios. This makes things easier to find, identify, and interact with. It also makes the whole experience more accessible for visitors who are color blind or who have low vision. However, you should never convey information using color alone.
 
 
-## Main brand colors 
+## Brand Colors 
 
-This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity. A primary color is the color displayed most frequently across your screens and components. 
+This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity. A primary color is the color displayed most frequently across your screens and components.
 
 <div style={{width:'100%',float:'left'}}>
-    <table style={{width:30+'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
                 <td style={{backgroundColor:'#007B6C',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#007B6C</div>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#007B6C <br/> EEA GREEN</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-    <table style={{width:30+'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
                 <td style={{backgroundColor:'#004B7F',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#004B7F</div>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#004B7F <br/> EEA BLUE </div>
                 </td>            
             </tr>
         </tbody>
     </table>
 
 </div>
+<div style={{width:'100%',float:'left'}}>
+    <h3>Shades</h3>    
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#C8FFF8',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#C8FFF8</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#85FFF1',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#85FFF1</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#00F5D8',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#00F5D8</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>  
+     <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#00CCB4',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#00CCB4</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#00A390',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#00A390</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+       <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#007B6C',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#007B6C</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>  
+     <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#005248',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#005248</div>
+                </td>            
+            </tr>
+        </tbody> </table>
+    
+</div>
 
 <br />
+<div style={{ width: '100%', float: 'left', marginBottom: '40px'}}>
+  <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#A0D7FF',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#A0D7FF</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#47B3FF',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#47B3FF</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#0A99FF',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0A99FF</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#0083E0',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0083E0</div>
+                </td>            
+            </tr>
+        </tbody> </table>
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#006BB8',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#006BB8</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+       <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#004B7F',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#004B7F</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#003052',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#003052</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-### Accents 		 
+##  Supplementary color  
 
-Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette. Not all colors have to be used - sometimes a simple color scheme works best 
+These colors highlight or complement the primary colors. These are to be used sparingly to make the UI elements stand out. These colors can be used together together or separately.
+
+<div class="row">
+    <div class="col col--5">
+        <table style={{float:'left'}} >
+            <tbody>
+                <tr>
+                    <td style={{backgroundColor:'#2E3E4C',width:200+'px',height:150+'px',textAlign:'center'}}>
+                        <div style={{color:'#F9F9F9',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#2E3E4C <br/>AAA</div>
+                    </td>   
+                        <td style={{backgroundColor:'#F9F9F9',width:200+'px',height:150+'px',textAlign:'center'}}>
+                        <div style={{color:'#2E3E4C',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#F9F9F9<br/> AAA </div>
+                    </td>      
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+    <div class="col col--7">
+        <div style={{float:'right'}}> ΕΕΑ main background color is white but the secondary colors can also be used as background to 
+            compliment text elements or components.  
+            <br/> <br/>
+            <b>You can use #F9F9F9 as background with #2E3E4C text (10.44:1 AAA) or,
+            you can use #2E3E4C background with #F9F9F9 text (10.44:1 AAA)</b>
+        </div>
+    </div>
+</div>
 
 <div style={{width:'100%',float:'left'}}>
-    <h3>Light</h3>    
-    <table style={{width:30+'%',float:'left'}} >
+    <h3>Shades</h3>    
+    <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#008380',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#008380</div>
+            <td style={{backgroundColor:'#DAE8F4',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#DAE8F4</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-    <table style={{width:30+'%',float:'left'}} >
+   <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#0065A4',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0065A4</div>
+            <td style={{backgroundColor:'#ACCAE5',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#ACCAE5</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#8EA6C2',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#8EA6C2</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>  
+     <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#6989A5',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#6989A5</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#4C677F',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#4C677F</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+       <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#3D5265',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#3D5265</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>  
+     <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#2E3E4C',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#2E3E4C</div>
+                </td>            
+            </tr>
+        </tbody> </table>
+    
 </div>
 
 <br />
+<div style={ {width:'100%', float:'left', marginBottom: '40px'}}>
+  <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#FFFFFF',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FFFFFF</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#F9F9F9',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#F9F9F9</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#E6E7E8',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#E6E7E8</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#BCBEC0',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#BCBEC0</div>
+                </td>            
+            </tr>
+        </tbody> </table>
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#808285',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#808285</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+       <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#323232',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#323232</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#000000',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#000000</div>
+                </td>            
+            </tr>
+        </tbody>
+        </table>
+</div>
 
+### State colors
+
+These are the colors that communicate purpose. They help users convey messages. 
+For example, Green has a positive connotation. We use Green to convey success, confirmation messages, etc.
+  
+<table style={{ width:"100%", float:'left', marginBottom: '40px'}} >
+    <tbody>
+        <tr>
+            <td style={{backgroundColor:'#B83230',width:200+'px',height:150+'px',textAlign:'center'}}>
+                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#B83230 <br/>ERROR</div>
+            </td>   
+                    <td style={{backgroundColor:'#FF9933',width:200+'px',height:150+'px',textAlign:'center'}}>
+                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FF9933<br/> WARNING </div>
+            </td> 
+                <td style={{backgroundColor:'#007B6C',width:200+'px',height:150+'px',textAlign:'center'}}>
+                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#007B6C <br/>SUCCESS</div>
+            </td>   
+                    <td style={{backgroundColor:'#004B7F',width:200+'px',height:150+'px',textAlign:'center'}}>
+                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#004B7F<br/> INFO </div>
+            </td>      
+        </tr>
+    </tbody>
+</table> 
+
+### EEA complete color palette
+
+Not all colors have to be used - sometimes a simple color scheme works best
+
+
+<div style={{width:'100%',float:'left'}}>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#FFF6EC',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FFF6EC</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#FFEDD8',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FFEDD8</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#E7BC91',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#E7BC91</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>  
+     <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#BC8A5F',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#BC8A5F</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#8B5E34',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#8B5E34</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+       <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#603808',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#603808</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>  
+     <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#3D2201',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#3D2201</div>
+                </td>            
+            </tr>
+        </tbody> </table>
+    
+</div>
+
+
+<br />
 <div style={{width:'100%',float:'left'}}>
-    <h3>Dark</h3>    
-    <table style={{width:30+'%',float:'left'}} >
+  <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#00665A',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#00665A</div>
+            <td style={{backgroundColor:'#EFEBF2',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#EFEBF2</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#DFD6E7',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#DFD6E7</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-    <table style={{width:30+'%',float:'left'}} >
+    <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#0A3D61',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0A3D61</div>
+            <td style={{backgroundColor:'#BEADCE',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#BEADCE</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#9E84B6',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#9E84B6</div>
+                </td>            
+            </tr>
+        </tbody> </table>
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#7D5B9D',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#7D5B9D</div>
                 </td>            
             </tr>
         </tbody>
     </table>
+       <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#5C3285',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#5C3285</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#3C096C',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#3C096C</div>
+                </td>            
+            </tr>
+        </tbody>
+        </table>
+</div>
 
+
+<div style={{width:'100%',float:'left'}}>    
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#FBEEF8',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FBEEF8</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#F6DDF0',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#F6DDF0</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#E7B2C0',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#E7B2C0</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>  
+     <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#D78890',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#D78890</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#C65B59',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#C65B59</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+       <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#B83230',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#B83230</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>  
+     <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#5C1918',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#5C1918</div>
+                </td>            
+            </tr>
+        </tbody> </table>
+    
 </div>
 
 <br />
-
-### Supplementary color  
-
-A supplementary color provides more ways to accent and distinguish your website. Having a supplementary color is optional and should be applied sparingly to selected parts of your UI. 
-
-
 <div style={{width:'100%',float:'left'}}>
-    <table style={{width:30+'%',float:'left'}} >
+  <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
-                <td style={{backgroundColor:'#2E3E4C',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#2E3E4C</div>
+            <td style={{backgroundColor:'#FEF6CD',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FEF6CD</div>
                 </td>            
             </tr>
         </tbody>
-    </table> 
-</div>
-
-<br />
-
-Supplementary colors are best for:  
-
-- Floating action buttons 
-
-- Selection controls, like sliders and switches 
-
-- Highlighting selected text 
-
-- Progress bars 
-
-
-
- 
-
- 
-
- 
-
-### Grays 
-
-Use as the text color for dark-on-light designs, or as the background for inverted designs. 
- 
-
-### Background 
-
-Use this color as the background for your dark-on-light designs, or the text color of an inverted design. 
-
-### Error color  
- <div style={{width:'100%',float:'left'}}>
-    <table style={{width:30+'%',float:'left'}} >
+    </table>   
+    <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
-                <td style={{backgroundColor:'#B83230',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#B83230</div>
+            <td style={{backgroundColor:'#FBEC9B',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FBEC9B</div>
                 </td>            
             </tr>
         </tbody>
-    </table> 
-</div>
-
-<br />
-
-### Warning  color  
- <div style={{width:'100%',float:'left'}}>
-    <table style={{width:30+'%',float:'left'}} >
+    </table>
+    <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
-                <td style={{backgroundColor:'#FF9933',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'#2E3E4C',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FF9933</div>
+            <td style={{backgroundColor:'#FAD936',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FAD936</div>
                 </td>            
             </tr>
         </tbody>
-    </table> 
+    </table>   
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#FAC50D',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FAC50D</div>
+                </td>            
+            </tr>
+        </tbody> </table>
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#FDAF20',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FDAF20</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+       <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#FF9933',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FF9933</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#E56B38',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#E56B38</div>
+                </td>            
+            </tr>
+        </tbody>
+        </table>
 </div>
 
-<br />
 
-### Links color
+<div style={{width:'100%',float:'left'}}>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#C8FFF8',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#C8FFF8</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#85FFF1',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#85FFF1</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#00F5D8',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#00F5D8</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>  
+     <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#00CCB4',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#00CCB4</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#00A390',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#00A390</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+       <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#007B6C',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#007B6C</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>  
+     <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#005248',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#005248</div>
+                </td>            
+            </tr>
+        </tbody> </table>
+    
+</div>
+
+
+<br />
 <div style={{width:'100%',float:'left'}}>
-     <table style={{width:30+'%',float:'left'}} >
+  <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
-             <td style={{backgroundColor:'#0065A4',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Non Visited - #0065A4</div>
+            <td style={{backgroundColor:'#A0D7FF',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#A0D7FF</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#47B3FF',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#47B3FF</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-       <table style={{width:30+'%',float:'left'}} >
+    <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#004B7F',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Visited - #004B7F</div>
+            <td style={{backgroundColor:'#0A99FF',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0A99FF</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#0083E0',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0083E0</div>
+                </td>            
+            </tr>
+        </tbody> </table>
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#006BB8',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#006BB8</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-
+       <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#004B7F',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#004B7F</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#003052',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#003052</div>
+                </td>            
+            </tr>
+        </tbody>
+        </table>
 </div>
 
 
-
+<div style={{width:'100%',float:'left'}}>    
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#DAE8F4',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#DAE8F4</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#ACCAE5',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#ACCAE5</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#8EA6C2',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#8EA6C2</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>  
+     <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#6989A5',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#6989A5</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#4C677F',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#4C677F</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+       <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#3D5265',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#3D5265</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>  
+     <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#2E3E4C',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#2E3E4C</div>
+                </td>            
+            </tr>
+        </tbody> </table>
+    
+</div>
 
 <br />
+<div style={ {width:'100%', float:'left', marginBottom: '40px'}}>
+  <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#FFFFFF',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FFFFFF</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#F9F9F9',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#F9F9F9</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#E6E7E8',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#E6E7E8</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+   <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#BCBEC0',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#BCBEC0</div>
+                </td>            
+            </tr>
+        </tbody> </table>
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#808285',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#808285</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+       <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#323232',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#323232</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>   
+    <table style={{width:'%',float:'left'}} >
+        <tbody>
+            <tr>
+            <td style={{backgroundColor:'#000000',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#000000</div>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 ### Tools for creating color palettes 
 
@@ -215,190 +909,3 @@ For optional creation of additional color shades to use in maps and charts you c
 https://colorbrewer2.org
 
 https://carto.com/carto-colors/ 
-
-## Main brand colors variations
-Please use the following colors with the text color combination indicated in the table to be aligned with WCAG requirements.
-
-Font colors used:
-White: #FFFFFF, 
-Japanese Indigo: #2E3E4C
-
-<table style={{width:30+'%',float:'left'}} >
-    <tbody>
-     <tr style={{border:'none'}}>
-           <td style={{border:'none',width:200+'px',padding:'0px 0px 0px 10px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#00665A',color:'white',fontSize:'14px',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Bottle Green  <br />
-                #00665A</div>
-            </td>            
-        </tr>
-        <tr style={{border:'none'}}>
-           <td style={{backgroundColor:'#007B6C',width:200+'px',height:150+'px',textAlign:'center',border:'20px solid #007B6C',borderTop:'10px',borderBottom:'10px' }}>
-                <div style={{color:'white',width:100+'%',fontSize:'14px',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Pine Green (Secondary) <br />
-                #007B6C</div>
-            </td>            
-        </tr>
-        <tr style={{border:'none'}}>
-           <td style={{border:'none',width:200+'px',padding:'0px 0px 0px 10px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#008380',fontSize:'14px',color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Teal Green <br />
-                #008380</div>
-            </td>
-        </tr>
-        <tr style={{border:'none'}}>
-           <td style={{border:'none',padding:'0px 0px 0px 10px',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#76C4BC',fontSize:'14px',color:'#2E3E4C',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Pearl Aqua  <br />
-                #76C4BC</div>
-            </td>
-        </tr>
-        <tr style={{border:'none'}}>
-           <td style={{border:'none',padding:'0px 0px 0px 10px',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#B9E8E2',fontSize:'14px',color:'#2E3E4C',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Powder Blue <br />
-                #B9E8E2</div>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<table >
-    <tbody>     
-        <tr style={{border:'none'}}>
-           <td style={{border:'none',padding:'0px 0px 0px 10px',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#0A3D61',color:'white',fontSize:'14px',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Dark Midnight Blue <br />
-                #0A3D61</div>
-            </td>            
-        </tr>   
-        <tr style={{border:'none'}}>
-           <td style={{backgroundColor:'#004B7F',width:200+'px',height:150+'px',textAlign:'center',border:'20px solid #004B7F',borderTop:'10px',borderBottom:'10px'}}>
-                <div style={{color:'white',fontSize:'14px',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Dark Cerulean (Primary) <br />
-                #004B7F</div>
-            </td>            
-        </tr>
-        <tr style={{border:'none'}}>
-           <td style={{border:'none',padding:'0px 0px 0px 10px',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#0065A4',color:'white',fontSize:'14px',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Medium Persian Blue <br />
-                #0065A4</div>
-            </td>
-        </tr>
-        <tr style={{border:'none'}}>
-           <td style={{border:'none',padding:'0px 0px 0px 10px',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#337E9E',color:'white',fontSize:'14px',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Jelly Bean Blue <br />
-                #337E9E</div>
-            </td>
-        </tr>
-        <tr style={{border:'none'}}>
-           <td style={{border:'none',padding:'0px 0px 0px 10px',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{backgroundColor:'#75C9DB',width:100+'%',fontSize:'14px',color:'#2E3E4C',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Mid Blue <br />
-                #75C9DB</div>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<br /><br />
-
-
-
-<table style={{width:30+'%',float:'left'}} >
-<heading><h3>Supplementary</h3></heading>
-    <tbody>
-        <tr>
-            <td style={{backgroundColor:'#2E3E4C',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',fontSize:'14px',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Japanese Indigo <br />
-                #2E3E4C</div>
-            </td>            
-        </tr>
-        <tr>
-           <td style={{backgroundColor:'#3D5265',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',fontSize:'14px',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Violet Blue  <br />
-                #3D5265</div>
-            </td>            
-        </tr>
-        <tr>
-           <td style={{backgroundColor:'#54728C',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',fontSize:'14px',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>UCLA Blue <br />
-                #54728C</div>
-            </td>
-        </tr>
-        <tr>
-           <td style={{backgroundColor:'#8DAAC3',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'#2E3E4C',fontSize:'14px',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Pewter Blue  <br />
-                #8DAAC3</div>
-            </td>
-        </tr>
-        <tr>
-           <td style={{backgroundColor:'#ACCAE5',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',fontSize:'14px',color:'#2E3E4C',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Light Steel Blue  <br />
-                #ACCAE5</div>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<table style={{width:30+'%',float:'left'}} >
-
-<heading><h3>Grays</h3></heading>
-    <tbody>
-        <tr>
-            <td style={{backgroundColor:'#000000',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',fontSize:'14px',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Black  <br />
-                #000000</div>
-            </td>            
-        </tr>
-        <tr>
-           <td style={{backgroundColor:'#808285',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',color:'white',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Old Silver  <br />
-                #808285</div>
-            </td>            
-        </tr>
-        <tr>
-           <td style={{backgroundColor:'#BCBEC0',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Mid Gray  <br />
-                #BCBEC0</div>
-            </td>
-        </tr>
-        <tr>
-           <td style={{backgroundColor:'#E6E7E8',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Silver Gray  <br />
-                #E6E7E8</div>
-            </td>
-        </tr>
-        <tr>
-           <td style={{backgroundColor:'#F9F9F9',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Ghost White <br />
-                #F9F9F9</div>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<table style={{width:30+'%',float:'left'}} >
-<heading><h3>Background</h3></heading>
-    <tbody>
-        <tr>
-            <td style={{color:'black',backgroundColor:'#FFFFFF',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',height:150+'px',fontSize:'14px',display:'flex',flexDirection:'column',justifyContent:'center'}}>White <br />  #FFFFFF</div>
-            </td>            
-        </tr>            
-    </tbody>
-</table>
-
-<table style={{width:30+'%',float:'left'}} >
-<heading><h3>Error</h3></heading>
-    <tbody>        
-        <tr>
-                <td style={{backgroundColor:'#B83230',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'white',fontSize:'14px',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Golden Gate Bridge <br /> #B83230</div>
-                </td>            
-            </tr>          
-    </tbody>
-</table>
-
-<table style={{width:30+'%',float:'left'}} >
-<heading><h3>Warning</h3></heading>
-    <tbody>
-        <tr>
-                <td style={{backgroundColor:'#FF9933',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'#2E3E4C',fontSize:'14px',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Deep Saffron<br /> #FF9933</div>
-                </td>            
-            </tr>      
-    </tbody>
-</table>
-
