@@ -1,0 +1,13 @@
+/*******************************
+        CONTENT ACCORDION
+*******************************/
+
+@contentsAccordionColor                 : @deepBlue;
+@contentsAccordionFontWeight            : @bold;
+@contentsAccordionActiveColor           : @white;
+@contentsAccordionActiveBackgroundColor : @deepBlue; 
+
+@contentsAccordionLinkWrapperWidth      : 100%;
+@contentsAccordionLinkWrapperHeight     : 1rem;
+@contentsAccordionLinkColor             : @mediumPersianBlue;
+@contentsAccordionLinkFontWeight        : @bold;

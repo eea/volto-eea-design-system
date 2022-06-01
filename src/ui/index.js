@@ -26,4 +26,6 @@ export AvatarGrid from './Card/AvatarGrid/AvatarGrid';
 
 export KeyContent from './KeyContent/KeyContent';
 
+export ContentAccordion from './Accordion/ContentAccordion/ContentAccordion';
+
 export RelatedContent from './Card/RelatedContent/RelatedContent';

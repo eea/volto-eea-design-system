@@ -10,6 +10,17 @@ export default {
     },
   },
   argTypes: {
+    readMoreVariant: {
+      description: 'Adds variant class',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: {
+          summary: false,
+        },
+      },
+    },
     toggle1: {
       description: 'Text of the accordion toggler',
       table: {
@@ -90,7 +101,7 @@ function AccordionContainer({ ...args }) {
   };
 
   return (
-    <Accordion>
+    <Accordion className={args.readMoreVariant ? 'read more' : ''}>
       <Accordion.Title
         active={activeIndex === 0}
         index={0}

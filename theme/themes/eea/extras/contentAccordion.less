@@ -1,0 +1,50 @@
+@type: 'extra';
+@element: 'contentAccordion';
+
+@import (multiple) '../../theme.config';
+
+/*----------------------------
+    CONTENT ACCORDION
+-----------------------------*/
+
+/* Read More Variation */
+.ui.accordion.contents {
+  .title {
+    color: @contentsAccordionColor;
+    font-weight: @contentsAccordionFontWeight;
+
+    i {
+      color: @contentsAccordionColor;
+    }
+
+    &:hover {
+      color: @contentsAccordionColor;
+
+      i {
+        color: @contentsAccordionColor;
+      }
+    }
+  }
+
+  .active.title {
+    background-color: @contentsAccordionActiveBackgroundColor;
+    color: @contentsAccordionActiveColor;
+
+    i {
+      color: @contentsAccordionActiveColor;
+    }
+  }
+
+  .content {
+    .read-more.wrapper {
+      width: @contentsAccordionLinkWrapperWidth;
+      height: @contentsAccordionLinkWrapperHeight;
+
+      a {
+        color: @contentsAccordionLinkColor;
+        font-weight: @contentsAccordionLinkFontWeight;
+        float: right;
+      }
+    }
+  }
+}
