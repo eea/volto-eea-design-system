@@ -26,4 +26,12 @@ export AvatarGrid from './Card/AvatarGrid/AvatarGrid';
 
 export KeyContent from './KeyContent/KeyContent';
 
+export DownloadLabeledIcon from './DownloadLabeledIcon/DownloadLabeledIcon';
+
+export NewTabLabeledIcon from './NewTabLabeledIcon/NewTabLabeledIcon';
+
+export LabeledIconGroup from './LabeledIconGroup/LabeledIconGroup';
+
+export LanguageLabeledIcon from './LanguageLabeledIcon/LanguageLabeledIcon';
+
 export RelatedContent from './Card/RelatedContent/RelatedContent';
