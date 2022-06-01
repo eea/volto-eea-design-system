@@ -1,5 +1,5 @@
 import React from 'react';
-import { Label } from 'semantic-ui-react';
+import { Label, Container, Image, Segment } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Label',
@@ -29,37 +29,101 @@ export default {
         },
       },
     },
+    importance: {
+      control: { type: 'inline-radio' },
+      defaultValue: null,
+      options: [null, 'low', 'medium', 'high', 'highlight'],
+      description: 'label class name for style',
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: {
+          summary: '',
+        },
+      },
+    },
   },
 };
 
-const Template = (args) => <Label {...args}></Label>;
+const Template = (args) => (
+  <Container>
+    <Label {...args} className={args.importance ? args.importance : ''}></Label>
+  </Container>
+);
 
 export const Default = Template.bind({});
 Default.args = {
   content: 'Label',
   pointing: false,
+  importance: null,
 };
 
-export const MediumImportance = (args) => (
-  <Label className="medium" {...args}></Label>
+export const Ribbon = (args) => (
+  <Container>
+    <Segment raised>
+      <Label
+        as="a"
+        ribbon
+        className={args.importance ? args.importance : ''}
+        {...args}
+      ></Label>
+      <Image
+        src="https://react.semantic-ui.com/images/wireframe/paragraph.png"
+        alt="paragraph"
+      ></Image>
+    </Segment>
+  </Container>
 );
-MediumImportance.args = {
-  content: 'Label',
-  pointing: false,
+
+Ribbon.args = {
+  content: 'Ribbon Label',
+  importance: null,
 };
 
-export const HighImportance = (args) => (
-  <Label className="high" {...args}></Label>
-);
-HighImportance.args = {
-  content: 'Label',
-  pointing: false,
+Ribbon.parameters = {
+  controls: { exclude: ['pointing'] },
+  hideNoControlsWarning: true,
 };
 
-export const Highlight = (args) => (
-  <Label className="highlight" {...args}></Label>
+export const Corner = (args) => (
+  <Container>
+    <Image
+      src="https://react.semantic-ui.com/images/wireframe/image.png"
+      label={{
+        as: 'a',
+        corner: 'right',
+        icon: 'save',
+        className: `${args.importance ? args.importance : ''}`,
+      }}
+      size="medium"
+      alt="image"
+    ></Image>
+  </Container>
 );
-Highlight.args = {
-  content: 'Label',
+
+Corner.args = {
+  importance: null,
+};
+
+Corner.parameters = {
+  controls: { exclude: ['pointing', 'content'] },
+  hideNoControlsWarning: true,
+};
+
+export const Basic = (args) => (
+  <Container>
+    <Label
+      {...args}
+      className={args.importance ? args.importance : ''}
+      basic
+      as="a"
+    ></Label>
+  </Container>
+);
+
+Basic.args = {
+  content: 'Basic Label',
   pointing: false,
+  importance: null,
 };

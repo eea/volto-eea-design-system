@@ -12,59 +12,26 @@
   }
 }
 
-div.eea-tab {
-  a.item {
-    font-size: @headerSize;
-  }
+// Contain images inside vertical tab content
+.stretched.wide.column > .tab img {
+  max-width: @verticalTabPaneImageMaxWidth;
+}
 
-  .tab {
-    font-size: @contentSize;
-  }
+.ui.pointing.secondary.menu::-webkit-scrollbar {
+  height: @mobileTabScrollbarHeight;
+}
 
-  .ui.secondary.pointing.menu {
-    border-color: @silverGray;
-
-    .active.item {
-      border-color: @secondaryColor !important;
-      color: @secondaryColor !important;
-
-      &:hover {
-        border-color: @secondaryColorHover;
-        color: @secondaryColorHover;
-      }
-    }
-  }
-
-  .ui.bottom.attached.segment.active.tab {
-    border: none;
+@media only screen and (min-width: @tabletBreakpoint) {
+  .ui.pointing.secondary.menu::-webkit-scrollbar {
+    height: @tabletTabScrollbarHeight;
   }
 }
 
-/* For semantic ui responsive bug */
-div.eea-tab .ui.secondary.vertical.menu {
-  max-width: 100%;
-}
-
-@media only screen and (max-width: @mobileBreakpoint) {
-  div.eea-tab .ui.secondary.pointing.menu {
-    padding-bottom: 2px;
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    a.item {
-      padding: 12px 8px;
-      font-size: @headerSizeResponsive;
-    }
-  }
-
-  div.eea-tab .ui.secondary.pointing.vertical.menu {
-    border: none;
-    overflow-x: unset;
-    overflow-y: unset;
-
-    a.item {
-      padding: 12px 8px;
-      font-size: @headerSizeResponsive;
+@media only screen and (max-width: @largestMobileScreen) {
+  .ui.pointing.secondary.vertical.menu {
+    .item {
+      padding: @mobileItemPadding;
+      font-size: @mobileItemFontSize;
     }
   }
 }

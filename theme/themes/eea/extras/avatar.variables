@@ -2,33 +2,27 @@
             Avatar
 *******************************/
 
-/* Big */
-@avatarWidthBig                 : 100%;
+/* Global */
+@avatarWidth                    : 100%;
 @avatarWrapperWidth             : 100%;
-@avatarImageWrapperWidth        : 100%;
-@avatarImageHeightBig           : 150px;
-@avatarImageWidthBig            : 150px;
-@avatarImageBorderRadius        : 50%;
+@avatarWrapperGap               : @largeGap;
 @avatarContentWrapperWidth      : 100%;
-@avatarContentMarginTop         : 17.84px;
-@avatarContentTitleFontWeight   : 700;
-@avatarContentTitleFontSize     : 36px;
-@avatarContentTitleLineHeight   : 54px;
-@avatarContentTitleLetterSpacing: -0.015em;
-@avatarContentTitleMarginBottom : 0px;
-@avatarMetadataFontSize         : 24px;
-@avatarMetadataFontWeight       : 400;
-@avatarMetadataMarginTop        : 8.84px;
+@avatarImageBorderRadius        : 50%;
+@avatarContentTitleMarginBottom : 0;
+@avatarImageWrapperWidth        : 100%;
+@avatarImageBackgroundSize      : cover;
+@avatarContentTitleFontWeight   : @bold;
+@avatarContentTitleFontSize     : 1.25rem;
 
+/* Big */
+@avatarBigImageHeight           : 173px;
+@avatarBigImageWidth            : 173px;
+@avatarBigMetadataFontSize      : 1.25rem;
+@avatarBigMetadataFontWeight    : @normal;
 
 /* Small */
-@avatarWidthSmall                       : 100%;
-@avatarImageHeightSmall                 : 130px;
-@avatarImageWidthSmall                  : 130px;
-@avatarContentMarginTopSmall            : 20px;
-@avatarContentTitleFontWeightSmall      : 500;
-@avatarContentTitleFontSizeSmall        : 20px;
-@avatarContentTitleLineHeightSmall      : 30px;
-@avatarMetadataFontSizeSmall            : 16px;
-@avatarMetadataFontWeightSmall          : 300;
-@avatarMetadataMarginTop                : 8.84px;
+@avatarSmallImageHeight         : 135px;
+@avatarSmallImageWidth          : 135px;
+@avatarSmallTitleColor          : @secondaryColor;
+@avatarSmallMetadataFontSize    : 1rem;
+@avatarSmallMetadataFontWeight  : 300;

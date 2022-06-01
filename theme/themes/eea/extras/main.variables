@@ -27,7 +27,10 @@
 @checkboxColor: @white;
 @checkboxBoxShadow: none;
 
+/* Page Add */
+@pageAddMinHeight: 750px;
+
 /*-------------------
       login.less
 --------------------*/
-@loginContainerMaxWidth: 680px !important;
+@loginContainerMaxWidth: 376px !important;
