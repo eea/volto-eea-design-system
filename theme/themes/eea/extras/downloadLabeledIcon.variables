@@ -1,0 +1,45 @@
+/*******************************
+        Download Labeled Icon
+*******************************/
+
+/* Body */
+@downloadLabeledIconWidth: min-content;
+@downloadLabeledIconMinWidth: 5rem;
+@downloadLabeledIconTextAlign: center;
+
+/* Label */
+@downloadLabeledIconLabelWidth: 100%;
+@downloadLabeledIconLabelFontSize: 0.875rem;
+@downloadLabeledIconLabelColor: @deepBlue;
+
+/* Wrapper */
+@downloadLabeledIconWrapperWidth: 100%;
+@downloadLabeledIconWrapperPadding: 0.5rem;
+
+/* Icon */
+@downloadLabeledIconIconFontSize: 1.563rem;
+@downloadLabeledIconWrapperIconHeight: 1.25rem;
+@downloadLabeledIconIconWidth: 1.25rem;
+@downloadLabeledIconColor: @mediumPersianBlue;
+
+/* Link Wrapper */
+@downloadLabeledIconLinkWrapperBackgroundColor: #f9f9f9;
+@downloadLabeledIconLinkWrapperZIndex: 1;
+@downloadLabeledIconLinkWrapperWidth: 100%;
+
+/* Dropdown */
+@downloadLabeledIconDropdownWIdth: 100%;
+
+/* List */
+@downloadLabeledIconUlMargin: 0.25rem 0;
+@downloadLabeledIconUlPaddingInlineStart: 0.25rem 0px;
+@downloadLabeledIconLiHover: @japaneseIndigo;
+
+/* Link */
+@downloadLabeledIconALinkFontWeight: 700;
+@downloadLabeledIconLinkFontSize: 0.875rem;
+@downloadLabeledIconLinkIconFontSize: 1rem;
+@downloadLabeledIconLinkIconPadding: 0.125rem 0.875rem;
+@downloadLabeledIconLinkIconLineHeight: 1.25rem;
+@downloadLabeledIconALinkColor: @japaneseIndigo;
+@downloadLabeledIconALinkColorHover: @white;
