@@ -1,3 +1,3 @@
 import Iframe from '../iframe_component.mdx';
 
-<Iframe id='components-blockquote--default' > </Iframe>
+<Iframe id='components-callout--default' > </Iframe>
