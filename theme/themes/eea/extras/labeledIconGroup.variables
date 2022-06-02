@@ -1,0 +1,10 @@
+
+/*******************************
+        Labeled Icon Group
+*******************************/
+
+@labeledIconGroupWidth : 100%;
+@labeledIconGroupPadding : 0 2rem;
+
+@labeledIconGroupWrapperMarginLeft: 0.25rem;
+@labeledIconGroupWrapperMarginRight: 0.25rem;
