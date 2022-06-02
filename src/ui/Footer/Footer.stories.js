@@ -74,7 +74,7 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  header: 'The EEA also contributes to',
+  header: 'EEA information systems',
   logosHeader: 'Managed by',
   contactHeader: 'Contact Us',
   actions: [
@@ -108,8 +108,8 @@ Default.args = {
     { icon: 'ri-rss-fill', link: '/#' },
   ],
   contacts: [
-    { icon: 'ri-chat-1-line', text: 'Ask your question' },
-    { icon: 'ri-mail-line', text: 'Sign up to our newsletter' },
+    { icon: 'ri-chat-1-line', text: 'Ask your question', link: '/#' },
+    { icon: 'ri-mail-line', text: 'Sign up to our newsletter', link: '/#' },
   ],
   address: 'Kongens Nytorv 6 1050 Copenhagen K (+45) 33 36 71 00',
 };
