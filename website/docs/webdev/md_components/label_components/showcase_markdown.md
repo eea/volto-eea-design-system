@@ -1,17 +1,17 @@
 import Iframe from '../iframe_component.mdx';
 
-## Low Importance
+## Default
 
 <Iframe id='components-label--default'height="120" > </Iframe>
 
-## Medium Importance
+## Basic
 
-<Iframe id='components-label--medium-importance' height="120"> </Iframe>
+<Iframe id='components-label--basic' height="120"> </Iframe>
 
-## High Importance
+## Ribbon
 
-<Iframe id='components-label--high-importance' height="120"> </Iframe>
+<Iframe id='components-label--ribbon' height="320"> </Iframe>
 
-## Highlight
+## Corner
 
-<Iframe id='components-label--highlight'height="120" > </Iframe>
+<Iframe id='components-label--corner'height="300" > </Iframe>
