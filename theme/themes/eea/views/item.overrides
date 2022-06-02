@@ -6,3 +6,40 @@
 .ui.items:not(.unstackable) > .item > .image {
   margin: @imageMargin;
 }
+
+.item .tile.image {
+  width: @tileImageWidth;
+  height: @tileImageHeight;
+}
+
+.ui.items.row > .item {
+  margin: @mobileRowItemMargin;
+}
+
+// As semantic does for non unstacable items
+// so columns does not affect margin in mobiles
+.ui.items.row > .item:last-child {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: @largestMobileScreen) {
+  .ui.items.row > .item {
+    flex-direction: row;
+  }
+  
+  .ui.items.row > .item > .image + .content {
+    padding: 0em 0em 0em @mobileContentImageDistance;
+  }
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .ui.items.row > .item {
+    margin: @tabletRowItemMargin;
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  .ui.items.row > .item {
+    margin: @desktopRowItemMargin;
+  }
+}
