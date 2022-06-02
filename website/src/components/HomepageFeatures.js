@@ -4,32 +4,44 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        EEA Design System was created from the ground up to be easily installed
-        and used a framework for your website.
-      </>
-    ),
+    title: 'Web developer',
+    link: '/volto-eea-design-system/docs/intro',
+    Svg: require('../../static/img/undraw_proud_coder_re_exuy.svg').default,
+    description: <>Design system for web developers.</>,
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
-    description: <>Reasons 3</>,
+    title: 'Web designer',
+    link: '/volto-eea-design-system/docs/intro',
+    Svg: require('../../static/img/undraw_static_website_re_x70h.svg').default,
+    description: <>Design system for web designers.</>,
   },
   {
-    title: 'Powered by React',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
-    description: <>Reasons 2</>,
+    title: 'Web content creator',
+    Svg: require('../../static/img/undraw_add_post_re_174w.svg').default,
+    description: <>Tips and tricks for writing for the web.</>,
+  },
+  {
+    title: 'Publication writer',
+    Svg: require('../../static/img/undraw_education_f8ru.svg').default,
+    description: <>Writing manual for publications.</>,
+  },
+  {
+    title: 'Publication designer',
+    Svg: require('../../static/img/undraw_online_articles_re_yrkj.svg').default,
+    description: <>Design system for publications.</>,
+  },
+  {
+    title: 'Data scientist',
+    Svg: require('../../static/img/undraw_all_the_data_re_hh4w.svg').default,
+    description: <>Design system for data scientists.</>,
   },
 ];
 
-function Feature({ Svg, title, description }) {
+function Feature({ Svg, title, description, link }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} alt={title} />
+        <a href={link}><Svg className={styles.featureSvg} alt={title} /></a>
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
@@ -43,6 +55,7 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
+        <h2 className="text--center">I am a...</h2>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
