@@ -36,7 +36,7 @@ Quote.Source = ({ children, ...rest }) => (
   </p>
 );
 
-Quote.SourceInfo = ({ children, ...rest }) => (
+Quote.Extra = ({ children, ...rest }) => (
   <p className="info" {...rest}>
     {children}
   </p>

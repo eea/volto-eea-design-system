@@ -11,7 +11,7 @@
 @verticalAlign: baseline;
 @verticalMargin: 0em;
 @horizontalMargin: @relative2px;
-@backgroundColor: @lowImportanceBackground;
+@backgroundColor: @grey;
 @color: @white;
 @backgroundImage: none;
 @verticalPadding: 0.5833em; /* medium is not @emSize custom value required */
@@ -19,7 +19,7 @@
 @borderRadius: @defaultBorderRadius;
 @textTransform: none;
 @fontWeight: @normal;
-@borderWidth: 0;
+@borderWidth: 1px;
 @border: none;
 
 @labelLineHeight: inherit;
@@ -158,6 +158,19 @@
 @highImportanceBackground: #005293;
 @highlightImportanceBackground: @secondaryColor;
 
+/* Hover Colors */
+@lowImportanceHoverBackground: darken(@deepBlue,5);
+@mediumImportanceHoverBackground: darken(#346F83,5);
+@highImportanceHoverBackground: darken(#005293,5);
+@highlightImportanceHoverBackground: darken(@secondaryColor,5);
+
+@importanceHoverTextColor: @white;
+
+@lowImportanceBasicTextColor: @deepBlue;
+@mediumImportanceBasicTextColor: #346F83;
+@highImportanceBasicTextColor: #005293;
+@highlightImportanceBasicTextColor: @secondaryColor;
+
 @redTextColor: @white;
 @orangeTextColor: @white;
 @yellowTextColor: @white;
@@ -235,7 +248,7 @@
 @emptyCircleSize: 0.5em;
 
 /* Pointing */
-@pointingBorderColor: inherit;
+@pointingBorderColor: @grey;
 @pointingBorderWidth: 0;
 @pointingVerticalDistance: 1em;
 @pointingTriangleSize: 0.6666em;
@@ -246,6 +259,7 @@
 
 /* Basic Pointing */
 @basicPointingTriangleOffset: -@pointingBorderWidth;
+@basicImportanceBorderWidth: 0 0 1px 1px;
 
 /* Floating */
 @floatingTopOffset: -1em;
