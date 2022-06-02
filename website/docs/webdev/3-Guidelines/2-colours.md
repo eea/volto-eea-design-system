@@ -129,18 +129,61 @@ Supplementary colors are best for:
 
  
 
- 
-
- 
-
 ### Grays 
 
 Use as the text color for dark-on-light designs, or as the background for inverted designs. 
+
+<table>
+<heading><h3>Grays</h3></heading>
+    <tbody>
+        <tr>
+            <td style={{backgroundColor:'#000000',width:200+'px',height:150+'px',textAlign:'center'}}>
+                <div style={{color:'white',fontSize:'14px',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Black  <br />
+                #000000</div>
+            </td>            
+        </tr>
+        <tr>
+           <td style={{backgroundColor:'#808285',width:200+'px',height:150+'px',textAlign:'center'}}>
+                <div style={{width:100+'%',color:'white',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Old Silver  <br />
+                #808285</div>
+            </td>            
+        </tr>
+        <tr>
+           <td style={{backgroundColor:'#BCBEC0',width:200+'px',height:150+'px',textAlign:'center'}}>
+                <div style={{width:100+'%',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Mid Gray  <br />
+                #BCBEC0</div>
+            </td>
+        </tr>
+        <tr>
+           <td style={{backgroundColor:'#E6E7E8',width:200+'px',height:150+'px',textAlign:'center'}}>
+                <div style={{width:100+'%',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Silver Gray  <br />
+                #E6E7E8</div>
+            </td>
+        </tr>
+        <tr>
+           <td style={{backgroundColor:'#F9F9F9',width:200+'px',height:150+'px',textAlign:'center'}}>
+                <div style={{width:100+'%',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Ghost White <br />
+                #F9F9F9</div>
+            </td>
+        </tr>
+    </tbody>
+</table>
  
 
 ### Background 
 
 Use this color as the background for your dark-on-light designs, or the text color of an inverted design. 
+
+<table>
+<heading><h3>Background</h3></heading>
+    <tbody>
+        <tr>
+            <td style={{color:'black',backgroundColor:'#FFFFFF',width:200+'px',height:150+'px',textAlign:'center'}}>
+                <div style={{width:100+'%',height:150+'px',fontSize:'14px',display:'flex',flexDirection:'column',justifyContent:'center'}}>White <br />  #FFFFFF</div>
+            </td>            
+        </tr>            
+    </tbody>
+</table>
 
 ### Error color  
  <div style={{width:'100%',float:'left'}}>
@@ -200,21 +243,6 @@ Use this color as the background for your dark-on-light designs, or the text col
 
 <br />
 
-### Tools for creating color palettes 
-
-You can use the following tools for creating color wheels and additional shades for every main color at each of EEA's network sites.
-
-https://color.adobe.com/create/color-wheel 
-
-https://coolors.co/  
-
-**Colors for maps**
-
-For optional creation of additional color shades to use in maps and charts you can use the following tools.
-
-https://colorbrewer2.org
-
-https://carto.com/carto-colors/ 
 
 ## Main brand colors variations
 Please use the following colors with the text color combination indicated in the table to be aligned with WCAG requirements.
@@ -332,53 +360,7 @@ Japanese Indigo: #2E3E4C
         </tr>
     </tbody>
 </table>
-<table style={{width:30+'%',float:'left'}} >
 
-<heading><h3>Grays</h3></heading>
-    <tbody>
-        <tr>
-            <td style={{backgroundColor:'#000000',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',fontSize:'14px',width:100+'%',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Black  <br />
-                #000000</div>
-            </td>            
-        </tr>
-        <tr>
-           <td style={{backgroundColor:'#808285',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',color:'white',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Old Silver  <br />
-                #808285</div>
-            </td>            
-        </tr>
-        <tr>
-           <td style={{backgroundColor:'#BCBEC0',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Mid Gray  <br />
-                #BCBEC0</div>
-            </td>
-        </tr>
-        <tr>
-           <td style={{backgroundColor:'#E6E7E8',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Silver Gray  <br />
-                #E6E7E8</div>
-            </td>
-        </tr>
-        <tr>
-           <td style={{backgroundColor:'#F9F9F9',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',fontSize:'14px',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>Ghost White <br />
-                #F9F9F9</div>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<table style={{width:30+'%',float:'left'}} >
-<heading><h3>Background</h3></heading>
-    <tbody>
-        <tr>
-            <td style={{color:'black',backgroundColor:'#FFFFFF',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{width:100+'%',height:150+'px',fontSize:'14px',display:'flex',flexDirection:'column',justifyContent:'center'}}>White <br />  #FFFFFF</div>
-            </td>            
-        </tr>            
-    </tbody>
-</table>
 
 <table style={{width:30+'%',float:'left'}} >
 <heading><h3>Error</h3></heading>
@@ -402,3 +384,22 @@ Japanese Indigo: #2E3E4C
     </tbody>
 </table>
 
+<div style={{clear:'both'}}>
+</div>
+
+
+## Tools for creating color palettes 
+
+You can use the following tools for creating color wheels and additional shades for every main color at each of EEA's network sites.
+
+https://color.adobe.com/create/color-wheel
+
+https://coolors.co/
+
+**Colors for maps**
+
+For optional creation of additional color shades to use in maps and charts you can use the following tools.
+
+https://colorbrewer2.org
+
+https://carto.com/carto-colors/ 
