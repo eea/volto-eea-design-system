@@ -41,6 +41,10 @@ footer .theme-sites {
   }
 }
 
+.subfooter .ui.grid {
+  align-items: center;
+}
+
 .subfooter .item {
   margin-top: @mobileItemMarginTop;
 
@@ -142,10 +146,9 @@ footer .theme-sites {
     }
   }
 
-  .eionet.logo {
-    img {
-      margin-left: @tabletEionetLogoMarginLeft;
-    }
+  .eionet.logo img {
+    margin-left: @tabletEionetLogoMarginLeft;
+    width: @tabletEionetLogoWidth;    
   }
 
   .subfooter .contact-block {
@@ -175,8 +178,13 @@ footer .theme-sites {
     padding: @computerThemeSitesPadding;
 
     .header {
-      font-size: @desktopFooterTitleFontSize;
+      font-size: @computerFooterTitleFontSize;
     }
+  }
+
+  .subfooter .logo-header {
+    // To match the figma align
+    margin-left: @computerLogoHeaderMarginLeft
   }
 
   .subfooter .item {
@@ -190,7 +198,7 @@ footer .theme-sites {
 
     .header {
       margin-bottom: @computerItemHeaderMarginBottom;
-      font-size: @desktopFooterTitleFontSize;
+      font-size: @computerFooterTitleFontSize;
     }
 
     .social a i.icon {
@@ -207,8 +215,13 @@ footer .theme-sites {
     }
   }
 
+  .eionet.logo img {
+    width: @computerEionetLogoWidth;
+    margin-left: 0;
+  }
+
   .subfooter .menu {
-    width: @desktopMenuWidth;
+    width: @computerMenuWidth;
   
     a {
       font-size: @computerMenuFontSize;

@@ -11,7 +11,7 @@ import Cca from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo
 import Copernicus from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/copernicus.svg';
 import Industry from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/industry.svg';
 import Marine from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/marine.svg';
-import EIONETLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eionet-full.svg';
+import EIONETLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EionetFull.svg';
 import EEALogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EEA-Logo-White-2.svg';
 
 export default {
@@ -29,7 +29,9 @@ const Template = (args) => (
         <Grid>
           <Grid.Column mobile={12} tablet={5} computer={6}>
             <div className="item">
-              <p className="header text-center">{args.logosHeader}</p>
+              <p className="header text-center logo-header">
+                {args.logosHeader}
+              </p>
 
               <Grid>
                 <Grid.Column mobile={6} tablet={12} computer={5}>
