@@ -232,7 +232,7 @@ These colors highlight or complement the primary colors. These are to be used sp
         <tbody>
             <tr>
             <td style={{backgroundColor:'#6989A5',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#6989A5</div>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#6989A5</div>
                 </td>            
             </tr>
         </tbody>
@@ -290,7 +290,7 @@ These colors highlight or complement the primary colors. These are to be used sp
         <tbody>
             <tr>
             <td style={{backgroundColor:'#E6E7E8',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#E6E7E8</div>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#E6E7E8</div>
                 </td>            
             </tr>
         </tbody>
@@ -426,6 +426,7 @@ Not all colors have to be used - sometimes a simple color scheme works best
         </tbody> </table>
     
 </div>
+
 
 
 <br />
@@ -585,7 +586,7 @@ Not all colors have to be used - sometimes a simple color scheme works best
         <tbody>
             <tr>
             <td style={{backgroundColor:'#FAD936',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FAD936</div>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FAD936</div>
                 </td>            
             </tr>
         </tbody>
@@ -852,7 +853,7 @@ Not all colors have to be used - sometimes a simple color scheme works best
         <tbody>
             <tr>
             <td style={{backgroundColor:'#E6E7E8',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#E6E7E8</div>
+                    <div style={{color:'black',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#E6E7E8</div>
                 </td>            
             </tr>
         </tbody>
@@ -894,6 +895,7 @@ Not all colors have to be used - sometimes a simple color scheme works best
     </table>
 </div>
 
+
 ### Tools for creating color palettes 
 
 You can use the following tools for creating color wheels and additional shades for every main color at each of EEA's network sites.
@@ -901,6 +903,7 @@ You can use the following tools for creating color wheels and additional shades 
 https://color.adobe.com/create/color-wheel 
 
 https://coolors.co/  
+
 
 **Colors for maps**
 
