@@ -1,5 +1,6 @@
 ---
 title: Use of images
+description: ""
 order: 4
 ---
 

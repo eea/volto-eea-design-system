@@ -94,7 +94,7 @@
 
 // Maps, Video and Image blocks use buttons without
 // icons, fix them in css for now
-#page-edit .basic.button {
+.toolbar-inner .ui.buttons .basic.button {
   padding: 0;
   background-color: transparent !important;
   box-shadow: none !important;

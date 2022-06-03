@@ -1,6 +1,6 @@
 ---
 title: Developer Guidelines
-description: Several rules and guidelines for developers of the EEA Design System
+description: Developer guidelines for developers of the EEA Design System
 hide_table_of_contents: false
 ---
 
