@@ -2,7 +2,7 @@
 
 module.exports = {
   title: 'EEA Design System',
-  tagline: 'Consistent user experience for our digital products',
+  tagline: 'Creating a consistent user experience for our digital products',
   url: 'https://eea.github.io/',
   deploymentBranch: 'develop-itml',
   baseUrl: '/volto-eea-design-system/',
@@ -19,7 +19,7 @@ module.exports = {
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
-      disableSwitch: true,
+      disableSwitch: false,
     },
     navbar: {
       title: 'EEA Design System',
@@ -28,12 +28,30 @@ module.exports = {
         src: 'img/eea_icon.png',
       },
       items: [
-        // {
-        //   type: 'doc',
-        //   docId: 'intro',
-        //   position: 'left',
-        //   label: 'EEA Component Library',
-        // },
+        {
+          to: 'docs/category/components',
+          label: 'Components',
+          activeBaseRegex: 'docs/(webdev|category)/(Components|components)',
+          position: 'left',
+        },
+        {
+          to: 'docs/category/web-content',
+          label: 'Web content',
+          activeBaseRegex: 'docs/(category/web-content|webcontent)',
+          position: 'left',
+        },
+        {
+          to: 'docs/category/publications',
+          label: 'Publications',
+          activeBaseRegex: 'docs/(category/publications|pubguide)',
+          position: 'left',
+        },
+        {
+          to: 'docs/category/maps-and-charts',
+          label: 'Maps and charts',
+          activeBaseRegex: 'docs/(dataguide|category/maps-and-charts)',
+          position: 'left',
+        },
         {
           href: 'https://github.com/eea/volto-eea-design-system',
           label: 'GitHub',
