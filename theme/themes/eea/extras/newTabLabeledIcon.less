@@ -1,0 +1,41 @@
+@type: 'extra';
+@element: 'newTabLabeledIcon';
+
+@import (multiple) '../../theme.config';
+
+/*******************************
+      New Tab Labeled Icon
+*******************************/
+.eea.new.tab.labeled.icon {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: @newTabLabeledIconWidth;
+  min-width: @newTabLabeledIconMinWidth;
+  text-align: @newTabLabeledIconTextAlign;
+
+  .label {
+    width: @newTabLabeledIconLabelWidth;
+    font-size: @newTabLabeledIconLabelFontSize;
+    color: @newTabLabeledIconLabelColor;
+    cursor: pointer;
+  }
+
+  .icon.wrapper {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: @newTabLabeledIconIconWrapperWidth;
+    padding: @newTabLabeledIconWrapperPadding;
+
+    .icon {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-size: @newTabLabeledIconIconFontSize;
+      color: @newTabLabeledIconColor;
+      width: @newTabLabeledIconIconWidth;
+      height: @newTabLabeledIconWrapperIconHeight;
+    }
+  }
+}

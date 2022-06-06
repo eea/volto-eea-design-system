@@ -35,7 +35,7 @@
 @space-35: @spacer * 35; //140px;
 
 @rem-space-025: @1px;
-@rem-space-05: @2px;
+@rem-space-050: @2px;
 @rem-space-1: @4px;
 @rem-space-2: @8px;
 @rem-space-3: @12px;
@@ -44,7 +44,7 @@
 @rem-space-5: @20px;
 @rem-space-6: @24px;
 @rem-space-7: @28px;
-@rem-space-7-5: @30px;
+@rem-space-7-50: @30px;
 @rem-space-8: @32px;
 @rem-space-9: @36px;
 @rem-space-10: @40px;
@@ -60,16 +60,16 @@
 @rem-space-20: @80px;
 
 @em-space-025: @relative1px;
-@em-space-05: @relative2px;
+@em-space-050: @relative2px;
 @em-space-1: @relative4px;
 @em-space-2: @relative8px;
 @em-space-3: @relative12px;
-@em-space-3-5: @relative14px;
+@em-space-3-50: @relative14px;
 @em-space-4: @relative16px;
 @em-space-5: @relative20px;
 @em-space-6: @relative24px;
 @em-space-7: @relative28px;
-@em-space-7-5: @relative30px;
+@em-space-7-50: @relative30px;
 @em-space-8: @relative32px;
 @em-space-9: @relative36px;
 @em-space-10: @relative40px;
@@ -83,3 +83,24 @@
 @em-space-18: @relative72px;
 @em-space-19: @relative76px;
 @em-space-20: @relative80px;
+
+// Size scale
+// Used for buttons, inputs, labels, avatars etc.
+@size: @space-4;
+
+@size-025: @size * 0.25;          // 4px
+@size-050: @size * 0.5;           // 8px
+@size-1:   @size;                 // 16px
+@size-2:   @size-1  +  @space-1;  // 20px
+@size-3:   @size-2  +  @space-1;  // 24px
+@size-4:   @size-3  +  @space-1;  // 28px
+@size-5:   @size-4  +  @space-1;  // 32px
+@size-6:   @size-5  +  @space-2;  // 40px
+@size-7:   @size-6  +  @space-2;  // 48px
+@size-8:   @size-7  +  @space-4;  // 64px
+@size-9:   @size-8  +  @space-4;  // 80px
+@size-10:  @size-9  +  @space-10; // 120px
+@size-11:  @size-10 +  @space-10; // 160px
+@size-12:  @size-11 +  @space-20; // 240px
+@size-13:  @size-12 +  @space-20; // 320px
+@size-14:  @size-13 +  @size-11;  // 480px
