@@ -91,9 +91,7 @@ const Metadata = (args) => (
 
 const Template = (args) => (
   <Hero {...args} image_url={args.image ? imgUrl : null}>
-    <Hero.Text {...args}>
-      <h2>{args.text}</h2>
-    </Hero.Text>
+    <Hero.Text {...args}>{args.text}</Hero.Text>
     <Hero.Meta {...args}>
       <Metadata {...args} />
     </Hero.Meta>

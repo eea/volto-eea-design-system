@@ -42,12 +42,8 @@ function Hero({
 }
 
 Hero.Text = ({ quoted, textVariant, textAlign, children }) => (
-  <div
-    className={`hero-block-text color-fg-${textVariant} ${
-      quoted ? 'quoted' : ''
-    } text-${textAlign}`}
-  >
-    {children}
+  <div className={`hero-block-text color-fg-${textVariant} text-${textAlign}`}>
+    <h2 className={`${quoted ? 'quoted' : ''}`}>{children}</h2>
   </div>
 );
 Hero.Meta = ({ metaAlign, children }) => (
