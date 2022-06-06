@@ -1,0 +1,23 @@
+/*******************************
+        New Tab Labeled Icon
+*******************************/
+
+/* Body */
+@newTabLabeledIconWidth: min-content;
+@newTabLabeledIconMinWidth: 7rem;
+@newTabLabeledIconTextAlign: center;
+
+/* Label */
+@newTabLabeledIconLabelWidth: 100%;
+@newTabLabeledIconLabelFontSize: 0.875rem;
+@newTabLabeledIconLabelColor: @deepBlue;
+@newTabLabeledIconColor: @mediumPersianBlue;
+
+/* Icon Wrapper */
+@newTabLabeledIconIconWrapperWidth: 100%;
+@newTabLabeledIconWrapperPadding: 0.5rem;
+
+/* Icon */
+@newTabLabeledIconIconFontSize: 1.563rem;
+@newTabLabeledIconWrapperIconHeight: 1.25rem;
+@newTabLabeledIconIconWidth: 1.25rem;
