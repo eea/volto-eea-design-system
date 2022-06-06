@@ -41,6 +41,7 @@
   color: @topSectionItemColor;
   font-size: @mobileTopSectionItemFontSize;
 }
+
 .top.bar .ui.dropdown {
   border: none !important;
   height: auto !important;
@@ -62,7 +63,7 @@
 
 .top.bar .ui.dropdown .menu,
 .top.bar .ui.dropdown .menu .item {
-  font-size: 12px;
+  font-size: @mobileDropdownMenuFontSize;
   color: @dropdownColor;
 }
 
@@ -88,6 +89,12 @@
   }
 }
 
+.top.bar .ui.dropdown i.chevron.down.icon {
+  position: absolute;
+  font-size: 1.1rem;
+  top: -@rem-space-1;
+}
+
 /* Official union dropdown */
 .top.bar .official-union {
   display: flex;
@@ -99,7 +106,7 @@
 
   .ui.dropdown {
     .menu {
-      padding: @mobileOfficialUnionPadding;
+      padding: @officialUnionPadding;
       left: @mobileOfficialUnionMenuLeft;
 
       .content {
@@ -142,8 +149,6 @@
 
 /* Language dropdown */
 #language-switcher {
-  font-size: @mobileLanguageFontSize;
-
   img {
     width: @mobileOfficialUnionImageWidth;
   }
@@ -175,6 +180,7 @@
   height: 100%;
   position: absolute;
 }
+
 .main.bar {
   scrollbar-gutter: stable;
   background: @headerMainSectionBackground;
@@ -201,28 +207,27 @@
         padding-right: 0;
       }
     }
+  }
+}
 
-    .main-menu {
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
-      width: 100%;
+.main-menu {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
 
-      .item {
-        //place-self: @mainMenuItemPlaceSelf;
-        a {
-          color: @mainMenuItemColor;
-          font-size: @headerLargeFontSize; // fallback font size
-          font-size: @mainMenuItemFontSize;
-          font-weight: @mainMenuItemFontWeight;
-        }
-      }
-
-      .item.active {
-        color: @mainMenuItemActiveColor;
-        border-bottom: @mainMenuItemActiveBorder;
-      }
+  .item {
+    a {
+      color: @mainMenuItemColor;
+      font-size: @headerLargeFontSize; // fallback font size
+      font-size: @mainMenuItemFontSize;
+      font-weight: @mainMenuItemFontWeight;
     }
+  }
+
+  .item.active {
+    color: @mainMenuItemActiveColor;
+    border-bottom: @mainMenuItemActiveBorder;
   }
 }
 
@@ -351,7 +356,7 @@
   
   .top.bar .ui.dropdown .menu,
   .top.bar .ui.dropdown .menu .item {
-    font-size: 14px
+    font-size: @tabletDropdownMenuFontSize;
   }
 
   /* Official union dropdown */
@@ -363,7 +368,6 @@
     }
     .ui.dropdown {
       .menu {
-        padding: @tabletOfficialUnionPadding;
         left: @tabletOfficialUnionMenuLeft;
 
         .content {
@@ -375,8 +379,6 @@
 
   /* Language dropdown */
   #language-switcher {
-    font-size: @tabletLanguageFontSize;
-
     img {
       width: 19px;
     }

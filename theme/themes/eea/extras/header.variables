@@ -55,15 +55,15 @@
 @dropdownMenuItemColorHover           : @white;
 @dropdownMenuItemBackgroundColorHover : @blue-grey-6;
 @dropdownMenuItemPadding              : @rem-space-050 @rem-space-5;
+@mobileDropdownMenuFontSize           : @font-size-00;
+@tabletDropdownMenuFontSize           : @font-size-0;
 
 // Official Union
 @mobileOfficialUnionGap               : 0;
 @tabletOfficialUnionGap               : @rem-space-2;
-@officialUnionMenuFontSize            : @headerMediumFontSize;
 @officialUnionLinkFontWeight          : @bold;
 @officialUnionLinkColor               : @blue-grey-6;
-@mobileOfficialUnionPadding           : 0.313rem;
-@tabletOfficialUnionPadding           : 0.75rem;
+@officialUnionPadding                 : @rem-space-3;
 @mobileOfficialUnionMaxWidth          : 220px;
 @tabletOfficialUnionMaxWidth          : 373px;
 @mobileOfficialUnionImageWidth        : 17px;
@@ -73,14 +73,11 @@
 
 // Theme Sites
 @themeSitesMenuWidth                  : 210px;
-@themeSitesMenuSiteLinkColor          : @japaneseIndigo;
+@themeSitesMenuSiteLinkColor          : @blue-grey-6;
 @themeSitesMenuSiteLinkFontWeight     : @normal;
-@themeSitesMenuItemPadding            : 0.125rem 0.313rem;
 @themeSitesMenuLeft                   : -35px;
 
 // Language
-@mobileLanguageFontSize               : @font-size-00;
-@tabletLanguageFontSize               : @headerMediumFontSize;
 @tabletLanguageMenuTop                : 18px;
 @languageMenuPadding                  : @rem-space-050 @rem-space-5;
 @languageMenuItemFontWeight           : @normal;
@@ -96,15 +93,14 @@
 @mobileLogoMaxWidth                   : 122px;
 @tabletLogoMaxWidth                   : 252px;
 @computerLogoMaxWidth                 : 348px;
-@mobileLogoMarginTop                  : 0.563rem;
-@tabletLogoMarginTop                  : 0.938rem;
-@computerLogoMarginTop                : 1.25rem;
+@mobileLogoMarginTop                  : @rem-space-2;
+@tabletLogoMarginTop                  : @rem-space-3-5;
+@computerLogoMarginTop                : @rem-space-5;
 
 /* Main menu */
-@mainMenuItemColor                    : @deepBlue;
+@mainMenuItemColor                    : @tertiaryColor;
 @mainMenuItemFontSize                 : ~"min(max(0.875rem, 1.5vw), 1.125rem)";
 @mainMenuItemFontWeight               : 500;
-@mainMenuItemPlaceSelf                : flex-end;
 @mainMenuItemActiveColor              : @secondaryColor;
 @mainMenuItemActiveBorder             : 3px solid @secondaryColor;
 

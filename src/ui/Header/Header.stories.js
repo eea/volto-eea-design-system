@@ -4,6 +4,7 @@ import { Dropdown, Image, Segment, Container } from 'semantic-ui-react';
 import { Logo } from '@eeacms/volto-eea-design-system/ui';
 
 import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea-logo.svg';
+import InvertedLogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EEA-Logo-White-2.svg';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
 
@@ -42,6 +43,15 @@ export default {
         type: { summary: 'boolean' },
       },
     },
+    MainMenuVariation: {
+      control: { type: 'select' },
+      options: ['primary', 'secondary', 'tertiary', 'white'],
+      description: 'Main menu color variation',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: '' },
+      },
+    },
   },
   decorators: [(Story) => <Story />],
 };
@@ -51,6 +61,8 @@ const logoProps = {
   alt: 'European Environment Agency',
   url: 'https://eea.europa.eu',
   src: LogoImage,
+  invertedSrc: InvertedLogoImage,
+  inverted: false,
 };
 
 const links = [
@@ -401,6 +413,7 @@ const Template = (args) => {
                   onClick && onClick(e, item);
                 }}
                 href={item['@id'] || item.url}
+                className={`color-fg-${args.MainMenuVariation}`}
               >
                 {item.title}
               </a>
@@ -560,4 +573,5 @@ Default.args = {
   menuItems,
   transparency: false,
   sticky: false,
+  MainMenuVariation: 'primary',
 };
