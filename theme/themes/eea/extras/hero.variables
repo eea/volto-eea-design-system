@@ -15,16 +15,9 @@
 @heroBlockImageBackgroundPosition : center;
 
 /* Wrapper */
-@heroBlockWrapperPadding : @gap-20;
+@heroBlockWrapperPadding : @rem-space-20;
 
 /* Body */
-@mobileHeroBlockBodyGap  : @gap-6;
-@tabletHeroBlockBodyGap  : @gap-8;
-@desktopHeroBlockBodyGap : @gap-10;
-
-/* Text */
-@heroBlockTextFontWeight       : @bold;
-@heroBlockTextLineHeight       : @font-lineheight-0;
-@mobileHeroBlockTextFontSize   : @font-size-4;
-@tabletHeroBlockTextFontSize   : @font-size-5;
-@desktopHeroBlockTextFontSize  : @font-size-7;
+@mobileHeroBlockBodyGap  : @rem-space-6;
+@tabletHeroBlockBodyGap  : @rem-space-8;
+@desktopHeroBlockBodyGap : @rem-space-10;
