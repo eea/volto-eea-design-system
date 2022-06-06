@@ -29,6 +29,29 @@ export default {
   title: 'Components/Hero',
   component: Hero,
   argTypes: {
+    image: {
+      description: 'Set or unset hero image',
+      table: {
+        defaultValue: { summary: '"true"' },
+        type: { summary: 'boolean' },
+      },
+    },
+    text: {
+      description: 'Hero text',
+      table: {
+        category: 'Content Text',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
+      },
+    },
+    buttonLabel: {
+      description: 'Meta button label',
+      table: {
+        category: 'Meta Action',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
+      },
+    },
     buttonVariant: {
       options: Object.keys(buttons),
       mapping: buttons,
@@ -43,8 +66,9 @@ export default {
           invertedButton: 'inverted',
         },
       },
-      defaultValue: 'primary',
+      defaultValue: primaryInvertedButton,
       table: {
+        category: 'Meta Action',
         defaultValue: { summary: 'primary inverted' },
         type: { summary: 'string' },
       },
@@ -68,7 +92,7 @@ const Metadata = (args) => (
 const Template = (args) => (
   <Hero {...args} image_url={args.image ? imgUrl : null}>
     <Hero.Text {...args}>{args.text}</Hero.Text>
-    <Hero.Meta>
+    <Hero.Meta {...args}>
       <Metadata {...args} />
     </Hero.Meta>
   </Hero>
@@ -82,6 +106,7 @@ Default.args = {
     'Forests are a key part of the solution to combat climate change and biodiversity loss.',
   textVariant: 'tertiary',
   textAlign: 'left',
+  metaAlign: 'left',
   buttonLabel: 'Button label',
   buttonVariant: primaryInvertedButton,
   alignContent: 'center',
@@ -94,6 +119,7 @@ Default.parameters = {
       'quoted',
       'textVariant',
       'textAlign',
+      'metaAlign',
       'alignContent',
       'backgroundVariant',
     ],
@@ -109,6 +135,7 @@ Playground.args = {
     'Forests are a key part of the solution to combat climate change and biodiversity loss.',
   textVariant: 'tertiary',
   textAlign: 'left',
+  metaAlign: 'left',
   buttonLabel: 'Button label',
   buttonVariant: primaryInvertedButton,
   alignContent: 'center',
@@ -122,27 +149,12 @@ Playground.argTypes = {
       type: { summary: 'boolean' },
     },
   },
-  image: {
-    description: 'Set or unset hero image',
-    table: {
-      defaultValue: { summary: '"true"' },
-      type: { summary: 'boolean' },
-    },
-  },
   quoted: {
     description: 'Add quotes to hero text',
     table: {
       category: 'Content Text',
       defaultValue: { summary: '"true"' },
       type: { summary: 'boolean' },
-    },
-  },
-  text: {
-    description: 'Hero text',
-    table: {
-      category: 'Content Text',
-      defaultValue: { summary: '""' },
-      type: { summary: 'string' },
     },
   },
   textVariant: {
@@ -167,10 +179,14 @@ Playground.argTypes = {
       type: { summary: 'string' },
     },
   },
-  buttonLabel: {
-    description: 'Meta button label',
+  metaAlign: {
+    options: ['left', 'center', 'right'],
+    description: 'Align content text',
+    control: { type: 'select' },
+    defaultValue: 'left',
     table: {
-      defaultValue: { summary: '""' },
+      category: 'Meta Action',
+      defaultValue: { summary: 'left' },
       type: { summary: 'string' },
     },
   },

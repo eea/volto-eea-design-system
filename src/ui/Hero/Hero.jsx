@@ -6,6 +6,7 @@ Hero.propTypes = {
   fullWidth: PropTypes.bool,
   alignContent: PropTypes.string,
   textAlign: PropTypes.string,
+  metaAlign: PropTypes.string,
   backgroundVariant: PropTypes.string,
   quoted: PropTypes.bool,
   textVariant: PropTypes.string,
@@ -16,7 +17,6 @@ function Hero({
   image,
   fullWidth,
   alignContent,
-  textAlign,
   backgroundVariant,
   children,
 }) {
@@ -34,23 +34,24 @@ function Hero({
         <div
           className={`hero-block-inner-wrapper d-flex ui container flex-items-${alignContent}`}
         >
-          {/* align text prop */}
-          <div className={`hero-block-body text-${textAlign}`}>{children}</div>
+          <div className="hero-block-body">{children}</div>
         </div>
       </div>
     </div>
   );
 }
 
-Hero.Text = ({ quoted, textVariant, children }) => (
+Hero.Text = ({ quoted, textVariant, textAlign, children }) => (
   <div
     className={`hero-block-text color-fg-${textVariant} ${
       quoted ? 'quoted' : ''
-    }`}
+    } text-${textAlign}`}
   >
     {children}
   </div>
 );
-Hero.Meta = ({ children }) => <div className="hero-block-meta">{children}</div>;
+Hero.Meta = ({ metaAlign, children }) => (
+  <div className={`hero-block-meta text-${metaAlign}`}>{children}</div>
+);
 
 export default Hero;
