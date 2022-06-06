@@ -3,14 +3,64 @@ import Hero from './Hero';
 import { Button } from 'semantic-ui-react';
 import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/forest.png';
 
+const primaryButton = { primary: true, secondary: false, inverted: false };
+const primaryInvertedButton = {
+  primary: true,
+  secondary: false,
+  inverted: true,
+};
+const secondaryButton = { primary: false, secondary: true, inverted: false };
+const secondaryInvertedButton = {
+  primary: false,
+  secondary: true,
+  inverted: true,
+};
+const invertedButton = { primary: false, secondary: false, inverted: true };
+
+const buttons = {
+  primaryButton,
+  primaryInvertedButton,
+  secondaryButton,
+  secondaryInvertedButton,
+  invertedButton,
+};
+
 export default {
   title: 'Components/Hero',
   component: Hero,
-  argTypes: {},
+  argTypes: {
+    buttonVariant: {
+      options: Object.keys(buttons),
+      mapping: buttons,
+      description: 'button variant options',
+      control: {
+        type: 'select',
+        labels: {
+          primaryButton: 'primary',
+          primaryInvertedButton: 'primary inverted',
+          secondaryButton: 'secondary',
+          secondaryInvertedButton: 'secondary inverted',
+          invertedButton: 'inverted',
+        },
+      },
+      defaultValue: 'primary',
+      table: {
+        defaultValue: { summary: 'primary inverted' },
+        type: { summary: 'string' },
+      },
+    },
+  },
 };
 
 const Metadata = (args) => (
-  <Button inverted primary as="a" href="/#" target="_blank">
+  <Button
+    primary={args.buttonVariant.primary}
+    secondary={args.buttonVariant.secondary}
+    inverted={args.buttonVariant.inverted}
+    as="a"
+    href="/#"
+    target="_blank"
+  >
     {args.buttonLabel}
   </Button>
 );
@@ -33,6 +83,7 @@ Default.args = {
   textVariant: 'tertiary',
   textAlign: 'left',
   buttonLabel: 'Button label',
+  buttonVariant: primaryInvertedButton,
   alignContent: 'center',
   backgroundVariant: 'grey',
 };
@@ -59,6 +110,7 @@ Playground.args = {
   textVariant: 'tertiary',
   textAlign: 'left',
   buttonLabel: 'Button label',
+  buttonVariant: primaryInvertedButton,
   alignContent: 'center',
   backgroundVariant: 'tertiary',
 };
