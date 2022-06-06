@@ -15,243 +15,247 @@
 .eea.header {
   /* So child can have position sticky */
   display: initial;
+}
 
-  /* Top header section */
-  .top.bar {
+/*----------------------------------------------------------------------------
+   HEADER TOP BAR
+----------------------------------------------------------------------------*/
+
+.top.bar {
+  display: flex;
+  align-items: center;
+  height: @mobileTopSectionHeight;
+  background: @topSectionBackground;
+
+  .ui.container {
     display: flex;
     align-items: center;
-    height: @mobileTopSectionHeight;
-    background: @topSectionBackground;
+    justify-content: space-between;
+    z-index: @topSectionZindex;
+  }
+}
 
-    .ui.container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      z-index: @topSectionZindex;
-    }
-    .item {
-      display: flex;
-      align-items: center;
-      color: @topSectionItemColor;
-      font-weight: @topSectionItemFontWeight;
-      font-size: @mobileTopSectionItemFontSize;
-    }
-    .ui.dropdown {
-      border: none !important;
-      height: auto !important;
-      border-radius: @defaultBorderRadius;
-      color: @topSectionItemColor;
+.top.bar .item {
+  display: flex;
+  align-items: center;
+  color: @topSectionItemColor;
+  font-size: @mobileTopSectionItemFontSize;
+}
+.top.bar .ui.dropdown {
+  border: none !important;
+  height: auto !important;
+  border-radius: @defaultBorderRadius;
+  color: @topSectionItemColor;
+}
 
-      font-size: @dropdownFontSize;
-      font-weight: @dropdownFontWeight;
+.top.bar .divider.text {
+  color: @dropdownColor;
+  font-size: @dropdownFontSize;
+  font-weight: @dropdownFontWeight;
+}
 
-      .menu {
-        margin-top: @mobileDropdownMenuMarginTop;
-        left: @dropdownMenuLeft;
-        right: @dropdownMenuRight;
+.top.bar .ui.dropdown .menu {
+  margin-top: @mobileDropdownMenuMarginTop;
+  left: @dropdownMenuLeft;
+  right: @dropdownMenuRight;
+}
 
-        .wrapper {
-          display: flex;
-          flex-direction: column;
-          gap: @dropdownMenuWrapperGap;
+.top.bar .ui.dropdown .menu,
+.top.bar .ui.dropdown .menu .item {
+  font-size: 12px;
+  color: @dropdownColor;
+}
+
+.top.bar .ui.dropdown .menu .item {
+  padding: @dropdownMenuItemPadding;
+
+  &:hover {
+    background: @dropdownMenuItemBackgroundColorHover;
+    color: @dropdownMenuItemColorHover;
+    cursor: pointer;
+  }
+}
+
+.top.bar .ui.dropdown .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: @dropdownMenuWrapperGap;
+  white-space: @dropdownMenuContentWhiteSpace;
+  margin: @dropdownMenuWrapperMargin;
+  
+  &.language-list {
+    padding-inline-start: @dropdownMenuLanguageWrapperPaddingInlineStart;
+  }
+}
+
+/* Official union dropdown */
+.top.bar .official-union {
+  display: flex;
+  gap: @mobileOfficialUnionGap;
+
+  img {
+    width: @mobileOfficialUnionImageWidth;
+  }
+
+  .ui.dropdown {
+    .menu {
+      padding: @mobileOfficialUnionPadding;
+      left: @mobileOfficialUnionMenuLeft;
+
+      .content {
+        max-width: @mobileOfficialUnionMaxWidth;
+
+        p {
           white-space: @dropdownMenuContentWhiteSpace;
-          margin: @dropdownMenuWrapperMargin;
-          
-          &.language-list {
-            padding-inline-start: @dropdownMenuLanguageWrapperPaddingInlineStart;
-          }
-
-          .item {
-            &:hover {
-              background: @dropdownMenuItemBackgroundColorHover;
-              color: @dropdownMenuItemColorHover;
-              cursor: pointer;
-            }
-          }
         }
-      }
-    }
-
-    .official-union {
-      display: flex;
-      gap: @officialUnionGap;
-
-      img {
-        width: @mobileOfficialUnionImageWidth;
-      }
-
-      .ui.dropdown {
-        font-size: @mobileTopSectionItemFontSize;
-
-        .menu {
-          padding: @mobileOfficialUnionPadding;
-
-          .content {
-            max-width: @mobileOfficialUnionMaxWidth;
-
-            p {
-              font-size: @mobileDropdownMenuContentFontSize;
-              font-weight: @officialUnionTextFontWeight;
-              white-space: @dropdownMenuContentWhiteSpace;
-            }
-            a {
-              font-size: @mobileDropdownMenuContentFontSize;
-              font-weight: @officialUnionLinkFontWeight;
-              white-space: @dropdownMenuContentWhiteSpace; 
-              color: @officialUnionLinkColor;
-            }
-
-            i.icon,
-            i.icons {
-              font-size: @mobileTopSectionItemFontSize;
-            }
-          }
-        }
-      }
-    }
-
-    /* Theme sites dropdown */
-    #theme-sites.ui.dropdown .menu {
-      .wrapper {
-        width: @themeSitesMenuWidth;
-
-        .item {
-          padding: @themeSitesMenuItemPadding;
-
-          &:hover {
-            a.site {
-              color: @white;
-            }
-          }
-
-          a.site {
-            color: @themeSitesMenuSiteLinkColor;
-            font-weight: @themeSitesMenuSiteLinkFontWeight;
-          }
-        }
-      }
-    }
-
-    /* Language dropdown */
-    #language-switcher {
-      font-size: @mobileLanguageFontSize;
-
-      img {
-        width: @mobileOfficialUnionImageWidth;
-      }
-      .menu {
-        top: @mobileLanguageMenuTop;
-        color: @japaneseIndigo;
-
-        .wrapper {
-          .item {
-            justify-content: flex-end;
-            padding: @languageMenuPadding;
-            font-weight: @languageMenuItemFontWeight;
-            font-size: @mobileLanguageFontSize;
-
-            span.country-code {
-              margin-left: @mobileLanguageCountryCodeMarginLeft;
-              font-weight: @mobileLanguageCountryCodeFontWeight;
-            }
-          }
+        a {
+          font-weight: @officialUnionLinkFontWeight;
+          white-space: @dropdownMenuContentWhiteSpace; 
+          color: @officialUnionLinkColor;
         }
       }
     }
   }
+}
 
-  /* Main header section */
-  .main.bar.transparency:before {
-    background-color: @headerMainSectionTransparency;
-    display: block;
-    content: " ";
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
+/* Theme sites dropdown */
+#theme-sites.ui.dropdown .menu {
+  left: @themeSitesMenuLeft;
+
+  .wrapper {
+    width: @themeSitesMenuWidth;
+
+    .item {
+      &:hover {
+        a.site {
+          color: @white;
+        }
+      }
+
+      a.site {
+        color: @themeSitesMenuSiteLinkColor;
+        font-weight: @themeSitesMenuSiteLinkFontWeight;
+      }
+    }
   }
-  .main.bar {
-    scrollbar-gutter: stable;
-    background: @headerMainSectionBackground;
+}
 
-    .ui.container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: @mobileMainSectionHeight;
+/* Language dropdown */
+#language-switcher {
+  font-size: @mobileLanguageFontSize;
 
-      .ui.grid {
-        /* All margins and paddings removed for main header */
-        width: 100%;
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-left: 0;
-        margin-right: 0;
-
-        div:first-child {
-          padding-left: 0;
-        }
-
-        div:last-child {
-          padding-right: 0;
-        }
-      }
-
-      .eea-logo {
-        width: @logoWidth;
-        max-width: @mobileLogoMaxWidth;
-        margin-top: @mobileLogoMarginTop;
-      }
-
-      .main-menu {
-        display: flex;
-        align-items: flex-end;
+  img {
+    width: @mobileOfficialUnionImageWidth;
+  }
+  .menu {
+    .wrapper {
+      .item {
         justify-content: flex-end;
-        width: 100%;
+        font-weight: @languageMenuItemFontWeight;
 
-        .item {
-          //place-self: @mainMenuItemPlaceSelf;
-          a {
-            color: @mainMenuItemColor;
-            font-size: @headerLargeFontSize; // fallback font size
-            font-size: @mainMenuItemFontSize;
-            font-weight: @mainMenuItemFontWeight;
-          }
-        }
-
-        .item.active {
-          color: @mainMenuItemActiveColor;
-          border-bottom: @mainMenuItemActiveBorder;
+        span.country-code {
+          margin-left: @mobileLanguageCountryCodeMarginLeft;
+          font-weight: @mobileLanguageCountryCodeFontWeight;
         }
       }
     }
+  }
+}
 
-    /* Search Box */
-    #search-box {
-      position: relative;
-      z-index: 99999;
-      overflow: auto;
+/*----------------------------------------------------------------------------
+   HEADER MAIN BAR
+----------------------------------------------------------------------------*/
+
+.main.bar.transparency:before {
+  background-color: @headerMainSectionTransparency;
+  display: block;
+  content: " ";
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.main.bar {
+  scrollbar-gutter: stable;
+  background: @headerMainSectionBackground;
+
+  .ui.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: @mobileMainSectionHeight;
+
+    .ui.grid {
+      /* All margins and paddings removed for main header */
       width: 100%;
-      height: @mobilePopUpHeight;
-      background: @searchBoxBackgroundGradient;
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 0;
+      margin-right: 0;
 
-      .ui.container {
-        height: 100%;
-        align-items: baseline;
+      div:first-child {
+        padding-left: 0;
       }
-      .wrapper {
-        position: relative;
-        width: 100%;
-        margin: @mobilePopupMarginTop 0;
-        display: flex;
-        flex-direction: column;
-        gap: @searchBoxWrapperGap;
 
-        .action {
-          display: flex;
-          justify-content: center;
+      div:last-child {
+        padding-right: 0;
+      }
+    }
+
+    .main-menu {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      width: 100%;
+
+      .item {
+        //place-self: @mainMenuItemPlaceSelf;
+        a {
+          color: @mainMenuItemColor;
+          font-size: @headerLargeFontSize; // fallback font size
+          font-size: @mainMenuItemFontSize;
+          font-weight: @mainMenuItemFontWeight;
         }
       }
+
+      .item.active {
+        color: @mainMenuItemActiveColor;
+        border-bottom: @mainMenuItemActiveBorder;
+      }
+    }
+  }
+}
+
+.eea.header .eea-logo {
+  width: @logoWidth;
+  max-width: @mobileLogoMaxWidth;
+  margin-top: @mobileLogoMarginTop;
+}
+
+/* Search Box */
+#search-box {
+  position: relative;
+  z-index: 99999;
+  overflow: auto;
+  width: 100%;
+  height: @mobilePopUpHeight;
+  background: @searchBoxBackgroundGradient;
+
+  .ui.container {
+    height: 100%;
+    align-items: baseline;
+  }
+  .wrapper {
+    position: relative;
+    width: 100%;
+    margin: @mobilePopupMarginTop 0;
+    display: flex;
+    flex-direction: column;
+    gap: @searchBoxWrapperGap;
+
+    .action {
+      display: flex;
+      justify-content: center;
     }
   }
 }
@@ -262,9 +266,9 @@
   }
 }
 
-/***************************************
-Header Actions - Burger and Search Icons
-***************************************/
+/*----------------------------------------------------------------------------
+  Header Actions - Burger and Search Icons
+----------------------------------------------------------------------------*/
 .burger-action {
   display: flex;
   align-items: center;
@@ -313,75 +317,8 @@ Header Actions - Burger and Search Icons
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-  .eea.header {
-    .top.bar {
-      height: @tabletTopSectionHeight;
-
-      .item {
-        font-size: @tabletTopSectionItemFontSize;
-      }
-
-      .ui.dropdown .menu {
-        margin-top: @tabletDropdownMenuMarginTop;
-      }
-
-      .official-union {
-        img {
-          width: @tabletOfficialUnionImageWidth;
-        }
-        .ui.dropdown {
-          font-size: @tabletTopSectionItemFontSize;
-          .menu {
-            padding: @tabletOfficialUnionPadding;
-    
-            .content {
-              max-width: @tabletOfficialUnionMaxWidth;
-
-              p {
-                font-size: @officialUnionMenuFontSize;
-              }
-              a {
-                font-size: @officialUnionMenuFontSize;
-              }
-            }
-          }
-        }
-      }
-
-      /* Language dropdown */
-      #language-switcher {
-        font-size: @tabletLanguageFontSize;
-
-        img {
-          width: 19px;
-        }
-
-        .menu {
-          top: @tabletLanguageMenuTop;
-          .wrapper .item {
-            font-size: @tabletLanguageFontSize;
-          }
-        }
-      }
-    }
-    .main.bar {
-      .ui.container {
-        height: 117px;
-
-        .eea-logo {
-          max-width: @tabletLogoMaxWidth;
-          margin-top: @tabletLogoMarginTop;
-        }
-      }
-
-      /* Search box */
-      #search-box {
-        height: @tabletPopUpHeight;
-        .wrapper {
-          margin: @tabletPopupMarginTop 0;
-        }
-      }
-    }
+  .top.bar .item {
+    font-size: @tabletTopSectionItemFontSize;
   }
 
   .text.menu {
@@ -398,47 +335,82 @@ Header Actions - Burger and Search Icons
     width: @tabletActionsBoxWidth;
     height: @tabletMainSectionHeight;
   }
-}
 
-@media only screen and (min-width: @computerBreakpoint) {
-  .eea.header {
-    .top.bar {
-      height: @computerTopSectionHeight;
+
+  /*----------------------------------------------------------------------------
+    HEADER TOP BAR TABLET
+  ----------------------------------------------------------------------------*/
+
+  .top.bar {
+    height: @tabletTopSectionHeight;
+  }
+
+  .top.bar .ui.dropdown .menu {
+    margin-top: @tabletDropdownMenuMarginTop;
+  }
+  
+  .top.bar .ui.dropdown .menu,
+  .top.bar .ui.dropdown .menu .item {
+    font-size: 14px
+  }
+
+  /* Official union dropdown */
+  .top.bar .official-union {
+    gap: @tabletOfficialUnionGap;
+
+    img {
+      width: @tabletOfficialUnionImageWidth;
     }
+    .ui.dropdown {
+      .menu {
+        padding: @tabletOfficialUnionPadding;
+        left: @tabletOfficialUnionMenuLeft;
 
-    .main.bar {
-      .ui.container {
-        height: 160px;
-
-        .eea-logo {
-          max-width: @computerLogoMaxWidth;
-          margin-top: @computerLogoMarginTop;
-        }
-
-        .ui.text.menu {
-          flex-wrap: wrap;
-          display: flex;
-          width: 88%;
-          max-height: 20px;
-          justify-content: space-between;
-          margin: 0;
-        }
-      }
-
-      /* Search box */
-      #search-box {
-        height: @computerPopUpHeight;
-
-        .wrapper {
-          margin: @computerPopupMarginTop 0;
-
-          .action {
-            justify-content: flex-end;
-          }
+        .content {
+          max-width: @tabletOfficialUnionMaxWidth;
         }
       }
     }
   }
+
+  /* Language dropdown */
+  #language-switcher {
+    font-size: @tabletLanguageFontSize;
+
+    img {
+      width: 19px;
+    }
+
+    .menu {
+      top: @tabletLanguageMenuTop;
+    }
+  }
+
+  /*----------------------------------------------------------------------------
+    HEADER MAIN BAR TABLET
+  ----------------------------------------------------------------------------*/
+
+  .main.bar {
+    .ui.container {
+      height: 117px;
+    }
+  }
+
+  .eea.header .eea-logo {
+    max-width: @tabletLogoMaxWidth;
+    margin-top: @tabletLogoMarginTop;
+  }
+
+  /* Search box */
+  #search-box {
+    height: @tabletPopUpHeight;
+    .wrapper {
+      margin: @tabletPopupMarginTop 0;
+    }
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
 
   .burger-action.mobile {
     display: none;
@@ -454,11 +426,54 @@ Header Actions - Burger and Search Icons
     width: @computerActionsBoxWidth;
     height: @computerMainSectionHeight;
   }
-}
 
-@media only screen and (max-width: 960px) {
-  #theme-sites {
-    display: none;
+  /*----------------------------------------------------------------------------
+      HEADER TOP BAR DESKTOP
+  ----------------------------------------------------------------------------*/
+
+  .top.bar {
+    height: @computerTopSectionHeight;
+  }
+
+  .top.bar .ui.dropdown .menu {
+    margin-top: @computerDropdownMenuMarginTop;
+  }
+
+  /*----------------------------------------------------------------------------
+      HEADER MAIN BAR DESKTOP
+  ----------------------------------------------------------------------------*/
+
+  .main.bar {
+    .ui.container {
+      height: 160px;
+
+      .ui.text.menu {
+        flex-wrap: wrap;
+        display: flex;
+        width: 88%;
+        max-height: 20px;
+        justify-content: space-between;
+        margin: 0;
+      }
+    }
+  }
+
+  .eea.header .eea-logo {
+    max-width: @computerLogoMaxWidth;
+    margin-top: @computerLogoMarginTop;
+  }
+
+  /* Search box */
+  #search-box {
+    height: @computerPopUpHeight;
+
+    .wrapper {
+      margin: @computerPopupMarginTop 0;
+
+      .action {
+        justify-content: flex-end;
+      }
+    }
   }
 }
 

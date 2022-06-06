@@ -3,7 +3,7 @@
 --------------------*/
 
 /* Heights */
-@mobileTopSectionHeight      : 14px;
+@mobileTopSectionHeight      : 20px;
 @tabletTopSectionHeight      : 30px;
 @computerTopSectionHeight    : 33px;
 
@@ -18,60 +18,71 @@
 /* Header font sizes */
 @headerMinyFontSize: 0.5rem;
 @headerTinyFontSize: 0.625rem;
-@headerSmallFontSize: 0.75rem;
+@headerSmallFontSize: @font-size-00;
 @headerMediumFontSize: 0.875rem;
 @headerLargeFontSize: 1.125rem;
 
-/* Top */
-@topSectionBackground                 : @silverGray;
-@topSectionItemColor                  : @japaneseIndigo;
+
+/*-------------------
+   HEADER TOP BAR
+--------------------*/
+
+@topSectionBackground                 : @grey-2;
+@topSectionItemColor                  : @blue-grey-6;
 @topSectionItemFontWeight             : @bold;
-@mobileTopSectionItemFontSize         : @headerSmallFontSize;
-@tabletTopSectionItemFontSize         : @headerSmallFontSize;
-@topSectionZindex                     : 1;
+@topSectionItemFontSize               : @font-size-00;
+@mobileTopSectionItemFontSize         : @font-size-00;
+@tabletTopSectionItemFontSize         : @font-size-00;
+@topSectionZindex                     : @z-index-1;
 
 /* Dropdown */
-@mobileDropdownMenuMarginTop          : 0.188rem;
-@tabletDropdownMenuMarginTop          : 0.438rem;
-@dropdownFontSize                     : @headerSmallFontSize;
+@mobileDropdownMenuMarginTop          : 0;
+@tabletDropdownMenuMarginTop          : 0.4rem;
+@computerDropdownMenuMarginTop        : 0.438rem;
+@dropdownColor                        : @blue-grey-6;
+@dropdownFontSize                     : @font-size-00;
 @dropdownFontWeight                   : @bold;
+
 /* Dropdown Menu */
 @dropdownMenuLeft                     : auto;
 @dropdownMenuRight                    : 0;
-@dropdownMenuWrapperGap               : 0.313rem;
-@dropdownMenuWrapperMargin            : 0.313rem 0;
+@dropdownMenuWrapperGap               : @rem-space-1;
+@dropdownMenuWrapperMargin            : @rem-space-1 0;
 @dropdownMenuLanguageWrapperPaddingInlineStart : 0;
 @dropdownMenuContentWhiteSpace        : pre-wrap;
-@dropdownMenuContentFontWeight        : @normal;
-@mobileDropdownMenuContentFontSize    : @headerSmallFontSize;
-@desktopDropdownMenuContentFontSize   : @headerSmallFontSize;
+@mobileDropdownMenuContentFontSize    : @font-size-00;
+@desktopDropdownMenuContentFontSize   : @font-size-00;
 @dropdownMenuItemColorHover           : @white;
-@dropdownMenuItemBackgroundColorHover : @japaneseIndigo;
+@dropdownMenuItemBackgroundColorHover : @blue-grey-6;
+@dropdownMenuItemPadding              : @rem-space-050 @rem-space-5;
+
 // Official Union
-@officialUnionGap                     : 0.75rem;
+@mobileOfficialUnionGap               : 0;
+@tabletOfficialUnionGap               : @rem-space-2;
 @officialUnionMenuFontSize            : @headerMediumFontSize;
-@officialUnionTextFontWeight          : @normal;
 @officialUnionLinkFontWeight          : @bold;
-@officialUnionLinkColor               : @japaneseIndigo;
+@officialUnionLinkColor               : @blue-grey-6;
 @mobileOfficialUnionPadding           : 0.313rem;
 @tabletOfficialUnionPadding           : 0.75rem;
-@mobileOfficialUnionMaxWidth          : 110px;
+@mobileOfficialUnionMaxWidth          : 220px;
 @tabletOfficialUnionMaxWidth          : 373px;
-//@mobileOfficialUnionImageWidth        : 11px;
-@mobileOfficialUnionImageWidth        : 16px;
-@tabletOfficialUnionImageWidth        : 33px;
+@mobileOfficialUnionImageWidth        : 17px;
+@tabletOfficialUnionImageWidth        : 36px;
+@mobileOfficialUnionMenuLeft          : -17px;
+@tabletOfficialUnionMenuLeft          : auto;
 
 // Theme Sites
 @themeSitesMenuWidth                  : 210px;
 @themeSitesMenuSiteLinkColor          : @japaneseIndigo;
 @themeSitesMenuSiteLinkFontWeight     : @normal;
 @themeSitesMenuItemPadding            : 0.125rem 0.313rem;
+@themeSitesMenuLeft                   : -35px;
+
 // Language
-@mobileLanguageFontSize               : @headerTinyFontSize;
+@mobileLanguageFontSize               : @font-size-00;
 @tabletLanguageFontSize               : @headerMediumFontSize;
-@mobileLanguageMenuTop                : 0.75rem;
 @tabletLanguageMenuTop                : 18px;
-@languageMenuPadding                  : 0.125rem 1.25rem;
+@languageMenuPadding                  : @rem-space-050 @rem-space-5;
 @languageMenuItemFontWeight           : @normal;
 @mobileLanguageCountryCodeMarginLeft  : 3px;
 @mobileLanguageCountryCodeFontWeight  : @bold;

@@ -291,7 +291,7 @@ const Template = (args) => {
             <Image src={eeaFlag} alt="eea flag"></Image>
             <Header.TopDropdownMenu
               text="An official website of the European Union | How do you Know?"
-              mobileText="An official EU website"
+              mobileText=" "
               icon="chevron down"
               aria-label="dropdown"
               className=""
@@ -318,7 +318,7 @@ const Template = (args) => {
           <Header.TopItem>
             <Header.TopDropdownMenu
               id="theme-sites"
-              className="tablet or lower hidden"
+              className="tablet hidden"
               text={linksMenuTitle}
               viewportWidth={viewportWidth}
             >
@@ -554,7 +554,7 @@ const Template = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  linksMenuTitle: 'Environmental information systems',
+  linksMenuTitle: 'EEA information systems',
   links,
   languages,
   menuItems,
