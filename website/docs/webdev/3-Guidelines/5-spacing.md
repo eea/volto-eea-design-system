@@ -34,12 +34,12 @@ For layout scale use larger increments (16px, 24px, 32px, 48px, 64px, 96px )
 
 
 ## Spacing Gaps in pixels
-| Token name         | Pixels           | Typically used | 
-| ------------------ | ---------------- | -------------- |
-| space-025            | 1px              | spacings within a component or between icons and related text               |
-| space-05             | 2px              | spacings within a component or between icons and related text               |
+| Token name         | Pixels             | Typically used | 
+| ------------------ | ----------------   | -------------- |
+| space-025            | 1px              | not typically used               |
+| space-05             | 2px              | not typically used              |
 | space-1              | 4px              | separate related elements and for small padding               |
-| space-2              | 8px              | only for right and left padding of buttons, form elements and horizontal tabs               |
+| space-2              | 8px              | only for right and left padding of buttons, form elements and horizontal tabs       |
 | space-3              | 12px             | to separate unrelated elements or groups and for normal padding               |
 | space-4              | 16px             | to separate sub-sections of content              |
 | space-5              | 20px             | to separate sub-sections of content               |
@@ -61,55 +61,55 @@ For layout scale use larger increments (16px, 24px, 32px, 48px, 64px, 96px )
 | space-24             | 96px             |                |
 
 ## Spacing Gaps in rem
-| Token name                  | Rem          | Typically used | 
-| --------------------------- | ------------ | -------------- |
-| rem-space-025            | 0.063rem     | spacings within a component or between icons and related text               |
-| rem-space-05             | 0.125rem     |  spacings within a component or between icons and related text              |
-| rem-space-1              | 0.25rem      |  separate related elements and for small padding              |
-| rem-space-2              | 0.5rem       |   only for right and left padding of buttons, form elements and horizontal tabs             |
-| rem-space-3              | 0.75rem      |   to separate unrelated elements or groups and for normal padding             |
-| rem-space-4              | 1rem         |    to separate sub-sections of content            |
-| rem-space-5              | 1.25rem      |    to separate sub-sections of content            |
-| rem-space-6              | 1.5rem       |     to separate sub-sections of content           |
-| rem-space-7              | 1.75rem      |     to separate sections of content           |
-| rem-space-8              | 2rem         |     to separate sections of content           |
-| rem-space-9              | 2.25rem      |     to separate sections of content           |
-| rem-space-10             | 2.5rem       |                |
-| rem-space-11             | 2.75rem      |                |
-| rem-space-12             | 3rem         |                |
-| rem-space-13             | 3.25rem      |                |
-| rem-space-14             | 3.5rem       |                |
-| rem-space-15             | 3.75rem      |                |
-| rem-space-16             | 4rem         |                |
-| rem-space-17             | 4.25rem      |                |
-| rem-space-18             | 4.5rem       |                |
-| rem-space-19             | 4.75rem      |                |
-| rem-space-20             | 5rem         |                |
-| rem-space-24             | 6rem         |                |
+| Token name               | Rem          | 
+| ------------------------ | ------------ | 
+| rem-space-025            | 0.063rem     |   
+| rem-space-05             | 0.125rem     |   
+| rem-space-1              | 0.25rem      |   
+| rem-space-2              | 0.5rem       |  
+| rem-space-3              | 0.75rem      |    
+| rem-space-4              | 1rem         |  
+| rem-space-5              | 1.25rem      |   
+| rem-space-6              | 1.5rem       |    
+| rem-space-7              | 1.75rem      |    
+| rem-space-8              | 2rem         |   
+| rem-space-9              | 2.25rem      |   
+| rem-space-10             | 2.5rem       |                
+| rem-space-11             | 2.75rem      |                
+| rem-space-12             | 3rem         |                
+| rem-space-13             | 3.25rem      |                
+| rem-space-14             | 3.5rem       |                
+| rem-space-15             | 3.75rem      |                
+| rem-space-16             | 4rem         |               
+| rem-space-17             | 4.25rem      |                
+| rem-space-18             | 4.5rem       |                
+| rem-space-19             | 4.75rem      |                
+| rem-space-20             | 5rem         |                
+| rem-space-24             | 6rem         |                
 
 ## Spacing Gaps in em
-| Token name                  | Rem          | Typically used | 
-| --------------------------- | ------------ | -------------- |
-| em-space-025            | 0.063em     |      spacings within a component or between icons and related text          |
-| em-space-05             | 0.125em     |       spacings within a component or between icons and related text         |
-| em-space-1              | 0.25em      |    separate related elements and for small padding            |
-| em-space-2              | 0.5em       |    only for right and left padding of buttons, form elements and horizontal tabs            |
-| em-space-3              | 0.75em      |    to separate unrelated elements or groups and for normal padding            |
-| em-space-4              | 1em         |    to separate sub-sections of content            |
-| em-space-5              | 1.25em      |    to separate sub-sections of content            |
-| em-space-6              | 1.5em       |     to separate sub-sections of content           |
-| em-space-7              | 1.75em      |    to separate sections of content           |
-| em-space-8              | 2em         |    to separate sections of content            |
-| em-space-9              | 2.25em      |     to separate sections of content           |
-| em-space-10             | 2.5em       |                |
-| em-space-11             | 2.75em      |                |
-| em-space-12             | 3em         |                |
-| em-space-13             | 3.25em      |                |
-| em-space-14             | 3.5em       |                |
-| em-space-15             | 3.75em      |                |
-| em-space-16             | 4em         |                |
-| em-space-17             | 4.25em      |                |
-| em-space-18             | 4.5em       |                |
-| em-space-19             | 4.75em      |                |
-| em-space-20             | 5em         |                |
-| em-space-24             | 6em         |                |
+| Token name                  | Rem         |  
+| --------------------------- | ----------- |
+| em-space-025                | 0.063em     |   
+| em-space-05                 | 0.125em     |   
+| em-space-1                  | 0.25em      | 
+| em-space-2                  | 0.5em       |    
+| em-space-3                  | 0.75em      |    
+| em-space-4                  | 1em         |   
+| em-space-5                  | 1.25em      |  
+| em-space-6                  | 1.5em       |   
+| em-space-7                  | 1.75em      |  
+| em-space-8                  | 2em         |  
+| em-space-9                  | 2.25em      |   
+| em-space-10                 | 2.5em       |                
+| em-space-11                 | 2.75em      |                
+| em-space-12                 | 3em         |                
+| em-space-13                 | 3.25em      |                
+| em-space-14                 | 3.5em       |                
+| em-space-15                 | 3.75em      |                
+| em-space-16                 | 4em         |                
+| em-space-17                 | 4.25em      |                
+| em-space-18                 | 4.5em       |                
+| em-space-19                 | 4.75em      |                
+| em-space-20                 | 5em         |                
+| em-space-24                 | 6em         |                
