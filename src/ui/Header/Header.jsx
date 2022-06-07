@@ -17,7 +17,6 @@ import PropTypes from 'prop-types';
 
 Header.propTypes = {
   transparency: PropTypes.bool,
-  sticky: PropTypes.bool,
 };
 
 function Header({ children }) {
@@ -63,6 +62,28 @@ const TopDropdownMenu = ({
   );
 };
 
+const useScrollingUp = () => {
+  let prevScroll;
+
+  if (process.browser) {
+    prevScroll = window.pageYOffset;
+  }
+  const [scrollingUp, setScrollingUp] = React.useState(false);
+  const handleScroll = () => {
+    const currScroll = window.pageYOffset;
+    const isScrolled = prevScroll > currScroll;
+    setScrollingUp(isScrolled);
+    prevScroll = currScroll;
+  };
+  React.useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll, { passive: true });
+    };
+  });
+  return scrollingUp;
+};
+
 const Main = ({
   logo,
   menuItems,
@@ -70,7 +91,6 @@ const Main = ({
   renderGlobalMenuItem,
   pathname,
   transparency,
-  sticky,
 }) => {
   const [activeItem, setActiveItem] = React.useState('');
   const [menuIsActive, setMenuIsActive] = React.useState(false);
@@ -121,6 +141,8 @@ const Main = ({
   //   }
   // }, [searchIsActive, burger, menuIsActive]);
 
+  const isScrollingUp = useScrollingUp();
+
   const node = React.useRef();
   const searchButtonRef = React.useRef();
   const mobileMenuBurgerRef = React.useRef();
@@ -128,7 +150,7 @@ const Main = ({
   return (
     <div
       className={`main bar ${transparency ? 'transparency' : ''} ${
-        sticky ? 'sticky' : ''
+        isScrollingUp ? 'sticky' : ''
       }`}
       ref={node}
     >

@@ -36,13 +36,6 @@ export default {
         type: { summary: 'boolean' },
       },
     },
-    sticky: {
-      description: 'make main section sticky',
-      table: {
-        defaultValue: { summary: '""' },
-        type: { summary: 'boolean' },
-      },
-    },
     inverted: {
       description: 'Inverted logo',
       table: {
@@ -1313,7 +1306,6 @@ const Template = (args) => {
         </Header.TopHeader>
         <Header.Main
           transparency={args.transparency}
-          sticky={args.sticky}
           pathname={pathname}
           logo={<Logo {...logoProps} inverted={args.inverted} />}
           menuItems={menuItems}
@@ -1503,7 +1495,6 @@ Default.args = {
   languages,
   menuItems,
   transparency: false,
-  sticky: false,
   inverted: false,
   MainMenuVariation: 'primary',
 };
