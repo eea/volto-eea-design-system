@@ -337,7 +337,6 @@
     > div {
       height: 100%;
     }
-
   }
 
   .slider-arrow {
@@ -383,8 +382,6 @@
     color: transparent;
 
   }
-
-
 }
 
 
