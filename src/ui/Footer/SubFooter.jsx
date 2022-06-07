@@ -3,16 +3,13 @@ import Footer from './Footer';
 
 import { Grid, Image } from 'semantic-ui-react';
 
-import EIONETLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EionetFull.svg';
-import EEALogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EEA-Logo-White-2.svg';
-
 const SubFooter = (props) => {
   if (props.children) {
     return <div>{props.children}</div>;
   }
 
   return (
-    <div className="subfooter">
+    <div className={'subfooter'}>
       <Grid>
         <Grid.Column mobile={12} tablet={5} computer={6}>
           <div className="item">
@@ -21,16 +18,20 @@ const SubFooter = (props) => {
             </p>
 
             <Grid>
-              <Grid.Column mobile={6} tablet={12} computer={5}>
-                <div className="site logo">
-                  <Image src={EEALogo} alt="EEA Logo"></Image>
-                </div>
-              </Grid.Column>
-              <Grid.Column mobile={6} tablet={12} computer={7}>
-                <div className="eionet logo">
-                  <Image src={EIONETLogo} alt="EIONET Logo"></Image>
-                </div>
-              </Grid.Column>
+              {props.managedBy &&
+                props.managedBy.map((manager, index) => (
+                  <Grid.Column
+                    mobile={manager.columnSize.mobile}
+                    tablet={manager.columnSize.tablet}
+                    computer={manager.columnSize.computer}
+                  >
+                    <div className={manager.className}>
+                      <a href={manager.link}>
+                        <Image src={manager.src} alt={manager.alt}></Image>
+                      </a>
+                    </div>
+                  </Grid.Column>
+                ))}
             </Grid>
           </div>
         </Grid.Column>

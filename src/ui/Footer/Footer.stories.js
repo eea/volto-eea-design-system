@@ -10,6 +10,8 @@ import Cca from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo
 import Copernicus from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/copernicus.svg';
 import Industry from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/industry.svg';
 import Marine from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/marine.svg';
+import Eionet from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eionet.svg';
+import EEA from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea.svg';
 
 export default {
   title: 'Layout/Footer',
@@ -17,7 +19,7 @@ export default {
   argTypes: {},
 };
 
-export const Template = (args) => (
+const Template = (args) => (
   <Footer>
     <Footer.Header>{args.header}</Footer.Header>
     <Footer.Sites sites={args.sites} />
@@ -51,6 +53,30 @@ Default.args = {
     { link: '/#', src: Cca, alt: 'Climate adapt' },
     { link: '/#', src: Energy, alt: 'Climate and energy in the EU' },
     { link: '/#', src: Copernicus, alt: 'Copernicus land monitoring service' },
+  ],
+  managedBy: [
+    {
+      link: 'https://www.eea.europa.eu/',
+      src: EEA,
+      alt: 'EEA Logo',
+      className: 'site logo',
+      columnSize: {
+        mobile: 12,
+        tablet: 12,
+        computer: 5,
+      },
+    },
+    {
+      link: 'https://www.eionet.europa.eu/',
+      src: Eionet,
+      alt: 'EIONET Logo',
+      className: 'eionet logo',
+      columnSize: {
+        mobile: 12,
+        tablet: 12,
+        computer: 6,
+      },
+    },
   ],
   social: [
     { name: 'twitter', icon: 'ri-twitter-fill', link: '/#' },
