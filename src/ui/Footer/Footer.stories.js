@@ -61,7 +61,7 @@ Default.args = {
       alt: 'EEA Logo',
       className: 'site logo',
       columnSize: {
-        mobile: 12,
+        mobile: 6,
         tablet: 12,
         computer: 5,
       },
@@ -72,9 +72,9 @@ Default.args = {
       alt: 'EIONET Logo',
       className: 'eionet logo',
       columnSize: {
-        mobile: 12,
+        mobile: 6,
         tablet: 12,
-        computer: 6,
+        computer: 7,
       },
     },
   ],
