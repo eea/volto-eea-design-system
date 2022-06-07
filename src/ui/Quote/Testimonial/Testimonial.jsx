@@ -11,9 +11,9 @@ Testimonial.propTypes = {
 function Testimonial({ children, ...rest }) {
   return (
     <div className="eea testimonial" {...rest}>
-      <Divider className="green clean" />
+      <Divider fitted className="secondary" />
       <Grid>{children}</Grid>
-      <Divider className="green clean" />
+      <Divider fitted className="secondary" />
     </div>
   );
 }
