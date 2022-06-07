@@ -5,7 +5,7 @@ export default {
   title: 'Components/Divider',
   component: Divider,
   argTypes: {
-    color: {
+    theme: {
       options: ['default', 'primary', 'secondary', 'tertiary'],
       control: { type: 'select' },
       description: 'Variations of the divider',
@@ -78,7 +78,7 @@ export default {
   },
 };
 
-function Template({ hidden, color, section, short, fitted }) {
+function Template({ hidden, theme, section, short, fitted }) {
   return (
     <Container>
       <p>
@@ -93,7 +93,7 @@ function Template({ hidden, color, section, short, fitted }) {
       <Divider
         hidden={hidden}
         section={section}
-        className={`${color === 'default' ? '' : color} ${
+        className={`${theme === 'default' ? '' : theme} ${
           short ? 'short' : ''
         }`}
         fitted={fitted}
@@ -113,7 +113,7 @@ function Template({ hidden, color, section, short, fitted }) {
 
 export const Default = Template.bind({});
 Default.args = {
-  color: 'default',
+  theme: 'default',
   hidden: false,
   section: false,
   short: false,
@@ -124,7 +124,7 @@ Default.parameters = {
   hideNoControlsWarning: true,
 };
 
-function DividerWithContentTemplate({ content, color, section, fitted }) {
+function DividerWithContentTemplate({ content, theme, section, fitted }) {
   return (
     <Container>
       <p>
@@ -139,7 +139,7 @@ function DividerWithContentTemplate({ content, color, section, fitted }) {
       <Divider
         horizontal
         section={section}
-        className={`${color === 'default' ? '' : color}`}
+        className={`${theme === 'default' ? '' : theme}`}
         fitted={fitted}
       >
         <div>{content}</div>
@@ -160,7 +160,7 @@ function DividerWithContentTemplate({ content, color, section, fitted }) {
 export const DividerWithContent = DividerWithContentTemplate.bind({});
 DividerWithContent.args = {
   content: 'Divider Content',
-  color: 'default',
+  theme: 'default',
   section: false,
   fitted: false,
 };
