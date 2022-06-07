@@ -1,6 +1,5 @@
 import React from 'react';
 import Footer from './Footer';
-import { Grid, Image } from 'semantic-ui-react';
 import Bise from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/bise.svg';
 import Energy from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/energy.svg';
 import Insitu from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/insitu.svg';
@@ -11,8 +10,6 @@ import Cca from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo
 import Copernicus from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/copernicus.svg';
 import Industry from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/industry.svg';
 import Marine from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/marine.svg';
-import EIONETLogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EionetFull.svg';
-import EEALogo from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EEA-Logo-White-2.svg';
 
 export default {
   title: 'Layout/Footer',
@@ -20,55 +17,11 @@ export default {
   argTypes: {},
 };
 
-const Template = (args) => (
+export const Template = (args) => (
   <Footer>
     <Footer.Header>{args.header}</Footer.Header>
     <Footer.Sites sites={args.sites} />
-    <Footer.SubFooter>
-      <div className="subfooter">
-        <Grid>
-          <Grid.Column mobile={12} tablet={5} computer={6}>
-            <div className="item">
-              <p className="header text-center logo-header">
-                {args.logosHeader}
-              </p>
-
-              <Grid>
-                <Grid.Column mobile={6} tablet={12} computer={5}>
-                  <div className="site logo">
-                    <Image src={EEALogo} alt="EEA Logo"></Image>
-                  </div>
-                </Grid.Column>
-                <Grid.Column mobile={6} tablet={12} computer={7}>
-                  <div className="eionet logo">
-                    <Image src={EIONETLogo} alt="EIONET Logo"></Image>
-                  </div>
-                </Grid.Column>
-              </Grid>
-            </div>
-          </Grid.Column>
-          <Grid.Column
-            mobile={6}
-            tablet={2}
-            computer={2}
-            className="mobile hidden"
-          ></Grid.Column>
-          <Grid.Column mobile={12} tablet={5} computer={4}>
-            <div className="item">
-              <Footer.Contact
-                contacts={args.contacts}
-                header={args.contactHeader}
-                address={args.address}
-              />
-              <Footer.Social social={args.social} />
-            </div>
-          </Grid.Column>
-        </Grid>
-        <Grid.Row>
-          <Footer.Actions actions={args.actions} />
-        </Grid.Row>
-      </div>
-    </Footer.SubFooter>
+    <Footer.SubFooter {...args} />
   </Footer>
 );
 
