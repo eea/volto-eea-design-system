@@ -56,7 +56,6 @@ const SubFooter = (props) => {
       </Grid.Row>
     </div>
   );
-  // }
 };
 
 export default SubFooter;
