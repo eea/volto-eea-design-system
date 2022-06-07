@@ -52,6 +52,7 @@
 .ui.divider.primary,
 .ui.divider.primary:not(.vertical):not(.horizontal) {
   border-top-color: @dividerPrimary;
+  color: @dividerPrimary;
 }
 .ui.vertical.divider.primary:before,
 .ui.vertical.divider.primary:after {
@@ -61,6 +62,7 @@
 .ui.divider.secondary,
 .ui.divider.secondary:not(.vertical):not(.horizontal) {
   border-top-color: @dividerSecondary;
+  color: @dividerSecondary;
 }
 .ui.vertical.divider.secondary:before,
 .ui.vertical.divider.secondary:after {
@@ -70,6 +72,7 @@
 .ui.divider.tertiary,
 .ui.divider.tertiary:not(.vertical):not(.horizontal) {
   border-top-color: @dividerTertiary;
+  color: @dividerTertiary;
 }
 .ui.vertical.divider.tertiary:before,
 .ui.vertical.divider.tertiary:after {
