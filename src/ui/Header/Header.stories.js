@@ -43,6 +43,13 @@ export default {
         type: { summary: 'boolean' },
       },
     },
+    inverted: {
+      description: 'Inverted logo',
+      table: {
+        defaultValue: { summary: '""' },
+        type: { summary: 'boolean' },
+      },
+    },
     MainMenuVariation: {
       control: { type: 'select' },
       options: ['primary', 'secondary', 'tertiary', 'white'],
@@ -62,7 +69,6 @@ const logoProps = {
   url: 'https://eea.europa.eu',
   src: LogoImage,
   invertedSrc: InvertedLogoImage,
-  inverted: false,
 };
 
 const links = [
@@ -384,7 +390,7 @@ const Template = (args) => {
           transparency={args.transparency}
           sticky={args.sticky}
           pathname={pathname}
-          logo={<Logo {...logoProps} />}
+          logo={<Logo {...logoProps} inverted={args.inverted} />}
           menuItems={menuItems}
           renderMenuItem={(item, options = {}) => {
             const { onClick } = options;
@@ -573,5 +579,6 @@ Default.args = {
   menuItems,
   transparency: false,
   sticky: false,
+  inverted: false,
   MainMenuVariation: 'primary',
 };

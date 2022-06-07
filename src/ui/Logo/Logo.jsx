@@ -20,7 +20,6 @@ const Logo = ({ src, invertedSrc, id, url, alt, title, inverted }) => {
         src={inverted ? invertedSrc : src}
         alt={alt}
         title={title}
-        //height={64}
         className="eea-logo"
         id={id}
       />
