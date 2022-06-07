@@ -222,10 +222,11 @@
       font-size: @headerLargeFontSize; // fallback font size
       font-size: @mainMenuItemFontSize;
       font-weight: @mainMenuItemFontWeight;
+      border-bottom: @mainMenuItemBorder;
     }
   }
 
-  .item.active {
+  .item.active a {
     color: @mainMenuItemActiveColor;
     border-bottom: @mainMenuItemActiveBorder;
   }
@@ -281,11 +282,7 @@
   cursor: pointer;
   width: @mobileActionsBoxWidth;
   height: @mobileMainSectionHeight;
-  background-color: @darkCerulean;
-}
-
-.burger-action.desktop {
-  display: none;
+  background-color: @burgerActionBackgroundColor;
 }
 
 .burger-action.mobile {
@@ -418,12 +415,6 @@
     display: none;
   }
 
-  .burger-action.desktop {
-    display: flex;
-    width: @computerActionsBoxWidth;
-    height: @computerMainSectionHeight;
-  }
-
   .search-action {
     width: @computerActionsBoxWidth;
     height: @computerMainSectionHeight;
@@ -456,6 +447,10 @@
         max-height: 20px;
         justify-content: space-between;
         margin: 0;
+
+        .item {
+          padding: @mainMenuItemPadding;
+        }
       }
     }
   }
@@ -480,264 +475,148 @@
 }
 
 /************************
-      MEGA MENU
+        MEGA MENU
 ************************/
 
 #mega-menu {
-  position: relative;
-  z-index: 9999;
+  position: absolute;
+  right: 0;
   overflow: auto;
   width: 100%;
-  background: @megaMenuBackgroundGradient;
+  z-index: @z-index-8;
+  width: @mobileMegaMenuWidth;
+  background: @megaMenuBackgroundColor;
+  color: @megaMenuTextColor;
+  max-height: @mobilePopUpHeight;
+  padding: @mobileMegaMenuPadding;
 
   .ui.container {
-    height: 100%;
-    align-items: baseline;
-  }
-
-  .toggle,
-  [id^='drop'] {
-    display: none;
-  }
-  nav {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    margin: @tabletPopupMarginTop 0;
-  }
-
-  nav:after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-
-  nav ul {
-    float: left;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    position: relative;
-
-    > li a {
-      padding: 0;
-    }
-  }
-
-  nav ul li {
-    display: inline-block;
-    font-size: @mobileMegaMenuFontSize;
-    font-size: @megaMenuFontSize;
-  }
-
-  nav a {
-    display: flex;
-    color: @mobileMegaMenuColor;
-    padding: @megaMenuLinkPadding;
-    line-height: @megaMenuLineHeight;
-    word-break: @megaMenuWordBreak;
-  }
-
-  nav ul ul {
-    display: none;
-    position: absolute;
-    top: 0;
-  }
-
-  // show second level nav when first level is visible
-  .active > .second {
-    display: block;
-  }
-
-  nav ul li:hover > ul,
-  nav ul li:active > ul {
     display: inherit;
-    display: flex;
-    flex-direction: column;
+    align-items: baseline;
+    height: 100%;
   }
 
-  nav ul ul li {
-    float: none;
-    display: list-item;
+  .title {
+    font-size: @megaMenuTitleFontSize;
+    font-weight: @megaMenuTitleFontWeight;
   }
 
-  nav ul ul ul li {
-    left: 0;
-  }
+  .sub-title {
+    font-size: @megaMenuSubTitleFontSize;
+    font-weight: @megaMenuSubTitleFontWeight;
+    color: @megaMenuTextColor;
 
-  li > a:only-child:after {
-    content: '';
-  }
-
-  @media all and (max-width: @largestMobileScreen) {
-    height: @mobilePopUpHeight;
-    nav {
-      margin: @mobilePopupMarginTop 0;
-    }
-    .menu,
-    li {
-      width: 100%;
-    }
-
-    .toggle + a,
-    .menu {
-      display: none;
-    }
-
-    .toggle {
-      display: block;
-      padding: @toggleMenuFirstPadding;
-      color: @mobileMegaMenuColor;
-      line-height: @megaMenuLineHeight;
-    }
-
-    [id^='drop']:checked + ul {
-      display: block;
-    }
-
-    nav ul li {
-      display: block;
-      width: 100%;
-    }
-
-    nav .menu > li > .toggle,
-    nav .menu > li > a {
-      padding: @mobileToggleMenuFirstPadding;
-    }
-    nav ul ul .toggle,
-    nav ul ul a {
-      padding: @mobileToggleMenuSecondPadding;
-    }
-
-    nav ul ul ul a {
-      padding: @mobileToggleMenuThirdPadding;
-    }
-
-    nav ul ul {
-      float: none;
-      position: static;
-      color: @mobileMegaMenuColor;
-    }
-
-    nav ul ul li:hover > ul,
-    nav ul li:hover > ul {
-      display: none;
-    }
-
-    nav ul ul li {
-      display: block;
-      width: 100%;
-    }
-
-    nav ul ul ul li {
-      position: static;
-    }
-  }
-
-  .menu {
-    display: flex;
-    flex-direction: column;
-  }
-  .sub {
-    left: 100%;
-  }
-
-  @media all and (min-width: @tabletBreakpoint) {
-    height: @tabletPopUpHeight;
-    nav {
-      .menu {
-        width: 33.33%;
-        font-size: @tabletMegaMenuFontSize;
-        font-size: @megaMenuFontSize;
-        > li {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: @megaMenuLiAlignItems;
-          margin-bottom: @tabletMegaMenuMarginBottom;
-
-          &.hasSubMenu:after {
-            content: @megaMenuAfterIcon;
-            font-family: @megaMenuIconFontFamily;
-            color: @white;
-          }
-          a {
-            display: flex;
-            justify-content: space-between;
-            align-items: @megaMenuLiAlignItems;
-            max-width: 100%;
-            padding-left: 1rem;
-          }
-        }
+    &+ .ui.grid {
+  
+      div.column:first-child {
+        padding-left: 0;
       }
-
-      .sub.second {
-        width: 100%;
-        left: 100%;
-        > li {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: @megaMenuLiAlignItems;
-          margin-bottom: @tabletMegaMenuMarginBottom;
-
-          &.hasSubMenu:after {
-            content: @megaMenuAfterIcon;
-            font-family: @megaMenuIconFontFamily;
-            color: @megaMenuIconAfterColor;
-          }
-          a {
-            max-width: 100%;
-            padding-left: 1rem;
-          }
-        }
-      }
-      .sub.third {
-        left: 100%;
-        width: 100%;
-        min-height: 50vh;
-        li {
-          margin-bottom: @tabletMegaMenuMarginBottom;
-          > a {
-            max-width: 100%;
-          }
-        }
+  
+      div.column:last-child {
+        padding-right: 0;
       }
     }
-    // underline active span element not just on hover
-    .active > a .item,
-    ul li:hover > a .item {
-      text-decoration: underline;
+  }
+}
+
+#mega-menu .ui.list .item {
+  display: flex;
+  font-size: @megaMenuListItemFontSize;
+  font-weight: @megaMenuListItemFontWeight;
+  padding: @megaMenuListItemPadding;
+}
+
+#mega-menu  a.item {
+  color: @megaMenuTextColor;
+
+  i.icon {
+    color: @megaMenuTextColor;
+  }
+}
+
+
+#at-a-glance {
+  background-color: @megaMenuGlanceBackgroundColor;
+  // To override the grid column paddings
+  padding: @megaMenuGlancePaddingLeft !important;
+
+  .ui.list .item {
+    font-size: @megaMenuGlanceListItemFontSize;
+    font-weight: @megaMenuGlanceListItemFontWeight;
+    margin: @megaMenuGlanceListItemMargin;
+  }
+}
+
+#mega-menu .ui.grid {
+  div.column:first-child {
+    padding-left: 0.625rem;
+  }
+
+  div.column:last-child {
+    padding-right: 0.625rem;
+  }
+}
+
+.menu-content > .ui.grid > .column {
+  padding-top: @megaMenuContentPaddingTop;
+}
+
+/*Mega Menu Accordion - Tablet & Mobile */
+#mega-menu .ui.accordion {
+  .title {
+    font-size: @megaMenuAccordionTitleFontSize;
+    color: @megaMenuTextColor;
+    padding: @megaMenuAccordionTitlePadding;
+    border-bottom: @megaMenuAccordionTitleBorderBottom;
+
+    i:before {
+      font-size: @megaMenuAccordionIconFontSize;
+    }
+
+    &:hover {
+
+      i {
+        color: @megaMenuTextColor;
+      }
     }
   }
 
-  @media only screen and (min-width: @computerBreakpoint) {
-    height: @computerPopUpHeight;
-    nav {
-      margin: @computerPopupMarginTop 0;
-      .menu {
-        > li {
-          margin-bottom: @computerMegaMenuMarginBottom;
-          &.hasSubMenu:after {
-            font-size: @megaMenuFontSize;
-          }
-          a {
-            padding-left: 2rem;
-          }
-        }
+  .active.title {
+    background-color: transparent;
+    border-bottom: @megaMenuAccordionActiveTitleBorderBottom;
+  }
+
+  .content {
+    background: @megaMenuBackgroundColor;
+    padding: @megaMenuAccordionContentPadding;
+
+    .accordion {
+      margin: @megaMenuNestedAccordionMargin;
+
+      .title {
+        font-size: @megaMenuNestedAccordionTitleFontSize;
+        font-weight: @megaMenuNestedAccordionTitleFontWeight;
+        border-bottom: none;
       }
-      .sub.second li {
-        margin-bottom: @computerMegaMenuMarginBottom;
-        &.hasSubMenu:after {
-          font-size: @megaMenuFontSize;
-        }
-        a {
-          padding-left: 2rem;
-        }
-      }
-      .sub.third li {
-        margin-bottom: @computerMegaMenuMarginBottom;
+
+      .content {
+        padding: @megaMenuNestedAccordionContentPadding;
       }
     }
+  }
+}
+
+@media all and (min-width: @tabletBreakpoint) {
+  #mega-menu {
+    padding: @tabletMegaMenuPadding;
+    max-height: @tabletPopUpHeight;
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  #mega-menu {
+    width: 100%;
+    padding: @computerMegaMenuPadding;
+    max-height: @computerPopUpHeight;
   }
 }

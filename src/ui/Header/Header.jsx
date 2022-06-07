@@ -45,7 +45,7 @@ const TopDropdownMenu = ({
   text,
   viewportWidth,
 }) => {
-  const isMobile = viewportWidth < 480;
+  const isMobile = viewportWidth < 767;
 
   const Component = ({ mobileText }) => (
     <Dropdown
@@ -87,9 +87,9 @@ const Main = ({
     if (menuIsActive === true) {
       setBurger('');
       setMenuIsActive(false);
+      setActiveItem('');
     }
     setSearchIsActive(!searchIsActive);
-    setActiveItem('');
   };
 
   const mobileBurgerOnClick = () => {
@@ -103,12 +103,8 @@ const Main = ({
     } else {
       setBurger('');
       setMenuIsActive(false);
+      setActiveItem('');
     }
-  };
-
-  const desktopBurgerOnClick = () => {
-    setMenuIsActive(false);
-    setActiveItem('');
   };
 
   const menuOnClick = (e, item) => {
@@ -117,17 +113,16 @@ const Main = ({
     setMenuIsActive(true);
   };
 
-  React.useEffect(() => {
-    if (searchIsActive || burger === 'open' || menuIsActive) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [searchIsActive, burger, menuIsActive]);
+  // React.useEffect(() => {
+  //   if (searchIsActive || burger === 'open' || menuIsActive) {
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = 'unset';
+  //   }
+  // }, [searchIsActive, burger, menuIsActive]);
 
   const node = React.useRef();
   const searchButtonRef = React.useRef();
-  const desktopMenuBurgerRef = React.useRef();
   const mobileMenuBurgerRef = React.useRef();
 
   return (
@@ -144,34 +139,22 @@ const Main = ({
           </Grid.Column>
           <Grid.Column mobile={4} tablet={4} computer={8}>
             <div className="main-menu">
-              {!menuIsActive && menuItems && (
+              {menuItems && (
                 <Menu className="eea-main-menu tablet or lower hidden" text>
-                  {menuItems.map((item) => {
-                    const url = item['@id'] || item.url;
-                    const hasUrl = (url && url !== '') || pathname === '';
-                    return (
-                      <Menu.Item
-                        name={item['@id'] || item.url}
-                        key={item['@id'] || item.url}
-                        active={hasUrl && pathname.indexOf(url) !== -1}
-                      >
-                        {renderGlobalMenuItem(item, {
-                          onClick: menuOnClick,
-                        })}
-                      </Menu.Item>
-                    );
-                  })}
+                  {menuItems.map((item) => (
+                    <Menu.Item
+                      name={item['@id'] || item.url}
+                      key={item['@id'] || item.url}
+                      active={
+                        activeItem === item['@id'] || activeItem === item.url
+                      }
+                    >
+                      {renderGlobalMenuItem(item, {
+                        onClick: menuOnClick,
+                      })}
+                    </Menu.Item>
+                  ))}
                 </Menu>
-              )}
-              {menuIsActive && (
-                <Header.BurgerAction
-                  className="desktop"
-                  onClick={desktopBurgerOnClick}
-                  ref={desktopMenuBurgerRef}
-                >
-                  {/* <Icon name="close" /> */}
-                  <Image src={closeIcon} alt="menu close icon" />
-                </Header.BurgerAction>
               )}
               <div
                 className="search-action"
@@ -190,9 +173,6 @@ const Main = ({
                 onClick={mobileBurgerOnClick}
                 ref={mobileMenuBurgerRef}
               >
-                {/* <Icon
-                  name={this.state.burger === 'open' ? 'close' : 'bars'}
-                ></Icon> */}
                 <Image
                   src={burger === 'open' ? `${closeIcon}` : `${burgerIcon}`}
                   alt="menu icon open/close"
@@ -214,7 +194,7 @@ const Main = ({
           activeItem={activeItem}
           menuItems={menuItems}
           onClose={mobileBurgerOnClick}
-          triggerRefs={[mobileMenuBurgerRef, desktopMenuBurgerRef]}
+          triggerRefs={[mobileMenuBurgerRef]}
         />
       )}
     </div>
