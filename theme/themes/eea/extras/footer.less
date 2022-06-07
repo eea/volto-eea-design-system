@@ -20,179 +20,153 @@ footer {
     background-image: @wrapperBackgroundImage;
     background-position: @wrapperBackgroundPosition;
     background-size: @mobileWrapperBackgroundSize;
+  }
+}
 
-    .theme-sites {
-      padding: @mobileThemeSitesPadding;
+footer .theme-sites {
+  padding: @mobileThemeSitesPadding;
 
-      .header {
-        font-weight: @headerFontWeight;
-        font-size: @mobileHeaderFontSize;
-        margin-bottom: @mobileHeaderMarginBottom;
-        text-align: center;
-      }
+  .header {
+    font-weight: @footerTitleFontWeight;
+  }
 
-      .logos .logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+  .logos .ui.grid {
+    align-items: center;
+  }
+
+  .logos .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin: auto;
     }
-    .subfooter {
-      .item {
-        margin-top: @mobileItemMarginTop;
+  }
+}
 
-        .site.logo {
-          .description {
-            margin: @mobileDescriptionMargin;
-            font-size: @mobileDescriptionFontSize;
-            line-height: @mobileDescriptionLineHeight;
-          }
-        }
+.subfooter .item .ui.grid {
+  align-items: center;
+}
 
-        .eionet.logo {
-          display: flex;
-          align-items: center;
-          margin-top: @mobileEionetMarginTop;
+.subfooter .item {
+  margin-top: @mobileItemMarginTop;
 
-          img {
-            width: @mobileEionetLogoWidth;
-            margin-left: @mobileEionetLogoMarginLeft;
-            margin-right: @mobileEionetLogoMarginRight;
-          }
+  .header {
+    margin-bottom: @mobileItemHeaderMarginBottom;
+    font-size: @mobileFooterTitleFontSize;
+    font-weight: @footerTitleFontWeight;
+    text-align: center;
+  }
+}
 
-          .description {
-            padding-top: @mobileEionetDescriptionPaddingTop;
-            font-size: @mobileEionetDescriptionFontSize;
-            line-height: @mobileEionetDescriptionLineHeight;
-            font-weight: @eionetDescriptionFontWeight;
-          }
-        }
+.subfooter .contact-block {
+  margin-inline: @mobileContactBlockMarginInline;
+  margin-bottom: @tabletContactBlockMarginbottom;
+}
 
-        .header {
-          margin-bottom: @mobileItemHeaderMarginBottom;
-          font-size: @mobileItemHeaderFontSize;
-          font-weight: @itemHeaderFontWeight;
-        }
+.subfooter .contact {
+  display: flex;
+  align-items: center;
+  margin: @mobileContactMargin;
+  font-size: @mobileContactFontSize;
 
-        .contact {
-          display: flex;
-          align-items: center;
-          margin: @mobileContactMargin;
-          font-size: @mobileContactFontSize;
+  a {
+    color: @menuLinkColor;
+  }
 
-          a {
-            color: @menuLinkColor;
-          }
-        }
-        .address {
-          font-size: @mobileAdressFontSize;
-        }
+  i.big.icon {
+    margin-right: @mobileContactIconMarginRight;
+    font-size: @mobileContactIconFontSize;
+  }
+}
 
-        .social a {
-          color: @socialIconColor;
+.subfooter .address {
+  font-size: @addressFontSize;
+}
 
-          &:active,
-          &:hover {
-            color: @socialIconColor;
-          }
+.subfooter .social {
+  display: flex;
+  justify-content: @mobileSocialJustifyContent;
+  
+  a {
+    color: @socialIconColor;
 
-          i.icon {
-            font-size: @mobileSocialIconSize;
-          }
-        }
-      }
-      .menu {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        margin: @mobileMenuMargin;
+    &:active,
+    &:hover {
+      color: @socialIconColor;
+    }
 
-        a {
-          color: @menuLinkColor;
-          font-weight: @menuFontWeight;
-          font-size: @mobileMenuFontSize;
-          cursor: pointer;
+    i.icon {
+      font-size: @mobileSocialIconSize;
+    }
+  }
+}
 
-          &:hover,
-          &:active {
-            color: @menuLinkColor;
-          }
-        }
-      }
+.subfooter .menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: @mobileMenuWidth;
+  margin: @mobileMenuMargin;
+
+  a {
+    color: @menuLinkColor;
+    font-weight: @menuFontWeight;
+    font-size: @mobileMenuFontSize;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+      color: @menuLinkColor;
     }
   }
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-  footer {
-    .wrapper {
-      .theme-sites {
-        .header {
-          font-size: @tabletHeaderFontSize;
-          margin-bottom: @tabletHeaderMarginBottom;
-        }
-      }
-      .subfooter {
-        .item {
-          margin-top: @tabletItemMarginTop;
+  footer .theme-sites {
+    .header {
+      font-size: @tabletFooterTitleFontSize;
+    }
+  }
 
-          .site.logo {
-            img {
-              width: @tabletSiteLogoWidth;
-              display: @tabletSiteLogoDisplay;
-            }
-            .description {
-              font-size: @tabletDescriptionFontSize;
-              line-height: @tabletDescriptionLineHeight;
-            }
-          }
+  .subfooter .item {
+    margin-top: @tabletItemMarginTop;
 
-          .eionet.logo {
-            img {
-              width: @tabletEionetLogoWidth;
-              margin-left: @tabletEionetLogoMarginLeft;
-            }
-
-            .description {
-              padding-top: @tabletEionetDescriptionPaddingTop;
-              font-size: @tabetEionetDescriptionFontSize;
-              line-height: @tabletEionetDescriptionLineHeight;
-            }
-          }
-
-          .header {
-            margin-bottom: @tabletItemHeaderMarginBottom;
-            font-size: @tabletItemHeaderFontSize;
-          }
-
-          .contact {
-            font-size: @tabletContactFontSize;
-            margin: @tabletContactMargin;
-
-            i.big.icon {
-              margin-right: @tabletContactIconMarginRight;
-              font-size: @tabletContactIconFontSize;
-            }
-          }
-
-          .address {
-            font-size: @tabletAddressFontSize;
-          }
-
-          .social a i.icon {
-            font-size: @tabletSocialIconSize;
-          }
-        }
-        .menu {
-          width: @tabletMenuWidth;
-          margin: @tabletMenuMargin;
-
-          a {
-            font-size: @tabletMenuFontSize;
-          }
-        }
+    .site.logo {
+      img {
+        width: @tabletSiteLogoWidth;
+        display: @tabletSiteLogoDisplay;
       }
     }
+
+    .header {
+      font-size: @tabletFooterTitleFontSize;
+      text-align: left;
+    }
+
+    .social a i.icon {
+      font-size: @tabletSocialIconSize;
+    }
+  }
+
+  .eionet.logo img {
+    margin-left: @tabletEionetLogoMarginLeft;
+    width: @tabletEionetLogoWidth;    
+  }
+
+  .subfooter .contact-block {
+    margin-inline: @tabletContactBlockMarginInline;
+  }
+
+  .subfooter .social {
+    justify-content: @tabletSocialJustifyContent;
+    gap: @tabletSocialGap;
+  }
+
+  .subfooter .menu {
+    width: @tabletMenuWidth;
+    margin: @tabletMenuMargin;
   }
 }
 
@@ -201,71 +175,60 @@ footer {
     .wrapper {
       padding: @computerWrapperPadding;
       background-size: @computerWrapperBackgroundSize;
-
-      .theme-sites {
-        padding: @computerThemeSitesPadding;
-
-        .header {
-          font-size: @computerHeaderFontSize;
-          margin-bottom: @computerHeaderMarginBottom;
-        }
-      }
-      .subfooter {
-        .item {
-          margin-top: @computerItemMarginTop;
-
-          .site.logo {
-            img {
-              width: @computerSiteLogoWidth;
-            }
-            .description {
-              margin: @computerDescriptionMargin;
-            }
-          }
-
-          .eionet.logo {
-            margin-top: @computerEionetMarginTop;
-
-            img {
-              width: @computerEionetLogoWidth;
-              margin-left: @computerEionetLogoMarginLeft;
-              margin-right: @computerEionetLogoMarginRight;
-            }
-
-            .description {
-              font-size: @computerEionetDescriptionFontSize;
-              line-height: @computerEionetDescriptionLineHeight;
-            }
-          }
-
-          .header {
-            margin-bottom: @computerItemHeaderMarginBottom;
-            font-size: @computerItemHeaderFontSize;
-          }
-
-          .contact {
-            font-size: @computerContactFontSize;
-            margin: @computerContactMargin;
-
-            i.big.icon {
-              font-size: @computerContactIconFontSize;
-            }
-          }
-
-          .social a i.icon {
-            font-size: @computerSocialIconSize;
-          }
-        }
-        .menu {
-          justify-content: flex-end;
-          width: 100%;
-
-          a {
-            padding-left: 3rem;
-            font-size: @computerMenuFontSize;
-          }
-        }
-      }
     }
   }
+
+  footer .theme-sites {
+    padding: @computerThemeSitesPadding;
+
+    .header {
+      font-size: @computerFooterTitleFontSize;
+    }
+  }
+
+  .subfooter .logo-header {
+    // To match the figma align
+    margin-left: @computerLogoHeaderMarginLeft
+  }
+
+  .subfooter .item {
+    margin-top: @computerItemMarginTop;
+
+    .site.logo {
+      img {
+        width: @computerSiteLogoWidth;
+      }
+    }
+
+    .header {
+      margin-bottom: @computerItemHeaderMarginBottom;
+      font-size: @computerFooterTitleFontSize;
+    }
+
+    .social a i.icon {
+      font-size: @computerSocialIconSize;
+    }
+  }
+
+  .subfooter .contact {
+    font-size: @computerContactFontSize;
+    margin: @computerContactMargin;
+
+    i.big.icon {
+      font-size: @computerContactIconFontSize;
+    }
+  }
+
+  .eionet.logo img {
+    width: @computerEionetLogoWidth;
+    margin-left: 0;
+  }
+
+  .subfooter .menu {
+    width: @computerMenuWidth;
+  
+    a {
+      font-size: @computerMenuFontSize;
+    }
+  } 
 }
