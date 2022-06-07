@@ -1285,7 +1285,11 @@ const Template = (args) => {
             }
             viewportWidth={viewportWidth}
           >
-            <ul className="wrapper language-list">
+            <ul
+              className="wrapper language-list"
+              role="listbox"
+              aria-label="language switcher"
+            >
               {languages.map((item, index) => (
                 <Dropdown.Item
                   as="li"

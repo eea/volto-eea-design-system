@@ -69,7 +69,7 @@
 @mobileOfficialUnionImageWidth        : 17px;
 @tabletOfficialUnionImageWidth        : 36px;
 @mobileOfficialUnionMenuLeft          : -17px;
-@tabletOfficialUnionMenuLeft          : auto;
+@tabletOfficialUnionMenuLeft          : -45px;
 
 // Theme Sites
 @themeSitesMenuWidth                  : 210px;
