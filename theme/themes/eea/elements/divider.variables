@@ -18,7 +18,7 @@
 @letterSpacing: 0.05em;
 @fontWeight: @bold;
 @color: @darkTextColor;
-@textTransform: uppercase;
+@textTransform: none;
 
 /*-------------------
        Coupling
@@ -51,3 +51,12 @@
 
 /* Sizes */
 @medium: 1rem;
+
+/* ShortDivider */
+@shortWidth       : 50%;
+@shortMarginInline: auto;
+
+/* Color */
+@dividerPrimary   : @primaryColor;
+@dividerSecondary : @secondaryColor;
+@dividerTertiary  : @tertiaryColor;

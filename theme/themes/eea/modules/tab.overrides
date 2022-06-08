@@ -3,11 +3,11 @@
 *******************************/
 
 .ui.pointing.secondary.menu {
-  a.item {
+  .item {
     font-size: @headerSize;
   }
 
-  a.item:hover {
+  .item:hover {
     color: @tabActiveItemHoverColor;
   }
 }

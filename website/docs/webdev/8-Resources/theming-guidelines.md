@@ -1,6 +1,6 @@
 ---
 title: Theming Guidelines
-description: Several rules and guidelines for developers of the EEA Design System
+description: Theming guidelines for developers of the EEA Design System
 hide_table_of_contents: false
 ---
 ## Theming best practices
