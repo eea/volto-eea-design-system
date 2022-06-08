@@ -3,28 +3,6 @@ import Hero from './Hero';
 import { Button } from 'semantic-ui-react';
 import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/forest.png';
 
-const primaryButton = { primary: true, secondary: false, inverted: false };
-const primaryInvertedButton = {
-  primary: true,
-  secondary: false,
-  inverted: true,
-};
-const secondaryButton = { primary: false, secondary: true, inverted: false };
-const secondaryInvertedButton = {
-  primary: false,
-  secondary: true,
-  inverted: true,
-};
-const invertedButton = { primary: false, secondary: false, inverted: true };
-
-const buttons = {
-  primaryButton,
-  primaryInvertedButton,
-  secondaryButton,
-  secondaryInvertedButton,
-  invertedButton,
-};
-
 export default {
   title: 'Components/Hero',
   component: Hero,
@@ -53,24 +31,27 @@ export default {
       },
     },
     buttonVariant: {
-      options: Object.keys(buttons),
-      mapping: buttons,
+      options: ['', 'primary', 'secondary'],
       description: 'button variant options',
       control: {
         type: 'select',
         labels: {
-          primaryButton: 'primary',
-          primaryInvertedButton: 'primary inverted',
-          secondaryButton: 'secondary',
-          secondaryInvertedButton: 'secondary inverted',
-          invertedButton: 'inverted',
+          '': 'default',
         },
       },
-      defaultValue: primaryInvertedButton,
+      defaultValue: 'primary',
       table: {
         category: 'Meta Action',
-        defaultValue: { summary: 'primary inverted' },
+        defaultValue: { summary: 'primary' },
         type: { summary: 'string' },
+      },
+    },
+    inverted: {
+      description: 'inverted button option',
+      table: {
+        category: 'Meta Action',
+        defaultValue: { summary: '' },
+        type: { summary: 'boolean' },
       },
     },
   },
@@ -78,9 +59,8 @@ export default {
 
 const Metadata = (args) => (
   <Button
-    primary={args.buttonVariant.primary}
-    secondary={args.buttonVariant.secondary}
-    inverted={args.buttonVariant.inverted}
+    className={args.buttonVariant}
+    inverted={args.inverted}
     as="a"
     href="/#"
     target="_blank"
@@ -108,7 +88,8 @@ Default.args = {
   textAlign: 'left',
   metaAlign: 'left',
   buttonLabel: 'Button label',
-  buttonVariant: primaryInvertedButton,
+  buttonVariant: 'primary',
+  inverted: true,
   alignContent: 'center',
   backgroundVariant: 'grey',
 };
@@ -137,7 +118,8 @@ Playground.args = {
   textAlign: 'left',
   metaAlign: 'left',
   buttonLabel: 'Button label',
-  buttonVariant: primaryInvertedButton,
+  buttonVariant: 'primary',
+  inverted: true,
   alignContent: 'center',
   backgroundVariant: 'tertiary',
 };
