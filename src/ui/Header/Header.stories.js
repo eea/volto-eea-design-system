@@ -1281,7 +1281,11 @@ const Template = (args) => {
             text={`${language.toUpperCase()}`}
             mobileText={`${language.toUpperCase()}`}
             icon={
-              <Image src={globeIcon} alt="language dropdown globe icon"></Image>
+              <Image
+                role="option"
+                src={globeIcon}
+                alt="language dropdown globe icon"
+              ></Image>
             }
             viewportWidth={viewportWidth}
           >
