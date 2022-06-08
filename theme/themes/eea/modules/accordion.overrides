@@ -70,6 +70,20 @@
   padding-bottom: @contentPaddingBottom;
 }
 
+.ui.menu.RRT__accordion {
+  .ui.item {
+    background-color: transparent;
+  }
+
+  .ui.item i {
+    font-size: @iconFontSize;
+
+    &::before {
+      font-size: @iconFontSize;
+    }
+  }
+}
+
 /*******************************
             Types
 *******************************/
