@@ -70,6 +70,22 @@
   padding-bottom: @contentPaddingBottom;
 }
 
+/*******************************
+            Types
+*******************************/
+
+/*--------------
+     Styled
+---------------*/
+
+.ui.styled.accordion .active.title input {
+  color: @styledActiveTitleColor;
+}
+
+/*------------------------------
+     Tabs as accordion (Volto)
+--------------------------------*/
+
 .ui.menu.RRT__accordion {
   .ui.item {
     background-color: transparent;
@@ -82,16 +98,4 @@
       font-size: @iconFontSize;
     }
   }
-}
-
-/*******************************
-            Types
-*******************************/
-
-/*--------------
-     Styled
----------------*/
-
-.ui.styled.accordion .active.title input {
-  color: @styledActiveTitleColor;
 }
