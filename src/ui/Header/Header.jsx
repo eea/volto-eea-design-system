@@ -17,6 +17,7 @@ import PropTypes from 'prop-types';
 
 Header.propTypes = {
   transparency: PropTypes.bool,
+  inverted: PropTypes.bool,
 };
 
 function Header({ children }) {
@@ -91,6 +92,7 @@ const Main = ({
   renderGlobalMenuItem,
   pathname,
   transparency,
+  inverted,
 }) => {
   const [activeItem, setActiveItem] = React.useState('');
   const [menuIsActive, setMenuIsActive] = React.useState(false);
@@ -160,7 +162,7 @@ const Main = ({
             {logo}
           </Grid.Column>
           <Grid.Column mobile={4} tablet={4} computer={8}>
-            <div className="main-menu">
+            <div className={inverted ? 'main-menu inverted' : 'main-menu'}>
               {menuItems && (
                 <Menu className="eea-main-menu tablet or lower hidden" text>
                   {menuItems.map((item) => (

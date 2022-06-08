@@ -64,18 +64,19 @@
 @officialUnionLinkFontWeight          : @bold;
 @officialUnionLinkColor               : @blue-grey-6;
 @officialUnionPadding                 : @rem-space-3;
-@mobileOfficialUnionMaxWidth          : 220px;
-@tabletOfficialUnionMaxWidth          : 373px;
+@mobileOfficialUnionMaxWidth          : 108px;
+@tabletOfficialUnionMaxWidth          : 388px;
 @mobileOfficialUnionImageWidth        : 17px;
 @tabletOfficialUnionImageWidth        : 36px;
-@mobileOfficialUnionMenuLeft          : -17px;
-@tabletOfficialUnionMenuLeft          : -45px;
+@mobileOfficialUnionMenuLeft          : -30px;
+@tabletOfficialUnionMenuLeft          : -54px;
 
 // Theme Sites
-@themeSitesMenuWidth                  : 210px;
+@mobileThemeSitesMenuWidth            : 190px;
+@computerThemeSitesMenuWidth          : 200px;
 @themeSitesMenuSiteLinkColor          : @blue-grey-6;
 @themeSitesMenuSiteLinkFontWeight     : @normal;
-@themeSitesMenuLeft                   : -35px;
+@themeSitesMenuLeft                   : -20px;
 
 // Language
 @tabletLanguageMenuTop                : 18px;
@@ -102,13 +103,16 @@
 @computerLogoMarginTop                : @rem-space-5;
 
 /* Main menu */
-@mainMenuItemColor                    : @tertiaryColor;
+@mainMenuItemColor                    : @primaryColor;
+@mainMenuItemInvertedColor            : @white;
 @mainMenuItemFontSize                 : ~"min(max(0.875rem, 1.5vw), 1.125rem)";
 @mainMenuItemFontWeight               : @font-weight-5;
 @mainMenuItemPadding                  : @rem-space-050 @rem-space-2;
 @mainMenuItemActiveColor              : @secondaryColor;
-@mainMenuItemBorder                  : 6px solid transparent;
-@mainMenuItemActiveBorder             : 6px solid @secondaryColor;
+@mainMenuItemBorder                   : 4px solid transparent;
+@mainMenuItemActiveBorder             : 4px solid @secondaryColor;
+@mainMenuInvertedItemActiveBorder     : 4px solid @white;
+@mainMenuItemAlignSelf                : flex-end;
 
 /*-----------------
    HEADER ACTIONS
@@ -148,7 +152,7 @@
 @megaMenuListItemPadding: @rem-space-2 0;
 
 /* At a glance */
-@megaMenuGlanceBackgroundColor: #008380;
+@megaMenuGlanceBackgroundColor: @secondaryColor;
 @megaMenuGlancePaddingLeft:  @rem-space-8 @rem-space-5;
 @megaMenuGlanceListItemFontSize: @font-size-2;
 @megaMenuGlanceListItemFontWeight: @font-weight-6;

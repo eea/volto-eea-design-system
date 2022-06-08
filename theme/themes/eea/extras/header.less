@@ -130,7 +130,7 @@
   left: @themeSitesMenuLeft;
 
   .wrapper {
-    width: @themeSitesMenuWidth;
+    width: @mobileThemeSitesMenuWidth;
 
     .item {
       &:hover {
@@ -223,12 +223,32 @@
       font-size: @mainMenuItemFontSize;
       font-weight: @mainMenuItemFontWeight;
       border-bottom: @mainMenuItemBorder;
+      align-self: @mainMenuItemAlignSelf;
+    }
+    a:hover {
+      border-bottom: @mainMenuItemActiveBorder;
     }
   }
 
   .item.active a {
     color: @mainMenuItemActiveColor;
     border-bottom: @mainMenuItemActiveBorder;
+  }
+}
+
+.main-menu.inverted {
+  .item a {
+    color: @mainMenuItemInvertedColor;
+  }
+
+  .item.active a {
+    color: @mainMenuItemInvertedColor;
+    border-bottom: @mainMenuInvertedItemActiveBorder;
+  }
+
+  a:hover {
+    color: @mainMenuItemInvertedColor;
+    border-bottom: @mainMenuInvertedItemActiveBorder;
   }
 }
 
@@ -298,7 +318,7 @@
   height: @mobileMainSectionHeight;
   align-items: center;
   justify-content: center;
-  background-color: @darkCyan;
+  background-color: @secondaryColor;
 }
 
 .burger-action,
@@ -432,6 +452,11 @@
     margin-top: @computerDropdownMenuMarginTop;
   }
 
+  #theme-sites.ui.dropdown .menu {
+    .wrapper {
+      width: @computerThemeSitesMenuWidth;
+    }
+  }
   /*----------------------------------------------------------------------------
       HEADER MAIN BAR DESKTOP
   ----------------------------------------------------------------------------*/

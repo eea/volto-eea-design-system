@@ -43,15 +43,6 @@ export default {
         type: { summary: 'boolean' },
       },
     },
-    MainMenuVariation: {
-      control: { type: 'select' },
-      options: ['primary', 'secondary', 'tertiary', 'white'],
-      description: 'Main menu color variation',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: '' },
-      },
-    },
   },
   decorators: [(Story) => <Story />],
 };
@@ -1314,6 +1305,7 @@ const Template = (args) => {
         </Header.TopHeader>
         <Header.Main
           transparency={args.transparency}
+          inverted={args.inverted}
           pathname={pathname}
           logo={<Logo {...logoProps} inverted={args.inverted} />}
           menuItems={menuItems}
@@ -1344,7 +1336,6 @@ const Template = (args) => {
                   onClick && onClick(e, item);
                 }}
                 href={item['@id'] || item.url}
-                className={`color-fg-${args.MainMenuVariation}`}
               >
                 {item.title}
               </a>
@@ -1504,5 +1495,4 @@ Default.args = {
   menuItems,
   transparency: false,
   inverted: false,
-  MainMenuVariation: 'primary',
 };
