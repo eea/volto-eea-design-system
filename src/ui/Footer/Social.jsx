@@ -9,9 +9,9 @@ const Social = (props) => {
 
   return (
     <div className="social">
-      {props.social.map((item, index) => (
+      {props.social?.map((item, index) => (
         <a href={item.link} aria-label={`${item.name} link`} key={index}>
-          <Icon name={item.name}></Icon>
+          <Icon className={item.icon}></Icon>
         </a>
       ))}
     </div>
