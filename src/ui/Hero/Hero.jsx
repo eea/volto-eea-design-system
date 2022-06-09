@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 Hero.propTypes = {
   image: PropTypes.bool,
   fullWidth: PropTypes.bool,
+  fullHeight: PropTypes.bool,
   alignContent: PropTypes.string,
   textAlign: PropTypes.string,
   metaAlign: PropTypes.string,
@@ -16,6 +17,7 @@ function Hero({
   image_url,
   image,
   fullWidth,
+  fullHeight,
   alignContent,
   backgroundVariant,
   children,
@@ -25,7 +27,7 @@ function Hero({
     <div
       className={`${
         fullWidth ? 'eea hero-block full-width' : 'eea hero-block'
-      } color-bg-${backgroundVariant}`}
+      } ${fullHeight ? 'full-height' : ''} color-bg-${backgroundVariant}`}
     >
       <div
         className="hero-block-image"

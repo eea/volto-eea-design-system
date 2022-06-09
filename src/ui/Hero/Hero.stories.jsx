@@ -80,6 +80,7 @@ const Template = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   fullWidth: true,
+  fullHeight: true,
   image: true,
   quoted: true,
   text:
@@ -97,6 +98,7 @@ Default.parameters = {
   controls: {
     exclude: [
       'fullWidth',
+      'fullHeight',
       'quoted',
       'textVariant',
       'textAlign',
@@ -110,6 +112,7 @@ Default.parameters = {
 export const Playground = Template.bind({});
 Playground.args = {
   fullWidth: true,
+  fullHeight: true,
   image: true,
   quoted: false,
   text:
@@ -126,6 +129,13 @@ Playground.args = {
 Playground.argTypes = {
   fullWidth: {
     description: 'Hero full width',
+    table: {
+      defaultValue: { summary: '"true"' },
+      type: { summary: 'boolean' },
+    },
+  },
+  fullHeight: {
+    description: 'Hero full height',
     table: {
       defaultValue: { summary: '"true"' },
       type: { summary: 'boolean' },
@@ -183,7 +193,7 @@ Playground.argTypes = {
     },
   },
   backgroundVariant: {
-    options: ['primary', 'secondary', 'tertiary'],
+    options: ['primary', 'secondary', 'tertiary', 'grey'],
     description: 'Updates the background color',
     control: { type: 'select' },
     defaultValue: 'tertiary',

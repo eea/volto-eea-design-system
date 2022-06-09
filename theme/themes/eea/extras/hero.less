@@ -3,44 +3,11 @@
 
 @import (multiple) '../../theme.config';
 
-// Color utilities
-.color-fg-primary { color: @primaryColor; }
-.color-fg-secondary { color: @secondaryColor; }
-.color-fg-tertiary { color: @tertiaryColor; }
-.color-fg-white { color: @white; }
-
-.color-bg-primary { background-color: @primaryColor; }
-.color-bg-secondary { background-color: @secondaryColor; }
-.color-bg-tertiary { background-color: @tertiaryColor; }
-.color-bg-grey { background-color: #F9F9F9; }
-
-// Display utilities
-.d-flex { display: flex !important; }
-.flex-items-start { align-items: flex-start; }
-.flex-items-end { align-items: flex-end; }
-.flex-items-center { align-items: center; }
-
-// Align text utilities
-.text-left { text-align: left; }
-.text-center { text-align: center;}
-.text-right { text-align: right; }
-
-//Quotes utilities
-.quoted::before {
-  content: "\ec51";
-  font-family: 'remixicon' !important;
-}
-.quoted::after {
-  content: "\ec52";
-  font-family: 'remixicon' !important;
-}
-
 /*-------------------
       Hero
 --------------------*/
 
 .eea.hero-block {
-  height: @mobileHeroBlockMinHeight;
   position: @heroBlockPosition;
 }
 
@@ -63,9 +30,17 @@
   height: 100%;
 }
 
+.eea.hero-block.full-height,
+.eea.hero-block.full-height .hero-block-image,
+.eea.hero-block.full-height .hero-block-inner-wrapper {
+  min-height: @mobileHeroBlockMinHeight;
+}
+
 @media only screen and (min-width: @tabletBreakpoint) {
-  .eea.hero-block {
-    height: @tabletHeroBlockMinHeight;
+  .eea.hero-block.full-height,
+  .eea.hero-block.full-height .hero-block-image,
+  .eea.hero-block.full-height .hero-block-inner-wrapper {
+    min-height: @tabletHeroBlockMinHeight;
   }
   .hero-block-body {
     gap: @tabletHeroBlockBodyGap;
@@ -73,8 +48,10 @@
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
-  .eea.hero-block {
-    height: @desktopHeroBlockMinHeight;
+  .eea.hero-block.full-height,
+  .eea.hero-block.full-height .hero-block-image,
+  .eea.hero-block.full-height .hero-block-inner-wrapper {
+    min-height: @desktopHeroBlockMinHeight;
   } 
   .hero-block-body {
     gap: @desktopHeroBlockBodyGap;
