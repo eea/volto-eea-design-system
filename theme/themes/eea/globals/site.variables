@@ -79,6 +79,11 @@
 @h5 : unit((20 / @fontSize), rem);
 @h6 : unit((18 / @fontSize), rem);
 
+@mobileH1: unit((30 / @fontSize), rem);
+@mobileH2: unit((24 / @fontSize), rem);
+@mobileH3: unit((20 / @fontSize), rem);
+@mobileH4: unit((18 / @fontSize), rem);
+
 /*--------------
    Form Input
 ---------------*/
