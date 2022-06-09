@@ -27,7 +27,7 @@
   .tags-content {
     line-height: @tagsLineHeight;
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     flex-direction: column;
   }
@@ -44,6 +44,7 @@
 
     .tags-content {
       flex-direction: inherit;
+      align-items: center;
     }
   }
 }
