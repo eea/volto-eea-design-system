@@ -105,6 +105,20 @@
   border-radius: @borderRadius;
 }
 
+/*--------------
+     Icons
+---------------*/
+
+.ui.items > .item {
+  &.primary > .icon {
+    color: @primaryColor;
+  }
+
+  &.secondary > .icon {
+    color: @secondaryColor;
+  }
+}
+
 
 /*--------------
      Content
@@ -130,7 +144,8 @@
   visibility: hidden;
 }
 
-.ui.items > .item > .image + .content {
+.ui.items > .item > .image + .content,
+.ui.items > .item > .icon + .content {
   min-width: 0;
   width: @contentWidth;
   display: @contentDisplay;
@@ -344,7 +359,8 @@
   .ui.items > .item > .image:not(.ui) {
     width: @tabletImageWidth;
   }
-  .ui.items > .item > .image + .content {
+  .ui.items > .item > .image + .content,
+  .ui.items > .item > .icon + .content {
     display: block;
     padding: 0em 0em 0em @tabletContentImageDistance;
   }
@@ -368,7 +384,8 @@
     width: @mobileImageWidth !important;
     max-height: @mobileImageMaxHeight !important;
   }
-  .ui.items:not(.unstackable) > .item > .image + .content {
+  .ui.items:not(.unstackable) > .item > .image + .content,
+  .ui.items:not(.unstackable) > .item > .icon + .content {
     display: block;
     padding: @mobileContentImageDistance 0em 0em;
   }
@@ -384,13 +401,16 @@
        Aligned
 --------------------*/
 
-.ui.items > .item > .image + [class*="top aligned"].content {
+.ui.items > .item > .image + [class*="top aligned"].content,
+.ui.items > .item > .icon + [class*="top aligned"].content {
   align-self: flex-start;
 }
-.ui.items > .item > .image + [class*="middle aligned"].content {
+.ui.items > .item > .image + [class*="middle aligned"].content,
+.ui.items > .item > .icon + [class*="middle aligned"].content {
   align-self: center;
 }
-.ui.items > .item > .image + [class*="bottom aligned"].content {
+.ui.items > .item > .image + [class*="bottom aligned"].content,
+.ui.items > .item > .icon + [class*="bottom aligned"].content {
   align-self: flex-end;
 }
 
