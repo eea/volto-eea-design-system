@@ -63,27 +63,28 @@ const TopDropdownMenu = ({
   );
 };
 
-const useScrollingUp = () => {
-  let prevScroll;
-
-  if (process.browser) {
-    prevScroll = window.pageYOffset;
-  }
-  const [scrollingUp, setScrollingUp] = React.useState(false);
-  const handleScroll = () => {
-    const currScroll = window.pageYOffset;
-    const isScrolled = prevScroll > currScroll;
-    setScrollingUp(isScrolled);
-    prevScroll = currScroll;
-  };
-  React.useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll, { passive: true });
-    };
-  });
-  return scrollingUp;
-};
+// disable sticky until it's more stable
+// const useScrollingUp = () => {
+//   let prevScroll;
+//
+//   if (process.browser) {
+//     prevScroll = window.pageYOffset;
+//   }
+//   const [scrollingUp, setScrollingUp] = React.useState(false);
+//   const handleScroll = () => {
+//     const currScroll = window.pageYOffset;
+//     const isScrolled = prevScroll > currScroll;
+//     setScrollingUp(isScrolled);
+//     prevScroll = currScroll;
+//   };
+//   React.useEffect(() => {
+//     window.addEventListener('scroll', handleScroll, { passive: true });
+//     return () => {
+//       window.removeEventListener('scroll', handleScroll, { passive: true });
+//     };
+//   });
+//   return scrollingUp;
+// };
 
 const Main = ({
   logo,
@@ -143,17 +144,20 @@ const Main = ({
   //   }
   // }, [searchIsActive, burger, menuIsActive]);
 
-  const isScrollingUp = useScrollingUp();
-
   const node = React.useRef();
   const searchButtonRef = React.useRef();
   const mobileMenuBurgerRef = React.useRef();
 
+  // disable sticky setting until feature is more stable
+  // const isScrollingUp = useScrollingUp();
+  // <div
+  // className={`main bar ${transparency ? 'transparency' : ''} ${
+  //     isScrollingUp ? 'sticky' : ''
+  // }`}
+  // >
   return (
     <div
-      className={`main bar ${transparency ? 'transparency' : ''} ${
-        isScrollingUp ? 'sticky' : ''
-      }`}
+      className={`main bar ${transparency ? 'transparency' : ''}`}
       ref={node}
     >
       <Container>
