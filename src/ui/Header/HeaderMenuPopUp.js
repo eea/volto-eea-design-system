@@ -7,7 +7,6 @@ import {
   Icon,
   Accordion,
 } from 'semantic-ui-react';
-// import cx from 'classnames';
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
 const createColumns = (item, length) => {
@@ -48,7 +47,7 @@ const Item = ({ item, icon = false, iconName }) => (
     </a>
     <List className="menu-list">
       {item.items.map((listItem) => (
-        <List.Item key={listItem['@id']} as="a" href={listItem.hreg}>
+        <List.Item key={listItem['@id']} as="a" href={listItem.href}>
           {icon && <Icon className={iconName} />}
           {listItem.title}
         </List.Item>
@@ -154,7 +153,7 @@ const SecondLevelContent = ({ element, topics = false }) => {
             {item.title}
           </List.Item>
         ))}
-        <List.Item as="a" href="/#">
+        <List.Item as="a" href="/#" key={'a-z-topics'}>
           A-Z Topics
         </List.Item>
       </List>
@@ -163,13 +162,9 @@ const SecondLevelContent = ({ element, topics = false }) => {
     content = (
       <List>
         {element.items.map((item) => (
-          <React.Fragment key={item['@id']}>
-            {
-              <List.Item as="a" href={item.href}>
-                {item.title}
-              </List.Item>
-            }
-          </React.Fragment>
+          <List.Item as="a" href={item.href} key={item['@id']}>
+            {item.title}
+          </List.Item>
         ))}
       </List>
     );
