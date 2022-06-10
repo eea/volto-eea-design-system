@@ -21,10 +21,10 @@ const createColumns = (item, length) => {
   const column = subArrays.map((subArray, index) => (
     <Grid.Column key={index}>
       <List>
-        {subArray.map((arrayItem) => (
-          <List.Item key={arrayItem['@id']} as="a" href={arrayItem.url}>
+        {subArray.map((arrayItem, idx) => (
+          <Link role="listitem" className="item" to={arrayItem.url} key={idx}>
             {arrayItem.title}
-          </List.Item>
+          </Link>
         ))}
       </List>
     </Grid.Column>
@@ -48,11 +48,11 @@ const Item = ({ item, icon = false, iconName }) => (
       {item.title}
     </Link>
     <List className="menu-list">
-      {item.items.map((listItem) => (
-        <List.Item key={listItem['@id']} as="a" href={listItem.url}>
+      {item.items.map((listItem, index) => (
+        <Link role="listitem" className="item" to={listItem.url} key={index}>
           {icon && <Icon className={iconName} />}
           {listItem.title}
-        </List.Item>
+        </Link>
       ))}
     </List>
   </>
@@ -60,14 +60,14 @@ const Item = ({ item, icon = false, iconName }) => (
 
 const Topics = ({ menuItem }) => (
   <Grid>
-    {menuItem.items.map((section) => (
-      <React.Fragment key={section['@id']}>
+    {menuItem.items.map((section, index) => (
+      <React.Fragment key={index}>
         {section.title === 'At a glance' ? (
-          <Grid.Column width={3} id="at-a-glance" key={section['@id']}>
+          <Grid.Column width={3} id="at-a-glance">
             <Item item={section} icon={true} iconName="ri-leaf-line" />
           </Grid.Column>
         ) : (
-          <Grid.Column width={9} key={section['@id']}>
+          <Grid.Column width={9} key={index}>
             <ItemGrid item={section} columns={4} length={10} />
           </Grid.Column>
         )}
@@ -79,8 +79,8 @@ const Topics = ({ menuItem }) => (
 const Countries = ({ menuItem }) => (
   <Grid>
     <Grid.Column width={8}>
-      {menuItem.items.map((section) => (
-        <React.Fragment key={section['@id']}>
+      {menuItem.items.map((section, index) => (
+        <React.Fragment key={index}>
           {section.title === 'EEA member countries' && (
             <ItemGrid item={section} columns={5} length={7} />
           )}
@@ -89,8 +89,8 @@ const Countries = ({ menuItem }) => (
     </Grid.Column>
     <Grid.Column width={4}>
       <Grid columns={1} className="nested-grid">
-        {menuItem.items.map((section) => (
-          <React.Fragment key={section['@id']}>
+        {menuItem.items.map((section, index) => (
+          <React.Fragment key={index}>
             {section.title !== 'EEA member countries' && (
               <Grid.Column>
                 <ItemGrid item={section} columns={2} length={3} />
@@ -105,8 +105,8 @@ const Countries = ({ menuItem }) => (
 
 const StandardMegaMenuGrid = ({ menuItem }) => (
   <Grid columns={4}>
-    {menuItem.items.map((section) => (
-      <Grid.Column key={section['@id']}>
+    {menuItem.items.map((section, index) => (
+      <Grid.Column key={index}>
         <Item item={section} />
       </Grid.Column>
     ))}
@@ -119,17 +119,17 @@ const FirstLevelContent = ({ element }) => {
   const firstLevelPanels = [];
   let content;
   if (!topics) {
-    element.items.forEach((item) => {
+    element.items.forEach((item, index) => {
       let x = {};
       x.key = item['@id'];
       x.title = (
-        <Accordion.Title>
+        <Accordion.Title key={`title=${index}`}>
           {item.title}
           <Icon className="ri-arrow-down-s-line" size="small" />
         </Accordion.Title>
       );
       x.content = (
-        <Accordion.Content>
+        <Accordion.Content key={index}>
           <SecondLevelContent element={item} />
         </Accordion.Content>
       );
@@ -150,23 +150,28 @@ const SecondLevelContent = ({ element, topics = false }) => {
     );
     content = (
       <List>
-        {atAGlance.items.map((item) => (
-          <List.Item key={item['@id']} as="a" href={item.url}>
+        {atAGlance.items.map((item, index) => (
+          <Link role="listitem" className="item" to={item.url} key={index}>
             {item.title}
-          </List.Item>
+          </Link>
         ))}
-        <List.Item as="a" href="/#" key={'a-z-topics'}>
+        <Link
+          role="listitem"
+          className="item"
+          to={element.url}
+          key={element['@id']}
+        >
           A-Z Topics
-        </List.Item>
+        </Link>
       </List>
     );
   } else {
     content = (
       <List>
-        {element.items.map((item) => (
-          <List.Item as="a" href={item.url} key={item['@id']}>
+        {element.items.map((item, index) => (
+          <Link role="listitem" className="item" to={item.url} key={index}>
             {item.title}
-          </List.Item>
+          </Link>
         ))}
       </List>
     );
@@ -177,17 +182,17 @@ const SecondLevelContent = ({ element, topics = false }) => {
 
 const NestedAccordion = ({ menuItems }) => {
   const rootPanels = [];
-  menuItems.forEach((element) => {
+  menuItems.forEach((element, index) => {
     let x = {};
-    x.key = element['@id'];
+    x.key = index;
     x.title = (
-      <Accordion.Title>
+      <Accordion.Title key={`title-${index}`}>
         {element.title}
         <Icon className="ri-arrow-down-s-line" size="small" />
       </Accordion.Title>
     );
     x.content = (
-      <Accordion.Content>
+      <Accordion.Content key={index}>
         <FirstLevelContent element={element} />
       </Accordion.Content>
     );
@@ -197,13 +202,7 @@ const NestedAccordion = ({ menuItems }) => {
   return <Accordion panels={rootPanels} />;
 };
 
-function HeaderMenuPopUp({
-  menuItems,
-  onClose,
-  triggerRefs,
-  renderMenuItem,
-  activeItem,
-}) {
+function HeaderMenuPopUp({ menuItems, onClose, triggerRefs, activeItem }) {
   const nodeRef = React.useRef();
   useClickOutside({ targetRefs: [nodeRef, ...triggerRefs], callback: onClose });
 
