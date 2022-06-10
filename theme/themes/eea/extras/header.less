@@ -194,10 +194,7 @@
     .ui.grid {
       /* All margins and paddings removed for main header */
       width: 100%;
-      margin-top: 0;
-      margin-bottom: 0;
-      margin-left: 0;
-      margin-right: 0;
+      margin: 0;
 
       div:first-child {
         padding-left: 0;
@@ -219,7 +216,6 @@
   .item {
     a {
       color: @mainMenuItemColor;
-      font-size: @headerLargeFontSize; // fallback font size
       font-size: @mainMenuItemFontSize;
       font-weight: @mainMenuItemFontWeight;
       border-bottom: @mainMenuItemBorder;
@@ -234,6 +230,10 @@
     color: @mainMenuItemActiveColor;
     border-bottom: @mainMenuItemActiveBorder;
   }
+}
+
+#main .main-menu .item:first-child {
+    display: none; // hide home nav item
 }
 
 .main-menu.inverted {
@@ -507,7 +507,6 @@
   position: absolute;
   right: 0;
   overflow: auto;
-  width: 100%;
   z-index: @z-index-8;
   width: @mobileMegaMenuWidth;
   background: @megaMenuBackgroundColor;
@@ -629,6 +628,10 @@
       }
     }
   }
+}
+
+#main #mega-menu .ui.accordion .title:first-child {
+  display: none; // hide home link from mobile menu
 }
 
 @media all and (min-width: @tabletBreakpoint) {
