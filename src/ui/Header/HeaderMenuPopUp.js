@@ -7,6 +7,8 @@ import {
   Icon,
   Accordion,
 } from 'semantic-ui-react';
+
+import { Link } from 'react-router-dom';
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
 const createColumns = (item, length) => {
@@ -33,18 +35,18 @@ const createColumns = (item, length) => {
 
 const ItemGrid = ({ item, columns, length }) => (
   <>
-    <a className="sub-title" href={item.url}>
+    <Link className="sub-title" to={item.url}>
       {item.title}
-    </a>
+    </Link>
     <Grid columns={columns}>{createColumns(item, length)}</Grid>
   </>
 );
 
 const Item = ({ item, icon = false, iconName }) => (
   <>
-    <a className="sub-title" href={item.url}>
+    <Link className="sub-title" to={item.url}>
       {item.title}
-    </a>
+    </Link>
     <List className="menu-list">
       {item.items.map((listItem) => (
         <List.Item key={listItem['@id']} as="a" href={listItem.url}>
@@ -215,7 +217,7 @@ function HeaderMenuPopUp({
         {menuItem && (
           <div className="menu-content tablet hidden mobile hidden">
             <h3 className="title">
-              <a href={menuItem.url}>{menuItem.title}</a>
+              <Link to={menuItem.url}>{menuItem.title}</Link>
             </h3>
             <Divider fitted />
             {menuItem.title === 'Topics' ? (
