@@ -112,7 +112,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Climate',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Health',
@@ -120,7 +120,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Health',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Nature',
@@ -128,7 +128,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Nature',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Sustainability',
@@ -136,7 +136,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Sustainability',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Economy-and-resources',
@@ -144,7 +144,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Economy and resources',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'State-of-Europe’s-environment',
@@ -152,12 +152,12 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'State of Europe’s environment',
-            href: '/#',
+            url: '/#',
           },
         ],
         review_state: null,
         title: 'At a glance',
-        href: '/#',
+        url: '/#',
       },
       {
         '@id': 'Closer-look',
@@ -169,7 +169,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Agriculture and food system',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Air-quality',
@@ -177,7 +177,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Air quality',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Bathing-water',
@@ -185,7 +185,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Bathing water',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Biodiversity-habitats-and-species',
@@ -193,7 +193,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Biodiversity , habitats and species',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Bioeconomy',
@@ -201,7 +201,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Bioeconomy',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Buildings and construction',
@@ -209,7 +209,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Buildings and construction',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'CC-Adaptation',
@@ -217,7 +217,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'CC Adaptation',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'CC-impacts-and-risks',
@@ -225,7 +225,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'CC impacts and risks',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'CC-mitigation',
@@ -233,7 +233,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'CC mitigation',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Chemicals',
@@ -241,7 +241,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Chemicals',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Circular-economy',
@@ -249,7 +249,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Circular economy',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Electric-vehicles',
@@ -257,7 +257,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Electric vehicles',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Energy',
@@ -265,7 +265,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Energy',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Energy-efficiency',
@@ -273,7 +273,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Energy efficiency',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Environmental-health-impacts',
@@ -281,7 +281,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Environmental health impacts',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Enivornmental-inequalities',
@@ -289,7 +289,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Enivornmental inequalities',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Environmental-noise',
@@ -297,7 +297,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Environmental noise',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Extreme-weather-floods-droughts-heatwaves',
@@ -305,7 +305,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Extreme weather: floods, droughts, heatwaves',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Forests-and-forestry',
@@ -313,7 +313,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Forests and forestry',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Industry',
@@ -321,7 +321,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Industry',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Land-use',
@@ -329,7 +329,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Land use',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Marine-and-coastal-zones',
@@ -337,7 +337,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Marine and coastal zones',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Plastics',
@@ -345,7 +345,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Plastics',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Pollution',
@@ -353,7 +353,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Pollution',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Production-and-consumption ',
@@ -361,7 +361,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Production and consumption ',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Protected-areas',
@@ -369,7 +369,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Protected areas',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Protecting-and-restoring-nature',
@@ -377,7 +377,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Protecting and restoring nature',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Renewable-energy',
@@ -385,7 +385,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Renewable-energy',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Resource-use-and-materials',
@@ -393,7 +393,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Resource use and materials',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Road-transport',
@@ -401,7 +401,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Road transport',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Soil',
@@ -409,7 +409,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Soil',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'State-of-Europes-environment',
@@ -417,7 +417,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'State of Europe’s  environment',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Sustainability-challenges',
@@ -425,7 +425,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Sustainability challenges',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Sustainability-solutions',
@@ -433,7 +433,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Sustainability solutions',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Sustainable-finance',
@@ -441,7 +441,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Sustainable-finance',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Textiles',
@@ -449,7 +449,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Textiles',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Urban-sustainability',
@@ -457,7 +457,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Urban sustainability',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Waste',
@@ -465,7 +465,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Waste',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Water',
@@ -473,24 +473,24 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Water',
-            href: '/#',
+            url: '/#',
           },
         ],
         review_state: null,
         title: 'Closer look',
-        href: '/#',
+        url: '/#',
       },
     ],
     review_state: null,
     title: 'Topics',
-    href: '/#',
+    url: '/#',
   },
   {
     '@id': 'Data-and-publications',
     items: [],
     review_state: null,
     title: 'Data and publications',
-    href: '/#',
+    url: '/#',
   },
 
   {
@@ -506,7 +506,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Austria',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Belgium',
@@ -514,7 +514,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Belgium',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Bulgaria',
@@ -522,7 +522,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Bulgaria',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Croatia',
@@ -530,7 +530,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Croatia',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Cyprus',
@@ -538,7 +538,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Cyprus',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Czechia',
@@ -546,7 +546,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Czechia',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Denmark',
@@ -554,7 +554,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Denmark',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Estonia',
@@ -562,7 +562,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Estonia',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Finland',
@@ -570,7 +570,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Finland',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'France',
@@ -578,7 +578,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'France',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Germany',
@@ -586,7 +586,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Germany',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Greece',
@@ -594,7 +594,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Greece',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Hungary',
@@ -602,7 +602,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Hungary',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Iceland',
@@ -610,7 +610,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Iceland',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Ireland',
@@ -618,7 +618,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Ireland',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Italy',
@@ -626,7 +626,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Italy',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Latvia',
@@ -634,7 +634,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Latvia',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Liechtenstein',
@@ -642,7 +642,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Liechtenstein',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Lithuania',
@@ -650,7 +650,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Lithuania',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Luxembourg',
@@ -658,7 +658,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Luxembourg',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Malta',
@@ -666,7 +666,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Malta',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Netherlands',
@@ -674,7 +674,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Netherlands',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Norway',
@@ -682,7 +682,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Norway',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Poland',
@@ -690,7 +690,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Poland',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Portugal',
@@ -698,7 +698,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Portugal',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Romania',
@@ -706,7 +706,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Romania',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Slovakia',
@@ -714,7 +714,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Slovakia',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Slovenia',
@@ -722,7 +722,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Slovenia',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Spain',
@@ -730,7 +730,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Spain',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Sweden',
@@ -738,7 +738,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Sweden',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Switzerland',
@@ -746,7 +746,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Switzerland',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Turkey',
@@ -754,7 +754,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Turkey',
-            href: '/#',
+            url: '/#',
           },
         ],
         review_state: null,
@@ -770,7 +770,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Albania',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Bosnia-and-Herzegovina',
@@ -778,7 +778,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Bosnia and Herzegovina',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Kosovo**',
@@ -786,7 +786,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Kosovo**',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Montenegro',
@@ -794,7 +794,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Montenegro',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'North-Macedonia',
@@ -802,7 +802,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'North Macedonia',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Serbia',
@@ -810,12 +810,12 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Serbia',
-            href: '/#',
+            url: '/#',
           },
         ],
         review_state: null,
         title: 'Cooperating countries',
-        href: '/#',
+        url: '/#',
       },
       {
         '@id': 'Former-member-country',
@@ -827,24 +827,24 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'United Kingdom*',
-            href: '/#',
+            url: '/#',
           },
         ],
         review_state: null,
         title: 'Former member country',
-        href: '/#',
+        url: '/#',
       },
     ],
     review_state: null,
     title: 'Countries',
-    href: '/#',
+    url: '/#',
   },
   {
     '@id': 'Newsroom',
     items: [],
     review_state: null,
     title: 'Newsroom',
-    href: '/#',
+    url: '/#',
   },
   {
     '@id': 'About-Us',
@@ -859,7 +859,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'About the EEA',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Eco-management-Reducing-our-environmental-footprint-EMAS',
@@ -867,7 +867,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Eco-management/Reducing our environmental footprint (EMAS)',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Copernicus',
@@ -875,7 +875,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Copernicus',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Digitilization',
@@ -883,12 +883,12 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Digitilization',
-            href: '/#',
+            url: '/#',
           },
         ],
         review_state: null,
         title: 'Mission, vision and values',
-        href: '/#',
+        url: '/#',
       },
       {
         '@id': 'Governance',
@@ -900,7 +900,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Executive Director',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Management-board-&-bureau',
@@ -908,7 +908,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Management board & bureau',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Operational-management-Senior-Management-Team)',
@@ -916,7 +916,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Operational management (Senior Management Team)',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Scientific-commitee',
@@ -924,7 +924,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Scientific commitee',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Organizational-chart',
@@ -932,12 +932,12 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Organizational chart',
-            href: '/#',
+            url: '/#',
           },
         ],
         review_state: null,
         title: 'Governance',
-        href: '/#',
+        url: '/#',
       },
       {
         '@id': 'Our-knowledge-network-Eionet',
@@ -949,7 +949,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'About the Eionet',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Members',
@@ -957,7 +957,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Members',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'ETCs',
@@ -965,7 +965,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'ETCs',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Interest-groups',
@@ -973,7 +973,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Interest groups',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Data-reporting',
@@ -981,7 +981,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Data-reporting',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Eionet-projects',
@@ -989,12 +989,12 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Eionet projects',
-            href: '/#',
+            url: '/#',
           },
         ],
         review_state: null,
         title: 'Our knowledge network (Eionet)',
-        href: '/#',
+        url: '/#',
       },
       {
         '@id': 'Services-and-projects',
@@ -1006,7 +1006,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'EUROGEO',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Human-Biomonitoring-for-Europe',
@@ -1014,7 +1014,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Human Biomonitoring for Europe',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'COPERNICUS',
@@ -1022,7 +1022,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'COPERNICUS',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'IPA-2020',
@@ -1030,7 +1030,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'IPA 2020',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'UNEP-IRP',
@@ -1038,12 +1038,12 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'UNEP IRP',
-            href: '/#',
+            url: '/#',
           },
         ],
         review_state: null,
         title: 'Services and projects',
-        href: '/#',
+        url: '/#',
       },
       {
         '@id': 'Contract-opportunities',
@@ -1055,7 +1055,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Open calls - Tenders above 140Κ €',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Negotiation-procedures-Tenders',
@@ -1063,7 +1063,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Negotiation procedures - Tenders 15K - 140K €',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Toolbox',
@@ -1071,7 +1071,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Toolbox',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Contracts-and-grants-awarded',
@@ -1079,12 +1079,12 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Contracts and grants awarded',
-            href: '/#',
+            url: '/#',
           },
         ],
         review_state: null,
         title: 'Contract opportunities',
-        href: '/#',
+        url: '/#',
       },
       {
         '@id': 'Careers',
@@ -1096,7 +1096,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'What do we offer?',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Vacancies',
@@ -1104,7 +1104,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Vacancies',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Bluebook-traineeships',
@@ -1112,12 +1112,12 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Bluebook traineeships',
-            href: '/#',
+            url: '/#',
           },
         ],
         review_state: null,
         title: 'Careers',
-        href: '/#',
+        url: '/#',
       },
       {
         '@id': 'Partners-and-networks',
@@ -1130,7 +1130,7 @@ const menuItems = [
             review_state: null,
             title:
               'Network of heads of Environmental Protection Agencies (EPA network)',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'EU-instititions-and-agencies',
@@ -1138,7 +1138,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'EU instititions and agencies',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'International-cooperation-Research-Institutions',
@@ -1146,12 +1146,12 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'International cooperation (Research Institutions)',
-            href: '/#',
+            url: '/#',
           },
         ],
         review_state: null,
         title: 'Partners and networks',
-        href: '/#',
+        url: '/#',
       },
       {
         '@id': 'Contact-us',
@@ -1163,7 +1163,7 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Contact details and form',
-            href: '/#',
+            url: '/#',
           },
           {
             '@id': 'Frequently-Asked-Questions',
@@ -1171,17 +1171,17 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Frequently Asked Questions',
-            href: '/#',
+            url: '/#',
           },
         ],
         review_state: null,
         title: 'Contact us',
-        href: '/#',
+        url: '/#',
       },
     ],
     review_state: null,
     title: 'About Us',
-    href: '/#',
+    url: '/#',
   },
 ];
 

@@ -20,7 +20,7 @@ const createColumns = (item, length) => {
     <Grid.Column key={index}>
       <List>
         {subArray.map((arrayItem) => (
-          <List.Item key={arrayItem['@id']} as="a" href={arrayItem.href}>
+          <List.Item key={arrayItem['@id']} as="a" href={arrayItem.url}>
             {arrayItem.title}
           </List.Item>
         ))}
@@ -33,7 +33,7 @@ const createColumns = (item, length) => {
 
 const ItemGrid = ({ item, columns, length }) => (
   <>
-    <a className="sub-title" href={item.href}>
+    <a className="sub-title" href={item.url}>
       {item.title}
     </a>
     <Grid columns={columns}>{createColumns(item, length)}</Grid>
@@ -42,12 +42,12 @@ const ItemGrid = ({ item, columns, length }) => (
 
 const Item = ({ item, icon = false, iconName }) => (
   <>
-    <a className="sub-title" href={item.href}>
+    <a className="sub-title" href={item.url}>
       {item.title}
     </a>
     <List className="menu-list">
       {item.items.map((listItem) => (
-        <List.Item key={listItem['@id']} as="a" href={listItem.href}>
+        <List.Item key={listItem['@id']} as="a" href={listItem.url}>
           {icon && <Icon className={iconName} />}
           {listItem.title}
         </List.Item>
@@ -149,7 +149,7 @@ const SecondLevelContent = ({ element, topics = false }) => {
     content = (
       <List>
         {atAGlance.items.map((item) => (
-          <List.Item key={item['@id']} as="a" href={item.href}>
+          <List.Item key={item['@id']} as="a" href={item.url}>
             {item.title}
           </List.Item>
         ))}
@@ -162,7 +162,7 @@ const SecondLevelContent = ({ element, topics = false }) => {
     content = (
       <List>
         {element.items.map((item) => (
-          <List.Item as="a" href={item.href} key={item['@id']}>
+          <List.Item as="a" href={item.url} key={item['@id']}>
             {item.title}
           </List.Item>
         ))}
@@ -205,7 +205,9 @@ function HeaderMenuPopUp({
   const nodeRef = React.useRef();
   useClickOutside({ targetRefs: [nodeRef, ...triggerRefs], callback: onClose });
 
-  const menuItem = menuItems.find((current) => current['@id'] === activeItem);
+  const menuItem = menuItems.find(
+    (current) => current.url === activeItem || current['@id'] === activeItem,
+  );
 
   return (
     <div id="mega-menu" ref={nodeRef}>
@@ -213,7 +215,7 @@ function HeaderMenuPopUp({
         {menuItem && (
           <div className="menu-content tablet hidden mobile hidden">
             <h3 className="title">
-              <a href={menuItem.href}>{menuItem.title}</a>
+              <a href={menuItem.url}>{menuItem.title}</a>
             </h3>
             <Divider fitted />
             {menuItem.title === 'Topics' ? (
