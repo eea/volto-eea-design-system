@@ -212,7 +212,9 @@ function HeaderMenuPopUp({
       <Container>
         {menuItem && (
           <div className="menu-content tablet hidden mobile hidden">
-            <h3 className="title">{menuItem.title}</h3>
+            <h3 className="title">
+              <a href={menuItem.href}>{menuItem.title}</a>
+            </h3>
             <Divider fitted />
             {menuItem.title === 'Topics' ? (
               <Topics menuItem={menuItem} />
