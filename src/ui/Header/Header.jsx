@@ -95,7 +95,7 @@ const Main = ({
   transparency,
   inverted,
 }) => {
-  const [activeItem, setActiveItem] = React.useState('');
+  const [activeItem, setActiveItem] = React.useState(pathname);
   const [menuIsActive, setMenuIsActive] = React.useState(false);
   const [searchIsActive, setSearchIsActive] = React.useState(false);
   const [burger, setBurger] = React.useState('');
@@ -104,6 +104,10 @@ const Main = ({
     setMenuIsActive(false);
     setSearchIsActive(false);
     setBurger('');
+    // remove active menu when we have no pathname which means we hit logo to go home
+    if (!pathname) {
+      setActiveItem('');
+    }
   }, [pathname]);
 
   const searchOnClick = (e, x) => {
@@ -174,7 +178,8 @@ const Main = ({
                       name={item['@id'] || item.url}
                       key={item['@id'] || item.url}
                       active={
-                        activeItem === item['@id'] || activeItem === item.url
+                        activeItem.indexOf(item['@id']) !== -1 ||
+                        activeItem.indexOf(item.url) !== -1
                       }
                     >
                       {renderGlobalMenuItem(item, {
