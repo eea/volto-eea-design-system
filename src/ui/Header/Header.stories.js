@@ -67,9 +67,7 @@ const links = [
 ];
 
 const languages = [
-  { name: 'Albanian', code: 'sq' },
   { name: 'Български', code: 'bg' },
-  { name: 'Bosnian', code: 'bs' },
   { name: 'čeština', code: 'cs' },
   { name: 'Hrvatski', code: 'hr' },
   { name: 'dansk', code: 'da' },
@@ -85,7 +83,6 @@ const languages = [
   { name: 'italiano', code: 'it' },
   { name: 'Latviešu', code: 'lv' },
   { name: 'lietuvių', code: 'lt' },
-  { name: 'Macedonian', code: 'mk' },
   { name: 'Malti', code: 'mt' },
   { name: 'Norsk', code: 'no' },
   { name: 'polski', code: 'pl' },

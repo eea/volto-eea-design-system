@@ -83,7 +83,7 @@
   gap: @dropdownMenuWrapperGap;
   white-space: @dropdownMenuContentWhiteSpace;
   margin: @dropdownMenuWrapperMargin;
-  
+
   &.language-list {
     padding-inline-start: @dropdownMenuLanguageWrapperPaddingInlineStart;
   }
@@ -117,7 +117,7 @@
         }
         a {
           font-weight: @officialUnionLinkFontWeight;
-          white-space: @dropdownMenuContentWhiteSpace; 
+          white-space: @dropdownMenuContentWhiteSpace;
           color: @officialUnionLinkColor;
         }
       }
@@ -288,10 +288,15 @@
 
 @media all and (max-width: @largestMobileScreen) {
   .eea.header .top.bar .ui.container {
-    width: 100% !important; //override semantic auto to display content with space between them   
+    width: 100% !important; //override semantic auto to display content with space between them
   }
 }
-
+.homepage .eea.header {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
 /*----------------------------------------------------------------------------
   Header Actions - Burger and Search Icons
 ----------------------------------------------------------------------------*/
@@ -370,7 +375,7 @@
   .top.bar .ui.dropdown .menu {
     margin-top: @tabletDropdownMenuMarginTop;
   }
-  
+
   .top.bar .ui.dropdown .menu,
   .top.bar .ui.dropdown .menu .item {
     font-size: @tabletDropdownMenuFontSize;
@@ -512,6 +517,7 @@
   background: @megaMenuBackgroundColor;
   color: @megaMenuTextColor;
   max-height: @mobilePopUpHeight;
+  min-height: @size-11;
   padding: @mobileMegaMenuPadding;
 
   .ui.container {
@@ -531,11 +537,11 @@
     color: @megaMenuTextColor;
 
     &+ .ui.grid {
-  
+
       div.column:first-child {
         padding-left: 0;
       }
-  
+
       div.column:last-child {
         padding-right: 0;
       }
@@ -649,5 +655,5 @@
   }
   #mega-menu .title > a {
     color: @megaMenuTextColor;
-  } 
+  }
 }
