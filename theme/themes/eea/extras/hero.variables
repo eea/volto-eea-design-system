@@ -8,6 +8,7 @@
 @desktopHeroBlockMinHeight: 665px;
 
 @heroBlockPosition: relative;
+@heroBlockHomepagePadding: 0 @rem-space-5;
 
 /* Background Image */
 @heroBlockImageBackgroundRepeat   : no-repeat;
