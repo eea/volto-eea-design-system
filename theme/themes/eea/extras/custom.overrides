@@ -1,0 +1,4 @@
+// hide stagingBanner on homepage
+.homepage .stagingBanner {
+  display: none !important;
+}
