@@ -72,6 +72,7 @@
 @contentBorderRadius: 0em;
 @contentBoxShadow: none;
 @contentBorder: none;
+@cardContentMarginBottom: @rem-space-4;
 
 
 /* Header */
@@ -79,12 +80,12 @@
 @headerFontWeight: @bold;
 @headerFontSize: 1.125rem;
 @headerLineHeightOffset: -(@lineHeight - 1em) / 2;
-@headerColor: @black;
+@headerColor: @tertiaryColor;
 
 /* Metadata */
 @metaFontSize: @relativeMedium;
 @metaSpacing: 0.3em;
-@metaColor: @oldSilver;
+@metaColor: @tertiaryColor;
 
 /* Icons */
 @actionOpacity: 0.75;
@@ -111,8 +112,8 @@
 @metaLinkHoverColor: @textColor;
 
 /* Description */
-@descriptionDistance: 0.5em;
-@descriptionColor: @black;
+@descriptionDistance: 0;
+@descriptionColor: @tertiaryColor;
 
 /* Content Image */
 @contentImageWidth: '';
