@@ -79,7 +79,7 @@
 @headerFontWeight: @bold;
 @headerFontSize: 1.125rem;
 @headerLineHeightOffset: -(@lineHeight - 1em) / 2;
-@headerColor: @black;
+@headerColor: inherit;
 
 /* Metadata */
 @metaFontSize: @relativeMedium;
@@ -112,7 +112,7 @@
 
 /* Description */
 @descriptionDistance: 0.5em;
-@descriptionColor: @black;
+@descriptionColor: inherit;
 
 /* Content Image */
 @contentImageWidth: '';
