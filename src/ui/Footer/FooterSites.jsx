@@ -9,7 +9,7 @@ const Sites = (props) => {
 
   //fallback to props
   return (
-    <div className="theme-sites">
+    <div className="theme-sites mobile hidden">
       <div className="logos">
         <Grid columns={5}>
           {props.sites &&

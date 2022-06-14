@@ -322,7 +322,7 @@
   .slick-list {
     margin: 0 -0.75em !important;
   }
-  
+
   .slick-track {
     display: flex;
   }
@@ -337,7 +337,6 @@
     > div {
       height: 100%;
     }
-
   }
 
   .slider-arrow {
@@ -363,6 +362,11 @@
     left: auto;
   }
 
+  .slick-dots {
+    position: relative;
+    bottom: unset;
+  }
+
   .slick-dots li button:before {
     background-color: @carouselDotsBackgroundColor;
     color: transparent;
@@ -376,10 +380,8 @@
   .slick-dots li.slick-active button:before {
     background-color: @carouselDotsActiveBackgroundColor;
     color: transparent;
-    
-  }
 
-  
+  }
 }
 
 

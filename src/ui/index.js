@@ -35,3 +35,5 @@ export LabeledIconGroup from './LabeledIconGroup/LabeledIconGroup';
 export LanguageLabeledIcon from './LanguageLabeledIcon/LanguageLabeledIcon';
 
 export RelatedContent from './Card/RelatedContent/RelatedContent';
+
+export Hero from './Hero/Hero';
