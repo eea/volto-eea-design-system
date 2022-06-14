@@ -37,6 +37,8 @@ export default {
   },
 };
 
+const MetaRight = (args) => <b>{args.metaRight}</b>;
+
 const Template = (args) => (
   <Container>
     <Card fluid={args.fluid} className={args.class}>
@@ -44,6 +46,9 @@ const Template = (args) => (
         <Image src={args.imgUrl} wrapped ui={false} alt="card image" />
       )}
       <Card.Content>
+        <Card.Meta>
+          {args.meta} <MetaRight {...args} />
+        </Card.Meta>
         <Card.Header>{args.title}</Card.Header>
         <Card.Description>{args.description}</Card.Description>
       </Card.Content>
@@ -62,12 +67,15 @@ Default.args = {
   class: null,
   imgUrl:
     'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+
+  meta: 'Article',
+  metaRight: '30/07/2022',
   title: 'Lorem Ipsum',
   description:
     'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
   hasImage: true,
+  links: null,
   fluid: false,
-  links: [{ linkName: 'Link 1' }],
 };
 Default.argTypes = {
   imgUrl:
@@ -108,15 +116,6 @@ Default.argTypes = {
       defaultValue: { summary: false },
     },
   },
-  links: {
-    description: 'array with links to other content',
-    table: {
-      type: {
-        summary: 'Object',
-      },
-      defaultValue: { summary: ' "" ' },
-    },
-  },
 };
 Default.parameters = {
   controls: { exclude: ['cards'] },
@@ -133,6 +132,9 @@ const GridTemplate = (args) => (
               <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
             )}
             <Card.Content>
+              <Card.Meta>
+                {card.meta} <MetaRight {...card} />
+              </Card.Meta>
               <Card.Header>{card.title}</Card.Header>
               <Card.Description>{card.description}</Card.Description>
             </Card.Content>
@@ -160,8 +162,10 @@ CardGrid.args = {
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: true,
+      meta: 'Article',
+      metaRight: '30/07/2022',
+      links: null,
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
       title: 'Suspendisse iaculis feugiat',
@@ -170,16 +174,20 @@ CardGrid.args = {
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: true,
+      meta: 'Article',
+      metaRight: '30/07/2022',
+      links: null,
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
       title: 'Eget tellus blandit aenean mattis.',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: false,
+      meta: 'Article',
+      metaRight: '30/07/2022',
+      links: null,
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
   ],
 };
@@ -204,6 +212,9 @@ const FluidGridTemplate = (args) => (
             <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
           )}
           <Card.Content>
+            <Card.Meta>
+              {card.meta} <MetaRight {...card} />
+            </Card.Meta>
             <Card.Header>{card.title}</Card.Header>
             <Card.Description>{card.description}</Card.Description>
           </Card.Content>
@@ -230,8 +241,10 @@ FluidGrid.args = {
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: true,
+      meta: 'Article',
+      metaRight: '30/07/2022',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
+      links: null,
     },
     {
       title: 'Suspendisse iaculis feugiat',
@@ -240,16 +253,20 @@ FluidGrid.args = {
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: true,
+      meta: 'Article',
+      metaRight: '30/07/2022',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
+      links: null,
     },
     {
       title: 'Eget tellus blandit aenean mattis.',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: false,
+      meta: 'Article',
+      metaRight: '30/07/2022',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
+      links: null,
     },
   ],
 };
@@ -310,15 +327,8 @@ function CarouselCardsContent({ settings, cards, ...rest }) {
             )}
             <Card.Content>
               <Card.Meta>{card.meta}</Card.Meta>
-              {/* <Card.Header>{card.title}</Card.Header> */}
-              <Card.Description>{card.description}</Card.Description>
+              <Card.Header>{card.title}</Card.Header>
             </Card.Content>
-            {/* {card.links !== null &&
-              card.links.map((item, index) => (
-                <Card.Content extra key={index}>
-                  <a href="/#">{item.linkName}</a>
-                </Card.Content>
-              ))} */}
           </Card>
         ))}
       </Slider>
@@ -364,8 +374,25 @@ CarouselCards.args = {
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
+      hasImage: true,
+      fluid: true,
+      links: [{ linkName: 'Link 1' }],
+    },
+    {
+      meta: 'March 20, 2022.',
+      imgUrl:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
+      hasImage: true,
+      fluid: true,
+      links: [{ linkName: 'Link 1' }],
+    },
+    {
+      meta: 'March 20, 2022.',
+      imgUrl:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
       fluid: true,
       links: [{ linkName: 'Link 1' }],
@@ -382,34 +409,10 @@ CarouselCards.args = {
       links: [{ linkName: 'Link 1' }],
     },
     {
-      title: 'Lorem Ipsum',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
-      hasImage: true,
-      fluid: true,
-      links: [{ linkName: 'Link 1' }],
-    },
-    {
-      title: 'Lorem Ipsum',
-      meta: 'March 20, 2022.',
-      imgUrl:
-        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
-      hasImage: true,
-      fluid: true,
-      links: [{ linkName: 'Link 1' }],
-    },
-    {
-      title: 'Lorem Ipsum',
-      meta: 'March 20, 2022.',
-      imgUrl:
-        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
       fluid: true,
       links: [{ linkName: 'Link 1' }],
