@@ -43,19 +43,28 @@ const Template = (args) => (
   <Container>
     <Card fluid={args.fluid} className={args.class}>
       {args.hasImage && (
-        <Image src={args.imgUrl} wrapped ui={false} alt="card image" />
+        <Image
+          as="a"
+          href={args.href}
+          src={args.imgUrl}
+          wrapped
+          ui={false}
+          alt="card image"
+        />
       )}
       <Card.Content>
         <Card.Meta>
           {args.meta} <MetaRight {...args} />
         </Card.Meta>
-        <Card.Header>{args.title}</Card.Header>
+        <Card.Header>
+          <a href={args.href}>{args.title}</a>
+        </Card.Header>
         <Card.Description>{args.description}</Card.Description>
       </Card.Content>
       {args.links !== null &&
         args.links.map((item, index) => (
           <Card.Content extra key={index}>
-            <a href="/#">{item.linkName}</a>
+            <a href={args.href}>{item.linkName}</a>
           </Card.Content>
         ))}
     </Card>
@@ -74,6 +83,7 @@ Default.args = {
   description:
     'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
   hasImage: true,
+  href: '/#',
   links: null,
   fluid: false,
 };
@@ -129,13 +139,22 @@ const GridTemplate = (args) => (
         <Grid.Column mobile={12} tablet={6} computer={4} key={index}>
           <Card fluid={card.fluid} className={args.class}>
             {card.hasImage && (
-              <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
+              <Image
+                as="a"
+                href={card.href}
+                src={card.imgUrl}
+                wrapped
+                ui={false}
+                alt="card image"
+              />
             )}
             <Card.Content>
               <Card.Meta>
                 {card.meta} <MetaRight {...card} />
               </Card.Meta>
-              <Card.Header>{card.title}</Card.Header>
+              <Card.Header>
+                <a href={args.href}>{card.title}</a>
+              </Card.Header>
               <Card.Description>{card.description}</Card.Description>
             </Card.Content>
             {card.links !== null &&
@@ -164,6 +183,7 @@ CardGrid.args = {
       hasImage: true,
       meta: 'Article',
       metaRight: '30/07/2022',
+      href: '/#',
       links: null,
       fluid: true,
     },
@@ -176,6 +196,7 @@ CardGrid.args = {
       hasImage: true,
       meta: 'Article',
       metaRight: '30/07/2022',
+      href: '/#',
       links: null,
       fluid: true,
     },
@@ -186,6 +207,7 @@ CardGrid.args = {
       hasImage: false,
       meta: 'Article',
       metaRight: '30/07/2022',
+      href: '/#',
       links: null,
       fluid: true,
     },
@@ -209,13 +231,22 @@ const FluidGridTemplate = (args) => (
       {args.cards.map((card, index) => (
         <Card fluid={card.fluid} className={args.class} key={index}>
           {card.hasImage && (
-            <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
+            <Image
+              as="a"
+              href={card.href}
+              src={card.imgUrl}
+              wrapped
+              ui={false}
+              alt="card image"
+            />
           )}
           <Card.Content>
             <Card.Meta>
               {card.meta} <MetaRight {...card} />
             </Card.Meta>
-            <Card.Header>{card.title}</Card.Header>
+            <Card.Header>
+              <a href={args.href}>{card.title}</a>
+            </Card.Header>
             <Card.Description>{card.description}</Card.Description>
           </Card.Content>
           {card.links !== null &&
@@ -243,6 +274,7 @@ FluidGrid.args = {
       hasImage: true,
       meta: 'Article',
       metaRight: '30/07/2022',
+      href: '/#',
       fluid: true,
       links: null,
     },
@@ -255,6 +287,7 @@ FluidGrid.args = {
       hasImage: true,
       meta: 'Article',
       metaRight: '30/07/2022',
+      href: '/#',
       fluid: true,
       links: null,
     },
@@ -265,6 +298,7 @@ FluidGrid.args = {
       hasImage: false,
       meta: 'Article',
       metaRight: '30/07/2022',
+      href: '/#',
       fluid: true,
       links: null,
     },
@@ -289,7 +323,7 @@ const Arrows = (props) => {
     <>
       <Button
         aria-label="Previous slide"
-        className="slider-arrow prev-arrow"
+        className="slider-arrow prev-arrow tablet or lower hidden"
         icon
         onClick={() => {
           if (slider.current) {
@@ -301,7 +335,7 @@ const Arrows = (props) => {
       </Button>
       <Button
         aria-label="Next slide"
-        className="slider-arrow next-arrow"
+        className="slider-arrow next-arrow tablet or lower hidden"
         icon
         onClick={() => {
           if (slider.current) {
@@ -323,11 +357,20 @@ function CarouselCardsContent({ settings, cards, ...rest }) {
         {cards.map((card, index) => (
           <Card fluid={card.fluid} key={index} className={rest.class}>
             {card.hasImage && (
-              <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
+              <Image
+                as="a"
+                href={card.href}
+                src={card.imgUrl}
+                wrapped
+                ui={false}
+                alt="card image"
+              />
             )}
             <Card.Content>
               <Card.Meta>{card.meta}</Card.Meta>
-              <Card.Header>{card.title}</Card.Header>
+              <Card.Header>
+                <a href={card.href}>{card.title}</a>
+              </Card.Header>
             </Card.Content>
           </Card>
         ))}
@@ -345,19 +388,20 @@ const CarouselCardsTemplate = (args) => (
 
 export const CarouselCards = CarouselCardsTemplate.bind({});
 CarouselCards.args = {
-  title: 'Our news',
   class: null,
   settings: {
     dots: true,
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
+    arrows: false,
     responsive: [
       {
         breakpoint: tabletBreakpoint,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
       {
@@ -365,57 +409,56 @@ CarouselCards.args = {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
     ],
   },
   cards: [
     {
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
+      href: '/#',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
+      href: '/#',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
+      href: '/#',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
-      title: 'Lorem Ipsum',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
+      href: '/#',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
+      href: '/#',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
   ],
 };
