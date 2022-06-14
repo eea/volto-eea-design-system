@@ -4,8 +4,15 @@
 
 /* Content Box */
 @contentBoxWidth : 100vw;
-@contentBoxBackgroundColor : @deepBlue;
 @contentBoxColor : @white;
+@contentBoxBackgroundColor: @grey-1;
+@contentBoxColorInverted : @black;
+
+/* Themes */
+@contentBoxBackgroundColorPrimary: @primaryColor;
+@contentBoxBackgroundColorSecondary: @secondaryColor;
+@contentBoxBackgroundColorTertiary: @tertiaryColor;
+
 
 /* Container */
 @contentBoxContainerMarginTop    : @bigGap;

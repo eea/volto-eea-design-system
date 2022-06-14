@@ -10,9 +10,11 @@
 }
 
 // add padding to containers on edit section so that we display add and delete buttons
-.section-edit .container {
-  width: auto !important;
-  padding: 0 3rem;
+.section-edit {
+  .container:not(.content-box-inner) {
+    width: auto !important;
+    padding: 0 3rem;
+  }
 }
 
 .contentWidth(@offset) {
