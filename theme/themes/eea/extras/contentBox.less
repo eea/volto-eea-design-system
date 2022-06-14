@@ -1,0 +1,41 @@
+@type: 'extra';
+@element: 'contentBox';
+
+@import (multiple) '../../theme.config';
+
+/*-------------------
+      CONTENT BOX
+--------------------*/
+
+.content-box {
+  width: @contentBoxWidth;
+  background-color: @contentBoxBackgroundColor;
+  color: @contentBoxColorInverted;
+  margin-bottom: @mediumGap;
+
+  position: relative;
+  margin-right: -50vw;
+  margin-left: -50vw;
+  right: 50%;
+  left: 50%;
+  
+  .ui.container {
+    padding-top: @contentBoxContainerMarginTop;
+    padding-bottom: @contentBoxContainerMarginBottom;
+  }
+
+  &.primary {
+    background-color: @contentBoxBackgroundColorPrimary;
+    color: @contentBoxColor;
+  }
+
+  &.secondary {
+    background-color: @contentBoxBackgroundColorSecondary;
+    color: @contentBoxColor;
+  }
+
+  &.tertiary {
+    background-color: @contentBoxBackgroundColorTertiary;
+    color: @contentBoxColor;
+  }
+}
