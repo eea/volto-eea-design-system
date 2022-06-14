@@ -3,9 +3,9 @@
 *******************************/
 
 /* Hero block */
-@mobileHeroBlockMinHeight : 417px;
-@tabletHeroBlockMinHeight : 465px;
-@desktopHeroBlockMinHeight: 665px;
+@mobileHeroBlockMinHeight : 360px;
+@tabletHeroBlockMinHeight : 500px;
+@desktopHeroBlockMinHeight: 600px;
 
 @heroBlockPosition: relative;
 @heroBlockHomepagePadding: 0 @rem-space-5;
