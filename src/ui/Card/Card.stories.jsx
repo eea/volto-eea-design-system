@@ -37,7 +37,9 @@ export default {
   },
 };
 
-const MetaRight = (args) => <b>{args.metaRight}</b>;
+const MetaRight = (args) => (
+  <span className="bold text-right">{args.metaRight}</span>
+);
 
 const Template = (args) => (
   <Container>
@@ -99,24 +101,6 @@ Default.argTypes = {
       defaultValue: { summary: true },
     },
   },
-  title: {
-    description: 'card header',
-    table: {
-      type: {
-        summary: 'string',
-      },
-      defaultValue: { summary: ' "" ' },
-    },
-  },
-  description: {
-    description: 'card main content',
-    table: {
-      type: {
-        summary: 'string',
-      },
-      defaultValue: { summary: ' "" ' },
-    },
-  },
   fluid: {
     description: 'take up the width of its container',
     table: {
@@ -126,9 +110,41 @@ Default.argTypes = {
       defaultValue: { summary: false },
     },
   },
+  meta: {
+    description: 'Card metadata',
+    table: {
+      category: 'Card content',
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  metaRight: {
+    description: 'Card right metadata',
+    table: {
+      category: 'Card content',
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  title: {
+    description: 'card header',
+    table: {
+      category: 'Card content',
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  description: {
+    description: 'card main content',
+    table: {
+      category: 'Card content',
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
 };
 Default.parameters = {
-  controls: { exclude: ['cards'] },
+  controls: { exclude: ['cards', 'href', 'links'] },
   hideNoControlsWarning: true,
 };
 
