@@ -39,6 +39,12 @@
   z-index: 0;
 }
 
+.hero-block-image-wrapper {
+  position: absolute;
+  min-height: @heroBlockImageWrapperMinHeight;
+}
+
+
 .hero-block-text .quoted > * {
   display: inline-block;
 }
@@ -48,28 +54,28 @@
 }
 
 .eea.hero-block.full-height,
-.eea.hero-block.full-height .hero-block-image,
+.eea.hero-block.full-height .hero-block-image-wrapper,
 .eea.hero-block.full-height .hero-block-inner-wrapper {
   min-height: @mobileHeroBlockMinHeight;
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
   .eea.hero-block.full-height,
-  .eea.hero-block.full-height .hero-block-image,
+  .eea.hero-block.full-height .hero-block-image-wrapper,
   .eea.hero-block.full-height .hero-block-inner-wrapper {
     min-height: @tabletHeroBlockMinHeight;
   }
   .hero-block-body {
     gap: @tabletHeroBlockBodyGap;
   }
-  .homepage .hero-block-body {
+  .homepage #page-document > .eea.hero-block:first-of-type .hero-block-body {
     margin: @heroBlockHomePageBodyMargin;
   }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
   .eea.hero-block.full-height,
-  .eea.hero-block.full-height .hero-block-image,
+  .eea.hero-block.full-height .hero-block-image-wrapper,
   .eea.hero-block.full-height .hero-block-inner-wrapper {
     min-height: @desktopHeroBlockMinHeight;
   }

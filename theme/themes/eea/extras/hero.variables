@@ -14,6 +14,9 @@
 /* Hero block spaced */
 @heroBlockSpacedMargin: @rem-space-12 0;
 
+/* Image Wrapper */
+@heroBlockImageWrapperMinHeight: 290px; // 5rem gap plus one line text
+
 /* Background Image */
 @heroBlockImageBackgroundRepeat   : no-repeat;
 @heroBlockImageBackgroundSize     : cover;
