@@ -24,6 +24,7 @@ const SubFooter = (props) => {
                     mobile={manager.columnSize.mobile}
                     tablet={manager.columnSize.tablet}
                     computer={manager.columnSize.computer}
+                    key={index}
                   >
                     <div className={manager.className}>
                       <a href={manager.link}>

@@ -1,0 +1,24 @@
+/*******************************
+            Hero
+*******************************/
+
+/* Hero block */
+@mobileHeroBlockMinHeight : 417px;
+@tabletHeroBlockMinHeight : 465px;
+@desktopHeroBlockMinHeight: 665px;
+
+@heroBlockPosition: relative;
+@heroBlockHomepagePadding: 0 @rem-space-5;
+
+/* Background Image */
+@heroBlockImageBackgroundRepeat   : no-repeat;
+@heroBlockImageBackgroundSize     : cover;
+@heroBlockImageBackgroundPosition : center;
+
+/* Wrapper */
+@heroBlockWrapperPadding : @rem-space-20;
+
+/* Body */
+@mobileHeroBlockBodyGap  : @rem-space-6;
+@tabletHeroBlockBodyGap  : @rem-space-8;
+@desktopHeroBlockBodyGap : @rem-space-10;

@@ -13,6 +13,12 @@ import burgerIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/asse
 
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
+import PropTypes from 'prop-types';
+
+Header.propTypes = {
+  transparency: PropTypes.bool,
+  inverted: PropTypes.bool,
+};
 
 function Header({ children }) {
   return <div className="eea header">{children}</div>;
@@ -39,7 +45,7 @@ const TopDropdownMenu = ({
   text,
   viewportWidth,
 }) => {
-  const isMobile = viewportWidth < 480;
+  const isMobile = viewportWidth < 767;
 
   const Component = ({ mobileText }) => (
     <Dropdown
@@ -57,14 +63,39 @@ const TopDropdownMenu = ({
   );
 };
 
+// disable sticky until it's more stable
+// const useScrollingUp = () => {
+//   let prevScroll;
+//
+//   if (process.browser) {
+//     prevScroll = window.pageYOffset;
+//   }
+//   const [scrollingUp, setScrollingUp] = React.useState(false);
+//   const handleScroll = () => {
+//     const currScroll = window.pageYOffset;
+//     const isScrolled = prevScroll > currScroll;
+//     setScrollingUp(isScrolled);
+//     prevScroll = currScroll;
+//   };
+//   React.useEffect(() => {
+//     window.addEventListener('scroll', handleScroll, { passive: true });
+//     return () => {
+//       window.removeEventListener('scroll', handleScroll, { passive: true });
+//     };
+//   });
+//   return scrollingUp;
+// };
+
 const Main = ({
   logo,
   menuItems,
   renderMenuItem,
   renderGlobalMenuItem,
   pathname,
+  transparency,
+  inverted,
 }) => {
-  const [activeItem, setActiveItem] = React.useState('');
+  const [activeItem, setActiveItem] = React.useState(pathname);
   const [menuIsActive, setMenuIsActive] = React.useState(false);
   const [searchIsActive, setSearchIsActive] = React.useState(false);
   const [burger, setBurger] = React.useState('');
@@ -73,15 +104,19 @@ const Main = ({
     setMenuIsActive(false);
     setSearchIsActive(false);
     setBurger('');
+    // remove active menu when we have no pathname which means we hit logo to go home
+    if (!pathname) {
+      setActiveItem('');
+    }
   }, [pathname]);
 
   const searchOnClick = (e, x) => {
     if (menuIsActive === true) {
       setBurger('');
       setMenuIsActive(false);
+      setActiveItem('');
     }
     setSearchIsActive(!searchIsActive);
-    setActiveItem('');
   };
 
   const mobileBurgerOnClick = () => {
@@ -95,12 +130,8 @@ const Main = ({
     } else {
       setBurger('');
       setMenuIsActive(false);
+      setActiveItem('');
     }
-  };
-
-  const desktopBurgerOnClick = () => {
-    setMenuIsActive(false);
-    setActiveItem('');
   };
 
   const menuOnClick = (e, item) => {
@@ -109,35 +140,47 @@ const Main = ({
     setMenuIsActive(true);
   };
 
-  React.useEffect(() => {
-    if (searchIsActive || burger === 'open' || menuIsActive) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [searchIsActive, burger, menuIsActive]);
+  // React.useEffect(() => {
+  //   if (searchIsActive || burger === 'open' || menuIsActive) {
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = 'unset';
+  //   }
+  // }, [searchIsActive, burger, menuIsActive]);
 
   const node = React.useRef();
   const searchButtonRef = React.useRef();
-  const desktopMenuBurgerRef = React.useRef();
   const mobileMenuBurgerRef = React.useRef();
 
+  // disable sticky setting until feature is more stable
+  // const isScrollingUp = useScrollingUp();
+  // <div
+  // className={`main bar ${transparency ? 'transparency' : ''} ${
+  //     isScrollingUp ? 'sticky' : ''
+  // }`}
+  // >
   return (
-    <div className="main bar" ref={node}>
+    <div
+      className={`main bar ${transparency ? 'transparency' : ''}`}
+      ref={node}
+    >
       <Container>
         <Grid>
           <Grid.Column mobile={8} tablet={8} computer={4}>
             {logo}
           </Grid.Column>
           <Grid.Column mobile={4} tablet={4} computer={8}>
-            <div className="main-menu">
-              {!menuIsActive && menuItems && (
+            <div className={inverted ? 'main-menu inverted' : 'main-menu'}>
+              {menuItems && (
                 <Menu className="eea-main-menu tablet or lower hidden" text>
                   {menuItems.map((item) => (
                     <Menu.Item
                       name={item['@id'] || item.url}
-                      active={activeItem === item.key}
                       key={item['@id'] || item.url}
+                      active={
+                        activeItem.indexOf(item['@id']) !== -1 ||
+                        activeItem.indexOf(item.url) !== -1
+                      }
                     >
                       {renderGlobalMenuItem(item, {
                         onClick: menuOnClick,
@@ -145,16 +188,6 @@ const Main = ({
                     </Menu.Item>
                   ))}
                 </Menu>
-              )}
-              {menuIsActive && (
-                <Header.BurgerAction
-                  className="desktop"
-                  onClick={desktopBurgerOnClick}
-                  ref={desktopMenuBurgerRef}
-                >
-                  {/* <Icon name="close" /> */}
-                  <Image src={closeIcon} alt="menu close icon" />
-                </Header.BurgerAction>
               )}
               <div
                 className="search-action"
@@ -173,9 +206,6 @@ const Main = ({
                 onClick={mobileBurgerOnClick}
                 ref={mobileMenuBurgerRef}
               >
-                {/* <Icon
-                  name={this.state.burger === 'open' ? 'close' : 'bars'}
-                ></Icon> */}
                 <Image
                   src={burger === 'open' ? `${closeIcon}` : `${burgerIcon}`}
                   alt="menu icon open/close"
@@ -197,7 +227,7 @@ const Main = ({
           activeItem={activeItem}
           menuItems={menuItems}
           onClose={mobileBurgerOnClick}
-          triggerRefs={[mobileMenuBurgerRef, desktopMenuBurgerRef]}
+          triggerRefs={[mobileMenuBurgerRef]}
         />
       )}
     </div>

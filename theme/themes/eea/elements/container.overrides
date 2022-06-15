@@ -9,11 +9,12 @@
     margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
-
 // add padding to containers on edit section so that we display add and delete buttons
-.section-edit .container {
-  padding: 0 3rem;
-  width: auto !important;
+.section-edit {
+  .container:not(.content-box-inner) {
+    width: auto !important;
+    padding: 0 3rem;
+  }
 }
 
 .contentWidth(@offset) {
