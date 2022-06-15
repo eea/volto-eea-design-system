@@ -24,7 +24,7 @@
 @googleFontRequest : '@{googleFontName}:@{googleFontSizes}&subset=@{googleSubset}';
 
 
-@bold              : 600;
+@bold              : @font-weight-7;
 @normal            : normal;
 
 /*-------------------
@@ -69,7 +69,7 @@
   Page Heading
 ---------------*/
 
-@headerLineHeight : @font-lineheight-3;
+@headerLineHeight : 1.25;
 @headerFontWeight : @font-weight-7;
 
 @h1 : unit((48 / @fontSize), rem);
