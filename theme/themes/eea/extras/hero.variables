@@ -11,6 +11,9 @@
 @heroBlockHomePagePadding: 0 @rem-space-5;
 @heroBlockHomePageBodyMargin: @rem-space-16 0 0 0;
 
+/* Hero block spaced */
+@heroBlockSpacedMargin: @rem-space-12 0;
+
 /* Background Image */
 @heroBlockImageBackgroundRepeat   : no-repeat;
 @heroBlockImageBackgroundSize     : cover;
