@@ -13,7 +13,8 @@
 .section-edit {
   .container:not(.content-box-inner) {
     width: auto !important;
-    padding: 0 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 

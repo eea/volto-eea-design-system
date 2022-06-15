@@ -3,12 +3,19 @@
 *******************************/
 
 /* Hero block */
-@mobileHeroBlockMinHeight : 417px;
-@tabletHeroBlockMinHeight : 465px;
-@desktopHeroBlockMinHeight: 665px;
+@mobileHeroBlockMinHeight : 360px;
+@tabletHeroBlockMinHeight : 500px;
+@desktopHeroBlockMinHeight: 600px;
 
 @heroBlockPosition: relative;
-@heroBlockHomepagePadding: 0 @rem-space-5;
+@heroBlockHomePagePadding: 0 @rem-space-5;
+@heroBlockHomePageBodyMargin: @rem-space-16 0 0 0;
+
+/* Hero block spaced */
+@heroBlockSpacedMargin: @rem-space-12 0;
+
+/* Image Wrapper */
+@heroBlockImageWrapperMinHeight: 290px; // 5rem gap plus one line text
 
 /* Background Image */
 @heroBlockImageBackgroundRepeat   : no-repeat;
