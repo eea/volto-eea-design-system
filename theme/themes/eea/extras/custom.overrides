@@ -2,3 +2,25 @@
 .homepage .stagingBanner {
   display: none !important;
 }
+
+// Block style - preset styles
+.style-select-widget {
+  .content {
+    text-align: center;
+  }
+  svg.default {
+    background-color: @grey-1;
+  }
+  svg.primary {
+    background-color: @primaryColor;
+    fill: @white !important;
+  }
+  svg.secondary {
+    background-color: @secondaryColor;
+    fill: @white !important;
+  }
+  svg.tertiary {
+    background-color: @tertiaryColor;
+    fill: @white !important;
+  }
+}
