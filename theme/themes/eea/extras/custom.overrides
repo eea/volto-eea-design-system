@@ -15,6 +15,12 @@
 
 }
 
+// set color of default cards to black when we are inside a content-box which has the ability to set
+// color classes
+.content-box [class="ui fluid card"] {
+  color: #000;
+}
+
 // Block style - preset styles
 .style-select-widget {
   .content {
