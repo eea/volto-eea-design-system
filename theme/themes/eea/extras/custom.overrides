@@ -21,6 +21,11 @@
   color: #000;
 }
 
+// remove text decoration on links that might be added by content-box a rule
+.grid-block-teaser a {
+  text-decoration: none;
+}
+
 // Block style - preset styles
 .style-select-widget {
   .content {
