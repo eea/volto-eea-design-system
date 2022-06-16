@@ -3,6 +3,18 @@
   display: none !important;
 }
 
+// hide breadcrumbs on homepage
+.homepage .breadcrumbs {
+    display: none !important;
+}
+
+// remove margin and padding from homepage content-area since we have the bg image over the header
+.homepage .content-area {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+
+}
+
 // Block style - preset styles
 .style-select-widget {
   .content {
