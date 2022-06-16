@@ -398,3 +398,19 @@
     }
   }
 }
+
+/*******************************
+          Icon Card
+*******************************/
+
+.ui.card.icon {
+  .content {
+    border-top: none;
+    .header {
+      word-break: break-word;
+    }
+  }
+  .icon {
+    margin: auto;
+  }
+}
