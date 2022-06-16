@@ -24,3 +24,8 @@
     fill: @white !important;
   }
 }
+
+// raise z-index of delete button to go above blocks
+.block .ui.basic.button.delete-button {
+  z-index: @z-index-5;
+}
