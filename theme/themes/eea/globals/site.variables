@@ -79,6 +79,11 @@
 @h5 : unit((20 / @fontSize), rem);
 @h6 : unit((18 / @fontSize), rem);
 
+@mobileH1: unit((30 / @fontSize), rem);
+@mobileH2: unit((24 / @fontSize), rem);
+@mobileH3: unit((20 / @fontSize), rem);
+@mobileH4: unit((18 / @fontSize), rem);
+
 /*--------------
    Form Input
 ---------------*/
@@ -145,17 +150,20 @@
   Gaps / Paddings / Margins
 ---------------------------*/
 
+@minyGap         : unit((8 / @emSize), rem);
 @tinyGap         : unit((12 / @emSize), rem);
 @mediumGap       : unit((16 / @emSize), rem);
 @largeGap        : unit((20 / @emSize), rem);
 @bigGap          : unit((24 / @emSize), rem);
 @hugeGap         : unit((28 / @emSize), rem);
 
+@squareMiny      : @minyGap @minyGap;
 @squareTiny      : @tinyGap @tinyGap;
 @squareMedium    : @mediumGap @mediumGap;
 @squareLarge     : @largeGap @largeGap;
 @squareBig       : @bigGap @bigGap;
 
+@rectangleMini   : @minyGap @tinyGap;
 @rectangleTiny   : @tinyGap @mediumGap;
 @rectangleMedium : @mediumGap @largeGap;
 @rectangleLarge  : @largeGap @bigGap;
