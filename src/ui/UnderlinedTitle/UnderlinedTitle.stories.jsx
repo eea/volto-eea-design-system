@@ -1,10 +1,21 @@
 import React from 'react';
-import { Divider, Container } from 'semantic-ui-react';
+import { Header, Divider, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Underlined title',
   component: Divider,
   argTypes: {
+    tag: {
+      name: 'Tag',
+      defaultValue: 'h2',
+      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+      control: { type: 'select' },
+      description: 'Heading HTML tag',
+      table: {
+        defaultValue: { summary: 'h2' },
+        type: { summary: 'string' },
+      },
+    },
     title: {
       description: 'Title text',
       table: {
@@ -26,7 +37,7 @@ export default {
         type: { summary: 'string' },
       },
     },
-    borderBottom: {
+    bordered: {
       description: 'Bottom border for title',
       table: {
         defaultValue: { summary: 'true' },
@@ -39,17 +50,18 @@ export default {
 export const Default = (args) => {
   return (
     <Container>
-      <h2
-        className={`color-fg-${args.variation} ${
-          args.borderBottom ? 'border-bottom-1' : ''
-        }`}
+      <Header
+        as={args.tag}
+        className={`${args.variation} ${args.bordered ? 'bordered' : ''}`}
       >
         {args.title}
-      </h2>
+      </Header>
     </Container>
   );
 };
 Default.args = {
+  tag: 'h2',
   title: 'At a glance',
-  borderBottom: true,
+  bordered: true,
+  variation: 'tertiary',
 };
