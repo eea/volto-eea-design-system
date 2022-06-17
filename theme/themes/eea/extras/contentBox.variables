@@ -6,7 +6,7 @@
 @contentBoxWidth : 100vw;
 @contentBoxColor : @white;
 @contentBoxBackgroundColor: @grey-1;
-@contentBoxColorInverted : @black;
+@contentBoxColorInverted : inherit;
 
 /* Themes */
 @contentBoxBackgroundColorPrimary: @primaryColor;

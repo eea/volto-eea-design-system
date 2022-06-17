@@ -11,9 +11,14 @@
   position: @heroBlockPosition;
 }
 
+.eea.hero-block.spaced {
+  margin: @heroBlockSpacedMargin;
+}
+
 .hero-block-inner-wrapper {
   height: 100%;
   padding-block: @heroBlockWrapperPadding;
+  position: relative;
 }
 
 .hero-block-body {
@@ -24,43 +29,53 @@
 }
 
 .hero-block-image {
+  background-color: inherit;
   background-repeat: @heroBlockImageBackgroundRepeat;
   background-size: @heroBlockImageBackgroundSize;
   background-position: @heroBlockImageBackgroundPosition;
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: -1;
+  z-index: 0;
 }
+
+.hero-block-image-wrapper {
+  position: absolute;
+  min-height: @heroBlockImageWrapperMinHeight;
+}
+
 
 .hero-block-text .quoted > * {
   display: inline-block;
 }
 
 .hero-block[class*='color-bg']:not(.full-width) {
-  padding: @heroBlockHomepagePadding;
+  padding: @heroBlockHomePagePadding;
 }
 
 .eea.hero-block.full-height,
-.eea.hero-block.full-height .hero-block-image,
+.eea.hero-block.full-height .hero-block-image-wrapper,
 .eea.hero-block.full-height .hero-block-inner-wrapper {
   min-height: @mobileHeroBlockMinHeight;
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
   .eea.hero-block.full-height,
-  .eea.hero-block.full-height .hero-block-image,
+  .eea.hero-block.full-height .hero-block-image-wrapper,
   .eea.hero-block.full-height .hero-block-inner-wrapper {
     min-height: @tabletHeroBlockMinHeight;
   }
   .hero-block-body {
     gap: @tabletHeroBlockBodyGap;
   }
+  .homepage #page-document > .eea.hero-block:first-of-type .hero-block-body {
+    margin: @heroBlockHomePageBodyMargin;
+  }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
   .eea.hero-block.full-height,
-  .eea.hero-block.full-height .hero-block-image,
+  .eea.hero-block.full-height .hero-block-image-wrapper,
   .eea.hero-block.full-height .hero-block-inner-wrapper {
     min-height: @desktopHeroBlockMinHeight;
   }

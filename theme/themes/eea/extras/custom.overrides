@@ -2,3 +2,53 @@
 .homepage .stagingBanner {
   display: none !important;
 }
+
+// hide breadcrumbs on homepage
+.homepage .breadcrumbs {
+    display: none !important;
+}
+
+// remove margin and padding from homepage content-area since we have the bg image over the header
+.homepage .content-area {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+
+}
+
+// set color of default cards to black when we are inside a content-box which has the ability to set
+// color classes
+.content-box [class="ui fluid card"] {
+  color: #000;
+}
+
+// remove text decoration on links that might be added by content-box a rule
+.grid-block-teaser a {
+  text-decoration: none;
+}
+
+// Block style - preset styles
+.style-select-widget {
+  .content {
+    text-align: center;
+  }
+  svg.default {
+    background-color: @grey-1;
+  }
+  svg.primary {
+    background-color: @primaryColor;
+    fill: @white !important;
+  }
+  svg.secondary {
+    background-color: @secondaryColor;
+    fill: @white !important;
+  }
+  svg.tertiary {
+    background-color: @tertiaryColor;
+    fill: @white !important;
+  }
+}
+
+// raise z-index of delete button to go above blocks
+.block .ui.basic.button.delete-button {
+  z-index: @z-index-5;
+}

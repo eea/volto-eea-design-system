@@ -6,20 +6,26 @@
 /*-------------------
       CONTENT BOX
 --------------------*/
+.content-box:before {
+  width: @contentBoxWidth;
+  margin-left: -50vw;
+  background-color: inherit;
+  content: " ";
+  position: absolute;
+  height: 100%;
+  z-index: -1;
+  margin-right: -50vw;
+  left: 50%;
+  right: 50%;
+}
 
 .content-box {
-  width: @contentBoxWidth;
   background-color: @contentBoxBackgroundColor;
   color: @contentBoxColorInverted;
   margin-bottom: @mediumGap;
-
   position: relative;
-  margin-right: -50vw;
-  margin-left: -50vw;
-  right: 50%;
-  left: 50%;
-  
-  .ui.container {
+
+  .content-box-inner {
     padding-top: @contentBoxContainerMarginTop;
     padding-bottom: @contentBoxContainerMarginBottom;
   }
@@ -38,4 +44,14 @@
     background-color: @contentBoxBackgroundColorTertiary;
     color: @contentBoxColor;
   }
+}
+
+// inherit link
+
+
+[class*="content-box"] a {
+  text-decoration: underline;
+}
+.content-box[class*="ary"] a {
+  color: inherit;
 }
