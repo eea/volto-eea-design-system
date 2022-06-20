@@ -2,26 +2,21 @@
         Global Overrides
 *******************************/
 
+@import '@eeacms/volto-eea-design-system/../theme/themes/eea/globals/utilities';
+
 /* Heading size adjustment */
-@media only screen and (min-width: @tabletBreakpoint) {
-  h1 {
-    font-size: unit((48 / 16), rem);
-  }
-
-  h2 {
-    font-size: unit((40 / 16), rem);
-  }
-
-  h3 {
-    font-size: unit((36 / 16), rem);
-  }
-
-  h4 {
-    font-size: unit((24 / 16), rem);
-  }
+@media only screen and (max-width: @largestMobileScreen) {
+  h1 { font-size: @mobileH1; }
+  h2 { font-size: @mobileH2; }
+  h3 { font-size: @mobileH3; }
+  h4 { font-size: @mobileH4; }
 }
 
 [class^='ri-'],
 [class*=' ri-'] {
   fill: currentColor;
+}
+
+.homepage {
+  color: @tertiaryColor;
 }

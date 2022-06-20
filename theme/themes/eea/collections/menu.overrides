@@ -238,7 +238,7 @@
 }
 
 /* Pagination active item custom border design */
-.ui.pagination.pointing.secondary.menu a.active.item {
+.ui.pagination.pointing.secondary.menu .active.item {
   padding: (@tinyGap - @1px) @tinyGap;
   border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
   margin-bottom: -@secondaryPointingctiveItemMarginBottom;
@@ -250,7 +250,7 @@
 }
 
 /* Hover item pagination */
-.ui.pagination.pointing.secondary.menu a.item:hover {
+.ui.pagination.pointing.secondary.menu .item:hover {
   padding: (@tinyGap - @1px) @tinyGap;
   border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
   margin-bottom: -@secondaryPointingctiveItemMarginBottom;
@@ -263,8 +263,8 @@
 }
 
 /* Tab active item custom border design */
-.ui.secondary.pointing.menu:not(.vertical):not(.pagination) a.active.item,
-.ui.secondary.pointing.menu:not(.vertical):not(.pagination) a.item:active {
+.ui.secondary.pointing.menu:not(.vertical):not(.pagination) .active.item,
+.ui.secondary.pointing.menu:not(.vertical):not(.pagination) .item:active {
   padding: (@secondaryPointingItemVerticalPadding - @1px)
     @secondaryPointingItemHorizontalPadding;
   border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;

@@ -1,4 +1,72 @@
 /*******************************
+       Pastanaga  Theme Overrides
+*******************************/
+
+.ui.input input {
+  font-weight: @inputFontWeight;
+}
+
+.inline.field {
+  .wrapper {
+    display: flex;
+    min-height: 60px;
+    align-items: center;
+    border-bottom: 1px solid @lightGreyBorderColor;
+  }
+
+  &.required .wrapper {
+    > label[for]::after,
+    .ui.label::after {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-left: 5px;
+      background-color: @pink;
+      border-radius: 50%;
+      content: '';
+    }
+  }
+
+  &.text {
+    .toolbar {
+      display: block;
+      margin-top: 18px;
+    }
+  }
+
+  &.textarea {
+    .wrapper,
+    .toolbar {
+      display: block;
+      margin-top: 18px;
+    }
+
+    textarea {
+      min-height: 60px;
+      padding: 0;
+      margin-top: 18px;
+    }
+  }
+
+  &.wysiwyg {
+    .wrapper,
+    .toolbar {
+      display: block;
+      margin-top: 18px;
+    }
+
+    .DraftEditor-root {
+      min-height: 60px;
+      margin-top: 18px;
+    }
+  }
+
+  .ui.checkbox ~ .ui.basic.label {
+    border: 0;
+  }
+}
+
+/*******************************
          Theme Overrides
 *******************************/
 
@@ -41,18 +109,17 @@ textarea.fluid {
 /* Search Input - to be updated */
 .ui.fluid.icon.input.search {
   input {
-    height: 70px !important;
-    padding: 18.5px;
-    border: none !important;
-    border-bottom: 2px solid !important;
+    padding: @rectangleMini;
+    border: none;
+    border-bottom: @2px solid;
     background: transparent;
-    color: @white !important;
-    font-size: 18px;
+    color: @white;
+    font-size: 16px;
   }
 
   i.icon {
     color: @white;
-    font-size: 18px;
+    font-size: 16px;
     opacity: 1;
   }
 }
@@ -69,10 +136,24 @@ textarea.fluid {
   color: rgba(255, 255, 255, 0.25);
 }
 
+@media only screen and (min-width: @tabletBreakpoint) {
+  .ui.fluid.icon.input.search {
+    input {
+      padding: @rectangleTiny;
+      font-size: 18px;
+    }
+
+    i.icon {
+      font-size: 18px;
+    }
+  }
+}
+
 @media only screen and (min-width: @computerBreakpoint) {
   .ui.fluid.icon.input.search {
     input {
-      border-bottom: 3px solid !important;
+      padding: @rectangleMedium;
+      border-bottom: 3px solid;
       font-size: 40px;
     }
 
