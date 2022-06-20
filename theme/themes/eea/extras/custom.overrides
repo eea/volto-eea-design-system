@@ -1,4 +1,60 @@
+/*-------------------
+      Homepage
+--------------------*/
 // hide stagingBanner on homepage
 .homepage .stagingBanner {
   display: none !important;
+}
+
+// hide breadcrumbs on homepage
+.homepage .breadcrumbs {
+    display: none !important;
+}
+
+// remove margin and padding from homepage content-area since we have the bg image over the header
+.homepage .content-area {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+
+}
+
+// use homepage text color for color of cards that are within a content-box that has a variant class
+.homepage .content-box[class*="ary"] [class="ui fluid card"] {
+  color: @blue-grey-5;
+}
+// set carousel arrow to homepage color
+.homepage .cards-carousel .ui.button.icon.slider-arrow .icon {
+  color: @blue-grey-5;
+}
+
+// remove text decoration on links that might be added by content-box a rule
+.grid-block-teaser a {
+  text-decoration: none;
+}
+
+// Block style - preset styles
+.style-select-widget {
+  .content {
+    text-align: center;
+  }
+  svg.default {
+    background-color: @grey-1;
+  }
+  svg.primary {
+    background-color: @primaryColor;
+    fill: @white !important;
+  }
+  svg.secondary {
+    background-color: @secondaryColor;
+    fill: @white !important;
+  }
+  svg.tertiary {
+    background-color: @tertiaryColor;
+    fill: @white !important;
+  }
+}
+
+// raise z-index of delete button to go above blocks
+.block .ui.basic.button.delete-button {
+  z-index: @z-index-5;
 }
