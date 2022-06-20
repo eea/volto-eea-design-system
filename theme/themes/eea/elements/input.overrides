@@ -109,18 +109,17 @@ textarea.fluid {
 /* Search Input - to be updated */
 .ui.fluid.icon.input.search {
   input {
-    height: 70px !important;
-    padding: 18.5px;
-    border: none !important;
-    border-bottom: 2px solid !important;
+    padding: @rectangleMini;
+    border: none;
+    border-bottom: @2px solid;
     background: transparent;
-    color: @white !important;
-    font-size: 18px;
+    color: @white;
+    font-size: 16px;
   }
 
   i.icon {
     color: @white;
-    font-size: 18px;
+    font-size: 16px;
     opacity: 1;
   }
 }
@@ -137,10 +136,24 @@ textarea.fluid {
   color: rgba(255, 255, 255, 0.25);
 }
 
+@media only screen and (min-width: @tabletBreakpoint) {
+  .ui.fluid.icon.input.search {
+    input {
+      padding: @rectangleTiny;
+      font-size: 18px;
+    }
+
+    i.icon {
+      font-size: 18px;
+    }
+  }
+}
+
 @media only screen and (min-width: @computerBreakpoint) {
   .ui.fluid.icon.input.search {
     input {
-      border-bottom: 3px solid !important;
+      padding: @rectangleMedium;
+      border-bottom: 3px solid;
       font-size: 40px;
     }
 
