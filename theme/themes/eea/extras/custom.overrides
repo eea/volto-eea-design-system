@@ -1,3 +1,6 @@
+/*-------------------
+      Homepage
+--------------------*/
 // hide stagingBanner on homepage
 .homepage .stagingBanner {
   display: none !important;
@@ -15,10 +18,13 @@
 
 }
 
-// set color of default cards to black when we are inside a content-box which has the ability to set
-// color classes
-.content-box [class="ui fluid card"] {
-  color: #000;
+// use homepage text color for color of cards that are within a content-box that has a variant class
+.homepage .content-box[class*="ary"] [class="ui fluid card"] {
+  color: @blue-grey-5;
+}
+// set carousel arrow to homepage color
+.homepage .cards-carousel .ui.button.icon.slider-arrow .icon {
+  color: @blue-grey-5;
 }
 
 // remove text decoration on links that might be added by content-box a rule
