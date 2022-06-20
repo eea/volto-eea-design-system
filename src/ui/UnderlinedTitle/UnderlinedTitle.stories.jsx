@@ -35,6 +35,17 @@ export default {
         type: { summary: 'boolean' },
       },
     },
+    variation: {
+      name: 'Heading variation',
+      defaultValue: 'tertiary',
+      options: ['primary', 'secondary', 'tertiary'],
+      control: { type: 'select' },
+      description: 'Text color variation',
+      table: {
+        defaultValue: { summary: 'tertiary' },
+        type: { summary: 'string' },
+      },
+    },
     white: {
       name: 'White title',
       description: 'Bottom border for title',
