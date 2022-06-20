@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pagination } from 'semantic-ui-react';
+import { Pagination, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Pagination',
@@ -70,7 +70,11 @@ export default {
   },
 };
 
-const DefaultTemplate = (args) => <Pagination {...args} />;
+const DefaultTemplate = (args) => (
+  <Container>
+    <Pagination {...args} />
+  </Container>
+);
 
 export const Default = DefaultTemplate.bind({});
 Default.args = {
@@ -81,13 +85,13 @@ Default.args = {
   siblingRange: 1,
 };
 
-const SecondaryTemplate = (args) => <Pagination pointing secondary {...args} />;
+// const SecondaryTemplate = (args) => <Pagination pointing secondary {...args} />;
 
-export const Secondary = SecondaryTemplate.bind({});
-Secondary.args = {
-  defaultActivePage: 5,
-  totalPages: 10,
-  disabled: false,
-  boundaryRange: 1,
-  siblingRange: 1,
-};
+// export const Secondary = SecondaryTemplate.bind({});
+// Secondary.args = {
+//   defaultActivePage: 5,
+//   totalPages: 10,
+//   disabled: false,
+//   boundaryRange: 1,
+//   siblingRange: 1,
+// };

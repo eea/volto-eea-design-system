@@ -203,7 +203,11 @@
 /* EEA Theme */
 /*************/
 
-/* Pagination and Tabs */
+/***********
+ Pagination
+***********/
+
+/*
 .ui.pagination.menu {
   border: none;
   box-shadow: none;
@@ -219,7 +223,6 @@
     }
   }
 }
-
 .ui.pagination.pointing.secondary, .ui.pagination {
   display: flex;
   width: @paginationWidth;
@@ -229,15 +232,16 @@
     justify-content: center;
   }
 }
-
 .ui.pagination.pointing.secondary.menu .item {
   justify-content: center;
   padding: @squareTiny;
   font-size: @paginationFontSize;
   color: @itemTextColor;
 }
+*/
 
 /* Pagination active item custom border design */
+/*
 .ui.pagination.pointing.secondary.menu .active.item {
   padding: (@tinyGap - @1px) @tinyGap;
   border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
@@ -248,19 +252,28 @@
     color: @secondaryPointingActiveTextColor;
   }
 }
+*/
 
 /* Hover item pagination */
+/*
 .ui.pagination.pointing.secondary.menu .item:hover {
   padding: (@tinyGap - @1px) @tinyGap;
   border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
   margin-bottom: -@secondaryPointingctiveItemMarginBottom;
   color: @paginationColor;
 }
+*/
 
 /* Hover ellipsis item pagination */
+/*
 .ui.pagination.pointing.secondary.menu a.item[type='ellipsisItem']:hover {
   border-bottom: @secondaryPointingActiveBorderWidth solid transparent;
 }
+*/
+
+/***********
+    Tabs
+***********/
 
 /* Tab active item custom border design */
 .ui.secondary.pointing.menu:not(.vertical):not(.pagination) .active.item,
