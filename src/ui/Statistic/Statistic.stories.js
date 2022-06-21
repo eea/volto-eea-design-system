@@ -1,5 +1,5 @@
 import React from 'react';
-import { Statistic } from 'semantic-ui-react';
+import { Statistic, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Statistic',
@@ -8,7 +8,7 @@ export default {
     size: {
       control: {
         type: 'select',
-        options: ['mini', 'tiny', 'small', '', 'large', 'huge'],
+        options: ['mini', 'tiny', 'small', 'large', 'huge'],
       },
       description: 'statistic size',
       table: {
@@ -35,13 +35,28 @@ export default {
 };
 
 const Template = (args) => (
-  <Statistic.Group {...args}>
-    {args.elements &&
-      args.elements.map((element, index) => (
-        <Statistic key={index} {...element}></Statistic>
-      ))}
-    {!args.elements && <Statistic {...args}></Statistic>}
-  </Statistic.Group>
+  <Container>
+    <Statistic.Group {...args}>
+      {args.elements &&
+        args.elements.map((element, index) => (
+          <Statistic
+            as="a"
+            href={element.href}
+            key={index}
+            {...element}
+          ></Statistic>
+        ))}
+      {!args.elements && (
+        <>
+          {args.linked ? (
+            <Statistic as="a" href="/#" {...args}></Statistic>
+          ) : (
+            <Statistic {...args}></Statistic>
+          )}{' '}
+        </>
+      )}
+    </Statistic.Group>
+  </Container>
 );
 
 export const Default = Template.bind({});
@@ -50,6 +65,7 @@ Default.args = {
   value: 'Value',
   horizontal: false,
   size: 'small',
+  linked: false,
 };
 
 Default.argTypes = {
@@ -75,14 +91,25 @@ Default.argTypes = {
       },
     },
   },
+  linked: {
+    description: 'Add link to statistic',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: {
+        summary: false,
+      },
+    },
+  },
 };
 
 export const Group = Template.bind({});
 Group.args = {
   elements: [
     { ...Default.args, label: 'label 1', value: '50' },
-    { ...Default.args, label: 'label 2', value: '500' },
-    { ...Default.args, label: 'label 3', value: '5000' },
+    { ...Default.args, label: 'label 2', value: '500', href: '/#' },
+    { ...Default.args, label: 'label 3', value: '5000', href: '/#' },
   ],
   horizontal: false,
   inverted: false,
@@ -110,6 +137,98 @@ Group.argTypes = {
       defaultValue: {
         summary: ' "" ',
       },
+    },
+  },
+};
+
+const CustomTemplate = (args) => (
+  <Container>
+    <Statistic.Group {...args}>
+      {args.elements &&
+        args.elements.map((element, index) => (
+          <a href={element.href} class="ui small statistic">
+            <div className={`value ${args.valueVariation}`}>
+              {element.value}
+            </div>
+            <div className={`label ${args.labelVariation}`}>
+              {element.label}
+            </div>
+            <div className={`slate text-center ${args.slateVariation}`}>
+              {element.slate}
+            </div>
+          </a>
+        ))}
+    </Statistic.Group>
+  </Container>
+);
+export const Custom = CustomTemplate.bind({});
+Custom.args = {
+  elements: [
+    {
+      ...Default.args,
+      label: 'label 1',
+      value: '50',
+      slate: 'Text from slate',
+      href: '/#',
+    },
+    {
+      ...Default.args,
+      label: 'label 2',
+      value: '500',
+      slate: 'Text from slate',
+      href: '/#',
+    },
+    {
+      ...Default.args,
+      label: 'label 3',
+      value: '5000',
+      slate: 'Text from slate',
+      href: '/#',
+    },
+  ],
+  size: 'small',
+  widths: 'three',
+  inverted: false,
+  horizontal: false,
+  valueVariation: 'secondary',
+  labelVariation: 'tertiary',
+  slateVariation: 'tertiary',
+};
+Custom.argTypes = {
+  valueVariation: {
+    name: 'Value variation',
+    defaultValue: 'tertiary',
+    options: ['primary', 'secondary', 'tertiary'],
+    control: { type: 'select' },
+    description: 'Text color variation',
+    table: {
+      category: 'Color variations',
+      defaultValue: { summary: 'tertiary' },
+      type: { summary: 'string' },
+    },
+  },
+  labelVariation: {
+    name: 'Value variation',
+    defaultValue: 'tertiary',
+    options: ['primary', 'secondary', 'tertiary'],
+    control: { type: 'select' },
+    description: 'Text color variation',
+    table: {
+      category: 'Color variations',
+      defaultValue: { summary: 'tertiary' },
+      type: { summary: 'string' },
+    },
+  },
+  slateVariation: {
+    name: 'Slate variation',
+    defaultValue: 'tertiary',
+    options: ['primary', 'secondary', 'tertiary'],
+    control: { type: 'select' },
+    description: 'Text color variation',
+    table: {
+      category: 'Color variations',
+      defaultValue: { summary: 'tertiary' },
+      type: { summary: 'string' },
     },
   },
 };

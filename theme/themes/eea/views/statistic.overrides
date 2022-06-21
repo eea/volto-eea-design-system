@@ -12,7 +12,27 @@
   width: @mobileStatisticWidth;
 }
 
-@media only screen and (min-width: @mobileBreakpoint) {
+/* Custom statistic variations */
+.ui.statistics:not(.inverted) .ui.statistic {
+  .value,
+  .label,
+  .slate {
+    &.primary { color: @primaryColor; }
+    &.secondary { color: @secondaryColor; }
+    &.tertiary { color: @tertiaryColor; }
+  }
+}
+
+.ui.statistics.inverted > a {
+  color: @white;
+}
+
+.ui.horizontal.statistics .statistic > .slate,
+.ui.horizontal.statistic > .slate {
+  margin: 0em 0em 0em @horizontalLabelDistance;
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
   .ui.statistic {
     width: @tabletStatisticWidth;
   }
