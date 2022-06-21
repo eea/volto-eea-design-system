@@ -5,6 +5,7 @@ import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
 export default {
   title: 'Components/Forms/Input',
   component: Input,
+  parameters: { controls: { exclude: ['invalid'] } },
   argTypes: {
     type: {
       control: {
@@ -57,6 +58,13 @@ export default {
         defaultValue: { summary: true },
       },
     },
+    invalid: {
+      description: 'Aria attribute',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
   },
 };
 
@@ -69,7 +77,7 @@ const Template = ({ label, error, ...rest }) => (
         required={rest.required}
         columns={label ? 1 : 0}
       >
-        <Input {...rest} id="temp-id" />
+        <Input aria-invalid={rest.invalid} {...rest} id="temp-id" />
       </FormFieldWrapper>
     </Form>
   </Container>
@@ -81,6 +89,7 @@ Default.args = {
   type: 'text',
   fluid: false,
   required: false,
+  invalid: false,
 };
 
 export const LabeledInput = Template.bind({});
@@ -91,6 +100,7 @@ LabeledInput.args = {
   fluid: false,
   required: false,
   disabled: false,
+  invalid: false,
 };
 
 LabeledInput.argTypes = {
@@ -119,6 +129,7 @@ LoadingInput.args = {
   fluid: false,
   required: false,
   disabled: false,
+  invalid: false,
 };
 LoadingInput.argTypes = {
   loading: {
@@ -154,6 +165,7 @@ ErrorInput.args = {
   fluid: false,
   required: false,
   disabled: false,
+  invalid: true,
 };
 ErrorInput.argTypes = {
   error: {
