@@ -441,7 +441,7 @@ CarouselCards.args = {
       fluid: true,
     },
     {
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      title: 'Lorem ipsum.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
@@ -459,7 +459,8 @@ CarouselCards.args = {
       fluid: true,
     },
     {
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      title:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean massa strong.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
