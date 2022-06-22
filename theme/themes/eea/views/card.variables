@@ -72,6 +72,7 @@
 @contentBorderRadius: 0em;
 @contentBoxShadow: none;
 @contentBorder: none;
+@cardContentMarginBottom: @rem-space-4;
 
 
 /* Header */
@@ -84,7 +85,8 @@
 /* Metadata */
 @metaFontSize: @relativeMedium;
 @metaSpacing: 0.3em;
-@metaColor: @oldSilver;
+@metaColor: @tertiaryColor;
+
 
 /* Icons */
 @actionOpacity: 0.75;
@@ -98,8 +100,8 @@
 @likeActiveColor: #FF2733;
 
 /* Links */
-@contentLinkColor: @white;
-@contentLinkHoverColor: @white;
+@contentLinkColor: @deepBlue;
+@contentLinkHoverColor: @deepBlue;
 @contentLinkFontWeight: @bold;
 @contentLinkTransition: color @defaultDuration @defaultEasing;
 @contentLinkTextDecoration: underline;
@@ -107,8 +109,8 @@
 @headerLinkColor: @headerColor;
 @headerLinkHoverColor: @linkHoverColor;
 
-@metaLinkColor: @lightTextColor;
-@metaLinkHoverColor: @textColor;
+@metaLinkColor: @deepBlue;
+@metaLinkHoverColor: @deepBlue;
 
 /* Description */
 @descriptionDistance: 0.5em;
@@ -268,7 +270,7 @@
 @roundedWrapperGap               : @largeGap;
 @roundedContentWrapperWidth      : 100%;
 @roundedImageBorderRadius        : @circularRadius;
-@roundedContentTitleMarginBottom : 0;
+@roundedContentTitleMarginBottom : @rem-space-2;
 @roundedImageWrapperWidth        : 100%;
 @roundedImageBackgroundSize      : cover;
 @roundedContentTitleFontWeight   : @bold;
@@ -307,8 +309,8 @@
 @cardContentPadding: 20px;
 @cardContentMaxHeight: 135px;
 @mobileCardContentHeight: 135px;
-@tabletCardContentMaxHeight: 110px;
-@tabletCardContentHeight: 110px;
+@tabletCardContentMaxHeight: 120px;
+@tabletCardContentHeight: 120px;
 
 /* Description */
 @cardDescriptionTextLineClampMobile: 3;
@@ -331,10 +333,10 @@
 
 /* Button */
 @carouselButtonPadding: 0;
-@carouselButtonIconColor: @black;
+@carouselButtonIconOpacity: 1;
+@carouselButtonIconColor: @deepBlue;
 @carouselButtonIconFontSize: 3.125rem;
 @carouselButtonDistance: -3.5rem;
-
 
 /* Dots */
 @carouselDotsFontSize: 0.75rem;
@@ -345,5 +347,11 @@
 @carouselDotsActiveBackgroundColor: @darkCerulean;
 @mobileCarouselDotsWidth: 0.875rem;
 @mobileCarouselDotsHeight: 0.875rem;
+
+/* Slick wrapper */
+@slickListMargin: 0 -0.75em;
+@slickTrackGap: 1.25rem;
+@slickTrackMargin: 1rem 0;
+
 
 
