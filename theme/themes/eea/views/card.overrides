@@ -327,21 +327,16 @@
     margin: @slickTrackMargin;
   }
 
-  // No need to customize carousel 
-  // slides when importing cards
-  /*
-    .slick-slide {
-      display: flex;
-      height: auto;
-      flex: 1;
-      flex-direction: column;
-      padding: 15px 0.75em !important;
+  .slick-slide {
+    display: flex;
+    height: auto;
+    flex: 1;
+    flex-direction: column;
 
-      > div {
-        height: 100%;
-      }
+    > div {
+      height: 100%;
     }
-  */
+  }
 }
 
 /* Carousel arrows */
@@ -355,6 +350,7 @@
   .icon {
     color: @carouselButtonIconColor;
     font-size: @carouselButtonIconFontSize;
+    opacity: @carouselButtonIconOpacity;
   }
 }
 

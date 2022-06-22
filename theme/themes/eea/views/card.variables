@@ -80,7 +80,7 @@
 @headerFontWeight: @bold;
 @headerFontSize: 1.125rem;
 @headerLineHeightOffset: -(@lineHeight - 1em) / 2;
-@headerColor: @tertiaryColor;
+@headerColor: inherit;
 
 /* Metadata */
 @metaFontSize: @relativeMedium;
@@ -113,8 +113,8 @@
 @metaLinkHoverColor: @deepBlue;
 
 /* Description */
-@descriptionDistance: 0;
-@descriptionColor: @tertiaryColor;
+@descriptionDistance: 0.5em;
+@descriptionColor: inherit;
 
 /* Content Image */
 @contentImageWidth: '';
@@ -333,6 +333,7 @@
 
 /* Button */
 @carouselButtonPadding: 0;
+@carouselButtonIconOpacity: 1;
 @carouselButtonIconColor: @deepBlue;
 @carouselButtonIconFontSize: 3.125rem;
 @carouselButtonDistance: -3.5rem;

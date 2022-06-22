@@ -35,6 +35,11 @@
   }
 }
 
+// enlarge top section on edit page due to width auto on container
+.section-edit .top .container {
+  flex: 1;
+}
+
 .top.bar .item {
   display: flex;
   align-items: center;
@@ -175,6 +180,7 @@
   background-color: @headerMainSectionTransparency;
   display: block;
   content: " ";
+  top: 0;
   z-index: 0;
   width: 100%;
   height: 100%;
@@ -372,6 +378,10 @@
     height: @tabletTopSectionHeight;
   }
 
+  .homepage .block-editor-hero {
+    margin-top: @tabletTopSectionHeight;
+  }
+
   .top.bar .ui.dropdown .menu {
     margin-top: @tabletDropdownMenuMarginTop;
   }
@@ -451,6 +461,9 @@
 
   .top.bar {
     height: @computerTopSectionHeight;
+  }
+  .homepage .block-editor-hero {
+    margin-top: @computerTopSectionHeight;
   }
 
   .top.bar .ui.dropdown .menu {
