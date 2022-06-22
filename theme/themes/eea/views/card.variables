@@ -335,6 +335,7 @@
 @carouselButtonPadding: 0;
 @carouselButtonIconColor: @deepBlue;
 @carouselButtonIconFontSize: 3.125rem;
+@carouselButtonIconOpacity: 1;
 @carouselButtonDistance: -3.5rem;
 
 /* Dots */
