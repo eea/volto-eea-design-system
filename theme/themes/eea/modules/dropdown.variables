@@ -39,13 +39,14 @@
 @menuTop: 100%;
 @menuTextAlign: left;
 
-@menuBorderWidth: 1px;
+@menuBorderWidth: 0px;
+@menuBorderBottomWidth: 1px;
 @menuBorderColor: @borderColor;
-@menuBorder: @menuBorderWidth solid @menuBorderColor;
+@menuBorder: @menuBorderBottomWidth solid @menuBorderColor;
 @menuBoxShadow: @raisedShadow;
 @menuBorderRadius: @borderRadius;
 @menuTransition: opacity @defaultDuration @defaultEasing;
-@menuMinWidth: ~"calc(100% + "(@menuBorderWidth * 2)~")";
+@menuMinWidth: ~"calc(100% + "(@menuBorderBottomWidth * 2)~")";
 @menuZIndex: 11;
 
 /* Text */
@@ -300,6 +301,7 @@
 
 /* Loading */
 @loadingZIndex: -1;
+@loadingIconPosition: sticky;
 
 /* Active Menu Item */
 @activeItemZIndex: @menuZIndex + 1;

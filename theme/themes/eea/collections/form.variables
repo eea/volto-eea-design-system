@@ -123,9 +123,9 @@
 @inputErrorBoxShadow: none;
 
 /* Dropdown Error */
-@dropdownErrorHoverBackground: @white;
+@dropdownErrorHoverBackground: rgba(0, 0, 0, 0.05);
 @dropdownErrorSelectedBackground: @dropdownErrorHoverBackground;
-@dropdownErrorActiveBackground: @white;
+@dropdownErrorActiveBackground: rgba(0, 0, 0, 0.05);
 @dropdownErrorLabelBackground: #EACBCB;
 @dropdownErrorLabelColor: @errorTextColor;
 
@@ -153,7 +153,7 @@
 
 /* Required */
 @requiredContent: '*';
-@requiredColor: rgba(0, 0, 0, 0.32);
+@requiredColor: @errorColor;
 @requiredVerticalOffset: -0.2em;
 @requiredDistance: 0.2em;
 @requiredMargin: @requiredVerticalOffset 0em 0em @requiredDistance;
