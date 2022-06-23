@@ -65,6 +65,13 @@ export default {
         defaultValue: { summary: false },
       },
     },
+    describedby: {
+      description: 'Describes the element on which the attribute is set',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
+    },
   },
 };
 
@@ -75,9 +82,15 @@ const Template = ({ label, error, ...rest }) => (
         error={error}
         label={label}
         required={rest.required}
+        describedby={rest.describedby}
         columns={label ? 1 : 0}
       >
-        <Input aria-invalid={rest.invalid} {...rest} id="temp-id" />
+        <Input
+          {...rest}
+          id="temp-id"
+          aria-invalid={rest.invalid}
+          aria-describedby={rest.describedby}
+        />
       </FormFieldWrapper>
     </Form>
   </Container>
@@ -90,6 +103,7 @@ Default.args = {
   fluid: false,
   required: false,
   invalid: false,
+  describedby: 'desc_id',
 };
 
 export const LabeledInput = Template.bind({});
@@ -101,6 +115,7 @@ LabeledInput.args = {
   required: false,
   disabled: false,
   invalid: false,
+  describedby: 'desc_id',
 };
 
 LabeledInput.argTypes = {
@@ -130,6 +145,7 @@ LoadingInput.args = {
   required: false,
   disabled: false,
   invalid: false,
+  describedby: 'desc_id',
 };
 LoadingInput.argTypes = {
   loading: {
@@ -166,6 +182,7 @@ ErrorInput.args = {
   required: false,
   disabled: false,
   invalid: true,
+  describedby: 'desc_id',
 };
 ErrorInput.argTypes = {
   error: {

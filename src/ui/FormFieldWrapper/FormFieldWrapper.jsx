@@ -6,6 +6,7 @@ function FormFieldWrapper({
   required = false,
   error = false,
   label = '',
+  describedby = '',
   columns = 0,
 }) {
   return (
@@ -28,7 +29,7 @@ function FormFieldWrapper({
           {columns === 1 && (
             <Grid.Column computer="2" tablet="2" mobile="12">
               {label.length > 0 && (
-                <Label>
+                <Label id={describedby}>
                   {label}
                   <span className="requred-input">*</span>
                 </Label>
