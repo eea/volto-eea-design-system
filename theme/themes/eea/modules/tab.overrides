@@ -3,19 +3,35 @@
 *******************************/
 
 .ui.pointing.secondary.menu {
-  a.item {
-    font-size: @mobileHeaderSize;
+  .item {
+    font-size: @headerSize;
   }
 
-  a.item:hover {
+  .item:hover {
     color: @tabActiveItemHoverColor;
   }
 }
 
+// Contain images inside vertical tab content
+.stretched.wide.column > .tab img {
+  max-width: @verticalTabPaneImageMaxWidth;
+}
+
+.ui.pointing.secondary.menu::-webkit-scrollbar {
+  height: @mobileTabScrollbarHeight;
+}
+
 @media only screen and (min-width: @tabletBreakpoint) {
-  .ui.pointing.secondary.menu {
-    a.item {
-      font-size: @tabletHeaderSize;
+  .ui.pointing.secondary.menu::-webkit-scrollbar {
+    height: @tabletTabScrollbarHeight;
+  }
+}
+
+@media only screen and (max-width: @largestMobileScreen) {
+  .ui.pointing.secondary.vertical.menu {
+    .item {
+      padding: @mobileItemPadding;
+      font-size: @mobileItemFontSize;
     }
   }
 }

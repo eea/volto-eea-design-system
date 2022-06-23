@@ -79,7 +79,7 @@
 @headerFontWeight: @bold;
 @headerFontSize: 1.125rem;
 @headerLineHeightOffset: -(@lineHeight - 1em) / 2;
-@headerColor: @black;
+@headerColor: inherit;
 
 /* Metadata */
 @metaFontSize: @relativeMedium;
@@ -112,7 +112,7 @@
 
 /* Description */
 @descriptionDistance: 0.5em;
-@descriptionColor: @black;
+@descriptionColor: inherit;
 
 /* Content Image */
 @contentImageWidth: '';
@@ -157,7 +157,7 @@
 --------------------*/
 
 /* Link */
-@linkHoverBackground: @white;
+@linkHoverBackground: transparent;
 @linkHoverBorder: @border;
 @linkHoverZIndex: 5;
 @linkHoverRaiseDistance: 3px;
@@ -319,3 +319,31 @@
 /* Meta */
 @cardMetaFontSize: 12px;
 @cardMetaTagFontWeight: 400;
+
+/*******************************
+        Carousel Cards
+*******************************/
+
+/*  Title */
+@carouselTitleFontWeight: 700;
+@carouselTitleMargin: 0;
+@carouselTitleColor: @deepBlue;
+
+/* Button */
+@carouselButtonPadding: 0;
+@carouselButtonIconColor: @black;
+@carouselButtonIconFontSize: 3.125rem;
+@carouselButtonDistance: -3.5rem;
+
+
+/* Dots */
+@carouselDotsFontSize: 0.75rem;
+@carouselDotsBorderRadius: 50%;
+@carouselDotsOpacity: 1;
+@carouselDotsBorder: 1px solid @darkCerulean;
+@carouselDotsBackgroundColor: @white;
+@carouselDotsActiveBackgroundColor: @darkCerulean;
+@mobileCarouselDotsWidth: 0.875rem;
+@mobileCarouselDotsHeight: 0.875rem;
+
+

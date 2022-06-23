@@ -1,0 +1,76 @@
+@type: 'extra';
+@element: 'quote';
+
+@import (multiple) '../../theme.config';
+
+/*******************************
+            Quote
+*******************************/
+
+.eea.quote {
+  padding: @quotePadding;
+  margin: @quoteMargin;
+  word-break: @contentWordBreak;
+  hyphens: @contentWordBreakHyphens;
+
+  .quotes.wrapper {
+    display: flex;
+
+    .quote {
+      padding: @mobileQuotePadding;
+    }
+
+    i.icon {
+      display: flex;
+      align-items: flex-end;
+      font-size: @mobileQuoteIconSize;
+      color: @quoteIconColor;
+    }
+
+    i.icomn:first-child {
+      align-self: flex-start;
+    }
+
+    i.icon:last-child {
+      align-self: flex-end;
+    }
+  }
+
+  .source {
+    color: @sourceTextColor;
+    text-align: @sourceTextAlign;
+    font-weight: @sourceFontWeight;
+    font-size: @sourceFontSize;
+    margin: @sourceMargin;
+  }
+
+  .info {
+    text-align: @extraTextAlign;
+    font-weight: @extraFontWeight;
+    font-size: @extraFontSize;
+  }
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .eea.quote {
+    .quotes.wrapper {
+      .quote {
+        padding: @tabletQuotePadding;
+      }
+
+      i.icon {
+        font-size: @tabletQuoteIconSize;
+      }
+    }
+  }
+  .eea.quote.left {
+    width: @maxWidthOnFloat;
+    padding: @quoteFloatLeftPadding;
+    float: left;
+  }
+  .eea.quote.right {
+    width: @maxWidthOnFloat;
+    padding: @quoteFloatRightPadding;
+    float: right;
+  }
+}

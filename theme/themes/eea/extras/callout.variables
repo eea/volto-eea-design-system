@@ -1,0 +1,19 @@
+/*******************************
+            Callout
+*******************************/
+/* Body */
+@mobileCalloutBorderLeft : @5px solid @secondaryColor;
+@tabletCalloutBorderLeft : @10px solid @secondaryColor;
+
+/* Text */
+@quoteColor            : @japaneseIndigo;
+@mobileQuoteFontSize   : 1rem;
+@tabletQuoteFontSize   : @h6;
+@computerQuoteFontSize : @h5;
+@quoteFontWeight       : 400;
+
+/* Layout */
+@calloutBorder        : none;
+@calloutBoxShadow     : none;
+@calloutBorderRadius  : 0;
+@calloutPadding       : 0;

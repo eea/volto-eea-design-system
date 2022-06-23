@@ -1,5 +1,9 @@
 import React from 'react';
-import { Card, Image, Grid, Container } from 'semantic-ui-react';
+import { Card, Image, Grid, Container, Icon, Button } from 'semantic-ui-react';
+import Slider from 'react-slick';
+
+const tabletBreakpoint = 835;
+const mobileBreakpoint = 480;
 
 export default {
   title: 'Components/Card/Default',
@@ -19,6 +23,15 @@ export default {
           summary: 'string',
         },
         defaultValue: { summary: 'null' },
+      },
+    },
+    cards: {
+      description: 'cards data',
+      table: {
+        type: {
+          summary: 'object',
+        },
+        defaultValue: { summary: '' },
       },
     },
   },
@@ -105,12 +118,16 @@ Default.argTypes = {
     },
   },
 };
+Default.parameters = {
+  controls: { exclude: ['cards'] },
+  hideNoControlsWarning: true,
+};
 
 const GridTemplate = (args) => (
   <Container>
     <Grid>
-      {args.cards.map((card) => (
-        <Grid.Column mobile={12} tablet={6} computer={4}>
+      {args.cards.map((card, index) => (
+        <Grid.Column mobile={12} tablet={6} computer={4} key={index}>
           <Card fluid={card.fluid} className={args.class}>
             {card.hasImage && (
               <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
@@ -181,8 +198,8 @@ CardGrid.argTypes = {
 const FluidGridTemplate = (args) => (
   <Container>
     <div className="fluid-card-row">
-      {args.cards.map((card) => (
-        <Card fluid={card.fluid} className={args.class}>
+      {args.cards.map((card, index) => (
+        <Card fluid={card.fluid} className={args.class} key={index}>
           {card.hasImage && (
             <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
           )}
@@ -244,6 +261,169 @@ CardGrid.argTypes = {
         summary: 'Object',
       },
       defaultValue: { summary: ' "" ' },
+    },
+  },
+};
+
+const Arrows = (props) => {
+  const { slider = {} } = props;
+
+  return (
+    <>
+      <Button
+        aria-label="Previous slide"
+        className="slider-arrow prev-arrow"
+        icon
+        onClick={() => {
+          if (slider.current) {
+            slider.current.slickPrev();
+          }
+        }}
+      >
+        <Icon className="ri-arrow-left-s-line" />
+      </Button>
+      <Button
+        aria-label="Next slide"
+        className="slider-arrow next-arrow"
+        icon
+        onClick={() => {
+          if (slider.current) {
+            slider.current.slickNext();
+          }
+        }}
+      >
+        <Icon className="ri-arrow-right-s-line" />
+      </Button>
+    </>
+  );
+};
+
+function CarouselCardsContent({ settings, cards, ...rest }) {
+  const slider = React.useRef(null);
+  return (
+    <div className="cards-carousel">
+      <Slider {...settings} ref={slider}>
+        {cards.map((card, index) => (
+          <Card fluid={card.fluid} key={index} className={rest.class}>
+            {card.hasImage && (
+              <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
+            )}
+            <Card.Content>
+              <Card.Meta>{card.meta}</Card.Meta>
+              {/* <Card.Header>{card.title}</Card.Header> */}
+              <Card.Description>{card.description}</Card.Description>
+            </Card.Content>
+            {/* {card.links !== null &&
+              card.links.map((item, index) => (
+                <Card.Content extra key={index}>
+                  <a href="/#">{item.linkName}</a>
+                </Card.Content>
+              ))} */}
+          </Card>
+        ))}
+      </Slider>
+      <Arrows slider={slider} />
+    </div>
+  );
+}
+
+const CarouselCardsTemplate = (args) => (
+  <Container>
+    <CarouselCardsContent {...args}></CarouselCardsContent>
+  </Container>
+);
+
+export const CarouselCards = CarouselCardsTemplate.bind({});
+CarouselCards.args = {
+  title: 'Our news',
+  class: null,
+  settings: {
+    dots: true,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: tabletBreakpoint,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: mobileBreakpoint,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  },
+  cards: [
+    {
+      meta: 'March 20, 2022.',
+      imgUrl:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
+      hasImage: true,
+      fluid: true,
+      links: [{ linkName: 'Link 1' }],
+    },
+    {
+      title: 'Lorem Ipsum',
+      meta: 'March 20, 2022.',
+      imgUrl:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
+      hasImage: true,
+      fluid: true,
+      links: [{ linkName: 'Link 1' }],
+    },
+    {
+      title: 'Lorem Ipsum',
+      meta: 'March 20, 2022.',
+      imgUrl:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
+      hasImage: true,
+      fluid: true,
+      links: [{ linkName: 'Link 1' }],
+    },
+    {
+      title: 'Lorem Ipsum',
+      meta: 'March 20, 2022.',
+      imgUrl:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
+      hasImage: true,
+      fluid: true,
+      links: [{ linkName: 'Link 1' }],
+    },
+    {
+      title: 'Lorem Ipsum',
+      meta: 'March 20, 2022.',
+      imgUrl:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
+      hasImage: true,
+      fluid: true,
+      links: [{ linkName: 'Link 1' }],
+    },
+  ],
+};
+CarouselCards.argTypes = {
+  settings: {
+    description: 'carousel slider settings',
+    table: {
+      type: {
+        summary: 'object',
+      },
+      defaultValue: { summary: '' },
     },
   },
 };

@@ -4,30 +4,17 @@
 
 /* All Sizes */
 .ui.container {
-  width: 100%;
-  padding-right: @mobilePadding;
-  padding-left: @mobilePadding;
   transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
-// TODO fix issue of large container padding and then remove this fix
-#toolbar .pastanaga-menu .ui.container {
-  padding: @profileSectionPadding;
-}
-
-@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
-  .ui.container {
-    padding-right: @tabletPadding;
-    padding-left: @tabletPadding;
-  }
-}
-
-@media only screen and (min-width: @computerBreakpoint) {
-  .ui.container {
-    padding-right: @computerPadding;
-    padding-left: @computerPadding;
+// add padding to containers on edit section so that we display add and delete buttons
+.section-edit {
+  .container {
+    width: auto !important;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 

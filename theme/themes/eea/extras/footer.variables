@@ -2,7 +2,13 @@
             Footer
 *******************************/
 
-@footerBackgroundGrandient           : linear-gradient(220.4deg, #009591 8.29%, #2E3E4C 56.3%, #212D38 89.06%);
+@footerBackgroundGrandient: linear-gradient(220.4deg, #009591 8.29%, #2E3E4C 56.3%, #212D38 89.06%);
+
+/* Titles */
+@footerTitleFontWeight     : @font-weight-7;
+@mobileFooterTitleFontSize : @font-size-3;
+@tabletFooterTitleFontSize : @font-size-4;
+@computerFooterTitleFontSize: @font-size-6;
 
 /* Wrapper */
 @wrapperBackgroundImage              : url(../assets/images/Footer/Extras/footervisual.svg);
@@ -10,100 +16,66 @@
 @mobileWrapperBackgroundSize         : cover;
 @computerWrapperBackgroundSize       : 100% 100%;
 @wrapperWidth                        : 100%;
-@mobileWrapperPadding                : 3rem 0 1rem;
-@computerWrapperPadding              : 5rem 0 3rem;
+@mobileWrapperPadding                : @space-9 0 @space-6;
+@tabletWrapperPadding                : @space-13 0 @space-8;
+@computerWrapperPadding              : @space-20 0 @space-18;
 
 /* Theme Sites */
-@mobileThemeSitesPadding            : 0;
-@computerThemeSitesPadding          : 0rem 0 2rem;
-
-/* Theme Sites Header */
-@headerFontWeight                   : @bold;
-@mobileHeaderMarginBottom           : 1.25rem;
-@tabletHeaderMarginBottom           : 2.5rem;
-@computerHeaderMarginBottom         : 3.75rem;
-@mobileHeaderFontSize               : 0.688rem;
-@tabletHeaderFontSize               : 1.25rem;
-@computerHeaderFontSize             : 2.25rem;
+@mobileThemeSitesPadding            : @space-2 0 @space-8;
+@computerThemeSitesPadding          : @space-4 0 @space-8;
 
 /* Subfooter with logo and contact info */
-@mobileItemMarginTop                : 1rem;
-@tabletItemMarginTop                : 2rem;
-@computerItemMarginTop              : 4rem;
+@mobileItemMarginTop                : @space-4;
+@tabletItemMarginTop                : @space-8;
+@computerItemMarginTop              : @space-18;
 
 /* Subfooter Item Header */
-@itemHeaderFontWeight               : @bold;
-@mobileItemHeaderMarginBottom       : 0.625rem;
-@mobileItemHeaderFontSize           : 0.688rem;
-@tabletItemHeaderMarginBottom       : 0.938rem;
-@tabletItemHeaderFontSize           : 1.375rem;
-@computerItemHeaderMarginBottom     : 1.563rem;
-@computerItemHeaderFontSize         : 2.25rem;
+@mobileItemHeaderMarginBottom       : @space-5;
+@computerItemHeaderMarginBottom     : @space-12;
+@computerLogoHeaderMarginLeft       : -50px;
 
 /* Site Logo */
-@tabletSiteLogoWidth                : 192px;
-@computerSiteLogoWidth              : 283px;
+@tabletSiteLogoWidth                : 200px;
+@computerSiteLogoWidth              : 250px;
 @tabletSiteLogoDisplay              : inline-block;
 
-/* Site Logo Description */
-@mobileDescriptionMargin             : 5px 0 0 10px;
-@computerDescriptionMargin           : 5px 0 0 25px;
-@mobileDescriptionFontSize           : 0.5rem;
-@tabletDescriptionFontSize           : 1rem;
-@mobileDescriptionLineHeight         : 0.563rem;
-@tabletDescriptionLineHeight         : 1.188rem;
-
 /* EIONET Logo */
-@mobileEionetMarginTop: .5rem;
-@computerEionetMarginTop: 2rem;
-
-@mobileEionetLogoWidth               : 37px;
-@tabletEionetLogoWidth               : 65px;
-@computerEionetLogoWidth             : 80px;
-@mobileEionetLogoMarginLeft          : 0.75rem;
-@tabletEionetLogoMarginLeft          : 0.625rem;
-@computerEionetLogoMarginLeft        : 1.563rem;
-@mobileEionetLogoMarginRight         : 0.5rem;
-@computerEionetLogoMarginRight       : 1.25rem;
-
-/* eIONET Logo Description */
-@eionetDescriptionFontWeight         : @bold;
-@mobileEionetDescriptionPaddingTop   : 0.125rem;
-@tabletEionetDescriptionPaddingTop   : 0.313rem;
-@mobileEionetDescriptionFontSize     : 0.5rem;
-@tabetEionetDescriptionFontSize      : 1rem;
-@computerEionetDescriptionFontSize   : 1.063rem;
-@mobileEionetDescriptionLineHeight   : 0.625rem;
-@tabletEionetDescriptionLineHeight   : 1.5rem;
-@computerEionetDescriptionLineHeight : 1.8rem;
+@tabletEionetLogoWidth               : 225px;
+@computerEionetLogoWidth             : 260px;
+@tabletEionetLogoMarginLeft          : @space-3;
 
 /* Contact Info */
-@mobileContactMargin                : 0.3rem 0;
-@tabletContactMargin                : 0.6rem 0;
-@computerContactMargin              : 1rem 0;
-@mobileContactFontSize              : 0.563rem;
-@tabletContactFontSize              : 0.875rem;
-@computerContactFontSize            : 1rem;
-@tabletContactIconMarginRight       : 0.938rem;
-@tabletContactIconFontSize          : 1.375rem;
-@computerContactIconFontSize        : 1.563rem;
+@mobileContactBlockMarginInline     : 10%;
+@tabletContactBlockMarginInline     : 0;
+@tabletContactBlockMarginbottom     : @space-4;
+@mobileContactMargin                : @space-4 0;
+@computerContactMargin              : @space-5 0;
+@mobileContactFontSize              : @font-size-1;
+@computerContactFontSize            : @font-size-2;
+@mobileContactIconMarginRight       : @space-3;
+@mobileContactIconFontSize          : @font-size-4;
+@computerContactIconFontSize        : @font-size-5;
 
 /* Address */
-@mobileAdressFontSize               : 0.5rem;
-@tabletAddressFontSize              : 0.875rem;
+@addressFontSize                    : @font-size-0;
 
 /* Social Icons */
 @socialIconColor                    : @white;
-@mobileSocialIconSize               : 0.9rem;
-@tabletSocialIconSize               : 1.8rem;
-@computerSocialIconSize             : 2rem;
+@mobileSocialJustifyContent         : space-around;
+@tabletSocialJustifyContent         : start;
+@tabletSocialGap                    : @space-1;
+@mobileSocialIconSize               : @font-size-5;
+@tabletSocialIconSize               : @font-size-4;
+@computerSocialIconSize             : @font-size-5;
 
 /* Footer Menu */
-@mobileMenuMargin                   : 1rem auto 0;
-@tabletMenuMargin                   : 2rem auto 0;
-@tabletMenuWidth                    : 500px;
+@mobileMenuMargin                   : @space-8 auto 0;
+@tabletMenuMargin                   : @space-13 auto 0;
+@computerMenuMargin                 : @space-20 auto 0;
+@mobileMenuWidth                    : 100%;
+@tabletMenuWidth                    : 350px;
+@computerMenuWidth                  : 500px;
 @menuLinkColor                      : @white;
-@menuFontWeight                     : 100;
-@mobileMenuFontSize                 : 0.438rem;
-@tabletMenuFontSize                 : 0.688rem;
-@computerMenuFontSize               : 1rem;
+@menuFontWeight                     : @font-weight-3;
+@mobileMenuFontSize                 : @font-size-0;
+@computerMenuFontSize               : @font-size-1;
