@@ -1,0 +1,10 @@
+position: 5 # float position is supported
+label: 'Maps and charts'
+collapsible: true # make the category collapsible
+collapsed: true # keep the category open by default
+className: red
+link:
+  type: generated-index
+  title: Maps and charts
+#customProps:
+#  description: This description can be used in the swizzled DocCard

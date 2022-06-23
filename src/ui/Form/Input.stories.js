@@ -5,6 +5,7 @@ import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
 export default {
   title: 'Components/Forms/Input',
   component: Input,
+  parameters: { controls: { exclude: ['invalid'] } },
   argTypes: {
     type: {
       control: {
@@ -57,6 +58,20 @@ export default {
         defaultValue: { summary: true },
       },
     },
+    invalid: {
+      description: 'Aria attribute',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    describedby: {
+      description: 'Describes the element on which the attribute is set',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
+    },
   },
 };
 
@@ -67,9 +82,15 @@ const Template = ({ label, error, ...rest }) => (
         error={error}
         label={label}
         required={rest.required}
+        describedby={rest.describedby}
         columns={label ? 1 : 0}
       >
-        <Input {...rest} id="temp-id" />
+        <Input
+          {...rest}
+          id="temp-id"
+          aria-invalid={rest.invalid}
+          aria-describedby={rest.describedby}
+        />
       </FormFieldWrapper>
     </Form>
   </Container>
@@ -81,6 +102,8 @@ Default.args = {
   type: 'text',
   fluid: false,
   required: false,
+  invalid: false,
+  describedby: 'desc_id',
 };
 
 export const LabeledInput = Template.bind({});
@@ -91,6 +114,8 @@ LabeledInput.args = {
   fluid: false,
   required: false,
   disabled: false,
+  invalid: false,
+  describedby: 'desc_id',
 };
 
 LabeledInput.argTypes = {
@@ -119,6 +144,8 @@ LoadingInput.args = {
   fluid: false,
   required: false,
   disabled: false,
+  invalid: false,
+  describedby: 'desc_id',
 };
 LoadingInput.argTypes = {
   loading: {
@@ -154,6 +181,8 @@ ErrorInput.args = {
   fluid: false,
   required: false,
   disabled: false,
+  invalid: true,
+  describedby: 'desc_id',
 };
 ErrorInput.argTypes = {
   error: {

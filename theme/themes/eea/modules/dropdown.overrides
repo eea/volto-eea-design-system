@@ -31,6 +31,9 @@
 .ui.form .field.error .ui.dropdown .menu .item:hover .text {
   background: transparent;
 }
+.ui.form .field.error .ui.selection.active.dropdown .menu {
+  border-color: @negativeBorderColor;
+}
 
 .ui.dropdown.right {
   float: right;

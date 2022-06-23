@@ -35,7 +35,7 @@
   white-space: @headerSortableWhiteSpace;
 }
 
-@media only screen and (max-width: @mobileLandscapeBreakpoint) {
+@media only screen and (max-width: @tabletBreakpoint) {
 
   .ui.table.responsive {
 
