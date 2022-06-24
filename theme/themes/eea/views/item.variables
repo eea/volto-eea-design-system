@@ -31,8 +31,8 @@
 @tabletContentImageDistance: 1em;
 
 @mobileItemSpacing: 2em;
-@mobileImageWidth: auto;
-@mobileImageMaxHeight: 250px;
+@mobileImageWidth: 100%;
+@mobileImageMaxHeight: 100%;
 @mobileContentImageDistance: 1.5em;
 
 
@@ -192,6 +192,7 @@
 @mobileDefaultItemDescriptionFontSize: 1rem;
 @desktopDefaultItemDescriptionFontSize: 1.25rem;
 @defaultItemDescriptionFontWeight: 400;
+@defaultItemDescriptionLineClamp: 4;
 
 /* Content */
 @mobileDefaultItemContentPadding: 1.5em;

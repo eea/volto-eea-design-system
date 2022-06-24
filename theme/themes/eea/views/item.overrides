@@ -60,6 +60,11 @@
         color: @defaultItemColor;
         font-size: @mobileDefaultItemDescriptionFontSize;
         font-weight: @defaultItemDescriptionFontWeight;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: @defaultItemDescriptionLineClamp;
       }
     }
   }
