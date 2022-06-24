@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item } from 'semantic-ui-react';
+import { Item, Container } from 'semantic-ui-react';
 import EUflag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/europe-flag.svg';
 
 export default {
@@ -22,6 +22,22 @@ function SingleItem({ header, image, description, meta, extra }) {
   );
 }
 
+function SingleItemDefault({ header, image, description, meta, dateMeta }) {
+  return (
+    <Item className="default">
+      <Item.Image src={image} alt="item image" />
+      <Item.Content>
+        <Item.Extra>
+          <Item.Meta>{meta}</Item.Meta>
+          <Item.Meta className="date">{dateMeta}</Item.Meta>
+        </Item.Extra>
+        <Item.Header>{header}</Item.Header>
+        <Item.Description>{description}</Item.Description>
+      </Item.Content>
+    </Item>
+  );
+}
+
 function ItemGroup({ items, divided, relaxed, unstackable, link }) {
   return (
     <Item.Group
@@ -37,12 +53,67 @@ function ItemGroup({ items, divided, relaxed, unstackable, link }) {
   );
 }
 
-const Template = (args) => <ItemGroup {...args}></ItemGroup>;
+export const Default = (args) => (
+  <Container>
+    <Item.Group>
+      <SingleItemDefault {...args}></SingleItemDefault>
+    </Item.Group>
+  </Container>
+);
+Default.args = {
+  header:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim quis nam dictumst amet gravida in sit.',
+  image: EUflag,
+  description:
+    'Accumsan viverra odio dictum egestas ac neque ut elit. Sapien parturient ullamcorper habitasse ipsum. At nunc ridiculus eget sapinen enim dol....',
+  meta: 'EEA signals',
+  dateMeta: '18.02.22',
+};
+
+Default.argTypes = {
+  header: {
+    description: 'item heading',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  image: {
+    description: 'Path or Url of the image',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  description: {
+    description: 'item content description',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  meta: {
+    description: 'item content metadata',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  dateMeta: {
+    description: 'item extra date content',
+    table: {
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+};
 
 export const DefaultItem = (args) => (
-  <Item.Group>
-    <SingleItem {...args}></SingleItem>
-  </Item.Group>
+  <Container>
+    <Item.Group>
+      <SingleItem {...args}></SingleItem>
+    </Item.Group>
+  </Container>
 );
 DefaultItem.args = {
   header: 'Header',
@@ -91,6 +162,12 @@ DefaultItem.argTypes = {
 };
 
 DefaultItem.storyName = 'Featured Item';
+
+const Template = (args) => (
+  <Container>
+    <ItemGroup {...args}></ItemGroup>
+  </Container>
+);
 
 export const DefaultGroup = Template.bind({});
 DefaultGroup.args = {
