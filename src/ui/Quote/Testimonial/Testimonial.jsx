@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Divider from '../../Divider/Divider';
 
 import Quote from '../Quote';
-import { Grid, Card, Image } from 'semantic-ui-react';
+import { Grid, Card, Image, Divider } from 'semantic-ui-react';
 
 Testimonial.propTypes = {
   title: PropTypes.string,
@@ -12,9 +11,9 @@ Testimonial.propTypes = {
 function Testimonial({ children, ...rest }) {
   return (
     <div className="eea testimonial" {...rest}>
-      <Divider />
+      <Divider fitted className="secondary" />
       <Grid>{children}</Grid>
-      <Divider />
+      <Divider fitted className="secondary" />
     </div>
   );
 }

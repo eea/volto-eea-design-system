@@ -1,3 +1,42 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+/*--------------
+     Sizes
+---------------*/
+
+// This override on .block .ui.image is needed as it
+// sets width: 100% by default
+
+.block .ui.mini.image {
+  width: @miniWidth;
+}
+
+.block .ui.tiny.image {
+  width: @tinyWidth;
+}
+
+.block .ui.small.image {
+  width: @smallWidth;
+}
+
+.block .ui.medium.image {
+  width: @mediumWidth;
+}
+
+.block .ui.large.image {
+  width: @largeWidth;
+}
+
+.block .ui.big.image {
+  width: @bigWidth;
+}
+
+.block .ui.huge.image {
+  width: @hugeWidth;
+}
+
+.block .ui.massive.image {
+  width: @massiveWidth;
+}

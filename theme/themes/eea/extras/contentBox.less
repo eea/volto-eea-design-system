@@ -1,0 +1,64 @@
+@type: 'extra';
+@element: 'contentBox';
+
+@import (multiple) '../../theme.config';
+
+/*-------------------
+      CONTENT BOX
+--------------------*/
+.content-box:before {
+  width: @contentBoxWidth;
+  margin-left: -50vw;
+  background-color: inherit;
+  content: " ";
+  position: absolute;
+  height: 100%;
+  z-index: -1;
+  margin-right: -50vw;
+  left: 50%;
+  right: 50%;
+}
+
+.content-box {
+  background-color: @contentBoxBackgroundColor;
+  color: @contentBoxColorInverted;
+  margin-bottom: @mediumGap;
+  position: relative;
+
+  .content-box-inner {
+    padding-top: @contentBoxContainerMarginTop;
+    padding-bottom: @contentBoxContainerMarginBottom;
+  }
+
+  &.primary {
+    background-color: @contentBoxBackgroundColorPrimary;
+    color: @contentBoxColor;
+  }
+
+  &.secondary {
+    background-color: @contentBoxBackgroundColorSecondary;
+    color: @contentBoxColor;
+  }
+
+  &.tertiary {
+    background-color: @contentBoxBackgroundColorTertiary;
+    color: @contentBoxColor;
+  }
+}
+
+// inherit link
+
+
+[class*="content-box"] a {
+  text-decoration: underline;
+}
+.content-box[class*="ary"] a {
+  color: inherit;
+}
+
+// set color of default cards to black when we are inside a content-box which has the ability to set
+// color classes
+.content-box[class*="ary"] [class="ui fluid card"] {
+  color: @grey-6;
+}
+

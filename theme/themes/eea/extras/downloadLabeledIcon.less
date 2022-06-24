@@ -1,0 +1,87 @@
+@type: 'extra';
+@element: 'downloadLabeledIcon';
+
+@import (multiple) '../../theme.config';
+
+/*******************************
+        Download Labeled Icon
+*******************************/
+.eea.download.labeled.icon {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: @downloadLabeledIconWidth;
+  min-width: @downloadLabeledIconMinWidth;
+  text-align: @downloadLabeledIconTextAlign;
+
+  .label {
+    width: @downloadLabeledIconLabelWidth;
+    font-size: @downloadLabeledIconLabelFontSize;
+    color: @downloadLabeledIconLabelColor;
+    cursor: pointer;
+  }
+  .icon.wrapper {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: @downloadLabeledIconWrapperWidth;
+    padding: @downloadLabeledIconWrapperPadding;
+
+    .icon {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-size: @downloadLabeledIconIconFontSize;
+      color: @downloadLabeledIconColor;
+      width: @downloadLabeledIconIconWidth;
+      height: @downloadLabeledIconWrapperIconHeight;
+    }
+  }
+}
+
+.ui.popup.download-popup {
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  .dropdown {
+    position: relative;
+    width: @downloadLabeledIconDropdownWIdth;
+
+    .link.wrapper {
+      cursor: pointer;
+      background-color: @downloadLabeledIconLinkWrapperBackgroundColor;
+      z-index: @downloadLabeledIconLinkWrapperZIndex;
+      width: @downloadLabeledIconLinkWrapperWidth;
+
+      ul {
+        list-style-type: none;
+        margin: @downloadLabeledIconUlMargin;
+        padding: @downloadLabeledIconUlPaddingInlineStart;
+
+        a {
+          display: flex;
+          justify-content: center;
+          font-weight: @downloadLabeledIconALinkFontWeight;
+          font-size: @downloadLabeledIconLinkFontSize;
+          padding: @downloadLabeledIconLinkIconPadding;
+          color: @downloadLabeledIconALinkColor;
+          
+          .icon {
+            font-size: @downloadLabeledIconLinkIconFontSize;
+            line-height: @downloadLabeledIconLinkIconLineHeight;
+          }
+        }
+        a:hover {
+          color: @downloadLabeledIconALinkColorHover;
+        }
+        li:hover {
+          background-color: @downloadLabeledIconLiHover;
+        }
+      }
+    }
+    .link.wrapper.hidden {
+      display: none;
+    }
+  }
+}
