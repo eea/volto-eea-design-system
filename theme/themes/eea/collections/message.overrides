@@ -3,32 +3,33 @@
 *******************************/
 
 /* Text size and weight */
-.ui.message p {
+.field-wrapper .ui.message p {
   font-weight: @messageFontWeight;
 }
 
 /* Text color for non state messages */
-.ui.message:not(.success):not(.error):not(.warning):not(.info):not(.negative):not(.positive) {
+.field-wrapper .ui.message:not(.success):not(.error):not(.warning):not(.info):not(.negative):not(.positive) {
   color: @messageColor;
 }
 
 /* Align icon next to header */
-.ui.icon.message {
+.field-wrapper .ui.icon.message {
   align-items: @messageItemsAlign;
 }
 
 /* Icon margin to align with header text size */
-div.ui.icon.message > .icon,
-div.ui.icon.message > .icon:not(.close) {
+.field-wrapper div.ui.icon.message > .icon,
+.field-wrapper div.ui.icon.message > .icon:not(.close) {
   margin: @iconMargin;
   line-height: @iconLineHeight;
 }
 
-.ui.success.message,
-.ui.warning.message,
-.ui.error.message,
-.ui.info.message,
-.ui.positive.message,
-.ui.negative.message {
-  background: @background;
+.field-wrapper .ui.success.message,
+.field-wrapper .ui.warning.message,
+.field-wrapper .ui.error.message,
+.field-wrapper .ui.info.message,
+.field-wrapper .ui.positive.message,
+.field-wrapper .ui.negative.message {
+  background: transparent;
+  box-shadow: none;
 }
