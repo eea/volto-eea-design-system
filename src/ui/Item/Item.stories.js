@@ -1,6 +1,5 @@
 import React from 'react';
 import { Item, Container } from 'semantic-ui-react';
-import EUflag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/europe-flag.svg';
 
 export default {
   title: 'Components/Item',
@@ -63,7 +62,8 @@ export const Default = (args) => (
 Default.args = {
   header:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim quis nam dictumst amet gravida in sit.',
-  image: EUflag,
+  image:
+    'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
   description:
     'Accumsan viverra odio dictum egestas ac neque ut elit. Sapien parturient ullamcorper habitasse ipsum. At nunc ridiculus eget sapinen enim dol....',
   meta: 'EEA signals',
@@ -117,7 +117,8 @@ export const DefaultItem = (args) => (
 );
 DefaultItem.args = {
   header: 'Header',
-  image: EUflag,
+  image:
+    'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
   description: 'Description',
   meta: 'Metadata',
   extra: 'Extra',
@@ -175,7 +176,8 @@ DefaultGroup.args = {
     {
       childKey: 0,
       header: 'Header',
-      image: EUflag,
+      image:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
       description: 'Description',
       meta: 'Metadata',
       extra: 'Extra',
@@ -183,7 +185,8 @@ DefaultGroup.args = {
     {
       childKey: 1,
       header: 'Header',
-      image: EUflag,
+      image:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
       description: 'Description',
       meta: 'Metadata',
       extra: 'Extra',
