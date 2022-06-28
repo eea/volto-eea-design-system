@@ -50,6 +50,7 @@
 @tabletActionsAlignItems                 : flex-end;
 @tabletActionsFlexDirection              : column;
 // Action
+@mobileActionsActionMarginBottom         : 0.5rem;
 @tabletActionsActionMinWidth             : 95px;
 // Button
 @mobileBannerActionButtonFontSize        : 0.75rem;
