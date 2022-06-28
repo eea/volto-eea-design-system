@@ -1,5 +1,5 @@
 import React from 'react';
-import { Message } from 'semantic-ui-react';
+import { Message, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Message',
@@ -7,7 +7,7 @@ export default {
   argTypes: {
     size: {
       control: { type: 'select' },
-      options: ['mini', 'tiny', 'small', '', 'large', 'big', 'huge', 'massive'],
+      options: ['mini', 'tiny', 'small', 'large', 'big', 'huge', 'massive'],
       description: 'message size',
       table: {
         type: {
@@ -43,7 +43,11 @@ export default {
   },
 };
 
-const Template = (args) => <Message {...args}></Message>;
+const Template = (args) => (
+  <Container>
+    <Message {...args}></Message>
+  </Container>
+);
 
 export const Default = Template.bind({});
 Default.args = {
