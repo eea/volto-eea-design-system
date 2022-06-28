@@ -31,9 +31,9 @@
 @tabletContentImageDistance: 2rem;
 
 @mobileItemSpacing: 2em;
-@mobileImageWidth: auto;
-@mobileImageMaxHeight: 250px;
-@mobileContentImageDistance: 1.5rem;
+@mobileImageWidth: 100%;
+@mobileImageMaxHeight: 100%;
+@mobileContentImageDistance: 1.5em;
 
 
 /*-------------------
@@ -164,3 +164,46 @@
 @tabletRowItemMargin  : 1.5rem 0;
 @desktopRowItemMargin : 2rem 0;
 
+/*-------------------
+      Default
+--------------------*/
+@defaultItemImageHeight: 100%;
+@tabletDefaultItemWidth: 35%;
+
+@defaultItemBackgroundColor: @white;
+@defaultItemColor: @deepBlue;
+
+/* Extra */
+@mobileDefaultItemExtraMarginBottom: 1.5rem;
+@tabletDefaultItemExtraMarginBottom: 2.5rem;
+@computerDefaultItemExtraMarginBottom: 4.5rem;
+@mobileDefaultItemExtraMarginTop: 0;
+
+/* Meta */
+@defaultItemMetaFontSize: 1rem;
+@defaultItemMetaOpacity: 1;
+@defaultItemMetaFontWeight: 100;
+
+@defaultItemDateMetaFontSize: 1.125rem;
+@defaultItemDateMetaOpacity: 1;
+@defaultItemDateMetaFontWeight: 400;
+
+/* Header */
+@mobileDefaultItemHeaderFontSize: 1.125rem;
+@tabletDefaultItemHeaderFontSize: 1rem;
+@desktopDefaultItemHeaderFontSize: 1.5rem;
+@defaultItemHeaderFontWeight: 700;
+@mobileDefaultItemHeaderMarginBottom: 0.375rem;
+@tabletDefaultItemHeaderMarginBottom: 0.875rem;
+@computerDefaultItemHeaderMarginBottom: 1.25rem;
+
+/* Description */
+@mobileDefaultItemDescriptionFontSize: 1rem;
+@desktopDefaultItemDescriptionFontSize: 1.25rem;
+@defaultItemDescriptionFontWeight: 400;
+@defaultItemDescriptionLineClamp: 4;
+
+/* Content */
+@mobileDefaultItemContentPadding: 1.5em;
+@tabletDefaultItemContentPadding: 1em;
+@computerDefaultItemContentPadding: 1.5em;
