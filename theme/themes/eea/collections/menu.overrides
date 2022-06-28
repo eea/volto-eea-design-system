@@ -155,18 +155,23 @@
   }
 }
 
-.ui.secondary.attached.pointing.menu {
-  .item {
-    padding: 1.4em 1em;
-    color: @blue;
-    font-size: @large;
-  }
+//
+// WARNING: Uncommenting the following code will break the sidebar tabs in Volto
+//
+// See https://github.com/eea/volto-eea-design-system/pull/162#issuecomment-1135949927
+//
+// .ui.secondary.attached.pointing.menu {
+//   .item {
+//     padding: 1.4em 1em;
+//     color: @blue;
+//     font-size: @large;
+//   }
 
-  .active.item {
-    border-color: @teal;
-    color: @black;
-  }
-}
+//   .active.item {
+//     border-color: @teal;
+//     color: @black;
+//   }
+// }
 
 @media only screen and (max-width: 767px) {
   .ui.menu.stackable > .menu,
