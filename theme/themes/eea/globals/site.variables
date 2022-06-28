@@ -346,7 +346,7 @@
 
 
 /*---  Colors  ---*/
-@orange           : #EBA33D;
+@orange           : #FF9933;
 @yellow           : #F2EB49;
 @olive            : #78AB66;
 @green            : @pineGreen;
@@ -492,70 +492,35 @@
     Emotive Colors
 --------------------*/
 
-/* Positive 
-@positiveColor           : @pineGreen;
-@positiveBackgroundColor : #EDF9F0;
-@positiveBorderColor     : #EDF9F0;
-@positiveHeaderColor     : @pineGreen;
-@positiveTextColor       : @pineGreen;
-*/
-
-/* Negative 
-@negativeColor           : @red;
-@negativeBackgroundColor : @white;
-@negativeBorderColor     : @red; //#FEEFEF;
-@negativeHeaderColor     : @red;
-@negativeTextColor       : @red;
-*/
-
-/* Info 
-@infoColor              : @mediumPersianBlue;
-@infoBackgroundColor    : #EEF2FA;
-@infoBorderColor        : #EEF2FA;
-@infoHeaderColor        : @mediumPersianBlue;
-@infoTextColor          : @mediumPersianBlue;
-*/
-
-/* Warning 
-@warningColor           : #EBA33D;
-@warningBorderColor     : #FFF4EC;
-@warningBackgroundColor : #FFF4EC;
-@warningHeaderColor     : #EBA33D;
-@warningTextColor       : #EBA33D;
-*/
-
-
-/*-------------------
-    Emotive Colors
---------------------*/
-
 /* Positive */
-@positiveColor           : @green;
+@positiveColor           : @green-6;
 @positiveBackgroundColor : #FCFFF5;
-@positiveBorderColor     : #A3C293;
-@positiveHeaderColor     : #1A531B;
-@positiveTextColor       : #2C662D;
+@positiveBorderColor     : @green-4;
+@positiveHeaderColor     : @green-6;
+@positiveTextColor       : @green-6;
 
 /* Negative */
-@negativeColor           : @red;
-@negativeBackgroundColor : #FFF6F6;
-@negativeBorderColor     : #E0B4B4;
-@negativeHeaderColor     : #912D2B;
-@negativeTextColor       : #9F3A38;
+@negativeColor           : @red-5;
+@negativeBackgroundColor : @white;
+@negativeBorderColor     : @red-4;
+@negativeHeaderColor     : @red-5;
+@negativeTextColor       : @red-5;
 
 /* Info */
-@infoColor              : #31CCEC;
+@infoColor              : @blue-6;
 @infoBackgroundColor    : #F8FFFF;
-@infoBorderColor        : #A9D5DE;
-@infoHeaderColor        : #0E566C;
-@infoTextColor          : #276F86;
+@infoBorderColor        : @blue-4;
+@infoHeaderColor        : @blue-6;
+@infoTextColor          : @blue-6;
+
 
 /* Warning */
-@warningColor           : #F2C037;
-@warningBorderColor     : #C9BA9B;
+@warningColor           : @brown-6;
 @warningBackgroundColor : #FFFAF3;
-@warningHeaderColor     : #794B02;
-@warningTextColor       : #573A08;
+@warningBorderColor     : @brown-4;
+@warningHeaderColor     : @brown-6;
+@warningTextColor       : @brown-6;
+
 
 /*-------------------
         Paths

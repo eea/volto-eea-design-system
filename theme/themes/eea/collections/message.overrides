@@ -2,28 +2,26 @@
          Theme Overrides
 *******************************/
 
-/* Text size and weight */
+/* Old custom messages | update in form refactoring
+
 .field-wrapper .ui.message p {
   font-weight: @messageFontWeight;
 }
-
-/* Text color for non state messages */
 .field-wrapper .ui.message:not(.success):not(.error):not(.warning):not(.info):not(.negative):not(.positive) {
   color: @messageColor;
 }
 
-/* Align icon next to header */
 .field-wrapper .ui.icon.message {
   align-items: @messageItemsAlign;
 }
-
-/* Icon margin to align with header text size */
 .field-wrapper div.ui.icon.message > .icon,
 .field-wrapper div.ui.icon.message > .icon:not(.close) {
   margin: @iconMargin;
   line-height: @iconLineHeight;
 }
+*/
 
+// No background or border for form messages
 .field-wrapper .ui.success.message,
 .field-wrapper .ui.warning.message,
 .field-wrapper .ui.error.message,
@@ -32,4 +30,10 @@
 .field-wrapper .ui.negative.message {
   background: transparent;
   box-shadow: none;
+}
+
+// Background color from semantic only for error messages
+// not for every negative background
+.ui.error.message {
+  background: #fffdfd;
 }
