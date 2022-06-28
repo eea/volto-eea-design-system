@@ -38,9 +38,9 @@
 
 /* Metadata */
 @metadataTypeFontWeight    : @bold;
-@mobileMetadataFontSize    : 0.438rem;
+@mobileMetadataFontSize    : 0.75rem;
 @tabletMetadataFontSize    : 0.875rem;
-@mobileMetadataLineHeight  : 0.5rem;
+@mobileMetadataLineHeight  : 1.2;
 @tabletMetadataLineHeight  : 1rem;
 // Metadata field
 @metadataFieldDividerContent: ' | ';
