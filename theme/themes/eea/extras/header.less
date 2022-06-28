@@ -132,7 +132,6 @@
 
 /* Theme sites dropdown */
 #theme-sites.ui.dropdown .menu {
-  left: @themeSitesMenuLeft;
 
   .wrapper {
     width: @mobileThemeSitesMenuWidth;
@@ -470,11 +469,6 @@
     margin-top: @computerDropdownMenuMarginTop;
   }
 
-  #theme-sites.ui.dropdown .menu {
-    .wrapper {
-      width: @computerThemeSitesMenuWidth;
-    }
-  }
   /*----------------------------------------------------------------------------
       HEADER MAIN BAR DESKTOP
   ----------------------------------------------------------------------------*/
@@ -651,6 +645,12 @@
 
 #main #mega-menu .ui.accordion .title:first-child {
   display: none; // hide home link from mobile menu
+}
+
+@media all and (max-width: @tabletBreakpoint - 1) {
+  #theme-sites.ui.dropdown .menu {
+    left: @mobileThemeSitesMenuLeft;
+  }
 }
 
 @media all and (min-width: @tabletBreakpoint) {

@@ -3,7 +3,7 @@
 --------------------*/
 
 /* Heights */
-@mobileTopSectionHeight      : 20px;
+@mobileTopSectionHeight      : 22px;
 @tabletTopSectionHeight      : 30px;
 @computerTopSectionHeight    : 33px;
 
@@ -72,11 +72,10 @@
 @tabletOfficialUnionMenuLeft          : -54px;
 
 // Theme Sites
-@mobileThemeSitesMenuWidth            : 190px;
-@computerThemeSitesMenuWidth          : 200px;
+@mobileThemeSitesMenuWidth            : 200px;
 @themeSitesMenuSiteLinkColor          : @blue-grey-6;
 @themeSitesMenuSiteLinkFontWeight     : @normal;
-@themeSitesMenuLeft                   : -20px;
+@mobileThemeSitesMenuLeft             : 0px;
 
 // Language
 @tabletLanguageMenuTop                : 18px;
