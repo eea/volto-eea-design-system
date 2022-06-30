@@ -58,3 +58,28 @@
 .block .ui.basic.button.delete-button {
   z-index: @z-index-5;
 }
+
+
+// inherit font weight of styled headers so that if we set 300 weight it's visible also on
+// the edit page
+#page-edit .slate .styled h1,
+#page-edit .slate .styled h2,
+#page-edit .slate .styled h3,
+#page-edit .slate .styled h4,
+#page-edit .slate .styled h5,
+#page-edit .slate .styled h6 {
+  font-weight: inherit;
+}
+
+// tweak padding of workflow progress titles now that
+// we have larger font size
+.progress__item .progress__title {
+  padding-top: 0;
+  line-height: 25px; // center bullet of progress item
+}
+
+// inherit color of description and link from homepage cards
+.homepage .ui.items > .item > .content > .description,
+.homepage .grid-block-teaser a {
+  color: inherit;
+}

@@ -84,7 +84,7 @@
 /* Metadata */
 @metaFontSize: @relativeMedium;
 @metaSpacing: 0.3em;
-@metaColor: @oldSilver;
+@metaColor: @tertiaryColor;
 
 /* Icons */
 @actionOpacity: 0.75;

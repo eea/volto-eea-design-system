@@ -15,6 +15,7 @@
 @computerBreadcrumbPadding: 0 @10px;
 
 @breadcrumbItemMaxWidth: 220px;
+@breadcrumbItemMaxHeight: @space-4;
 
 /* Icon */
 @breadcrumbImgWidth: @12px;
