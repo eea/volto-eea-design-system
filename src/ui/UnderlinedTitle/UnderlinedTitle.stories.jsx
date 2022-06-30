@@ -3,7 +3,7 @@ import { Header, Divider, Container } from 'semantic-ui-react';
 import ContentBox from '../ContentBox/ContentBox';
 
 export default {
-  title: 'Components/Underlined title',
+  title: 'Components/Heading/Underlined',
   component: Divider,
   argTypes: {
     tag: {
@@ -46,40 +46,27 @@ export default {
         type: { summary: 'string' },
       },
     },
-    white: {
-      name: 'White title',
-      description: 'Bottom border for title',
-      table: {
-        category: 'Backgound variants',
-        defaultValue: { summary: 'false' },
-        type: { summary: 'boolean' },
-      },
-    },
     variant: {
       name: 'Background variation',
-      defaultValue: 'tertiary',
-      options: ['primary', 'secondary', 'tertiary'],
+      defaultValue: 'default',
+      options: ['default', 'primary', 'secondary', 'tertiary'],
       control: { type: 'select' },
       description: 'Color variation',
       table: {
-        category: 'Backgound variants',
-        defaultValue: { summary: 'tertiary' },
+        defaultValue: { summary: 'default' },
         type: { summary: 'string' },
       },
-      if: { arg: 'white' },
     },
   },
 };
 
 export const Default = (args) => {
   return (
-    <ContentBox variant={`${args.white ? args.variant : 'default'}`}>
+    <ContentBox variant={args.variant}>
       <Container className="content-box-inner">
         <Header
           as={args.tag}
-          className={`${args.white ? 'white' : args.variation} ${
-            args.bordered ? 'bordered' : ''
-          }`}
+          className={`${args.variation} ${args.bordered ? 'bordered' : ''}`}
         >
           {args.title}
         </Header>
@@ -107,5 +94,5 @@ Default.args = {
   title: 'At a glance',
   bordered: true,
   variation: 'tertiary',
-  white: false,
+  variant: 'default',
 };
