@@ -56,7 +56,7 @@
 @listItemMargin: 0.3em;
 
 /* Icon */
-@iconDistance: 0.3em;
+@iconDistance: @rem-space-4;
 
 /* Close Icon */
 @closeTopDistance: @verticalPadding - @lineHeightOffset;
