@@ -7,6 +7,69 @@
   margin: @imageMargin;
 }
 
+.ui.items {
+  &:not(.unstackable) > .item.default > .content {
+    padding: @mobileDefaultItemContentPadding;
+  }
+
+  .item.default {
+    background-color: @defaultItemBackgroundColor;
+
+    .image {
+      img {
+        height: @defaultItemImageHeight;
+        border-radius: 0;
+        object-fit: cover;
+      }
+    }
+
+    .content {
+      .extra {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: @mobileDefaultItemExtraMarginTop;
+        margin-bottom: @mobileDefaultItemExtraMarginBottom;
+
+        .meta {
+          color: @defaultItemColor;
+          font-size: @defaultItemMetaFontSize;
+          font-weight: @defaultItemMetaFontWeight;
+          opacity: @defaultItemMetaOpacity;
+
+          &.date {
+            font-size: @defaultItemDateMetaFontSize;
+            font-weight: @defaultItemDateMetaFontWeight;
+            opacity: @defaultItemDateMetaOpacity;
+          }
+        }
+
+        &:after {
+          display: none;
+        }
+      }
+
+      .header {
+        margin-bottom: @mobileDefaultItemHeaderMarginBottom;
+        color: @defaultItemColor;
+        font-size: @mobileDefaultItemHeaderFontSize;
+        font-weight: @defaultItemHeaderFontWeight;
+      }
+
+      .description {
+        color: @defaultItemColor;
+        font-size: @mobileDefaultItemDescriptionFontSize;
+        font-weight: @defaultItemDescriptionFontWeight;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: @defaultItemDescriptionLineClamp;
+      }
+    }
+  }
+}
+
 .item .tile.image,
 .block .item .tile.image {
   width: @tileImageWidth;
@@ -34,12 +97,49 @@
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
+  .ui.items .item.default {
+    .image {
+      width: @tabletDefaultItemWidth;
+    }
+
+    .content {
+      padding: @tabletDefaultItemContentPadding;
+
+      .extra {
+        margin-top: inherit;
+        margin-bottom: @tabletDefaultItemExtraMarginBottom;
+      }
+
+      .header {
+        margin-bottom: @tabletDefaultItemHeaderMarginBottom;
+        font-size: @tabletDefaultItemHeaderFontSize;
+      }
+    }
+  }
   .ui.items.row > .item {
     margin: @tabletRowItemMargin;
   }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
+  .ui.items .item.default {
+    .content {
+      padding: @computerDefaultItemContentPadding;
+
+      .extra {
+        margin-bottom: @computerDefaultItemExtraMarginBottom;
+      }
+
+      .header {
+        margin-bottom: @computerDefaultItemHeaderMarginBottom;
+        font-size: @desktopDefaultItemHeaderFontSize;
+      }
+
+      .description {
+        font-size: @desktopDefaultItemDescriptionFontSize;
+      }
+    }
+  }
   .ui.items.row > .item {
     margin: @desktopRowItemMargin;
   }

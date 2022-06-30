@@ -55,3 +55,10 @@
 .content-box[class*="ary"] a {
   color: inherit;
 }
+
+// set color of default cards to black when we are inside a content-box which has the ability to set
+// color classes
+.content-box[class*="ary"] [class="ui fluid card"] {
+  color: @grey-6;
+}
+

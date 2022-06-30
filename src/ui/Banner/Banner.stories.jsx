@@ -69,9 +69,6 @@ const Template = (args) => (
                     <Banner.Action icon="ri-facebook-fill" />
                     <Banner.Action icon="ri-twitter-fill" />
                     <Banner.Action icon="ri-linkedin-fill" />
-                    <Banner.Action icon="blogger b" />
-                    <Banner.Action icon="ri-reddit-line" />
-                    <Banner.Action icon="stumbleupon circle" />
                   </div>
                 </>
               )}
