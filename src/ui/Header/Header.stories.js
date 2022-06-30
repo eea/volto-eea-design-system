@@ -1242,7 +1242,6 @@ const Template = (args) => {
           <Header.TopItem>
             <Header.TopDropdownMenu
               id="theme-sites"
-              className="tablet hidden"
               text={linksMenuTitle}
               viewportWidth={viewportWidth}
             >
