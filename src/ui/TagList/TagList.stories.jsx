@@ -1,9 +1,10 @@
 import React from 'react';
 import TagList from './TagList';
 import Tag from '../Tag/Tag';
+import { Container } from 'semantic-ui-react';
 
 export default {
-  title: 'Components/TagList',
+  title: 'Components/Tag',
   component: TagList,
   argTypes: {
     title: {
@@ -38,20 +39,20 @@ export default {
   },
 };
 
-export const Default = (args) => (
-  <TagList className={args.direction}>
-    <TagList.Title>{args.title}</TagList.Title>
-    <TagList.Content>
+export const List = (args) => (
+  <Container>
+    <TagList className={args.direction}>
+      <TagList.Title>{args.title}</TagList.Title>
       {args.tags.map((tag, index) => [
         <Tag className={tag.class} href={tag.href} key={index}>
           {tag.category}
         </Tag>,
       ])}
-    </TagList.Content>
-  </TagList>
+    </TagList>
+  </Container>
 );
 
-Default.args = {
+List.args = {
   title: 'Tags:',
   direction: 'right',
   tags: [
