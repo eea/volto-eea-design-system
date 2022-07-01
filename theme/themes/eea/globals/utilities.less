@@ -1,4 +1,11 @@
-// Color utilities
+// Color
+h1, h2, h3, h4, h5, h6, p, span, .header {
+  &.primary { color: @primaryColor !important; }
+  &.secondary { color: @secondaryColor !important; }
+  &.tertiary { color: @tertiaryColor !important; }
+  &.white { color: @white !important; }
+}
+
 .color-fg-primary { color: @primaryColor !important; }
 .color-fg-secondary { color: @secondaryColor !important; }
 .color-fg-tertiary { color: @tertiaryColor !important; }
@@ -20,18 +27,18 @@
   z-index: 0;
 }
 
-// Display utilities
+// Flexbox
 .d-flex { display: flex !important; }
 .flex-items-start { align-items: flex-start !important; }
 .flex-items-end { align-items: flex-end !important; }
 .flex-items-center { align-items: center !important; }
 
-// Align text utilities
+// Align text
 .text-left { text-align: left !important; }
 .text-center { text-align: center !important;}
 .text-right { text-align: right !important; }
 
-//Quotes utilities
+// Quotes
 .quoted::before {
   content: "\ec51";
   font-family: 'remixicon' !important;
@@ -39,4 +46,10 @@
 .quoted::after {
   content: "\ec52";
   font-family: 'remixicon' !important;
+}
+
+// Borders
+.bordered { 
+  border-bottom: @border-size-1 solid !important;
+  padding-bottom: @rem-space-2 !important;
 }
