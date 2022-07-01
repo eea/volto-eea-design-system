@@ -316,3 +316,9 @@
   border-top: 1px solid @midGray;
   content: ' ';
 }
+
+// edit page, normalize font size of tab headers from the sidebar
+.section-edit .ui.pointing.secondary.menu .item,
+.tabs-wrapper .ui.pointing.secondary.menu .item {
+  font-size: 1.25rem;
+}
