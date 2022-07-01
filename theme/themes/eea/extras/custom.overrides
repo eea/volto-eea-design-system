@@ -83,3 +83,44 @@
 .homepage .grid-block-teaser a {
   color: inherit;
 }
+
+// Tabs block border left/top
+.tabs-block {
+  .border-left {
+    border-right: none !important;
+    border-left: 0.0625rem solid @midGray !important;
+
+    .item.active {
+      border-right: none !important;
+      border-left-style: solid !important;
+      margin: 0em 0em 0em -0.2rem !important;
+    }
+
+    .item:active {
+      border-right: none !important;
+    }
+  }
+
+  .border-top {
+    border: none !important;
+    border-top: 0.0625rem solid @midGray !important;
+
+    &::before {
+      border-top: none !important;
+    }
+
+    .item {
+      border: none !important;
+    }
+
+    .item.active {
+      border-bottom: none !important;
+      border-top-style: solid !important;
+      margin: 0em 0em 0em -0.2rem !important;
+    }
+
+    .item:active {
+      border-bottom: none !important;
+    }
+  }
+}
