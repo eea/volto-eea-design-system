@@ -41,7 +41,7 @@
 
 /* EIONET Logo */
 @tabletEionetLogoWidth               : 225px;
-@computerEionetLogoWidth             : 260px;
+@computerEionetLogoWidth             : 259px; // 260px was rendering the image fuzzy
 @tabletEionetLogoMarginLeft          : @space-3;
 
 /* Contact Info */
