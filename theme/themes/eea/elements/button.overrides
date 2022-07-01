@@ -105,6 +105,7 @@
 // .ui.secondary.pointing.menu:not(.vertical) overrides
 .ui.button.full-size-sidenav-btn {
   z-index: 1;
+  padding: @fullSizeSidenavBtnPadding;
 }
 
 /* Global Button Styles */
