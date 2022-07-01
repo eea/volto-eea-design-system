@@ -302,6 +302,11 @@
   z-index: 1;
   width: 100%;
 }
+// reduce width of header when we have toolbar open for better placement
+.has-toolbar.homepage .eea.header {
+    width: 96%;
+}
+
 /*----------------------------------------------------------------------------
   Header Actions - Burger and Search Icons
 ----------------------------------------------------------------------------*/
@@ -481,7 +486,7 @@
         flex-wrap: wrap;
         display: flex;
         width: 88%;
-        max-height: 20px;
+        max-height: 100%;
         justify-content: space-between;
         margin: 0;
 
@@ -644,7 +649,13 @@
 }
 
 #main #mega-menu .ui.accordion .title:first-child {
-  display: none; // hide home link from mobile menu
+  display: flex;
+}
+//#main #mega-menu .ui.accordion .title:first-child {
+//  display: none; // hide home link from mobile menu
+//}
+#main #mega-menu .mobile > .ui.accordion > .title:first-child {
+  display: none;
 }
 
 @media all and (max-width: @tabletBreakpoint - 1) {
