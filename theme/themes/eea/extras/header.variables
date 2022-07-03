@@ -34,6 +34,8 @@
 @mobileTopSectionItemFontSize         : @font-size-00;
 @tabletTopSectionItemFontSize         : @font-size-00;
 @topSectionZindex                     : @z-index-1;
+@topSectionIconMarginLeft             : 1px;
+@topSectionIconFontSize               : 0.8rem;
 
 /* Dropdown */
 @mobileDropdownMenuMarginTop          : 0;
