@@ -161,11 +161,18 @@
 ---------------*/
 
 .ui.items > .item {
-  &.primary > .icon {
+  &.primary,
+  > .icon.primary
+  {
     color: @primaryColor;
   }
 
-  &.secondary > .icon {
+  &.secondary,
+  > .icon.secondary {
     color: @secondaryColor;
+  }
+  &.tertiary,
+  > .icon.tertiary {
+    color: @tertiaryColor;
   }
 }
