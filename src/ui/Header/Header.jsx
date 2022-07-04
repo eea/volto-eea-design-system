@@ -134,6 +134,19 @@ const Main = ({
     }
   };
 
+  const menuOnClickOutside = () => {
+    // restore active element if nothing was selected from the menu dropdown
+    if (pathname !== activeItem) {
+      setActiveItem(pathname);
+    }
+    // close mobile navigation when clicking outside if we have value for nav
+    if (burger) {
+      setBurger('');
+    }
+    // always close the  menu
+    setMenuIsActive(false);
+  };
+
   const menuOnClick = (e, item) => {
     if (searchIsActive) setSearchIsActive(false);
     setActiveItem(item['@id'] || item.url);
@@ -226,7 +239,7 @@ const Main = ({
           renderMenuItem={renderMenuItem}
           activeItem={activeItem}
           menuItems={menuItems}
-          onClose={mobileBurgerOnClick}
+          onClose={menuOnClickOutside}
           triggerRefs={[mobileMenuBurgerRef]}
         />
       )}
