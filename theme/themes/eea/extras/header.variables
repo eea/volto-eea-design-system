@@ -34,6 +34,8 @@
 @mobileTopSectionItemFontSize         : @font-size-00;
 @tabletTopSectionItemFontSize         : @font-size-00;
 @topSectionZindex                     : @z-index-1;
+@topSectionIconMarginLeft             : 1px;
+@topSectionIconFontSize               : 0.8rem;
 
 /* Dropdown */
 @mobileDropdownMenuMarginTop          : 0;
@@ -96,7 +98,7 @@
 @logoWidth                            : 100%;
 @mobileLogoMaxWidth                   : 122px;
 @tabletLogoMaxWidth                   : 252px;
-@computerLogoMaxWidth                 : 348px;
+@computerLogoMaxWidth                 : 347px; //348 rendered fuzzy :(
 @mobileLogoMarginTop                  : @rem-space-2;
 @tabletLogoMarginTop                  : @rem-space-3-5;
 @computerLogoMarginTop                : @rem-space-5;

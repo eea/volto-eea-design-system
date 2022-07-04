@@ -42,11 +42,16 @@ h1, h2, h3, h4, h5, h6, p, span, .header {
 .bold { font-weight: @bold !important; }
 .underline { text-decoration: underline !important; }
 
-//Quotes utilities
+// Quotes
+.quoted-wrapper h2::before,
+.quoted-wrapper h3::before,
 .quoted::before {
   content: "\ec51";
   font-family: 'remixicon' !important;
 }
+
+.quoted-wrapper  h2::after,
+.quoted-wrapper  h3::after,
 .quoted::after {
   content: "\ec52";
   font-family: 'remixicon' !important;

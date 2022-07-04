@@ -87,7 +87,6 @@
 @metaSpacing: 0.3em;
 @metaColor: @tertiaryColor;
 
-
 /* Icons */
 @actionOpacity: 0.75;
 @actionHoverOpacity: 1;
@@ -100,8 +99,8 @@
 @likeActiveColor: #FF2733;
 
 /* Links */
-@contentLinkColor: @deepBlue;
-@contentLinkHoverColor: @deepBlue;
+@contentLinkColor: @tertiaryColor;
+@contentLinkHoverColor: @tertiaryColor;
 @contentLinkFontWeight: @bold;
 @contentLinkTransition: color @defaultDuration @defaultEasing;
 @contentLinkTextDecoration: underline;
