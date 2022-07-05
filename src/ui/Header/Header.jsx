@@ -120,7 +120,6 @@ const Main = ({
   };
 
   const mobileBurgerOnClick = () => {
-    console.log('aa', burger);
     if (searchIsActive === true) {
       setSearchIsActive(false);
     }
