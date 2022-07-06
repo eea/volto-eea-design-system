@@ -99,3 +99,25 @@
     }
   }
 }
+
+/*--------------
+   Variations
+---------------*/
+
+/* Primary */
+.ui.accordion.primary .active.title {
+  background-color: @primaryColor;
+}
+.ui.accordion.primary .title:not(.active):hover,
+.ui.accordion.primary .title:not(.active):hover i {
+  color: @primaryColor;
+}
+
+/* Tertiary */
+.ui.accordion.tertiary .active.title {
+  background-color: @tertiaryColor;
+}
+.ui.accordion.tertiary .title:not(.active):hover,
+.ui.accordion.tertiary .title:not(.active):hover i {
+  color: @tertiaryColor;
+}
