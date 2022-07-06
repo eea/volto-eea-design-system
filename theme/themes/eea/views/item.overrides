@@ -70,6 +70,17 @@
   }
 }
 
+// decrease margin when using icons instead of images
+// since the icons have themselves extra whitespace
+// and we should aim to get about 32px as seen in the figma design
+.item .icon {
+  width: auto;
+  margin-right: 0;
+}
+.ui.items > .item > .icon + .content {
+  padding-left: @tabletItemSpacing;
+}
+
 .item .tile.image,
 .block .item .tile.image {
   width: @tileImageWidth;
@@ -80,7 +91,7 @@
   margin: @mobileRowItemMargin;
 }
 
-// As semantic does for non unstacable items
+// As semantic does for non unstackable items
 // so columns does not affect margin in mobiles
 .ui.items.row > .item:last-child {
   margin-bottom: 0;
@@ -150,11 +161,18 @@
 ---------------*/
 
 .ui.items > .item {
-  &.primary > .icon {
+  &.primary,
+  > .icon.primary
+  {
     color: @primaryColor;
   }
 
-  &.secondary > .icon {
+  &.secondary,
+  > .icon.secondary {
     color: @secondaryColor;
+  }
+  &.tertiary,
+  > .icon.tertiary {
+    color: @tertiaryColor;
   }
 }

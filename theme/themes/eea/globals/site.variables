@@ -24,7 +24,7 @@
 @googleFontRequest : '@{googleFontName}:@{googleFontSizes}&subset=@{googleSubset}';
 
 
-@bold              : 600;
+@bold              : @font-weight-7;
 @normal            : normal;
 
 /*-------------------
@@ -70,7 +70,7 @@
 ---------------*/
 
 @headerLineHeight : 1.25;
-@headerFontWeight : 700;
+@headerFontWeight : @font-weight-7;
 
 @h1 : unit((48 / @fontSize), rem);
 @h2 : unit((40 / @fontSize), rem);
@@ -176,8 +176,8 @@
 @pageBackground      : @white;
 @pageOverflowX       : hidden;
 
-@lineHeight          : 1.5;
-@mobileLineHeight    : 1.5;
+@lineHeight          : @font-lineheight-3;
+@mobileLineHeight    : @font-lineheight-3;
 @textColor           : rgba(0, 0, 0, 1);
 
 /*-------------------
