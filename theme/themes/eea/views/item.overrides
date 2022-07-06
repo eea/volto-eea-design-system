@@ -7,6 +7,80 @@
   margin: @imageMargin;
 }
 
+.ui.items {
+  &:not(.unstackable) > .item.default > .content {
+    padding: @mobileDefaultItemContentPadding;
+  }
+
+  .item.default {
+    background-color: @defaultItemBackgroundColor;
+
+    .image {
+      img {
+        height: @defaultItemImageHeight;
+        border-radius: 0;
+        object-fit: cover;
+      }
+    }
+
+    .content {
+      .extra {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: @mobileDefaultItemExtraMarginTop;
+        margin-bottom: @mobileDefaultItemExtraMarginBottom;
+
+        .meta {
+          color: @defaultItemColor;
+          font-size: @defaultItemMetaFontSize;
+          font-weight: @defaultItemMetaFontWeight;
+          opacity: @defaultItemMetaOpacity;
+
+          &.date {
+            font-size: @defaultItemDateMetaFontSize;
+            font-weight: @defaultItemDateMetaFontWeight;
+            opacity: @defaultItemDateMetaOpacity;
+          }
+        }
+
+        &:after {
+          display: none;
+        }
+      }
+
+      .header {
+        margin-bottom: @mobileDefaultItemHeaderMarginBottom;
+        color: @defaultItemColor;
+        font-size: @mobileDefaultItemHeaderFontSize;
+        font-weight: @defaultItemHeaderFontWeight;
+      }
+
+      .description {
+        color: @defaultItemColor;
+        font-size: @mobileDefaultItemDescriptionFontSize;
+        font-weight: @defaultItemDescriptionFontWeight;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: @defaultItemDescriptionLineClamp;
+      }
+    }
+  }
+}
+
+// decrease margin when using icons instead of images
+// since the icons have themselves extra whitespace
+// and we should aim to get about 32px as seen in the figma design
+.item .icon {
+  width: auto;
+  margin-right: 0;
+}
+.ui.items > .item > .icon + .content {
+  padding-left: @tabletItemSpacing;
+}
+
 .item .tile.image,
 .block .item .tile.image {
   width: @tileImageWidth;
@@ -17,7 +91,7 @@
   margin: @mobileRowItemMargin;
 }
 
-// As semantic does for non unstacable items
+// As semantic does for non unstackable items
 // so columns does not affect margin in mobiles
 .ui.items.row > .item:last-child {
   margin-bottom: 0;
@@ -34,12 +108,49 @@
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
+  .ui.items .item.default {
+    .image {
+      width: @tabletDefaultItemWidth;
+    }
+
+    .content {
+      padding: @tabletDefaultItemContentPadding;
+
+      .extra {
+        margin-top: inherit;
+        margin-bottom: @tabletDefaultItemExtraMarginBottom;
+      }
+
+      .header {
+        margin-bottom: @tabletDefaultItemHeaderMarginBottom;
+        font-size: @tabletDefaultItemHeaderFontSize;
+      }
+    }
+  }
   .ui.items.row > .item {
     margin: @tabletRowItemMargin;
   }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
+  .ui.items .item.default {
+    .content {
+      padding: @computerDefaultItemContentPadding;
+
+      .extra {
+        margin-bottom: @computerDefaultItemExtraMarginBottom;
+      }
+
+      .header {
+        margin-bottom: @computerDefaultItemHeaderMarginBottom;
+        font-size: @desktopDefaultItemHeaderFontSize;
+      }
+
+      .description {
+        font-size: @desktopDefaultItemDescriptionFontSize;
+      }
+    }
+  }
   .ui.items.row > .item {
     margin: @desktopRowItemMargin;
   }
@@ -50,11 +161,18 @@
 ---------------*/
 
 .ui.items > .item {
-  &.primary > .icon {
+  &.primary,
+  > .icon.primary
+  {
     color: @primaryColor;
   }
 
-  &.secondary > .icon {
+  &.secondary,
+  > .icon.secondary {
     color: @secondaryColor;
+  }
+  &.tertiary,
+  > .icon.tertiary {
+    color: @tertiaryColor;
   }
 }

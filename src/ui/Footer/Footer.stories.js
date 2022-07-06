@@ -11,7 +11,7 @@ import Copernicus from '@eeacms/volto-eea-design-system/../theme/themes/eea/asse
 import Industry from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/industry.svg';
 import Marine from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/marine.svg';
 import Eionet from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eionet.svg';
-import EEA from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea.svg';
+import EEA from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-white.svg';
 
 export default {
   title: 'Layout/Footer',

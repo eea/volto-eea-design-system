@@ -4,102 +4,264 @@ description: ""
 order: 1
 ---
 
+<br/>
+
 ### Primary Font: Roboto
 
-We use Roboto as our Primary font. Roboto allows letters to take up as much space as it needs and ultimately, making for an improved experience for the reader.
+We use Roboto as our Primary font. Roboto allows letters to take up as much space as it needs and ultimately, making for an improved experience for the reader. 
+We use Arial as a web safe alternative font. It is similar in character and style to Roboto typeface and is a commonly available system font.
 
-### Web Safe Font: Arial
+### Weight
 
-We use Arial as an alternative font. It is similar in character and style to Roboto typeface and is a commonly available system font.
+Font weight is the thickness of a font's stroke, with various weights used to differentiate content hierarchy. The bold style emphasizes the importance in comparison with the regular font style in the font family. 
+We can use weights strarting from 300 (Light) up to 700 (Bold). Usually, the bold style is assigned to headings. Regular text is used for body text.
+
+<h4 style={{ fontWeight: '300', display: 'flex', marginBlock: '10px' }}><span style={{ width: '100px' }}>Light</span> 300</h4>
+<h4 style={{ fontWeight: '400', display: 'flex', marginBlock: '10px'  }}><span style={{ width: '100px' }}>Regular</span> 400</h4>
+<h4 style={{ fontWeight: '500', display: 'flex', marginBlock: '10px' }}><span style={{ width: '100px' }}>Medium</span> 500</h4>
+<h4 style={{ fontWeight: '600', display: 'flex', marginBlock: '10px'  }}><span style={{ width: '100px' }}>SemiBold</span> 600</h4>
+<h4 style={{ fontWeight: '700', display: 'flex', marginBlock: '10px'  }}><span style={{ width: '100px' }}>Bold</span> 700</h4>
+
+<br/>
+
+### Line height
+
+Line spacing is commonly measured as a percentage of font size. Conventional wisdom is that line spacing of 130%-150% is ideal for readability. In fact, anything from about 120% up to 200% is acceptable, 
+but 150% tends to be the most quoted sweet spot (and a WCAG recommendation). You should experiment to see what looks best with your text. The line-height value is always divisible by 4 to support the grid.
+
+ ![](../md_components/static/height150.png)
+
+
+<br/>
+
+### Letter spacing
+
+Letterspacing (also known as character spacing or tracking ) is the adjustment of the horizontal white space between the letters in a block of text. Unlike kerning, which affects only designated pairs of letters, letterspacing affects every pair. 
+By adjusting letter-spacing to the environment you are working with you will help readers consume your information faster, and more efficiently. The fun part is that they won’t even notice it!
+
+#### Headings -1.5%
+#### Body 0%
+#### Caption and Small text 1%
+
+<br/>
+
+### Text color
+
+Color also plays a key role in an interface’s typographic hierarchy, often by established types like: <br/>
+- Brand colors and supplementary colors, for most interface text whether body or heading. <br/>
+- Interactive, not just for links but also flat buttons, tab labels, and more <br/>
+- Disabled, often resulting is especially lower contrast treatments <br/>
+- Error, usually red, for the highest contrast with its surroundings <br/>
+
+<br/>
+
+### Line length
+Line-length is the number of characters displayed in a single line. Lines that are too long or too short can distract readers. For readability, limit to **no more than 80 characters including spaces for desktop**. 
+Line length **for mobile is recommended to use 40 to 60 characters** including space per line.
+
+<br/>
 
 ### Base Font Size
 We set 16px (1rem) as the base font size for body text to ensure readability. It is the default font size for most browsers.
 
+<br/>
+
+## <u> Desktop Styles </u> 
+
+<div>
+    <div className="row" style={{ alignItems: 'flex', height: '120px' }}>
+        <div className="col col--6" >
+            <h1>Heading 1</h1>
+        </div>
+        <div className="col col--6">
+            <b>Font: Roboto   Size: 48px or 3rem  <br/> Letter spacing: -1.5%</b>
+        </div>
+    </div>
+    <div className="row" style={{ alignItems: 'center' , height: '120px' }}>
+        <div className="col col--6">
+            <h2>Heading 2</h2>
+        </div>
+        <div className="col col--6">
+            <b>Font: Roboto   Size: 40px or 2.5rem  <br/> Letter spacing: -1.5%</b>
+        </div>
+    </div>
+    <div className="row" style={{ alignItems: 'center' , height: '120px' }}>
+        <div className="col col--6">
+            <h3>Heading 3</h3>
+        </div>
+        <div className="col col--6">
+            <b>Font: Roboto   Size: 36px or 2rem <br/>  Letter spacing: -1.5%</b>
+        </div>
+    </div>
+    <div className="row" style={{ alignItems: 'center', height: '120px'}}>
+        <div className="col col--6">
+            <h4>Heading 4</h4>
+        </div>
+        <div className="col col--6">
+            <b>Font: Roboto   Size: 24px or 1.5rem <br/>  Letter spacing: -1.5%</b>
+        </div>
+    </div>
+    <div className="row" style={{ alignItems: 'center', height: '120px'}}>
+        <div className="col col--6">
+            <h5>Heading 5</h5>
+        </div>
+        <div className="col col--6">
+            <b>Font: Roboto   Size: 20px or 1.25rem <br/>  Letter spacing: -1.5%</b>
+        </div>
+    </div>
+    <div className="row" style={{ alignItems: 'center', height: '120px'}}>
+        <div className="col col--6">
+            <body>Body</body>
+        </div>
+        <div className="col col--6">
+            <b>Font: Roboto   Size: 16px or 1rem <br/>  Letter spacing: 0%</b>
+        </div>
+    </div>
+      <div className="row" style={{ alignItems: 'center', height: '120px'}}>
+        <div className="col col--6">
+            <caption>Caption</caption>
+        </div>
+        <div className="col col--6">
+            <b>Font: Roboto   Size: 14px or 0.875rem <br/>  Letter spacing: 1%</b>
+        </div>
+    </div>
+      <div className="row" style={{ alignItems: 'center', height: '120px'}}>
+        <div className="col col--6">
+            <smalltext>Small text</smalltext>
+        </div>
+        <div className="col col--6">
+            <b>Font: Roboto   Size: 12px or 0.75rem <br/>  Letter spacing: 1%</b>
+        </div>
+    </div>
+
+</div>
+
+## <u> Mobile Styles </u> 
+
+<div>
+    <div className="row" style={{ alignItems: 'center', height: '120px' }}>
+        <div className="col col--6">
+            <p style={{ fontWeight: '700', fontSize:1.875 + 'rem' ,lineHeight:1.875+'rem',fontFamily:'Roboto'}}> Heading 1</p>
+        </div>
+        <div className="col col--6">
+            <b>Font: Roboto   Size: 30px or 1.875rem  <br/> Letter spacing: -1.5%</b>
+        </div>
+    </div>
+    <div className="row" style={{ alignItems: 'center', height: '120px' }}>
+        <div className="col col--6">
+            <p style={{ fontWeight: '700', fontSize:1.5 + 'rem' ,lineHeight:1.5+'rem',fontFamily:'Roboto'}}> Heading 2</p>
+        </div>
+        <div className="col col--6">
+            <b>Font: Roboto   Size: 24px or 1.5rem <br/>  Letter spacing: -1.5%</b>
+        </div>
+    </div>
+    <div className="row" style={{ alignItems: 'center', height: '120px' }}>
+        <div className="col col--6">
+            <p style={{ fontWeight: '700', fontSize:1.25 + 'rem' ,lineHeight:1.5+'rem',fontFamily:'Roboto'}}> Heading 3</p>
+        </div>
+        <div className="col col--6">
+            <b>Font: Roboto   Size: 20px or 1.25rem <br/>  Letter spacing: -1.5%</b>
+        </div>
+    </div>
+      <div className="row" style={{ alignItems: 'center', height: '120px' }}>
+        <div className="col col--6">
+            <p style={{ fontWeight: '700', fontSize:1.125 + 'rem' ,lineHeight:1.5+'rem',fontFamily:'Roboto'}}> Heading 4</p>
+        </div>
+        <div className="col col--6">
+            <b>Font: Roboto   Size: 18px or 1.125rem <br/>  Letter spacing: -1.5%</b>
+        </div>
+    </div>
+    <div className="row" style={{ alignItems: 'center', height: '120px'}}>
+        <div className="col col--6">
+            <body>Body</body>
+        </div>
+        <div className="col col--6">
+            <b>Font: Roboto   Size: 16px or 1rem <br/>  Letter spacing: 0%</b>
+        </div>
+    </div>
+    <div className="row" style={{ alignItems: 'center', height: '120px'}}>
+        <div className="col col--6">
+            <caption>Caption</caption>
+        </div>
+        <div className="col col--6">
+            <b>Font: Roboto   Size: 14px or 0.875rem <br/>  Letter spacing: 1%</b>
+        </div>
+    </div>
+    <div className="row" style={{ alignItems: 'center', height: '120px'}}>
+        <div className="col col--6">
+            <smalltext>Small text</smalltext>
+        </div>
+        <div className="col col--6">
+            <b>Font: Roboto   Size: 12px or 0.75rem  <br/> Letter spacing: 1%</b>
+        </div>
+    </div>
+</div>
 
 
-#### Heading 1
-|         | Font |Font size                                    | Line height                                   | Example |
-| ------- | ---  |-------------------------------------------- | --------------------------------------------- |---
-| mobile  | Roboto     | 3XL <br/> 30px <br/> 1.875rem | LH-3XL <br/> 45px <br/> 2.8rem    | <p style={{fontSize:1.875+'rem',lineHeight:2.8+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-| mobile  | Archivo     | 3XL <br/> 30px <br/> 1.875rem | LH-3XL <br/> 45px <br/> 2.8rem    | <p style={{fontSize:1.875+'rem',lineHeight:2.8+'rem',fontFamily:'Archivo'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-| desktop |Roboto| 6XL <br/> 48px <br/> 3rem        | LH-6XL 72px <br/> 4.5rem |  <p style={{fontSize:3+'rem',lineHeight:4.5+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-| desktop |Archivo| 6XL <br/> 48px <br/> 3rem        | LH-6XL 72px <br/> 4.5rem |  <p style={{fontSize:3+'rem',lineHeight:4.5+'rem',fontFamily:'Archivo'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-
-#### Heading 2
-|         | Font |Font size                                    | Line height                                   | Example |
-| ------- | ---  |-------------------------------------------- | --------------------------------------------- |---
-| mobile  | Roboto     | 2XL <br/> 24px <br/> 1.5rem | LH-2XL <br/> 36px <br/> 2.25rem     | <p style={{fontSize:1.5+'rem',lineHeight:2.25+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-| desktop |Roboto| 5XL <br/> 40px <br/> 2.5rem       | LH-5XL <br/> 60px <br/> 3.75rem|  <p style={{fontSize:2.5+'rem',lineHeight:3.75+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-#### Heading 3
-|         | Font |Font size                                    | Line height                                   | Example |
-| ------- | ---  |-------------------------------------------- | --------------------------------------------- |---
-| mobile  | Roboto     | XL <br/>  20px <br/> 1.25rem | LH-XL <br/> 30px <br/> 1.875rem     | <p style={{fontSize:1.25+'rem',lineHeight:1.875+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-| desktop |Roboto| 4XL <br/> 36px <br/> 2.25rem        | LH-4XL <br/> 54px <br/> 3.375rem |  <p style={{fontSize:2.25+'rem',lineHeight:3.375+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-#### Heading 4
-|         | Font |Font size                                    | Line height                                   | Example |
-| ------- | ---  |-------------------------------------------- | --------------------------------------------- |---
-| mobile  | Roboto     | L <br/> 18px <br/> 1.125rem | LH-L <br/> 27px <br/> 1.7rem    | <p style={{fontSize:1.125+'rem',lineHeight:1.7+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-| desktop |Roboto| 2XL <br/> 24px <br/> 1.5rem        | LH-2XL <br/> 36px <br/> 2.25rem |  <p style={{fontSize:1.5+'rem',lineHeight:2.25+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-
-#### Heading 5
-|         | Font |Font size                                    | Line height                                   | Example |
-| ------- | ---  |-------------------------------------------- | --------------------------------------------- |---
-| desktop |Roboto| XL <br/> 20px <br/> 1.25rem        | LH-XL <br/> 30px <br/> 1.875rem |  <p style={{fontSize:1.25+'rem',lineHeight:1.875+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-#### Heading 6
-|         | Font |Font size                                    | Line height                                   | Example |
-| ------- | ---  |-------------------------------------------- | --------------------------------------------- |---
-| desktop |Roboto| L <br/> 18px <br/> 1.125rem        | LH-L <br/> 27px <br/> 1.7rem |  <p style={{fontSize:1.125+'rem',lineHeight:1.7+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-#### Body
-|         | Font |Font size                                    | Line height                                   | Example |
-| ------- | ---  |-------------------------------------------- | --------------------------------------------- |---
-| mobile  | Roboto     |  M <br/> 16px <br/> 1rem| LH-M <br/> 24px <br/> 1.5rem     | <p style={{fontSize:1+'rem',lineHeight:1.5+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-| desktop |Roboto| M <br/> 16px <br/> 1rem| LH-M <br/> 24px <br/> 1.5rem |  <p style={{fontSize:1+'rem',lineHeight:1.5+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-#### Caption
-|         | Font |Font size                                    | Line height                                   | Example |
-| ------- | ---  |-------------------------------------------- | --------------------------------------------- |---
-| mobile  | Roboto     | S <br/> 14px <br/> 0.875rem| LH-S <br/> 21px <br/> 1.3rem    | <p style={{fontSize:0.875+'rem',lineHeight:1.3+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-| desktop |Roboto| M <br/> 16px <br/> 0.875rem       | LH-M <br/> 24px <br/> 1.5rem  |  <p style={{fontSize:0.875+'rem',lineHeight:1.3+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-#### Small Text
-|         | Font |Font size                                    | Line height                                   | Example |
-| ------- | ---  |-------------------------------------------- | --------------------------------------------- |---
-| mobile  | Roboto     |  XS <br/> 12px <br/> 0.75rem | LH-XS <br/> 18px <br/> 1.125rem     | <p style={{fontSize:0.75+'rem',lineHeight:1.125+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-| desktop |Roboto| XS <br/> 12px <br/> 0.75rem       | LH-XS <br/> 18px <br/> 1.125rem |  <p style={{fontSize:0.75+'rem',lineHeight:1.125+'rem',fontFamily:'Roboto'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-
+## Typography tokens 
 
 ### Weight
 
-Font weight is the thickness of a font's stroke, with various weights used to differentiate content hierarchy. The bold style emphasizes the importance in comparison with the regular font style in the font family. **We use 400 for regular and 600 for bold**. Usually, the bold style is assigned to headings. Regular text is used for body text.
+| Token name         | Value           | Style | 
+| ------------------ | ----------------| -------------- |
+| font-weight-1      | 100             | Thin              |
+| font-weight-2      | 200             | Light             |
+| font-weight-3      | 300             | Book              |
+| font-weight-4      | 400             | Regular           |
+| font-weight-5      | 500             | Medium            |
+| font-weight-6      | 600             | SemiBold          |
+| font-weight-7      | 700             | Bold              |
+| font-weight-8      | 800             | ExtraBold         |
+| font-weight-9      | 900             | Black             |
 
 ### Line height
 
-Line spacing is commonly measured as a percentage of font size. Conventional wisdom is that line spacing of 130%-150% is ideal for readability. In fact, anything from about 120% up to 200% is acceptable, **but 150% tends to be the most quoted sweet spot (and a WCAG recommendation)**. You should experiment to see what looks best with your text. The line-height value is always divisible by 4 to support the grid.
-<table >
-    <tbody>
-        <tr>
-            <td><p style={{lineHeight:100+'%',width:600+'px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p></td>
-            <td style={{width:150+'px' }}>100%</td>
-        </tr>
-        <tr>
-            <td><p style={{lineHeight:150+'%',width:600+'px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></td>
-            <td style={{width:150+'px' }}>150%</td>
-        </tr>
-        <tr>
-            <td><p style={{lineHeight:250+'%',width:600+'px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></td>
-            <td style={{width:150+'px' }}>250%</td>
-        </tr>
-    </tbody>
-</table>
+
+| Token name         | Value(no unit) |
+| ------------------ | ----------------| 
+| font-lineheight-00 | .95             |
+| font-lineheight-0  | 1.1             |
+| font-lineheight-1  | 1.25            |
+| font-lineheight-2  | 1.375           |
+| font-lineheight-3  | 1.5             |
+| font-lineheight-4  | 1.75            |
+| font-lineheight-5  | 2               |
 
 
+### Letter spacing
 
-### Line length
+| Token name             | Value(em)       |
+| ---------------------- | ----------------| 
+| font-letterspacing-000 | -.02            |
+| font-letterspacing-00  | -.015           |
+| font-letterspacing-0   | -.005           |
+| font-letterspacing-1   |  .005           |
+| font-letterspacing-2   |  .015           |
+| font-letterspacing-3   |  .02            |
+| font-letterspacing-4   |  .075           |
+| font-letterspacing-5   |  .15            |
 
-Line-length is the number of characters displayed in a single line. Lines that are too long or too short can distract readers. For readability, limit to **no more than 80 characters including spaces for desktop**. Line length **for mobile is recommended to use 40 to 60 characters** including space per line.
+### Font size
+
+| Token name             | Value(rem)       |
+| ---------------------- | ---------------- | 
+| font-size-00           | .75              |
+| font-size-0            | .875             |
+| font-size-1            |  1               |
+| font-size-2            |  1.1             |
+| font-size-3            |  1.25            |
+| font-size-4            |  1.5             |
+| font-size-5            |  2               |
+| font-size-6            |  2.5             |
+| font-size-7            |  3               |
+| font-size-8            |  3.5             |
+
+
+### Font size fluid
+
+| Token name             | Value                |  
+| ---------------------- | -------------------  | 
+| font-size-fluid-0      | .75rem, 2vw, 1rem    |
+| font-size-fluid-1      | 1rem, 4vw, 1.5rem    |
+| font-size-fluid-2      | 1.5rem, 6vw, 2.5rem  |
+| font-size-fluid-3      | 2rem, 9vw, 3.5rem    |

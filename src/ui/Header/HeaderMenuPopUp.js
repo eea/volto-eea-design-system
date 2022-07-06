@@ -150,11 +150,12 @@ const SecondLevelContent = ({ element, topics = false }) => {
     );
     content = (
       <List>
-        {atAGlance.items.map((item, index) => (
-          <Link role="listitem" className="item" to={item.url} key={index}>
-            {item.title}
-          </Link>
-        ))}
+        {atAGlance &&
+          atAGlance.items.map((item, index) => (
+            <Link role="listitem" className="item" to={item.url} key={index}>
+              {item.title}
+            </Link>
+          ))}
         <Link
           role="listitem"
           className="item"

@@ -13,7 +13,6 @@
   content: " ";
   position: absolute;
   height: 100%;
-  z-index: -1;
   margin-right: -50vw;
   left: 50%;
   right: 50%;
@@ -33,16 +32,25 @@
   &.primary {
     background-color: @contentBoxBackgroundColorPrimary;
     color: @contentBoxColor;
+    .header {
+      color: @contentBoxColor !important;
+    }
   }
 
   &.secondary {
     background-color: @contentBoxBackgroundColorSecondary;
     color: @contentBoxColor;
+    .header {
+      color: @contentBoxColor !important;
+    }
   }
 
   &.tertiary {
     background-color: @contentBoxBackgroundColorTertiary;
     color: @contentBoxColor;
+    .header {
+      color: @contentBoxColor !important;
+    }
   }
 }
 

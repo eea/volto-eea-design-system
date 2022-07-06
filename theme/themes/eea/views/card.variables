@@ -87,7 +87,6 @@
 @metaSpacing: 0.3em;
 @metaColor: @tertiaryColor;
 
-
 /* Icons */
 @actionOpacity: 0.75;
 @actionHoverOpacity: 1;
