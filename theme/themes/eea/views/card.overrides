@@ -45,6 +45,10 @@
   }
 }
 
+.card .header-link:hover {
+  text-decoration: @contentLinkTextDecoration;
+}
+
 .ui.left.card {
   margin-right: auto;
 }

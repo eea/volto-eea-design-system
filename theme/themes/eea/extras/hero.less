@@ -42,6 +42,8 @@
 .hero-block-image-wrapper {
   position: absolute;
   min-height: @heroBlockImageWrapperMinHeight;
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -68,6 +70,9 @@
   .hero-block-body {
     gap: @tabletHeroBlockBodyGap;
   }
+  .hero-block-inner-wrapper {
+    padding-block: @tableHeroBlockWrapperPadding;
+  }
   .homepage #page-document > .eea.hero-block:first-of-type .hero-block-body {
     margin: @heroBlockHomePageBodyMargin;
   }
@@ -78,6 +83,10 @@
   .eea.hero-block.full-height .hero-block-image-wrapper,
   .eea.hero-block.full-height .hero-block-inner-wrapper {
     min-height: @desktopHeroBlockMinHeight;
+  }
+
+  .hero-block-inner-wrapper {
+    padding-block: @desktopHeroBlockWrapperPadding;
   }
   .hero-block-body {
     gap: @desktopHeroBlockBodyGap;
