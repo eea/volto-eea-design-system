@@ -31,9 +31,3 @@
   background: transparent;
   box-shadow: none;
 }
-
-// Background color from semantic only for error messages
-// not for every negative background
-.ui.error.message {
-  background: #fffdfd;
-}
