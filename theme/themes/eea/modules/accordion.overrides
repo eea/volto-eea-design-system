@@ -113,6 +113,15 @@
   color: @primaryColor;
 }
 
+/* Secondary */
+.ui.accordion.secondary .active.title {
+  background-color: @secondaryColor;
+}
+.ui.accordion.secondary .title:not(.active):hover,
+.ui.accordion.secondary .title:not(.active):hover i {
+  color: @secondaryColor;
+}
+
 /* Tertiary */
 .ui.accordion.tertiary .active.title {
   background-color: @tertiaryColor;

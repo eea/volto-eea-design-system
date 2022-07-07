@@ -13,7 +13,7 @@ export default {
     variant: {
       name: 'Variation',
       defaultValue: 'primary',
-      options: ['primary', 'secondary', 'tertiary'],
+      options: ['default', 'primary', 'secondary', 'tertiary'],
       control: { type: 'select' },
       description: 'call to action variation',
       table: {
