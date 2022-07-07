@@ -12,7 +12,7 @@
 @titleFontSize: 1.125rem;
 @titleColor: @textColor;
 @titleBorderBottom: @1px solid @silverGray;
-@titleColorHover: @secondaryColor;
+@titleColorHover: @grey-5;
 @titleJustifyContent: space-between;
 
 /* Icon */
@@ -32,7 +32,7 @@
 ;
 @iconVerticalAlign: baseline;
 @iconTransform: none;
-@iconColorHover: @secondaryColor;
+@iconColorHover: @grey-5;
 @iconInactive: "\ea4e"; // Icon of closed accordion
 @iconActive: "\EA78"; // Icon of open accordion
 @iconOrder: 1; // Icon after text of the title
@@ -62,7 +62,7 @@
 --------------------*/
 
 @activeIconTransform: none;
-@activeTitleBackground: @secondaryColor;
+@activeTitleBackground: @grey-5;
 @activeTitleColor: @white;
 @activeTitleBorderBottom: 0;
 

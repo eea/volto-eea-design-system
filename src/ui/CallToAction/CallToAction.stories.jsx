@@ -5,6 +5,17 @@ export default {
   title: 'Components/Call To Action',
   component: Button,
   argTypes: {
+    variant: {
+      name: 'Variation',
+      defaultValue: 'primary',
+      options: ['default', 'primary', 'secondary', 'tertiary'],
+      control: { type: 'select' },
+      description: 'call to action variation',
+      table: {
+        defaultValue: { summary: 'primary' },
+        type: { summary: 'string' },
+      },
+    },
     label: {
       description: 'link label',
       table: {
@@ -39,58 +50,21 @@ export default {
 export const Default = (args) => {
   return (
     <Container>
-      <Button as="a" disabled={args.disabled} href={args.href} target="_blank">
+      <Button
+        as="a"
+        className={args.variant === 'default' ? '' : args.variant}
+        disabled={args.disabled}
+        href={args.href}
+        target="_blank"
+      >
         {args.label}
       </Button>
     </Container>
   );
 };
 Default.args = {
-  label: 'Default Call To Action',
-  href: '/#',
-  disabled: false,
-};
-
-//Primary Call To Action
-export const Primary = (args) => {
-  return (
-    <Container>
-      <Button
-        primary
-        as="a"
-        disabled={args.disabled}
-        href={args.href}
-        target="_blank"
-      >
-        {args.label}
-      </Button>
-    </Container>
-  );
-};
-Primary.args = {
-  label: 'Primary Call To Action',
-  href: '/#',
-  disabled: false,
-};
-
-//Secondary Call To Action
-export const Secondary = (args) => {
-  return (
-    <Container>
-      <Button
-        secondary
-        as="a"
-        disabled={args.disabled}
-        href={args.href}
-        target="_blank"
-      >
-        {args.label}
-      </Button>
-    </Container>
-  );
-};
-Secondary.args = {
-  label: 'Secondary Call To Action',
+  variant: 'primary',
+  label: 'Call To Action',
   href: '/#',
   disabled: false,
 };
@@ -99,56 +73,26 @@ Secondary.args = {
 export const Inverted = (args) => {
   return (
     <Container>
-      <Segment compact>
-        <Button
-          primary
-          inverted
-          as="a"
-          disabled={args.disabled}
-          href={args.href1}
-          target="_blank"
-        >
-          {args.button1}
-        </Button>
-      </Segment>
-      <Segment compact>
-        <Button
-          secondary
-          inverted
-          as="a"
-          disabled={args.disabled}
-          href={args.href2}
-          target="_blank"
-        >
-          {args.button2}
-        </Button>
-      </Segment>
-      <Segment inverted compact>
+      <Segment compact className={args.variant === 'default' ? 'inverted' : ''}>
         <Button
           inverted
           as="a"
           disabled={args.disabled}
-          href={args.href3}
+          href={args.href}
           target="_blank"
+          className={args.variant === 'default' ? '' : args.variant}
         >
-          {args.button3}
+          {args.label}
         </Button>
       </Segment>
     </Container>
   );
 };
 Inverted.args = {
-  button1: 'Primary Call To Action',
-  button2: 'Secondary Call To Action',
-  button3: 'Default Call To Action',
-  href1: '/#',
-  href2: '/#',
-  href3: '/#',
+  variant: 'primary',
+  label: 'Inverted Call To Action',
+  href: '/#',
   disabled: false,
-};
-Inverted.parameters = {
-  controls: { exclude: ['label', 'href'] },
-  hideNoControlsWarning: true,
 };
 
 //Labeled Call To Action
@@ -156,7 +100,12 @@ export const Labeled = (args) => {
   return (
     <Container>
       <Button
-        className={args.variant + ' icon ' + args.icon_position + ' labeled'}
+        className={
+          (args.variant === 'default' ? '' : args.variant) +
+          ' icon ' +
+          args.icon_position +
+          ' labeled'
+        }
         as="a"
         disabled={args.disabled}
         href={args.href}
@@ -169,22 +118,14 @@ export const Labeled = (args) => {
   );
 };
 Labeled.args = {
+  variant: 'primary',
   label: 'Labeled Call To Action',
   icon: 'chevron right',
+  icon_position: 'right',
   href: '/#',
   disabled: false,
 };
 Labeled.argTypes = {
-  variant: {
-    options: ['primary', 'secondary', 'default'],
-    description: 'call to action class',
-    control: { type: 'radio' },
-    defaultValue: 'secondary',
-    table: {
-      defaultValue: { summary: 'secondary' },
-      type: { summary: 'string' },
-    },
-  },
   icon: {
     name: 'icon',
     defaultValue: 'chevron right',
@@ -213,10 +154,10 @@ Labeled.argTypes = {
   icon_position: {
     options: ['left', 'right'],
     control: { type: 'radio' },
-    defaultValue: 'left',
+    defaultValue: 'right',
     description: 'icon left or right position',
     table: {
-      defaultValue: { summary: 'left' },
+      defaultValue: { summary: 'right' },
       type: { summary: 'string' },
     },
   },
@@ -235,5 +176,6 @@ Link.args = {
   href: '/#',
 };
 Link.parameters = {
+  controls: { exclude: ['disabled'] },
   hideNoControlsWarning: true,
 };
