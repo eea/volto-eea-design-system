@@ -65,6 +65,17 @@
   }
 }
 
+/* Faq accordion */
+.ui.accordion.faq {
+  .content {
+    background: @faqContentBackground;
+  }
+
+  > .content {
+    border-bottom: @faqContentBorderBottom;
+  }
+}
+
 /* All content padding are equal including last child */
 .ui.accordion:not(.styled) .title ~ .content:not(.ui):last-child {
   padding-bottom: @contentPaddingBottom;

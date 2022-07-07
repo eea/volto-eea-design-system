@@ -1,0 +1,217 @@
+@type: 'extra';
+@element: 'faqContent';
+
+@import (multiple) '../../theme.config';
+
+/*******************************
+            FAQ Content
+*******************************/
+
+.eea.faqContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: justify;
+
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: @mobileFaqContentRowMarginBottom;
+    width: @faqContentRowWidth;
+    padding: @faqContentRowMobilePadding;
+  }
+
+  .row.info {
+    display: flex;
+    height: @faqContentInfoHeight;
+    font-size: @faqContentFontSize;
+    font-weight: @faqContentFontWeight;
+    line-height: @faqContentInfoLineHeight;
+    color: @faqContentInfoTextColor;
+    
+  }
+
+  .dropdown {
+    .divider {
+      color: @faqContentInfoTextColor;
+      font-size: @faqContentFontSize;
+      font-weight: @faqContentFontWeight;
+    }
+  }
+
+  .languages {
+    display: inline-flex;
+    text-align: right;
+    align-items: center;
+    font-size: @faqContentInfoLangFontSize;
+    font-weight: @faqContentInfoLangFontWeight;
+    color: @faqContentInfoTextColor;
+
+    .image {
+      display: inline-flex;
+      padding: @faqContentInfoLangImgPadding;
+      margin: @faqContentInfoLangImgMargin;
+      width: @faqContentInfoLangImgWidth;
+    }
+    .menu {
+      color: @faqContentInfoTextColor;
+      right: 0;
+      left: unset;
+
+      .wrapper {
+        .item {
+          justify-content: flex-end;
+          padding: @faqContentInfoLangItemPadding;
+          font-weight: @faqContentInfoItemFontWeight;
+          font-size: @faqContentInfoItemFontSize;
+          &:hover {
+            background: @faqContentInfoTextColor;
+            color: @white;
+            cursor: pointer;
+          }
+          span.country-code {
+            margin-left: @faqContentInfoItemMarginLeft;
+            font-weight: @faqContentInfoLangFontWeight;
+          }
+        }
+
+        &.language {
+          max-width: @faqContentInfoLangWidth;
+          padding: @faqContentInfoLangPadding;
+          list-style-type: none;
+          margin-block-start: @faqContentInfoLangMarginBlock;
+          margin-block-end: @faqContentInfoLangMarginBlock;
+          padding-inline-start: @faqContentInfoLangPadding;
+          
+          .ui.column.grid {
+            margin-top: 0;
+            margin-bottom: 0;
+
+            .column {
+              padding-top: 0;
+              padding-bottom: 0;
+            }
+
+            .column:nth-child(odd){
+              padding-right: 0;
+            }
+
+            .column:nth-child(even){
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .row.content {
+    font-size: @faqContentFontSize;
+    font-weight: @faqContentFontWeight;
+    line-height: @faqContentLineHeight;
+  }
+
+  .row.actions {
+    display: flex;
+    align-items: end;
+    padding: @faqContentActionPadding;
+    margin-top: @faqContentActionMobileMarginTop;
+
+    .button {
+      padding: @faqContentActionPadding;
+      width: unset;
+      height: unset;
+      background-color: @faqContentActionButtonBackground;
+      margin: @faqContentActionButtonMargin;
+      font-size: @faqContentActionButtonFontSize;
+      color: @japaneseIndigo;
+      border: none;
+      .icon {
+        margin: @faqContentActionButtonIconMargin;
+      }
+    }
+  }
+}
+
+.ui.popup.share-popup {
+  padding: @sharePopupPadding;
+  filter: @sharePopupFilter;
+
+  p {
+      font-size: @sharePopupFontSize;
+      font-weight: @sharePopupFontWeight;
+      line-height: @sharePopupLineHeight;
+  }
+
+  .actions {
+      flex-flow: column;
+      align-items: center;
+      i.icon {
+          color: @sharePopupActionsIconColor;
+      }
+
+      .action {
+          display:flex;
+          justify-content:center
+      }
+
+      .ui.button:not(.icon) > .icon:not(.button):not(.dropdown) {
+        margin: @sharePopupActionsIconMargin;
+      }
+  }
+
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .eea.faqContent {
+    .row {
+      margin-bottom: @tabletFaqContentRowMarginBottom;
+    }
+
+    .row.actions {
+      align-items: center;
+    }
+  }
+
+  .ui.popup.share-popup {
+    min-width: @tabletSharePopupMinWidth;
+
+    .actions{
+        flex-flow: row;
+        display: flex;
+        justify-content: space-between;
+
+        .action {
+            display:inherit;
+        }
+    }
+
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  .eea.faqContent {
+    .row {
+      margin-bottom: @computerFaqContentRowMarginBottom;
+    }
+    :last-child.row {
+      margin-bottom: @tabletFaqContentRowMarginBottom;
+    }
+    .row.actions {
+      display: flex;
+      margin-top: @faqContentActionDesktopMarginTop;
+    }
+    .row.info {
+      display: flex;
+    }
+
+    .dropdown .divider {
+      font-size: inherit;
+      font-weight: inherit;
+    }
+  }
+}
