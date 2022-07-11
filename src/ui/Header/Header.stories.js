@@ -756,6 +756,7 @@ const menuItems = [
         ],
         review_state: null,
         title: 'EEA member countries',
+        url: '/#',
       },
       {
         '@id': 'Cooperating-countries',
