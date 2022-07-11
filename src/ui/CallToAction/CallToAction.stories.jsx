@@ -176,6 +176,6 @@ Link.args = {
   href: '/#',
 };
 Link.parameters = {
-  controls: { exclude: ['variant', 'disabled'] },
+  controls: { exclude: ['Variation', 'disabled'] },
   hideNoControlsWarning: true,
 };
