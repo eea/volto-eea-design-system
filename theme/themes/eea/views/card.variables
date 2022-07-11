@@ -86,10 +86,6 @@
 @metaFontSize: @relativeMedium;
 @metaSpacing: 0.3em;
 @metaColor: @tertiaryColor;
-<<<<<<< HEAD
-=======
-
->>>>>>> refactor-card
 
 /* Icons */
 @actionOpacity: 0.75;
