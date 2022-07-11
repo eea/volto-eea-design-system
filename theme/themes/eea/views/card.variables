@@ -53,7 +53,7 @@
 /* Image */
 @cardImageHeight: 200px;
 @cardImageOverflow: hidden;
-@imageBackground: @transparentBlack;
+@imageBackground: transparent;
 @imagePadding: 0em;
 @imageBorder: none;
 @imageBoxShadow: none;
