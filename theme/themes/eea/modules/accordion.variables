@@ -62,8 +62,8 @@
 --------------------*/
 
 @activeIconTransform: none;
-@activeTitleBackground: @grey-5;
-@activeTitleColor: @white;
+@activeTitleBackground: @darkWhite;
+@activeTitleColor: @grey-5;
 @activeTitleBorderBottom: 0;
 
 /*-------------------
@@ -99,9 +99,9 @@
 
 /* Styled Title States */
 @styledTitleHoverBackground: transparent;
-@styledTitleHoverColor: @activeTitleBackground;
+@styledTitleHoverColor: @activeTitleColor;
 @styledActiveTitleBackground: @activeTitleBackground;
-@styledActiveTitleColor: @white;
+@styledActiveTitleColor: @activeTitleColor;
 
 /* Styled Child Title States */
 @styledHoverChildTitleBackground: @styledTitleHoverBackground;
