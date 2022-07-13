@@ -257,3 +257,48 @@ p.ui.button {
 .ui.inverted.secondary.button:active {
   background-color: @secondaryColorDown;
 }
+
+/* Tertiary */
+
+.ui.button.tertiary:not(.inverted) {
+  background-color: @tertiaryColor;
+  color: @white;
+}
+
+.ui.inverted.tertiary.buttons .button,
+.ui.inverted.tertiary.button {
+  box-shadow: 0px 0px 0px @invertedBorderSize @tertiaryColor inset !important;
+  color: @tertiaryColor;
+}
+
+.ui.inverted.tertiary.buttons .button:hover,
+.ui.inverted.tertiary.button:hover,
+.ui.inverted.tertiary.buttons .button:focus,
+.ui.inverted.tertiary.button:focus,
+.ui.inverted.tertiary.buttons .button.active,
+.ui.inverted.tertiary.button.active,
+.ui.inverted.tertiary.buttons .button:active,
+.ui.inverted.tertiary.button:active {
+  box-shadow: none !important; // button.less - L:3142
+  color: @invertedHoveredTextColor;
+}
+
+.ui.tertiary.buttons .button:hover,
+.ui.tertiary.button:hover {
+  background-color: @tertiaryColorHover;
+}
+
+.ui.tertiary.buttons .button:focus,
+.ui.tertiary.button:focus {
+  background-color: @tertiaryColorFocus;
+}
+
+.ui.tertiary.buttons .active.button,
+.ui.tertiary.active.button {
+  background-color: @tertiaryColorActive;
+}
+
+.ui.tertiary.buttons .button:active,
+.ui.tertiary.button:active {
+  background-color: @tertiaryColorDown;
+}
