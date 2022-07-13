@@ -236,7 +236,6 @@
 
 .ui.card.rounded {
   padding-top: @iconCardPaddingTop;
-  width: @roundedWidth;
   border: none;
 
   .image {
@@ -246,7 +245,7 @@
     img {
       width: @roundedImageWidth;
       height: @roundedImageHeight;
-      border-radius: 50%;
+      border-radius: @roundedImageBorderRadius;
     }
   }
 

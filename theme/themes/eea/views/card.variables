@@ -272,18 +272,10 @@
           Rounded Card
 *******************************/
 /* Global */
-@roundedWidth                    : 100%;
-@roundedWrapperWidth             : 100%;
-@roundedWrapperGap               : @largeGap;
-@roundedContentWrapperWidth      : 100%;
 @roundedImageBorderRadius        : @circularRadius;
 @roundedContentTitleMarginBottom : @rem-space-2;
-@roundedImageWrapperWidth        : 100%;
-@roundedImageBackgroundSize      : cover;
 @roundedContentTitleFontWeight   : @bold;
 @roundedContentTitleFontSize     : @font-size-3;
-
-/* Big */
 @roundedImageHeight           : 173px;
 @roundedImageWidth            : 173px;
 @roundedMetadataFontSize      : @font-size-1;

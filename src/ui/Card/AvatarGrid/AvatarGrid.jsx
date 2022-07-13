@@ -26,7 +26,7 @@ AvatarGrid.Group = ({ children, ...rest }) => {
                 className={`eea rounded ${
                   rest.variant === 'default' ? '' : rest.variant
                 } ${rest.inverted ? 'inverted' : ''}`}
-                fluid={avatar.fluid}
+                fluid={rest.fluid}
               >
                 {rest.hasLink ? (
                   <Image

@@ -26,6 +26,15 @@ export default {
         type: { summary: 'boolean' },
       },
     },
+    fluid: {
+      description: 'take up the width of its container',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: { summary: false },
+      },
+    },
     hasLink: {
       description: 'Clickable card',
       table: {
@@ -57,6 +66,7 @@ export const RoundedGrid = GridTemplate.bind({});
 RoundedGrid.args = {
   variant: 'default',
   inverted: false,
+  fluid: false,
   hasLink: true,
   href: '/#',
   avatars: [
