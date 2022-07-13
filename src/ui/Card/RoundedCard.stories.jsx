@@ -11,6 +11,24 @@ export default {
     },
   },
   argTypes: {
+    variant: {
+      options: ['default', 'primary', 'secondary', 'tertiary'],
+      control: { type: 'select' },
+      description: 'card variation class',
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: { summary: 'null' },
+      },
+    },
+    inverted: {
+      description: 'Inverted card',
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
     hasImage: {
       description: 'true if card contains image',
       table: {
@@ -47,18 +65,6 @@ export default {
         defaultValue: { summary: false },
       },
     },
-    avatarVariant: {
-      options: ['big', 'small'],
-      control: { type: 'inline-radio' },
-      defaultValue: 'big',
-      description: 'rounded card size class',
-      table: {
-        type: {
-          summary: 'string',
-        },
-        defaultValue: { summary: ' "" ' },
-      },
-    },
     src: {
       description: 'rounded card image url',
       table: {
@@ -73,7 +79,12 @@ export default {
 
 const AvatarTemplate = (args) => (
   <Container>
-    <Card className={`rounded ${args.avatarVariant}`} fluid={args.fluid}>
+    <Card
+      className={`rounded ${args.variant === 'default' ? '' : args.variant} ${
+        args.inverted ? 'inverted' : ''
+      }`}
+      fluid={args.fluid}
+    >
       {args.hasImage && (
         <Image src={args.src} wrapped ui={false} alt="card image" />
       )}
@@ -87,7 +98,8 @@ const AvatarTemplate = (args) => (
 
 export const Default = AvatarTemplate.bind({});
 Default.args = {
-  avatarVariant: 'big',
+  variant: 'default',
+  inverted: false,
   src: imgUrl,
   title: 'Lorem Ipsum',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',

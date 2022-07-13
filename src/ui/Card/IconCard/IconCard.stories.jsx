@@ -10,8 +10,8 @@ export default {
     },
   },
   argTypes: {
-    class: {
-      options: [null, 'primary', 'secondary', 'tertiary'],
+    variant: {
+      options: ['default', 'primary', 'secondary', 'tertiary'],
       control: { type: 'select' },
       description: 'card variation class',
       table: {
@@ -21,15 +21,45 @@ export default {
         defaultValue: { summary: 'null' },
       },
     },
+    inverted: {
+      description: 'Inverted card',
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
+    hasLink: {
+      description: 'Clickable card',
+      table: {
+        defaultValue: { summary: 'true' },
+        type: { summary: 'boolean' },
+      },
+    },
   },
 };
 
 const Template = (args) => (
   <Container>
-    <Card className={`icon text-center ${args.class}`}>
-      <Icon className={`${args.size} ${args.icon}`} />
+    <Card
+      className={`icon text-center ${
+        args.variant === 'default' ? '' : args.variant
+      } ${args.inverted ? 'inverted' : ''}`}
+    >
+      {args.hasLink ? (
+        <a href={args.href}>
+          <Icon className={`${args.size} ${args.icon}`} />
+        </a>
+      ) : (
+        <Icon className={`${args.size} ${args.icon}`} />
+      )}
       <Card.Content>
-        <Card.Header>{args.title}</Card.Header>
+        {args.hasLink ? (
+          <Card.Header>
+            <a href={args.href}>{args.title}</a>
+          </Card.Header>
+        ) : (
+          <Card.Header>{args.title}</Card.Header>
+        )}
       </Card.Content>
     </Card>
   </Container>
@@ -37,10 +67,13 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
+  variant: 'default',
+  inverted: false,
   title: 'Lorem Ipsum',
   icon: 'ri-leaf-line',
   size: 'huge',
-  class: null,
+  hasLink: true,
+  href: '/#',
 };
 Default.argTypes = {
   title: {
@@ -78,10 +111,26 @@ const GridTemplate = (args) => (
       {args.cards !== null &&
         args.cards.map((card, index) => (
           <Grid.Column mobile={6} tablet={4} computer={2} key={index}>
-            <Card className="icon text-center">
-              <Icon className={`${card.size} ${card.icon}`} />
+            <Card
+              className={`icon text-center ${
+                args.variant === 'default' ? '' : args.variant
+              } ${args.inverted ? 'inverted' : ''}`}
+            >
+              {args.hasLink ? (
+                <a href={args.href}>
+                  <Icon className={`${card.size} ${card.icon}`} />
+                </a>
+              ) : (
+                <Icon className={`${card.size} ${card.icon}`} />
+              )}
               <Card.Content>
-                <Card.Header>{card.title}</Card.Header>
+                {args.hasLink ? (
+                  <Card.Header>
+                    <a href={args.href}>{card.title}</a>
+                  </Card.Header>
+                ) : (
+                  <Card.Header>{card.title}</Card.Header>
+                )}
               </Card.Content>
             </Card>
           </Grid.Column>
@@ -92,6 +141,10 @@ const GridTemplate = (args) => (
 
 export const GridIconCard = GridTemplate.bind({});
 GridIconCard.args = {
+  variant: 'default',
+  inverted: false,
+  hasLink: true,
+  href: '/#',
   cards: [
     {
       title: 'Climate',
