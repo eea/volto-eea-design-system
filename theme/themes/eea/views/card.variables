@@ -242,7 +242,7 @@
 @primaryExtraLinkHoverColor: @white;
 @primaryMetaColor: @white;
 @invertedPrimaryContentColor: @primaryColor;
-@invertedPrimaryHover: @primaryColorHover;
+@invertedPrimaryColorHover: @primaryColorHover;
 
 /*******************************
             Secondary
@@ -254,7 +254,7 @@
 @secondaryExtraLinkHoverColor: @white;
 @secondaryMetaColor: @white;
 @invertedSecondaryContentColor: @secondaryColor;
-@invertedSecondaryHover: @secondaryColorHover;
+@invertedSecondaryColorHover: @secondaryColorHover;
 
 /*******************************
             Tertiary
@@ -266,6 +266,7 @@
 @tertiaryExtraLinkHoverColor: @white;
 @tertiaryMetaColor: @white;
 @invertedTertiaryContentColor: @tertiaryColor;
+@invertedTertiaryColorHover: @tertiaryColorHover;
 
 /*******************************
           Rounded Card

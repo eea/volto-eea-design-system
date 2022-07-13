@@ -111,19 +111,17 @@
 
 /* Inverted */
 .ui.card.primary.inverted > i.icon,
-.ui.card.primary.inverted > a > i.icon,
 .ui.card.primary.inverted > .content * {
   color: @invertedPrimaryContentColor;
-
-  &:hover {
-    color: @invertedPrimaryHover;
-  }
 }
+
+.ui.card.primary.inverted > a > i.icon,
+.ui.card.primary.inverted > .content a,
 .ui.card.primary.inverted > .extra.content a:not(.ui) {
   color: @invertedPrimaryContentColor;
 
   &:hover {
-    color: @invertedPrimaryHover;
+    color: @invertedPrimaryColorHover;
   }
 }
 
@@ -163,19 +161,17 @@
 
 /* Inverted */
 .ui.card.secondary.inverted > i.icon,
-.ui.card.secondary.inverted > a > i.icon,
 .ui.card.secondary.inverted > .content * {
   color: @invertedSecondaryContentColor;
-
-  &:hover {
-    color: @invertedSecondaryHover;
-  }
 }
+
+.ui.card.secondary.inverted > a > i.icon,
+.ui.card.secondary.inverted > .content a,
 .ui.card.secondary.inverted > .extra.content a:not(.ui) {
   color: @invertedSecondaryContentColor;
 
   &:hover {
-    color: @invertedSecondaryHover;
+    color: @invertedSecondaryColorHover;
   }
 }
 
@@ -215,15 +211,17 @@
 
 /* Inverted */
 .ui.card.tertiary.inverted > i.icon,
-.ui.card.tertiary.inverted > a > i.icon,
 .ui.card.tertiary.inverted > .content * {
   color: @invertedTertiaryContentColor;
 }
+
+.ui.card.tertiary.inverted > a > i.icon,
+.ui.card.tertiary.inverted > .content a,
 .ui.card.tertiary.inverted > .extra.content a:not(.ui) {
   color: @invertedTertiaryContentColor;
 
   &:hover {
-    color: @invertedTertiaryContentColor;
+    color: @invertedTertiaryColorHover;
   }
 }
 
