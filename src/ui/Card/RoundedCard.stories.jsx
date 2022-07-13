@@ -47,18 +47,6 @@ export default {
         defaultValue: { summary: false },
       },
     },
-    avatarVariant: {
-      options: ['big', 'small'],
-      control: { type: 'inline-radio' },
-      defaultValue: 'big',
-      description: 'rounded card size class',
-      table: {
-        type: {
-          summary: 'string',
-        },
-        defaultValue: { summary: ' "" ' },
-      },
-    },
     src: {
       description: 'rounded card image url',
       table: {
@@ -73,7 +61,7 @@ export default {
 
 const AvatarTemplate = (args) => (
   <Container>
-    <Card className={`rounded ${args.avatarVariant}`} fluid={args.fluid}>
+    <Card className="rounded" fluid={args.fluid}>
       {args.hasImage && (
         <Image src={args.src} wrapped ui={false} alt="card image" />
       )}
@@ -87,7 +75,6 @@ const AvatarTemplate = (args) => (
 
 export const Default = AvatarTemplate.bind({});
 Default.args = {
-  avatarVariant: 'big',
   src: imgUrl,
   title: 'Lorem Ipsum',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
