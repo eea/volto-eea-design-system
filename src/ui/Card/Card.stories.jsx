@@ -14,15 +14,15 @@ export default {
     },
   },
   argTypes: {
-    class: {
-      options: [null, 'primary', 'secondary', 'tertiary'],
+    variant: {
+      options: ['default', 'primary', 'secondary', 'tertiary'],
       control: { type: 'select' },
       description: 'card variation class',
       table: {
         type: {
           summary: 'string',
         },
-        defaultValue: { summary: 'null' },
+        defaultValue: { summary: 'default' },
       },
     },
     cards: {
@@ -34,6 +34,13 @@ export default {
         defaultValue: { summary: '' },
       },
     },
+    inverted: {
+      description: 'Inverted card',
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
   },
 };
 
@@ -43,7 +50,12 @@ const MetaRight = (args) => (
 
 const Template = (args) => (
   <Container>
-    <Card fluid={args.fluid} className={args.class}>
+    <Card
+      fluid={args.fluid}
+      className={`${args.variant === 'default' ? '' : args.variant} ${
+        args.inverted ? 'inverted' : ''
+      }`}
+    >
       {args.hasImage && (
         <Image
           as="a"
@@ -75,7 +87,8 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  class: null,
+  variant: 'default',
+  inverted: false,
   imgUrl:
     'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
 
@@ -153,7 +166,12 @@ const GridTemplate = (args) => (
     <Grid>
       {args.cards.map((card, index) => (
         <Grid.Column mobile={12} tablet={6} computer={4} key={index}>
-          <Card fluid={card.fluid} className={args.class}>
+          <Card
+            fluid={card.fluid}
+            className={`${args.variant === 'default' ? '' : args.variant} ${
+              args.inverted ? 'inverted' : ''
+            }`}
+          >
             {card.hasImage && (
               <Image
                 as="a"
@@ -188,7 +206,8 @@ const GridTemplate = (args) => (
 
 export const CardGrid = GridTemplate.bind({});
 CardGrid.args = {
-  class: null,
+  variant: 'default',
+  inverted: false,
   cards: [
     {
       title: 'Lorem Ipsum',
@@ -245,7 +264,13 @@ const FluidGridTemplate = (args) => (
   <Container>
     <div className="fluid-card-row">
       {args.cards.map((card, index) => (
-        <Card fluid={card.fluid} className={args.class} key={index}>
+        <Card
+          fluid={card.fluid}
+          className={`${args.variant === 'default' ? '' : args.variant} ${
+            args.inverted ? 'inverted' : ''
+          }`}
+          key={index}
+        >
           {card.hasImage && (
             <Image
               as="a"
@@ -279,7 +304,8 @@ const FluidGridTemplate = (args) => (
 
 export const FluidGrid = FluidGridTemplate.bind({});
 FluidGrid.args = {
-  class: null,
+  variant: 'default',
+  inverted: false,
   cards: [
     {
       title: 'Lorem Ipsum',
@@ -365,13 +391,19 @@ const Arrows = (props) => {
   );
 };
 
-function CarouselCardsContent({ settings, cards, ...rest }) {
+function CarouselCardsContent({ variant, inverted, settings, cards, ...rest }) {
   const slider = React.useRef(null);
   return (
     <div className="cards-carousel">
       <Slider {...settings} ref={slider}>
         {cards.map((card, index) => (
-          <Card fluid={card.fluid} key={index} className={rest.class}>
+          <Card
+            fluid={card.fluid}
+            key={index}
+            className={`${variant === 'default' ? '' : variant} ${
+              inverted ? 'inverted' : ''
+            }`}
+          >
             {card.hasImage && (
               <Image
                 as="a"
@@ -404,7 +436,8 @@ const CarouselCardsTemplate = (args) => (
 
 export const CarouselCards = CarouselCardsTemplate.bind({});
 CarouselCards.args = {
-  class: null,
+  variant: 'default',
+  inverted: false,
   settings: {
     dots: true,
     infinite: true,

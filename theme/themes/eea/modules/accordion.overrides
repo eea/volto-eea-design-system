@@ -78,6 +78,10 @@
      Styled
 ---------------*/
 
+.ui.styled.accordion  .title,
+.ui.styled.accordion  .title:hover {
+  background-color: @styledActiveTitleBackground;
+}
 .ui.styled.accordion .active.title input {
   color: @styledActiveTitleColor;
 }
@@ -103,6 +107,12 @@
 /*--------------
    Variations
 ---------------*/
+.ui.accordion:not([class*='ary']) .active.title i {
+   color: @tertiaryColor;
+}
+.ui.accordion[class*='ary'] .active.title {
+  color: white;
+}
 
 /* Primary */
 .ui.accordion.primary .active.title {
