@@ -29,15 +29,6 @@ export default {
         type: { summary: 'boolean' },
       },
     },
-    hasImage: {
-      description: 'true if card contains image',
-      table: {
-        type: {
-          summary: 'boolean',
-        },
-        defaultValue: { summary: true },
-      },
-    },
     title: {
       description: 'card header',
       table: {
@@ -74,6 +65,13 @@ export default {
         defaultValue: { summary: ' "" ' },
       },
     },
+    hasLink: {
+      description: 'Clickable card',
+      table: {
+        defaultValue: { summary: 'true' },
+        type: { summary: 'boolean' },
+      },
+    },
   },
 };
 
@@ -85,11 +83,26 @@ const AvatarTemplate = (args) => (
       }`}
       fluid={args.fluid}
     >
-      {args.hasImage && (
+      {args.hasLink ? (
+        <Image
+          as="a"
+          href={args.href}
+          src={args.src}
+          wrapped
+          ui={false}
+          alt="card image"
+        />
+      ) : (
         <Image src={args.src} wrapped ui={false} alt="card image" />
       )}
       <Card.Content>
-        <Card.Header>{args.title}</Card.Header>
+        {args.hasLink ? (
+          <Card.Header>
+            <a href={args.href}>{args.title}</a>
+          </Card.Header>
+        ) : (
+          <Card.Header>{args.title}</Card.Header>
+        )}
         <Card.Description>{args.description}</Card.Description>
       </Card.Content>
     </Card>
@@ -103,6 +116,7 @@ Default.args = {
   src: imgUrl,
   title: 'Lorem Ipsum',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  hasImage: true,
   fluid: false,
+  hasLink: true,
+  href: '/#',
 };
