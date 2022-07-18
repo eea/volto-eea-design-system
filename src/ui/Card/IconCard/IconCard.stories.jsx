@@ -55,7 +55,9 @@ const Template = (args) => (
       <Card.Content>
         {args.hasLink ? (
           <Card.Header>
-            <a href={args.href} aria-label={args.title}>{args.title}</a>
+            <a href={args.href} aria-label={args.title}>
+              {args.title}
+            </a>
           </Card.Header>
         ) : (
           <Card.Header>{args.title}</Card.Header>
@@ -126,7 +128,9 @@ const GridTemplate = (args) => (
               <Card.Content>
                 {args.hasLink ? (
                   <Card.Header>
-                    <a href={args.href} aria-label={card.title}>{card.title}</a>
+                    <a href={args.href} aria-label={card.title}>
+                      {card.title}
+                    </a>
                   </Card.Header>
                 ) : (
                   <Card.Header>{card.title}</Card.Header>
