@@ -46,7 +46,7 @@ const Template = (args) => (
       } ${args.inverted ? 'inverted' : ''}`}
     >
       {args.hasLink ? (
-        <a href={args.href}>
+        <a href={args.href} aria-label={args.title}>
           <Icon className={`${args.size} ${args.icon}`} />
         </a>
       ) : (
@@ -55,7 +55,7 @@ const Template = (args) => (
       <Card.Content>
         {args.hasLink ? (
           <Card.Header>
-            <a href={args.href}>{args.title}</a>
+            <a href={args.href} aria-label={args.title}>{args.title}</a>
           </Card.Header>
         ) : (
           <Card.Header>{args.title}</Card.Header>
@@ -117,7 +117,7 @@ const GridTemplate = (args) => (
               } ${args.inverted ? 'inverted' : ''}`}
             >
               {args.hasLink ? (
-                <a href={args.href}>
+                <a href={args.href} aria-label={card.title}>
                   <Icon className={`${card.size} ${card.icon}`} />
                 </a>
               ) : (
@@ -126,7 +126,7 @@ const GridTemplate = (args) => (
               <Card.Content>
                 {args.hasLink ? (
                   <Card.Header>
-                    <a href={args.href}>{card.title}</a>
+                    <a href={args.href} aria-label={card.title}>{card.title}</a>
                   </Card.Header>
                 ) : (
                   <Card.Header>{card.title}</Card.Header>
