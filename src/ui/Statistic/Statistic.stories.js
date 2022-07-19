@@ -32,32 +32,49 @@ export default {
         },
       },
     },
+    backgroundVariant: {
+      name: 'Background when inverted',
+      options: ['primary', 'secondary', 'tertiary'],
+      description: 'Updates the background color',
+      control: { type: 'select' },
+      defaultValue: 'tertiary',
+      table: {
+        defaultValue: { summary: 'tertiary' },
+        type: { summary: 'string' },
+      },
+    },
   },
 };
 
 const Template = (args) => (
-  <Container>
-    <Statistic.Group {...args}>
-      {args.elements &&
-        args.elements.map((element, index) => (
-          <Statistic
-            as="a"
-            href={element.href}
-            key={index}
-            {...element}
-          ></Statistic>
-        ))}
-      {!args.elements && (
-        <>
-          {args.linked ? (
-            <Statistic as="a" href="/#" {...args}></Statistic>
-          ) : (
-            <Statistic {...args}></Statistic>
-          )}{' '}
-        </>
-      )}
-    </Statistic.Group>
-  </Container>
+  <div
+    className={`full-width color-bg-${
+      args.inverted ? args.backgroundVariant : ''
+    }`}
+  >
+    <Container>
+      <Statistic.Group {...args}>
+        {args.elements &&
+          args.elements.map((element, index) => (
+            <Statistic
+              as="a"
+              href={element.href}
+              key={index}
+              {...element}
+            ></Statistic>
+          ))}
+        {!args.elements && (
+          <>
+            {args.linked ? (
+              <Statistic as="a" href="/#" {...args}></Statistic>
+            ) : (
+              <Statistic {...args}></Statistic>
+            )}{' '}
+          </>
+        )}
+      </Statistic.Group>
+    </Container>
+  </div>
 );
 
 export const Default = Template.bind({});
@@ -67,6 +84,8 @@ Default.args = {
   horizontal: false,
   size: 'small',
   linked: false,
+  inverted: false,
+  backgroundVariant: 'primary',
 };
 
 Default.argTypes = {
@@ -143,24 +162,30 @@ Group.argTypes = {
 };
 
 const CustomTemplate = (args) => (
-  <Container>
-    <Statistic.Group {...args}>
-      {args.elements &&
-        args.elements.map((element, index) => (
-          <a href={element.href} className="ui small statistic">
-            <div className={`value ${args.valueVariation}`}>
-              {element.value}
-            </div>
-            <div className={`label ${args.labelVariation}`}>
-              {element.label}
-            </div>
-            <div className={`slate text-center ${args.slateVariation}`}>
-              {element.slate}
-            </div>
-          </a>
-        ))}
-    </Statistic.Group>
-  </Container>
+  <div
+    className={`full-width color-bg-${
+      args.inverted ? args.backgroundVariant : ''
+    }`}
+  >
+    <Container>
+      <Statistic.Group {...args}>
+        {args.elements &&
+          args.elements.map((element, index) => (
+            <a href={element.href} className="ui small statistic">
+              <div className={`value ${args.valueVariation}`}>
+                {element.value}
+              </div>
+              <div className={`label ${args.labelVariation}`}>
+                {element.label}
+              </div>
+              <div className={`slate text-center ${args.slateVariation}`}>
+                {element.slate}
+              </div>
+            </a>
+          ))}
+      </Statistic.Group>
+    </Container>
+  </div>
 );
 export const Custom = CustomTemplate.bind({});
 Custom.args = {
@@ -189,11 +214,12 @@ Custom.args = {
   ],
   size: 'small',
   widths: 'three',
-  inverted: false,
   horizontal: false,
   valueVariation: 'secondary',
   labelVariation: 'tertiary',
   slateVariation: 'tertiary',
+  inverted: false,
+  backgroundVariant: 'primary',
 };
 Custom.argTypes = {
   valueVariation: {
@@ -284,26 +310,33 @@ Animation.args = {
   size: 'small',
   horizontal: false,
 };
+Animation.parameters = { controls: { exclude: ['Background when inverted'] } };
 
 const CountupStatistics = (args) => (
-  <Container>
-    <Statistic.Group id="counter" {...args}>
-      {args.elements &&
-        args.elements.map((element, index) => (
-          <a href={element.href} className="ui small statistic">
-            <div className={`value ${args.valueVariation}`}>
-              <CountUp end={element.value} />
-            </div>
-            <div className={`label ${args.labelVariation}`}>
-              {element.label}
-            </div>
-            <div className={`slate text-center ${args.slateVariation}`}>
-              {element.slate}
-            </div>
-          </a>
-        ))}
-    </Statistic.Group>
-  </Container>
+  <div
+    className={`full-width color-bg-${
+      args.inverted ? args.backgroundVariant : ''
+    }`}
+  >
+    <Container>
+      <Statistic.Group id="counter" {...args}>
+        {args.elements &&
+          args.elements.map((element, index) => (
+            <a href={element.href} className="ui small statistic">
+              <div className={`value ${args.valueVariation}`}>
+                <CountUp end={element.value} />
+              </div>
+              <div className={`label ${args.labelVariation}`}>
+                {element.label}
+              </div>
+              <div className={`slate text-center ${args.slateVariation}`}>
+                {element.slate}
+              </div>
+            </a>
+          ))}
+      </Statistic.Group>
+    </Container>
+  </div>
 );
 export const AnimationGroup = CountupStatistics.bind({});
 AnimationGroup.args = {
@@ -332,11 +365,12 @@ AnimationGroup.args = {
   ],
   size: 'small',
   widths: 'three',
-  inverted: false,
   horizontal: false,
   valueVariation: 'secondary',
   labelVariation: 'tertiary',
   slateVariation: 'tertiary',
+  inverted: false,
+  backgroundVariant: 'primary',
 };
 AnimationGroup.argTypes = {
   valueVariation: {
