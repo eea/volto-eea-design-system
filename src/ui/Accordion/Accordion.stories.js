@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Accordion, Icon } from 'semantic-ui-react';
+import { Accordion, Icon, Container } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Accordion',
@@ -10,6 +10,17 @@ export default {
     },
   },
   argTypes: {
+    variant: {
+      name: 'Variation',
+      defaultValue: 'primary',
+      options: ['default', 'primary', 'secondary', 'tertiary'],
+      control: { type: 'select' },
+      description: 'call to action variation',
+      table: {
+        defaultValue: { summary: 'primary' },
+        type: { summary: 'string' },
+      },
+    },
     toggle1: {
       description: 'Text of the accordion toggler',
       table: {
@@ -90,46 +101,48 @@ function AccordionContainer({ ...args }) {
   };
 
   return (
-    <Accordion>
-      <Accordion.Title
-        active={activeIndex === 0}
-        index={0}
-        onClick={toggleOpenAccordion}
-      >
-        {args.toggle1}
-        <Icon className="ri-arrow-down-s-line" />
-      </Accordion.Title>
-      <Accordion.Content active={activeIndex === 0}>
-        {args.content1.length > 0 &&
-          args.content1.map((item, index) => <p key={index}>{item}</p>)}
-      </Accordion.Content>
+    <Container>
+      <Accordion className={args.variant}>
+        <Accordion.Title
+          active={activeIndex === 0}
+          index={0}
+          onClick={toggleOpenAccordion}
+        >
+          {args.toggle1}
+          <Icon className="ri-arrow-down-s-line" />
+        </Accordion.Title>
+        <Accordion.Content active={activeIndex === 0}>
+          {args.content1.length > 0 &&
+            args.content1.map((item, index) => <p key={index}>{item}</p>)}
+        </Accordion.Content>
 
-      <Accordion.Title
-        active={activeIndex === 1}
-        index={1}
-        onClick={toggleOpenAccordion}
-      >
-        {args.toggle2}
-        <Icon className="ri-arrow-down-s-line" />
-      </Accordion.Title>
-      <Accordion.Content active={activeIndex === 1}>
-        {args.content2.length > 0 &&
-          args.content2.map((item, index) => <p key={index}>{item}</p>)}
-      </Accordion.Content>
+        <Accordion.Title
+          active={activeIndex === 1}
+          index={1}
+          onClick={toggleOpenAccordion}
+        >
+          {args.toggle2}
+          <Icon className="ri-arrow-down-s-line" />
+        </Accordion.Title>
+        <Accordion.Content active={activeIndex === 1}>
+          {args.content2.length > 0 &&
+            args.content2.map((item, index) => <p key={index}>{item}</p>)}
+        </Accordion.Content>
 
-      <Accordion.Title
-        active={activeIndex === 2}
-        index={2}
-        onClick={toggleOpenAccordion}
-      >
-        {args.toggle3}
-        <Icon className="ri-arrow-down-s-line" />
-      </Accordion.Title>
-      <Accordion.Content active={activeIndex === 2}>
-        {args.content3.length > 0 &&
-          args.content3.map((item, index) => <p key={index}>{item}</p>)}
-      </Accordion.Content>
-    </Accordion>
+        <Accordion.Title
+          active={activeIndex === 2}
+          index={2}
+          onClick={toggleOpenAccordion}
+        >
+          {args.toggle3}
+          <Icon className="ri-arrow-down-s-line" />
+        </Accordion.Title>
+        <Accordion.Content active={activeIndex === 2}>
+          {args.content3.length > 0 &&
+            args.content3.map((item, index) => <p key={index}>{item}</p>)}
+        </Accordion.Content>
+      </Accordion>
+    </Container>
   );
 }
 
@@ -137,6 +150,7 @@ const Template = (args) => <AccordionContainer {...args}></AccordionContainer>;
 
 export const Default = Template.bind({});
 Default.args = {
+  variant: 'secondary',
   toggle1: 'Water and marine environment',
   toggle2: 'Resource efficiency and waste',
   toggle3: 'Air pollution',

@@ -98,8 +98,8 @@
 @likeActiveColor: #FF2733;
 
 /* Links */
-@contentLinkColor: @white;
-@contentLinkHoverColor: @white;
+@contentLinkColor: @tertiaryColor;
+@contentLinkHoverColor: @tertiaryColor;
 @contentLinkFontWeight: @bold;
 @contentLinkTransition: color @defaultDuration @defaultEasing;
 @contentLinkTextDecoration: underline;

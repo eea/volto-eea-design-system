@@ -3,13 +3,13 @@
 *******************************/
 
 /* Hero block */
-@mobileHeroBlockMinHeight : 360px;
-@tabletHeroBlockMinHeight : 500px;
-@desktopHeroBlockMinHeight: 600px;
+@mobileHeroBlockMinHeight : 412px;
+@tabletHeroBlockMinHeight : 446px;
+@desktopHeroBlockMinHeight: 664px;
 
 @heroBlockPosition: relative;
 @heroBlockHomePagePadding: 0 @rem-space-5;
-@heroBlockHomePageBodyMargin: @rem-space-16 0 0 0;
+@heroBlockHomePageBodyMargin: @rem-space-20 0 0 0;
 
 /* Hero block spaced */
 @heroBlockSpacedMargin: @rem-space-12 0;
@@ -23,7 +23,9 @@
 @heroBlockImageBackgroundPosition : center;
 
 /* Wrapper */
-@heroBlockWrapperPadding : @rem-space-20;
+@heroBlockWrapperPadding : 5rem;
+@tableHeroBlockWrapperPadding: 6rem;
+@desktopHeroBlockWrapperPadding: 194px 96px;
 
 /* Body */
 @mobileHeroBlockBodyGap  : @rem-space-6;

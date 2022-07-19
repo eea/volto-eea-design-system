@@ -96,8 +96,9 @@
 
 .top.bar .ui.dropdown i.chevron.down.icon {
   position: absolute;
-  font-size: 1.1rem;
-  top: -@rem-space-1;
+  font-size: @topSectionIconFontSize;
+  margin-left: @topSectionIconMarginLeft;
+  top: 0;
 }
 
 /* Official union dropdown */
@@ -155,6 +156,7 @@
 #language-switcher {
   img {
     width: @mobileOfficialUnionImageWidth;
+    margin-left: @topSectionIconMarginLeft;
   }
   .menu {
     .wrapper {
