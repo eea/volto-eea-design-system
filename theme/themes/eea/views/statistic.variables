@@ -23,7 +23,7 @@
 @groupMargin: @verticalMargin -@horizontalSpacing -@rowSpacing;
 
 /* Group Element */
-@elementMargin: 0em @horizontalSpacing @rowSpacing;
+@elementMargin: @rowSpacing @horizontalSpacing @rowSpacing;
 @elementMaxWidth: @maxWidth;
 
 /*-------------------
