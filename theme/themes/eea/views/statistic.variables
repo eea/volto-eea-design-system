@@ -74,6 +74,7 @@
 /* Inverted */
 @invertedValueColor: @white;
 @invertedLabelColor: @invertedTextColor;
+@invertedBackground: transparent;
 
 /* Item Width */
 @itemGroupMargin: 0em 0em -@rowSpacing;
