@@ -81,8 +81,8 @@ export const Default = Template.bind({});
 Default.args = {
   label: 'Statistic Label',
   value: 'Value',
-  horizontal: false,
   size: 'small',
+  horizontal: false,
   linked: false,
   inverted: false,
   backgroundVariant: 'primary',
@@ -131,9 +131,11 @@ Group.args = {
     { ...Default.args, label: 'label 2', value: '500', href: '/#' },
     { ...Default.args, label: 'label 3', value: '5000', href: '/#' },
   ],
+  widths: 'three',
+  size: 'small',
   horizontal: false,
   inverted: false,
-  widths: 'three',
+  backgroundVariant: 'primary',
 };
 
 Group.argTypes = {
@@ -212,9 +214,9 @@ Custom.args = {
       href: '/#',
     },
   ],
-  size: 'small',
   widths: 'three',
   horizontal: false,
+  size: 'small',
   valueVariation: 'secondary',
   labelVariation: 'tertiary',
   slateVariation: 'tertiary',
@@ -363,8 +365,8 @@ AnimationGroup.args = {
       href: '/#',
     },
   ],
-  size: 'small',
   widths: 'three',
+  size: 'small',
   horizontal: false,
   valueVariation: 'secondary',
   labelVariation: 'tertiary',
