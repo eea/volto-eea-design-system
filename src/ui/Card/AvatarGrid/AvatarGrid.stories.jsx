@@ -8,18 +8,38 @@ export default {
   title: 'Components/Card/Rounded Card',
   component: AvatarGrid,
   argTypes: {
-    showTitle: {
-      description: 'show / hide title',
+    variant: {
+      options: ['default', 'primary', 'secondary', 'tertiary'],
+      control: { type: 'select' },
+      description: 'card variation class',
       table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: true },
+        type: {
+          summary: 'string',
+        },
+        defaultValue: { summary: 'default' },
       },
     },
-    title: {
-      description: 'avatar grid title',
+    inverted: {
+      description: 'Inverted card',
       table: {
-        defaultValue: { summary: '""' },
-        type: { summary: 'string' },
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
+    fluid: {
+      description: 'take up the width of its container',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+        defaultValue: { summary: false },
+      },
+    },
+    hasLink: {
+      description: 'Clickable card',
+      table: {
+        defaultValue: { summary: 'true' },
+        type: { summary: 'boolean' },
       },
     },
     avatars: {
@@ -36,10 +56,7 @@ const GridTemplate = (args) => (
   <Container>
     <AvatarGrid>
       <AvatarGrid.Content>
-        <AvatarGrid.Title showTitle={args.showTitle}>
-          {args.title}
-        </AvatarGrid.Title>
-        <AvatarGrid.Group avatars={args.avatars}></AvatarGrid.Group>
+        <AvatarGrid.Group avatars={args.avatars} {...args}></AvatarGrid.Group>
       </AvatarGrid.Content>
     </AvatarGrid>
   </Container>
@@ -47,8 +64,11 @@ const GridTemplate = (args) => (
 
 export const RoundedGrid = GridTemplate.bind({});
 RoundedGrid.args = {
-  title: 'Amet - Lorem ipsum dolor sit amet',
-  showTitle: true,
+  variant: 'default',
+  inverted: false,
+  fluid: false,
+  hasLink: true,
+  href: '/#',
   avatars: [
     {
       src: imgUrl,

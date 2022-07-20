@@ -14,15 +14,15 @@ export default {
     },
   },
   argTypes: {
-    class: {
-      options: [null, 'primary', 'secondary', 'tertiary'],
+    variant: {
+      options: ['default', 'primary', 'secondary', 'tertiary'],
       control: { type: 'select' },
       description: 'card variation class',
       table: {
         type: {
           summary: 'string',
         },
-        defaultValue: { summary: 'null' },
+        defaultValue: { summary: 'default' },
       },
     },
     cards: {
@@ -34,23 +34,51 @@ export default {
         defaultValue: { summary: '' },
       },
     },
+    inverted: {
+      description: 'Inverted card',
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
   },
 };
 
+const MetaRight = (args) => (
+  <span className="bold text-right">{args.metaRight}</span>
+);
+
 const Template = (args) => (
   <Container>
-    <Card fluid={args.fluid} className={args.class}>
+    <Card
+      fluid={args.fluid}
+      className={`${args.variant === 'default' ? '' : args.variant} ${
+        args.inverted ? 'inverted' : ''
+      }`}
+    >
       {args.hasImage && (
-        <Image src={args.imgUrl} wrapped ui={false} alt="card image" />
+        <Image
+          as="a"
+          href={args.href}
+          src={args.imgUrl}
+          wrapped
+          ui={false}
+          alt="card image"
+        />
       )}
       <Card.Content>
-        <Card.Header>{args.title}</Card.Header>
+        <Card.Meta>
+          {args.meta} <MetaRight {...args} />
+        </Card.Meta>
+        <Card.Header>
+          <a href={args.href}>{args.title}</a>
+        </Card.Header>
         <Card.Description>{args.description}</Card.Description>
       </Card.Content>
       {args.links !== null &&
         args.links.map((item, index) => (
           <Card.Content extra key={index}>
-            <a href="/#">{item.linkName}</a>
+            <a href={args.href}>{item.linkName}</a>
           </Card.Content>
         ))}
     </Card>
@@ -59,15 +87,20 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  class: null,
+  variant: 'default',
+  inverted: false,
   imgUrl:
     'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+
+  meta: 'Article',
+  metaRight: '30/07/2022',
   title: 'Lorem Ipsum',
   description:
     'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
   hasImage: true,
+  href: '/#',
+  links: null,
   fluid: false,
-  links: [{ linkName: 'Link 1' }],
 };
 Default.argTypes = {
   imgUrl:
@@ -81,24 +114,6 @@ Default.argTypes = {
       defaultValue: { summary: true },
     },
   },
-  title: {
-    description: 'card header',
-    table: {
-      type: {
-        summary: 'string',
-      },
-      defaultValue: { summary: ' "" ' },
-    },
-  },
-  description: {
-    description: 'card main content',
-    table: {
-      type: {
-        summary: 'string',
-      },
-      defaultValue: { summary: ' "" ' },
-    },
-  },
   fluid: {
     description: 'take up the width of its container',
     table: {
@@ -108,18 +123,41 @@ Default.argTypes = {
       defaultValue: { summary: false },
     },
   },
-  links: {
-    description: 'array with links to other content',
+  meta: {
+    description: 'Card metadata',
     table: {
-      type: {
-        summary: 'Object',
-      },
+      category: 'Card content',
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  metaRight: {
+    description: 'Card right metadata',
+    table: {
+      category: 'Card content',
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  title: {
+    description: 'card header',
+    table: {
+      category: 'Card content',
+      type: { summary: 'string' },
+      defaultValue: { summary: ' "" ' },
+    },
+  },
+  description: {
+    description: 'card main content',
+    table: {
+      category: 'Card content',
+      type: { summary: 'string' },
       defaultValue: { summary: ' "" ' },
     },
   },
 };
 Default.parameters = {
-  controls: { exclude: ['cards'] },
+  controls: { exclude: ['cards', 'href', 'links'] },
   hideNoControlsWarning: true,
 };
 
@@ -128,12 +166,29 @@ const GridTemplate = (args) => (
     <Grid>
       {args.cards.map((card, index) => (
         <Grid.Column mobile={12} tablet={6} computer={4} key={index}>
-          <Card fluid={card.fluid} className={args.class}>
+          <Card
+            fluid={card.fluid}
+            className={`${args.variant === 'default' ? '' : args.variant} ${
+              args.inverted ? 'inverted' : ''
+            }`}
+          >
             {card.hasImage && (
-              <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
+              <Image
+                as="a"
+                href={card.href}
+                src={card.imgUrl}
+                wrapped
+                ui={false}
+                alt="card image"
+              />
             )}
             <Card.Content>
-              <Card.Header>{card.title}</Card.Header>
+              <Card.Meta>
+                {card.meta} <MetaRight {...card} />
+              </Card.Meta>
+              <Card.Header>
+                <a href={args.href}>{card.title}</a>
+              </Card.Header>
               <Card.Description>{card.description}</Card.Description>
             </Card.Content>
             {card.links !== null &&
@@ -151,7 +206,8 @@ const GridTemplate = (args) => (
 
 export const CardGrid = GridTemplate.bind({});
 CardGrid.args = {
-  class: null,
+  variant: 'default',
+  inverted: false,
   cards: [
     {
       title: 'Lorem Ipsum',
@@ -160,8 +216,11 @@ CardGrid.args = {
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: true,
+      meta: 'Article',
+      metaRight: '30/07/2022',
+      href: '/#',
+      links: null,
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
       title: 'Suspendisse iaculis feugiat',
@@ -170,16 +229,22 @@ CardGrid.args = {
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: true,
+      meta: 'Article',
+      metaRight: '30/07/2022',
+      href: '/#',
+      links: null,
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
       title: 'Eget tellus blandit aenean mattis.',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: false,
+      meta: 'Article',
+      metaRight: '30/07/2022',
+      href: '/#',
+      links: null,
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
   ],
 };
@@ -199,12 +264,30 @@ const FluidGridTemplate = (args) => (
   <Container>
     <div className="fluid-card-row">
       {args.cards.map((card, index) => (
-        <Card fluid={card.fluid} className={args.class} key={index}>
+        <Card
+          fluid={card.fluid}
+          className={`${args.variant === 'default' ? '' : args.variant} ${
+            args.inverted ? 'inverted' : ''
+          }`}
+          key={index}
+        >
           {card.hasImage && (
-            <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
+            <Image
+              as="a"
+              href={card.href}
+              src={card.imgUrl}
+              wrapped
+              ui={false}
+              alt="card image"
+            />
           )}
           <Card.Content>
-            <Card.Header>{card.title}</Card.Header>
+            <Card.Meta>
+              {card.meta} <MetaRight {...card} />
+            </Card.Meta>
+            <Card.Header>
+              <a href={args.href}>{card.title}</a>
+            </Card.Header>
             <Card.Description>{card.description}</Card.Description>
           </Card.Content>
           {card.links !== null &&
@@ -221,7 +304,8 @@ const FluidGridTemplate = (args) => (
 
 export const FluidGrid = FluidGridTemplate.bind({});
 FluidGrid.args = {
-  class: null,
+  variant: 'default',
+  inverted: false,
   cards: [
     {
       title: 'Lorem Ipsum',
@@ -230,8 +314,11 @@ FluidGrid.args = {
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: true,
+      meta: 'Article',
+      metaRight: '30/07/2022',
+      href: '/#',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
+      links: null,
     },
     {
       title: 'Suspendisse iaculis feugiat',
@@ -240,16 +327,22 @@ FluidGrid.args = {
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: true,
+      meta: 'Article',
+      metaRight: '30/07/2022',
+      href: '/#',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
+      links: null,
     },
     {
       title: 'Eget tellus blandit aenean mattis.',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: false,
+      meta: 'Article',
+      metaRight: '30/07/2022',
+      href: '/#',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
+      links: null,
     },
   ],
 };
@@ -272,7 +365,7 @@ const Arrows = (props) => {
     <>
       <Button
         aria-label="Previous slide"
-        className="slider-arrow prev-arrow"
+        className="slider-arrow prev-arrow tablet or lower hidden"
         icon
         onClick={() => {
           if (slider.current) {
@@ -284,7 +377,7 @@ const Arrows = (props) => {
       </Button>
       <Button
         aria-label="Next slide"
-        className="slider-arrow next-arrow"
+        className="slider-arrow next-arrow tablet or lower hidden"
         icon
         onClick={() => {
           if (slider.current) {
@@ -298,27 +391,35 @@ const Arrows = (props) => {
   );
 };
 
-function CarouselCardsContent({ settings, cards, ...rest }) {
+function CarouselCardsContent({ variant, inverted, settings, cards, ...rest }) {
   const slider = React.useRef(null);
   return (
     <div className="cards-carousel">
       <Slider {...settings} ref={slider}>
         {cards.map((card, index) => (
-          <Card fluid={card.fluid} key={index} className={rest.class}>
+          <Card
+            fluid={card.fluid}
+            key={index}
+            className={`${variant === 'default' ? '' : variant} ${
+              inverted ? 'inverted' : ''
+            }`}
+          >
             {card.hasImage && (
-              <Image src={card.imgUrl} wrapped ui={false} alt="card image" />
+              <Image
+                as="a"
+                href={card.href}
+                src={card.imgUrl}
+                wrapped
+                ui={false}
+                alt="card image"
+              />
             )}
             <Card.Content>
               <Card.Meta>{card.meta}</Card.Meta>
-              {/* <Card.Header>{card.title}</Card.Header> */}
-              <Card.Description>{card.description}</Card.Description>
+              <Card.Header>
+                <a href={card.href}>{card.title}</a>
+              </Card.Header>
             </Card.Content>
-            {/* {card.links !== null &&
-              card.links.map((item, index) => (
-                <Card.Content extra key={index}>
-                  <a href="/#">{item.linkName}</a>
-                </Card.Content>
-              ))} */}
           </Card>
         ))}
       </Slider>
@@ -335,19 +436,21 @@ const CarouselCardsTemplate = (args) => (
 
 export const CarouselCards = CarouselCardsTemplate.bind({});
 CarouselCards.args = {
-  title: 'Our news',
-  class: null,
+  variant: 'default',
+  inverted: false,
   settings: {
     dots: true,
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
+    arrows: false,
     responsive: [
       {
         breakpoint: tabletBreakpoint,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
       {
@@ -355,64 +458,57 @@ CarouselCards.args = {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
     ],
   },
   cards: [
     {
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
+      href: '/#',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
-      title: 'Lorem Ipsum',
+      title: 'Lorem ipsum.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
+      href: '/#',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
-      title: 'Lorem Ipsum',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
+      href: '/#',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
-      title: 'Lorem Ipsum',
+      title:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean massa strong.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
+      href: '/#',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
     {
-      title: 'Lorem Ipsum',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non ',
       hasImage: true,
+      href: '/#',
       fluid: true,
-      links: [{ linkName: 'Link 1' }],
     },
   ],
 };

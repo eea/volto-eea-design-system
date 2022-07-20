@@ -31,29 +31,34 @@ DefaultEven.args = {
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       image: imageUrl,
+      href: '/#',
     },
     {
       tag: '#Publication',
       description: 'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
       image: imageUrl,
+      href: '/#',
     },
     {
       tag: '#Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. ',
       image: imageUrl,
+      href: '/#',
     },
     {
       tag: '#Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
       image: imageUrl,
+      href: '/#',
     },
     {
       tag: '#Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       image: imageUrl,
+      href: '/#',
     },
   ],
   buttonText: 'See All',
@@ -104,17 +109,20 @@ DefaultOdd.args = {
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       image: imageUrl,
+      href: '/#',
     },
     {
       tag: '#Publication',
       description: 'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
       image: imageUrl,
+      href: '/#',
     },
     {
       tag: '#Publication',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
       image: imageUrl,
+      href: '/#',
     },
   ],
   buttonText: 'See All',
@@ -190,6 +198,7 @@ function TabWithRelatedContent({ panes }) {
         menu={{
           secondary: true,
           pointing: true,
+          tabIndex: 0,
         }}
       />
     </Container>
@@ -209,6 +218,7 @@ RelatedContentInTab.args = {
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
           image: imageUrl,
+          href: '/#',
         },
       ],
       buttonText: 'See All',
@@ -222,12 +232,14 @@ RelatedContentInTab.args = {
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
           image: imageUrl,
+          href: '/#',
         },
         {
           tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
           image: imageUrl,
+          href: '/#',
         },
       ],
       buttonText: 'See All',
@@ -241,18 +253,21 @@ RelatedContentInTab.args = {
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
           image: imageUrl,
+          href: '/#',
         },
         {
           tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
           image: imageUrl,
+          href: '/#',
         },
         {
           tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. ',
           image: imageUrl,
+          href: '/#',
         },
       ],
       buttonText: 'See All',
@@ -266,30 +281,35 @@ RelatedContentInTab.args = {
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
           image: imageUrl,
+          href: '/#',
         },
         {
           tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat.',
           image: imageUrl,
+          href: '/#',
         },
         {
           tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. ',
           image: imageUrl,
+          href: '/#',
         },
         {
           tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. ',
           image: imageUrl,
+          href: '/#',
         },
         {
           tag: '#Publication',
           description:
             'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
           image: imageUrl,
+          href: '/#',
         },
       ],
       buttonText: 'See All',

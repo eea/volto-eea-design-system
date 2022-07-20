@@ -43,6 +43,7 @@ function TabContent({
         pointing: true,
         vertical: vertical,
         fluid: fluid,
+        tabIndex: 0,
       }}
       grid={grid}
     ></Tab>

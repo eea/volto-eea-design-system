@@ -11,13 +11,22 @@ export default {
     },
   },
   argTypes: {
-    hasImage: {
-      description: 'true if card contains image',
+    variant: {
+      options: ['default', 'primary', 'secondary', 'tertiary'],
+      control: { type: 'select' },
+      description: 'card variation class',
       table: {
         type: {
-          summary: 'boolean',
+          summary: 'string',
         },
-        defaultValue: { summary: true },
+        defaultValue: { summary: 'null' },
+      },
+    },
+    inverted: {
+      description: 'Inverted card',
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
       },
     },
     title: {
@@ -47,18 +56,6 @@ export default {
         defaultValue: { summary: false },
       },
     },
-    avatarVariant: {
-      options: ['big', 'small'],
-      control: { type: 'inline-radio' },
-      defaultValue: 'big',
-      description: 'rounded card size class',
-      table: {
-        type: {
-          summary: 'string',
-        },
-        defaultValue: { summary: ' "" ' },
-      },
-    },
     src: {
       description: 'rounded card image url',
       table: {
@@ -68,17 +65,44 @@ export default {
         defaultValue: { summary: ' "" ' },
       },
     },
+    hasLink: {
+      description: 'Clickable card',
+      table: {
+        defaultValue: { summary: 'true' },
+        type: { summary: 'boolean' },
+      },
+    },
   },
 };
 
 const AvatarTemplate = (args) => (
   <Container>
-    <Card className={`rounded ${args.avatarVariant}`} fluid={args.fluid}>
-      {args.hasImage && (
+    <Card
+      className={`rounded ${args.variant === 'default' ? '' : args.variant} ${
+        args.inverted ? 'inverted' : ''
+      }`}
+      fluid={args.fluid}
+    >
+      {args.hasLink ? (
+        <Image
+          as="a"
+          href={args.href}
+          src={args.src}
+          wrapped
+          ui={false}
+          alt="card image"
+        />
+      ) : (
         <Image src={args.src} wrapped ui={false} alt="card image" />
       )}
       <Card.Content>
-        <Card.Header>{args.title}</Card.Header>
+        {args.hasLink ? (
+          <Card.Header>
+            <a href={args.href}>{args.title}</a>
+          </Card.Header>
+        ) : (
+          <Card.Header>{args.title}</Card.Header>
+        )}
         <Card.Description>{args.description}</Card.Description>
       </Card.Content>
     </Card>
@@ -87,10 +111,12 @@ const AvatarTemplate = (args) => (
 
 export const Default = AvatarTemplate.bind({});
 Default.args = {
-  avatarVariant: 'big',
+  variant: 'default',
+  inverted: false,
   src: imgUrl,
   title: 'Lorem Ipsum',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  hasImage: true,
   fluid: false,
+  hasLink: true,
+  href: '/#',
 };

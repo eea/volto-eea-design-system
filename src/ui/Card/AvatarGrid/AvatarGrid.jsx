@@ -1,10 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Grid, Card, Image } from 'semantic-ui-react';
-
-AvatarGrid.propTypes = {
-  title: PropTypes.string,
-};
 
 function AvatarGrid({ children, ...rest }) {
   return (
@@ -18,11 +13,6 @@ AvatarGrid.Content = ({ children }) => {
   return <div className="content">{children}</div>;
 };
 
-AvatarGrid.Title = ({ children, ...rest }) => (
-  <h3 className={`grid-title  ${rest.showTitle ? '' : 'hidden'}`}>
-    {children}
-  </h3>
-);
 AvatarGrid.Group = ({ children, ...rest }) => {
   let avatars = rest.avatars;
 
@@ -32,10 +22,32 @@ AvatarGrid.Group = ({ children, ...rest }) => {
         {avatars.map((avatar, index) => (
           <Grid.Column key={index} mobile={12} tablet={4} computer={4}>
             <div className="avatar-wrapper">
-              <Card className={`eea rounded big`} fluid={avatar.fluid}>
-                <Image src={avatar.src} wrapped ui={false} alt="card image" />
+              <Card
+                className={`eea rounded ${
+                  rest.variant === 'default' ? '' : rest.variant
+                } ${rest.inverted ? 'inverted' : ''}`}
+                fluid={rest.fluid}
+              >
+                {rest.hasLink ? (
+                  <Image
+                    as="a"
+                    href={rest.href}
+                    src={avatar.src}
+                    wrapped
+                    ui={false}
+                    alt="card image"
+                  />
+                ) : (
+                  <Image src={avatar.src} wrapped ui={false} alt="card image" />
+                )}
                 <Card.Content>
-                  <Card.Header>{avatar.title}</Card.Header>
+                  {rest.hasLink ? (
+                    <Card.Header>
+                      <a href={rest.href}>{avatar.title}</a>
+                    </Card.Header>
+                  ) : (
+                    <Card.Header>{avatar.title}</Card.Header>
+                  )}
                   <Card.Description>{avatar.description}</Card.Description>
                 </Card.Content>
               </Card>
