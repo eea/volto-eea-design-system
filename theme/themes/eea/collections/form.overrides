@@ -50,7 +50,8 @@
   }
 }
 
-.ui.form .field > .selection.dropdown {
+.ui.form .field > .selection.dropdown,
+.ui.form .selection.dropdown {
   height: 60px;
 }
 

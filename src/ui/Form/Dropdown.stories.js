@@ -25,6 +25,27 @@ export default {
         defaultValue: { summary: ' "" ' },
       },
     },
+    fluid: {
+      description: 'takes the full width of its parent',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    required: {
+      description: 'a field can show that is mandatory',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    disabled: {
+      description: 'disable dropdown',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
   },
 };
 
@@ -75,35 +96,26 @@ export const Default = Template.bind({});
 Default.args = {
   placeholder: 'Select Option',
   options: listOptions,
-};
-export const Playground = Template.bind({});
-Playground.args = {
-  placeholder: 'Select Option',
-  options: listOptions,
-  label: 'Dropdown',
-  required: true,
+  required: false,
   search: false,
   disabled: false,
   fluid: false,
 };
 
-Playground.argTypes = {
+export const LabeledDropdown = Template.bind({});
+LabeledDropdown.args = {
+  placeholder: 'Select Option',
+  options: listOptions,
+  label: 'Dropdown',
+  required: false,
+  search: false,
+  disabled: false,
+  fluid: false,
+};
+
+LabeledDropdown.argTypes = {
   search: {
     description: ' search through a large list of choice',
-    table: {
-      type: { summary: 'boolean' },
-      defaultValue: { summary: false },
-    },
-  },
-  disabled: {
-    description: 'disable dropdown',
-    table: {
-      type: { summary: 'boolean' },
-      defaultValue: { summary: false },
-    },
-  },
-  fluid: {
-    description: 'takes the full width of its parent',
     table: {
       type: { summary: 'boolean' },
       defaultValue: { summary: false },
@@ -116,11 +128,26 @@ Playground.argTypes = {
       defaultValue: { summary: '' },
     },
   },
-  required: {
-    description: 'a field can show that is mandatory',
+};
+
+export const LoadingDropdown = Template.bind({});
+LoadingDropdown.args = {
+  placeholder: 'Select Option',
+  options: listOptions,
+  label: 'Dropdown',
+  loading: true,
+  required: false,
+  search: false,
+  disabled: false,
+  fluid: false,
+};
+
+LoadingDropdown.argTypes = {
+  label: {
+    description: 'dropdown label',
     table: {
-      type: { summary: 'boolean' },
-      defaultValue: { summary: false },
+      type: { summary: 'string' },
+      defaultValue: { summary: '' },
     },
   },
 };
@@ -131,7 +158,7 @@ ErrorDropdown.args = {
   options: listOptions,
   label: 'Dropdown',
   error: true,
-  required: true,
+  required: false,
   search: false,
   disabled: false,
   fluid: false,

@@ -58,11 +58,3 @@ Default.args = {
   name: 'example',
   disabled: false,
 };
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  id: 'disabled',
-  label: 'Disabled Toggle',
-  name: 'disabled',
-  disabled: true,
-};

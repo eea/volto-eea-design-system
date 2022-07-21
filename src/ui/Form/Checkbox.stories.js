@@ -170,25 +170,6 @@ invalid.argTypes = {
   },
 };
 
-export const optional = Template.bind({});
-optional.args = {
-  label: 'Select your preferred options',
-  helperText: 'Helper text for the group',
-  errorMessage: 'Error message for the group',
-  optionalText: ' (optional)',
-  requiredText: '*',
-  invalid: false,
-  required: false,
-};
-
-optional.argTypes = {
-  required: {
-    table: {
-      defaultValue: { summary: false },
-    },
-  },
-};
-
 export const single = (args) => (
   <SingleCheckboxForm {...args}></SingleCheckboxForm>
 );
