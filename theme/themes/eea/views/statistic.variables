@@ -45,7 +45,7 @@
 @labelFontWeight: @bold;
 @labelColor: @primaryColor;
 @labelLineHeight: @relativeLarge;
-@labelTextTransform: uppercase;
+@labelTextTransform: none;
 
 /* Text */
 @textValueLineHeight: 1em;

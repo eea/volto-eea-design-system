@@ -48,7 +48,7 @@
 @searchButtonIconLeft: 1.25rem;
 @searchButtonIconOpacity: 0.625rem;
 
-@verticalMargin: 0em;
+@verticalMargin: 0.25em;
 @horizontalMargin: 0.25em;
 @backgroundColor: @silverGray;
 @backgroundImage: none;
