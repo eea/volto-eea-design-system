@@ -1317,6 +1317,7 @@ const Template = (args) => {
                   onClick && onClick(e, item);
                 }}
                 href={item['@id'] || item.url}
+                {...options}
               >
                 <span className={'item'}>{item.title}</span>
               </a>
