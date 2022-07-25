@@ -23,10 +23,13 @@ const createColumns = (item, length, renderMenuItem) => {
     <Grid.Column key={index}>
       <List>
         {subArray.map((arrayItem, idx) => (
-          <>{renderMenuItem(arrayItem, { className: 'item' })}</>
-          // <Link role="listitem" className="item" to={arrayItem.url} key={idx}>
-          //   {arrayItem.title}
-          // </Link>
+          <>
+            {renderMenuItem(arrayItem, {
+              className: 'item',
+              role: 'listitem',
+              key: idx,
+            })}
+          </>
         ))}
       </List>
     </Grid.Column>
@@ -37,9 +40,6 @@ const createColumns = (item, length, renderMenuItem) => {
 
 const ItemGrid = ({ item, columns, length, renderMenuItem }) => (
   <>
-    {/*<Link className="sub-title" to={item.url}>*/}
-    {/*  {item.title}*/}
-    {/*</Link>*/}
     {renderMenuItem(item, { className: 'sub-title' })}
     <Grid columns={columns}>{createColumns(item, length, renderMenuItem)}</Grid>
   </>
@@ -48,16 +48,19 @@ const ItemGrid = ({ item, columns, length, renderMenuItem }) => (
 const Item = ({ item, icon = false, iconName, renderMenuItem }) => (
   <>
     {renderMenuItem(item, { className: 'sub-title' })}
-    {/*<Link className="sub-title" to={item.url}>*/}
-    {/*   {item.title}*/}
-    {/*  {' '}*/}
-    {/*</Link>*/}
     <List className="menu-list">
       {item.items.map((listItem, index) => (
-        <Link role="listitem" className="item" to={listItem.url} key={index}>
-          {icon && <Icon className={iconName} />}
-          {listItem.title}
-        </Link>
+        <>
+          {renderMenuItem(
+            listItem,
+            {
+              className: 'item',
+              key: index,
+              role: 'listitem',
+            },
+            { children: icon && <Icon className={iconName} /> },
+          )}
+        </>
       ))}
     </List>
   </>
@@ -138,7 +141,7 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem }) => (
   </Grid>
 );
 
-const FirstLevelContent = ({ element }) => {
+const FirstLevelContent = ({ element, renderMenuItem }) => {
   const topics = element.title === 'Topics' ? true : false;
 
   const firstLevelPanels = [];
@@ -155,19 +158,26 @@ const FirstLevelContent = ({ element }) => {
       );
       x.content = (
         <Accordion.Content key={index}>
-          <SecondLevelContent element={item} />
+          {renderMenuItem(item, { className: 'item' })}
+          <SecondLevelContent element={item} renderMenuItem={renderMenuItem} />
         </Accordion.Content>
       );
       firstLevelPanels.push(x);
     });
     content = <Accordion.Accordion panels={firstLevelPanels} />;
   } else {
-    content = <SecondLevelContent element={element} topics={true} />;
+    content = (
+      <SecondLevelContent
+        element={element}
+        topics={true}
+        renderMenuItem={renderMenuItem}
+      />
+    );
   }
   return <>{content}</>;
 };
 
-const SecondLevelContent = ({ element, topics = false }) => {
+const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
   let content;
   if (topics) {
     const atAGlance = element.items.find(
@@ -177,9 +187,13 @@ const SecondLevelContent = ({ element, topics = false }) => {
       <List>
         {atAGlance &&
           atAGlance.items.map((item, index) => (
-            <Link role="listitem" className="item" to={item.url} key={index}>
-              {item.title}
-            </Link>
+            <>
+              {renderMenuItem(item, {
+                key: index,
+                role: 'listitem',
+                className: 'item',
+              })}
+            </>
           ))}
         <Link
           role="listitem"
@@ -195,9 +209,13 @@ const SecondLevelContent = ({ element, topics = false }) => {
     content = (
       <List>
         {element.items.map((item, index) => (
-          <Link role="listitem" className="item" to={item.url} key={index}>
-            {item.title}
-          </Link>
+          <>
+            {renderMenuItem(item, {
+              key: index,
+              role: 'listitem',
+              className: 'item',
+            })}
+          </>
         ))}
       </List>
     );
@@ -206,7 +224,7 @@ const SecondLevelContent = ({ element, topics = false }) => {
   return <>{content}</>;
 };
 
-const NestedAccordion = ({ menuItems }) => {
+const NestedAccordion = ({ menuItems, renderMenuItem }) => {
   const rootPanels = [];
   menuItems.forEach((element, index) => {
     let x = {};
@@ -219,7 +237,8 @@ const NestedAccordion = ({ menuItems }) => {
     );
     x.content = (
       <Accordion.Content key={index}>
-        <FirstLevelContent element={element} />
+        {renderMenuItem(element, { className: 'item' })}
+        <FirstLevelContent element={element} renderMenuItem={renderMenuItem} />
       </Accordion.Content>
     );
     rootPanels.push(x);

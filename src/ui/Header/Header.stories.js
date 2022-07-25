@@ -1306,7 +1306,7 @@ const Template = (args) => {
           pathname={pathname}
           logo={<Logo {...logoProps} inverted={args.inverted} />}
           menuItems={menuItems}
-          renderMenuItem={(item, options = {}) => {
+          renderMenuItem={(item, options = {}, props) => {
             const { onClick } = options;
             return (
               <a
@@ -1319,7 +1319,8 @@ const Template = (args) => {
                 href={item['@id'] || item.url}
                 {...options}
               >
-                <span className={'item'}>{item.title}</span>
+                {props?.children}
+                {item.title}
               </a>
             );
           }}
