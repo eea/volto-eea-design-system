@@ -7,6 +7,7 @@ import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/asset
 import InvertedLogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EEA-Logo-White-2.svg';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
+import cx from 'classnames';
 
 export default {
   title: 'Layout/Header',
@@ -1318,9 +1319,12 @@ const Template = (args) => {
                 }}
                 href={item['@id'] || item.url}
                 {...options}
+                className={cx(options?.className, {
+                  active: item['@id'] === pathname,
+                })}
               >
                 {props?.children}
-                {item.title}
+                <span>{item.title}</span>
               </a>
             );
           }}
