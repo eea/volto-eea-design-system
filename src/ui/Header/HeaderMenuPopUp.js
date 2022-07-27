@@ -23,13 +23,13 @@ const createColumns = (item, length, renderMenuItem) => {
     <Grid.Column key={index}>
       <List>
         {subArray.map((arrayItem, idx) => (
-          <>
+          <React.Fragment key={idx}>
             {renderMenuItem(arrayItem, {
               className: 'item',
               role: 'listitem',
               key: idx,
             })}
-          </>
+          </React.Fragment>
         ))}
       </List>
     </Grid.Column>
@@ -50,7 +50,7 @@ const Item = ({ item, icon = false, iconName, renderMenuItem }) => (
     {renderMenuItem(item, { className: 'sub-title' })}
     <List className="menu-list">
       {item.items.map((listItem, index) => (
-        <>
+        <React.Fragment key={index}>
           {renderMenuItem(
             listItem,
             {
@@ -60,7 +60,7 @@ const Item = ({ item, icon = false, iconName, renderMenuItem }) => (
             },
             { children: icon && <Icon className={iconName} /> },
           )}
-        </>
+        </React.Fragment>
       ))}
     </List>
   </>
@@ -76,6 +76,7 @@ const Topics = ({ menuItem, renderMenuItem }) => (
               item={section}
               icon={true}
               iconName="ri-leaf-line"
+              key={index}
               renderMenuItem={renderMenuItem}
             />
           </Grid.Column>
@@ -85,6 +86,7 @@ const Topics = ({ menuItem, renderMenuItem }) => (
               item={section}
               columns={4}
               length={10}
+              key={index}
               renderMenuItem={renderMenuItem}
             />
           </Grid.Column>
@@ -149,7 +151,7 @@ const FirstLevelContent = ({ element, renderMenuItem }) => {
   if (!topics) {
     element.items.forEach((item, index) => {
       let x = {};
-      x.key = item['@id'];
+      x.key = item['@id'] || item['url'];
       x.title = (
         <Accordion.Title key={`title=${index}`}>
           {item.title}
@@ -187,13 +189,13 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
       <List>
         {atAGlance &&
           atAGlance.items.map((item, index) => (
-            <>
+            <React.Fragment key={index}>
               {renderMenuItem(item, {
                 key: index,
                 role: 'listitem',
                 className: 'item',
               })}
-            </>
+            </React.Fragment>
           ))}
         <Link
           role="listitem"
@@ -209,13 +211,13 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
     content = (
       <List>
         {element.items.map((item, index) => (
-          <>
+          <React.Fragment key={index}>
             {renderMenuItem(item, {
               key: index,
               role: 'listitem',
               className: 'item',
             })}
-          </>
+          </React.Fragment>
         ))}
       </List>
     );
