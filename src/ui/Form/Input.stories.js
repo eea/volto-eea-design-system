@@ -114,7 +114,6 @@ Default.args = {
   required: false,
   disabled: false,
   invalid: false,
-  describedby: 'desc_id',
   labelledby: 'label_id',
 };
 
@@ -145,7 +144,6 @@ LoadingInput.args = {
   required: false,
   disabled: false,
   invalid: false,
-  describedby: 'desc_id',
   labelledby: 'label_id',
 };
 LoadingInput.argTypes = {

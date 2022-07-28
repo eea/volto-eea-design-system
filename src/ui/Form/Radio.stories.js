@@ -105,7 +105,7 @@ function RadioForm({
             onChange={handleChange}
             id="field1"
           ></Radio>
-          <label htmlFor="field1">Helper text for option 1</label>
+          <p class="description">Helper text for option 1</p>
         </Form.Field>
         <Form.Field error={invalid}>
           <Radio
@@ -116,7 +116,7 @@ function RadioForm({
             onChange={handleChange}
             id="field2"
           ></Radio>
-          <label htmlFor="field2">Helper text for option 2</label>
+          <p class="description">Helper text for option 2</p>
         </Form.Field>
         <Form.Field error={invalid}>
           <Radio
@@ -128,7 +128,7 @@ function RadioForm({
             onChange={handleChange}
             id="field3"
           ></Radio>
-          <label htmlFor="field3">Helper text for option 3</label>
+          <p class="description">Helper text for option 3</p>
         </Form.Field>
       </Form>
     </Container>
@@ -172,7 +172,6 @@ function Binary({
             onChange={handleChange}
             id="radio-yes"
           ></Radio>
-          <label htmlFor="radio-yes"> </label>
         </Form.Field>
         <Form.Field error={invalid}>
           <Radio
@@ -183,7 +182,6 @@ function Binary({
             onChange={handleChange}
             id="radio-no"
           ></Radio>
-          <label htmlFor="radio-no"> </label>
         </Form.Field>
       </Form>
     </Container>

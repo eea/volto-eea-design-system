@@ -22,10 +22,9 @@
   }
 }
 
-/* Helper text for disabled element */
-.ui.disabled.checkbox + label,
-.ui.disabled.radio.checkbox + label {
-  opacity: @disabledCheckboxOpacity;
+/* Helper text below label */
+.error p.description {
+  color: @textColor;
 }
 
 /* Error checkbox must have negative background */
