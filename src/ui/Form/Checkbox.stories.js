@@ -89,15 +89,15 @@ function CheckboxForm({
         ) : null}
         <Form.Field error={invalid}>
           <Checkbox label="Option 1" defaultChecked id="field1"></Checkbox>
-          <label htmlFor="field1">Helper text for option 1</label>
+          <p class="description">Helper text for option 1</p>
         </Form.Field>
         <Form.Field error={invalid}>
           <Checkbox label="Option 2" id="field2"></Checkbox>
-          <label htmlFor="field2">Helper text for option 2</label>
+          <p class="description">Helper text for option 2</p>
         </Form.Field>
         <Form.Field error={invalid}>
           <Checkbox label="Option 3 (disabled)" disabled id="field3"></Checkbox>
-          <label htmlFor="field3">Helper text for option 3</label>
+          <p class="description">Helper text for option 3</p>
         </Form.Field>
       </Form>
     </Container>
@@ -128,7 +128,7 @@ function SingleCheckboxForm({
 
         <Form.Field error={invalid}>
           <Checkbox label="Option 1" defaultChecked id="field4"></Checkbox>
-          <label htmlFor="field4">Helper text for option 1</label>
+          <p class="description">Helper text for option 1</p>
         </Form.Field>
         {invalid ? (
           <Message header="Error Message" content={errorMessage} negative />
