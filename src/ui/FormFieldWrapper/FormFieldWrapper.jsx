@@ -7,6 +7,7 @@ function FormFieldWrapper({
   error = false,
   label = '',
   describedby = '',
+  labelledby = '',
   columns = 0,
 }) {
   return (
@@ -24,12 +25,13 @@ function FormFieldWrapper({
               content="This is an error message"
               size="mini"
               icon="exclamation circle"
+              id={describedby}
             />
           )}
           {columns === 1 && (
             <Grid.Column computer="2" tablet="2" mobile="12">
               {label.length > 0 && (
-                <Label id={describedby}>
+                <Label id={labelledby}>
                   {label}
                   <span className="requred-input">*</span>
                 </Label>
