@@ -72,6 +72,13 @@ export default {
         defaultValue: { summary: ' "" ' },
       },
     },
+    labelledby: {
+      description: 'Id of the label of the element',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
+    },
   },
 };
 
@@ -83,6 +90,7 @@ const Template = ({ label, error, ...rest }) => (
         label={label}
         required={rest.required}
         describedby={rest.describedby}
+        labelledby={rest.labelledby}
         columns={label ? 1 : 0}
       >
         <Input
@@ -90,6 +98,7 @@ const Template = ({ label, error, ...rest }) => (
           id="temp-id"
           aria-invalid={rest.invalid}
           aria-describedby={rest.describedby}
+          aria-labelledby={rest.labelledby}
         />
       </FormFieldWrapper>
     </Form>
@@ -98,16 +107,6 @@ const Template = ({ label, error, ...rest }) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  placeholder: 'Placeholder',
-  type: 'text',
-  fluid: false,
-  required: false,
-  invalid: false,
-  describedby: 'desc_id',
-};
-
-export const LabeledInput = Template.bind({});
-LabeledInput.args = {
   label: 'Input label',
   placeholder: 'Placeholder',
   type: 'text',
@@ -116,9 +115,10 @@ LabeledInput.args = {
   disabled: false,
   invalid: false,
   describedby: 'desc_id',
+  labelledby: 'label_id',
 };
 
-LabeledInput.argTypes = {
+Default.argTypes = {
   label: {
     description: 'input label',
     table: {
@@ -146,6 +146,7 @@ LoadingInput.args = {
   disabled: false,
   invalid: false,
   describedby: 'desc_id',
+  labelledby: 'label_id',
 };
 LoadingInput.argTypes = {
   loading: {
@@ -183,6 +184,7 @@ ErrorInput.args = {
   disabled: false,
   invalid: true,
   describedby: 'desc_id',
+  labelledby: 'label_id',
 };
 ErrorInput.argTypes = {
   error: {

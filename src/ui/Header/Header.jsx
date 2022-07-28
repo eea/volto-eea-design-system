@@ -54,6 +54,8 @@ const TopDropdownMenu = ({
       text={mobileText || text}
       icon={icon || 'chevron down'}
       aria-label="dropdown"
+      closeOnChange={false}
+      closeOnBlur={false}
     >
       <Dropdown.Menu role="group">{children}</Dropdown.Menu>
     </Dropdown>
