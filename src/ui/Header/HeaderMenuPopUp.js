@@ -143,8 +143,9 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem }) => (
   </Grid>
 );
 
-const FirstLevelContent = ({ element, renderMenuItem }) => {
+const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
   const topics = element.title === 'Topics' ? true : false;
+  let defaultIndex = -1;
 
   const firstLevelPanels = [];
   let content;
@@ -152,21 +153,29 @@ const FirstLevelContent = ({ element, renderMenuItem }) => {
     element.items.forEach((item, index) => {
       let x = {};
       x.key = item['@id'] || item['url'];
+      if (pathName.indexOf(item.url) !== -1) {
+        defaultIndex = index;
+      }
       x.title = (
-        <Accordion.Title key={`title=${index}`}>
+        <Accordion.Title key={`title=${index}`} index={index}>
           {item.title}
           <Icon className="ri-arrow-down-s-line" size="small" />
         </Accordion.Title>
       );
       x.content = (
         <Accordion.Content key={index}>
-          {renderMenuItem(item, { className: 'item' })}
+          {renderMenuItem(item, { className: 'item title-item' })}
           <SecondLevelContent element={item} renderMenuItem={renderMenuItem} />
         </Accordion.Content>
       );
       firstLevelPanels.push(x);
     });
-    content = <Accordion.Accordion panels={firstLevelPanels} />;
+    content = (
+      <Accordion.Accordion
+        defaultActiveIndex={defaultIndex}
+        panels={firstLevelPanels}
+      />
+    );
   } else {
     content = (
       <SecondLevelContent
@@ -226,13 +235,18 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
   return <>{content}</>;
 };
 
-const NestedAccordion = ({ menuItems, renderMenuItem }) => {
+const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
+  let defaultIndex = -1;
   const rootPanels = [];
   menuItems.forEach((element, index) => {
     let x = {};
     x.key = index;
+
+    if (pathName.indexOf(element.url) !== -1) {
+      defaultIndex = index;
+    }
     x.title = (
-      <Accordion.Title key={`title-${index}`}>
+      <Accordion.Title key={`title-${index}`} index={index}>
         {element.title}
         <Icon className="ri-arrow-down-s-line" size="small" />
       </Accordion.Title>
@@ -240,18 +254,23 @@ const NestedAccordion = ({ menuItems, renderMenuItem }) => {
     x.content = (
       <Accordion.Content key={index}>
         {renderMenuItem(element, { className: 'item' })}
-        <FirstLevelContent element={element} renderMenuItem={renderMenuItem} />
+        <FirstLevelContent
+          element={element}
+          renderMenuItem={renderMenuItem}
+          pathName={pathName}
+        />
       </Accordion.Content>
     );
     rootPanels.push(x);
   });
 
-  return <Accordion panels={rootPanels} />;
+  return <Accordion defaultActiveIndex={defaultIndex} panels={rootPanels} />;
 };
 
 function HeaderMenuPopUp({
   menuItems,
   renderMenuItem,
+  pathName,
   onClose,
   triggerRefs,
   activeItem,
@@ -291,6 +310,7 @@ function HeaderMenuPopUp({
             <NestedAccordion
               menuItems={menuItems}
               renderMenuItem={renderMenuItem}
+              pathName={pathName}
             />
           </div>
         </Container>
