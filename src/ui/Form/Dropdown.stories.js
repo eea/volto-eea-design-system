@@ -96,16 +96,6 @@ export const Default = Template.bind({});
 Default.args = {
   placeholder: 'Select Option',
   options: listOptions,
-  required: false,
-  search: false,
-  disabled: false,
-  fluid: false,
-};
-
-export const LabeledDropdown = Template.bind({});
-LabeledDropdown.args = {
-  placeholder: 'Select Option',
-  options: listOptions,
   label: 'Dropdown',
   required: false,
   search: false,
@@ -113,7 +103,7 @@ LabeledDropdown.args = {
   fluid: false,
 };
 
-LabeledDropdown.argTypes = {
+Default.argTypes = {
   search: {
     description: ' search through a large list of choice',
     table: {
