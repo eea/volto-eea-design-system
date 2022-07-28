@@ -54,6 +54,11 @@ const TopDropdownMenu = ({
       text={mobileText || text}
       icon={icon || 'chevron down'}
       aria-label="dropdown"
+      closeOnChange={false}
+      closeOnBlur={false}
+      onClose={(e, data) => console.log('on close', data)}
+      onChange={(e, data) => console.log('onchange', data)}
+      onClick={(e, data) => console.log('on click', data)}
     >
       <Dropdown.Menu role="group">{children}</Dropdown.Menu>
     </Dropdown>
@@ -134,6 +139,19 @@ const Main = ({
     }
   };
 
+  const menuOnClickOutside = () => {
+    // restore active element if nothing was selected from the menu dropdown
+    if (pathname !== activeItem) {
+      setActiveItem(pathname);
+    }
+    // close mobile navigation when clicking outside if we have value for nav
+    if (burger) {
+      setBurger('');
+    }
+    // always close the  menu
+    setMenuIsActive(false);
+  };
+
   const menuOnClick = (e, item) => {
     if (searchIsActive) setSearchIsActive(false);
     setActiveItem(item['@id'] || item.url);
@@ -151,6 +169,7 @@ const Main = ({
   const node = React.useRef();
   const searchButtonRef = React.useRef();
   const mobileMenuBurgerRef = React.useRef();
+  const desktopMenuRef = React.useRef();
 
   // disable sticky setting until feature is more stable
   // const isScrollingUp = useScrollingUp();
@@ -172,7 +191,10 @@ const Main = ({
           <Grid.Column mobile={4} tablet={4} computer={8}>
             <div className={inverted ? 'main-menu inverted' : 'main-menu'}>
               {menuItems && (
-                <Menu className="eea-main-menu tablet or lower hidden" text>
+                <div
+                  className="ui text eea-main-menu tablet or lower hidden menu"
+                  ref={desktopMenuRef}
+                >
                   {menuItems.map((item) => (
                     <Menu.Item
                       name={item['@id'] || item.url}
@@ -187,7 +209,7 @@ const Main = ({
                       })}
                     </Menu.Item>
                   ))}
-                </Menu>
+                </div>
               )}
               <div
                 className="search-action"
@@ -221,15 +243,14 @@ const Main = ({
           triggerRefs={[searchButtonRef]}
         />
       )}
-      {menuIsActive && (
-        <HeaderMenuPopUp
-          renderMenuItem={renderMenuItem}
-          activeItem={activeItem}
-          menuItems={menuItems}
-          onClose={mobileBurgerOnClick}
-          triggerRefs={[mobileMenuBurgerRef]}
-        />
-      )}
+      <HeaderMenuPopUp
+        renderMenuItem={renderMenuItem}
+        activeItem={activeItem}
+        menuItems={menuItems}
+        onClose={menuOnClickOutside}
+        triggerRefs={[mobileMenuBurgerRef, desktopMenuRef]}
+        visible={menuIsActive}
+      />
     </div>
   );
 };

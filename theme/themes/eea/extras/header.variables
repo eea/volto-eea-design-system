@@ -3,7 +3,7 @@
 --------------------*/
 
 /* Heights */
-@mobileTopSectionHeight      : 20px;
+@mobileTopSectionHeight      : 22px;
 @tabletTopSectionHeight      : 30px;
 @computerTopSectionHeight    : 33px;
 
@@ -34,6 +34,8 @@
 @mobileTopSectionItemFontSize         : @font-size-00;
 @tabletTopSectionItemFontSize         : @font-size-00;
 @topSectionZindex                     : @z-index-1;
+@topSectionIconMarginLeft             : 1px;
+@topSectionIconFontSize               : 0.8rem;
 
 /* Dropdown */
 @mobileDropdownMenuMarginTop          : 0;
@@ -72,11 +74,10 @@
 @tabletOfficialUnionMenuLeft          : -54px;
 
 // Theme Sites
-@mobileThemeSitesMenuWidth            : 190px;
-@computerThemeSitesMenuWidth          : 200px;
+@mobileThemeSitesMenuWidth            : 200px;
 @themeSitesMenuSiteLinkColor          : @blue-grey-6;
 @themeSitesMenuSiteLinkFontWeight     : @normal;
-@themeSitesMenuLeft                   : -20px;
+@mobileThemeSitesMenuLeft             : 0px;
 
 // Language
 @tabletLanguageMenuTop                : 18px;
@@ -97,7 +98,7 @@
 @logoWidth                            : 100%;
 @mobileLogoMaxWidth                   : 122px;
 @tabletLogoMaxWidth                   : 252px;
-@computerLogoMaxWidth                 : 348px;
+@computerLogoMaxWidth                 : 347px; //348 rendered fuzzy :(
 @mobileLogoMarginTop                  : @rem-space-2;
 @tabletLogoMarginTop                  : @rem-space-3-5;
 @computerLogoMarginTop                : @rem-space-5;

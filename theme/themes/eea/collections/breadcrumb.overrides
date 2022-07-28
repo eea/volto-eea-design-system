@@ -19,6 +19,7 @@
     overflow: hidden;
 
     /* Max breadcrumb length */
+    min-height: @breadcrumbItemMinHeight;
     max-width: @breadcrumbItemMaxWidth;
     padding: @mobileBreadcrumbPadding;
     text-overflow: ellipsis;

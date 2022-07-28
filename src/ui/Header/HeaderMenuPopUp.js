@@ -1,4 +1,5 @@
 import React from 'react';
+import { Transition } from 'semantic-ui-react';
 import {
   Container,
   Divider,
@@ -150,11 +151,12 @@ const SecondLevelContent = ({ element, topics = false }) => {
     );
     content = (
       <List>
-        {atAGlance.items.map((item, index) => (
-          <Link role="listitem" className="item" to={item.url} key={index}>
-            {item.title}
-          </Link>
-        ))}
+        {atAGlance &&
+          atAGlance.items.map((item, index) => (
+            <Link role="listitem" className="item" to={item.url} key={index}>
+              {item.title}
+            </Link>
+          ))}
         <Link
           role="listitem"
           className="item"
@@ -202,7 +204,13 @@ const NestedAccordion = ({ menuItems }) => {
   return <Accordion panels={rootPanels} />;
 };
 
-function HeaderMenuPopUp({ menuItems, onClose, triggerRefs, activeItem }) {
+function HeaderMenuPopUp({
+  menuItems,
+  onClose,
+  triggerRefs,
+  activeItem,
+  visible,
+}) {
   const nodeRef = React.useRef();
   useClickOutside({ targetRefs: [nodeRef, ...triggerRefs], callback: onClose });
 
@@ -211,29 +219,30 @@ function HeaderMenuPopUp({ menuItems, onClose, triggerRefs, activeItem }) {
   );
 
   return (
-    <div id="mega-menu" ref={nodeRef}>
-      <Container>
-        {menuItem && (
-          <div className="menu-content tablet hidden mobile hidden">
-            <h3 className="title">
-              <Link to={menuItem.url}>{menuItem.title}</Link>
-            </h3>
-            <Divider fitted />
-            {menuItem.title === 'Topics' ? (
-              <Topics menuItem={menuItem} />
-            ) : menuItem.title === 'Countries' ? (
-              <Countries menuItem={menuItem} />
-            ) : (
-              <StandardMegaMenuGrid menuItem={menuItem} />
-            )}
+    <Transition visible={visible} animation="slide down" duration={300}>
+      <div id="mega-menu" ref={nodeRef}>
+        <Container>
+          {menuItem && (
+            <div className="menu-content tablet hidden mobile hidden">
+              <h3 className="title">
+                <a href={menuItem.href}>{menuItem.title}</a>
+              </h3>
+              <Divider fitted />
+              {menuItem.title === 'Topics' ? (
+                <Topics menuItem={menuItem} />
+              ) : menuItem.title === 'Countries' ? (
+                <Countries menuItem={menuItem} />
+              ) : (
+                <StandardMegaMenuGrid menuItem={menuItem} />
+              )}
+            </div>
+          )}
+          <div className="tablet only mobile only">
+            <NestedAccordion menuItems={menuItems} />
           </div>
-        )}
-
-        <div className="tablet only mobile only">
-          <NestedAccordion menuItems={menuItems} />
-        </div>
-      </Container>
-    </div>
+        </Container>
+      </div>
+    </Transition>
   );
 }
 

@@ -31,12 +31,22 @@
   font-size: @metaFontSize;
 }
 
+// add bottom margin also when meta isn't inside .content
+//
+.ui.cards > .card .meta, .ui.card .meta {
+    margin-bottom: @rem-space-4;
+}
+
 .ui.card .extra.content a {
   font-weight: @contentLinkFontWeight;
 
   &:hover {
     text-decoration: @contentLinkTextDecoration;
   }
+}
+
+.card .header-link:hover {
+  text-decoration: @contentLinkTextDecoration;
 }
 
 .ui.left.card {

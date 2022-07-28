@@ -12,7 +12,7 @@
 /* Gradient */
 @backgroundGradient           : linear-gradient(8deg, #0c1b28b3 32%, rgba(0, 36, 78, 0) 80%);
 @backgroundGradientWithImage  : linear-gradient(0deg, rgb(20, 33, 44, 90%) 24%, rgba(0, 36, 78, 0) 80%);
-@backgroundGradientOpacity    : 0.9;
+@backgroundGradientOpacity    : 1;
 
 /* Content */
 @mobileContentPadding      : 1rem 0 1.25rem;
@@ -38,9 +38,9 @@
 
 /* Metadata */
 @metadataTypeFontWeight    : @bold;
-@mobileMetadataFontSize    : 0.438rem;
+@mobileMetadataFontSize    : 0.75rem;
 @tabletMetadataFontSize    : 0.875rem;
-@mobileMetadataLineHeight  : 0.5rem;
+@mobileMetadataLineHeight  : 1.2;
 @tabletMetadataLineHeight  : 1rem;
 // Metadata field
 @metadataFieldDividerContent: ' | ';
@@ -50,6 +50,7 @@
 @tabletActionsAlignItems                 : flex-end;
 @tabletActionsFlexDirection              : column;
 // Action
+@mobileActionsActionMarginBottom         : 0.5rem;
 @tabletActionsActionMinWidth             : 95px;
 // Button
 @mobileBannerActionButtonFontSize        : 0.75rem;

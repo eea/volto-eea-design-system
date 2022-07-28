@@ -84,7 +84,7 @@
 /* Metadata */
 @metaFontSize: @relativeMedium;
 @metaSpacing: 0.3em;
-@metaColor: @oldSilver;
+@metaColor: @tertiaryColor;
 
 /* Icons */
 @actionOpacity: 0.75;
@@ -98,8 +98,8 @@
 @likeActiveColor: #FF2733;
 
 /* Links */
-@contentLinkColor: @white;
-@contentLinkHoverColor: @white;
+@contentLinkColor: @tertiaryColor;
+@contentLinkHoverColor: @tertiaryColor;
 @contentLinkFontWeight: @bold;
 @contentLinkTransition: color @defaultDuration @defaultEasing;
 @contentLinkTextDecoration: underline;

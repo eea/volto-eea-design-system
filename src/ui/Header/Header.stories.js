@@ -756,6 +756,7 @@ const menuItems = [
         ],
         review_state: null,
         title: 'EEA member countries',
+        url: '/#',
       },
       {
         '@id': 'Cooperating-countries',
@@ -1242,7 +1243,6 @@ const Template = (args) => {
           <Header.TopItem>
             <Header.TopDropdownMenu
               id="theme-sites"
-              className="tablet hidden"
               text={linksMenuTitle}
               viewportWidth={viewportWidth}
             >
