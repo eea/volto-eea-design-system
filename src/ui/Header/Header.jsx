@@ -56,9 +56,6 @@ const TopDropdownMenu = ({
       aria-label="dropdown"
       closeOnChange={false}
       closeOnBlur={false}
-      onClose={(e, data) => console.log('on close', data)}
-      onChange={(e, data) => console.log('onchange', data)}
-      onClick={(e, data) => console.log('on click', data)}
     >
       <Dropdown.Menu role="group">{children}</Dropdown.Menu>
     </Dropdown>
