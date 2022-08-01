@@ -7,6 +7,7 @@ import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/asset
 import InvertedLogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EEA-Logo-White-2.svg';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
+import cx from 'classnames';
 
 export default {
   title: 'Layout/Header',
@@ -756,6 +757,7 @@ const menuItems = [
         ],
         review_state: null,
         title: 'EEA member countries',
+        url: '/#',
       },
       {
         '@id': 'Cooperating-countries',
@@ -1305,7 +1307,7 @@ const Template = (args) => {
           pathname={pathname}
           logo={<Logo {...logoProps} inverted={args.inverted} />}
           menuItems={menuItems}
-          renderMenuItem={(item, options = {}) => {
+          renderMenuItem={(item, options = {}, props) => {
             const { onClick } = options;
             return (
               <a
@@ -1316,8 +1318,13 @@ const Template = (args) => {
                   onClick && onClick(e, item);
                 }}
                 href={item['@id'] || item.url}
+                {...options}
+                className={cx(options?.className, {
+                  active: item['@id'] === pathname,
+                })}
               >
-                <span className={'item'}>{item.title}</span>
+                {props?.children}
+                <span>{item.title}</span>
               </a>
             );
           }}

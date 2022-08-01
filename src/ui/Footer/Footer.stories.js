@@ -74,7 +74,7 @@ Default.args = {
       columnSize: {
         mobile: 6,
         tablet: 12,
-        computer: 7,
+        computer: 6,
       },
     },
   ],
