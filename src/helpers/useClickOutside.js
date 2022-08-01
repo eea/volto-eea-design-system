@@ -19,7 +19,7 @@ export default function useClickOutside({ targetRefs = [], callback }) {
     [callback, targetRefs],
   );
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside, false);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside, false);
