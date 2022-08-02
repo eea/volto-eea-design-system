@@ -151,6 +151,7 @@
 @megaMenuListItemFontSize: @font-size-1;
 @megaMenuListItemFontWeight: @font-weight-4;
 @megaMenuListItemPadding: @rem-space-2 0;
+@megaMenuListItemActiveBorder: 2px solid #FFF;
 
 /* At a glance */
 @megaMenuGlanceBackgroundColor: @secondaryColor;
