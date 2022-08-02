@@ -10,7 +10,7 @@ pipeline {
         NAMESPACE = "@eeacms"
         SONARQUBE_TAGS = "volto.eea.europa.eu,www.eea.europa.eu-ims,demo-www.eea.europa.eu"
         DEPENDENCIES = ""
-        VOLTO = "alpha"
+        VOLTO = "16.0.0-alpha.14"
     }
 
   stages {
@@ -252,7 +252,7 @@ pipeline {
                           pullRequest.comment("### :x: Docusaurus build FAILED\nCheck ${BUILD_URL} for details\n\n:fire: @${GITHUB_COMMENT_AUTHOR}")
                           currentBuild.result = 'FAILURE'
                           error("Docusaurus build FAILED")
-                    }                
+                    }
 
               }
              }
