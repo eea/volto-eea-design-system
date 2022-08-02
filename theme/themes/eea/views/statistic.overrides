@@ -10,6 +10,7 @@
 /* Full width statistics for mobile */
 .ui.statistic {
   width: @mobileStatisticWidth;
+  align-items: center;
 }
 
 /* Custom statistic variations */
@@ -21,6 +22,11 @@
     &.secondary { color: @secondaryColor; }
     &.tertiary { color: @tertiaryColor; }
   }
+}
+
+/* Wrap label text */
+.ui.statistic .label {
+  max-width: fit-content;
 }
 
 .ui.statistics.inverted > a {
