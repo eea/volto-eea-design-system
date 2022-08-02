@@ -101,6 +101,7 @@ const Main = ({
   const [menuIsActive, setMenuIsActive] = React.useState(false);
   const [searchIsActive, setSearchIsActive] = React.useState(false);
   const [burger, setBurger] = React.useState('');
+  const searchInputRef = React.useRef(null);
 
   React.useEffect(() => {
     setMenuIsActive(false);
@@ -111,6 +112,12 @@ const Main = ({
       setActiveItem('');
     }
   }, [pathname]);
+
+  React.useEffect(() => {
+    if (searchIsActive) {
+      searchInputRef.current && searchInputRef.current.focus();
+    }
+  }, [searchIsActive]);
 
   const searchOnClick = (e, x) => {
     if (menuIsActive === true) {
@@ -237,6 +244,7 @@ const Main = ({
       {searchIsActive && (
         <HeaderSearchPopUp
           onClose={searchOnClick}
+          searchInputRef={searchInputRef}
           triggerRefs={[searchButtonRef]}
         />
       )}
@@ -244,6 +252,7 @@ const Main = ({
         renderMenuItem={renderMenuItem}
         activeItem={activeItem}
         menuItems={menuItems}
+        pathName={pathname}
         onClose={menuOnClickOutside}
         triggerRefs={[mobileMenuBurgerRef, desktopMenuRef]}
         visible={menuIsActive}
