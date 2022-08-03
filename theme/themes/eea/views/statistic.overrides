@@ -10,13 +10,15 @@
 /* Full width statistics for mobile */
 .ui.statistic {
   width: @mobileStatisticWidth;
+  align-items: center;
 }
 
-/* Custom statistic variations */
+/* Custom statistic variations & text wrap */
 .ui.statistics:not(.inverted) .ui.statistic {
   .value,
   .label,
   .slate {
+    max-width: fit-content;
     &.primary { color: @primaryColor; }
     &.secondary { color: @secondaryColor; }
     &.tertiary { color: @tertiaryColor; }
