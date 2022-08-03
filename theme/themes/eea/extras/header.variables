@@ -142,6 +142,7 @@
 /* Title */
 @megaMenuTitleFontSize: @font-size-4;
 @megaMenuTitleFontWeight: @font-weight-7;
+@megaMenuTitleImgMarginLeft: 4px;
 
 /* Sub Title */
 @megaMenuSubTitleFontSize: @font-size-2;
