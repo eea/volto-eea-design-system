@@ -156,8 +156,12 @@
 @dividedFirstLastPadding: 0em;
 
 
-/* Unstackable */
+/* Unstackable items */
 @unstackableMobileImageWidth: 125px;
+
+/* Stackable item */
+@stackableContentPaddingTop: @rem-space-4;
+@stackableContentPaddingLeft: 0;
 
 /* Row */
 @mobileRowItemMargin  : 1rem 0;

@@ -101,9 +101,13 @@
 .ui.items.row .item.stackable {
   display: grid;
 
+  .image {
+    margin: auto;
+  }
+
   .content {
-    padding-left: 0;
-    padding-top: @rem-space-4;
+    padding-left: @stackableContentPaddingLeft;
+    padding-top: @stackableContentPaddingTop;
   }
 }
 
