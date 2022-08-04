@@ -127,9 +127,25 @@ Default.argTypes = {
 export const Group = Template.bind({});
 Group.args = {
   elements: [
-    { ...Default.args, label: 'label 1', value: '50' },
-    { ...Default.args, label: 'label 2', value: '500', href: '/#' },
-    { ...Default.args, label: 'label 3', value: '5000', href: '/#' },
+    {
+      ...Default.args,
+      label:
+        'Premature deaths were attributed to chronic exposure to fine particulate matter',
+      value: '307,000',
+    },
+    {
+      ...Default.args,
+      label:
+        'Premature deaths were attributed to chronic nitrogen dioxide exposure',
+      value: '40,400',
+      href: '/#',
+    },
+    {
+      ...Default.args,
+      label: 'Premature deaths were attributed to acute ozone exposure',
+      value: '16,800',
+      href: '/#',
+    },
   ],
   widths: 'three',
   size: 'small',
@@ -151,10 +167,14 @@ Group.argTypes = {
     },
   },
   widths: {
-    description: 'a statistic group can have its items divided evenly',
+    control: {
+      type: 'select',
+      options: ['one', 'two', 'three', 'four', 'five'],
+    },
+    description: 'statistic column size',
     table: {
       type: {
-        summary: 'number',
+        summary: 'string',
       },
       defaultValue: {
         summary: ' "" ',
@@ -224,6 +244,21 @@ Custom.args = {
   backgroundVariant: 'primary',
 };
 Custom.argTypes = {
+  widths: {
+    control: {
+      type: 'select',
+      options: ['one', 'two', 'three', 'four', 'five'],
+    },
+    description: 'statistic column size',
+    table: {
+      type: {
+        summary: 'string',
+      },
+      defaultValue: {
+        summary: ' "" ',
+      },
+    },
+  },
   valueVariation: {
     name: 'Value variation',
     defaultValue: 'tertiary',
@@ -375,6 +410,21 @@ AnimationGroup.args = {
   backgroundVariant: 'primary',
 };
 AnimationGroup.argTypes = {
+  widths: {
+    control: {
+      type: 'select',
+      options: ['one', 'two', 'three', 'four', 'five'],
+    },
+    description: 'statistic column size',
+    table: {
+      type: {
+        summary: 'string',
+      },
+      defaultValue: {
+        summary: ' "" ',
+      },
+    },
+  },
   valueVariation: {
     name: 'Value variation',
     defaultValue: 'tertiary',

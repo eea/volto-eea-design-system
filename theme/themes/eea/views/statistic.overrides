@@ -39,3 +39,10 @@
     width: @tabletStatisticWidth;
   }
 }
+
+/* No horizontal statistic on mobile screens */
+@media only screen and (max-width: @largestMobileScreen) {
+  .ui.statistics.horizontal .ui.statistic {
+    flex-direction: column;
+  }
+}
