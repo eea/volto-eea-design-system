@@ -11,13 +11,11 @@ export default {
   title: 'Components/Item/Item group with icons',
   component: Item,
   argTypes: {
-    argTypes: {
-      stackable: {
-        description: 'Image above content',
-        table: {
-          type: { summary: 'boolean' },
-          defaultValue: { summary: false },
-        },
+    stackable: {
+      description: 'Image above content',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
       },
     },
   },
