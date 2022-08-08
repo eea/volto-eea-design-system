@@ -9,6 +9,8 @@ import {
   Accordion,
 } from 'semantic-ui-react';
 
+import { cloneDeep } from 'lodash';
+
 import { Link } from 'react-router-dom';
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
@@ -39,6 +41,7 @@ const createColumns = (item, length, renderMenuItem) => {
 
   return column;
 };
+
 const ItemGrid = ({ item, columns, length, renderMenuItem }) => (
   <>
     {renderMenuItem(item, { className: 'sub-title' })}
@@ -149,44 +152,57 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
   let defaultIndex = -1;
 
   const firstLevelPanels = [];
-  let content;
-  if (!topics) {
-    element.items.forEach((item, index) => {
-      let x = {};
-      x.key = item['@id'] || item['url'];
-      if (pathName.indexOf(item.url) !== -1) {
-        defaultIndex = index;
-      }
-      x.title = (
-        <Accordion.Title key={`title=${index}`} index={index}>
-          {item.title}
-          <Icon className="ri-arrow-down-s-line" size="small" />
-        </Accordion.Title>
-      );
-      x.content = (
-        <Accordion.Content key={index}>
-          {renderMenuItem(item, { className: 'item title-item' })}
-          <SecondLevelContent element={item} renderMenuItem={renderMenuItem} />
-        </Accordion.Content>
-      );
-      firstLevelPanels.push(x);
-    });
-    content = (
-      <Accordion.Accordion
-        defaultActiveIndex={defaultIndex}
-        panels={firstLevelPanels}
-      />
-    );
-  } else {
-    content = (
-      <SecondLevelContent
-        element={element}
-        topics={true}
-        renderMenuItem={renderMenuItem}
-      />
-    );
-  }
-  return <>{content}</>;
+
+  return (
+    <>
+      {!topics ? (
+        <React.Fragment>
+          {element.items.map((item, index) => {
+            if (!item.items.length) {
+              return <>{renderMenuItem(item, { className: 'item' })}</>;
+            }
+            let x = {};
+            x.key = item['@id'] || item['url'];
+            if (pathName.indexOf(item.url) !== -1) {
+              defaultIndex = index;
+            }
+            x.title = (
+              <Accordion.Title key={`title=${index}`} index={index}>
+                {item.title}
+                <Icon className="ri-arrow-down-s-line" size="small" />
+              </Accordion.Title>
+            );
+            let overflow_item = cloneDeep(item);
+            overflow_item.title = 'Overview';
+            x.content = (
+              <Accordion.Content key={index}>
+                {renderMenuItem(overflow_item, {
+                  className: 'item title-item',
+                })}
+                <SecondLevelContent
+                  element={item}
+                  renderMenuItem={renderMenuItem}
+                />
+              </Accordion.Content>
+            );
+            firstLevelPanels.push(x);
+            return (
+              <Accordion.Accordion
+                defaultActiveIndex={defaultIndex}
+                panels={firstLevelPanels}
+              />
+            );
+          })}
+        </React.Fragment>
+      ) : (
+        <SecondLevelContent
+          element={element}
+          topics={true}
+          renderMenuItem={renderMenuItem}
+        />
+      )}
+    </>
+  );
 };
 
 const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
@@ -252,9 +268,11 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
         <Icon className="ri-arrow-down-s-line" size="small" />
       </Accordion.Title>
     );
+    let overview = cloneDeep(element);
+    overview.title = 'Overview';
     x.content = (
       <Accordion.Content key={index}>
-        {renderMenuItem(element, { className: 'item' })}
+        {renderMenuItem(overview, { className: 'item' })}
         <FirstLevelContent
           element={element}
           renderMenuItem={renderMenuItem}
