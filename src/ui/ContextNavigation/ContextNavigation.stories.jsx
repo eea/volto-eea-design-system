@@ -92,16 +92,16 @@ const sidenavItems = [
   },
 ];
 
-function Template({ args }) {
+function Template({ ...args }) {
   return (
     <Container>
       <nav className="context-navigation">
         <div className="context-navigation-header">
-          <Icon className="ri-menu-2-line" /> Navigation
+          <Icon className="ri-menu-2-line" /> {args.header}
         </div>
         <div role="list" className="ui list">
-          {sidenavItems &&
-            sidenavItems.map((element, index) => {
+          {args.sidenavItems &&
+            args.sidenavItems.map((element, index) => {
               return (
                 <div role="listitem" className="item level-1">
                   <div className="content">
@@ -148,5 +148,6 @@ export default {
 
 export const Default = Template.bind({});
 Default.args = {
-  root: 'https://www.eea.europa.eu/',
+  header: 'Navigation',
+  sidenavItems: sidenavItems,
 };
