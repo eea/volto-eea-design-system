@@ -170,7 +170,7 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
               defaultIndex = index;
             }
             x.title = (
-              <Accordion.Title key={`title=${index}`} index={index}>
+              <Accordion.Title key={`title=${index}`}>
                 {item.title}
                 <Icon className="ri-arrow-down-s-line" size="small" />
               </Accordion.Title>
@@ -178,7 +178,7 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
             let overflow_item = cloneDeep(item);
             overflow_item.title = 'Overview';
             x.content = (
-              <Accordion.Content key={index}>
+              <Accordion.Content>
                 {renderMenuItem(overflow_item, {
                   className: 'item title-item',
                 })}
@@ -191,9 +191,9 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
             firstLevelPanels.push(x);
             return (
               <Accordion.Accordion
-                defaultActiveIndex={defaultIndex}
                 panels={firstLevelPanels}
                 key={index}
+                defaultActiveIndex={defaultIndex === index ? 0 : -1}
               />
             );
           })}
