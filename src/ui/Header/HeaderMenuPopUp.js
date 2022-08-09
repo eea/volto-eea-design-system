@@ -158,7 +158,11 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
           {element.items.map((item, index) => {
             let firstLevelPanels = [];
             if (!item.items.length) {
-              return <>{renderMenuItem(item, { className: 'item' })}</>;
+              return (
+                <React.Fragment key={index}>
+                  {renderMenuItem(item, { className: 'item' })}
+                </React.Fragment>
+              );
             }
             let x = {};
             x.key = item['@id'] || item['url'];
@@ -189,6 +193,7 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
               <Accordion.Accordion
                 defaultActiveIndex={defaultIndex}
                 panels={firstLevelPanels}
+                key={index}
               />
             );
           })}
