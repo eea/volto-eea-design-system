@@ -115,7 +115,7 @@ function Template({ ...args }) {
                     {element.items.length > 0 &&
                       element.items.map((subelement, index) => {
                         return (
-                          <div className="list">
+                          <div className="list" role="list">
                             <div role="listitem" className="item level-2">
                               <div className="content">
                                 <a
