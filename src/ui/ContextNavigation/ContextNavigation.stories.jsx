@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Icon } from 'semantic-ui-react';
 
 const sidenavItems = [
