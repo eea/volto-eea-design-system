@@ -151,13 +151,12 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
   const topics = element.title === 'Topics' ? true : false;
   let defaultIndex = -1;
 
-  const firstLevelPanels = [];
-
   return (
     <>
       {!topics ? (
         <React.Fragment>
           {element.items.map((item, index) => {
+            let firstLevelPanels = [];
             if (!item.items.length) {
               return <>{renderMenuItem(item, { className: 'item' })}</>;
             }
