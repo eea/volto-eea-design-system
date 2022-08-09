@@ -1,0 +1,38 @@
+/*******************************
+        Sidebar Nav
+*******************************/
+
+@sidenavMaxWidth: 350px;
+@widescreenSidenavMaxWidth: 300px;
+@sidenavBackground: @grey-0;
+@sidenavMarginRight: @rem-space-4;
+@sidenavBorderLeft: 2px solid @secondaryColor;
+@sidenavPaddingLeft: @rem-space-4;
+@sidenavOverflow: hidden;
+@sidenavMargin: @rem-space-8 auto;
+
+/* Header */
+@sidenavHeaderColor: @blue-grey-5;
+@sidenavHeaderFontSize: @font-size-3;
+@sidenavHeaderFontWeight: @font-weight-7;
+@sidenavHeaderPadding: @rem-space-4;
+@sidenavHeaderBorderBottom: @2px solid @blue-grey-5;
+@sidenavHeaderIconMarginRight: @rem-space-4;
+
+/* Nav item */
+@sidenavItemPadding: @rem-space-2 0 @rem-space-2 @rem-space-8;
+@sidenavItemFontSize: @font-size-1;
+@sidenavItemFontWeight: @font-weight-4;
+@sidenavItemColor: @blue-grey-5;
+@sidenavItemHoverBackground: @blue-grey-5;
+@sidenavItemHoverColor: @grey-0;
+
+/* Item active */
+@sidenavItemActiveColor: @secondaryColor;
+@sidenavItemActiveFontWeight: @font-weight-7;
+@sidenavItemActiveColorHover: @grey-0;
+
+/* Folders - Level 1 */
+@sidenavFolderFontSize: @font-size-2;
+@sidenavFolderFontWeight: @font-weight-7;
+@sidenavFolderItemPadding: @rem-space-4 0 @rem-space-4 @rem-space-4;
