@@ -176,7 +176,7 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
               </Accordion.Title>
             );
             let overflow_item = cloneDeep(item);
-            overflow_item.title = 'Overview';
+            overflow_item.title = 'See all';
             x.content = (
               <Accordion.Content>
                 {renderMenuItem(overflow_item, {
@@ -273,7 +273,7 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
       </Accordion.Title>
     );
     let overview = cloneDeep(element);
-    overview.title = 'Overview';
+    overview.title = 'See all';
     x.content = (
       <Accordion.Content key={index}>
         {renderMenuItem(overview, { className: 'item' })}
