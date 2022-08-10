@@ -11,7 +11,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: @footerBackgroundGrandient;
+  background: @mobileFooterBackgroundGrandient;
   color: @white;
 
   .wrapper {
@@ -40,8 +40,6 @@ footer .theme-sites {
 }
 
 .subfooter .item {
-  margin-top: @mobileItemMarginTop;
-
   .header {
     margin-bottom: @mobileItemHeaderMarginBottom;
     font-size: @mobileFooterTitleFontSize;
@@ -51,15 +49,20 @@ footer .theme-sites {
 }
 
 .subfooter .contact-block {
-  margin-inline: @mobileContactBlockMarginInline;
   margin-bottom: @tabletContactBlockMarginbottom;
 }
 
+.contact-block .subcontact a {
+  font-size: @computerSubcontactIconFontSize;
+  margin-right: @computerSubcontactIconMarginRight;
+  font-weight: @computerSubcontactIconFontWeight;
+}
+
 .subfooter .contact {
-  display: flex;
-  align-items: center;
+  display: block;
   margin: @mobileContactMargin;
-  font-size: @mobileContactFontSize;
+  font-size: @contactFontSize;
+  gap: @contactGap;
 
   a {
     color: @menuLinkColor;
@@ -71,13 +74,10 @@ footer .theme-sites {
   }
 }
 
-.subfooter .address {
-  font-size: @addressFontSize;
-}
-
 .subfooter .social {
   display: flex;
   justify-content: @mobileSocialJustifyContent;
+  margin: @mobileSocialIconsMargin;
   
   a {
     color: @socialIconColor;
@@ -93,18 +93,23 @@ footer .theme-sites {
   }
 }
 
-.subfooter .menu {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: @mobileMenuWidth;
-  margin: @mobileMenuMargin;
+footer .wrapper .menu {
+  .actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+  }
 
   a {
     color: @menuLinkColor;
     font-weight: @menuFontWeight;
     font-size: @mobileMenuFontSize;
     cursor: pointer;
+    margin-inline: 12px;
 
     &:hover,
     &:active {
@@ -114,6 +119,9 @@ footer .theme-sites {
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
+  footer {
+    background: @computerFooterBackgroundGrandient;
+  }
   footer .theme-sites {
     .header {
       font-size: @tabletFooterTitleFontSize;
@@ -122,22 +130,21 @@ footer .theme-sites {
   }
 
   .subfooter .item {
-    margin-top: @tabletItemMarginTop;
+    .logo img {
+      max-height: 100px;
+    }
 
-    .site.logo {
-      img {
-        width: @tabletSiteLogoWidth;
-        display: @tabletSiteLogoDisplay;
-      }
+    .site.logo img {
+      padding-right: @siteLogoPaddingRight;
+    }
+
+    .contact-block {
+      padding-left: @siteLogoPaddingRight;
     }
 
     .header {
       font-size: @tabletFooterTitleFontSize;
       text-align: left;
-    }
-
-    .social a i.icon {
-      font-size: @tabletSocialIconSize;
     }
   }
 
@@ -149,12 +156,21 @@ footer .theme-sites {
   .subfooter .social {
     justify-content: @tabletSocialJustifyContent;
     gap: @tabletSocialGap;
+    margin: @tabletSocialIconsMargin;
+
+    a {
+      i.icon {
+        font-size: @tabletSocialIconSize;
+      }
+    }
   }
 
-  .subfooter .menu {
-    width: @tabletMenuWidth;
-    margin: @tabletMenuMargin;
+  footer .wrapper .menu {
+    .actions {
+      justify-content: flex-end;
+    }
   }
+
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
@@ -182,26 +198,15 @@ footer .theme-sites {
   }
 
   .subfooter .item {
-    margin-top: @computerItemMarginTop;
-
-    .site.logo {
-      img {
-        width: @computerSiteLogoWidth;
-      }
-    }
-
     .header {
       margin-bottom: @computerItemHeaderMarginBottom;
       font-size: @computerFooterTitleFontSize;
     }
-
-    .social a i.icon {
-      font-size: @computerSocialIconSize;
-    }
   }
 
   .subfooter .contact {
-    font-size: @computerContactFontSize;
+    display: flex;
+    align-items: center;
     margin: @computerContactMargin;
 
     i.big.icon {
@@ -209,8 +214,7 @@ footer .theme-sites {
     }
   }
 
-  .subfooter .menu {
-    width: @computerMenuWidth;
+  .footer .wrapper .menu {
   
     a {
       font-size: @computerMenuFontSize;

@@ -24,20 +24,19 @@ const Template = (args) => (
     <Footer.SubFooter {...args} />
     <Footer.Header>{args.header}</Footer.Header>
     <Footer.Sites sites={args.sites} />
+    <Footer.Actions actions={args.actions} copyright={args.copyright} />
   </Footer>
 );
 
 export const Default = Template.bind({});
 Default.args = {
   header: 'Thematic information platforms',
-  logosHeader: 'Managed by',
-  contactHeader: 'Contact Us',
   actions: [
-    { link: '/#', title: 'CMS Login', copy: false },
-    { link: '/#', title: 'Sitemap', copy: false },
-    { link: '/#', title: 'Privacy', copy: false },
-    { link: '/#', title: 'Copyright', copy: true },
+    { link: '/#', title: 'Privacy' },
+    { link: '/#', title: 'Sitemap' },
+    { link: '/#', title: 'CMS Login' },
   ],
+  copyright: [{ link: '/#', site: 'EEA' }],
   sites: [
     { link: '/#', src: Marine, alt: 'WISE marine' },
     { link: '/#', src: Freshwater, alt: 'WISE freshwater' },
@@ -61,9 +60,9 @@ Default.args = {
       alt: 'EEA Logo',
       className: 'site logo',
       columnSize: {
-        mobile: 6,
-        tablet: 12,
-        computer: 5,
+        mobile: 5,
+        tablet: 4,
+        computer: 4,
       },
     },
     {
@@ -72,9 +71,9 @@ Default.args = {
       alt: 'EIONET Logo',
       className: 'eionet logo',
       columnSize: {
-        mobile: 6,
-        tablet: 12,
-        computer: 6,
+        mobile: 7,
+        tablet: 4,
+        computer: 4,
       },
     },
   ],
@@ -87,8 +86,15 @@ Default.args = {
     { name: 'rss', icon: 'ri-rss-fill', link: '/#' },
   ],
   contacts: [
-    { icon: 'ri-chat-1-line', text: 'Ask your question', link: '/#' },
-    { icon: 'ri-mail-line', text: 'Sign up to our newsletter', link: '/#' },
+    {
+      text: 'About us',
+      link: '/#',
+      children: [
+        { text: 'FAQs', link: '/#' },
+        { text: 'Careers', link: '/#' },
+      ],
+    },
+    { text: 'Contact us', link: '/#' },
+    { text: 'Sign up to our newsletter', link: '/#' },
   ],
-  address: 'Kongens Nytorv 6 1050 Copenhagen K (+45) 33 36 71 00',
 };
