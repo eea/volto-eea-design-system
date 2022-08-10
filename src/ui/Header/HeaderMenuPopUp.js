@@ -76,13 +76,7 @@ const Topics = ({ menuItem, renderMenuItem }) => (
       <React.Fragment key={index}>
         {section.title === 'At a glance' ? (
           <Grid.Column width={3} id="at-a-glance">
-            <Item
-              item={section}
-              icon={true}
-              iconName="ri-leaf-line"
-              key={index}
-              renderMenuItem={renderMenuItem}
-            />
+            <Item item={section} key={index} renderMenuItem={renderMenuItem} />
           </Grid.Column>
         ) : (
           <Grid.Column width={9} key={index}>
