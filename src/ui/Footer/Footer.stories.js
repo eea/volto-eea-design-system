@@ -21,15 +21,15 @@ export default {
 
 const Template = (args) => (
   <Footer>
+    <Footer.SubFooter {...args} />
     <Footer.Header>{args.header}</Footer.Header>
     <Footer.Sites sites={args.sites} />
-    <Footer.SubFooter {...args} />
   </Footer>
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  header: 'EEA information systems',
+  header: 'Thematic information platforms',
   logosHeader: 'Managed by',
   contactHeader: 'Contact Us',
   actions: [
@@ -40,19 +40,19 @@ Default.args = {
   ],
   sites: [
     { link: '/#', src: Marine, alt: 'WISE marine' },
+    { link: '/#', src: Freshwater, alt: 'WISE freshwater' },
     { link: '/#', src: Bise, alt: 'Biodiversity' },
+    { link: '/#', src: Fise, alt: 'Forest information system for europe' },
     {
       link: '/#',
       src: ClimateHealth,
       alt: 'Information platform for chemical monitoring',
     },
-    { link: '/#', src: Industry, alt: 'European industrial emissions portal' },
-    { link: '/#', src: Insitu, alt: 'Copernicus in situ' },
-    { link: '/#', src: Freshwater, alt: 'WISE freshwater' },
-    { link: '/#', src: Fise, alt: 'Forest information system for europe' },
     { link: '/#', src: Cca, alt: 'Climate adapt' },
+    { link: '/#', src: Industry, alt: 'European industrial emissions portal' },
     { link: '/#', src: Energy, alt: 'Climate and energy in the EU' },
     { link: '/#', src: Copernicus, alt: 'Copernicus land monitoring service' },
+    { link: '/#', src: Insitu, alt: 'Copernicus in situ' },
   ],
   managedBy: [
     {

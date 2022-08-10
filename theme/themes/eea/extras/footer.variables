@@ -5,10 +5,11 @@
 @footerBackgroundGrandient: linear-gradient(220.4deg, #009591 8.29%, #2E3E4C 56.3%, #212D38 89.06%);
 
 /* Titles */
-@footerTitleFontWeight     : @font-weight-7;
-@mobileFooterTitleFontSize : @font-size-3;
-@tabletFooterTitleFontSize : @font-size-4;
-@computerFooterTitleFontSize: @font-size-6;
+@footerTitleFontWeight      : @font-weight-7;
+@mobileFooterTitleFontSize  : @font-size-1;
+@tabletFooterTitleFontSize  : @font-size-4;
+@computerFooterTitleFontSize: @font-size-4;
+@tabletFooterTitleFontWeight: @font-weight-7;
 
 /* Wrapper */
 @wrapperBackgroundImage              : url(../assets/images/Footer/Extras/footervisual.svg);
@@ -21,8 +22,10 @@
 @computerWrapperPadding              : @space-20 0 @space-18;
 
 /* Theme Sites */
-@mobileThemeSitesPadding            : @space-2 0 @space-8;
-@computerThemeSitesPadding          : @space-4 0 @space-8;
+@mobileThemeSitesPadding            : @space-2 0;
+@computerThemeSitesPadding          : @space-4 0;
+@mobileThemeSitesLogoMargin         : 0 auto @rem-space-8;
+@computerThemeSitesLogoMargin       : 0 auto @rem-space-10;
 
 /* Subfooter with logo and contact info */
 @mobileItemMarginTop                : @space-4;
