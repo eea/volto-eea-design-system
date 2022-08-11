@@ -12,6 +12,8 @@ import {
 import { Link } from 'react-router-dom';
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
+import linkArrowsSVG from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Svg/arrow-double-right.svg';
+
 const createColumns = (item, length, renderMenuItem) => {
   let subArrays = [];
   let size = length;
@@ -37,7 +39,6 @@ const createColumns = (item, length, renderMenuItem) => {
 
   return column;
 };
-
 const ItemGrid = ({ item, columns, length, renderMenuItem }) => (
   <>
     {renderMenuItem(item, { className: 'sub-title' })}
@@ -289,7 +290,22 @@ function HeaderMenuPopUp({
         <Container>
           {menuItem && (
             <div className="menu-content tablet hidden mobile hidden">
-              <h3 className="title">{renderMenuItem(menuItem)}</h3>
+              <h3 className="title">
+                {renderMenuItem(
+                  menuItem,
+                  { className: 'title-link' },
+                  {
+                    iconPosition: 'right',
+                    children: (
+                      <img
+                        src={linkArrowsSVG}
+                        className={'title-img'}
+                        alt={'Title icon'}
+                      />
+                    ),
+                  },
+                )}
+              </h3>
               <Divider fitted />
               {menuItem.title === 'Topics' ? (
                 <Topics menuItem={menuItem} renderMenuItem={renderMenuItem} />
