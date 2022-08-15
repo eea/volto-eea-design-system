@@ -15,7 +15,9 @@ const Contact = ({ children, contacts }) =>
           {contact.children && (
             <div className="subcontact">
               {contact.children.map((child, index) => (
-                <Link to={child.link}>{child.text}</Link>
+                <Link to={child.link} key={index}>
+                  {child.text}
+                </Link>
               ))}
             </div>
           )}
