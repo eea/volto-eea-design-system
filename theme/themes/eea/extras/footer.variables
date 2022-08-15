@@ -66,4 +66,8 @@
 @menuLinkColor                      : @white;
 @menuFontWeight                     : @font-weight-3;
 @mobileMenuFontSize                 : @font-size-0;
+@mobileMenuMargin                   : @rem-space-4 0;
+@mobileMenuBorder                   : 1px solid rgba(249, 249, 249, 0.25);
+@mobileMenuLeft                     : -20px;
+@mobileMenuFontWeight               : 400;
 @computerMenuFontSize               : @font-size-1;

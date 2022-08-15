@@ -14,7 +14,7 @@ footer {
   background: @mobileFooterBackgroundGrandient;
   color: @white;
 
-  .wrapper {
+  .footer-wrapper {
     width: @wrapperWidth;
     padding: @mobileWrapperPadding;
     background-image: @wrapperBackgroundImage;
@@ -93,7 +93,7 @@ footer .theme-sites {
   }
 }
 
-footer .wrapper .menu {
+footer .footer-wrapper .menu {
   .actions {
     display: flex;
     justify-content: center;
@@ -115,6 +115,42 @@ footer .wrapper .menu {
     &:active {
       color: @menuLinkColor;
     }
+  }
+}
+
+@media only screen and (max-width: @largestMobileScreen) {
+  .footer-wrapper > .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .copyright {
+    display: none !important;
+  }
+
+  .subfooter {
+    order: 1
+  }
+
+  .menu {
+    order: 2;
+    position: relative;
+    margin: @mobileMenuMargin;
+  }
+  .menu::after {
+    position: absolute;
+    bottom: 0;
+    border: @mobileMenuBorder;
+    content: " ";
+    display: block;
+    width: 100vw;
+    left: @mobileMenuLeft;
+  }
+  footer .footer-wrapper .menu a {
+    font-weight: @mobileMenuFontWeight;
+  }
+
+  .theme-sites {
+    order: 3;
   }
 }
 
@@ -165,7 +201,7 @@ footer .wrapper .menu {
     }
   }
 
-  footer .wrapper .menu {
+  footer .footer-wrapper .menu {
     .actions {
       justify-content: flex-end;
     }
@@ -175,7 +211,7 @@ footer .wrapper .menu {
 
 @media only screen and (min-width: @computerBreakpoint) {
   footer {
-    .wrapper {
+    .footer-wrapper {
       padding: @computerWrapperPadding;
       background-size: @computerWrapperBackgroundSize;
     }
@@ -214,7 +250,7 @@ footer .wrapper .menu {
     }
   }
 
-  .footer .wrapper .menu {
+  .footer .footer-wrapper .menu {
   
     a {
       font-size: @computerMenuFontSize;
