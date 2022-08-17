@@ -137,7 +137,7 @@
 @ribbonShadowColor: rgba(0, 0, 0, 0.15);
 
 @ribbonMargin: 1rem;
-@ribbonOffset: calc(-@ribbonMargin - @ribbonTriangleSize);
+@ribbonOffset: calc(@ribbonMargin - @ribbonTriangleSize);
 @ribbonDistance: calc(@ribbonMargin + @ribbonTriangleSize);
 @rightRibbonOffset:  calc(100% + @ribbonMargin + @ribbonTriangleSize);
 
