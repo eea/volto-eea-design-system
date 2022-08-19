@@ -71,20 +71,20 @@
   Page Heading
 ---------------*/
 
-@headerLineHeight : 1.25;
+@headerLineHeight : 1.2;
 @headerFontWeight : @font-weight-7;
 
-@h1 : unit((48 / @fontSize), rem);
-@h2 : unit((40 / @fontSize), rem);
-@h3 : unit((36 / @fontSize), rem);
-@h4 : unit((24 / @fontSize), rem);
-@h5 : unit((20 / @fontSize), rem);
-@h6 : unit((18 / @fontSize), rem);
+@h1 : unit((@font-size-10 / @fontSize), rem);
+@h2 : unit((@font-size-7 / @fontSize), rem);
+@h3 : unit((@font-size-5 / @fontSize), rem);
+@h4 : unit((@font-size-3 / @fontSize), rem);
+@h5 : unit((@font-size-2 / @fontSize), rem);
+@h6 : unit((@font-size-1 / @fontSize), rem);
 
-@mobileH1: unit((30 / @fontSize), rem);
-@mobileH2: unit((24 / @fontSize), rem);
-@mobileH3: unit((20 / @fontSize), rem);
-@mobileH4: unit((18 / @fontSize), rem);
+@mobileH1: unit((@font-size-6 / @fontSize), rem);
+@mobileH2: unit((@font-size-4 / @fontSize), rem);
+@mobileH3: unit((@font-size-3 / @fontSize), rem);
+@mobileH4: unit((@font-size-2 / @fontSize), rem);
 
 /*--------------
    Form Input
