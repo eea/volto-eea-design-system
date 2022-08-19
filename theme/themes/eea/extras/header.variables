@@ -167,7 +167,7 @@
 /* Accordion */
 @megaMenuAccordionTitleFontSize: @font-size-3;
 @megaMenuAccordionTitlePadding: @rem-space-2 0;
-@megaMenuAccordionIconFontSize: @font-size-5;
+@megaMenuAccordionIconFontSize: @font-size-9;
 @megaMenuAccordionContentPadding: @rem-space-4 0;
 @megaMenuAccordionTitleBorderBottom: 1px solid rgba(255, 255, 255, 0.25);
 @megaMenuAccordionActiveTitleBorderBottom: 1px solid @white;
