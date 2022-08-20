@@ -46,7 +46,7 @@
 @contactGap                         : @rem-space-8;
 @mobileContactIconMarginRight       : @space-3;
 @mobileContactIconFontSize          : @font-size-4;
-@computerContactIconFontSize        : @font-size-5;
+@computerContactIconFontSize        : @font-size-9;
 @computerSubcontactIconFontSize     : @font-size-1;
 @computerSubcontactIconMarginRight  : @rem-space-4;
 @computerSubcontactIconFontWeight   : @font-weight-4;
@@ -58,8 +58,8 @@
 @mobileSocialJustifyContent         : space-around;
 @tabletSocialJustifyContent         : center;
 @tabletSocialGap                    : @space-3;
-@mobileSocialIconSize               : @font-size-5;
-@tabletSocialIconSize               : @font-size-6;
+@mobileSocialIconSize               : @font-size-9;
+@tabletSocialIconSize               : @font-size-9;
 
 /* Footer Menu */
 
