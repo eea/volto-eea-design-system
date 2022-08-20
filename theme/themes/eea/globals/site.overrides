@@ -7,10 +7,18 @@
 h1, h2, h3, h4, h5, h6 {
   line-height: @font-lineheight-0;
   letter-spacing: @font-letterspacing-00;
-  color: @tertiaryColor;
 }
+
+h2, h3, h4, h5, h6,
 .content-area {
   color: @tertiaryColor;
+}
+
+// text smaller than body has extra letterspacing as described in docusaurus
+.tiny,
+.caption,
+.discreet {
+  letter-spacing: @font-letterspacing-1;
 }
 
 /* Heading size adjustment */
