@@ -13,6 +13,8 @@
 
 .homepage #page-document > .hero-block h2 {
   font-size: @h1;
+}
+.hero-block h2 {
   color: inherit;
 }
 
