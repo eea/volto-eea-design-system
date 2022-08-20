@@ -9,9 +9,12 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: @font-letterspacing-00;
 }
 
-h2, h3, h4, h5, h6,
+h2, h3, h4, h5, h6 {
+  color: @headerColor;
+}
+
 .content-area {
-  color: @tertiaryColor;
+  color: @contentAreaColor;
 }
 
 // text smaller than body has extra letterspacing as described in docusaurus

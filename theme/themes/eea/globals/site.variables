@@ -73,6 +73,7 @@
 
 @headerLineHeight : 1.2;
 @headerFontWeight : @font-weight-7;
+@headerColor: @tertiaryColor;
 
 @h1 : unit((44 / @fontSize), rem);
 @h2 : unit((32 / @fontSize), rem);
@@ -181,6 +182,7 @@
 @lineHeight          : @font-lineheight-3;
 @mobileLineHeight    : @font-lineheight-3;
 @textColor           : rgba(0, 0, 0, 1);
+@contentAreaColor    : @headerColor;
 
 /*-------------------
       Paragraph
