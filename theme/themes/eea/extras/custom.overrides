@@ -14,9 +14,6 @@
 .homepage #page-document > .hero-block h2 {
   font-size: @h1;
 }
-.hero-block h2 {
-  color: inherit;
-}
 
 // remove margin and padding from homepage content-area since we have the bg image over the header
 .homepage .content-area {
