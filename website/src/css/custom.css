@@ -15,8 +15,10 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
-  --ifm-font-family-base: 'Roboto', sans-serif;
-  --ifm-heading-font-family: 'Roboto', sans-serif;
+  --ifm-font-family-base: 'Roboto', Arial, 'Helvetica Neue', Helvetica,
+    sans-serif;
+  --ifm-heading-font-family: 'Roboto', Arial, 'Helvetica Neue', Helvetica,
+    sans-serif;
   --ifm-heading-line-height: 1.2;
   --ifm-h1-font-size: 2.75rem;
   --ifm-h2-font-size: 2rem;
@@ -49,11 +51,11 @@ body {
   line-height: 1.5;
 }
 
-caption {
+.caption {
   font-size: 0.875rem;
 }
 
-small {
+.tiny {
   font-size: 0.75rem;
 }
 
