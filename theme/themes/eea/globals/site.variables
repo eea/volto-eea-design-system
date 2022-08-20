@@ -9,7 +9,6 @@
 --------------------*/
 
 @fontName          : 'Roboto';
-@secondaryFontName : 'Archivo';
 @fontSmoothing     : antialiased;
 
 @headerFont        : @fontName, Arial, 'Helvetica Neue', Helvetica, sans-serif;
