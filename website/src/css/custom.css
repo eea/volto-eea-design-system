@@ -7,6 +7,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  --eea-color-tertiary: #3D5265;
   --ifm-color-primary: #027572;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
@@ -19,6 +20,8 @@
     sans-serif;
   --ifm-heading-font-family: 'Roboto', Arial, 'Helvetica Neue', Helvetica,
     sans-serif;
+  --ifm-heading-color: var(--eea-color-tertiary);
+  --ifm-color-content: var(--eea-color-tertiary);
   --ifm-heading-line-height: 1.2;
   --ifm-h1-font-size: 2.75rem;
   --ifm-h2-font-size: 2rem;
