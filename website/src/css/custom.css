@@ -7,7 +7,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --eea-color-tertiary: #3D5265;
+  --eea-color-tertiary: #3d5265;
   --ifm-color-primary: #027572;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
@@ -33,6 +33,20 @@
 
 .markdown h1:first-child {
   --ifm-h1-font-size: 2.75rem;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  letter-spacing: -0.015em;
+}
+
+.tiny,
+.caption {
+  letter-spacing: 0.01em;
 }
 
 .mobile {
