@@ -12,6 +12,10 @@
   width: @mobileStatisticWidth;
 }
 
+.ui.statistics .statistic > .label, .ui.statistic > .label {
+  text-transform: none;
+}
+
 @media only screen and (min-width: @mobileBreakpoint) {
   .ui.statistic {
     width: @tabletStatisticWidth;
