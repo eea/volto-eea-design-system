@@ -64,10 +64,9 @@
 /* Footer Menu */
 
 @menuLinkColor                      : @white;
-@menuFontWeight                     : @font-weight-3;
+@menuFontWeight                     : @font-weight-4;
 @mobileMenuFontSize                 : @font-size-0;
-@mobileMenuMargin                   : @rem-space-4 0;
-@mobileMenuBorder                   : 1px solid rgba(249, 249, 249, 0.25);
-@mobileMenuLeft                     : -20px;
-@mobileMenuFontWeight               : 400;
+@mobileMenuCopyrightFontSize        : @font-size-00;
+@mobileMenuCopyrightFontWeight      : @font-weight-3;
+@mobileMenuFontWeight               : @font-weight-4;
 @computerMenuFontSize               : @font-size-1;
