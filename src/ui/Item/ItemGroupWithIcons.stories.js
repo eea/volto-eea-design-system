@@ -10,13 +10,26 @@ import Knowledge from '@eeacms/volto-eea-design-system/../theme/themes/eea/asset
 export default {
   title: 'Components/Item/Item group with icons',
   component: Item,
-  argTypes: {},
+  argTypes: {
+    stackable: {
+      description: 'Image above content',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+  },
 };
 
-function SingleItem({ image, imageSize, description, verticalAlign }) {
+function SingleItem({
+  image,
+  imageSize,
+  description,
+  verticalAlign,
+  stackable,
+}) {
   return (
-    <Item>
-      {/* <Item.Image size={imageSize == 'default' ? '' : imageSize} src={image} alt="item image" /> */}
+    <Item className={stackable ? 'stackable' : ''}>
       <Item.Image className={`ui ${imageSize}`} src={image} alt="item image" />
       <Item.Content verticalAlign={verticalAlign}>{description}</Item.Content>
     </Item>
@@ -32,8 +45,9 @@ export const DefaultItem = (args) => (
   </Container>
 );
 DefaultItem.args = {
-  imageSize: 'default',
+  imageSize: 'tile',
   verticalAlign: 'middle',
+  stackable: false,
   image: GlobeEco,
   description:
     'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
@@ -73,7 +87,13 @@ DefaultItem.argTypes = {
   },
 };
 
-function ItemGroup({ imageSize, verticalAlign, ColumnLeft, ColumnRight }) {
+function ItemGroup({
+  imageSize,
+  verticalAlign,
+  ColumnLeft,
+  ColumnRight,
+  stackable,
+}) {
   return (
     <Container>
       <Grid>
@@ -86,6 +106,7 @@ function ItemGroup({ imageSize, verticalAlign, ColumnLeft, ColumnRight }) {
                   {...item}
                   imageSize={imageSize}
                   verticalAlign={verticalAlign}
+                  stackable={stackable}
                 ></SingleItem>
               ))}
             </Item.Group>
@@ -98,6 +119,7 @@ function ItemGroup({ imageSize, verticalAlign, ColumnLeft, ColumnRight }) {
                   {...item}
                   imageSize={imageSize}
                   verticalAlign={verticalAlign}
+                  stackable={stackable}
                 ></SingleItem>
               ))}
             </Item.Group>
@@ -113,8 +135,9 @@ const Template = (args) => <ItemGroup {...args}></ItemGroup>;
 // Group of items
 export const DefaultGroup = Template.bind({});
 DefaultGroup.args = {
-  imageSize: 'mini',
+  imageSize: 'tile',
   verticalAlign: 'middle',
+  stackable: false,
   ColumnLeft: [
     {
       childKey: 0,

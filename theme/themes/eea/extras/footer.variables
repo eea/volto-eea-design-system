@@ -2,13 +2,16 @@
             Footer
 *******************************/
 
-@footerBackgroundGrandient: linear-gradient(220.4deg, #009591 8.29%, #2E3E4C 56.3%, #212D38 89.06%);
+/* @footerBackgroundGrandient: linear-gradient(220.4deg, #009591 8.29%, #2E3E4C 56.3%, #212D38 89.06%); */
+@mobileFooterBackgroundGrandient: linear-gradient(220.4deg, @green-5 8.29%, @blue-grey-6 56.3%, #212D38 89.06%);
+@computerFooterBackgroundGrandient: linear-gradient(212.33deg, @green-5 6.78%, #212D38 69.54%, #212D38 98.23%);
 
 /* Titles */
-@footerTitleFontWeight     : @font-weight-7;
-@mobileFooterTitleFontSize : @font-size-3;
-@tabletFooterTitleFontSize : @font-size-4;
-@computerFooterTitleFontSize: @font-size-6;
+@footerTitleFontWeight      : @font-weight-7;
+@mobileFooterTitleFontSize  : @font-size-1;
+@tabletFooterTitleFontSize  : @font-size-4;
+@computerFooterTitleFontSize: @font-size-4;
+@tabletFooterTitleFontWeight: @font-weight-7;
 
 /* Wrapper */
 @wrapperBackgroundImage              : url(../assets/images/Footer/Extras/footervisual.svg);
@@ -21,13 +24,10 @@
 @computerWrapperPadding              : @space-20 0 @space-18;
 
 /* Theme Sites */
-@mobileThemeSitesPadding            : @space-2 0 @space-8;
-@computerThemeSitesPadding          : @space-4 0 @space-8;
-
-/* Subfooter with logo and contact info */
-@mobileItemMarginTop                : @space-4;
-@tabletItemMarginTop                : @space-8;
-@computerItemMarginTop              : @space-18;
+@mobileThemeSitesPadding            : @space-2 0;
+@computerThemeSitesPadding          : @space-4 0;
+@mobileThemeSitesLogoMargin         : 0 auto @rem-space-8;
+@computerThemeSitesLogoMargin       : 0 auto @rem-space-10;
 
 /* Subfooter Item Header */
 @mobileItemHeaderMarginBottom       : @space-5;
@@ -35,47 +35,39 @@
 @computerLogoHeaderMarginLeft       : -50px;
 
 /* Site Logo */
-@tabletSiteLogoWidth                : 200px;
-@computerSiteLogoWidth              : 250px;
-@tabletSiteLogoDisplay              : inline-block;
-
-/* EIONET Logo */
-@tabletEionetLogoWidth               : 225px;
-@computerEionetLogoWidth             : 259px; // 260px was rendering the image fuzzy
-@tabletEionetLogoMarginLeft          : @space-3;
+@siteLogoPaddingRight : 20%;
 
 /* Contact Info */
-@mobileContactBlockMarginInline     : 10%;
 @tabletContactBlockMarginInline     : 0;
 @tabletContactBlockMarginbottom     : @space-4;
 @mobileContactMargin                : @space-4 0;
-@computerContactMargin              : @space-5 0;
-@mobileContactFontSize              : @font-size-1;
-@computerContactFontSize            : @font-size-2;
+@computerContactMargin              : @rem-space-050 0;
+@contactFontSize                    : @font-size-3;
+@contactGap                         : @rem-space-8;
 @mobileContactIconMarginRight       : @space-3;
 @mobileContactIconFontSize          : @font-size-4;
-@computerContactIconFontSize        : @font-size-5;
-
-/* Address */
-@addressFontSize                    : @font-size-0;
+@computerContactIconFontSize        : @font-size-9;
+@computerSubcontactIconFontSize     : @font-size-1;
+@computerSubcontactIconMarginRight  : @rem-space-4;
+@computerSubcontactIconFontWeight   : @font-weight-4;
 
 /* Social Icons */
+@mobileSocialIconsMargin            : @rem-space-2 0 @rem-space-8;
+@tabletSocialIconsMargin            : @rem-space-17 0;
 @socialIconColor                    : @white;
 @mobileSocialJustifyContent         : space-around;
-@tabletSocialJustifyContent         : start;
-@tabletSocialGap                    : @space-1;
-@mobileSocialIconSize               : @font-size-5;
-@tabletSocialIconSize               : @font-size-4;
-@computerSocialIconSize             : @font-size-5;
+@tabletSocialJustifyContent         : center;
+@tabletSocialGap                    : @space-3;
+@mobileSocialIconSize               : @font-size-9;
+@tabletSocialIconSize               : @font-size-9;
 
 /* Footer Menu */
-@mobileMenuMargin                   : @space-8 auto 0;
-@tabletMenuMargin                   : @space-13 auto 0;
-@computerMenuMargin                 : @space-20 auto 0;
-@mobileMenuWidth                    : 100%;
-@tabletMenuWidth                    : 350px;
-@computerMenuWidth                  : 500px;
+
 @menuLinkColor                      : @white;
 @menuFontWeight                     : @font-weight-3;
 @mobileMenuFontSize                 : @font-size-0;
+@mobileMenuMargin                   : @rem-space-4 0;
+@mobileMenuBorder                   : 1px solid rgba(249, 249, 249, 0.25);
+@mobileMenuLeft                     : -20px;
+@mobileMenuFontWeight               : 400;
 @computerMenuFontSize               : @font-size-1;

@@ -9,7 +9,6 @@
 --------------------*/
 
 @fontName          : 'Roboto';
-@secondaryFontName : 'Archivo';
 @fontSmoothing     : antialiased;
 
 @headerFont        : @fontName, Arial, 'Helvetica Neue', Helvetica, sans-serif;
@@ -61,23 +60,26 @@
 
 @lightPrimaryColor    : @mediumPersianBlue;
 @lightSecondaryColor  : @darkCyan;
+@lightTertiaryColor   : @UCLABlue;
 
 @darkPrimaryColor     : @darkMidnightBlue;
 @darkSecondaryColor   : @bottleGreen;
+@darkTertiaryColor    : @japaneseIndigo;
 
 /*--------------
   Page Heading
 ---------------*/
 
-@headerLineHeight : 1.25;
+@headerLineHeight : 1.2;
 @headerFontWeight : @font-weight-7;
+@headerColor: inherit;
 
-@h1 : unit((48 / @fontSize), rem);
-@h2 : unit((40 / @fontSize), rem);
-@h3 : unit((36 / @fontSize), rem);
-@h4 : unit((24 / @fontSize), rem);
-@h5 : unit((20 / @fontSize), rem);
-@h6 : unit((18 / @fontSize), rem);
+@h1 : unit((44 / @fontSize), rem);
+@h2 : unit((32 / @fontSize), rem);
+@h3 : unit((26 / @fontSize), rem);
+@h4 : unit((20 / @fontSize), rem);
+@h5 : unit((18 / @fontSize), rem);
+@h6 : unit((16 / @fontSize), rem);
 
 @mobileH1: unit((30 / @fontSize), rem);
 @mobileH2: unit((24 / @fontSize), rem);
@@ -179,6 +181,7 @@
 @lineHeight          : @font-lineheight-3;
 @mobileLineHeight    : @font-lineheight-3;
 @textColor           : rgba(0, 0, 0, 1);
+@contentAreaColor    : @tertiaryColor;
 
 /*-------------------
       Paragraph
@@ -934,8 +937,10 @@
 /*---  Colors  ---*/
 @primaryColorHover        : saturate(darken(@primaryColor, 5), 10, relative);
 @secondaryColorHover      : saturate(lighten(@secondaryColor, 5), 10, relative);
+@tertiaryColorHover       : saturate(lighten(@tertiaryColor, 5), 10, relative);
 @lightPrimaryColorHover   : saturate(darken(@lightPrimaryColor, 5), 10, relative);
 @lightSecondaryColorHover : saturate(lighten(@lightSecondaryColor, 5), 10, relative);
+@lightTertiaryColorHover  : saturate(lighten(@lightTertiaryColor, 5), 10, relative);
 
 @redHover                 : saturate(darken(@red, 5), 10, relative);
 @orangeHover              : saturate(darken(@orange, 5), 10, relative);
@@ -994,8 +999,10 @@
 /*---  Colors  ---*/
 @primaryColorFocus        : saturate(darken(@primaryColor, 8), 20, relative);
 @secondaryColorFocus      : saturate(lighten(@secondaryColor, 8), 20, relative);
+@tertiaryColorFocus       : saturate(lighten(@tertiaryColor, 8), 20, relative);
 @lightPrimaryColorFocus   : saturate(darken(@lightPrimaryColor, 8), 20, relative);
 @lightSecondaryColorFocus : saturate(lighten(@lightSecondaryColor, 8), 20, relative);
+@lightTertiaryColorFocus  : saturate(lighten(@lightTertiaryColor, 8), 20, relative);
 
 @redFocus                 : saturate(darken(@red, 8), 20, relative);
 @orangeFocus              : saturate(darken(@orange, 8), 20, relative);
@@ -1055,8 +1062,10 @@
 /*---  Colors  ---*/
 @primaryColorDown        : darken(@primaryColor, 10);
 @secondaryColorDown      : lighten(@secondaryColor, 10);
+@tertiaryColorDown       : lighten(@tertiaryColor, 10);
 @lightPrimaryColorDown   : darken(@lightPrimaryColor, 10);
 @lightSecondaryColorDown : lighten(@lightSecondaryColor, 10);
+@lightTertiaryColorDown : lighten(@lightTertiaryColor, 10);
 
 @redDown                 : darken(@red, 10);
 @orangeDown              : darken(@orange, 10);
@@ -1116,8 +1125,10 @@
 /*---  Colors  ---*/
 @primaryColorActive        : saturate(darken(@primaryColor, 5), 15, relative);
 @secondaryColorActive      : saturate(lighten(@secondaryColor, 5), 15, relative);
+@tertiaryColorActive       : saturate(lighten(@tertiaryColor, 5), 15, relative);
 @lightPrimaryColorActive   : saturate(darken(@lightPrimaryColor, 5), 15, relative);
 @lightSecondaryColorActive : saturate(lighten(@lightSecondaryColor, 5), 15, relative);
+@lightTertiaryColorActive  : saturate(lighten(@lightTertiaryColor, 5), 15, relative);
 
 @redActive                 : saturate(darken(@red, 5), 15, relative);
 @orangeActive              : saturate(darken(@orange, 5), 15, relative);

@@ -13,7 +13,6 @@
   content: " ";
   position: absolute;
   height: 100%;
-  z-index: -1;
   margin-right: -50vw;
   left: 50%;
   right: 50%;
@@ -28,6 +27,8 @@
   .content-box-inner {
     padding-top: @contentBoxContainerMarginTop;
     padding-bottom: @contentBoxContainerMarginBottom;
+    position: relative;
+    z-index: 1;
   }
 
   &.primary {
