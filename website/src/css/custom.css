@@ -60,6 +60,10 @@
   --ifm-h1-font-size: 1.875rem;
 }
 
+.hero__title {
+  color: #fff;
+}
+
 html {
   font-family: 'Roboto', sans-serif;
 }
