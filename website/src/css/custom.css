@@ -9,8 +9,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i');
 
-
 :root {
+  --eea-color-tertiary: #3d5265;
   --ifm-color-primary: #027572;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
@@ -19,26 +19,85 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
-  --ifm-font-family-base: "Roboto";
-  --ifm-font-color-base: #3D5265;
+  --ifm-font-family-base: 'Roboto', Arial, 'Helvetica Neue', Helvetica,
+    sans-serif;
+  --ifm-heading-font-family: 'Roboto', Arial, 'Helvetica Neue', Helvetica,
+    sans-serif;
+  --ifm-heading-color: var(--eea-color-tertiary);
+  --ifm-color-content: var(--eea-color-tertiary);
+  --ifm-heading-line-height: 1.2;
+  --ifm-h1-font-size: 2.75rem;
+  --ifm-h2-font-size: 2rem;
+  --ifm-h3-font-size: 1.625rem;
+  --ifm-h4-font-size: 1.25rem;
+  --ifm-h5-font-size: 1.125rem;
+  --ifm-h6-font-size: 1rem;
 }
 
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2.75rem;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  letter-spacing: -0.015em;
+}
+
+.tiny,
+.caption {
+  letter-spacing: 0.01em;
+}
+
+.mobile {
+  --ifm-h1-font-size: 1.875rem;
+  --ifm-h2-font-size: 1.5rem;
+  --ifm-h3-font-size: 1.25rem;
+  --ifm-h4-font-size: 1.125rem;
+}
+
+.markdown .mobile h1:first-child {
+  --ifm-h1-font-size: 1.875rem;
+}
+
+.hero__title {
+  color: #fff;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  line-height: 1.5;
+}
+
+.caption {
+  font-size: 0.875rem;
+}
+
+.tiny {
+  font-size: 0.75rem;
+}
 
 .docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
   display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  background-color: rgb(72, 77, 91);
 }
 
 /* ensure that storybook iframe span the entire width of content area */
 iframe {
-  border: none;
-  width: 100%;
-  height: 100%;
-  height: auto;
   overflow: visible;
+  width: 100%;
+  height: auto;
+  border: none;
 }
+
 .frameWrapper {
   width: 100%;
 }

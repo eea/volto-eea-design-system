@@ -46,7 +46,7 @@
 @contactGap                         : @rem-space-8;
 @mobileContactIconMarginRight       : @space-3;
 @mobileContactIconFontSize          : @font-size-4;
-@computerContactIconFontSize        : @font-size-5;
+@computerContactIconFontSize        : @font-size-9;
 @computerSubcontactIconFontSize     : @font-size-1;
 @computerSubcontactIconMarginRight  : @rem-space-4;
 @computerSubcontactIconFontWeight   : @font-weight-4;
@@ -58,16 +58,15 @@
 @mobileSocialJustifyContent         : space-around;
 @tabletSocialJustifyContent         : center;
 @tabletSocialGap                    : @space-3;
-@mobileSocialIconSize               : @font-size-5;
-@tabletSocialIconSize               : @font-size-6;
+@mobileSocialIconSize               : @font-size-9;
+@tabletSocialIconSize               : @font-size-9;
 
 /* Footer Menu */
 
 @menuLinkColor                      : @white;
-@menuFontWeight                     : @font-weight-3;
+@menuFontWeight                     : @font-weight-4;
 @mobileMenuFontSize                 : @font-size-0;
-@mobileMenuMargin                   : @rem-space-4 0;
-@mobileMenuBorder                   : 1px solid rgba(249, 249, 249, 0.25);
-@mobileMenuLeft                     : -20px;
-@mobileMenuFontWeight               : 400;
+@mobileMenuCopyrightFontSize        : @font-size-00;
+@mobileMenuCopyrightFontWeight      : @font-weight-3;
+@mobileMenuFontWeight               : @font-weight-4;
 @computerMenuFontSize               : @font-size-1;
