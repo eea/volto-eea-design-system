@@ -4,10 +4,23 @@ import { Header, Container } from 'semantic-ui-react';
 export default {
   title: 'Components/Heading',
   component: Header,
+  argTypes: {
+    variation: {
+      name: 'Heading variation',
+      defaultValue: 'tertiary',
+      options: ['primary', 'secondary', 'tertiary', 'black'],
+      control: { type: 'select' },
+      description: 'Text color variation',
+      table: {
+        defaultValue: { summary: 'tertiary' },
+        type: { summary: 'string' },
+      },
+    },
+  },
 };
 
 const Template = (args) => (
-  <Container>
+  <Container className={'color-fg-' + args.variation}>
     <h1>Heading 1</h1>
     <h1>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis arcu

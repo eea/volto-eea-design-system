@@ -123,34 +123,10 @@ footer .footer-wrapper .menu {
     display: flex;
     flex-direction: column;
   }
-  .copyright {
-    display: none !important;
-  }
 
-  .subfooter {
-    order: 1
-  }
-
-  .menu {
-    order: 2;
-    position: relative;
-    margin: @mobileMenuMargin;
-  }
-  .menu::after {
-    position: absolute;
-    bottom: 0;
-    border: @mobileMenuBorder;
-    content: " ";
-    display: block;
-    width: 100vw;
-    left: @mobileMenuLeft;
-  }
-  footer .footer-wrapper .menu a {
-    font-weight: @mobileMenuFontWeight;
-  }
-
-  .theme-sites {
-    order: 3;
+ footer .footer-wrapper .menu .copyright a {
+    font-size: @mobileMenuCopyrightFontSize;
+    font-weight: @mobileMenuCopyrightFontWeight;
   }
 }
 

@@ -349,7 +349,7 @@
 
 
 /*---  Colors  ---*/
-@orange           : #EBA33D;
+@orange           : #FF9933;
 @yellow           : #F2EB49;
 @olive            : #78AB66;
 @green            : @pineGreen;
@@ -496,32 +496,34 @@
 --------------------*/
 
 /* Positive */
-@positiveColor           : @pineGreen;
-@positiveBackgroundColor : #EDF9F0;
-@positiveBorderColor     : #EDF9F0;
-@positiveHeaderColor     : @pineGreen;
-@positiveTextColor       : @pineGreen;
+@positiveColor           : @green-6;
+@positiveBackgroundColor : #FCFFF5;
+@positiveBorderColor     : @green-4;
+@positiveHeaderColor     : @green-6;
+@positiveTextColor       : @green-6;
 
 /* Negative */
-@negativeColor           : @red;
+@negativeColor           : @red-5;
 @negativeBackgroundColor : @white;
-@negativeBorderColor     : @red; //#FEEFEF;
-@negativeHeaderColor     : @red;
-@negativeTextColor       : @red;
+@negativeBorderColor     : @red-4;
+@negativeHeaderColor     : @red-5;
+@negativeTextColor       : @red-5;
 
 /* Info */
-@infoColor              : @mediumPersianBlue;
-@infoBackgroundColor    : #EEF2FA;
-@infoBorderColor        : #EEF2FA;
-@infoHeaderColor        : @mediumPersianBlue;
-@infoTextColor          : @mediumPersianBlue;
+@infoColor              : @blue-6;
+@infoBackgroundColor    : #F8FFFF;
+@infoBorderColor        : @blue-4;
+@infoHeaderColor        : @blue-6;
+@infoTextColor          : @blue-6;
+
 
 /* Warning */
-@warningColor           : #EBA33D;
-@warningBorderColor     : #FFF4EC;
-@warningBackgroundColor : #FFF4EC;
-@warningHeaderColor     : #EBA33D;
-@warningTextColor       : #EBA33D;
+@warningColor           : @brown-6;
+@warningBackgroundColor : #FFFAF3;
+@warningBorderColor     : @brown-4;
+@warningHeaderColor     : @brown-6;
+@warningTextColor       : @brown-6;
+
 
 /*-------------------
         Paths
