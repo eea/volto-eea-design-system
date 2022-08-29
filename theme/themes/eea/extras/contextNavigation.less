@@ -7,7 +7,6 @@
   max-width      : @widescreenSidenavMaxWidth;
   background     : @sidenavBackground;
   margin-right   : @sidenavMarginRight;
-  border-left    : @sidenavBorderLeft;
   padding-left   : @sidenavPaddingLeft;
   overflow       : @sidenavOverflow;
 }
@@ -50,6 +49,15 @@
   padding    : @sidenavFolderItemPadding;
 }
 
+.context-navigation .ui.list > .item > .content {
+  border-bottom: @sidenavContentBorderBottom;
+}
+
+// Hide last border
+.context-navigation .ui.list > .item:last-child > .content {
+  border-bottom: none; 
+}
+
 // Nav custom list
 .context-navigation .ui.list {
   margin: 0;
@@ -61,12 +69,7 @@
 }
 
 .context-navigation .level-1 .item:last-child a {
-  margin-bottom: .5rem;
-}
-
-// Hide last divider
-.context-navigation .item.level-1:last-child .ui.divider {
-  display: none; 
+  margin-bottom: @sidenavLastItemMarginBottom;
 }
 
 .context-navigation .item.level-1 .ui.divider {
