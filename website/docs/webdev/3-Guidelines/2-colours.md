@@ -365,8 +365,11 @@ These colors highlight or complement the primary colors. These are to be used sp
                 <td style={{backgroundColor:'#004B7F',width:200+'px',height:150+'px',textAlign:'center'}}>
                 <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#004B7F <br/>Hover color</div>
             </td>
+            <td style={{backgroundColor:'#0083E0',width:200+'px',height:150+'px',textAlign:'center'}}>
+                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0083E0<br/>Visited color</div>
+            </td>
             <td style={{backgroundColor:'#003052',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#003052<br/>Visited color</div>
+                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#003052<br/>Active color</div>
             </td>
         </tr>
     </tbody>
@@ -399,7 +402,7 @@ For example, Green has a positive connotation. We use Green to convey success, c
 
 ## EEA complete color palette
 
-Not all colors have to be used - sometimes a simple color scheme works best
+Not all colors have to be used - sometimes a simple color scheme works best. Accessible text and background color combinations are included and marked with their accesibility level.
 
 
 <div style={{width:'120%',float:'left'}}>   
@@ -760,8 +763,8 @@ Not all colors have to be used - sometimes a simple color scheme works best
     <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#0A99FF',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0A99FF <br/> blue-2 <br/>AA L</div>
+            <td style={{backgroundColor:'#0D98FB',width:120+'px',height:80+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0D98FB <br/> blue-2 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody>
