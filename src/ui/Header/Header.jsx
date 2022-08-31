@@ -41,10 +41,12 @@ const TopDropdownMenu = ({
   className,
   icon,
   id,
+  tabletText,
   mobileText,
   text,
   viewportWidth,
 }) => {
+  const isTablet = viewportWidth < 991;
   const isMobile = viewportWidth < 767;
 
   const Component = ({ mobileText }) => (
@@ -61,7 +63,15 @@ const TopDropdownMenu = ({
     </Dropdown>
   );
   return (
-    <>{isMobile ? <Component mobileText={mobileText} /> : <Component />}</>
+    <>
+      {isMobile ? (
+        <Component mobileText={mobileText} />
+      ) : isTablet ? (
+        <Component mobileText={tabletText} />
+      ) : (
+        <Component />
+      )}
+    </>
   );
 };
 

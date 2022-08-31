@@ -57,9 +57,11 @@ const logoProps = {
 };
 
 const links = [
+  { title: 'EEA Main Portal', href: '/#' },
   { title: 'Biodiversity Information System for Europe', href: '/#' },
   { title: 'Climate Adaptation Platform', href: '/#' },
   { title: 'Copernicus in situ component', href: '/#' },
+  { title: 'Copernicus land monitoring', href: '/#' },
   { title: 'European Industrial Emissions Portal', href: '/#' },
   { title: 'Forest Information System for Europe', href: '/#' },
   { title: 'Information Platform for Chemical Monitoring', href: '/#' },
@@ -1204,7 +1206,14 @@ const Template = (args) => {
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
-  const { languages, links, linksMenuTitle, menuItems } = args;
+  const {
+    languages,
+    links,
+    linksMenuTitle,
+    tabletLinksMenuTitle,
+    mobileLinksMenuTitle,
+    menuItems,
+  } = args;
 
   const [language, setLanguage] = React.useState('en');
   const [pathname, setPathname] = React.useState('/');
@@ -1217,6 +1226,7 @@ const Template = (args) => {
             <Image src={eeaFlag} alt="eea flag"></Image>
             <Header.TopDropdownMenu
               text="An official website of the European Union | How do you Know?"
+              tabletText="An official website of the European Union"
               mobileText=" "
               icon="chevron down"
               aria-label="dropdown"
@@ -1245,6 +1255,8 @@ const Template = (args) => {
             <Header.TopDropdownMenu
               id="theme-sites"
               text={linksMenuTitle}
+              tabletText={tabletLinksMenuTitle}
+              mobileText={mobileLinksMenuTitle}
               viewportWidth={viewportWidth}
             >
               <div className="wrapper">
@@ -1493,7 +1505,9 @@ const Template = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  linksMenuTitle: 'EEA information systems',
+  linksMenuTitle: 'Environmental information systems',
+  tabletLinksMenuTitle: 'EEA information systems',
+  mobileLinksMenuTitle: 'EEA information systems',
   links,
   languages,
   menuItems,

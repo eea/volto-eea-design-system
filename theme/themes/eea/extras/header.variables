@@ -3,9 +3,9 @@
 --------------------*/
 
 /* Heights */
-@mobileTopSectionHeight      : 22px;
-@tabletTopSectionHeight      : 30px;
-@computerTopSectionHeight    : 33px;
+@mobileTopSectionHeight      : 42px; //delete
+@tabletTopSectionHeight      : 42px;
+@computerTopSectionHeight    : 34px;
 
 @mobileMainSectionHeight     : 56px;
 @tabletMainSectionHeight     : 117px;
@@ -34,18 +34,20 @@
 @mobileTopSectionItemFontSize         : @font-size-00;
 @tabletTopSectionItemFontSize         : @font-size-00;
 @topSectionZindex                     : @z-index-1;
-@topSectionIconMarginLeft             : 1px;
-@topSectionIconFontSize               : 0.8rem;
-
-/* Dropdown */
-@mobileDropdownMenuMarginTop          : 0;
-@tabletDropdownMenuMarginTop          : 0.4rem;
-@computerDropdownMenuMarginTop        : 0.438rem;
+@topSectionIconMarginLeft             : @rem-space-1;
+@topSectionIconMarginRight            : @rem-space-1;
+@topSectionIconFontSize               : @font-size-0;
+@mobileTopSectionIconTop              : 10px;
+@computerTopSectionIconTop            : 6px;
 @dropdownColor                        : @blue-grey-6;
-@dropdownFontSize                     : @font-size-00;
+@mobileDropdownFontSize               : @font-size-00;
+@tabletDropdownFontSize               : @font-size-00;
 @dropdownFontWeight                   : @bold;
 
 /* Dropdown Menu */
+@mobileDropdownPadding                : @rem-space-3 @rem-space-6 @rem-space-3 @rem-space-2;
+@computerDropdownPadding              : @rem-space-2 @rem-space-6 @rem-space-2 @rem-space-2;
+@dropdownMaxWidth                     : 410px;
 @dropdownMenuLeft                     : auto;
 @dropdownMenuRight                    : 0;
 @dropdownMenuWrapperGap               : @rem-space-1;
@@ -57,31 +59,36 @@
 @dropdownMenuItemColorHover           : @white;
 @dropdownMenuItemBackgroundColorHover : @blue-grey-6;
 @dropdownMenuItemPadding              : @rem-space-050 @rem-space-5;
-@mobileDropdownMenuFontSize           : @font-size-00;
-@tabletDropdownMenuFontSize           : @font-size-0;
+@dropdownMenuFontSize                 : @font-size-00;
 
 // Official Union
 @mobileOfficialUnionGap               : 0;
-@tabletOfficialUnionGap               : @rem-space-2;
+@tabletOfficialUnionGap               : 0;
 @officialUnionLinkFontWeight          : @bold;
 @officialUnionLinkColor               : @blue-grey-6;
 @officialUnionPadding                 : @rem-space-3;
 @mobileOfficialUnionMaxWidth          : 108px;
-@tabletOfficialUnionMaxWidth          : 388px;
-@mobileOfficialUnionImageWidth        : 17px;
-@tabletOfficialUnionImageWidth        : 36px;
-@mobileOfficialUnionMenuLeft          : -30px;
-@tabletOfficialUnionMenuLeft          : -54px;
+@tabletOfficialUnionMaxWidth          : 272px;
+@computerOfficialUnionMaxWidth        : 380px;
+@mobileOfficialUnionImageWidth        : 25px;
+@tabletOfficialUnionImageWidth        : 44px;
+@mobileOfficialUnionMenuLeft          : 0;
+@tabletOfficialUnionMenuLeft          : 0;
+@mobileOfficialUnionPadding           : @rem-space-3 @rem-space-6;
+@tabletOfficialUnionPadding           : @rem-space-3 @rem-space-6 @rem-space-3 @rem-space-12;
+@computerOfficialUnionPadding         : @rem-space-2 @rem-space-6 @rem-space-2 @rem-space-12;
 
 // Theme Sites
-@mobileThemeSitesMenuWidth            : 200px;
+@mobileThemeSitesMenuWidth            : 168px;
+@tabletThemeSitesMenuWidth            : 168px;
+@computerThemeSitesMenuWidth          : 225px;
 @themeSitesMenuSiteLinkColor          : @blue-grey-6;
 @themeSitesMenuSiteLinkFontWeight     : @normal;
 @mobileThemeSitesMenuLeft             : 0px;
 
 // Language
-@tabletLanguageMenuTop                : 18px;
-@languageMenuPadding                  : @rem-space-050 @rem-space-5;
+@mobileLanguageMenuPadding            : @rem-space-3 @rem-space-2;
+@computerLanguageMenuPadding          : @rem-space-2;
 @languageMenuItemFontWeight           : @normal;
 @mobileLanguageCountryCodeMarginLeft  : 3px;
 @mobileLanguageCountryCodeFontWeight  : @bold;
