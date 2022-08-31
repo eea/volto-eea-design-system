@@ -8,6 +8,57 @@
 /* You can override the default Infima variables here. */
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i');
+/* Remix icons */
+@import 'https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css';
+.icon-list .icon-type-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  border-bottom: 1px solid #d6e0ea;
+  margin-bottom: 32px;
+}
+.icon-list .icon-type-item .icon-items {
+  width: 100%;
+  padding-bottom: 24px;
+}
+.icon-list .icon-type-item .icon-items .icon-item-group {
+  position: relative;
+  display: inline-block;
+  width: 10%;
+}
+.icon-list .icon-type-item .icon-items .icon-item {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 2px;
+  transition: all .2s cubic-bezier(.4,.6,.5,1.32);
+  vertical-align: middle;
+  border: 1px solid transparent;
+}
+.icon-list .icon-type-item .icon-items .icon-item .icon-info i {
+  display: block;
+  margin-top: 20px;
+  font-size: 24px;
+  color: #3D5265;
+}
+.icon-list .icon-type-item .icon-items .icon-item .icon-info p {
+  font-size: 14px;
+  color: #4C677F;
+  line-height: .95;
+}
+.icon-list .icon-type-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+@media only screen and (max-width: 768px){
+  .icon-list .icon-type-item .icon-items .icon-item-group {
+    width: 20%;
+  }
+}
+
 
 :root {
   --eea-color-tertiary: #3d5265;
