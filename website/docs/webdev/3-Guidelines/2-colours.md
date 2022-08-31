@@ -343,10 +343,7 @@ These colors highlight or complement the primary colors. These are to be used sp
             </td>   
                 <td style={{backgroundColor:'#FFFFFF',width:200+'px',height:150+'px',textAlign:'center'}}>
                 <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FFFFFF <br/>Background color</div>
-            </td>
-            <td style={{backgroundColor:'#323232',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#323232<br/> Discreet elements <br/> color </div>
-            </td>     
+            </td>    
             <td style={{backgroundColor:'#007B6C',width:200+'px',height:150+'px',textAlign:'center'}}>
                 <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#007B6C<br/> Highlight <br/> (EEA Green) </div>
             </td>     
@@ -354,27 +351,41 @@ These colors highlight or complement the primary colors. These are to be used sp
     </tbody>
 </table> 
 
-### Link
+### Link colors
 
 <table style={{ width:"100%", float:'left', marginBottom: '40px'}} >
     <tbody>
         <tr>
             <td style={{backgroundColor:'#006BB8',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#006BB8 <br/>Default color</div>
+                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#006BB8 <br/>Default</div>
             </td>   
                 <td style={{backgroundColor:'#004B7F',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#004B7F <br/>Hover color</div>
+                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#004B7F <br/>Hover</div>
             </td>
             <td style={{backgroundColor:'#0083E0',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0083E0<br/>Visited color</div>
+                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0083E0<br/>Visited</div>
             </td>
             <td style={{backgroundColor:'#003052',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#003052<br/>Active color</div>
+                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#003052<br/>Active</div>
             </td>
         </tr>
     </tbody>
 </table> 
 
+### Discrete colors
+
+<table style={{ width:"100%", float:'left', marginBottom: '20px'}} >
+    <tbody>
+        <tr>
+            <td style={{backgroundColor:'#3D5265',width:200+'px',height:150+'px',textAlign:'center'}}>
+                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#3D5265 <br/>Usually used with a small text style</div>
+            </td>   
+            <td style={{backgroundColor:'#323232',width:200+'px',height:150+'px',textAlign:'center'}}>
+                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#323232<br/> Used with a background </div>
+            </td>     
+        </tr>
+    </tbody>
+</table> 
 
 ## State colors
 
