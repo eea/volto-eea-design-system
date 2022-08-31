@@ -34,15 +34,18 @@
 @mobileTopSectionItemFontSize         : @font-size-00;
 @tabletTopSectionItemFontSize         : @font-size-00;
 @topSectionZindex                     : @z-index-1;
-@topSectionIconMarginLeft             : @rem-space-1;
-@topSectionIconMarginRight            : @rem-space-1;
-@topSectionIconFontSize               : @font-size-0;
-@mobileTopSectionIconTop              : 10px;
-@computerTopSectionIconTop            : 6px;
 @dropdownColor                        : @blue-grey-6;
 @mobileDropdownFontSize               : @font-size-00;
 @tabletDropdownFontSize               : @font-size-00;
 @dropdownFontWeight                   : @bold;
+
+/* Icon */
+@topSectionIconMarginLeft             : @rem-space-1;
+@topSectionIconMarginRight            : @rem-space-1;
+@topSectionIconFontSize               : @font-size-0;
+@topSectionIconLineHeight             : @font-lineheight-00;
+@mobileTopSectionIconTop              : 14px;
+@computerTopSectionIconTop            : 10px;
 
 /* Dropdown Menu */
 @mobileDropdownPadding                : @rem-space-3 @rem-space-6 @rem-space-3 @rem-space-2;
@@ -65,7 +68,6 @@
 @mobileOfficialUnionGap               : 0;
 @tabletOfficialUnionGap               : 0;
 @officialUnionLinkFontWeight          : @bold;
-@officialUnionLinkColor               : @blue-grey-6;
 @officialUnionPadding                 : @rem-space-3;
 @mobileOfficialUnionMaxWidth          : 108px;
 @tabletOfficialUnionMaxWidth          : 272px;
@@ -92,6 +94,8 @@
 @languageMenuItemFontWeight           : @normal;
 @mobileLanguageCountryCodeMarginLeft  : 3px;
 @mobileLanguageCountryCodeFontWeight  : @bold;
+@mobileLanguageFontSize               : @font-size-0;
+@computerLanguageFontSize             : @font-size-1;
 
 /*-----------------------
    HEADER MAIN SECTION

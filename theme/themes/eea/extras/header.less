@@ -58,6 +58,10 @@
 .top.bar .ui.active.visible.dropdown {
   background: @grey-0;
   box-shadow: @shadow-topbar-dropdown;
+
+  i.icon {
+    transform: rotate(180deg);
+  }
 }
 
 .top.bar .divider.text {
@@ -106,6 +110,8 @@
   font-size: @topSectionIconFontSize;
   margin-left: @topSectionIconMarginLeft;
   top: @mobileTopSectionIconTop;
+  line-height: @topSectionIconLineHeight;
+  transition: .2s;
 }
 
 /* Official union dropdown */
@@ -136,7 +142,6 @@
         a {
           font-weight: @officialUnionLinkFontWeight;
           white-space: @dropdownMenuContentWhiteSpace;
-          color: @officialUnionLinkColor;
         }
       }
     }
@@ -178,6 +183,10 @@
       .item {
         justify-content: flex-end;
         font-weight: @languageMenuItemFontWeight;
+
+        span {
+          font-size: @mobileLanguageFontSize;
+        }
 
         span.country-code {
           margin-left: @mobileLanguageCountryCodeMarginLeft;
@@ -437,7 +446,7 @@
       font-size: @font-size-1;
       line-height: @font-lineheight-00;
     }
-    
+
     img {
       width: 18px;
     }
@@ -515,6 +524,10 @@
 
   #language-switcher {
     padding: @computerLanguageMenuPadding;
+
+    .menu .wrapper .item span {
+      font-size: @computerLanguageFontSize;
+    }
   }
 
   /*----------------------------------------------------------------------------
