@@ -7,7 +7,7 @@
 @tabletTopSectionHeight      : 42px;
 @computerTopSectionHeight    : 34px;
 
-@mobileMainSectionHeight     : 56px;
+@mobileMainSectionHeight     : 69px;
 @tabletMainSectionHeight     : 117px;
 @computerMainSectionHeight   : 160px;
 
@@ -107,7 +107,7 @@
 
 /* Logo */
 @logoWidth                            : 100%;
-@mobileLogoMaxWidth                   : 122px;
+@mobileLogoMaxWidth                   : 142px;
 @tabletLogoMaxWidth                   : 252px;
 @computerLogoMaxWidth                 : 347px; //348 rendered fuzzy :(
 @mobileLogoMarginTop                  : @rem-space-2;
@@ -131,7 +131,7 @@
 ------------------*/
 
 /* Actions (Mega menu & Search) */
-@mobileActionsBoxWidth: 30px;
+@mobileActionsBoxWidth: 44px;
 @tabletActionsBoxWidth: 66px;
 @computerActionsBoxWidth: 72px;
 @burgerActionBackgroundColor: @darkMidnightBlue;
@@ -192,3 +192,13 @@
 /* Search box */
 @searchBoxBackgroundGradient : linear-gradient(340.97deg, @darkCerulean 9.19%, #009591 77.47%);
 @searchBoxWrapperGap : 75px;
+
+/* Custom shadows for dropdowns */
+@shadow-topbar-dropdown: 2px 0 2px -5px hsla(@shadow-color, calc(@shadow-strength + 6%));
+@shadow-4-no-top: 
+  0 0 0 0 hsla(@shadow-color, calc(@shadow-strength + 2%)),
+  0 1px 1px -2px hsla(@shadow-color, calc(@shadow-strength + 3%)),
+  0 2px 2px -2px hsla(@shadow-color, calc(@shadow-strength + 3%)),
+  0 5px 5px -2px hsla(@shadow-color, calc(@shadow-strength + 4%)),
+  0 9px 9px -2px hsla(@shadow-color, calc(@shadow-strength + 5%)),
+  0 16px 16px -2px hsla(@shadow-color, calc(@shadow-strength + 6%));
