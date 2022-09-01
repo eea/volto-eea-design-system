@@ -32,11 +32,22 @@ RelatedContent.Grid = ({ children, ...rest }) => {
               mobile={12}
             >
               {row.map((item, index) => (
-                <Card className="publication" key={index}>
-                  <Image src={item.image} wrapped ui={false} alt="card image" />
+                <Card className="publication tertiary" key={index}>
+                  <Image
+                    as="a"
+                    href={item.href}
+                    src={item.image}
+                    wrapped
+                    ui={false}
+                    alt="card image"
+                  />
                   <Card.Content>
-                    <Card.Meta>{item.tag}</Card.Meta>
-                    <Card.Description>{item.description}</Card.Description>
+                    <Card.Meta>
+                      <a href={item.href}>{item.tag}</a>
+                    </Card.Meta>
+                    <Card.Description>
+                      <a href={item.href}>{item.description}</a>
+                    </Card.Description>
                   </Card.Content>
                 </Card>
               ))}
@@ -50,11 +61,22 @@ RelatedContent.Grid = ({ children, ...rest }) => {
               tablet={12}
               mobile={12}
             >
-              <Card className="publication">
-                <Image src={item.image} wrapped ui={false} alt="card image" />
+              <Card className="publication tertiary">
+                <Image
+                  as="a"
+                  href={item.href}
+                  src={item.image}
+                  wrapped
+                  ui={false}
+                  alt="card image"
+                />
                 <Card.Content>
-                  <Card.Meta>{item.tag}</Card.Meta>
-                  <Card.Description>{item.description}</Card.Description>
+                  <Card.Meta>
+                    <a href={item.href}>{item.tag}</a>
+                  </Card.Meta>
+                  <Card.Description>
+                    <a href={item.href}>{item.description}</a>
+                  </Card.Description>
                 </Card.Content>
               </Card>
             </Grid.Column>

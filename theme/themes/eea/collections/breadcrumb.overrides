@@ -25,6 +25,10 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 
+    &.active {
+      color: @activeColor;
+    }
+
     img {
       width: @breadcrumbImgWidth;
     }

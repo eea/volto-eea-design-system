@@ -130,7 +130,6 @@ function Template({ ...args }) {
                           </div>
                         );
                       })}
-                    <div class="ui fitted divider tertiary"></div>
                   </div>
                 </div>
               );

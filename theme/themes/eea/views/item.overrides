@@ -97,12 +97,26 @@
   margin-bottom: 0;
 }
 
+// Stackable items that have image above content
+.ui.items.row .item.stackable {
+  display: grid;
+
+  .image {
+    margin: auto;
+  }
+
+  .content {
+    padding-left: @stackableContentPaddingLeft;
+    padding-top: @stackableContentPaddingTop;
+  }
+}
+
 @media only screen and (max-width: @largestMobileScreen) {
   .ui.items.row > .item {
     flex-direction: row;
   }
 
-  .ui.items.row > .item > .image + .content {
+  .ui.items.row > .item:not(.stackable) > .image + .content {
     padding: 0em 0em 0em @mobileContentImageDistance;
   }
 }

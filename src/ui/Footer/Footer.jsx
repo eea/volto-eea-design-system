@@ -24,7 +24,7 @@ const Footer = (props) => {
   const { children } = props;
   return (
     <footer>
-      <div className="wrapper">
+      <div className="footer-wrapper">
         <Container>{children}</Container>
       </div>
     </footer>

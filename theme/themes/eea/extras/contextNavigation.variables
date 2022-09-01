@@ -6,7 +6,6 @@
 @widescreenSidenavMaxWidth: 300px;
 @sidenavBackground: @grey-0;
 @sidenavMarginRight: @rem-space-4;
-@sidenavBorderLeft: 2px solid @secondaryColor;
 @sidenavPaddingLeft: @rem-space-4;
 @sidenavOverflow: hidden;
 @sidenavMargin: @rem-space-8 auto;
@@ -19,6 +18,9 @@
 @sidenavHeaderBorderBottom: @2px solid @blue-grey-5;
 @sidenavHeaderIconMarginRight: @rem-space-4;
 
+/* Content */
+@sidenavContentBorderBottom: 1px solid @tertiaryColor;
+
 /* Nav item */
 @sidenavItemPadding: @rem-space-2 0 @rem-space-2 @rem-space-8;
 @sidenavItemFontSize: @font-size-1;
@@ -26,6 +28,7 @@
 @sidenavItemColor: @blue-grey-5;
 @sidenavItemHoverBackground: @blue-grey-5;
 @sidenavItemHoverColor: @grey-0;
+@sidenavLastItemMarginBottom: @rem-space-2;
 
 /* Item active */
 @sidenavItemActiveColor: @secondaryColor;

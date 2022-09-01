@@ -9,6 +9,8 @@ import {
   Accordion,
 } from 'semantic-ui-react';
 
+import { cloneDeep } from 'lodash';
+
 import { Link } from 'react-router-dom';
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
@@ -39,6 +41,7 @@ const createColumns = (item, length, renderMenuItem) => {
 
   return column;
 };
+
 const ItemGrid = ({ item, columns, length, renderMenuItem }) => (
   <>
     {renderMenuItem(item, { className: 'sub-title' })}
@@ -73,13 +76,7 @@ const Topics = ({ menuItem, renderMenuItem }) => (
       <React.Fragment key={index}>
         {section.title === 'At a glance' ? (
           <Grid.Column width={3} id="at-a-glance">
-            <Item
-              item={section}
-              icon={true}
-              iconName="ri-leaf-line"
-              key={index}
-              renderMenuItem={renderMenuItem}
-            />
+            <Item item={section} key={index} renderMenuItem={renderMenuItem} />
           </Grid.Column>
         ) : (
           <Grid.Column width={9} key={index}>
@@ -148,45 +145,62 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
   const topics = element.title === 'Topics' ? true : false;
   let defaultIndex = -1;
 
-  const firstLevelPanels = [];
-  let content;
-  if (!topics) {
-    element.items.forEach((item, index) => {
-      let x = {};
-      x.key = item['@id'] || item['url'];
-      if (pathName.indexOf(item.url) !== -1) {
-        defaultIndex = index;
-      }
-      x.title = (
-        <Accordion.Title key={`title=${index}`} index={index}>
-          {item.title}
-          <Icon className="ri-arrow-down-s-line" size="small" />
-        </Accordion.Title>
-      );
-      x.content = (
-        <Accordion.Content key={index}>
-          {renderMenuItem(item, { className: 'item title-item' })}
-          <SecondLevelContent element={item} renderMenuItem={renderMenuItem} />
-        </Accordion.Content>
-      );
-      firstLevelPanels.push(x);
-    });
-    content = (
-      <Accordion.Accordion
-        defaultActiveIndex={defaultIndex}
-        panels={firstLevelPanels}
-      />
-    );
-  } else {
-    content = (
-      <SecondLevelContent
-        element={element}
-        topics={true}
-        renderMenuItem={renderMenuItem}
-      />
-    );
-  }
-  return <>{content}</>;
+  return (
+    <>
+      {!topics ? (
+        <React.Fragment>
+          {element.items.map((item, index) => {
+            let firstLevelPanels = [];
+            if (!item.items.length) {
+              return (
+                <React.Fragment key={index}>
+                  {renderMenuItem(item, { className: 'item' })}
+                </React.Fragment>
+              );
+            }
+            let x = {};
+            x.key = item['@id'] || item['url'];
+            if (pathName.indexOf(item.url) !== -1) {
+              defaultIndex = index;
+            }
+            x.title = (
+              <Accordion.Title key={`title=${index}`}>
+                {item.title}
+                <Icon className="ri-arrow-down-s-line" size="small" />
+              </Accordion.Title>
+            );
+            let overflow_item = cloneDeep(item);
+            overflow_item.title = 'See all';
+            x.content = (
+              <Accordion.Content>
+                {renderMenuItem(overflow_item, {
+                  className: 'item title-item',
+                })}
+                <SecondLevelContent
+                  element={item}
+                  renderMenuItem={renderMenuItem}
+                />
+              </Accordion.Content>
+            );
+            firstLevelPanels.push(x);
+            return (
+              <Accordion.Accordion
+                panels={firstLevelPanels}
+                key={index}
+                defaultActiveIndex={defaultIndex === index ? 0 : -1}
+              />
+            );
+          })}
+        </React.Fragment>
+      ) : (
+        <SecondLevelContent
+          element={element}
+          topics={true}
+          renderMenuItem={renderMenuItem}
+        />
+      )}
+    </>
+  );
 };
 
 const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
@@ -252,9 +266,11 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
         <Icon className="ri-arrow-down-s-line" size="small" />
       </Accordion.Title>
     );
+    let overview = cloneDeep(element);
+    overview.title = 'See all';
     x.content = (
       <Accordion.Content key={index}>
-        {renderMenuItem(element, { className: 'item' })}
+        {renderMenuItem(overview, { className: 'item' })}
         <FirstLevelContent
           element={element}
           renderMenuItem={renderMenuItem}

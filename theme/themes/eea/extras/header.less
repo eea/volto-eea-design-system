@@ -565,7 +565,11 @@
     }
   }
 }
-#mega-menu .ui.list .item {
+
+#mega-menu .ui.list {
+  margin: 0;
+}
+#mega-menu .item {
   display: flex;
   font-size: @megaMenuListItemFontSize;
   font-weight: @megaMenuListItemFontWeight;
@@ -574,6 +578,10 @@
 
 #mega-menu  a.item {
   color: @megaMenuTextColor;
+  display: @megaMenuTextDisplay;
+  &:hover {
+    text-decoration: @megaMenuTextHoverDecoration;
+  }
 
   i.icon {
     color: @megaMenuTextColor;
@@ -586,7 +594,7 @@
   // To override the grid column paddings
   padding: @megaMenuGlancePaddingLeft !important;
 
-  .ui.list .item {
+  .item {
     font-size: @megaMenuGlanceListItemFontSize;
     font-weight: @megaMenuGlanceListItemFontWeight;
     margin: @megaMenuGlanceListItemMargin;
@@ -607,8 +615,9 @@
   padding-top: @megaMenuContentPaddingTop;
 }
 
-#mega-menu .active > span {
-  border-bottom: 2px solid #FFF;
+#mega-menu .active:not(.title-link) > span {
+  border-left: @megaMenuListItemActiveBorder;
+  padding-left: @megaMenuListItemActivePadding;
 }
 
 /*Mega Menu Accordion - Tablet & Mobile */
