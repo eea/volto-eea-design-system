@@ -43,7 +43,7 @@ This color should be eye-catching but not harsh. It can be liberally applied to 
     </table>
 
 </div>
-<div style={{width:'120%',float:'left'}}>
+<div style={{width:'100%',float:'left'}}>
     <h3>Shades</h3>    
     <table style={{width:'%',float:'left'}} >
         <tbody>
@@ -142,7 +142,7 @@ These colors highlight or complement the primary colors. These are to be used sp
     </div>
 </div>
 
-<div style={{width:'120%',float:'left'}}>
+<div style={{width:'100%',float:'left'}}>
     <h3>Shades</h3>    
     <table style={{width:'%',float:'left'}} >
         <tbody>
@@ -347,7 +347,7 @@ For example, Green has a positive connotation. We use Green to convey success, c
 Not all colors have to be used - sometimes a simple color scheme works best. Accessible text and background color combinations are included and marked with their accesibility level.
 
 
-<div style={{width:'120%',float:'left'}}>   
+<div style={{width:'100%',float:'left'}}>   
     <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
@@ -416,7 +416,7 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
 
 
 <br />
-<div style={{width:'120%',float:'left'}}>
+<div style={{width:'100%',float:'left'}}>
   <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
@@ -482,7 +482,7 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
 </div>
 
 
-<div style={{width:'120%',float:'left'}}>    
+<div style={{width:'100%',float:'left'}}>    
     <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
@@ -549,7 +549,7 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
 </div>
 
 <br />
-<div style={{width:'120%',float:'left'}}>
+<div style={{width:'100%',float:'left'}}>
   <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
@@ -615,7 +615,7 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
 </div>
 
 
-<div style={{width:'120%',float:'left'}}>   
+<div style={{width:'100%',float:'left'}}>   
     <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
@@ -683,7 +683,7 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
 
 
 <br />
-<div style={{width:'120%',float:'left'}}>
+<div style={{width:'100%',float:'left'}}>
   <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
@@ -749,7 +749,7 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
 </div>
 
 
-<div style={{width:'120%',float:'left'}}>    
+<div style={{width:'100%',float:'left'}}>    
     <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
@@ -816,7 +816,7 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
 </div>
 
 <br />
-<div style={ {width:'120%', float:'left', marginBottom: '40px'}}>
+<div style={ {width:'100%', float:'left', marginBottom: '40px'}}>
   <table style={{width:'%',float:'left'}} >
         <tbody>
             <tr>
