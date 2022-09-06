@@ -14,11 +14,19 @@
 }
 
 /* Custom statistic variations & text wrap */
-.ui.statistics:not(.inverted) .ui.statistic {
+.ui.statistics .ui.statistic {
+  max-width: min-content;
   .value,
   .label,
   .slate {
     max-width: fit-content;
+  }
+}
+
+.ui.statistics:not(.inverted) .ui.statistic {
+  .value,
+  .label,
+  .slate {
     &.primary { color: @primaryColor; }
     &.secondary { color: @secondaryColor; }
     &.tertiary { color: @tertiaryColor; }
