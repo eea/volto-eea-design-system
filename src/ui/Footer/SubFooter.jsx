@@ -11,51 +11,55 @@ const SubFooter = (props) => {
   return (
     <div className={'subfooter'}>
       <Grid>
-        <Grid.Column mobile={12} tablet={5} computer={6}>
-          <div className="item">
-            <p className="header text-center logo-header">
-              {props.logosHeader}
-            </p>
+        {props.managedBy &&
+          props.managedBy.map((manager, index) => (
+            <Grid.Column
+              mobile={manager.columnSize.mobile}
+              tablet={manager.columnSize.tablet}
+              computer={manager.columnSize.computer}
+              key={index}
+              className="mobile hidden"
+            >
+              <div className="item">
+                <div className={manager.className}>
+                  <a href={manager.link}>
+                    <Image src={manager.src} alt={manager.alt}></Image>
+                  </a>
+                </div>
+              </div>
+            </Grid.Column>
+          ))}
 
-            <Grid>
-              {props.managedBy &&
-                props.managedBy.map((manager, index) => (
-                  <Grid.Column
-                    mobile={manager.columnSize.mobile}
-                    tablet={manager.columnSize.tablet}
-                    computer={manager.columnSize.computer}
-                    key={index}
-                  >
-                    <div className={manager.className}>
-                      <a href={manager.link}>
-                        <Image src={manager.src} alt={manager.alt}></Image>
-                      </a>
-                    </div>
-                  </Grid.Column>
-                ))}
-            </Grid>
-          </div>
-        </Grid.Column>
-        <Grid.Column
-          mobile={6}
-          tablet={2}
-          computer={2}
-          className="mobile hidden"
-        ></Grid.Column>
-        <Grid.Column mobile={12} tablet={5} computer={4}>
+        <Grid.Column mobile={12} tablet={4} computer={4}>
           <div className="item">
-            <Footer.Contact
-              contacts={props.contacts}
-              header={props.contactHeader}
-              address={props.address}
-            />
-            <Footer.Social social={props.social} />
+            <Footer.Contact contacts={props.contacts} />
           </div>
         </Grid.Column>
       </Grid>
+
       <Grid.Row>
-        <Footer.Actions actions={props.actions} />
+        <Footer.Social social={props.social} />
       </Grid.Row>
+
+      <Grid className="mobile only">
+        {props.managedBy &&
+          props.managedBy.map((manager, index) => (
+            <Grid.Column
+              mobile={manager.columnSize.mobile}
+              tablet={manager.columnSize.tablet}
+              computer={manager.columnSize.computer}
+              key={index}
+            >
+              <div className="item">
+                <div className={manager.className}>
+                  <a href={manager.link}>
+                    <Image src={manager.src} alt={manager.alt}></Image>
+                  </a>
+                </div>
+              </div>
+            </Grid.Column>
+          ))}
+      </Grid>
     </div>
   );
 };
