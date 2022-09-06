@@ -89,6 +89,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           exclude: ['**/md_components/**'],
+          editUrl: 'https://github.com/eea/volto-eea-design-system/edit/contribute-documentation/website/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
