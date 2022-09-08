@@ -11,7 +11,19 @@ TEST: this is **some new text** for the training.
 
 > this is a quote
 
-:::info
+## Logos
+
+[BE Logo](./CA_LOGO_2023.eps).
+
+## Image example
+
+![This is an image](cards-image-with-text.png)
+
+## Charts
+
+here we add the charts design guide.
+
+:::note
 
 This section is **under development**.
 
