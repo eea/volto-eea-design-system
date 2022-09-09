@@ -128,8 +128,8 @@ This color should be eye-catching but not harsh. It can be liberally applied to 
     <table style={{width:'%',float:'left'}}>
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#0A99FF',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0A99FF</div>
+            <td style={{backgroundColor:'#0D98FB',width:100+'px',height:70+'px',textAlign:'center'}}>
+                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0D98FB</div>
                 </td>            
             </tr>
         </tbody>
