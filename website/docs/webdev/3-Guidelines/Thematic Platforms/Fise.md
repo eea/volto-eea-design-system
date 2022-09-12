@@ -26,8 +26,8 @@ This color should be eye-catching but not harsh. It can be liberally applied to 
     <table style={{float:'left'}} >
         <tbody>
             <tr>
-                <td style={{backgroundColor:'#007B6C',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#007B6C </div>
+                <td style={{backgroundColor:'#007B6C'}} className="large-color-box-td">
+                    <div style={{color:'white'}} className="large-color-box">#007B6C </div>
                 </td>            
             </tr>
         </tbody>
@@ -35,8 +35,8 @@ This color should be eye-catching but not harsh. It can be liberally applied to 
     <table style={{float:'left'}} >
         <tbody>
             <tr>
-                <td style={{backgroundColor:'#005248',width:200+'px',height:150+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#005248 </div>
+                <td style={{backgroundColor:'#005248'}} className="large-color-box-td">
+                    <div style={{color:'white'}} className="large-color-box">#005248 </div>
                 </td>            
             </tr>
         </tbody>
@@ -45,65 +45,65 @@ This color should be eye-catching but not harsh. It can be liberally applied to 
 </div>
 <div style={{width:'100%',float:'left'}}>
     <h3>Shades</h3>    
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#C8FFF8',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#C8FFF8</div>
+            <td style={{backgroundColor:'#C8FFF8'}} className="small-color-box-70">
+                    <div style={{color:'#3D5265'}} className="small-color-box-70">#C8FFF8</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#85FFF1',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#85FFF1</div>
+            <td style={{backgroundColor:'#85FFF1'}} className="small-color-box-70">
+                    <div style={{color:'#3D5265'}} className="small-color-box-70">#85FFF1</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#00F5D8',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#00F5D8</div>
+            <td style={{backgroundColor:'#00F5D8'}} className="small-color-box-70">
+                    <div style={{color:'#3D5265'}} className="small-color-box-70">#00F5D8</div>
                 </td>            
             </tr>
         </tbody>
     </table>  
-     <table style={{width:'%',float:'left'}} >
+     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#00CCB4',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#00CCB4</div>
+            <td style={{backgroundColor:'#00CCB4'}} className="small-color-box-70">
+                    <div style={{color:'#3D5265'}} className="small-color-box-70">#00CCB4</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#00A390',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#00A390</div>
+            <td style={{backgroundColor:'#00A390'}} className="small-color-box-70">
+                    <div style={{color:'#3D5265'}} className="small-color-box-70">#00A390</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-       <table style={{width:'%',float:'left'}} >
+       <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#007B6C',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#007B6C</div>
+            <td style={{backgroundColor:'#007B6C'}} className="small-color-box-70">
+                    <div style={{color:'white'}} className="small-color-box-70">#007B6C</div>
                 </td>            
             </tr>
         </tbody>
     </table>  
-     <table style={{width:'%',float:'left'}} >
+     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#005248',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#005248</div>
+            <td style={{backgroundColor:'#005248'}} className="small-color-box-70">
+                    <div style={{color:'white'}} className="small-color-box-70">#005248</div>
                 </td>            
             </tr>
         </tbody> </table>
@@ -122,11 +122,11 @@ These colors highlight or complement the primary colors. These are to be used sp
         <table style={{float:'left'}} >
             <tbody>
                 <tr>
-                    <td style={{backgroundColor:'#3D5265',width:200+'px',height:150+'px',textAlign:'center'}}>
-                        <div style={{color:'#F9F9F9',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#3D5265 <br/>AAA</div>
+                    <td style={{backgroundColor:'#3D5265'}} className="large-color-box-td">
+                        <div style={{color:'#F9F9F9'}} className="large-color-box">#3D5265 <br/>AAA</div>
                     </td>   
-                        <td style={{backgroundColor:'#F9F9F9',width:200+'px',height:150+'px',textAlign:'center'}}>
-                        <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#F9F9F9<br/> AAA </div>
+                        <td style={{backgroundColor:'#F9F9F9'}} className="large-color-box-td">
+                        <div style={{color:'#3D5265'}} className="large-color-box">#F9F9F9<br/> AAA </div>
                     </td>      
                 </tr>
             </tbody>
@@ -144,65 +144,65 @@ These colors highlight or complement the primary colors. These are to be used sp
 
 <div style={{width:'100%',float:'left'}}>
     <h3>Shades</h3>    
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#DAE8F4',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#DAE8F4</div>
+            <td style={{backgroundColor:'#DAE8F4'}} className="small-color-box-70">
+                    <div style={{color:'#3D5265'}} className="small-color-box-70">#DAE8F4</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#ACCAE5',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#ACCAE5</div>
+            <td style={{backgroundColor:'#ACCAE5'}} className="small-color-box-70">
+                    <div style={{color:'#3D5265'}} className="small-color-box-70">#ACCAE5</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#8EA6C2',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#8EA6C2</div>
+            <td style={{backgroundColor:'#8EA6C2'}} className="small-color-box-70">
+                    <div style={{color:'#3D5265'}} className="small-color-box-70">#8EA6C2</div>
                 </td>            
             </tr>
         </tbody>
     </table>  
-     <table style={{width:'%',float:'left'}} >
+     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#6989A5',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#6989A5</div>
+            <td style={{backgroundColor:'#6989A5'}} className="small-color-box-70">
+                    <div style={{color:'#3D5265'}} className="small-color-box-70">#6989A5</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#4C677F',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#4C677F</div>
+            <td style={{backgroundColor:'#4C677F'}} className="small-color-box-70">
+                    <div style={{color:'white'}} className="small-color-box-70">#4C677F</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-       <table style={{width:'%',float:'left'}} >
+       <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#3D5265',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#3D5265</div>
+            <td style={{backgroundColor:'#3D5265'}} className="small-color-box-70">
+                    <div style={{color:'white'}} className="small-color-box-70">#3D5265</div>
                 </td>            
             </tr>
         </tbody>
     </table>  
-     <table style={{width:'%',float:'left'}} >
+     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#3D5265',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#3D5265</div>
+            <td style={{backgroundColor:'#3D5265'}} className="small-color-box-70">
+                    <div style={{color:'white'}} className="small-color-box-70">#3D5265</div>
                 </td>            
             </tr>
         </tbody> </table>
@@ -211,64 +211,64 @@ These colors highlight or complement the primary colors. These are to be used sp
 
 <br />
 <div style={ {width:'100%', float:'left', marginBottom: '40px'}}>
-  <table style={{width:'%',float:'left'}} >
+  <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#FFFFFF',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FFFFFF</div>
+            <td style={{backgroundColor:'#FFFFFF'}} className="small-color-box-70">
+                    <div style={{color:'#3D5265'}} className="small-color-box-70">#FFFFFF</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#F9F9F9',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#F9F9F9</div>
+            <td style={{backgroundColor:'#F9F9F9'}} className="small-color-box-70">
+                    <div style={{color:'#3D5265'}} className="small-color-box-70">#F9F9F9</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#E6E7E8',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#E6E7E8</div>
+            <td style={{backgroundColor:'#E6E7E8'}} className="small-color-box-70">
+                    <div style={{color:'#3D5265'}} className="small-color-box-70">#E6E7E8</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#BCBEC0',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#BCBEC0</div>
+            <td style={{backgroundColor:'#BCBEC0'}} className="small-color-box-70">
+                    <div style={{color:'#3D5265'}} className="small-color-box-70">#BCBEC0</div>
                 </td>            
             </tr>
         </tbody> </table>
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#808285',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#808285</div>
+            <td style={{backgroundColor:'#808285'}} className="small-color-box-70">
+                    <div style={{color:'#3D5265'}} className="small-color-box-70">#808285</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-       <table style={{width:'%',float:'left'}} >
+       <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#323232',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#323232</div>
+            <td style={{backgroundColor:'#323232'}} className="small-color-box-70">
+                    <div style={{color:'white'}} className="small-color-box-70">#323232</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#000000',width:100+'px',height:70+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:70+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#000000</div>
+            <td style={{backgroundColor:'#000000'}} className="small-color-box-70">
+                    <div style={{color:'white'}} className="small-color-box-70">#000000</div>
                 </td>            
             </tr>
         </tbody>
@@ -280,17 +280,17 @@ These colors highlight or complement the primary colors. These are to be used sp
 <table style={{ width:"100%", float:'left', marginBottom: '20px'}} >
     <tbody>
         <tr>
-            <td style={{backgroundColor:'#3D5265',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#3D5265 <br/>Text color</div>
+            <td style={{backgroundColor:'#3D5265'}} className="large-color-box-td">
+                <div style={{color:'white'}} className="large-color-box">#3D5265 <br/>Text color</div>
             </td>   
-                <td style={{backgroundColor:'#FFFFFF',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FFFFFF <br/>Background color</div>
+                <td style={{backgroundColor:'#FFFFFF'}} className="large-color-box-td">
+                <div style={{color:'#3D5265'}} className="large-color-box">#FFFFFF <br/>Background color</div>
             </td>
-            <td style={{backgroundColor:'#005248',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#005248<br/> Elements  </div>
+            <td style={{backgroundColor:'#005248'}} className="large-color-box-td">
+                <div style={{color:'white'}} className="large-color-box">#005248<br/> Elements  </div>
             </td>     
-            <td style={{backgroundColor:'#007B6C',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#007B6C<br/> Highlight  </div>
+            <td style={{backgroundColor:'#007B6C'}} className="large-color-box-td">
+                <div style={{color:'white'}} className="large-color-box">#007B6C<br/> Highlight  </div>
             </td>     
         </tr>
     </tbody>
@@ -301,17 +301,17 @@ These colors highlight or complement the primary colors. These are to be used sp
 <table style={{ width:"100%", float:'left', marginBottom: '40px'}} >
     <tbody>
         <tr>
-            <td style={{backgroundColor:'#006BB8',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#006BB8 <br/>Default color</div>
+            <td style={{backgroundColor:'#006BB8'}} className="large-color-box-td">
+                <div style={{color:'white'}} className="large-color-box">#006BB8 <br/>Default color</div>
             </td>   
-                <td style={{backgroundColor:'#004B7F',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#004B7F <br/>Hover color</div>
+                <td style={{backgroundColor:'#004B7F'}} className="large-color-box-td">
+                <div style={{color:'white'}} className="large-color-box">#004B7F <br/>Hover color</div>
             </td>
-            <td style={{backgroundColor:'#0083E0',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0083E0<br/>Visited color</div>
+            <td style={{backgroundColor:'#0083E0'}} className="large-color-box-td">
+                <div style={{color:'white'}} className="large-color-box">#0083E0<br/>Visited color</div>
             </td>
-            <td style={{backgroundColor:'#003052',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#003052<br/>Active color</div>
+            <td style={{backgroundColor:'#003052'}} className="large-color-box-td">
+                <div style={{color:'white'}} className="large-color-box">#003052<br/>Active color</div>
             </td>
         </tr>
     </tbody>
@@ -326,17 +326,17 @@ For example, Green has a positive connotation. We use Green to convey success, c
 <table style={{ width:"100%", float:'left', marginBottom: '40px'}} >
     <tbody>
         <tr>
-            <td style={{backgroundColor:'#B83230',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#B83230 <br/>ERROR</div>
+            <td style={{backgroundColor:'#B83230'}} className="large-color-box-td">
+                <div style={{color:'white'}} className="large-color-box">#B83230 <br/>ERROR</div>
             </td>   
-                    <td style={{backgroundColor:'#FF9933',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FF9933<br/> WARNING </div>
+                    <td style={{backgroundColor:'#FF9933'}} className="large-color-box-td">
+                <div style={{color:'#3D5265'}} className="large-color-box">#FF9933<br/> WARNING </div>
             </td> 
-                <td style={{backgroundColor:'#007B6C',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#007B6C <br/>SUCCESS</div>
+                <td style={{backgroundColor:'#007B6C'}} className="large-color-box-td">
+                <div style={{color:'white'}} className="large-color-box">#007B6C <br/>SUCCESS</div>
             </td>   
-                    <td style={{backgroundColor:'#004B7F',width:200+'px',height:150+'px',textAlign:'center'}}>
-                <div style={{color:'white',width:100+'%',textAlign:'center',height:150+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#004B7F<br/> INFO </div>
+                    <td style={{backgroundColor:'#004B7F'}} className="large-color-box-td">
+                <div style={{color:'white'}} className="large-color-box">#004B7F<br/> INFO </div>
             </td>      
         </tr>
     </tbody>
@@ -348,65 +348,65 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
 
 
 <div style={{width:'100%',float:'left'}}>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#FFF6EC',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FFF6EC <br/> brown-0 <br/>AAA</div>
+            <td style={{backgroundColor:'#FFF6EC'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#FFF6EC <br/> brown-0 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#FFEDD8',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FFEDD8 <br/> brown-1 <br/>AAA</div>
+            <td style={{backgroundColor:'#FFEDD8'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#FFEDD8 <br/> brown-1 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#E7BC91',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#E7BC91 <br/> brown-2 <br/>AA</div>
+            <td style={{backgroundColor:'#E7BC91'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#E7BC91 <br/> brown-2 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>  
-     <table style={{width:'%',float:'left'}} >
+     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#BC8A5F',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#BC8A5F <br/> brown-3 <br/>AA L</div>
+            <td style={{backgroundColor:'#BC8A5F'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#BC8A5F <br/> brown-3 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#8B5E34',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#8B5E34 <br/> brown-4 <br/>AA</div>
+            <td style={{backgroundColor:'#8B5E34'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#8B5E34 <br/> brown-4 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-       <table style={{width:'%',float:'left'}} >
+       <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#603808',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#603808 <br/> brown-5 <br/>AAA</div>
+            <td style={{backgroundColor:'#603808'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#603808 <br/> brown-5 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody>
     </table>  
-     <table style={{width:'%',float:'left'}} >
+     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#3D2201',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#3D2201 <br/> brown-6 <br/>AAA</div>
+            <td style={{backgroundColor:'#3D2201'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#3D2201 <br/> brown-6 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody> </table>
@@ -417,64 +417,64 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
 
 <br />
 <div style={{width:'100%',float:'left'}}>
-  <table style={{width:'%',float:'left'}} >
+  <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#EFEBF2',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#EFEBF2 <br/> purple-0 <br/>AA</div>
+            <td style={{backgroundColor:'#EFEBF2'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#EFEBF2 <br/> purple-0 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#DFD6E7',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#DFD6E7 <br/> purple-1 <br/>AA</div>
+            <td style={{backgroundColor:'#DFD6E7'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#DFD6E7 <br/> purple-1 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#BEADCE',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#BEADCE <br/> purple-2 <br/>AA L</div>
+            <td style={{backgroundColor:'#BEADCE'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#BEADCE <br/> purple-2 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#9E84B6',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#9E84B6 <br/> purple-3 <br/>AA L</div>
+            <td style={{backgroundColor:'#9E84B6'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#9E84B6 <br/> purple-3 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody> </table>
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#7D5B9D',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#7D5B9D <br/> purple-4<br/>AA</div>
+            <td style={{backgroundColor:'#7D5B9D'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#7D5B9D <br/> purple-4<br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-       <table style={{width:'%',float:'left'}} >
+       <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#5C3285',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#5C3285 <br/> purple-5 <br/>AAA </div>
+            <td style={{backgroundColor:'#5C3285'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#5C3285 <br/> purple-5 <br/>AAA </div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#3C096C',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#3C096C <br/> purple-6 <br/>AAA </div>
+            <td style={{backgroundColor:'#3C096C'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#3C096C <br/> purple-6 <br/>AAA </div>
                 </td>            
             </tr>
         </tbody>
@@ -483,65 +483,65 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
 
 
 <div style={{width:'100%',float:'left'}}>    
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#FBEEF8',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FBEEF8 <br/> red-0 <br/>AAA</div>
+            <td style={{backgroundColor:'#FBEEF8'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#FBEEF8 <br/> red-0 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#F6DDF0',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#F6DDF0<br/> red-1 <br/>AA</div>
+            <td style={{backgroundColor:'#F6DDF0'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#F6DDF0<br/> red-1 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#E7B2C0',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#E7B2C0 <br/> red-2 <br/>AA L</div>
+            <td style={{backgroundColor:'#E7B2C0'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#E7B2C0 <br/> red-2 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody>
     </table>  
-     <table style={{width:'%',float:'left'}} >
+     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#D78890',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#D78890<br/> red-3 <br/>AA L</div>
+            <td style={{backgroundColor:'#D78890'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#D78890<br/> red-3 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#C65B59',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#C65B59 <br/> red-4 <br/>AA L</div>
+            <td style={{backgroundColor:'#C65B59'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#C65B59 <br/> red-4 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-       <table style={{width:'%',float:'left'}} >
+       <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#B83230',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#B83230 <br/> red-5 <br/>AA</div>
+            <td style={{backgroundColor:'#B83230'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#B83230 <br/> red-5 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>  
-     <table style={{width:'%',float:'left'}} >
+     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#5C1918',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#5C1918 <br/> red-6 <br/>AAA</div>
+            <td style={{backgroundColor:'#5C1918'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#5C1918 <br/> red-6 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody> </table>
@@ -550,64 +550,64 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
 
 <br />
 <div style={{width:'100%',float:'left'}}>
-  <table style={{width:'%',float:'left'}} >
+  <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#FEF6CD',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FEF6CD <br/> yellow-0 <br/>AAA</div>
+            <td style={{backgroundColor:'#FEF6CD'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#FEF6CD <br/> yellow-0 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#FBEC9B',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FBEC9B <br/> yellow-1 <br/>AA</div>
+            <td style={{backgroundColor:'#FBEC9B'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#FBEC9B <br/> yellow-1 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#FAD936',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FAD936 <br/> yellow-2 <br/>AA</div>
+            <td style={{backgroundColor:'#FAD936'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#FAD936 <br/> yellow-2 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#FAC50D',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FAC50D <br/> yellow-3 <br/>AA</div>
+            <td style={{backgroundColor:'#FAC50D'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#FAC50D <br/> yellow-3 <br/>AA</div>
                 </td>            
             </tr>
         </tbody> </table>
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#FDAF20',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FDAF20 <br/> yellow-4 <br/>AA L</div>
+            <td style={{backgroundColor:'#FDAF20'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#FDAF20 <br/> yellow-4 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-       <table style={{width:'%',float:'left'}} >
+       <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#FF9933',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FF9933 <br/> yellow-5 <br/>AA L</div>
+            <td style={{backgroundColor:'#FF9933'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#FF9933 <br/> yellow-5 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#C35527',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#C35527 <br/> yellow-6 <br/>AA</div>
+            <td style={{backgroundColor:'#C35527'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#C35527 <br/> yellow-6 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
@@ -616,65 +616,65 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
 
 
 <div style={{width:'100%',float:'left'}}>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#C8FFF8',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#C8FFF8 <br/> green-0 <br/>AAA</div>
+            <td style={{backgroundColor:'#C8FFF8'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#C8FFF8 <br/> green-0 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#85FFF1',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#85FFF1<br/> green-1 <br/>AA</div>
+            <td style={{backgroundColor:'#85FFF1'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#85FFF1<br/> green-1 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#00F5D8',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#00F5D8 <br/> green-2 <br/>AA</div>
+            <td style={{backgroundColor:'#00F5D8'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#00F5D8 <br/> green-2 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>  
-     <table style={{width:'%',float:'left'}} >
+     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#00CCB4',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#00CCB4 <br/> green-3 <br/>AA L</div>
+            <td style={{backgroundColor:'#00CCB4'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#00CCB4 <br/> green-3 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#00A390',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#00A390 <br/> green-4 <br/>AA L</div>
+            <td style={{backgroundColor:'#00A390'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#00A390 <br/> green-4 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-       <table style={{width:'%',float:'left'}} >
+       <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#007B6C',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#007B6C <br/> green-5 <br/>AA</div>
+            <td style={{backgroundColor:'#007B6C'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#007B6C <br/> green-5 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>  
-     <table style={{width:'%',float:'left'}} >
+     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#005248',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#005248 <br/> green-6 <br/>AAA</div>
+            <td style={{backgroundColor:'#005248'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#005248 <br/> green-6 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody> </table>
@@ -684,64 +684,64 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
 
 <br />
 <div style={{width:'100%',float:'left'}}>
-  <table style={{width:'%',float:'left'}} >
+  <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#A0D7FF',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#A0D7FF<br/> blue-0 <br/>AA</div>
+            <td style={{backgroundColor:'#A0D7FF'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#A0D7FF<br/> blue-0 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#47B3FF',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#47B3FF <br/> blue-1 <br/>AA L</div>
+            <td style={{backgroundColor:'#47B3FF'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#47B3FF <br/> blue-1 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#0D98FB',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0D98FB <br/> blue-2 <br/>AA L</div>
+            <td style={{backgroundColor:'#0D98FB'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#0D98FB <br/> blue-2 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#0083E0',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#0083E0<br/> blue-3 <br/>AA L</div>
+            <td style={{backgroundColor:'#0083E0'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#0083E0<br/> blue-3 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody> </table>
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#006BB8',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#006BB8 <br/> blue-4 <br/>AA</div>
+            <td style={{backgroundColor:'#006BB8'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#006BB8 <br/> blue-4 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-       <table style={{width:'%',float:'left'}} >
+       <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#004B7F',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#004B7F <br/> blue-5 <br/>AAA</div>
+            <td style={{backgroundColor:'#004B7F'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#004B7F <br/> blue-5 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#003052',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#003052 <br/> blue-6 <br/>AAA</div>
+            <td style={{backgroundColor:'#003052'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#003052 <br/> blue-6 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody>
@@ -750,65 +750,65 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
 
 
 <div style={{width:'100%',float:'left'}}>    
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#DAE8F4',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#DAE8F4 <br/> blue-grey-0 <br/>AA</div>
+            <td style={{backgroundColor:'#DAE8F4'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#DAE8F4 <br/> blue-grey-0 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#ACCAE5',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#ACCAE5 <br/> blue-grey-1 <br/>AA</div>
+            <td style={{backgroundColor:'#ACCAE5'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#ACCAE5 <br/> blue-grey-1 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#8EA6C2',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#8EA6C2 <br/> blue-grey-2 <br/>AA L</div>
+            <td style={{backgroundColor:'#8EA6C2'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#8EA6C2 <br/> blue-grey-2 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody>
     </table>  
-     <table style={{width:'%',float:'left'}} >
+     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#6989A5',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#6989A5 <br/> blue-grey-3 <br/>AA L</div>
+            <td style={{backgroundColor:'#6989A5'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#6989A5 <br/> blue-grey-3 <br/>AA L</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#4C677F',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#4C677F <br/> blue-grey-4 <br/>AA</div>
+            <td style={{backgroundColor:'#4C677F'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#4C677F <br/> blue-grey-4 <br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-       <table style={{width:'%',float:'left'}} >
+       <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#3D5265',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#3D5265 <br/> blue-grey-5 <br/>AAA</div>
+            <td style={{backgroundColor:'#3D5265'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#3D5265 <br/> blue-grey-5 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody>
     </table>  
-     <table style={{width:'%',float:'left'}} >
+     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#3D5265',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#3D5265 <br/> blue-grey-6 <br/>AAA</div>
+            <td style={{backgroundColor:'#3D5265'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#3D5265 <br/> blue-grey-6 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody> </table>
@@ -817,64 +817,64 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
 
 <br />
 <div style={ {width:'100%', float:'left', marginBottom: '40px'}}>
-  <table style={{width:'%',float:'left'}} >
+  <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#FFFFFF',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#FFFFFF <br/> grey-0 <br/>AAA</div>
+            <td style={{backgroundColor:'#FFFFFF'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#FFFFFF <br/> grey-0 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#F9F9F9',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#F9F9F9 <br/> grey-1 <br/>AAA</div>
+            <td style={{backgroundColor:'#F9F9F9'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#F9F9F9 <br/> grey-1 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#E6E7E8',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#E6E7E8 <br/> grey-2<br/>AA</div>
+            <td style={{backgroundColor:'#E6E7E8'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#E6E7E8 <br/> grey-2<br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-   <table style={{width:'%',float:'left'}} >
+   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#BCBEC0',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#3D5265',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#BCBEC0 <br/> grey-3<br/>AA L</div>
+            <td style={{backgroundColor:'#BCBEC0'}} className="small-color-box-td">
+                    <div style={{color:'#3D5265'}} className="small-color-box">#BCBEC0 <br/> grey-3<br/>AA L</div>
                 </td>            
             </tr>
         </tbody> </table>
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#747678',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'#FFFFFF',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#747678 <br/> grey-4<br/>AA</div>
+            <td style={{backgroundColor:'#747678'}} className="small-color-box-td">
+                    <div style={{color:'#FFFFFF'}} className="small-color-box">#747678 <br/> grey-4<br/>AA</div>
                 </td>            
             </tr>
         </tbody>
     </table>
-       <table style={{width:'%',float:'left'}} >
+       <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#323232',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#323232 <br/> grey-5 <br/>AAA</div>
+            <td style={{backgroundColor:'#323232'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#323232 <br/> grey-5 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody>
     </table>   
-    <table style={{width:'%',float:'left'}} >
+    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#000000',width:120+'px',height:80+'px',textAlign:'center'}}>
-                    <div style={{color:'white',width:100+'%',textAlign:'center',height:80+'px',display:'flex',flexDirection:'column',justifyContent:'center'}}>#000000 <br/> grey-6 <br/>AAA</div>
+            <td style={{backgroundColor:'#000000'}} className="small-color-box-td">
+                    <div style={{color:'white'}} className="small-color-box">#000000 <br/> grey-6 <br/>AAA</div>
                 </td>            
             </tr>
         </tbody>
