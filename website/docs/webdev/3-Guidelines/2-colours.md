@@ -362,8 +362,8 @@ These colors highlight or complement the primary colors. These are to be used sp
                 <td style={{backgroundColor:'#004B7F'}} className="large-color-box-td">
                 <div style={{color:'white'}} className="large-color-box">#004B7F<br/>Hover</div>
             </td>
-            <td style={{backgroundColor:'#0083E0'}} className="large-color-box-td">
-                <div style={{color:'white'}} className="large-color-box">#0083E0<br/>Visited</div>
+            <td style={{backgroundColor:'#5C3285'}} className="large-color-box-td">
+                <div style={{color:'white'}} className="large-color-box">#5C3285<br/>Visited</div>
             </td>
             <td style={{backgroundColor:'#003052'}} className="large-color-box-td">
                 <div style={{color:'white'}} className="large-color-box">#003052<br/>Active</div>
