@@ -259,8 +259,8 @@ These colors highlight or complement the primary colors. These are to be used sp
      <table style={{float:'left'}}>
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#3D5265'}} className="small-color-box-td-70">
-                    <div style={{color:'white'}} className="small-color-box-70">#3D5265</div>
+            <td style={{backgroundColor:'#2E3E4C'}} className="small-color-box-td-70">
+                    <div style={{color:'white'}} className="small-color-box-70">#2E3E4C</div>
                 </td>            
             </tr>
         </tbody> </table>
@@ -877,7 +877,7 @@ Not all colors have to be used - sometimes a simple color scheme works best. Acc
         <tbody>
             <tr>
             <td style={{backgroundColor:'var(--blue-grey-6)'}} className="small-color-box-td">
-                    <div style={{color:'white'}} className="small-color-box">#3D5265<br/>blue-grey-6<br/>AAA</div>
+                    <div style={{color:'white'}} className="small-color-box">#2E3E4C<br/>blue-grey-6<br/>AAA</div>
                 </td>            
             </tr>
         </tbody> </table>

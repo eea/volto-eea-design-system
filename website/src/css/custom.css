@@ -116,10 +116,10 @@
   --yellow-3: #FAC50D;
   --yellow-4: #FDAF20;
   --yellow-5: #FF9933;
-  --yellow-6: #E56B38; /* */
+  --yellow-6: #C35527;
   --blue-0: #A0D7FF;
   --blue-1: #47B3FF;
-  --blue-2: #0A99FF; /* */
+  --blue-2: #0D98FB;
   --blue-3: #0083E0;
   --blue-4: #006BB8;
   --blue-5: #004B7F;
@@ -130,12 +130,12 @@
   --blue-grey-3: #6989A5;
   --blue-grey-4: #4C677F;
   --blue-grey-5: #3D5265;
-  --blue-grey-6: #2E3E4C; /* */
+  --blue-grey-6: #2E3E4C;
   --grey-0: #FFFFFF;
   --grey-1: #F9F9F9;
   --grey-2: #E6E7E8;
   --grey-3: #BCBEC0;
-  --grey-4: #67696b; /* 10% shade of #808285 which passed AA validation on white bg - diff */
+  --grey-4: #747678;
   --grey-5: #323232;
   --grey-6: #000000;
 
