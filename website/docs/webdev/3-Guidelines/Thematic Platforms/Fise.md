@@ -43,12 +43,12 @@ This color should be eye-catching but not harsh. It can be liberally applied to 
     </table>
 
 </div>
-<div style={{width:'100%',float:'left'}}>
-    <h3>Shades</h3>    
+    <h3>Shades</h3>
+    <div style={{ width:'100%', float:'left', marginBottom: '40px'}}>
     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#C8FFF8'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#C8FFF8'}} className="small-color-box-td-70">
                     <div style={{color:'#3D5265'}} className="small-color-box-70">#C8FFF8</div>
                 </td>            
             </tr>
@@ -57,7 +57,7 @@ This color should be eye-catching but not harsh. It can be liberally applied to 
    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#85FFF1'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#85FFF1'}} className="small-color-box-td-70">
                     <div style={{color:'#3D5265'}} className="small-color-box-70">#85FFF1</div>
                 </td>            
             </tr>
@@ -66,7 +66,7 @@ This color should be eye-catching but not harsh. It can be liberally applied to 
    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#00F5D8'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#00F5D8'}} className="small-color-box-td-70">
                     <div style={{color:'#3D5265'}} className="small-color-box-70">#00F5D8</div>
                 </td>            
             </tr>
@@ -75,7 +75,7 @@ This color should be eye-catching but not harsh. It can be liberally applied to 
      <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#00CCB4'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#00CCB4'}} className="small-color-box-td-70">
                     <div style={{color:'#3D5265'}} className="small-color-box-70">#00CCB4</div>
                 </td>            
             </tr>
@@ -84,7 +84,7 @@ This color should be eye-catching but not harsh. It can be liberally applied to 
     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#00A390'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#00A390'}} className="small-color-box-td-70">
                     <div style={{color:'#3D5265'}} className="small-color-box-70">#00A390</div>
                 </td>            
             </tr>
@@ -93,7 +93,7 @@ This color should be eye-catching but not harsh. It can be liberally applied to 
        <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#007B6C'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#007B6C'}} className="small-color-box-td-70">
                     <div style={{color:'white'}} className="small-color-box-70">#007B6C</div>
                 </td>            
             </tr>
@@ -102,7 +102,7 @@ This color should be eye-catching but not harsh. It can be liberally applied to 
      <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#005248'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#005248'}} className="small-color-td-box-70">
                     <div style={{color:'white'}} className="small-color-box-70">#005248</div>
                 </td>            
             </tr>
@@ -147,7 +147,7 @@ These colors highlight or complement the primary colors. These are to be used sp
     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#DAE8F4'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#DAE8F4'}} className="small-color-box-td-70">
                     <div style={{color:'#3D5265'}} className="small-color-box-70">#DAE8F4</div>
                 </td>            
             </tr>
@@ -156,7 +156,7 @@ These colors highlight or complement the primary colors. These are to be used sp
    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#ACCAE5'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#ACCAE5'}} className="small-color-box-td-70">
                     <div style={{color:'#3D5265'}} className="small-color-box-70">#ACCAE5</div>
                 </td>            
             </tr>
@@ -165,7 +165,7 @@ These colors highlight or complement the primary colors. These are to be used sp
    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#8EA6C2'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#8EA6C2'}} className="small-color-box-td-70">
                     <div style={{color:'#3D5265'}} className="small-color-box-70">#8EA6C2</div>
                 </td>            
             </tr>
@@ -174,7 +174,7 @@ These colors highlight or complement the primary colors. These are to be used sp
      <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#6989A5'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#6989A5'}} className="small-color-box-td-70">
                     <div style={{color:'#3D5265'}} className="small-color-box-70">#6989A5</div>
                 </td>            
             </tr>
@@ -183,7 +183,7 @@ These colors highlight or complement the primary colors. These are to be used sp
     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#4C677F'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#4C677F'}} className="small-color-box-td-70">
                     <div style={{color:'white'}} className="small-color-box-70">#4C677F</div>
                 </td>            
             </tr>
@@ -192,7 +192,7 @@ These colors highlight or complement the primary colors. These are to be used sp
        <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#3D5265'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#3D5265'}} className="small-color-box-td-70">
                     <div style={{color:'white'}} className="small-color-box-70">#3D5265</div>
                 </td>            
             </tr>
@@ -201,7 +201,7 @@ These colors highlight or complement the primary colors. These are to be used sp
      <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#3D5265'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#3D5265'}} className="small-color-box-td-70">
                     <div style={{color:'white'}} className="small-color-box-70">#3D5265</div>
                 </td>            
             </tr>
@@ -214,7 +214,7 @@ These colors highlight or complement the primary colors. These are to be used sp
   <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#FFFFFF'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#FFFFFF'}} className="small-color-box-td-70">
                     <div style={{color:'#3D5265'}} className="small-color-box-70">#FFFFFF</div>
                 </td>            
             </tr>
@@ -223,7 +223,7 @@ These colors highlight or complement the primary colors. These are to be used sp
     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#F9F9F9'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#F9F9F9'}} className="small-color-box-td-70">
                     <div style={{color:'#3D5265'}} className="small-color-box-70">#F9F9F9</div>
                 </td>            
             </tr>
@@ -232,7 +232,7 @@ These colors highlight or complement the primary colors. These are to be used sp
     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#E6E7E8'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#E6E7E8'}} className="small-color-box-td-70">
                     <div style={{color:'#3D5265'}} className="small-color-box-70">#E6E7E8</div>
                 </td>            
             </tr>
@@ -241,7 +241,7 @@ These colors highlight or complement the primary colors. These are to be used sp
    <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#BCBEC0'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#BCBEC0'}} className="small-color-box-td-70">
                     <div style={{color:'#3D5265'}} className="small-color-box-70">#BCBEC0</div>
                 </td>            
             </tr>
@@ -249,7 +249,7 @@ These colors highlight or complement the primary colors. These are to be used sp
     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#808285'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#808285'}} className="small-color-box-td-70">
                     <div style={{color:'#3D5265'}} className="small-color-box-70">#808285</div>
                 </td>            
             </tr>
@@ -258,7 +258,7 @@ These colors highlight or complement the primary colors. These are to be used sp
        <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#323232'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#323232'}} className="small-color-box-td-70">
                     <div style={{color:'white'}} className="small-color-box-70">#323232</div>
                 </td>            
             </tr>
@@ -267,7 +267,7 @@ These colors highlight or complement the primary colors. These are to be used sp
     <table style={{float:'left'}} >
         <tbody>
             <tr>
-            <td style={{backgroundColor:'#000000'}} className="small-color-box-70">
+            <td style={{backgroundColor:'#000000'}} className="small-color-box-td-70">
                     <div style={{color:'white'}} className="small-color-box-70">#000000</div>
                 </td>            
             </tr>
