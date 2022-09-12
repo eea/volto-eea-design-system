@@ -1194,6 +1194,10 @@ const debounce = (func) => {
   };
 };
 
+const handleDropdownClick = (event) => {
+  event.stopPropagation();
+};
+
 const Template = (args) => {
   const [viewportWidth, setWidth] = React.useState(
     typeof window !== 'undefined' && window.innerWidth,
@@ -1233,7 +1237,13 @@ const Template = (args) => {
               className=""
               viewportWidth={viewportWidth}
             >
-              <div className="content">
+              <div
+                className="content"
+                role="menu"
+                tabIndex="0"
+                onClick={handleDropdownClick}
+                onKeyDown={handleDropdownClick}
+              >
                 <p>
                   All official European Union website addresses are in the{' '}
                   europa.eu domain.
