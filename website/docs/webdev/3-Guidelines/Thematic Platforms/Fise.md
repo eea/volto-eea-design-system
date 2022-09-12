@@ -6,7 +6,7 @@ order: 4
 ---
 
 
- ![](../../md_components/static/FISE.png)
+ ![](../../md_components/static/FISE_logo.svg)
 
 
 ## Communication is key
