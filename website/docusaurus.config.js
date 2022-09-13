@@ -88,7 +88,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          exclude: ['**/md_components/**'],
+          exclude: ['**/md_components/**','**/_partials/**' ],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
