@@ -200,7 +200,7 @@ const CustomTemplate = (args) => (
               <div className={`label ${args.labelVariation}`}>
                 {element.label}
               </div>
-              <div className={`slate text-center ${args.slateVariation}`}>
+              <div className={`slate text-center ${args.extraVariation}`}>
                 {element.slate}
               </div>
             </a>
@@ -239,7 +239,7 @@ Custom.args = {
   size: 'small',
   valueVariation: 'secondary',
   labelVariation: 'tertiary',
-  slateVariation: 'tertiary',
+  extraVariation: 'tertiary',
   inverted: false,
   backgroundVariant: 'primary',
 };
@@ -283,8 +283,8 @@ Custom.argTypes = {
       type: { summary: 'string' },
     },
   },
-  slateVariation: {
-    name: 'Slate variation',
+  extraVariation: {
+    name: 'Extra info variation',
     defaultValue: 'tertiary',
     options: ['primary', 'secondary', 'tertiary'],
     control: { type: 'select' },
@@ -366,7 +366,7 @@ const CountupStatistics = (args) => (
               <div className={`label ${args.labelVariation}`}>
                 {element.label}
               </div>
-              <div className={`slate text-center ${args.slateVariation}`}>
+              <div className={`slate text-center ${args.extraVariation}`}>
                 {element.slate}
               </div>
             </a>
@@ -405,7 +405,7 @@ AnimationGroup.args = {
   horizontal: false,
   valueVariation: 'secondary',
   labelVariation: 'tertiary',
-  slateVariation: 'tertiary',
+  extraVariation: 'tertiary',
   inverted: false,
   backgroundVariant: 'primary',
 };
@@ -449,8 +449,8 @@ AnimationGroup.argTypes = {
       type: { summary: 'string' },
     },
   },
-  slateVariation: {
-    name: 'Slate variation',
+  extraVariation: {
+    name: 'Extra info variation',
     defaultValue: 'tertiary',
     options: ['primary', 'secondary', 'tertiary'],
     control: { type: 'select' },
