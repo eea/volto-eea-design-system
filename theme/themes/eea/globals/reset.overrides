@@ -193,6 +193,15 @@ sup {
   top: -0.5em;
 }
 
+/**
+ * Add background and color for scroll-to-text fragments
+ */
+
+::target-text {
+  background: #e8d2fd;
+  color: #000;
+}
+
 /* Embedded content
    ========================================================================== */
 
