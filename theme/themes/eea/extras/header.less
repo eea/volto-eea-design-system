@@ -175,7 +175,7 @@
   flex-direction: row-reverse;
 
   img {
-    width: 17px;
+    width: @mobileLanguageImageWidth;
     margin-right: @topSectionIconMarginRight;
   }
   .menu {
@@ -223,16 +223,21 @@
     height: @mobileMainSectionHeight;
 
     .ui.grid {
-      /* All margins and paddings removed for main header */
+      // All margins and paddings removed for main header
       width: 100%;
       margin: 0;
 
+      // Override grid specific paddings for header
       div:first-child {
         padding-left: 0;
+        padding-top: 0;
+        padding-bottom: 0;
       }
 
       div:last-child {
         padding-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
       }
     }
   }
@@ -448,7 +453,7 @@
     }
 
     img {
-      width: 18px;
+      width: @tabletLanguageImageWidth;
     }
   }
 
@@ -458,7 +463,7 @@
 
   .main.bar {
     .ui.container {
-      height: 117px;
+      height: @tabletMainSectionHeight;
     }
   }
 
@@ -536,7 +541,7 @@
 
   .main.bar {
     .ui.container {
-      height: 160px;
+      height: @computerMainSectionHeight;
 
       .ui.text.menu {
         flex-wrap: wrap;

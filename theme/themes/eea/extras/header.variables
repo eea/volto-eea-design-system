@@ -96,6 +96,8 @@
 @mobileLanguageCountryCodeFontWeight  : @bold;
 @mobileLanguageFontSize               : @font-size-0;
 @computerLanguageFontSize             : @font-size-1;
+@mobileLanguageImageWidth             : 17px;
+@tabletLanguageImageWidth             : 18px;
 
 /*-----------------------
    HEADER MAIN SECTION
