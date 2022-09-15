@@ -373,6 +373,7 @@
 @lightBlue        : #75C9DB;
 @lightViolet      : #BFC0FF;
 @lightPurple      : #DE99FF;
+@lightLavender    : #E8D2FD;
 @lightPink        : #FFBFF1;
 @lightBrown       : #D9C2AD;
 @lightGrey        : #E6E7E8;

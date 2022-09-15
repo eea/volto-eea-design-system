@@ -40,3 +40,9 @@ h2, h3, h4, h5, h6 {
 .homepage {
   color: @tertiaryColor;
 }
+
+/* Add background and color for scroll-to-text fragments */
+::target-text {
+  background: @lightLavender;
+  color: @black;
+}
