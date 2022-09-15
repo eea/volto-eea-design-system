@@ -32,6 +32,15 @@ h2, h3, h4, h5, h6 {
   h4 { font-size: @mobileH4; }
 }
 
+a {
+  &:visited {
+    color:  @linkVisitedColor;
+  }
+  &:active {
+    color: @linkActiveColor;
+  }
+}
+
 [class^='ri-'],
 [class*=' ri-'] {
   fill: currentColor;
