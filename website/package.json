@@ -31,7 +31,8 @@
     "eslint-plugin-testing-library": "^4.5.0",
     "eslint-webpack-plugin": "^2.5.4",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "remixicon": "^2.5.0"
   },
   "browserslist": {
     "production": [

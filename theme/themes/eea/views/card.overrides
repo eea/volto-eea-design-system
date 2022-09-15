@@ -242,11 +242,12 @@
     display: flex;
     justify-content: center;
 
-    img {
-      width: @roundedImageWidth;
-      height: @roundedImageHeight;
-      border-radius: @roundedImageBorderRadius;
-    }
+  }
+
+  img {
+    width: @roundedImageWidth;
+    height: @roundedImageHeight;
+    border-radius: @roundedImageBorderRadius;
   }
 
   .content {
@@ -408,6 +409,7 @@
   cursor: pointer;
   outline: none;
   transform: translate(0, -50%);
+  z-index: 1; // make arrows clickable even on events page with right column
 }
 
 .cards-carousel .prev-arrow {
@@ -421,6 +423,10 @@
 } 
 
 /* Custom carousel pagination bullets */
+// avoid dots going over content that follows sliders
+.slick-dots {
+  bottom: 0;
+}
 .cards-carousel .slick-dots li button:before {
   background-color: @carouselDotsBackgroundColor;
   color: transparent;
