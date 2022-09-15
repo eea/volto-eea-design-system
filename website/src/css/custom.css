@@ -59,10 +59,10 @@
 
 @media only screen and (max-width: 768px) {
   .icon-list .icon-type-item .icon-items .icon-item-group {
-    width: 20%;
+     width: 20%;
   }
 }
-
+  
 :root {
   --eea-color-tertiary: #3d5265;
   --ifm-color-primary: #027572;
@@ -257,3 +257,4 @@ iframe {
   flex-direction: column;
   justify-content: center;
 }
+
