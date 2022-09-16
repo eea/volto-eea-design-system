@@ -42,6 +42,7 @@
 .ui.card .meta {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 
@@ -251,9 +252,6 @@
   }
 
   .content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: @roundedContentJustifyContent;
     border-top: none;
 
     .header {
