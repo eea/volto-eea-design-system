@@ -30,6 +30,8 @@
        Content
 --------------------*/
 
+@statisticContentMinWidth : @size-11;
+
 /* Value */
 @valueFont: @pageFont;
 @valueFontWeight: @normal;

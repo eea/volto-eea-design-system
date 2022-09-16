@@ -27,6 +27,7 @@
   .value,
   .label,
   .slate {
+    min-width: @statisticContentMinWidth;
     &.primary { color: @primaryColor; }
     &.secondary { color: @secondaryColor; }
     &.tertiary { color: @tertiaryColor; }
