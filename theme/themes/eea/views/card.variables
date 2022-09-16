@@ -273,9 +273,12 @@
 *******************************/
 /* Global */
 @roundedImageBorderRadius        : @circularRadius;
+@roundedContentJustifyContent     : center;
 @roundedContentTitleMarginBottom : @rem-space-2;
+@roundedContentTitleTextAlign    : center;
 @roundedContentTitleFontWeight   : @bold;
 @roundedContentTitleFontSize     : @font-size-3;
+@roundedImageJustifyContent      : center;
 @roundedImageHeight           : 173px;
 @roundedImageWidth            : 173px;
 @roundedMetadataFontSize      : @font-size-1;
