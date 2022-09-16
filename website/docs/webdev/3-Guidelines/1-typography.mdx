@@ -29,9 +29,7 @@ We can use weights starting from 300 (Light) up to 700 (Bold). Usually, the bold
 Line spacing is commonly measured as a percentage of font size. Conventional wisdom is that line spacing of 130%-150% is ideal for readability. In fact, anything from about 120% up to 200% is acceptable, 
 but 150% tends to be the most quoted sweet spot (and a WCAG recommendation). You should experiment to see what looks best with your text. The line-height value is always divisible by 4 to support the grid.
 
-This is why for **body text** we use 150% line height, while for **headers** we use 120% due to the larger font size where using
-150% would add too much space between the heading lines.
-
+This is why for **body text** we use 150% line height, while for **headers** we use 120% due to the larger font size where using 150% would add too much space between the heading lines.
 
  ![](../md_components/static/height150.png)
 
@@ -40,16 +38,17 @@ This is why for **body text** we use 150% line height, while for **headers** we 
 
 ### Letter spacing
 
-Letter spacing (also known as character spacing or tracking ) is the adjustment of the horizontal white space between the letters in a block of text. Unlike kerning, which affects only designated pairs of letters, letter spacing affects every pair.
-By adjusting letter-spacing to the environment you are working with you will help readers consume your information faster, and more efficiently. The fun part is that they won’t even notice it!
+Letter spacing (also known as character spacing or tracking ) is the adjustment of the horizontal white space between the letters in a block of text. Unlike kerning, which affects only designated pairs of letters, letterspacing affects every pair. 
+By adjusting letter spacing to the environment you are working with you will help readers consume your information faster, and more efficiently. The fun part is that they won’t even notice it!
 
-#### Headings -1.5% Figma, -0.015em CSS
+#### Headings -0.015em (-1.5%)
 #### Body 0%
-#### Caption and Small text 1% Figma, 0.01em CSS
+#### Caption and Small text 0.005em (0.5%)
 
 <br/>
 
 ### Text color
+Body text color is blue-grey-5 (#3D5265) <br/>
 
 Color also plays a key role in an interface’s typographic hierarchy, often by established types like: <br/>
 - Brand colors and supplementary colors, for most interface text whether body or heading. <br/>
@@ -78,7 +77,7 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
             <h1 className="h1">Heading 1</h1>
         </div>
         <div className="col col--6">
-            <b>Font Size: 44x or 2.75rem  <br/> Letter spacing: -0.015em <br/> Line height: 1.2</b>
+            <b>Font Size: 44px or 2.75rem  <br/> Letter spacing: -0.015em (-1.5%) <br/> Line height: 1.2 (120%)</b>
         </div>
     </div>
     <div className="row" style={{ alignItems: 'center' , height: '120px' }}>
@@ -86,7 +85,7 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
             <h2 className="h2">Heading 2</h2>
         </div>
         <div className="col col--6">
-            <b>Font Size: 40px or 2.5rem <br />  Letter spacing: -0.015em <br/> Line height: 1.2</b>
+            <b>Font Size: 32px or 2rem <br />  Letter spacing: -0.015em (-1.5%) <br/> Line height: 1.2 (120%)</b>
         </div>
     </div>
     <div className="row" style={{ alignItems: 'center' , height: '120px' }}>
@@ -94,7 +93,7 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
             <h3 className="h3">Heading 3</h3>
         </div>
         <div className="col col--6">
-            <b>Font Size: 36px or 2rem <br/>  Letter spacing: -0.015em <br/> Line height: 1.2</b>
+            <b>Font Size: 26px or 1.625rem <br/>  Letter spacing: -0.015em (-1.5%) <br/> Line height: 1.2 (120%)</b>
         </div>
     </div>
     <div className="row" style={{ alignItems: 'center', height: '120px'}}>
@@ -102,7 +101,7 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
             <h4 className="h4">Heading 4</h4>
         </div>
         <div className="col col--6">
-            <b>Font Size: 24px or 1.5rem <br/>  Letter spacing: -0.015em <br/> Line height: 1.2</b>
+            <b>Font Size: 20px or 1.25rem <br/>  Letter spacing: -0.015em (-1.5%) <br/> Line height: 1.2 (120%)</b>
         </div>
     </div>
     <div className="row" style={{ alignItems: 'center', height: '120px'}}>
@@ -110,7 +109,7 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
             <h5 className="h5">Heading 5</h5>
         </div>
         <div className="col col--6">
-            <b>Font Size: 20px or 1.25rem <br/>  Letter spacing: -0.015em <br/> Line height: 1.2</b>
+            <b>Font Size: 18px or 1.125rem <br/>  Letter spacing: -0.015em (-1.5%) <br/> Line height: 1.2 (120%)</b>
         </div>
     </div>
     <div className="row" style={{ alignItems: 'center', height: '120px'}}>
@@ -118,7 +117,7 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
             <p>Body text</p>
         </div>
         <div className="col col--6">
-            <b>Font Size: 16px or 1rem <br/>  Letter spacing: 0 <br/>  Line height: 1.5</b>
+            <b>Font Size: 16px or 1rem <br/>  Letter spacing: 0 (0%) <br/>  Line height: 1.5 (150%)</b>
         </div>
     </div>
       <div className="row" style={{ alignItems: 'center', height: '120px'}}>
@@ -126,7 +125,7 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
             <p className="caption">Caption text</p>
         </div>
         <div className="col col--6">
-            <b>Font Size: 14px or 0.875rem <br/>  Letter spacing: 0.01em <br/>  Line height: 1.5</b>
+            <b>Font Size: 14px or 0.875rem <br/>  Letter spacing: 0.01 (1%) <br/>  Line height: 1.5 (150%)</b>
         </div>
     </div>
       <div className="row" style={{ alignItems: 'center', height: '120px'}}>
@@ -134,7 +133,7 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
             <p className="tiny">Small text</p>
         </div>
         <div className="col col--6">
-            <b>Font Size: 12px or 0.75rem <br/>  Letter spacing: 0.01em <br/>  Line height: 1.5</b>
+            <b>Font Size: 12px or 0.75rem <br/>  Letter spacing: 0.01 (1%) <br/>  Line height: 1.5 (150%)</b>
         </div>
     </div>
 
@@ -148,7 +147,7 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
             <h1 className="h1"> Heading 1</h1>
         </div>
         <div className="col col--6">
-            <b>Font Size: 30px or 1.875rem  <br/> Letter spacing: -0.015em</b>
+            <b>Font Size: 30px or 1.875rem  <br/> Letter spacing: -0.015em (-1.5%) <br/> Line height: 1.2 (120%)</b>
         </div>
     </div>
     <div className="row" style={{ alignItems: 'center', height: '120px' }}>
@@ -156,7 +155,7 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
             <h2 className="h2"> Heading 2</h2>
         </div>
         <div className="col col--6">
-            <b>Font Size: 24px or 1.5rem <br/>  Letter spacing: -0.015em</b>
+            <b>Font Size: 24px or 1.5rem <br/>  Letter spacing: -0.015em (-1.5%) <br/> Line height: 1.2 (120%)</b>
         </div>
     </div>
     <div className="row" style={{ alignItems: 'center', height: '120px' }}>
@@ -164,7 +163,7 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
             <h3 className="h3"> Heading 3</h3>
         </div>
         <div className="col col--6">
-            <b>Font Size: 20px or 1.25rem <br/>  Letter spacing: -0.015em</b>
+            <b>Font Size: 20px or 1.25rem <br/>  Letter spacing: -0.015em (-1.5%) <br/> Line height: 1.2 (120%)</b>
         </div>
     </div>
       <div className="row" style={{ alignItems: 'center', height: '120px' }}>
@@ -172,7 +171,7 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
             <h4 className="h4"> Heading 4</h4>
         </div>
         <div className="col col--6">
-            <b>Font Size: 18px or 1.125rem <br/>  Letter spacing: -0.015em</b>
+            <b>Font Size: 18px or 1.125rem <br/>  Letter spacing: -0.015em (-1.5%) <br/> Line height: 1.2 (120%)</b>
         </div>
     </div>
     <div className="row" style={{ alignItems: 'center', height: '120px'}}>
@@ -180,7 +179,7 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
             <p>Body</p>
         </div>
         <div className="col col--6">
-            <b>Font Size: 16px or 1rem <br/>  Letter spacing: 0</b>
+            <b>Font Size: 16px or 1rem <br/>  Letter spacing: 0 (0%) <br/> Line height: 1.5 (150%)</b>
         </div>
     </div>
     <div className="row" style={{ alignItems: 'center', height: '120px'}}>
@@ -188,7 +187,7 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
             <p className="caption">Caption</p>
         </div>
         <div className="col col--6">
-            <b>Font Size: 14px or 0.875rem <br/>  Letter spacing: 0.01em</b>
+            <b>Font Size: 14px or 0.875rem <br/>  Letter spacing: 0.01em (1%) <br/> Line height: 1.5 (150%)</b>
         </div>
     </div>
     <div className="row" style={{ alignItems: 'center', height: '120px'}}>
@@ -196,7 +195,7 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
             <p className="tiny">Small text</p>
         </div>
         <div className="col col--6">
-            <b>Font Size: 12px or 0.75rem  <br/> Letter spacing: 0.01em</b>
+            <b>Font Size: 12px or 0.75rem  <br/> Letter spacing: 0.01em (1%) <br/> Line height: 1.5 (150%)</b>
         </div>
     </div>
 </div>
@@ -206,61 +205,61 @@ We set 16px (1rem) as the base font size for body text to ensure readability. It
 
 ### Weight
 
-| Token name         | Value            | Style          |
-| ------------------ | ---------------- | -------------- |
-| font-weight-1      | 100              | Thin           |
-| font-weight-2      | 200              | Light          |
-| font-weight-3      | 300              | Book           |
-| font-weight-4      | 400              | Regular        |
-| font-weight-5      | 500              | Medium         |
-| font-weight-6      | 600              | SemiBold       |
-| font-weight-7      | 700              | Bold           |
-| font-weight-8      | 800              | ExtraBold      |
-| font-weight-9      | 900              | Black          |
+| Token name         | Value           | Style             | 
+| ------------------ | --------------- | ----------------- |
+| font-weight-1      | 100             | Thin              |
+| font-weight-2      | 200             | Light             |
+| font-weight-3      | 300             | Book              |
+| font-weight-4      | 400             | Regular           |
+| font-weight-5      | 500             | Medium            |
+| font-weight-6      | 600             | SemiBold          |
+| font-weight-7      | 700             | Bold              |
+| font-weight-8      | 800             | ExtraBold         |
+| font-weight-9      | 900             | Black             |
 
 ### Line height
 
 
-| Token name         | Value(no unit)   |
-| ------------------ | ---------------- |
-| font-lineheight-00 | .95              |
-| font-lineheight-0  | 1.2              |
-| font-lineheight-1  | 1.25             |
-| font-lineheight-2  | 1.375            |
-| font-lineheight-3  | 1.5              |
-| font-lineheight-4  | 1.75             |
-| font-lineheight-5  | 2                |
+| Token name         | Value(no unit)  |
+| ------------------ | --------------- | 
+| font-lineheight-00 | .95             |
+| font-lineheight-0  | 1.1             |
+| font-lineheight-1  | 1.25            |
+| font-lineheight-2  | 1.375           |
+| font-lineheight-3  | 1.5             |
+| font-lineheight-4  | 1.75            |
+| font-lineheight-5  | 2               |
 
 
 ### Letter spacing
 
-| Token name             | Value(em)        |
-| ---------------------- | ---------------- |
-| font-letterspacing-000 | -.02             |
-| font-letterspacing-00  | -.015            |
-| font-letterspacing-0   | -.01             |
-| font-letterspacing-1   |  .01             |
-| font-letterspacing-2   |  .015            |
-| font-letterspacing-3   |  .02             |
-| font-letterspacing-4   |  .075            |
-| font-letterspacing-5   |  .15             |
+| Token name             | Value(em)       |
+| ---------------------- | --------------- | 
+| font-letterspacing-000 | -.02            |
+| font-letterspacing-00  | -.015           |
+| font-letterspacing-0   | -.005           |
+| font-letterspacing-1   |  .005           |
+| font-letterspacing-2   |  .015           |
+| font-letterspacing-3   |  .02            |
+| font-letterspacing-4   |  .075           |
+| font-letterspacing-5   |  .15            |
 
 ### Font size
 
 | Token name             | Value(rem)       | Value(px)        |
 | ---------------------- | ---------------- | ---------------- |
-| @font-size-00          | .75              |  12              |
-| @font-size-0           | .875             |  14              |
-| @font-size-1           |  1               |  16              |
-| @font-size-2           |  1.125           |  18              |
-| @font-size-3           |  1.25            |  20              |
-| @font-size-4           |  1.5             |  24              |
-| @font-size-5           |  1.625           |  26              |
-| @font-size-6           |  1.875           |  30              |
-| @font-size-7           |  2rem            |  32              |
-| @font-size-8           |  2.25            |  36              |
-| @font-size-9           |  2.5             |  40              |
-| @font-size-10          |  2.75            |  44              |
+| font-size-00           | .75              |  12              |
+| font-size-0            | .875             |  14              |
+| font-size-1            |  1               |  16              |
+| font-size-2            |  1.125           |  18              |
+| font-size-3            |  1.25            |  20              |
+| font-size-4            |  1.5             |  24              |
+| font-size-5            |  1.625           |  26              |
+| font-size-6            |  1.875           |  30              |
+| font-size-7            |  2               |  32              |
+| font-size-8            |  2.25            |  36              |
+| font-size-9            |  2.5             |  40              |
+| font-size-10           |  2.75            |  44              |
 
 ### Font size fluid
 
