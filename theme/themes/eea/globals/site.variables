@@ -224,7 +224,6 @@
 @thumbHoverBackground: rgba(128, 135, 139, 0.8);
 
 /* Inverted */
-@statisticInvertedBackground: @bottleGreen;
 @trackInvertedBackground: rgba(255, 255, 255, 0.1);
 @thumbInvertedBackground: rgba(255, 255, 255, 0.25);
 @thumbInvertedInactiveBackground: rgba(255, 255, 255, 0.15);
