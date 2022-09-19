@@ -14,8 +14,8 @@
   height: 100%;
 }
 
-.ui.cards > .card > .image,
-.ui.card > .image {
+.ui.cards > .card:not(.rounded) > .image,
+.ui.card:not(.rounded) > .image {
   overflow: @cardImageOverflow;
   height: @cardImageHeight;
 
@@ -28,9 +28,9 @@
 }
 
 .ui.cards > .card > i.icon,
-.ui.cards > .card > a > i.icon,
+.ui.cards > .card > a:not(.ui) > i.icon,
 .ui.card > i.icon,
-.ui.card > a > i.icon {
+.ui.card > a:not(.ui) > i.icon {
   color: @iconColor;
 }
 
@@ -42,6 +42,7 @@
 .ui.card .meta {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 
@@ -55,7 +56,7 @@
     margin-bottom: @rem-space-4;
 }
 
-.ui.card .extra.content a {
+.ui.card .extra.content a:not(.ui) {
   font-weight: @contentLinkFontWeight;
 
   &:hover {
@@ -89,9 +90,9 @@
 }
 
 .ui.card.primary > i.icon,
-.ui.card.primary > a > i.icon,
-.ui.card.primary > .content a,
-.ui.card.primary > .content a:hover,
+.ui.card.primary > a:not(.ui) > i.icon,
+.ui.card.primary > .content a:not(.ui),
+.ui.card.primary > .content a:not(.ui):hover,
 .ui.card.primary > .content > .description {
   color: @primaryDescriptionColor;
 }
@@ -105,7 +106,7 @@
 }
 
 .ui.card.primary > .content > .meta,
-.ui.card.primary > .content > .meta a {
+.ui.card.primary > .content > .meta a:not(.ui) {
   color: @primaryMetaColor;
 }
 
@@ -115,8 +116,8 @@
   color: @invertedPrimaryContentColor;
 }
 
-.ui.card.primary.inverted > a > i.icon,
-.ui.card.primary.inverted > .content a,
+.ui.card.primary.inverted > a:not(.ui) > i.icon,
+.ui.card.primary.inverted > .content a:not(.ui),
 .ui.card.primary.inverted > .extra.content a:not(.ui) {
   color: @invertedPrimaryContentColor;
 
@@ -135,9 +136,9 @@
 }
 
 .ui.card.secondary > i.icon,
-.ui.card.secondary > a > i.icon,
-.ui.card.secondary > .content a,
-.ui.card.secondary > .content a:hover,
+.ui.card.secondary > a:not(.ui) > i.icon,
+.ui.card.secondary > .content a:not(.ui),
+.ui.card.secondary > .content a:not(.ui):hover,
 .ui.card.secondary > .content > .header {
   color: @secondaryHeaderColor;
 }
@@ -155,7 +156,7 @@
 }
 
 .ui.card.secondary > .content > .meta,
-.ui.card.secondary > .content > .meta a {
+.ui.card.secondary > .content > .meta a:not(.ui) {
   color: @secondaryMetaColor;
 }
 
@@ -165,8 +166,8 @@
   color: @invertedSecondaryContentColor;
 }
 
-.ui.card.secondary.inverted > a > i.icon,
-.ui.card.secondary.inverted > .content a,
+.ui.card.secondary.inverted > a:not(.ui) > i.icon,
+.ui.card.secondary.inverted > .content a:not(.ui),
 .ui.card.secondary.inverted > .extra.content a:not(.ui) {
   color: @invertedSecondaryContentColor;
 
@@ -185,9 +186,9 @@
 }
 
 .ui.card.tertiary > i.icon,
-.ui.card.tertiary > a > i.icon,
-.ui.card.tertiary > .content a,
-.ui.card.tertiary > .content a:hover,
+.ui.card.tertiary > a:not(.ui) > i.icon,
+.ui.card.tertiary > .content a:not(.ui),
+.ui.card.tertiary > .content a:not(.ui):hover,
 .ui.card.tertiary > .content > .header {
   color: @tertiaryHeaderColor;
 }
@@ -205,7 +206,7 @@
 }
 
 .ui.card.tertiary > .content > .meta,
-.ui.card.tertiary > .content > .meta a {
+.ui.card.tertiary > .content > .meta a:not(.ui) {
   color: @tertiaryMetaColor;
 }
 
@@ -215,8 +216,8 @@
   color: @invertedTertiaryContentColor;
 }
 
-.ui.card.tertiary.inverted > a > i.icon,
-.ui.card.tertiary.inverted > .content a,
+.ui.card.tertiary.inverted > a:not(.ui) > i.icon,
+.ui.card.tertiary.inverted > .content a:not(.ui),
 .ui.card.tertiary.inverted > .extra.content a:not(.ui) {
   color: @invertedTertiaryContentColor;
 
@@ -234,34 +235,35 @@
   height: auto;
 }
 
+.ui.cards .ui.card.rounded,
 .ui.card.rounded {
   padding-top: @iconCardPaddingTop;
   border: none;
 
   .image {
     display: flex;
-    justify-content: center;
+    justify-content: @roundedImageJustifyContent;
 
-    img {
-      width: @roundedImageWidth;
-      height: @roundedImageHeight;
-      border-radius: @roundedImageBorderRadius;
-    }
+  }
+
+  img {
+    width: @roundedImageWidth;
+    height: @roundedImageHeight;
+    border-radius: @roundedImageBorderRadius;
   }
 
   .content {
-    justify-content: center;
     border-top: none;
 
     .header {
       margin-bottom: @roundedContentTitleMarginBottom;
       font-size: @roundedContentTitleFontSize;
       font-weight: @roundedContentTitleFontWeight;
-      text-align: center;
+      text-align: @roundedContentTitleTextAlign;
     }
 
     .description {
-      text-align: center;
+      text-align: @roundedContentTitleTextAlign;
       font-size: @roundedMetadataFontSize;
       font-weight: @roundedMetadataFontWeight;
     }
@@ -288,7 +290,7 @@
     background-color: @publicationCardDescriptionColor;
 
     .meta,
-    .meta a {
+    .meta a:not(.ui) {
       color: @publicationCardtextColor;
       font-size: @cardMetaFontSize;
       font-weight: @cardMetaTagFontWeight;
@@ -408,6 +410,7 @@
   cursor: pointer;
   outline: none;
   transform: translate(0, -50%);
+  z-index: 1; // make arrows clickable even on events page with right column
 }
 
 .cards-carousel .prev-arrow {
@@ -421,6 +424,10 @@
 } 
 
 /* Custom carousel pagination bullets */
+// avoid dots going over content that follows sliders
+.slick-dots {
+  bottom: 0;
+}
 .cards-carousel .slick-dots li button:before {
   background-color: @carouselDotsBackgroundColor;
   color: transparent;

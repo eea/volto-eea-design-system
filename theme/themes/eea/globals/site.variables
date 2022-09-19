@@ -194,9 +194,11 @@
        Links
 --------------------*/
 
-@linkColor           : @primaryColor;
+@linkColor           : @blue-4;
+@linkHoverColor      : @blue-5;
+@linkVisitedColor    : @purple-5;
+@linkActiveColor     : @blue-6;
 @linkUnderline       : none;
-@linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
 @linkHoverUnderline  : @linkUnderline;
 
 /*-------------------
@@ -222,7 +224,6 @@
 @thumbHoverBackground: rgba(128, 135, 139, 0.8);
 
 /* Inverted */
-@statisticInvertedBackground: @bottleGreen;
 @trackInvertedBackground: rgba(255, 255, 255, 0.1);
 @thumbInvertedBackground: rgba(255, 255, 255, 0.25);
 @thumbInvertedInactiveBackground: rgba(255, 255, 255, 0.15);
@@ -373,6 +374,7 @@
 @lightBlue        : #75C9DB;
 @lightViolet      : #BFC0FF;
 @lightPurple      : #DE99FF;
+@lightLavender    : #E8D2FD;
 @lightPink        : #FFBFF1;
 @lightBrown       : #D9C2AD;
 @lightGrey        : #E6E7E8;
