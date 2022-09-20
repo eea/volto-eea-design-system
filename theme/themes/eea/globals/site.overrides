@@ -4,12 +4,41 @@
 
 @import '@eeacms/volto-eea-design-system/../theme/themes/eea/globals/utilities';
 
+h1, h2, h3, h4, h5, h6 {
+  line-height: @font-lineheight-0;
+  letter-spacing: @font-letterspacing-00;
+}
+
+h2, h3, h4, h5, h6 {
+  color: @headerColor;
+}
+
+.content-area {
+  color: @contentAreaColor;
+}
+
+// text smaller than body has extra letterspacing as described in docusaurus
+.tiny,
+.caption,
+.discreet {
+  letter-spacing: @font-letterspacing-1;
+}
+
 /* Heading size adjustment */
 @media only screen and (max-width: @largestMobileScreen) {
   h1 { font-size: @mobileH1; }
   h2 { font-size: @mobileH2; }
   h3 { font-size: @mobileH3; }
   h4 { font-size: @mobileH4; }
+}
+
+a {
+  &:visited {
+    color:  @linkVisitedColor;
+  }
+  &:active {
+    color: @linkActiveColor;
+  }
 }
 
 [class^='ri-'],
@@ -19,4 +48,10 @@
 
 .homepage {
   color: @tertiaryColor;
+}
+
+/* Add background and color for scroll-to-text fragments */
+::target-text {
+  background: @lightLavender;
+  color: @black;
 }

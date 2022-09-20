@@ -1,5 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
+const fs = require('fs');
+
 module.exports = {
   title: 'EEA Design System',
   tagline: 'Creating a consistent user experience for our digital products',
@@ -79,6 +81,9 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} EEA. Built with Docusaurus.`,
     },
   },
+  stylesheets: [
+    'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic,700italic&display=swap',
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -86,6 +91,27 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           exclude: ['**/md_components/**'],
+          editUrl: ({ versionDocsDirPath, docPath }) => {
+            let thePath = `${versionDocsDirPath}/${docPath}`;
+            let newPath = '';
+            if (thePath.includes('/5-Components/')) {
+              fs.readFileSync(thePath, 'utf-8')
+                .split(/\r?\n/)
+                .forEach((line) => {
+                  if (line.includes('Usage from ')) {
+                    newPath = line.replace(/import.*Usage from '[../]+/, '');
+                    newPath = newPath.replace("';", '');
+                    newPath = thePath.split('5-Components')[0] + newPath;
+                  }
+                });
+            }
+
+            if (newPath.length) {
+              thePath = newPath;
+            }
+
+            return `https://github.com/eea/volto-eea-design-system/edit/contribute-documentation/website/${thePath}`;
+          },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

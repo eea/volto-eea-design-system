@@ -197,7 +197,7 @@ p.ui.button {
 .ui.inverted.primary.button.active,
 .ui.inverted.primary.buttons .button:active,
 .ui.inverted.primary.button:active {
-  color: @invertedHoveredTextColor;
+  color: @invertedHoveredTextColor !important;
 }
 
 .ui.inverted.primary.buttons .button:hover,
@@ -235,7 +235,7 @@ p.ui.button {
 .ui.inverted.secondary.button.active,
 .ui.inverted.secondary.buttons .button:active,
 .ui.inverted.secondary.button:active {
-  color: @invertedHoveredTextColor;
+  color: @invertedHoveredTextColor !important;
 }
 
 .ui.inverted.secondary.buttons .button:hover,
@@ -280,7 +280,7 @@ p.ui.button {
 .ui.inverted.tertiary.buttons .button:active,
 .ui.inverted.tertiary.button:active {
   box-shadow: none !important; // button.less - L:3142
-  color: @invertedHoveredTextColor;
+  color: @invertedHoveredTextColor !important;
 }
 
 .ui.tertiary.buttons .button:hover,

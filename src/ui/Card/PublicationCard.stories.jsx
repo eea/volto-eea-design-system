@@ -28,10 +28,21 @@ export default {
 const Template = (args) => (
   <Container>
     <Card className="publication tertiary">
-      <Image src={args.image} wrapped ui={false} alt="card image" />
+      <Image
+        as="a"
+        href={args.href}
+        src={args.image}
+        wrapped
+        ui={false}
+        alt="card image"
+      />
       <Card.Content>
-        <Card.Meta>{args.tag}</Card.Meta>
-        <Card.Description>{args.description}</Card.Description>
+        <Card.Meta>
+          <a href={args.href}>{args.tag}</a>
+        </Card.Meta>
+        <Card.Description>
+          <a href={args.href}>{args.description}</a>
+        </Card.Description>
       </Card.Content>
     </Card>
   </Container>
@@ -43,4 +54,5 @@ PublicationCard.args = {
   description:
     'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
   image: imageUrl,
+  href: '/#',
 };

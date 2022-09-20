@@ -133,7 +133,9 @@
 /* Mega menu */
 @mobileMegaMenuWidth: 94%;
 @megaMenuBackgroundColor: @darkMidnightBlue;
+@megaMenuTextDisplay: flex;
 @megaMenuTextColor: @white;
+@megaMenuTextHoverDecoration: underline;
 @mobileMegaMenuPadding: @rem-space-4 0;
 @tabletMegaMenuPadding: @rem-space-9;
 @computerMegaMenuPadding: @rem-space-10 0 0 0;
@@ -142,6 +144,7 @@
 /* Title */
 @megaMenuTitleFontSize: @font-size-4;
 @megaMenuTitleFontWeight: @font-weight-7;
+@megaMenuTitleImgMarginLeft: 4px;
 
 /* Sub Title */
 @megaMenuSubTitleFontSize: @font-size-2;
@@ -151,19 +154,20 @@
 @megaMenuListItemFontSize: @font-size-1;
 @megaMenuListItemFontWeight: @font-weight-4;
 @megaMenuListItemPadding: @rem-space-2 0;
-@megaMenuListItemActiveBorder: 2px solid #FFF;
+@megaMenuListItemActiveBorder: 4px solid #FFF;
+@megaMenuListItemActivePadding: 8px;
 
 /* At a glance */
 @megaMenuGlanceBackgroundColor: @secondaryColor;
 @megaMenuGlancePaddingLeft:  @rem-space-8 @rem-space-5;
 @megaMenuGlanceListItemFontSize: @font-size-2;
-@megaMenuGlanceListItemFontWeight: @font-weight-6;
-@megaMenuGlanceListItemMargin: @rem-space-6 0;
+@megaMenuGlanceListItemFontWeight: @font-weight-4;
+@megaMenuGlanceListItemMargin: @rem-space-4 0;
 
 /* Accordion */
 @megaMenuAccordionTitleFontSize: @font-size-3;
 @megaMenuAccordionTitlePadding: @rem-space-2 0;
-@megaMenuAccordionIconFontSize: @font-size-5;
+@megaMenuAccordionIconFontSize: @font-size-9;
 @megaMenuAccordionContentPadding: @rem-space-4 0;
 @megaMenuAccordionTitleBorderBottom: 1px solid rgba(255, 255, 255, 0.25);
 @megaMenuAccordionActiveTitleBorderBottom: 1px solid @white;

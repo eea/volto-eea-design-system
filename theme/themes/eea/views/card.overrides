@@ -27,6 +27,25 @@
   }
 }
 
+.ui.cards > .card > i.icon,
+.ui.cards > .card > a:not(.ui) > i.icon,
+.ui.card > i.icon,
+.ui.card > a:not(.ui) > i.icon {
+  color: @iconColor;
+}
+
+.ui.cards > .card > .content > *:not(:last-child),
+.ui.card > .content > *:not(:last-child) {
+  margin-bottom: @cardContentMarginBottom;
+}
+
+.ui.card .meta {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
 .ui.card .meta > .category {
   font-size: @metaFontSize;
 }
@@ -37,7 +56,7 @@
     margin-bottom: @rem-space-4;
 }
 
-.ui.card .extra.content a {
+.ui.card .extra.content a:not(.ui) {
   font-weight: @contentLinkFontWeight;
 
   &:hover {
@@ -61,7 +80,8 @@
             Primary
 *******************************/
 
-.ui.card.primary {
+.ui.card.primary:not(.inverted),
+.ui.card.primary:not(.inverted) .image {
   background: @primaryBackground;
 }
 
@@ -69,6 +89,10 @@
   color: @primaryHeaderColor;
 }
 
+.ui.card.primary > i.icon,
+.ui.card.primary > a:not(.ui) > i.icon,
+.ui.card.primary > .content a:not(.ui),
+.ui.card.primary > .content a:not(.ui):hover,
 .ui.card.primary > .content > .description {
   color: @primaryDescriptionColor;
 }
@@ -81,18 +105,40 @@
   }
 }
 
-.ui.card.primary > .content > .meta {
+.ui.card.primary > .content > .meta,
+.ui.card.primary > .content > .meta a:not(.ui) {
   color: @primaryMetaColor;
+}
+
+/* Inverted */
+.ui.card.primary.inverted > i.icon,
+.ui.card.primary.inverted > .content * {
+  color: @invertedPrimaryContentColor;
+}
+
+.ui.card.primary.inverted > a:not(.ui) > i.icon,
+.ui.card.primary.inverted > .content a:not(.ui),
+.ui.card.primary.inverted > .extra.content a:not(.ui) {
+  color: @invertedPrimaryContentColor;
+
+  &:hover {
+    color: @invertedPrimaryColorHover;
+  }
 }
 
 /*******************************
             Secondary
 *******************************/
 
-.ui.card.secondary {
+.ui.card.secondary:not(.inverted),
+.ui.card.secondary:not(.inverted) .image {
   background: @secondaryBackground;
 }
 
+.ui.card.secondary > i.icon,
+.ui.card.secondary > a:not(.ui) > i.icon,
+.ui.card.secondary > .content a:not(.ui),
+.ui.card.secondary > .content a:not(.ui):hover,
 .ui.card.secondary > .content > .header {
   color: @secondaryHeaderColor;
 }
@@ -109,18 +155,40 @@
   }
 }
 
-.ui.card.secondary > .content > .meta {
+.ui.card.secondary > .content > .meta,
+.ui.card.secondary > .content > .meta a:not(.ui) {
   color: @secondaryMetaColor;
+}
+
+/* Inverted */
+.ui.card.secondary.inverted > i.icon,
+.ui.card.secondary.inverted > .content * {
+  color: @invertedSecondaryContentColor;
+}
+
+.ui.card.secondary.inverted > a:not(.ui) > i.icon,
+.ui.card.secondary.inverted > .content a:not(.ui),
+.ui.card.secondary.inverted > .extra.content a:not(.ui) {
+  color: @invertedSecondaryContentColor;
+
+  &:hover {
+    color: @invertedSecondaryColorHover;
+  }
 }
 
 /*******************************
             Tertiary
 *******************************/
 
-.ui.card.tertiary {
+.ui.card.tertiary:not(.inverted),
+.ui.card.tertiary:not(.inverted) .image {
   background: @tertiaryBackground;
 }
 
+.ui.card.tertiary > i.icon,
+.ui.card.tertiary > a:not(.ui) > i.icon,
+.ui.card.tertiary > .content a:not(.ui),
+.ui.card.tertiary > .content a:not(.ui):hover,
 .ui.card.tertiary > .content > .header {
   color: @tertiaryHeaderColor;
 }
@@ -137,8 +205,25 @@
   }
 }
 
-.ui.card.tertiary > .content > .meta {
+.ui.card.tertiary > .content > .meta,
+.ui.card.tertiary > .content > .meta a:not(.ui) {
   color: @tertiaryMetaColor;
+}
+
+/* Inverted */
+.ui.card.tertiary.inverted > i.icon,
+.ui.card.tertiary.inverted > .content * {
+  color: @invertedTertiaryContentColor;
+}
+
+.ui.card.tertiary.inverted > a:not(.ui) > i.icon,
+.ui.card.tertiary.inverted > .content a:not(.ui),
+.ui.card.tertiary.inverted > .extra.content a:not(.ui) {
+  color: @invertedTertiaryContentColor;
+
+  &:hover {
+    color: @invertedTertiaryColorHover;
+  }
 }
 
 /*******************************
@@ -151,72 +236,36 @@
 }
 
 .ui.card.rounded {
-  width: @roundedWidth;
+  padding-top: @iconCardPaddingTop;
   border: none;
 
-  .content {
-    justify-content: center;
-    border-top: none;
+  .image {
+    display: flex;
+    justify-content: @roundedImageJustifyContent;
 
-    .image {
-      display: flex;
-      justify-content: center;
-      background-color: @white;
-    }
+  }
+
+  img {
+    width: @roundedImageWidth;
+    height: @roundedImageHeight;
+    border-radius: @roundedImageBorderRadius;
+  }
+
+  .content {
+    border-top: none;
 
     .header {
       margin-bottom: @roundedContentTitleMarginBottom;
       font-size: @roundedContentTitleFontSize;
       font-weight: @roundedContentTitleFontWeight;
-      text-align: center;
+      text-align: @roundedContentTitleTextAlign;
     }
 
     .description {
-      text-align: center;
+      text-align: @roundedContentTitleTextAlign;
+      font-size: @roundedMetadataFontSize;
+      font-weight: @roundedMetadataFontWeight;
     }
-  }
-}
-
-.ui.card.rounded.big {
-  .image {
-    display: flex;
-    justify-content: center;
-    background-color: @white;
-
-    img {
-      width: @roundedBigImageWidth;
-      height: @roundedBigImageHeight;
-      border-radius: 50%;
-    }
-  }
-
-  .description {
-    font-size: @roundedBigMetadataFontSize;
-    font-weight: @roundedBigMetadataFontWeight;
-  }
-}
-
-.ui.rounded.small {
-  .image {
-    display: flex;
-    justify-content: center;
-    background-color: @white;
-
-    img {
-      display: flex;
-      width: @roundedSmallImageWidth;
-      height: @roundedSmallImageHeight;
-      border-radius: @roundedImageBorderRadius;
-    }
-  }
-
-  .header {
-    color: @roundedSmallTitleColor;
-  }
-
-  .description {
-    font-size: @roundedSmallMetadataFontSize;
-    font-weight: @roundedSmallMetadataFontWeight;
   }
 }
 
@@ -239,7 +288,8 @@
     padding: @cardContentPadding;
     background-color: @publicationCardDescriptionColor;
 
-    .meta {
+    .meta,
+    .meta a:not(.ui) {
       color: @publicationCardtextColor;
       font-size: @cardMetaFontSize;
       font-weight: @cardMetaTagFontWeight;
@@ -306,35 +356,14 @@
 .cards-carousel {
   position: relative;
 
-  .ui.button.icon.slider-arrow {
-    padding: @carouselButtonPadding;
-    display: none;
-
-    .active, &:focus, &:hover {
-      background: transparent;
-    }
-
-    .icon {
-      color: @carouselButtonIconColor;
-      font-size: @carouselButtonIconFontSize;
-    }
-  }
-
-  .slick-arrow {
-    display: block !important;
-  }
-
-  .slick-prev,
-  .slick-next {
-    display: none !important;
-  }
-
   .slick-list {
-    margin: 0 -0.75em !important;
+    margin: @slickListMargin;
   }
 
   .slick-track {
     display: flex;
+    gap: @slickTrackGap;
+    margin: @slickTrackMargin;
   }
 
   .slick-slide {
@@ -342,69 +371,102 @@
     height: auto;
     flex: 1;
     flex-direction: column;
-    padding: 15px 0.75em !important;
 
     > div {
       height: 100%;
     }
   }
+}
 
-  .slider-arrow {
-    position: absolute;
-    top: 50%;
-    bottom: auto;
-    display: block;
-    padding: 0;
-    border: none;
+/* Carousel arrows */
+.cards-carousel .ui.button.icon.slider-arrow {
+  padding: @carouselButtonPadding;
+
+  .active, &:focus, &:hover {
     background: transparent;
-    cursor: pointer;
-    outline: none;
-    transform: translate(0, -50%);
   }
 
-  .prev-arrow {
-    right: auto;
-    left: @carouselButtonDistance;
+  &:focus-visible {
+    outline: auto;
   }
 
-  .next-arrow {
-    right: @carouselButtonDistance;
-    left: auto;
-  }
-
-  .slick-dots {
-    position: relative;
-    bottom: unset;
-  }
-
-  .slick-dots li button:before {
-    background-color: @carouselDotsBackgroundColor;
-    color: transparent;
-    border: @carouselDotsBorder;
-    border-radius: @carouselDotsBorderRadius;
-    opacity: @carouselDotsOpacity;
-    width: @mobileCarouselDotsWidth;
-    height: @mobileCarouselDotsHeight;
-  }
-
-  .slick-dots li.slick-active button:before {
-    background-color: @carouselDotsActiveBackgroundColor;
-    color: transparent;
-
+  .icon {
+    color: @carouselButtonIconColor;
+    font-size: @carouselButtonIconFontSize;
+    opacity: @carouselButtonIconOpacity;
+    padding-top: @carouselButtonPaddingTop;
+    width: auto;
   }
 }
 
+.cards-carousel .slider-arrow {
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  transform: translate(0, -50%);
+  z-index: 1; // make arrows clickable even on events page with right column
+}
+
+.cards-carousel .prev-arrow {
+  right: auto;
+  left: @carouselButtonDistance;
+}
+
+.cards-carousel .next-arrow {
+  right: @carouselButtonDistance;
+  left: auto;
+} 
+
+/* Custom carousel pagination bullets */
+// avoid dots going over content that follows sliders
+.slick-dots {
+  bottom: 0;
+}
+.cards-carousel .slick-dots li button:before {
+  background-color: @carouselDotsBackgroundColor;
+  color: transparent;
+  border: @carouselDotsBorder;
+  border-radius: @carouselDotsBorderRadius;
+  opacity: @carouselDotsOpacity;
+  width: @mobileCarouselDotsWidth;
+  height: @mobileCarouselDotsHeight;
+}
+
+.cards-carousel .slick-dots li.slick-active button:before {
+  background-color: @carouselDotsActiveBackgroundColor;
+  color: transparent;  
+}
+
+.slick-dots li button:focus-visible {
+  outline: black;
+  outline-style: auto;
+}
 
 @media only screen and (min-width: @computerBreakpoint) {
-  .cards-carousel {
+  .cards-carousel .slick-dots li button:before {
+    width: inherit;
+    height: inherit;
+  }
+}
 
-    .ui.button.icon.slider-arrow {
-      display: block;
-    }
+/*******************************
+          Icon Card
+*******************************/
 
-    .slick-dots li button:before {
-      width: inherit;
-      height: inherit;
+.ui.card.icon {
+  padding-top: @iconCardPaddingTop;
+  .content {
+    border-top: none;
+    .header {
+      word-break: break-word;
     }
+  }
+  .icon {
+    margin: auto;
   }
 }
