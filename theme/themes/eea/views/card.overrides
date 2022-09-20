@@ -14,8 +14,8 @@
   height: 100%;
 }
 
-.ui.cards > .card > .image,
-.ui.card > .image {
+.ui.cards > .card:not(.rounded) > .image,
+.ui.card:not(.rounded) > .image {
   overflow: @cardImageOverflow;
   height: @cardImageHeight;
 
@@ -235,6 +235,7 @@
   height: auto;
 }
 
+.ui.cards .ui.card.rounded,
 .ui.card.rounded {
   padding-top: @iconCardPaddingTop;
   border: none;
