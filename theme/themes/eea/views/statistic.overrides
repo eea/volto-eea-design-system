@@ -4,16 +4,54 @@
 
 .ui.inverted.statistics,
 .ui.inverted.statistic {
-  background: @statisticInvertedBackground;
+  background: @invertedBackground;
 }
 
 /* Full width statistics for mobile */
 .ui.statistic {
   width: @mobileStatisticWidth;
+  align-items: center;
 }
 
-@media only screen and (min-width: @mobileBreakpoint) {
+/* Custom statistic variations & text wrap */
+.ui.statistics .ui.statistic {
+  max-width: min-content;
+  .value,
+  .label,
+  .slate {
+    max-width: fit-content;
+  }
+}
+
+.ui.statistics:not(.inverted) .ui.statistic {
+  .value,
+  .label,
+  .slate {
+    min-width: @statisticContentMinWidth;
+    &.primary { color: @primaryColor; }
+    &.secondary { color: @secondaryColor; }
+    &.tertiary { color: @tertiaryColor; }
+  }
+}
+
+.ui.statistics.inverted > a {
+  color: @white;
+}
+
+.ui.horizontal.statistics .statistic > .slate,
+.ui.horizontal.statistic > .slate {
+  margin: 0em 0em 0em @horizontalLabelDistance;
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
   .ui.statistic {
     width: @tabletStatisticWidth;
+  }
+}
+
+/* No horizontal statistic on mobile screens */
+@media only screen and (max-width: @largestMobileScreen) {
+  .ui.statistics.horizontal .ui.statistic {
+    flex-direction: column;
   }
 }
