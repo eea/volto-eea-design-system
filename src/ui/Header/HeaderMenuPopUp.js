@@ -275,10 +275,22 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
       </Accordion.Title>
     );
     let overview = cloneDeep(element);
-    overview.title = 'See all';
     x.content = (
       <Accordion.Content key={index}>
-        {renderMenuItem(overview, { className: 'item' })}
+        {/* Inverted right labeled button as a category title - Mobile */}
+        {renderMenuItem(
+          overview,
+          { className: 'ui button inverted icon right labeled' },
+          {
+            children: (
+              <>
+                {/* Add word overview to titles */}
+                <span> overview</span>
+                <Icon className={'arrow right icon'} alt={'Title icon'} />
+              </>
+            ),
+          },
+        )}
         <FirstLevelContent
           element={element}
           renderMenuItem={renderMenuItem}
