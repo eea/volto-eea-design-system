@@ -1,20 +1,11 @@
 import React from 'react';
 import { Transition } from 'semantic-ui-react';
-import {
-  Container,
-  Divider,
-  Grid,
-  List,
-  Icon,
-  Accordion,
-} from 'semantic-ui-react';
+import { Container, Grid, List, Icon, Accordion } from 'semantic-ui-react';
 
 import { cloneDeep } from 'lodash';
 
 import { Link } from 'react-router-dom';
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
-
-import linkArrowsSVG from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Svg/arrow-double-right.svg';
 
 const createColumns = (item, length, renderMenuItem) => {
   let subArrays = [];
@@ -76,10 +67,27 @@ const Topics = ({ menuItem, renderMenuItem }) => (
       <React.Fragment key={index}>
         {section.title === 'At a glance' ? (
           <Grid.Column width={3} id="at-a-glance">
+            <div className="mega-menu-title">
+              {/* Inverted right labeled button as a category title,
+                    for topics the button goes inside the grid */}
+              {renderMenuItem(
+                menuItem,
+                { className: 'ui button inverted icon right labeled' },
+                {
+                  children: (
+                    <>
+                      {/* Add word overview to titles */}
+                      <span> overview</span>
+                      <Icon className={'arrow right icon'} alt={'Title icon'} />
+                    </>
+                  ),
+                },
+              )}
+            </div>
             <Item item={section} key={index} renderMenuItem={renderMenuItem} />
           </Grid.Column>
         ) : (
-          <Grid.Column width={9} key={index}>
+          <Grid.Column width={9} key={index} id="topics-right-column">
             <ItemGrid
               item={section}
               columns={4}
@@ -306,23 +314,28 @@ function HeaderMenuPopUp({
         <Container>
           {menuItem && (
             <div className="menu-content tablet hidden mobile hidden">
-              <h3 className="title">
-                {renderMenuItem(
-                  menuItem,
-                  { className: 'title-link' },
-                  {
-                    iconPosition: 'right',
-                    children: (
-                      <img
-                        src={linkArrowsSVG}
-                        className={'title-img'}
-                        alt={'Title icon'}
-                      />
-                    ),
-                  },
-                )}
-              </h3>
-              <Divider fitted />
+              {/* Inverted right labeled button as a category title,
+                  for topics the button goes inside the grid */}
+              {menuItem.title !== 'Topics' && (
+                <div className="mega-menu-title">
+                  {renderMenuItem(
+                    menuItem,
+                    { className: 'ui button inverted icon right labeled' },
+                    {
+                      children: (
+                        <>
+                          {/* Add word overview to titles */}
+                          <span> overview</span>
+                          <Icon
+                            className={'arrow right icon'}
+                            alt={'Title icon'}
+                          />
+                        </>
+                      ),
+                    },
+                  )}
+                </div>
+              )}
               {menuItem.title === 'Topics' ? (
                 <Topics menuItem={menuItem} renderMenuItem={renderMenuItem} />
               ) : menuItem.title === 'Countries' ? (

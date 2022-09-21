@@ -1345,9 +1345,8 @@ const Template = (args) => {
                   active: item['@id'] === pathname,
                 })}
               >
-                {props?.iconPosition !== 'right' && props?.children}
                 <span>{item.title}</span>
-                {props?.iconPosition === 'right' && props?.children}
+                {props?.children}
               </a>
             );
           }}

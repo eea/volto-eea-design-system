@@ -216,13 +216,13 @@
   scrollbar-gutter: stable;
   background: @headerMainSectionBackground;
 
-  .ui.container {
+  > .ui.container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: @mobileMainSectionHeight;
 
-    .ui.grid {
+    > .ui.grid {
       // All margins and paddings removed for main header
       width: 100%;
       margin: 0;
@@ -599,12 +599,8 @@
     height: 100%;
   }
 
-  .title {
-    font-size: @megaMenuTitleFontSize;
-    font-weight: @megaMenuTitleFontWeight;
-    .title-img {
-      margin-left: @megaMenuTitleImgMarginLeft;
-    }
+  .mega-menu-title {
+    padding: @megaMenuTitleButtonPadding;
   }
 
   .sub-title {
@@ -612,7 +608,7 @@
     font-weight: @megaMenuSubTitleFontWeight;
     color: @megaMenuTextColor;
 
-    &+ .ui.grid {
+    /*&+ .ui.grid {
 
       div.column:first-child {
         padding-left: 0;
@@ -621,7 +617,7 @@
       div.column:last-child {
         padding-right: 0;
       }
-    }
+    }*/
   }
 }
 
@@ -650,14 +646,22 @@
 
 #at-a-glance {
   background-color: @megaMenuGlanceBackgroundColor;
-  // To override the grid column paddings
-  padding: @megaMenuGlancePaddingLeft !important;
+  padding: @megaMenuGlancePadding !important;
 
   .item {
     font-size: @megaMenuGlanceListItemFontSize;
     font-weight: @megaMenuGlanceListItemFontWeight;
     margin: @megaMenuGlanceListItemMargin;
   }
+}
+
+#topics-right-column {
+  padding-top: @topicsRightColumnPaddingTop;
+  padding-left: @topicsRightColumnPaddingLeft;
+}
+
+.ui.grid > .column > .ui.grid {
+  margin-top: 0; 
 }
 
 #mega-menu .ui.grid {
