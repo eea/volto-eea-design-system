@@ -49,6 +49,8 @@
        Content
 --------------------*/
 
+@cardTextAlign: left;
+
 
 /* Image */
 @cardImageHeight: 200px;
@@ -84,6 +86,7 @@
 @headerColor: @tertiaryColor;
 
 /* Metadata */
+@metaJustifyContent: space-between;
 @metaFontSize: @relativeMedium;
 @metaSpacing: 0.3em;
 @metaColor: @tertiaryColor;
@@ -135,6 +138,7 @@
 /* Additional Content */
 @extraDivider: none;
 @extraBackground: none;
+@extraJustifyContent: right;
 @extraPosition: static;
 @extraWidth: auto;
 @extraTop: 0em;
