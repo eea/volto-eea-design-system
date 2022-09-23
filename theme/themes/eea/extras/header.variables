@@ -152,11 +152,10 @@
 @mobileMegaMenuPadding: @rem-space-4 0;
 @tabletMegaMenuPadding: @rem-space-9;
 @computerMegaMenuPadding: @rem-space-4 0;
-@megaMenuContentPaddingTop: @rem-space-8;
 
 /* Title */
-@mobileMegaMenuTitleButtonPadding: @rem-space-5 0 @rem-space-4;
-@computerMegaMenuTitleButtonPadding: @rem-space-8 0 @rem-space-6;
+@mobileMegaMenuTitleButtonPadding: @rem-space-5 0;
+@computerMegaMenuTitleButtonPadding: @rem-space-8 0;
 
 /* Sub Title */
 @mobileMegaMenuSubTitleFontSize: @font-size-2;
@@ -171,7 +170,7 @@
 @megaMenuListItemActivePadding: 8px;
 
 /* Topics */
-@topicsRightColumnPaddingTop: calc(2 * @rem-space-15);
+@topicsRightColumnPaddingTop: calc(31 * @spacer); // 124px;
 @topicsRightColumnPaddingLeft: @rem-space-4;
 
 /* At a glance */
