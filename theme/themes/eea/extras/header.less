@@ -607,7 +607,7 @@
 }
 
 #mega-menu .mega-menu-title {
-  padding: @computerMegaMenuTitleButtonPadding;
+  padding: @mobileMegaMenuTitleButtonPadding;
 }
 
 #mega-menu .ui.list {
@@ -677,6 +677,7 @@
 #mega-menu .ui.accordion {
   .title {
     font-size: @megaMenuAccordionTitleFontSize;
+    font-weight: @megaMenuAccordionTitleFontWeight;
     color: @megaMenuTextColor;
     padding: @megaMenuAccordionTitlePadding;
     border-bottom: @megaMenuAccordionTitleBorderBottom;
@@ -750,9 +751,6 @@
   .nav-description {
     font-size: @tabletNavDescriptionFontSize;
   }
-  #mega-menu .mega-menu-title {
-    padding: @mobileMegaMenuTitleButtonPadding;
-  }
 }
 
 @media all and (min-width: @tabletBreakpoint) {
@@ -770,6 +768,10 @@
   }
   #mega-menu .title > a {
     color: @megaMenuTextColor;
+  }
+
+  #mega-menu .mega-menu-title {
+    padding: @computerMegaMenuTitleButtonPadding;
   }
 
   #mega-menu .sub-title {
