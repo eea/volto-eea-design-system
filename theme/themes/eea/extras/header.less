@@ -598,32 +598,22 @@
     align-items: baseline;
     height: 100%;
   }
+}
 
-  .mega-menu-title {
-    padding: @megaMenuTitleButtonPadding;
-  }
+#mega-menu .item.sub-title {
+  font-size: @mobileMegaMenuSubTitleFontSize;
+  font-weight: @megaMenuSubTitleFontWeight;
+  color: @megaMenuTextColor;
+}
 
-  .sub-title {
-    font-size: @megaMenuSubTitleFontSize;
-    font-weight: @megaMenuSubTitleFontWeight;
-    color: @megaMenuTextColor;
-
-    /*&+ .ui.grid {
-
-      div.column:first-child {
-        padding-left: 0;
-      }
-
-      div.column:last-child {
-        padding-right: 0;
-      }
-    }*/
-  }
+#mega-menu .mega-menu-title {
+  padding: @computerMegaMenuTitleButtonPadding;
 }
 
 #mega-menu .ui.list {
   margin: 0;
 }
+
 #mega-menu .item {
   display: flex;
   font-size: @megaMenuListItemFontSize;
@@ -681,6 +671,10 @@
 #mega-menu .active:not(.title-link) > span {
   border-left: @megaMenuListItemActiveBorder;
   padding-left: @megaMenuListItemActivePadding;
+}
+
+.nav-description {
+  font-size: @computerNavDescriptionFontSize;
 }
 
 /*Mega Menu Accordion - Tablet & Mobile */
@@ -756,6 +750,13 @@
   #language-switcher .menu {
     right: -20px;
   }
+
+  .nav-description {
+    font-size: @tabletNavDescriptionFontSize;
+  }
+  #mega-menu .mega-menu-title {
+    padding: @mobileMegaMenuTitleButtonPadding;
+  }
 }
 
 @media all and (min-width: @tabletBreakpoint) {
@@ -773,5 +774,15 @@
   }
   #mega-menu .title > a {
     color: @megaMenuTextColor;
+  }
+
+  #mega-menu .sub-title {
+    font-size: @computerMegaMenuSubTitleFontSize;
+    font-weight: @megaMenuSubTitleFontWeight;
+    color: @megaMenuTextColor;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

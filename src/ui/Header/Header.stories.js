@@ -1415,7 +1415,9 @@ const Template = (args) => {
                   {props?.children}
                 </a>
                 {/* Item description */}
-                {item.nav_description && <p>{item.nav_description}</p>}
+                {item.nav_description && (
+                  <p className="nav-description">{item.nav_description}</p>
+                )}
               </>
             );
           }}

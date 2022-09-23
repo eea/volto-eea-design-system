@@ -162,7 +162,7 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
             if (!item.items.length) {
               return (
                 <React.Fragment key={index}>
-                  {renderMenuItem(item, { className: 'item' })}
+                  {renderMenuItem(item, { className: 'item sub-title' })}
                 </React.Fragment>
               );
             }
@@ -277,20 +277,22 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
     let overview = cloneDeep(element);
     x.content = (
       <Accordion.Content key={index}>
-        {/* Inverted right labeled button as a category title - Mobile */}
-        {renderMenuItem(
-          overview,
-          { className: 'ui button inverted icon right labeled' },
-          {
-            children: (
-              <>
-                {/* Add word overview to titles */}
-                <span> overview</span>
-                <Icon className={'arrow right icon'} alt={'Title icon'} />
-              </>
-            ),
-          },
-        )}
+        <div className="mega-menu-title">
+          {/* Inverted right labeled button as a category title - Mobile */}
+          {renderMenuItem(
+            overview,
+            { className: 'ui button inverted icon right labeled' },
+            {
+              children: (
+                <>
+                  {/* Add word overview to titles */}
+                  <span> overview</span>
+                  <Icon className={'arrow right icon'} alt={'Title icon'} />
+                </>
+              ),
+            },
+          )}
+        </div>
         <FirstLevelContent
           element={element}
           renderMenuItem={renderMenuItem}

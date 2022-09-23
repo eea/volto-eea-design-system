@@ -155,11 +155,13 @@
 @megaMenuContentPaddingTop: @rem-space-8;
 
 /* Title */
-@megaMenuTitleButtonPadding: @rem-space-8 0 @rem-space-6;
+@mobileMegaMenuTitleButtonPadding: @rem-space-5 0 @rem-space-4;
+@computerMegaMenuTitleButtonPadding: @rem-space-8 0 @rem-space-6;
 
 /* Sub Title */
-@megaMenuSubTitleFontSize: @font-size-2;
-@megaMenuSubTitleFontWeight: @font-weight-6;
+@mobileMegaMenuSubTitleFontSize: @font-size-2;
+@computerMegaMenuSubTitleFontSize: @font-size-3;
+@megaMenuSubTitleFontWeight: @font-weight-7;
 
 /* List Item */
 @megaMenuListItemFontSize: @font-size-1;
@@ -186,6 +188,10 @@
 @megaMenuAccordionContentPadding: @rem-space-4 0;
 @megaMenuAccordionTitleBorderBottom: 1px solid rgba(255, 255, 255, 0.25);
 @megaMenuAccordionActiveTitleBorderBottom: 1px solid @white;
+
+/* Menu item description */
+@tabletNavDescriptionFontSize: @font-size-1;
+@computerNavDescriptionFontSize: @font-size-0;
 
 /* Nested Accordion */
 @megaMenuNestedAccordionMargin: 0;
