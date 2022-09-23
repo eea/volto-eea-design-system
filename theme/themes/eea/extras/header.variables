@@ -185,7 +185,7 @@
 @megaMenuAccordionTitleFontWeight: @font-weight-7;
 @megaMenuAccordionTitlePadding: @rem-space-2 0;
 @megaMenuAccordionIconFontSize: @font-size-9;
-@megaMenuAccordionContentPadding: 0;
+@megaMenuAccordionContentPadding: 0 0 @rem-space-5 0;
 @megaMenuAccordionTitleBorderBottom: 1px solid rgba(255, 255, 255, 0.25);
 @megaMenuAccordionActiveTitleBorderBottom: 1px solid @white;
 
