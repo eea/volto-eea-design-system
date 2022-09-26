@@ -282,8 +282,8 @@
 @roundedContentTitleFontWeight   : @bold;
 @roundedContentTitleFontSize     : @font-size-3;
 @roundedImageJustifyContent      : center;
-@roundedImageHeight           : 173px;
-@roundedImageWidth            : 173px;
+@roundedImageHeight           : 176px;
+@roundedImageWidth            : 176px;
 @roundedMetadataFontSize      : @font-size-1;
 @roundedMetadataFontWeight    : @normal;
 

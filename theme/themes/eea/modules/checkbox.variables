@@ -5,6 +5,7 @@
 @checkboxSize: 20px;
 @checkboxColor: @textColor;
 @checkboxLineHeight: @checkboxSize;
+@circularRadius: 500rem;
 
 
 /* Label */
