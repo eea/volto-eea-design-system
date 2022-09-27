@@ -7,11 +7,15 @@
 .ui.card > .extra {
   font-size: @extraLinkFontSize;
   word-break: @extraLinkWordBreak;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: var(--text-align, @extraJustifyContent);
 }
 
 /* Cards must have same height */
 .ui.card {
   height: 100%;
+  text-align: var(--text-align, @cardTextAlign);
 }
 
 .ui.cards > .card:not(.rounded) > .image,
@@ -41,7 +45,7 @@
 
 .ui.card .meta {
   display: flex;
-  justify-content: space-between;
+  justify-content: var(--justify-content, @metaJustifyContent);
   width: 100%;
 }
 
@@ -259,11 +263,11 @@
       margin-bottom: @roundedContentTitleMarginBottom;
       font-size: @roundedContentTitleFontSize;
       font-weight: @roundedContentTitleFontWeight;
-      text-align: @roundedContentTitleTextAlign;
+      //text-align: @roundedContentTitleTextAlign;
     }
 
     .description {
-      text-align: @roundedContentTitleTextAlign;
+      //text-align: @roundedContentTitleTextAlign;
       font-size: @roundedMetadataFontSize;
       font-weight: @roundedMetadataFontWeight;
     }
