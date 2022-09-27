@@ -15,10 +15,16 @@
   .container {
     width: auto !important;
   }
+
   [class*="block-editor"] {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    [class*="block-editor"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
 
 .contentWidth(@offset) {
