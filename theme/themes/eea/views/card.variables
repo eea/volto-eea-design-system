@@ -118,7 +118,7 @@
 
 /* Description */
 @descriptionDistance: 0;
-@descriptionColor: @tertiaryColor;
+@descriptionColor: inherit;
 
 /* Content Image */
 @contentImageWidth: '';
