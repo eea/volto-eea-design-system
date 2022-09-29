@@ -30,6 +30,7 @@
   box-shadow @defaultDuration @defaultEasing,
   transform @defaultDuration @defaultEasing
 ;
+@cardMetaDateMarginLeft: auto;
 
 /* Card Group */
 @horizontalSpacing: 1em;

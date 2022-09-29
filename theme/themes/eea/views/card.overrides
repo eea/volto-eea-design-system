@@ -18,6 +18,10 @@
   text-align: var(--text-align, @cardTextAlign);
 }
 
+.card .meta .date {
+  margin-left: @cardMetaDateMarginLeft;
+}
+
 .ui.cards > .card:not(.rounded) > .image,
 .ui.card:not(.rounded) > .image {
   overflow: @cardImageOverflow;
