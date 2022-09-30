@@ -9,6 +9,7 @@
 @contentBoxColorInverted : inherit;
 
 /* Themes */
+@contentBoxNoBackground: transparent;
 @contentBoxBackgroundColorPrimary: @primaryColor;
 @contentBoxBackgroundColorSecondary: @secondaryColor;
 @contentBoxBackgroundColorTertiary: @tertiaryColor;
