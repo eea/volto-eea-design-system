@@ -45,7 +45,8 @@
 @contentMargin: 0;
 @contentPaddingBottom: 1.563rem;
 @contentPadding: @squareMedium;
-@contentBackground: #F9F9F9;
+@contentBackground: @grey-1;
+@contentColor: @tertiaryColor;
 
 /*-------------------
        Coupling
@@ -62,7 +63,7 @@
 --------------------*/
 
 @activeIconTransform: none;
-@activeTitleBackground: @darkWhite;
+@activeTitleBackground: @white;
 @activeTitleColor: @grey-5;
 @activeTitleBorderBottom: 0;
 
