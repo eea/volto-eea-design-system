@@ -49,6 +49,11 @@
 [class*="content-box"] a {
   text-decoration: underline;
 }
+.content-box[class*="ary"] {
+  --bg-color: transparent;
+  --text-color: #FFF;
+  --text-color-hover: @grey-1;
+}
 // inherit link
 .content-box[class*="ary"] a {
   color: inherit;
