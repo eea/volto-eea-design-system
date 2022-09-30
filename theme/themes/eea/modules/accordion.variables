@@ -10,13 +10,13 @@
 @titlePadding: 1rem 1.563rem;
 @titlePadding: @rectangleMedium;
 @titleFontSize: 1.125rem;
-@titleColor: @textColor;
+@titleColor: var(--text-color, @textColor);
 @titleBorderBottom: @1px solid @silverGray;
-@titleColorHover: @grey-5;
+@titleColorHover:var(--text-color-hover, @grey-5);
 @titleJustifyContent: space-between;
 
 /* Icon */
-@iconColor: @oldSilver;
+@iconColor: var(--text-color, @oldSilver);
 @iconColorActive: @white;
 @iconOpacity: 1;
 @iconFontSize: 3rem;
