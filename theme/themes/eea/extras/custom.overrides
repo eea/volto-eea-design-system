@@ -80,6 +80,26 @@
     color: @red-5;
 }
 
+.power-user-menu,
+.blocks-chooser {
+  --text-color: @textColor;
+}
+.blocks-chooser {
+  .searchbox {
+    height: auto !important;
+  }
+  .input {
+    width: auto !important;
+  }
+  .clear-search-button {
+    padding: 0.5rem;
+  }
+  .icon {
+    margin-right: 0 !important;
+  }
+}
+
+
 // ensure background of content-box goes above the content area
 // draft image for non published pages
 .view-viewview:not(.wf-state-published) .content-area {
