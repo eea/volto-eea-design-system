@@ -74,10 +74,6 @@
   font-weight: inherit;
 }
 
-// inherit color for slate links within context boxes
-.content-box .slate-editor-link {
-  color: inherit;
-}
 
 // customize error class from volto-slate to our color of red
 .error {
