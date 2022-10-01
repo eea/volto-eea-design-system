@@ -10,7 +10,7 @@
 @titlePadding: 1rem 1.563rem;
 @titlePadding: @rectangleMedium;
 @titleFontSize: 1.125rem;
-@titleColor: var(--text-color, @textColor);
+@titleColor: @textColorCSSVar;
 @titleBorderBottom: @1px solid @silverGray;
 @titleColorHover:var(--text-color-hover, @grey-5);
 @titleJustifyContent: space-between;
@@ -32,7 +32,7 @@
 ;
 @iconVerticalAlign: baseline;
 @iconTransform: none;
-@iconColorHover: @grey-5;
+@iconColorHover: @titleColorHover;
 @iconInactive: "\ea4e"; // Icon of closed accordion
 @iconActive: "\EA78"; // Icon of open accordion
 @iconOrder: 1; // Icon after text of the title
