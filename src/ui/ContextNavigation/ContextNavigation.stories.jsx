@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Icon } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
 const sidenavItems = [
   {
@@ -72,7 +72,25 @@ const sidenavItems = [
       {
         '@id': 'Articles',
         description: '',
-        items: [],
+        items: [
+          {
+            '@id': 'article-1',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Summer 2022: Living in a state of multiple crises',
+            url: '/#',
+          },
+          {
+            '@id': 'article-2',
+            description: '',
+            items: [],
+            review_state: null,
+            title:
+              'Interview — Prosumers and the energy crisis: citizens contributing to Europe’s energy transition',
+            url: '/#',
+          },
+        ],
         review_state: null,
         title: 'Articles',
         url: '/#',
@@ -96,9 +114,7 @@ function Template({ ...args }) {
   return (
     <Container>
       <nav className="context-navigation">
-        <div className="context-navigation-header">
-          <Icon className="ri-menu-2-line" /> {args.header}
-        </div>
+        <div className="context-navigation-header">{args.header}</div>
         <div role="list" className="ui list">
           {args.sidenavItems &&
             args.sidenavItems.map((element, index) => {
@@ -125,6 +141,29 @@ function Template({ ...args }) {
                                 >
                                   {subelement.title}
                                 </a>
+                                {subelement.items.length > 0 &&
+                                  subelement.items.map(
+                                    (subparelement, index) => {
+                                      return (
+                                        <div className="list" role="list">
+                                          <div
+                                            role="listitem"
+                                            className="item level-3"
+                                          >
+                                            <div className="content">
+                                              <a
+                                                title={subparelement.title}
+                                                className="contenttype-document"
+                                                href={subparelement.url}
+                                              >
+                                                {subparelement.title}
+                                              </a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      );
+                                    },
+                                  )}
                               </div>
                             </div>
                           </div>
