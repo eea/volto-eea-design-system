@@ -180,7 +180,7 @@
 
 @lineHeight          : @font-lineheight-3;
 @mobileLineHeight    : @font-lineheight-3;
-@textColor           : rgba(0, 0, 0, 1);
+@textColor           : @tertiaryColor;
 @contentAreaColor    : @tertiaryColor;
 
 /*-------------------
@@ -224,7 +224,6 @@
 @thumbHoverBackground: rgba(128, 135, 139, 0.8);
 
 /* Inverted */
-@statisticInvertedBackground: @bottleGreen;
 @trackInvertedBackground: rgba(255, 255, 255, 0.1);
 @thumbInvertedBackground: rgba(255, 255, 255, 0.25);
 @thumbInvertedInactiveBackground: rgba(255, 255, 255, 0.15);
@@ -623,7 +622,7 @@
       Borders
 --------------------*/
 
-@circularRadius                : 500rem;
+@circularRadius                : 50%;
 
 @borderColor               : @silverGray;
 @strongBorderColor         : rgba(34, 36, 38, 0.22);

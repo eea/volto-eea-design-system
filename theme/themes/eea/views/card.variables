@@ -30,6 +30,7 @@
   box-shadow @defaultDuration @defaultEasing,
   transform @defaultDuration @defaultEasing
 ;
+@cardMetaDateMarginLeft: auto;
 
 /* Card Group */
 @horizontalSpacing: 1em;
@@ -48,6 +49,8 @@
 /*-------------------
        Content
 --------------------*/
+
+@cardTextAlign: left;
 
 
 /* Image */
@@ -84,7 +87,8 @@
 @headerColor: @tertiaryColor;
 
 /* Metadata */
-@metaFontSize: @relativeMedium;
+@metaJustifyContent: space-between;
+@metaFontSize: @absoluteMedium;
 @metaSpacing: 0.3em;
 @metaColor: @tertiaryColor;
 
@@ -115,7 +119,7 @@
 
 /* Description */
 @descriptionDistance: 0;
-@descriptionColor: @tertiaryColor;
+@descriptionColor: inherit;
 
 /* Content Image */
 @contentImageWidth: '';
@@ -135,6 +139,7 @@
 /* Additional Content */
 @extraDivider: none;
 @extraBackground: none;
+@extraJustifyContent: right;
 @extraPosition: static;
 @extraWidth: auto;
 @extraTop: 0em;
@@ -273,14 +278,13 @@
 *******************************/
 /* Global */
 @roundedImageBorderRadius        : @circularRadius;
-@roundedContentJustifyContent     : center;
 @roundedContentTitleMarginBottom : @rem-space-2;
-@roundedContentTitleTextAlign    : center;
+@roundedContentTitleTextAlign    : left;
 @roundedContentTitleFontWeight   : @bold;
 @roundedContentTitleFontSize     : @font-size-3;
 @roundedImageJustifyContent      : center;
-@roundedImageHeight           : 173px;
-@roundedImageWidth            : 173px;
+@roundedImageHeight           : 176px;
+@roundedImageWidth            : 176px;
 @roundedMetadataFontSize      : @font-size-1;
 @roundedMetadataFontWeight    : @normal;
 

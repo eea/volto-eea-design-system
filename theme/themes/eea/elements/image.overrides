@@ -8,6 +8,9 @@
 
 // This override on .block .ui.image is needed as it
 // sets width: 100% by default
+.ui.image {
+  max-width: var(--image-max-width, 100%);
+}
 
 .block .ui.mini.image {
   width: @miniWidth;

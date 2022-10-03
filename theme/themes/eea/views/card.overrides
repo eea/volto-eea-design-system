@@ -7,15 +7,23 @@
 .ui.card > .extra {
   font-size: @extraLinkFontSize;
   word-break: @extraLinkWordBreak;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: var(--text-align, @extraJustifyContent);
 }
 
 /* Cards must have same height */
 .ui.card {
   height: 100%;
+  text-align: var(--text-align, @cardTextAlign);
 }
 
-.ui.cards > .card > .image,
-.ui.card > .image {
+.card .meta .date {
+  margin-left: @cardMetaDateMarginLeft;
+}
+
+.ui.cards > .card:not(.rounded) > .image,
+.ui.card:not(.rounded) > .image {
   overflow: @cardImageOverflow;
   height: @cardImageHeight;
 
@@ -41,7 +49,8 @@
 
 .ui.card .meta {
   display: flex;
-  justify-content: space-between;
+  justify-content: var(--justify-content, @metaJustifyContent);
+  width: 100%;
 }
 
 
@@ -234,6 +243,7 @@
   height: auto;
 }
 
+.ui.cards .ui.card.rounded,
 .ui.card.rounded {
   padding-top: @iconCardPaddingTop;
   border: none;
@@ -251,20 +261,17 @@
   }
 
   .content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: @roundedContentJustifyContent;
     border-top: none;
 
     .header {
       margin-bottom: @roundedContentTitleMarginBottom;
       font-size: @roundedContentTitleFontSize;
       font-weight: @roundedContentTitleFontWeight;
-      text-align: @roundedContentTitleTextAlign;
+      //text-align: @roundedContentTitleTextAlign;
     }
 
     .description {
-      text-align: @roundedContentTitleTextAlign;
+      //text-align: @roundedContentTitleTextAlign;
       font-size: @roundedMetadataFontSize;
       font-weight: @roundedMetadataFontWeight;
     }
@@ -427,6 +434,7 @@
 /* Custom carousel pagination bullets */
 // avoid dots going over content that follows sliders
 .slick-dots {
+  position: relative;
   bottom: 0;
 }
 .cards-carousel .slick-dots li button:before {

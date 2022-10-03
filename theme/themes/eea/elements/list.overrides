@@ -28,11 +28,13 @@ ul.ui.list li:before {
 }
 
 // Third layer margin fix
-.ui.ordered.list .list .list > .item:before {
+.ui.ordered.list .list .list > .item:before,
+.ui.ordered.list .list .list > li:before {
   margin-left: @orderedGrandchildCountOffset;
 }
 
 // Fourth layer margin fix
-.ui.ordered.list .list .list .list > .item:before {
+.ui.ordered.list .list .list .list > .item:before,
+.ui.ordered.list .list .list .list > li:before {
   margin-left: @orderedGreatGrandchildCountOffset;
 }
