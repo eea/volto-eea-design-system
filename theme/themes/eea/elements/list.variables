@@ -182,7 +182,7 @@
 /* Ordered List */
 @orderedCountName: ordered;
 @orderedCountContent: counters(ordered, ".") " ";
-@orderedCountColor: @primaryColor;
+@orderedCountColor: inherit;
 @orderedCountDistance: 1.25rem;
 @orderedCountOpacity: 1;
 @orderedCountTextAlign: right;

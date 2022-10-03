@@ -186,6 +186,10 @@
 @textColor           : @tertiaryColor;
 // use this variable when you want it to be replaced by css variables
 @textColorCSSVar     : var(--text-color, @textColor);
+@borderColorCSSVar   : var(--border-color, @grey-3);
+@borderColorPrimaryCSSVar: var(--border-color-primary, @primaryColor);
+@borderColorSecondaryCSSVar: var(--border-color-secondary, @secondaryColor);
+@borderColorTertiaryCSSVar: var(--border-color-tertiary, @tertiaryColor);
 @contentAreaColor    : @tertiaryColor;
 
 /*-------------------
