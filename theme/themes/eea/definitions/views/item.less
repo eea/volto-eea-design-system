@@ -61,6 +61,18 @@
 /*--------------
       Item
 ---------------*/
+// color item images that are svg files
+.item.primary img {
+    filter: @itemPrimaryFilterColor;
+}
+
+.item.secondary img {
+    filter: @itemSecondaryFilterColor;
+}
+
+.item.tertiary img {
+    filter: @itemTertiaryFilterColor;
+}
 
 .ui.items > .item:after {
   display: block;

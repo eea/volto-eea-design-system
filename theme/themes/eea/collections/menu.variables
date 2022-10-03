@@ -30,7 +30,7 @@
   color @defaultDuration @defaultEasing
 ;
 @itemFontWeight: @normal;
-@itemTextColor: @deepBlue;
+@itemTextColor: var(--text-color, @deepBlue);
 
 /* Divider */
 @dividerSize: 1px;
@@ -254,7 +254,7 @@
 // Pastanaga custom
 @secondaryPointingItemTextTransform: uppercase;
 
-@secondaryPointingHoverTextColor: @textColor;
+@secondaryPointingHoverTextColor: var(--text-color-hover, @textColor);
 
 @secondaryPointingActiveBorderColor: @secondaryColor;
 @secondaryPointingActiveTextColor: @secondaryColor;

@@ -34,41 +34,27 @@
   &.primary {
     background-color: @contentBoxBackgroundColorPrimary;
     color: @contentBoxColor;
-    .header {
-      color: @contentBoxColor !important;
-    }
   }
-
   &.secondary {
     background-color: @contentBoxBackgroundColorSecondary;
     color: @contentBoxColor;
-    .header {
-      color: @contentBoxColor !important;
-    }
   }
 
   &.tertiary {
     background-color: @contentBoxBackgroundColorTertiary;
     color: @contentBoxColor;
-    .header {
-      color: @contentBoxColor !important;
-    }
   }
 }
-
-// inherit link
-
 
 [class*="content-box"] a {
   text-decoration: underline;
 }
+.content-box[class*="ary"] {
+  --bg-color: transparent;
+  --text-color: #FFF;
+  --text-color-hover: @grey-1;
+}
+// inherit link
 .content-box[class*="ary"] a {
   color: inherit;
 }
-
-// set color of default cards to black when we are inside a content-box which has the ability to set
-// color classes
-.content-box[class*="ary"] [class="ui fluid card"] {
-  color: @grey-6;
-}
-
