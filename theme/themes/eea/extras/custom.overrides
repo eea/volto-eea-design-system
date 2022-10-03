@@ -74,6 +74,27 @@
   font-weight: inherit;
 }
 
+// inherit color for slate links within context boxes
+.content-box .slate-editor-link {
+  color: inherit;
+}
+
+// customize error class from volto-slate to our color of red
+.error {
+    color: @red-5;
+}
+
+// ensure background of content-box goes above the content area
+// draft image for non published pages
+.view-viewview:not(.wf-state-published) .content-area {
+    z-index: 0;
+}
+
+// remove margin from block headings overriding blocks.less rule
+.block h1:last-child, .block h2:last-child, .block h3:last-child, .block h4:last-child, .block h5:last-child {
+    margin: 0;
+}
+
 // tweak padding of workflow progress titles now that
 // we have larger font size
 .progress__item .progress__title {

@@ -180,7 +180,7 @@
 
 @lineHeight          : @font-lineheight-3;
 @mobileLineHeight    : @font-lineheight-3;
-@textColor           : rgba(0, 0, 0, 1);
+@textColor           : @tertiaryColor;
 @contentAreaColor    : @tertiaryColor;
 
 /*-------------------
@@ -622,7 +622,7 @@
       Borders
 --------------------*/
 
-@circularRadius                : 500rem;
+@circularRadius                : 50%;
 
 @borderColor               : @silverGray;
 @strongBorderColor         : rgba(34, 36, 38, 0.22);
