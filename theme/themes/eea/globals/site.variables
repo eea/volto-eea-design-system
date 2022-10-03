@@ -55,11 +55,11 @@
 --------------------*/
 
 @primaryColor         : @darkCerulean;
-@primaryColorCSSVar   : var(--primary-color, @primaryColor);
+@primaryColorCSSVar   : var(--text-color-primary, @primaryColor);
 @secondaryColor       : @pineGreen;
-@secondaryColorCSSVar : var(--secondary-color, @secondaryColor);
+@secondaryColorCSSVar : var(--text-color-secondary, @secondaryColor);
 @tertiaryColor        : @deepBlue;
-@tertiaryColorCSSVar  : var(--tertiary-color, @tertiaryColor);
+@tertiaryColorCSSVar  : var(--text-color-tertiary, @tertiaryColor);
 
 @lightPrimaryColor    : @mediumPersianBlue;
 @lightSecondaryColor  : @darkCyan;
