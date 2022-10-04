@@ -328,3 +328,15 @@ iframe {
   justify-content: center;
 }
 
+.thematicLogos img {
+  height: 130px
+}
+
+.thematicLogosSmall img {
+  height: 120px
+}
+
+.thematicLogosBig img {
+  height: 220px
+}
+
