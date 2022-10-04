@@ -63,7 +63,7 @@
 --------------------*/
 
 @activeIconTransform: none;
-@activeTitleBackground: @white;
+@activeTitleBackground: var(--bg-color, @white);
 @activeTitleColor: @grey-5;
 @activeTitleBorderBottom: 0;
 
@@ -73,7 +73,7 @@
 
 /* Styled */
 @styledWidth: 600px;
-@styledBackground: @white;
+@styledBackground: @activeTitleBackground;
 @styledBorderRadius: 0;
 @styledBoxShadow: none;
 
