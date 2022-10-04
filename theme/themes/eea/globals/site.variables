@@ -191,8 +191,10 @@
 @borderColorSecondaryCSSVar: var(--border-color-secondary, @secondaryColor);
 @borderColorTertiaryCSSVar: var(--border-color-tertiary, @tertiaryColor);
 @contentAreaColor    : @tertiaryColor;
-@backgroundColor: @grey-1;
+@backgroundColor: @grey-0;
 @backgroundColorCSSVar: var(--bg-color, @backgroundColor);
+@backgroundColorSupplementary: @grey-1;
+@backgroundColorSupplementaryCSSVar: var(--bg-color-supplementary, @backgroundColorSupplementary);
 
 /*-------------------
       Paragraph
