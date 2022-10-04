@@ -12,6 +12,10 @@
   }
 }
 
+.tabs-block {
+  color: @tabsBlockColor;
+}
+
 // Contain images inside vertical tab content
 .stretched.wide.column > .tab img {
   max-width: @verticalTabPaneImageMaxWidth;

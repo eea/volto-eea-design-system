@@ -35,27 +35,17 @@ function OrderedList(items, animated, divided, horizontal) {
     <Container>
       <List as="ol" ordered animated={animated} divided={divided}>
         {items.map((item, index) => (
-          <List.Item as="li" key={index} className="item">
+          <List.Item as="li" key={index}>
             <a href="/#">{item.content}</a>
             {item.subList && (
               <List.List role="list" as="ol" className="list">
                 {item.subList.map((sub, subIndex) => (
-                  <List.Item
-                    key={subIndex}
-                    as="li"
-                    role="listitem"
-                    className="item"
-                  >
+                  <List.Item key={subIndex} as="li" role="listitem">
                     <a href="/#">{sub.content}</a>
                     {sub.subList && (
                       <List.List role="list" as="ol" className="list">
                         {sub.subList.map((sub1, subIndex) => (
-                          <List.Item
-                            key={subIndex}
-                            as="li"
-                            role="listitem"
-                            className="item"
-                          >
+                          <List.Item key={subIndex} as="li" role="listitem">
                             <a href="/#">{sub1.content}</a>
                             {sub1.subList && (
                               <List.List role="list" as="ol" className="list">
@@ -64,7 +54,6 @@ function OrderedList(items, animated, divided, horizontal) {
                                     key={subIndex}
                                     as="li"
                                     role="listitem"
-                                    className="item"
                                   >
                                     <a href="/#">{sub2.content}</a>
                                   </List.Item>
