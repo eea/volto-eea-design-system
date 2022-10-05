@@ -9,8 +9,8 @@
 @mobileStatisticWidth: 100%;
 @tabletStatisticWidth: inherit;
 
-@secondaryValueColor: @secondaryColor;
-@primaryLabelColor: @primaryColor;
+@secondaryValueColor: @secondaryColorCSSVar;
+@primaryLabelColor: @primaryColorCSSVar;
 
 @verticalMargin: 1em;
 @margin: @verticalMargin 0em;
@@ -36,7 +36,7 @@
 @valueFont: @pageFont;
 @valueFontWeight: @normal;
 @valueLineHeight: 1.5em;
-@valueColor: @secondaryColor;
+@valueColor: @secondaryColorCSSVar;
 @valueTextTransform: none;
 
 /* Label */
@@ -45,7 +45,7 @@
 @bottomLabelDistance: 0rem;
 @labelFont: @headerFont;
 @labelFontWeight: @bold;
-@labelColor: @primaryColor;
+@labelColor: @primaryColorCSSVar;
 @labelLineHeight: @relativeLarge;
 @labelTextTransform: none;
 
