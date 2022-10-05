@@ -80,6 +80,7 @@ const sidenavItems = [
             review_state: null,
             title: 'Summer 2022: Living in a state of multiple crises',
             url: '/#',
+            is_current: true,
           },
           {
             '@id': 'article-2',
@@ -94,6 +95,7 @@ const sidenavItems = [
         review_state: null,
         title: 'Articles',
         url: '/#',
+        is_in_path: true,
       },
       {
         '@id': 'Infographics-overview',
@@ -107,6 +109,7 @@ const sidenavItems = [
     review_state: null,
     title: 'Infographics',
     url: '/#',
+    is_in_path: true,
   },
 ];
 
@@ -119,7 +122,14 @@ function Template({ ...args }) {
           {args.sidenavItems &&
             args.sidenavItems.map((element, index) => {
               return (
-                <div role="listitem" className="item level-1">
+                <div
+                  role="listitem"
+                  className={
+                    (element.is_current ? 'active ' : '') +
+                    (element.is_in_path ? 'in_path ' : '') +
+                    'item level-1'
+                  }
+                >
                   <div className="content">
                     <a
                       title={element.title}
@@ -132,7 +142,14 @@ function Template({ ...args }) {
                       element.items.map((subelement, index) => {
                         return (
                           <div className="list" role="list">
-                            <div role="listitem" className="item level-2">
+                            <div
+                              role="listitem"
+                              className={
+                                (subelement.is_current ? 'active ' : '') +
+                                (subelement.is_in_path ? 'in_path ' : '') +
+                                'item level-2'
+                              }
+                            >
                               <div className="content">
                                 <a
                                   title={subelement.title}
@@ -148,7 +165,11 @@ function Template({ ...args }) {
                                         <div className="list" role="list">
                                           <div
                                             role="listitem"
-                                            className="item level-3"
+                                            className={
+                                              (subparelement.is_current
+                                                ? 'active '
+                                                : '') + 'item level-3'
+                                            }
                                           >
                                             <div className="content">
                                               <a
