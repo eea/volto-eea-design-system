@@ -55,8 +55,11 @@
 --------------------*/
 
 @primaryColor         : @darkCerulean;
+@primaryColorCSSVar   : var(--text-color-primary, @primaryColor);
 @secondaryColor       : @pineGreen;
+@secondaryColorCSSVar : var(--text-color-secondary, @secondaryColor);
 @tertiaryColor        : @deepBlue;
+@tertiaryColorCSSVar  : var(--text-color-tertiary, @tertiaryColor);
 
 @lightPrimaryColor    : @mediumPersianBlue;
 @lightSecondaryColor  : @darkCyan;
@@ -181,7 +184,17 @@
 @lineHeight          : @font-lineheight-3;
 @mobileLineHeight    : @font-lineheight-3;
 @textColor           : @tertiaryColor;
+// use this variable when you want it to be replaced by css variables
+@textColorCSSVar     : var(--text-color, @textColor);
+@borderColorCSSVar   : var(--border-color, @grey-3);
+@borderColorPrimaryCSSVar: var(--border-color-primary, @primaryColor);
+@borderColorSecondaryCSSVar: var(--border-color-secondary, @secondaryColor);
+@borderColorTertiaryCSSVar: var(--border-color-tertiary, @tertiaryColor);
 @contentAreaColor    : @tertiaryColor;
+@backgroundColor: @grey-0;
+@backgroundColorCSSVar: var(--bg-color, @backgroundColor);
+@backgroundColorSupplementary: @grey-1;
+@backgroundColorSupplementaryCSSVar: var(--bg-color-supplementary, @backgroundColorSupplementary);
 
 /*-------------------
       Paragraph
