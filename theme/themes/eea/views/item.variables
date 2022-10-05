@@ -113,7 +113,7 @@
 @descriptionMaxWidth: auto;
 @descriptionFontSize: 1em;
 @descriptionLineHeight: @lineHeight;
-@descriptionColor: @textColor;
+@descriptionColor: @textColorCSSVar;
 
 /* Content Image */
 @contentImageWidth: '';

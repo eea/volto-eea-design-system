@@ -2,11 +2,11 @@
             Callout
 *******************************/
 /* Body */
-@mobileCalloutBorderLeft : @5px solid @secondaryColor;
-@tabletCalloutBorderLeft : @10px solid @secondaryColor;
+@mobileCalloutBorderLeft : @5px solid @borderColorSecondaryCSSVar;
+@tabletCalloutBorderLeft : @10px solid @borderColorSecondaryCSSVar;
 
 /* Text */
-@quoteColor            : @japaneseIndigo;
+@quoteColor            : @textColorCSSVar;
 @mobileQuoteFontSize   : 1rem;
 @tabletQuoteFontSize   : @h6;
 @computerQuoteFontSize : @h5;

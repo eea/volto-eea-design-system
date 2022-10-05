@@ -70,6 +70,19 @@
   }
 }
 
+// color item images that are svg files
+.item.primary img {
+  filter: @itemPrimaryFilterColor;
+}
+
+.item.secondary img {
+  filter: @itemSecondaryFilterColor;
+}
+
+.item.tertiary img {
+  filter: @itemTertiaryFilterColor;
+}
+
 // decrease margin when using icons instead of images
 // since the icons have themselves extra whitespace
 // and we should aim to get about 32px as seen in the figma design
