@@ -27,10 +27,10 @@
   background: @topSectionBackground;
 
   .ui.container {
+    z-index: @topSectionZindex;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: @topSectionZindex;
   }
 }
 
@@ -47,12 +47,12 @@
 }
 
 .top.bar .ui.dropdown {
-  border: none !important;
+  max-width: @dropdownMaxWidth;
   height: auto !important;
+  padding: @mobileDropdownPadding;
+  border: none !important;
   border-radius: @defaultBorderRadius;
   color: @topSectionItemColor;
-  padding: @mobileDropdownPadding;
-  max-width: @dropdownMaxWidth;
 }
 
 .top.bar .ui.active.visible.dropdown {
@@ -71,16 +71,16 @@
 }
 
 .top.bar .ui.dropdown .menu {
-  left: @dropdownMenuLeft;
   right: @dropdownMenuRight;
-  box-shadow: @shadow-4-no-top;
+  left: @dropdownMenuLeft;
   border: none;
+  box-shadow: @shadow-4-no-top;
 }
 
 .top.bar .ui.dropdown .menu,
 .top.bar .ui.dropdown .menu .item {
-  font-size: @dropdownMenuFontSize;
   color: @dropdownColor;
+  font-size: @dropdownMenuFontSize;
 }
 
 .top.bar .ui.dropdown .menu .item {
@@ -96,9 +96,9 @@
 .top.bar .ui.dropdown .wrapper {
   display: flex;
   flex-direction: column;
+  margin: @dropdownMenuWrapperMargin;
   gap: @dropdownMenuWrapperGap;
   white-space: @dropdownMenuContentWhiteSpace;
-  margin: @dropdownMenuWrapperMargin;
 
   &.language-list {
     padding-inline-start: @dropdownMenuLanguageWrapperPaddingInlineStart;
@@ -107,11 +107,11 @@
 
 .top.bar .ui.dropdown i.chevron.down.icon {
   position: absolute;
-  font-size: @topSectionIconFontSize;
-  margin-left: @topSectionIconMarginLeft;
   top: @mobileTopSectionIconTop;
+  margin-left: @topSectionIconMarginLeft;
+  font-size: @topSectionIconFontSize;
   line-height: @topSectionIconLineHeight;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 /* Official union dropdown */
@@ -120,9 +120,9 @@
   gap: @mobileOfficialUnionGap;
 
   img {
-    width: @mobileOfficialUnionImageWidth;
     position: absolute;
     z-index: @z-index-1;
+    width: @mobileOfficialUnionImageWidth;
     padding-left: @rem-space-2;
   }
 
@@ -130,8 +130,8 @@
     padding: @mobileOfficialUnionPadding;
 
     .menu {
-      padding: @officialUnionPadding;
       left: @mobileOfficialUnionMenuLeft;
+      padding: @officialUnionPadding;
 
       .content {
         max-width: @mobileOfficialUnionMaxWidth;
@@ -139,6 +139,7 @@
         p {
           white-space: @dropdownMenuContentWhiteSpace;
         }
+
         a {
           font-weight: @officialUnionLinkFontWeight;
           white-space: @dropdownMenuContentWhiteSpace;
@@ -150,7 +151,6 @@
 
 /* Theme sites dropdown */
 #theme-sites.ui.dropdown .menu {
-
   .wrapper {
     width: @mobileThemeSitesMenuWidth;
 
@@ -171,13 +171,14 @@
 
 /* Language dropdown */
 #language-switcher {
-  padding: @mobileLanguageMenuPadding;
   flex-direction: row-reverse;
+  padding: @mobileLanguageMenuPadding;
 
   img {
     width: @mobileLanguageImageWidth;
     margin-right: @topSectionIconMarginRight;
   }
+
   .menu {
     .wrapper {
       .item {
@@ -202,25 +203,25 @@
 ----------------------------------------------------------------------------*/
 
 .main.bar.transparency:before {
-  background-color: @headerMainSectionTransparency;
-  display: block;
-  content: " ";
-  top: 0;
+  position: absolute;
   z-index: 0;
+  top: 0;
+  display: block;
   width: 100%;
   height: 100%;
-  position: absolute;
+  background-color: @headerMainSectionTransparency;
+  content: ' ';
 }
 
 .main.bar {
-  scrollbar-gutter: stable;
   background: @headerMainSectionBackground;
+  scrollbar-gutter: stable;
 
   .ui.container {
     display: flex;
+    height: @mobileMainSectionHeight;
     align-items: center;
     justify-content: space-between;
-    height: @mobileMainSectionHeight;
 
     .ui.grid {
       // All margins and paddings removed for main header
@@ -229,14 +230,14 @@
 
       // Override grid specific paddings for header
       div:first-child {
-        padding-left: 0;
         padding-top: 0;
         padding-bottom: 0;
+        padding-left: 0;
       }
 
       div:last-child {
-        padding-right: 0;
         padding-top: 0;
+        padding-right: 0;
         padding-bottom: 0;
       }
     }
@@ -245,31 +246,32 @@
 
 .main-menu {
   display: flex;
+  width: 100%;
   align-items: flex-end;
   justify-content: flex-end;
-  width: 100%;
 
   .item {
     a {
+      align-self: @mainMenuItemAlignSelf;
+      border-bottom: @mainMenuItemBorder;
       color: @mainMenuItemColor;
       font-size: @mainMenuItemFontSize;
       font-weight: @mainMenuItemFontWeight;
-      border-bottom: @mainMenuItemBorder;
-      align-self: @mainMenuItemAlignSelf;
     }
+
     a:hover {
       border-bottom: @mainMenuItemActiveBorder;
     }
   }
 
   .item.active a {
-    color: @mainMenuItemActiveColor;
     border-bottom: @mainMenuItemActiveBorder;
+    color: @mainMenuItemActiveColor;
   }
 }
 
 #main .main-menu .item:first-child {
-    display: none; // hide home nav item
+  display: none; // hide home nav item
 }
 
 .main-menu.inverted {
@@ -278,13 +280,13 @@
   }
 
   .item.active a {
-    color: @mainMenuItemInvertedColor;
     border-bottom: @mainMenuInvertedItemActiveBorder;
+    color: @mainMenuItemInvertedColor;
   }
 
   a:hover {
-    color: @mainMenuItemInvertedColor;
     border-bottom: @mainMenuInvertedItemActiveBorder;
+    color: @mainMenuItemInvertedColor;
   }
 }
 
@@ -307,17 +309,39 @@
     height: 100%;
     align-items: baseline;
   }
+
   .wrapper {
     position: relative;
-    width: 100%;
-    margin: @mobilePopupMarginTop 0;
     display: flex;
+    width: 100%;
     flex-direction: column;
+    margin: @mobilePopupMarginTop 0;
     gap: @searchBoxWrapperGap;
 
     .action {
       display: flex;
       justify-content: center;
+    }
+  }
+
+  .advanced-search {
+    padding: @searchBoxFullSearchPadding;
+    border-top: @searchBoxFullSearchBorder;
+    border-bottom: @searchBoxFullSearchBorder;
+    background-color: @searchBoxFullSearchBackground;
+    box-shadow: @searchBoxFullSearchBoxShadow;
+    color: @searchBoxFullSearchTextColor;
+    font-weight: @searchBoxFullSearchFontWeight;
+
+    .ui.container {
+      justify-content: @searchBoxFullSearchJustifyContent;
+      gap: @searchBoxFullSearchGap;
+
+      @media only screen and (max-width: @tabletBreakpoint) {
+        flex-direction: @tabletSearchBoxFullSearchFlexDirection;
+        align-items: @tabletSearchBoxFullSearchAlignItems;
+        text-align: @tabletSearchBoxFullSearchTextAlign;
+      }
     }
   }
 }
@@ -327,15 +351,16 @@
     width: 100% !important; //override semantic auto to display content with space between them
   }
 }
+
 .homepage .eea.header {
   position: absolute;
-  top: 0;
   z-index: 1;
+  top: 0;
   width: 100%;
 }
 // reduce width of header when we have toolbar open for better placement
 .has-toolbar.homepage .eea.header {
-    width: 96%;
+  width: 96%;
 }
 
 /*----------------------------------------------------------------------------
@@ -343,12 +368,12 @@
 ----------------------------------------------------------------------------*/
 .burger-action {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
   width: @mobileActionsBoxWidth;
   height: @mobileMainSectionHeight;
+  align-items: center;
+  justify-content: center;
   background-color: @burgerActionBackgroundColor;
+  cursor: pointer;
 }
 
 .burger-action.mobile {
@@ -358,13 +383,13 @@
 }
 
 .search-action {
-  cursor: pointer;
   display: flex;
   width: @mobileActionsBoxWidth;
   height: @mobileMainSectionHeight;
   align-items: center;
   justify-content: center;
   background-color: @secondaryColor;
+  cursor: pointer;
 }
 
 .burger-action,
@@ -375,12 +400,12 @@
   }
   // icon to be used
   i.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
     color: @white;
     font-size: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }
 
@@ -404,7 +429,6 @@
     height: @tabletMainSectionHeight;
   }
 
-
   /*----------------------------------------------------------------------------
     HEADER TOP BAR TABLET
   ----------------------------------------------------------------------------*/
@@ -425,7 +449,7 @@
       width: @tabletOfficialUnionImageWidth;
     }
 
-    .ui.dropdown {  
+    .ui.dropdown {
       padding: @tabletOfficialUnionPadding;
 
       .menu {
@@ -475,6 +499,7 @@
   /* Search box */
   #search-box {
     height: @tabletPopUpHeight;
+
     .wrapper {
       margin: @tabletPopupMarginTop 0;
     }
@@ -482,7 +507,6 @@
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
-
   .burger-action.mobile {
     display: none;
   }
@@ -508,13 +532,13 @@
     top: @computerTopSectionIconTop;
   }
 
-  .top.bar .official-union {    
+  .top.bar .official-union {
     .ui.dropdown {
       padding: @computerOfficialUnionPadding;
 
       .menu {
         .content {
-            max-width: @computerOfficialUnionMaxWidth;
+          max-width: @computerOfficialUnionMaxWidth;
         }
       }
     }
@@ -525,7 +549,7 @@
     .wrapper {
       width: @computerThemeSitesMenuWidth;
     }
-  }  
+  }
 
   #language-switcher {
     padding: @computerLanguageMenuPadding;
@@ -544,10 +568,10 @@
       height: @computerMainSectionHeight;
 
       .ui.text.menu {
-        flex-wrap: wrap;
         display: flex;
         width: 88%;
         max-height: 100%;
+        flex-wrap: wrap;
         justify-content: space-between;
         margin: 0;
 
@@ -583,37 +607,37 @@
 
 #mega-menu {
   position: absolute;
+  z-index: @z-index-8;
   right: 0;
   overflow: auto;
-  z-index: @z-index-8;
   width: @mobileMegaMenuWidth;
+  min-height: @size-11;
+  max-height: @mobilePopUpHeight;
+  padding: @mobileMegaMenuPadding;
   background: @megaMenuBackgroundColor;
   color: @megaMenuTextColor;
-  max-height: @mobilePopUpHeight;
-  min-height: @size-11;
-  padding: @mobileMegaMenuPadding;
 
   .ui.container {
     display: inherit;
-    align-items: baseline;
     height: 100%;
+    align-items: baseline;
   }
 
   .title {
     font-size: @megaMenuTitleFontSize;
     font-weight: @megaMenuTitleFontWeight;
+
     .title-img {
       margin-left: @megaMenuTitleImgMarginLeft;
     }
   }
 
   .sub-title {
+    color: @megaMenuTextColor;
     font-size: @megaMenuSubTitleFontSize;
     font-weight: @megaMenuSubTitleFontWeight;
-    color: @megaMenuTextColor;
 
-    &+ .ui.grid {
-
+    & + .ui.grid {
       div.column:first-child {
         padding-left: 0;
       }
@@ -628,16 +652,18 @@
 #mega-menu .ui.list {
   margin: 0;
 }
+
 #mega-menu .item {
   display: flex;
+  padding: @megaMenuListItemPadding;
   font-size: @megaMenuListItemFontSize;
   font-weight: @megaMenuListItemFontWeight;
-  padding: @megaMenuListItemPadding;
 }
 
-#mega-menu  a.item {
-  color: @megaMenuTextColor;
+#mega-menu a.item {
   display: @megaMenuTextDisplay;
+  color: @megaMenuTextColor;
+
   &:hover {
     text-decoration: @megaMenuTextHoverDecoration;
   }
@@ -647,16 +673,15 @@
   }
 }
 
-
 #at-a-glance {
-  background-color: @megaMenuGlanceBackgroundColor;
   // To override the grid column paddings
   padding: @megaMenuGlancePaddingLeft !important;
+  background-color: @megaMenuGlanceBackgroundColor;
 
   .item {
+    margin: @megaMenuGlanceListItemMargin;
     font-size: @megaMenuGlanceListItemFontSize;
     font-weight: @megaMenuGlanceListItemFontWeight;
-    margin: @megaMenuGlanceListItemMargin;
   }
 }
 
@@ -675,24 +700,23 @@
 }
 
 #mega-menu .active:not(.title-link) > span {
-  border-left: @megaMenuListItemActiveBorder;
   padding-left: @megaMenuListItemActivePadding;
+  border-left: @megaMenuListItemActiveBorder;
 }
 
 /*Mega Menu Accordion - Tablet & Mobile */
 #mega-menu .ui.accordion {
   .title {
-    font-size: @megaMenuAccordionTitleFontSize;
-    color: @megaMenuTextColor;
     padding: @megaMenuAccordionTitlePadding;
     border-bottom: @megaMenuAccordionTitleBorderBottom;
+    color: @megaMenuTextColor;
+    font-size: @megaMenuAccordionTitleFontSize;
 
     i:before {
       font-size: @megaMenuAccordionIconFontSize;
     }
 
     &:hover {
-
       i {
         color: @megaMenuTextColor;
       }
@@ -700,21 +724,21 @@
   }
 
   .active.title {
-    background-color: transparent;
     border-bottom: @megaMenuAccordionActiveTitleBorderBottom;
+    background-color: transparent;
   }
 
   .content {
-    background: @megaMenuBackgroundColor;
     padding: @megaMenuAccordionContentPadding;
+    background: @megaMenuBackgroundColor;
 
     .accordion {
       margin: @megaMenuNestedAccordionMargin;
 
       .title {
+        border-bottom: none;
         font-size: @megaMenuNestedAccordionTitleFontSize;
         font-weight: @megaMenuNestedAccordionTitleFontWeight;
-        border-bottom: none;
       }
 
       .content {
@@ -756,17 +780,18 @@
 
 @media all and (min-width: @tabletBreakpoint) {
   #mega-menu {
-    padding: @tabletMegaMenuPadding;
     max-height: @tabletPopUpHeight;
+    padding: @tabletMegaMenuPadding;
   }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
   #mega-menu {
     width: 100%;
-    padding: @computerMegaMenuPadding;
     max-height: @computerPopUpHeight;
+    padding: @computerMegaMenuPadding;
   }
+
   #mega-menu .title > a {
     color: @megaMenuTextColor;
   }
