@@ -74,6 +74,7 @@ const Topics = ({ menuItem, renderMenuItem }) => (
                 menuItem,
                 { className: 'ui button inverted icon right labeled' },
                 {
+                  iconPosition: 'right',
                   children: (
                     <>
                       {/* Add word overview to titles */}
@@ -283,6 +284,7 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
             overview,
             { className: 'ui button inverted icon right labeled' },
             {
+              iconPosition: 'right',
               children: (
                 <>
                   {/* Add word overview to titles */}
@@ -336,6 +338,7 @@ function HeaderMenuPopUp({
                     menuItem,
                     { className: 'ui button inverted icon right labeled' },
                     {
+                      iconPosition: 'right',
                       children: (
                         <>
                           {/* Add word overview to titles */}
