@@ -2,7 +2,8 @@ import React from 'react';
 import Banner from './Banner';
 // eslint-disable-next-line import/no-unresolved
 import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/banner.png';
-import { Popup } from 'semantic-ui-react';
+import { Popup, Icon } from 'semantic-ui-react';
+import Copyright from '../Copyright/Copyright';
 
 export default {
   title: 'Components/Page Header',
@@ -41,6 +42,50 @@ export default {
       table: {
         defaultValue: { summary: '""' },
         type: { summary: 'boolean' },
+      },
+    },
+    copyrightVariant: {
+      name: 'Variation',
+      defaultValue: 'default',
+      options: ['default', 'primary', 'secondary', 'tertiary'],
+      control: { type: 'select' },
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: 'default' },
+        type: { summary: 'string' },
+      },
+    },
+    copyrightPosition: {
+      name: 'Position',
+      control: {
+        type: 'inline-radio',
+        options: ['left', 'right'],
+      },
+      type: { name: 'string' },
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '"left"' },
+      },
+    },
+    copyrightIcon: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
+      },
+    },
+    copyrightText: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
+      },
+    },
+    copyrightData: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
       },
     },
   },
@@ -99,6 +144,16 @@ const Template = (args) => (
           </>
         </Banner.Metadata>
       )}
+      <Copyright
+        copyrightPosition={args.copyrightPosition}
+        colorVariant={args.copyrightVariant}
+      >
+        <Copyright.Icon>
+          <Icon className={args.copyrightIcon} />
+        </Copyright.Icon>
+        <Copyright.Text>{args.copyrightText}</Copyright.Text>
+        <Copyright.Data>{args.copyrightData}</Copyright.Data>
+      </Copyright>
     </Banner.Content>
   </Banner>
 );
@@ -115,4 +170,10 @@ Default.args = {
   image: true,
   hideShareButton: false,
   hideDownloadButton: false,
+
+  copyrightVariant: 'default',
+  copyrightPosition: 'left',
+  copyrightIcon: 'ri-copyright-line',
+  copyrightText: 'Image copyright:',
+  copyrightData: 'Velit fusce sed sem ut.',
 };

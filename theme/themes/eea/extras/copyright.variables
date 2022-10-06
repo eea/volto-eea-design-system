@@ -1,0 +1,10 @@
+/*******************************
+          Copyright
+*******************************/
+
+@copyrightWidth: 100%;
+
+/* Content */
+@copyrightContentColor: @grey-1;
+@copyrightContentFontSize: @font-size-00;
+@copyrightContentPaddingRight: @rem-space-1;
