@@ -12,7 +12,7 @@
 @secondaryValueColor: @secondaryColorCSSVar;
 @primaryLabelColor: @primaryColorCSSVar;
 
-@verticalMargin: 1em;
+@verticalMargin: 1.5em;
 @margin: @verticalMargin 0em;
 @textAlign: center;
 @maxWidth: auto;
@@ -20,7 +20,7 @@
 /* Group */
 @horizontalSpacing: 1.5em;
 @rowSpacing: 2em;
-@groupMargin: @verticalMargin -@horizontalSpacing -@rowSpacing;
+@groupMargin: @verticalMargin 0;
 
 /* Group Element */
 @elementMargin: @rowSpacing @horizontalSpacing @rowSpacing;
