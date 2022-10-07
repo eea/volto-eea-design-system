@@ -152,7 +152,6 @@ const Template = (args) => (
           <Icon className={args.copyrightIcon} />
         </Copyright.Icon>
         <Copyright.Text>{args.copyrightText}</Copyright.Text>
-        <Copyright.Data>{args.copyrightData}</Copyright.Data>
       </Copyright>
     </Banner.Content>
   </Banner>
@@ -174,6 +173,5 @@ Default.args = {
   copyrightVariant: 'default',
   copyrightPosition: 'left',
   copyrightIcon: 'ri-copyright-line',
-  copyrightText: 'Image copyright:',
-  copyrightData: 'Velit fusce sed sem ut.',
+  copyrightText: 'Image copyright: Velit fusce sed sem ut.',
 };

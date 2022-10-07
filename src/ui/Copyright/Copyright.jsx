@@ -25,6 +25,4 @@ function Copyright({ children, ...rest }) {
 Copyright.Icon = ({ children, ...rest }) => <span {...rest}>{children}</span>;
 
 Copyright.Text = ({ children, ...rest }) => <span {...rest}>{children}</span>;
-
-Copyright.Data = ({ children, ...rest }) => <span {...rest}>{children}</span>;
 export default Copyright;

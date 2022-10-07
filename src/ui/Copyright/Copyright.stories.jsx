@@ -41,7 +41,6 @@ export const Default = (args) => (
           <Icon className={args.icon} />
         </Copyright.Icon>
         <Copyright.Text>{args.text}</Copyright.Text>
-        <Copyright.Data>{args.data}</Copyright.Data>
       </Copyright>
     </Segment>
   </Container>
@@ -51,6 +50,5 @@ Default.args = {
   colorVariant: 'default',
   copyrightPosition: 'left',
   icon: 'ri-copyright-line',
-  text: 'Image copyright:',
-  data: 'Velit fusce sed sem ut.',
+  text: 'Image copyright: Velit fusce sed sem ut.',
 };
