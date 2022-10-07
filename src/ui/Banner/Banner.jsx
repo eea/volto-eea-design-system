@@ -54,7 +54,12 @@ Banner.Metadata = ({ children }) => <p className="metadata">{children}</p>;
 
 Banner.MetadataField = ({ hidden, type = 'text', label, value, title }) => {
   if (hidden || !value) return '';
-  return <span className={`field ${type}`}>{value}</span>;
+  return (
+    <span className={`field ${type}`}>
+      {label && <>{label}: </>}
+      {value}
+    </span>
+  );
 };
 
 export default Banner;
