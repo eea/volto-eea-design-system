@@ -49,6 +49,7 @@ Banner.Content = ({ children, actions }) => {
 };
 
 Banner.Title = ({ children }) => <p className="title">{children}</p>;
+Banner.Subtitle = ({ children }) => <p className="subtitle">{children}</p>;
 Banner.Metadata = ({ children }) => <p className="metadata">{children}</p>;
 
 Banner.MetadataField = ({ hidden, type = 'text', label, value, title }) => {
