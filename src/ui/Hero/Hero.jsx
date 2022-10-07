@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Icon } from 'semantic-ui-react';
+import Copyright from '../Copyright/Copyright';
+
 Hero.propTypes = {
   image: PropTypes.bool,
   fullWidth: PropTypes.bool,
@@ -21,6 +24,12 @@ function Hero({
   alignContent,
   backgroundVariant,
   children,
+
+  has_copyright,
+  copyrightVariant,
+  copyrightPosition,
+  copyrightIcon,
+  copyrightText,
 }) {
   return (
     // full width prop
@@ -36,7 +45,21 @@ function Hero({
         <div
           className={`hero-block-inner-wrapper d-flex ui container flex-items-${alignContent}`}
         >
-          <div className="hero-block-body">{children}</div>
+          <div className="hero-block-body">
+            {children}
+
+            {has_copyright && (
+              <Copyright
+                copyrightPosition={copyrightPosition}
+                colorVariant={copyrightVariant}
+              >
+                <Copyright.Icon>
+                  <Icon className={copyrightIcon} />
+                </Copyright.Icon>
+                <Copyright.Text>{copyrightText}</Copyright.Text>
+              </Copyright>
+            )}
+          </div>
         </div>
       </div>
     </div>

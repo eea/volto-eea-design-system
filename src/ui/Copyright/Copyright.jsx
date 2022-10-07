@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 
 Copyright.propTypes = {
   copyrightPosition: PropTypes.oneOf(['left', 'right']),
-  colorVariant: PropTypes.oneOf(['white', 'primary', 'secondary', 'tertiary']),
+  colorVariant: PropTypes.oneOf([
+    'default',
+    'primary',
+    'secondary',
+    'tertiary',
+  ]),
 };
 
 function Copyright({ children, ...rest }) {

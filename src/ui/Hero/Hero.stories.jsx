@@ -54,6 +54,51 @@ export default {
         type: { summary: 'boolean' },
       },
     },
+    has_copyright: {
+      name: 'Copyright',
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '' },
+        type: { summary: 'boolean' },
+      },
+    },
+    copyrightVariant: {
+      name: 'Variation',
+      defaultValue: 'default',
+      options: ['default', 'primary', 'secondary', 'tertiary'],
+      control: { type: 'select' },
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: 'default' },
+        type: { summary: 'string' },
+      },
+    },
+    copyrightPosition: {
+      name: 'Position',
+      control: {
+        type: 'inline-radio',
+        options: ['left', 'right'],
+      },
+      type: { name: 'string' },
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '"left"' },
+      },
+    },
+    copyrightIcon: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
+      },
+    },
+    copyrightText: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
+      },
+    },
   },
 };
 
@@ -93,6 +138,12 @@ Default.args = {
   inverted: true,
   alignContent: 'center',
   backgroundVariant: 'grey',
+
+  has_copyright: true,
+  copyrightVariant: 'default',
+  copyrightPosition: 'left',
+  copyrightIcon: 'ri-copyright-line',
+  copyrightText: 'Image copyright: Velit fusce sed sem ut.',
 };
 Default.parameters = {
   controls: {
@@ -125,6 +176,12 @@ Playground.args = {
   inverted: true,
   alignContent: 'center',
   backgroundVariant: 'tertiary',
+
+  has_copyright: true,
+  copyrightVariant: 'default',
+  copyrightPosition: 'left',
+  copyrightIcon: 'ri-copyright-line',
+  copyrightText: 'Image copyright: Velit fusce sed sem ut.',
 };
 Playground.argTypes = {
   fullWidth: {
@@ -199,6 +256,43 @@ Playground.argTypes = {
     defaultValue: 'tertiary',
     table: {
       defaultValue: { summary: 'tertiary' },
+      type: { summary: 'string' },
+    },
+  },
+  copyrightVariant: {
+    name: 'Variation',
+    defaultValue: 'default',
+    options: ['default', 'primary', 'secondary', 'tertiary'],
+    control: { type: 'select' },
+    table: {
+      category: 'Copyright',
+      defaultValue: { summary: 'default' },
+      type: { summary: 'string' },
+    },
+  },
+  copyrightPosition: {
+    name: 'Position',
+    control: {
+      type: 'inline-radio',
+      options: ['left', 'right'],
+    },
+    type: { name: 'string' },
+    table: {
+      category: 'Copyright',
+      defaultValue: { summary: '"left"' },
+    },
+  },
+  copyrightIcon: {
+    table: {
+      category: 'Copyright',
+      defaultValue: { summary: '""' },
+      type: { summary: 'string' },
+    },
+  },
+  copyrightText: {
+    table: {
+      category: 'Copyright',
+      defaultValue: { summary: '""' },
       type: { summary: 'string' },
     },
   },

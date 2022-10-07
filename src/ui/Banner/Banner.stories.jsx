@@ -81,13 +81,6 @@ export default {
         type: { summary: 'string' },
       },
     },
-    copyrightData: {
-      table: {
-        category: 'Copyright',
-        defaultValue: { summary: '""' },
-        type: { summary: 'string' },
-      },
-    },
   },
 };
 
