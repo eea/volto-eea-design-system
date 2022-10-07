@@ -20,6 +20,10 @@
 @border: none;
 @zIndex: '';
 @transition: box-shadow @defaultDuration @defaultEasing;
+// black to desired color filter option resulted from https://codepen.io/sosuke/pen/Pjoqqp
+@itemPrimaryFilterColor: invert(9%) sepia(89%) saturate(5332%) hue-rotate(194deg) brightness(98%) contrast(101%);
+@itemSecondaryFilterColor: invert(33%) sepia(14%) saturate(5566%) hue-rotate(139deg) brightness(98%) contrast(101%);
+@itemTertiaryFilterColor: invert(27%) sepia(15%) saturate(1161%) hue-rotate(167deg) brightness(93%) contrast(80%);
 
 /* Responsive */
 @itemSpacing: 1em;
@@ -109,7 +113,7 @@
 @descriptionMaxWidth: auto;
 @descriptionFontSize: 1em;
 @descriptionLineHeight: @lineHeight;
-@descriptionColor: @textColor;
+@descriptionColor: @textColorCSSVar;
 
 /* Content Image */
 @contentImageWidth: '';

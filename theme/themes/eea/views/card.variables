@@ -30,6 +30,7 @@
   box-shadow @defaultDuration @defaultEasing,
   transform @defaultDuration @defaultEasing
 ;
+@cardMetaDateMarginLeft: auto;
 
 /* Card Group */
 @horizontalSpacing: 1em;
@@ -87,7 +88,7 @@
 
 /* Metadata */
 @metaJustifyContent: space-between;
-@metaFontSize: @relativeMedium;
+@metaFontSize: @absoluteMedium;
 @metaSpacing: 0.3em;
 @metaColor: @tertiaryColor;
 
@@ -118,7 +119,7 @@
 
 /* Description */
 @descriptionDistance: 0;
-@descriptionColor: @tertiaryColor;
+@descriptionColor: inherit;
 
 /* Content Image */
 @contentImageWidth: '';

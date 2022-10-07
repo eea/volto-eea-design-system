@@ -78,6 +78,9 @@
   max-width: 100%;
 }
 
+.accordion-title:not(.active) .ui.input input {
+  color: @textColorCSSVar;
+}
 .ui.input input {
   border: @border;
 
@@ -126,15 +129,18 @@ textarea.fluid {
 }
 
 .ui.fluid.icon.input.search > input::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.25);
+  opacity: 0.9;
+  color: rgb(255, 255, 255);
 }
 
 .ui.fluid.icon.input.search > input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.25);
+  opacity: 0.9;
+  color: rgb(255, 255, 255);
 }
 
 .ui.fluid.icon.input.search > input::-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.25);
+  opacity: 0.9;
+  color: rgb(255, 255, 255);
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {

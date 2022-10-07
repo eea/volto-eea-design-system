@@ -74,6 +74,43 @@
   font-weight: inherit;
 }
 
+
+// customize error class from volto-slate to our color of red
+.error {
+    color: @red-5;
+}
+
+.power-user-menu,
+.blocks-chooser {
+  --text-color: @textColor;
+}
+.blocks-chooser {
+  .searchbox {
+    height: auto !important;
+  }
+  .input {
+    width: auto !important;
+  }
+  .clear-search-button {
+    padding: 0.5rem;
+  }
+  .icon {
+    margin-right: 0 !important;
+  }
+}
+
+
+// ensure background of content-box goes above the content area
+// draft image for non published pages
+.view-viewview:not(.wf-state-published) .content-area {
+    z-index: 0;
+}
+
+// remove margin from block headings overriding blocks.less rule
+.block h1:last-child, .block h2:last-child, .block h3:last-child, .block h4:last-child, .block h5:last-child {
+    margin: 0;
+}
+
 // tweak padding of workflow progress titles now that
 // we have larger font size
 .progress__item .progress__title {
