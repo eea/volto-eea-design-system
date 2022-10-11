@@ -57,7 +57,7 @@
 
 /* Social Icons */
 @mobileSocialIconsMargin            : @rem-space-2 0 @rem-space-8;
-@tabletSocialIconsMargin            : @rem-space-12 0;
+@tabletSocialIconsMargin            : @rem-space-7 0;
 @computerSocialIconsMargin          : @rem-space-17 0;
 @socialIconColor                    : @white;
 @mobileSocialJustifyContent         : space-around;
