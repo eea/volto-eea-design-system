@@ -41,19 +41,24 @@
 @tabletContactBlockMarginInline     : 0;
 @tabletContactBlockMarginbottom     : @space-4;
 @mobileContactMargin                : @space-4 0;
-@computerContactMargin              : @rem-space-050 0;
+@tabletContactMargin                : @rem-space-050 0;
 @contactFontSize                    : @font-size-3;
+@tabletContactFontSize              : @font-size-1;
+@tabletContactGap                   : @rem-space-4;
 @contactGap                         : @rem-space-8;
 @mobileContactIconMarginRight       : @space-3;
 @mobileContactIconFontSize          : @font-size-4;
 @computerContactIconFontSize        : @font-size-9;
+@tabletSubcontactIconFontSize       : @font-size-0;
 @computerSubcontactIconFontSize     : @font-size-1;
+@tabletSubcontactIconMarginRight    : @rem-space-2;
 @computerSubcontactIconMarginRight  : @rem-space-4;
 @computerSubcontactIconFontWeight   : @font-weight-4;
 
 /* Social Icons */
 @mobileSocialIconsMargin            : @rem-space-2 0 @rem-space-8;
-@tabletSocialIconsMargin            : @rem-space-17 0;
+@tabletSocialIconsMargin            : @rem-space-12 0;
+@computerSocialIconsMargin          : @rem-space-17 0;
 @socialIconColor                    : @white;
 @mobileSocialJustifyContent         : space-around;
 @tabletSocialJustifyContent         : center;
