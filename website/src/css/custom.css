@@ -224,3 +224,16 @@ iframe {
 .frameWrapper {
   width: 100%;
 }
+
+.thematicLogos {
+  height: 130px
+}
+
+.thematicLogosSmall {
+  height: 120px
+}
+
+.thematicLogosBig {
+  height: 220px
+}
+
