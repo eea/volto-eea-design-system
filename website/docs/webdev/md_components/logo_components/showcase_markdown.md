@@ -4,13 +4,9 @@ import FiseLogo from '../../md_components/static/Fise.svg';
 import WiseMLogo from '../../md_components/static/WiseM.svg';
 import WiseFLogo from '../../md_components/static/WiseF.svg';
 
-### EEA logo
+## EEA logo
 
-<div className="thematicLogos">
-
-<Iframe id='components-logo--logo' > </Iframe>
-
-</div>
+<Iframe id='components-logo--logo' height="190"> </Iframe>
 
 <br/> 
 
