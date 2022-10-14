@@ -15,9 +15,8 @@
   font-size: @h1;
 }
 
-// remove margin and padding from homepage content-area since we have the bg image over the header
+// remove padding from homepage content-area since we have the bg image over the header
 .homepage .content-area {
-    margin-top: 0 !important;
     padding-top: 0 !important;
 }
 
