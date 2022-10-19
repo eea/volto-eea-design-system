@@ -1,8 +1,9 @@
 import Iframe from '../iframe_component.mdx';
-import BiseLogo from '../../md_components/static/Bise.svg';
-import FiseLogo from '../../md_components/static/Fise.svg';
-import WiseMLogo from '../../md_components/static/WiseM.svg';
-import WiseFLogo from '../../md_components/static/WiseF.svg';
+import BiseLogo from '/img/Bise.svg';
+import FiseLogo from '/img/Fise.svg';
+import WiseMLogo from '/img/WiseM.svg';
+import WiseFLogo from '/img/WiseF.svg';
+import Download from '../../md_components/static/download.svg';
 
 ## EEA logo
 
@@ -10,31 +11,53 @@ import WiseFLogo from '../../md_components/static/WiseF.svg';
 
 <br/> 
 
+[<Download/>](/img/EEA.svg)
+
+<br/><br/>
+
 ## Thematic websites
 <br/> 
 
 ### Biodiversity logo
 
-<br/> <br/>
+<br/><br/><br/>
 
 <BiseLogo className="thematicLogos" /> 
 
-<br/> <br/><br/> <br/>
+<br/>
+
+[<Download/>](/img/Bise.svg)
+
+<br/><br/><br/>
 
 ### Forest Information System logo
 
 <FiseLogo className="thematicLogos" />
 
-<br/> <br/>
+<br/>
+
+[<Download/>](/img/Fise.svg)
+
+<br/><br/><br/>
 
 ### Wise Freshwater logo
 <br/>
 
 <WiseFLogo className="thematicLogos" />
 
-<br/> <br/> <br/> <br/>
+<br/>
+
+[<Download/>](/img/WiseF.svg)
+
+<br/><br/><br/>
 
 ### Wise Marine logo
 <br/>
 
 <WiseMLogo className="thematicLogos" />
+
+<br/>
+
+[<Download/>](/img/WiseM.svg)
+
+<br/>
