@@ -347,15 +347,17 @@
 }
 
 @media all and (max-width: @largestMobileScreen) {
+  .homepage .content-area {
+    margin-top: -@mobileMainSectionHeight;
+  }
   .eea.header .top.bar .ui.container {
     width: 100% !important; //override semantic auto to display content with space between them
   }
 }
 
 .homepage .eea.header {
-  position: absolute;
+  position: relative;
   z-index: 1;
-  top: 0;
   width: 100%;
 }
 // reduce width of header when we have toolbar open for better placement
@@ -496,6 +498,10 @@
     margin-top: @tabletLogoMarginTop;
   }
 
+  .homepage .content-area {
+    margin-top: -@tabletMainSectionHeight !important;
+  }
+
   /* Search box */
   #search-box {
     height: @tabletPopUpHeight;
@@ -585,6 +591,10 @@
   .eea.header .eea-logo {
     max-width: @computerLogoMaxWidth;
     margin-top: @computerLogoMarginTop;
+  }
+
+  .homepage .content-area {
+    margin-top: -@computerMainSectionHeight !important;
   }
 
   /* Search box */
