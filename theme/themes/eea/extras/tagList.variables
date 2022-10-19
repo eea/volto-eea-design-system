@@ -6,7 +6,7 @@
 @tagsBodyWidth             : 100%;
 
 /* Tags Title */
-@tagsTitleFontColor        : @japaneseIndigo;
+@tagsTitleFontColor        : @textColorCSSVar;
 @tagsTitleMargin           : 1rem;
 @tagsFontWeight            : 400;
 @tagsFontSize              : 1.125rem;
