@@ -160,9 +160,20 @@ footer .footer-wrapper .menu {
     }
   }
 
+  .subfooter .contact {
+    display: flex;
+    font-size: @tabletContactFontSize;
+    margin: @tabletContactMargin;
+    gap: @tabletContactGap;
+  }
 
   .subfooter .contact-block {
     margin-inline: @tabletContactBlockMarginInline;
+  }
+
+  .contact-block .subcontact a {
+    font-size: @tabletSubcontactIconFontSize;
+    margin-right: @tabletSubcontactIconMarginRight;
   }
 
   .subfooter .social {
@@ -182,7 +193,6 @@ footer .footer-wrapper .menu {
       justify-content: flex-end;
     }
   }
-
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
@@ -216,14 +226,23 @@ footer .footer-wrapper .menu {
     }
   }
 
+  .contact-block .subcontact a {
+    font-size: @computerSubcontactIconFontSize;
+    margin-right: @computerSubcontactIconMarginRight;
+  }
+
   .subfooter .contact {
-    display: flex;
     align-items: center;
-    margin: @computerContactMargin;
+    font-size: @contactFontSize;
+    gap: @contactGap;
 
     i.big.icon {
       font-size: @computerContactIconFontSize;
     }
+  }
+
+  .subfooter .social {
+    margin: @computerSocialIconsMargin;
   }
 
   .footer .footer-wrapper .menu {
