@@ -8,7 +8,9 @@ import Download from '../../md_components/static/download.svg';
 
 ## EEA logo
 
-<Iframe id='components-logo--logo' height="190"> </Iframe>
+<br/>
+
+<EEALogo className="thematicLogosBig" /> 
 
 <br/> 
 
