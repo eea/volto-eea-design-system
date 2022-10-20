@@ -78,6 +78,9 @@
   max-width: 100%;
 }
 
+.accordion-title:not(.active) .ui.input input {
+  color: @textColorCSSVar;
+}
 .ui.input input {
   border: @border;
 
@@ -115,6 +118,7 @@ textarea.fluid {
     background: transparent;
     color: @white;
     font-size: 16px;
+    font-weight: @bold;
   }
 
   i.icon {

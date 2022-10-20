@@ -122,7 +122,7 @@
 }
 .ui.accordion.primary .title:not(.active):hover,
 .ui.accordion.primary .title:not(.active):hover i {
-  color: @primaryColor;
+  color: @primaryColorCSSVar;
 }
 
 /* Secondary */
@@ -131,7 +131,7 @@
 }
 .ui.accordion.secondary .title:not(.active):hover,
 .ui.accordion.secondary .title:not(.active):hover i {
-  color: @secondaryColor;
+  color: @secondaryColorCSSVar;
 }
 
 /* Tertiary */
@@ -140,5 +140,5 @@
 }
 .ui.accordion.tertiary .title:not(.active):hover,
 .ui.accordion.tertiary .title:not(.active):hover i {
-  color: @tertiaryColor;
+  color: @tertiaryColorCSSVar;
 }
