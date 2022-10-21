@@ -16,6 +16,12 @@ _Illustrations_: For static content that is transformable into something visual,
 
 _Infographics_: Use these for visual storytelling to make complex information easier to understand. For example, an infographic could describe a workflow, how an investment plan works or the law-making process.
 
+## Image copyrights
+
+Photographs, illustrations and other images will generally be protected by copyrights as artistic works. This means that a user will usually need the permission of the copyright owner if they want to use it.
+To acknowledge a copyrighted work add three things to the image, the copyright symbol,  the year of the copyright and the name of the copyright holder.
+
+
 ## Best practices
 
 - your visual content is relevant to the topic of the webpage
