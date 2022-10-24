@@ -76,12 +76,12 @@ DefaultItem.argTypes = {
   imageUrl: {
     name: 'Image URL',
     control: 'text',
-    if: { arg: 'boolTest' },
+    if: { arg: 'mediaType', eq: 'image' },
   },
   icon: {
     name: 'Icon class',
     control: 'text',
-    if: { arg: 'boolTest' },
+    if: { arg: 'mediaType', eq: 'icon' },
   },
   imageSize: {
     control: { type: 'select' },
