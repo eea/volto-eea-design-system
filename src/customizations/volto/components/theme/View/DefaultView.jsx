@@ -10,13 +10,40 @@ import { injectIntl } from 'react-intl';
 import { Container, Segment, Grid, Label } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
 import { getSchema } from '@plone/volto/actions';
-import { getWidget } from '@plone/volto/helpers/Widget/utils';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
 import { hasBlocksData, getBaseUrl } from '@plone/volto/helpers';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { isEqual } from 'lodash';
+
+export const getWidget = (id, field) => {
+  if (id === 'title') {
+    return 'title';
+  }
+  if (id === 'description') {
+    return 'description';
+  }
+  if (id === 'subjects') {
+    return 'tags';
+  }
+  if (field?.factory === 'Choice') {
+    return 'choices';
+  }
+  if (field?.factory === 'Relation Choice') {
+    return 'relation';
+  }
+  if (field?.factory === 'Relation List') {
+    return 'relations';
+  }
+  if (field?.factory === 'Image') {
+    return 'image';
+  }
+  if (field?.factory === 'File') {
+    return 'file';
+  }
+  return field?.widget || field?.type || id;
+};
 
 /**
  * Component to display the default view.
