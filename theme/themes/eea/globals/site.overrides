@@ -17,6 +17,16 @@ h2, h3, h4, h5, h6 {
   color: @contentAreaColor;
 }
 
+.narrow_view [id="page-document"] > * {
+  max-width: @narrowWidth;
+  margin: 0 auto;
+}
+
+.wide_view [id="page-document"] > * {
+  max-width: @wideWidth;
+  margin: 0 auto;
+}
+
 // text smaller than body has extra letterspacing as described in docusaurus
 .tiny,
 .caption,

@@ -279,6 +279,8 @@
       Container
 --------------------*/
 @textWidth: 800px;
+@narrowWidth: var(--narrow-text-width, 900px);
+@wideWidth: var(--wide-text-width, 1200px);
 
 
 /*-------------------
