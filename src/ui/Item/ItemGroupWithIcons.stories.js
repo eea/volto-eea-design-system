@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item, Container, Grid } from 'semantic-ui-react';
+import { Item, Container, Grid, Icon } from 'semantic-ui-react';
 
 import GlobeEco from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Svg/globe-eco.svg';
 import Sustainable from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Svg/sustainable.svg';
@@ -18,11 +18,21 @@ export default {
         defaultValue: { summary: false },
       },
     },
+    mediaType: {
+      name: 'Media type',
+      options: ['image', 'icon'],
+      control: { type: 'radio' },
+      table: {
+        defaultValue: { summary: 'image' },
+      },
+    },
   },
 };
 
 function SingleItem({
-  image,
+  mediaType,
+  imageUrl,
+  icon,
   imageSize,
   description,
   verticalAlign,
@@ -30,7 +40,15 @@ function SingleItem({
 }) {
   return (
     <Item className={stackable ? 'stackable' : ''}>
-      <Item.Image className={`ui ${imageSize}`} src={image} alt="item image" />
+      {mediaType === 'image' ? (
+        <Item.Image
+          className={`ui ${imageSize}`}
+          src={imageUrl}
+          alt="item image"
+        />
+      ) : (
+        <Icon className={`${imageSize} ${icon}`} />
+      )}
       <Item.Content verticalAlign={verticalAlign}>{description}</Item.Content>
     </Item>
   );
@@ -45,17 +63,39 @@ export const DefaultItem = (args) => (
   </Container>
 );
 DefaultItem.args = {
+  mediaType: 'image',
+  imageUrl: GlobeEco,
+  icon: 'ri-leaf-line',
   imageSize: 'tile',
   verticalAlign: 'middle',
   stackable: false,
-  image: GlobeEco,
   description:
     'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
 };
 DefaultItem.argTypes = {
+  imageUrl: {
+    name: 'Image URL',
+    control: 'text',
+    if: { arg: 'boolTest' },
+  },
+  icon: {
+    name: 'Icon class',
+    control: 'text',
+    if: { arg: 'boolTest' },
+  },
   imageSize: {
     control: { type: 'select' },
-    options: ['mini', 'tile', 'tiny', 'small'],
+    options: [
+      'mini',
+      'tile',
+      'tiny',
+      'small',
+      'medium',
+      'large',
+      'big',
+      'huge',
+      'massive',
+    ],
     description: 'Content can specify its vertical alignment',
     table: {
       type: { summary: 'string' },
@@ -71,13 +111,6 @@ DefaultItem.argTypes = {
       defaultValue: { summary: ' "" ' },
     },
   },
-  image: {
-    description: 'Path or Url of the image',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: ' "" ' },
-    },
-  },
   description: {
     description: 'Item content description',
     table: {
@@ -88,6 +121,9 @@ DefaultItem.argTypes = {
 };
 
 function ItemGroup({
+  mediaType,
+  imageUrl,
+  icon,
   imageSize,
   verticalAlign,
   ColumnLeft,
@@ -104,6 +140,7 @@ function ItemGroup({
                 <SingleItem
                   key={item.childKey}
                   {...item}
+                  mediaType={mediaType}
                   imageSize={imageSize}
                   verticalAlign={verticalAlign}
                   stackable={stackable}
@@ -117,6 +154,7 @@ function ItemGroup({
                 <SingleItem
                   key={item.childKey}
                   {...item}
+                  mediaType={mediaType}
                   imageSize={imageSize}
                   verticalAlign={verticalAlign}
                   stackable={stackable}
@@ -135,25 +173,29 @@ const Template = (args) => <ItemGroup {...args}></ItemGroup>;
 // Group of items
 export const DefaultGroup = Template.bind({});
 DefaultGroup.args = {
+  mediaType: 'image',
   imageSize: 'tile',
   verticalAlign: 'middle',
   stackable: false,
   ColumnLeft: [
     {
       childKey: 0,
-      image: GlobeEco,
+      imageUrl: GlobeEco,
+      icon: 'ri-leaf-line',
       description:
         'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
     },
     {
       childKey: 1,
-      image: Sustainable,
+      imageUrl: Sustainable,
+      icon: 'ri-leaf-line',
       description:
         'Supply input on solutions to the sustainability challenges of today – and tomorrow.  ',
     },
     {
       childKey: 2,
-      image: DataAnalytics,
+      imageUrl: DataAnalytics,
+      icon: 'ri-leaf-line',
       description:
         'Leverage the data and technology to support the EU’s decision-making processes concerning the environment and climate',
     },
@@ -161,13 +203,15 @@ DefaultGroup.args = {
   ColumnRight: [
     {
       childKey: 0,
-      image: Network,
+      imageUrl: Network,
+      icon: 'ri-home-2-line',
       description:
         'Build stronger networks and partnerships with state and regional governments and organisations.',
     },
     {
       childKey: 1,
-      image: Knowledge,
+      imageUrl: Knowledge,
+      icon: 'ri-leaf-line',
       description:
         'Strengthen the EU’s knowledge capacity and help secure the resources needed to create a sustainable Europe.',
     },
