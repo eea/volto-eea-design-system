@@ -14,11 +14,12 @@
 .section-edit {
   .container {
     width: auto !important;
+    max-width: @containerWidth !important;
   }
 
   [class*="block-editor"] {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: @editContainerGutter;
+    padding-right: @editContainerGutter;
 
     [class*="block-editor"] {
       padding-left: 0;
@@ -75,15 +76,14 @@ body {
 }
 
 // WIP container fixes for edit interface
-.section-edit .container {
-    max-width: 1120px !important;
-}
 @media only screen and (max-width: 1600px) {
+  .has-sidebar.section-add .container,
   .has-sidebar.section-edit .container {
     margin-left: 0 !important;
   }
 }
 @media only screen and (min-width: 1601px) {
+  .has-sidebar.section-add .main.bar .ui.container,
   .has-sidebar.section-edit .main.bar .ui.container {
     margin-left: 10% !important;
   }
