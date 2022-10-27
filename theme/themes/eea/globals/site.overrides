@@ -17,12 +17,23 @@ h2, h3, h4, h5, h6 {
   color: @contentAreaColor;
 }
 
-.narrow_view [id="page-document"] > * {
+[class*="narrow-view"] [id="page-document"] > *,
+.content-area .narrow_width
+{
   max-width: @narrowWidth;
   margin: 0 auto;
 }
 
-.wide_view [id="page-document"] > * {
+[class="view-defaultview"] [id="page-document"] > *,
+.content-area .container-width
+{
+  max-width: @containerWidth;
+  margin: 0 auto;
+}
+
+[class="wide-view"] [id="page-document"] > *,
+.content-area .wide-width
+{
   max-width: @wideWidth;
   margin: 0 auto;
 }

@@ -1,6 +1,6 @@
 /**
  * Document view component.
- * @module components/theme/View/NarrowTextView
+ * @module components/theme/View/WideView
  */
 
 import React from 'react';
@@ -14,15 +14,15 @@ import { hasBlocksData } from '@plone/volto/helpers';
 
 /**
  * Component to display the default view.
- * @function NarrowView
+ * @function WideView
  * @param {Object} content Content object.
  * @returns {string} Markup of the component.
  */
-const NarrowView = ({ content }) => {
+const WideView = ({ content }) => {
   return hasBlocksData(content) ? (
     <>
-      <BodyClass className="narrow-view" />
-      <DefaultView content={content} className={'page-area'} />
+      <BodyClass className="wide-view" />
+      <DefaultView content={content} />
     </>
   ) : null;
 };
@@ -32,7 +32,7 @@ const NarrowView = ({ content }) => {
  * @property {Object} propTypes Property types.
  * @static
  */
-NarrowView.propTypes = {
+WideView.propTypes = {
   /**
    * Content of the object
    */
@@ -57,4 +57,4 @@ NarrowView.propTypes = {
   }).isRequired,
 };
 
-export default NarrowView;
+export default WideView;
