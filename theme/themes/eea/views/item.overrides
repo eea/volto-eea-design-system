@@ -94,10 +94,66 @@
   padding-left: @tabletItemSpacing;
 }
 
-.item .tile.image,
-.block .item .tile.image {
-  width: @tileImageWidth;
-  height: @tileImageHeight;
+/* Image & Icon size */
+
+// TINY - 24px (Looks good for 1 line text)
+.item .tiny.image,
+.block .item .tiny.image,
+.item i.tiny.icon, 
+.item i.tiny.icons {
+  width: @tinyMediaSize;
+  height: auto;
+  font-size: @tinyMediaSize;
+}
+
+// SMALL - 48px
+.item .small.image,
+.block .item .small.image,
+.item i.small.icon, 
+.item i.small.icons {
+  width: @smallMediaSize;
+  height: auto;
+  font-size: @smallMediaSize;
+}
+
+// MEDIUM - 64px (Used in Landing Page)
+.item .medium.image,
+.block .item .medium.image,
+.item i.medium.icon, 
+.item i.medium.icons {
+  width: @mediumMediaSize;
+  height: auto;
+  font-size: @mediumMediaSize;
+}
+
+// LARGE - 124px
+.item .large.image,
+.block .item .large.image,
+.item i.large.icon, 
+.item i.large.icons {
+  width: @largeMediaSize; 
+  height: auto;
+  font-size: @largeMediaSize;
+}
+
+// BIG - 200px
+.item .big.image,
+.block .item .big.image,
+.item i.big.icon, 
+.item i.big.icons {
+  width: @bigMediaSize;
+  height: auto;
+  font-size: @bigMediaSize;
+}
+
+// HUGE - 400px
+.item .huge.image,
+.block .item .huge.image,
+.item i.huge.icon, 
+.item i.huge.icons {
+  width: @hugeMediaSize;
+  height: auto;
+  font-size: @hugeMediaSize;
 }
 
 .ui.items.row > .item {

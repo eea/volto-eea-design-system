@@ -56,9 +56,13 @@
 @imageBoxShadow: none;
 @imageBorder: none;
 
-/* Tile image size */
-@tileImageWidth: 50px;
-@tileImageHeight: auto;
+/* Image & Icon size */
+@tinyMediaSize   : 1.5rem;
+@smallMediaSize  : 3rem;
+@mediumMediaSize : 4rem;
+@largeMediaSize  : 8rem;
+@bigMediaSize    : 12.5rem;
+@hugeMediaSize   : 25rem;
 
 /* Content */
 @contentDisplay: block;

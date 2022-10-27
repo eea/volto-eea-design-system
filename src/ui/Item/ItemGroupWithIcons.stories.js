@@ -49,7 +49,9 @@ function SingleItem({
       ) : (
         <Icon className={`${imageSize} ${icon}`} />
       )}
-      <Item.Content verticalAlign={verticalAlign}>{description}</Item.Content>
+      <Item.Content verticalAlign={verticalAlign}>
+        <Item.Description>{description}</Item.Description>
+      </Item.Content>
     </Item>
   );
 }
@@ -85,17 +87,7 @@ DefaultItem.argTypes = {
   },
   imageSize: {
     control: { type: 'select' },
-    options: [
-      'mini',
-      'tile',
-      'tiny',
-      'small',
-      'medium',
-      'large',
-      'big',
-      'huge',
-      'massive',
-    ],
+    options: ['tiny', 'small', 'medium', 'large', 'big', 'huge'],
     description: 'Content can specify its vertical alignment',
     table: {
       type: { summary: 'string' },
@@ -220,7 +212,7 @@ DefaultGroup.args = {
 DefaultGroup.argTypes = {
   imageSize: {
     control: { type: 'select' },
-    options: ['mini', 'tile', 'tiny', 'small'],
+    options: ['tiny', 'small', 'medium', 'large', 'big', 'huge'],
     description: 'Content can specify its vertical alignment',
     table: {
       type: { summary: 'string' },
