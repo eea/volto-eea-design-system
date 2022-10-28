@@ -1,7 +1,9 @@
 .vscode/
 .history
 .eslintrc.js
+.nyc_output
 project
+coverage
 logs
 *.log
 npm-debug.log*
