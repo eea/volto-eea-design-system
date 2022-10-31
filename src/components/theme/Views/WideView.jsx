@@ -21,7 +21,7 @@ import { hasBlocksData } from '@plone/volto/helpers';
 const WideView = ({ content }) => {
   return hasBlocksData(content) ? (
     <>
-      <BodyClass className="wide-view" />
+      <BodyClass className="wide_view" />
       <DefaultView content={content} />
     </>
   ) : null;

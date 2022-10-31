@@ -21,7 +21,7 @@ import { hasBlocksData } from '@plone/volto/helpers';
 const NarrowView = ({ content }) => {
   return hasBlocksData(content) ? (
     <>
-      <BodyClass className="narrow-view" />
+      <BodyClass className="narrow_view" />
       <DefaultView content={content} className={'page-area'} />
     </>
   ) : null;
