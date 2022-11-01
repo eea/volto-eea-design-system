@@ -16,6 +16,7 @@
     width: auto !important;
     max-width: @containerWidth !important;
   }
+   #page-add .container,
    #page-edit .container {
      max-width: unset !important;
    }

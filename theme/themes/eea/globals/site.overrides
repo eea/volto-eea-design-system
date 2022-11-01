@@ -17,33 +17,51 @@ h2, h3, h4, h5, h6 {
   color: @contentAreaColor;
 }
 
-[class*="narrow_view"] [id="page-document"] > *,
+
+[class~="narrow_view"] [id="page-document"] > *,
 .content-area .narrow_width,
 .content-area .has--size--narrow_width
 {
-  --layout-max-width: @narrowWidth;
   max-width: @narrowWidth;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-[class*="view-defaultview"] [id="page-document"] > *,
+[class~="view-defaultview"] [id="page-document"] > *,
 //[class="view"] [id="page-document"] > *,
 .content-area .container_width,
 .content-area .has--size--container_width
 {
   --layout-max-width: @containerWidth;
   max-width: @containerWidth;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-[class="wide_view"] [id="page-document"] > *,
+[class~="wide_view"] [id="page-document"] > *,
 .content-area .wide_width,
 .content-area .has--size--wide_width
 {
   --layout-max-width: @wideWidth;
   max-width: @wideWidth;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.block-editor-title {
+  --layout-max-width: @containerWidth;
+}
+[class~="narrow_view"] {
+  --layout-max-width: @narrowWidth;
+}
+[class~="wide_view"] {
+  --layout-max-width: @wideWidth;
+}
+
+//.styled-group {
+//  margin-top: @rem-space-4;
+//  margin-bottom: @rem-space-4;
+//}
 
 // text smaller than body has extra letterspacing as described in docusaurus
 .tiny,
