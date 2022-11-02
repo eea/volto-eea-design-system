@@ -22,7 +22,7 @@ const NarrowView = ({ content }) => {
   return hasBlocksData(content) ? (
     <>
       <BodyClass className="narrow_view" />
-      <DefaultView content={content} className={'page-area'} />
+      <DefaultView content={content} className={'ui container'} />
     </>
   ) : null;
 };
