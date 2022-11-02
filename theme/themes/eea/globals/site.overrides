@@ -28,6 +28,7 @@ h2, h3, h4, h5, h6 {
 }
 
 [class~="view-defaultview"] [id="page-document"] > *,
+[class~="view-viewview"] [id="page-document"] > *,
 //[class="view"] [id="page-document"] > *,
 .content-area .container_width,
 .content-area .has--size--container_width
