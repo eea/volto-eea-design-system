@@ -77,6 +77,10 @@
     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
       display: none !important;
     }
+    #page-document {
+      width: unset !important;
+      max-width: unset !important;
+    }
   }
 }
 
