@@ -87,7 +87,7 @@ const DefaultView = (props) => {
   // If the content is not yet loaded, then do not show anything
   return contentLoaded ? (
     hasBlocksData(content) ? (
-      <div id="page-document" className={props.className}>
+      <div id="page-document" className={props.className || 'ui container'}>
         <RenderBlocks {...props} path={path} />
       </div>
     ) : (
