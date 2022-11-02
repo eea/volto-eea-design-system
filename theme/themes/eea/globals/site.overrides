@@ -17,24 +17,22 @@ h2, h3, h4, h5, h6 {
   color: @contentAreaColor;
 }
 
+[class~="view-defaultview"] [id="page-document"] > *,
+[class~="view-viewview"] [id="page-document"] > *,
+.content-area .container_width,
+.content-area .has--size--container_width
+{
+  --layout-max-width: @containerWidth;
+  max-width: @containerWidth;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 [class~="narrow_view"] [id="page-document"] > *,
 .content-area .narrow_width,
 .content-area .has--size--narrow_width
 {
   max-width: @narrowWidth;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-[class~="view-defaultview"] [id="page-document"] > *,
-[class~="view-viewview"] [id="page-document"] > *,
-//[class="view"] [id="page-document"] > *,
-.content-area .container_width,
-.content-area .has--size--container_width
-{
-  --layout-max-width: @containerWidth;
-  max-width: @containerWidth;
   margin-left: auto;
   margin-right: auto;
 }
