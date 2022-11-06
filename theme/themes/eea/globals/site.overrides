@@ -57,10 +57,11 @@ h2, h3, h4, h5, h6 {
   --layout-max-width: @wideWidth;
 }
 
-//.styled-group {
-//  margin-top: @rem-space-4;
-//  margin-bottom: @rem-space-4;
-//}
+// add a 1rem margin top and bottom on all styled classes
+[class*="styled-"] {
+  margin-top: @rem-space-4;
+  margin-bottom: @rem-space-4;
+}
 
 // text smaller than body has extra letterspacing as described in docusaurus
 .tiny,
