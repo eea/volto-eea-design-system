@@ -24,8 +24,8 @@ h2, h3, h4, h5, h6 {
 {
   --layout-max-width: @containerWidth;
   max-width: @containerWidth;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 [class~="narrow_view"] [id="page-document"] > *,
@@ -33,8 +33,8 @@ h2, h3, h4, h5, h6 {
 .content-area .has--size--narrow_width
 {
   max-width: @narrowWidth;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 [class~="wide_view"] [id="page-document"] > *,
@@ -43,8 +43,8 @@ h2, h3, h4, h5, h6 {
 {
   --layout-max-width: @wideWidth;
   max-width: @wideWidth;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .block-editor-title {
