@@ -19,8 +19,8 @@ h2, h3, h4, h5, h6 {
 
 [class~="view-defaultview"] [id="page-document"] > *,
 [class~="view-viewview"] [id="page-document"] > *,
-.content-area .container_width,
-.content-area .has--size--container_width
+#main .container_width,
+#main .has--size--container_width
 {
   --layout-max-width: @containerWidth;
   max-width: @containerWidth;
@@ -29,8 +29,8 @@ h2, h3, h4, h5, h6 {
 }
 
 [class~="narrow_view"] [id="page-document"] > *,
-.content-area .narrow_width,
-.content-area .has--size--narrow_width
+#main .narrow_width,
+#main .has--size--narrow_width
 {
   max-width: @narrowWidth;
   margin-left: auto !important;
@@ -38,8 +38,8 @@ h2, h3, h4, h5, h6 {
 }
 
 [class~="wide_view"] [id="page-document"] > *,
-.content-area .wide_width,
-.content-area .has--size--wide_width
+#main .wide_width,
+#main .has--size--wide_width
 {
   --layout-max-width: @wideWidth;
   max-width: @wideWidth;
