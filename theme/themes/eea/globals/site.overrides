@@ -23,7 +23,7 @@ h2, h3, h4, h5, h6 {
 #main .has--size--container_width
 {
   --layout-max-width: @containerWidth;
-  max-width: @containerWidth;
+  max-width: @containerWidth !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -32,7 +32,7 @@ h2, h3, h4, h5, h6 {
 #main .narrow_width,
 #main .has--size--narrow_width
 {
-  max-width: @narrowWidth;
+  max-width: @narrowWidth !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -42,7 +42,7 @@ h2, h3, h4, h5, h6 {
 #main .has--size--wide_width
 {
   --layout-max-width: @wideWidth;
-  max-width: @wideWidth;
+  max-width: @wideWidth !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
