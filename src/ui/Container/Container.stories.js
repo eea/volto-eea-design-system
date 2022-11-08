@@ -74,15 +74,20 @@ const content = (
   </p>
 );
 
-const Template = (args) => (
-  <div id={'main'}>
-    <Container
-      id={'page-document'}
-      {...args}
-      className={args.containerWidth || 'container_width'}
-    ></Container>
-  </div>
-);
+const Template = (args) => {
+  const { containerWidth, ...options } = args;
+  return (
+    <>
+      <div id={'main'}>
+        <Container
+          id={'page-document'}
+          {...options}
+          className={containerWidth || 'container_width'}
+        ></Container>
+      </div>
+    </>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {
