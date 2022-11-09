@@ -14,17 +14,27 @@
 .section-edit {
   .container {
     width: auto !important;
+    max-width: @containerWidth !important;
   }
+   #page-add .container,
+   #page-edit .container {
+     max-width: unset !important;
+   }
 
   [class*="block-editor"] {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: @editContainerGutter;
+    padding-right: @editContainerGutter;
 
     [class*="block-editor"] {
       padding-left: 0;
       padding-right: 0;
     }
   }
+}
+[class="invisible"] > div > * {
+  max-width: var(--layout-max-width, @containerWidth);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contentWidth(@offset) {
@@ -67,6 +77,10 @@
     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
       display: none !important;
     }
+    #page-document {
+      width: unset !important;
+      max-width: unset !important;
+    }
   }
 }
 
@@ -75,15 +89,14 @@ body {
 }
 
 // WIP container fixes for edit interface
-.section-edit .container {
-    max-width: 1120px !important;
-}
 @media only screen and (max-width: 1600px) {
+  .has-sidebar.section-add .container,
   .has-sidebar.section-edit .container {
     margin-left: 0 !important;
   }
 }
 @media only screen and (min-width: 1601px) {
+  .has-sidebar.section-add .main.bar .ui.container,
   .has-sidebar.section-edit .main.bar .ui.container {
     margin-left: 10% !important;
   }
