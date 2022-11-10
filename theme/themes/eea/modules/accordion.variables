@@ -47,6 +47,8 @@
 @contentPadding: @squareMedium;
 @contentBackground: @grey-1;
 @contentColor: @tertiaryColor;
+@contentListItemPadding: 0em;
+@contentListItemMargin: 0em;
 
 /*-------------------
        Coupling

@@ -101,3 +101,17 @@ a {
   background: @lightLavender;
   color: @black;
 }
+
+/* override slate-metadata addon styles */
+
+ .title.metadata.mention,
+ .description.metadata.mention,
+ .datetime.metadata.mention,
+ .text.metadata.mention,
+ .other_organisations.metadata.mention,
+ .preview_caption.text.metadata.mention,
+ .publisher.metadata.mention,
+ .rights.metadata.mention,
+ .topics.text.metadata.mention {
+   all: unset !important;
+ }

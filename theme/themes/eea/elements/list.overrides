@@ -38,3 +38,9 @@ ul.ui.list li:before {
 .ui.ordered.list .list .list .list > li:before {
   margin-left: @orderedGreatGrandchildCountOffset;
 }
+
+/* override slate-metadata addon styles */
+ div.ui.list.metadata > .item .description,
+ .content {
+   margin: @itemMetadataMargin;
+ }
