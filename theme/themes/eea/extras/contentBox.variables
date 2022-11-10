@@ -17,4 +17,4 @@
 
 /* Container */
 @contentBoxContainerMarginTop    : @bigGap;
-@contentBoxContainerMarginBottom : .paddings[6];
+@contentBoxContainerMarginBottom : @bigGap;
