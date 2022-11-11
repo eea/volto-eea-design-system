@@ -96,7 +96,17 @@
 
 /* Image & Icon size */
 
-// TINY - 24px (Looks good for 1 line text)
+// MINI - 24px
+.item .mini.image,
+.block .item .mini.image,
+.item i.mini.icon, 
+.item i.mini.icons {
+  width: @miniMediaSize;
+  height: auto;
+  font-size: @miniMediaSize;
+}
+
+// TINY - 32px
 .item .tiny.image,
 .block .item .tiny.image,
 .item i.tiny.icon, 
@@ -106,7 +116,7 @@
   font-size: @tinyMediaSize;
 }
 
-// SMALL - 48px
+// SMALL - 40px
 .item .small.image,
 .block .item .small.image,
 .item i.small.icon, 
@@ -116,7 +126,7 @@
   font-size: @smallMediaSize;
 }
 
-// MEDIUM - 64px (Used in Landing Page)
+// MEDIUM - 48px
 .item .medium.image,
 .block .item .medium.image,
 .item i.medium.icon, 
@@ -126,7 +136,7 @@
   font-size: @mediumMediaSize;
 }
 
-// LARGE - 124px
+// LARGE - 56px
 .item .large.image,
 .block .item .large.image,
 .item i.large.icon, 
@@ -136,7 +146,7 @@
   font-size: @largeMediaSize;
 }
 
-// BIG - 200px
+// BIG - 64px
 .item .big.image,
 .block .item .big.image,
 .item i.big.icon, 
@@ -146,7 +156,7 @@
   font-size: @bigMediaSize;
 }
 
-// HUGE - 400px
+// HUGE - 72px
 .item .huge.image,
 .block .item .huge.image,
 .item i.huge.icon, 

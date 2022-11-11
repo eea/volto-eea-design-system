@@ -87,7 +87,7 @@ DefaultItem.argTypes = {
   },
   imageSize: {
     control: { type: 'select' },
-    options: ['tiny', 'small', 'medium', 'large', 'big', 'huge'],
+    options: ['mini', 'tiny', 'small', 'medium', 'large', 'big', 'huge'],
     description: 'Content can specify its vertical alignment',
     table: {
       type: { summary: 'string' },
@@ -212,7 +212,7 @@ DefaultGroup.args = {
 DefaultGroup.argTypes = {
   imageSize: {
     control: { type: 'select' },
-    options: ['tiny', 'small', 'medium', 'large', 'big', 'huge'],
+    options: ['mini', 'tiny', 'small', 'medium', 'large', 'big', 'huge'],
     description: 'Content can specify its vertical alignment',
     table: {
       type: { summary: 'string' },
