@@ -57,13 +57,9 @@
 @imageBorder: none;
 
 /* Image & Icon size */
-@miniMediaSize   : 1.5rem;
-@tinyMediaSize   : 2rem;
-@smallMediaSize  : 2.5rem;
-@mediumMediaSize : 3rem;
-@largeMediaSize  : 3.5rem;
-@bigMediaSize    : 4rem;
-@hugeMediaSize   : 4.5rem;
+@smallMediaSize  : 3rem;
+@mediumMediaSize : 4rem;
+@largeMediaSize  : 5rem;
 
 /* Content */
 @contentDisplay: block;
@@ -114,7 +110,6 @@
 
 
 /* Description */
-@descriptionDistance: 0.6em;
 @descriptionMaxWidth: auto;
 @descriptionFontSize: 1em;
 @descriptionLineHeight: @lineHeight;

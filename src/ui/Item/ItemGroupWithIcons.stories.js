@@ -12,18 +12,41 @@ export default {
   component: Item,
   argTypes: {
     stackable: {
-      description: 'Image above content',
       table: {
         type: { summary: 'boolean' },
         defaultValue: { summary: false },
       },
     },
     mediaType: {
-      name: 'Media type',
+      name: 'media type',
       options: ['image', 'icon'],
       control: { type: 'radio' },
       table: {
         defaultValue: { summary: 'image' },
+      },
+    },
+    imageSize: {
+      control: { type: 'select' },
+      options: ['small', 'medium', 'large'],
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'medium' },
+      },
+    },
+    flexAlign: {
+      name: 'vertical align',
+      options: ['start', 'center', 'end'],
+      control: { type: 'select' },
+      table: {
+        defaultValue: { summary: 'start' },
+      },
+    },
+    colorVariation: {
+      name: 'icon variation',
+      options: ['primary', 'secondary', 'tertiary'],
+      control: { type: 'select' },
+      table: {
+        defaultValue: { summary: 'tertiary' },
       },
     },
   },
@@ -34,12 +57,15 @@ function SingleItem({
   imageUrl,
   icon,
   imageSize,
+  colorVariation,
   description,
-  verticalAlign,
+  flexAlign,
   stackable,
 }) {
   return (
-    <Item className={stackable ? 'stackable' : ''}>
+    <Item
+      className={`flex-items-${flexAlign} ${stackable ? ' stackable' : ''}`}
+    >
       {mediaType === 'image' ? (
         <Item.Image
           className={`ui ${imageSize}`}
@@ -47,9 +73,9 @@ function SingleItem({
           alt="item image"
         />
       ) : (
-        <Icon className={`${imageSize} ${icon}`} />
+        <Icon className={`${imageSize} ${icon} ${colorVariation}`} />
       )}
-      <Item.Content verticalAlign={verticalAlign}>
+      <Item.Content>
         <Item.Description>{description}</Item.Description>
       </Item.Content>
     </Item>
@@ -68,8 +94,8 @@ DefaultItem.args = {
   mediaType: 'image',
   imageUrl: GlobeEco,
   icon: 'ri-leaf-line',
-  imageSize: 'tile',
-  verticalAlign: 'middle',
+  imageSize: 'medium',
+  flexAlign: 'start',
   stackable: false,
   description:
     'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
@@ -85,26 +111,7 @@ DefaultItem.argTypes = {
     control: 'text',
     if: { arg: 'mediaType', eq: 'icon' },
   },
-  imageSize: {
-    control: { type: 'select' },
-    options: ['mini', 'tiny', 'small', 'medium', 'large', 'big', 'huge'],
-    description: 'Content can specify its vertical alignment',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: ' "" ' },
-    },
-  },
-  verticalAlign: {
-    control: { type: 'select' },
-    options: ['top', 'middle', 'bottom'],
-    description: 'An image can vary in size',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: ' "" ' },
-    },
-  },
   description: {
-    description: 'Item content description',
     table: {
       type: { summary: 'string' },
       defaultValue: { summary: ' "" ' },
@@ -117,7 +124,8 @@ function ItemGroup({
   imageUrl,
   icon,
   imageSize,
-  verticalAlign,
+  colorVariation,
+  flexAlign,
   ColumnLeft,
   ColumnRight,
   stackable,
@@ -132,9 +140,10 @@ function ItemGroup({
                 <SingleItem
                   key={item.childKey}
                   {...item}
+                  flexAlign={flexAlign}
                   mediaType={mediaType}
                   imageSize={imageSize}
-                  verticalAlign={verticalAlign}
+                  colorVariation={colorVariation}
                   stackable={stackable}
                 ></SingleItem>
               ))}
@@ -146,9 +155,10 @@ function ItemGroup({
                 <SingleItem
                   key={item.childKey}
                   {...item}
+                  flexAlign={flexAlign}
                   mediaType={mediaType}
                   imageSize={imageSize}
-                  verticalAlign={verticalAlign}
+                  colorVariation={colorVariation}
                   stackable={stackable}
                 ></SingleItem>
               ))}
@@ -166,14 +176,15 @@ const Template = (args) => <ItemGroup {...args}></ItemGroup>;
 export const DefaultGroup = Template.bind({});
 DefaultGroup.args = {
   mediaType: 'image',
-  imageSize: 'tile',
-  verticalAlign: 'middle',
+  imageSize: 'medium',
+  colorVariation: 'tertiary',
+  flexAlign: 'start',
   stackable: false,
   ColumnLeft: [
     {
       childKey: 0,
       imageUrl: GlobeEco,
-      icon: 'ri-leaf-line',
+      icon: 'ri-earth-line',
       description:
         'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
     },
@@ -187,7 +198,7 @@ DefaultGroup.args = {
     {
       childKey: 2,
       imageUrl: DataAnalytics,
-      icon: 'ri-leaf-line',
+      icon: 'ri-pie-chart-line',
       description:
         'Leverage the data and technology to support the EU’s decision-making processes concerning the environment and climate',
     },
@@ -196,36 +207,16 @@ DefaultGroup.args = {
     {
       childKey: 0,
       imageUrl: Network,
-      icon: 'ri-home-2-line',
+      icon: 'ri-pin-distance-line',
       description:
         'Build stronger networks and partnerships with state and regional governments and organisations.',
     },
     {
       childKey: 1,
       imageUrl: Knowledge,
-      icon: 'ri-leaf-line',
+      icon: 'ri-line-chart-line',
       description:
         'Strengthen the EU’s knowledge capacity and help secure the resources needed to create a sustainable Europe.',
     },
   ],
-};
-DefaultGroup.argTypes = {
-  imageSize: {
-    control: { type: 'select' },
-    options: ['mini', 'tiny', 'small', 'medium', 'large', 'big', 'huge'],
-    description: 'Content can specify its vertical alignment',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: ' "" ' },
-    },
-  },
-  verticalAlign: {
-    control: { type: 'select' },
-    options: ['top', 'middle', 'bottom'],
-    description: 'An image can vary in size',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: ' "" ' },
-    },
-  },
 };
