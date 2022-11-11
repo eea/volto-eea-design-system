@@ -17,15 +17,17 @@ h2, h3, h4, h5, h6 {
   color: @contentAreaColor;
 }
 
+[id="page-document"] > * {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 [class~="view-defaultview"] [id="page-document"] > *,
 [class~="view-viewview"] [id="page-document"] > *,
 #main .container_width,
 #main .has--size--container_width
 {
-  --layout-max-width: @containerWidth;
   max-width: @containerWidth !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
 }
 
 [class~="narrow_view"] [id="page-document"] > *,
@@ -33,18 +35,13 @@ h2, h3, h4, h5, h6 {
 #main .has--size--narrow_width
 {
   max-width: @narrowWidth !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
 }
 
 [class~="wide_view"] [id="page-document"] > *,
 #main .wide_width,
 #main .has--size--wide_width
 {
-  --layout-max-width: @wideWidth;
   max-width: @wideWidth !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
 }
 
 .block-editor-title {
