@@ -142,3 +142,10 @@
 .ui.accordion.tertiary .title:not(.active):hover i {
   color: @tertiaryColorCSSVar;
 }
+
+/* override slate-metadata addon styles */
+.ui.accordion .content .ui.list.metadata > .item .content,
+.description {
+   margin: @contentListItemPadding;
+   padding: @contentListItemMargin;
+   }
