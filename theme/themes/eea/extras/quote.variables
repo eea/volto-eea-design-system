@@ -16,7 +16,7 @@
 @tabletQuotePadding  : 0.5rem 0 1rem;
 
 /* Source */
-@sourceTextColor     : @secondaryColor;
+@sourceTextColor     : @secondaryColorCSSVar;
 @sourceTextAlign     : right;
 @sourceFontWeight    : @bold;
 @sourceFontSize      : 1.25rem;
@@ -30,5 +30,5 @@
 /* Icon */
 @mobileQuoteIconSize : 2rem;
 @tabletQuoteIconSize : 3rem;
-@quoteIconColor      : @secondaryColor;
+@quoteIconColor      : @secondaryColorCSSVar;
 @quoteDownIconFloat  : right;

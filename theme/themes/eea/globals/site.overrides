@@ -17,6 +17,49 @@ h2, h3, h4, h5, h6 {
   color: @contentAreaColor;
 }
 
+[id="page-document"] > * {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+[class~="view-defaultview"] [id="page-document"] > *,
+[class~="view-viewview"] [id="page-document"] > *,
+#main .container_width,
+#main .has--size--container_width
+{
+  max-width: @containerWidth !important;
+}
+
+[class~="narrow_view"] [id="page-document"] > *,
+#main .narrow_width,
+#main .has--size--narrow_width
+{
+  max-width: @narrowWidth !important;
+}
+
+[class~="wide_view"] [id="page-document"] > *,
+#main .wide_width,
+#main .has--size--wide_width
+{
+  max-width: @wideWidth !important;
+}
+
+.block-editor-title {
+  --layout-max-width: @containerWidth;
+}
+[class~="narrow_view"] {
+  --layout-max-width: @narrowWidth;
+}
+[class~="wide_view"] {
+  --layout-max-width: @wideWidth;
+}
+
+// add a 1rem margin top and bottom on all styled classes
+[class*="styled-"] {
+  margin-top: @rem-space-4;
+  margin-bottom: @rem-space-4;
+}
+
 // text smaller than body has extra letterspacing as described in docusaurus
 .tiny,
 .caption,

@@ -34,6 +34,7 @@
   }
 }
 
+.ui.statistics.inverted .slate,
 .ui.statistics.inverted > a {
   color: @white;
 }

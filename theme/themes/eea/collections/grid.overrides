@@ -15,3 +15,13 @@
 .ui.grid > [class*='any reversed'].row {
   flex-direction: row-reverse;
 }
+
+// remove grid and column padding from full-size
+.has--size--full .grid {
+  margin-left: 0;
+  margin-right: 0;
+}
+.has--size--full .grid .column {
+  padding: 0 !important;
+}
+

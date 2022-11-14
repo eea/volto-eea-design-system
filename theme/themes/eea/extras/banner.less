@@ -8,10 +8,10 @@
 --------------------*/
 
 .eea.banner {
-  width: 100%;
-  color: @white;
-  background: @bannerBackgroundColor;
   position: relative;
+  width: 100%;
+  background: @bannerBackgroundColor;
+  color: @white;
 
   .gradient {
     background: @backgroundGradient;
@@ -32,6 +32,14 @@
         line-height: @mobileTitleLineHeight;
       }
 
+      .subtitle {
+        max-width: @subtitleMaxWidth;
+        margin: @mobileSubtitleMargin;
+        font-size: @mobileSubtitleFontSize;
+        font-weight: @subtitleFontWeight;
+        line-height: @mobileSubtitleLineHeight;
+      }
+
       .metadata {
         font-size: @mobileMetadataFontSize;
         line-height: @mobileMetadataLineHeight;
@@ -47,8 +55,8 @@
 
       .actions {
         display: flex;
-        justify-content: flex-end;
         align-items: @mobileActionsAlignItems;
+        justify-content: flex-end;
 
         .action {
           .ui.basic.inverted.button {
@@ -64,21 +72,22 @@
             }
 
             i.icon {
-              opacity: @bannerActionButtonIconOpacity;
               margin: @mobileBannerActionButtonMargin;
               font-size: @mobileBannerActionButtonIconFontSize;
+              opacity: @bannerActionButtonIconOpacity;
             }
           }
         }
       }
     }
   }
+
   .image {
-    background-repeat: @imageBackgroundRepeat;
-    background-size: @imageBackgroundSize;
-    background-position: @imageBackgroundPosition;
     width: 100%;
     height: 100%;
+    background-position: @imageBackgroundPosition;
+    background-repeat: @imageBackgroundRepeat;
+    background-size: @imageBackgroundSize;
 
     .gradient {
       background-image: @backgroundGradientWithImage;
@@ -104,6 +113,7 @@
 
   .actions {
     flex-flow: column;
+
     i.icon {
       color: @sharePopupActionsIconColor;
     }
@@ -132,9 +142,9 @@
         padding: @tabletContentPadding;
 
         .title {
+          margin: @tabletTitleMargin;
           font-size: @tabletTitleFontSize;
           font-weight: @titleFontWeight;
-          margin: @tabletTitleMargin;
           line-height: @tabletTitleLineHeight;
         }
 
@@ -144,8 +154,8 @@
         }
 
         .actions {
-          align-items: @tabletActionsAlignItems;
           flex-direction: @tabletActionsFlexDirection;
+          align-items: @tabletActionsAlignItems;
 
           .action {
             min-width: @tabletActionsActionMinWidth;
@@ -170,8 +180,8 @@
     min-width: @tabletSharePopupMinWidth;
 
     .actions {
-      flex-flow: row;
       display: flex;
+      flex-flow: row;
 
       .action {
         display: inherit;
@@ -192,10 +202,19 @@
       padding: @computerContentPadding;
 
       .title {
-        font-size: @computerTitleFontSize;
         margin: @computerTitleMargin;
+        font-size: @computerTitleFontSize;
         line-height: @computerTitleLineHeight;
+      }
+
+      .subtitle {
+        margin: @computerSubtitleMargin;
+        font-size: @computerSubtitleFontSize;
+        line-height: @computerSubtitleLineHeight;
       }
     }
   }
 }
+
+.loadUIOverrides();
+

@@ -14,17 +14,31 @@
 .section-edit {
   .container {
     width: auto !important;
+    max-width: @containerWidth !important;
   }
+   #page-add .container,
+   #page-edit .container {
+     max-width: unset !important;
+   }
 
   [class*="block-editor"] {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: @editContainerGutter;
+    padding-right: @editContainerGutter;
 
     [class*="block-editor"] {
       padding-left: 0;
       padding-right: 0;
     }
   }
+}
+
+// column-block also has invisible > div > items as such we need
+// a more specific selector to ensure that we get only the
+// top of the edit page selector
+.container > .blocks-form > .invisible > div > * {
+  max-width: var(--layout-max-width, @containerWidth);
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .contentWidth(@offset) {
@@ -67,6 +81,10 @@
     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
       display: none !important;
     }
+    #page-document {
+      width: unset !important;
+      max-width: unset !important;
+    }
   }
 }
 
@@ -75,15 +93,14 @@ body {
 }
 
 // WIP container fixes for edit interface
-.section-edit .container {
-    max-width: 1120px !important;
-}
 @media only screen and (max-width: 1600px) {
+  .has-sidebar.section-add .container,
   .has-sidebar.section-edit .container {
     margin-left: 0 !important;
   }
 }
 @media only screen and (min-width: 1601px) {
+  .has-sidebar.section-add .main.bar .ui.container,
   .has-sidebar.section-edit .main.bar .ui.container {
     margin-left: 10% !important;
   }
@@ -98,6 +115,7 @@ body {
 }
 
 /* Hack for escape the blocks container in blocks full width */
+.has--size--full:not(.block-editor-columnsBlock),
 .full-width {
   position: relative;
   right: 50%;
@@ -107,3 +125,15 @@ body {
   margin-right: -50vw !important;
   margin-left: -50vw !important;
 }
+
+@media screen and (min-width: 768px) {
+  .has-toolbar .has--size--full:not(.block-editor-columnsBlock) {
+    margin-left: -47vw !important;
+  }
+
+  .has-toolbar-collapsed .has--size--full:not(.block-editor-columnsBlock) {
+    margin-left: -49vw !important;
+  }
+
+}
+

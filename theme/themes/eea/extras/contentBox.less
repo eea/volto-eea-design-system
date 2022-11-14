@@ -28,7 +28,6 @@
     padding-top: @contentBoxContainerMarginTop;
     padding-bottom: @contentBoxContainerMarginBottom;
     position: relative;
-    z-index: 1;
   }
 
   &.primary {
@@ -46,15 +45,23 @@
   }
 }
 
-[class*="content-box"] a {
-  text-decoration: underline;
-}
 .content-box[class*="ary"] {
   --bg-color: transparent;
-  --text-color: #FFF;
-  --text-color-hover: @grey-1;
+  --border-color-secondary: @contentBoxColor;
+  --text-color: @contentBoxColor;
+  --text-color-primary: @contentBoxColor;
+  --text-color-secondary: @contentBoxColor;
+  --text-color-tertiary: @contentBoxColor;
+  --text-color-hover: @backgroundColorSupplementary;
 }
 // inherit link
-.content-box[class*="ary"] a {
+.content-box[class*="ary"] a:not(.ui, .item) {
   color: inherit;
+  text-decoration: underline;
+}
+
+// inherit color for slate links within context boxes
+.content-box .slate-editor-link {
+  color: inherit;
+  text-decoration: underline;
 }

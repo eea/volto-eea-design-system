@@ -36,6 +36,16 @@
 @tabletTitleMargin         : 0 0 0.813rem 0;
 @computerTitleMargin       : 0 0 1.125rem 0;
 
+/* Subtitle */
+@subtitleFontWeight        : @bold;
+@subtitleMaxWidth          : 100%;
+@mobileSubtitleFontSize    : 0.875rem;
+@computerSubtitleFontSize  : 1.125rem;
+@mobileSubtitleLineHeight  : 1rem;
+@computerSubtitleLineHeight: 1.625rem;
+@mobileSubtitleMargin      : 0 0 1.125rem 0;
+@computerSubtitleMargin    : 0 0 1.25rem 0;
+
 /* Metadata */
 @metadataTypeFontWeight    : @bold;
 @mobileMetadataFontSize    : 0.75rem;

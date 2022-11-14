@@ -1,10 +1,6 @@
 /*-------------------
       Homepage
 --------------------*/
-// hide stagingBanner on homepage
-.homepage .stagingBanner {
-  display: none !important;
-}
 
 // hide breadcrumbs on homepage
 .homepage .breadcrumbs {
@@ -15,9 +11,8 @@
   font-size: @h1;
 }
 
-// remove margin and padding from homepage content-area since we have the bg image over the header
+// remove padding from homepage content-area since we have the bg image over the header
 .homepage .content-area {
-    margin-top: 0 !important;
     padding-top: 0 !important;
 }
 
@@ -74,15 +69,31 @@
   font-weight: inherit;
 }
 
-// inherit color for slate links within context boxes
-.content-box .slate-editor-link {
-  color: inherit;
-}
 
 // customize error class from volto-slate to our color of red
 .error {
     color: @red-5;
 }
+
+.power-user-menu,
+.blocks-chooser {
+  --text-color: @textColor;
+}
+.blocks-chooser {
+  .searchbox {
+    height: auto !important;
+  }
+  .input {
+    width: auto !important;
+  }
+  .clear-search-button {
+    padding: 0.5rem;
+  }
+  .icon {
+    margin-right: 0 !important;
+  }
+}
+
 
 // ensure background of content-box goes above the content area
 // draft image for non published pages

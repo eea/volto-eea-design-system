@@ -1,18 +1,17 @@
-import { setupBeforeEach, tearDownAfterEach } from '../support';
+import { slateBeforeEach, slateAfterEach } from '../support/e2e';
 
 describe('Blocks Tests', () => {
-  beforeEach(setupBeforeEach);
-  afterEach(tearDownAfterEach);
+  beforeEach(slateBeforeEach);
+  afterEach(slateAfterEach);
 
   it('Add Block: Empty', () => {
     // Change page title
-    cy.get('.documentFirstHeading > .public-DraftStyleDefault-block, .block.title [data-slate-editor]')
-      .clear()
-      .type('My Add-on Page')
-      .get('.documentFirstHeading span[data-text], .documentFirstHeading span[data-slate-string]')
-      .contains('My Add-on Page');
+    cy.clearSlateTitle();
+    cy.getSlateTitle().type('My Add-on Page');
 
-    cy.get('.documentFirstHeading > .public-DraftStyleDefault-block, .block.title [data-slate-editor]').type('{enter}');
+    cy.get('.documentFirstHeading').contains('My Add-on Page');
+
+    cy.getSlate().click();
 
     // Add block
     cy.get('.ui.basic.icon.button.block-add-button').first().click();
