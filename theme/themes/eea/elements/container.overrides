@@ -126,13 +126,33 @@ body {
   margin-left: -50vw !important;
 }
 
-@media screen and (min-width: 768px) {
+// tweak size of full to take into account toolbar open or collapsed
+@media screen and (min-width: 768px) and (hover: hover) {
   .has-toolbar .has--size--full:not(.block-editor-columnsBlock) {
-    margin-left: -47vw !important;
+    width: calc(100vw - 96px) !important;
+    left: calc(50% + 47px);
   }
 
   .has-toolbar-collapsed .has--size--full:not(.block-editor-columnsBlock) {
-    margin-left: -49vw !important;
+    width: calc(100vw - 37px) !important;
+    left: calc(50% + 20px);
+
+  }
+
+}
+
+// when we have no hover we have touch where there is no always visible
+// scrollbar
+@media screen and (min-width: 768px) and (hover: none) {
+  .has-toolbar .has--size--full:not(.block-editor-columnsBlock) {
+    width: calc(100vw - 80px) !important;
+    left: calc(50% + 12px);
+  }
+
+  .has-toolbar-collapsed .has--size--full:not(.block-editor-columnsBlock) {
+    width: calc(100vw - 20px) !important;
+    left: calc(50% + 12px);
+
   }
 
 }
