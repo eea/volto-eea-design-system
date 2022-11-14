@@ -31,10 +31,14 @@
     }
   }
 }
-[class="invisible"] > div > * {
+
+// column-block also has invisible > div > items as such we need
+// a more specific selector to ensure that we get only the
+// top of the edit page selector
+.container > .blocks-form > .invisible > div > * {
   max-width: var(--layout-max-width, @containerWidth);
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .contentWidth(@offset) {
@@ -111,6 +115,7 @@ body {
 }
 
 /* Hack for escape the blocks container in blocks full width */
+.has--size--full:not(.block-editor-columnsBlock),
 .full-width {
   position: relative;
   right: 50%;
@@ -120,3 +125,15 @@ body {
   margin-right: -50vw !important;
   margin-left: -50vw !important;
 }
+
+@media screen and (min-width: 768px) {
+  .has-toolbar .has--size--full:not(.block-editor-columnsBlock) {
+    margin-left: -47vw !important;
+  }
+
+  .has-toolbar-collapsed .has--size--full:not(.block-editor-columnsBlock) {
+    margin-left: -49vw !important;
+  }
+
+}
+
