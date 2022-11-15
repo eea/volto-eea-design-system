@@ -220,3 +220,88 @@ DefaultGroup.args = {
     },
   ],
 };
+
+function ItemFlexGroup({
+  mediaType,
+  imageUrl,
+  icon,
+  imageSize,
+  colorVariation,
+  flexAlign,
+  Items,
+  stackable,
+}) {
+  return (
+    <Container>
+      <Item.Group unstackable className="row flex-items-wrapper">
+        {Items.map((item) => (
+          <SingleItem
+            key={item.childKey}
+            {...item}
+            flexAlign={flexAlign}
+            mediaType={mediaType}
+            imageSize={imageSize}
+            colorVariation={colorVariation}
+            stackable={stackable}
+          ></SingleItem>
+        ))}
+      </Item.Group>
+    </Container>
+  );
+}
+
+const FlexTemplate = (args) => <ItemFlexGroup {...args}></ItemFlexGroup>;
+
+// Flex items
+export const FlexGroup = FlexTemplate.bind({});
+FlexGroup.args = {
+  mediaType: 'image',
+  imageSize: 'medium',
+  colorVariation: 'tertiary',
+  flexAlign: 'start',
+  stackable: false,
+  Items: [
+    {
+      childKey: 0,
+      imageUrl: GlobeEco,
+      icon: 'ri-earth-line',
+      description:
+        'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
+    },
+    {
+      childKey: 1,
+      imageUrl: Sustainable,
+      icon: 'ri-leaf-line',
+      description:
+        'Supply input on solutions to the sustainability challenges of today – and tomorrow.  ',
+    },
+    {
+      childKey: 2,
+      imageUrl: DataAnalytics,
+      icon: 'ri-pie-chart-line',
+      description:
+        'Leverage the data and technology to support the EU’s decision-making processes concerning the environment and climate',
+    },
+    {
+      childKey: 3,
+      imageUrl: Network,
+      icon: 'ri-pin-distance-line',
+      description:
+        'Build stronger networks and partnerships with state and regional governments and organisations.',
+    },
+    {
+      childKey: 4,
+      imageUrl: GlobeEco,
+      icon: 'ri-earth-line',
+      description:
+        'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
+    },
+    {
+      childKey: 5,
+      imageUrl: Knowledge,
+      icon: 'ri-line-chart-line',
+      description:
+        'Strengthen the EU’s knowledge capacity and help secure the resources needed to create a sustainable Europe.',
+    },
+  ],
+};

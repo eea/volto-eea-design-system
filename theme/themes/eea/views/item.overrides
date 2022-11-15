@@ -129,7 +129,7 @@
 
 // As semantic does for non unstackable items
 // so columns does not affect margin in mobiles
-.ui.items.row > .item:last-child {
+.ui.items.row:not(.flex-items-wrapper) > .item:last-child {
   margin-bottom: 0;
 }
 
@@ -137,7 +137,8 @@
 .ui.items.row .item.stackable {
   display: grid;
 
-  .image {
+  .image,
+  i.icon {
     margin: auto;
   }
 
@@ -146,6 +147,17 @@
     padding-top: @stackableContentPaddingTop;
   }
 }
+
+// Flex wrapper for list of items
+.ui.items.flex-items-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  .item {
+    width: @mobileFlexItemWidth;
+  }
+}
+
 
 @media only screen and (max-width: @largestMobileScreen) {
   .ui.items.row > .item {
@@ -180,6 +192,15 @@
   .ui.items.row > .item {
     margin: @tabletRowItemMargin;
   }
+
+  // Flex wrapper for list of items
+  .ui.items.flex-items-wrapper {
+    gap: @tabletFlexGroupGap;
+
+    .item {
+      width: @tabletFlexItemWidth;
+    }
+  }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
@@ -203,6 +224,11 @@
   }
   .ui.items.row > .item {
     margin: @desktopRowItemMargin;
+  }
+
+  // Flex wrapper for list of items
+  .ui.items.flex-items-wrapper {
+    gap: @desktopFlexGroupGap;
   }
 }
 

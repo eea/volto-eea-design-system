@@ -7,7 +7,11 @@
 --------------------*/
 
 /* Group */
-@groupMargin: 1.5em 0em;
+@groupMargin: @rem-space-6 0em;
+
+/* Flex group */
+@tabletFlexGroupGap: 0 @rem-space-3-5;
+@desktopFlexGroupGap: 0 @rem-space-4;
 
 /* Item */
 @display: flex;
@@ -108,7 +112,6 @@
 @contentLinkHoverColor: '';
 @contentLinkTransition: color @defaultDuration @defaultEasing;
 
-
 /* Description */
 @descriptionMaxWidth: auto;
 @descriptionFontSize: 1em;
@@ -146,6 +149,10 @@
 /*-------------------
       Variations
 --------------------*/
+
+/* Flex item */
+@mobileFlexItemWidth: 100%;
+@tabletFlexItemWidth: 49%;
 
 /* Relaxed */
 @relaxedItemSpacing: 1.5em;
