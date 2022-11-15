@@ -134,7 +134,6 @@ body {
 @media screen and (min-width: 768px) and (hover: hover) {
   .has-toolbar .has--size--full:not(.block-editor-columnsBlock) {
     width: calc(100vw - 96px) !important;
-    //left: calc(50% + 47px);
   }
 
   #page-add [class*="block-editor-"].has--size--full .block.inner,
@@ -151,7 +150,6 @@ body {
 
   .has-toolbar-collapsed .has--size--full:not(.block-editor-columnsBlock) {
     width: calc(100vw - 37px) !important;
-    //left: calc(50% + 20px);
   }
 
 }
@@ -161,12 +159,12 @@ body {
 @media screen and (min-width: 768px) and (hover: none) {
   .has-toolbar .has--size--full:not(.block-editor-columnsBlock) {
     width: calc(100vw - 80px) !important;
-    //left: calc(50% + 12px);
+    left: calc(50% + 40px);
   }
 
   .has-toolbar-collapsed .has--size--full:not(.block-editor-columnsBlock) {
     width: calc(100vw - 20px) !important;
-    //left: calc(50% + 12px);
+    left: calc(50% + 12px);
   }
 
 }
