@@ -152,6 +152,7 @@
 .ui.items.flex-items-wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 
   .item {
     width: @mobileFlexItemWidth;
@@ -194,12 +195,8 @@
   }
 
   // Flex wrapper for list of items
-  .ui.items.flex-items-wrapper {
-    gap: @tabletFlexGroupGap;
-
-    .item {
-      width: @tabletFlexItemWidth;
-    }
+  .ui.items.flex-items-wrapper .item {
+    width: @tabletFlexItemWidth;
   }
 }
 
@@ -227,8 +224,8 @@
   }
 
   // Flex wrapper for list of items
-  .ui.items.flex-items-wrapper {
-    gap: @desktopFlexGroupGap;
+  .ui.items.flex-items-wrapper .item {
+    width: @desktopFlexItemWidth;
   }
 }
 

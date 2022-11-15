@@ -280,7 +280,7 @@ FlexGroup.args = {
       imageUrl: DataAnalytics,
       icon: 'ri-pie-chart-line',
       description:
-        'Leverage the data and technology to support the EU’s decision-making processes concerning the environment and climate',
+        'This is an exmple of an item having bigger description text. Leverage the data and technology to support the EU’s decision-making processes concerning the environment and climate',
     },
     {
       childKey: 3,

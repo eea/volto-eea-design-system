@@ -9,10 +9,6 @@
 /* Group */
 @groupMargin: @rem-space-6 0em;
 
-/* Flex group */
-@tabletFlexGroupGap: 0 @rem-space-3-5;
-@desktopFlexGroupGap: 0 @rem-space-4;
-
 /* Item */
 @display: flex;
 @background: transparent;
@@ -152,7 +148,8 @@
 
 /* Flex item */
 @mobileFlexItemWidth: 100%;
-@tabletFlexItemWidth: 49%;
+@tabletFlexItemWidth: 48.8%;
+@desktopFlexItemWidth: 49%;
 
 /* Relaxed */
 @relaxedItemSpacing: 1.5em;
