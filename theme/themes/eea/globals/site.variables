@@ -282,6 +282,7 @@
 @narrowWidth: var(--narrow-text-width, 900px);
 @containerWidth: var(--container-text-width, 1120px);
 @wideWidth: var(--wide-text-width, 1320px);
+@wideWidthLaptop: var(--wide-text-laptop-width, 1220px);
 
 
 /*-------------------

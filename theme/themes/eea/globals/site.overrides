@@ -44,6 +44,15 @@ h2, h3, h4, h5, h6 {
   max-width: @wideWidth !important;
 }
 
+// enlarge wide section when we have a resolution from 1280px to before the laptop hd resolution
+@media screen and (min-width: 1280px) and (max-width: 1365px) {
+  [class~="wide_view"] [id="page-document"] > *,
+  #main .wide_width,
+  #main .has--size--wide_width {
+    max-width: @wideWidthLaptop !important;
+  }
+}
+
 .block-editor-title {
   --layout-max-width: @containerWidth;
 }
