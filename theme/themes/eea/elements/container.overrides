@@ -99,12 +99,6 @@ body {
     margin-left: 0 !important;
   }
 }
-@media only screen and (min-width: 1601px) {
-  .has-sidebar.section-add .main.bar .ui.container,
-  .has-sidebar.section-edit .main.bar .ui.container {
-    margin-left: 10% !important;
-  }
-}
 
 .drag.handle.wrapper {
   margin-left: -15px !important;
@@ -126,17 +120,38 @@ body {
   margin-left: -50vw !important;
 }
 
+  .has--size--full:not(.block-editor-columnsBlock) .ui.grid {
+    margin-left: 0;
+    margin-right: 0;
+  }
+ .has--size--full:not(.block-editor-columnsBlock) .ui.grid .column-blocks-wrapper {
+   padding-left: 0;
+   padding-right: 0;
+ }
+//}
+
 // tweak size of full to take into account toolbar open or collapsed
 @media screen and (min-width: 768px) and (hover: hover) {
   .has-toolbar .has--size--full:not(.block-editor-columnsBlock) {
     width: calc(100vw - 96px) !important;
-    left: calc(50% + 47px);
+    //left: calc(50% + 47px);
+  }
+
+  #page-add [class*="block-editor-"].has--size--full .block.inner,
+  #page-edit [class*="block-editor-"].has--size--full .column-grid {
+    width: calc(100vw - 471px) !important;
+    left: calc(50% + 240px);
+    position: relative;
+    right: 50%;
+    max-width: initial !important;
+    margin-right: -50vw !important;
+    margin-left: -50vw !important;
+
   }
 
   .has-toolbar-collapsed .has--size--full:not(.block-editor-columnsBlock) {
     width: calc(100vw - 37px) !important;
-    left: calc(50% + 20px);
-
+    //left: calc(50% + 20px);
   }
 
 }
@@ -146,13 +161,12 @@ body {
 @media screen and (min-width: 768px) and (hover: none) {
   .has-toolbar .has--size--full:not(.block-editor-columnsBlock) {
     width: calc(100vw - 80px) !important;
-    left: calc(50% + 12px);
+    //left: calc(50% + 12px);
   }
 
   .has-toolbar-collapsed .has--size--full:not(.block-editor-columnsBlock) {
     width: calc(100vw - 20px) !important;
-    left: calc(50% + 12px);
-
+    //left: calc(50% + 12px);
   }
 
 }
