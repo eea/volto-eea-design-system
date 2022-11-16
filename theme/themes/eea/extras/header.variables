@@ -128,6 +128,16 @@
 @mainMenuInvertedItemActiveBorder     : 4px solid @white;
 @mainMenuItemAlignSelf                : flex-end;
 
+
+/* Subsite */
+@subsiteFontFamily                    : @headerFont;
+@subsiteFontWeight                    : @headerFontWeight;
+@subsiteColor                         : @linkColor;
+@subsiteDividerColor                  : @darkCyan;
+@mobileSubsiteFontSize                : unit(@h4, em);
+@tabletSubsiteFontSize                : unit(@h3, em);
+@computerSubsiteFontSize              : unit(@h2, em);
+
 /*-----------------
    HEADER ACTIONS
 ------------------*/
