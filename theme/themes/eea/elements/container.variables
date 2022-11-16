@@ -65,3 +65,4 @@
 @textSize: @large;
 
 /* Section */
+@editContainerGutter: 3rem;
