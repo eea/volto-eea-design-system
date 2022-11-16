@@ -800,13 +800,11 @@
   }
 }
 
-#main #mega-menu .ui.accordion .title:first-child {
-  display: flex;
-}
-//#main #mega-menu .ui.accordion .title:first-child {
-//  display: none; // hide home link from mobile menu
-//}
+// hide home link and accordion content from mobile menu
 #main #mega-menu .mobile > .ui.accordion > .title:first-child {
+  display: none;
+}
+#main #mega-menu .ui.accordion .title:first-child  + .content {
   display: none;
 }
 
