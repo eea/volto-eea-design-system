@@ -120,15 +120,14 @@ body {
   margin-left: -50vw !important;
 }
 
-  .has--size--full:not(.block-editor-columnsBlock) .ui.grid {
-    margin-left: 0;
-    margin-right: 0;
-  }
- .has--size--full:not(.block-editor-columnsBlock) .ui.grid .column-blocks-wrapper {
-   padding-left: 0;
-   padding-right: 0;
- }
-//}
+.has--size--full:not(.block-editor-columnsBlock) .ui.grid {
+  margin-left: 0;
+  margin-right: 0;
+}
+.has--size--full:not(.block-editor-columnsBlock) .ui.grid .column-blocks-wrapper {
+  padding-left: 0;
+  padding-right: 0;
+}
 
 // tweak size of full to take into account toolbar open or collapsed
 @media screen and (min-width: 768px) and (hover: hover) {
