@@ -298,7 +298,7 @@
 
 /* Search Box */
 #search-box {
-  position: relative;
+  position: @searchBoxPosition;
   z-index: 99999;
   overflow: auto;
   width: 100%;
@@ -806,3 +806,5 @@
     color: @megaMenuTextColor;
   }
 }
+
+.loadUIOverrides();
