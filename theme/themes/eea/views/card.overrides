@@ -16,6 +16,8 @@
 .ui.card {
   height: 100%;
   text-align: var(--text-align, @cardTextAlign);
+  background-color: var(--card-background-color, @background);
+  color: var(--card-text-color, @cardColor);
 }
 
 .card .meta .date {
@@ -87,151 +89,41 @@
 /*******************************
             Primary
 *******************************/
-
-.ui.card.primary:not(.inverted),
-.ui.card.primary:not(.inverted) .image {
-  background: @primaryBackground;
+.ui.card.primary {
+  --card-background-color: @primaryCardBackground;
+  --card-text-color: @primaryCardColor;
 }
-
-.ui.card.primary > .content > .header {
-  color: @primaryHeaderColor;
-}
-
-.ui.card.primary > i.icon,
-.ui.card.primary > a:not(.ui) > i.icon,
-.ui.card.primary > .content a:not(.ui),
-.ui.card.primary > .content a:not(.ui):hover,
-.ui.card.primary > .content > .description {
-  color: @primaryDescriptionColor;
-}
-
-.ui.card.primary > .extra.content a:not(.ui) {
-  color: @primaryExtraLinkColor;
-
-  &:hover {
-    color: @primaryExtraLinkHoverColor;
-  }
-}
-
-.ui.card.primary > .content > .meta,
-.ui.card.primary > .content > .meta a:not(.ui) {
-  color: @primaryMetaColor;
-}
-
 /* Inverted */
-.ui.card.primary.inverted > i.icon,
-.ui.card.primary.inverted > .content * {
-  color: @invertedPrimaryContentColor;
-}
-
-.ui.card.primary.inverted > a:not(.ui) > i.icon,
-.ui.card.primary.inverted > .content a:not(.ui),
-.ui.card.primary.inverted > .extra.content a:not(.ui) {
-  color: @invertedPrimaryContentColor;
-
-  &:hover {
-    color: @invertedPrimaryColorHover;
-  }
+.ui.card.primary.inverted {
+  --card-background-color: @invertedPrimaryCardBackgroundColor;
+  --card-text-color: @invertedPrimaryCardColor;
 }
 
 /*******************************
             Secondary
 *******************************/
 
-.ui.card.secondary:not(.inverted),
-.ui.card.secondary:not(.inverted) .image {
-  background: @secondaryBackground;
+.ui.card.secondary {
+  --card-background-color:  @secondaryCardBackground;
+  --card-text-color: @secondaryCardColor;
 }
-
-.ui.card.secondary > i.icon,
-.ui.card.secondary > a:not(.ui) > i.icon,
-.ui.card.secondary > .content a:not(.ui),
-.ui.card.secondary > .content a:not(.ui):hover,
-.ui.card.secondary > .content > .header {
-  color: @secondaryHeaderColor;
-}
-
-.ui.card.secondary > .content > .description {
-  color: @secondaryDescriptionColor;
-}
-
-.ui.card.secondary > .extra.content a:not(.ui) {
-  color: @secondaryExtraLinkColor;
-
-  &:hover {
-    color: @secondaryExtraLinkHoverColor;
-  }
-}
-
-.ui.card.secondary > .content > .meta,
-.ui.card.secondary > .content > .meta a:not(.ui) {
-  color: @secondaryMetaColor;
-}
-
 /* Inverted */
-.ui.card.secondary.inverted > i.icon,
-.ui.card.secondary.inverted > .content * {
-  color: @invertedSecondaryContentColor;
-}
-
-.ui.card.secondary.inverted > a:not(.ui) > i.icon,
-.ui.card.secondary.inverted > .content a:not(.ui),
-.ui.card.secondary.inverted > .extra.content a:not(.ui) {
-  color: @invertedSecondaryContentColor;
-
-  &:hover {
-    color: @invertedSecondaryColorHover;
-  }
+.ui.card.secondary.inverted {
+  background-color: @invertedSecondaryCardBackgroundColor;
+  color: @invertedSecondaryCardColor;
 }
 
 /*******************************
             Tertiary
 *******************************/
-
-.ui.card.tertiary:not(.inverted),
-.ui.card.tertiary:not(.inverted) .image {
-  background: @tertiaryBackground;
+.ui.card.tertiary {
+  --card-background-color:  @tertiaryCardBackground;
+  --card-text-color: @tertiaryCardColor;
 }
-
-.ui.card.tertiary > i.icon,
-.ui.card.tertiary > a:not(.ui) > i.icon,
-.ui.card.tertiary > .content a:not(.ui),
-.ui.card.tertiary > .content a:not(.ui):hover,
-.ui.card.tertiary > .content > .header {
-  color: @tertiaryHeaderColor;
-}
-
-.ui.card.tertiary > .content > .description {
-  color: @tertiaryDescriptionColor;
-}
-
-.ui.card.tertiary > .extra.content a:not(.ui) {
-  color: @tertiaryExtraLinkColor;
-
-  &:hover {
-    color: @tertiaryExtraLinkHoverColor;
-  }
-}
-
-.ui.card.tertiary > .content > .meta,
-.ui.card.tertiary > .content > .meta a:not(.ui) {
-  color: @tertiaryMetaColor;
-}
-
 /* Inverted */
-.ui.card.tertiary.inverted > i.icon,
-.ui.card.tertiary.inverted > .content * {
-  color: @invertedTertiaryContentColor;
-}
-
-.ui.card.tertiary.inverted > a:not(.ui) > i.icon,
-.ui.card.tertiary.inverted > .content a:not(.ui),
-.ui.card.tertiary.inverted > .extra.content a:not(.ui) {
-  color: @invertedTertiaryContentColor;
-
-  &:hover {
-    color: @invertedTertiaryColorHover;
-  }
+.ui.card.tertiary.inverted {
+  --card-background-color:  @invertedTertiaryCardBackgroundColor;
+  --card-text-color:  @invertedTertiaryCardColor;
 }
 
 /*******************************
@@ -239,11 +131,13 @@
 *******************************/
 
 .ui.cards > .ui.card.rounded > .image,
+.has--rounded--true .ui.card > .image,
 .ui.card.rounded > .image {
   height: auto;
 }
 
 .ui.cards .ui.card.rounded,
+.has--rounded--true .ui.card,
 .ui.card.rounded {
   padding-top: @iconCardPaddingTop;
   border: none;
