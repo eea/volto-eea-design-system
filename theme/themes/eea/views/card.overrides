@@ -30,19 +30,13 @@
   height: @cardImageHeight;
 
   img {
-    width: @imageWidth;
-    height: @imageHeight;
+    width: var(--card-image-width, @imageWidth);
+    height: var(--card-image-width, @imageHeight);
     object-fit: @imageObjectFit;
     object-position: @imageObjectPosition;
   }
 }
 
-.ui.cards > .card > i.icon,
-.ui.cards > .card > a:not(.ui) > i.icon,
-.ui.card > i.icon,
-.ui.card > a:not(.ui) > i.icon {
-  color: @iconColor;
-}
 
 .ui.cards > .card > .content > *:not(:last-child),
 .ui.card > .content > *:not(:last-child) {
@@ -89,12 +83,14 @@
 /*******************************
             Primary
 *******************************/
-.ui.card.primary {
+.has--theme--primary .card,
+.card.primary {
   --card-background-color: @primaryCardBackground;
   --card-text-color: @primaryCardColor;
 }
 /* Inverted */
-.ui.card.primary.inverted {
+.has--theme--primary.has--inverted--true .card,
+.card.primary.inverted {
   --card-background-color: @invertedPrimaryCardBackgroundColor;
   --card-text-color: @invertedPrimaryCardColor;
 }
@@ -102,13 +98,14 @@
 /*******************************
             Secondary
 *******************************/
-
-.ui.card.secondary {
+.has--theme--secondary .card,
+.card.secondary {
   --card-background-color:  @secondaryCardBackground;
   --card-text-color: @secondaryCardColor;
 }
 /* Inverted */
-.ui.card.secondary.inverted {
+.has--theme--secondary.has--inverted--true .card,
+.card.secondary.inverted {
   background-color: @invertedSecondaryCardBackgroundColor;
   color: @invertedSecondaryCardColor;
 }
@@ -116,12 +113,14 @@
 /*******************************
             Tertiary
 *******************************/
-.ui.card.tertiary {
+.has--theme--tertiary .card,
+.card.tertiary {
   --card-background-color:  @tertiaryCardBackground;
   --card-text-color: @tertiaryCardColor;
 }
 /* Inverted */
-.ui.card.tertiary.inverted {
+.has--theme--tertiary.has--inverted--true .card,
+.card.tertiary.inverted {
   --card-background-color:  @invertedTertiaryCardBackgroundColor;
   --card-text-color:  @invertedTertiaryCardColor;
 }
@@ -136,6 +135,10 @@
   height: auto;
 }
 
+.has--rounded--true .card {
+  --card-image-width: @roundedImageWidth;
+  --card-image-height: @roundedImageHeight;
+}
 .ui.cards .ui.card.rounded,
 .has--rounded--true .ui.card,
 .ui.card.rounded {
@@ -373,4 +376,11 @@
   .icon {
     margin: auto;
   }
+}
+
+.ui.cards > .card > i.icon,
+.ui.cards > .card > a:not(.ui) > i.icon,
+.ui.card > i.icon,
+.ui.card > a:not(.ui) > i.icon {
+  color: @iconColor;
 }
