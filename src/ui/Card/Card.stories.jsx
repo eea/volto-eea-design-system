@@ -2,6 +2,9 @@ import React from 'react';
 import { Card, Image, Grid, Container, Icon, Button } from 'semantic-ui-react';
 import Slider from 'react-slick';
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 const tabletBreakpoint = 835;
 const mobileBreakpoint = 480;
 
