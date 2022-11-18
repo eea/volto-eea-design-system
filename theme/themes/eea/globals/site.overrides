@@ -63,8 +63,8 @@ h2, h3, h4, h5, h6 {
   --layout-max-width: @wideWidth;
 }
 
-// add a 1rem margin top and bottom on all styled classes
-[class*="styled-"] {
+// add a 1rem margin top and bottom on all direct styled classes from container
+[class~="container"] > [class*="styled-"] {
   margin-top: @rem-space-4;
   margin-bottom: @rem-space-4;
 }
