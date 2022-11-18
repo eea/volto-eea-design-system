@@ -130,7 +130,7 @@
 *******************************/
 
 .ui.cards > .ui.card.rounded > .image,
-ui.card.has--rounded--true. > .image,
+.ui.card.has--rounded--true > .image,
 .ui.card.rounded > .image {
   height: auto;
 }
