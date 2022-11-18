@@ -83,13 +83,13 @@
 /*******************************
             Primary
 *******************************/
-.has--theme--primary .card,
+.card.has--theme--primary,
 .card.primary {
   --card-background-color: @primaryCardBackground;
   --card-text-color: @primaryCardColor;
 }
 /* Inverted */
-.has--theme--primary.has--inverted--true .card,
+.card.has--theme--primary.has--inverted--true,
 .card.primary.inverted {
   --card-background-color: @invertedPrimaryCardBackgroundColor;
   --card-text-color: @invertedPrimaryCardColor;
@@ -98,13 +98,13 @@
 /*******************************
             Secondary
 *******************************/
-.has--theme--secondary .card,
+.card.has--theme--secondary,
 .card.secondary {
   --card-background-color:  @secondaryCardBackground;
   --card-text-color: @secondaryCardColor;
 }
 /* Inverted */
-.has--theme--secondary.has--inverted--true .card,
+.card.has--theme--secondary.has--inverted--true,
 .card.secondary.inverted {
   background-color: @invertedSecondaryCardBackgroundColor;
   color: @invertedSecondaryCardColor;
@@ -113,13 +113,13 @@
 /*******************************
             Tertiary
 *******************************/
-.has--theme--tertiary .card,
+.card.has--theme--tertiary,
 .card.tertiary {
   --card-background-color:  @tertiaryCardBackground;
   --card-text-color: @tertiaryCardColor;
 }
 /* Inverted */
-.has--theme--tertiary.has--inverted--true .card,
+.card.has--theme--tertiary.has--inverted--true,
 .card.tertiary.inverted {
   --card-background-color:  @invertedTertiaryCardBackgroundColor;
   --card-text-color:  @invertedTertiaryCardColor;
@@ -130,17 +130,17 @@
 *******************************/
 
 .ui.cards > .ui.card.rounded > .image,
-.has--rounded--true .ui.card > .image,
+ui.card.has--rounded--true. > .image,
 .ui.card.rounded > .image {
   height: auto;
 }
 
-.has--rounded--true .card {
+.card.has--rounded--true {
   --card-image-width: @roundedImageWidth;
   --card-image-height: @roundedImageHeight;
 }
 .ui.cards .ui.card.rounded,
-.has--rounded--true .ui.card,
+.ui.card.has--rounded--true,
 .ui.card.rounded {
   padding-top: @iconCardPaddingTop;
   border: none;
