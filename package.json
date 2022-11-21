@@ -23,6 +23,7 @@
     "@eeacms/volto-corsproxy": "*",
     "remixicon": "2.5.0",
     "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
     "react-countup": "^6.3.0"
   },
   "devDependencies": {

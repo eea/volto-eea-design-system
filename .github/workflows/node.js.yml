@@ -6,11 +6,6 @@ name: Storybook & Docusaurus CI deployment
 on:
   push:
     branches: [ develop ]
-    paths:
-      - src/**
-      - theme/**
-      - website/**
-      - templates/**
 
 jobs:
   build:
