@@ -41,7 +41,7 @@ jobs:
           git commit -m "Autobuild of docusaurus docs"
           git push
 
-    - uses: convictional/trigger-workflow-and-wait@v1.3.0
+    - uses: convictional/trigger-workflow-and-wait@v1.6.5
       with:
         github_token: ${{ secrets.PAT_TOKEN }}
         owner: 'eea'
