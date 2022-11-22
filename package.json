@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-eea-design-system",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "@eeacms/volto-eea-design-system: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
@@ -23,6 +23,7 @@
     "@eeacms/volto-corsproxy": "*",
     "remixicon": "2.5.0",
     "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
     "react-countup": "^6.3.0"
   },
   "devDependencies": {

@@ -34,16 +34,18 @@ h1, h2, h3, h4, h5, h6, p, span, .header {
 .flex-items-center { align-items: center !important; }
 
 // Text
-.text-left { text-align: left !important; }
-.text-center { text-align: center !important;}
+.text-left,
+.has--text--left { text-align: left !important; }
+.text-center,
+.has--text--center { text-align: center !important;}
 .text-right { text-align: right !important; }
 .bold { font-weight: bold !important; }
 
-.align_left {
+.has--text--left {
   --text-align: left;
 }
 
-.align_center {
+.has--text--center {
   --text-align: center;
   --justify-content: space-evenly;
 }
