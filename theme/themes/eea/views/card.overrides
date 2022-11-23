@@ -14,6 +14,7 @@
 
 /* Cards must have same height */
 .ui.card {
+  min-width: @minWidth;
   height: 100%;
   text-align: var(--text-align, @cardTextAlign);
   background-color: var(--card-background-color, @background);
@@ -25,7 +26,8 @@
 }
 
 .ui.cards > .card:not(.rounded) > .image,
-.ui.card:not(.rounded) > .image {
+.ui.card:not(.rounded) > .image,
+.ui.card .image-with-title .image {
   overflow: @cardImageOverflow;
   height: @cardImageHeight;
 
@@ -252,6 +254,62 @@
 
   .ui.card {
     margin: 0;
+  }
+}
+
+/*******************************
+      Image with title
+*******************************/
+// Adding the default image css for image inside image-with-title
+.ui.cards > .card > .image, .ui.card .image-with-title > .image {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  padding: 0em;
+  background: transparent;
+}
+
+.image-with-title {
+  position: relative;
+}
+
+// Gradient Mixin
+.gradientMix(@type; @colors; @dir: 0deg; @prefixes: webkit, moz, ms, o; @index: length(@prefixes)) when (@index > 0) {
+  .gradientMix(@type; @colors; @dir; @prefixes; (@index - 1));
+
+  @prefix  : extract(@prefixes, @index);
+  @dir-old : 90 - (@dir);
+
+  background-image: ~"-@{prefix}-@{type}-gradient(@{dir-old}, @{colors})";
+& when ( @index = length(@prefixes) ) {
+      background-image: ~"@{type}-gradient(@{dir}, @{colors})";
+  }
+}
+
+.image-with-title .gradient {
+  display: flex;
+  align-items: end;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  padding: @imageTitlePadding;
+  .gradientMix(linear; rgba(46, 62, 76, 0.65) 38.6%, rgba(46, 62, 76, 0.169) 59.52%, rgba(69, 95, 106, 0) 79.64%; 13.39deg);
+}
+
+.image-with-title .header a {
+  font-size: var(--image-header-font-size, @imageTitleFontSize);
+  color: @imageTitleColor;
+  font-weight: @imageTitleFontWeight;
+  line-height: @imageTitleLineHeight;
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .image-with-title .gradient {
+    padding-block: @imageTitlePaddingBlock;
+  }
+  .image-with-title .header a {
+    --image-header-font-size: @font-size-10;
   }
 }
 
