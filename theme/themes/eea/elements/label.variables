@@ -142,8 +142,8 @@
 @rightRibbonOffset:  calc(100% + @ribbonMargin + @ribbonTriangleSize);
 
 @ribbonImageTopDistance: 1rem;
-@ribbonImageMargin: -0.05rem; /* Rounding Offset on Triangle */
-@ribbonImageOffset: calc(-@ribbonImageMargin - @ribbonTriangleSize);
+@ribbonImageMargin: 0.05rem; /* Rounding Offset on Triangle */
+@ribbonImageOffset: calc(@ribbonImageMargin - @ribbonTriangleSize);
 @rightRibbonImageOffset:  calc(100% + @ribbonImageMargin + @ribbonTriangleSize);
 
 @ribbonTableMargin: @relativeMini; /* Rounding Offset on Triangle */
