@@ -143,7 +143,7 @@
 
 @ribbonImageTopDistance: 1rem;
 @ribbonImageMargin: 0.05rem; /* Rounding Offset on Triangle */
-@ribbonImageOffset: calc(@ribbonImageMargin - @ribbonTriangleSize);
+@ribbonImageOffset: calc(-@ribbonImageMargin - @ribbonTriangleSize);
 @rightRibbonImageOffset:  calc(100% + @ribbonImageMargin + @ribbonTriangleSize);
 
 @ribbonTableMargin: @relativeMini; /* Rounding Offset on Triangle */
@@ -173,7 +173,7 @@
 
 @redTextColor: @white;
 @orangeTextColor: @white;
-@yellowTextColor: @white;
+@yellowTextColor: @textColor;
 @oliveTextColor: @white;
 @greenTextColor: @white;
 @tealTextColor: @white;
@@ -187,7 +187,7 @@
 
 @redHoverTextColor: @white;
 @orangeHoverTextColor: @white;
-@yellowHoverTextColor: @white;
+@yellowHoverTextColor: @textColor;
 @oliveHoverTextColor: @white;
 @greenHoverTextColor: @white;
 @tealHoverTextColor: @white;
