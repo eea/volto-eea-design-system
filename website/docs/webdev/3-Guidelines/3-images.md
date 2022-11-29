@@ -18,8 +18,8 @@ _Infographics_: Use these for visual storytelling to make complex information ea
 
 ## Image copyrights
 
-Photographs, illustrations and other images will generally be protected by copyrights as artistic works. This means that a user will usually need the permission of the copyright owner if they want to use it.
-To acknowledge a copyrighted work add three things to the image, the copyright symbol,  the year of the copyright and the name of the copyright holder.
+Photographs, illustrations, and other images will generally be protected by copyrights as artistic works. This means that a user will usually need the permission of the copyright owner if they want to use it.
+To acknowledge a copyrighted work add three things to the image, the copyright symbol,  the year of the copyright, and the name of the copyright holder.
 
 
 ## Best practices
