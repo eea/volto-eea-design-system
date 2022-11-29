@@ -16,12 +16,12 @@ The page header component provides users the context of the page. It is always p
 
 - ensure the pages contain all the components and elements in the anatomy table above
 - always use a page header when building your internal pages
-- when choosing a background image, make sure it highlights the main object related to the content, and it is meaningful
-- choose image copyright text colour according to image, use light font colour on darker images and darker font colour on lighter ones
+- when choosing a background image, make sure it highlights the main object related to the content and it is meaningful
+- choose image copyright text color according to image, use light font color on darker images and darker font color on lighter ones
 
 ### Don'ts
 
-- don't use more than one page header per page
+- don't use more than one-page header per page
 - do not use a background image unless there is a communication need, as it might be a distraction
 
 ### When to use
@@ -30,4 +30,4 @@ The page header component provides users the context of the page. It is always p
 
 ### When not to use
 
-- page header is not used for homepage of the website
+- the page header is not used for the homepage of the website
