@@ -18,6 +18,11 @@
 @sidenavHeaderBorderBottom: @2px solid @blue-grey-5;
 @sidenavHeaderIconMarginRight: @rem-space-4;
 
+/* Header icon */
+@sidenavHeaderIconContent: "\ef32";
+@sidenavHeaderIconFontWeight: @font-weight-4;
+@sidenavHeaderIconPaddingRight: @rem-space-4;
+
 /* Content */
 @sidenavContentBorderBottom: 1px solid @tertiaryColor;
 
@@ -29,6 +34,9 @@
 @sidenavItemHoverBackground: @blue-grey-5;
 @sidenavItemHoverColor: @grey-0;
 @sidenavLastItemMarginBottom: @rem-space-2;
+
+/* Third level item */
+@subparItemPaddingLeft: @rem-space-12;
 
 /* Item active */
 @sidenavItemActiveColor: @secondaryColor;

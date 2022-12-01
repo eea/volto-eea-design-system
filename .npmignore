@@ -6,8 +6,8 @@ bin/
 build/
 lib/
 g-api/
+mockups/
 tests/
-website/
 
 # Docs
 docs/
@@ -18,7 +18,6 @@ cypress/
 # Tests
 __tests__/
 *.snap
-*.stories.js
 
 # Files
 .travis.yml

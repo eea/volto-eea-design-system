@@ -23,6 +23,26 @@ export default {
         },
       },
     },
+    containerWidth: {
+      control: {
+        type: 'inline-radio',
+        labels: {
+          narrow_width: 'Narrow',
+          container_width: 'Default',
+          wide_width: 'Wide',
+        },
+      },
+      options: ['narrow_width', 'container_width', 'wide_width'],
+      description: 'Container width',
+      table: {
+        type: {
+          summary: 'text',
+        },
+        defaultValue: {
+          summary: 'container_width',
+        },
+      },
+    },
     content: {
       description: 'container content',
       table: {
@@ -54,7 +74,20 @@ const content = (
   </p>
 );
 
-const Template = (args) => <Container {...args}></Container>;
+const Template = (args) => {
+  const { containerWidth, ...options } = args;
+  return (
+    <>
+      <div id={'main'}>
+        <Container
+          id={'page-document'}
+          {...options}
+          className={containerWidth || 'container_width'}
+        ></Container>
+      </div>
+    </>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {

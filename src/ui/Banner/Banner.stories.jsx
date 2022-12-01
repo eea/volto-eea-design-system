@@ -86,6 +86,7 @@ const Template = (args) => (
         </>
       }
     >
+      <Banner.Subtitle>{args.subtitle}</Banner.Subtitle>
       <Banner.Title>{args.title}</Banner.Title>
       {args.metadata && (
         <Banner.Metadata>
@@ -106,6 +107,7 @@ const Template = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  subtitle: 'Lorem ipsum dolor',
   metadata: [
     { hidden: false, value: 'Briefing', type: 'type' },
     { hidden: false, value: 'Published Date', type: 'date' },
