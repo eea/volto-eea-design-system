@@ -5,7 +5,7 @@
 /* Body */
 @tagsBodyWidth             : 100%;
 @tagsLabelsGap             : 0.5rem;
-@tagsGap                   : 1rem;
+@tagsGap                   : 0 1rem;
 @tagsContentGap            : 0.5rem 1rem;
 
 /* Tags Title */
