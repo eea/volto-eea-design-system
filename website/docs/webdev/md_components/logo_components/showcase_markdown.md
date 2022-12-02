@@ -16,21 +16,22 @@ import Download from '../../md_components/static/download.svg';
 
 ### EEA logo
 
-<EEALogo className="thematicLogosBig" style={{width:'400px'}} /> 
+<EEALogo className="thematicLogosBig" /> 
 
+<br/> 
 <br/> 
 
 [<Download/>](/img/EEA.zip)
+
 </div>
 
 <div>
 
 
 ### EEA logo dark
-<br/>
-<div  className="thematicLogosBigDark" style={{width:'320px'}}> 
+<div  className="thematicLogosBigDark" style={{width:'382px'}}> 
   <div>
-    <EEALogoDark style={{width:'280px'}}/> 
+    <EEALogoDark /> 
   </div>
 </div>
 <br/> 
@@ -58,7 +59,7 @@ import Download from '../../md_components/static/download.svg';
 [<Download/>](/img/Bise.zip)
 
 </div>
-<br/><br/><br/>
+
 <div>
 
 ### Biodiversity logo dark
