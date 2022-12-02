@@ -27,7 +27,15 @@ function Copyright({ children, ...rest }) {
   );
 }
 
-Copyright.Icon = ({ children, ...rest }) => <span {...rest}>{children}</span>;
+Copyright.Icon = ({ children, ...rest }) => (
+  <span {...rest} className={'icon-wrapper'}>
+    {children}
+  </span>
+);
 
-Copyright.Text = ({ children, ...rest }) => <span {...rest}>{children}</span>;
+Copyright.Text = ({ children, ...rest }) => (
+  <span {...rest} className={'content'}>
+    {children}
+  </span>
+);
 export default Copyright;

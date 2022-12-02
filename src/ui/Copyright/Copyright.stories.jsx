@@ -32,7 +32,7 @@ export default {
 
 export const Default = (args) => (
   <Container>
-    <Segment inverted>
+    <Segment className={args.colorVariant === 'default' ? 'inverted' : ''}>
       <Copyright
         copyrightPosition={args.copyrightPosition}
         colorVariant={args.colorVariant}

@@ -13,22 +13,16 @@
     .wrapper {
         display: flex;
         color: @copyrightContentColor;
+        font-size: @copyrightContentFontSize;
+        gap: @copyrightContentPaddingRight;
     }
-}
-
-.eea.copyright.left .wrapper {
-    justify-content: flex-start;
-}
-
-.eea.copyright.right .wrapper {
+    &.left .wrapper {
+      justify-content: flex-start;
+    }
+  &.right .wrapper {
     justify-content: flex-end;
-}
-
-.eea.copyright .wrapper span {
-    font-size: @copyrightContentFontSize;
-    padding-right: @copyrightContentPaddingRight;
-}
-
-.eea.copyright .wrapper i.icon {
+  }
+  .icon {
     margin: 0; // override default
+  }
 }
