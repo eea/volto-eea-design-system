@@ -96,30 +96,30 @@
 // SMALL - 48px
 .item .small.image,
 .block .item .small.image,
-.item i.small.icon, 
+.item i.small.icon,
 .item i.small.icons {
   width: @smallMediaSize;
-  height: auto;
+  height: @smallMediaSize;
   font-size: @smallMediaSize;
 }
 
 // MEDIUM - 64px
 .item .medium.image,
 .block .item .medium.image,
-.item i.medium.icon, 
+.item i.medium.icon,
 .item i.medium.icons {
   width: @mediumMediaSize;
-  height: auto;
+  height: @mediumMediaSize;
   font-size: @mediumMediaSize;
 }
 
 // LARGE - 80px
 .item .large.image,
 .block .item .large.image,
-.item i.large.icon, 
+.item i.large.icon,
 .item i.large.icons {
-  width: @largeMediaSize; 
-  height: auto;
+  width: @largeMediaSize;
+  height: @largeMediaSize;
   font-size: @largeMediaSize;
 }
 

@@ -38,7 +38,7 @@ export default {
       options: ['start', 'center', 'end'],
       control: { type: 'select' },
       table: {
-        defaultValue: { summary: 'start' },
+        defaultValue: { summary: 'center' },
       },
     },
     colorVariation: {
@@ -46,7 +46,7 @@ export default {
       options: ['primary', 'secondary', 'tertiary'],
       control: { type: 'select' },
       table: {
-        defaultValue: { summary: 'tertiary' },
+        defaultValue: { summary: 'secondary' },
       },
     },
   },
@@ -95,7 +95,8 @@ DefaultItem.args = {
   imageUrl: GlobeEco,
   icon: 'ri-leaf-line',
   imageSize: 'medium',
-  flexAlign: 'start',
+  flexAlign: 'center',
+  colorVariation: 'secondary',
   stackable: false,
   description:
     'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
@@ -177,8 +178,8 @@ export const DefaultGroup = Template.bind({});
 DefaultGroup.args = {
   mediaType: 'image',
   imageSize: 'medium',
-  colorVariation: 'tertiary',
-  flexAlign: 'start',
+  colorVariation: 'secondary',
+  flexAlign: 'center',
   stackable: false,
   ColumnLeft: [
     {
@@ -257,8 +258,8 @@ export const FlexGroup = FlexTemplate.bind({});
 FlexGroup.args = {
   mediaType: 'image',
   imageSize: 'medium',
-  colorVariation: 'tertiary',
-  flexAlign: 'start',
+  colorVariation: 'secondary',
+  flexAlign: 'center',
   stackable: false,
   Items: [
     {
