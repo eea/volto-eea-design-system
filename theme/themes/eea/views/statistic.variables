@@ -12,7 +12,7 @@
 @secondaryValueColor: @secondaryColorCSSVar;
 @primaryLabelColor: @primaryColorCSSVar;
 
-@verticalMargin: 1em;
+@verticalMargin: 1.5em;
 @margin: @verticalMargin 0em;
 @textAlign: center;
 @maxWidth: auto;
@@ -20,7 +20,7 @@
 /* Group */
 @horizontalSpacing: 1.5em;
 @rowSpacing: 2em;
-@groupMargin: @verticalMargin -@horizontalSpacing -@rowSpacing;
+@groupMargin: @verticalMargin 0;
 
 /* Group Element */
 @elementMargin: @rowSpacing @horizontalSpacing @rowSpacing;
@@ -79,8 +79,8 @@
 @invertedBackground: transparent;
 
 /* Item Width */
-@itemGroupMargin: 0em 0em -@rowSpacing;
-@itemMargin: 0em 0em @rowSpacing;
+@itemGroupMargin: 2rem 0;
+@itemMargin: 2rem 0;
 
 /* Size */
 @miniTextValueSize: 1rem;

@@ -41,6 +41,13 @@
   i.icon {
     margin-right: @sidenavHeaderIconMarginRight;
   }
+
+  &::before {
+    content: @sidenavHeaderIconContent;
+    font-family: 'remixicon';
+    font-weight: @sidenavHeaderIconFontWeight;
+    padding-right: @sidenavHeaderIconPaddingRight;
+  }
 }
 
 .context-navigation a.contenttype-folder {
@@ -76,12 +83,21 @@
   border-bottom: none; 
 }
 
+.item.level-3 a {
+  padding-left: @subparItemPaddingLeft;
+}
+
 // Active indicator
-.context-navigation .item a.active {
+.context-navigation .active.item > .content > a {
   color: @sidenavItemActiveColor;
   font-weight: @sidenavItemActiveFontWeight;
 }
-
-.context-navigation .item a.active:hover {
+.context-navigation .active.item > .content > a:hover {
   color : @sidenavItemActiveColorHover;
 }
+
+// Hide arrow
+.content.active-indicator {
+  display: none;
+}
+.loadUIOverrides();

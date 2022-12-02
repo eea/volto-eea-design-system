@@ -4,6 +4,7 @@
  */
 
 import React from 'react'; // , { Component }
+import { useHistory } from 'react-router-dom';
 import cx from 'classnames';
 import { Container, Image, Menu, Grid, Dropdown } from 'semantic-ui-react'; // Dropdown,
 
@@ -107,6 +108,7 @@ const Main = ({
   transparency,
   inverted,
 }) => {
+  const history = useHistory();
   const [activeItem, setActiveItem] = React.useState(pathname);
   const [menuIsActive, setMenuIsActive] = React.useState(false);
   const [searchIsActive, setSearchIsActive] = React.useState(false);
@@ -169,7 +171,11 @@ const Main = ({
   const menuOnClick = (e, item) => {
     if (searchIsActive) setSearchIsActive(false);
     setActiveItem(item['@id'] || item.url);
-    setMenuIsActive(true);
+    if (item.items.length) {
+      setMenuIsActive(true);
+    } else {
+      history.push(item.url);
+    }
   };
 
   // React.useEffect(() => {

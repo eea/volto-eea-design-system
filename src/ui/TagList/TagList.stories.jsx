@@ -43,11 +43,13 @@ export const List = (args) => (
   <Container>
     <TagList className={args.direction}>
       <TagList.Title>{args.title}</TagList.Title>
-      {args.tags.map((tag, index) => [
-        <Tag className={tag.class} href={tag.href} key={index}>
-          {tag.category}
-        </Tag>,
-      ])}
+      <TagList.Content>
+        {args.tags.map((tag, index) => [
+          <Tag className={tag.class} href={tag.href} key={index}>
+            {tag.category}
+          </Tag>,
+        ])}
+      </TagList.Content>
     </TagList>
   </Container>
 );
