@@ -34,7 +34,7 @@ Copyright.Icon = ({ children, ...rest }) => (
 );
 
 Copyright.Text = ({ children, ...rest }) => (
-  <span {...rest} className={'content'}>
+  <span {...rest} className={'icon-content'}>
     {children}
   </span>
 );
