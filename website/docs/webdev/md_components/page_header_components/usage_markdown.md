@@ -1,4 +1,4 @@
-The page header component provides users the context of the page. It is always placed just below the site header. 
+The page header component provides the users with the context of the page. It is always placed just below the site header. 
 
 ### Anatomy
 
@@ -7,7 +7,7 @@ The page header component provides users the context of the page. It is always p
 | **Page title**                                                                                                                                                                                                                   | yes           | no         |
 | **Meta (content type, published date, modified date, reading time)**                                                                                                                                                                                                             | no           | yes          |
 | **Download - Bookmark actions**                                                                                                                                                                                                           | no            | yes          |
-| **Breadcrumb**<br />Breadcrumb component provides information on the page and its relationship to the site's hierarchy and structure.<br />It is optional if your website's navigational structure has less than 3 levels. | no            | yes          |
+| **Breadcrumb**<br />The breadcrumb component provides information on the page and its relationship to the site's hierarchy and structure.<br />It is optional if your website's navigational structure has less than 3 levels. | no            | yes          |
 | **Image copyrights** ***(only if there is a header image)*** <br />Image copyright is the legal ownership of an image.                                                                                                                                                                                                            |yes            | no          |
 
 
@@ -17,7 +17,7 @@ The page header component provides users the context of the page. It is always p
 - ensure the pages contain all the components and elements in the anatomy table above
 - always use a page header when building your internal pages
 - when choosing a background image, make sure it highlights the main object related to the content and it is meaningful
-- choose image copyright text color according to image, use light font color on darker images and darker font color on lighter ones
+- choose image copyright text color according to the image, use light font color on darker images and darker font color on lighter ones
 
 ### Don'ts
 
