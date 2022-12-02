@@ -234,6 +234,18 @@ iframe {
 }
 
 .thematicLogosBig {
-  height: 220px
+  height: 220px;
+  padding: 16px;
 }
 
+.thematicLogosBigDark {
+  padding: 16px;
+  background-color: black;
+}
+
+.rowLogos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
