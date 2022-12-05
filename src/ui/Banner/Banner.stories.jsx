@@ -138,10 +138,7 @@ const Template = (args) => (
           </>
         </Banner.Metadata>
       )}
-      <Copyright
-        copyrightPosition={args.copyrightPosition}
-        colorVariant={args.copyrightVariant}
-      >
+      <Copyright copyrightPosition={args.copyrightPosition}>
         <Copyright.Icon>
           <Icon className={args.copyrightIcon} />
         </Copyright.Icon>

@@ -3,26 +3,12 @@ import PropTypes from 'prop-types';
 
 Copyright.propTypes = {
   copyrightPosition: PropTypes.oneOf(['left', 'right']),
-  colorVariant: PropTypes.oneOf([
-    'default',
-    'primary',
-    'secondary',
-    'tertiary',
-  ]),
 };
 
 function Copyright({ children, ...rest }) {
   return (
     <div className={`eea copyright ${rest.copyrightPosition}`}>
-      <div
-        className={`${
-          rest.colorVariant === 'default'
-            ? 'wrapper'
-            : 'wrapper color-fg-' + rest.colorVariant
-        }`}
-      >
-        {children}
-      </div>
+      <div className={'wrapper'}>{children}</div>
     </div>
   );
 }

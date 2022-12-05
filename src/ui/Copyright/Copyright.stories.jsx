@@ -6,16 +6,6 @@ export default {
   title: 'Components/Copyright',
   component: Copyright,
   argTypes: {
-    colorVariant: {
-      name: 'Variation',
-      defaultValue: 'default',
-      options: ['default', 'primary', 'secondary', 'tertiary'],
-      control: { type: 'select' },
-      table: {
-        defaultValue: { summary: 'default' },
-        type: { summary: 'string' },
-      },
-    },
     copyrightPosition: {
       name: 'Position',
       control: {
@@ -32,11 +22,8 @@ export default {
 
 export const Default = (args) => (
   <Container>
-    <Segment className={args.colorVariant === 'default' ? 'inverted' : ''}>
-      <Copyright
-        copyrightPosition={args.copyrightPosition}
-        colorVariant={args.colorVariant}
-      >
+    <Segment className={'inverted'}>
+      <Copyright copyrightPosition={args.copyrightPosition}>
         <Copyright.Icon>
           <Icon className={args.icon} />
         </Copyright.Icon>
@@ -47,7 +34,6 @@ export const Default = (args) => (
 );
 
 Default.args = {
-  colorVariant: 'default',
   copyrightPosition: 'left',
   icon: 'ri-copyright-line',
   text: 'Image copyright: Velit fusce sed sem ut.',

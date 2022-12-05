@@ -49,10 +49,7 @@ function Hero({
             {children}
 
             {has_copyright && (
-              <Copyright
-                copyrightPosition={copyrightPosition}
-                colorVariant={copyrightVariant}
-              >
+              <Copyright copyrightPosition={copyrightPosition}>
                 <Copyright.Icon>
                   <Icon className={copyrightIcon} />
                 </Copyright.Icon>
