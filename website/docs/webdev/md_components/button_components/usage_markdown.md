@@ -38,6 +38,13 @@ Use for medium-emphasis actions. They contain actions that are important but are
 - don't use for navigation
 - don't use an icon when it is not relevant or necessary to the action
 
+## Inverted Button
+
+### When to use
+
+- use inverted and inverted-green only on white or light color background
+- use inverted-dark only on dark background
+
 ## Text link Button
 
 Use for low-emphasis actions or for buttons that could have a long length text. It can be grouped with other buttons or placed independently.

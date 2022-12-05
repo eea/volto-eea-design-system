@@ -15,15 +15,25 @@
   flex-wrap: wrap;
   width: @tagsBodyWidth;
   line-height: @tagsLineHeight;
+  gap: @tagsGap;
 
   .tags-title {
     text-align: right;
     height: @tagsLineHeight;
     color: @tagsTitleFontColor;
-    margin-right: @tagsTitleMargin;
     font-weight: @tagsFontWeight;
     font-size: @tagsFontSize;
   }
+}
+
+.tags.labels {
+  gap: @tagsLabelsGap;
+}
+
+.tags-content {
+  gap: @tagsContentGap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .tags.left {

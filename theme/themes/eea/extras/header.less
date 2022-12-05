@@ -217,13 +217,13 @@
   background: @headerMainSectionBackground;
   scrollbar-gutter: stable;
 
-  .ui.container {
+  > .ui.container {
     display: flex;
     height: @mobileMainSectionHeight;
     align-items: center;
     justify-content: space-between;
 
-    .ui.grid {
+    > .ui.grid {
       // All margins and paddings removed for main header
       width: 100%;
       margin: 0;
@@ -294,6 +294,33 @@
   width: @logoWidth;
   max-width: @mobileLogoMaxWidth;
   margin-top: @mobileLogoMarginTop;
+}
+
+/* Subsite */
+.eea.header .logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.eea.header .subsite-logo {
+  margin-top: @mobileLogoMarginTop;
+  font-size: @mobileSubsiteFontSize;
+  font-family: @subsiteFontFamily;
+  font-weight: @subsiteFontWeight;
+  color: @subsiteColor;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    width: 1px;
+    height: 70%;
+    content: ' ';
+    background-color: @subsiteDividerColor;
+    left: -15px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 /* Search Box */
@@ -498,6 +525,11 @@
     margin-top: @tabletLogoMarginTop;
   }
 
+  .eea.header .subsite-logo {
+    margin-top: @tabletLogoMarginTop;
+    font-size: @tabletSubsiteFontSize;
+  }
+
   .homepage .content-area {
     margin-top: -@tabletMainSectionHeight !important;
   }
@@ -593,6 +625,11 @@
     margin-top: @computerLogoMarginTop;
   }
 
+  .eea.header .subsite-logo {
+    margin-top: @computerLogoMarginTop;
+    font-size: @computerSubsiteFontSize;
+  }
+
   .homepage .content-area {
     margin-top: -@computerMainSectionHeight !important;
   }
@@ -632,31 +669,16 @@
     height: 100%;
     align-items: baseline;
   }
+}
 
-  .title {
-    font-size: @megaMenuTitleFontSize;
-    font-weight: @megaMenuTitleFontWeight;
+#mega-menu .item.sub-title {
+  font-size: @mobileMegaMenuSubTitleFontSize;
+  font-weight: @megaMenuSubTitleFontWeight;
+  color: @megaMenuTextColor;
+}
 
-    .title-img {
-      margin-left: @megaMenuTitleImgMarginLeft;
-    }
-  }
-
-  .sub-title {
-    color: @megaMenuTextColor;
-    font-size: @megaMenuSubTitleFontSize;
-    font-weight: @megaMenuSubTitleFontWeight;
-
-    & + .ui.grid {
-      div.column:first-child {
-        padding-left: 0;
-      }
-
-      div.column:last-child {
-        padding-right: 0;
-      }
-    }
-  }
+#mega-menu .mega-menu-title {
+  padding: @mobileMegaMenuTitleButtonPadding;
 }
 
 #mega-menu .ui.list {
@@ -684,15 +706,23 @@
 }
 
 #at-a-glance {
-  // To override the grid column paddings
-  padding: @megaMenuGlancePaddingLeft !important;
   background-color: @megaMenuGlanceBackgroundColor;
+  padding: @megaMenuGlancePadding !important;
 
   .item {
     margin: @megaMenuGlanceListItemMargin;
     font-size: @megaMenuGlanceListItemFontSize;
     font-weight: @megaMenuGlanceListItemFontWeight;
   }
+}
+
+#topics-right-column {
+  padding-top: @topicsRightColumnPaddingTop;
+  padding-left: @topicsRightColumnPaddingLeft;
+}
+
+.ui.grid > .column > .ui.grid {
+  margin-top: 0; 
 }
 
 #mega-menu .ui.grid {
@@ -705,18 +735,22 @@
   }
 }
 
-.menu-content > .ui.grid > .column {
-  padding-top: @megaMenuContentPaddingTop;
-}
-
-#mega-menu .active:not(.title-link) > span {
+#mega-menu .active:not(.title-link):not(.button) > span {
+  border-left: @megaMenuListItemActiveBorder;
   padding-left: @megaMenuListItemActivePadding;
   border-left: @megaMenuListItemActiveBorder;
+}
+
+.nav-description {
+  font-size: @computerNavDescriptionFontSize;
 }
 
 /*Mega Menu Accordion - Tablet & Mobile */
 #mega-menu .ui.accordion {
   .title {
+    font-size: @megaMenuAccordionTitleFontSize;
+    font-weight: @megaMenuAccordionTitleFontWeight;
+    color: @megaMenuTextColor;
     padding: @megaMenuAccordionTitlePadding;
     border-bottom: @megaMenuAccordionTitleBorderBottom;
     color: @megaMenuTextColor;
@@ -742,6 +776,10 @@
     padding: @megaMenuAccordionContentPadding;
     background: @megaMenuBackgroundColor;
 
+    p {
+      color: @megaMenuTextColor;
+    }
+
     .accordion {
       margin: @megaMenuNestedAccordionMargin;
 
@@ -753,18 +791,20 @@
 
       .content {
         padding: @megaMenuNestedAccordionContentPadding;
+
+        p {
+          color: @megaMenuTextColor;
+        }
       }
     }
   }
 }
 
-#main #mega-menu .ui.accordion .title:first-child {
-  display: flex;
-}
-//#main #mega-menu .ui.accordion .title:first-child {
-//  display: none; // hide home link from mobile menu
-//}
+// hide home link and accordion content from mobile menu
 #main #mega-menu .mobile > .ui.accordion > .title:first-child {
+  display: none;
+}
+#main #mega-menu .ui.accordion .title:first-child  + .content {
   display: none;
 }
 
@@ -786,6 +826,10 @@
   #language-switcher .menu {
     right: -20px;
   }
+
+  .nav-description {
+    font-size: @tabletNavDescriptionFontSize;
+  }
 }
 
 @media all and (min-width: @tabletBreakpoint) {
@@ -805,6 +849,21 @@
   #mega-menu .title > a {
     color: @megaMenuTextColor;
   }
+
+  #mega-menu .mega-menu-title {
+    padding: @computerMegaMenuTitleButtonPadding;
+  }
+
+  #mega-menu .sub-title {
+    font-size: @computerMegaMenuSubTitleFontSize;
+    font-weight: @megaMenuSubTitleFontWeight;
+    color: @megaMenuTextColor;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
+
 
 .loadUIOverrides();
