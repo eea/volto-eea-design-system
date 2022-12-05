@@ -26,7 +26,6 @@ function Hero({
   children,
 
   has_copyright,
-  copyrightVariant,
   copyrightPosition,
   copyrightIcon,
   copyrightText,

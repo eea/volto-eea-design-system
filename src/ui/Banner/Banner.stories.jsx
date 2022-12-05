@@ -44,17 +44,6 @@ export default {
         type: { summary: 'boolean' },
       },
     },
-    copyrightVariant: {
-      name: 'Variation',
-      defaultValue: 'default',
-      options: ['default', 'primary', 'secondary', 'tertiary'],
-      control: { type: 'select' },
-      table: {
-        category: 'Copyright',
-        defaultValue: { summary: 'default' },
-        type: { summary: 'string' },
-      },
-    },
     copyrightPosition: {
       name: 'Position',
       control: {
@@ -161,8 +150,6 @@ Default.args = {
   image: true,
   hideShareButton: false,
   hideDownloadButton: false,
-
-  copyrightVariant: 'default',
   copyrightPosition: 'left',
   copyrightIcon: 'ri-copyright-line',
   copyrightText: 'Image copyright: Velit fusce sed sem ut.',
