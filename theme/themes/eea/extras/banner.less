@@ -43,6 +43,7 @@
       .metadata {
         font-size: @mobileMetadataFontSize;
         line-height: @mobileMetadataLineHeight;
+        margin-bottom: @rem-space-3;
 
         .field.type {
           font-weight: @metadataTypeFontWeight;
@@ -129,7 +130,7 @@
   }
 }
 
-@media only screen and (max-width: @tabletBreakpoint - 1) {
+@media only screen and (max-width: @largestMobileScreen) {
   .actions .action {
     margin-bottom: @mobileActionsActionMarginBottom;
   }
