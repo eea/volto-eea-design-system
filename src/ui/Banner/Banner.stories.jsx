@@ -2,7 +2,8 @@ import React from 'react';
 import Banner from './Banner';
 // eslint-disable-next-line import/no-unresolved
 import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/banner.png';
-import { Popup } from 'semantic-ui-react';
+import { Popup, Icon } from 'semantic-ui-react';
+import Copyright from '../Copyright/Copyright';
 
 export default {
   title: 'Components/Page Header',
@@ -41,6 +42,32 @@ export default {
       table: {
         defaultValue: { summary: '""' },
         type: { summary: 'boolean' },
+      },
+    },
+    copyrightPosition: {
+      name: 'Position',
+      control: {
+        type: 'inline-radio',
+        options: ['left', 'right'],
+      },
+      type: { name: 'string' },
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '"left"' },
+      },
+    },
+    copyrightIcon: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
+      },
+    },
+    copyrightText: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
       },
     },
   },
@@ -100,6 +127,12 @@ const Template = (args) => (
           </>
         </Banner.Metadata>
       )}
+      <Copyright copyrightPosition={args.copyrightPosition}>
+        <Copyright.Icon>
+          <Icon className={args.copyrightIcon} />
+        </Copyright.Icon>
+        <Copyright.Text>{args.copyrightText}</Copyright.Text>
+      </Copyright>
     </Banner.Content>
   </Banner>
 );
@@ -117,4 +150,7 @@ Default.args = {
   image: true,
   hideShareButton: false,
   hideDownloadButton: false,
+  copyrightPosition: 'left',
+  copyrightIcon: 'ri-copyright-line',
+  copyrightText: 'Image copyright: Velit fusce sed sem ut.',
 };
