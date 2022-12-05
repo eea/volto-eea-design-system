@@ -5,7 +5,7 @@
 @copyrightWidth: 100%;
 
 /* Content */
-@copyrightContentColor: @grey-1;
+@copyrightContentColor: var(--text-color, @grey-1);
 @copyrightContentFontSize: @font-size-00;
 @copyrightLineHeight: @font-lineheight-0;
 @copyrightContentPaddingRight: @rem-space-1;
