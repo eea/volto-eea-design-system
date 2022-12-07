@@ -7,6 +7,8 @@
             Tag
 *******************************/
 
+@tagsGap: 0 1rem;
+
 .tags {
   display: flex;
   flex-direction: row;
@@ -28,6 +30,12 @@
 
 .tags.labels {
   gap: @tagsLabelsGap;
+}
+
+.tags-content {
+  gap: @tagsContentGap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .tags.left {

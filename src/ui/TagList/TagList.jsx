@@ -14,4 +14,8 @@ TagList.Title = ({ children, ...rest }) => (
   </span>
 );
 
+TagList.Content = ({ children }) => (
+  <div className="tags-content">{children}</div>
+);
+
 export default TagList;

@@ -107,6 +107,7 @@ const Main = ({
   pathname,
   transparency,
   inverted,
+  hideSearch,
 }) => {
   const history = useHistory();
   const [activeItem, setActiveItem] = React.useState(pathname);
@@ -231,18 +232,20 @@ const Main = ({
                   ))}
                 </div>
               )}
-              <div
-                className="search-action"
-                onClick={searchOnClick}
-                role="none"
-                ref={searchButtonRef}
-              >
-                {/* <Icon name={!state.activeSearch ? 'search' : 'close'} /> */}
-                <Image
-                  src={!searchIsActive ? `${searchIcon}` : `${closeIcon}`}
-                  alt="search button open/close"
-                />
-              </div>
+              {!hideSearch && (
+                <div
+                  className="search-action"
+                  onClick={searchOnClick}
+                  role="none"
+                  ref={searchButtonRef}
+                >
+                  {/* <Icon name={!state.activeSearch ? 'search' : 'close'} /> */}
+                  <Image
+                    src={!searchIsActive ? `${searchIcon}` : `${closeIcon}`}
+                    alt="search button open/close"
+                  />
+                </div>
+              )}
               <Header.BurgerAction
                 className={`mobile ${burger}`}
                 onClick={mobileBurgerOnClick}
