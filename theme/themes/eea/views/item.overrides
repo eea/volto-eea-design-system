@@ -92,6 +92,9 @@
 }
 
 /* Image & Icon size */
+.item .image {
+  overflow: hidden;
+}
 
 // SMALL - 48px
 .item .small.image,
@@ -113,11 +116,11 @@
   font-size: @mediumMediaSize;
 }
 
-// LARGE - 80px
-.item .large.image,
-.block .item .large.image,
-.item i.large.icon,
-.item i.large.icons {
+// BIG - 80px
+.item .big.image,
+.block .item .big.image,
+.item i.big.icon,
+.item i.big.icons {
   width: @largeMediaSize;
   height: @largeMediaSize;
   font-size: @largeMediaSize;
