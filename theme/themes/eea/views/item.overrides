@@ -90,14 +90,37 @@
   width: auto;
   margin-right: 0;
 }
-.ui.items > .item > .icon + .content {
-  padding-left: @tabletItemSpacing;
+
+/* Image & Icon size */
+
+// SMALL - 48px
+.item .small.image,
+.block .item .small.image,
+.item i.small.icon,
+.item i.small.icons {
+  width: @smallMediaSize;
+  height: @smallMediaSize;
+  font-size: @smallMediaSize;
 }
 
-.item .tile.image,
-.block .item .tile.image {
-  width: @tileImageWidth;
-  height: @tileImageHeight;
+// MEDIUM - 64px
+.item .medium.image,
+.block .item .medium.image,
+.item i.medium.icon,
+.item i.medium.icons {
+  width: @mediumMediaSize;
+  height: @mediumMediaSize;
+  font-size: @mediumMediaSize;
+}
+
+// LARGE - 80px
+.item .large.image,
+.block .item .large.image,
+.item i.large.icon,
+.item i.large.icons {
+  width: @largeMediaSize;
+  height: @largeMediaSize;
+  font-size: @largeMediaSize;
 }
 
 .ui.items.row > .item {
@@ -106,7 +129,7 @@
 
 // As semantic does for non unstackable items
 // so columns does not affect margin in mobiles
-.ui.items.row > .item:last-child {
+.ui.items.row:not(.flex-items-wrapper) > .item:last-child {
   margin-bottom: 0;
 }
 
@@ -114,7 +137,8 @@
 .ui.items.row .item.stackable {
   display: grid;
 
-  .image {
+  .image,
+  i.icon {
     margin: auto;
   }
 
@@ -123,6 +147,18 @@
     padding-top: @stackableContentPaddingTop;
   }
 }
+
+// Flex wrapper for list of items
+.ui.items.flex-items-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .item {
+    width: @mobileFlexItemWidth;
+  }
+}
+
 
 @media only screen and (max-width: @largestMobileScreen) {
   .ui.items.row > .item {
@@ -157,6 +193,11 @@
   .ui.items.row > .item {
     margin: @tabletRowItemMargin;
   }
+
+  // Flex wrapper for list of items
+  .ui.items.flex-items-wrapper .item {
+    width: @tabletFlexItemWidth;
+  }
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
@@ -180,6 +221,11 @@
   }
   .ui.items.row > .item {
     margin: @desktopRowItemMargin;
+  }
+
+  // Flex wrapper for list of items
+  .ui.items.flex-items-wrapper .item {
+    width: @desktopFlexItemWidth;
   }
 }
 
