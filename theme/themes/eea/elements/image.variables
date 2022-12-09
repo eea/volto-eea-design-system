@@ -38,6 +38,7 @@
 @tinyWidth: 80px;
 @smallWidth: 150px;
 @mediumWidth: 300px;
+@previewWidth: 400px;
 @largeWidth: 450px;
 @bigWidth: 600px;
 @hugeWidth: 800px;
