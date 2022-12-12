@@ -291,22 +291,24 @@ iframe {
   height: 120px
 }
 
-.thematicLogosBig {
-  margin: 1rem 1rem 1rem 0;
-}
-
-.thematicLogosBigDark {
-  padding: 1rem;
-  background-color: black;
-  width: fit-content;
-}
-
 .rowLogos {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
+
+.thematicLogoWrapper {
+  width: 382px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.thematicLogoWrapper.dark {
+  background-color: black;
+}
+
 
 .large-color-box-td{
   width: 200px;

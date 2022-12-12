@@ -16,45 +16,42 @@ import Download from '../../md_components/static/download.svg';
 
 ### EEA logo
 
-<EEALogo className="thematicLogosBig" /> 
-
-<br/> 
-<br/> 
+<div className="thematicLogoWrapper">
+  <EEALogo  /> 
+</div>
 
 [<Download/>](/img/EEA.zip)
 
 </div>
-
 <div>
 
-
 ### EEA logo dark
-<div  className="thematicLogosBigDark" style={{width:'382px'}}> 
-  <div>
+
+<div className="thematicLogoWrapper dark"> 
     <EEALogoDark /> 
-  </div>
 </div>
-<br/> 
 
 [<Download/>](/img/EEAblack.zip)
+
 </div>
+<br/>
 </div>
 
-<br/><br/>
+<!--------------------------------------------------------->
 
 ## Thematic websites
 <br/> 
 
+<!--------------------------------------------------------->
+
 <div className="rowLogos">
 <div>
 
-### Biodiversity logo
+### Biodiversity
 
-
-
-<BiseLogo className="thematicLogos" /> 
-
-<br/><br/>
+<div className="thematicLogoWrapper">
+  <BiseLogo /> 
+</div>
 
 [<Download/>](/img/Bise.zip)
 
@@ -64,105 +61,91 @@ import Download from '../../md_components/static/download.svg';
 
 ### Biodiversity logo dark
 
-<div  className="thematicLogosBigDark" > 
-  <div>
-    <BiseLogoDark style={{width:'350px'}} /> 
-  </div>
+<div className="thematicLogoWrapper dark"> 
+  <BiseLogoDark /> 
 </div>
-<br/> 
 
 [<Download/>](/img/BiseDark.zip)
 
 </div>
 </div>
 
+<!--------------------------------------------------------->
+
 <div className="rowLogos">
 <div>
 
-### Forest Information System logo
+### Forest Information System
 
-
-<FiseLogo className="thematicLogos" style={{width:'330px'}} />
-
-<br/><br/>
+<div className="thematicLogoWrapper">
+  <FiseLogo />
+</div>
 
 [<Download/>](/img/Fise.zip)
 
 </div>
-
 <div>
 
 ### Forest Information System dark
 
-<div  className="thematicLogosBigDark"> 
-  <div>
-    <FiseLogoDark style={{width:'300px'}}/> 
-  </div>
+<div className="thematicLogoWrapper dark"> 
+  <FiseLogoDark /> 
 </div>
-<br/> 
 
 [<Download/>](/img/FiseDark.zip)
 </div>
 </div>
 
+<!--------------------------------------------------------->
+
 <div className="rowLogos">
 <div>
 
-### Wise Freshwater logo
-<br/>
+### Wise Freshwater
 
-<WiseFLogo className="thematicLogos" />
-<br/>
-<br/>
+<div className="thematicLogoWrapper">
+  <WiseFLogo />
+</div>
 
 [<Download/>](/img/WiseF.zip)
 
 </div>
-
-<br/><br/><br/>
 <div>
 
 ### Wise Freshwater dark
-<br/>
-<div  className="thematicLogosBigDark"> 
-  <div>
-    <WiseFLogoDark style={{width:'233px'}} /> 
-  </div>
+
+<div className="thematicLogoWrapper dark"> 
+  <WiseFLogoDark /> 
 </div>
-<br/> 
 
 [<Download/>](/img/WiseFDark.zip)
 </div>
-
 </div>
+
+<!--------------------------------------------------------->
 
 <div className="rowLogos">
 
 <div>
 
-### Wise Marine logo
-<br/>
+### Wise Marine
 
-<WiseMLogo className="thematicLogos" />
-
-<br/>
-<br/>
+<div className="thematicLogoWrapper">
+  <WiseMLogo />
+</div>
 
 [<Download/>](/img/WiseM.zip)
 </div>
 
-<br/>
 <div>
 
 ### Wise Marine dark
-<br/>
-<div  className="thematicLogosBigDark" style={{width:'220px'}}> 
-  
-  <WiseMLogoDark  /> 
-  
-</div> 
-<br/>
+
+<div className="thematicLogoWrapper dark">
+  <WiseMLogoDark  />   
+</div>
 
 [<Download/>](/img/WiseMDark.zip)
 </div>
+
 </div>
