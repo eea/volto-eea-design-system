@@ -17,7 +17,7 @@ The EEA header shows users that they are on EEA portal and which service they ar
         </tr>
         <tr>
             <td><strong>Logo</strong></td>
-            <td>yes</td>
+            <td>yes*</td>
         </tr>
         <tr>
             <td><strong>Language select</strong></td>
@@ -29,7 +29,7 @@ The EEA header shows users that they are on EEA portal and which service they ar
         </tr>
         <tr>
             <td><strong>Menu</strong></td>
-            <td>yes</td>
+            <td>yes*</td>
         </tr>
     </tbody>
 </table>
@@ -41,4 +41,4 @@ The EEA header shows users that they are on EEA portal and which service they ar
 - Make sure that contain all mandatory element from the Anatomy table
 
 ### Dont’s
-- You must not use the EEA's logo and menu if your service is not being hosted in one of the above domains.
+- (\*) You must not use the EEA's logo and menu if your service is not being hosted in one of the above domains.
