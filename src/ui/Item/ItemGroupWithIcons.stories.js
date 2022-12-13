@@ -27,7 +27,7 @@ export default {
     },
     imageSize: {
       control: { type: 'select' },
-      options: ['small', 'medium', 'big'],
+      options: ['tiny', 'small', 'medium', 'big'],
       table: {
         type: { summary: 'string' },
         defaultValue: { summary: 'medium' },

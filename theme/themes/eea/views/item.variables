@@ -57,6 +57,7 @@
 @imageBorder: none;
 
 /* Image & Icon size */
+@tinyMediaSize  : 1.5rem;
 @smallMediaSize  : 3rem;
 @mediumMediaSize : 4rem;
 @largeMediaSize  : 5rem;
