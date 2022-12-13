@@ -110,7 +110,7 @@
 @contentLinkTransition: color @defaultDuration @defaultEasing;
 
 /* Description */
-@descriptionDistance: 0.6em;
+@descriptionDistance: 0;
 @descriptionMaxWidth: auto;
 @descriptionFontSize: 1em;
 @descriptionLineHeight: @lineHeight;
