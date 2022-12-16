@@ -1968,10 +1968,6 @@ i.icon.medapps:before {
   content: '\f3c6';
 }
 
-i.icon.medium:before {
-  content: '\f23a';
-}
-
 i.icon.medium.m:before {
   content: '\f3c7';
 }

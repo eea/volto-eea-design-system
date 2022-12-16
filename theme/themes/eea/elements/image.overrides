@@ -28,6 +28,10 @@
   width: @mediumWidth;
 }
 
+.block .ui.preview.image {
+  width: @previewWidth;
+}
+
 .block .ui.large.image {
   width: @largeWidth;
 }

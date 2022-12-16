@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item, Container, Grid } from 'semantic-ui-react';
+import { Item, Container, Grid, Icon } from 'semantic-ui-react';
 
 import GlobeEco from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Svg/globe-eco.svg';
 import Sustainable from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Svg/sustainable.svg';
@@ -12,26 +12,72 @@ export default {
   component: Item,
   argTypes: {
     stackable: {
-      description: 'Image above content',
       table: {
         type: { summary: 'boolean' },
         defaultValue: { summary: false },
+      },
+    },
+    mediaType: {
+      name: 'media type',
+      options: ['image', 'icon'],
+      control: { type: 'radio' },
+      table: {
+        defaultValue: { summary: 'image' },
+      },
+    },
+    imageSize: {
+      control: { type: 'select' },
+      options: ['tiny', 'small', 'medium', 'big'],
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'medium' },
+      },
+    },
+    flexAlign: {
+      name: 'vertical align',
+      options: ['start', 'center', 'end'],
+      control: { type: 'select' },
+      table: {
+        defaultValue: { summary: 'center' },
+      },
+    },
+    colorVariation: {
+      name: 'icon variation',
+      options: ['primary', 'secondary', 'tertiary'],
+      control: { type: 'select' },
+      table: {
+        defaultValue: { summary: 'secondary' },
       },
     },
   },
 };
 
 function SingleItem({
-  image,
+  mediaType,
+  imageUrl,
+  icon,
   imageSize,
+  colorVariation,
   description,
-  verticalAlign,
+  flexAlign,
   stackable,
 }) {
   return (
-    <Item className={stackable ? 'stackable' : ''}>
-      <Item.Image className={`ui ${imageSize}`} src={image} alt="item image" />
-      <Item.Content verticalAlign={verticalAlign}>{description}</Item.Content>
+    <Item
+      className={`flex-items-${flexAlign} ${stackable ? ' stackable' : ''}`}
+    >
+      {mediaType === 'image' ? (
+        <Item.Image
+          className={`ui ${imageSize}`}
+          src={imageUrl}
+          alt="item image"
+        />
+      ) : (
+        <Icon className={`${imageSize} ${icon} ${colorVariation}`} />
+      )}
+      <Item.Content>
+        <Item.Description>{description}</Item.Description>
+      </Item.Content>
     </Item>
   );
 }
@@ -45,41 +91,28 @@ export const DefaultItem = (args) => (
   </Container>
 );
 DefaultItem.args = {
-  imageSize: 'tile',
-  verticalAlign: 'middle',
+  mediaType: 'image',
+  imageUrl: GlobeEco,
+  icon: 'ri-leaf-line',
+  imageSize: 'medium',
+  flexAlign: 'center',
+  colorVariation: 'secondary',
   stackable: false,
-  image: GlobeEco,
   description:
     'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
 };
 DefaultItem.argTypes = {
-  imageSize: {
-    control: { type: 'select' },
-    options: ['mini', 'tile', 'tiny', 'small'],
-    description: 'Content can specify its vertical alignment',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: ' "" ' },
-    },
+  imageUrl: {
+    name: 'Image URL',
+    control: 'text',
+    if: { arg: 'mediaType', eq: 'image' },
   },
-  verticalAlign: {
-    control: { type: 'select' },
-    options: ['top', 'middle', 'bottom'],
-    description: 'An image can vary in size',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: ' "" ' },
-    },
-  },
-  image: {
-    description: 'Path or Url of the image',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: ' "" ' },
-    },
+  icon: {
+    name: 'Icon class',
+    control: 'text',
+    if: { arg: 'mediaType', eq: 'icon' },
   },
   description: {
-    description: 'Item content description',
     table: {
       type: { summary: 'string' },
       defaultValue: { summary: ' "" ' },
@@ -88,8 +121,12 @@ DefaultItem.argTypes = {
 };
 
 function ItemGroup({
+  mediaType,
+  imageUrl,
+  icon,
   imageSize,
-  verticalAlign,
+  colorVariation,
+  flexAlign,
   ColumnLeft,
   ColumnRight,
   stackable,
@@ -104,8 +141,10 @@ function ItemGroup({
                 <SingleItem
                   key={item.childKey}
                   {...item}
+                  flexAlign={flexAlign}
+                  mediaType={mediaType}
                   imageSize={imageSize}
-                  verticalAlign={verticalAlign}
+                  colorVariation={colorVariation}
                   stackable={stackable}
                 ></SingleItem>
               ))}
@@ -117,8 +156,10 @@ function ItemGroup({
                 <SingleItem
                   key={item.childKey}
                   {...item}
+                  flexAlign={flexAlign}
+                  mediaType={mediaType}
                   imageSize={imageSize}
-                  verticalAlign={verticalAlign}
+                  colorVariation={colorVariation}
                   stackable={stackable}
                 ></SingleItem>
               ))}
@@ -135,25 +176,30 @@ const Template = (args) => <ItemGroup {...args}></ItemGroup>;
 // Group of items
 export const DefaultGroup = Template.bind({});
 DefaultGroup.args = {
-  imageSize: 'tile',
-  verticalAlign: 'middle',
+  mediaType: 'image',
+  imageSize: 'medium',
+  colorVariation: 'secondary',
+  flexAlign: 'center',
   stackable: false,
   ColumnLeft: [
     {
       childKey: 0,
-      image: GlobeEco,
+      imageUrl: GlobeEco,
+      icon: 'ri-earth-line',
       description:
         'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
     },
     {
       childKey: 1,
-      image: Sustainable,
+      imageUrl: Sustainable,
+      icon: 'ri-leaf-line',
       description:
         'Supply input on solutions to the sustainability challenges of today – and tomorrow.  ',
     },
     {
       childKey: 2,
-      image: DataAnalytics,
+      imageUrl: DataAnalytics,
+      icon: 'ri-pie-chart-line',
       description:
         'Leverage the data and technology to support the EU’s decision-making processes concerning the environment and climate',
     },
@@ -161,35 +207,102 @@ DefaultGroup.args = {
   ColumnRight: [
     {
       childKey: 0,
-      image: Network,
+      imageUrl: Network,
+      icon: 'ri-pin-distance-line',
       description:
         'Build stronger networks and partnerships with state and regional governments and organisations.',
     },
     {
       childKey: 1,
-      image: Knowledge,
+      imageUrl: Knowledge,
+      icon: 'ri-line-chart-line',
       description:
         'Strengthen the EU’s knowledge capacity and help secure the resources needed to create a sustainable Europe.',
     },
   ],
 };
-DefaultGroup.argTypes = {
-  imageSize: {
-    control: { type: 'select' },
-    options: ['mini', 'tile', 'tiny', 'small'],
-    description: 'Content can specify its vertical alignment',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: ' "" ' },
+
+function ItemFlexGroup({
+  mediaType,
+  imageUrl,
+  icon,
+  imageSize,
+  colorVariation,
+  flexAlign,
+  Items,
+  stackable,
+}) {
+  return (
+    <Container>
+      <Item.Group unstackable className="row flex-items-wrapper">
+        {Items.map((item) => (
+          <SingleItem
+            key={item.childKey}
+            {...item}
+            flexAlign={flexAlign}
+            mediaType={mediaType}
+            imageSize={imageSize}
+            colorVariation={colorVariation}
+            stackable={stackable}
+          ></SingleItem>
+        ))}
+      </Item.Group>
+    </Container>
+  );
+}
+
+const FlexTemplate = (args) => <ItemFlexGroup {...args}></ItemFlexGroup>;
+
+// Flex items
+export const FlexGroup = FlexTemplate.bind({});
+FlexGroup.args = {
+  mediaType: 'image',
+  imageSize: 'medium',
+  colorVariation: 'secondary',
+  flexAlign: 'center',
+  stackable: false,
+  Items: [
+    {
+      childKey: 0,
+      imageUrl: GlobeEco,
+      icon: 'ri-earth-line',
+      description:
+        'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
     },
-  },
-  verticalAlign: {
-    control: { type: 'select' },
-    options: ['top', 'middle', 'bottom'],
-    description: 'An image can vary in size',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: ' "" ' },
+    {
+      childKey: 1,
+      imageUrl: Sustainable,
+      icon: 'ri-leaf-line',
+      description:
+        'Supply input on solutions to the sustainability challenges of today – and tomorrow.  ',
     },
-  },
+    {
+      childKey: 2,
+      imageUrl: DataAnalytics,
+      icon: 'ri-pie-chart-line',
+      description:
+        'This is an exmple of an item having bigger description text. Leverage the data and technology to support the EU’s decision-making processes concerning the environment and climate',
+    },
+    {
+      childKey: 3,
+      imageUrl: Network,
+      icon: 'ri-pin-distance-line',
+      description:
+        'Build stronger networks and partnerships with state and regional governments and organisations.',
+    },
+    {
+      childKey: 4,
+      imageUrl: GlobeEco,
+      icon: 'ri-earth-line',
+      description:
+        'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
+    },
+    {
+      childKey: 5,
+      imageUrl: Knowledge,
+      icon: 'ri-line-chart-line',
+      description:
+        'Strengthen the EU’s knowledge capacity and help secure the resources needed to create a sustainable Europe.',
+    },
+  ],
 };
