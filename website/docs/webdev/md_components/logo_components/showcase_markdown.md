@@ -1,12 +1,12 @@
 import Iframe from '../iframe_component.mdx';
 import BiseLogo from '@site/static/img/Bise.svg';
-import BiseLogoDark from '@site/static/img/BiseDark.svg';
+import BiseLogoDark from '@site/static/img/Bise_inverted.svg';
 import FiseLogo from '@site/static/img/Fise.svg';
-import FiseLogoDark from '@site/static/img/FiseDark.svg';
+import FiseLogoDark from '@site/static/img/Fise_inverted.svg';
 import WiseMLogo from '@site/static/img/WiseM.svg';
-import WiseMLogoDark from '@site/static/img/WiseMDark.svg';
+import WiseMLogoDark from '@site/static/img/WiseM_inverted.svg';
 import WiseFLogo from '@site/static/img/WiseF.svg';
-import WiseFLogoDark from '@site/static/img/WiseFDark.svg';
+import WiseFLogoDark from '@site/static/img/WiseF_inverted.svg';
 import EEALogo from '@site/static/img/EEA.svg';
 import EEALogoDark from '@site/static/img/EEAblack.svg';
 import Download from '../../md_components/static/download.svg';
@@ -65,7 +65,7 @@ import Download from '../../md_components/static/download.svg';
   <BiseLogoDark /> 
 </div>
 
-[<Download/>](/img/BiseDark.zip)
+[<Download/>](/img/Bise_inverted.zip)
 
 </div>
 </div>
@@ -92,7 +92,7 @@ import Download from '../../md_components/static/download.svg';
   <FiseLogoDark /> 
 </div>
 
-[<Download/>](/img/FiseDark.zip)
+[<Download/>](/img/Fise_inverted.zip)
 </div>
 </div>
 
@@ -118,7 +118,7 @@ import Download from '../../md_components/static/download.svg';
   <WiseFLogoDark /> 
 </div>
 
-[<Download/>](/img/WiseFDark.zip)
+[<Download/>](/img/WiseF_inverted.zip)
 </div>
 </div>
 
@@ -142,10 +142,10 @@ import Download from '../../md_components/static/download.svg';
 ### Wise Marine dark
 
 <div className="thematicLogoWrapper dark">
-  <WiseMLogoDark  />   
+  <WiseMLogoDark />   
 </div>
 
-[<Download/>](/img/WiseMDark.zip)
+[<Download/>](/img/WiseM_inverted.zip)
 </div>
 
 </div>

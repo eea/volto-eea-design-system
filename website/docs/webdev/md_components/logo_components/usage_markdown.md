@@ -1,3 +1,5 @@
+import EEALogo from '@site/static/img/EEA.svg';
+import EEALogoDark from '@site/static/img/EEAblack.svg';
 
 ### EEA LOGO
 
@@ -5,11 +7,9 @@
 
  When applying the logo to images ensure that it is against a light, uncluttered background.
 
-<br/>
-
-![](../static/ΕΕΑLOGOwhite.svg) 
-
-<br/> 
+<div className="thematicLogoWrapper">
+  <EEALogo  /> 
+</div>
 
 To ensure logo's integrity and visibility, it must always be kept clear of competing text, images or graphic elements. It must be surrounded by a minimum clear space οf 16px as indicated below. 
 
@@ -19,9 +19,8 @@ To ensure logo's integrity and visibility, it must always be kept clear of compe
 
 The only time the white version of the EEA logo appears on is against the dark background of the footer. 
 
-<div style={{backgroundColor:'black',width:'400px'}}> 
-
-![](../static/ΕΕΑLOGOblack.svg)
+<div className="thematicLogoWrapper dark"> 
+    <EEALogoDark /> 
 </div>
 
 

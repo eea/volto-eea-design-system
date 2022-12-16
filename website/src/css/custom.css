@@ -300,15 +300,14 @@ iframe {
 }
 
 .thematicLogoWrapper {
-  width: 382px;
   padding: 1rem;
   margin-bottom: 1rem;
+  width: fit-content;
 }
 
 .thematicLogoWrapper.dark {
   background-color: black;
 }
-
 
 .large-color-box-td{
   width: 200px;
