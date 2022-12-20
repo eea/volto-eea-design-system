@@ -2,19 +2,19 @@ import React from 'react';
 import { Container, Segment } from 'semantic-ui-react';
 import LogoEEA from './Logo';
 import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea-logo.svg';
-import InvertedLogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EEA-Logo-White.svg';
+import InvertedLogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
 
-import Bise from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/Bise.svg';
-import BiseInverted from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/Bise_inverted.svg';
+import Bise from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/bise-logo.svg';
+import BiseInverted from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/bise-logo-white.svg';
 
-import Fise from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/Fise.svg';
-import FiseInverted from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/Fise_inverted.svg';
+import Fise from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/fise-logo.svg';
+import FiseInverted from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/fise-logo-white.svg';
 
-import Freshwater from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/WiseF.svg';
-import FreshwaterInverted from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/WiseF_inverted.svg';
+import Freshwater from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/wise-freshwater-logo.svg';
+import FreshwaterInverted from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/wise-freshwater-logo-white.svg';
 
-import Marine from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/WiseM.svg';
-import MarineInverted from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/WiseM_inverted.svg';
+import Marine from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/wise-marine-logo.svg';
+import MarineInverted from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/wise-marine-logo-white.svg';
 
 // import Energy from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/energy.svg';
 // import Insitu from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/insitu.svg';
