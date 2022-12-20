@@ -30,7 +30,9 @@
     "react-countup": "^6.3.0",
     "react-slick": "^0.28.1",
     "remixicon": "2.5.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "esri-loader": "3.6.0",
+    "react-querybuilder": "4.2.3"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",
