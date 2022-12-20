@@ -39,3 +39,5 @@ export RelatedContent from './Card/RelatedContent/RelatedContent';
 export Hero from './Hero/Hero';
 
 export Copyright from './Copyright/Copyright';
+
+export Map from './Visualizations/Map';

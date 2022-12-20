@@ -17,10 +17,16 @@
     "url": "git@github.com:eea/volto-eea-design-system.git"
   },
   "addons": [
-    "@eeacms/volto-corsproxy"
+    "@eeacms/volto-corsproxy",
+    "@eeacms/volto-eea-map",
+    "@eeacms/volto-plotlycharts",
+    "@eeacms/volto-tableau"
   ],
   "dependencies": {
     "@eeacms/volto-corsproxy": "*",
+    "@eeacms/volto-eea-map": "*",
+    "@eeacms/volto-plotlycharts": "*",
+    "@eeacms/volto-tableau": "*",
     "react-countup": "^6.3.0",
     "react-slick": "^0.28.1",
     "remixicon": "2.5.0",
