@@ -33,12 +33,12 @@ export default {
         defaultValue: { summary: 'medium' },
       },
     },
-    flexAlign: {
+    verticalAlign: {
       name: 'vertical align',
-      options: ['start', 'center', 'end'],
+      options: ['top', 'middle', 'bottom'],
       control: { type: 'select' },
       table: {
-        defaultValue: { summary: 'center' },
+        defaultValue: { summary: 'middle' },
       },
     },
     colorVariation: {
@@ -59,13 +59,11 @@ function SingleItem({
   imageSize,
   colorVariation,
   description,
-  flexAlign,
+  verticalAlign,
   stackable,
 }) {
   return (
-    <Item
-      className={`flex-items-${flexAlign} ${stackable ? ' stackable' : ''}`}
-    >
+    <Item className={`${stackable ? ' stackable' : ''}`}>
       {mediaType === 'image' ? (
         <Item.Image
           className={`ui ${imageSize}`}
@@ -75,7 +73,7 @@ function SingleItem({
       ) : (
         <Icon className={`${imageSize} ${icon} ${colorVariation}`} />
       )}
-      <Item.Content>
+      <Item.Content verticalAlign={verticalAlign}>
         <Item.Description>{description}</Item.Description>
       </Item.Content>
     </Item>
@@ -95,7 +93,7 @@ DefaultItem.args = {
   imageUrl: GlobeEco,
   icon: 'ri-leaf-line',
   imageSize: 'medium',
-  flexAlign: 'center',
+  verticalAlign: 'middle',
   colorVariation: 'secondary',
   stackable: false,
   description:
@@ -126,7 +124,7 @@ function ItemGroup({
   icon,
   imageSize,
   colorVariation,
-  flexAlign,
+  verticalAlign,
   ColumnLeft,
   ColumnRight,
   stackable,
@@ -141,7 +139,7 @@ function ItemGroup({
                 <SingleItem
                   key={item.childKey}
                   {...item}
-                  flexAlign={flexAlign}
+                  verticalAlign={verticalAlign}
                   mediaType={mediaType}
                   imageSize={imageSize}
                   colorVariation={colorVariation}
@@ -156,7 +154,7 @@ function ItemGroup({
                 <SingleItem
                   key={item.childKey}
                   {...item}
-                  flexAlign={flexAlign}
+                  verticalAlign={verticalAlign}
                   mediaType={mediaType}
                   imageSize={imageSize}
                   colorVariation={colorVariation}
@@ -179,7 +177,7 @@ DefaultGroup.args = {
   mediaType: 'image',
   imageSize: 'medium',
   colorVariation: 'secondary',
-  flexAlign: 'center',
+  verticalAlign: 'middle',
   stackable: false,
   ColumnLeft: [
     {
@@ -228,7 +226,7 @@ function ItemFlexGroup({
   icon,
   imageSize,
   colorVariation,
-  flexAlign,
+  verticalAlign,
   Items,
   stackable,
 }) {
@@ -239,7 +237,7 @@ function ItemFlexGroup({
           <SingleItem
             key={item.childKey}
             {...item}
-            flexAlign={flexAlign}
+            verticalAlign={verticalAlign}
             mediaType={mediaType}
             imageSize={imageSize}
             colorVariation={colorVariation}
@@ -259,7 +257,7 @@ FlexGroup.args = {
   mediaType: 'image',
   imageSize: 'medium',
   colorVariation: 'secondary',
-  flexAlign: 'center',
+  verticalAlign: 'middle',
   stackable: false,
   Items: [
     {
