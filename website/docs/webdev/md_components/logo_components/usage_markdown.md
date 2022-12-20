@@ -1,5 +1,5 @@
-import EEALogo from '@site/static/img/EEA.svg';
-import EEALogoDark from '@site/static/img/EEAblack.svg';
+import EEALogo from '@site/static/img/eea-logo.svg';
+import EEALogoDark from '@site/static/img/eea-logo-white.svg';
 
 ### EEA LOGO
 

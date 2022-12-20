@@ -1,14 +1,14 @@
 import Iframe from '../iframe_component.mdx';
-import BiseLogo from '@site/static/img/Bise.svg';
-import BiseLogoDark from '@site/static/img/Bise_inverted.svg';
-import FiseLogo from '@site/static/img/Fise.svg';
-import FiseLogoDark from '@site/static/img/Fise_inverted.svg';
-import WiseMLogo from '@site/static/img/WiseM.svg';
-import WiseMLogoDark from '@site/static/img/WiseM_inverted.svg';
-import WiseFLogo from '@site/static/img/WiseF.svg';
-import WiseFLogoDark from '@site/static/img/WiseF_inverted.svg';
-import EEALogo from '@site/static/img/EEA.svg';
-import EEALogoDark from '@site/static/img/EEAblack.svg';
+import BiseLogo from '@site/static/img/bise-logo.svg';
+import BiseLogoDark from '@site/static/img/bise-logo-white.svg';
+import FiseLogo from '@site/static/img/fise-logo.svg';
+import FiseLogoDark from '@site/static/img/fise-logo-white.svg';
+import WiseMLogo from '@site/static/img/wise-marine-logo.svg';
+import WiseMLogoDark from '@site/static/img/wise-marine-logo-white.svg';
+import WiseFLogo from '@site/static/img/wise-freshwater-logo.svg';
+import WiseFLogoDark from '@site/static/img/wise-freshwater-logo-white.svg';
+import EEALogo from '@site/static/img/eea-logo.svg';
+import EEALogoDark from '@site/static/img/eea-logo-white.svg';
 import Download from '../../md_components/static/download.svg';
 
 <div className="rowLogos">
@@ -20,7 +20,7 @@ import Download from '../../md_components/static/download.svg';
   <EEALogo  /> 
 </div>
 
-[<Download/>](/img/EEA.zip)
+[<Download/>](/img/eea-logo.zip)
 
 </div>
 <div>
@@ -31,7 +31,7 @@ import Download from '../../md_components/static/download.svg';
     <EEALogoDark /> 
 </div>
 
-[<Download/>](/img/EEAblack.zip)
+[<Download/>](/img/eea-logo-white.zip)
 
 </div>
 <br/>
@@ -53,7 +53,7 @@ import Download from '../../md_components/static/download.svg';
   <BiseLogo /> 
 </div>
 
-[<Download/>](/img/Bise.zip)
+[<Download/>](/img/bise-logo.zip)
 
 </div>
 
@@ -65,7 +65,7 @@ import Download from '../../md_components/static/download.svg';
   <BiseLogoDark /> 
 </div>
 
-[<Download/>](/img/Bise_inverted.zip)
+[<Download/>](/img/bise-logo-white.zip)
 
 </div>
 </div>
@@ -81,7 +81,7 @@ import Download from '../../md_components/static/download.svg';
   <FiseLogo />
 </div>
 
-[<Download/>](/img/Fise.zip)
+[<Download/>](/img/fise-logo.zip)
 
 </div>
 <div>
@@ -92,7 +92,7 @@ import Download from '../../md_components/static/download.svg';
   <FiseLogoDark /> 
 </div>
 
-[<Download/>](/img/Fise_inverted.zip)
+[<Download/>](/img/fise-logo-white.zip)
 </div>
 </div>
 
@@ -107,7 +107,7 @@ import Download from '../../md_components/static/download.svg';
   <WiseFLogo />
 </div>
 
-[<Download/>](/img/WiseF.zip)
+[<Download/>](/img/wise-freshwater-logo.zip)
 
 </div>
 <div>
@@ -118,7 +118,7 @@ import Download from '../../md_components/static/download.svg';
   <WiseFLogoDark /> 
 </div>
 
-[<Download/>](/img/WiseF_inverted.zip)
+[<Download/>](/img/wise-freshwater-logo-white.zip)
 </div>
 </div>
 
@@ -134,7 +134,7 @@ import Download from '../../md_components/static/download.svg';
   <WiseMLogo />
 </div>
 
-[<Download/>](/img/WiseM.zip)
+[<Download/>](/img/wise-marine-logo.zip)
 </div>
 
 <div>
@@ -145,7 +145,7 @@ import Download from '../../md_components/static/download.svg';
   <WiseMLogoDark />   
 </div>
 
-[<Download/>](/img/WiseM_inverted.zip)
+[<Download/>](/img/wise-marine-logo-white.zip)
 </div>
 
 </div>
