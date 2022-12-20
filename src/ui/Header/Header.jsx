@@ -41,6 +41,7 @@ const TopDropdownMenu = ({
   children,
   className,
   icon,
+  hasLanguageDropdown = false,
   id,
   tabletText,
   mobileText,
@@ -50,19 +51,39 @@ const TopDropdownMenu = ({
   const isTablet = viewportWidth < 991;
   const isMobile = viewportWidth < 767;
 
-  const Component = ({ mobileText }) => (
-    <Dropdown
-      id={id}
-      className={className}
-      text={mobileText || text}
-      icon={icon || 'chevron down'}
-      aria-label="dropdown"
-      closeOnChange={false}
-      closeOnBlur={true}
-    >
-      <Dropdown.Menu role="group">{children}</Dropdown.Menu>
-    </Dropdown>
-  );
+  const Component = ({ mobileText }) => {
+    return (
+      <>
+        {children.props['aria-label'] === 'language switcher' ? (
+          hasLanguageDropdown && (
+            <Dropdown
+              id={id}
+              className={className}
+              text={mobileText || text}
+              icon={icon || 'chevron down'}
+              aria-label="dropdown"
+              closeOnChange={false}
+              closeOnBlur={true}
+            >
+              <Dropdown.Menu role="group">{children}</Dropdown.Menu>
+            </Dropdown>
+          )
+        ) : (
+          <Dropdown
+            id={id}
+            className={className}
+            text={mobileText || text}
+            icon={icon || 'chevron down'}
+            aria-label="dropdown"
+            closeOnChange={false}
+            closeOnBlur={true}
+          >
+            <Dropdown.Menu role="group">{children}</Dropdown.Menu>
+          </Dropdown>
+        )}
+      </>
+    );
+  };
   return (
     <>
       {isMobile ? (
