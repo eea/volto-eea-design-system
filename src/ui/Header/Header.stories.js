@@ -1276,6 +1276,7 @@ const Template = (args) => {
     tabletLinksMenuTitle,
     mobileLinksMenuTitle,
     menuItems,
+    hasLanguageDropdown,
   } = args;
 
   const [language, setLanguage] = React.useState('en');
@@ -1347,6 +1348,7 @@ const Template = (args) => {
 
           <Header.TopDropdownMenu
             id="language-switcher"
+            hasLanguageDropdown={hasLanguageDropdown}
             className="item"
             text={`${language.toUpperCase()}`}
             mobileText={`${language.toUpperCase()}`}
@@ -1588,6 +1590,7 @@ Default.args = {
   linksMenuTitle: 'Environmental information systems',
   tabletLinksMenuTitle: 'EEA information systems',
   mobileLinksMenuTitle: 'EEA information systems',
+  hasLanguageDropdown: false,
   links,
   languages,
   menuItems,
