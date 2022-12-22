@@ -1590,7 +1590,7 @@ Default.args = {
   linksMenuTitle: 'Environmental information systems',
   tabletLinksMenuTitle: 'EEA information systems',
   mobileLinksMenuTitle: 'EEA information systems',
-  hasLanguageDropdown: false,
+  hasLanguageDropdown: true,
   links,
   languages,
   menuItems,
