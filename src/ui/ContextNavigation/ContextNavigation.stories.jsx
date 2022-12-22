@@ -117,7 +117,13 @@ function Template({ ...args }) {
   return (
     <Container>
       <nav className="context-navigation">
-        <div className="context-navigation-header">{args.header}</div>
+        <div className="context-navigation-header">
+          {args?.header ? (
+            <a href="/en/sitemap">{args?.header}</a>
+          ) : (
+            'Navigation'
+          )}
+        </div>
         <div role="list" className="ui list">
           {args.sidenavItems &&
             args.sidenavItems.map((element, index) => {
@@ -207,6 +213,6 @@ export default {
 
 export const Default = Template.bind({});
 Default.args = {
-  header: 'Navigation',
+  header: '',
   sidenavItems: sidenavItems,
 };
