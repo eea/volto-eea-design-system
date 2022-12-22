@@ -44,6 +44,20 @@ export default {
         type: { summary: 'boolean' },
       },
     },
+    copyright: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
+      },
+    },
+    copyrightIcon: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
+      },
+    },
     copyrightPosition: {
       name: 'Position',
       control: {
@@ -54,20 +68,6 @@ export default {
       table: {
         category: 'Copyright',
         defaultValue: { summary: '"left"' },
-      },
-    },
-    copyrightIcon: {
-      table: {
-        category: 'Copyright',
-        defaultValue: { summary: '""' },
-        type: { summary: 'string' },
-      },
-    },
-    copyrightText: {
-      table: {
-        category: 'Copyright',
-        defaultValue: { summary: '""' },
-        type: { summary: 'string' },
       },
     },
   },
@@ -131,7 +131,7 @@ const Template = (args) => (
         <Copyright.Icon>
           <Icon className={args.copyrightIcon} />
         </Copyright.Icon>
-        <Copyright.Text>{args.copyrightText}</Copyright.Text>
+        <Copyright.Text>{args.copyright}</Copyright.Text>
       </Copyright>
     </Banner.Content>
   </Banner>
@@ -152,5 +152,5 @@ Default.args = {
   hideDownloadButton: false,
   copyrightPosition: 'left',
   copyrightIcon: 'ri-copyright-line',
-  copyrightText: 'Image copyright: Velit fusce sed sem ut.',
+  copyright: 'Image copyright: Velit fusce sed sem ut.',
 };
