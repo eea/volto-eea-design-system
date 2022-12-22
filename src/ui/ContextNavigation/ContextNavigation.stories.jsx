@@ -118,11 +118,7 @@ function Template({ ...args }) {
     <Container>
       <nav className="context-navigation">
         <div className="context-navigation-header">
-          {args?.header ? (
-            <a href="/en/sitemap">{args?.header}</a>
-          ) : (
-            'Navigation'
-          )}
+          {args?.header ? <a href="/#">{args?.header}</a> : 'Navigation'}
         </div>
         <div role="list" className="ui list">
           {args.sidenavItems &&
