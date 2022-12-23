@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Segment } from 'semantic-ui-react';
 import LogoEEA from './Logo';
-import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea-logo.svg';
+import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo.svg';
 import InvertedLogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
 
 import Bise from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/sites/bise-logo.svg';
