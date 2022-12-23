@@ -26,9 +26,9 @@ function Hero({
   children,
 
   has_copyright,
-  copyrightPosition,
+  copyright,
   copyrightIcon,
-  copyrightText,
+  copyrightPosition,
 }) {
   return (
     // full width prop
@@ -52,7 +52,7 @@ function Hero({
                 <Copyright.Icon>
                   <Icon className={copyrightIcon} />
                 </Copyright.Icon>
-                <Copyright.Text>{copyrightText}</Copyright.Text>
+                <Copyright.Text>{copyright}</Copyright.Text>
               </Copyright>
             )}
           </div>

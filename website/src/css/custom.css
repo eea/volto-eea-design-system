@@ -283,6 +283,32 @@ iframe {
   width: 100%;
 }
 
+.thematicLogos {
+  height: 130px
+}
+
+.thematicLogosSmall {
+  height: 120px
+}
+
+.rowLogos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.thematicLogoWrapper {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.thematicLogoWrapper.dark {
+  background-color: black;
+}
+
 .large-color-box-td{
   width: 200px;
   height: 150px;
@@ -327,16 +353,3 @@ iframe {
   flex-direction: column;
   justify-content: center;
 }
-
-.thematicLogos img {
-  height: 130px
-}
-
-.thematicLogosSmall img {
-  height: 120px
-}
-
-.thematicLogosBig img {
-  height: 220px
-}
-

@@ -81,7 +81,7 @@ export default {
         type: { summary: 'string' },
       },
     },
-    copyrightText: {
+    copyright: {
       table: {
         category: 'Copyright',
         defaultValue: { summary: '""' },
@@ -131,7 +131,7 @@ Default.args = {
   has_copyright: true,
   copyrightPosition: 'left',
   copyrightIcon: 'ri-copyright-line',
-  copyrightText: 'Image copyright: Velit fusce sed sem ut.',
+  copyright: 'Image copyright: Velit fusce sed sem ut.',
 };
 Default.parameters = {
   controls: {
@@ -168,7 +168,7 @@ Playground.args = {
   has_copyright: true,
   copyrightPosition: 'left',
   copyrightIcon: 'ri-copyright-line',
-  copyrightText: 'Image copyright: Velit fusce sed sem ut.',
+  copyright: 'Image copyright: Velit fusce sed sem ut.',
 };
 Playground.argTypes = {
   fullWidth: {
@@ -246,16 +246,11 @@ Playground.argTypes = {
       type: { summary: 'string' },
     },
   },
-  copyrightPosition: {
-    name: 'Position',
-    control: {
-      type: 'inline-radio',
-      options: ['left', 'right'],
-    },
-    type: { name: 'string' },
+  copyright: {
     table: {
       category: 'Copyright',
-      defaultValue: { summary: '"left"' },
+      defaultValue: { summary: '""' },
+      type: { summary: 'string' },
     },
   },
   copyrightIcon: {
@@ -265,11 +260,15 @@ Playground.argTypes = {
       type: { summary: 'string' },
     },
   },
-  copyrightText: {
+  copyrightPosition: {
+    control: {
+      type: 'inline-radio',
+      options: ['left', 'right'],
+    },
+    type: { name: 'string' },
     table: {
       category: 'Copyright',
-      defaultValue: { summary: '""' },
-      type: { summary: 'string' },
+      defaultValue: { summary: '"left"' },
     },
   },
 };
