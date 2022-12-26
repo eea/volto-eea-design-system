@@ -26,6 +26,8 @@
 /* Title */
 @titleFontWeight           : @bold;
 @titleMaxWidth             : 100%;
+@titleMarginBottom         : 0;
+@titleBorderBottom         : none;
 @mobileTitleFontSize       : 1.25rem;
 @tabletTitleFontSize       : 2.25rem;
 @computerTitleFontSize     : 3rem;
@@ -35,6 +37,7 @@
 @mobileTitleMargin         : 0 0 0.5rem 0;
 @tabletTitleMargin         : 0 0 0.813rem 0;
 @computerTitleMargin       : 0 0 1.125rem 0;
+
 
 /* Subtitle */
 @subtitleFontWeight        : @bold;
