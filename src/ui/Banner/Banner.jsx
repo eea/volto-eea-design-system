@@ -1,22 +1,68 @@
 import React from 'react';
 import { Container, Icon, Button, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import { formatDate } from '@plone/volto/helpers/Utils/Date';
+import config from '@plone/volto/registry';
 
 Banner.propTypes = {
   title: PropTypes.string,
   image: PropTypes.bool,
 };
 
-function Banner({ image_url, image, children }) {
+const socialPlatforms = {
+  facebook: {
+    shareLink: (url) => `https://facebook.com/sharer.php?u=${url}`,
+  },
+  twitter: {
+    shareLink: (url) => `https://www.twitter.com/share?url=${url}`,
+  },
+  linkedin: {
+    shareLink: (url) =>
+      `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+  },
+  reddit: {
+    shareLink: (url, title) => `https://reddit.com/submit?url=${url}`,
+  },
+};
+
+export const getImageSource = (image) => {
+  if (image?.download) return image.download;
+  if (image?.encoding)
+    return `data:${image['content-type']};${image['encoding']},${image['data']}`;
+  return null;
+};
+
+export const sharePage = (url, platform) => {
+  if (!socialPlatforms[platform]) return;
+  const link = document.createElement('a');
+  link.setAttribute('href', socialPlatforms[platform].shareLink(url));
+  link.setAttribute('target', '_blank');
+  link.setAttribute('rel', 'noreferrer');
+  link.click();
+};
+
+function Banner({ image, metadata, properties, children, ...rest }) {
+  if (image) {
+    //extract Lead image from page content.
+    const content = metadata || properties;
+    const imageUrl = getImageSource(content['image']) ?? image;
+    return (
+      <div className="eea banner">
+        <div
+          className={imageUrl ? 'image' : ''}
+          style={imageUrl ? { backgroundImage: `url(${imageUrl})` } : {}}
+        >
+          <div className="gradient">
+            <Container>{children}</Container>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="eea banner">
-      <div
-        className={image ? 'image' : ''}
-        style={image ? { backgroundImage: `url(${image_url})` } : {}}
-      >
-        <div className="gradient">
-          <Container>{children}</Container>
-        </div>
+      <div className="gradient">
+        <Container>{children}</Container>
       </div>
     </div>
   );
@@ -48,18 +94,32 @@ Banner.Content = ({ children, actions }) => {
   );
 };
 
-Banner.Title = ({ children }) => <p className="title">{children}</p>;
+Banner.Title = ({ children }) => {
+  //return (<p className="title">{children}</p>)
+  return <h1 className="documentFirstHeading">{children}</h1>;
+};
 Banner.Subtitle = ({ children }) => <p className="subtitle">{children}</p>;
 Banner.Metadata = ({ children }) => <p className="metadata">{children}</p>;
 
 Banner.MetadataField = ({ hidden, type = 'text', label, value, title }) => {
+  const locale = config.settings.dateLocale || 'en-gb';
   if (hidden || !value) return '';
-  return (
-    <span className={`field ${type}`}>
-      {label && <>{label}: </>}
-      {value}
-    </span>
-  );
+  if (type === 'date' && value)
+    return (
+      <span className={`field ${type}`} title={title?.replace('{}', value)}>
+        {label}{' '}
+        {formatDate({
+          date: value,
+          format: {
+            year: 'numeric',
+            month: 'short',
+            day: '2-digit',
+          },
+          locale: locale,
+        })}
+      </span>
+    );
+  return <span className={`field ${type}`}>{value}</span>;
 };
 
 export default Banner;
