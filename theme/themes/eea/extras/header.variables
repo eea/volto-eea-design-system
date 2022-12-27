@@ -211,7 +211,7 @@
 
 /* Search box */
 @searchBoxPosition: absolute;
-@searchBoxBackgroundGradient : linear-gradient(340.97deg, @darkCerulean 9.19%, #009591 77.47%);
+@searchBoxBackgroundGradient : linear-gradient(13.69deg, @blue-5 1.17%, @secondaryColor 80%);
 @searchBoxWrapperGap : 75px;
 @searchBoxFullSearchBackground: rgba(255, 255, 255, 0.1);
 @searchBoxFullSearchBoxShadow: 0 0 6px 0 rgba(0, 0, 0, 0.25);

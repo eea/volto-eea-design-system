@@ -18,6 +18,7 @@ module.exports = {
   customFields: {
     storyBookUrl: 'https://eea.github.io/volto-kitkat-frontend/',
   },
+  staticDirectories: ['static'],
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
