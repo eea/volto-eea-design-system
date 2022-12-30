@@ -209,7 +209,7 @@
 
 @linkColor           : @blue-4;
 @linkHoverColor      : @blue-5;
-@linkVisitedColor    : @purple-5;
+@linkVisitedColor    : @purple-4;
 @linkActiveColor     : @blue-6;
 @linkUnderline       : none;
 @linkHoverUnderline  : @linkUnderline;
