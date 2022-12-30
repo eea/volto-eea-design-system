@@ -37,3 +37,5 @@ export LanguageLabeledIcon from './LanguageLabeledIcon/LanguageLabeledIcon';
 export RelatedContent from './Card/RelatedContent/RelatedContent';
 
 export Hero from './Hero/Hero';
+
+export Copyright from './Copyright/Copyright';

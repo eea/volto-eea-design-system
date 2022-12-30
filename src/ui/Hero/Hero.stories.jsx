@@ -54,6 +54,40 @@ export default {
         type: { summary: 'boolean' },
       },
     },
+    has_copyright: {
+      name: 'Copyright',
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '' },
+        type: { summary: 'boolean' },
+      },
+    },
+    copyrightPosition: {
+      name: 'Position',
+      control: {
+        type: 'inline-radio',
+        options: ['left', 'right'],
+      },
+      type: { name: 'string' },
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '"left"' },
+      },
+    },
+    copyrightIcon: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
+      },
+    },
+    copyright: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
+      },
+    },
   },
 };
 
@@ -93,6 +127,11 @@ Default.args = {
   inverted: true,
   alignContent: 'center',
   backgroundVariant: 'grey',
+
+  has_copyright: true,
+  copyrightPosition: 'left',
+  copyrightIcon: 'ri-copyright-line',
+  copyright: 'Image copyright: Velit fusce sed sem ut.',
 };
 Default.parameters = {
   controls: {
@@ -125,6 +164,11 @@ Playground.args = {
   inverted: true,
   alignContent: 'center',
   backgroundVariant: 'tertiary',
+
+  has_copyright: true,
+  copyrightPosition: 'left',
+  copyrightIcon: 'ri-copyright-line',
+  copyright: 'Image copyright: Velit fusce sed sem ut.',
 };
 Playground.argTypes = {
   fullWidth: {
@@ -200,6 +244,31 @@ Playground.argTypes = {
     table: {
       defaultValue: { summary: 'tertiary' },
       type: { summary: 'string' },
+    },
+  },
+  copyright: {
+    table: {
+      category: 'Copyright',
+      defaultValue: { summary: '""' },
+      type: { summary: 'string' },
+    },
+  },
+  copyrightIcon: {
+    table: {
+      category: 'Copyright',
+      defaultValue: { summary: '""' },
+      type: { summary: 'string' },
+    },
+  },
+  copyrightPosition: {
+    control: {
+      type: 'inline-radio',
+      options: ['left', 'right'],
+    },
+    type: { name: 'string' },
+    table: {
+      category: 'Copyright',
+      defaultValue: { summary: '"left"' },
     },
   },
 };

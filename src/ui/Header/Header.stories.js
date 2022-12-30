@@ -3,8 +3,8 @@ import Header from './Header';
 import { Dropdown, Image, Segment, Container } from 'semantic-ui-react';
 import { Logo } from '@eeacms/volto-eea-design-system/ui';
 
-import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea-logo.svg';
-import InvertedLogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EEA-Logo-White-2.svg';
+import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo.svg';
+import InvertedLogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
 import cx from 'classnames';
@@ -486,13 +486,72 @@ const menuItems = [
     url: '/#',
   },
   {
-    '@id': 'Data-and-publications',
-    items: [],
+    '@id': 'Analysis-and-data',
+    items: [
+      {
+        '@id': 'Reports',
+        nav_description:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        items: [],
+        review_state: null,
+        title: 'Briefings',
+        nav_title: 'Briefings nav',
+        url: '/#',
+      },
+      {
+        '@id': 'Briefings',
+        nav_description:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        items: [],
+        review_state: null,
+        title: 'Reports',
+        nav_title: 'Reports nav',
+        url: '/#',
+      },
+      {
+        '@id': 'Indicators',
+        nav_description:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        items: [],
+        review_state: null,
+        title: 'Indicators',
+        nav_title: 'Indicators nav',
+        url: '/#',
+      },
+      {
+        '@id': 'Datahub',
+        nav_description:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        items: [],
+        review_state: null,
+        title: 'Datahub',
+        nav_title: 'Datahub nav',
+        url: '/#',
+      },
+      {
+        '@id': 'Maps-and-charts',
+        nav_description:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        items: [],
+        review_state: null,
+        title: 'Maps and charts',
+        url: '/#',
+      },
+      {
+        '@id': 'Country-fact-sheets',
+        nav_description:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        items: [],
+        review_state: null,
+        title: 'Country fact sheets',
+        nav_title: '',
+        url: '/#',
+      },
+    ],
     review_state: null,
-    title: 'Data and publications',
+    title: 'Analysis and data',
     url: '/#',
   },
-
   {
     '@id': 'Countries',
     items: [
@@ -1217,6 +1276,7 @@ const Template = (args) => {
     tabletLinksMenuTitle,
     mobileLinksMenuTitle,
     menuItems,
+    hasLanguageDropdown,
   } = args;
 
   const [language, setLanguage] = React.useState('en');
@@ -1288,6 +1348,7 @@ const Template = (args) => {
 
           <Header.TopDropdownMenu
             id="language-switcher"
+            hasLanguageDropdown={hasLanguageDropdown}
             className="item"
             text={`${language.toUpperCase()}`}
             mobileText={`${language.toUpperCase()}`}
@@ -1332,23 +1393,34 @@ const Template = (args) => {
           renderMenuItem={(item, options = {}, props) => {
             const { onClick } = options;
             return (
-              <a
-                onClick={(e) => {
-                  const path = item['@id'] || item.url;
-                  setPathname(path);
-                  e.preventDefault();
-                  onClick && onClick(e, item);
-                }}
-                href={item['@id'] || item.url}
-                {...options}
-                className={cx(options?.className, {
-                  active: item['@id'] === pathname,
-                })}
-              >
-                {props?.iconPosition !== 'right' && props?.children}
-                <span>{item.title}</span>
-                {props?.iconPosition === 'right' && props?.children}
-              </a>
+              <>
+                <a
+                  onClick={(e) => {
+                    const path = item['@id'] || item.url;
+                    setPathname(path);
+                    e.preventDefault();
+                    onClick && onClick(e, item);
+                  }}
+                  href={item['@id'] || item.url}
+                  {...options}
+                  className={cx(options?.className, {
+                    active: item['@id'] === pathname,
+                  })}
+                >
+                  {/* nav_title ovverides title */}
+                  {item.nav_title && item.nav_title !== '' ? (
+                    <span>{item.nav_title}</span>
+                  ) : (
+                    <span>{item.title}</span>
+                  )}
+                  {/* Contains a string and an icon for the buttons */}
+                  {props?.children}
+                </a>
+                {/* Item description */}
+                {item.nav_description && (
+                  <p className="nav-description">{item.nav_description}</p>
+                )}
+              </>
             );
           }}
           renderGlobalMenuItem={(item, options = {}) => {
@@ -1518,6 +1590,7 @@ Default.args = {
   linksMenuTitle: 'Environmental information systems',
   tabletLinksMenuTitle: 'EEA information systems',
   mobileLinksMenuTitle: 'EEA information systems',
+  hasLanguageDropdown: true,
   links,
   languages,
   menuItems,

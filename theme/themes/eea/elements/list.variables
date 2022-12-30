@@ -165,7 +165,7 @@
 /* Bulleted */
 
 @bulletSize: 1.1rem;
-@bulletDistance: 1.25rem;
+@bulletDistance: @rem-space-5;
 @bulletOffset: -@bulletDistance;
 
 @bulletOpacity: 1;

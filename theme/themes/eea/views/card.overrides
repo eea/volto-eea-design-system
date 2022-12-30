@@ -16,31 +16,26 @@
 .ui.card {
   height: 100%;
   text-align: var(--text-align, @cardTextAlign);
+  background-color: var(--card-background-color, @background);
+  color: var(--card-text-color, @cardColor);
 }
 
 .card .meta .date {
   margin-left: @cardMetaDateMarginLeft;
 }
 
-.ui.cards > .card:not(.rounded) > .image,
 .ui.card:not(.rounded) > .image {
   overflow: @cardImageOverflow;
   height: @cardImageHeight;
 
   img {
-    width: @imageWidth;
-    height: @imageHeight;
+    width: var(--card-image-width, @imageWidth);
+    height: var(--card-image-width, @imageHeight);
     object-fit: @imageObjectFit;
     object-position: @imageObjectPosition;
   }
 }
 
-.ui.cards > .card > i.icon,
-.ui.cards > .card > a:not(.ui) > i.icon,
-.ui.card > i.icon,
-.ui.card > a:not(.ui) > i.icon {
-  color: @iconColor;
-}
 
 .ui.cards > .card > .content > *:not(:last-child),
 .ui.card > .content > *:not(:last-child) {
@@ -87,163 +82,59 @@
 /*******************************
             Primary
 *******************************/
-
-.ui.card.primary:not(.inverted),
-.ui.card.primary:not(.inverted) .image {
-  background: @primaryBackground;
+.card.has--theme--primary,
+.card.primary {
+  --card-background-color: @primaryCardBackground;
+  --card-text-color: @primaryCardColor;
 }
-
-.ui.card.primary > .content > .header {
-  color: @primaryHeaderColor;
-}
-
-.ui.card.primary > i.icon,
-.ui.card.primary > a:not(.ui) > i.icon,
-.ui.card.primary > .content a:not(.ui),
-.ui.card.primary > .content a:not(.ui):hover,
-.ui.card.primary > .content > .description {
-  color: @primaryDescriptionColor;
-}
-
-.ui.card.primary > .extra.content a:not(.ui) {
-  color: @primaryExtraLinkColor;
-
-  &:hover {
-    color: @primaryExtraLinkHoverColor;
-  }
-}
-
-.ui.card.primary > .content > .meta,
-.ui.card.primary > .content > .meta a:not(.ui) {
-  color: @primaryMetaColor;
-}
-
 /* Inverted */
-.ui.card.primary.inverted > i.icon,
-.ui.card.primary.inverted > .content * {
-  color: @invertedPrimaryContentColor;
-}
-
-.ui.card.primary.inverted > a:not(.ui) > i.icon,
-.ui.card.primary.inverted > .content a:not(.ui),
-.ui.card.primary.inverted > .extra.content a:not(.ui) {
-  color: @invertedPrimaryContentColor;
-
-  &:hover {
-    color: @invertedPrimaryColorHover;
-  }
+.card.has--theme--primary.has--inverted--true,
+.card.primary.inverted {
+  --card-background-color: @invertedPrimaryCardBackgroundColor;
+  --card-text-color: @invertedPrimaryCardColor;
 }
 
 /*******************************
             Secondary
 *******************************/
-
-.ui.card.secondary:not(.inverted),
-.ui.card.secondary:not(.inverted) .image {
-  background: @secondaryBackground;
+.card.has--theme--secondary,
+.card.secondary {
+  --card-background-color:  @secondaryCardBackground;
+  --card-text-color: @secondaryCardColor;
 }
-
-.ui.card.secondary > i.icon,
-.ui.card.secondary > a:not(.ui) > i.icon,
-.ui.card.secondary > .content a:not(.ui),
-.ui.card.secondary > .content a:not(.ui):hover,
-.ui.card.secondary > .content > .header {
-  color: @secondaryHeaderColor;
-}
-
-.ui.card.secondary > .content > .description {
-  color: @secondaryDescriptionColor;
-}
-
-.ui.card.secondary > .extra.content a:not(.ui) {
-  color: @secondaryExtraLinkColor;
-
-  &:hover {
-    color: @secondaryExtraLinkHoverColor;
-  }
-}
-
-.ui.card.secondary > .content > .meta,
-.ui.card.secondary > .content > .meta a:not(.ui) {
-  color: @secondaryMetaColor;
-}
-
 /* Inverted */
-.ui.card.secondary.inverted > i.icon,
-.ui.card.secondary.inverted > .content * {
-  color: @invertedSecondaryContentColor;
-}
-
-.ui.card.secondary.inverted > a:not(.ui) > i.icon,
-.ui.card.secondary.inverted > .content a:not(.ui),
-.ui.card.secondary.inverted > .extra.content a:not(.ui) {
-  color: @invertedSecondaryContentColor;
-
-  &:hover {
-    color: @invertedSecondaryColorHover;
-  }
+.card.has--theme--secondary.has--inverted--true,
+.card.secondary.inverted {
+  background-color: @invertedSecondaryCardBackgroundColor;
+  color: @invertedSecondaryCardColor;
 }
 
 /*******************************
             Tertiary
 *******************************/
-
-.ui.card.tertiary:not(.inverted),
-.ui.card.tertiary:not(.inverted) .image {
-  background: @tertiaryBackground;
+.card.has--theme--tertiary,
+.card.tertiary {
+  --card-background-color:  @tertiaryCardBackground;
+  --card-text-color: @tertiaryCardColor;
 }
-
-.ui.card.tertiary > i.icon,
-.ui.card.tertiary > a:not(.ui) > i.icon,
-.ui.card.tertiary > .content a:not(.ui),
-.ui.card.tertiary > .content a:not(.ui):hover,
-.ui.card.tertiary > .content > .header {
-  color: @tertiaryHeaderColor;
-}
-
-.ui.card.tertiary > .content > .description {
-  color: @tertiaryDescriptionColor;
-}
-
-.ui.card.tertiary > .extra.content a:not(.ui) {
-  color: @tertiaryExtraLinkColor;
-
-  &:hover {
-    color: @tertiaryExtraLinkHoverColor;
-  }
-}
-
-.ui.card.tertiary > .content > .meta,
-.ui.card.tertiary > .content > .meta a:not(.ui) {
-  color: @tertiaryMetaColor;
-}
-
 /* Inverted */
-.ui.card.tertiary.inverted > i.icon,
-.ui.card.tertiary.inverted > .content * {
-  color: @invertedTertiaryContentColor;
-}
-
-.ui.card.tertiary.inverted > a:not(.ui) > i.icon,
-.ui.card.tertiary.inverted > .content a:not(.ui),
-.ui.card.tertiary.inverted > .extra.content a:not(.ui) {
-  color: @invertedTertiaryContentColor;
-
-  &:hover {
-    color: @invertedTertiaryColorHover;
-  }
+.card.has--theme--tertiary.has--inverted--true,
+.card.tertiary.inverted {
+  --card-background-color:  @invertedTertiaryCardBackgroundColor;
+  --card-text-color:  @invertedTertiaryCardColor;
 }
 
 /*******************************
           Rounded Card
 *******************************/
-
-.ui.cards > .ui.card.rounded > .image,
 .ui.card.rounded > .image {
   height: auto;
 }
 
-.ui.cards .ui.card.rounded,
+.card.rounded {
+  --card-image-width: @roundedImageWidth;
+  --card-image-height: @roundedImageHeight;
+}
 .ui.card.rounded {
   padding-top: @iconCardPaddingTop;
   border: none;
@@ -257,7 +148,7 @@
   img {
     width: @roundedImageWidth;
     height: @roundedImageHeight;
-    border-radius: @roundedImageBorderRadius;
+    border-radius: @roundedImageBorderRadius !important;
   }
 
   .content {
@@ -429,7 +320,7 @@
 .cards-carousel .next-arrow {
   right: @carouselButtonDistance;
   left: auto;
-} 
+}
 
 /* Custom carousel pagination bullets */
 // avoid dots going over content that follows sliders
@@ -449,7 +340,7 @@
 
 .cards-carousel .slick-dots li.slick-active button:before {
   background-color: @carouselDotsActiveBackgroundColor;
-  color: transparent;  
+  color: transparent;
 }
 
 .slick-dots li button:focus-visible {
@@ -479,4 +370,11 @@
   .icon {
     margin: auto;
   }
+}
+
+.ui.cards > .card > i.icon,
+.ui.cards > .card > a:not(.ui) > i.icon,
+.ui.card > i.icon,
+.ui.card > a:not(.ui) > i.icon {
+  color: @iconColor;
 }

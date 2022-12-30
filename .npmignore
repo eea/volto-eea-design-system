@@ -1,12 +1,17 @@
 # https://docs.npmjs.com/using-npm/developers.html#keeping-files-out-of-your-package
 
 # Directories
+.github/
+.storybook/
 api/
 bin/
 build/
-lib/
 g-api/
+lib/
+mockups/
+storybook-static/
 tests/
+website/
 
 # Docs
 docs/

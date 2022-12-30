@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Icon } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
 const sidenavItems = [
   {
@@ -72,10 +72,30 @@ const sidenavItems = [
       {
         '@id': 'Articles',
         description: '',
-        items: [],
+        items: [
+          {
+            '@id': 'article-1',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Summer 2022: Living in a state of multiple crises',
+            url: '/#',
+            is_current: true,
+          },
+          {
+            '@id': 'article-2',
+            description: '',
+            items: [],
+            review_state: null,
+            title:
+              'Interview — Prosumers and the energy crisis: citizens contributing to Europe’s energy transition',
+            url: '/#',
+          },
+        ],
         review_state: null,
         title: 'Articles',
         url: '/#',
+        is_in_path: true,
       },
       {
         '@id': 'Infographics-overview',
@@ -89,6 +109,15 @@ const sidenavItems = [
     review_state: null,
     title: 'Infographics',
     url: '/#',
+    is_in_path: true,
+  },
+  {
+    '@id': 'About',
+    review_state: null,
+    title: 'About',
+    items: [],
+    url: '/#',
+    is_in_path: true,
   },
 ];
 
@@ -97,39 +126,85 @@ function Template({ ...args }) {
     <Container>
       <nav className="context-navigation">
         <div className="context-navigation-header">
-          <Icon className="ri-menu-2-line" /> {args.header}
+          {args?.header ? <a href="/#">{args?.header}</a> : 'Navigation'}
         </div>
         <div role="list" className="ui list">
           {args.sidenavItems &&
             args.sidenavItems.map((element, index) => {
               return (
-                <div role="listitem" className="item level-1">
+                <div
+                  role="listitem"
+                  className={
+                    (element.is_current ? 'active ' : '') +
+                    (element.is_in_path ? 'in_path ' : '') +
+                    'item level-1'
+                  }
+                >
                   <div className="content">
                     <a
                       title={element.title}
-                      className="contenttype-folder"
+                      className={
+                        element?.items?.length > 0
+                          ? 'contenttype-folder'
+                          : 'contenttype-document'
+                      }
                       href={element.url}
                     >
                       {element.title}
                     </a>
-                    {element.items.length > 0 &&
-                      element.items.map((subelement, index) => {
-                        return (
-                          <div className="list" role="list">
-                            <div role="listitem" className="item level-2">
-                              <div className="content">
-                                <a
-                                  title={subelement.title}
-                                  className="contenttype-document"
-                                  href={subelement.url}
-                                >
-                                  {subelement.title}
-                                </a>
+                    {element?.items?.length > 0
+                      ? element.items.map((subelement, index) => {
+                          return (
+                            <div className="list" role="list">
+                              <div
+                                role="listitem"
+                                className={
+                                  (subelement.is_current ? 'active ' : '') +
+                                  (subelement.is_in_path ? 'in_path ' : '') +
+                                  'item level-2'
+                                }
+                              >
+                                <div className="content">
+                                  <a
+                                    title={subelement.title}
+                                    className="contenttype-document"
+                                    href={subelement.url}
+                                  >
+                                    {subelement.title}
+                                  </a>
+                                  {subelement?.items?.length > 0 &&
+                                    subelement.items.map(
+                                      (subparelement, index) => {
+                                        return (
+                                          <div className="list" role="list">
+                                            <div
+                                              role="listitem"
+                                              className={
+                                                (subparelement.is_current
+                                                  ? 'active '
+                                                  : '') + 'item level-3'
+                                              }
+                                            >
+                                              <div className="content">
+                                                <a
+                                                  title={subparelement.title}
+                                                  className="contenttype-document"
+                                                  href={subparelement.url}
+                                                >
+                                                  {subparelement.title}
+                                                </a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        );
+                                      },
+                                    )}
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        );
-                      })}
+                          );
+                        })
+                      : null}
                   </div>
                 </div>
               );
@@ -147,6 +222,6 @@ export default {
 
 export const Default = Template.bind({});
 Default.args = {
-  header: 'Navigation',
+  header: '',
   sidenavItems: sidenavItems,
 };

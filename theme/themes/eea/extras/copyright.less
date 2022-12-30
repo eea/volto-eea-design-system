@@ -1,0 +1,29 @@
+@type: 'extra';
+@element: 'copyright';
+
+@import (multiple) '../../theme.config';
+
+/*-------------------
+      Copyright
+--------------------*/
+
+.eea.copyright {
+    width: @copyrightWidth;
+
+    .wrapper {
+        display: flex;
+        color: @copyrightContentColor;
+        font-size: @copyrightContentFontSize;
+        line-height: @copyrightLineHeight;
+        gap: @copyrightContentPaddingRight;
+    }
+    &.left .wrapper {
+      justify-content: flex-start;
+    }
+  &.right .wrapper {
+    justify-content: flex-end;
+  }
+  .icon {
+    margin: 0; // override default
+  }
+}

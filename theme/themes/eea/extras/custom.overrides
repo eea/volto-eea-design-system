@@ -57,6 +57,12 @@
   z-index: @z-index-5;
 }
 
+// remove extra margin from cards on edit, when they are inside a grid such as teaser
+// the outline is cut before the theme background with margin 1em set
+.block .ui.card {
+  margin: 0;
+}
+
 
 // inherit font weight of styled headers so that if we set 300 weight it's visible also on
 // the edit page

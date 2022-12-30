@@ -7,8 +7,13 @@ const modify = (config, { target, dev }, webpack) => {
   config.resolve.alias['../../theme.config$'] = themeConfigPath;
   config.resolve.alias['../../theme.config'] = themeConfigPath;
 
-  const projectRootPath = path.resolve('.');
-  const themesPath = `${projectRootPath}/node_modules/@eeacms/volto-eea-design-system/theme/themes`;
+  const designSystem = '@eeacms/volto-eea-design-system';
+  const designSystemPath =
+    config.resolve.alias[designSystem] ||
+    path.dirname(require.resolve(designSystem));
+  const themeLessPath = path.resolve(`${designSystemPath}/../theme`);
+
+  const themesPath = `${themeLessPath}/themes`;
 
   config.resolve.alias['eea-volto-themes'] = themesPath;
   config.resolve.alias['ui-theme'] = `${themesPath}/eea/`;
