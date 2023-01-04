@@ -10,8 +10,7 @@
 @imageBackgroundPosition : center;
 
 /* Gradient */
-@backgroundGradient           : linear-gradient(8deg, #0c1b28b3 32%, rgba(0, 36, 78, 0) 80%);
-@backgroundGradientWithImage  : linear-gradient(0deg, rgb(20, 33, 44, 90%) 24%, rgba(0, 36, 78, 0) 80%);
+@backgroundGradient           : linear-gradient(0deg, #0c1b28b3 32%, rgba(0, 36, 78, 0) 80%);
 @backgroundGradientOpacity    : 1;
 
 /* Content */
