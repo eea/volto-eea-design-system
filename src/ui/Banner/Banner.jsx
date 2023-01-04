@@ -95,7 +95,6 @@ Banner.Content = ({ children, actions }) => {
 };
 
 Banner.Title = ({ children }) => {
-  //return (<p className="title">{children}</p>)
   return <h1 className="documentFirstHeading">{children}</h1>;
 };
 Banner.Subtitle = ({ children }) => <p className="subtitle">{children}</p>;
