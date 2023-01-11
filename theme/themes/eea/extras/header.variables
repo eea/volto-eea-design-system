@@ -133,9 +133,10 @@
 @subsiteFontFamily                    : @headerFont;
 @subsiteFontWeight                    : @headerFontWeight;
 @subsiteColor                         : @linkColor;
+@subsiteLineHeight                    : 1.1;
 @subsiteDividerColor                  : @darkCyan;
-@mobileSubsiteFontSize                : unit(@h4, em);
-@tabletSubsiteFontSize                : unit(@h3, em);
+@mobileSubsiteFontSize                : unit(@h6, em);
+@tabletSubsiteFontSize                : unit(@h4, em);
 @computerSubsiteFontSize              : unit(@h2, em);
 
 /*-----------------
