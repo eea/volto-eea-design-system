@@ -134,6 +134,11 @@
 @subsiteFontWeight                    : @headerFontWeight;
 @subsiteColor                         : @linkColor;
 @subsiteLineHeight                    : 1.1;
+@subsiteFlexGap                       : 30px;
+@subsiteLogoTopPosition               : 50%;
+@subsiteDividerHeight                 : 110%;
+@subsiteDividerWidth                  : 1px;
+@subsiteDividerTopPosition            : 50%;
 @subsiteDividerColor                  : @darkCyan;
 @mobileSubsiteFontSize                : unit(@h6, em);
 @tabletSubsiteFontSize                : unit(@h4, em);

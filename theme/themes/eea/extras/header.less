@@ -302,7 +302,7 @@
   display: flex;
   align-items: center;
   margin-top: @mobileLogoMarginTop;
-  gap: 30px;
+  gap: @subsiteFlexGap;
 
   .eea-logo {
     margin: 0;
@@ -319,10 +319,10 @@
 
   &:before {
     position: absolute;
-    top: 50%;
-    left: -15px;
-    width: 1px;
-    height: 110%;
+    top: @subsiteDividerTopPosition;
+    left: calc(-@subsiteFlexGap / 2);
+    width: @subsiteDividerWidth;
+    height: @subsiteDividerHeight;
     background-color: @subsiteDividerColor;
     content: ' ';
     transform: translate(-50%, -50%);
@@ -558,10 +558,10 @@
   .eea.header .subsite-logo {
     position: absolute;
     z-index: 1;
-    top: 50%;
-    left: calc(100% + 30px);
+    top: @subsiteLogoTopPosition;
+    left: calc(100% + @subsiteFlexGap);
     width: 400px;
-    transform: translateY(-50%);
+    transform: translateY(-@subsiteLogoTopPosition);
   }
 
   .burger-action.mobile {
@@ -672,7 +672,7 @@
 
 @media only screen and (min-width: @largestSmallMonitor) {
   .eea.header .subsite-logo {
-    left: calc(100% + 15px) !important;
+    left: calc(100% + calc(@subsiteFlexGap / 2));
   }
 }
 
