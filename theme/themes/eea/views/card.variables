@@ -267,7 +267,7 @@
         Image with title
 *******************************/
 @imageTitleColor: @white;
-@imageTitleFontSize: @font-size-7;
+@imageTitleFontSize: @font-size-4;
 @imageTitleFontWeight: @font-weight-7;
 @imageTitleLineHeight: @font-lineheight-0;
 @imageTitlePadding: @rem-space-6;

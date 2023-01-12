@@ -150,7 +150,7 @@ Default.args = {
   inverted: false,
   cards: [
     {
-      title: 'Lorem Ipsum',
+      title: 'Economy and resources',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
       description:
@@ -189,7 +189,7 @@ CardGrid.args = {
   inverted: false,
   cards: [
     {
-      title: 'Lorem Ipsum',
+      title: 'Nature',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
       description:
@@ -201,7 +201,7 @@ CardGrid.args = {
       fluid: true,
     },
     {
-      title: 'Suspendisse iaculis feugiat',
+      title: 'Economy and resources',
       imgUrl:
         'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
       description:
@@ -213,7 +213,7 @@ CardGrid.args = {
       fluid: true,
     },
     {
-      title: 'Eget tellus blandit aenean mattis.',
+      title: 'State of Europe\'s environment',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: false,
@@ -248,7 +248,7 @@ FluidGrid.args = {
   inverted: false,
   cards: [
     {
-      title: 'Lorem Ipsum',
+      title: 'Nature',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
       description:
@@ -260,7 +260,7 @@ FluidGrid.args = {
       fluid: true,
     },
     {
-      title: 'Suspendisse iaculis feugiat',
+      title: 'Health',
       imgUrl:
         'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
       description:
@@ -272,7 +272,7 @@ FluidGrid.args = {
       fluid: true,
     },
     {
-      title: 'Eget tellus blandit aenean mattis.',
+      title: 'State of Europe\'s environment',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: false,
@@ -382,7 +382,7 @@ CarouselCards.args = {
   },
   cards: [
     {
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      title: 'State of Europe\'s environment',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
@@ -391,7 +391,7 @@ CarouselCards.args = {
       fluid: true,
     },
     {
-      title: 'Lorem ipsum.',
+      title: 'Nature',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
@@ -400,7 +400,7 @@ CarouselCards.args = {
       fluid: true,
     },
     {
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      title: 'Health',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
@@ -409,8 +409,7 @@ CarouselCards.args = {
       fluid: true,
     },
     {
-      title:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean massa strong.',
+      title: 'Climate',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
@@ -419,7 +418,7 @@ CarouselCards.args = {
       fluid: true,
     },
     {
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      title: 'Economy and resources',
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
