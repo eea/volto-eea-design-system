@@ -41,6 +41,7 @@ const TopDropdownMenu = ({
   children,
   className,
   icon,
+  hasLanguageDropdown = true,
   id,
   tabletText,
   mobileText,
@@ -50,19 +51,39 @@ const TopDropdownMenu = ({
   const isTablet = viewportWidth < 991;
   const isMobile = viewportWidth < 767;
 
-  const Component = ({ mobileText }) => (
-    <Dropdown
-      id={id}
-      className={className}
-      text={mobileText || text}
-      icon={icon || 'chevron down'}
-      aria-label="dropdown"
-      closeOnChange={false}
-      closeOnBlur={true}
-    >
-      <Dropdown.Menu role="group">{children}</Dropdown.Menu>
-    </Dropdown>
-  );
+  const Component = ({ mobileText }) => {
+    return (
+      <>
+        {children.props['aria-label'] === 'language switcher' ? (
+          hasLanguageDropdown && (
+            <Dropdown
+              id={id}
+              className={className}
+              text={mobileText || text}
+              icon={icon || 'chevron down'}
+              aria-label="dropdown"
+              closeOnChange={false}
+              closeOnBlur={true}
+            >
+              <Dropdown.Menu role="group">{children}</Dropdown.Menu>
+            </Dropdown>
+          )
+        ) : (
+          <Dropdown
+            id={id}
+            className={className}
+            text={mobileText || text}
+            icon={icon || 'chevron down'}
+            aria-label="dropdown"
+            closeOnChange={false}
+            closeOnBlur={true}
+          >
+            <Dropdown.Menu role="group">{children}</Dropdown.Menu>
+          </Dropdown>
+        )}
+      </>
+    );
+  };
   return (
     <>
       {isMobile ? (
@@ -107,6 +128,7 @@ const Main = ({
   pathname,
   transparency,
   inverted,
+  hideSearch,
 }) => {
   const history = useHistory();
   const [activeItem, setActiveItem] = React.useState(pathname);
@@ -231,18 +253,20 @@ const Main = ({
                   ))}
                 </div>
               )}
-              <div
-                className="search-action"
-                onClick={searchOnClick}
-                role="none"
-                ref={searchButtonRef}
-              >
-                {/* <Icon name={!state.activeSearch ? 'search' : 'close'} /> */}
-                <Image
-                  src={!searchIsActive ? `${searchIcon}` : `${closeIcon}`}
-                  alt="search button open/close"
-                />
-              </div>
+              {!hideSearch && (
+                <div
+                  className="search-action"
+                  onClick={searchOnClick}
+                  role="none"
+                  ref={searchButtonRef}
+                >
+                  {/* <Icon name={!state.activeSearch ? 'search' : 'close'} /> */}
+                  <Image
+                    src={!searchIsActive ? `${searchIcon}` : `${closeIcon}`}
+                    alt="search button open/close"
+                  />
+                </div>
+              )}
               <Header.BurgerAction
                 className={`mobile ${burger}`}
                 onClick={mobileBurgerOnClick}

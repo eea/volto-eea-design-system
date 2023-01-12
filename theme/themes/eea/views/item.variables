@@ -7,7 +7,7 @@
 --------------------*/
 
 /* Group */
-@groupMargin: 1.5em 0em;
+@groupMargin: @rem-space-6 0em;
 
 /* Item */
 @display: flex;
@@ -56,9 +56,11 @@
 @imageBoxShadow: none;
 @imageBorder: none;
 
-/* Tile image size */
-@tileImageWidth: 50px;
-@tileImageHeight: auto;
+/* Image & Icon size */
+@tinyMediaSize  : 1.5rem;
+@smallMediaSize  : 3rem;
+@mediumMediaSize : 4rem;
+@largeMediaSize  : 5rem;
 
 /* Content */
 @contentDisplay: block;
@@ -107,9 +109,8 @@
 @contentLinkHoverColor: '';
 @contentLinkTransition: color @defaultDuration @defaultEasing;
 
-
 /* Description */
-@descriptionDistance: 0.6em;
+@descriptionDistance: 0;
 @descriptionMaxWidth: auto;
 @descriptionFontSize: 1em;
 @descriptionLineHeight: @lineHeight;
@@ -146,6 +147,11 @@
 /*-------------------
       Variations
 --------------------*/
+
+/* Flex item */
+@mobileFlexItemWidth: 100%;
+@tabletFlexItemWidth: 48.8%;
+@desktopFlexItemWidth: 49%;
 
 /* Relaxed */
 @relaxedItemSpacing: 1.5em;

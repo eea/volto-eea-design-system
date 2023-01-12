@@ -3,8 +3,8 @@ import Header from './Header';
 import { Dropdown, Image, Segment, Container } from 'semantic-ui-react';
 import { Logo } from '@eeacms/volto-eea-design-system/ui';
 
-import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea-logo.svg';
-import InvertedLogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EEA-Logo-White-2.svg';
+import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo.svg';
+import InvertedLogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
 import cx from 'classnames';
@@ -1276,6 +1276,7 @@ const Template = (args) => {
     tabletLinksMenuTitle,
     mobileLinksMenuTitle,
     menuItems,
+    hasLanguageDropdown,
   } = args;
 
   const [language, setLanguage] = React.useState('en');
@@ -1347,6 +1348,7 @@ const Template = (args) => {
 
           <Header.TopDropdownMenu
             id="language-switcher"
+            hasLanguageDropdown={hasLanguageDropdown}
             className="item"
             text={`${language.toUpperCase()}`}
             mobileText={`${language.toUpperCase()}`}
@@ -1588,6 +1590,7 @@ Default.args = {
   linksMenuTitle: 'Environmental information systems',
   tabletLinksMenuTitle: 'EEA information systems',
   mobileLinksMenuTitle: 'EEA information systems',
+  hasLanguageDropdown: true,
   links,
   languages,
   menuItems,

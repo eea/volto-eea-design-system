@@ -36,7 +36,11 @@ const createColumns = (item, length, renderMenuItem) => {
 const ItemGrid = ({ item, columns, length, renderMenuItem }) => (
   <>
     {renderMenuItem(item, { className: 'sub-title' })}
-    <Grid columns={columns}>{createColumns(item, length, renderMenuItem)}</Grid>
+    {item.items.length ? (
+      <Grid columns={columns}>
+        {createColumns(item, length, renderMenuItem)}
+      </Grid>
+    ) : null}
   </>
 );
 

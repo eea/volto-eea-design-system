@@ -130,19 +130,14 @@
 /*******************************
           Rounded Card
 *******************************/
-
-.ui.cards > .ui.card.rounded > .image,
-.ui.card.has--rounded--true > .image,
 .ui.card.rounded > .image {
   height: auto;
 }
 
-.card.has--rounded--true {
+.card.rounded {
   --card-image-width: @roundedImageWidth;
   --card-image-height: @roundedImageHeight;
 }
-.ui.cards .ui.card.rounded,
-.ui.card.has--rounded--true,
 .ui.card.rounded {
   padding-top: @iconCardPaddingTop;
   border: none;
@@ -156,7 +151,7 @@
   img {
     width: @roundedImageWidth;
     height: @roundedImageHeight;
-    border-radius: @roundedImageBorderRadius;
+    border-radius: @roundedImageBorderRadius !important;
   }
 
   .content {
@@ -384,7 +379,7 @@
 .cards-carousel .next-arrow {
   right: @carouselButtonDistance;
   left: auto;
-} 
+}
 
 /* Custom carousel pagination bullets */
 // avoid dots going over content that follows sliders
@@ -404,7 +399,7 @@
 
 .cards-carousel .slick-dots li.slick-active button:before {
   background-color: @carouselDotsActiveBackgroundColor;
-  color: transparent;  
+  color: transparent;
 }
 
 .slick-dots li button:focus-visible {
