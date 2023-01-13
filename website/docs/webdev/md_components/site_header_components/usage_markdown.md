@@ -1,6 +1,6 @@
 The EEA header shows users that they are on EEA portal and which service they are using.
 
-![](../../md_components/static/headerElements.png)
+![](../../md_components/static/header-elements.png)
 
 ### Anatomy
 
@@ -10,7 +10,7 @@ The EEA header shows users that they are on EEA portal and which service they ar
 | 2 | **Environmental Information systems**              | yes       | Complete list of EEA's thematic websites |
 | 3 | **Languages**<br />     | yes       | Language select |
 | 4 | **EEA Identity**                                         | yes       | Logo of European Environmental Agency |
-| 5 | **Menu**                                         | yes       |  Main navigation of the website 
+| 5 | **Menu**                                         | yes       |  Main navigation of the website
 | 6 | **Search**                                         | yes       | 	Enables the user to search and retrieve related information from using keywords |
 
 
