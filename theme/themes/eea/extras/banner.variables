@@ -33,9 +33,9 @@
 @mobileTitleLineHeight     : @headerLineHeight;
 @tabletTitleLineHeight     : @headerLineHeight;
 @computerTitleLineHeight   : @headerLineHeight;
-@mobileTitleMargin         : 0 0 0.5rem 0;
-@tabletTitleMargin         : 0 0 0.813rem 0;
-@computerTitleMargin       : 0 0 1.125rem 0;
+@mobileTitleMargin         : 0 0 0 0;
+@tabletTitleMargin         : 0 0 0 0;
+@computerTitleMargin       : 0 0 0 0;
 
 
 /* Subtitle */
