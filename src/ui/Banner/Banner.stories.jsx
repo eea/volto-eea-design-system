@@ -143,18 +143,8 @@ Default.args = {
   subtitle: 'Lorem ipsum dolor',
   metadata: [
     { hidden: false, value: 'Briefing', type: 'type' },
-    {
-      hidden: false,
-      value: Date.now(),
-      type: 'date',
-      title: 'Published Date',
-    },
-    {
-      hidden: false,
-      value: Date.now(),
-      type: 'date',
-      title: 'Modified Date',
-    },
+    { hidden: false, label: 'Published', value: '25 Nov 2022', type: 'date' },
+    { hidden: false, label: 'Modified', value: '29 Nov 2022', type: 'date' },
     { hidden: false, value: '5 min read', type: '' },
   ],
   image: true,
