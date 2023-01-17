@@ -13,7 +13,7 @@ import EEALogoDark from '@site/static/img/eea-logo-white.svg';
 
 To ensure logo's integrity and visibility, it must always be kept clear of competing text, images or graphic elements. It must be surrounded by a minimum clear space οf 16px as indicated below. 
 
-![](../static/LOGOwhite.png)
+![](../static/logo-white.png)
 
 ### EEA LOGO - Dark version
 
