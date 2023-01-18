@@ -24,14 +24,14 @@ Beyond mathematical precision, spacing also reacts to the objects it surrounds, 
 Controls the spacing inside the components. <br/>
 For components use smaller increments. ( 4px, 8px, 12px, 16px, 20px, 24px, 32px, 36px, 40px, 48px)
 
- ![](../md_components/static/componenetPX.png)
+ ![](../md_components/static/componenet-px.png)
 
 
 <b> Layout Spacing </b> <br/>
 Controls space between the components. <br/>
 For layout scale use larger increments (16px, 24px, 32px, 48px, 64px, 96px )
 
- ![](../md_components/static/layoutPX.png)
+ ![](../md_components/static/layout-px.png)
 
 
 ## Spacing Gaps in pixels
