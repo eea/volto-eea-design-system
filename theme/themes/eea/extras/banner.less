@@ -91,11 +91,18 @@
     background-size: @imageBackgroundSize;
 
     .gradient {
-      background-image: @backgroundGradientWithImage;
-
       .content {
         padding: @mobileContentPaddingWithImage;
       }
+    }
+  }
+
+  .documentFirstHeading {
+    border-bottom: @titleBorderBottom;
+    margin-bottom: @titleMarginBottom;
+
+    &::before {
+      content: @titleBorderBottom;
     }
   }
 }
@@ -218,4 +225,3 @@
 }
 
 .loadUIOverrides();
-

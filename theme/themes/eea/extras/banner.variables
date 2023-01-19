@@ -10,8 +10,7 @@
 @imageBackgroundPosition : center;
 
 /* Gradient */
-@backgroundGradient           : linear-gradient(8deg, #0c1b28b3 32%, rgba(0, 36, 78, 0) 80%);
-@backgroundGradientWithImage  : linear-gradient(0deg, rgb(20, 33, 44, 90%) 24%, rgba(0, 36, 78, 0) 80%);
+@backgroundGradient           : linear-gradient(8deg,rgba(12,27,40, 0.7) 32%,rgba(0,36,78,0) 80%);
 @backgroundGradientOpacity    : 1;
 
 /* Content */
@@ -26,15 +25,18 @@
 /* Title */
 @titleFontWeight           : @bold;
 @titleMaxWidth             : 100%;
-@mobileTitleFontSize       : 1.25rem;
-@tabletTitleFontSize       : 2.25rem;
-@computerTitleFontSize     : 3rem;
-@mobileTitleLineHeight     : 1.375rem;
-@tabletTitleLineHeight     : 2.75rem;
-@computerTitleLineHeight   : 3.5rem;
-@mobileTitleMargin         : 0 0 0.5rem 0;
-@tabletTitleMargin         : 0 0 0.813rem 0;
-@computerTitleMargin       : 0 0 1.125rem 0;
+@titleMarginBottom         : 0;
+@titleBorderBottom         : none;
+@mobileTitleFontSize       : @mobileH1;
+@tabletTitleFontSize       : @h2;
+@computerTitleFontSize     : @h1;
+@mobileTitleLineHeight     : @headerLineHeight;
+@tabletTitleLineHeight     : @headerLineHeight;
+@computerTitleLineHeight   : @headerLineHeight;
+@mobileTitleMargin         : 0 0 0 0;
+@tabletTitleMargin         : 0 0 0 0;
+@computerTitleMargin       : 0 0 0 0;
+
 
 /* Subtitle */
 @subtitleFontWeight        : @bold;

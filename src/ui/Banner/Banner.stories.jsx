@@ -74,7 +74,7 @@ export default {
 };
 
 const Template = (args) => (
-  <Banner {...args} image_url={args.image ? imgUrl : null}>
+  <Banner {...args} image={args.image ? imgUrl : null}>
     <Banner.Content
       actions={
         <>
@@ -143,8 +143,8 @@ Default.args = {
   subtitle: 'Lorem ipsum dolor',
   metadata: [
     { hidden: false, value: 'Briefing', type: 'type' },
-    { hidden: false, value: 'Published Date', type: 'date' },
-    { hidden: false, value: 'Modified Date', type: 'date' },
+    { hidden: false, label: 'Published', value: '25 Nov 2022', type: 'date' },
+    { hidden: false, label: 'Modified', value: '29 Nov 2022', type: 'date' },
     { hidden: false, value: '5 min read', type: '' },
   ],
   image: true,
