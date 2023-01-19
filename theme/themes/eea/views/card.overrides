@@ -26,8 +26,7 @@
 }
 
 .ui.cards > .card:not(.rounded) > .image,
-.ui.card:not(.rounded) > .image,
-.ui.card .image-with-title .image {
+.ui.card:not(.rounded) > .image {
   overflow: @cardImageOverflow;
   height: @cardImageHeight;
 
@@ -256,16 +255,12 @@
       Image with title
 *******************************/
 // Adding the default image css for image inside image-with-title
-.ui.cards > .card > .image, .ui.card .image-with-title > .image {
+.ui.cards > .card > .image {
   position: relative;
   display: block;
   flex: 0 0 auto;
-  padding: 0em;
+  padding: 0;
   background: transparent;
-}
-
-.image-with-title {
-  position: relative;
 }
 
 // Gradient Mixin
@@ -281,7 +276,7 @@
   }
 }
 
-.image-with-title .gradient {
+.card .gradient {
   display: flex;
   align-items: end;
   position: absolute;
@@ -292,18 +287,19 @@
   .gradientMix(linear; rgba(46, 62, 76, 0.65) 38.6%, rgba(46, 62, 76, 0.169) 59.52%, rgba(69, 95, 106, 0) 79.64%; 13.39deg);
 }
 
-.image-with-title .header a {
+.gradient .header {
   font-size: var(--image-header-font-size, @imageTitleFontSize);
   color: @imageTitleColor;
   font-weight: @imageTitleFontWeight;
   line-height: @imageTitleLineHeight;
+  text-transform: @imageTitleTextTransform;
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-  .image-with-title .gradient {
+  .card .gradient {
     padding-block: @imageTitlePaddingBlock;
   }
-  .image-with-title .header a {
+  .gradient .header {
     --image-header-font-size: @font-size-7;
   }
 }

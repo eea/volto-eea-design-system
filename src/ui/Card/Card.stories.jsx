@@ -86,14 +86,12 @@ const CardTemplate = ({ variant, inverted, titleOnImage, card }) => (
 
       {/* Title */}
       {!titleOnImage || !card.hasImage ? (
-        <Card.Header>
-          <a href={card.href}>{card.title}</a>
-        </Card.Header>
+        <Card.Header>{card.title}</Card.Header>
       ) : (
         ''
       )}
 
-      {/* Decription */}
+      {/* Description */}
       <Card.Description>{card.description}</Card.Description>
     </Card.Content>
 
@@ -108,21 +106,12 @@ const CardTemplate = ({ variant, inverted, titleOnImage, card }) => (
 );
 
 const CardImage = (card) => (
-  <div className="image-with-title">
-    <Image
-      as="a"
-      href={card.href}
-      src={card.imgUrl}
-      wrapped
-      ui={false}
-      alt="card image"
-    />
+  <a href={card.href} className={'image'}>
+    <Image src={card.imgUrl} ui={false} alt="card image" />
     <div className="gradient">
-      <Card.Header>
-        <a href={card.href}>{card.title}</a>
-      </Card.Header>
+      <Card.Header>{card.title}</Card.Header>
     </div>
-  </div>
+  </a>
 );
 
 const MetaRight = (args) => (
@@ -213,7 +202,7 @@ CardGrid.args = {
       fluid: true,
     },
     {
-      title: 'State of Europe\'s environment',
+      title: "State of Europe's environment",
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: false,
@@ -272,7 +261,7 @@ FluidGrid.args = {
       fluid: true,
     },
     {
-      title: 'State of Europe\'s environment',
+      title: "State of Europe's environment",
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: false,
@@ -323,7 +312,6 @@ function CarouselCardsContent({
   inverted,
   settings,
   cards,
-  ...rest
 }) {
   const slider = React.useRef(null);
   return (
@@ -382,7 +370,7 @@ CarouselCards.args = {
   },
   cards: [
     {
-      title: 'State of Europe\'s environment',
+      title: "State of Europe's environment",
       meta: 'March 20, 2022.',
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
