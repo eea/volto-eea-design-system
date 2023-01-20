@@ -9,7 +9,7 @@
 @keyContentListGap:  @largeGap;
 
 /* Item */
-@keyContentItemColor : @japaneseIndigo;
+@keyContentItemColor : @blue-grey-6;
 @mobileKeyContentItemFontSize : 1rem;
 @computerKeyContentItemFontSize: 1.25rem;
 @keyContentItemMarginLeft : @hugeGap;
@@ -20,5 +20,5 @@
 @keyContentListBulletFontSize : 3rem;
 
 /* Colored Title */
-@keyContentColoredTitleColor : @darkCyan;
+@keyContentColoredTitleColor : @secondaryColor;
 @keyContentTitleMarginLeft : 2.8rem;

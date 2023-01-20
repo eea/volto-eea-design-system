@@ -6,35 +6,9 @@
        Element
 --------------------*/
 
-
-
 /* Button */
 @buttonBorder: @relative2px solid;
 @buttonDisabledOpacity: 1;
-
-/* Primary Button */
-@primaryButtonColor: @primaryColor;
-@primaryButtonColorHover: @darkMidnightBlue;
-@primaryButtonBackgroundActive: @mediumPersianBlue;
-@primaryButtonDisabledBackground: @midBlue;
-
-/* Secondary Button */
-@secondaryButtonBackground: transparent;
-@secondaryButtonColor: @darkMidnightBlue;
-@secondaryButtonColorHover : @white;
-@secondaryBorder: @buttonBorder @darkMidnightBlue;
-@secondaryBorderHover: @buttonBorder @darkMidnightBlue;
-@secondaryButtonDisabledColor: @weldonBlue;
-
-/* Secondary Button Inverted */
-@secondaryButtonInvertedColor: @white;
-@secondaryButtonInvertedColorHover: @darkMidnightBlue;
-
-/* Action Button */
-@actionButtonColor: @white;
-@actionButtonBackground: @darkCyan;
-@actionButtonBackgroundHover: #2E6173;
-@actionButtonBackgroundActive: @pineGreen;
 
 /* Text Button */
 @textButtonBackground: transparent;
@@ -50,7 +24,7 @@
 
 @verticalMargin: 0.25em;
 @horizontalMargin: 0.25em;
-@backgroundColor: @silverGray;
+@backgroundColor: @grey-2;
 @backgroundImage: none;
 @background: @backgroundColor @backgroundImage;
 @lineHeight: 1em;
@@ -126,7 +100,7 @@
 --------------------*/
 
 /* Hovered */
-@hoverBackgroundColor: @midGray;
+@hoverBackgroundColor: @grey-3;
 @hoverBackgroundImage: @backgroundImage;
 @hoverBoxShadow: @boxShadow;
 @hoverColor: @hoveredTextColor;

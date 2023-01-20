@@ -147,7 +147,7 @@
 
 /* Colors */
 @globalLabelColor: @white;
-@lowImportanceBackground: @deepBlue;
+@lowImportanceBackground: @blue-grey-5;
 @mediumImportanceBackground: #346F83;
 @highImportanceBackground: #005293;
 @highlightImportanceBackground: #009591;

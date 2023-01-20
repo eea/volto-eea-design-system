@@ -23,12 +23,12 @@
 @timelineLabelFontSize     : 0.875rem;
 
 /* Line */
-@timelineLineBorderLeft    : @2px solid @silverGray;
+@timelineLineBorderLeft    : @2px solid @borderColor;
 
 /* Colors */
 @timelineBlue   : @blue;
 @timelineGreen  : @green;
-@timelineGrey   : @midGray;
+@timelineGrey   : @grey-3;
 @timelineRed    : @red;
 @timelineOrange : @orange;
 @timelineYellow : @yellow;

@@ -138,7 +138,7 @@
 .tabs-block {
   .border-left {
     border-right: none !important;
-    border-left: 0.0625rem solid @midGray !important;
+    border-left: 0.0625rem solid @darkBorderColor !important;
 
     .item.active {
       border-right: none !important;
@@ -153,7 +153,7 @@
 
   .border-top {
     border: none !important;
-    border-top: 0.0625rem solid @midGray !important;
+    border-top: 0.0625rem solid @darkBorderColor !important;
 
     &::before {
       border-top: none !important;

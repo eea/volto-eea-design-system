@@ -10,15 +10,15 @@
 /* Icon Wrapper  */
 @languageLabeledIconIconWrapperFontSize : 0.875rem;
 @languageLabeledIconIconWrapperFontWeight : 400;
-@languageLabeledIconIconWrapperColor : @deepBlue;
+@languageLabeledIconIconWrapperColor : @blue-grey-5;
 
 /* Icon  */
-@languageLabeledIconIconWrapperIconColor: @mediumPersianBlue;
+@languageLabeledIconIconWrapperIconColor: @blue-4;
 @languageLabeledIconIconWrapperIconMarginRight: 0.25rem;
 @languageLabeledIconIconWrapperIconFontSize: 1.5rem;
 
 /* Label  */
-@languageLabeledIconLabelColor: @deepBlue;
+@languageLabeledIconLabelColor: @blue-grey-5;
 @languageLabeledIconLabelFontSize: 0.875rem;
 @languageLabeledIconLabelFontWeight: 400;
 
@@ -31,11 +31,11 @@
 
 /* List  */
 @languageLabeledIconLabelUlMargin:0;
-@languageLabeledIconLabelUlColor: @japaneseIndigo;
+@languageLabeledIconLabelUlColor: @blue-grey-6;
 @languageLabeledIconLabelUlPadding: 0.25rem;
 
 /* List Item  */
 @languageLabeledIconLabelUlLiPadding: 0.125rem 0.313rem;
 @languageLabeledIconLabelUlLiColor: @white;
-@languageLabeledIconLabelUlLiBackgroundColor: @japaneseIndigo;
+@languageLabeledIconLabelUlLiBackgroundColor: @blue-grey-6;
 @languageLabeledIconLabelUlLiSpanFontWeight: 700;
