@@ -203,9 +203,11 @@ CardGrid.args = {
     },
     {
       title: "State of Europe's environment",
+      imgUrl:
+        'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-      hasImage: false,
+      hasImage: true,
       meta: 'Article',
       metaRight: '30/07/2022',
       href: '/#',
@@ -262,9 +264,11 @@ FluidGrid.args = {
     },
     {
       title: "State of Europe's environment",
+      imgUrl:
+        'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-      hasImage: false,
+      hasImage: true,
       meta: 'Article',
       metaRight: '30/07/2022',
       href: '/#',
