@@ -2,9 +2,9 @@
             Footer
 *******************************/
 
-/* @footerBackgroundGrandient: linear-gradient(220.4deg, #009591 8.29%, #2E3E4C 56.3%, #212D38 89.06%); */
-@mobileFooterBackgroundGrandient: linear-gradient(220.4deg, @green-5 8.29%, @blue-grey-6 56.3%, #212D38 89.06%);
-@computerFooterBackgroundGrandient: linear-gradient(212.33deg, @green-5 6.78%, #212D38 69.54%, #212D38 98.23%);
+/* @footerBackgroundGradient: linear-gradient(220.4deg, #009591 8.29%, #2E3E4C 56.3%, #212D38 89.06%); */
+@mobileFooterBackgroundGradient: linear-gradient(220.4deg, @green-5 8.29%, @blue-grey-6 56.3%, #212D38 89.06%);
+@computerFooterBackgroundGradient: linear-gradient(212.33deg, @green-5 6.78%, #212D38 69.54%, #212D38 98.23%);
 
 /* Titles */
 @footerTitleFontWeight      : @font-weight-7;
