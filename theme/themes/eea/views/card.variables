@@ -6,7 +6,7 @@
          View
 --------------------*/
 
-@cardBorder: 1px solid @midGray;
+@cardBorder: 1px solid @darkBorderColor;
 @cardColor: @tertiaryColor;
 @background: @white;
 
@@ -115,8 +115,8 @@
 @headerLinkColor: @headerColor;
 @headerLinkHoverColor: @linkHoverColor;
 
-@metaLinkColor: @deepBlue;
-@metaLinkHoverColor: @deepBlue;
+@metaLinkColor: @linkColor;
+@metaLinkHoverColor: @linkHoverColor;
 
 /* Description */
 @descriptionDistance: 0;
@@ -331,9 +331,9 @@
 @carouselDotsFontSize: 0.75rem;
 @carouselDotsBorderRadius: 50%;
 @carouselDotsOpacity: 1;
-@carouselDotsBorder: 1px solid @darkCerulean;
+@carouselDotsBorder: 1px solid @primaryColor;
 @carouselDotsBackgroundColor: @white;
-@carouselDotsActiveBackgroundColor: @darkCerulean;
+@carouselDotsActiveBackgroundColor: @primaryColor;
 @mobileCarouselDotsWidth: 0.875rem;
 @mobileCarouselDotsHeight: 0.875rem;
 

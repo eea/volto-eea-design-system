@@ -26,7 +26,7 @@
 /* Divider */
 @dividerSpacing: @5px;
 @dividerOpacity: 1;
-@dividerColor: @deepBlue;
+@dividerColor: @blue-grey-5;
 
 @dividerSize: @relativeSmall;
 @dividerVerticalAlign: baseline;

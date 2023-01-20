@@ -29,7 +29,7 @@
 ---------------*/
 
 /* Table Row */
-@rowBorder: 1px solid @midGray;
+@rowBorder: 1px solid @darkBorderColor;
 
 /* Table Cell */
 @cellVerticalPadding: @relativeMini;
@@ -44,7 +44,7 @@
 @headerBackground: @white;
 @headerAlign: inherit;
 @headerVerticalAlign: inherit;
-@headerColor: @deepBlue;
+@headerColor: @blue-grey-5;
 @headerVerticalPadding: @relativeSmall;
 @headerHorizontalPadding: @cellHorizontalPadding;
 @headerFontStyle: none;

@@ -54,20 +54,20 @@
     Brand Colors
 --------------------*/
 
-@primaryColor         : @darkCerulean;
+@primaryColor         : @blue-5;
 @primaryColorCSSVar   : var(--text-color-primary, @primaryColor);
-@secondaryColor       : @pineGreen;
+@secondaryColor       : @green-5;
 @secondaryColorCSSVar : var(--text-color-secondary, @secondaryColor);
-@tertiaryColor        : @deepBlue;
+@tertiaryColor        : @blue-grey-5;
 @tertiaryColorCSSVar  : var(--text-color-tertiary, @tertiaryColor);
 
-@lightPrimaryColor    : @mediumPersianBlue;
-@lightSecondaryColor  : @darkCyan;
-@lightTertiaryColor   : @UCLABlue;
+@lightPrimaryColor    : @blue-4;
+@lightSecondaryColor  : @green-4;
+@lightTertiaryColor   : @blue-grey-4;
 
-@darkPrimaryColor     : @darkMidnightBlue;
-@darkSecondaryColor   : @bottleGreen;
-@darkTertiaryColor    : @japaneseIndigo;
+@darkPrimaryColor     : @blue-6;
+@darkSecondaryColor   : @green-6;
+@darkTertiaryColor    : @blue-grey-6;
 
 /*--------------
   Page Heading
@@ -335,44 +335,13 @@
       Site Colors
 --------------------*/
 
-/*---  EEA Colors  ---*/
-
-// Green Colors - Darker to lighter
-@bottleGreen      : #00665A;
-@pineGreen        : #007B6C;
-@darkCyan         : #00928F;
-@pearlAqua        : #74CBC8;
-@powderBlue       : #AEDFE8;
-
-// Blue Colors - Darker to lighter
-@darkMidnightBlue   : #0A3D61;
-@darkCerulean       : #004B7F;
-@mediumPersianBlue  : #0065A4;
-@steelBlue          : #478EA5;
-@midBlue            : #75C9DB;
-
-// Secondary Colors - Darker to lighter
-@japaneseIndigo   : #2E3E4C;
-@deepBlue         : #3D5265;
-@UCLABlue         : #54728C;
-@weldonBlue       : #7495B2;
-@lightSteelBlue   : #ACCAE5;
-
-//Gray Colors
-@black            : #000000;
-@oldSilver        : #808285;
-@midGray          : #BCBEC0;
-@silverGray       : #E6E7E8;
-@white            : #FFFFFF;
-
-
 /*---  Colors  ---*/
 @orange           : #FF9933;
 @yellow           : #F2EB49;
 @olive            : #78AB66;
-@green            : @pineGreen;
+@green            : @green-5;
 @teal             : #00928F;
-@blue             : @darkCerulean;
+@blue             : @blue-5;
 @violet           : #6667AB;
 @purple           : #A530B8;
 @pink             : #F255D0;
@@ -463,12 +432,12 @@
 @sidebarToggleButtonHighlightColor: @grey;
 
 /*--- Progress Colors ---*/
-@progressBarFrom0to30    : @midBlue;
-@progressBarFrom30to40   : @mediumPersianBlue;
-@progressBarFrom40to60   : @mediumPersianBlue;
-@progressBarFrom60to70   : @pineGreen;
-@progressBarFrom70to90   : @pineGreen;
-@progressBarFrom90to100  : @bottleGreen;
+@progressBarFrom0to30    : @blue-0;
+@progressBarFrom30to40   : @blue-4;
+@progressBarFrom40to60   : @blue-4;
+@progressBarFrom60to70   : @green-5;
+@progressBarFrom70to90   : @green-5;
+@progressBarFrom90to100  : @green-6;
 
 /*-------------------
      Alpha Colors
@@ -641,7 +610,9 @@
 
 @circularRadius                : 50%;
 
-@borderColor               : @silverGray;
+@borderColor               : @grey-2;
+@lightBorderColor          : var(--light-border-color, @grey-1);
+@darkBorderColor           : var(--dark-border-color, @grey-3);
 @strongBorderColor         : rgba(34, 36, 38, 0.22);
 @internalBorderColor       : rgba(34, 36, 38, 0.1);
 @selectedBorderColor       : rgba(34, 36, 38, 0.35);

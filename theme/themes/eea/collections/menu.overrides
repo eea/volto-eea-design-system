@@ -313,7 +313,7 @@
   bottom: @1px;
   width: -moz-available;
   width: -webkit-fill-available;
-  border-top: 1px solid @midGray;
+  border-top: 1px solid @grey-3;
   content: ' ';
 }
 

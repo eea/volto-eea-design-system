@@ -139,7 +139,7 @@
 @subsiteDividerHeight                 : 110%;
 @subsiteDividerWidth                  : 1px;
 @subsiteDividerTopPosition            : 50%;
-@subsiteDividerColor                  : @darkCyan;
+@subsiteDividerColor                  : @secondaryColor;
 @mobileSubsiteFontSize                : unit(@h6, em);
 @tabletSubsiteFontSize                : unit(@h4, em);
 @computerSubsiteFontSize              : unit(@h2, em);
@@ -152,7 +152,7 @@
 @mobileActionsBoxWidth: 44px;
 @tabletActionsBoxWidth: 66px;
 @computerActionsBoxWidth: 72px;
-@burgerActionBackgroundColor: @darkMidnightBlue;
+@burgerActionBackgroundColor: @blue-6;
 
 /* Mega menu and Search popup */
 @mobilePopupMarginTop   : 5vh;
@@ -161,7 +161,7 @@
 
 /* Mega menu */
 @mobileMegaMenuWidth: 94%;
-@megaMenuBackgroundColor: @darkMidnightBlue;
+@megaMenuBackgroundColor: @blue-6;
 @megaMenuTextDisplay: flex;
 @megaMenuTextColor: @white;
 @megaMenuTextHoverDecoration: underline;

@@ -22,8 +22,8 @@
 @mobileMenuNavItemLineHeight: 1.25;
 
 /* Checkbox */
-@checkboxBorderUnchecked: 1px solid @oldSilver;
-@checkboxBorderChecked: 1px solid @darkCerulean;
+@checkboxBorderUnchecked: 1px solid @grey-4;
+@checkboxBorderChecked: 1px solid @blue-5;
 @checkboxColor: @white;
 @checkboxBoxShadow: none;
 
