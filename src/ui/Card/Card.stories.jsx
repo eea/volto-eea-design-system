@@ -216,6 +216,39 @@ CardGrid.args = {
   ],
 };
 
+export const ImageGrid = GridTemplate.bind({});
+ImageGrid.args = {
+  titleOnImage: true,
+  variant: 'default',
+  inverted: false,
+  cards: [
+    {
+      title: 'Nature',
+      imgUrl:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      hasImage: true,
+      href: '/#',
+      fluid: true,
+    },
+    {
+      title: 'Economy and resources',
+      imgUrl:
+        'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
+      hasImage: true,
+      href: '/#',
+      fluid: true,
+    },
+    {
+      title: "State of Europe's environment",
+      imgUrl:
+        'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
+      hasImage: true,
+      href: '/#',
+      fluid: true,
+    },
+  ],
+};
+
 const FluidGridTemplate = (args) => (
   <Container>
     <div className="fluid-card-row">

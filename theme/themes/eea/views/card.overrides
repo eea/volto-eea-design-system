@@ -276,11 +276,10 @@
 }
 
 .gradient .header {
-  font-size: var(--image-header-font-size, @imageTitleFontSize);
+  font-size: var(--image-header-font-size, @imageTitleMobileFontSize);
   color: @imageTitleColor;
   font-weight: @imageTitleFontWeight;
   line-height: @imageTitleLineHeight;
-  text-transform: @imageTitleTextTransform;
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
@@ -288,7 +287,7 @@
     padding-block: @imageTitlePaddingBlock;
   }
   .gradient .header {
-    --image-header-font-size: @font-size-7;
+    --image-header-font-size: @imageTitleFontSize;
   }
 }
 

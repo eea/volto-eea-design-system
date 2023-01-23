@@ -267,12 +267,12 @@
         Image with title
 *******************************/
 @imageTitleColor: @white;
-@imageTitleFontSize: @font-size-4;
+@imageTitleFontSize: @h2;
+@imageTitleMobileFontSize: @mobileH1;
 @imageTitleFontWeight: @font-weight-7;
 @imageTitleLineHeight: @font-lineheight-0;
 @imageTitlePadding: @rem-space-6;
 @imageTitlePaddingBlock: @rem-space-2;
-@imageTitleTextTransform: none;
 
 /*******************************
           Rounded Card
