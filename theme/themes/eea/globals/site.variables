@@ -3,6 +3,7 @@
 *******************************/
 
 @import '@eeacms/volto-eea-design-system/../theme/themes/eea/tokens/tokens';
+@import '@eeacms/volto-eea-design-system/../theme/themes/eea/globals/mixins';
 
 /*-------------------
        Fonts
@@ -209,7 +210,7 @@
 
 @linkColor           : @blue-4;
 @linkHoverColor      : @blue-5;
-@linkVisitedColor    : @purple-5;
+@linkVisitedColor    : @purple-4;
 @linkActiveColor     : @blue-6;
 @linkUnderline       : none;
 @linkHoverUnderline  : @linkUnderline;

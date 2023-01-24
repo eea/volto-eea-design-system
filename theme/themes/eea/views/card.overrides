@@ -14,6 +14,7 @@
 
 /* Cards must have same height */
 .ui.card {
+  min-width: @minWidth;
   height: 100%;
   text-align: var(--text-align, @cardTextAlign);
   background-color: var(--card-background-color, @background);
@@ -24,6 +25,7 @@
   margin-left: @cardMetaDateMarginLeft;
 }
 
+.ui.cards > .card:not(.rounded) > .image,
 .ui.card:not(.rounded) > .image {
   overflow: @cardImageOverflow;
   height: @cardImageHeight;
@@ -246,6 +248,46 @@
 
   .ui.card {
     margin: 0;
+  }
+}
+
+/*******************************
+      Image with title
+*******************************/
+// Adding the default image css for image inside image-with-title
+.ui.cards > .card > .image {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  padding: 0;
+  background: transparent;
+}
+
+
+.card .gradient {
+  display: flex;
+  align-items: end;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  padding: @imageTitlePadding;
+  .image-overlay-gradient();
+}
+
+.gradient .header {
+  font-size: var(--image-header-font-size, @imageTitleMobileFontSize);
+  color: @imageTitleColor;
+  font-weight: @imageTitleFontWeight;
+  line-height: @imageTitleLineHeight;
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .card .gradient {
+    padding-block: @imageTitlePaddingBlock;
+  }
+  .gradient .header {
+    --image-header-font-size: @imageTitleFontSize;
   }
 }
 

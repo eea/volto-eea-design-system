@@ -11,7 +11,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: @mobileFooterBackgroundGrandient;
+  background: @mobileFooterBackgroundGradient;
   color: @white;
 
   .footer-wrapper {
@@ -78,7 +78,7 @@ footer .theme-sites {
   display: flex;
   justify-content: @mobileSocialJustifyContent;
   margin: @mobileSocialIconsMargin;
-  
+
   a {
     color: @socialIconColor;
 
@@ -132,7 +132,7 @@ footer .footer-wrapper .menu {
 
 @media only screen and (min-width: @tabletBreakpoint) {
   footer {
-    background: @computerFooterBackgroundGrandient;
+    background: @computerFooterBackgroundGradient;
   }
   footer .theme-sites {
     .header {
@@ -246,11 +246,11 @@ footer .footer-wrapper .menu {
   }
 
   .footer .footer-wrapper .menu {
-  
+
     a {
       font-size: @computerMenuFontSize;
     }
-  } 
+  }
 }
 
 .loadUIOverrides();

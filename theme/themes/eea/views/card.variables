@@ -22,6 +22,7 @@
 @minHeight: 0px;
 @padding: 0em;
 @width: 290px;
+@minWidth: 250px;
 @borderWidth: 1px;
 @borderShadow: 0px 0px 0px @borderWidth @solidBorderColor;
 @boxShadow: @eeaGlobalShadow;
@@ -261,6 +262,17 @@
 @tertiaryCardColor: @white;
 @invertedTertiaryCardColor: @tertiaryColor;
 @invertedTertiaryCardBackgroundColor: @white;
+
+/*******************************
+        Image with title
+*******************************/
+@imageTitleColor: @white;
+@imageTitleFontSize: @h2;
+@imageTitleMobileFontSize: @mobileH1;
+@imageTitleFontWeight: @font-weight-7;
+@imageTitleLineHeight: @font-lineheight-0;
+@imageTitlePadding: @rem-space-6;
+@imageTitlePaddingBlock: @rem-space-4;
 
 /*******************************
           Rounded Card
