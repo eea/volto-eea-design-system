@@ -55,7 +55,7 @@
 @labelRight: auto;
 @labelBottom: auto;
 @labelOffset: (@labelHeight - 1.3em);
-@labelColor: @textColor;
+@labelColor: @textColorCSSVar;
 @labelTextShadow: none;
 @labelFontWeight: @bold;
 @labelTextAlign: center;
@@ -72,12 +72,12 @@
 @indicatingFifthColor: @progressBarFrom70to90;
 @indicatingSixthColor: @progressBarFrom90to100;
 
-@indicatingFirstLabelColor: @textColor;
-@indicatingSecondLabelColor: @textColor;
-@indicatingThirdLabelColor: @textColor;
-@indicatingFourthLabelColor: @textColor;
-@indicatingFifthLabelColor: @textColor;
-@indicatingSixthLabelColor: @textColor;
+@indicatingFirstLabelColor: @textColorCSSVar;
+@indicatingSecondLabelColor: @textColorCSSVar;
+@indicatingThirdLabelColor: @textColorCSSVar;
+@indicatingFourthLabelColor: @textColorCSSVar;
+@indicatingFifthLabelColor: @textColorCSSVar;
+@indicatingSixthLabelColor: @textColorCSSVar;
 
 /*-------------------
         States

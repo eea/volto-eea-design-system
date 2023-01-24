@@ -104,7 +104,7 @@
 @headerLinkColor: @headerColor;
 @headerLinkHoverColor: @linkHoverColor;
 @metaLinkColor: @lightTextColor;
-@metaLinkHoverColor: @textColor;
+@metaLinkHoverColor: @textColorCSSVar;
 @contentLinkColor: '';
 @contentLinkHoverColor: '';
 @contentLinkTransition: color @defaultDuration @defaultEasing;
@@ -184,7 +184,7 @@
 @tabletDefaultItemWidth: 35%;
 
 @defaultItemBackgroundColor: @white;
-@defaultItemColor: @blue-grey-5;
+@defaultItemColor: @tertiaryColor;
 
 /* Extra */
 @mobileDefaultItemExtraMarginBottom: 1.5rem;

@@ -109,7 +109,8 @@
 @inputColor: @textColor;
 //@inputPlaceholderColor: lighten(@inputColor, 75);
 @inputPlaceholderColor: #B8C6C8;
-@inputPlaceholderFocusColor: lighten(@inputColor, 45);
+// Breaks when the lightened var is inputColor
+@inputPlaceholderFocusColor: lighten(@textColor, 45);
 
 /* Line Height Default For Inputs in Browser (Descenders are 17px at 14px base em) */
 @inputLineHeight: unit((17 / 14), em);
@@ -623,7 +624,7 @@
 @solidBorderColor          : #D4D4D5;
 @solidSelectedBorderColor  : #BCBDBD;
 
-@whiteBorderColor              : rgba(255, 255, 255, 0.1);
+@whiteBorderColor              : @grey-0;
 @selectedWhiteBorderColor      : rgba(255, 255, 255, 0.8);
 
 @solidWhiteBorderColor         : #555555;

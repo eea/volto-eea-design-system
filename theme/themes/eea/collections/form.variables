@@ -25,7 +25,7 @@
 @labelFontSize: @14px;
 @labelFontWeight: normal;
 @labelTextTransform: none;
-@labelColor: @textColor;
+@labelColor: @textColorCSSVar;
 @formErrorLabelColor: @white;
 
 /* Input */
@@ -33,10 +33,10 @@
 @inputWidth: 100%;
 @inputFontSize: 1em;
 @inputPadding: (@inputVerticalPadding + ((1em - @inputLineHeight) / 2)) @inputHorizontalPadding;
-@inputBorderColor : rgba(0, 0, 0, 0.32);
+@inputBorderColor : @darkBorderColor;
 @inputBorder: 1px solid @inputBorderColor;
 @inputBorderRadius: @absoluteBorderRadius;
-@inputColor: @textColor;
+@inputColor: @textColorCSSVar;
 @inputTransition:
   color @defaultDuration @defaultEasing,
   border-color @defaultDuration @defaultEasing
@@ -90,7 +90,7 @@
 /* Input Focus */
 @inputFocusBackground: @inputBackground;
 @inputFocusBorderColor: @focusedFormBorderColor;
-@inputFocusColor: @textColor;
+@inputFocusColor: @textColorCSSVar;
 @inputFocusBoxShadow: @inputFocusPointerSize 0em 0em 0em @selectedBorderColor inset;
 @inputFocusBorderRadius: @inputBorderRadius;
 
@@ -205,7 +205,7 @@
 --------------------*/
 
 @fieldWrapperLabelBackground: transparent;
-@fieldWrapperLabelColor: @textColor;
+@fieldWrapperLabelColor: @textColorCSSVar;
 @fieldWrapperLabelPadding: unit((@inputVerticalPadding + @1px), rem) 0;
 
 

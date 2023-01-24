@@ -113,7 +113,7 @@
 @basicBackground: none @white;
 @basicBorderWidth: 1px;
 @basicBorder: @basicBorderWidth solid @borderColor;
-@basicColor: @textColor;
+@basicColor: @textColorCSSVar;
 @basicBoxShadow: none;
 
 @basicHoverBackground: @basicBackground;

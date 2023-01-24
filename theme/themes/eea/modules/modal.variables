@@ -64,7 +64,7 @@
 /* Inner Close Position (Tablet/Mobile) */
 @innerCloseTop: (@headerVerticalPadding - @closeHitBoxOffset + (@lineHeight - 1em));
 @innerCloseRight: 1rem;
-@innerCloseColor: @textColor;
+@innerCloseColor: @textColorCSSVar;
 
 /* Mobile Positions */
 @mobileHeaderPadding: 0.75rem 1rem;
@@ -114,7 +114,7 @@
 @basicModalCloseRight: 1.5rem;
 @basicInnerCloseColor: @white;
 
-@basicInvertedModalColor: @textColor;
+@basicInvertedModalColor: @textColorCSSVar;
 @basicInvertedModalHeaderColor: @darkTextColor;
 
 /* Top Aligned */

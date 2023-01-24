@@ -10,8 +10,8 @@
 /* Label */
 @newTabLabeledIconLabelWidth: 100%;
 @newTabLabeledIconLabelFontSize: 0.875rem;
-@newTabLabeledIconLabelColor: @blue-grey-5;
-@newTabLabeledIconColor: @blue-4;
+@newTabLabeledIconLabelColor: @tertiaryColor;
+@newTabLabeledIconColor: @lightPrimaryColor;
 
 /* Icon Wrapper */
 @newTabLabeledIconIconWrapperWidth: 100%;

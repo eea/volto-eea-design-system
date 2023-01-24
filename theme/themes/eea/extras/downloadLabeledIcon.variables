@@ -10,7 +10,7 @@
 /* Label */
 @downloadLabeledIconLabelWidth: 100%;
 @downloadLabeledIconLabelFontSize: 0.875rem;
-@downloadLabeledIconLabelColor: @blue-grey-5;
+@downloadLabeledIconLabelColor: @tertiaryColorCSSVar;
 
 /* Wrapper */
 @downloadLabeledIconWrapperWidth: 100%;
@@ -20,10 +20,10 @@
 @downloadLabeledIconIconFontSize: 1.563rem;
 @downloadLabeledIconWrapperIconHeight: 1.25rem;
 @downloadLabeledIconIconWidth: 1.25rem;
-@downloadLabeledIconColor: @blue-4;
+@downloadLabeledIconColor: @lightPrimaryColor;
 
 /* Link Wrapper */
-@downloadLabeledIconLinkWrapperBackgroundColor: #f9f9f9;
+@downloadLabeledIconLinkWrapperBackgroundColor: @grey-1;
 @downloadLabeledIconLinkWrapperZIndex: 1;
 @downloadLabeledIconLinkWrapperWidth: 100%;
 
@@ -33,7 +33,7 @@
 /* List */
 @downloadLabeledIconUlMargin: 0.25rem 0;
 @downloadLabeledIconUlPaddingInlineStart: 0.25rem 0px;
-@downloadLabeledIconLiHover: @blue-grey-6;
+@downloadLabeledIconLiHover: @darkTertiaryColor;
 
 /* Link */
 @downloadLabeledIconALinkFontWeight: 700;
@@ -41,5 +41,5 @@
 @downloadLabeledIconLinkIconFontSize: 1rem;
 @downloadLabeledIconLinkIconPadding: 0.125rem 0.875rem;
 @downloadLabeledIconLinkIconLineHeight: 1.25rem;
-@downloadLabeledIconALinkColor: @blue-grey-6;
-@downloadLabeledIconALinkColorHover: @white;
+@downloadLabeledIconALinkColor: @darkTertiaryColor;
+@downloadLabeledIconALinkColorHover: @grey-0;

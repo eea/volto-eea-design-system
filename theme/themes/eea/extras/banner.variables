@@ -86,5 +86,5 @@
 @sharePopupFontWeight: 500;
 @sharePopupLineHeight: 1rem;
 // Actions
-@sharePopupActionsIconColor: @secondaryColor;
+@sharePopupActionsIconColor: @secondaryColorCSSVar;
 @sharePopupActionsIconMargin: 0;

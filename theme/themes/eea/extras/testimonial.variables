@@ -14,7 +14,7 @@
 @mobileTestimonialContentTitleMarginHorizontal : 0;
 @tabletTestimonialContentTitleMarginHorizontal : 3.125rem;
 @testimonialContentTitleFontWeight             : 500;
-@testimonialContentTitleColor                  : @blue-grey-5;
+@testimonialContentTitleColor                  : @tertiaryColorCSSVar;
 
 /* Image */
 @mobileCardImageWidth  : 100px;

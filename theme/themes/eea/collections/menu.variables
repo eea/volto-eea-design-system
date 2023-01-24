@@ -30,7 +30,7 @@
   color @defaultDuration @defaultEasing
 ;
 @itemFontWeight: @normal;
-@itemTextColor: var(--text-color, @blue-grey-5);
+@itemTextColor: var(--text-color, @tertiaryColor);
 
 /* Divider */
 @dividerSize: 1px;
@@ -256,7 +256,7 @@
 
 @secondaryPointingHoverTextColor: var(--text-color-hover, @textColor);
 
-@secondaryPointingActiveBorderColor: @secondaryColor;
+@secondaryPointingActiveBorderColor: @borderColorSecondaryCSSVar;
 @secondaryPointingActiveTextColor: @secondaryColor;
 @secondaryPointingActiveFontWeight: @normal;
 

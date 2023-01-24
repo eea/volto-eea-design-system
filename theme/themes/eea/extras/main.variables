@@ -23,7 +23,7 @@
 
 /* Checkbox */
 @checkboxBorderUnchecked: 1px solid @grey-4;
-@checkboxBorderChecked: 1px solid @blue-5;
+@checkboxBorderChecked: 1px solid @primaryColor;
 @checkboxColor: @white;
 @checkboxBoxShadow: none;
 

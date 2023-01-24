@@ -1,7 +1,7 @@
 /*******************************
             Dropdown
 *******************************/
-@dropdownTextColor: @textColor;
+@dropdownTextColor: @textColorCSSVar;
 
 // Pastanaga variable
 @inputFontWeight: normal;
@@ -153,7 +153,7 @@
 @selectVisibility: visible;
 @selectHeight: 38px;
 
-@selectionTextColor: @textColor;
+@selectionTextColor: @textColorCSSVar;
 
 @selectionTextUnderlayIconOpacity: @disabledOpacity;
 @selectionTextUnderlayColor: @inputPlaceholderFocusColor;

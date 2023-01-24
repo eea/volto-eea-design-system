@@ -9,7 +9,7 @@
 @keyContentListGap:  @largeGap;
 
 /* Item */
-@keyContentItemColor : @blue-grey-6;
+@keyContentItemColor : @darkTertiaryColor;
 @mobileKeyContentItemFontSize : 1rem;
 @computerKeyContentItemFontSize: 1.25rem;
 @keyContentItemMarginLeft : @hugeGap;

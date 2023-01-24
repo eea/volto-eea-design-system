@@ -331,7 +331,7 @@
 @carouselDotsFontSize: 0.75rem;
 @carouselDotsBorderRadius: 50%;
 @carouselDotsOpacity: 1;
-@carouselDotsBorder: 1px solid @primaryColor;
+@carouselDotsBorder: 1px solid @borderColorPrimaryCSSVar;
 @carouselDotsBackgroundColor: @white;
 @carouselDotsActiveBackgroundColor: @primaryColor;
 @mobileCarouselDotsWidth: 0.875rem;

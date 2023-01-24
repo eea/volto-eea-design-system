@@ -28,13 +28,13 @@
 --------------------*/
 
 @topSectionBackground                 : @grey-2;
-@topSectionItemColor                  : @blue-grey-6;
+@topSectionItemColor                  : @darkTertiaryColor;
 @topSectionItemFontWeight             : @bold;
 @topSectionItemFontSize               : @font-size-00;
 @mobileTopSectionItemFontSize         : @font-size-00;
 @tabletTopSectionItemFontSize         : @font-size-00;
 @topSectionZindex                     : @z-index-1;
-@dropdownColor                        : @blue-grey-6;
+@dropdownColor                        : @darkTertiaryColor;
 @mobileDropdownFontSize               : @font-size-00;
 @tabletDropdownFontSize               : @font-size-00;
 @dropdownFontWeight                   : @bold;
@@ -60,7 +60,7 @@
 @mobileDropdownMenuContentFontSize    : @font-size-00;
 @desktopDropdownMenuContentFontSize   : @font-size-00;
 @dropdownMenuItemColorHover           : @white;
-@dropdownMenuItemBackgroundColorHover : @blue-grey-6;
+@dropdownMenuItemBackgroundColorHover : @darkTertiaryColor;
 @dropdownMenuItemPadding              : @rem-space-050 @rem-space-5;
 @dropdownMenuFontSize                 : @font-size-00;
 
@@ -84,7 +84,7 @@
 @mobileThemeSitesMenuWidth            : 168px;
 @tabletThemeSitesMenuWidth            : 168px;
 @computerThemeSitesMenuWidth          : 225px;
-@themeSitesMenuSiteLinkColor          : @blue-grey-6;
+@themeSitesMenuSiteLinkColor          : @tertiaryColor;
 @themeSitesMenuSiteLinkFontWeight     : @normal;
 @mobileThemeSitesMenuLeft             : 0px;
 
@@ -117,15 +117,15 @@
 @computerLogoMarginTop                : @rem-space-5;
 
 /* Main menu */
-@mainMenuItemColor                    : @primaryColor;
+@mainMenuItemColor                    : @primaryColorCSSVar;
 @mainMenuItemInvertedColor            : @white;
 @mainMenuItemFontSize                 : ~"min(max(0.875rem, 1.5vw), 1.125rem)";
 @mainMenuItemFontWeight               : @font-weight-5;
 @mainMenuItemPadding                  : @rem-space-050 @rem-space-2;
-@mainMenuItemActiveColor              : @secondaryColor;
+@mainMenuItemActiveColor              : @secondaryColorCSSVar;
 @mainMenuItemBorder                   : 4px solid transparent;
-@mainMenuItemActiveBorder             : 4px solid @secondaryColor;
-@mainMenuInvertedItemActiveBorder     : 4px solid @white;
+@mainMenuItemActiveBorder             : 4px solid @borderColorSecondaryCSSVar;
+@mainMenuInvertedItemActiveBorder     : 4px solid @whiteBorderColor;
 @mainMenuItemAlignSelf                : flex-end;
 
 
@@ -139,7 +139,7 @@
 @subsiteDividerHeight                 : 110%;
 @subsiteDividerWidth                  : 1px;
 @subsiteDividerTopPosition            : 50%;
-@subsiteDividerColor                  : @secondaryColor;
+@subsiteDividerColor                  : @secondaryColorCSSVar;
 @mobileSubsiteFontSize                : unit(@h6, em);
 @tabletSubsiteFontSize                : unit(@h4, em);
 @computerSubsiteFontSize              : unit(@h2, em);
@@ -152,7 +152,7 @@
 @mobileActionsBoxWidth: 44px;
 @tabletActionsBoxWidth: 66px;
 @computerActionsBoxWidth: 72px;
-@burgerActionBackgroundColor: @blue-6;
+@burgerActionBackgroundColor: @darkPrimaryColor;
 
 /* Mega menu and Search popup */
 @mobilePopupMarginTop   : 5vh;
@@ -161,7 +161,7 @@
 
 /* Mega menu */
 @mobileMegaMenuWidth: 94%;
-@megaMenuBackgroundColor: @blue-6;
+@megaMenuBackgroundColor: @darkPrimaryColor;
 @megaMenuTextDisplay: flex;
 @megaMenuTextColor: @white;
 @megaMenuTextHoverDecoration: underline;
@@ -182,7 +182,7 @@
 @megaMenuListItemFontSize: @font-size-1;
 @megaMenuListItemFontWeight: @font-weight-4;
 @megaMenuListItemPadding: @rem-space-2 0;
-@megaMenuListItemActiveBorder: 4px solid #FFF;
+@megaMenuListItemActiveBorder: 4px solid @whiteBorderColor;
 @megaMenuListItemActivePadding: 8px;
 
 /* Topics */
@@ -203,7 +203,7 @@
 @megaMenuAccordionIconFontSize: @font-size-9;
 @megaMenuAccordionContentPadding: 0 0 @rem-space-5 0;
 @megaMenuAccordionTitleBorderBottom: 1px solid rgba(255, 255, 255, 0.25);
-@megaMenuAccordionActiveTitleBorderBottom: 1px solid @white;
+@megaMenuAccordionActiveTitleBorderBottom: 1px solid @whiteBorderColor;
 
 /* Menu item description */
 @tabletNavDescriptionFontSize: @font-size-1;
@@ -217,11 +217,11 @@
 
 /* Search box */
 @searchBoxPosition: absolute;
-@searchBoxBackgroundGradient : linear-gradient(13.69deg, @blue-5 1.17%, @secondaryColor 80%);
+@searchBoxBackgroundGradient : linear-gradient(13.69deg, @primaryColor 1.17%, @secondaryColor 80%);
 @searchBoxWrapperGap : 75px;
 @searchBoxFullSearchBackground: rgba(255, 255, 255, 0.1);
 @searchBoxFullSearchBoxShadow: 0 0 6px 0 rgba(0, 0, 0, 0.25);
-@searchBoxFullSearchBorder: 1px solid @white;
+@searchBoxFullSearchBorder: 1px solid @whiteBorderColor;
 @searchBoxFullSearchFontWeight: @bold;
 @searchBoxFullSearchTextColor: @white;
 @searchBoxFullSearchJustifyContent: center;

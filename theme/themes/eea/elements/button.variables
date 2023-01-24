@@ -217,7 +217,7 @@
 /* Basic */
 @basicBorderRadius: @borderRadius;
 @basicBorderSize: @2px;
-@basicTextColor: @textColor;
+@basicTextColor: @textColorCSSVar;
 @basicColoredBorderSize: @2px;
 
 @basicBackground: transparent none;
@@ -231,7 +231,7 @@
 @basicHoverBackground: #FFFFFF;
 @basicHoverTextColor: @hoveredTextColor;
 @basicHoverBoxShadow:
-        0px 0px 0px @basicBorderSize @textColor inset,
+        0px 0px 0px @basicBorderSize @textColorCSSVar inset,
         0px 0px 0px 0px @borderColor inset
 ;
 /* Basic Focus */

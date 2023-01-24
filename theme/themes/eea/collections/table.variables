@@ -18,7 +18,7 @@
   color @defaultDuration @defaultEasing
 ;
 @background: @white;
-@color: @textColor;
+@color: @textColorCSSVar;
 @borderWidth: 1px;
 @border: 0;
 @boxShadow: none;
@@ -36,15 +36,15 @@
 @cellHorizontalPadding: @relativeMini;
 @cellVerticalAlign: inherit;
 @cellTextAlign: center;
-@cellBorder: 1px solid @secondaryColor;
+@cellBorder: 1px solid @borderColorSecondaryCSSVar;
 
 /* Table Header */
-@headerBorder: 1px solid @secondaryColor;
+@headerBorder: 1px solid @borderColorSecondaryCSSVar;
 @headerDivider: none;
 @headerBackground: @white;
 @headerAlign: inherit;
 @headerVerticalAlign: inherit;
-@headerColor: @blue-grey-5;
+@headerColor: @tertiaryColor;
 @headerVerticalPadding: @relativeSmall;
 @headerHorizontalPadding: @cellHorizontalPadding;
 @headerFontStyle: none;
@@ -61,7 +61,7 @@
 @footerBackground: @white;
 @footerAlign: inherit;
 @footerVerticalAlign: middle;
-@footerColor: @textColor;
+@footerColor: @textColorCSSVar;
 @footerVerticalPadding: @cellVerticalPadding;
 @footerHorizontalPadding: @cellHorizontalPadding;
 @footerFontStyle: @normal;
@@ -140,7 +140,7 @@
 @warningColorHover: darken(@warningColor, 3);
 
 /* Active */
-@activeColor: @textColor;
+@activeColor: @textColorCSSVar;
 @activeBackgroundColor: #E0E0E0;
 @activeBoxShadow: @stateMarkerWidth 0px 0px @activeColor inset;
 
