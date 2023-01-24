@@ -833,7 +833,8 @@
   display: none;
 }
 
-#main #mega-menu .ui.accordion .title:first-child + .content {
+// hide content of accordion titles that are not active
+#main #mega-menu .ui.accordion .title:first-child + .content:not(.active) {
   display: none;
 }
 
