@@ -272,7 +272,7 @@
 @imageTitleFontWeight: @font-weight-7;
 @imageTitleLineHeight: @font-lineheight-0;
 @imageTitlePadding: @rem-space-6;
-@imageTitlePaddingBlock: @rem-space-2;
+@imageTitlePaddingBlock: @rem-space-4;
 
 /*******************************
           Rounded Card
