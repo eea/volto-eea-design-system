@@ -50,6 +50,20 @@ h1, h2, h3, h4, h5, h6, p, span, .header {
   --justify-content: space-evenly;
 }
 
+// background position utilities
+.has--bg--top {
+  background-position: top !important;
+}
+
+.has--bg--center {
+  background-position: center !important;
+}
+
+.has--bg--bottom {
+  background-position: bottom !important;
+}
+
+
 // Text utilities
 .bold { font-weight: @bold !important; }
 .underline { text-decoration: underline !important; }
@@ -70,7 +84,7 @@ h1, h2, h3, h4, h5, h6, p, span, .header {
 }
 
 // Borders
-.bordered { 
+.bordered {
   border-bottom: @border-size-1 solid !important;
   padding-bottom: @rem-space-2 !important;
 }
