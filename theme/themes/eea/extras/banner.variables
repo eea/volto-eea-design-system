@@ -2,7 +2,7 @@
             Page Banner
 *******************************/
 
-@bannerBackgroundColor   : @darkCyan;
+@bannerBackgroundColor   : @secondaryColor;
 
 /* Background Image */
 @imageBackgroundRepeat   : no-repeat;

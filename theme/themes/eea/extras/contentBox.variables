@@ -18,3 +18,4 @@
 /* Container */
 @contentBoxContainerMarginTop    : @bigGap;
 @contentBoxContainerMarginBottom : @bigGap;
+@contentBoxContainerZIndex : 1;
