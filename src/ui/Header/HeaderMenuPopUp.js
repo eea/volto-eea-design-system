@@ -237,7 +237,7 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
         <Link
           role="listitem"
           className="item"
-          to={element.url}
+          to={atAGlance.url}
           key={element['@id']}
         >
           A-Z Topics
