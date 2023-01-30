@@ -222,6 +222,11 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
     const atAGlance = element.items.find(
       (element) => element.title === 'At a glance',
     );
+    const inDepth = element.items.find(
+      (element) => element.url.indexOf('in-depth') !== -1,
+    );
+    // eslint-disable-next-line no-unused-expressions
+    inDepth ? (inDepth.nav_title = 'A-Z Topics') : '';
     content = (
       <List>
         {atAGlance &&
@@ -234,14 +239,15 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
               })}
             </React.Fragment>
           ))}
-        <Link
-          role="listitem"
-          className="item"
-          to={'/en/topics/in-depth'}
-          key={element['@id']}
-        >
-          A-Z Topics
-        </Link>
+        {inDepth && (
+          <React.Fragment key={inDepth.url}>
+            {renderMenuItem(inDepth, {
+              key: inDepth.url,
+              role: 'listitem',
+              className: 'item',
+            })}
+          </React.Fragment>
+        )}
       </List>
     );
   } else {
