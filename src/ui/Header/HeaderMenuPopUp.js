@@ -4,7 +4,6 @@ import { Container, Grid, List, Icon, Accordion } from 'semantic-ui-react';
 
 import { cloneDeep } from 'lodash';
 
-import { Link } from 'react-router-dom';
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
 const createColumns = (item, length, renderMenuItem) => {
