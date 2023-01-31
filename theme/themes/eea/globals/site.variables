@@ -55,20 +55,66 @@
     Brand Colors
 --------------------*/
 
-@primaryColor         : @darkCerulean;
+// 205 100% 25% - @darkCerulean
+@primaryColorHue        : var(--primary-color-h, 205);
+@primaryColorSaturation : var(--primary-color-s, 100%);
+@primaryColorLightness  : var(--primary-color-l, 25%);
+
+// 173 100% 24% - @pineGreen
+@secondaryColorHue        : var(--secondary-color-h, 173);
+@secondaryColorSaturation : var(--secondary-color-s, 100%);
+@secondaryColorLightness  : var(--secondary-color-l, 24%);
+
+// 208 25 32 - @deepBlue
+@tertiaryColorHue        : var(--tertiary-color-h, 208);
+@tertiaryColorSaturation : var(--tertiary-color-s, 25%);
+@tertiaryColorLightness  : var(--tertiary-color-l, 32%);
+
+// 203 100 32 - @mediumPersianBlue
+@lightPrimaryColorHue        : var(--light-primary-color-h, 203);
+@lightPrimaryColorSaturation : var(--light-primary-color-s, 100%);
+@lightPrimaryColorLightness  : var(--light-primary-color-l, 32%);
+
+// 179 100 29 - @darkCyan
+@lightSecondaryColorHue        : var(--light-secondary-color-h, 179);
+@lightSecondaryColorSaturation : var(--light-secondary-color-s, 100%);
+@lightSecondaryColorLightness  : var(--light-secondary-color-l, 29%);
+
+// 208 25 44 - @UCLABlue
+@lightTertiaryColorHue        : var(--light-tertiary-color-h, 208);
+@lightTertiaryColorSaturation : var(--light-tertiary-color-s, 25%);
+@lightTertiaryColorLightness  : var(--light-tertiary-color-l, 44%);
+
+// 205 81 21 - @darkMidnightBlue
+@darkPrimaryColorHue        : var(--dark-primary-color-h, 205);
+@darkPrimaryColorSaturation : var(--dark-primary-color-s, 81%);
+@darkPrimaryColorLightness  : var(--dark-primary-color-l, 21%);
+
+// 173 100 20 - @bottleGreen
+@darkSecondaryColorHue        : var(--dark-secondary-color-h, 173);
+@darkSecondaryColorSaturation : var(--dark-secondary-color-s, 100%);
+@darkSecondaryColorLightness  : var(--dark-secondary-color-l, 20%);
+
+// 208 25 24 - @japaneseIndigo
+@darkTertiaryColorHue        : var(--dark-tertiary-color-h, 208);
+@darkTertiaryColorSaturation : var(--dark-tertiary-color-s, 25%);
+@darkTertiaryColorLightness  : var(--dark-tertiary-color-l, 24%);
+
+@primaryColor   : var(--primary-color, hsl(@primaryColorHue, @primaryColorSaturation, @primaryColorLightness));
+@secondaryColor : var(--secondary-color, hsl(@secondaryColorHue, @secondaryColorSaturation, @secondaryColorLightness));
+@tertiaryColor  : var(--tertiary-color, hsl(@tertiaryColorHue, @tertiaryColorSaturation, @tertiaryColorLightness));
+
+@lightPrimaryColor    : var(--light-primary-color, hsl(@lightPrimaryColorHue, @lightPrimaryColorSaturation, @lightPrimaryColorLightness));
+@lightSecondaryColor  : var(--light-secondary-color, hsl(@lightSecondaryColorHue, @lightSecondaryColorSaturation, @lightSecondaryColorLightness));
+@lightTertiaryColor   : var(--light-tertiary-color, hsl(@lightTertiaryColorHue, @lightTertiaryColorSaturation, @lightTertiaryColorLightness));
+
+@darkPrimaryColor    : var(--dark-primary-color, hsl(@darkPrimaryColorHue, @darkPrimaryColorSaturation, @darkPrimaryColorLightness));
+@darkSecondaryColor  : var(--dark-secondary-color, hsl(@darkSecondaryColorHue, @darkSecondaryColorSaturation, @darkSecondaryColorLightness));
+@darkTertiaryColor   : var(--dark-tertiary-color, hsl(@darkTertiaryColorHue, @darkTertiaryColorSaturation, @darkTertiaryColorLightness));
+
 @primaryColorCSSVar   : var(--text-color-primary, @primaryColor);
-@secondaryColor       : @pineGreen;
 @secondaryColorCSSVar : var(--text-color-secondary, @secondaryColor);
-@tertiaryColor        : @deepBlue;
 @tertiaryColorCSSVar  : var(--text-color-tertiary, @tertiaryColor);
-
-@lightPrimaryColor    : @mediumPersianBlue;
-@lightSecondaryColor  : @darkCyan;
-@lightTertiaryColor   : @UCLABlue;
-
-@darkPrimaryColor     : @darkMidnightBlue;
-@darkSecondaryColor   : @bottleGreen;
-@darkTertiaryColor    : @japaneseIndigo;
 
 /*--------------
   Page Heading
@@ -955,12 +1001,12 @@
 ;
 
 /*---  Colors  ---*/
-@primaryColorHover        : saturate(darken(@primaryColor, 5), 10, relative);
-@secondaryColorHover      : saturate(lighten(@secondaryColor, 5), 10, relative);
-@tertiaryColorHover       : saturate(lighten(@tertiaryColor, 5), 10, relative);
-@lightPrimaryColorHover   : saturate(darken(@lightPrimaryColor, 5), 10, relative);
-@lightSecondaryColorHover : saturate(lighten(@lightSecondaryColor, 5), 10, relative);
-@lightTertiaryColorHover  : saturate(lighten(@lightTertiaryColor, 5), 10, relative);
+@primaryColorHover        : var(--primary-color-hover, saturate(darken(@primaryColor, 5), 10, relative));
+@secondaryColorHover      : var(--secondary-color-hover, saturate(lighten(@secondaryColor, 5), 10, relative));
+@tertiaryColorHover       : var(--tertiary-color-hover, saturate(lighten(@tertiaryColor, 5), 10, relative));
+@lightPrimaryColorHover   : var(--light-primary-color-hover, saturate(darken(@lightPrimaryColor, 5), 10, relative));
+@lightSecondaryColorHover : var(--light-secondary-color-hover, saturate(lighten(@lightSecondaryColor, 5), 10, relative));
+@lightTertiaryColorHover  : var(--light-tertiary-color-hover, saturate(lighten(@lightTertiaryColor, 5), 10, relative));
 
 @redHover                 : saturate(darken(@red, 5), 10, relative);
 @orangeHover              : saturate(darken(@orange, 5), 10, relative);
@@ -1017,12 +1063,12 @@
 --------------------*/
 
 /*---  Colors  ---*/
-@primaryColorFocus        : saturate(darken(@primaryColor, 8), 20, relative);
-@secondaryColorFocus      : saturate(lighten(@secondaryColor, 8), 20, relative);
-@tertiaryColorFocus       : saturate(lighten(@tertiaryColor, 8), 20, relative);
-@lightPrimaryColorFocus   : saturate(darken(@lightPrimaryColor, 8), 20, relative);
-@lightSecondaryColorFocus : saturate(lighten(@lightSecondaryColor, 8), 20, relative);
-@lightTertiaryColorFocus  : saturate(lighten(@lightTertiaryColor, 8), 20, relative);
+@primaryColorFocus        : var(--primary-color-focus, saturate(darken(@primaryColor, 8), 20, relative));
+@secondaryColorFocus      : var(--secondary-color-focus, saturate(lighten(@secondaryColor, 8), 20, relative));
+@tertiaryColorFocus       : var(--tertiary-color-focus, saturate(lighten(@tertiaryColor, 8), 20, relative));
+@lightPrimaryColorFocus   : var(--light-primary-color-focus, saturate(darken(@lightPrimaryColor, 8), 20, relative));
+@lightSecondaryColorFocus : var(--light-secondary-color-focus, saturate(lighten(@lightSecondaryColor, 8), 20, relative));
+@lightTertiaryColorFocus  : var(--light-tertiary-color-focus, saturate(lighten(@lightTertiaryColor, 8), 20, relative));
 
 @redFocus                 : saturate(darken(@red, 8), 20, relative);
 @orangeFocus              : saturate(darken(@orange, 8), 20, relative);
@@ -1080,12 +1126,12 @@
 --------------------*/
 
 /*---  Colors  ---*/
-@primaryColorDown        : darken(@primaryColor, 10);
-@secondaryColorDown      : lighten(@secondaryColor, 10);
-@tertiaryColorDown       : lighten(@tertiaryColor, 10);
-@lightPrimaryColorDown   : darken(@lightPrimaryColor, 10);
-@lightSecondaryColorDown : lighten(@lightSecondaryColor, 10);
-@lightTertiaryColorDown : lighten(@lightTertiaryColor, 10);
+@primaryColorDown        : var(--primary-color-down, darken(@primaryColor, 10));
+@secondaryColorDown      : var(--secondary-color-down, lighten(@secondaryColor, 10));
+@tertiaryColorDown       : var(--tertiary-color-down, lighten(@tertiaryColor, 10));
+@lightPrimaryColorDown   : var(--light-primary-color-down, darken(@lightPrimaryColor, 10));
+@lightSecondaryColorDown : var(--light-secondary-color-down, lighten(@lightSecondaryColor, 10));
+@lightTertiaryColorDown  : var(--light-tertiary-color-down, lighten(@lightTertiaryColor, 10));
 
 @redDown                 : darken(@red, 10);
 @orangeDown              : darken(@orange, 10);
@@ -1143,12 +1189,12 @@
 --------------------*/
 
 /*---  Colors  ---*/
-@primaryColorActive        : saturate(darken(@primaryColor, 5), 15, relative);
-@secondaryColorActive      : saturate(lighten(@secondaryColor, 5), 15, relative);
-@tertiaryColorActive       : saturate(lighten(@tertiaryColor, 5), 15, relative);
-@lightPrimaryColorActive   : saturate(darken(@lightPrimaryColor, 5), 15, relative);
-@lightSecondaryColorActive : saturate(lighten(@lightSecondaryColor, 5), 15, relative);
-@lightTertiaryColorActive  : saturate(lighten(@lightTertiaryColor, 5), 15, relative);
+@primaryColorActive        : var(--primary-color-active, saturate(darken(@primaryColor, 5), 15, relative));
+@secondaryColorActive      : var(--secondary-color-active, saturate(lighten(@secondaryColor, 5), 15, relative));
+@tertiaryColorActive       : var(--tertiary-color-active, saturate(lighten(@tertiaryColor, 5), 15, relative));
+@lightPrimaryColorActive   : var(--light-primary-color-active, saturate(darken(@lightPrimaryColor, 5), 15, relative));
+@lightSecondaryColorActive : var(--light-secondary-color-active, saturate(lighten(@lightSecondaryColor, 5), 15, relative));
+@lightTertiaryColorActive  : var(--light-tertiary-color-active, saturate(lighten(@lightTertiaryColor, 5), 15, relative));
 
 @redActive                 : saturate(darken(@red, 5), 15, relative);
 @orangeActive              : saturate(darken(@orange, 5), 15, relative);
