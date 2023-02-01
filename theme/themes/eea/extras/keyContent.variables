@@ -20,5 +20,5 @@
 @keyContentListBulletFontSize : 3rem;
 
 /* Colored Title */
-@keyContentColoredTitleColor : @darkCyan;
+@keyContentColoredTitleColor : @secondaryColor;
 @keyContentTitleMarginLeft : 2.8rem;
