@@ -11,6 +11,11 @@ const applyConfig = (config) => {
     component: ThemeGenerator,
   });
 
+  config.addonRoutes.push({
+    path: '/controlpanel/theme',
+    component: ThemeGenerator,
+  });
+
   return config;
 };
 
