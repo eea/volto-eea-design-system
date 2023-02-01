@@ -62,9 +62,11 @@
 @tertiaryColor        : @blue-grey-5;
 @tertiaryColorCSSVar  : var(--text-color-tertiary, @tertiaryColor);
 
+
 @lightPrimaryColor    : @blue-4;
 @lightSecondaryColor  : @green-4;
 @lightTertiaryColor   : @blue-grey-4;
+
 
 @darkPrimaryColor     : @blue-6;
 @darkSecondaryColor   : @green-6;

@@ -233,7 +233,7 @@
 
 /* Custom shadows for dropdowns */
 @shadow-topbar-dropdown: 2px 0 2px -5px hsla(@shadow-color, calc(@shadow-strength + 6%));
-@shadow-4-no-top: 
+@shadow-4-no-top:
   0 0 0 0 hsla(@shadow-color, calc(@shadow-strength + 2%)),
   0 1px 1px -2px hsla(@shadow-color, calc(@shadow-strength + 3%)),
   0 2px 2px -2px hsla(@shadow-color, calc(@shadow-strength + 3%)),
