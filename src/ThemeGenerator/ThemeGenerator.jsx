@@ -8,7 +8,6 @@ import {
   saturate,
   toRGB,
   toHSL,
-  toCSS,
   hslToHex,
   randomNumberGenerator,
 } from './helpers';
