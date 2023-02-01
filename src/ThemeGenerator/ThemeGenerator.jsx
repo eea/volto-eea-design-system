@@ -15,16 +15,16 @@ import {
 
 import './styles.less';
 
-const defaultTheme = {
-  '@primaryColor': '#004B7F',
-  '@secondaryColor': '#007B6C',
-  '@tertiaryColor': '#3D5265',
-  '@lightPrimaryColor': '#0065A4',
-  '@lightSecondaryColor': '#00928F',
-  '@lightTertiaryColor': '#54728C',
-  '@darkPrimaryColor': '#0A3D61',
-  '@darkSecondaryColor': '#00665A',
-  '@darkTertiaryColor': '#2E3E4C',
+const themeMap = {
+  '@primaryColor': 'primary',
+  '@secondaryColor': 'secondary',
+  '@tertiaryColor': 'tertiary',
+  '@lightPrimaryColor': 'light-primary',
+  '@lightSecondaryColor': 'light-secondary',
+  '@lightTertiaryColor': 'light-tertiary',
+  '@darkPrimaryColor': 'dark-primary',
+  '@darkSecondaryColor': 'dark-secondary',
+  '@darkTertiaryColor': 'dark-tertiary',
 };
 
 const defineColor = (title, color) => {
@@ -52,11 +52,41 @@ const defineColor = (title, color) => {
 };
 
 const getStyle = (theme) => {
-  return {
-    ...defineColor('primary', theme['@primaryColor']).style,
-    ...defineColor('secondary', theme['@secondaryColor']).style,
-    ...defineColor('tertiary', theme['@tertiaryColor']).style,
+  let style = {};
+
+  Object.keys(themeMap).forEach((key) => {
+    style = {
+      ...style,
+      ...defineColor(themeMap[key], theme[key]).style,
+    };
+  });
+  return style;
+};
+
+const getDefaultColor = (title) => {
+  const hsl = {
+    h: parseFloat(
+      getComputedStyle(document.documentElement)
+        .getPropertyValue(`--${title}-color-h`)
+        .replace(' ', ''),
+    ),
+    s:
+      parseFloat(
+        getComputedStyle(document.documentElement)
+          .getPropertyValue(`--${title}-color-s`)
+          .replace(' ', '')
+          .replace('%', ''),
+      ) / 100,
+    l:
+      parseFloat(
+        getComputedStyle(document.documentElement)
+          .getPropertyValue(`--${title}-color-l`)
+          .replace(' ', '')
+          .replace('%', ''),
+      ) / 100,
   };
+
+  return hslToHex(hsl);
 };
 
 const updateSpan = (id, value) => {
@@ -68,8 +98,24 @@ const updateSpan = (id, value) => {
 };
 
 const ThemeGenerator = () => {
-  const [method, setMethod] = useState('I');
   const [theme, setTheme] = useState({});
+
+  const init = () => {
+    const newTheme = { ...theme };
+
+    Object.keys(themeMap).forEach((key) => {
+      const color = getDefaultColor(themeMap[key]);
+      updateSpan(key, color);
+      newTheme[key] = color;
+    });
+
+    setTheme(newTheme);
+  };
+
+  useEffect(() => {
+    init();
+    /* eslint-disable-next-line */
+  }, []);
 
   useEffect(() => {
     const style = getStyle(theme);
@@ -100,7 +146,7 @@ const ThemeGenerator = () => {
         </Grid.Row>
 
         <Grid.Row columns={2}>
-          <Grid.Column style={getStyle(defaultTheme)}>
+          <Grid.Column style={getStyle(theme)}>
             <h2>site.variables</h2>
             <div className="theme-generator">
               <div className="theme-generator-toolbar">
@@ -161,13 +207,8 @@ const ThemeGenerator = () => {
                   </button>
                   <button
                     onClick={() => {
-                      const prevMethod = method;
                       document.documentElement.style = {};
-                      setTheme({});
-                      setMethod(undefined);
-                      setTimeout(() => {
-                        setMethod(prevMethod);
-                      }, 0);
+                      init();
                     }}
                   >
                     Reset
@@ -175,11 +216,7 @@ const ThemeGenerator = () => {
                   <button
                     className="copy-btn"
                     onClick={() => {
-                      if (method === 'I') {
-                        navigator.clipboard.writeText(
-                          toCSS(getStyle({ ...defaultTheme, ...theme })),
-                        );
-                      }
+                      navigator.clipboard.writeText(toCSS(getStyle(theme)));
                     }}
                   >
                     Copy
@@ -187,16 +224,14 @@ const ThemeGenerator = () => {
                 </div>
               </div>
               <pre>
-                {Object.keys(defaultTheme).map((key, index) => (
+                {Object.keys(themeMap).map((key, index) => (
                   <React.Fragment key={key}>
                     <code>
                       {'  '}
                       <button
                         className="color-picker"
                         style={{
-                          backgroundColor: toRGB(theme[key])
-                            ? theme[key]
-                            : defaultTheme[key],
+                          backgroundColor: theme[key],
                         }}
                       />{' '}
                       {key}: "
@@ -210,9 +245,7 @@ const ThemeGenerator = () => {
                             [key]: e.currentTarget?.textContent,
                           });
                         }}
-                      >
-                        {defaultTheme[key]}
-                      </span>
+                      />
                       ";
                     </code>
                     {key === '@tertiaryColor' && '\n'}
