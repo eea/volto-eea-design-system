@@ -36,10 +36,10 @@
 @cellHorizontalPadding: @relativeMini;
 @cellVerticalAlign: inherit;
 @cellTextAlign: center;
-@cellBorder: 1px solid @secondaryColor;
+@cellBorder: 1px solid @borderColorSecondaryCSSVar;
 
 /* Table Header */
-@headerBorder: 1px solid @secondaryColor;
+@headerBorder: 1px solid @borderColorSecondaryCSSVar;
 @headerDivider: none;
 @headerBackground: @white;
 @headerAlign: inherit;

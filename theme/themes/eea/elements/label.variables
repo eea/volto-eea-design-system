@@ -11,7 +11,7 @@
 @verticalAlign: baseline;
 @verticalMargin: 0;
 @horizontalMargin: 0;
-@backgroundColor: @grey;
+@backgroundColor: @grey-4;
 @color: @white;
 @backgroundImage: none;
 @verticalPadding: 0.5833em; /* medium is not @emSize custom value required */
@@ -248,7 +248,7 @@
 @emptyCircleSize: 0.5em;
 
 /* Pointing */
-@pointingBorderColor: @grey;
+@pointingBorderColor: @grey-4;
 @pointingBorderWidth: 0;
 @pointingVerticalDistance: 1em;
 @pointingTriangleSize: 0.6666em;

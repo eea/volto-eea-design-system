@@ -249,7 +249,7 @@
 /*
 .ui.pagination.pointing.secondary.menu .active.item {
   padding: (@tinyGap - @1px) @tinyGap;
-  border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
+  border-bottom: @secondaryPointingActiveBorderWidth solid @borderColorSecondaryCSSVar;
   margin-bottom: -@secondaryPointingctiveItemMarginBottom;
   color: @secondaryPointingActiveTextColor;
 
@@ -263,7 +263,7 @@
 /*
 .ui.pagination.pointing.secondary.menu .item:hover {
   padding: (@tinyGap - @1px) @tinyGap;
-  border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
+  border-bottom: @secondaryPointingActiveBorderWidth solid @borderColorSecondaryCSSVar;
   margin-bottom: -@secondaryPointingctiveItemMarginBottom;
   color: @paginationColor;
 }
@@ -285,7 +285,7 @@
 .ui.secondary.pointing.menu:not(.vertical):not(.pagination) .item:active {
   padding: (@secondaryPointingItemVerticalPadding - @1px)
     @secondaryPointingItemHorizontalPadding;
-  border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
+  border-bottom: @secondaryPointingActiveBorderWidth solid @borderColorSecondaryCSSVar;
   margin-bottom: -@secondaryPointingctiveItemMarginBottom;
   color: var(--text-color, @secondaryPointingActiveTextColor);
 }
@@ -313,7 +313,7 @@
   bottom: @1px;
   width: -moz-available;
   width: -webkit-fill-available;
-  border-top: 1px solid @grey-3;
+  border-top: 1px solid @darkBorderColor;
   content: ' ';
 }
 

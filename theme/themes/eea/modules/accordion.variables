@@ -11,7 +11,7 @@
 @titlePadding: @rectangleMedium;
 @titleFontSize: 1.125rem;
 @titleColor: @textColorCSSVar;
-@titleBorderBottom: @1px solid @grey-2;
+@titleBorderBottom: @1px solid @borderColor;
 @titleColorHover:var(--text-color-hover, @grey-5);
 @titleJustifyContent: space-between;
 

@@ -124,7 +124,7 @@
 @mainMenuItemPadding                  : @rem-space-050 @rem-space-2;
 @mainMenuItemActiveColor              : @secondaryColor;
 @mainMenuItemBorder                   : 4px solid transparent;
-@mainMenuItemActiveBorder             : 4px solid @secondaryColor;
+@mainMenuItemActiveBorder             : 4px solid @borderColorSecondaryCSSVar;
 @mainMenuInvertedItemActiveBorder     : 4px solid @white;
 @mainMenuItemAlignSelf                : flex-end;
 
@@ -182,7 +182,7 @@
 @megaMenuListItemFontSize: @font-size-1;
 @megaMenuListItemFontWeight: @font-weight-4;
 @megaMenuListItemPadding: @rem-space-2 0;
-@megaMenuListItemActiveBorder: 4px solid #FFF;
+@megaMenuListItemActiveBorder: 4px solid @white;
 @megaMenuListItemActivePadding: 8px;
 
 /* Topics */
