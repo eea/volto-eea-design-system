@@ -22,7 +22,7 @@ module.exports = {
         const hsl = toHSL(color);
 
         if (hsl) {
-          return lighten(color, amount, method);
+          return darken(color, amount, method);
         }
       } catch (err) {
         if (color.name === 'hsl') {
@@ -63,7 +63,7 @@ module.exports = {
         const hsl = toHSL(color);
 
         if (hsl) {
-          return darken(color, amount, method);
+          return lighten(color, amount, method);
         }
       } catch (err) {
         if (color.name === 'hsl') {
