@@ -248,7 +248,7 @@
 @emptyCircleSize: 0.5em;
 
 /* Pointing */
-@pointingBorderColor: @grey-4;
+@pointingBorderColor: @backgroundColor;
 @pointingBorderWidth: 0;
 @pointingVerticalDistance: 1em;
 @pointingTriangleSize: 0.6666em;
