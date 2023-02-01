@@ -63,6 +63,18 @@ const getStyle = (theme) => {
   return style;
 };
 
+const getLess = (theme) => {
+  let style = '';
+
+  Object.keys(themeMap).forEach((key) => {
+    const color = hslToHex(defineColor(themeMap[key], theme[key]).hsla);
+
+    style += `.define-color(${themeMap[key]}, ${color});\n`;
+  });
+
+  return style;
+};
+
 const getDefaultColor = (title) => {
   const hsl = {
     h: parseFloat(
@@ -216,7 +228,7 @@ const ThemeGenerator = () => {
                   <button
                     className="copy-btn"
                     onClick={() => {
-                      navigator.clipboard.writeText(toCSS(getStyle(theme)));
+                      navigator.clipboard.writeText(getLess(theme));
                     }}
                   >
                     Copy
