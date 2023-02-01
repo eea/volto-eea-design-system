@@ -162,7 +162,7 @@
 @lowImportanceHoverBackground: darken(@deepBlue,5);
 @mediumImportanceHoverBackground: darken(#346F83,5);
 @highImportanceHoverBackground: darken(#005293,5);
-@highlightImportanceHoverBackground: darken(@secondaryColor,5);
+@highlightImportanceHoverBackground: darken(@secondaryColorHSL,5);
 
 @importanceHoverTextColor: @white;
 

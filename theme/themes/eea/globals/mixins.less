@@ -1,3 +1,11 @@
+.define-color(@title, @color) {
+  --@{title}-color-h: hue(@color);
+  --@{title}-color-s: saturation(@color);
+  --@{title}-color-l: lightness(@color);
+  --@{title}-color-a: alpha(@color);
+  --@{title}-color: hsla(hue(@color), saturation(@color), lightness(@color), alpha(@color));
+}
+
 // Gradient Mixin
 .gradientMix(@type; @colors; @dir: 0deg; @prefixes: webkit, moz, ms, o; @index: length(@prefixes)) when (@index > 0) {
   .gradientMix(@type; @colors; @dir; @prefixes; (@index - 1));

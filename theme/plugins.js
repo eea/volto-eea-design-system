@@ -25,7 +25,7 @@ module.exports = {
           return darken(color, amount, method);
         }
       } catch (err) {
-        if (color.name === 'hsl') {
+        if (['hsl', 'hsla'].includes(color.name)) {
           if (amount?.value) {
             color.args[2] = new less.tree.Call('calc', [
               new less.tree.Operation(
@@ -66,7 +66,7 @@ module.exports = {
           return lighten(color, amount, method);
         }
       } catch (err) {
-        if (color.name === 'hsl') {
+        if (['hsl', 'hsla'].includes(color.name)) {
           if (amount?.value) {
             color.args[2] = new less.tree.Call('calc', [
               new less.tree.Operation(
@@ -107,7 +107,7 @@ module.exports = {
           return saturate(color, amount, method);
         }
       } catch (err) {
-        if (color.name === 'hsl') {
+        if (['hsl', 'hsla'].includes(color.name)) {
           if (amount?.value) {
             color.args[1] = new less.tree.Call('calc', [
               new less.tree.Operation(
@@ -149,7 +149,7 @@ module.exports = {
           return desaturate(color, amount, method);
         }
       } catch (err) {
-        if (color.name === 'hsl') {
+        if (['hsl', 'hsla'].includes(color.name)) {
           if (amount?.value) {
             color.args[1] = new less.tree.Call('calc', [
               new less.tree.Operation(

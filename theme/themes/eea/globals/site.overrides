@@ -4,6 +4,18 @@
 
 @import '@eeacms/volto-eea-design-system/../theme/themes/eea/globals/utilities';
 
+:root {
+  .define-color(primary, @darkCerulean);
+  .define-color(secondary, @pineGreen);
+  .define-color(tertiary, @deepBlue);
+  .define-color(light-primary, @mediumPersianBlue);
+  .define-color(light-secondary, @darkCyan);
+  .define-color(light-tertiary, @UCLABlue);
+  .define-color(dark-primary, @darkMidnightBlue);
+  .define-color(dark-secondary, @bottleGreen);
+  .define-color(dark-tertiary, @japaneseIndigo);
+}
+
 h1, h2, h3, h4, h5, h6 {
   line-height: @font-lineheight-0;
   letter-spacing: @font-letterspacing-00;
