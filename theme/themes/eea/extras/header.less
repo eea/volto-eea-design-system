@@ -394,10 +394,6 @@
   z-index: 1;
   width: 100%;
 }
-// reduce width of header when we have toolbar open for better placement
-.has-toolbar.homepage .eea.header {
-  width: 96%;
-}
 
 /*----------------------------------------------------------------------------
   Header Actions - Burger and Search Icons
@@ -833,7 +829,8 @@
   display: none;
 }
 
-#main #mega-menu .ui.accordion .title:first-child + .content {
+// hide content of accordion titles that are not active
+#main #mega-menu .ui.accordion .title:first-child + .content:not(.active) {
   display: none;
 }
 

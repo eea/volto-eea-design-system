@@ -16,6 +16,11 @@
     padding-top: 0 !important;
 }
 
+// show staging banner on homepage
+.homepage .stagingBanner {
+    display: block !important;
+}
+
 // use homepage text color for color of cards that are within a content-box that has a variant class
 .homepage .content-box[class*="ary"] [class="ui fluid card"] {
   color: @textColorCSSVar;
@@ -75,6 +80,10 @@
   font-weight: inherit;
 }
 
+// remove margin from first hero block used on the homepage
+#page-document > .styled-hero {
+  margin-top: 0;
+}
 
 // customize error class from volto-slate to our color of red
 .error {

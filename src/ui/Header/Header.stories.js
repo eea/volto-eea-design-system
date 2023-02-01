@@ -1407,7 +1407,7 @@ const Template = (args) => {
                     active: item['@id'] === pathname,
                   })}
                 >
-                  {/* nav_title ovverides title */}
+                  {/* nav_title overrides title */}
                   {item.nav_title && item.nav_title !== '' ? (
                     <span>{item.nav_title}</span>
                   ) : (
