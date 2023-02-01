@@ -1,105 +1,70 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Message, Grid, Select } from 'semantic-ui-react';
+import { Button, Message, Grid } from 'semantic-ui-react';
 import { UniversalLink } from '@plone/volto/components';
-import { toRGB, toHSL, toCSS } from './helpers';
+import {
+  colors,
+  darken,
+  lighten,
+  saturate,
+  toRGB,
+  toHSL,
+  toCSS,
+  hslToHex,
+  randomNumberGenerator,
+} from './helpers';
 
 import './styles.less';
 
-const methods = [
-  { key: 'I', value: 'I', text: 'Method I' },
-  { key: 'II', value: 'II', text: 'Method II' },
-];
-
-const themes = {
-  I: {
-    '@primaryColor': '#004B7F',
-    '@secondaryColor': '#007B6C',
-    '@tertiaryColor': '#3D5265',
-    '@lightPrimaryColor': '#0065A4',
-    '@lightSecondaryColor': '#00928F',
-    '@lightTertiaryColor': '#54728C',
-    '@darkPrimaryColor': '#0A3D61',
-    '@darkSecondaryColor': '#00665A',
-    '@darkTertiaryColor': '#2E3E4C',
-  },
-  II: {
-    '@primaryColor': '#004B7F',
-    '@secondaryColor': '#007B6C',
-    '@tertiaryColor': '#3D5265',
-    '@lightPrimaryColor': '#0065A4',
-    '@lightSecondaryColor': '#00928F',
-    '@lightTertiaryColor': '#54728C',
-    '@darkPrimaryColor': '#0A3D61',
-    '@darkSecondaryColor': '#00665A',
-    '@darkTertiaryColor': '#2E3E4C',
-  },
+const defaultTheme = {
+  '@primaryColor': '#004B7F',
+  '@secondaryColor': '#007B6C',
+  '@tertiaryColor': '#3D5265',
+  '@lightPrimaryColor': '#0065A4',
+  '@lightSecondaryColor': '#00928F',
+  '@lightTertiaryColor': '#54728C',
+  '@darkPrimaryColor': '#0A3D61',
+  '@darkSecondaryColor': '#00665A',
+  '@darkTertiaryColor': '#2E3E4C',
 };
 
-const getMethodIStyle = (theme) => {
-  const primaryHSL = toHSL(toRGB(theme['@primaryColor']), 1);
-  const secondaryHSL = toHSL(toRGB(theme['@secondaryColor']), 1);
-  const tertiaryHSL = toHSL(toRGB(theme['@tertiaryColor']), 1);
+const defineColor = (title, color) => {
+  const rgb = toRGB(color);
+  const hsla = toHSL(rgb);
+
+  if (hsla) {
+    hsla.sp = `${hsla.s * 100}%`;
+    hsla.lp = `${hsla.l * 100}%`;
+  }
 
   return {
-    ...(primaryHSL
+    rgb,
+    hsla,
+    style: hsla
       ? {
-          '--primary-color-h': primaryHSL.h,
-          '--primary-color-s': `${primaryHSL.s * 100}%`,
-          '--primary-color-l': `${primaryHSL.l * 100}%`,
+          [`--${title}-color-h`]: hsla.h,
+          [`--${title}-color-s`]: hsla.sp,
+          [`--${title}-color-l`]: hsla.lp,
+          [`--${title}-color-a`]: hsla.a,
+          [`--${title}-color`]: `hsla(${hsla.h}, ${hsla.sp}, ${hsla.lp}, ${hsla.a})`,
         }
-      : {}),
-    ...(secondaryHSL
-      ? {
-          '--secondary-color-h': secondaryHSL.h,
-          '--secondary-color-s': `${secondaryHSL.s * 100}%`,
-          '--secondary-color-l': `${secondaryHSL.l * 100}%`,
-        }
-      : {}),
-    ...(tertiaryHSL
-      ? {
-          '--tertiary-color-h': tertiaryHSL.h,
-          '--tertiary-color-s': `${tertiaryHSL.s * 100}%`,
-          '--tertiary-color-l': `${tertiaryHSL.l * 100}%`,
-        }
-      : {}),
+      : {},
   };
 };
 
-const MethodView = ({ theme, setTheme, method }) => {
-  if (!method) return null;
-  return (
-    <>
-      {Object.keys(themes[method]).map((key, index) => (
-        <React.Fragment key={key}>
-          <code>
-            {'  '}
-            <button
-              className="color-picker"
-              style={{
-                backgroundColor: toRGB(theme[key])
-                  ? theme[key]
-                  : themes[method][key],
-              }}
-            />{' '}
-            {key}: "
-            <span
-              contentEditable={true}
-              suppressContentEditableWarning={true}
-              onInput={(e) => {
-                setTheme({ ...theme, [key]: e.currentTarget?.textContent });
-              }}
-            >
-              {themes[method][key]}
-            </span>
-            ";
-          </code>
-          {key === '@tertiaryColor' && '\n'}
-          {key === '@lightTertiaryColor' && '\n'}
-          {key !== '@darkTertiaryColor' && '\n'}
-        </React.Fragment>
-      ))}
-    </>
-  );
+const getStyle = (theme) => {
+  return {
+    ...defineColor('primary', theme['@primaryColor']).style,
+    ...defineColor('secondary', theme['@secondaryColor']).style,
+    ...defineColor('tertiary', theme['@tertiaryColor']).style,
+  };
+};
+
+const updateSpan = (id, value) => {
+  const span = document.getElementById(id);
+
+  if (span) {
+    span.innerHTML = value;
+  }
 };
 
 const ThemeGenerator = () => {
@@ -107,7 +72,7 @@ const ThemeGenerator = () => {
   const [theme, setTheme] = useState({});
 
   useEffect(() => {
-    const style = getMethodIStyle(theme);
+    const style = getStyle(theme);
     Object.keys(style).forEach((key) => {
       document.documentElement.style.setProperty(key, style[key]);
     });
@@ -135,22 +100,65 @@ const ThemeGenerator = () => {
         </Grid.Row>
 
         <Grid.Row columns={2}>
-          <Grid.Column style={getMethodIStyle(themes['I'])}>
-            <div className="theme-generator-method">
-              <h2>site.variables</h2>
-              <Select
-                placeholder="Select method"
-                onChange={(e, data) => {
-                  setMethod(data.value);
-                }}
-                options={methods}
-                value={method}
-              />
-            </div>
+          <Grid.Column style={getStyle(defaultTheme)}>
+            <h2>site.variables</h2>
             <div className="theme-generator">
               <div className="theme-generator-toolbar">
                 <div>
-                  <button>Randomize</button>
+                  <button
+                    onClick={() => {
+                      const randomColors = randomNumberGenerator(
+                        0,
+                        colors.length,
+                        3,
+                      );
+                      const primary = defineColor(
+                        'primary',
+                        colors[randomColors[0]],
+                      );
+                      const secondary = defineColor(
+                        'secondary',
+                        colors[randomColors[1]],
+                      );
+                      const tertiary = defineColor(
+                        'tertiary',
+                        colors[randomColors[2]],
+                      );
+
+                      const newTheme = {
+                        ...theme,
+                        '@primaryColor': hslToHex(primary.hsla),
+                        '@secondaryColor': hslToHex(secondary.hsla),
+                        '@tertiaryColor': hslToHex(tertiary.hsla),
+                        '@lightPrimaryColor': hslToHex(
+                          saturate(lighten(primary.hsla, 15), 0),
+                        ),
+                        '@lightSecondaryColor': hslToHex(
+                          saturate(lighten(secondary.hsla, 15), 0),
+                        ),
+                        '@lightTertiaryColor': hslToHex(
+                          saturate(lighten(tertiary.hsla, 15), 0),
+                        ),
+                        '@darkPrimaryColor': hslToHex(
+                          saturate(darken(primary.hsla, 6), 10),
+                        ),
+                        '@darkSecondaryColor': hslToHex(
+                          saturate(darken(secondary.hsla, 6), 10),
+                        ),
+                        '@darkTertiaryColor': hslToHex(
+                          saturate(darken(tertiary.hsla, 6), 10),
+                        ),
+                      };
+
+                      Object.keys(newTheme).forEach((key) => {
+                        updateSpan(key, newTheme[key]);
+                      });
+
+                      setTheme(newTheme);
+                    }}
+                  >
+                    Randomize
+                  </button>
                   <button
                     onClick={() => {
                       const prevMethod = method;
@@ -169,7 +177,7 @@ const ThemeGenerator = () => {
                     onClick={() => {
                       if (method === 'I') {
                         navigator.clipboard.writeText(
-                          toCSS(getMethodIStyle({ ...themes['I'], ...theme })),
+                          toCSS(getStyle({ ...defaultTheme, ...theme })),
                         );
                       }
                     }}
@@ -179,7 +187,39 @@ const ThemeGenerator = () => {
                 </div>
               </div>
               <pre>
-                <MethodView theme={theme} setTheme={setTheme} method={method} />
+                {Object.keys(defaultTheme).map((key, index) => (
+                  <React.Fragment key={key}>
+                    <code>
+                      {'  '}
+                      <button
+                        className="color-picker"
+                        style={{
+                          backgroundColor: toRGB(theme[key])
+                            ? theme[key]
+                            : defaultTheme[key],
+                        }}
+                      />{' '}
+                      {key}: "
+                      <span
+                        id={key}
+                        contentEditable={true}
+                        suppressContentEditableWarning={true}
+                        onInput={(e) => {
+                          setTheme({
+                            ...theme,
+                            [key]: e.currentTarget?.textContent,
+                          });
+                        }}
+                      >
+                        {defaultTheme[key]}
+                      </span>
+                      ";
+                    </code>
+                    {key === '@tertiaryColor' && '\n'}
+                    {key === '@lightTertiaryColor' && '\n'}
+                    {key !== '@darkTertiaryColor' && '\n'}
+                  </React.Fragment>
+                ))}
               </pre>
               <div></div>
             </div>
