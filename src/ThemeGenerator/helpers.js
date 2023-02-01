@@ -78,6 +78,41 @@ export function hslToHex(color) {
   return `#${f(0)}${f(8)}${f(4)}`;
 }
 
+export function getLuminance(rgb) {
+  let r = rgb[0] / 255;
+  let g = rgb[1] / 255;
+  let b = rgb[2] / 255;
+
+  r = r <= 0.03928 ? r / 12.92 : Math.pow((r + 0.055) / 1.055, 2.4);
+  g = g <= 0.03928 ? g / 12.92 : Math.pow((g + 0.055) / 1.055, 2.4);
+  b = b <= 0.03928 ? b / 12.92 : Math.pow((b + 0.055) / 1.055, 2.4);
+
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
+export function getContrast(color, dark, light, threshold) {
+  if (typeof light === 'undefined') {
+    light = [255, 255, 255];
+  }
+  if (typeof dark === 'undefined') {
+    dark = [0, 0, 0];
+  }
+  // Figure out which is actually light and dark:
+  if (getLuminance(dark) > getLuminance(light)) {
+    const t = light;
+    light = dark;
+    dark = t;
+  }
+  if (typeof threshold === 'undefined') {
+    threshold = 0.43;
+  }
+  if (getLuminance(color) < threshold) {
+    return toHex(light);
+  } else {
+    return toHex(dark);
+  }
+}
+
 export function darken(color, amount = 0) {
   return {
     h: color.h,

@@ -9,6 +9,7 @@ import {
   toRGB,
   toHSL,
   hslToHex,
+  getContrast,
   randomNumberGenerator,
 } from './helpers';
 
@@ -45,6 +46,7 @@ const defineColor = (title, color) => {
           [`--${title}-color-l`]: hsla.lp,
           [`--${title}-color-a`]: hsla.a,
           [`--${title}-color`]: `hsla(${hsla.h}, ${hsla.sp}, ${hsla.lp}, ${hsla.a})`,
+          [`--${title}-contrast`]: getContrast(rgb),
         }
       : {},
   };

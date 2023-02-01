@@ -67,6 +67,19 @@
 @darkSecondaryColor: hsla(var(--dark-secondary-color-h), var(--dark-secondary-color-s), var(--dark-secondary-color-l), var(--dark-secondary-color-a));
 @darkTertiaryColor : hsla(var(--dark-tertiary-color-h), var(--dark-tertiary-color-s), var(--dark-tertiary-color-l), var(--dark-tertiary-color-a));
 
+@primaryContrast    : var(--primary-contrast);
+@secondaryContrast  : var(--secondary-contrast);
+@tertiaryContrast   : var(--tertiary-contrast);
+
+@lightPrimaryContrast   : var(--light-primary-contrast);
+@lightSecondaryContrast : var(--light-secondary-contrast);
+@lightTertiaryContrast  : var(--light-tertiary-contrast);
+
+@darkPrimaryContrast    : var(--dark-primary-contrast);
+@darkSecondaryContrast  : var(--dark-secondary-contrast);
+@darkTertiaryContrast   : var(--dark-tertiary-contrast);
+
+
 @primaryColorVar   : var(--primary-color);
 @secondaryColorVar : var(--secondary-color);
 @tertiaryColorVar  : var(--tertiary-color);
