@@ -157,7 +157,7 @@ const ThemeGenerator = () => {
         </Grid.Row>
 
         <Grid.Row columns={2}>
-          <Grid.Column style={getStyle(theme)}>
+          <Grid.Column>
             <h2>site.variables</h2>
             <div className="theme-generator">
               <div className="theme-generator-toolbar">
