@@ -30,6 +30,11 @@ h2, h3, h4, h5, h6 {
   max-width: @containerWidth !important;
 }
 
+[class~="view-defaultview"] [id="page-document"] > .full-width,
+[class~="view-viewview"] [id="page-document"] > .full-width {
+  max-width: 100vw !important;
+}
+
 [class~="narrow_view"] [id="page-document"] > *,
 #main .narrow_width,
 #main .has--size--narrow_width

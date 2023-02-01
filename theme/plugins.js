@@ -44,6 +44,13 @@ module.exports = {
 
           return color;
         } else if (color.name === 'var') {
+          if (color.args[1]) {
+            color.args[1] = functions.get('darken')(
+              color.args[1],
+              amount,
+              method,
+            );
+          }
           return color;
         } else {
           throw err;
@@ -78,6 +85,13 @@ module.exports = {
 
           return color;
         } else if (color.name === 'var') {
+          if (color.args[1]) {
+            color.args[1] = functions.get('lighten')(
+              color.args[1],
+              amount,
+              method,
+            );
+          }
           return color;
         } else {
           throw err;
@@ -112,6 +126,14 @@ module.exports = {
 
           return color;
         } else if (!color.rgb || color.name === 'var') {
+          if (color.name === 'var' && color.args[1]) {
+            color.args[1] = functions.get('saturate')(
+              color.args[1],
+              amount,
+              method,
+            );
+            return color;
+          }
           return null;
         } else {
           throw err;
@@ -146,6 +168,13 @@ module.exports = {
 
           return color;
         } else if (color.name === 'var') {
+          if (color.args[1]) {
+            color.args[1] = functions.get('desaturate')(
+              color.args[1],
+              amount,
+              method,
+            );
+          }
           return color;
         } else {
           throw err;

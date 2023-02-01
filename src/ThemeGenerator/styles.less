@@ -1,0 +1,67 @@
+@type: 'extra';
+@element: 'custom';
+
+@import (multiple, reference, optional) '../../theme.config';
+
+.theme-generator-method {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.theme-generator {
+  position: relative;
+  background: @tertiaryColor;
+  color: @invertedTextColor;
+  border-radius: 8px;
+  padding: 1rem;
+
+  .theme-generator-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 0.75rem;
+      width: 0.75rem;
+      border-radius: 9999px;
+      opacity: .3;
+      box-shadow: 1.4em 0, 2.8em 0, 4.2em 0;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      border-radius: 8px;
+      color: @invertedTextColor;
+      padding: 0.25rem 0.5rem;
+      cursor: pointer;
+      
+      &:hover {
+        background-color: darken(@tertiaryColor, 5);
+      }
+    }
+
+    .copy-btn {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+    }
+  }
+
+  .color-picker {
+    background: transparent;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.2rem;
+    cursor: pointer;
+  }
+}
