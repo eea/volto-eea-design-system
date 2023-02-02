@@ -464,3 +464,76 @@ CarouselCards.argTypes = {
     },
   },
 };
+
+const TeaserCard = ({ variant, inverted, titleOnImage, card }) => (
+  <div className="column grid-block-teaser">
+    <div
+      className={`styled-teaser styled ${
+        variant === 'default' ? '' : variant
+      } ${inverted ? 'inverted' : ''}`}
+    >
+      <div
+        className={`ui card u-card max-2-lines title-max-2-lines ${
+          card.fluid ? 'fluid' : ''
+        }`}
+      >
+        <a claclassNamess="image" href={card.href}>
+          <img src={card.imgUrl} alt={card.title} class="ui image" />
+          <div className="gradient">
+            <div className="header">{card.title}</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+);
+
+const TeaserTemplate = (args) => (
+  <Container>
+    <div className="block __grid teaserGrid centered three">
+      <div className="ui stackable stretched three column grid">
+        {args.cards.map((card, index) => (
+          <TeaserCard
+            variant={args.variant}
+            titleOnImage={args.titleOnImage}
+            inverted={args.inverted}
+            card={card}
+            key={index}
+          />
+        ))}
+      </div>
+    </div>
+  </Container>
+);
+
+export const TeaserCardGrid = TeaserTemplate.bind({});
+TeaserCardGrid.args = {
+  variant: 'default',
+  inverted: false,
+  cards: [
+    {
+      title: "State of Europe's environment",
+      imgUrl:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      hasImage: true,
+      href: '/#',
+      fluid: true,
+    },
+    {
+      title: 'Climate',
+      imgUrl:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      hasImage: true,
+      href: '/#',
+      fluid: true,
+    },
+    {
+      title: 'Economy and resources',
+      imgUrl:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      hasImage: true,
+      href: '/#',
+      fluid: true,
+    },
+  ],
+};

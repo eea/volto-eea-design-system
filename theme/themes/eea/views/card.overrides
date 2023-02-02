@@ -420,3 +420,29 @@
 .ui.card > a:not(.ui) > i.icon {
   color: @iconColor;
 }
+
+/*******************************
+          Teaser Card
+*******************************/
+// Teaser cards grid on tablet update padding and min-width
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+  .ui.grid > .column.grid-block-teaser,
+  .ui.grid > .row > .column.grid-block-teaser {
+    padding-left: @tabletTeaserCardPaddingInline;
+    padding-right: @tabletTeaserCardPaddingInline;
+  }
+  .grid-block-teaser .ui.card {
+    min-width: @tabletTeaserCardMinWidth;
+  }
+}
+
+// Added from listing-cards.less
+.title-max-2-lines {
+  --title-max-lines: 2;
+}
+.grid-block-teaser .ui.card.u-card .header {
+  display: -webkit-box !important;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--title-max-lines, 5);
+}
