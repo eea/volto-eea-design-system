@@ -10,6 +10,7 @@
   background: @tertiaryColor;
   border-radius: 8px;
   color: @tertiaryContrast;
+  transition: background-color 0.5s;
 
   .theme-generator-toolbar {
     display: flex;
@@ -44,6 +45,27 @@
       position: absolute;
       right: 1rem;
       bottom: 1rem;
+      display: flex;
+      flex-flow: column;
+      align-items: flex-end;
+
+      button {
+        width: fit-content;
+      }
+
+      button:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      &:hover {
+        .hidden {
+          display: block;
+        }
+      }
     }
   }
 

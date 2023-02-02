@@ -8,6 +8,7 @@ import {
   saturate,
   toRGB,
   toHSL,
+  toCSS,
   hslToHex,
   getContrast,
   randomNumberGenerator,
@@ -226,14 +227,23 @@ const ThemeGenerator = () => {
                   >
                     Reset
                   </button>
-                  <button
-                    className="copy-btn"
-                    onClick={() => {
-                      navigator.clipboard.writeText(getLess(theme));
-                    }}
-                  >
-                    Copy
-                  </button>
+                  <div className="copy-btn">
+                    <button
+                      className="hidden"
+                      onClick={() => {
+                        navigator.clipboard.writeText(toCSS(getStyle(theme)));
+                      }}
+                    >
+                      CSS variables
+                    </button>
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText(getLess(theme));
+                      }}
+                    >
+                      Copy
+                    </button>
+                  </div>
                 </div>
               </div>
               <pre>
