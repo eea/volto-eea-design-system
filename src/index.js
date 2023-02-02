@@ -7,12 +7,7 @@ const applyConfig = (config) => {
   };
 
   config.addonRoutes.push({
-    path: '/**/controlpanel/theme',
-    component: ThemeGenerator,
-  });
-
-  config.addonRoutes.push({
-    path: '/controlpanel/theme',
+    path: ['/controlpanel/theme', '/**/controlpanel/theme'],
     component: ThemeGenerator,
   });
 

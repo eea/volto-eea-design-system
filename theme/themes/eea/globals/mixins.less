@@ -1,10 +1,14 @@
 .define-color(@title, @color) {
+  @hue: hue(@color);
+  @saturation: saturation(@color);
+  @lightness: lightness(@color);
+  @alpha: alpha(@color);
   --@{title}-color-h: hue(@color);
   --@{title}-color-s: saturation(@color);
   --@{title}-color-l: lightness(@color);
   --@{title}-color-a: alpha(@color);
-  --@{title}-color: hsla(hue(@color), saturation(@color), lightness(@color), alpha(@color));
-  --@{title}-contrast: contrast(hsla(hue(@color), saturation(@color), lightness(@color), alpha(@color)));
+  --@{title}-color: hsla(@hue, @saturation, @lightness, @alpha);
+  --@{title}-contrast: contrast(@color);
 }
 
 // Gradient Mixin

@@ -4,12 +4,12 @@
 @import (multiple, reference, optional) '../../theme.config';
 
 .theme-generator {
-  .define-color(tertiary, @deepBlue);
+  // .define-color(tertiary, @deepBlue);
   position: relative;
   padding: 1rem;
   background: @tertiaryColor;
   border-radius: 8px;
-  color: @invertedTextColor;
+  color: @tertiaryContrast;
 
   .theme-generator-toolbar {
     display: flex;
@@ -31,7 +31,7 @@
       border: none;
       background-color: transparent;
       border-radius: 8px;
-      color: @invertedTextColor;
+      color: @tertiaryContrast;
       cursor: pointer;
 
       &:hover {
