@@ -473,16 +473,25 @@ const TeaserCard = ({ variant, inverted, titleOnImage, card }) => (
       } ${inverted ? 'inverted' : ''}`}
     >
       <div
-        className={`ui card u-card max-2-lines title-max-2-lines ${
+        className={`ui card u-card max-3-lines title-max-3-lines ${
           card.fluid ? 'fluid' : ''
-        }`}
+        } ${variant}`}
       >
-        <a claclassNamess="image" href={card.href}>
-          <img src={card.imgUrl} alt={card.title} class="ui image" />
-          <div className="gradient">
-            <div className="header">{card.title}</div>
-          </div>
+        <a className="image" href={card.href}>
+          <img src={card.imgUrl} alt={card.title} className="ui image" />
+          {titleOnImage && (
+            <div className="gradient">
+              <div className="header">{card.title}</div>
+            </div>
+          )}
         </a>
+
+        {!titleOnImage && (
+          <div className="content">
+            <div className="header">{card.title}</div>
+            <Card.Description>{card.description}</Card.Description>
+          </div>
+        )}
       </div>
     </div>
   </div>
@@ -508,6 +517,7 @@ const TeaserTemplate = (args) => (
 
 export const TeaserCardGrid = TeaserTemplate.bind({});
 TeaserCardGrid.args = {
+  titleOnImage: false,
   variant: 'default',
   inverted: false,
   cards: [
@@ -515,6 +525,8 @@ TeaserCardGrid.args = {
       title: "State of Europe's environment",
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      description:
+        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       hasImage: true,
       href: '/#',
       fluid: true,
@@ -524,6 +536,8 @@ TeaserCardGrid.args = {
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
       hasImage: true,
+      description:
+        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       href: '/#',
       fluid: true,
     },
@@ -532,6 +546,8 @@ TeaserCardGrid.args = {
       imgUrl:
         'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
       hasImage: true,
+      description:
+        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
       href: '/#',
       fluid: true,
     },
