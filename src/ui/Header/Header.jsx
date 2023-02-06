@@ -200,6 +200,32 @@ const Main = ({
     }
   };
 
+  // Listens for escape keydown event
+  React.useEffect(() => {
+    const escKeyPressed = (e) => {
+      if (e.key === 'Escape') {
+        // menuOnClickOutside();
+        // restore active element if nothing was selected from the menu dropdown
+        if (pathname !== activeItem) {
+          setActiveItem(pathname);
+        }
+        // close mobile navigation when clicking outside if we have value for nav
+        if (burger) {
+          setBurger('');
+        }
+        // always close the  menu & search
+        setMenuIsActive(false);
+        setSearchIsActive(false);
+      }
+    };
+
+    document.addEventListener('keydown', escKeyPressed);
+
+    return () => {
+      document.removeEventListener('keydown', escKeyPressed);
+    };
+  }, [activeItem, burger, pathname]);
+
   // React.useEffect(() => {
   //   if (searchIsActive || burger === 'open' || menuIsActive) {
   //     document.body.style.overflow = 'hidden';
@@ -254,10 +280,12 @@ const Main = ({
                 </div>
               )}
               {!hideSearch && (
-                <div
+                <button
                   className="search-action"
                   onClick={searchOnClick}
-                  role="none"
+                  tabindex="0"
+                  aria-pressed="false"
+                  aria-haspopup="true"
                   ref={searchButtonRef}
                 >
                   {/* <Icon name={!state.activeSearch ? 'search' : 'close'} /> */}
@@ -265,7 +293,7 @@ const Main = ({
                     src={!searchIsActive ? `${searchIcon}` : `${closeIcon}`}
                     alt="search button open/close"
                   />
-                </div>
+                </button>
               )}
               <Header.BurgerAction
                 className={`mobile ${burger}`}
@@ -302,14 +330,16 @@ const Main = ({
 };
 
 const BurgerAction = React.forwardRef((props, ref) => (
-  <div
+  <button
     ref={ref}
     className={`burger-action ${props.className}`}
-    role="none"
+    tabindex="0"
+    aria-pressed="false"
+    aria-haspopup="true"
     onClick={props.onClick}
   >
     {props.children}
-  </div>
+  </button>
 ));
 
 Header.BurgerAction = BurgerAction;
