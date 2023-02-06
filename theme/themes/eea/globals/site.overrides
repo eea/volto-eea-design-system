@@ -72,8 +72,11 @@ h2, h3, h4, h5, h6 {
 // text smaller than body has extra letterspacing as described in docusaurus
 .tiny,
 .caption,
-.discreet {
+.discreet,
+small {
   letter-spacing: @font-letterspacing-1;
+  font-size: @font-size-00;
+  line-height: @font-lineheight-3;
 }
 
 /* Heading size adjustment */
