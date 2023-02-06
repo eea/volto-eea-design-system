@@ -282,7 +282,7 @@
   line-height: @imageTitleLineHeight;
 }
 
-@media only screen and (min-width: @tabletBreakpoint) {
+@media only screen and (min-width: @computerBreakpoint) {
   .card .gradient {
     padding-block: @imageTitlePaddingBlock;
   }
@@ -437,12 +437,9 @@
 }
 
 // Added from listing-cards.less
-.title-max-2-lines {
-  --title-max-lines: 2;
-}
 .grid-block-teaser .ui.card.u-card .header {
   display: -webkit-box !important;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: var(--title-max-lines, 5);
+  -webkit-line-clamp: var(--title-max-lines, 3);
 }
