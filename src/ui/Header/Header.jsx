@@ -283,7 +283,7 @@ const Main = ({
                 <button
                   className="search-action"
                   onClick={searchOnClick}
-                  tabindex="0"
+                  tabIndex="0"
                   aria-pressed="false"
                   aria-haspopup="true"
                   ref={searchButtonRef}
@@ -333,7 +333,7 @@ const BurgerAction = React.forwardRef((props, ref) => (
   <button
     ref={ref}
     className={`burger-action ${props.className}`}
-    tabindex="0"
+    tabIndex="0"
     aria-pressed="false"
     aria-haspopup="true"
     onClick={props.onClick}
