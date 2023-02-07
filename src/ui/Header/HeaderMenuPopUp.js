@@ -5,6 +5,7 @@ import { Container, Grid, List, Icon, Accordion } from 'semantic-ui-react';
 import { cloneDeep } from 'lodash';
 
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
+import './style.less';
 
 const createColumns = (item, length, renderMenuItem) => {
   let subArrays = [];
@@ -146,7 +147,12 @@ const Countries = ({ menuItem, renderMenuItem }) => (
 const StandardMegaMenuGrid = ({ menuItem, renderMenuItem }) => (
   <Grid columns={4}>
     {menuItem.items.map((section, index) => (
-      <Grid.Column key={index}>
+      <Grid.Column
+        key={index}
+        className={
+          index > 3 && section.items.length === 0 ? 'secondRowMenuItem' : null
+        }
+      >
         <Item item={section} renderMenuItem={renderMenuItem} />
       </Grid.Column>
     ))}
