@@ -354,5 +354,9 @@
 @slickTrackGap: 1.25rem;
 @slickTrackMargin: 1rem 0;
 
-
+/*******************************
+        Teaser Cards
+*******************************/
+@tabletTeaserCardPaddingInline: @rem-space-2;
+@tabletTeaserCardMinWidth: 100%;
 

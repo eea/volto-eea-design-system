@@ -63,7 +63,7 @@
 @tertiaryColorCSSVar  : var(--text-color-tertiary, @tertiaryColor);
 
 @lightPrimaryColor    : @mediumPersianBlue;
-@lightSecondaryColor  : @darkCyan;
+@lightSecondaryColor  : @green-4;
 @lightTertiaryColor   : @UCLABlue;
 
 @darkPrimaryColor     : @darkMidnightBlue;

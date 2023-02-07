@@ -464,3 +464,92 @@ CarouselCards.argTypes = {
     },
   },
 };
+
+const TeaserCard = ({ variant, inverted, titleOnImage, card }) => (
+  <div className="column grid-block-teaser">
+    <div
+      className={`styled-teaser styled ${
+        variant === 'default' ? '' : variant
+      } ${inverted ? 'inverted' : ''}`}
+    >
+      <div
+        className={`ui card u-card max-3-lines title-max-3-lines ${
+          card.fluid ? 'fluid' : ''
+        } ${variant}`}
+      >
+        <a className="image" href={card.href}>
+          <img src={card.imgUrl} alt={card.title} className="ui image" />
+          {titleOnImage && (
+            <div className="gradient">
+              <div className="header">{card.title}</div>
+            </div>
+          )}
+        </a>
+
+        {!titleOnImage && (
+          <div className="content">
+            <div className="header">{card.title}</div>
+            <Card.Description>{card.description}</Card.Description>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+);
+
+const TeaserTemplate = (args) => (
+  <Container>
+    <div className="block __grid teaserGrid centered three">
+      <div className="ui stackable stretched three column grid">
+        {args.cards.map((card, index) => (
+          <TeaserCard
+            variant={args.variant}
+            titleOnImage={args.titleOnImage}
+            inverted={args.inverted}
+            card={card}
+            key={index}
+          />
+        ))}
+      </div>
+    </div>
+  </Container>
+);
+
+export const TeaserCardGrid = TeaserTemplate.bind({});
+TeaserCardGrid.args = {
+  titleOnImage: false,
+  variant: 'default',
+  inverted: false,
+  cards: [
+    {
+      title: "State of Europe's environment",
+      imgUrl:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      description:
+        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+      hasImage: true,
+      href: '/#',
+      fluid: true,
+    },
+    {
+      title: 'Climate',
+      imgUrl:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      hasImage: true,
+      description:
+        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+      href: '/#',
+      fluid: true,
+    },
+    {
+      title: 'Economy and resources',
+      imgUrl:
+        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+      hasImage: true,
+      description:
+        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
+      href: '/#',
+      fluid: true,
+    },
+  ],
+};
