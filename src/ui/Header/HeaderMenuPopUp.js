@@ -147,12 +147,7 @@ const Countries = ({ menuItem, renderMenuItem }) => (
 const StandardMegaMenuGrid = ({ menuItem, renderMenuItem }) => (
   <Grid columns={4}>
     {menuItem.items.map((section, index) => (
-      <Grid.Column
-        key={index}
-        className={
-          index > 3 && section.items.length === 0 ? 'secondRowMenuItem' : null
-        }
-      >
+      <Grid.Column key={index}>
         <Item item={section} renderMenuItem={renderMenuItem} />
       </Grid.Column>
     ))}
