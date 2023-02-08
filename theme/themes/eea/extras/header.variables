@@ -168,6 +168,7 @@
 @mobileMegaMenuPadding: @rem-space-4 0;
 @tabletMegaMenuPadding: @rem-space-9;
 @computerMegaMenuPadding: @rem-space-4 0;
+@megaMenuContainerPaddingBottom: @rem-space-4;
 
 /* Title */
 @mobileMegaMenuTitleButtonPadding: @rem-space-6 0 @rem-space-4;
@@ -192,6 +193,7 @@
 /* At a glance */
 @megaMenuGlanceBackgroundColor: @secondaryColor;
 @megaMenuGlancePadding: @rem-space-4 @rem-space-6;
+@megaMenuGlanceMarginBottom: -@rem-space-4;
 @megaMenuGlanceListItemFontSize: @font-size-2;
 @megaMenuGlanceListItemFontWeight: @font-weight-4;
 @megaMenuGlanceListItemMargin: @rem-space-4 0;
