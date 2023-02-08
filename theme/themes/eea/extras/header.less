@@ -333,14 +333,34 @@
 #search-box {
   position: @searchBoxPosition;
   z-index: 99999;
+  display: flex;
   overflow: auto;
   width: 100%;
   height: @mobilePopUpHeight;
+  align-items: @searchBoxAlignItems;
   background: @searchBoxBackgroundGradient;
 
   .ui.container {
-    height: 100%;
-    align-items: baseline;
+    height: auto;
+  }
+
+  .search-suggestions {
+    margin-top: @searchBoxSuggestionsMarginTop;
+    color: @searchBoxSuggestionsTextColor;
+
+    .ui.list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: @searchBoxSuggestionsMarginTop;
+      column-gap: @searchBoxSuggestionsColumnGap;
+      row-gap: @searchBoxSuggestionsRowGap;
+
+      .item {
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+      }
+    }
   }
 
   .wrapper {
@@ -348,7 +368,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    margin: @mobilePopupMarginTop 0;
+    // margin: @mobilePopupMarginTop 0;
     gap: @searchBoxWrapperGap;
 
     .action {
@@ -368,8 +388,13 @@
 
     .ui.container {
       display: flex;
+      align-items: @searchBoxFullSearchAlignItems;
       justify-content: @searchBoxFullSearchJustifyContent;
       gap: @searchBoxFullSearchGap;
+
+      .ui.button {
+        margin: 0;
+      }
 
       @media only screen and (max-width: @tabletBreakpoint) {
         flex-direction: @tabletSearchBoxFullSearchFlexDirection;
@@ -546,7 +571,7 @@
     height: @tabletPopUpHeight;
 
     .wrapper {
-      margin: @tabletPopupMarginTop 0;
+      // margin: @tabletPopupMarginTop 0;
     }
   }
 }
@@ -658,7 +683,7 @@
     height: @computerPopUpHeight;
 
     .wrapper {
-      margin: @computerPopupMarginTop 0;
+      // margin: @computerPopupMarginTop 0;
 
       .action {
         justify-content: flex-end;

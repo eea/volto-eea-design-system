@@ -219,6 +219,7 @@
 @searchBoxPosition: absolute;
 @searchBoxBackgroundGradient : linear-gradient(13.69deg, @blue-5 1.17%, @secondaryColor 80%);
 @searchBoxWrapperGap : 75px;
+@searchBoxAlignItems: center;
 @searchBoxFullSearchBackground: rgba(255, 255, 255, 0.1);
 @searchBoxFullSearchBoxShadow: 0 0 6px 0 rgba(0, 0, 0, 0.25);
 @searchBoxFullSearchBorder: 1px solid @white;
@@ -227,9 +228,14 @@
 @searchBoxFullSearchJustifyContent: center;
 @searchBoxFullSearchGap: 1.5rem;
 @searchBoxFullSearchPadding: 2em 0;
+@searchBoxFullSearchAlignItems: center;
 @tabletSearchBoxFullSearchFlexDirection: column;
 @tabletSearchBoxFullSearchAlignItems: center;
 @tabletSearchBoxFullSearchTextAlign: center;
+@searchBoxSuggestionsMarginTop: 2em;
+@searchBoxSuggestionsTextColor: @white;
+@searchBoxSuggestionsColumnGap: 2em; 
+@searchBoxSuggestionsRowGap: 1em;
 
 /* Custom shadows for dropdowns */
 @shadow-topbar-dropdown: 2px 0 2px -5px hsla(@shadow-color, calc(@shadow-strength + 6%));
