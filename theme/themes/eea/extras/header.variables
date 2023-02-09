@@ -236,6 +236,9 @@
 @searchBoxSuggestionsTextColor: @white;
 @searchBoxSuggestionsColumnGap: 2em; 
 @searchBoxSuggestionsRowGap: 1em;
+@searchBoxMobilePopupMarginTop: 0.5em;
+@searchBoxTabletPopupMarginTop: 1em;
+@searchBoxComputerPopupMarginTop: 1.5em;
 
 /* Custom shadows for dropdowns */
 @shadow-topbar-dropdown: 2px 0 2px -5px hsla(@shadow-color, calc(@shadow-strength + 6%));
