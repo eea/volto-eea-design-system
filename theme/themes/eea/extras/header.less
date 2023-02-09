@@ -785,9 +785,11 @@
 
     i:before {
       font-size: @megaMenuAccordionIconFontSize;
+      line-height: @megaMenuAccordionIconLineHeight;
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       i {
         color: @megaMenuTextColor;
       }

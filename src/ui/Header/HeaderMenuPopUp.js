@@ -176,7 +176,7 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
               defaultIndex = index;
             }
             x.title = (
-              <Accordion.Title key={`title=${index}`}>
+              <Accordion.Title key={`title=${index}`} as="button">
                 {item.title}
                 <Icon className="ri-arrow-down-s-line" size="small" />
               </Accordion.Title>
@@ -279,7 +279,7 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
       defaultIndex = index;
     }
     x.title = (
-      <Accordion.Title key={`title-${index}`} index={index}>
+      <Accordion.Title key={`title-${index}`} index={index} as="button">
         {element.title}
         <Icon className="ri-arrow-down-s-line" size="small" />
       </Accordion.Title>

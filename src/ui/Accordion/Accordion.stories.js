@@ -107,6 +107,7 @@ function AccordionContainer({ ...args }) {
           active={activeIndex === 0}
           index={0}
           onClick={toggleOpenAccordion}
+          as="button"
         >
           {args.toggle1}
           <Icon className="ri-arrow-down-s-line" />
@@ -114,12 +115,14 @@ function AccordionContainer({ ...args }) {
         <Accordion.Content active={activeIndex === 0}>
           {args.content1.length > 0 &&
             args.content1.map((item, index) => <p key={index}>{item}</p>)}
+          <a href="/#">Read more</a>
         </Accordion.Content>
 
         <Accordion.Title
           active={activeIndex === 1}
           index={1}
           onClick={toggleOpenAccordion}
+          as="button"
         >
           {args.toggle2}
           <Icon className="ri-arrow-down-s-line" />
@@ -133,6 +136,7 @@ function AccordionContainer({ ...args }) {
           active={activeIndex === 2}
           index={2}
           onClick={toggleOpenAccordion}
+          as="button"
         >
           {args.toggle3}
           <Icon className="ri-arrow-down-s-line" />
