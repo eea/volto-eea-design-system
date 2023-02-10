@@ -343,7 +343,7 @@
 
 .cards-carousel .slider-arrow {
   position: absolute;
-  top: 50%;
+  top: 32.5%;
   bottom: auto;
   padding: 0;
   border: none;
@@ -356,11 +356,11 @@
 
 .cards-carousel .prev-arrow {
   right: auto;
-  left: @carouselButtonDistance;
+  left: @carouselLeftDistance;
 }
 
 .cards-carousel .next-arrow {
-  right: @carouselButtonDistance;
+  right: @carouselRightDistance;
   left: auto;
 }
 
