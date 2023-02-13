@@ -76,3 +76,5 @@
 @mobileMenuCopyrightFontWeight      : @font-weight-3;
 @mobileMenuFontWeight               : @font-weight-4;
 @computerMenuFontSize               : @font-size-1;
+@menuFooterActionsGap               : 0 @size-1;
+@menuFooterCopyrightGap             : @size-1;
