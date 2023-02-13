@@ -26,7 +26,7 @@ const FooterActions = (props) => {
             {props.copyright &&
               props.copyright.map((copyright, index) => (
                 <Link to={copyright.link} key={index}>
-                  &copy; Copyright {new Date().getFullYear()} {copyright.site}
+                  {copyright.title}
                 </Link>
               ))}
           </div>

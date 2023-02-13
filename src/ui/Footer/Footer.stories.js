@@ -36,7 +36,7 @@ Default.args = {
     { link: '/#', title: 'Sitemap' },
     { link: '/#', title: 'CMS Login' },
   ],
-  copyright: [{ link: '/#', site: 'EEA' }],
+  copyright: [{ link: '/#', title: '© Copyright 2023 EEA' }],
   sites: [
     { link: '/#', src: Marine, alt: 'WISE marine' },
     { link: '/#', src: Freshwater, alt: 'WISE freshwater' },
