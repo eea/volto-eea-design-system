@@ -2,7 +2,7 @@
 title: What's new
 ---
 
-### EEA Design System (1.0.0-alpha)
+### EEA Design System (1.0.0-beta)
 
 #### Components ready to be used
 
