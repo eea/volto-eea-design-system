@@ -29,7 +29,7 @@
 @mobileThemeSitesLogoMargin         : 0 auto @rem-space-8;
 @computerThemeSitesLogoMargin       : 0 auto @rem-space-10;
 
-/* Subfooter Item Header */
+/* Sub-footer Item Header */
 @mobileItemHeaderMarginBottom       : @space-5;
 @computerItemHeaderMarginBottom     : @space-12;
 @computerLogoHeaderMarginLeft       : -50px;
@@ -39,7 +39,7 @@
 
 /* Contact Info */
 @tabletContactBlockMarginInline     : 0;
-@tabletContactBlockMarginbottom     : @space-4;
+@tabletContactBlockMarginBottom     : @space-4;
 @mobileContactMargin                : @space-4 0;
 @tabletContactMargin                : @rem-space-050 0;
 @contactFontSize                    : @font-size-3;
@@ -49,11 +49,11 @@
 @mobileContactIconMarginRight       : @space-3;
 @mobileContactIconFontSize          : @font-size-4;
 @computerContactIconFontSize        : @font-size-9;
-@tabletSubcontactIconFontSize       : @font-size-0;
-@computerSubcontactIconFontSize     : @font-size-1;
-@tabletSubcontactIconMarginRight    : @rem-space-2;
-@computerSubcontactIconMarginRight  : @rem-space-4;
-@computerSubcontactIconFontWeight   : @font-weight-4;
+@tabletSubContactIconFontSize       : @font-size-0;
+@computerSubContactIconFontSize     : @font-size-1;
+@tabletSubContactIconMarginRight    : @rem-space-2;
+@computerSubContactIconMarginRight  : @rem-space-4;
+@computerSubContactIconFontWeight   : @font-weight-4;
 
 /* Social Icons */
 @mobileSocialIconsMargin            : @rem-space-2 0 @rem-space-8;
@@ -69,6 +69,7 @@
 /* Footer Menu */
 
 @menuLinkColor                      : @white;
+@menuLinkTextAlign                  : center;
 @menuFontWeight                     : @font-weight-4;
 @mobileMenuFontSize                 : @font-size-0;
 @mobileMenuCopyrightFontSize        : @font-size-00;
