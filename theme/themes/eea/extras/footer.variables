@@ -14,7 +14,7 @@
 @tabletFooterTitleFontWeight: @font-weight-7;
 
 /* Wrapper */
-@wrapperBackgroundImage              : url(../assets/images/Footer/Extras/footervisual.svg);
+@wrapperBackgroundImage              : url(../assets/images/Footer/Extras/footer-visual.svg);
 @wrapperBackgroundPosition           : left;
 @mobileWrapperBackgroundSize         : cover;
 @computerWrapperBackgroundSize       : 100% 100%;
