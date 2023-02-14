@@ -86,7 +86,8 @@
 .top.bar .ui.dropdown .menu .item {
   padding: @dropdownMenuItemPadding;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background: @dropdownMenuItemBackgroundColorHover;
     color: @dropdownMenuItemColorHover;
     cursor: pointer;
@@ -155,7 +156,8 @@
     width: @mobileThemeSitesMenuWidth;
 
     .item {
-      &:hover {
+      &:hover,
+      &:focus-visible {
         a.site {
           color: @white;
         }
@@ -259,7 +261,8 @@
       font-weight: @mainMenuItemFontWeight;
     }
 
-    a:hover {
+    a:hover,
+    &:focus-visible {
       border-bottom: @mainMenuItemActiveBorder;
     }
   }
@@ -284,7 +287,8 @@
     color: @mainMenuItemInvertedColor;
   }
 
-  a:hover {
+  a:hover,
+  &:focus-visible {
     border-bottom: @mainMenuInvertedItemActiveBorder;
     color: @mainMenuItemInvertedColor;
   }
@@ -722,7 +726,8 @@
   display: @megaMenuTextDisplay;
   color: @megaMenuTextColor;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     text-decoration: @megaMenuTextHoverDecoration;
   }
 
@@ -890,7 +895,8 @@
     font-size: @computerMegaMenuSubTitleFontSize;
     font-weight: @megaMenuSubTitleFontWeight;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       text-decoration: underline;
     }
   }

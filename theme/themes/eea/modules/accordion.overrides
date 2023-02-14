@@ -27,7 +27,8 @@
       flex-shrink: 0;
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       color: @titleColorHover;
 
       i {
@@ -88,7 +89,8 @@
 ---------------*/
 
 .ui.styled.accordion  .title,
-.ui.styled.accordion  .title:hover {
+.ui.styled.accordion  .title:hover,
+.ui.styled.accordion  .title:focus-visible {
   background-color: @styledActiveTitleBackground;
 }
 .ui.styled.accordion .active.title input {
@@ -129,7 +131,9 @@
   background-color: @primaryColor;
 }
 .ui.accordion.primary .title:not(.active):hover,
-.ui.accordion.primary .title:not(.active):hover i {
+.ui.accordion.primary .title:not(.active):focus-visible,
+.ui.accordion.primary .title:not(.active):hover i,
+.ui.accordion.primary .title:not(.active):focus-visible i {
   color: @primaryColorCSSVar;
 }
 
@@ -138,7 +142,9 @@
   background-color: @secondaryColor;
 }
 .ui.accordion.secondary .title:not(.active):hover,
-.ui.accordion.secondary .title:not(.active):hover i {
+.ui.accordion.secondary .title:not(.active):focus-visible,
+.ui.accordion.secondary .title:not(.active):hover i,
+.ui.accordion.secondary .title:not(.active):focus-visible i {
   color: @secondaryColorCSSVar;
 }
 
@@ -147,6 +153,8 @@
   background-color: @tertiaryColor;
 }
 .ui.accordion.tertiary .title:not(.active):hover,
-.ui.accordion.tertiary .title:not(.active):hover i {
+.ui.accordion.tertiary .title:not(.active):focus-visible,
+.ui.accordion.tertiary .title:not(.active):hover i,
+.ui.accordion.tertiary .title:not(.active):focus-visble i {
   color: @tertiaryColorCSSVar;
 }

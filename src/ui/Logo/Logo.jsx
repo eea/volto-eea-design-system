@@ -13,9 +13,9 @@ import { Image } from 'semantic-ui-react';
  * @param {Object} intl Intl object
  * @returns {string} Markup of the component.
  */
-const Logo = ({ src, invertedSrc, id, url, alt, title, inverted }) => {
+const Logo = ({ src, classes, invertedSrc, id, url, alt, title, inverted }) => {
   return (
-    <Link to={url} title={title}>
+    <Link to={url} title={title} class={classes}>
       <Image
         src={inverted ? invertedSrc : src}
         alt={alt}
