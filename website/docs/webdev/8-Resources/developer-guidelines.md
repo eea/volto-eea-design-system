@@ -58,6 +58,8 @@ following practical guidelines.
 
 - Use .jsx extension for React components
 - Filename: Use PascalCase for filenames. E.g., ItemCard.jsx. [Bad example][2]
+- Image filenames: Use kebab-case for image filenames. E.g. 
+  lowercase-separated-by-dashes.png 
 - Variable naming: Use PascalCase for React components and camelCase for their
   instances.
 - Component Naming: Use the filename as the component name. For example,
