@@ -6,13 +6,6 @@
 @mobileFooterBackgroundGradient: linear-gradient(220.4deg, @green-5 8.29%, @blue-grey-6 56.3%, #212D38 89.06%);
 @computerFooterBackgroundGradient: linear-gradient(212.33deg, @green-5 6.78%, #212D38 69.54%, #212D38 98.23%);
 
-/* Titles */
-@footerTitleFontWeight      : @font-weight-7;
-@mobileFooterTitleFontSize  : @font-size-1;
-@tabletFooterTitleFontSize  : @font-size-4;
-@computerFooterTitleFontSize: @font-size-4;
-@tabletFooterTitleFontWeight: @font-weight-7;
-
 /* Wrapper */
 @wrapperBackgroundImage              : url(../assets/images/Footer/Extras/footervisual.svg);
 @wrapperBackgroundPosition           : left;
@@ -24,8 +17,8 @@
 @computerWrapperPadding              : @space-20 0 @space-18;
 
 /* Theme Sites */
-@mobileThemeSitesPadding            : @space-2 0;
-@computerThemeSitesPadding          : @space-4 0;
+@mobileThemeSitesPadding            : @rem-space-3 0;
+@computerThemeSitesPadding          : @rem-space-5 0;
 @mobileThemeSitesLogoMargin         : 0 auto @rem-space-8;
 @computerThemeSitesLogoMargin       : 0 auto @rem-space-10;
 
