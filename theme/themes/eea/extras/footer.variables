@@ -21,6 +21,8 @@
 @computerThemeSitesPadding          : @rem-space-5 0;
 @mobileThemeSitesLogoMargin         : 0 auto @rem-space-8;
 @computerThemeSitesLogoMargin       : 0 auto @rem-space-10;
+@mobileFooterTitleFontSize          : @mobileH4;
+@tabletFooterTitleFontSize          : @h3;
 
 /* Sub-footer Item Header */
 @mobileItemHeaderMarginBottom       : @space-5;
