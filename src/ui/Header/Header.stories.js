@@ -50,7 +50,6 @@ export default {
 
 const logoProps = {
   title: 'Site',
-  classes: 'logo',
   alt: 'European Environment Agency',
   url: 'https://eea.europa.eu',
   src: LogoImage,
