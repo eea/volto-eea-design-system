@@ -23,7 +23,7 @@ import Contact from '@eeacms/volto-eea-design-system/ui/Footer/Contact';
 const Footer = (props) => {
   const { children } = props;
   return (
-    <footer>
+    <footer id={'footer'}>
       <div className="footer-wrapper">
         <Container>{children}</Container>
       </div>

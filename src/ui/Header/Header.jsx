@@ -238,6 +238,7 @@ const Main = ({
                 <div
                   className="ui text eea-main-menu tablet or lower hidden menu"
                   ref={desktopMenuRef}
+                  id={'navigation'}
                 >
                   {menuItems.map((item) => (
                     <Menu.Item

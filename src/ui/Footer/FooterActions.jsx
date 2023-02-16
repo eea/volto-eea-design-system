@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
 
 const FooterActions = (props) => {
@@ -14,9 +13,14 @@ const FooterActions = (props) => {
           <div className="actions">
             {props.actions &&
               props.actions.map((action, index) => (
-                <Link to={action.link} key={index}>
+                <a
+                  href={action.link}
+                  key={index}
+                  target={'_blank'}
+                  rel={'noreferrer'}
+                >
                   {action.title}
-                </Link>
+                </a>
               ))}
           </div>
         </Grid.Column>
@@ -25,9 +29,16 @@ const FooterActions = (props) => {
           <div className="copyright">
             {props.copyright &&
               props.copyright.map((copyright, index) => (
-                <Link to={copyright.link} key={index}>
-                  &copy; Copyright {new Date().getFullYear()} {copyright.site}
-                </Link>
+                <>
+                  <a
+                    href={copyright.link}
+                    key={index}
+                    target={'_blank'}
+                    rel={'noreferrer'}
+                  >
+                    {copyright.title}
+                  </a>
+                </>
               ))}
           </div>
         </Grid.Column>
