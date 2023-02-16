@@ -4,13 +4,9 @@
 
 @import '@eeacms/volto-eea-design-system/../theme/themes/eea/globals/utilities';
 
-// Accessibility box-shadow on focus-visible for every component
-// On logos apply the box-shadow on image to show correctly
-*:not(.logo) > *:not(.logo):focus-visible, // All components except logos
-*.logo:focus-visible > img,                // Header and Footer theme site logos
-*.logo *:focus-visible > img {             // Footer top 2 logos
-  outline: 0;
-  box-shadow: @focusVisibleBoxShadow;
+// Accessibility outline on focus-visible for every component
+*:focus-visible {
+  outline: @focusVisibleOutline;
 }
 
 h1, h2, h3, h4, h5, h6 {
