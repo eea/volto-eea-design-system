@@ -62,10 +62,11 @@ const TopDropdownMenu = ({
               text={mobileText || text}
               icon={icon || 'chevron down'}
               aria-label="dropdown"
+              lazyLoad
               closeOnChange={false}
               closeOnBlur={true}
             >
-              <Dropdown.Menu role="group">{children}</Dropdown.Menu>
+              <Dropdown.Menu role="option">{children}</Dropdown.Menu>
             </Dropdown>
           )
         ) : (
@@ -74,11 +75,12 @@ const TopDropdownMenu = ({
             className={className}
             text={mobileText || text}
             icon={icon || 'chevron down'}
-            aria-label="dropdown"
+            role="dropdown"
+            lazyLoad
             closeOnChange={false}
             closeOnBlur={true}
           >
-            <Dropdown.Menu role="group">{children}</Dropdown.Menu>
+            <Dropdown.Menu role="option">{children}</Dropdown.Menu>
           </Dropdown>
         )}
       </>
