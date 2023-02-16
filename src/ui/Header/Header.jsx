@@ -62,6 +62,7 @@ const TopDropdownMenu = ({
               text={mobileText || text}
               icon={icon || 'chevron down'}
               aria-label="dropdown"
+              role="dropdown"
               lazyLoad
               closeOnChange={false}
               closeOnBlur={true}
@@ -76,6 +77,7 @@ const TopDropdownMenu = ({
             text={mobileText || text}
             icon={icon || 'chevron down'}
             role="dropdown"
+            aria-label="dropdown"
             lazyLoad
             closeOnChange={false}
             closeOnBlur={true}
