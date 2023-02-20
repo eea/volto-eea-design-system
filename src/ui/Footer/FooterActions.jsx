@@ -29,7 +29,7 @@ const FooterActions = (props) => {
           <div className="copyright">
             {props.copyright &&
               props.copyright.map((copyright, index) => (
-                <>
+                <React.Fragment key={index}>
                   <a
                     href={copyright.link}
                     key={index}
@@ -38,7 +38,7 @@ const FooterActions = (props) => {
                   >
                     {copyright.title}
                   </a>
-                </>
+                </React.Fragment>
               ))}
           </div>
         </Grid.Column>
