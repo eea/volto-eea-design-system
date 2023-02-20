@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 
 import { Grid, Image } from 'semantic-ui-react';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 const SubFooter = (props) => {
   if (props.children) {
@@ -23,7 +24,9 @@ const SubFooter = (props) => {
               <div className="item">
                 <div className={manager.className}>
                   <a href={manager.link}>
-                    <Image src={manager.src} alt={manager.alt}></Image>
+                    <LazyLoadComponent>
+                      <Image src={manager.src} alt={manager.alt}></Image>
+                    </LazyLoadComponent>
                   </a>
                 </div>
               </div>
@@ -53,7 +56,9 @@ const SubFooter = (props) => {
               <div className="item">
                 <div className={manager.className}>
                   <a href={manager.link}>
-                    <Image src={manager.src} alt={manager.alt}></Image>
+                    <LazyLoadComponent>
+                      <Image src={manager.src} alt={manager.alt}></Image>
+                    </LazyLoadComponent>
                   </a>
                 </div>
               </div>
