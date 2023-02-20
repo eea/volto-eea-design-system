@@ -12,7 +12,7 @@ import FooterHeader from '@eeacms/volto-eea-design-system/ui/Footer/FooterHeader
 import SubFooter from '@eeacms/volto-eea-design-system/ui/Footer/SubFooter';
 import Social from '@eeacms/volto-eea-design-system/ui/Footer/Social';
 import Contact from '@eeacms/volto-eea-design-system/ui/Footer/Contact';
-import { useOnScreen } from '../../helpers/useOnScreen';
+import useOnScreen from '../../helpers/useOnScreen';
 
 /**
  * Component to display the footer.
