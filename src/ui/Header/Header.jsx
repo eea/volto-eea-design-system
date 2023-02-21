@@ -54,34 +54,18 @@ const TopDropdownMenu = ({
   const Component = ({ mobileText }) => {
     return (
       <>
-        {children.props['aria-label'] === 'language switcher' ? (
-          hasLanguageDropdown && (
-            <Dropdown
-              id={id}
-              className={className}
-              text={mobileText || text}
-              icon={icon || 'chevron down'}
-              aria-label="dropdown"
-              closeOnChange={false}
-              closeOnBlur={true}
-            >
-              <Dropdown.Menu role="group">{children}</Dropdown.Menu>
-            </Dropdown>
-          )
-        ) : (
-          <Dropdown
-            id={id}
-            className={className}
-            text={mobileText || text}
-            icon={icon || 'chevron down'}
-            aria-label="dropdown"
-            closeOnChange={true}
-            closeOnBlur={false}
-            closeOnEscape={true}
-          >
-            <Dropdown.Menu role="group">{children}</Dropdown.Menu>
-          </Dropdown>
-        )}
+        <Dropdown
+          id={id}
+          className={className}
+          text={mobileText || text}
+          icon={icon || 'chevron down'}
+          aria-label="dropdown"
+          closeOnChange={true}
+          closeOnBlur={false}
+          closeOnEscape={true}
+        >
+          <Dropdown.Menu role="group">{children}</Dropdown.Menu>
+        </Dropdown>
       </>
     );
   };

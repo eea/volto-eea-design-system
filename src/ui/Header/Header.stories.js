@@ -1371,14 +1371,18 @@ const Template = (args) => {
                   as="li"
                   key={index}
                   text={
-                    <span>
+                    <a
+                      href={'/' + item.code}
+                      onClick={() => setLanguage(item.code)}
+                      tabIndex={0}
+                      className={'language-link'}
+                    >
                       {item.name}
                       <span className="country-code">
                         {item.code.toUpperCase()}
                       </span>
-                    </span>
+                    </a>
                   }
-                  onClick={() => setLanguage(item.code)}
                 ></Dropdown.Item>
               ))}
             </ul>
