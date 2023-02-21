@@ -10,9 +10,9 @@ function HeaderSearchPopUp({ onClose, searchInputRef, triggerRefs = [] }) {
 
   return (
     <div id="search-box" ref={nodeRef}>
-      <form>
+      <div className="wrapper">
         <Container>
-          <div className="wrapper">
+          <form>
             <Input
               ref={searchInputRef}
               className="search"
@@ -20,30 +20,21 @@ function HeaderSearchPopUp({ onClose, searchInputRef, triggerRefs = [] }) {
               placeholder="Search..."
               fluid
             />
-            {/* <div className="action">
-            <Button icon labelPosition="left" className="search">
-              <Icon name="search" />
-              Advanced Search
-            </Button>
-          </div> */}
-          </div>
+          </form>
         </Container>
-      </form>
 
-      <div className="advanced-search">
-        <Container>
-          <p>
-            Looking for more information? Try searching the full EEA website
-            content
-          </p>
-          <a
-            href="/"
-            className="ui button white inverted"
-            title="Advanced search"
-          >
-            Go to full site search
-          </a>
-        </Container>
+        <div className="advanced-search">
+          <Container>
+            <div>For more search options</div>
+            <a
+              href="/"
+              className="ui button white inverted"
+              title="Advanced search"
+            >
+              Go to advanced search
+            </a>
+          </Container>
+        </div>
       </div>
     </div>
   );

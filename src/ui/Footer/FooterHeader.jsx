@@ -3,7 +3,7 @@ import React from 'react';
 const FooterHeader = (props) => {
   return (
     <div className="theme-sites">
-      <p className="header text-center">{props.children}</p>
+      <h3 className="header text-center">{props.children}</h3>
     </div>
   );
 };

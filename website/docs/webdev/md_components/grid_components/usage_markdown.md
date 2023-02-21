@@ -6,7 +6,7 @@ The responsive layout grid is made up of three elements: columns, gutters, and m
 
 Content is placed in the areas of the screen that contain columns. The number of columns displayed in the grid is determined by the breakpoint range, a range of predetermined screen sizes. A breakpoint can correspond with mobile, tablet, or other screen type.
 
-![](../static/grid1.png)
+![](../static/grid-1.png)
 <br />
 
 On mobile, at a breakpoint of 480px, this layout grid uses 4 columns.

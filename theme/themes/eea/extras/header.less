@@ -86,11 +86,21 @@
 .top.bar .ui.dropdown .menu .item {
   padding: @dropdownMenuItemPadding;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background: @dropdownMenuItemBackgroundColorHover;
     color: @dropdownMenuItemColorHover;
     cursor: pointer;
   }
+
+  &:hover .language-link
+   {
+    color: @dropdownMenuItemColorHover;
+  }
+}
+
+.language-link {
+  color: @dropdownColor;
 }
 
 .top.bar .ui.dropdown .wrapper {
@@ -155,7 +165,8 @@
     width: @mobileThemeSitesMenuWidth;
 
     .item {
-      &:hover {
+      &:hover,
+      &:focus-visible {
         a.site {
           color: @white;
         }
@@ -185,11 +196,11 @@
         justify-content: flex-end;
         font-weight: @languageMenuItemFontWeight;
 
-        span {
+        .language-link {
           font-size: @mobileLanguageFontSize;
         }
 
-        span.country-code {
+        .country-code {
           margin-left: @mobileLanguageCountryCodeMarginLeft;
           font-weight: @mobileLanguageCountryCodeFontWeight;
         }
@@ -259,7 +270,8 @@
       font-weight: @mainMenuItemFontWeight;
     }
 
-    a:hover {
+    a:hover,
+    &:focus-visible {
       border-bottom: @mainMenuItemActiveBorder;
     }
   }
@@ -284,7 +296,8 @@
     color: @mainMenuItemInvertedColor;
   }
 
-  a:hover {
+  a:hover,
+  &:focus-visible {
     border-bottom: @mainMenuInvertedItemActiveBorder;
     color: @mainMenuItemInvertedColor;
   }
@@ -431,6 +444,7 @@
   align-items: center;
   justify-content: center;
   background-color: @burgerActionBackgroundColor;
+  border: none;
   cursor: pointer;
 }
 
@@ -447,6 +461,7 @@
   align-items: center;
   justify-content: center;
   background-color: @secondaryColor;
+  border: none;
   cursor: pointer;
 }
 
@@ -633,7 +648,7 @@
   #language-switcher {
     padding: @computerLanguageMenuPadding;
 
-    .menu .wrapper .item span {
+    .menu .wrapper .item .language-link {
       font-size: @computerLanguageFontSize;
     }
   }
@@ -747,7 +762,8 @@
   display: @megaMenuTextDisplay;
   color: @megaMenuTextColor;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     text-decoration: @megaMenuTextHoverDecoration;
   }
 
@@ -810,9 +826,11 @@
 
     i:before {
       font-size: @megaMenuAccordionIconFontSize;
+      line-height: @megaMenuAccordionIconLineHeight;
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       i {
         color: @megaMenuTextColor;
       }
@@ -913,7 +931,8 @@
     font-size: @computerMegaMenuSubTitleFontSize;
     font-weight: @megaMenuSubTitleFontWeight;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       text-decoration: underline;
     }
   }
