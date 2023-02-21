@@ -41,7 +41,7 @@ const TopDropdownMenu = ({
   children,
   className,
   icon,
-  hasLanguageDropdown = true,
+  hasLanguageDropdown = false,
   id,
   tabletText,
   mobileText,
