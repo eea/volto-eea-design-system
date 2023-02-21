@@ -4,6 +4,12 @@
 
 @import '@eeacms/volto-eea-design-system/../theme/themes/eea/globals/utilities';
 
+// Accessibility outline on focus-visible for every component
+button:focus-visible,
+*:focus-visible {
+  outline: @focusVisibleOutline;
+}
+
 h1, h2, h3, h4, h5, h6 {
   line-height: @font-lineheight-0;
   letter-spacing: @font-letterspacing-00;
@@ -72,8 +78,11 @@ h2, h3, h4, h5, h6 {
 // text smaller than body has extra letterspacing as described in docusaurus
 .tiny,
 .caption,
-.discreet {
+.discreet,
+small {
   letter-spacing: @font-letterspacing-1;
+  font-size: @font-size-00;
+  line-height: @font-lineheight-3;
 }
 
 /* Heading size adjustment */
@@ -106,4 +115,26 @@ a {
 ::target-text {
   background: @lightLavender;
   color: @black;
+}
+
+/* Add colors for paragraphs styles options in StyeMenu */
+#style-menu.ui.dropdown .menu {
+  span:nth-of-type(1) {
+    color: @primaryColor;
+      span.text {
+        color: @primaryColor;
+      }
+  }
+  span:nth-of-type(2) {
+    color: @secondaryColor;
+      span.text {
+        color: @secondaryColor;
+      }
+  }
+  span:nth-of-type(3) {
+    color: @tertiaryColor;
+      span.text {
+        color: @tertiaryColor;
+      }
+  }
 }

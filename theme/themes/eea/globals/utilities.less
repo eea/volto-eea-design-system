@@ -35,10 +35,17 @@ h1, h2, h3, h4, h5, h6, p, span, .header {
 
 // Text
 .text-left,
-.has--text--left { text-align: left !important; }
+.has--text--left,
+.has--textAlign--left { text-align: left !important; }
 .text-center,
-.has--text--center { text-align: center !important;}
-.text-right { text-align: right !important; }
+.has--text--center,
+.has--textAlign--center { text-align: center !important;}
+.text-right,
+.has--text--right,
+.has--textAlign--right { text-align: right !important; }
+.text-justify,
+.has--text--justify,
+.has--textAlign--justify { text-align: justify !important; }
 .bold { font-weight: bold !important; }
 
 .has--text--left {
@@ -87,4 +94,8 @@ h1, h2, h3, h4, h5, h6, p, span, .header {
 .bordered {
   border-bottom: @border-size-1 solid !important;
   padding-bottom: @rem-space-2 !important;
+}
+
+.fw-light {
+  font-weight: @font-weight-3;
 }

@@ -75,8 +75,9 @@ const TopDropdownMenu = ({
             text={mobileText || text}
             icon={icon || 'chevron down'}
             aria-label="dropdown"
-            closeOnChange={false}
-            closeOnBlur={true}
+            closeOnChange={true}
+            closeOnBlur={false}
+            closeOnEscape={true}
           >
             <Dropdown.Menu role="group">{children}</Dropdown.Menu>
           </Dropdown>
@@ -262,6 +263,7 @@ const Main = ({
                 <div
                   className="ui text eea-main-menu tablet or lower hidden menu"
                   ref={desktopMenuRef}
+                  id={'navigation'}
                 >
                   {menuItems.map((item) => (
                     <Menu.Item
