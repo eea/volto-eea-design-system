@@ -92,6 +92,15 @@
     color: @dropdownMenuItemColorHover;
     cursor: pointer;
   }
+
+  &:hover .language-link
+   {
+    color: @dropdownMenuItemColorHover;
+  }
+}
+
+.language-link {
+  color: @dropdownColor;
 }
 
 .top.bar .ui.dropdown .wrapper {
@@ -187,11 +196,11 @@
         justify-content: flex-end;
         font-weight: @languageMenuItemFontWeight;
 
-        span {
+        .language-link {
           font-size: @mobileLanguageFontSize;
         }
 
-        span.country-code {
+        .country-code {
           margin-left: @mobileLanguageCountryCodeMarginLeft;
           font-weight: @mobileLanguageCountryCodeFontWeight;
         }
@@ -435,6 +444,7 @@
   align-items: center;
   justify-content: center;
   background-color: @burgerActionBackgroundColor;
+  border: none;
   cursor: pointer;
 }
 
@@ -451,6 +461,7 @@
   align-items: center;
   justify-content: center;
   background-color: @secondaryColor;
+  border: none;
   cursor: pointer;
 }
 
@@ -637,7 +648,7 @@
   #language-switcher {
     padding: @computerLanguageMenuPadding;
 
-    .menu .wrapper .item span {
+    .menu .wrapper .item .language-link {
       font-size: @computerLanguageFontSize;
     }
   }
