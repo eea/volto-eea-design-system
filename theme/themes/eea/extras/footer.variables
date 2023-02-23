@@ -50,6 +50,14 @@
 @computerSubContactIconMarginRight  : @rem-space-4;
 @computerSubContactIconFontWeight   : @font-weight-4;
 
+/* Description */
+@mobileFooterDescriptionMargin      : @rem-space-2 0 @rem-space-8;
+@tabletFooterDescriptionMargin      : @rem-space-7 0 0 0;
+@computerFooterDescriptionMargin    : @rem-space-17 0 0 0;
+@computerFooterDescriptionFontSize  : @font-size-1;
+@mobileFooterDescriptionFontSize    : @font-size-0;
+@footerDescriptionTextAlign         : center;
+
 /* Social Icons */
 @mobileSocialIconsMargin            : @rem-space-2 0 @rem-space-8;
 @tabletSocialIconsMargin            : @rem-space-7 0;

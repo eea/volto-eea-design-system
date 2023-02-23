@@ -12,6 +12,7 @@ import FooterHeader from '@eeacms/volto-eea-design-system/ui/Footer/FooterHeader
 import SubFooter from '@eeacms/volto-eea-design-system/ui/Footer/SubFooter';
 import Social from '@eeacms/volto-eea-design-system/ui/Footer/Social';
 import Contact from '@eeacms/volto-eea-design-system/ui/Footer/Contact';
+import Description from '@eeacms/volto-eea-design-system/ui/Footer/Description';
 
 /**
  * Component to display the footer.
@@ -37,6 +38,7 @@ Footer.Header = FooterHeader;
 Footer.Sites = FooterSites;
 Footer.Social = Social;
 Footer.SubFooter = SubFooter;
+Footer.Description = Description;
 
 /**
  * Property types.
