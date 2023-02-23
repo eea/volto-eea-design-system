@@ -31,6 +31,7 @@ const Template = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   header: 'Thematic information platforms',
+  description: '',
   actions: [
     { link: '/#', title: 'Privacy' },
     { link: '/#', title: 'Sitemap' },
