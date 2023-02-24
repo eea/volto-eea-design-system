@@ -4,7 +4,7 @@ import { Grid } from 'semantic-ui-react';
 
 const Description = (props) => {
   if (props.children) {
-    return <div>{props.children}</div>;
+    return <div className="footer-description">{props.children}</div>;
   }
 
   return props.description ? (
