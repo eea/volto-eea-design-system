@@ -37,9 +37,7 @@ const SubFooter = (props) => {
         </Grid.Column>
       </Grid>
 
-      <Grid.Row>
-        <Footer.Description description={props.description} />
-      </Grid.Row>
+      <Footer.Description description={props.description} />
 
       <Grid.Row>
         <Footer.Social social={props.social} />
