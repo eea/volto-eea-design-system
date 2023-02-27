@@ -37,6 +37,10 @@ footer .theme-sites {
   .logos .logo img {
     margin: @mobileThemeSitesLogoMargin;
   }
+
+  .header {
+    font-size: @mobileFooterTitleFontSize;
+  }
 }
 
 .subfooter .item .ui.grid {
@@ -46,8 +50,6 @@ footer .theme-sites {
 .subfooter .item {
   .header {
     margin-bottom: @mobileItemHeaderMarginBottom;
-    font-size: @mobileFooterTitleFontSize;
-    font-weight: @footerTitleFontWeight;
     text-align: center;
   }
 }
@@ -94,6 +96,15 @@ footer .theme-sites {
     i.icon {
       font-size: @mobileSocialIconSize;
     }
+  }
+}
+
+.subfooter .footer-description {
+  margin: @mobileFooterDescriptionMargin;
+  text-align: @footerDescriptionTextAlign;
+
+  p {
+    font-size: @mobileFooterDescriptionFontSize;
   }
 }
 
@@ -152,11 +163,9 @@ footer .footer-wrapper .menu {
   footer {
     background: @computerFooterBackgroundGradient;
   }
-  footer .theme-sites {
-    .header {
-      font-size: @tabletFooterTitleFontSize;
-      font-weight: @tabletFooterTitleFontWeight;
-    }
+
+  footer .theme-sites .header {
+    font-size: @tabletFooterTitleFontSize;
   }
 
   .subfooter .item {
@@ -170,11 +179,6 @@ footer .footer-wrapper .menu {
 
     .contact-block {
       padding-left: @siteLogoPaddingRight;
-    }
-
-    .header {
-      font-size: @tabletFooterTitleFontSize;
-      text-align: left;
     }
   }
 
@@ -192,6 +196,10 @@ footer .footer-wrapper .menu {
   .contact-block .subcontact a {
     font-size: @tabletSubContactIconFontSize;
     margin-right: @tabletSubContactIconMarginRight;
+  }
+
+  .subfooter .footer-description {
+    margin: @tabletFooterDescriptionMargin;
   }
 
   .subfooter .social {
@@ -218,9 +226,6 @@ footer .footer-wrapper .menu {
   footer .theme-sites {
     padding: @computerThemeSitesPadding;
 
-    .header {
-      font-size: @computerFooterTitleFontSize;
-    }
     .logos .logo img {
       margin: @computerThemeSitesLogoMargin;
     }
@@ -229,13 +234,13 @@ footer .footer-wrapper .menu {
   .subfooter .logo-header {
     // To match the figma align
     margin-left: @computerLogoHeaderMarginLeft;
-  }
 
   .subfooter .item {
     .header {
       margin-bottom: @computerItemHeaderMarginBottom;
       font-size: @computerFooterTitleFontSize;
     }
+
   }
 
   .contact-block .subcontact a {
@@ -250,6 +255,14 @@ footer .footer-wrapper .menu {
 
     i.big.icon {
       font-size: @computerContactIconFontSize;
+    }
+  }
+
+  .subfooter .footer-description {
+    margin: @computerFooterDescriptionMargin;
+
+    p {
+      font-size: @computerFooterDescriptionFontSize;
     }
   }
 
