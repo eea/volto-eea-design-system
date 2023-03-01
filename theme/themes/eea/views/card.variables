@@ -22,7 +22,6 @@
 @minHeight: 0px;
 @padding: 0em;
 @width: 290px;
-@minWidth: 250px;
 @borderWidth: 1px;
 @borderShadow: 0px 0px 0px @borderWidth @solidBorderColor;
 @boxShadow: @eeaGlobalShadow;
@@ -333,6 +332,7 @@
 
 /* Button */
 @carouselButtonPadding: 0;
+@carouselButtonMargin: 0;
 @carouselButtonIconColor: @tertiaryColor;
 @carouselButtonIconFontSize: 3.125rem;
 @carouselButtonIconOpacity: 1;
@@ -353,8 +353,8 @@
 
 /* Slick wrapper */
 @slickListMargin: 0 -0.75em;
-@slickTrackGap: 1.25rem;
 @slickTrackMargin: 1rem 0;
+@slickSlideMargin: 0 10px;
 
 /*******************************
         Teaser Cards
