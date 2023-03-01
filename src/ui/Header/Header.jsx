@@ -67,7 +67,6 @@ const TopDropdownMenu = ({
               closeOnChange={true}
               closeOnBlur={false}
               closeOnEscape={true}
-
             >
               <Dropdown.Menu role="option">{children}</Dropdown.Menu>
             </Dropdown>
