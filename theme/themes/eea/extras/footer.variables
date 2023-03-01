@@ -82,4 +82,3 @@
 @computerMenuFontSize               : @font-size-1;
 @menuFooterActionsGap               : @size-1 0;
 @menuFooterCopyrightGap             : @size-1 0;
-@mobileTapTargetMinimum             : 50px;
