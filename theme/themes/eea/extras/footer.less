@@ -95,6 +95,15 @@ footer .theme-sites {
   }
 }
 
+.subfooter .footer-description {
+  margin: @mobileFooterDescriptionMargin;
+  text-align: @footerDescriptionTextAlign;
+
+  p {
+    font-size: @mobileFooterDescriptionFontSize;
+  }
+}
+
 footer .footer-wrapper .menu {
   .actions {
     display: flex;
@@ -131,7 +140,7 @@ footer .footer-wrapper .menu {
     flex-direction: column;
   }
 
- footer .footer-wrapper .menu .copyright a {
+  footer .footer-wrapper .menu .copyright a {
     font-size: @mobileMenuCopyrightFontSize;
     font-weight: @mobileMenuCopyrightFontWeight;
   }
@@ -143,7 +152,7 @@ footer .footer-wrapper .menu {
   }
 
   footer .theme-sites .header {
-    font-size: @tabletFooterTitleFontSize
+    font-size: @tabletFooterTitleFontSize;
   }
 
   .subfooter .item {
@@ -176,6 +185,10 @@ footer .footer-wrapper .menu {
     margin-right: @tabletSubContactIconMarginRight;
   }
 
+  .subfooter .footer-description {
+    margin: @tabletFooterDescriptionMargin;
+  }
+
   .subfooter .social {
     justify-content: @tabletSocialJustifyContent;
     gap: @tabletSocialGap;
@@ -187,7 +200,6 @@ footer .footer-wrapper .menu {
       }
     }
   }
-
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
@@ -208,7 +220,7 @@ footer .footer-wrapper .menu {
 
   .subfooter .logo-header {
     // To match the figma align
-    margin-left: @computerLogoHeaderMarginLeft
+    margin-left: @computerLogoHeaderMarginLeft;
   }
 
   .contact-block .subcontact a {
@@ -226,12 +238,19 @@ footer .footer-wrapper .menu {
     }
   }
 
+  .subfooter .footer-description {
+    margin: @computerFooterDescriptionMargin;
+
+    p {
+      font-size: @computerFooterDescriptionFontSize;
+    }
+  }
+
   .subfooter .social {
     margin: @computerSocialIconsMargin;
   }
 
   .footer .footer-wrapper .menu {
-
     a {
       font-size: @computerMenuFontSize;
     }

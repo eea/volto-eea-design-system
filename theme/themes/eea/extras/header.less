@@ -93,8 +93,7 @@
     cursor: pointer;
   }
 
-  &:hover .language-link
-   {
+  &:hover .language-link {
     color: @dropdownMenuItemColorHover;
   }
 }
@@ -371,7 +370,10 @@
       .item {
         padding: 0;
         margin: 0;
-        cursor: pointer;
+
+        a {
+          color: @searchBoxSuggestionsTextColor;
+        }
       }
     }
   }
@@ -443,8 +445,8 @@
   height: @mobileMainSectionHeight;
   align-items: center;
   justify-content: center;
-  background-color: @burgerActionBackgroundColor;
   border: none;
+  background-color: @burgerActionBackgroundColor;
   cursor: pointer;
 }
 
@@ -460,8 +462,8 @@
   height: @mobileMainSectionHeight;
   align-items: center;
   justify-content: center;
-  background-color: @secondaryColor;
   border: none;
+  background-color: @secondaryColor;
   cursor: pointer;
 }
 
