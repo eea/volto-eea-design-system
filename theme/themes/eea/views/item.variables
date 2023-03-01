@@ -184,7 +184,7 @@
 @tabletDefaultItemWidth: 35%;
 
 @defaultItemBackgroundColor: @white;
-@defaultItemColor: @deepBlue;
+@defaultItemColor: @blue-grey-5;
 
 /* Extra */
 @mobileDefaultItemExtraMarginBottom: 1.5rem;

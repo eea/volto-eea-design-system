@@ -16,7 +16,7 @@
 ;
 @borderRadius: @defaultBorderRadius;
 @borderWidth: @1px;
-@border: @borderWidth solid @midGray;
+@border: @borderWidth solid @darkBorderColor;
 
 @raisedShadow: 0px 2px 3px 0px @borderColor;
 

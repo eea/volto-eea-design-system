@@ -29,22 +29,22 @@
 ---------------*/
 
 /* Table Row */
-@rowBorder: 1px solid @midGray;
+@rowBorder: 1px solid @darkBorderColor;
 
 /* Table Cell */
 @cellVerticalPadding: @relativeMini;
 @cellHorizontalPadding: @relativeMini;
 @cellVerticalAlign: inherit;
 @cellTextAlign: center;
-@cellBorder: 1px solid @secondaryColor;
+@cellBorder: 1px solid @borderColorSecondaryCSSVar;
 
 /* Table Header */
-@headerBorder: 1px solid @secondaryColor;
+@headerBorder: 1px solid @borderColorSecondaryCSSVar;
 @headerDivider: none;
 @headerBackground: @white;
 @headerAlign: inherit;
 @headerVerticalAlign: inherit;
-@headerColor: @deepBlue;
+@headerColor: @blue-grey-5;
 @headerVerticalPadding: @relativeSmall;
 @headerHorizontalPadding: @cellHorizontalPadding;
 @headerFontStyle: none;

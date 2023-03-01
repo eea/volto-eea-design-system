@@ -30,7 +30,7 @@
   color @defaultDuration @defaultEasing
 ;
 @itemFontWeight: @normal;
-@itemTextColor: var(--text-color, @deepBlue);
+@itemTextColor: var(--text-color, @blue-grey-5);
 
 /* Divider */
 @dividerSize: 1px;
@@ -245,7 +245,7 @@
 /* Pointing */
 @secondaryPointingBorderWidth: @1px;
 @secondaryPointingActiveBorderWidth: @3px;
-@secondaryPointingBorderColor: @midGray;
+@secondaryPointingBorderColor: @darkBorderColor;
 @secondaryPointingItemMargin: 0 1.25rem;
 @secondaryPointingItemVerticalPadding: @tinyGap;
 @secondaryPointingItemActiveVerticalPadding: unit((@relativeTiny - @3px), rem);
@@ -269,7 +269,7 @@
 @secondaryVerticalPointingItemMargin: 0em -@secondaryPointingBorderWidth 0em 0em;
 
 
-@secondaryPointingItemBorderBottom: @1px solid @midGray;
+@secondaryPointingItemBorderBottom: @1px solid @darkBorderColor;
 @secondaryPointingItemMaxWidth: 15.625rem; 
 
 /* Inverted Secondary */
@@ -310,7 +310,7 @@
 
 /* Icon */
 @iconMenuTextAlign: center;
-@iconMenuItemColor: @grey;
+@iconMenuItemColor: @grey-4;
 @iconMenuInvertedItemColor: @white;
 
 
@@ -342,7 +342,7 @@
 /* Pagination */
 @paginationFontSize: 0.875rem;
 @paginationWidth: 100%;
-@paginationColor: @deepBlue;
+@paginationColor: @itemTextColor;
 @paginationMinWidth: 2em;
 @paginationActiveBackground: @transparentBlack;
 @paginationActiveTextColor: @selectedTextColor;

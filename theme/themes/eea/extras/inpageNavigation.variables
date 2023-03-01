@@ -4,7 +4,7 @@
 
 @navBottom            : @largeGap;
 @navRight             : @largeGap;
-@navBackground        : @darkCerulean;
+@navBackground        : @primaryColor;
 @navColor             : @white;
 @navFontWeight        : @bold;
 

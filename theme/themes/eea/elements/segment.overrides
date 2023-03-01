@@ -53,7 +53,7 @@
 }
 
 .ui.segment.dashed {
-  border: 3px dashed #ccc;
+  border: 3px dashed @borderColor;
   box-shadow: none;
 }
 

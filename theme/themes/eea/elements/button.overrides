@@ -132,7 +132,7 @@ p.ui.button {
 /* Advanced Search Button - to be deleted*/
 .ui.button.search {
   box-sizing: border-box;
-  border: @buttonBorder @white;
+  border: @buttonBorder @whiteBorderColor;
   background: @searchButtonBackground;
   border-radius: @searchButtonBorderRadius;
   color: @searchButtonColor;
@@ -142,7 +142,7 @@ p.ui.button {
   &:visited,
   &:focus,
   &:hover {
-    border: @buttonBorder @white;
+    border: @buttonBorder @whiteBorderColor;
     background: @searchButtonBackground;
     color: @searchButtonColor;
   }
@@ -185,7 +185,7 @@ p.ui.button {
 /* Primary - button.less - L:3128 */
 .ui.inverted.primary.buttons .button,
 .ui.inverted.primary.button {
-  box-shadow: 0px 0px 0px @invertedBorderSize @primaryColor inset !important;
+  box-shadow: 0px 0px 0px @invertedBorderSize @borderColorPrimaryCSSVar inset !important;
   color: @primaryColor;
 }
 
@@ -223,7 +223,7 @@ p.ui.button {
 /* Secondary - button.less - L:3128 */
 .ui.inverted.secondary.buttons .button,
 .ui.inverted.secondary.button {
-  box-shadow: 0px 0px 0px @invertedBorderSize @secondaryColor inset !important;
+  box-shadow: 0px 0px 0px @invertedBorderSize @borderColorSecondaryCSSVar inset !important;
   color: @secondaryColor;
 }
 

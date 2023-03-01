@@ -57,6 +57,6 @@
 @shortMarginInline: auto;
 
 /* Color */
-@dividerPrimary   : @primaryColor;
-@dividerSecondary : @secondaryColor;
-@dividerTertiary  : @tertiaryColor;
+@dividerPrimary   : @borderColorPrimaryCSSVar;
+@dividerSecondary : @borderColorSecondaryCSSVar;
+@dividerTertiary  : @borderColorTertiaryCSSVar;

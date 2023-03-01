@@ -15,7 +15,7 @@
 @sidenavHeaderFontSize: @font-size-3;
 @sidenavHeaderFontWeight: @font-weight-7;
 @sidenavHeaderPadding: @rem-space-4;
-@sidenavHeaderBorderBottom: @2px solid @blue-grey-5;
+@sidenavHeaderBorderBottom: @2px solid @borderColorTertiaryCSSVar;
 @sidenavHeaderIconMarginRight: @rem-space-4;
 
 /* Header icon */
@@ -24,7 +24,7 @@
 @sidenavHeaderIconPaddingRight: @rem-space-4;
 
 /* Content */
-@sidenavContentBorderBottom: 1px solid @tertiaryColor;
+@sidenavContentBorderBottom: 1px solid @borderColorTertiaryCSSVar;
 
 /* Nav item */
 @sidenavItemPadding: @rem-space-2 0 @rem-space-2 @rem-space-8;
