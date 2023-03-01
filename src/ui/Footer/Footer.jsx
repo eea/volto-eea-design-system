@@ -12,6 +12,7 @@ import FooterHeader from '@eeacms/volto-eea-design-system/ui/Footer/FooterHeader
 import SubFooter from '@eeacms/volto-eea-design-system/ui/Footer/SubFooter';
 import Social from '@eeacms/volto-eea-design-system/ui/Footer/Social';
 import Contact from '@eeacms/volto-eea-design-system/ui/Footer/Contact';
+import useOnScreen from '../../helpers/useOnScreen';
 import Description from '@eeacms/volto-eea-design-system/ui/Footer/Description';
 
 /**
@@ -23,9 +24,15 @@ import Description from '@eeacms/volto-eea-design-system/ui/Footer/Description';
 
 const Footer = (props) => {
   const { children } = props;
+
+  const bgImgRef = React.useRef();
+  const onScreen = useOnScreen(bgImgRef, '-10px');
   return (
     <footer id={'footer'}>
-      <div className="footer-wrapper">
+      <div
+        ref={bgImgRef}
+        className={onScreen ? 'footer-wrapper' : 'footer-wrapper-nobg'}
+      >
         <Container>{children}</Container>
       </div>
     </footer>
