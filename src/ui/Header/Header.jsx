@@ -278,6 +278,7 @@ const Main = ({
                         activeItem.indexOf(item['@id']) !== -1 ||
                         activeItem.indexOf(item.url) !== -1
                       }
+                      tabIndex="0"
                     >
                       {renderGlobalMenuItem(item, {
                         onClick: menuOnClick,
