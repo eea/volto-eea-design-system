@@ -20,7 +20,6 @@ const createColumns = (item, length, renderMenuItem) => {
           <React.Fragment key={idx}>
             {renderMenuItem(arrayItem, {
               className: 'item',
-              role: 'listitem',
               key: idx,
             })}
           </React.Fragment>
@@ -34,7 +33,7 @@ const createColumns = (item, length, renderMenuItem) => {
 
 const ItemGrid = ({ item, columns, length, renderMenuItem }) => (
   <>
-    {renderMenuItem(item, { className: 'sub-title' })}
+    {renderMenuItem(item, { className: 'sub-title', id: 'david' })}
     {item.items.length ? (
       <Grid columns={columns}>
         {createColumns(item, length, renderMenuItem)}
@@ -43,26 +42,31 @@ const ItemGrid = ({ item, columns, length, renderMenuItem }) => (
   </>
 );
 
-const Item = ({ item, icon = false, iconName, renderMenuItem }) => (
-  <>
-    {renderMenuItem(item, { className: 'sub-title' })}
-    <List className="menu-list">
-      {item.items.map((listItem, index) => (
-        <React.Fragment key={index}>
-          {renderMenuItem(
-            listItem,
-            {
-              className: 'item',
-              key: index,
-              role: 'listitem',
-            },
-            { children: icon && <Icon className={iconName} /> },
-          )}
-        </React.Fragment>
-      ))}
-    </List>
-  </>
-);
+const Item = ({ item, icon = false, iconName, renderMenuItem }) => {
+  const item_id = item.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
+  return (
+    <>
+      {renderMenuItem(item, {
+        className: 'sub-title',
+        id: item_id,
+      })}
+      <List className="menu-list" aria-labelledby={item_id}>
+        {item.items.map((listItem, index) => (
+          <React.Fragment key={index}>
+            {renderMenuItem(
+              listItem,
+              {
+                className: 'item',
+                key: index,
+              },
+              { children: icon && <Icon className={iconName} /> },
+            )}
+          </React.Fragment>
+        ))}
+      </List>
+    </>
+  );
+};
 
 const Topics = ({ menuItem, renderMenuItem }) => (
   <Grid>
