@@ -346,8 +346,10 @@
 @carouselDotsBorder: 1px solid @darkCerulean;
 @carouselDotsBackgroundColor: @white;
 @carouselDotsActiveBackgroundColor: @darkCerulean;
-@mobileCarouselDotsWidth: 0.875rem;
-@mobileCarouselDotsHeight: 0.875rem;
+@mobileCarouselDotsWidth: 1.25rem;
+@mobileCarouselDotsHeight: 1.25rem;
+@mobileCarouselDotsButtonWidth: 1.875rem;
+@mobileCarouselDotsButtonHeight: 1.875rem;
 
 /* Slick wrapper */
 @slickListMargin: 0 -0.75em;
