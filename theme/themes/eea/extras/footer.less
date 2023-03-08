@@ -21,6 +21,10 @@ footer {
     background-position: @wrapperBackgroundPosition;
     background-size: @mobileWrapperBackgroundSize;
   }
+  .footer-wrapper-nobg {
+    width: @wrapperWidth;
+    padding: @mobileWrapperPadding;
+  }
 }
 
 footer .theme-sites {
@@ -144,6 +148,10 @@ footer .footer-wrapper .menu {
     font-size: @mobileMenuCopyrightFontSize;
     font-weight: @mobileMenuCopyrightFontWeight;
   }
+
+  .contact-block .subcontact {
+    margin-top: @mobileSubcontactBlockMarginTop;
+  }
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
@@ -221,38 +229,45 @@ footer .footer-wrapper .menu {
   .subfooter .logo-header {
     // To match the figma align
     margin-left: @computerLogoHeaderMarginLeft;
-  }
 
-  .contact-block .subcontact a {
-    font-size: @computerSubContactIconFontSize;
-    margin-right: @computerSubContactIconMarginRight;
-  }
+    .subfooter .item {
+      .header {
+        margin-bottom: @computerItemHeaderMarginBottom;
+      }
 
-  .subfooter .contact {
-    align-items: center;
-    font-size: @contactFontSize;
-    gap: @contactGap;
-
-    i.big.icon {
-      font-size: @computerContactIconFontSize;
     }
-  }
 
-  .subfooter .footer-description {
-    margin: @computerFooterDescriptionMargin;
-
-    p {
-      font-size: @computerFooterDescriptionFontSize;
+    .contact-block .subcontact a {
+      font-size: @computerSubContactIconFontSize;
+      margin-right: @computerSubContactIconMarginRight;
     }
-  }
 
-  .subfooter .social {
-    margin: @computerSocialIconsMargin;
-  }
+    .subfooter .contact {
+      align-items: center;
+      font-size: @contactFontSize;
+      gap: @contactGap;
 
-  .footer .footer-wrapper .menu {
-    a {
-      font-size: @computerMenuFontSize;
+      i.big.icon {
+        font-size: @computerContactIconFontSize;
+      }
+    }
+
+    .subfooter .footer-description {
+      margin: @computerFooterDescriptionMargin;
+
+      p {
+        font-size: @computerFooterDescriptionFontSize;
+      }
+    }
+
+    .subfooter .social {
+      margin: @computerSocialIconsMargin;
+    }
+
+    .footer .footer-wrapper .menu {
+      a {
+        font-size: @computerMenuFontSize;
+      }
     }
   }
 }

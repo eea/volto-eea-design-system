@@ -1,5 +1,7 @@
 import React from 'react';
 import { Grid, Image } from 'semantic-ui-react';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
+
 import PropTypes from 'prop-types';
 
 const Sites = (props) => {
@@ -11,10 +13,14 @@ const Sites = (props) => {
       column.push(
         <Grid.Column className="logo" key={i}>
           <a className="logo" href={item.link}>
-            <Image src={item.src} alt={item.alt}></Image>
+            <LazyLoadComponent>
+              <Image src={item.src} alt={item.alt}></Image>
+            </LazyLoadComponent>
           </a>
           <a className="logo" href={nextItem.link}>
-            <Image src={nextItem.src} alt={nextItem.alt}></Image>
+            <LazyLoadComponent>
+              <Image src={nextItem.src} alt={nextItem.alt}></Image>
+            </LazyLoadComponent>
           </a>
         </Grid.Column>,
       );

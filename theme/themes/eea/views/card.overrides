@@ -14,7 +14,6 @@
 
 /* Cards must have same height */
 .ui.card {
-  min-width: @minWidth;
   height: 100%;
   text-align: var(--text-align, @cardTextAlign);
   background-color: var(--card-background-color, @background);
@@ -304,7 +303,6 @@
 
   .slick-track {
     display: flex;
-    gap: @slickTrackGap;
     margin: @slickTrackMargin;
   }
 
@@ -313,6 +311,7 @@
     height: auto;
     flex: 1;
     flex-direction: column;
+    margin: @slickSlideMargin;
 
     > div {
       height: 100%;
@@ -323,6 +322,7 @@
 /* Carousel arrows */
 .cards-carousel .ui.button.icon.slider-arrow {
   padding: @carouselButtonPadding;
+  margin: @carouselButtonMargin;
 
   .active, &:focus, &:hover {
     background: transparent;
@@ -370,6 +370,7 @@
   position: relative;
   bottom: 0;
 }
+
 .cards-carousel .slick-dots li button:before {
   background-color: @carouselDotsBackgroundColor;
   color: transparent;
@@ -390,11 +391,13 @@
   outline-style: auto;
 }
 
-@media only screen and (min-width: @computerBreakpoint) {
-  .cards-carousel .slick-dots li button:before {
-    width: inherit;
-    height: inherit;
+@media only screen and (max-width: @tabletBreakpoint) {
+  .cards-carousel .slick-dots li,
+  .cards-carousel .slick-dots li button {
+    width: @mobileCarouselDotsButtonWidth;
+    height: @mobileCarouselDotsButtonHeight;
   }
+
 }
 
 /*******************************
