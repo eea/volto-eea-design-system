@@ -6,41 +6,54 @@ import { cloneDeep } from 'lodash';
 
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
-const createColumns = (item, length, renderMenuItem) => {
+const createColumns = (item, length, columns, renderMenuItem, item_id) => {
   let subArrays = [];
-  let size = length;
-  for (let i = 0; i < item.items.length; i += size) {
-    subArrays.push(item.items.slice(i, i + size));
+  //let size = length;
+  for (let i = 0; i < item.items.length; i++) {
+    subArrays.push(item.items[i]);
+
+    // For lists with one item (Former member country)
+    // if (item.items.length == 1) { break; }
+    // i += size;
+
+    // if (item.items.length == (columns * size)) { i += 1; }
+    // console.log(i)
+    // if (i > item.items.length) {
+    //   i = i - (columns * size);
+    //   i += 1;
+    // } else if (i == item.items.length) {
+    //   if (item.items.length == (columns * size)) { subArrays.push(item.items[i-1]); }
+    //   break;
+    // }
+    // if (item.items.length == (columns * size)) { i -= 1; }
   }
 
   const column = subArrays.map((subArray, index) => (
-    <Grid.Column key={index}>
-      <List>
-        {subArray.map((arrayItem, idx) => (
-          <React.Fragment key={idx}>
-            {renderMenuItem(arrayItem, {
-              className: 'item',
-              key: idx,
-            })}
-          </React.Fragment>
-        ))}
-      </List>
-    </Grid.Column>
+    <React.Fragment key={index}>
+      {renderMenuItem(subArray, {
+        className: 'item',
+        key: index,
+        id: item_id,
+      })}
+    </React.Fragment>
   ));
 
   return column;
 };
 
-const ItemGrid = ({ item, columns, length, renderMenuItem }) => (
-  <>
-    {renderMenuItem(item, { className: 'sub-title', id: 'david' })}
-    {item.items.length ? (
-      <Grid columns={columns}>
-        {createColumns(item, length, renderMenuItem)}
-      </Grid>
-    ) : null}
-  </>
-);
+const ItemGrid = ({ sectionTitle, item, columns, length, renderMenuItem }) => {
+  const item_id = item.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
+  return (
+    <>
+      {renderMenuItem(item, { className: 'sub-title', id: item_id })}
+      {item.items.length ? (
+        <List aria-labelledby={item_id} style={{ columns: `${columns}` }}>
+          {createColumns(item, length, columns, renderMenuItem, item_id)}
+        </List>
+      ) : null}
+    </>
+  );
+};
 
 const Item = ({ item, icon = false, iconName, renderMenuItem }) => {
   const item_id = item.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
@@ -97,6 +110,7 @@ const Topics = ({ menuItem, renderMenuItem }) => (
         ) : (
           <Grid.Column width={9} key={index} id="topics-right-column">
             <ItemGrid
+              sectionTitle={section.title}
               item={section}
               columns={4}
               length={10}
@@ -117,6 +131,7 @@ const Countries = ({ menuItem, renderMenuItem }) => (
         <React.Fragment key={index}>
           {section.title === 'EEA member countries' && (
             <ItemGrid
+              sectionTitle={section.title}
               item={section}
               columns={5}
               length={7}
@@ -133,6 +148,7 @@ const Countries = ({ menuItem, renderMenuItem }) => (
             {section.title !== 'EEA member countries' && (
               <Grid.Column>
                 <ItemGrid
+                  sectionTitle={section.title}
                   item={section}
                   columns={2}
                   length={3}
