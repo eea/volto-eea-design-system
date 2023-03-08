@@ -27,3 +27,62 @@
     margin: 0; // override default
   }
 }
+
+.image-block {
+  position: relative;
+}
+
+// remove block.less margin from image, we set margin on block instead
+.block.image.align img {
+  margin-bottom: 0 !important;
+}
+
+// remove float from images, set on block instead
+.block.image.align.right,
+.block.image.align.left
+{
+  img {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    float: none !important;
+  }
+}
+
+.image.left {
+  max-width: @floatImageLeftMaxWidth;
+  padding-right: @floatImageLeftPadding;
+  float: left;
+}
+
+.image.right {
+  max-width: @floatImageRightMaxWidth;
+  padding-left: @floatImageRightPadding;
+  float: right;
+}
+
+.image-block-container {
+  position: relative;
+}
+
+.image-block-container:not(.full) {
+  display: inline-block;
+}
+
+.copyright-wrapper {
+  position: absolute;
+  z-index: @z-index-8;
+  bottom: @copyrightWrapperBottom;
+  width: 100%;
+  padding-right: @copyrightWrapperPaddingLeft;
+  padding-left: @copyrightWrapperPaddingRight;
+}
+
+.copyright-hover-container {
+  position: absolute;
+  z-index: @z-index-8;
+  bottom: 0;
+  padding: @copyrightHoverContainerPadding;
+  background-color: @copyrightHoverContainerBackgroundColor;
+  border-radius: @copyrightHoverContainerBorderRadius;
+  color: @copyrightHoverContainerColor;
+}
