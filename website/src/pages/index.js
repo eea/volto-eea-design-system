@@ -6,6 +6,12 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import 'remixicon/fonts/remixicon.css'
+import '@fontsource/roboto/latin-300.css';
+import '@fontsource/roboto/latin-400.css';
+import '@fontsource/roboto/latin-500.css';
+import '@fontsource/roboto/latin-700.css';
+import '@fontsource/roboto/latin-400-italic.css';
+import '@fontsource/roboto/latin-700-italic.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
