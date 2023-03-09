@@ -11,6 +11,7 @@
 
 @fontName          : 'Roboto';
 @fontSmoothing     : antialiased;
+@fontDisplay       : swap;
 
 @headerFont        : @fontName, Arial, 'Helvetica Neue', Helvetica, sans-serif;
 @pageFont          : @fontName, Arial, 'Helvetica Neue', Helvetica, sans-serif;
