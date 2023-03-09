@@ -120,6 +120,11 @@ body {
   margin-left: -50vw !important;
 }
 
+[class~="view-defaultview"] [id="page-document"] > .full-width,
+[class~="view-viewview"] [id="page-document"] > .full-width {
+  max-width: initial !important;
+}
+
 .has--size--full:not(.block-editor-columnsBlock) .ui.grid {
   margin-left: 0;
   margin-right: 0;
