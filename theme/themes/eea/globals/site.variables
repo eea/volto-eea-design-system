@@ -15,7 +15,13 @@
 @headerFont        : @fontName, Arial, 'Helvetica Neue', Helvetica, sans-serif;
 @pageFont          : @fontName, Arial, 'Helvetica Neue', Helvetica, sans-serif;
 
-@importGoogleFonts : true;
+@googleFontName    : @fontName;
+@importGoogleFonts : false;
+@googleFontSizes   : '300,400,500,700,400italic,700italic&display=swap';
+@googleSubset      : 'latin';
+
+@googleProtocol    : 'https://';
+@googleFontRequest : '@{googleFontName}:@{googleFontSizes}&subset=@{googleSubset}';
 
 
 @bold              : @font-weight-7;
