@@ -6,26 +6,10 @@ import { cloneDeep } from 'lodash';
 
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
-const createColumns = (item, length, columns, renderMenuItem, item_id) => {
+const createColumns = (item, columns, renderMenuItem, item_id) => {
   let subArrays = [];
-  //let size = length;
   for (let i = 0; i < item.items.length; i++) {
     subArrays.push(item.items[i]);
-
-    // For lists with one item (Former member country)
-    // if (item.items.length == 1) { break; }
-    // i += size;
-
-    // if (item.items.length == (columns * size)) { i += 1; }
-    // console.log(i)
-    // if (i > item.items.length) {
-    //   i = i - (columns * size);
-    //   i += 1;
-    // } else if (i == item.items.length) {
-    //   if (item.items.length == (columns * size)) { subArrays.push(item.items[i-1]); }
-    //   break;
-    // }
-    // if (item.items.length == (columns * size)) { i -= 1; }
   }
 
   const column = subArrays.map((subArray, index) => (
@@ -41,14 +25,14 @@ const createColumns = (item, length, columns, renderMenuItem, item_id) => {
   return column;
 };
 
-const ItemGrid = ({ sectionTitle, item, columns, length, renderMenuItem }) => {
+const ItemGrid = ({ sectionTitle, item, columns, renderMenuItem }) => {
   const item_id = item.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
   return (
     <>
       {renderMenuItem(item, { className: 'sub-title', id: item_id })}
       {item.items.length ? (
         <List aria-labelledby={item_id} style={{ columns: `${columns}` }}>
-          {createColumns(item, length, columns, renderMenuItem, item_id)}
+          {createColumns(item, columns, renderMenuItem, item_id)}
         </List>
       ) : null}
     </>
@@ -113,7 +97,6 @@ const Topics = ({ menuItem, renderMenuItem }) => (
               sectionTitle={section.title}
               item={section}
               columns={4}
-              length={10}
               key={index}
               renderMenuItem={renderMenuItem}
             />
@@ -134,7 +117,6 @@ const Countries = ({ menuItem, renderMenuItem }) => (
               sectionTitle={section.title}
               item={section}
               columns={5}
-              length={7}
               renderMenuItem={renderMenuItem}
             />
           )}
@@ -151,7 +133,6 @@ const Countries = ({ menuItem, renderMenuItem }) => (
                   sectionTitle={section.title}
                   item={section}
                   columns={2}
-                  length={3}
                   renderMenuItem={renderMenuItem}
                 />
               </Grid.Column>
