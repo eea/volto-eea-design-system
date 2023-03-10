@@ -75,6 +75,12 @@ h2, h3, h4, h5, h6 {
   margin-bottom: @rem-space-4;
 }
 
+// clear any floats if we add a columns block as a floated image
+// can modify the width of the column block children
+.styled-columnsBlock {
+  clear: both;
+}
+
 // text smaller than body has extra letterspacing as described in docusaurus
 .tiny,
 .caption,
