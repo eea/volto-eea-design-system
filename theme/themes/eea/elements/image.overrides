@@ -47,3 +47,74 @@
 .block .ui.massive.image {
   width: @massiveWidth;
 }
+
+
+/*--------------
+  Image block float changes
+---------------*/
+
+.image-block {
+  position: relative;
+}
+
+// remove block.less margin from image, we set margin on block instead
+.block.image.align img {
+  margin-bottom: 0 !important;
+}
+
+// remove float from images, set on block instead
+.block.image.align.right,
+.block.image.align.left {
+  img {
+    max-width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+  }
+}
+
+/* edit page fixes for float issues */
+#page-edit  .image {
+  max-width: 100%;
+  min-height: @imageMinHeight;
+}
+#page-edit  .image.left,
+#page-edit  .image.right,
+#page-document > .image.left,
+#page-document > .image.right {
+  float: none;
+}
+
+.image-block-container {
+  position: relative;
+}
+
+/* if the image is smaller than the content area the copyright
+  isn't as big as the image unless the image is inline-block
+*/
+.image-block-container.center {
+  display: inline-block;
+}
+
+.image-block-container.right {
+  margin-left: @imageBlockContainerLeftMargin;
+  float: right;
+}
+
+.image-block-container.left {
+  margin-right: @imageBlockContainerRightMargin;
+  float: left;
+}
+
+/* Set max size on image-block-container, by default it's set to block image */
+.image.align:not(.full, .center) .image-block-container {
+  max-width: @imageAlignLargeMaxWidth;
+}
+
+.image.align:not(.full, .center) .image-block-container.medium {
+  max-width: @imageAlignMediumMaxWidth;
+}
+
+.image.align:not(.full, .center) .image-block-container.small {
+  max-width: @imageAlignSmallMaxWidth;
+}
+

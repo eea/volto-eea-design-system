@@ -48,9 +48,13 @@
        Fonts
 -------------------*/
 
-.loadFonts() when (@importGoogleFonts) {
-  @import (css)
-    url('@{googleProtocol}fonts.googleapis.com/css?family=@{googleFontRequest}');
+.loadFonts() {
+  @import (css) '~@fontsource/roboto/latin-300.css';
+  @import (css) '~@fontsource/roboto/latin-400.css';
+  @import (css) '~@fontsource/roboto/latin-500.css';
+  @import (css) '~@fontsource/roboto/latin-700.css';
+  @import (css) '~@fontsource/roboto/latin-400-italic.css';
+  @import (css) '~@fontsource/roboto/latin-700-italic.css';
 }
 
 /*------------------
