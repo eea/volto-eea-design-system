@@ -6,23 +6,17 @@ import { cloneDeep } from 'lodash';
 
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
-const createColumns = (item, columns, renderMenuItem, item_id) => {
-  let subArrays = [];
-  for (let i = 0; i < item.items.length; i++) {
-    subArrays.push(item.items[i]);
-  }
-
-  const column = subArrays.map((subArray, index) => (
+const createColumns = (item, renderMenuItem, item_id) => {
+  const itemList = item.items.map((item, index) => (
     <React.Fragment key={index}>
-      {renderMenuItem(subArray, {
+      {renderMenuItem(item, {
         className: 'item',
         key: index,
         id: item_id,
       })}
     </React.Fragment>
   ));
-
-  return column;
+  return itemList;
 };
 
 const ItemGrid = ({ sectionTitle, item, columns, renderMenuItem }) => {
@@ -32,7 +26,7 @@ const ItemGrid = ({ sectionTitle, item, columns, renderMenuItem }) => {
       {renderMenuItem(item, { className: 'sub-title', id: item_id })}
       {item.items.length ? (
         <List aria-labelledby={item_id} style={{ columns: `${columns}` }}>
-          {createColumns(item, columns, renderMenuItem, item_id)}
+          {createColumns(item, renderMenuItem, item_id)}
         </List>
       ) : null}
     </>
