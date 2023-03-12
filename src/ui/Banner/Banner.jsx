@@ -26,9 +26,7 @@ const socialPlatforms = {
 };
 
 export const getImageSource = (image) => {
-  if (image?.download) return image.download;
-  if (image?.encoding)
-    return `data:${image['content-type']};${image['encoding']},${image['data']}`;
+  if (image?.scales?.huge) return image.scales.huge.download;
   return null;
 };
 
