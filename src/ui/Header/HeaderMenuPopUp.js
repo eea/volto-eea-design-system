@@ -224,8 +224,6 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
     const inDepth = element.items.find(
       (element) => element.url.indexOf('in-depth') !== -1,
     );
-    // eslint-disable-next-line no-unused-expressions
-    inDepth ? (inDepth.nav_title = 'A-Z Topics') : '';
     content = (
       <List>
         {atAGlance &&
