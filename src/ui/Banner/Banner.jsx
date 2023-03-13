@@ -3,7 +3,7 @@ import { Container, Icon, Button, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { formatDate } from '@plone/volto/helpers/Utils/Date';
 import config from '@plone/volto/registry';
-
+import './style.less';
 Banner.propTypes = {
   title: PropTypes.string,
   image: PropTypes.bool,
@@ -33,6 +33,7 @@ export const getImageSource = (image) => {
 export const sharePage = (url, platform) => {
   if (!socialPlatforms[platform]) return;
   const link = document.createElement('a');
+  link.setAttribute('href', socialPlatforms[platform].shareLink(url));
   link.setAttribute('href', socialPlatforms[platform].shareLink(url));
   link.setAttribute('target', '_blank');
   link.setAttribute('rel', 'noreferrer');
