@@ -1,6 +1,6 @@
 The core footer provides supplementary information such as copyright, legal, privacy, social media, contact information and links to other important sites within the EEA. It is always placed at the bottom of every page. <b> Always use a footer when building your page </b>
 
-![](../../md_components/static/footer-elements.png)
+![](../../md_components/static/footer-elements.jpg)
 
 ### Anatomy
 
