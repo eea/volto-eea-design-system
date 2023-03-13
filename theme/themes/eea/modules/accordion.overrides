@@ -155,6 +155,6 @@
 .ui.accordion.tertiary .title:not(.active):hover,
 .ui.accordion.tertiary .title:not(.active):focus-visible,
 .ui.accordion.tertiary .title:not(.active):hover i,
-.ui.accordion.tertiary .title:not(.active):focus-visble i {
+.ui.accordion.tertiary .title:not(.active):focus-visible i {
   color: @tertiaryColorCSSVar;
 }
