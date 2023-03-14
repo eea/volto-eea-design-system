@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import Banner from './Banner';
+// eslint-disable-next-line import/no-unresolved
 import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/banner.png';
 import { Popup, Icon } from 'semantic-ui-react';
 import Copyright from '../Copyright/Copyright';
