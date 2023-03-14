@@ -1,71 +1,71 @@
-import React, { useRef } from "react";
-import Banner from "./Banner";
-import imgUrl from "@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/banner.png";
-import { Popup, Icon } from "semantic-ui-react";
-import Copyright from "../Copyright/Copyright";
+import React, { useRef } from 'react';
+import Banner from './Banner';
+import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/banner.png';
+import { Popup, Icon } from 'semantic-ui-react';
+import Copyright from '../Copyright/Copyright';
 
 export default {
-  title: "Components/Page Header",
+  title: 'Components/Page Header',
   component: Banner,
   argTypes: {
     title: {
-      description: "banner title",
+      description: 'banner title',
       table: {
-        defaultValue: { summary: '""' },
-        type: { summary: "string" },
+        defaultValue: { summary: '' },
+        type: { summary: 'string' },
       },
     },
     metadata: {
-      description: "banner metadata",
+      description: 'banner metadata',
       table: {
-        defaultValue: { summary: '""' },
-        type: { summary: "object" },
+        defaultValue: { summary: '' },
+        type: { summary: 'object' },
       },
     },
     image: {
-      description: "set or unset banner image",
+      description: 'set or unset banner image',
       table: {
-        defaultValue: { summary: '""' },
-        type: { summary: "boolean" },
+        defaultValue: { summary: '' },
+        type: { summary: 'boolean' },
       },
     },
     hideShareButton: {
-      description: "hide/show share button",
+      description: 'hide/show share button',
       table: {
-        defaultValue: { summary: '""' },
-        type: { summary: "boolean" },
+        defaultValue: { summary: '' },
+        type: { summary: 'boolean' },
       },
     },
     hideDownloadButton: {
-      description: "hide/show download button",
+      description: 'hide/show download button',
       table: {
-        defaultValue: { summary: '""' },
-        type: { summary: "boolean" },
+        defaultValue: { summary: '' },
+        type: { summary: 'boolean' },
       },
     },
     copyright: {
       table: {
-        category: "Copyright",
-        defaultValue: { summary: '""' },
-        type: { summary: "string" },
+        category: 'Copyright',
+        defaultValue: { summary: '' },
+        type: { summary: 'string' },
       },
     },
     copyrightIcon: {
       table: {
-        category: "Copyright",
-        defaultValue: { summary: '""' },
-        type: { summary: "string" },
+        category: 'Copyright',
+        defaultValue: { summary: '' },
+        type: { summary: 'string' },
       },
     },
     copyrightPosition: {
-      name: "Position",
+      name: 'Position',
       control: {
-        type: "inline-radio",
-        options: ["left", "right"],
+        type: 'inline-radio',
+        options: ['left', 'right'],
       },
-      type: { name: "string" },
+      type: { name: 'string' },
       table: {
-        category: "Copyright",
+        category: 'Copyright',
         defaultValue: { summary: '"left"' },
       },
     },
@@ -79,7 +79,6 @@ const Template = (args) => {
       <Banner.Content
         actions={
           <>
-            {" "}
             {!args.hideShareButton && (
               <Popup
                 onMount={() => {
@@ -145,18 +144,18 @@ const Template = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  subtitle: "Lorem ipsum dolor",
+  title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  subtitle: 'Lorem ipsum dolor',
   metadata: [
-    { hidden: false, value: "Briefing", type: "type" },
-    { hidden: false, label: "Published", value: "25 Nov 2022", type: "date" },
-    { hidden: false, label: "Modified", value: "29 Nov 2022", type: "date" },
-    { hidden: false, value: "5 min read", type: "" },
+    { hidden: false, value: 'Briefing', type: 'type' },
+    { hidden: false, label: 'Published', value: '25 Nov 2022', type: 'date' },
+    { hidden: false, label: 'Modified', value: '29 Nov 2022', type: 'date' },
+    { hidden: false, value: '5 min read', type: '' },
   ],
   image: true,
   hideShareButton: false,
   hideDownloadButton: false,
-  copyrightPosition: "left",
-  copyrightIcon: "ri-copyright-line",
-  copyright: "Image copyright: Velit fusce sed sem ut.",
+  copyrightPosition: 'left',
+  copyrightIcon: 'ri-copyright-line',
+  copyright: 'Image copyright: Velit fusce sed sem ut.',
 };
