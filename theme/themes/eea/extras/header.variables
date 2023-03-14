@@ -187,13 +187,9 @@
 @megaMenuListItemActivePadding: 8px;
 
 /* Topics */
-@topicsRightColumnPaddingTop: calc(31 * @spacer); // 124px;
 @topicsRightColumnPaddingLeft: @rem-space-4;
 
 /* At a glance */
-@megaMenuGlanceBackgroundColor: transparent;
-@megaMenuGlancePadding: @rem-space-4 @rem-space-6;
-@megaMenuGlanceMarginBottom: -@rem-space-4;
 @megaMenuGlanceListItemFontSize: @font-size-1;
 @megaMenuGlanceListItemFontWeight: @font-weight-4;
 @megaMenuGlanceListItemMargin: 0;
