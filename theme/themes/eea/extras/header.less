@@ -27,7 +27,7 @@
   background: @topSectionBackground;
 
   .ui.container {
-    z-index: @topSectionZindex;
+    z-index: @topSectionZIndex;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -775,19 +775,17 @@
 }
 
 #at-a-glance {
-  padding: @megaMenuGlancePadding !important;
-  margin-bottom: @megaMenuGlanceMarginBottom !important;
-  background-color: @megaMenuGlanceBackgroundColor;
-
   .item {
     margin: @megaMenuGlanceListItemMargin;
     font-size: @megaMenuGlanceListItemFontSize;
     font-weight: @megaMenuGlanceListItemFontWeight;
   }
+  .list.menu-list {
+    margin-top: @megaMenuGlanceMenuListMarginTop;
+  }
 }
 
 #topics-right-column {
-  padding-top: @topicsRightColumnPaddingTop;
   padding-left: @topicsRightColumnPaddingLeft;
 }
 
