@@ -42,9 +42,7 @@ const SubFooter = (props) => {
 
       <Footer.Description description={props.description} />
 
-      <Grid.Row>
-        <Footer.Social social={props.social} />
-      </Grid.Row>
+      <Footer.Social social={props.social} />
 
       <Grid className="mobile only">
         {props.managedBy &&
