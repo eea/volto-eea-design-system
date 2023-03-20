@@ -99,12 +99,12 @@ Banner.Title = ({ children }) => {
 Banner.Subtitle = ({ children }) => <p className="subtitle">{children}</p>;
 Banner.Metadata = ({ children }) => <p className="metadata">{children}</p>;
 
-Banner.MetadataField = ({ hidden, type = 'text', label, value, title }) => {
+Banner.MetadataField = ({ hidden, type = 'text', label, value }) => {
   const locale = config.settings.dateLocale || 'en-gb';
   if (hidden || !value) return '';
   if (type === 'date' && value)
     return (
-      <span className={`field ${type}`} title={title?.replace('{}', value)}>
+      <time className={`field ${type}`} dateTime={value}>
         {label}{' '}
         {formatDate({
           date: value,
@@ -115,7 +115,7 @@ Banner.MetadataField = ({ hidden, type = 'text', label, value, title }) => {
           },
           locale: locale,
         })}
-      </span>
+      </time>
     );
   return (
     <span className={`field ${type}`}>
