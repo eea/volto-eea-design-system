@@ -2,7 +2,8 @@ import React, { useRef } from 'react';
 import Banner from './Banner';
 // eslint-disable-next-line import/no-unresolved
 import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/banner.png';
-import { Popup, Icon } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
+import Popup from '@eeacms/volto-eea-design-system/ui/Popup/Popup';
 import Copyright from '../Copyright/Copyright';
 
 export default {
@@ -82,10 +83,6 @@ const Template = (args) => {
           <>
             {!args.hideShareButton && (
               <Popup
-                onMount={() => {
-                  if (popupRef.current?.firstChild?.firstChild)
-                    popupRef.current.firstChild.firstChild.focus();
-                }}
                 className="share-popup"
                 trigger={
                   <Banner.Action
@@ -94,7 +91,7 @@ const Template = (args) => {
                     className="share"
                   />
                 }
-                content={() => (
+                content={
                   <>
                     <p>Share to:</p>
                     <div className="actions" ref={popupRef}>
@@ -103,7 +100,7 @@ const Template = (args) => {
                       <Banner.Action icon="ri-linkedin-fill" />
                     </div>
                   </>
-                )}
+                }
                 position="top center"
                 basic
               />

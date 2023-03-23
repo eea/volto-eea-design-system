@@ -7,7 +7,6 @@ import './style.less';
 
 Banner.propTypes = {
   title: PropTypes.string,
-  image: PropTypes.bool,
 };
 
 const socialPlatforms = {
@@ -67,16 +66,19 @@ function Banner({ image, metadata, properties, children, ...rest }) {
   );
 }
 
-Banner.Action = function ({ id, title, icon, onClick, className, color }) {
+Banner.Action = React.forwardRef(function (
+  { id, title, icon, onClick, className, color },
+  ref,
+) {
   return (
-    <div className="action">
+    <div className="action" ref={ref}>
       <Button className={className} basic icon inverted onClick={onClick}>
         <Icon className={icon} color={color}></Icon>
         <span className="mobile hidden">{title}</span>
       </Button>
     </div>
   );
-};
+});
 
 Banner.Content = ({ children, actions }) => {
   return (
