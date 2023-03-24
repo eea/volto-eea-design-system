@@ -77,7 +77,7 @@ class Popup extends React.Component {
   }
 
   render() {
-    const { trigger, className, size, position, content } = this.props;
+    const { trigger, className, size, position, basic, content } = this.props;
     const event = this.props.on;
     const onEvent = 'on' + event.charAt(0).toUpperCase() + event.slice(1);
     return (
@@ -99,6 +99,7 @@ class Popup extends React.Component {
                 className,
                 size,
                 position,
+                basic ? 'basic' : '',
                 this.state.isOpen ? 'visible' : '',
               )}
             >
