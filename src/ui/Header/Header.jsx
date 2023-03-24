@@ -131,6 +131,7 @@ const Main = ({
   menuItems,
   renderMenuItem,
   renderGlobalMenuItem,
+  headerSearchBox,
   pathname,
   transparency,
   inverted,
@@ -321,6 +322,7 @@ const Main = ({
           onClose={searchOnClick}
           searchInputRef={searchInputRef}
           triggerRefs={[searchButtonRef]}
+          headerSearchBox={headerSearchBox}
         />
       )}
       <HeaderMenuPopUp
