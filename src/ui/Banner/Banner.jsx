@@ -3,7 +3,6 @@ import { Container, Icon, Button, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { formatDate } from '@plone/volto/helpers/Utils/Date';
 import config from '@plone/volto/registry';
-import './style.less';
 
 Banner.propTypes = {
   title: PropTypes.string,
@@ -67,14 +66,14 @@ function Banner({ image, metadata, properties, children, ...rest }) {
 }
 
 Banner.Action = React.forwardRef(function (
-  { id, title, icon, onClick, className, color },
+  { id, title, titleClass, icon, onClick, className, color },
   ref,
 ) {
   return (
     <div className="action" ref={ref}>
       <Button className={className} basic icon inverted onClick={onClick}>
         <Icon className={icon} color={color}></Icon>
-        <span className="mobile hidden">{title}</span>
+        <span className={titleClass || 'mobile hidden'}>{title}</span>
       </Button>
     </div>
   );

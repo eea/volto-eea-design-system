@@ -59,7 +59,7 @@
         align-items: @mobileActionsAlignItems;
         justify-content: flex-end;
 
-        .action {
+        > .action {
           .ui.basic.inverted.button {
             /* used basic inverted button for minimun overrides on box-shadow and active state background */
             box-shadow: @bannerActionButtonBoxShadow !important;
@@ -112,6 +112,8 @@
 .ui.popup.share-popup {
   padding: @sharePopupPadding;
   filter: @sharePopupFilter;
+  min-width: @sharePopupMinWidth;
+  position: initial; // without position initial popper cannot correctly place popup
 
   p {
     font-size: @sharePopupFontSize;
@@ -165,7 +167,7 @@
           flex-direction: @tabletActionsFlexDirection;
           align-items: @tabletActionsAlignItems;
 
-          .action {
+          > .action {
             min-width: @tabletActionsActionMinWidth;
 
             .ui.basic.inverted.button i.icon {
@@ -189,10 +191,12 @@
 
     .actions {
       display: flex;
-      flex-flow: row;
+      flex-flow: row !important;
+      justify-content: flex-start !important;
 
       .action {
         display: inherit;
+        min-width: 1rem !important;
       }
     }
   }

@@ -95,14 +95,25 @@ const Template = (args) => {
                   <>
                     <p>Share to:</p>
                     <div className="actions" ref={popupRef}>
-                      <Banner.Action icon="ri-facebook-fill" />
-                      <Banner.Action icon="ri-twitter-fill" />
-                      <Banner.Action icon="ri-linkedin-fill" />
+                      <Banner.Action
+                        icon="ri-facebook-fill"
+                        title={'Share page to Facebook'}
+                        titleClass={'hiddenStructure'}
+                      />
+                      <Banner.Action
+                        icon="ri-twitter-fill"
+                        title={'Share page to Twitter'}
+                        titleClass={'hiddenStructure'}
+                      />
+                      <Banner.Action
+                        icon="ri-linkedin-fill"
+                        title={'Share page to Linkedin'}
+                        titleClass={'hiddenStructure'}
+                      />
                     </div>
                   </>
                 }
                 position="top center"
-                basic
               />
             )}
             {!args.hideDownloadButton && (
