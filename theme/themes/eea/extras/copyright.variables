@@ -12,7 +12,6 @@
 @copyrightWrapperPaddingLeft: @rem-space-3;
 @copyrightWrapperPaddingRight: @rem-space-3;
 @copyrightWrapperBottom: @rem-space-4;
-@copyrightMinHeight: @rem-space-8;
 @copyrightAlignItems: start;
 
 /* Image block */
