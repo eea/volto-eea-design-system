@@ -13,11 +13,14 @@ function Copyright({ children, ...rest }) {
   );
 }
 
-Copyright.Prefix = ({ children, ...rest }) => (
-  <span {...rest} className={'icon-prefix'}>
-    {children}
-  </span>
-);
+Copyright.Prefix = ({ children, ...rest }) =>
+  children ? (
+    <span {...rest} className={'icon-prefix'}>
+      {children}
+    </span>
+  ) : (
+    ''
+  );
 
 Copyright.Icon = ({ children, ...rest }) => (
   <span {...rest} className={'icon-wrapper'}>
