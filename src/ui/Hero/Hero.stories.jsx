@@ -138,7 +138,7 @@ Default.args = {
   copyrightPosition: 'left',
   copyrightPrefix: 'Image',
   copyrightIcon: 'ri-copyright-line',
-  copyright: 'Image copyright: Velit fusce sed sem ut.',
+  copyright: 'John Smith, Well with Nature /EEA',
 };
 Default.parameters = {
   controls: {
@@ -176,7 +176,7 @@ Playground.args = {
   copyrightPosition: 'left',
   copyrightPrefix: 'Image',
   copyrightIcon: 'ri-copyright-line',
-  copyright: 'Image copyright: Velit fusce sed sem ut.',
+  copyright: 'John Smith, Well with Nature /EEA',
 };
 Playground.argTypes = {
   fullWidth: {
