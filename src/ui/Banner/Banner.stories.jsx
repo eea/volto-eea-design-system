@@ -67,7 +67,6 @@ export default {
       },
     },
     copyrightPosition: {
-      name: 'Position',
       control: {
         type: 'inline-radio',
         options: ['left', 'right'],

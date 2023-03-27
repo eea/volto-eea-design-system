@@ -63,7 +63,6 @@ export default {
       },
     },
     copyrightPosition: {
-      name: 'Position',
       control: {
         type: 'inline-radio',
         options: ['left', 'right'],
@@ -72,6 +71,13 @@ export default {
       table: {
         category: 'Copyright',
         defaultValue: { summary: '"left"' },
+      },
+    },
+    copyrightPrefix: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
       },
     },
     copyrightIcon: {
@@ -130,6 +136,7 @@ Default.args = {
 
   has_copyright: true,
   copyrightPosition: 'left',
+  copyrightPrefix: 'Image',
   copyrightIcon: 'ri-copyright-line',
   copyright: 'Image copyright: Velit fusce sed sem ut.',
 };
@@ -167,6 +174,7 @@ Playground.args = {
 
   has_copyright: true,
   copyrightPosition: 'left',
+  copyrightPrefix: 'Image',
   copyrightIcon: 'ri-copyright-line',
   copyright: 'Image copyright: Velit fusce sed sem ut.',
 };
@@ -247,6 +255,13 @@ Playground.argTypes = {
     },
   },
   copyright: {
+    table: {
+      category: 'Copyright',
+      defaultValue: { summary: '""' },
+      type: { summary: 'string' },
+    },
+  },
+  copyrightPrefix: {
     table: {
       category: 'Copyright',
       defaultValue: { summary: '""' },

@@ -26,6 +26,7 @@ function Hero({
   children,
   has_copyright,
   copyright,
+  copyrightPrefix,
   copyrightIcon,
   copyrightPosition,
 }) {
@@ -48,7 +49,7 @@ function Hero({
 
             {has_copyright && (
               <Copyright copyrightPosition={copyrightPosition}>
-                <Copyright.Prefix>Image</Copyright.Prefix>
+                <Copyright.Prefix>{copyrightPrefix}</Copyright.Prefix>
                 <Copyright.Icon>
                   <Icon className={copyrightIcon} />
                 </Copyright.Icon>
