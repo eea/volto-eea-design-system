@@ -24,7 +24,6 @@ function Hero({
   alignContent,
   backgroundVariant,
   children,
-
   has_copyright,
   copyright,
   copyrightIcon,
@@ -49,6 +48,7 @@ function Hero({
 
             {has_copyright && (
               <Copyright copyrightPosition={copyrightPosition}>
+                <Copyright.Prefix>Image</Copyright.Prefix>
                 <Copyright.Icon>
                   <Icon className={copyrightIcon} />
                 </Copyright.Icon>

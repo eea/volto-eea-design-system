@@ -24,6 +24,7 @@ export const Default = (args) => (
   <Container>
     <Segment className={'inverted'}>
       <Copyright copyrightPosition={args.copyrightPosition}>
+        <Copyright.Prefix>{args.prefix}</Copyright.Prefix>
         <Copyright.Icon>
           <Icon className={args.icon} />
         </Copyright.Icon>
@@ -35,6 +36,7 @@ export const Default = (args) => (
 
 Default.args = {
   copyrightPosition: 'left',
+  prefix: 'Image',
   icon: 'ri-copyright-line',
-  text: 'Image copyright: Velit fusce sed sem ut.',
+  text: 'John Smith, Well with Nature /EEA',
 };

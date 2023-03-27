@@ -52,6 +52,13 @@ export default {
         type: { summary: 'string' },
       },
     },
+    copyrightPrefix: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '' },
+        type: { summary: 'string' },
+      },
+    },
     copyrightIcon: {
       table: {
         category: 'Copyright',
@@ -141,6 +148,7 @@ const Template = (args) => {
           </Banner.Metadata>
         )}
         <Copyright copyrightPosition={args.copyrightPosition}>
+          <Copyright.Prefix>{args.copyrightPrefix}</Copyright.Prefix>
           <Copyright.Icon>
             <Icon className={args.copyrightIcon} />
           </Copyright.Icon>
@@ -164,7 +172,8 @@ Default.args = {
   image: true,
   hideShareButton: false,
   hideDownloadButton: false,
+  copyrightPrefix: 'Image',
   copyrightPosition: 'left',
   copyrightIcon: 'ri-copyright-line',
-  copyright: 'Image copyright: Velit fusce sed sem ut.',
+  copyright: 'John Smith, Well with Nature /EEA',
 };
