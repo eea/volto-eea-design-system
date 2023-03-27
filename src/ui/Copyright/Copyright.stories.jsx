@@ -7,7 +7,6 @@ export default {
   component: Copyright,
   argTypes: {
     copyrightPosition: {
-      name: 'Position',
       control: {
         type: 'inline-radio',
         options: ['left', 'right'],
@@ -24,10 +23,11 @@ export const Default = (args) => (
   <Container>
     <Segment className={'inverted'}>
       <Copyright copyrightPosition={args.copyrightPosition}>
+        <Copyright.Prefix>{args.copyrightPrefix}</Copyright.Prefix>
         <Copyright.Icon>
-          <Icon className={args.icon} />
+          <Icon className={args.copyrightIcon} />
         </Copyright.Icon>
-        <Copyright.Text>{args.text}</Copyright.Text>
+        <Copyright.Text>{args.copyright}</Copyright.Text>
       </Copyright>
     </Segment>
   </Container>
@@ -35,6 +35,7 @@ export const Default = (args) => (
 
 Default.args = {
   copyrightPosition: 'left',
-  icon: 'ri-copyright-line',
-  text: 'Image copyright: Velit fusce sed sem ut.',
+  copyrightPrefix: 'Image',
+  copyrightIcon: 'ri-copyright-line',
+  copyright: 'John Smith, Well with Nature /EEA',
 };
