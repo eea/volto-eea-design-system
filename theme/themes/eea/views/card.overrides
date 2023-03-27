@@ -446,3 +446,16 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--title-max-lines, 3);
 }
+
+// Spacing adjustment to display outline with overflow hidden
+.ui.card .header {
+  padding: @headerPadding;
+  margin-inline: @headerMarginInline;
+  //margin-top: @headerMarginTop; 
+}
+
+.ui.cards > .card > .content > .header:not(:last-child),
+.ui.card > .content > .header:not(:last-child),
+.ui.card.rounded .content .header {
+  margin-bottom: @headerMarginBottom;
+}

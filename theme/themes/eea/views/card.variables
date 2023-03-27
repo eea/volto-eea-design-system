@@ -84,8 +84,14 @@
 @headerMargin: '';
 @headerFontWeight: @bold;
 @headerFontSize: 1.125rem;
-@headerLineHeightOffset: -(@lineHeight - 1em) / 2;
+
 @headerColor: inherit;
+
+@headerPadding: @em-space-1;
+@headerMarginInline: -@headerPadding;
+//@headerMarginTop: @headerLineHeightOffset - @headerPadding;
+@headerLineHeightOffset: -((@lineHeight - 1em) / 2) - @headerPadding;
+@headerMarginBottom: @cardContentMarginBottom - @headerPadding;
 
 /* Metadata */
 @metaJustifyContent: space-between;

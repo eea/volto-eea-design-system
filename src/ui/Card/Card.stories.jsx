@@ -86,7 +86,9 @@ const CardTemplate = ({ variant, inverted, titleOnImage, card }) => (
 
       {/* Title */}
       {!titleOnImage || !card.hasImage ? (
-        <Card.Header>{card.title}</Card.Header>
+        <Card.Header>
+          <a href={card.href}>{card.title}</a>
+        </Card.Header>
       ) : (
         ''
       )}

@@ -84,7 +84,6 @@ function ModalEEA({
   const [open, setOpen] = React.useState(false);
   return (
     <Modal
-      //closeIcon
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
@@ -93,7 +92,11 @@ function ModalEEA({
       size={size}
       dimmer={dimmer}
     >
-      <Button className="close icon" onClick={() => setOpen(false)}  title='Close modal dialog'>
+      <Button
+        className="close icon"
+        onClick={() => setOpen(false)}
+        title="Close modal dialog"
+      >
         <Icon name="close" />
       </Button>
 
