@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal } from 'semantic-ui-react';
+import { Button, Modal, Icon } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Modal',
@@ -84,7 +84,7 @@ function ModalEEA({
   const [open, setOpen] = React.useState(false);
   return (
     <Modal
-      closeIcon
+      //closeIcon
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
@@ -93,6 +93,10 @@ function ModalEEA({
       size={size}
       dimmer={dimmer}
     >
+      <Button className="close icon" onClick={() => setOpen(false)}  title='Close modal dialog'>
+        <Icon name="close" />
+      </Button>
+
       <Modal.Header>{header}</Modal.Header>
       <Modal.Content>
         <Modal.Description>{content}</Modal.Description>
