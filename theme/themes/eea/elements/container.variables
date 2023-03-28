@@ -2,6 +2,10 @@
             Container
 *******************************/
 
+@toolbarWidth: 80px;
+@sidebarWidth: 375px;
+@collapsedWidth: 20px;
+
 /*-------------------
        Element
 --------------------*/

@@ -41,15 +41,15 @@
       }
 
       .metadata {
+        margin-bottom: @rem-space-3;
         font-size: @mobileMetadataFontSize;
         line-height: @mobileMetadataLineHeight;
-        margin-bottom: @rem-space-3;
 
         .field.type {
           font-weight: @metadataTypeFontWeight;
         }
 
-        span.field:not(:last-child)::after {
+        .field:not(:last-child)::after {
           content: @metadataFieldDividerContent;
         }
       }
@@ -110,10 +110,10 @@
 /*Share Popup*/
 
 .ui.popup.share-popup {
+  position: initial; // without position initial popper cannot correctly place popup
+  min-width: @sharePopupMinWidth;
   padding: @sharePopupPadding;
   filter: @sharePopupFilter;
-  min-width: @sharePopupMinWidth;
-  position: initial; // without position initial popper cannot correctly place popup
 
   p {
     font-size: @sharePopupFontSize;
