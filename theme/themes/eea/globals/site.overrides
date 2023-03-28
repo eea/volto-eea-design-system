@@ -24,12 +24,16 @@ h2, h3, h4, h5, h6 {
 
 .content-area {
   color: @contentAreaColor;
-  overflow-x: hidden;
 }
 
 [id="page-document"] > * {
   margin-left: auto !important;
   margin-right: auto !important;
+}
+
+[class~="view-defaultview"] .content-area,
+[class~="view-viewview"] .content-area {
+  overflow-x: hidden;
 }
 
 [class~="view-defaultview"] [id="page-document"] > *,
