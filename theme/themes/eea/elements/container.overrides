@@ -143,14 +143,14 @@ body {
 .full-width {
   @toolbarWidthCSS: var(--toolbar-width, 0px);
   @sidebarWidthCSS: var(--sidebar-width, 0px);
-  @scrollbarWidthCSS: var(--scrollbar-width, @scrollbarWidth);
+  @halfWidth: vw(50);
   position: relative;
-  width: calc(100vw - @toolbarWidthCSS - @sidebarWidthCSS - @scrollbarWidthCSS) !important;
-  right: 50%;
-  left: 50%;
+  width: calc(vw(100) - @toolbarWidthCSS - @sidebarWidthCSS) !important;
+  right: 50% !important;
+  left: 50% !important;
   max-width: initial !important;
-  margin-left: calc(-50vw + (@toolbarWidthCSS + @sidebarWidthCSS + @scrollbarWidthCSS) / 2) !important;
-  margin-right: calc(-50vw + (@toolbarWidthCSS + @sidebarWidthCSS + @scrollbarWidthCSS) / 2) !important;
+  margin-left: calc(-1 * @halfWidth + (@toolbarWidthCSS + @sidebarWidthCSS) / 2) !important;
+  margin-right: calc(-1 * @halfWidth + (@toolbarWidthCSS + @sidebarWidthCSS) / 2) !important;
 }
 
 .has--size--full:not(.block-editor-columnsBlock) .ui.grid {
