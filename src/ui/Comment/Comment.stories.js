@@ -45,32 +45,42 @@ function CommentEEA({ title, comments, threaded, minimal, size }) {
         <Comment key={comIndex}>
           <Comment.Avatar src={comment.src} alt="user avatar" />
           <Comment.Content>
-            <Comment.Author as="a">{comment.author}</Comment.Author>
+            <Comment.Author as="a" href={comment.authorLink}>
+              {comment.author}
+            </Comment.Author>
             <Comment.Metadata>
               <div>{comment.time}</div>
             </Comment.Metadata>
             <Comment.Text>{comment.text}</Comment.Text>
             <Comment.Actions>
-              <Comment.Action>Reply</Comment.Action>
+              <Comment.Action as="button" className="ui button text">
+                Reply
+              </Comment.Action>
             </Comment.Actions>
           </Comment.Content>
-          <Comment.Group>
-            {comment.replies.map((reply, repIndex) => (
-              <Comment key={repIndex}>
-                <Comment.Avatar src={comment.src} alt="user avatar" />
-                <Comment.Content>
-                  <Comment.Author as="a">{reply.author}</Comment.Author>
-                  <Comment.Metadata>
-                    <div>{reply.time}</div>
-                  </Comment.Metadata>
-                  <Comment.Text>{reply.text}</Comment.Text>
-                  <Comment.Actions>
-                    <Comment.Action>Reply</Comment.Action>
-                  </Comment.Actions>
-                </Comment.Content>
-              </Comment>
-            ))}
-          </Comment.Group>
+          {comment.replies.length > 0 && (
+            <Comment.Group>
+              {comment.replies.map((reply, repIndex) => (
+                <Comment key={repIndex}>
+                  <Comment.Avatar src={comment.src} alt="user avatar" />
+                  <Comment.Content>
+                    <Comment.Author as="a" href={reply.authorLink}>
+                      {reply.author}
+                    </Comment.Author>
+                    <Comment.Metadata>
+                      <div>{reply.time}</div>
+                    </Comment.Metadata>
+                    <Comment.Text>{reply.text}</Comment.Text>
+                    <Comment.Actions>
+                      <Comment.Action as="button" className="ui button text">
+                        Reply
+                      </Comment.Action>
+                    </Comment.Actions>
+                  </Comment.Content>
+                </Comment>
+              ))}
+            </Comment.Group>
+          )}
         </Comment>
       ))}
     </Comment.Group>
@@ -88,12 +98,14 @@ Default.args = {
     {
       src: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
       author: 'User 1',
+      authorLink: '/#',
       time: 'Message timestamp',
       text: 'Message Content',
       replies: [
         {
           src: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
           author: 'User 4',
+          authorLink: '/#',
           time: 'Message timestamp',
           text: 'Message Content',
         },
@@ -102,6 +114,7 @@ Default.args = {
     {
       src: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
       author: 'User 2',
+      authorLink: '/#',
       time: 'Message timestamp',
       text: 'Message Content',
       replies: [],
@@ -109,6 +122,7 @@ Default.args = {
     {
       src: 'https://react.semantic-ui.com/images/avatar/large/matthew.png',
       author: 'User 3',
+      authorLink: '/#',
       time: 'Message timestamp',
       text: 'Message Content',
       replies: [],

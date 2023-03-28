@@ -116,6 +116,7 @@ p.ui.button {
   background-color: @textButtonBackground;
   color: @primaryColor;
   text-decoration: underline;
+  padding: @textButtonPadding;
 
   &:hover,
   &:active,
