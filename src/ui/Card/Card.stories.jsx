@@ -490,7 +490,9 @@ const TeaserCard = ({ variant, inverted, titleOnImage, card }) => (
 
         {!titleOnImage && (
           <div className="content">
-            <div className="header">{card.title}</div>
+            <div className="header">
+              <a href={card.href}>{card.title}</a>
+            </div>
             <Card.Description>{card.description}</Card.Description>
           </div>
         )}
