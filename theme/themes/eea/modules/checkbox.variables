@@ -174,8 +174,8 @@
 @toggleLabelOffset: 0.15em;
 
 
-@toggleFocusColor: @grey-2;
-@toggleHoverColor: @grey-2;
+@toggleFocusColor: @grey-3;
+@toggleHoverColor: @grey-3;
 
 @toggleOffLabelColor: @checkboxColor;
 @toggleOffHandleBoxShadow: none;
