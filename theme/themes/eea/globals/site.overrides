@@ -9,7 +9,8 @@
   outline: @focusVisibleOutline;
 }
 
-button:focus-visible {
+button:focus-visible,
+a.button:focus-visible {
   outline: @focusVisibleOutline !important;
 }
 

@@ -112,6 +112,7 @@
 /* Text Button */
 button.ui.button.text,
 button.ui.buttons.text,
+a.ui.button.text,
 p.ui.button {
   background-color: @textButtonBackground;
   color: @primaryColor;
