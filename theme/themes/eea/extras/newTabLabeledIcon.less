@@ -14,29 +14,35 @@
   min-width: @newTabLabeledIconMinWidth;
   text-align: @newTabLabeledIconTextAlign;
 
+  a {
+    text-decoration: none;
+  }
+
   .label {
     width: @newTabLabeledIconLabelWidth;
     font-size: @newTabLabeledIconLabelFontSize;
+    font-weight: @newTabLabeledIconLabelFontWeight;
     color: @newTabLabeledIconLabelColor;
     cursor: pointer;
   }
+}
 
-  .icon.wrapper {
-    text-align: center;
+.eea.new.tab.labeled.icon .icon.wrapper {
+  min-height: @newTabLabeledIconIconWrapperMinHeight;
+  width: @newTabLabeledIconIconWrapperWidth;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-bottom: @newTabLabeledIconWrapperPaddingBottom;
+
+  .icon {
+    cursor: pointer;
     display: flex;
-    justify-content: center;
-    width: @newTabLabeledIconIconWrapperWidth;
-    padding: @newTabLabeledIconWrapperPadding;
-
-    .icon {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      font-size: @newTabLabeledIconIconFontSize;
-      color: @newTabLabeledIconColor;
-      width: @newTabLabeledIconIconWidth;
-      height: @newTabLabeledIconWrapperIconHeight;
-    }
+    align-items: center;
+    font-size: @newTabLabeledIconIconFontSize;
+    color: @newTabLabeledIconColor;
+    width: @newTabLabeledIconIconWidth;
+    height: @newTabLabeledIconWrapperIconHeight;
   }
 }
 
