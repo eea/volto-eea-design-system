@@ -33,7 +33,7 @@
 @topSectionItemFontSize               : @font-size-00;
 @mobileTopSectionItemFontSize         : @font-size-00;
 @tabletTopSectionItemFontSize         : @font-size-00;
-@topSectionZindex                     : @z-index-1;
+@topSectionZIndex                     : @z-index-1;
 @dropdownColor                        : @blue-grey-6;
 @mobileDropdownFontSize               : @font-size-00;
 @tabletDropdownFontSize               : @font-size-00;
@@ -187,16 +187,13 @@
 @megaMenuListItemActivePadding: 8px;
 
 /* Topics */
-@topicsRightColumnPaddingTop: calc(31 * @spacer); // 124px;
 @topicsRightColumnPaddingLeft: @rem-space-4;
 
 /* At a glance */
-@megaMenuGlanceBackgroundColor: @secondaryColor;
-@megaMenuGlancePadding: @rem-space-4 @rem-space-6;
-@megaMenuGlanceMarginBottom: -@rem-space-4;
-@megaMenuGlanceListItemFontSize: @font-size-2;
+@megaMenuGlanceListItemFontSize: @font-size-1;
 @megaMenuGlanceListItemFontWeight: @font-weight-4;
-@megaMenuGlanceListItemMargin: @rem-space-4 0;
+@megaMenuGlanceListItemMargin: 0;
+@megaMenuGlanceMenuListMarginTop: @rem-space-4;
 
 /* Accordion */
 @megaMenuAccordionTitleFontSize: @font-size-3;
@@ -237,7 +234,7 @@
 @tabletSearchBoxFullSearchTextAlign: center;
 @searchBoxSuggestionsMarginTop: 2em;
 @searchBoxSuggestionsTextColor: @white;
-@searchBoxSuggestionsColumnGap: 2em; 
+@searchBoxSuggestionsColumnGap: 2em;
 @searchBoxSuggestionsRowGap: 1em;
 @searchBoxMobilePopupMarginTop: 0.5em;
 @searchBoxTabletPopupMarginTop: 1em;

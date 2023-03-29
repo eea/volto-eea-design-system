@@ -65,24 +65,6 @@ const Topics = ({ menuItem, renderMenuItem }) => (
       <React.Fragment key={index}>
         {section.title === 'At a glance' ? (
           <Grid.Column width={3} id="at-a-glance">
-            <div className="mega-menu-title">
-              {/* Inverted right labeled button as a category title,
-                    for topics the button goes inside the grid */}
-              {renderMenuItem(
-                menuItem,
-                { className: 'ui button inverted icon right labeled' },
-                {
-                  iconPosition: 'right',
-                  children: (
-                    <>
-                      {/* Add word overview to titles */}
-                      <span> overview</span>
-                      <Icon className={'arrow right icon'} alt={'Title icon'} />
-                    </>
-                  ),
-                },
-              )}
-            </div>
             <Item item={section} key={index} renderMenuItem={renderMenuItem} />
           </Grid.Column>
         ) : (
@@ -219,8 +201,6 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
     const inDepth = element.items.find(
       (element) => element.url.indexOf('in-depth') !== -1,
     );
-    // eslint-disable-next-line no-unused-expressions
-    inDepth ? (inDepth.nav_title = 'A-Z Topics') : '';
     content = (
       <List>
         {atAGlance &&
@@ -336,7 +316,7 @@ function HeaderMenuPopUp({
             <div className="menu-content tablet hidden mobile hidden">
               {/* Inverted right labeled button as a category title,
                   for topics the button goes inside the grid */}
-              {menuItem.title !== 'Topics' && (
+              {menuItem.title && (
                 <div className="mega-menu-title">
                   {renderMenuItem(
                     menuItem,

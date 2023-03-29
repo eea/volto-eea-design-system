@@ -1147,6 +1147,30 @@ const menuItems = [
   },
 ];
 
+const headerSearchBox = [
+  {
+    isDefault: true,
+    path: '/en/advanced-search',
+    placeholder: 'Search or ask your question...',
+    description: 'For more search options',
+    buttonTitle: 'Go to advanced search',
+    searchSuggestions: {
+      maxToShow: 6,
+      suggestionsTitle: 'Try our suggestions',
+      suggestions: [
+        'What is PFAS?',
+        'Which transport mode has the lowest pollution?',
+        'Which countries use most renewable energy?',
+        'How many premature deaths are attributed to PM2.5?',
+        'How many premature deaths are attributed to air pollution?',
+        'How much have new cars co2 emissions decreased?',
+        'What countries had the highest land take in the EEA-39?',
+        'How many people are exposed to air pollution?',
+      ],
+    },
+  },
+];
+
 const debounce = (func) => {
   let timer;
   return (event) => {
@@ -1296,6 +1320,7 @@ const Template = (args) => {
           pathname={pathname}
           logo={<Logo {...logoProps} inverted={args.inverted} />}
           menuItems={menuItems}
+          headerSearchBox={headerSearchBox}
           renderMenuItem={(item, options = {}, props) => {
             const { onClick } = options;
             return (
