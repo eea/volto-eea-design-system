@@ -14,7 +14,6 @@
 
 /* Cards must have same height */
 .ui.card {
-  min-width: @minWidth;
   height: 100%;
   text-align: var(--text-align, @cardTextAlign);
   background-color: var(--card-background-color, @background);
@@ -282,7 +281,7 @@
   line-height: @imageTitleLineHeight;
 }
 
-@media only screen and (min-width: @tabletBreakpoint) {
+@media only screen and (min-width: @computerBreakpoint) {
   .card .gradient {
     padding-block: @imageTitlePaddingBlock;
   }
@@ -304,7 +303,6 @@
 
   .slick-track {
     display: flex;
-    gap: @slickTrackGap;
     margin: @slickTrackMargin;
   }
 
@@ -313,6 +311,7 @@
     height: auto;
     flex: 1;
     flex-direction: column;
+    margin: @slickSlideMargin;
 
     > div {
       height: 100%;
@@ -323,6 +322,7 @@
 /* Carousel arrows */
 .cards-carousel .ui.button.icon.slider-arrow {
   padding: @carouselButtonPadding;
+  margin: @carouselButtonMargin;
 
   .active, &:focus, &:hover {
     background: transparent;
@@ -370,6 +370,7 @@
   position: relative;
   bottom: 0;
 }
+
 .cards-carousel .slick-dots li button:before {
   background-color: @carouselDotsBackgroundColor;
   color: transparent;
@@ -390,11 +391,13 @@
   outline-style: auto;
 }
 
-@media only screen and (min-width: @computerBreakpoint) {
-  .cards-carousel .slick-dots li button:before {
-    width: inherit;
-    height: inherit;
+@media only screen and (max-width: @tabletBreakpoint) {
+  .cards-carousel .slick-dots li,
+  .cards-carousel .slick-dots li button {
+    width: @mobileCarouselDotsButtonWidth;
+    height: @mobileCarouselDotsButtonHeight;
   }
+
 }
 
 /*******************************
@@ -419,4 +422,27 @@
 .ui.card > i.icon,
 .ui.card > a:not(.ui) > i.icon {
   color: @iconColor;
+}
+
+/*******************************
+          Teaser Card
+*******************************/
+// Teaser cards grid on tablet update padding and min-width
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+  .ui.grid > .column.grid-block-teaser,
+  .ui.grid > .row > .column.grid-block-teaser {
+    padding-left: @tabletTeaserCardPaddingInline;
+    padding-right: @tabletTeaserCardPaddingInline;
+  }
+  .grid-block-teaser .ui.card {
+    min-width: @tabletTeaserCardMinWidth;
+  }
+}
+
+// Added from listing-cards.less
+.grid-block-teaser .ui.card.u-card .header {
+  display: -webkit-box !important;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--title-max-lines, 3);
 }

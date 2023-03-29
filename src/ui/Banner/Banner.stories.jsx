@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Banner from './Banner';
 // eslint-disable-next-line import/no-unresolved
 import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/banner.png';
-import { Popup, Icon } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
+import Popup from '@eeacms/volto-eea-design-system/ui/Popup/Popup';
 import Copyright from '../Copyright/Copyright';
 
 export default {
@@ -12,54 +13,60 @@ export default {
     title: {
       description: 'banner title',
       table: {
-        defaultValue: { summary: '""' },
+        defaultValue: { summary: '' },
         type: { summary: 'string' },
       },
     },
     metadata: {
       description: 'banner metadata',
       table: {
-        defaultValue: { summary: '""' },
+        defaultValue: { summary: '' },
         type: { summary: 'object' },
       },
     },
     image: {
       description: 'set or unset banner image',
       table: {
-        defaultValue: { summary: '""' },
+        defaultValue: { summary: '' },
         type: { summary: 'boolean' },
       },
     },
     hideShareButton: {
       description: 'hide/show share button',
       table: {
-        defaultValue: { summary: '""' },
+        defaultValue: { summary: '' },
         type: { summary: 'boolean' },
       },
     },
     hideDownloadButton: {
       description: 'hide/show download button',
       table: {
-        defaultValue: { summary: '""' },
+        defaultValue: { summary: '' },
         type: { summary: 'boolean' },
       },
     },
     copyright: {
       table: {
         category: 'Copyright',
-        defaultValue: { summary: '""' },
+        defaultValue: { summary: '' },
+        type: { summary: 'string' },
+      },
+    },
+    copyrightPrefix: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '' },
         type: { summary: 'string' },
       },
     },
     copyrightIcon: {
       table: {
         category: 'Copyright',
-        defaultValue: { summary: '""' },
+        defaultValue: { summary: '' },
         type: { summary: 'string' },
       },
     },
     copyrightPosition: {
-      name: 'Position',
       control: {
         type: 'inline-radio',
         options: ['left', 'right'],
@@ -73,69 +80,83 @@ export default {
   },
 };
 
-const Template = (args) => (
-  <Banner {...args} image={args.image ? imgUrl : null}>
-    <Banner.Content
-      actions={
-        <>
-          {' '}
-          {!args.hideShareButton && (
-            <Popup
-              className="share-popup"
-              trigger={
-                <Banner.Action
-                  icon="ri-share-fill"
-                  title="Share"
-                  className="share"
-                />
-              }
-              content={() => (
-                <>
-                  <p>Share to:</p>
-                  <div className="actions">
-                    <Banner.Action icon="ri-facebook-fill" />
-                    <Banner.Action icon="ri-twitter-fill" />
-                    <Banner.Action icon="ri-linkedin-fill" />
-                  </div>
-                </>
-              )}
-              position="top center"
-              basic
-            />
-          )}
-          {!args.hideDownloadButton && (
-            <Banner.Action
-              icon="ri-download-2-line"
-              title="Download"
-              className="download"
-            />
-          )}
-        </>
-      }
-    >
-      <Banner.Subtitle>{args.subtitle}</Banner.Subtitle>
-      <Banner.Title>{args.title}</Banner.Title>
-      {args.metadata && (
-        <Banner.Metadata>
+const Template = (args) => {
+  const popupRef = useRef(null);
+  return (
+    <Banner {...args} image={args.image ? imgUrl : null}>
+      <Banner.Content
+        actions={
           <>
-            {args.metadata.map((meta, index) => (
-              <Banner.MetadataField
-                {...meta}
-                key={index}
-              ></Banner.MetadataField>
-            ))}
+            {!args.hideShareButton && (
+              <Popup
+                className="share-popup"
+                trigger={
+                  <Banner.Action
+                    icon="ri-share-fill"
+                    title="Share"
+                    className="share"
+                  />
+                }
+                content={
+                  <>
+                    <p>Share to:</p>
+                    <div className="actions" ref={popupRef}>
+                      <Banner.Action
+                        icon="ri-facebook-fill"
+                        title={'Share page to Facebook'}
+                        titleClass={'hiddenStructure'}
+                      />
+                      <Banner.Action
+                        icon="ri-twitter-fill"
+                        title={'Share page to Twitter'}
+                        titleClass={'hiddenStructure'}
+                      />
+                      <Banner.Action
+                        icon="ri-linkedin-fill"
+                        title={'Share page to Linkedin'}
+                        titleClass={'hiddenStructure'}
+                      />
+                    </div>
+                  </>
+                }
+                position="top center"
+              />
+            )}
+            {!args.hideDownloadButton && (
+              <Banner.Action
+                icon="ri-download-2-line"
+                title="Download"
+                className="download"
+              />
+            )}
           </>
-        </Banner.Metadata>
-      )}
-      <Copyright copyrightPosition={args.copyrightPosition}>
-        <Copyright.Icon>
-          <Icon className={args.copyrightIcon} />
-        </Copyright.Icon>
-        <Copyright.Text>{args.copyright}</Copyright.Text>
-      </Copyright>
-    </Banner.Content>
-  </Banner>
-);
+        }
+      >
+        <Banner.Subtitle>{args.subtitle}</Banner.Subtitle>
+        <Banner.Title>{args.title}</Banner.Title>
+        {args.metadata && (
+          <Banner.Metadata>
+            <>
+              {args.metadata.map((meta, index) => (
+                <Banner.MetadataField
+                  {...meta}
+                  key={index}
+                ></Banner.MetadataField>
+              ))}
+            </>
+          </Banner.Metadata>
+        )}
+        <Copyright copyrightPosition={args.copyrightPosition}>
+          <Copyright.Prefix>{args.copyrightPrefix}</Copyright.Prefix>
+          <Copyright.Icon>
+            <Icon className={args.copyrightIcon} />
+          </Copyright.Icon>
+          <Copyright.Text>{args.copyright}</Copyright.Text>
+        </Copyright>
+      </Banner.Content>
+    </Banner>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {
@@ -150,7 +171,8 @@ Default.args = {
   image: true,
   hideShareButton: false,
   hideDownloadButton: false,
+  copyrightPrefix: 'Image',
   copyrightPosition: 'left',
   copyrightIcon: 'ri-copyright-line',
-  copyright: 'Image copyright: Velit fusce sed sem ut.',
+  copyright: 'John Smith, Well with Nature /EEA',
 };

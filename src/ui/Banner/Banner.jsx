@@ -1,12 +1,12 @@
 import React from 'react';
 import { Container, Icon, Button, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { formatDate } from '@plone/volto/helpers/Utils/Date';
 import config from '@plone/volto/registry';
 
 Banner.propTypes = {
   title: PropTypes.string,
-  image: PropTypes.bool,
 };
 
 const socialPlatforms = {
@@ -26,9 +26,7 @@ const socialPlatforms = {
 };
 
 export const getImageSource = (image) => {
-  if (image?.download) return image.download;
-  if (image?.encoding)
-    return `data:${image['content-type']};${image['encoding']},${image['data']}`;
+  if (image?.scales?.huge) return flattenToAppURL(image.scales.huge.download);
   return null;
 };
 
@@ -68,16 +66,19 @@ function Banner({ image, metadata, properties, children, ...rest }) {
   );
 }
 
-Banner.Action = function ({ id, title, icon, onClick, className, color }) {
+Banner.Action = React.forwardRef(function (
+  { id, title, titleClass, icon, onClick, className, color },
+  ref,
+) {
   return (
-    <div className="action">
+    <div className="action" ref={ref}>
       <Button className={className} basic icon inverted onClick={onClick}>
         <Icon className={icon} color={color}></Icon>
-        <span className="mobile hidden">{title}</span>
+        <span className={titleClass || 'mobile hidden'}>{title}</span>
       </Button>
     </div>
   );
-};
+});
 
 Banner.Content = ({ children, actions }) => {
   return (
@@ -100,12 +101,12 @@ Banner.Title = ({ children }) => {
 Banner.Subtitle = ({ children }) => <p className="subtitle">{children}</p>;
 Banner.Metadata = ({ children }) => <p className="metadata">{children}</p>;
 
-Banner.MetadataField = ({ hidden, type = 'text', label, value, title }) => {
+Banner.MetadataField = ({ hidden, type = 'text', label, value }) => {
   const locale = config.settings.dateLocale || 'en-gb';
   if (hidden || !value) return '';
   if (type === 'date' && value)
     return (
-      <span className={`field ${type}`} title={title?.replace('{}', value)}>
+      <time className={`field ${type}`} dateTime={value}>
         {label}{' '}
         {formatDate({
           date: value,
@@ -116,7 +117,7 @@ Banner.MetadataField = ({ hidden, type = 'text', label, value, title }) => {
           },
           locale: locale,
         })}
-      </span>
+      </time>
     );
   return (
     <span className={`field ${type}`}>

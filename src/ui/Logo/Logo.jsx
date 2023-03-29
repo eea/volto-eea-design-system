@@ -15,7 +15,7 @@ import { Image } from 'semantic-ui-react';
  */
 const Logo = ({ src, invertedSrc, id, url, alt, title, inverted }) => {
   return (
-    <Link to={url} title={title}>
+    <Link to={url} title={title} className={'logo'}>
       <Image
         src={inverted ? invertedSrc : src}
         alt={alt}

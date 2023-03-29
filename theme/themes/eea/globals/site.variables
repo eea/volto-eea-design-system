@@ -11,6 +11,7 @@
 
 @fontName          : 'Roboto';
 @fontSmoothing     : antialiased;
+@fontDisplay       : swap;
 
 @headerFont        : @fontName, Arial, 'Helvetica Neue', Helvetica, sans-serif;
 @pageFont          : @fontName, Arial, 'Helvetica Neue', Helvetica, sans-serif;
@@ -119,6 +120,9 @@
 /*-------------------
     Focused Input
 --------------------*/
+
+/* Global focus-visible for accessibility */
+@focusVisibleOutline: .2rem solid var(--focus-visible, @blue-3);
 
 /* Used on inputs, textarea etc */
 @focusedFormBorderColor: @secondaryColor;

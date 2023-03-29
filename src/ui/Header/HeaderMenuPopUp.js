@@ -70,24 +70,6 @@ const Topics = ({ menuItem, renderMenuItem }) => (
       <React.Fragment key={index}>
         {section.title === 'At a glance' ? (
           <Grid.Column width={3} id="at-a-glance">
-            <div className="mega-menu-title">
-              {/* Inverted right labeled button as a category title,
-                    for topics the button goes inside the grid */}
-              {renderMenuItem(
-                menuItem,
-                { className: 'ui button inverted icon right labeled' },
-                {
-                  iconPosition: 'right',
-                  children: (
-                    <>
-                      {/* Add word overview to titles */}
-                      <span> overview</span>
-                      <Icon className={'arrow right icon'} alt={'Title icon'} />
-                    </>
-                  ),
-                },
-              )}
-            </div>
             <Item item={section} key={index} renderMenuItem={renderMenuItem} />
           </Grid.Column>
         ) : (
@@ -176,7 +158,7 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
               defaultIndex = index;
             }
             x.title = (
-              <Accordion.Title key={`title=${index}`}>
+              <Accordion.Title key={`title=${index}`} as="button">
                 {item.title}
                 <Icon className="ri-arrow-down-s-line" size="small" />
               </Accordion.Title>
@@ -224,8 +206,6 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
     const inDepth = element.items.find(
       (element) => element.url.indexOf('in-depth') !== -1,
     );
-    // eslint-disable-next-line no-unused-expressions
-    inDepth ? (inDepth.nav_title = 'A-Z Topics') : '';
     content = (
       <List>
         {atAGlance &&
@@ -279,7 +259,7 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
       defaultIndex = index;
     }
     x.title = (
-      <Accordion.Title key={`title-${index}`} index={index}>
+      <Accordion.Title key={`title-${index}`} index={index} as="button">
         {element.title}
         <Icon className="ri-arrow-down-s-line" size="small" />
       </Accordion.Title>
@@ -341,7 +321,7 @@ function HeaderMenuPopUp({
             <div className="menu-content tablet hidden mobile hidden">
               {/* Inverted right labeled button as a category title,
                   for topics the button goes inside the grid */}
-              {menuItem.title !== 'Topics' && (
+              {menuItem.title && (
                 <div className="mega-menu-title">
                   {renderMenuItem(
                     menuItem,

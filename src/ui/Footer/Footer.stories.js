@@ -30,13 +30,17 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  header: 'Thematic information platforms',
+  header: 'Environmental information systems',
+  description: '',
   actions: [
     { link: '/#', title: 'Privacy' },
     { link: '/#', title: 'Sitemap' },
     { link: '/#', title: 'CMS Login' },
   ],
-  copyright: [{ link: '/#', site: 'EEA' }],
+  copyright: [
+    { link: 'https://status.eea.europa.eu/', title: 'System status' },
+    { link: '/#', title: '© Copyright 2023 EEA' },
+  ],
   sites: [
     { link: '/#', src: Marine, alt: 'WISE marine' },
     { link: '/#', src: Freshwater, alt: 'WISE freshwater' },

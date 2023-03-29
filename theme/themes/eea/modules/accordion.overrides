@@ -2,11 +2,18 @@
          Theme Overrides
 *******************************/
 
+.ui.accordion button.title {
+  background: transparent;
+  width: 100%;
+  border: none;
+}
+
 .ui.accordion {
   margin: @itemsMargin;
   transition: @styledTitleTransition;
 
-  .title {
+  .title,
+  button.title {
     display: flex;
     align-items: center;
     justify-content: @titleJustifyContent;
@@ -20,7 +27,8 @@
       flex-shrink: 0;
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       color: @titleColorHover;
 
       i {
@@ -81,7 +89,8 @@
 ---------------*/
 
 .ui.styled.accordion  .title,
-.ui.styled.accordion  .title:hover {
+.ui.styled.accordion  .title:hover,
+.ui.styled.accordion  .title:focus-visible {
   background-color: @styledActiveTitleBackground;
 }
 .ui.styled.accordion .active.title input {
@@ -112,7 +121,8 @@
 .ui.accordion:not([class*='ary']) .active.title i {
    color: @tertiaryColor;
 }
-.ui.accordion[class*='ary'] .active.title {
+.ui.accordion[class*='ary'] .active.title,
+.ui.accordion[class*='ary'] .active.title i {
   color: white;
 }
 
@@ -121,7 +131,9 @@
   background-color: @primaryColor;
 }
 .ui.accordion.primary .title:not(.active):hover,
-.ui.accordion.primary .title:not(.active):hover i {
+.ui.accordion.primary .title:not(.active):focus-visible,
+.ui.accordion.primary .title:not(.active):hover i,
+.ui.accordion.primary .title:not(.active):focus-visible i {
   color: @primaryColorCSSVar;
 }
 
@@ -130,7 +142,9 @@
   background-color: @secondaryColor;
 }
 .ui.accordion.secondary .title:not(.active):hover,
-.ui.accordion.secondary .title:not(.active):hover i {
+.ui.accordion.secondary .title:not(.active):focus-visible,
+.ui.accordion.secondary .title:not(.active):hover i,
+.ui.accordion.secondary .title:not(.active):focus-visible i {
   color: @secondaryColorCSSVar;
 }
 
@@ -139,6 +153,8 @@
   background-color: @tertiaryColor;
 }
 .ui.accordion.tertiary .title:not(.active):hover,
-.ui.accordion.tertiary .title:not(.active):hover i {
+.ui.accordion.tertiary .title:not(.active):focus-visible,
+.ui.accordion.tertiary .title:not(.active):hover i,
+.ui.accordion.tertiary .title:not(.active):focus-visible i {
   color: @tertiaryColorCSSVar;
 }

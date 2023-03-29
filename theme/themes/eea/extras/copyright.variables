@@ -9,3 +9,18 @@
 @copyrightContentFontSize: @font-size-00;
 @copyrightLineHeight: @font-lineheight-0;
 @copyrightContentPaddingRight: @rem-space-1;
+@copyrightWrapperPaddingLeft: @rem-space-3;
+@copyrightWrapperPaddingRight: @rem-space-3;
+@copyrightWrapperBottom: @rem-space-4;
+@copyrightAlignItems: start;
+
+/* Image block */
+@floatImageLeftMaxWidth: 50%;
+@floatImageRightMaxWidth: 50%;
+
+
+
+@copyrightHoverContainerPadding: @rem-space-1 @rem-space-2;
+@copyrightHoverContainerBackgroundColor: @tertiaryColor;
+@copyrightHoverContainerBorderRadius: @rem-space-1;
+@copyrightHoverContainerColor: @grey-1;

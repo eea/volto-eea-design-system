@@ -1,5 +1,8 @@
 import { React } from 'react';
-import { Button, Segment, Popup, Image, Icon } from 'semantic-ui-react';
+import { Button, Segment, Image, Icon } from 'semantic-ui-react';
+
+import Popup from './Popup';
+
 import EUflag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/europe-flag.svg';
 
 export default {

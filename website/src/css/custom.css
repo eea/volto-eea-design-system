@@ -7,76 +7,6 @@
 
 /* You can override the default Infima variables here. */
 
-@font-face { 
-  font-family: Roboto; 
-  src: url('../../static/fonts/roboto/Roboto-Black.ttf') format('truetype'); 
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face { 
-  font-family: Roboto; 
-  src: url('../../static/fonts/roboto/Roboto-BlackItalic.ttf') format('truetype'); 
-  font-weight: 900;
-  font-style: italic;
-}
-
-@font-face { 
-  font-family: Roboto; 
-  src: url('../../static/fonts/roboto/Roboto-Bold.ttf') format('truetype'); 
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face { 
-  font-family: Roboto; 
-  src: url('../../static/fonts/roboto/Roboto-BoldItalic.ttf') format('truetype'); 
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face { 
-  font-family: Roboto; 
-  src: url('../../static/fonts/roboto/Roboto-Medium.ttf') format('truetype'); 
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face { 
-  font-family: Roboto; 
-  src: url('../../static/fonts/roboto/Roboto-MediumItalic.ttf') format('truetype'); 
-  font-weight: 500;
-  font-style: italic;
-}
-
-@font-face { 
-  font-family: Roboto; 
-  src: url('../../static/fonts/roboto/Roboto-Regular.ttf') format('truetype'); 
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face { 
-  font-family: Roboto; 
-  src: url('../../static/fonts/roboto/Roboto-Italic.ttf') format('truetype'); 
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face { 
-  font-family: Roboto; 
-  src: url('../../static/fonts/roboto/Roboto-Light.ttf') format('truetype'); 
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face { 
-  font-family: Roboto; 
-  src: url('../../static/fonts/roboto/Roboto-LightItalic.ttf') format('truetype'); 
-  font-weight: 300;
-  font-style: italic;
-}
-
 .icon-list .icon-type-item {
   display: -ms-flexbox;
   display: flex;
@@ -178,10 +108,10 @@
   --red-5: #B83230;
   --red-6: #5C1918;
   --green-0: #C8FFF8;
-  --green-1: #85FFF1;
-  --green-2: #00F5D8;
-  --green-3: #00CCB4;
-  --green-4: #00A390;
+  --green-1: #A0E5DC;
+  --green-2: #78CAC0;
+  --green-3: #50B0A4;
+  --green-4: #289588;
   --green-5: #007B6C;
   --green-6: #005248;
   --yellow-0: #FEF6CD;
@@ -193,14 +123,14 @@
   --yellow-6: #C35527;
   --blue-0: #A0D7FF;
   --blue-1: #47B3FF;
-  --blue-2: #0D98FB;
+  --blue-2: #0A99FF;
   --blue-3: #0083E0;
   --blue-4: #006BB8;
   --blue-5: #004B7F;
   --blue-6: #003052;
   --blue-grey-0: #DAE8F4;
   --blue-grey-1: #ACCAE5;
-  --blue-grey-2: #8EA6C2;
+  --blue-grey-2: #87A7C3;
   --blue-grey-3: #6989A5;
   --blue-grey-4: #4C677F;
   --blue-grey-5: #3D5265;

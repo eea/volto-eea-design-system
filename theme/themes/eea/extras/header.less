@@ -27,7 +27,7 @@
   background: @topSectionBackground;
 
   .ui.container {
-    z-index: @topSectionZindex;
+    z-index: @topSectionZIndex;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -86,11 +86,20 @@
 .top.bar .ui.dropdown .menu .item {
   padding: @dropdownMenuItemPadding;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background: @dropdownMenuItemBackgroundColorHover;
     color: @dropdownMenuItemColorHover;
     cursor: pointer;
   }
+
+  &:hover .language-link {
+    color: @dropdownMenuItemColorHover;
+  }
+}
+
+.language-link {
+  color: @dropdownColor;
 }
 
 .top.bar .ui.dropdown .wrapper {
@@ -155,7 +164,8 @@
     width: @mobileThemeSitesMenuWidth;
 
     .item {
-      &:hover {
+      &:hover,
+      &:focus-visible {
         a.site {
           color: @white;
         }
@@ -185,11 +195,11 @@
         justify-content: flex-end;
         font-weight: @languageMenuItemFontWeight;
 
-        span {
+        .language-link {
           font-size: @mobileLanguageFontSize;
         }
 
-        span.country-code {
+        .country-code {
           margin-left: @mobileLanguageCountryCodeMarginLeft;
           font-weight: @mobileLanguageCountryCodeFontWeight;
         }
@@ -259,7 +269,8 @@
       font-weight: @mainMenuItemFontWeight;
     }
 
-    a:hover {
+    a:hover,
+    &:focus-visible {
       border-bottom: @mainMenuItemActiveBorder;
     }
   }
@@ -284,7 +295,8 @@
     color: @mainMenuItemInvertedColor;
   }
 
-  a:hover {
+  a:hover,
+  &:focus-visible {
     border-bottom: @mainMenuInvertedItemActiveBorder;
     color: @mainMenuItemInvertedColor;
   }
@@ -333,14 +345,37 @@
 #search-box {
   position: @searchBoxPosition;
   z-index: 99999;
+  display: flex;
   overflow: auto;
   width: 100%;
   height: @mobilePopUpHeight;
+  align-items: @searchBoxAlignItems;
   background: @searchBoxBackgroundGradient;
 
   .ui.container {
-    height: 100%;
-    align-items: baseline;
+    height: auto;
+  }
+
+  .search-suggestions {
+    margin-top: @searchBoxSuggestionsMarginTop;
+    color: @searchBoxSuggestionsTextColor;
+
+    .ui.list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: @searchBoxSuggestionsMarginTop;
+      column-gap: @searchBoxSuggestionsColumnGap;
+      row-gap: @searchBoxSuggestionsRowGap;
+
+      .item {
+        padding: 0;
+        margin: 0;
+
+        a {
+          color: @searchBoxSuggestionsTextColor;
+        }
+      }
+    }
   }
 
   .wrapper {
@@ -348,7 +383,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    margin: @mobilePopupMarginTop 0;
+    margin: @searchBoxMobilePopupMarginTop 0;
     gap: @searchBoxWrapperGap;
 
     .action {
@@ -367,8 +402,14 @@
     font-weight: @searchBoxFullSearchFontWeight;
 
     .ui.container {
+      display: flex;
+      align-items: @searchBoxFullSearchAlignItems;
       justify-content: @searchBoxFullSearchJustifyContent;
       gap: @searchBoxFullSearchGap;
+
+      .ui.button {
+        margin: 0;
+      }
 
       @media only screen and (max-width: @tabletBreakpoint) {
         flex-direction: @tabletSearchBoxFullSearchFlexDirection;
@@ -404,6 +445,7 @@
   height: @mobileMainSectionHeight;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: @burgerActionBackgroundColor;
   cursor: pointer;
 }
@@ -420,6 +462,7 @@
   height: @mobileMainSectionHeight;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: @secondaryColor;
   cursor: pointer;
 }
@@ -545,7 +588,7 @@
     height: @tabletPopUpHeight;
 
     .wrapper {
-      margin: @tabletPopupMarginTop 0;
+      margin: @searchBoxTabletPopupMarginTop 0;
     }
   }
 }
@@ -553,7 +596,6 @@
 @media only screen and (min-width: @computerBreakpoint) {
   .eea.header .subsite-logo {
     position: absolute;
-    z-index: 1;
     top: @subsiteLogoTopPosition;
     left: calc(100% + @subsiteFlexGap);
     width: 400px;
@@ -607,7 +649,7 @@
   #language-switcher {
     padding: @computerLanguageMenuPadding;
 
-    .menu .wrapper .item span {
+    .menu .wrapper .item .language-link {
       font-size: @computerLanguageFontSize;
     }
   }
@@ -657,7 +699,7 @@
     height: @computerPopUpHeight;
 
     .wrapper {
-      margin: @computerPopupMarginTop 0;
+      margin: @searchBoxComputerPopupMarginTop 0;
 
       .action {
         justify-content: flex-end;
@@ -692,6 +734,7 @@
     display: inherit;
     height: 100%;
     align-items: baseline;
+    padding-bottom: @megaMenuContainerPaddingBottom;
   }
 }
 
@@ -720,7 +763,8 @@
   display: @megaMenuTextDisplay;
   color: @megaMenuTextColor;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     text-decoration: @megaMenuTextHoverDecoration;
   }
 
@@ -730,18 +774,18 @@
 }
 
 #at-a-glance {
-  padding: @megaMenuGlancePadding !important;
-  background-color: @megaMenuGlanceBackgroundColor;
-
   .item {
     margin: @megaMenuGlanceListItemMargin;
     font-size: @megaMenuGlanceListItemFontSize;
     font-weight: @megaMenuGlanceListItemFontWeight;
   }
+
+  .list.menu-list {
+    margin-top: @megaMenuGlanceMenuListMarginTop;
+  }
 }
 
 #topics-right-column {
-  padding-top: @topicsRightColumnPaddingTop;
   padding-left: @topicsRightColumnPaddingLeft;
 }
 
@@ -782,9 +826,11 @@
 
     i:before {
       font-size: @megaMenuAccordionIconFontSize;
+      line-height: @megaMenuAccordionIconLineHeight;
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       i {
         color: @megaMenuTextColor;
       }
@@ -885,7 +931,8 @@
     font-size: @computerMegaMenuSubTitleFontSize;
     font-weight: @megaMenuSubTitleFontWeight;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       text-decoration: underline;
     }
   }
