@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Icon, Button, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { formatDate } from '@plone/volto/helpers/Utils/Date';
 import config from '@plone/volto/registry';
 
@@ -25,7 +26,7 @@ const socialPlatforms = {
 };
 
 export const getImageSource = (image) => {
-  if (image?.scales?.huge) return image.scales.huge.download;
+  if (image?.scales?.huge) return flattenToAppURL(image.scales.huge.download);
   return null;
 };
 

@@ -2,6 +2,35 @@
          Theme Overrides
 *******************************/
 
+body {
+  .contentWidth(0);
+  --toolbar-width: 0px;
+  --sidebar-width: 0px;
+
+  &.has-toolbar {
+    --toolbar-width: @toolbarWidth;
+  }
+
+  &.has-toolbar-collapsed {
+    --toolbar-width: @collapsedWidth;
+  }
+
+  &.has-sidebar {
+    --sidebar-width: @sidebarWidth;
+  }
+
+  &.has-sidebar-collapsed {
+    --sidebar-width: @collapsedWidth;
+  }
+
+  @media screen and (max-width: calc(@tabletBreakpoint - 1px)) {
+    &.has-toolbar,
+    &.has-toolbar-collapsed {
+      --toolbar-width: 0px;
+    }
+  }
+}
+
 /* All Sizes */
 .ui.container {
   transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
@@ -88,10 +117,6 @@
   }
 }
 
-body {
-  .contentWidth(0);
-}
-
 // WIP container fixes for edit interface
 @media only screen and (max-width: 1600px) {
   .has-sidebar.section-add .container,
@@ -116,33 +141,16 @@ body {
 
 .has--size--full:not(.block-editor-columnsBlock),
 .full-width {
+  @toolbarWidthCSS: var(--toolbar-width, 0px);
+  @sidebarWidthCSS: var(--sidebar-width, 0px);
+  @scrollbarWidthCSS: var(--scrollbar-width, @scrollbarWidth);
   position: relative;
-  width: calc(100vw - var(--scrollbar-width, @scrollbarWidth)) !important;
+  width: calc(100vw - @toolbarWidthCSS - @sidebarWidthCSS - @scrollbarWidthCSS) !important;
   right: 50%;
   left: 50%;
   max-width: initial !important;
-  margin-left: calc(-50vw + var(--scrollbar-width, @scrollbarWidth) / 2) !important;
-  margin-right: calc(-50vw + var(--scrollbar-width, @scrollbarWidth) / 2) !important;
-}
-
-@media only screen and (min-width: @largestMobileScreen) {
-  body.has-toolbar {
-    .has--size--full:not(.block-editor-columnsBlock),
-    .full-width {
-      width: calc(100vw - @toolbarWidth - var(--scrollbar-width, @scrollbarWidth)) !important;
-      margin-left: calc(-50vw + (@toolbarWidth + var(--scrollbar-width, @scrollbarWidth)) / 2) !important;
-      margin-right: calc(-50vw + (@toolbarWidth + var(--scrollbar-width, @scrollbarWidth)) / 2) !important;
-    }
-  }
-
-  body.has-toolbar-collapsed {
-    .has--size--full:not(.block-editor-columnsBlock),
-    .full-width {
-      width: calc(100vw - @toolbarWidthMin - var(--scrollbar-width, @scrollbarWidth)) !important;
-      margin-left: calc(-50vw + (var(--scrollbar-width, @scrollbarWidth) + @toolbarWidthMin) / 2) !important;
-      margin-right: calc(-50vw + (var(--scrollbar-width, @scrollbarWidth) + @toolbarWidthMin) / 2) !important;
-    }
-  }
+  margin-left: calc(-50vw + (@toolbarWidthCSS + @sidebarWidthCSS + @scrollbarWidthCSS) / 2) !important;
+  margin-right: calc(-50vw + (@toolbarWidthCSS + @sidebarWidthCSS + @scrollbarWidthCSS) / 2) !important;
 }
 
 .has--size--full:not(.block-editor-columnsBlock) .ui.grid {
@@ -192,4 +200,3 @@ body {
   }
 
 }
-
