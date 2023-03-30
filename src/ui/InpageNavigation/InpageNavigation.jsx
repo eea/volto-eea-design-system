@@ -43,6 +43,7 @@ class InpageNavigation extends Component {
           id="inpage-navigation"
           onClick={this.onInpageNavigationClick}
           className={this.state.removeClass}
+          title="Go to top"
         >
           <div className="mobile tablet only">
             <Icon className="ri-arrow-up-s-line" />

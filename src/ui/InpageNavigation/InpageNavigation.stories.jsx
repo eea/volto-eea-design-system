@@ -12,6 +12,7 @@ function InpageNavigationExample() {
   return (
     <div id="anchor">
       <Container>
+        <h3>Scroll to reveal Inpage Navigation</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis
           arcu egestas ultrices mollis. In facilisis, velit vel varius
