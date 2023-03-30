@@ -52,7 +52,7 @@ function InpageNavigationExample() {
           tempor blandit. Curabitur iaculis risus ac ipsum semper egestas. Sed
           in condimentum lacus. Donec ac efficitur sapien. Integer sit amet
           bibendum urna, eget rhoncus elit. Nam a diam sed dui consectetur
-          aliquet.
+          aliquet. <a href="/#">Link example</a>
         </p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis
@@ -80,7 +80,7 @@ function InpageNavigationExample() {
           tempor blandit. Curabitur iaculis risus ac ipsum semper egestas. Sed
           in condimentum lacus. Donec ac efficitur sapien. Integer sit amet
           bibendum urna, eget rhoncus elit. Nam a diam sed dui consectetur
-          aliquet.
+          aliquet. <a href="/#">Link example</a>
         </p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis
@@ -108,7 +108,7 @@ function InpageNavigationExample() {
           tempor blandit. Curabitur iaculis risus ac ipsum semper egestas. Sed
           in condimentum lacus. Donec ac efficitur sapien. Integer sit amet
           bibendum urna, eget rhoncus elit. Nam a diam sed dui consectetur
-          aliquet.
+          aliquet. <a href="/#">Link example</a>
         </p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis
@@ -136,7 +136,7 @@ function InpageNavigationExample() {
           tempor blandit. Curabitur iaculis risus ac ipsum semper egestas. Sed
           in condimentum lacus. Donec ac efficitur sapien. Integer sit amet
           bibendum urna, eget rhoncus elit. Nam a diam sed dui consectetur
-          aliquet.
+          aliquet. <a href="/#">Link example</a>
         </p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Icon } from 'semantic-ui-react';
+import { Container, Button, Icon } from 'semantic-ui-react';
 
 class InpageNavigation extends Component {
   constructor(props) {
@@ -39,10 +39,9 @@ class InpageNavigation extends Component {
   render() {
     return (
       <Container>
-        <div
+        <Button
           id="inpage-navigation"
           onClick={this.onInpageNavigationClick}
-          role="none"
           className={this.state.removeClass}
         >
           <div className="mobile tablet only">
@@ -52,7 +51,7 @@ class InpageNavigation extends Component {
             <Icon className="ri-arrow-up-s-line" />
             <div className="text">top</div>
           </div>
-        </div>
+        </Button>
       </Container>
     );
   }
