@@ -6,63 +6,58 @@ import { cloneDeep } from 'lodash';
 
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
-const createColumns = (item, length, renderMenuItem) => {
-  let subArrays = [];
-  let size = length;
-  for (let i = 0; i < item.items.length; i += size) {
-    subArrays.push(item.items.slice(i, i + size));
-  }
+const createColumns = (item, renderMenuItem, item_id) => {
+  const itemList = item.items.map((item, index) => (
+    <React.Fragment key={index}>
+      {renderMenuItem(item, {
+        className: 'item',
+        key: index,
+        id: item_id,
+      })}
+    </React.Fragment>
+  ));
+  return itemList;
+};
 
-  const column = subArrays.map((subArray, index) => (
-    <Grid.Column key={index}>
-      <List>
-        {subArray.map((arrayItem, idx) => (
-          <React.Fragment key={idx}>
-            {renderMenuItem(arrayItem, {
-              className: 'item',
-              role: 'listitem',
-              key: idx,
-            })}
+const ItemGrid = ({ sectionTitle, item, columns, renderMenuItem }) => {
+  const item_id = item.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
+  return (
+    <>
+      {renderMenuItem(item, { className: 'sub-title', id: item_id })}
+      {item.items.length ? (
+        <List aria-labelledby={item_id} style={{ columns: `${columns}` }}>
+          {createColumns(item, renderMenuItem, item_id)}
+        </List>
+      ) : null}
+    </>
+  );
+};
+
+const Item = ({ item, icon = false, iconName, renderMenuItem }) => {
+  const item_id = item.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
+  return (
+    <>
+      {renderMenuItem(item, {
+        className: 'sub-title',
+        id: item_id,
+      })}
+      <List className="menu-list" aria-labelledby={item_id}>
+        {item.items.map((listItem, index) => (
+          <React.Fragment key={index}>
+            {renderMenuItem(
+              listItem,
+              {
+                className: 'item',
+                key: index,
+              },
+              { children: icon && <Icon className={iconName} /> },
+            )}
           </React.Fragment>
         ))}
       </List>
-    </Grid.Column>
-  ));
-
-  return column;
+    </>
+  );
 };
-
-const ItemGrid = ({ item, columns, length, renderMenuItem }) => (
-  <>
-    {renderMenuItem(item, { className: 'sub-title' })}
-    {item.items.length ? (
-      <Grid columns={columns}>
-        {createColumns(item, length, renderMenuItem)}
-      </Grid>
-    ) : null}
-  </>
-);
-
-const Item = ({ item, icon = false, iconName, renderMenuItem }) => (
-  <>
-    {renderMenuItem(item, { className: 'sub-title' })}
-    <List className="menu-list">
-      {item.items.map((listItem, index) => (
-        <React.Fragment key={index}>
-          {renderMenuItem(
-            listItem,
-            {
-              className: 'item',
-              key: index,
-              role: 'listitem',
-            },
-            { children: icon && <Icon className={iconName} /> },
-          )}
-        </React.Fragment>
-      ))}
-    </List>
-  </>
-);
 
 const Topics = ({ menuItem, renderMenuItem }) => (
   <Grid>
@@ -75,9 +70,9 @@ const Topics = ({ menuItem, renderMenuItem }) => (
         ) : (
           <Grid.Column width={9} key={index} id="topics-right-column">
             <ItemGrid
+              sectionTitle={section.title}
               item={section}
               columns={4}
-              length={10}
               key={index}
               renderMenuItem={renderMenuItem}
             />
@@ -95,9 +90,9 @@ const Countries = ({ menuItem, renderMenuItem }) => (
         <React.Fragment key={index}>
           {section.title === 'EEA member countries' && (
             <ItemGrid
+              sectionTitle={section.title}
               item={section}
               columns={5}
-              length={7}
               renderMenuItem={renderMenuItem}
             />
           )}
@@ -111,9 +106,9 @@ const Countries = ({ menuItem, renderMenuItem }) => (
             {section.title !== 'EEA member countries' && (
               <Grid.Column>
                 <ItemGrid
+                  sectionTitle={section.title}
                   item={section}
                   columns={2}
-                  length={3}
                   renderMenuItem={renderMenuItem}
                 />
               </Grid.Column>
