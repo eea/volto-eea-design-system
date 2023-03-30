@@ -19,16 +19,13 @@ const Breadcrumbs = ({
   return sections.length > 0 ? (
     <Segment className="breadcrumbs" attached vertical>
       <Container>
-        <Breadcrumb size={size} as="nav" aria-label={'breadcrumbs'}>
-          <Link
-            to={root || '/'}
-            className="section"
-            title={'Home'}
-            id="breadcrumbs-list"
-          >
-            <Image src={homeIcon} alt="Homepage icon" />
-          </Link>
-          <ol aria-labelledby="breadcrumbs-list">
+        <Breadcrumb size={size} as="nav" aria-label={'Breadcrumbs'}>
+          <ol aria-label="Breadcrumbs navigation">
+            <li>
+              <Link to={root || '/'} className="section" title={'Home'}>
+                <Image src={homeIcon} alt="" />
+              </Link>
+            </li>
             {sections.map((item, index, items) => [
               <li key={index}>
                 <Breadcrumb.Divider key={`divider-${item.href}`}>
