@@ -11,13 +11,13 @@
   }
 }
 
-nav.ui.breadcrumb ol {
+.ui.breadcrumb ol {
   list-style: none;
   padding-left: 0;
   margin: 0;
   padding-top: @space-025;
   li {
-    display: inline;
+    display: inline-block;
   }
 }
 
