@@ -785,6 +785,12 @@
   }
 }
 
+// add negative margin to the first column subtitle from nested grid
+// so that the subtitle lines up with the subtitle from the left column
+#mega-menu .nested-grid > .column:first-of-type .sub-title {
+  margin-top: @megaMenuSubTitleCountriesNestedGridMarginTop;
+}
+
 #topics-right-column {
   padding-left: @topicsRightColumnPaddingLeft;
 }
@@ -930,6 +936,8 @@
     color: @megaMenuTextColor;
     font-size: @computerMegaMenuSubTitleFontSize;
     font-weight: @megaMenuSubTitleFontWeight;
+    padding: @megaMenuSubTitlePadding;
+    display: @megaMenuSubTitleDisplay;
 
     &:hover,
     &:focus-visible {

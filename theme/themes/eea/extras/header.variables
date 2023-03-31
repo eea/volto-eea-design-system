@@ -178,6 +178,9 @@
 @mobileMegaMenuSubTitleFontSize: @font-size-2;
 @computerMegaMenuSubTitleFontSize: @font-size-3;
 @megaMenuSubTitleFontWeight: @font-weight-7;
+@megaMenuSubTitlePadding: 0.5rem 0;
+@megaMenuSubTitleDisplay: block;
+@megaMenuSubTitleCountriesNestedGridMarginTop: -1rem;
 
 /* List Item */
 @megaMenuListItemFontSize: @font-size-1;
@@ -193,7 +196,7 @@
 @megaMenuGlanceListItemFontSize: @font-size-1;
 @megaMenuGlanceListItemFontWeight: @font-weight-4;
 @megaMenuGlanceListItemMargin: 0;
-@megaMenuGlanceMenuListMarginTop: @rem-space-4;
+@megaMenuGlanceMenuListMarginTop: 0;
 
 /* Accordion */
 @megaMenuAccordionTitleFontSize: @font-size-3;
