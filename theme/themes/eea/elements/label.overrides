@@ -164,3 +164,7 @@ a.ui.basic.highlight.label:hover {
     background: @labelNoBackground;
   }
 }
+
+a.ui.corner.label i.icon:hover {
+  cursor: pointer;
+}

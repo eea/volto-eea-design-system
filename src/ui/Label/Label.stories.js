@@ -48,7 +48,12 @@ export default {
 
 const Template = (args) => (
   <Container>
-    <Label {...args} className={args.importance ? args.importance : ''}></Label>
+    <Label
+      {...args}
+      as="a"
+      href={args.link}
+      className={args.importance ? args.importance : ''}
+    ></Label>
   </Container>
 );
 
@@ -57,6 +62,7 @@ Default.args = {
   content: 'Label',
   pointing: false,
   importance: null,
+  link: '/#',
 };
 
 export const Ribbon = (args) => (
@@ -64,10 +70,13 @@ export const Ribbon = (args) => (
     <Segment raised>
       <Label
         as="a"
+        href={args.link}
         ribbon
         className={args.importance ? args.importance : ''}
         {...args}
       ></Label>
+      <br />
+      <br />
       <Image
         src="https://react.semantic-ui.com/images/wireframe/paragraph.png"
         alt="paragraph"
@@ -79,6 +88,7 @@ export const Ribbon = (args) => (
 Ribbon.args = {
   content: 'Ribbon Label',
   importance: null,
+  link: '/#',
 };
 
 Ribbon.parameters = {
@@ -92,6 +102,7 @@ export const Corner = (args) => (
       src="https://react.semantic-ui.com/images/wireframe/image.png"
       label={{
         as: 'a',
+        href: `${args.link}`,
         corner: 'right',
         icon: 'save',
         className: `${args.importance ? args.importance : ''}`,
@@ -104,6 +115,7 @@ export const Corner = (args) => (
 
 Corner.args = {
   importance: null,
+  link: '/#',
 };
 
 Corner.parameters = {
@@ -118,6 +130,7 @@ export const Basic = (args) => (
       className={args.importance ? args.importance : ''}
       basic
       as="a"
+      href={args.link}
     ></Label>
   </Container>
 );
@@ -126,4 +139,5 @@ Basic.args = {
   content: 'Basic Label',
   pointing: false,
   importance: null,
+  link: '/#',
 };
