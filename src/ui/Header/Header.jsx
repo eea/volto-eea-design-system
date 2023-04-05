@@ -16,6 +16,8 @@ import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
 import PropTypes from 'prop-types';
 
+import { isInternalURL } from '@plone/volto/helpers';
+
 Header.propTypes = {
   transparency: PropTypes.bool,
   inverted: PropTypes.bool,
@@ -203,7 +205,12 @@ const Main = ({
     if (item.items.length) {
       setMenuIsActive(true);
     } else {
-      history.push(item.url);
+      if (isInternalURL(item.url)) {
+        history.push(item.url);
+      }
+      if (!isInternalURL(item.url) && __CLIENT__) {
+        window.location.replace(item.url);
+      }
     }
   };
 
