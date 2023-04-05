@@ -53,7 +53,7 @@
 @medium: 1rem;
 
 /* ShortDivider */
-@shortWidth       : 50%;
+@shortWidth       : 40%;
 @shortMarginInline: auto;
 
 /* Color */
