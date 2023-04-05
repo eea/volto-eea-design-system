@@ -145,6 +145,9 @@ const Main = ({
   const [searchIsActive, setSearchIsActive] = React.useState(false);
   const [burger, setBurger] = React.useState('');
   const searchInputRef = React.useRef(null);
+  const [isClient, setIsClient] = React.useState();
+
+  React.useEffect(() => setIsClient(true), []);
 
   React.useEffect(() => {
     setMenuIsActive(false);
@@ -208,7 +211,7 @@ const Main = ({
       if (isInternalURL(item.url)) {
         history.push(item.url);
       }
-      if (!isInternalURL(item.url) && __CLIENT__) {
+      if (!isInternalURL(item.url) && isClient) {
         window.location.replace(item.url);
       }
     }
