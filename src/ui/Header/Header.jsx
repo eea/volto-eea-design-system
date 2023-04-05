@@ -3,20 +3,20 @@
  * @module components/theme/Header/Header
  */
 
-import React from 'react'; // , { Component }
-import { useHistory } from 'react-router-dom';
-import cx from 'classnames';
-import { Container, Image, Menu, Grid, Dropdown } from 'semantic-ui-react'; // Dropdown,
+import React from "react"; // , { Component }
+import { useHistory } from "react-router-dom";
+import cx from "classnames";
+import { Container, Image, Menu, Grid, Dropdown } from "semantic-ui-react"; // Dropdown,
 
-import closeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/close-line.svg';
-import searchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search-line.svg';
-import burgerIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/menu-line.svg';
+import closeIcon from "@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/close-line.svg";
+import searchIcon from "@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search-line.svg";
+import burgerIcon from "@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/menu-line.svg";
 
-import HeaderSearchPopUp from './HeaderSearchPopUp';
-import HeaderMenuPopUp from './HeaderMenuPopUp';
-import PropTypes from 'prop-types';
+import HeaderSearchPopUp from "./HeaderSearchPopUp";
+import HeaderMenuPopUp from "./HeaderMenuPopUp";
+import PropTypes from "prop-types";
 
-import { isInternalURL } from '@plone/volto/helpers';
+import { isInternalURL } from "@plone/volto/helpers";
 
 Header.propTypes = {
   transparency: PropTypes.bool,
@@ -34,7 +34,7 @@ const TopHeader = ({ children }) => (
 );
 
 const TopItem = ({ children, className, id }) => (
-  <div className={cx('item', 'header-top-item', className)} id={id}>
+  <div className={cx("item", "header-top-item", className)} id={id}>
     {children}
   </div>
 );
@@ -56,13 +56,13 @@ const TopDropdownMenu = ({
   const Component = ({ mobileText }) => {
     return (
       <>
-        {children.props['aria-label'] === 'language switcher' ? (
+        {children.props["aria-label"] === "language switcher" ? (
           hasLanguageDropdown && (
             <Dropdown
               id={id}
               className={className}
               text={mobileText || text}
-              icon={icon || 'chevron down'}
+              icon={icon || "chevron down"}
               aria-label="dropdown"
               role="dropdown"
               lazyLoad
@@ -78,7 +78,7 @@ const TopDropdownMenu = ({
             id={id}
             className={className}
             text={mobileText || text}
-            icon={icon || 'chevron down'}
+            icon={icon || "chevron down"}
             role="dropdown"
             aria-label="dropdown"
             lazyLoad
@@ -143,7 +143,7 @@ const Main = ({
   const [activeItem, setActiveItem] = React.useState(pathname);
   const [menuIsActive, setMenuIsActive] = React.useState(false);
   const [searchIsActive, setSearchIsActive] = React.useState(false);
-  const [burger, setBurger] = React.useState('');
+  const [burger, setBurger] = React.useState("");
   const searchInputRef = React.useRef(null);
   const [isClient, setIsClient] = React.useState();
 
@@ -152,10 +152,10 @@ const Main = ({
   React.useEffect(() => {
     setMenuIsActive(false);
     setSearchIsActive(false);
-    setBurger('');
+    setBurger("");
     // remove active menu when we have no pathname which means we hit logo to go home
     if (!pathname) {
-      setActiveItem('');
+      setActiveItem("");
     }
   }, [pathname]);
 
@@ -167,9 +167,9 @@ const Main = ({
 
   const searchOnClick = (e, x) => {
     if (menuIsActive === true) {
-      setBurger('');
+      setBurger("");
       setMenuIsActive(false);
-      setActiveItem('');
+      setActiveItem("");
     }
     setSearchIsActive(!searchIsActive);
   };
@@ -179,13 +179,13 @@ const Main = ({
       setSearchIsActive(false);
     }
 
-    if (burger === '') {
-      setBurger('open');
+    if (burger === "") {
+      setBurger("open");
       setMenuIsActive(true);
     } else {
-      setBurger('');
+      setBurger("");
       setMenuIsActive(false);
-      setActiveItem('');
+      setActiveItem("");
     }
   };
 
@@ -196,7 +196,7 @@ const Main = ({
     }
     // close mobile navigation when clicking outside if we have value for nav
     if (burger) {
-      setBurger('');
+      setBurger("");
     }
     // always close the  menu
     setMenuIsActive(false);
@@ -204,14 +204,13 @@ const Main = ({
 
   const menuOnClick = (e, item) => {
     if (searchIsActive) setSearchIsActive(false);
-    setActiveItem(item['@id'] || item.url);
+    setActiveItem(item["@id"] || item.url);
     if (item.items.length) {
       setMenuIsActive(true);
     } else {
       if (isInternalURL(item.url)) {
         history.push(item.url);
-      }
-      if (!isInternalURL(item.url) && isClient) {
+      } else if (isClient) {
         window.location.replace(item.url);
       }
     }
@@ -220,7 +219,7 @@ const Main = ({
   // Listens for escape keydown event
   React.useEffect(() => {
     const escKeyPressed = (e) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         // menuOnClickOutside();
         // restore active element if nothing was selected from the menu dropdown
         if (pathname !== activeItem) {
@@ -228,7 +227,7 @@ const Main = ({
         }
         // close mobile navigation when clicking outside if we have value for nav
         if (burger) {
-          setBurger('');
+          setBurger("");
         }
         // always close the  menu & search
         setMenuIsActive(false);
@@ -236,10 +235,10 @@ const Main = ({
       }
     };
 
-    document.addEventListener('keydown', escKeyPressed);
+    document.addEventListener("keydown", escKeyPressed);
 
     return () => {
-      document.removeEventListener('keydown', escKeyPressed);
+      document.removeEventListener("keydown", escKeyPressed);
     };
   }, [activeItem, burger, pathname]);
 
@@ -265,7 +264,7 @@ const Main = ({
   // >
   return (
     <div
-      className={`main bar ${transparency ? 'transparency' : ''}`}
+      className={`main bar ${transparency ? "transparency" : ""}`}
       ref={node}
     >
       <Container>
@@ -274,20 +273,20 @@ const Main = ({
             {logo}
           </Grid.Column>
           <Grid.Column mobile={4} tablet={4} computer={8}>
-            <div className={inverted ? 'main-menu inverted' : 'main-menu'}>
+            <div className={inverted ? "main-menu inverted" : "main-menu"}>
               {menuItems && (
                 <ul
                   className="ui text eea-main-menu tablet or lower hidden menu"
                   ref={desktopMenuRef}
-                  id={'navigation'}
+                  id={"navigation"}
                 >
                   {menuItems.map((item) => (
                     <Menu.Item
-                      name={item['@id'] || item.url}
-                      key={item['@id'] || item.url}
-                      as={'li'}
+                      name={item["@id"] || item.url}
+                      key={item["@id"] || item.url}
+                      as={"li"}
                       active={
-                        activeItem.indexOf(item['@id']) !== -1 ||
+                        activeItem.indexOf(item["@id"]) !== -1 ||
                         activeItem.indexOf(item.url) !== -1
                       }
                     >
@@ -320,7 +319,7 @@ const Main = ({
                 ref={mobileMenuBurgerRef}
               >
                 <Image
-                  src={burger === 'open' ? `${closeIcon}` : `${burgerIcon}`}
+                  src={burger === "open" ? `${closeIcon}` : `${burgerIcon}`}
                   alt="menu icon open/close"
                 />
               </Header.BurgerAction>
