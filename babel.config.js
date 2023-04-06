@@ -10,22 +10,8 @@ module.exports = function (api) {
     ],
   ];
 
-  const module =  {
-    rules: [
-      {
-        test: /\.(vtt)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
-      },
-    ],
-  },
-
   return {
     plugins,
     presets,
-    modules,
   };
 };
