@@ -3,6 +3,7 @@ import { Container } from 'semantic-ui-react';
 import Video from './Video';
 
 import englishTrack from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/video/demo-track-en.vtt';
+import romanianTrack from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/video/demo-track-ro.vtt';
 import greekTrack from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/video/demo-track-el.vtt';
 
 export default {
@@ -38,9 +39,6 @@ const Template = (args) => (
   </Container>
 );
 
-const parsedEn = require(`file-loader!${englishTrack}`);
-const parsedEl = require(`file-loader!${greekTrack}`);
-
 export const Default = Template.bind({});
 Default.args = {
   url: 'https://cmshare.eea.europa.eu/s/Xw7kH2TJGCibHJf/download',
@@ -49,7 +47,8 @@ Default.args = {
   align: 'center',
   placeholder_image: '',
   tracks: [
-    { src: parsedEn, code: 'en', lang: 'English' },
-    { src: parsedEl, code: 'el', lang: 'Ελλήνικά' },
-  ]
+    { src: englishTrack, code: 'en', lang: 'English' },
+    { src: romanianTrack, code: 'ro', lang: 'Română' },
+    { src: greekTrack, code: 'el', lang: 'Ελλήνικά' },
+  ],
 };

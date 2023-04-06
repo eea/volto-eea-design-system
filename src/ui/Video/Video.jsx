@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-function Video ({ children, align }) {
+function Video({ children, align }) {
   return <div className={cx('block video align', align)}>{children}</div>;
 }
 
@@ -11,7 +11,17 @@ Video.Body = ({ children, align }) => (
   </div>
 );
 
-Video.Embed = ({ url, loop, autoPlay, align, placeholder_image }) => {
+Video.Embed = ({
+  children,
+  url,
+  loop,
+  autoPlay,
+  align,
+  placeholder_image,
+  tracks,
+}) => {
+  return (
+    // eslint-disable-next-line jsx-a11y/media-has-caption
     <video
       src={url}
       controls={!autoPlay}
@@ -20,16 +30,22 @@ Video.Embed = ({ url, loop, autoPlay, align, placeholder_image }) => {
       loop={loop}
       poster={placeholder_image}
       type="video/mp4"
-    />
+    >
+      {children}
+    </video>
+  );
 };
 
-Video.Track = ({ tracks }) => {
-
+Video.Track = ({ tracks }) =>
   tracks.map((track, index) => {
-    console.log(track.src);
-    //const loadTrack = require(`file-loader!${track.src}`);
-    <track src={track.src} kind="subtitles" srclang={track.code} label={track.lang} />
+    return (
+      <track
+        src={track.src}
+        kind="subtitles"
+        srclang={track.code}
+        label={track.lang}
+      />
+    );
   });
-}
 
 export default Video;
