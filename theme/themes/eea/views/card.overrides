@@ -450,12 +450,8 @@
 // Spacing adjustment to display outline with overflow hidden
 .ui.card .header {
   padding: @headerPadding;
-  margin-inline: @headerMarginInline;
-  //margin-top: @headerMarginTop; 
+}
+.ui.card .header > a {
+  display: @headerLinkDisplay;
 }
 
-.ui.cards > .card > .content > .header:not(:last-child),
-.ui.card > .content > .header:not(:last-child),
-.ui.card.rounded .content .header {
-  margin-bottom: @headerMarginBottom;
-}

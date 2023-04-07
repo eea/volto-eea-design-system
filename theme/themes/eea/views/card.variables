@@ -81,15 +81,14 @@
 
 
 /* Header */
-@headerMargin: '';
+@headerMargin: -@em-space-2 -@em-space-1 -@em-space-1 -@em-space-1;
 @headerFontWeight: @bold;
 @headerFontSize: 1.125rem;
 
 @headerColor: inherit;
+@headerLinkDisplay: block;
 
 @headerPadding: @em-space-1;
-@headerMarginInline: -@headerPadding;
-//@headerMarginTop: @headerLineHeightOffset - @headerPadding;
 @headerLineHeightOffset: -((@lineHeight - 1em) / 2) - @headerPadding;
 @headerMarginBottom: @cardContentMarginBottom - @headerPadding;
 
