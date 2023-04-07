@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container } from 'semantic-ui-react';
 import Video from './Video';
-
 import englishTrack from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/video/demo-track-en.vtt';
 import romanianTrack from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/video/demo-track-ro.vtt';
 import greekTrack from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/video/demo-track-el.vtt';
@@ -46,9 +45,9 @@ Default.args = {
   loop: false,
   align: 'center',
   placeholder_image: '',
+  required_caption: { src: englishTrack, srclang: 'en', label: 'English' },
   tracks: [
-    { src: englishTrack, code: 'en', lang: 'English' },
-    { src: romanianTrack, code: 'ro', lang: 'Română' },
-    { src: greekTrack, code: 'el', lang: 'Ελλήνικά' },
+    { src: romanianTrack, kind: 'captions', srclang: 'ro', label: 'Română' },
+    { src: greekTrack, kind: 'captions', srclang: 'el', label: 'Ελλήνικά' },
   ],
 };

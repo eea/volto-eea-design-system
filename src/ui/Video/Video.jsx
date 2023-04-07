@@ -18,10 +18,9 @@ Video.Embed = ({
   autoPlay,
   align,
   placeholder_image,
-  tracks,
+  required_caption,
 }) => {
   return (
-    // eslint-disable-next-line jsx-a11y/media-has-caption
     <video
       src={url}
       controls={!autoPlay}
@@ -31,6 +30,7 @@ Video.Embed = ({
       poster={placeholder_image}
       type="video/mp4"
     >
+      <track kind="captions" {...required_caption} />
       {children}
     </video>
   );
@@ -38,14 +38,7 @@ Video.Embed = ({
 
 Video.Track = ({ tracks }) =>
   tracks.map((track, index) => {
-    return (
-      <track
-        src={track.src}
-        kind="subtitles"
-        srclang={track.code}
-        label={track.lang}
-      />
-    );
+    return <track {...track} />;
   });
 
 export default Video;
