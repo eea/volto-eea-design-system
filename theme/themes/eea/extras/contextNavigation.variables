@@ -11,11 +11,11 @@
 @sidenavMargin: @rem-space-8 auto;
 
 /* Header */
-@sidenavHeaderColor: @blue-grey-5;
+@sidenavHeaderColor: @tertiaryColor;
 @sidenavHeaderFontSize: @font-size-3;
 @sidenavHeaderFontWeight: @font-weight-7;
 @sidenavHeaderPadding: @rem-space-4;
-@sidenavHeaderBorderBottom: @2px solid @blue-grey-5;
+@sidenavHeaderBorderBottom: @2px solid @borderColorTertiaryCSSVar;
 @sidenavHeaderIconMarginRight: @rem-space-4;
 
 /* Header icon */
@@ -24,14 +24,14 @@
 @sidenavHeaderIconPaddingRight: @rem-space-4;
 
 /* Content */
-@sidenavContentBorderBottom: 1px solid @tertiaryColor;
+@sidenavContentBorderBottom: 1px solid @borderColorTertiaryCSSVar;
 
 /* Nav item */
 @sidenavItemPadding: @rem-space-2 0 @rem-space-2 @rem-space-8;
 @sidenavItemFontSize: @font-size-1;
 @sidenavItemFontWeight: @font-weight-4;
-@sidenavItemColor: @blue-grey-5;
-@sidenavItemHoverBackground: @blue-grey-5;
+@sidenavItemColor: @tertiaryColor;
+@sidenavItemHoverBackground: @tertiaryColor;
 @sidenavItemHoverColor: @grey-0;
 @sidenavLastItemMarginBottom: @rem-space-2;
 

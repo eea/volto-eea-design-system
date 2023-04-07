@@ -1,7 +1,7 @@
 /*******************************
             Dropdown
 *******************************/
-@dropdownTextColor: @textColor;
+@dropdownTextColor: @textColorCSSVar;
 
 // Pastanaga variable
 @inputFontWeight: normal;
@@ -16,7 +16,7 @@
 ;
 @borderRadius: @defaultBorderRadius;
 @borderWidth: @1px;
-@border: @borderWidth solid @midGray;
+@border: @borderWidth solid @darkBorderColor;
 
 @raisedShadow: 0px 2px 3px 0px @borderColor;
 
@@ -153,7 +153,7 @@
 @selectVisibility: visible;
 @selectHeight: 38px;
 
-@selectionTextColor: @textColor;
+@selectionTextColor: @textColorCSSVar;
 
 @selectionTextUnderlayIconOpacity: @disabledOpacity;
 @selectionTextUnderlayColor: @inputPlaceholderFocusColor;

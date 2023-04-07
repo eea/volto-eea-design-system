@@ -15,7 +15,7 @@
 @borderColor: @solidBorderColor;
 @borderWidth: 1px;
 @boxShadow: @eeaGlobalShadow;
-@color: @textColor;
+@color: @textColorCSSVar;
 
 @verticalPadding: 0.75rem;
 @horizontalPadding: 1.875rem;
@@ -147,7 +147,7 @@
 
 /* Colors */
 @globalLabelColor: @white;
-@lowImportanceBackground: @deepBlue;
+@lowImportanceBackground: @blue-grey-5;
 @mediumImportanceBackground: #346F83;
 @highImportanceBackground: #005293;
 @highlightImportanceBackground: #009591;

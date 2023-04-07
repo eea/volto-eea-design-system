@@ -75,7 +75,7 @@
 
 /* Linked Icon */
 @itemLinkIconColor: @lightTextColor;
-@itemLinkIconHoverColor: @textColor;
+@itemLinkIconHoverColor: @textColorCSSVar;
 @invertedIconLinkColor: @invertedLightTextColor;
 
 /*-------------------

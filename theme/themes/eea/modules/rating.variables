@@ -26,7 +26,7 @@
 @inactiveColor: rgba(0, 0, 0, 0.15);
 
 @selectedBackground: @inactiveBackground;
-@selectedColor: @textColor;
+@selectedColor: @textColorCSSVar;
 
 @activeBackground: @inactiveBackground;
 @activeColor: @darkTextColor;

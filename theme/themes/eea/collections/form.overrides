@@ -17,7 +17,7 @@
 .ui.form .inline.field .help {
   padding-top: @10px;
   padding-bottom: @10px;
-  border-bottom: 1px solid @lightGreyBorderColor;
+  border-bottom: 1px solid @lightBorderColor;
 }
 
 .ui.form p.help {
@@ -102,7 +102,7 @@
 .ui.form .inline.field .link-form-container {
   .wrapper {
     display: flex;
-    border-bottom: 1px solid @lightGreyBorderColor;
+    border-bottom: 1px solid @lightBorderColor;
 
     .ui.input.input-anchorlink-theme {
       vertical-align: unset;

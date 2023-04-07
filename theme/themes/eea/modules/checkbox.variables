@@ -3,7 +3,7 @@
 *******************************/
 
 @checkboxSize: 20px;
-@checkboxColor: @textColor;
+@checkboxColor: @textColorCSSVar;
 @checkboxLineHeight: @checkboxSize;
 @circularRadius: 500rem;
 
@@ -31,7 +31,7 @@
 
 /* Label */
 @labelFontSize: @relativeMedium;
-@labelColor: @textColor;
+@labelColor: @textColorCSSVar;
 @labelTransition: color @defaultDuration @defaultEasing;
 
 /*-------------------
@@ -53,7 +53,7 @@
 @checkboxFocusBackground: @white;
 @checkboxFocusBorderColor: @focusedFormMutedBorderColor;
 @checkboxFocusCheckColor: @selectedTextColor;
-@labelFocusColor: @textColor;
+@labelFocusColor: @textColorCSSVar;
 
 /* Active */
 @labelActiveColor: @selectedTextColor;

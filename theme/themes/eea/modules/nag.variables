@@ -20,7 +20,7 @@
 
 @fontSize: 1rem;
 @textAlign: center;
-@color: @textColor;
+@color: @textColorCSSVar;
 
 @transition: 0.2s background ease;
 

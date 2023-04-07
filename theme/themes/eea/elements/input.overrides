@@ -86,7 +86,7 @@
 
   &:active,
   &:focus {
-    border: @borderWidth solid @secondaryColor;
+    border: @borderWidth solid @borderColorSecondaryCSSVar;
     color: @textColor;
   }
 }
@@ -101,7 +101,7 @@ textarea {
 
   &:active,
   &:focus {
-    border: @borderWidth solid @secondaryColor;
+    border: @borderWidth solid @borderColorSecondaryCSSVar;
   }
 }
 

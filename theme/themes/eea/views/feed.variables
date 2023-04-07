@@ -61,7 +61,7 @@
 @summaryMargin: 0em;
 @summaryFontSize: @relativeMedium;
 @summaryFontWeight: @bold;
-@summaryColor: @textColor;
+@summaryColor: @textColorCSSVar;
 
 /* Summary Image */
 @summaryImageWidth: auto;
@@ -92,7 +92,7 @@
 @extraMargin: 0.5em 0em 0em;
 @extraBackground: none;
 @extraPadding: 0em;
-@extraColor: @textColor;
+@extraColor: @textColorCSSVar;
 
 /* Extra Images */
 @extraImageMargin: 0em 0.25em 0em 0em;

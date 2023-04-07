@@ -70,16 +70,16 @@
 @messageHorizontalPadding: 1em;
 @messageHeaderFontSize: @medium;
 @messageHeaderFontWeight: @bold;
-@messageHeaderColor: @textColor;
+@messageHeaderColor: @textColorCSSVar;
 @messageDescriptionDistance: 0.25rem;
 @messageDescriptionFontSize: 1em;
-@messageDescriptionColor: @textColor;
+@messageDescriptionColor: @textColorCSSVar;
 
 /* All Results Link */
 @actionBorder: none;
 @actionBackground: @darkWhite;
 @actionPadding: @relativeSmall @relativeMedium;
-@actionColor: @textColor;
+@actionColor: @textColorCSSVar;
 @actionFontWeight: @bold;
 @actionAlign: center;
 
@@ -102,7 +102,7 @@
 
 /* Active Category */
 @categoryActiveBackground: @darkWhite;
-@categoryNameActiveColor: @textColor;
+@categoryNameActiveColor: @textColorCSSVar;
 
 /* Active Result */
 @resultActiveBorderLeft: @internalBorderColor;
