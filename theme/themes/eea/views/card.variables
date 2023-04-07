@@ -89,8 +89,7 @@
 @headerLinkDisplay: block;
 
 @headerPadding: @em-space-1;
-@headerLineHeightOffset: -((@lineHeight - 1em) / 2) - @headerPadding;
-@headerMarginBottom: @cardContentMarginBottom - @headerPadding;
+@headerLineHeightOffset: -(@headerPadding * 2);
 
 /* Metadata */
 @metaJustifyContent: space-between;
