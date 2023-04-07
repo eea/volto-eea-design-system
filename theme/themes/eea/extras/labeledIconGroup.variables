@@ -4,7 +4,7 @@
 *******************************/
 
 @labeledIconGroupWidth : 100%;
-@labeledIconGroupPadding : 0 2rem;
+@labeledIconGroupPadding : 0 @rem-space-8;
 
-@labeledIconGroupWrapperMarginLeft: 0.25rem;
-@labeledIconGroupWrapperMarginRight: 0.25rem;
+@labeledIconGroupWrapperMarginLeft: @rem-space-1;
+@labeledIconGroupWrapperMarginRight: @rem-space-1;

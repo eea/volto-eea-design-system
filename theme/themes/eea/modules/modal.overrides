@@ -5,3 +5,16 @@
 .ui.modal > :last-child {
   overflow: hidden; // clear floats from modal
 }
+
+.ui.modal .ui.button.close {
+  background: @closeButtonBackground;
+  padding: @closeButtonPadding;
+
+  i {
+    color: @closeColor;
+  }
+}
+
+.ui.modal .ui.button.close:focus-visible {
+  outline: @focusVisibleOutline;
+}

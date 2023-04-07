@@ -125,14 +125,15 @@ function Template({ ...args }) {
   return (
     <Container>
       <nav className="context-navigation">
-        <div className="context-navigation-header">
+        <div className="context-navigation-header" id="Navigation">
           {args?.header ? <a href="/#">{args?.header}</a> : 'Navigation'}
         </div>
-        <div role="list" className="ui list">
+        <div role="list" className="ui list" aria-labelledby="Navigation">
           {args.sidenavItems &&
             args.sidenavItems.map((element, index) => {
               return (
                 <div
+                  key={index}
                   role="listitem"
                   className={
                     (element.is_current ? 'active ' : '') +
@@ -142,6 +143,7 @@ function Template({ ...args }) {
                 >
                   <div className="content">
                     <a
+                      id={element['@id']}
                       title={element.title}
                       className={
                         element?.items?.length > 0
@@ -155,7 +157,12 @@ function Template({ ...args }) {
                     {element?.items?.length > 0
                       ? element.items.map((subelement, index) => {
                           return (
-                            <div className="list" role="list">
+                            <div
+                              className="list"
+                              role="list"
+                              key={index}
+                              aria-labelledby={element['@id']}
+                            >
                               <div
                                 role="listitem"
                                 className={
@@ -166,6 +173,7 @@ function Template({ ...args }) {
                               >
                                 <div className="content">
                                   <a
+                                    id={subelement['@id']}
                                     title={subelement.title}
                                     className="contenttype-document"
                                     href={subelement.url}
@@ -176,7 +184,12 @@ function Template({ ...args }) {
                                     subelement.items.map(
                                       (subparelement, index) => {
                                         return (
-                                          <div className="list" role="list">
+                                          <div
+                                            className="list"
+                                            role="list"
+                                            key={index}
+                                            aria-labelledby={subelement['@id']}
+                                          >
                                             <div
                                               role="listitem"
                                               className={
@@ -187,6 +200,7 @@ function Template({ ...args }) {
                                             >
                                               <div className="content">
                                                 <a
+                                                  id={subparelement['@id']}
                                                   title={subparelement.title}
                                                   className="contenttype-document"
                                                   href={subparelement.url}

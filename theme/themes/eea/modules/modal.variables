@@ -15,7 +15,11 @@
 /* Close Icon */
 @closeOpacity: 0.8;
 @closeSize: 1.25em;
-@closeColor: @black;
+@closeColor: @grey-6;
+
+/* Close Button */
+@closeButtonBackground: transparent;
+@closeButtonPadding: 0;
 
 @closeHitbox: 2.25rem;
 @closeDistance: 0.25rem;

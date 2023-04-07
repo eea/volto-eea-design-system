@@ -12,6 +12,7 @@ function InpageNavigationExample() {
   return (
     <div id="anchor">
       <Container>
+        <h3>Scroll to reveal Inpage Navigation</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis
           arcu egestas ultrices mollis. In facilisis, velit vel varius
@@ -52,7 +53,7 @@ function InpageNavigationExample() {
           tempor blandit. Curabitur iaculis risus ac ipsum semper egestas. Sed
           in condimentum lacus. Donec ac efficitur sapien. Integer sit amet
           bibendum urna, eget rhoncus elit. Nam a diam sed dui consectetur
-          aliquet.
+          aliquet. <a href="/#">Link example</a>
         </p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis
@@ -80,7 +81,7 @@ function InpageNavigationExample() {
           tempor blandit. Curabitur iaculis risus ac ipsum semper egestas. Sed
           in condimentum lacus. Donec ac efficitur sapien. Integer sit amet
           bibendum urna, eget rhoncus elit. Nam a diam sed dui consectetur
-          aliquet.
+          aliquet. <a href="/#">Link example</a>
         </p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis
@@ -108,7 +109,7 @@ function InpageNavigationExample() {
           tempor blandit. Curabitur iaculis risus ac ipsum semper egestas. Sed
           in condimentum lacus. Donec ac efficitur sapien. Integer sit amet
           bibendum urna, eget rhoncus elit. Nam a diam sed dui consectetur
-          aliquet.
+          aliquet. <a href="/#">Link example</a>
         </p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis
@@ -136,7 +137,7 @@ function InpageNavigationExample() {
           tempor blandit. Curabitur iaculis risus ac ipsum semper egestas. Sed
           in condimentum lacus. Donec ac efficitur sapien. Integer sit amet
           bibendum urna, eget rhoncus elit. Nam a diam sed dui consectetur
-          aliquet.
+          aliquet. <a href="/#">Link example</a>
         </p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis

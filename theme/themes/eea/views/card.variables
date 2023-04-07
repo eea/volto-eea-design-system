@@ -81,11 +81,15 @@
 
 
 /* Header */
-@headerMargin: '';
+@headerMargin: -@em-space-2 -@em-space-1 -@em-space-1 -@em-space-1;
 @headerFontWeight: @bold;
 @headerFontSize: 1.125rem;
-@headerLineHeightOffset: -(@lineHeight - 1em) / 2;
+
 @headerColor: inherit;
+@headerLinkDisplay: block;
+
+@headerPadding: @em-space-1;
+@headerLineHeightOffset: -(@headerPadding * 2);
 
 /* Metadata */
 @metaJustifyContent: space-between;

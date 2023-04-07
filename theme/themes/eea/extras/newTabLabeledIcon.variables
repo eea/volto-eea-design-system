@@ -4,18 +4,20 @@
 
 /* Body */
 @newTabLabeledIconWidth: min-content;
-@newTabLabeledIconMinWidth: 7rem;
+@newTabLabeledIconMinWidth: 8.5rem;
 @newTabLabeledIconTextAlign: center;
 
 /* Label */
 @newTabLabeledIconLabelWidth: 100%;
-@newTabLabeledIconLabelFontSize: 0.875rem;
-@newTabLabeledIconLabelColor: @deepBlue;
-@newTabLabeledIconColor: @mediumPersianBlue;
+@newTabLabeledIconLabelFontSize: @font-size-0;
+@newTabLabeledIconLabelFontWeight: @font-weight-4;
+@newTabLabeledIconLabelColor: @tertiaryColor;
+@newTabLabeledIconColor: @lightPrimaryColor;
 
 /* Icon Wrapper */
+@newTabLabeledIconIconWrapperMinHeight: @rem-space-8;
 @newTabLabeledIconIconWrapperWidth: 100%;
-@newTabLabeledIconWrapperPadding: 0.5rem;
+@newTabLabeledIconWrapperPaddingBottom: @rem-space-1;
 
 /* Icon */
 @newTabLabeledIconIconFontSize: 1.563rem;

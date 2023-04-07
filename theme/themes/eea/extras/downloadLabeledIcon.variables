@@ -9,37 +9,39 @@
 
 /* Label */
 @downloadLabeledIconLabelWidth: 100%;
-@downloadLabeledIconLabelFontSize: 0.875rem;
-@downloadLabeledIconLabelColor: @deepBlue;
+@downloadLabeledIconLabelFontSize: @font-size-0;
+@downloadLabeledIconLabelFontWeight: @font-weight-4;
+@downloadLabeledIconLabelColor: @tertiaryColor;
 
 /* Wrapper */
+@downloadLabeledIconWrapperMinHeight: @rem-space-8;
 @downloadLabeledIconWrapperWidth: 100%;
-@downloadLabeledIconWrapperPadding: 0.5rem;
+@downloadLabeledIconWrapperPaddingBottom: @rem-space-1;
 
 /* Icon */
 @downloadLabeledIconIconFontSize: 1.563rem;
 @downloadLabeledIconWrapperIconHeight: 1.25rem;
 @downloadLabeledIconIconWidth: 1.25rem;
-@downloadLabeledIconColor: @mediumPersianBlue;
+@downloadLabeledIconColor: @lightPrimaryColor;
 
 /* Link Wrapper */
-@downloadLabeledIconLinkWrapperBackgroundColor: #f9f9f9;
-@downloadLabeledIconLinkWrapperZIndex: 1;
+@downloadLabeledIconLinkWrapperBackgroundColor: @grey-1;
+@downloadLabeledIconLinkWrapperZIndex: @z-index-1;
 @downloadLabeledIconLinkWrapperWidth: 100%;
 
 /* Dropdown */
 @downloadLabeledIconDropdownWIdth: 100%;
 
 /* List */
-@downloadLabeledIconUlMargin: 0.25rem 0;
-@downloadLabeledIconUlPaddingInlineStart: 0.25rem 0px;
-@downloadLabeledIconLiHover: @japaneseIndigo;
+@downloadLabeledIconUlMargin: @rem-space-1 0;
+@downloadLabeledIconUlPaddingInlineStart: @rem-space-1 0px;
+@downloadLabeledIconLiHover: @darkTertiaryColor;
 
 /* Link */
 @downloadLabeledIconALinkFontWeight: 700;
-@downloadLabeledIconLinkFontSize: 0.875rem;
-@downloadLabeledIconLinkIconFontSize: 1rem;
-@downloadLabeledIconLinkIconPadding: 0.125rem 0.875rem;
+@downloadLabeledIconLinkFontSize: @font-size-0;
+@downloadLabeledIconLinkIconFontSize: @font-size-1;
+@downloadLabeledIconLinkIconPadding: @rem-space-050 @rem-space-3-5;
 @downloadLabeledIconLinkIconLineHeight: 1.25rem;
-@downloadLabeledIconALinkColor: @japaneseIndigo;
-@downloadLabeledIconALinkColorHover: @white;
+@downloadLabeledIconALinkColor: @darkTertiaryColor;
+@downloadLabeledIconALinkColorHover: @grey-0;

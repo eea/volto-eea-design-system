@@ -24,7 +24,8 @@
   font-weight: @sidenavItemFontWeight;
   color      : @sidenavItemColor;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background: @sidenavItemHoverBackground;
     color     : @sidenavItemHoverColor;
   }
@@ -92,7 +93,8 @@
   color: @sidenavItemActiveColor;
   font-weight: @sidenavItemActiveFontWeight;
 }
-.context-navigation .active.item > .content > a:hover {
+.context-navigation .active.item > .content > a:hover,
+.context-navigation .active.item > .content > a:focus-visible {
   color : @sidenavItemActiveColorHover;
 }
 
