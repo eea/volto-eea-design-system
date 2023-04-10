@@ -43,6 +43,12 @@ export default {
         type: { summary: 'boolean' },
       },
     },
+    rounded: {
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
     cards: {
       table: {
         type: {
@@ -54,12 +60,12 @@ export default {
   },
 };
 
-const CardTemplate = ({ variant, inverted, titleOnImage, card }) => (
+const CardTemplate = ({ variant, inverted, rounded, titleOnImage, card }) => (
   <Card
     fluid={card.fluid}
     className={`${variant === 'default' ? '' : variant} ${
       inverted ? 'inverted' : ''
-    }`}
+    } ${rounded ? 'rounded' : ''}`}
   >
     {/* Card Image */}
     {card.hasImage ? (
@@ -127,6 +133,7 @@ const Template = (args) => (
         variant={args.variant}
         titleOnImage={args.titleOnImage}
         inverted={args.inverted}
+        rounded={args.rounded}
         card={card}
         key={index}
       />
@@ -139,6 +146,7 @@ Default.args = {
   titleOnImage: false,
   variant: 'default',
   inverted: false,
+  rounded: false,
   cards: [
     {
       title: 'Economy and resources',
@@ -164,6 +172,7 @@ const GridTemplate = (args) => (
             variant={args.variant}
             titleOnImage={args.titleOnImage}
             inverted={args.inverted}
+            rounded={args.rounded}
             card={card}
             key={index}
           />
@@ -178,6 +187,7 @@ CardGrid.args = {
   titleOnImage: false,
   variant: 'default',
   inverted: false,
+  rounded: false,
   cards: [
     {
       title: 'Nature',
@@ -223,6 +233,7 @@ ImageGrid.args = {
   titleOnImage: true,
   variant: 'default',
   inverted: false,
+  rounded: false,
   cards: [
     {
       title: 'Nature',
@@ -259,6 +270,7 @@ const FluidGridTemplate = (args) => (
           variant={args.variant}
           titleOnImage={args.titleOnImage}
           inverted={args.inverted}
+          rounded={args.rounded}
           card={card}
           key={index}
         />
@@ -272,6 +284,7 @@ FluidGrid.args = {
   titleOnImage: false,
   variant: 'default',
   inverted: false,
+  rounded: false,
   cards: [
     {
       title: 'Nature',
@@ -349,6 +362,7 @@ function CarouselCardsContent({
   titleOnImage,
   variant,
   inverted,
+  rounded,
   settings,
   cards,
 }) {
@@ -361,6 +375,7 @@ function CarouselCardsContent({
             variant={variant}
             titleOnImage={titleOnImage}
             inverted={inverted}
+            rounded={rounded}
             card={card}
             key={index}
           />
@@ -382,6 +397,7 @@ CarouselCards.args = {
   titleOnImage: false,
   variant: 'default',
   inverted: false,
+  rounded: false,
   settings: {
     dots: true,
     infinite: true,
@@ -467,7 +483,7 @@ CarouselCards.argTypes = {
   },
 };
 
-const TeaserCard = ({ variant, inverted, titleOnImage, card }) => (
+const TeaserCard = ({ variant, inverted, rounded, titleOnImage, card }) => (
   <div className="column grid-block-teaser">
     <div
       className={`styled-teaser styled ${
@@ -477,7 +493,7 @@ const TeaserCard = ({ variant, inverted, titleOnImage, card }) => (
       <div
         className={`ui card u-card max-3-lines title-max-3-lines ${
           card.fluid ? 'fluid' : ''
-        } ${variant}`}
+        } ${variant} ${rounded ? 'rounded' : ''}`}
       >
         <a className="image" href={card.href}>
           <img src={card.imgUrl} alt={card.title} className="ui image" />
@@ -510,6 +526,7 @@ const TeaserTemplate = (args) => (
             variant={args.variant}
             titleOnImage={args.titleOnImage}
             inverted={args.inverted}
+            rounded={args.rounded}
             card={card}
             key={index}
           />
@@ -524,6 +541,7 @@ TeaserCardGrid.args = {
   titleOnImage: false,
   variant: 'default',
   inverted: false,
+  rounded: false,
   cards: [
     {
       title: "State of Europe's environment",
