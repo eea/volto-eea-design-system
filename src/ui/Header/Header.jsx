@@ -16,6 +16,8 @@ import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
 import PropTypes from 'prop-types';
 
+import { isInternalURL } from '@plone/volto/helpers';
+
 Header.propTypes = {
   transparency: PropTypes.bool,
   inverted: PropTypes.bool,
@@ -143,6 +145,9 @@ const Main = ({
   const [searchIsActive, setSearchIsActive] = React.useState(false);
   const [burger, setBurger] = React.useState('');
   const searchInputRef = React.useRef(null);
+  const [isClient, setIsClient] = React.useState();
+
+  React.useEffect(() => setIsClient(true), []);
 
   React.useEffect(() => {
     setMenuIsActive(false);
@@ -203,7 +208,11 @@ const Main = ({
     if (item.items.length) {
       setMenuIsActive(true);
     } else {
-      history.push(item.url);
+      if (isInternalURL(item.url)) {
+        history.push(item.url);
+      } else if (isClient) {
+        window.location.replace(item.url);
+      }
     }
   };
 
@@ -266,7 +275,7 @@ const Main = ({
           <Grid.Column mobile={4} tablet={4} computer={8}>
             <div className={inverted ? 'main-menu inverted' : 'main-menu'}>
               {menuItems && (
-                <div
+                <ul
                   className="ui text eea-main-menu tablet or lower hidden menu"
                   ref={desktopMenuRef}
                   id={'navigation'}
@@ -275,6 +284,7 @@ const Main = ({
                     <Menu.Item
                       name={item['@id'] || item.url}
                       key={item['@id'] || item.url}
+                      as={'li'}
                       active={
                         activeItem.indexOf(item['@id']) !== -1 ||
                         activeItem.indexOf(item.url) !== -1
@@ -285,7 +295,7 @@ const Main = ({
                       })}
                     </Menu.Item>
                   ))}
-                </div>
+                </ul>
               )}
               {!hideSearch && (
                 <button

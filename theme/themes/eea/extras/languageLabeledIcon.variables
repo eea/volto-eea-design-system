@@ -8,34 +8,36 @@
 @languageLabeledIconTextAlign: center;
 
 /* Icon Wrapper  */
-@languageLabeledIconIconWrapperFontSize : 0.875rem;
-@languageLabeledIconIconWrapperFontWeight : 400;
-@languageLabeledIconIconWrapperColor : @deepBlue;
+@languageLabeledIconIconWrapperMinHeight: @rem-space-8;
+@languageLabeledIconIconWrapperFontSize : @font-size-0;
+@languageLabeledIconIconWrapperFontWeight : @font-weight-4;
+@languageLabeledIconIconWrapperColor : @tertiaryColor;
+@languageLabeledIconIconWrapperPaddingBottom : @rem-space-1;
 
 /* Icon  */
-@languageLabeledIconIconWrapperIconColor: @mediumPersianBlue;
-@languageLabeledIconIconWrapperIconMarginRight: 0.25rem;
-@languageLabeledIconIconWrapperIconFontSize: 1.5rem;
+@languageLabeledIconIconWrapperIconColor: @lightPrimaryColor;
+@languageLabeledIconIconWrapperIconMarginRight: @rem-space-1;
+@languageLabeledIconIconWrapperIconFontSize: @font-size-4;
 
 /* Label  */
-@languageLabeledIconLabelColor: @deepBlue;
-@languageLabeledIconLabelFontSize: 0.875rem;
-@languageLabeledIconLabelFontWeight: 400;
+@languageLabeledIconLabelColor: @tertiaryColor;
+@languageLabeledIconLabelFontSize: @font-size-0;
+@languageLabeledIconLabelFontWeight: @font-weight-4;
 
 /* Dropdown  */
-@languageLabeledIconDropdownBackgroundColor: #f9f9f9;
+@languageLabeledIconDropdownBackgroundColor: @grey-1;
 
 /* Link  */
 @languageLabeledIconDropdowLinkWrapperWidth: max-content;
 
 
 /* List  */
-@languageLabeledIconLabelUlMargin:0;
-@languageLabeledIconLabelUlColor: @japaneseIndigo;
-@languageLabeledIconLabelUlPadding: 0.25rem;
+@languageLabeledIconLabelUlMargin: 0;
+@languageLabeledIconLabelUlColor: @darkTertiaryColor;
+@languageLabeledIconLabelUlPadding: @rem-space-1;
 
 /* List Item  */
 @languageLabeledIconLabelUlLiPadding: 0.125rem 0.313rem;
-@languageLabeledIconLabelUlLiColor: @white;
-@languageLabeledIconLabelUlLiBackgroundColor: @japaneseIndigo;
-@languageLabeledIconLabelUlLiSpanFontWeight: 700;
+@languageLabeledIconLabelUlLiColor: @grey-0;
+@languageLabeledIconLabelUlLiBackgroundColor: @darkTertiaryColor;
+@languageLabeledIconLabelUlLiSpanFontWeight: @font-weight-7;

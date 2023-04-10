@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'semantic-ui-react';
 import NewTabLabeledIcon from '../NewTabLabeledIcon/NewTabLabeledIcon';
 import DownloadLabeledIcon from '../DownloadLabeledIcon/DownloadLabeledIcon';
 import LanguageLabeledIcon from '../LanguageLabeledIcon/LanguageLabeledIcon';
@@ -17,12 +18,12 @@ LabeledIconGroup.Download = ({ children, ...rest }) => {
       <DownloadLabeledIcon
         {...rest}
         trigger={
-          <div>
+          <Button className="text">
             <DownloadLabeledIcon.Icon {...rest}>
               {rest.icon}
             </DownloadLabeledIcon.Icon>
             <DownloadLabeledIcon.Label>{rest.label}</DownloadLabeledIcon.Label>
-          </div>
+          </Button>
         }
       >
         <DownloadLabeledIcon.Dropdown {...rest}></DownloadLabeledIcon.Dropdown>
@@ -48,12 +49,12 @@ LabeledIconGroup.Language = ({ children, ...rest }) => {
       <LanguageLabeledIcon
         {...rest}
         trigger={
-          <div>
+          <Button className="text">
             <LanguageLabeledIcon.Icon
               icon={rest.icon}
             ></LanguageLabeledIcon.Icon>
             <LanguageLabeledIcon.Label>{rest.label}</LanguageLabeledIcon.Label>
-          </div>
+          </Button>
         }
       >
         <LanguageLabeledIcon.Dropdown

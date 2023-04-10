@@ -208,7 +208,7 @@
   }
 
   // Flex wrapper for list of items
-  .ui.items.flex-items-wrapper .item {
+  .ui.items.flex-items-wrapper > .item {
     width: @tabletFlexItemWidth;
   }
 }
@@ -237,7 +237,7 @@
   }
 
   // Flex wrapper for list of items
-  .ui.items.flex-items-wrapper .item {
+  .ui.items.flex-items-wrapper > .item {
     width: @desktopFlexItemWidth;
   }
 }
