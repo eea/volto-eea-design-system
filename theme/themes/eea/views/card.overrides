@@ -291,6 +291,43 @@
 }
 
 /*******************************
+      Image alignment
+*******************************/
+
+//resizing
+
+.ui.card.has--objectfit--contain > div.image img {
+  object-fit: contain;
+}
+.ui.card.has--objectfit--cover > div.image img {
+  object-fit: cover;
+}
+.ui.card.has--objectfit--fill > div.image img {
+  object-fit: fill;
+}
+.ui.card.has--objectfit--scale-down > div.image img {
+  object-fit: scale-down;
+}
+
+//position
+
+.ui.card.has--objectposition--top > div.image img {
+  object-position: top;
+}
+.ui.card.has--objectposition--bottom > div.image img {
+  object-position: bottom;
+}
+.ui.card.has--objectposition--left > div.image img {
+  object-position: left;
+}
+.ui.card.has--objectposition--right > div.image img {
+  object-position: right;
+}
+.ui.card.has--objectposition--center > div.image img {
+  object-position: center;
+}
+
+/*******************************
         Carousel
 *******************************/
 
