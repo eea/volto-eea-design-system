@@ -157,17 +157,14 @@ const Main = ({
     // remove active menu when we have no pathname which means we hit logo to go home
     //remove the lang route in order to check if empty
     //setActiveItem as pathname when pathname changed
-    console.log('Pathname', { pathname });
-
     if (
       !pathname ||
       (isMultilingual === true && !pathname?.split('/')?.slice(2)?.join('/'))
     ) {
       setActiveItem('');
-      console.log('Active item if ', pathname);
     } else setActiveItem(pathname);
-  }, [pathname]);
-  console.log('ACtive item', { activeItem });
+  }, [isMultilingual, pathname]);
+
   React.useEffect(() => {
     if (searchIsActive) {
       searchInputRef.current && searchInputRef.current.focus();
