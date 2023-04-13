@@ -245,6 +245,7 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
 
 const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
   const [activeIndex, setActiveIndex] = useState(-1);
+
   useEffect(() => {
     let index = 0;
     menuItems.forEach((menuItem) => {
@@ -253,14 +254,10 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
     });
   }, [menuItems, pathName]);
 
-  let defaultIndex = -1;
   const rootPanels = [];
   menuItems.forEach((element, index) => {
     let x = {};
     x.key = index;
-    if (pathName.indexOf(element.url) !== -1) {
-      defaultIndex = index;
-    }
     x.title = (
       <Accordion.Title
         key={`title-${index}`}
@@ -306,13 +303,7 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
     rootPanels.push(x);
   });
 
-  return (
-    <Accordion
-      activeIndex={activeIndex}
-      defaultActiveIndex={defaultIndex}
-      panels={rootPanels}
-    />
-  );
+  return <Accordion activeIndex={activeIndex} panels={rootPanels} />;
 };
 
 function HeaderMenuPopUp({
