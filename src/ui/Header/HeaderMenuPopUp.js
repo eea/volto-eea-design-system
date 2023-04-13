@@ -132,6 +132,7 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem }) => (
 
 const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
   const topics = element.title === 'Topics' ? true : false;
+  let defaultIndex = -1;
 
   return (
     <>
@@ -148,6 +149,9 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
             }
             let x = {};
             x.key = item['@id'] || item['url'];
+            if (pathName.indexOf(item.url) !== -1) {
+              defaultIndex = index;
+            }
             x.title = (
               <Accordion.Title key={`title=${index}`} as="button">
                 {item.title}
@@ -169,7 +173,11 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
             );
             firstLevelPanels.push(x);
             return (
-              <Accordion.Accordion panels={firstLevelPanels} key={index} />
+              <Accordion.Accordion
+                panels={firstLevelPanels}
+                key={index}
+                defaultActiveIndex={defaultIndex === index ? 0 : -1}
+              />
             );
           })}
         </React.Fragment>
