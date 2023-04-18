@@ -3,6 +3,7 @@
 *******************************/
 
 .ui.pointing.secondary.menu {
+  padding: 2px;
   .item {
     font-size: @headerSize;
   }
