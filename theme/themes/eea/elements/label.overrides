@@ -33,25 +33,25 @@
 
 /* Link */
 .ui.low.labels .label:hover,
-a.ui.low.label:hover{
+.ui.low.label:hover{
   background-color: @lowImportanceHoverBackground;
   border-color: @lowImportanceHoverBackground;
 }
 
 .ui.medium.labels .label:hover,
-a.ui.medium.label:hover{
+.ui.medium.label:hover{
   background-color: @mediumImportanceHoverBackground;
   border-color: @mediumImportanceHoverBackground;
 }
 
 .ui.high.labels .label:hover,
-a.ui.high.label:hover{
+.ui.high.label:hover{
   background-color: @highImportanceHoverBackground;
   border-color: @highImportanceHoverBackground;
 }
 
 .ui.highlight.labels .label:hover,
-a.ui.highlight.label:hover{
+.ui.highlight.label:hover{
   background-color: @highlightImportanceHoverBackground;
   border-color: @highlightImportanceHoverBackground;
 }
@@ -80,7 +80,7 @@ a.ui.highlight.label:hover{
   border-color: @lowImportanceBackground;
 }
 .ui.basic.low.labels a.label:hover,
-a.ui.basic.low.label:hover {
+.ui.basic.low.label:hover {
   background-color: @white;
   color: @lowImportanceHoverBackground;
   border-color: @lowImportanceHoverBackground;
@@ -92,7 +92,7 @@ a.ui.basic.low.label:hover {
   border-color: @mediumImportanceBackground;
 }
 .ui.basic.medium.labels a.label:hover,
-a.ui.basic.medium.label:hover {
+.ui.basic.medium.label:hover {
   background-color: @white;
   color: @mediumImportanceHoverBackground;
   border-color: @mediumImportanceHoverBackground;
@@ -104,7 +104,7 @@ a.ui.basic.medium.label:hover {
   border-color: @highImportanceBackground;
 }
 .ui.basic.high.labels a.label:hover,
-a.ui.basic.high.label:hover {
+.ui.basic.high.label:hover {
   background-color: @white;
   color: @highImportanceHoverBackground;
   border-color: @highImportanceHoverBackground;
@@ -116,7 +116,7 @@ a.ui.basic.high.label:hover {
   border-color: @highlightImportanceBackground;
 }
 .ui.basic.highlight.labels a.label:hover,
-a.ui.basic.highlight.label:hover {
+.ui.basic.highlight.label:hover {
   background-color: @white;
   color: @highlightImportanceHoverBackground;
   border-color: @highlightImportanceHoverBackground;
@@ -163,4 +163,8 @@ a.ui.basic.highlight.label:hover {
   .metadata.mention.empty {
     background: @labelNoBackground;
   }
+}
+
+.ui.corner.label i.icon:hover {
+  cursor: pointer;
 }

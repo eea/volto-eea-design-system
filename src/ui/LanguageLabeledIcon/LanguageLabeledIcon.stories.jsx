@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'semantic-ui-react';
 import LanguageLabeledIcon from './LanguageLabeledIcon';
 import LabeledIconGroup from '../LabeledIconGroup/LabeledIconGroup';
 
@@ -35,10 +36,10 @@ const Template = (args) => (
     <LanguageLabeledIcon
       {...args}
       trigger={
-        <div>
+        <Button className="text">
           <LanguageLabeledIcon.Icon icon={args.icon}></LanguageLabeledIcon.Icon>
           <LanguageLabeledIcon.Label>{args.label}</LanguageLabeledIcon.Label>
-        </div>
+        </Button>
       }
     >
       <LanguageLabeledIcon.Dropdown

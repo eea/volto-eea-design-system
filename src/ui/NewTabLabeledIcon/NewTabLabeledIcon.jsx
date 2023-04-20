@@ -1,12 +1,18 @@
 import React from 'react';
-import { Icon } from 'semantic-ui-react';
+import { Button, Icon } from 'semantic-ui-react';
 
 function NewTabLabeledIcon({ children, ...rest }) {
   return (
     <div className="eea new tab labeled icon">
-      <a target="_blank" rel="noreferrer" href={rest.link}>
+      <Button
+        target="_blank"
+        rel="noreferrer"
+        href={rest.link}
+        as="a"
+        className="text"
+      >
         {children}
-      </a>
+      </Button>
     </div>
   );
 }

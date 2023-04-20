@@ -7,7 +7,7 @@
 @sidenavBackground: @grey-0;
 @sidenavMarginRight: @rem-space-4;
 @sidenavPaddingLeft: @rem-space-4;
-@sidenavOverflow: hidden;
+@sidenavOverflow: inherit;
 @sidenavMargin: @rem-space-8 auto;
 
 /* Header */

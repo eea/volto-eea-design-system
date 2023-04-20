@@ -16,7 +16,7 @@ export default {
 
 export const Default = (args) => (
   <Container>
-    <Tag href={args.href}>{args.title}</Tag>
+    <Tag href={args.link}>{args.title}</Tag>
   </Container>
 );
 

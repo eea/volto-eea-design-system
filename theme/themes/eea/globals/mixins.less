@@ -14,3 +14,11 @@
 .image-overlay-gradient() {
   .gradientMix(linear; rgba(46, 62, 76, 0.65) 38.6%, rgba(46, 62, 76, 0.169) 59.52%, rgba(69, 95, 106, 0) 79.64%; 13.39deg)
 }
+
+.useTitleMaxLines(@value: 2) {
+  display: -webkit-box !important;
+  overflow: hidden;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--title-max-lines, @value);
+}

@@ -9,7 +9,10 @@
   outline: @focusVisibleOutline;
 }
 
-button:focus-visible {
+button:focus-visible,
+a.button:focus-visible,
+.ui.checkbox input[type="checkbox"]:focus-visible,
+.ui.checkbox input[type="radio"]:focus-visible {
   outline: @focusVisibleOutline !important;
 }
 

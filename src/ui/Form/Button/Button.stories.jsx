@@ -189,7 +189,7 @@ Labeled.argTypes = {
 export const Text = (args) => {
   return (
     <Container>
-      <Button as="p" disabled={args.disabled}>
+      <Button className="text" disabled={args.disabled}>
         {args.label}
       </Button>
     </Container>
