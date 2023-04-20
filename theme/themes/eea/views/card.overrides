@@ -451,7 +451,8 @@
 .ui.card .header {
   padding: @headerPadding;
 }
+
 .ui.card .header > a {
-  display: @headerLinkDisplay;
+  .useTitleMaxLines();
 }
 
