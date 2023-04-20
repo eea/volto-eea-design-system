@@ -3,7 +3,6 @@
 *******************************/
 
 .ui.pointing.secondary.menu {
-  padding: 2px;
   .item {
     font-size: @headerSize;
   }
@@ -11,6 +10,10 @@
   .item:hover {
     color: @tabActiveItemHoverColor;
   }
+}
+
+.ui.pointing.secondary.menu:not(.vertical) {
+  padding: 2px;
 }
 
 .tabs-block {
