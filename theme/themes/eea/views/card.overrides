@@ -32,9 +32,12 @@
   img {
     width: var(--card-image-width, @imageWidth);
     height: var(--card-image-width, @imageHeight);
-    object-fit: var(--image-object-fit, @imageObjectFit);
-    object-position: var(--image-object-position, @imageObjectPosition);
   }
+}
+
+.ui.card img, img.ui.image {
+  object-fit: var(--image-object-fit, @imageObjectFit);
+  object-position: var(--image-object-position, @imageObjectPosition);
 }
 
 
@@ -293,44 +296,6 @@
 }
 
 /*******************************
-      Image alignment
-*******************************/
-
-//resizing
-
-.ui.card.has--objectfit--contain {
-  --image-object-fit: contain;
-}
-
-.ui.card.has--objectfit--cover {
-  --image-object-fit: cover;
-}
-.ui.card.has--objectfit--fill {
-  --image-object-fit: fill;
-}
-.ui.card.has--objectfit--scale-down {
-  --image-object-fit: scale-down;
-}
-
-//position
-
-.ui.card.has--objectposition--top {
-  --image-object-position: top;
-}
-.ui.card.has--objectposition--bottom {
-  --image-object-position: bottom;
-}
-.ui.card.has--objectposition--left {
-  --image-object-position: left;
-}
-.ui.card.has--objectposition--right {
-  --image-object-position: right;
-}
-.ui.card.has--objectposition--center {
-  --image-object-position: center;
-}
-
-/*******************************
         Carousel
 *******************************/
 
@@ -477,12 +442,4 @@
   .grid-block-teaser .ui.card {
     min-width: @tabletTeaserCardMinWidth;
   }
-}
-
-// Added from listing-cards.less
-.grid-block-teaser .ui.card.u-card .header {
-  display: -webkit-box !important;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: var(--title-max-lines, 3);
 }
