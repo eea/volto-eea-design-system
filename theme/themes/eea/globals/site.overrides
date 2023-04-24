@@ -152,7 +152,9 @@ a {
 }
 
 @media print {
+  .skiplinks-wrapper,
   .top.bar,
+  .main.bar.transparency,
   .main-menu,
   .eea .header .action,
   .slider-arrow,
