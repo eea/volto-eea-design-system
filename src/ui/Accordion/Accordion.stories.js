@@ -15,85 +15,28 @@ export default {
       defaultValue: 'primary',
       options: ['default', 'primary', 'secondary', 'tertiary'],
       control: { type: 'select' },
-      description: 'call to action variation',
       table: {
         defaultValue: { summary: 'primary' },
         type: { summary: 'string' },
       },
     },
-    toggle1: {
-      description: 'Text of the accordion toggler',
+    title_size: {
+      name: 'Title size',
+      defaultValue: 'primary',
+      options: ['no value', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+      control: { type: 'select' },
       table: {
-        type: {
-          summary: 'string',
-        },
-        defaultValue: {
-          summary: '""',
-        },
-      },
-    },
-    toggle2: {
-      description: 'Text of the accordion toggler',
-      table: {
-        type: {
-          summary: 'string',
-        },
-        defaultValue: {
-          summary: '""',
-        },
-      },
-    },
-    toggle3: {
-      description: 'Text of the accordion toggler',
-      table: {
-        type: {
-          summary: 'string',
-        },
-        defaultValue: {
-          summary: '""',
-        },
-      },
-    },
-    content1: {
-      description: 'Text of the hidden content',
-      table: {
-        type: {
-          summary: 'array',
-        },
-        defaultValue: {
-          summary: '""',
-        },
-      },
-    },
-    content2: {
-      description: 'Text of the hidden content',
-      table: {
-        type: {
-          summary: 'array',
-        },
-        defaultValue: {
-          summary: '""',
-        },
-      },
-    },
-    content3: {
-      description: 'Text of the hidden content',
-      table: {
-        type: {
-          summary: 'array',
-        },
-        defaultValue: {
-          summary: '""',
-        },
+        defaultValue: { summary: 'primary' },
+        type: { summary: 'string' },
       },
     },
   },
 };
 
 function AccordionContainer({ ...args }) {
-  const [activeIndex, setActiveIndex] = useState();
+  const [activeIndex, setActiveIndex] = useState([0]);
 
-  const toggleOpenAccordion = (e, titleProps) => {
+  const handleClick = (e, titleProps) => {
     const { index } = titleProps;
     const newIndex = activeIndex === index ? -1 : index;
 
@@ -102,70 +45,56 @@ function AccordionContainer({ ...args }) {
 
   return (
     <Container>
-      <Accordion className={args.variant}>
-        <Accordion.Title
-          active={activeIndex === 0}
-          index={0}
-          onClick={toggleOpenAccordion}
-          as="button"
-        >
-          {args.toggle1}
-          <Icon className="ri-arrow-down-s-line" />
-        </Accordion.Title>
-        <Accordion.Content active={activeIndex === 0}>
-          {args.content1.length > 0 &&
-            args.content1.map((item, index) => <p key={index}>{item}</p>)}
-          <a href="/#">Read more</a>
-        </Accordion.Content>
-
-        <Accordion.Title
-          active={activeIndex === 1}
-          index={1}
-          onClick={toggleOpenAccordion}
-          as="button"
-        >
-          {args.toggle2}
-          <Icon className="ri-arrow-down-s-line" />
-        </Accordion.Title>
-        <Accordion.Content active={activeIndex === 1}>
-          {args.content2.length > 0 &&
-            args.content2.map((item, index) => <p key={index}>{item}</p>)}
-        </Accordion.Content>
-
-        <Accordion.Title
-          active={activeIndex === 2}
-          index={2}
-          onClick={toggleOpenAccordion}
-          as="button"
-        >
-          {args.toggle3}
-          <Icon className="ri-arrow-down-s-line" />
-        </Accordion.Title>
-        <Accordion.Content active={activeIndex === 2}>
-          {args.content3.length > 0 &&
-            args.content3.map((item, index) => <p key={index}>{item}</p>)}
-        </Accordion.Content>
-      </Accordion>
+      <div className="accordion-block">
+        {args.panels.map((panel, index) => {
+          return (
+            <Accordion className={args.variant} key={index}>
+              <Accordion.Title
+                index={index}
+                tabIndex={0}
+                active={activeIndex === index}
+                onClick={handleClick}
+                as={args.title_size === 'no value' ? '' : args.title_size}
+                onKeyDown={(e) => {
+                  if (e.nativeEvent.keyCode === 13) {
+                    handleClick(e, { index });
+                  }
+                }}
+              >
+                <span>{panel.title}</span>
+                <Icon className="ri-arrow-down-s-line" />
+              </Accordion.Title>
+              <Accordion.Content active={activeIndex === index}>
+                {panel.content}
+              </Accordion.Content>
+            </Accordion>
+          );
+        })}
+      </div>
     </Container>
   );
 }
 
 const Template = (args) => <AccordionContainer {...args}></AccordionContainer>;
-
 export const Default = Template.bind({});
 Default.args = {
   variant: 'secondary',
-  toggle1: 'Water and marine environment',
-  toggle2: 'Resource efficiency and waste',
-  toggle3: 'Air pollution',
-  content1: [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nisi mauris enim felis eget id sed tristique. At laoreet ligula pretium, pulvinar. Accumsan egestas ultricies erat sed. Eget non quis libero, odio elementum lectus lectus ullamcorper elit. In quam pulvinar amet, habitasse mi lorem nunc. Sed sed elementum est purus elementum eget. Elementum tortor at nulla nunc, tempor rhoncus, bibendum. Massa mauris, mauris, vel elementum adipiscing.',
-  ],
-  content2: [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nisi mauris enim felis eget id sed tristique. At laoreet ligula pretium, pulvinar. Accumsan egestas ultricies erat sed. Eget non quis libero, odio elementum lectus lectus ullamcorper elit. In quam pulvinar amet, habitasse mi lorem nunc. Sed sed elementum est purus elementum eget. Elementum tortor at nulla nunc, tempor rhoncus, bibendum. Massa mauris, mauris, vel elementum adipiscing.',
-  ],
-  content3: [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nisi mauris enim felis eget id sed tristique. At laoreet ligula pretium, pulvinar. Accumsan egestas ultricies erat sed. Eget non quis libero, odio elementum lectus lectus ullamcorper elit. In quam pulvinar amet, habitasse mi lorem nunc. Sed sed elementum est purus elementum eget. Elementum tortor at nulla nunc, tempor rhoncus, bibendum. Massa mauris, mauris, vel elementum adipiscing.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nisi mauris enim felis eget id sed tristique. At laoreet ligula pretium, pulvinar. Accumsan egestas ultricies erat sed. Eget non quis libero, odio elementum lectus lectus ullamcorper elit. In quam pulvinar amet, habitasse mi lorem nunc. Sed sed elementum est purus elementum eget. Elementum tortor at nulla nunc, tempor rhoncus, bibendum. Massa mauris, mauris, vel elementum adipiscing.',
+  title_size: 'no value',
+  panels: [
+    {
+      title: 'Water and marine environment',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nisi mauris enim felis eget id sed tristique. At laoreet ligula pretium, pulvinar. Accumsan egestas ultricies erat sed. Eget non quis libero, odio elementum lectus lectus ullamcorper elit. In quam pulvinar amet, habitasse mi lorem nunc. Sed sed elementum est purus elementum eget. Elementum tortor at nulla nunc, tempor rhoncus, bibendum. Massa mauris, mauris, vel elementum adipiscing.',
+    },
+    {
+      title: 'Resource efficiency and waste',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nisi mauris enim felis eget id sed tristique. At laoreet ligula pretium, pulvinar. Accumsan egestas ultricies erat sed. Eget non quis libero, odio elementum lectus lectus ullamcorper elit. In quam pulvinar amet, habitasse mi lorem nunc. Sed sed elementum est purus elementum eget. Elementum tortor at nulla nunc, tempor rhoncus, bibendum. Massa mauris, mauris, vel elementum adipiscing.',
+    },
+    {
+      title: 'Air pollution',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nisi mauris enim felis eget id sed tristique. At laoreet ligula pretium, pulvinar. Accumsan egestas ultricies erat sed. Eget non quis libero, odio elementum lectus lectus ullamcorper elit. In quam pulvinar amet, habitasse mi lorem nunc. Sed sed elementum est purus elementum eget. Elementum tortor at nulla nunc, tempor rhoncus, bibendum. Massa mauris, mauris, vel elementum adipiscing.',
+    },
   ],
 };
