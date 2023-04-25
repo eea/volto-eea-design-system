@@ -32,9 +32,12 @@
   img {
     width: var(--card-image-width, @imageWidth);
     height: var(--card-image-width, @imageHeight);
-    object-fit: @imageObjectFit;
-    object-position: @imageObjectPosition;
   }
+}
+
+.ui.card img, img.ui.image {
+  object-fit: var(--image-object-fit, @imageObjectFit);
+  object-position: var(--image-object-position, @imageObjectPosition);
 }
 
 
@@ -150,6 +153,8 @@
     width: @roundedImageWidth;
     height: @roundedImageHeight;
     border-radius: @roundedImageBorderRadius !important;
+    object-fit: var(--image-object-fit, @imageObjectFit);
+    object-position: var(--image-object-position, @imageObjectPosition);
   }
 
   .content {
@@ -437,21 +442,12 @@
   .grid-block-teaser .ui.card {
     min-width: @tabletTeaserCardMinWidth;
   }
-}
-
-// Added from listing-cards.less
-.grid-block-teaser .ui.card.u-card .header {
-  display: -webkit-box !important;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: var(--title-max-lines, 3);
-}
 
 // Spacing adjustment to display outline with overflow hidden
 .ui.card .header {
   padding: @headerPadding;
 }
-.ui.card .header > a {
-  display: @headerLinkDisplay;
-}
 
+.ui.card .header > a {
+  .useTitleMaxLines();
+}
