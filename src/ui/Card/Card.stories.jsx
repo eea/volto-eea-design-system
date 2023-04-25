@@ -57,15 +57,44 @@ export default {
         defaultValue: { summary: ' "" ' },
       },
     },
+    objectfit: {
+      name: 'Image fit',
+      options: ['no value', 'center', 'top', 'bottom', 'left', 'right'],
+      control: { type: 'select' },
+      table: {
+        category: 'Image',
+        defaultValue: { summary: 'center' },
+      },
+    },
+    objectposition: {
+      name: 'Image position',
+      options: ['no value', 'cover', 'contain', 'fill', 'scale-down'],
+      control: { type: 'select' },
+      table: {
+        category: 'Image',
+        defaultValue: { summary: 'cover' },
+      },
+    },
   },
 };
 
-const CardTemplate = ({ variant, inverted, rounded, titleOnImage, card }) => (
+const CardTemplate = ({
+  variant,
+  inverted,
+  titleOnImage,
+  objectfit,
+  objectposition,
+  card,
+}) => (
   <Card
     fluid={card.fluid}
     className={`${variant === 'default' ? '' : variant} ${
       inverted ? 'inverted' : ''
-    } ${rounded ? 'rounded' : ''}`}
+    } ${objectfit === 'no value' ? '' : 'has--objectfit--' + objectfit} ${
+      objectposition === 'no value'
+        ? ''
+        : 'has--objectposition--' + objectposition
+    }`}
   >
     {/* Card Image */}
     {card.hasImage ? (
@@ -134,6 +163,8 @@ const Template = (args) => (
         titleOnImage={args.titleOnImage}
         inverted={args.inverted}
         rounded={args.rounded}
+        objectfit={args.objectfit}
+        objectposition={args.objectposition}
         card={card}
         key={index}
       />
@@ -147,6 +178,8 @@ Default.args = {
   variant: 'default',
   inverted: false,
   rounded: false,
+  objectfit: 'center',
+  objectposition: 'cover',
   cards: [
     {
       title: 'Economy and resources',
@@ -173,6 +206,8 @@ const GridTemplate = (args) => (
             titleOnImage={args.titleOnImage}
             inverted={args.inverted}
             rounded={args.rounded}
+            objectfit={args.objectfit}
+            objectposition={args.objectposition}
             card={card}
             key={index}
           />
@@ -188,6 +223,8 @@ CardGrid.args = {
   variant: 'default',
   inverted: false,
   rounded: false,
+  objectfit: 'center',
+  objectposition: 'cover',
   cards: [
     {
       title: 'Nature',
@@ -234,6 +271,8 @@ ImageGrid.args = {
   variant: 'default',
   inverted: false,
   rounded: false,
+  objectfit: 'center',
+  objectposition: 'cover',
   cards: [
     {
       title: 'Nature',
@@ -271,6 +310,8 @@ const FluidGridTemplate = (args) => (
           titleOnImage={args.titleOnImage}
           inverted={args.inverted}
           rounded={args.rounded}
+          objectfit={args.objectfit}
+          objectposition={args.objectposition}
           card={card}
           key={index}
         />
@@ -285,6 +326,8 @@ FluidGrid.args = {
   variant: 'default',
   inverted: false,
   rounded: false,
+  objectfit: 'center',
+  objectposition: 'cover',
   cards: [
     {
       title: 'Nature',
@@ -363,7 +406,9 @@ function CarouselCardsContent({
   variant,
   inverted,
   rounded,
+  objectfit,
   settings,
+  objectposition,
   cards,
 }) {
   const slider = React.useRef(null);
@@ -376,6 +421,8 @@ function CarouselCardsContent({
             titleOnImage={titleOnImage}
             inverted={inverted}
             rounded={rounded}
+            objectfit={objectfit}
+            objectposition={objectposition}
             card={card}
             key={index}
           />
@@ -398,6 +445,8 @@ CarouselCards.args = {
   variant: 'default',
   inverted: false,
   rounded: false,
+  objectfit: 'center',
+  objectposition: 'cover',
   settings: {
     dots: true,
     infinite: true,
@@ -483,7 +532,15 @@ CarouselCards.argTypes = {
   },
 };
 
-const TeaserCard = ({ variant, inverted, rounded, titleOnImage, card }) => (
+const TeaserCard = ({
+  variant,
+  titleOnImage,
+  inverted,
+  rounded,
+  objectfit,
+  objectposition,
+  card,
+}) => (
   <div className="column grid-block-teaser">
     <div
       className={`styled-teaser styled ${
@@ -493,7 +550,13 @@ const TeaserCard = ({ variant, inverted, rounded, titleOnImage, card }) => (
       <div
         className={`ui card u-card max-3-lines title-max-3-lines ${
           card.fluid ? 'fluid' : ''
-        } ${variant} ${rounded ? 'rounded' : ''}`}
+        } ${variant} ${rounded ? 'rounded' : ''} ${
+          objectfit === 'no value' ? '' : 'has--objectfit--' + objectfit
+        } ${
+          objectposition === 'no value'
+            ? ''
+            : 'has--objectposition--' + objectposition
+        }`}
       >
         <a className="image" href={card.href}>
           <img src={card.imgUrl} alt={card.title} className="ui image" />
@@ -527,6 +590,8 @@ const TeaserTemplate = (args) => (
             titleOnImage={args.titleOnImage}
             inverted={args.inverted}
             rounded={args.rounded}
+            objectfit={args.objectfit}
+            objectposition={args.objectposition}
             card={card}
             key={index}
           />
@@ -542,6 +607,8 @@ TeaserCardGrid.args = {
   variant: 'default',
   inverted: false,
   rounded: false,
+  objectfit: 'center',
+  objectposition: 'cover',
   cards: [
     {
       title: "State of Europe's environment",
