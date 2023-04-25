@@ -439,6 +439,7 @@
     padding-left: @tabletTeaserCardPaddingInline;
     padding-right: @tabletTeaserCardPaddingInline;
   }
+
   .grid-block-teaser .ui.card {
     min-width: @tabletTeaserCardMinWidth;
   }
