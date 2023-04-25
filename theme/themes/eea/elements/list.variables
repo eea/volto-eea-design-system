@@ -47,7 +47,7 @@
 @imageAlign: top;
 
 /* Item */
-@itemColor: @primaryColor;
+@itemColor: @textColorCSSVar;
 
 /* Content */
 @contentDistance: 0.5em;
@@ -58,7 +58,7 @@
 /* Header */
 @itemHeaderFontFamily: @headerFont;
 @itemHeaderFontWeight: @bold;
-@itemHeaderColor: @textColor;
+@itemHeaderColor: @textColorCSSVar;
 
 /* Description */
 @itemDescriptionColor: rgba(0, 0, 0, 0.7);
@@ -165,24 +165,24 @@
 /* Bulleted */
 
 @bulletSize: 1.1rem;
-@bulletDistance: 1.25rem;
+@bulletDistance: @rem-space-5;
 @bulletOffset: -@bulletDistance;
 
 @bulletOpacity: 1;
 @bulletCharacter: '•';
-@bulletColor: @primaryColor;
-@bulletLinkColor: @primaryColor;
+@bulletColor: @textColorCSSVar;
+@bulletLinkColor: @primaryColorCSSVar;
 @bulletVerticalAlign: top;
 @bulletChildDistance: @bulletDistance;
 
 /* Horizontal Bullets */
-@horizontalBulletColor: @primaryColor;
+@horizontalBulletColor: @textColorCSSVar;
 @horizontalBulletSpacing: @bulletDistance + 0.5em;
 
 /* Ordered List */
 @orderedCountName: ordered;
 @orderedCountContent: counters(ordered, ".") " ";
-@orderedCountColor: @primaryColor;
+@orderedCountColor: inherit;
 @orderedCountDistance: 1.25rem;
 @orderedCountOpacity: 1;
 @orderedCountTextAlign: right;

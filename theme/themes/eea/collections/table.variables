@@ -1,7 +1,7 @@
 /*******************************
              Table
 *******************************/
-@tableHoverBackgroundColor: #F9F9F9;
+@tableHoverBackgroundColor: @backgroundColorCSSVar;
 
 /*-------------------
        Element

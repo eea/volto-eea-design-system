@@ -31,3 +31,7 @@
 @mobileHeroBlockBodyGap  : @rem-space-6;
 @tabletHeroBlockBodyGap  : @rem-space-8;
 @desktopHeroBlockBodyGap : @rem-space-10;
+
+/* Copyright */
+@mobileCopyrightBottom: @rem-space-4;
+@desktopCopyrightBottom: @rem-space-7-50;

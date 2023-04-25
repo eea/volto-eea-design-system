@@ -7,7 +7,7 @@
 --------------------*/
 
 /* Group */
-@groupMargin: 1.5em 0em;
+@groupMargin: @rem-space-6 0em;
 
 /* Item */
 @display: flex;
@@ -20,6 +20,10 @@
 @border: none;
 @zIndex: '';
 @transition: box-shadow @defaultDuration @defaultEasing;
+// black to desired color filter option resulted from https://codepen.io/sosuke/pen/Pjoqqp
+@itemPrimaryFilterColor: invert(9%) sepia(89%) saturate(5332%) hue-rotate(194deg) brightness(98%) contrast(101%);
+@itemSecondaryFilterColor: invert(33%) sepia(14%) saturate(5566%) hue-rotate(139deg) brightness(98%) contrast(101%);
+@itemTertiaryFilterColor: invert(27%) sepia(15%) saturate(1161%) hue-rotate(167deg) brightness(93%) contrast(80%);
 
 /* Responsive */
 @itemSpacing: 1em;
@@ -52,9 +56,11 @@
 @imageBoxShadow: none;
 @imageBorder: none;
 
-/* Tile image size */
-@tileImageWidth: 50px;
-@tileImageHeight: auto;
+/* Image & Icon size */
+@tinyMediaSize  : 1.5rem;
+@smallMediaSize  : 3rem;
+@mediumMediaSize : 4rem;
+@largeMediaSize  : 5rem;
 
 /* Content */
 @contentDisplay: block;
@@ -103,13 +109,12 @@
 @contentLinkHoverColor: '';
 @contentLinkTransition: color @defaultDuration @defaultEasing;
 
-
 /* Description */
-@descriptionDistance: 0.6em;
+@descriptionDistance: 0;
 @descriptionMaxWidth: auto;
 @descriptionFontSize: 1em;
 @descriptionLineHeight: @lineHeight;
-@descriptionColor: @textColor;
+@descriptionColor: @textColorCSSVar;
 
 /* Content Image */
 @contentImageWidth: '';
@@ -142,6 +147,11 @@
 /*-------------------
       Variations
 --------------------*/
+
+/* Flex item */
+@mobileFlexItemWidth: 100%;
+@tabletFlexItemWidth: 48.8%;
+@desktopFlexItemWidth: 49%;
 
 /* Relaxed */
 @relaxedItemSpacing: 1.5em;

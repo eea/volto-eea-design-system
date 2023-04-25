@@ -11,7 +11,7 @@
   display: flex;
   min-width: @eeaLoaderMinWidth;
   max-width: @eeaLoaderMaxWidth;
-  align-items: end;
+  align-items: flex-end;
   justify-content: center;
   padding: @eeaLoaderPadding;
   animation: loaderPulse ease-out 2.5s infinite;
@@ -20,7 +20,7 @@
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0)
     ),
-    url('../assets/images/loaderImage.png');
+    url('../assets/images/loader-image.png');
   background-position: @eeaLoaderBackgroundPosition;
   background-repeat: no-repeat;
   border-radius: @eeaLoaderBorderRadius;
@@ -35,7 +35,7 @@
         rgba(255, 255, 255, 0),
         rgba(255, 255, 255, 0)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   5% {
@@ -43,7 +43,7 @@
         rgba(255, 255, 255, 0),
         rgba(255, 255, 255, 0)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   10% {
@@ -51,7 +51,7 @@
         rgba(255, 255, 255, 0),
         rgba(255, 255, 255, 0)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   15% {
@@ -59,7 +59,7 @@
         rgba(255, 255, 255, 0.1),
         rgba(255, 255, 255, 0.1)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   20% {
@@ -67,7 +67,7 @@
         rgba(255, 255, 255, 0.2),
         rgba(255, 255, 255, 0.2)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   25% {
@@ -75,7 +75,7 @@
         rgba(255, 255, 255, 0.3),
         rgba(255, 255, 255, 0.3)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   30% {
@@ -83,7 +83,7 @@
         rgba(255, 255, 255, 0.4),
         rgba(255, 255, 255, 0.4)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   35% {
@@ -91,7 +91,7 @@
         rgba(255, 255, 255, 0.5),
         rgba(255, 255, 255, 0.5)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   40% {
@@ -99,7 +99,7 @@
         rgba(255, 255, 255, 0.6),
         rgba(255, 255, 255, 0.6)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   45% {
@@ -107,7 +107,7 @@
         rgba(255, 255, 255, 0.7),
         rgba(255, 255, 255, 0.7)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   50% {
@@ -115,7 +115,7 @@
         rgba(255, 255, 255, 0.75),
         rgba(255, 255, 255, 0.8)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   55% {
@@ -123,7 +123,7 @@
         rgba(255, 255, 255, 0.7),
         rgba(255, 255, 255, 0.7)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   60% {
@@ -131,7 +131,7 @@
         rgba(255, 255, 255, 0.6),
         rgba(255, 255, 255, 0.6)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   65% {
@@ -139,7 +139,7 @@
         rgba(255, 255, 255, 0.5),
         rgba(255, 255, 255, 0.5)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   70% {
@@ -147,7 +147,7 @@
         rgba(255, 255, 255, 0.4),
         rgba(255, 255, 255, 0.4)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   75% {
@@ -155,7 +155,7 @@
         rgba(255, 255, 255, 0.3),
         rgba(255, 255, 255, 0.3)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   80% {
@@ -163,7 +163,7 @@
         rgba(255, 255, 255, 0.2),
         rgba(255, 255, 255, 0.2)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   85% {
@@ -171,7 +171,7 @@
         rgba(255, 255, 255, 0.1),
         rgba(255, 255, 255, 0.1)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   90% {
@@ -179,7 +179,7 @@
         rgba(255, 255, 255, 0),
         rgba(255, 255, 255, 0)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   95% {
@@ -187,7 +187,7 @@
         rgba(255, 255, 255, 0),
         rgba(255, 255, 255, 0)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 
   100% {
@@ -195,6 +195,6 @@
         rgba(255, 255, 255, 0),
         rgba(255, 255, 255, 0)
       ),
-      url('../assets/images/loaderImage.png');
+      url('../assets/images/loader-image.png');
   }
 }

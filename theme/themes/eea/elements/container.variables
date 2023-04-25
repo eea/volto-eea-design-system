@@ -2,6 +2,10 @@
             Container
 *******************************/
 
+@toolbarWidth: 80px;
+@sidebarWidth: 375px;
+@collapsedWidth: 20px;
+
 /*-------------------
        Element
 --------------------*/
@@ -65,3 +69,4 @@
 @textSize: @large;
 
 /* Section */
+@editContainerGutter: 3rem;

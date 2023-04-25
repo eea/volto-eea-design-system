@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'semantic-ui-react';
 import DownloadLabeledIcon from './DownloadLabeledIcon';
 import LabeledIconGroup from '../LabeledIconGroup/LabeledIconGroup';
 
@@ -42,12 +43,12 @@ const DefaultTemplate = (args) => (
     <DownloadLabeledIcon
       {...args}
       trigger={
-        <div>
+        <Button className="text">
           <DownloadLabeledIcon.Icon {...args}>
             {args.icon}
           </DownloadLabeledIcon.Icon>
           <DownloadLabeledIcon.Label>{args.label}</DownloadLabeledIcon.Label>
-        </div>
+        </Button>
       }
     >
       <DownloadLabeledIcon.Dropdown {...args}></DownloadLabeledIcon.Dropdown>

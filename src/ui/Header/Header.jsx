@@ -4,6 +4,7 @@
  */
 
 import React from 'react'; // , { Component }
+import { useHistory } from 'react-router-dom';
 import cx from 'classnames';
 import { Container, Image, Menu, Grid, Dropdown } from 'semantic-ui-react'; // Dropdown,
 
@@ -14,6 +15,8 @@ import burgerIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/asse
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
 import PropTypes from 'prop-types';
+
+import { isInternalURL } from '@plone/volto/helpers';
 
 Header.propTypes = {
   transparency: PropTypes.bool,
@@ -40,28 +43,65 @@ const TopDropdownMenu = ({
   children,
   className,
   icon,
+  hasLanguageDropdown = false,
   id,
+  tabletText,
   mobileText,
   text,
   viewportWidth,
 }) => {
+  const isTablet = viewportWidth < 991;
   const isMobile = viewportWidth < 767;
 
-  const Component = ({ mobileText }) => (
-    <Dropdown
-      id={id}
-      className={className}
-      text={mobileText || text}
-      icon={icon || 'chevron down'}
-      aria-label="dropdown"
-      closeOnChange={false}
-      closeOnBlur={false}
-    >
-      <Dropdown.Menu role="group">{children}</Dropdown.Menu>
-    </Dropdown>
-  );
+  const Component = ({ mobileText }) => {
+    return (
+      <>
+        {children.props['aria-label'] === 'language switcher' ? (
+          hasLanguageDropdown && (
+            <Dropdown
+              id={id}
+              className={className}
+              text={mobileText || text}
+              icon={icon || 'chevron down'}
+              aria-label="dropdown"
+              role="dropdown"
+              lazyLoad
+              closeOnChange={true}
+              closeOnBlur={false}
+              closeOnEscape={true}
+            >
+              <Dropdown.Menu role="option">{children}</Dropdown.Menu>
+            </Dropdown>
+          )
+        ) : (
+          <Dropdown
+            id={id}
+            className={className}
+            text={mobileText || text}
+            icon={icon || 'chevron down'}
+            role="dropdown"
+            aria-label="dropdown"
+            lazyLoad
+            closeOnChange={true}
+            closeOnBlur={false}
+            closeOnEscape={true}
+          >
+            <Dropdown.Menu role="option">{children}</Dropdown.Menu>
+          </Dropdown>
+        )}
+      </>
+    );
+  };
   return (
-    <>{isMobile ? <Component mobileText={mobileText} /> : <Component />}</>
+    <>
+      {isMobile ? (
+        <Component mobileText={mobileText} />
+      ) : isTablet ? (
+        <Component mobileText={tabletText} />
+      ) : (
+        <Component />
+      )}
+    </>
   );
 };
 
@@ -93,15 +133,21 @@ const Main = ({
   menuItems,
   renderMenuItem,
   renderGlobalMenuItem,
+  headerSearchBox,
   pathname,
   transparency,
   inverted,
+  hideSearch,
 }) => {
+  const history = useHistory();
   const [activeItem, setActiveItem] = React.useState(pathname);
   const [menuIsActive, setMenuIsActive] = React.useState(false);
   const [searchIsActive, setSearchIsActive] = React.useState(false);
   const [burger, setBurger] = React.useState('');
   const searchInputRef = React.useRef(null);
+  const [isClient, setIsClient] = React.useState();
+
+  React.useEffect(() => setIsClient(true), []);
 
   React.useEffect(() => {
     setMenuIsActive(false);
@@ -159,8 +205,42 @@ const Main = ({
   const menuOnClick = (e, item) => {
     if (searchIsActive) setSearchIsActive(false);
     setActiveItem(item['@id'] || item.url);
-    setMenuIsActive(true);
+    if (item.items.length) {
+      setMenuIsActive(true);
+    } else {
+      if (isInternalURL(item.url)) {
+        history.push(item.url);
+      } else if (isClient) {
+        window.location.replace(item.url);
+      }
+    }
   };
+
+  // Listens for escape keydown event
+  React.useEffect(() => {
+    const escKeyPressed = (e) => {
+      if (e.key === 'Escape') {
+        // menuOnClickOutside();
+        // restore active element if nothing was selected from the menu dropdown
+        if (pathname !== activeItem) {
+          setActiveItem(pathname);
+        }
+        // close mobile navigation when clicking outside if we have value for nav
+        if (burger) {
+          setBurger('');
+        }
+        // always close the  menu & search
+        setMenuIsActive(false);
+        setSearchIsActive(false);
+      }
+    };
+
+    document.addEventListener('keydown', escKeyPressed);
+
+    return () => {
+      document.removeEventListener('keydown', escKeyPressed);
+    };
+  }, [activeItem, burger, pathname]);
 
   // React.useEffect(() => {
   //   if (searchIsActive || burger === 'open' || menuIsActive) {
@@ -195,14 +275,16 @@ const Main = ({
           <Grid.Column mobile={4} tablet={4} computer={8}>
             <div className={inverted ? 'main-menu inverted' : 'main-menu'}>
               {menuItems && (
-                <div
+                <ul
                   className="ui text eea-main-menu tablet or lower hidden menu"
                   ref={desktopMenuRef}
+                  id={'navigation'}
                 >
                   {menuItems.map((item) => (
                     <Menu.Item
                       name={item['@id'] || item.url}
                       key={item['@id'] || item.url}
+                      as={'li'}
                       active={
                         activeItem.indexOf(item['@id']) !== -1 ||
                         activeItem.indexOf(item.url) !== -1
@@ -213,20 +295,24 @@ const Main = ({
                       })}
                     </Menu.Item>
                   ))}
-                </div>
+                </ul>
               )}
-              <div
-                className="search-action"
-                onClick={searchOnClick}
-                role="none"
-                ref={searchButtonRef}
-              >
-                {/* <Icon name={!state.activeSearch ? 'search' : 'close'} /> */}
-                <Image
-                  src={!searchIsActive ? `${searchIcon}` : `${closeIcon}`}
-                  alt="search button open/close"
-                />
-              </div>
+              {!hideSearch && (
+                <button
+                  className="search-action"
+                  onClick={searchOnClick}
+                  tabIndex="0"
+                  aria-pressed="false"
+                  aria-haspopup="true"
+                  ref={searchButtonRef}
+                >
+                  {/* <Icon name={!state.activeSearch ? 'search' : 'close'} /> */}
+                  <Image
+                    src={!searchIsActive ? `${searchIcon}` : `${closeIcon}`}
+                    alt="search button open/close"
+                  />
+                </button>
+              )}
               <Header.BurgerAction
                 className={`mobile ${burger}`}
                 onClick={mobileBurgerOnClick}
@@ -246,6 +332,7 @@ const Main = ({
           onClose={searchOnClick}
           searchInputRef={searchInputRef}
           triggerRefs={[searchButtonRef]}
+          headerSearchBox={headerSearchBox}
         />
       )}
       <HeaderMenuPopUp
@@ -262,14 +349,16 @@ const Main = ({
 };
 
 const BurgerAction = React.forwardRef((props, ref) => (
-  <div
+  <button
     ref={ref}
     className={`burger-action ${props.className}`}
-    role="none"
+    tabIndex="0"
+    aria-pressed="false"
+    aria-haspopup="true"
     onClick={props.onClick}
   >
     {props.children}
-  </div>
+  </button>
 ));
 
 Header.BurgerAction = BurgerAction;

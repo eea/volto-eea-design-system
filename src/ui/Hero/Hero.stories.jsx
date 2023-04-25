@@ -54,6 +54,46 @@ export default {
         type: { summary: 'boolean' },
       },
     },
+    has_copyright: {
+      name: 'Copyright',
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '' },
+        type: { summary: 'boolean' },
+      },
+    },
+    copyrightPosition: {
+      control: {
+        type: 'inline-radio',
+        options: ['left', 'right'],
+      },
+      type: { name: 'string' },
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '"left"' },
+      },
+    },
+    copyrightPrefix: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
+      },
+    },
+    copyrightIcon: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
+      },
+    },
+    copyright: {
+      table: {
+        category: 'Copyright',
+        defaultValue: { summary: '""' },
+        type: { summary: 'string' },
+      },
+    },
   },
 };
 
@@ -93,6 +133,12 @@ Default.args = {
   inverted: true,
   alignContent: 'center',
   backgroundVariant: 'grey',
+
+  has_copyright: true,
+  copyrightPosition: 'left',
+  copyrightPrefix: 'Image',
+  copyrightIcon: 'ri-copyright-line',
+  copyright: 'John Smith, Well with Nature /EEA',
 };
 Default.parameters = {
   controls: {
@@ -125,6 +171,12 @@ Playground.args = {
   inverted: true,
   alignContent: 'center',
   backgroundVariant: 'tertiary',
+
+  has_copyright: true,
+  copyrightPosition: 'left',
+  copyrightPrefix: 'Image',
+  copyrightIcon: 'ri-copyright-line',
+  copyright: 'John Smith, Well with Nature /EEA',
 };
 Playground.argTypes = {
   fullWidth: {
@@ -200,6 +252,38 @@ Playground.argTypes = {
     table: {
       defaultValue: { summary: 'tertiary' },
       type: { summary: 'string' },
+    },
+  },
+  copyright: {
+    table: {
+      category: 'Copyright',
+      defaultValue: { summary: '""' },
+      type: { summary: 'string' },
+    },
+  },
+  copyrightPrefix: {
+    table: {
+      category: 'Copyright',
+      defaultValue: { summary: '""' },
+      type: { summary: 'string' },
+    },
+  },
+  copyrightIcon: {
+    table: {
+      category: 'Copyright',
+      defaultValue: { summary: '""' },
+      type: { summary: 'string' },
+    },
+  },
+  copyrightPosition: {
+    control: {
+      type: 'inline-radio',
+      options: ['left', 'right'],
+    },
+    type: { name: 'string' },
+    table: {
+      category: 'Copyright',
+      defaultValue: { summary: '"left"' },
     },
   },
 };

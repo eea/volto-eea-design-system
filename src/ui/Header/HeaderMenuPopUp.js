@@ -1,74 +1,63 @@
 import React from 'react';
 import { Transition } from 'semantic-ui-react';
-import {
-  Container,
-  Divider,
-  Grid,
-  List,
-  Icon,
-  Accordion,
-} from 'semantic-ui-react';
+import { Container, Grid, List, Icon, Accordion } from 'semantic-ui-react';
 
 import { cloneDeep } from 'lodash';
 
-import { Link } from 'react-router-dom';
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
-import linkArrowsSVG from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Svg/arrow-double-right.svg';
+const createColumns = (item, renderMenuItem, item_id) => {
+  const itemList = item.items.map((item, index) => (
+    <React.Fragment key={index}>
+      {renderMenuItem(item, {
+        className: 'item',
+        key: index,
+        id: item_id,
+      })}
+    </React.Fragment>
+  ));
+  return itemList;
+};
 
-const createColumns = (item, length, renderMenuItem) => {
-  let subArrays = [];
-  let size = length;
-  for (let i = 0; i < item.items.length; i += size) {
-    subArrays.push(item.items.slice(i, i + size));
-  }
+const ItemGrid = ({ sectionTitle, item, columns, renderMenuItem }) => {
+  const item_id = item.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
+  return (
+    <>
+      {renderMenuItem(item, { className: 'sub-title', id: item_id })}
+      {item.items.length ? (
+        <List aria-labelledby={item_id} style={{ columns: `${columns}` }}>
+          {createColumns(item, renderMenuItem, item_id)}
+        </List>
+      ) : null}
+    </>
+  );
+};
 
-  const column = subArrays.map((subArray, index) => (
-    <Grid.Column key={index}>
-      <List>
-        {subArray.map((arrayItem, idx) => (
-          <React.Fragment key={idx}>
-            {renderMenuItem(arrayItem, {
-              className: 'item',
-              role: 'listitem',
-              key: idx,
-            })}
+const Item = ({ item, icon = false, iconName, renderMenuItem }) => {
+  const item_id = item.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
+  return (
+    <>
+      {renderMenuItem(item, {
+        className: 'sub-title',
+        id: item_id,
+      })}
+      <List className="menu-list" aria-labelledby={item_id}>
+        {item.items.map((listItem, index) => (
+          <React.Fragment key={index}>
+            {renderMenuItem(
+              listItem,
+              {
+                className: 'item',
+                key: index,
+              },
+              { children: icon && <Icon className={iconName} /> },
+            )}
           </React.Fragment>
         ))}
       </List>
-    </Grid.Column>
-  ));
-
-  return column;
+    </>
+  );
 };
-
-const ItemGrid = ({ item, columns, length, renderMenuItem }) => (
-  <>
-    {renderMenuItem(item, { className: 'sub-title' })}
-    <Grid columns={columns}>{createColumns(item, length, renderMenuItem)}</Grid>
-  </>
-);
-
-const Item = ({ item, icon = false, iconName, renderMenuItem }) => (
-  <>
-    {renderMenuItem(item, { className: 'sub-title' })}
-    <List className="menu-list">
-      {item.items.map((listItem, index) => (
-        <React.Fragment key={index}>
-          {renderMenuItem(
-            listItem,
-            {
-              className: 'item',
-              key: index,
-              role: 'listitem',
-            },
-            { children: icon && <Icon className={iconName} /> },
-          )}
-        </React.Fragment>
-      ))}
-    </List>
-  </>
-);
 
 const Topics = ({ menuItem, renderMenuItem }) => (
   <Grid>
@@ -79,11 +68,11 @@ const Topics = ({ menuItem, renderMenuItem }) => (
             <Item item={section} key={index} renderMenuItem={renderMenuItem} />
           </Grid.Column>
         ) : (
-          <Grid.Column width={9} key={index}>
+          <Grid.Column width={9} key={index} id="topics-right-column">
             <ItemGrid
+              sectionTitle={section.title}
               item={section}
               columns={4}
-              length={10}
               key={index}
               renderMenuItem={renderMenuItem}
             />
@@ -101,9 +90,9 @@ const Countries = ({ menuItem, renderMenuItem }) => (
         <React.Fragment key={index}>
           {section.title === 'EEA member countries' && (
             <ItemGrid
+              sectionTitle={section.title}
               item={section}
               columns={5}
-              length={7}
               renderMenuItem={renderMenuItem}
             />
           )}
@@ -117,9 +106,9 @@ const Countries = ({ menuItem, renderMenuItem }) => (
             {section.title !== 'EEA member countries' && (
               <Grid.Column>
                 <ItemGrid
+                  sectionTitle={section.title}
                   item={section}
                   columns={2}
-                  length={3}
                   renderMenuItem={renderMenuItem}
                 />
               </Grid.Column>
@@ -154,7 +143,7 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
             if (!item.items.length) {
               return (
                 <React.Fragment key={index}>
-                  {renderMenuItem(item, { className: 'item' })}
+                  {renderMenuItem(item, { className: 'item sub-title' })}
                 </React.Fragment>
               );
             }
@@ -164,7 +153,7 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
               defaultIndex = index;
             }
             x.title = (
-              <Accordion.Title key={`title=${index}`}>
+              <Accordion.Title key={`title=${index}`} as="button">
                 {item.title}
                 <Icon className="ri-arrow-down-s-line" size="small" />
               </Accordion.Title>
@@ -209,6 +198,9 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
     const atAGlance = element.items.find(
       (element) => element.title === 'At a glance',
     );
+    const inDepth = element.items.find(
+      (element) => element.url.indexOf('in-depth') !== -1,
+    );
     content = (
       <List>
         {atAGlance &&
@@ -221,14 +213,15 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
               })}
             </React.Fragment>
           ))}
-        <Link
-          role="listitem"
-          className="item"
-          to={element.url}
-          key={element['@id']}
-        >
-          A-Z Topics
-        </Link>
+        {inDepth && (
+          <React.Fragment key={inDepth.url}>
+            {renderMenuItem(inDepth, {
+              key: inDepth.url,
+              role: 'listitem',
+              className: 'item',
+            })}
+          </React.Fragment>
+        )}
       </List>
     );
   } else {
@@ -261,16 +254,31 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
       defaultIndex = index;
     }
     x.title = (
-      <Accordion.Title key={`title-${index}`} index={index}>
+      <Accordion.Title key={`title-${index}`} index={index} as="button">
         {element.title}
         <Icon className="ri-arrow-down-s-line" size="small" />
       </Accordion.Title>
     );
     let overview = cloneDeep(element);
-    overview.title = 'See all';
     x.content = (
       <Accordion.Content key={index}>
-        {renderMenuItem(overview, { className: 'item' })}
+        <div className="mega-menu-title">
+          {/* Inverted right labeled button as a category title - Mobile */}
+          {renderMenuItem(
+            overview,
+            { className: 'ui button inverted icon right labeled' },
+            {
+              iconPosition: 'right',
+              children: (
+                <>
+                  {/* Add word overview to titles */}
+                  <span> overview</span>
+                  <Icon className={'arrow right icon'} alt={'Title icon'} />
+                </>
+              ),
+            },
+          )}
+        </div>
         <FirstLevelContent
           element={element}
           renderMenuItem={renderMenuItem}
@@ -306,23 +314,29 @@ function HeaderMenuPopUp({
         <Container>
           {menuItem && (
             <div className="menu-content tablet hidden mobile hidden">
-              <h3 className="title">
-                {renderMenuItem(
-                  menuItem,
-                  { className: 'title-link' },
-                  {
-                    iconPosition: 'right',
-                    children: (
-                      <img
-                        src={linkArrowsSVG}
-                        className={'title-img'}
-                        alt={'Title icon'}
-                      />
-                    ),
-                  },
-                )}
-              </h3>
-              <Divider fitted />
+              {/* Inverted right labeled button as a category title,
+                  for topics the button goes inside the grid */}
+              {menuItem.title && (
+                <div className="mega-menu-title">
+                  {renderMenuItem(
+                    menuItem,
+                    { className: 'ui button inverted icon right labeled' },
+                    {
+                      iconPosition: 'right',
+                      children: (
+                        <>
+                          {/* Add word overview to titles */}
+                          <span> overview</span>
+                          <Icon
+                            className={'arrow right icon'}
+                            alt={'Title icon'}
+                          />
+                        </>
+                      ),
+                    },
+                  )}
+                </div>
+              )}
               {menuItem.title === 'Topics' ? (
                 <Topics menuItem={menuItem} renderMenuItem={renderMenuItem} />
               ) : menuItem.title === 'Countries' ? (

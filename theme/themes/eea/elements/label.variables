@@ -9,8 +9,8 @@
 @labelFontSize: @fontSize;
 
 @verticalAlign: baseline;
-@verticalMargin: 0em;
-@horizontalMargin: @relative2px;
+@verticalMargin: 0;
+@horizontalMargin: 0;
 @backgroundColor: @grey;
 @color: @white;
 @backgroundImage: none;
@@ -142,7 +142,7 @@
 @rightRibbonOffset:  calc(100% + @ribbonMargin + @ribbonTriangleSize);
 
 @ribbonImageTopDistance: 1rem;
-@ribbonImageMargin: -0.05rem; /* Rounding Offset on Triangle */
+@ribbonImageMargin: 0.05rem; /* Rounding Offset on Triangle */
 @ribbonImageOffset: calc(-@ribbonImageMargin - @ribbonTriangleSize);
 @rightRibbonImageOffset:  calc(100% + @ribbonImageMargin + @ribbonTriangleSize);
 
@@ -173,7 +173,7 @@
 
 @redTextColor: @white;
 @orangeTextColor: @white;
-@yellowTextColor: @white;
+@yellowTextColor: @textColor;
 @oliveTextColor: @white;
 @greenTextColor: @white;
 @tealTextColor: @white;
@@ -187,7 +187,7 @@
 
 @redHoverTextColor: @white;
 @orangeHoverTextColor: @white;
-@yellowHoverTextColor: @white;
+@yellowHoverTextColor: @textColor;
 @oliveHoverTextColor: @white;
 @greenHoverTextColor: @white;
 @tealHoverTextColor: @white;

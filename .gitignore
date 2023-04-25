@@ -1,7 +1,9 @@
 .vscode/
 .history
 .eslintrc.js
+.nyc_output
 project
+coverage
 logs
 *.log
 npm-debug.log*
@@ -10,6 +12,7 @@ npm-debug.log*
 yarn-error.log
 yarn.lock
 package-lock.json
+website/.yarn/*
 
 node_modules
 build

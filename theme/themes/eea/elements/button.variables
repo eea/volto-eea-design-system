@@ -38,6 +38,7 @@
 
 /* Text Button */
 @textButtonBackground: transparent;
+@textButtonPadding: @em-space-1 @em-space-3;
 @textButtonFocusedBoxShadow: 0 0 0 2px @primaryColorHover inset;
 
 /* Search Button */
@@ -48,7 +49,7 @@
 @searchButtonIconLeft: 1.25rem;
 @searchButtonIconOpacity: 0.625rem;
 
-@verticalMargin: 0em;
+@verticalMargin: 0.25em;
 @horizontalMargin: 0.25em;
 @backgroundColor: @silverGray;
 @backgroundImage: none;

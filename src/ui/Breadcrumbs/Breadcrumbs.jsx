@@ -17,32 +17,32 @@ const Breadcrumbs = ({
   size = 'tiny',
 }) => {
   return sections.length > 0 ? (
-    <Segment
-      role="navigation"
-      aria-label={'breadcrumbs'}
-      className="breadcrumbs"
-      attached
-      vertical
-    >
+    <Segment className="breadcrumbs" attached vertical>
       <Container>
-        <Breadcrumb size={size}>
-          <Link to={root || '/'} className="section" title={'Home'}>
-            <Image src={homeIcon} alt="home" />
-          </Link>
-          {sections.map((item, index, items) => [
-            <Breadcrumb.Divider key={`divider-${item.href}`}>
-              <Icon className={icon}></Icon>
-            </Breadcrumb.Divider>,
-            index < items.length - 1 ? (
-              <Link key={item.key} to={item.href} className="section">
-                {item.title}
+        <Breadcrumb size={size} as="nav" aria-label={'Breadcrumbs'}>
+          <ol aria-label="Breadcrumbs navigation">
+            <li>
+              <Link to={root || '/'} className="section" title={'Home'}>
+                <Image src={homeIcon} alt="" />
               </Link>
-            ) : (
-              <Breadcrumb.Section key={item.key} active>
-                {item.title}
-              </Breadcrumb.Section>
-            ),
-          ])}
+            </li>
+            {sections.map((item, index, items) => [
+              <li key={index}>
+                <Breadcrumb.Divider key={`divider-${item.href}`}>
+                  <Icon className={icon}></Icon>
+                </Breadcrumb.Divider>
+                {index < items.length - 1 ? (
+                  <Link key={item.key} to={item.href} className="section">
+                    {item.title}
+                  </Link>
+                ) : (
+                  <Breadcrumb.Section key={item.key} active>
+                    {item.title}
+                  </Breadcrumb.Section>
+                )}
+              </li>,
+            ])}
+          </ol>
         </Breadcrumb>
       </Container>
     </Segment>

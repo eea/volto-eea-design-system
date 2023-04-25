@@ -7,32 +7,36 @@
 .ui.card > .extra {
   font-size: @extraLinkFontSize;
   word-break: @extraLinkWordBreak;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: var(--text-align, @extraJustifyContent);
 }
 
 /* Cards must have same height */
 .ui.card {
   height: 100%;
+  text-align: var(--text-align, @cardTextAlign);
+  background-color: var(--card-background-color, @background);
+  color: var(--card-text-color, @cardColor);
 }
 
-.ui.cards > .card > .image,
-.ui.card > .image {
+.card .meta .date {
+  margin-left: @cardMetaDateMarginLeft;
+}
+
+.ui.cards > .card:not(.rounded) > .image,
+.ui.card:not(.rounded) > .image {
   overflow: @cardImageOverflow;
   height: @cardImageHeight;
 
   img {
-    width: @imageWidth;
-    height: @imageHeight;
+    width: var(--card-image-width, @imageWidth);
+    height: var(--card-image-width, @imageHeight);
     object-fit: @imageObjectFit;
     object-position: @imageObjectPosition;
   }
 }
 
-.ui.cards > .card > i.icon,
-.ui.cards > .card > a > i.icon,
-.ui.card > i.icon,
-.ui.card > a > i.icon {
-  color: @iconColor;
-}
 
 .ui.cards > .card > .content > *:not(:last-child),
 .ui.card > .content > *:not(:last-child) {
@@ -41,7 +45,8 @@
 
 .ui.card .meta {
   display: flex;
-  justify-content: space-between;
+  justify-content: var(--justify-content, @metaJustifyContent);
+  width: 100%;
 }
 
 
@@ -55,7 +60,7 @@
     margin-bottom: @rem-space-4;
 }
 
-.ui.card .extra.content a {
+.ui.card .extra.content a:not(.ui) {
   font-weight: @contentLinkFontWeight;
 
   &:hover {
@@ -78,190 +83,87 @@
 /*******************************
             Primary
 *******************************/
-
-.ui.card.primary:not(.inverted),
-.ui.card.primary:not(.inverted) .image {
-  background: @primaryBackground;
+.card.has--theme--primary,
+.card.primary {
+  --card-background-color: @primaryCardBackground;
+  --card-text-color: @primaryCardColor;
 }
-
-.ui.card.primary > .content > .header {
-  color: @primaryHeaderColor;
-}
-
-.ui.card.primary > i.icon,
-.ui.card.primary > a > i.icon,
-.ui.card.primary > .content a,
-.ui.card.primary > .content a:hover,
-.ui.card.primary > .content > .description {
-  color: @primaryDescriptionColor;
-}
-
-.ui.card.primary > .extra.content a:not(.ui) {
-  color: @primaryExtraLinkColor;
-
-  &:hover {
-    color: @primaryExtraLinkHoverColor;
-  }
-}
-
-.ui.card.primary > .content > .meta,
-.ui.card.primary > .content > .meta a {
-  color: @primaryMetaColor;
-}
-
 /* Inverted */
-.ui.card.primary.inverted > i.icon,
-.ui.card.primary.inverted > .content * {
-  color: @invertedPrimaryContentColor;
-}
-
-.ui.card.primary.inverted > a > i.icon,
-.ui.card.primary.inverted > .content a,
-.ui.card.primary.inverted > .extra.content a:not(.ui) {
-  color: @invertedPrimaryContentColor;
-
-  &:hover {
-    color: @invertedPrimaryColorHover;
-  }
+.card.has--theme--primary.has--inverted--true,
+.card.primary.inverted {
+  --card-background-color: @invertedPrimaryCardBackgroundColor;
+  --card-text-color: @invertedPrimaryCardColor;
 }
 
 /*******************************
             Secondary
 *******************************/
-
-.ui.card.secondary:not(.inverted),
-.ui.card.secondary:not(.inverted) .image {
-  background: @secondaryBackground;
+.card.has--theme--secondary,
+.card.secondary {
+  --card-background-color:  @secondaryCardBackground;
+  --card-text-color: @secondaryCardColor;
 }
-
-.ui.card.secondary > i.icon,
-.ui.card.secondary > a > i.icon,
-.ui.card.secondary > .content a,
-.ui.card.secondary > .content a:hover,
-.ui.card.secondary > .content > .header {
-  color: @secondaryHeaderColor;
-}
-
-.ui.card.secondary > .content > .description {
-  color: @secondaryDescriptionColor;
-}
-
-.ui.card.secondary > .extra.content a:not(.ui) {
-  color: @secondaryExtraLinkColor;
-
-  &:hover {
-    color: @secondaryExtraLinkHoverColor;
-  }
-}
-
-.ui.card.secondary > .content > .meta,
-.ui.card.secondary > .content > .meta a {
-  color: @secondaryMetaColor;
-}
-
 /* Inverted */
-.ui.card.secondary.inverted > i.icon,
-.ui.card.secondary.inverted > .content * {
-  color: @invertedSecondaryContentColor;
-}
-
-.ui.card.secondary.inverted > a > i.icon,
-.ui.card.secondary.inverted > .content a,
-.ui.card.secondary.inverted > .extra.content a:not(.ui) {
-  color: @invertedSecondaryContentColor;
-
-  &:hover {
-    color: @invertedSecondaryColorHover;
-  }
+.card.has--theme--secondary.has--inverted--true,
+.card.secondary.inverted {
+  background-color: @invertedSecondaryCardBackgroundColor;
+  color: @invertedSecondaryCardColor;
 }
 
 /*******************************
             Tertiary
 *******************************/
-
-.ui.card.tertiary:not(.inverted),
-.ui.card.tertiary:not(.inverted) .image {
-  background: @tertiaryBackground;
+.card.has--theme--tertiary,
+.card.tertiary {
+  --card-background-color:  @tertiaryCardBackground;
+  --card-text-color: @tertiaryCardColor;
 }
-
-.ui.card.tertiary > i.icon,
-.ui.card.tertiary > a > i.icon,
-.ui.card.tertiary > .content a,
-.ui.card.tertiary > .content a:hover,
-.ui.card.tertiary > .content > .header {
-  color: @tertiaryHeaderColor;
-}
-
-.ui.card.tertiary > .content > .description {
-  color: @tertiaryDescriptionColor;
-}
-
-.ui.card.tertiary > .extra.content a:not(.ui) {
-  color: @tertiaryExtraLinkColor;
-
-  &:hover {
-    color: @tertiaryExtraLinkHoverColor;
-  }
-}
-
-.ui.card.tertiary > .content > .meta,
-.ui.card.tertiary > .content > .meta a {
-  color: @tertiaryMetaColor;
-}
-
 /* Inverted */
-.ui.card.tertiary.inverted > i.icon,
-.ui.card.tertiary.inverted > .content * {
-  color: @invertedTertiaryContentColor;
-}
-
-.ui.card.tertiary.inverted > a > i.icon,
-.ui.card.tertiary.inverted > .content a,
-.ui.card.tertiary.inverted > .extra.content a:not(.ui) {
-  color: @invertedTertiaryContentColor;
-
-  &:hover {
-    color: @invertedTertiaryColorHover;
-  }
+.card.has--theme--tertiary.has--inverted--true,
+.card.tertiary.inverted {
+  --card-background-color:  @invertedTertiaryCardBackgroundColor;
+  --card-text-color:  @invertedTertiaryCardColor;
 }
 
 /*******************************
           Rounded Card
 *******************************/
-
-.ui.cards > .ui.card.rounded > .image,
 .ui.card.rounded > .image {
   height: auto;
 }
 
+.card.rounded {
+  --card-image-width: @roundedImageWidth;
+  --card-image-height: @roundedImageHeight;
+}
 .ui.card.rounded {
   padding-top: @iconCardPaddingTop;
   border: none;
 
   .image {
     display: flex;
-    justify-content: center;
+    justify-content: @roundedImageJustifyContent;
 
-    img {
-      width: @roundedImageWidth;
-      height: @roundedImageHeight;
-      border-radius: @roundedImageBorderRadius;
-    }
+  }
+
+  img {
+    width: @roundedImageWidth;
+    height: @roundedImageHeight;
+    border-radius: @roundedImageBorderRadius !important;
   }
 
   .content {
-    justify-content: center;
     border-top: none;
 
     .header {
       margin-bottom: @roundedContentTitleMarginBottom;
       font-size: @roundedContentTitleFontSize;
       font-weight: @roundedContentTitleFontWeight;
-      text-align: center;
+      //text-align: @roundedContentTitleTextAlign;
     }
 
     .description {
-      text-align: center;
+      //text-align: @roundedContentTitleTextAlign;
       font-size: @roundedMetadataFontSize;
       font-weight: @roundedMetadataFontWeight;
     }
@@ -288,7 +190,7 @@
     background-color: @publicationCardDescriptionColor;
 
     .meta,
-    .meta a {
+    .meta a:not(.ui) {
       color: @publicationCardtextColor;
       font-size: @cardMetaFontSize;
       font-weight: @cardMetaTagFontWeight;
@@ -349,6 +251,46 @@
 }
 
 /*******************************
+      Image with title
+*******************************/
+// Adding the default image css for image inside image-with-title
+.ui.cards > .card > .image {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  padding: 0;
+  background: transparent;
+}
+
+
+.card .gradient {
+  display: flex;
+  align-items: end;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  padding: @imageTitlePadding;
+  .image-overlay-gradient();
+}
+
+.gradient .header {
+  font-size: var(--image-header-font-size, @imageTitleMobileFontSize);
+  color: @imageTitleColor;
+  font-weight: @imageTitleFontWeight;
+  line-height: @imageTitleLineHeight;
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  .card .gradient {
+    padding-block: @imageTitlePaddingBlock;
+  }
+  .gradient .header {
+    --image-header-font-size: @imageTitleFontSize;
+  }
+}
+
+/*******************************
         Carousel
 *******************************/
 
@@ -361,7 +303,6 @@
 
   .slick-track {
     display: flex;
-    gap: @slickTrackGap;
     margin: @slickTrackMargin;
   }
 
@@ -370,6 +311,7 @@
     height: auto;
     flex: 1;
     flex-direction: column;
+    margin: @slickSlideMargin;
 
     > div {
       height: 100%;
@@ -380,6 +322,7 @@
 /* Carousel arrows */
 .cards-carousel .ui.button.icon.slider-arrow {
   padding: @carouselButtonPadding;
+  margin: @carouselButtonMargin;
 
   .active, &:focus, &:hover {
     background: transparent;
@@ -408,6 +351,7 @@
   cursor: pointer;
   outline: none;
   transform: translate(0, -50%);
+  z-index: 1; // make arrows clickable even on events page with right column
 }
 
 .cards-carousel .prev-arrow {
@@ -418,9 +362,15 @@
 .cards-carousel .next-arrow {
   right: @carouselButtonDistance;
   left: auto;
-} 
+}
 
 /* Custom carousel pagination bullets */
+// avoid dots going over content that follows sliders
+.slick-dots {
+  position: relative;
+  bottom: 0;
+}
+
 .cards-carousel .slick-dots li button:before {
   background-color: @carouselDotsBackgroundColor;
   color: transparent;
@@ -433,7 +383,7 @@
 
 .cards-carousel .slick-dots li.slick-active button:before {
   background-color: @carouselDotsActiveBackgroundColor;
-  color: transparent;  
+  color: transparent;
 }
 
 .slick-dots li button:focus-visible {
@@ -441,11 +391,13 @@
   outline-style: auto;
 }
 
-@media only screen and (min-width: @computerBreakpoint) {
-  .cards-carousel .slick-dots li button:before {
-    width: inherit;
-    height: inherit;
+@media only screen and (max-width: @tabletBreakpoint) {
+  .cards-carousel .slick-dots li,
+  .cards-carousel .slick-dots li button {
+    width: @mobileCarouselDotsButtonWidth;
+    height: @mobileCarouselDotsButtonHeight;
   }
+
 }
 
 /*******************************
@@ -464,3 +416,42 @@
     margin: auto;
   }
 }
+
+.ui.cards > .card > i.icon,
+.ui.cards > .card > a:not(.ui) > i.icon,
+.ui.card > i.icon,
+.ui.card > a:not(.ui) > i.icon {
+  color: @iconColor;
+}
+
+/*******************************
+          Teaser Card
+*******************************/
+// Teaser cards grid on tablet update padding and min-width
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+  .ui.grid > .column.grid-block-teaser,
+  .ui.grid > .row > .column.grid-block-teaser {
+    padding-left: @tabletTeaserCardPaddingInline;
+    padding-right: @tabletTeaserCardPaddingInline;
+  }
+  .grid-block-teaser .ui.card {
+    min-width: @tabletTeaserCardMinWidth;
+  }
+}
+
+// Added from listing-cards.less
+.grid-block-teaser .ui.card.u-card .header {
+  display: -webkit-box !important;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--title-max-lines, 3);
+}
+
+// Spacing adjustment to display outline with overflow hidden
+.ui.card .header {
+  padding: @headerPadding;
+}
+.ui.card .header > a {
+  display: @headerLinkDisplay;
+}
+

@@ -18,10 +18,19 @@ module.exports = {
   customFields: {
     storyBookUrl: 'https://eea.github.io/volto-kitkat-frontend/',
   },
+  staticDirectories: ['static'],
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
+    },
+    announcementBar: {
+      id: 'alpha-release',
+      content:
+        '🚧 The EEA Design System is currently <strong>Work-In-Progress</strong>. See <a target="_blank" rel="noopener noreferrer" href="/volto-eea-design-system/docs/whatsnew">What\'s new</a> for more information. 🚧',
+      backgroundColor: '#fafbfc',
+      textColor: '#091E42',
+      isCloseable: false,
     },
     navbar: {
       title: 'EEA Design System',
@@ -81,16 +90,13 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} EEA. Built with Docusaurus.`,
     },
   },
-  stylesheets: [
-    'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic,700italic&display=swap',
-  ],
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          exclude: ['**/md_components/**'],
+          exclude: ['**/md_components/**','**/_partials/**' ],
           editUrl: ({ versionDocsDirPath, docPath }) => {
             let thePath = `${versionDocsDirPath}/${docPath}`;
             let newPath = '';

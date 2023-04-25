@@ -5,6 +5,7 @@
 @checkboxSize: 20px;
 @checkboxColor: @textColor;
 @checkboxLineHeight: @checkboxSize;
+@circularRadius: 500rem;
 
 
 /* Label */
@@ -161,7 +162,7 @@
   left @sliderTransitionDuration @defaultEasing
 ;
 
-@toggleLaneBackground: @transparentBlack;
+@toggleLaneBackground: @grey-2;
 @toggleLaneHeight: @toggleHandleSize;
 @toggleLaneBoxShadow: none;
 @toggleLaneVerticalOffset: 0rem;
@@ -173,8 +174,8 @@
 @toggleLabelOffset: 0.15em;
 
 
-@toggleFocusColor: @veryStrongTransparentBlack;
-@toggleHoverColor: @toggleFocusColor;
+@toggleFocusColor: @grey-3;
+@toggleHoverColor: @grey-3;
 
 @toggleOffLabelColor: @checkboxColor;
 @toggleOffHandleBoxShadow: none;

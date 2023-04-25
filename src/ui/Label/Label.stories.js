@@ -64,10 +64,13 @@ export const Ribbon = (args) => (
     <Segment raised>
       <Label
         as="a"
+        href={args.link}
         ribbon
         className={args.importance ? args.importance : ''}
         {...args}
       ></Label>
+      <br />
+      <br />
       <Image
         src="https://react.semantic-ui.com/images/wireframe/paragraph.png"
         alt="paragraph"
@@ -91,7 +94,6 @@ export const Corner = (args) => (
     <Image
       src="https://react.semantic-ui.com/images/wireframe/image.png"
       label={{
-        as: 'a',
         corner: 'right',
         icon: 'save',
         className: `${args.importance ? args.importance : ''}`,

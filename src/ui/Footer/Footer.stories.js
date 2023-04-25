@@ -11,7 +11,7 @@ import Copernicus from '@eeacms/volto-eea-design-system/../theme/themes/eea/asse
 import Industry from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/industry.svg';
 import Marine from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/marine.svg';
 import Eionet from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eionet.svg';
-import EEA from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-white.svg';
+import EEA from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
 
 export default {
   title: 'Layout/Footer',
@@ -30,13 +30,17 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  header: 'Thematic information platforms',
+  header: 'Environmental information systems',
+  description: '',
   actions: [
     { link: '/#', title: 'Privacy' },
     { link: '/#', title: 'Sitemap' },
     { link: '/#', title: 'CMS Login' },
   ],
-  copyright: [{ link: '/#', site: 'EEA' }],
+  copyright: [
+    { link: 'https://status.eea.europa.eu/', title: 'System status' },
+    { link: '/#', title: '© Copyright 2023 EEA' },
+  ],
   sites: [
     { link: '/#', src: Marine, alt: 'WISE marine' },
     { link: '/#', src: Freshwater, alt: 'WISE freshwater' },

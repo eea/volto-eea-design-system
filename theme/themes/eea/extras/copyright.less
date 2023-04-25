@@ -1,0 +1,50 @@
+@type: 'extra';
+@element: 'copyright';
+
+@import (multiple) '../../theme.config';
+
+/*-------------------
+      Copyright
+--------------------*/
+
+.eea.copyright {
+    width: @copyrightWidth;
+
+    .wrapper {
+        display: flex;
+        color: @copyrightContentColor;
+        font-size: @copyrightContentFontSize;
+        align-items: @copyrightAlignItems;
+        line-height: @copyrightLineHeight;
+        gap: @copyrightContentPaddingRight;
+    }
+    &.left .wrapper {
+      justify-content: flex-start;
+    }
+  &.right .wrapper {
+    justify-content: flex-end;
+  }
+  .icon {
+    margin: 0; // override default
+  }
+}
+
+
+.copyright-wrapper {
+  position: absolute;
+  z-index: @z-index-8;
+  bottom: @copyrightWrapperBottom;
+  width: 100%;
+  padding-right: @copyrightWrapperPaddingLeft;
+  padding-left: @copyrightWrapperPaddingRight;
+}
+
+.copyright-hover-container {
+  position: absolute;
+  z-index: @z-index-8;
+  bottom: 0;
+  padding: @copyrightHoverContainerPadding;
+  background-color: @copyrightHoverContainerBackgroundColor;
+  border-radius: @copyrightHoverContainerBorderRadius;
+  color: @copyrightHoverContainerColor;
+}

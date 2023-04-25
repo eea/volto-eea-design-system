@@ -46,6 +46,10 @@
   height: 100%;
 }
 
+.hero-block-body .eea.copyright {
+  position: absolute;
+  bottom: @mobileCopyrightBottom;
+}
 
 .hero-block-text .quoted > * {
   display: inline-block;
@@ -91,4 +95,9 @@
   .hero-block-body {
     gap: @desktopHeroBlockBodyGap;
   }
+  .hero-block-body .eea.copyright {
+    bottom: @desktopCopyrightBottom;
+  }
 }
+
+.loadUIOverrides();

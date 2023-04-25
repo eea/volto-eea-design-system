@@ -13,6 +13,8 @@
 @tabletNavHeight      : 2.25rem;
 @computerNavWidth     : 3.125rem;
 @computerNavHeight    : 3.125rem;
+@navLineHeight        : @font-lineheight-3;
+@navPadding           : 0;
 
 /* Desktop Icon */
 @inpageNavigationIconWidth : 100%;

@@ -15,28 +15,35 @@
   min-width: @languageLabeledIconMinWidth;
   text-align: @languageLabeledIconTextAlign;
 
-  .icon.wrapper {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: @languageLabeledIconIconWrapperFontSize;
-    font-weight: @languageLabeledIconIconWrapperFontWeight;
-    color: @languageLabeledIconIconWrapperColor;
-
-    i {
-      color: @languageLabeledIconIconWrapperIconColor;
-      margin-right: @languageLabeledIconIconWrapperIconMarginRight;
-      font-size: @languageLabeledIconIconWrapperIconFontSize;
-    }
+  button {
+    text-decoration: none;
   }
+}
 
-  .label {
-    color: @languageLabeledIconLabelColor;
-    font-size: @languageLabeledIconLabelFontSize;
-    font-weight: @languageLabeledIconLabelFontWeight;
-    cursor: pointer;
+.eea.language.labeled.icon .icon.wrapper {
+  height: @languageLabeledIconIconWrapperMinHeight;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: @languageLabeledIconIconWrapperFontSize;
+  font-weight: @languageLabeledIconIconWrapperFontWeight;
+  color: @languageLabeledIconIconWrapperColor;
+  padding-bottom: @languageLabeledIconIconWrapperPaddingBottom;
+
+  i {
+    opacity: 1;
+    color: @languageLabeledIconIconWrapperIconColor;
+    margin-right: @languageLabeledIconIconWrapperIconMarginRight;
+    font-size: @languageLabeledIconIconWrapperIconFontSize;
   }
+}
+
+.eea.language.labeled.icon .label {
+  color: @languageLabeledIconLabelColor;
+  font-size: @languageLabeledIconLabelFontSize;
+  font-weight: @languageLabeledIconLabelFontWeight;
+  cursor: pointer;
 }
 
 .ui.popup.language-popup {
@@ -67,7 +74,8 @@
           padding: @languageLabeledIconLabelUlLiPadding;
         }
 
-        li:hover {
+        li:hover,
+        li div:focus-visible {
           color: @languageLabeledIconLabelUlLiColor;
           background-color: @languageLabeledIconLabelUlLiBackgroundColor;
         }
@@ -79,3 +87,5 @@
     }
   }
 }
+
+.loadUIOverrides();

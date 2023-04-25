@@ -14,28 +14,35 @@
   min-width: @downloadLabeledIconMinWidth;
   text-align: @downloadLabeledIconTextAlign;
 
-  .label {
-    width: @downloadLabeledIconLabelWidth;
-    font-size: @downloadLabeledIconLabelFontSize;
-    color: @downloadLabeledIconLabelColor;
-    cursor: pointer;
+  button {
+    text-decoration: none;
   }
-  .icon.wrapper {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    width: @downloadLabeledIconWrapperWidth;
-    padding: @downloadLabeledIconWrapperPadding;
+}
 
-    .icon {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      font-size: @downloadLabeledIconIconFontSize;
-      color: @downloadLabeledIconColor;
-      width: @downloadLabeledIconIconWidth;
-      height: @downloadLabeledIconWrapperIconHeight;
-    }
+.eea.download.labeled.icon .label {
+  width: @downloadLabeledIconLabelWidth;
+  font-size: @downloadLabeledIconLabelFontSize;
+  font-weight: @downloadLabeledIconLabelFontWeight;
+  color: @downloadLabeledIconLabelColor;
+  cursor: pointer;
+}
+
+.eea.download.labeled.icon .icon.wrapper {
+  height: @downloadLabeledIconWrapperMinHeight;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: @downloadLabeledIconWrapperWidth;
+  padding-bottom: @downloadLabeledIconWrapperPaddingBottom;
+
+  .icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: @downloadLabeledIconIconFontSize;
+    color: @downloadLabeledIconColor;
+    width: @downloadLabeledIconIconWidth;
+    height: @downloadLabeledIconWrapperIconHeight;
   }
 }
 
@@ -72,10 +79,12 @@
             line-height: @downloadLabeledIconLinkIconLineHeight;
           }
         }
-        a:hover {
+        a:hover,
+        a:focus-visible {
           color: @downloadLabeledIconALinkColorHover;
         }
-        li:hover {
+        li:hover,
+        li a:focus-visible {
           background-color: @downloadLabeledIconLiHover;
         }
       }
@@ -85,3 +94,5 @@
     }
   }
 }
+
+.loadUIOverrides();

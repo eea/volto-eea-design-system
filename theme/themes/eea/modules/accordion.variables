@@ -10,13 +10,13 @@
 @titlePadding: 1rem 1.563rem;
 @titlePadding: @rectangleMedium;
 @titleFontSize: 1.125rem;
-@titleColor: @textColor;
+@titleColor: @textColorCSSVar;
 @titleBorderBottom: @1px solid @silverGray;
-@titleColorHover: @grey-5;
+@titleColorHover:var(--text-color-hover, @grey-5);
 @titleJustifyContent: space-between;
 
 /* Icon */
-@iconColor: @oldSilver;
+@iconColor: var(--text-color, @oldSilver);
 @iconColorActive: @white;
 @iconOpacity: 1;
 @iconFontSize: 3rem;
@@ -32,7 +32,7 @@
 ;
 @iconVerticalAlign: baseline;
 @iconTransform: none;
-@iconColorHover: @grey-5;
+@iconColorHover: @titleColorHover;
 @iconInactive: "\ea4e"; // Icon of closed accordion
 @iconActive: "\EA78"; // Icon of open accordion
 @iconOrder: 1; // Icon after text of the title
@@ -45,7 +45,8 @@
 @contentMargin: 0;
 @contentPaddingBottom: 1.563rem;
 @contentPadding: @squareMedium;
-@contentBackground: #F9F9F9;
+@contentBackground: @grey-1;
+@contentColor: @tertiaryColor;
 
 /*-------------------
        Coupling
@@ -62,7 +63,7 @@
 --------------------*/
 
 @activeIconTransform: none;
-@activeTitleBackground: @darkWhite;
+@activeTitleBackground: var(--bg-color, @white);
 @activeTitleColor: @grey-5;
 @activeTitleBorderBottom: 0;
 
@@ -72,7 +73,7 @@
 
 /* Styled */
 @styledWidth: 600px;
-@styledBackground: @white;
+@styledBackground: @activeTitleBackground;
 @styledBorderRadius: 0;
 @styledBoxShadow: none;
 

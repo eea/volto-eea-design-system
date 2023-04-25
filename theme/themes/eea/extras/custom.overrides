@@ -1,10 +1,6 @@
 /*-------------------
       Homepage
 --------------------*/
-// hide stagingBanner on homepage
-.homepage .stagingBanner {
-  display: none !important;
-}
 
 // hide breadcrumbs on homepage
 .homepage .breadcrumbs {
@@ -15,10 +11,14 @@
   font-size: @h1;
 }
 
-// remove margin and padding from homepage content-area since we have the bg image over the header
+// remove padding from homepage content-area since we have the bg image over the header
 .homepage .content-area {
-    margin-top: 0 !important;
     padding-top: 0 !important;
+}
+
+// show staging banner on homepage
+.homepage .stagingBanner {
+    display: block !important;
 }
 
 // use homepage text color for color of cards that are within a content-box that has a variant class
@@ -62,6 +62,12 @@
   z-index: @z-index-5;
 }
 
+// remove extra margin from cards on edit, when they are inside a grid such as teaser
+// the outline is cut before the theme background with margin 1em set
+.block .ui.card {
+  margin: 0;
+}
+
 
 // inherit font weight of styled headers so that if we set 300 weight it's visible also on
 // the edit page
@@ -72,6 +78,47 @@
 #page-edit .slate .styled h5,
 #page-edit .slate .styled h6 {
   font-weight: inherit;
+}
+
+// remove margin from first hero block used on the homepage
+#page-document > .styled-hero {
+  margin-top: 0;
+}
+
+// customize error class from volto-slate to our color of red
+.error {
+    color: @red-5;
+}
+
+.power-user-menu,
+.blocks-chooser {
+  --text-color: @textColor;
+}
+.blocks-chooser {
+  .searchbox {
+    height: auto !important;
+  }
+  .input {
+    width: auto !important;
+  }
+  .clear-search-button {
+    padding: 0.5rem;
+  }
+  .icon {
+    margin-right: 0 !important;
+  }
+}
+
+
+// ensure background of content-box goes above the content area
+// draft image for non published pages
+.view-viewview:not(.wf-state-published) .content-area {
+    z-index: 0;
+}
+
+// remove margin from block headings overriding blocks.less rule
+.block h1:last-child, .block h2:last-child, .block h3:last-child, .block h4:last-child, .block h5:last-child {
+    margin: 0;
 }
 
 // tweak padding of workflow progress titles now that

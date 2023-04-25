@@ -6,6 +6,63 @@
  */
 
 /* You can override the default Infima variables here. */
+
+.icon-list .icon-type-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  border-bottom: 1px solid #d6e0ea;
+  margin-bottom: 32px;
+}
+
+.icon-list .icon-type-item .icon-items {
+  width: 100%;
+  padding-bottom: 24px;
+}
+
+.icon-list .icon-type-item .icon-items .icon-item-group {
+  position: relative;
+  display: inline-block;
+  width: 10%;
+}
+
+.icon-list .icon-type-item .icon-items .icon-item {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  text-align: center;
+  transition: all 0.2s cubic-bezier(0.4, 0.6, 0.5, 1.32);
+  vertical-align: middle;
+}
+
+.icon-list .icon-type-item .icon-items .icon-item .icon-info i {
+  display: block;
+  margin-top: 20px;
+  color: #3d5265;
+  font-size: 24px;
+}
+
+.icon-list .icon-type-item .icon-items .icon-item .icon-info p {
+  color: #4c677f;
+  font-size: 14px;
+  line-height: 0.95;
+}
+
+.icon-list .icon-type-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+  .icon-list .icon-type-item .icon-items .icon-item-group {
+     width: 20%;
+  }
+}
+  
 :root {
   --eea-color-tertiary: #3d5265;
   --ifm-color-primary: #027572;
@@ -29,6 +86,63 @@
   --ifm-h4-font-size: 1.25rem;
   --ifm-h5-font-size: 1.125rem;
   --ifm-h6-font-size: 1rem;
+  --brown-0: #FFF6EC;
+  --brown-1: #FFEDD8;
+  --brown-2: #E7BC91;
+  --brown-3: #BC8A5F;
+  --brown-4: #8B5E34;
+  --brown-5: #603808;
+  --brown-6: #3D2201;
+  --purple-0: #EFEBF2;
+  --purple-1: #DFD6E7;
+  --purple-2: #BEADCE;
+  --purple-3: #9E84B6;
+  --purple-4: #753AAD;
+  --purple-5: #5C3285;
+  --purple-6: #3C096C;
+  --red-0: #FBEEF8;
+  --red-1: #F6DDF0;
+  --red-2: #E7B2C0;
+  --red-3: #D78890;
+  --red-4: #C65B59;
+  --red-5: #B83230;
+  --red-6: #5C1918;
+  --green-0: #C8FFF8;
+  --green-1: #A0E5DC;
+  --green-2: #78CAC0;
+  --green-3: #50B0A4;
+  --green-4: #289588;
+  --green-5: #007B6C;
+  --green-6: #005248;
+  --yellow-0: #FEF6CD;
+  --yellow-1: #FBEC9B;
+  --yellow-2: #FAD936;
+  --yellow-3: #FAC50D;
+  --yellow-4: #FDAF20;
+  --yellow-5: #FF9933;
+  --yellow-6: #C35527;
+  --blue-0: #A0D7FF;
+  --blue-1: #47B3FF;
+  --blue-2: #0A99FF;
+  --blue-3: #0083E0;
+  --blue-4: #006BB8;
+  --blue-5: #004B7F;
+  --blue-6: #003052;
+  --blue-grey-0: #DAE8F4;
+  --blue-grey-1: #ACCAE5;
+  --blue-grey-2: #87A7C3;
+  --blue-grey-3: #6989A5;
+  --blue-grey-4: #4C677F;
+  --blue-grey-5: #3D5265;
+  --blue-grey-6: #2E3E4C;
+  --grey-0: #FFFFFF;
+  --grey-1: #F9F9F9;
+  --grey-2: #E6E7E8;
+  --grey-3: #BCBEC0;
+  --grey-4: #747678;
+  --grey-5: #323232;
+  --grey-6: #000000;
+
 }
 
 .markdown h1:first-child {
@@ -97,4 +211,81 @@ iframe {
 
 .frameWrapper {
   width: 100%;
+}
+
+.thematicLogos {
+  height: 130px
+}
+
+.thematicLogosSmall {
+  height: 120px
+}
+
+.rowLogos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.thematicLogoWrapper {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.thematicLogoWrapperColour {
+  padding: 1rem;
+  width: 400px;
+}
+
+.thematicLogoWrapper.dark {
+  background-color: black;
+}
+
+
+.large-color-box-td{
+  width: 200px;
+  height: 150px;
+  text-align: center;
+}
+
+.large-color-box{
+  width: 100%;
+  height: 150px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.small-color-box-td{
+  width: 120px;
+  height: 80px;
+  text-align: center;
+}
+
+.small-color-box{
+  width: 100%;
+  text-align: center;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.small-color-box-td-70{
+  width: 100px;
+  height: 70px;
+  text-align: center;
+}
+
+.small-color-box-70{
+  width: 100%;
+  text-align: center;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

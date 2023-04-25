@@ -5,7 +5,7 @@
 /* Tags */
 @tagPadding            : @mediumGap 0;
 @tagHeight             : 1.25rem;
-@tagMargin             : 0 @mediumGap 0 0;
+@tagMargin             : 0 0 0 0;
 
 /* Tag Icon */
 @tagHashtagFontSize    : 0.75rem;
@@ -13,7 +13,7 @@
 
 /* Tag text */
 @tagNameFontSize       : 1rem;
-@tagNameFontColor      : @japaneseIndigo;
+@tagNameFontColor      : @textColorCSSVar;
 @tagNameFontColorWithBackground : @white;
 @tagNameFontWeight     : 500;
 @tagNameLineHeight     : 1.25rem;

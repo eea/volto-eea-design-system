@@ -3,8 +3,8 @@ import Header from './Header';
 import { Dropdown, Image, Segment, Container } from 'semantic-ui-react';
 import { Logo } from '@eeacms/volto-eea-design-system/ui';
 
-import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea-logo.svg';
-import InvertedLogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/EEA-Logo-White-2.svg';
+import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo.svg';
+import InvertedLogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
 import globeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/global-line.svg';
 import eeaFlag from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/eea.png';
 import cx from 'classnames';
@@ -57,9 +57,11 @@ const logoProps = {
 };
 
 const links = [
+  { title: 'EEA Main Portal', href: '/#' },
   { title: 'Biodiversity Information System for Europe', href: '/#' },
   { title: 'Climate Adaptation Platform', href: '/#' },
   { title: 'Copernicus in situ component', href: '/#' },
+  { title: 'Copernicus land monitoring', href: '/#' },
   { title: 'European Industrial Emissions Portal', href: '/#' },
   { title: 'Forest Information System for Europe', href: '/#' },
   { title: 'Information Platform for Chemical Monitoring', href: '/#' },
@@ -105,11 +107,27 @@ const menuItems = [
         description: '',
         items: [
           {
+            '@id': 'State-of-Europe’s-environment',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'State of Europe’s environment',
+            url: '/#',
+          },
+          {
             '@id': 'Climate',
             description: '',
             items: [],
             review_state: null,
             title: 'Climate',
+            url: '/#',
+          },
+          {
+            '@id': 'Economy-and-resources',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Economy and resources',
             url: '/#',
           },
           {
@@ -134,22 +152,6 @@ const menuItems = [
             items: [],
             review_state: null,
             title: 'Sustainability',
-            url: '/#',
-          },
-          {
-            '@id': 'Economy-and-resources',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'Economy and resources',
-            url: '/#',
-          },
-          {
-            '@id': 'State-of-Europe’s-environment',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'State of Europe’s environment',
             url: '/#',
           },
         ],
@@ -484,13 +486,62 @@ const menuItems = [
     url: '/#',
   },
   {
-    '@id': 'Data-and-publications',
-    items: [],
+    '@id': 'Analysis-and-data',
+    items: [
+      {
+        '@id': 'Pulications',
+        nav_description:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        items: [],
+        review_state: null,
+        title: 'Pulications',
+        nav_title: 'Pulications nav',
+        url: '/#',
+      },
+      {
+        '@id': 'Indicators',
+        nav_description:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        items: [],
+        review_state: null,
+        title: 'Indicators',
+        nav_title: 'Indicators nav',
+        url: '/#',
+      },
+      {
+        '@id': 'Maps-and-charts',
+        nav_description:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        items: [],
+        review_state: null,
+        title: 'Maps and charts',
+        url: '/#',
+      },
+      {
+        '@id': 'Country-fact-sheets',
+        nav_description:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        items: [],
+        review_state: null,
+        title: 'Country fact sheets',
+        nav_title: '',
+        url: '/#',
+      },
+      {
+        '@id': 'Datahub',
+        nav_description:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        items: [],
+        review_state: null,
+        title: 'Datahub',
+        nav_title: 'Datahub nav',
+        url: '/#',
+      },
+    ],
     review_state: null,
-    title: 'Data and publications',
+    title: 'Analysis and data',
     url: '/#',
   },
-
   {
     '@id': 'Countries',
     items: [
@@ -840,7 +891,50 @@ const menuItems = [
   },
   {
     '@id': 'Newsroom',
-    items: [],
+    items: [
+      {
+        '@id': 'Press-releases',
+        items: [],
+        review_state: null,
+        title: 'Press releases',
+        url: '/#',
+      },
+      {
+        '@id': 'Feature-articles',
+        items: [],
+        review_state: null,
+        title: 'Feature articles',
+        url: '/#',
+      },
+      {
+        '@id': 'Corporate-visuals',
+        items: [],
+        review_state: null,
+        title: 'Corporate visuals',
+        url: '/#',
+      },
+      {
+        '@id': 'Events',
+        items: [],
+        review_state: null,
+        title: 'Events',
+        url: '/#',
+      },
+      {
+        '@id': 'Photo-competitions',
+        items: [],
+        review_state: null,
+        title: 'Photo competitions',
+        url: '/#',
+      },
+      {
+        '@id': 'Newsletter',
+        items: [],
+        review_state: null,
+        title: 'Newsletter',
+        url: '/#',
+      },
+    ],
     review_state: null,
     title: 'Newsroom',
     url: '/#',
@@ -849,23 +943,64 @@ const menuItems = [
     '@id': 'About-Us',
     items: [
       {
-        '@id': 'Mission-vision-and-values',
+        '@id': 'Who-we-are',
         description: '',
         items: [
           {
-            '@id': 'About-the-EEA',
+            '@id': 'Governance',
             description: '',
             items: [],
             review_state: null,
-            title: 'About the EEA',
+            title: 'Governance',
             url: '/#',
           },
           {
-            '@id': 'Eco-management-Reducing-our-environmental-footprint-EMAS',
+            '@id': 'Our-knowledge-network—Eionet',
             description: '',
             items: [],
             review_state: null,
-            title: 'Eco-management/Reducing our environmental footprint (EMAS)',
+            title: 'Our knowledge network — Eionet',
+            url: '/#',
+          },
+          {
+            '@id': 'Projects-and-cooperation-agreements',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Projects and cooperation agreements',
+            url: '/#',
+          },
+          {
+            '@id': 'Becoming-a-climate-neutral-agency',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Becoming a climate neutral agency',
+            url: '/#',
+          },
+        ],
+        review_state: null,
+        title: 'Who we are',
+        url: '/#',
+      },
+      {
+        '@id': 'Key-partners',
+        description: '',
+        items: [
+          {
+            '@id': 'European-Union-partners',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'European Union partners',
+            url: '/#',
+          },
+          {
+            '@id': 'International-engagement',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'International engagement',
             url: '/#',
           },
           {
@@ -876,192 +1011,62 @@ const menuItems = [
             title: 'Copernicus',
             url: '/#',
           },
+        ],
+        review_state: null,
+        title: 'Key partners',
+        url: '/#',
+      },
+      {
+        '@id': 'Careers',
+        description: '',
+        items: [
           {
-            '@id': 'Digitilization',
+            '@id': 'How-to-apply',
             description: '',
             items: [],
             review_state: null,
-            title: 'Digitilization',
+            title: 'How to apply',
+            url: '/#',
+          },
+          {
+            '@id': 'Our-workplace',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Our workplace',
+            url: '/#',
+          },
+          {
+            '@id': 'Traineeships',
+            description: '',
+            items: [],
+            review_state: null,
+            title: 'Traineeships',
             url: '/#',
           },
         ],
         review_state: null,
-        title: 'Mission, vision and values',
+        title: 'Careers',
         url: '/#',
       },
       {
-        '@id': 'Governance',
+        '@id': 'Procurement-and-grants',
         description: '',
         items: [
           {
-            '@id': 'Executive-Director',
+            '@id': 'Contracts-between-€15k-and-€140k',
             description: '',
             items: [],
             review_state: null,
-            title: 'Executive Director',
+            title: 'Contracts between €15k and €140k',
             url: '/#',
           },
           {
-            '@id': 'Management-board-&-bureau',
+            '@id': 'Contracts-above-€140k',
             description: '',
             items: [],
             review_state: null,
-            title: 'Management board & bureau',
-            url: '/#',
-          },
-          {
-            '@id': 'Operational-management-Senior-Management-Team)',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'Operational management (Senior Management Team)',
-            url: '/#',
-          },
-          {
-            '@id': 'Scientific-commitee',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'Scientific commitee',
-            url: '/#',
-          },
-          {
-            '@id': 'Organizational-chart',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'Organizational chart',
-            url: '/#',
-          },
-        ],
-        review_state: null,
-        title: 'Governance',
-        url: '/#',
-      },
-      {
-        '@id': 'Our-knowledge-network-Eionet',
-        description: '',
-        items: [
-          {
-            '@id': 'About-the-Eionet',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'About the Eionet',
-            url: '/#',
-          },
-          {
-            '@id': 'Members',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'Members',
-            url: '/#',
-          },
-          {
-            '@id': 'ETCs',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'ETCs',
-            url: '/#',
-          },
-          {
-            '@id': 'Interest-groups',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'Interest groups',
-            url: '/#',
-          },
-          {
-            '@id': 'Data-reporting',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'Data-reporting',
-            url: '/#',
-          },
-          {
-            '@id': 'Eionet-projects',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'Eionet projects',
-            url: '/#',
-          },
-        ],
-        review_state: null,
-        title: 'Our knowledge network (Eionet)',
-        url: '/#',
-      },
-      {
-        '@id': 'Services-and-projects',
-        description: '',
-        items: [
-          {
-            '@id': 'EUROGEO',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'EUROGEO',
-            url: '/#',
-          },
-          {
-            '@id': 'Human-Biomonitoring-for-Europe',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'Human Biomonitoring for Europe',
-            url: '/#',
-          },
-          {
-            '@id': 'COPERNICUS',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'COPERNICUS',
-            url: '/#',
-          },
-          {
-            '@id': 'IPA-2020',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'IPA 2020',
-            url: '/#',
-          },
-          {
-            '@id': 'UNEP-IRP',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'UNEP IRP',
-            url: '/#',
-          },
-        ],
-        review_state: null,
-        title: 'Services and projects',
-        url: '/#',
-      },
-      {
-        '@id': 'Contract-opportunities',
-        description: '',
-        items: [
-          {
-            '@id': 'Open-calls-Tenders-above',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'Open calls - Tenders above 140Κ €',
-            url: '/#',
-          },
-          {
-            '@id': 'Negotiation-procedures-Tenders',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'Negotiation procedures - Tenders 15K - 140K €',
+            title: 'Contracts above €140k',
             url: '/#',
           },
           {
@@ -1072,84 +1077,42 @@ const menuItems = [
             title: 'Toolbox',
             url: '/#',
           },
-          {
-            '@id': 'Contracts-and-grants-awarded',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'Contracts and grants awarded',
-            url: '/#',
-          },
         ],
         review_state: null,
-        title: 'Contract opportunities',
+        title: 'Procurement and grants',
         url: '/#',
       },
       {
-        '@id': 'Careers',
+        '@id': 'Policy-corner',
         description: '',
-        items: [
-          {
-            '@id': 'What-do-we-offer',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'What do we offer?',
-            url: '/#',
-          },
-          {
-            '@id': 'Vacancies',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'Vacancies',
-            url: '/#',
-          },
-          {
-            '@id': 'Bluebook-traineeships',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'Bluebook traineeships',
-            url: '/#',
-          },
-        ],
+        items: [],
         review_state: null,
-        title: 'Careers',
+        title: 'Policy corner: EU policies we support',
         url: '/#',
       },
       {
-        '@id': 'Partners-and-networks',
+        '@id': 'Working-practices',
         description: '',
         items: [
           {
-            '@id': 'Network-of-heads-of-Environmental-Protection-Agencies',
+            '@id': 'Procedures-and-policies',
             description: '',
             items: [],
             review_state: null,
-            title:
-              'Network of heads of Environmental Protection Agencies (EPA network)',
+            title: 'Procedures and policies',
             url: '/#',
           },
           {
-            '@id': 'EU-instititions-and-agencies',
+            '@id': 'Personal-data-protection',
             description: '',
             items: [],
             review_state: null,
-            title: 'EU instititions and agencies',
-            url: '/#',
-          },
-          {
-            '@id': 'International-cooperation-Research-Institutions',
-            description: '',
-            items: [],
-            review_state: null,
-            title: 'International cooperation (Research Institutions)',
+            title: 'Personal data protection',
             url: '/#',
           },
         ],
         review_state: null,
-        title: 'Partners and networks',
+        title: 'Working practices',
         url: '/#',
       },
       {
@@ -1157,19 +1120,19 @@ const menuItems = [
         description: '',
         items: [
           {
-            '@id': 'Contact-details-and-form',
+            '@id': 'Frequently-asked-questions',
             description: '',
             items: [],
             review_state: null,
-            title: 'Contact details and form',
+            title: 'Frequently asked questions (FAQs)',
             url: '/#',
           },
           {
-            '@id': 'Frequently-Asked-Questions',
+            '@id': 'Ask-your-question',
             description: '',
             items: [],
             review_state: null,
-            title: 'Frequently Asked Questions',
+            title: 'Ask your question',
             url: '/#',
           },
         ],
@@ -1184,12 +1147,40 @@ const menuItems = [
   },
 ];
 
+const headerSearchBox = [
+  {
+    isDefault: true,
+    path: '/en/advanced-search',
+    placeholder: 'Search or ask your question...',
+    description: 'For more search options',
+    buttonTitle: 'Go to advanced search',
+    searchSuggestions: {
+      maxToShow: 6,
+      suggestionsTitle: 'Try our suggestions',
+      suggestions: [
+        'What is PFAS?',
+        'Which transport mode has the lowest pollution?',
+        'Which countries use most renewable energy?',
+        'How many premature deaths are attributed to PM2.5?',
+        'How many premature deaths are attributed to air pollution?',
+        'How much have new cars co2 emissions decreased?',
+        'What countries had the highest land take in the EEA-39?',
+        'How many people are exposed to air pollution?',
+      ],
+    },
+  },
+];
+
 const debounce = (func) => {
   let timer;
   return (event) => {
     if (timer) clearTimeout(timer);
     timer = setTimeout(func, 50, event);
   };
+};
+
+const handleDropdownClick = (event) => {
+  event.stopPropagation();
 };
 
 const Template = (args) => {
@@ -1204,7 +1195,15 @@ const Template = (args) => {
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
-  const { languages, links, linksMenuTitle, menuItems } = args;
+  const {
+    languages,
+    links,
+    linksMenuTitle,
+    tabletLinksMenuTitle,
+    mobileLinksMenuTitle,
+    menuItems,
+    hasLanguageDropdown,
+  } = args;
 
   const [language, setLanguage] = React.useState('en');
   const [pathname, setPathname] = React.useState('/');
@@ -1216,14 +1215,21 @@ const Template = (args) => {
           <Header.TopItem className="official-union">
             <Image src={eeaFlag} alt="eea flag"></Image>
             <Header.TopDropdownMenu
-              text="An official website of the European Union | How do you Know?"
+              text="An official website of the European Union | How do you know?"
+              tabletText="An official website of the European Union"
               mobileText=" "
               icon="chevron down"
               aria-label="dropdown"
               className=""
               viewportWidth={viewportWidth}
             >
-              <div className="content">
+              <div
+                className="content"
+                role="menu"
+                tabIndex="0"
+                onClick={handleDropdownClick}
+                onKeyDown={handleDropdownClick}
+              >
                 <p>
                   All official European Union website addresses are in the{' '}
                   europa.eu domain.
@@ -1245,6 +1251,8 @@ const Template = (args) => {
             <Header.TopDropdownMenu
               id="theme-sites"
               text={linksMenuTitle}
+              tabletText={tabletLinksMenuTitle}
+              mobileText={mobileLinksMenuTitle}
               viewportWidth={viewportWidth}
             >
               <div className="wrapper">
@@ -1266,6 +1274,7 @@ const Template = (args) => {
 
           <Header.TopDropdownMenu
             id="language-switcher"
+            hasLanguageDropdown={hasLanguageDropdown}
             className="item"
             text={`${language.toUpperCase()}`}
             mobileText={`${language.toUpperCase()}`}
@@ -1288,14 +1297,18 @@ const Template = (args) => {
                   as="li"
                   key={index}
                   text={
-                    <span>
+                    <a
+                      href={'/' + item.code}
+                      onClick={() => setLanguage(item.code)}
+                      tabIndex={0}
+                      className={'language-link'}
+                    >
                       {item.name}
                       <span className="country-code">
                         {item.code.toUpperCase()}
                       </span>
-                    </span>
+                    </a>
                   }
-                  onClick={() => setLanguage(item.code)}
                 ></Dropdown.Item>
               ))}
             </ul>
@@ -1307,26 +1320,38 @@ const Template = (args) => {
           pathname={pathname}
           logo={<Logo {...logoProps} inverted={args.inverted} />}
           menuItems={menuItems}
+          headerSearchBox={headerSearchBox}
           renderMenuItem={(item, options = {}, props) => {
             const { onClick } = options;
             return (
-              <a
-                onClick={(e) => {
-                  const path = item['@id'] || item.url;
-                  setPathname(path);
-                  e.preventDefault();
-                  onClick && onClick(e, item);
-                }}
-                href={item['@id'] || item.url}
-                {...options}
-                className={cx(options?.className, {
-                  active: item['@id'] === pathname,
-                })}
-              >
-                {props?.iconPosition !== 'right' && props?.children}
-                <span>{item.title}</span>
-                {props?.iconPosition === 'right' && props?.children}
-              </a>
+              <>
+                <a
+                  onClick={(e) => {
+                    const path = item['@id'] || item.url;
+                    setPathname(path);
+                    e.preventDefault();
+                    onClick && onClick(e, item);
+                  }}
+                  href={item['@id'] || item.url}
+                  {...options}
+                  className={cx(options?.className, {
+                    active: item['@id'] === pathname,
+                  })}
+                >
+                  {/* nav_title overrides title */}
+                  {item.nav_title && item.nav_title !== '' ? (
+                    <span>{item.nav_title}</span>
+                  ) : (
+                    <span>{item.title}</span>
+                  )}
+                  {/* Contains a string and an icon for the buttons */}
+                  {props?.children}
+                </a>
+                {/* Item description */}
+                {item.nav_description && (
+                  <p className="nav-description">{item.nav_description}</p>
+                )}
+              </>
             );
           }}
           renderGlobalMenuItem={(item, options = {}) => {
@@ -1493,7 +1518,10 @@ const Template = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  linksMenuTitle: 'EEA information systems',
+  linksMenuTitle: 'Environmental information systems',
+  tabletLinksMenuTitle: 'EEA information systems',
+  mobileLinksMenuTitle: 'EEA information systems',
+  hasLanguageDropdown: true,
   links,
   languages,
   menuItems,

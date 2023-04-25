@@ -1,8 +1,8 @@
 // Color
 h1, h2, h3, h4, h5, h6, p, span, .header {
-  &.primary { color: @primaryColor !important; }
-  &.secondary { color: @secondaryColor !important; }
-  &.tertiary { color: @tertiaryColor !important; }
+  &.primary { color: @primaryColorCSSVar !important; }
+  &.secondary { color: @secondaryColorCSSVar !important; }
+  &.tertiary { color: @tertiaryColorCSSVar !important; }
   &.white { color: @white !important; }
 }
 
@@ -34,10 +34,42 @@ h1, h2, h3, h4, h5, h6, p, span, .header {
 .flex-items-center { align-items: center !important; }
 
 // Text
-.text-left { text-align: left !important; }
-.text-center { text-align: center !important;}
-.text-right { text-align: right !important; }
+.text-left,
+.has--text--left,
+.has--textAlign--left { text-align: left !important; }
+.text-center,
+.has--text--center,
+.has--textAlign--center { text-align: center !important;}
+.text-right,
+.has--text--right,
+.has--textAlign--right { text-align: right !important; }
+.text-justify,
+.has--text--justify,
+.has--textAlign--justify { text-align: justify !important; }
 .bold { font-weight: bold !important; }
+
+.has--text--left {
+  --text-align: left;
+}
+
+.has--text--center {
+  --text-align: center;
+  --justify-content: space-evenly;
+}
+
+// background position utilities
+.has--bg--top {
+  background-position: top !important;
+}
+
+.has--bg--center {
+  background-position: center !important;
+}
+
+.has--bg--bottom {
+  background-position: bottom !important;
+}
+
 
 // Text utilities
 .bold { font-weight: @bold !important; }
@@ -59,7 +91,24 @@ h1, h2, h3, h4, h5, h6, p, span, .header {
 }
 
 // Borders
-.bordered { 
+.bordered {
   border-bottom: @border-size-1 solid !important;
   padding-bottom: @rem-space-2 !important;
+}
+
+.fw-light {
+  font-weight: @font-weight-3;
+}
+
+.hiddenStructure {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
 }

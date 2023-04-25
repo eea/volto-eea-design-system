@@ -8,10 +8,10 @@
 --------------------*/
 
 .eea.banner {
-  width: 100%;
-  color: @white;
-  background: @bannerBackgroundColor;
   position: relative;
+  width: 100%;
+  background: @bannerBackgroundColor;
+  color: @white;
 
   .gradient {
     background: @backgroundGradient;
@@ -21,7 +21,7 @@
       padding: @mobileContentPadding;
 
       .ui.grid {
-        align-items: end;
+        align-items: flex-end;
       }
 
       .title {
@@ -32,7 +32,16 @@
         line-height: @mobileTitleLineHeight;
       }
 
+      .subtitle {
+        max-width: @subtitleMaxWidth;
+        margin: @mobileSubtitleMargin;
+        font-size: @mobileSubtitleFontSize;
+        font-weight: @subtitleFontWeight;
+        line-height: @mobileSubtitleLineHeight;
+      }
+
       .metadata {
+        margin-bottom: @rem-space-3;
         font-size: @mobileMetadataFontSize;
         line-height: @mobileMetadataLineHeight;
 
@@ -40,17 +49,17 @@
           font-weight: @metadataTypeFontWeight;
         }
 
-        span.field:not(:last-child)::after {
+        .field:not(:last-child)::after {
           content: @metadataFieldDividerContent;
         }
       }
 
       .actions {
         display: flex;
-        justify-content: flex-end;
         align-items: @mobileActionsAlignItems;
+        justify-content: flex-end;
 
-        .action {
+        > .action {
           .ui.basic.inverted.button {
             /* used basic inverted button for minimun overrides on box-shadow and active state background */
             box-shadow: @bannerActionButtonBoxShadow !important;
@@ -64,28 +73,36 @@
             }
 
             i.icon {
-              opacity: @bannerActionButtonIconOpacity;
               margin: @mobileBannerActionButtonMargin;
               font-size: @mobileBannerActionButtonIconFontSize;
+              opacity: @bannerActionButtonIconOpacity;
             }
           }
         }
       }
     }
   }
+
   .image {
-    background-repeat: @imageBackgroundRepeat;
-    background-size: @imageBackgroundSize;
-    background-position: @imageBackgroundPosition;
     width: 100%;
     height: 100%;
+    background-position: @imageBackgroundPosition;
+    background-repeat: @imageBackgroundRepeat;
+    background-size: @imageBackgroundSize;
 
     .gradient {
-      background-image: @backgroundGradientWithImage;
-
       .content {
         padding: @mobileContentPaddingWithImage;
       }
+    }
+  }
+
+  .documentFirstHeading {
+    border-bottom: @titleBorderBottom;
+    margin-bottom: @titleMarginBottom;
+
+    &::before {
+      content: @titleBorderBottom;
     }
   }
 }
@@ -93,6 +110,8 @@
 /*Share Popup*/
 
 .ui.popup.share-popup {
+  position: initial; // without position initial popper cannot correctly place popup
+  min-width: @sharePopupMinWidth;
   padding: @sharePopupPadding;
   filter: @sharePopupFilter;
 
@@ -104,6 +123,7 @@
 
   .actions {
     flex-flow: column;
+
     i.icon {
       color: @sharePopupActionsIconColor;
     }
@@ -119,7 +139,7 @@
   }
 }
 
-@media only screen and (max-width: @tabletBreakpoint - 1) {
+@media only screen and (max-width: @largestMobileScreen) {
   .actions .action {
     margin-bottom: @mobileActionsActionMarginBottom;
   }
@@ -132,9 +152,9 @@
         padding: @tabletContentPadding;
 
         .title {
+          margin: @tabletTitleMargin;
           font-size: @tabletTitleFontSize;
           font-weight: @titleFontWeight;
-          margin: @tabletTitleMargin;
           line-height: @tabletTitleLineHeight;
         }
 
@@ -144,10 +164,10 @@
         }
 
         .actions {
-          align-items: @tabletActionsAlignItems;
           flex-direction: @tabletActionsFlexDirection;
+          align-items: @tabletActionsAlignItems;
 
-          .action {
+          > .action {
             min-width: @tabletActionsActionMinWidth;
 
             .ui.basic.inverted.button i.icon {
@@ -170,11 +190,13 @@
     min-width: @tabletSharePopupMinWidth;
 
     .actions {
-      flex-flow: row;
       display: flex;
+      flex-flow: row !important;
+      justify-content: flex-start !important;
 
       .action {
         display: inherit;
+        min-width: 1rem !important;
       }
     }
   }
@@ -192,10 +214,18 @@
       padding: @computerContentPadding;
 
       .title {
-        font-size: @computerTitleFontSize;
         margin: @computerTitleMargin;
+        font-size: @computerTitleFontSize;
         line-height: @computerTitleLineHeight;
+      }
+
+      .subtitle {
+        margin: @computerSubtitleMargin;
+        font-size: @computerSubtitleFontSize;
+        line-height: @computerSubtitleLineHeight;
       }
     }
   }
 }
+
+.loadUIOverrides();

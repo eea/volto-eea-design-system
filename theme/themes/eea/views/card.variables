@@ -7,6 +7,7 @@
 --------------------*/
 
 @cardBorder: 1px solid @midGray;
+@cardColor: @tertiaryColor;
 @background: @white;
 
 /* Shadow */
@@ -30,6 +31,7 @@
   box-shadow @defaultDuration @defaultEasing,
   transform @defaultDuration @defaultEasing
 ;
+@cardMetaDateMarginLeft: auto;
 
 /* Card Group */
 @horizontalSpacing: 1em;
@@ -48,6 +50,8 @@
 /*-------------------
        Content
 --------------------*/
+
+@cardTextAlign: left;
 
 
 /* Image */
@@ -77,16 +81,21 @@
 
 
 /* Header */
-@headerMargin: '';
+@headerMargin: -@em-space-2 -@em-space-1 -@em-space-1 -@em-space-1;
 @headerFontWeight: @bold;
 @headerFontSize: 1.125rem;
-@headerLineHeightOffset: -(@lineHeight - 1em) / 2;
-@headerColor: @tertiaryColor;
+
+@headerColor: inherit;
+@headerLinkDisplay: block;
+
+@headerPadding: @em-space-1;
+@headerLineHeightOffset: -(@headerPadding * 2);
 
 /* Metadata */
-@metaFontSize: @relativeMedium;
+@metaJustifyContent: space-between;
+@metaFontSize: @absoluteMedium;
 @metaSpacing: 0.3em;
-@metaColor: @tertiaryColor;
+@metaColor: inherit;
 
 /* Icons */
 @iconCardPaddingTop: @rem-space-4;
@@ -101,8 +110,8 @@
 @likeActiveColor: #FF2733;
 
 /* Links */
-@contentLinkColor: @tertiaryColor;
-@contentLinkHoverColor: @tertiaryColor;
+@contentLinkColor: inherit;
+@contentLinkHoverColor: inherit;
 @contentLinkFontWeight: @bold;
 @contentLinkTransition: color @defaultDuration @defaultEasing;
 @contentLinkTextDecoration: underline;
@@ -115,7 +124,7 @@
 
 /* Description */
 @descriptionDistance: 0;
-@descriptionColor: @tertiaryColor;
+@descriptionColor: inherit;
 
 /* Content Image */
 @contentImageWidth: '';
@@ -135,6 +144,7 @@
 /* Additional Content */
 @extraDivider: none;
 @extraBackground: none;
+@extraJustifyContent: right;
 @extraPosition: static;
 @extraWidth: auto;
 @extraTop: 0em;
@@ -235,38 +245,37 @@
 /*******************************
             Primary
 *******************************/
-@primaryBackground: @primaryColor;
-@primaryHeaderColor: @white;
-@primaryDescriptionColor: @white;
-@primaryExtraLinkColor: @white;
-@primaryExtraLinkHoverColor: @white;
-@primaryMetaColor: @white;
-@invertedPrimaryContentColor: @primaryColor;
-@invertedPrimaryColorHover: @primaryColorHover;
+@primaryCardBackground: @primaryColor;
+@primaryCardColor: @white;
+@invertedPrimaryCardColor: @primaryColor;
+@invertedPrimaryCardBackgroundColor: @white;
 
 /*******************************
             Secondary
 *******************************/
-@secondaryBackground: @secondaryColor;
-@secondaryHeaderColor: @white;
-@secondaryDescriptionColor: @white;
-@secondaryExtraLinkColor: @white;
-@secondaryExtraLinkHoverColor: @white;
-@secondaryMetaColor: @white;
-@invertedSecondaryContentColor: @secondaryColor;
-@invertedSecondaryColorHover: @secondaryColorHover;
+@secondaryCardBackground: @secondaryColor;
+@secondaryCardColor: @white;
+@invertedSecondaryCardColor: @secondaryColor;
+@invertedSecondaryCardBackgroundColor: @white;
 
 /*******************************
             Tertiary
 *******************************/
-@tertiaryBackground: @tertiaryColor;
-@tertiaryHeaderColor: @white;
-@tertiaryDescriptionColor: @white;
-@tertiaryExtraLinkColor: @white;
-@tertiaryExtraLinkHoverColor: @white;
-@tertiaryMetaColor: @white;
-@invertedTertiaryContentColor: @tertiaryColor;
-@invertedTertiaryColorHover: @tertiaryColorHover;
+@tertiaryCardBackground: @tertiaryColor;
+@tertiaryCardColor: @white;
+@invertedTertiaryCardColor: @tertiaryColor;
+@invertedTertiaryCardBackgroundColor: @white;
+
+/*******************************
+        Image with title
+*******************************/
+@imageTitleColor: @white;
+@imageTitleFontSize: @h2;
+@imageTitleMobileFontSize: @mobileH1;
+@imageTitleFontWeight: @font-weight-7;
+@imageTitleLineHeight: @font-lineheight-0;
+@imageTitlePadding: @rem-space-6;
+@imageTitlePaddingBlock: @rem-space-4;
 
 /*******************************
           Rounded Card
@@ -274,10 +283,12 @@
 /* Global */
 @roundedImageBorderRadius        : @circularRadius;
 @roundedContentTitleMarginBottom : @rem-space-2;
+@roundedContentTitleTextAlign    : left;
 @roundedContentTitleFontWeight   : @bold;
 @roundedContentTitleFontSize     : @font-size-3;
-@roundedImageHeight           : 173px;
-@roundedImageWidth            : 173px;
+@roundedImageJustifyContent      : center;
+@roundedImageHeight           : 176px;
+@roundedImageWidth            : 176px;
 @roundedMetadataFontSize      : @font-size-1;
 @roundedMetadataFontWeight    : @normal;
 
@@ -325,6 +336,7 @@
 
 /* Button */
 @carouselButtonPadding: 0;
+@carouselButtonMargin: 0;
 @carouselButtonIconColor: @tertiaryColor;
 @carouselButtonIconFontSize: 3.125rem;
 @carouselButtonIconOpacity: 1;
@@ -338,13 +350,19 @@
 @carouselDotsBorder: 1px solid @darkCerulean;
 @carouselDotsBackgroundColor: @white;
 @carouselDotsActiveBackgroundColor: @darkCerulean;
-@mobileCarouselDotsWidth: 0.875rem;
-@mobileCarouselDotsHeight: 0.875rem;
+@mobileCarouselDotsWidth: 1.25rem;
+@mobileCarouselDotsHeight: 1.25rem;
+@mobileCarouselDotsButtonWidth: 1.875rem;
+@mobileCarouselDotsButtonHeight: 1.875rem;
 
 /* Slick wrapper */
 @slickListMargin: 0 -0.75em;
-@slickTrackGap: 1.25rem;
 @slickTrackMargin: 1rem 0;
+@slickSlideMargin: 0 10px;
 
-
+/*******************************
+        Teaser Cards
+*******************************/
+@tabletTeaserCardPaddingInline: @rem-space-2;
+@tabletTeaserCardMinWidth: 100%;
 

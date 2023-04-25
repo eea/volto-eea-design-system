@@ -8,6 +8,12 @@
     format('truetype');
 }
 
+// To display focus state
+.ui.checkbox input[type="checkbox"],
+.ui.checkbox input[type="radio"] {
+  opacity: 1 !important;
+}
+
 /* Checkbox */
 .ui.checkbox:not(.toggle) {
   margin-bottom: @bottomMargin;

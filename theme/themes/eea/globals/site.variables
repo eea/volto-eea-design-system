@@ -3,6 +3,7 @@
 *******************************/
 
 @import '@eeacms/volto-eea-design-system/../theme/themes/eea/tokens/tokens';
+@import '@eeacms/volto-eea-design-system/../theme/themes/eea/globals/mixins';
 
 /*-------------------
        Fonts
@@ -10,6 +11,7 @@
 
 @fontName          : 'Roboto';
 @fontSmoothing     : antialiased;
+@fontDisplay       : swap;
 
 @headerFont        : @fontName, Arial, 'Helvetica Neue', Helvetica, sans-serif;
 @pageFont          : @fontName, Arial, 'Helvetica Neue', Helvetica, sans-serif;
@@ -55,11 +57,14 @@
 --------------------*/
 
 @primaryColor         : @darkCerulean;
+@primaryColorCSSVar   : var(--text-color-primary, @primaryColor);
 @secondaryColor       : @pineGreen;
+@secondaryColorCSSVar : var(--text-color-secondary, @secondaryColor);
 @tertiaryColor        : @deepBlue;
+@tertiaryColorCSSVar  : var(--text-color-tertiary, @tertiaryColor);
 
 @lightPrimaryColor    : @mediumPersianBlue;
-@lightSecondaryColor  : @darkCyan;
+@lightSecondaryColor  : @green-4;
 @lightTertiaryColor   : @UCLABlue;
 
 @darkPrimaryColor     : @darkMidnightBlue;
@@ -114,6 +119,9 @@
 /*-------------------
     Focused Input
 --------------------*/
+
+/* Global focus-visible for accessibility */
+@focusVisibleOutline: .2rem solid var(--focus-visible, @blue-3);
 
 /* Used on inputs, textarea etc */
 @focusedFormBorderColor: @secondaryColor;
@@ -180,8 +188,18 @@
 
 @lineHeight          : @font-lineheight-3;
 @mobileLineHeight    : @font-lineheight-3;
-@textColor           : rgba(0, 0, 0, 1);
+@textColor           : @tertiaryColor;
+// use this variable when you want it to be replaced by css variables
+@textColorCSSVar     : var(--text-color, @textColor);
+@borderColorCSSVar   : var(--border-color, @grey-3);
+@borderColorPrimaryCSSVar: var(--border-color-primary, @primaryColor);
+@borderColorSecondaryCSSVar: var(--border-color-secondary, @secondaryColor);
+@borderColorTertiaryCSSVar: var(--border-color-tertiary, @tertiaryColor);
 @contentAreaColor    : @tertiaryColor;
+@backgroundColor: @grey-0;
+@backgroundColorCSSVar: var(--bg-color, @backgroundColor);
+@backgroundColorSupplementary: @grey-1;
+@backgroundColorSupplementaryCSSVar: var(--bg-color-supplementary, @backgroundColorSupplementary);
 
 /*-------------------
       Paragraph
@@ -194,9 +212,11 @@
        Links
 --------------------*/
 
-@linkColor           : @primaryColor;
+@linkColor           : @blue-4;
+@linkHoverColor      : @blue-5;
+@linkVisitedColor    : @purple-4;
+@linkActiveColor     : @blue-6;
 @linkUnderline       : none;
-@linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
 @linkHoverUnderline  : @linkUnderline;
 
 /*-------------------
@@ -222,7 +242,6 @@
 @thumbHoverBackground: rgba(128, 135, 139, 0.8);
 
 /* Inverted */
-@statisticInvertedBackground: @bottleGreen;
 @trackInvertedBackground: rgba(255, 255, 255, 0.1);
 @thumbInvertedBackground: rgba(255, 255, 255, 0.25);
 @thumbInvertedInactiveBackground: rgba(255, 255, 255, 0.15);
@@ -265,6 +284,10 @@
       Container
 --------------------*/
 @textWidth: 800px;
+@narrowWidth: var(--narrow-text-width, 900px);
+@containerWidth: var(--container-text-width, 1120px);
+@wideWidth: var(--wide-text-width, 1320px);
+@wideWidthLaptop: var(--wide-text-laptop-width, 1220px);
 
 
 /*-------------------
@@ -373,6 +396,7 @@
 @lightBlue        : #75C9DB;
 @lightViolet      : #BFC0FF;
 @lightPurple      : #DE99FF;
+@lightLavender    : #E8D2FD;
 @lightPink        : #FFBFF1;
 @lightBrown       : #D9C2AD;
 @lightGrey        : #E6E7E8;
@@ -620,7 +644,7 @@
       Borders
 --------------------*/
 
-@circularRadius                : 500rem;
+@circularRadius                : 50%;
 
 @borderColor               : @silverGray;
 @strongBorderColor         : rgba(34, 36, 38, 0.22);

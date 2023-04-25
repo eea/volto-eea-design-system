@@ -28,47 +28,41 @@
     padding-top: @contentBoxContainerMarginTop;
     padding-bottom: @contentBoxContainerMarginBottom;
     position: relative;
-    z-index: 1;
+    z-index: @contentBoxContainerZIndex;
   }
 
   &.primary {
     background-color: @contentBoxBackgroundColorPrimary;
     color: @contentBoxColor;
-    .header {
-      color: @contentBoxColor !important;
-    }
   }
-
   &.secondary {
     background-color: @contentBoxBackgroundColorSecondary;
     color: @contentBoxColor;
-    .header {
-      color: @contentBoxColor !important;
-    }
   }
 
   &.tertiary {
     background-color: @contentBoxBackgroundColorTertiary;
     color: @contentBoxColor;
-    .header {
-      color: @contentBoxColor !important;
-    }
   }
 }
 
+.content-box[class*="ary"] {
+  --bg-color: transparent;
+  --border-color-secondary: @contentBoxColor;
+  --text-color: @contentBoxColor;
+  --text-color-primary: @contentBoxColor;
+  --text-color-secondary: @contentBoxColor;
+  --text-color-tertiary: @contentBoxColor;
+  --text-color-hover: @backgroundColorSupplementary;
+}
 // inherit link
-
-
-[class*="content-box"] a {
+.content-box[class*="ary"] a:not(.ui, .item, .header-link) {
+  color: inherit;
   text-decoration: underline;
 }
-.content-box[class*="ary"] a {
+
+// inherit color for slate links within context boxes
+.content-box .slate-editor-link {
   color: inherit;
+  text-decoration: underline;
 }
-
-// set color of default cards to black when we are inside a content-box which has the ability to set
-// color classes
-.content-box[class*="ary"] [class="ui fluid card"] {
-  color: @grey-6;
-}
-

@@ -1,37 +1,84 @@
 import React from 'react';
 import { Container, Icon, Button, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import { formatDate } from '@plone/volto/helpers/Utils/Date';
+import config from '@plone/volto/registry';
 
 Banner.propTypes = {
   title: PropTypes.string,
-  image: PropTypes.bool,
 };
 
-function Banner({ image_url, image, children }) {
+const socialPlatforms = {
+  facebook: {
+    shareLink: (url) => `https://facebook.com/sharer.php?u=${url}`,
+  },
+  twitter: {
+    shareLink: (url) => `https://www.twitter.com/share?url=${url}`,
+  },
+  linkedin: {
+    shareLink: (url) =>
+      `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+  },
+  reddit: {
+    shareLink: (url, title) => `https://reddit.com/submit?url=${url}`,
+  },
+};
+
+export const getImageSource = (image) => {
+  if (image?.scales?.huge) return flattenToAppURL(image.scales.huge.download);
+  return null;
+};
+
+export const sharePage = (url, platform) => {
+  if (!socialPlatforms[platform]) return;
+  const link = document.createElement('a');
+  link.setAttribute('href', socialPlatforms[platform].shareLink(url));
+  link.setAttribute('target', '_blank');
+  link.setAttribute('rel', 'noreferrer');
+  link.click();
+};
+
+function Banner({ image, metadata, properties, children, ...rest }) {
+  if (image) {
+    //extract Lead image from page content.
+    const content = metadata || properties;
+    const imageUrl = getImageSource(content['image']) ?? image;
+    return (
+      <div className="eea banner">
+        <div
+          className={imageUrl ? 'image' : ''}
+          style={imageUrl ? { backgroundImage: `url(${imageUrl})` } : {}}
+        >
+          <div className="gradient">
+            <Container>{children}</Container>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="eea banner">
-      <div
-        className={image ? 'image' : ''}
-        style={image ? { backgroundImage: `url(${image_url})` } : {}}
-      >
-        <div className="gradient">
-          <Container>{children}</Container>
-        </div>
+      <div className="gradient">
+        <Container>{children}</Container>
       </div>
     </div>
   );
 }
 
-Banner.Action = function ({ id, title, icon, onClick, className, color }) {
+Banner.Action = React.forwardRef(function (
+  { id, title, titleClass, icon, onClick, className, color },
+  ref,
+) {
   return (
-    <div className="action">
+    <div className="action" ref={ref}>
       <Button className={className} basic icon inverted onClick={onClick}>
         <Icon className={icon} color={color}></Icon>
-        <span className="mobile hidden">{title}</span>
+        <span className={titleClass || 'mobile hidden'}>{title}</span>
       </Button>
     </div>
   );
-};
+});
 
 Banner.Content = ({ children, actions }) => {
   return (
@@ -48,12 +95,36 @@ Banner.Content = ({ children, actions }) => {
   );
 };
 
-Banner.Title = ({ children }) => <p className="title">{children}</p>;
+Banner.Title = ({ children }) => {
+  return <h1 className="documentFirstHeading title">{children}</h1>;
+};
+Banner.Subtitle = ({ children }) => <p className="subtitle">{children}</p>;
 Banner.Metadata = ({ children }) => <p className="metadata">{children}</p>;
 
-Banner.MetadataField = ({ hidden, type = 'text', label, value, title }) => {
+Banner.MetadataField = ({ hidden, type = 'text', label, value }) => {
+  const locale = config.settings.dateLocale || 'en-gb';
   if (hidden || !value) return '';
-  return <span className={`field ${type}`}>{value}</span>;
+  if (type === 'date' && value)
+    return (
+      <time className={`field ${type}`} dateTime={value}>
+        {label}{' '}
+        {formatDate({
+          date: value,
+          format: {
+            year: 'numeric',
+            month: 'short',
+            day: '2-digit',
+          },
+          locale: locale,
+        })}
+      </time>
+    );
+  return (
+    <span className={`field ${type}`}>
+      {label && <>{label}: </>}
+      {value}
+    </span>
+  );
 };
 
 export default Banner;

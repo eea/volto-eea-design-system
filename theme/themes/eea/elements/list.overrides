@@ -19,6 +19,12 @@ dl dd {
 }
 
 /* Unordered list */
+
+// use padding instead
+ul.ui.list, .ui.bulleted.list {
+  padding-left: @bulletDistance;
+  margin-left: 0;
+}
 .ui.bulleted.list .list > .item:before,
 .ui.bulleted.list .list > a.item:before,
 .ui.bulleted.list > .item:before,
@@ -28,11 +34,13 @@ ul.ui.list li:before {
 }
 
 // Third layer margin fix
-.ui.ordered.list .list .list > .item:before {
+.ui.ordered.list .list .list > .item:before,
+.ui.ordered.list .list .list > li:before {
   margin-left: @orderedGrandchildCountOffset;
 }
 
 // Fourth layer margin fix
-.ui.ordered.list .list .list .list > .item:before {
+.ui.ordered.list .list .list .list > .item:before,
+.ui.ordered.list .list .list .list > li:before {
   margin-left: @orderedGreatGrandchildCountOffset;
 }

@@ -6,6 +6,7 @@
 @contentBoxWidth : 100vw;
 @contentBoxColor : @white;
 @contentBoxBackgroundColor: @grey-1;
+@contentBoxNoBackground: transparent;
 @contentBoxColorInverted : inherit;
 
 /* Themes */
@@ -17,3 +18,4 @@
 /* Container */
 @contentBoxContainerMarginTop    : @bigGap;
 @contentBoxContainerMarginBottom : @bigGap;
+@contentBoxContainerZIndex : 1;
