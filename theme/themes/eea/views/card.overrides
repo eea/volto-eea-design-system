@@ -442,6 +442,7 @@
   .grid-block-teaser .ui.card {
     min-width: @tabletTeaserCardMinWidth;
   }
+}
 
 // Spacing adjustment to display outline with overflow hidden
 .ui.card .header {
@@ -450,4 +451,9 @@
 
 .ui.card .header > a {
   .useTitleMaxLines();
+}
+
+// Meta align fix
+.ui.card.u-card .meta:after {
+    content: none;
 }
