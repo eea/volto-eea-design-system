@@ -43,23 +43,85 @@ export default {
         type: { summary: 'boolean' },
       },
     },
+    rounded: {
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
+    objectfit: {
+      name: 'Image fit',
+      options: ['unset', 'cover', 'contain', 'fill', 'scale-down'],
+      control: { type: 'select' },
+      table: {
+        category: 'Image',
+        defaultValue: { summary: 'cover' },
+      },
+    },
+    objectposition: {
+      name: 'Image position',
+      options: ['none', 'center', 'top', 'bottom', 'left', 'right'],
+      control: { type: 'select' },
+      table: {
+        category: 'Image',
+        defaultValue: { summary: 'center' },
+      },
+    },
+    titleMaxLines: {
+      name: 'Title max lines',
+      options: ['none', '1', '2', '3', '4', '5'],
+      control: { type: 'select' },
+      table: {
+        category: 'Content',
+        defaultValue: { summary: '2' },
+      },
+    },
+    maxLines: {
+      name: 'Content max lines',
+      options: ['none', '1', '2', '3', '4', '5'],
+      control: { type: 'select' },
+      table: {
+        category: 'Content',
+        defaultValue: { summary: '2' },
+      },
+    },
     cards: {
+      name: 'Cards content',
       table: {
         type: {
           summary: 'Object',
         },
+        category: 'Content',
         defaultValue: { summary: ' "" ' },
       },
     },
   },
 };
 
-const CardTemplate = ({ variant, inverted, titleOnImage, card }) => (
+const CardTemplate = ({
+  variant,
+  inverted,
+  titleOnImage,
+  rounded,
+  objectfit,
+  objectposition,
+  titleMaxLines,
+  maxLines,
+  card,
+}) => (
   <Card
     fluid={card.fluid}
-    className={`${variant === 'default' ? '' : variant} ${
+    className={`u-card ${variant === 'default' ? '' : variant} ${
       inverted ? 'inverted' : ''
-    }`}
+    } ${variant} ${rounded ? 'rounded' : ''} ${
+      objectfit === 'unset' ? '' : 'has--objectfit--' + objectfit
+    } ${
+      objectposition === 'none' ? '' : 'has--objectposition--' + objectposition
+    } ${
+      titleMaxLines === 'none'
+        ? 'title-max-0-lines'
+        : 'title-max-' + titleMaxLines + '-lines'
+    } ${maxLines === 'none' ? 'max-0-lines' : 'max-' + maxLines + '-lines'}`}
   >
     {/* Card Image */}
     {card.hasImage ? (
@@ -127,6 +189,11 @@ const Template = (args) => (
         variant={args.variant}
         titleOnImage={args.titleOnImage}
         inverted={args.inverted}
+        rounded={args.rounded}
+        objectfit={args.objectfit}
+        objectposition={args.objectposition}
+        titleMaxLines={args.titleMaxLines}
+        maxLines={args.maxLines}
         card={card}
         key={index}
       />
@@ -139,6 +206,11 @@ Default.args = {
   titleOnImage: false,
   variant: 'default',
   inverted: false,
+  rounded: false,
+  objectfit: 'cover',
+  objectposition: 'center',
+  titleMaxLines: '2',
+  maxLines: '2',
   cards: [
     {
       title: 'Economy and resources',
@@ -164,6 +236,11 @@ const GridTemplate = (args) => (
             variant={args.variant}
             titleOnImage={args.titleOnImage}
             inverted={args.inverted}
+            rounded={args.rounded}
+            objectfit={args.objectfit}
+            objectposition={args.objectposition}
+            titleMaxLines={args.titleMaxLines}
+            maxLines={args.maxLines}
             card={card}
             key={index}
           />
@@ -178,6 +255,11 @@ CardGrid.args = {
   titleOnImage: false,
   variant: 'default',
   inverted: false,
+  rounded: false,
+  objectfit: 'cover',
+  objectposition: 'center',
+  titleMaxLines: '2',
+  maxLines: '2',
   cards: [
     {
       title: 'Nature',
@@ -223,6 +305,11 @@ ImageGrid.args = {
   titleOnImage: true,
   variant: 'default',
   inverted: false,
+  rounded: false,
+  objectfit: 'center',
+  objectposition: 'cover',
+  titleMaxLines: '2',
+  maxLines: '2',
   cards: [
     {
       title: 'Nature',
@@ -259,6 +346,11 @@ const FluidGridTemplate = (args) => (
           variant={args.variant}
           titleOnImage={args.titleOnImage}
           inverted={args.inverted}
+          rounded={args.rounded}
+          objectfit={args.objectfit}
+          objectposition={args.objectposition}
+          titleMaxLines={args.titleMaxLines}
+          maxLines={args.maxLines}
           card={card}
           key={index}
         />
@@ -272,6 +364,11 @@ FluidGrid.args = {
   titleOnImage: false,
   variant: 'default',
   inverted: false,
+  rounded: false,
+  objectfit: 'cover',
+  objectposition: 'center',
+  titleMaxLines: '2',
+  maxLines: '2',
   cards: [
     {
       title: 'Nature',
@@ -349,7 +446,12 @@ function CarouselCardsContent({
   titleOnImage,
   variant,
   inverted,
+  rounded,
+  objectfit,
   settings,
+  objectposition,
+  titleMaxLines,
+  maxLines,
   cards,
 }) {
   const slider = React.useRef(null);
@@ -361,6 +463,11 @@ function CarouselCardsContent({
             variant={variant}
             titleOnImage={titleOnImage}
             inverted={inverted}
+            rounded={rounded}
+            objectfit={objectfit}
+            objectposition={objectposition}
+            titleMaxLines={titleMaxLines}
+            maxLines={maxLines}
             card={card}
             key={index}
           />
@@ -382,6 +489,11 @@ CarouselCards.args = {
   titleOnImage: false,
   variant: 'default',
   inverted: false,
+  rounded: false,
+  objectfit: 'cover',
+  objectposition: 'center',
+  titleMaxLines: '2',
+  maxLines: '2',
   settings: {
     dots: true,
     infinite: true,
@@ -467,17 +579,37 @@ CarouselCards.argTypes = {
   },
 };
 
-const TeaserCard = ({ variant, inverted, titleOnImage, card }) => (
+const TeaserCard = ({
+  variant,
+  titleOnImage,
+  inverted,
+  rounded,
+  objectfit,
+  objectposition,
+  titleMaxLines,
+  maxLines,
+  card,
+}) => (
   <div className="column grid-block-teaser">
     <div
-      className={`styled-teaser styled ${
-        variant === 'default' ? '' : variant
-      } ${inverted ? 'inverted' : ''}`}
+      className={`styled-teaser styled ${variant === 'default' ? '' : variant}`}
     >
       <div
-        className={`ui card u-card max-3-lines title-max-3-lines ${
-          card.fluid ? 'fluid' : ''
-        } ${variant}`}
+        className={`ui card u-card ${card.fluid ? 'fluid' : ''} ${
+          inverted ? 'inverted' : ''
+        } ${variant} ${rounded ? 'rounded' : ''} ${
+          objectfit === 'unset' ? '' : 'has--objectfit--' + objectfit
+        } ${
+          objectposition === 'none'
+            ? ''
+            : 'has--objectposition--' + objectposition
+        } ${
+          titleMaxLines === 'none'
+            ? 'title-max-0-lines'
+            : 'title-max-' + titleMaxLines + '-lines'
+        } ${
+          maxLines === 'none' ? 'max-0-lines' : 'max-' + maxLines + '-lines'
+        }`}
       >
         <a className="image" href={card.href}>
           <img src={card.imgUrl} alt={card.title} className="ui image" />
@@ -510,6 +642,11 @@ const TeaserTemplate = (args) => (
             variant={args.variant}
             titleOnImage={args.titleOnImage}
             inverted={args.inverted}
+            rounded={args.rounded}
+            objectfit={args.objectfit}
+            objectposition={args.objectposition}
+            titleMaxLines={args.titleMaxLines}
+            maxLines={args.maxLines}
             card={card}
             key={index}
           />
@@ -524,6 +661,11 @@ TeaserCardGrid.args = {
   titleOnImage: false,
   variant: 'default',
   inverted: false,
+  rounded: false,
+  objectfit: 'cover',
+  objectposition: 'center',
+  titleMaxLines: '2',
+  maxLines: '2',
   cards: [
     {
       title: "State of Europe's environment",
@@ -538,7 +680,7 @@ TeaserCardGrid.args = {
     {
       title: 'Climate',
       imgUrl:
-        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
+        'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
       hasImage: true,
       description:
         'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',

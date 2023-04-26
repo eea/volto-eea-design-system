@@ -453,3 +453,8 @@
 .ui.card .header > a {
   .useTitleMaxLines();
 }
+
+// Meta align fix
+.ui.card.u-card .meta:after {
+    content: none;
+}
