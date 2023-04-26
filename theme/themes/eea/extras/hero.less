@@ -99,7 +99,19 @@
     bottom: @desktopCopyrightBottom;
   }
 }
+
 @media print {
+  .eea.hero-block.full-height,
+  .eea.hero-block.full-height .hero-block-image-wrapper,
+  .eea.hero-block.full-height .hero-block-inner-wrapper {
+    min-height: unset;
+  }
+
+  .hero-block-inner-wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   .hero-block-image-wrapper {
     left: 0 !important;
     right: 0 !important;
@@ -110,8 +122,14 @@
     width: 100% !important;
     break-inside: avoid-page;
   }
+
   .hero-block {
     break-inside: avoid-page;
+  }
+
+  .hero-block-body .eea.copyright {
+    display: none;
+    visibility: hidden;
   }
 }
 
