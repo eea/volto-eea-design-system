@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import { isInternalURL } from '@plone/volto/helpers/Url/Url';
+
 const Contact = ({ children, contacts }) =>
   children?.length ? (
     children
@@ -9,15 +11,40 @@ const Contact = ({ children, contacts }) =>
     <div className="contact-block">
       {contacts?.map((contact, index) => (
         <div className="contact" key={index}>
-          <Link to={contact.link} className="bold">
-            {contact.text}
-          </Link>
+          {isInternalURL(contact.link) ? (
+            <Link to={contact.link} className="bold">
+              {contact.text}
+            </Link>
+          ) : (
+            <a
+              href={contact.link}
+              title={contact?.text}
+              target={'_blank'}
+              rel="noopener noreferrer"
+              className={'bold'}
+            >
+              {contact.text}
+            </a>
+          )}
           {contact.children && (
             <div className="subcontact">
               {contact.children.map((child, index) => (
-                <Link to={child.link} key={index}>
-                  {child.text}
-                </Link>
+                <>
+                  {isInternalURL(child.link) ? (
+                    <Link to={child.link} key={index}>
+                      {child.text}
+                    </Link>
+                  ) : (
+                    <a
+                      href={child.link}
+                      title={child?.text}
+                      target={'_blank'}
+                      rel="noopener noreferrer"
+                    >
+                      {child.text}
+                    </a>
+                  )}
+                </>
               ))}
             </div>
           )}
