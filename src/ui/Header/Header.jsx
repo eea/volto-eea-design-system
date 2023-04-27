@@ -138,6 +138,7 @@ const Main = ({
   transparency,
   inverted,
   hideSearch,
+  isMultilingual,
 }) => {
   const history = useHistory();
   const [activeItem, setActiveItem] = React.useState(pathname);
@@ -154,10 +155,15 @@ const Main = ({
     setSearchIsActive(false);
     setBurger('');
     // remove active menu when we have no pathname which means we hit logo to go home
-    if (!pathname) {
+    //remove the lang route in order to check if empty
+    //setActiveItem as pathname when pathname changed
+    if (
+      !pathname ||
+      (isMultilingual === true && !pathname?.split('/')?.slice(2)?.join('/'))
+    ) {
       setActiveItem('');
-    }
-  }, [pathname]);
+    } else setActiveItem(pathname);
+  }, [isMultilingual, pathname]);
 
   React.useEffect(() => {
     if (searchIsActive) {
