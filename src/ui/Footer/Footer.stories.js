@@ -35,7 +35,7 @@ Default.args = {
   actions: [
     { link: '/privacy', title: 'Privacy' },
     { link: '/sitemap', title: 'Sitemap' },
-    { link: '/login', title: 'CMS Login' },
+    { link: 'https://www.eea.europa.eu/en/login', title: 'CMS Login' },
   ],
   copyright: [
     { link: 'https://status.eea.europa.eu/', title: 'System status' },
