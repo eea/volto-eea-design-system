@@ -18,7 +18,6 @@ const Contact = ({ children, contacts }) =>
           ) : (
             <a
               href={contact.link}
-              title={contact?.text}
               target={'_blank'}
               rel="noopener noreferrer"
               className={'bold'}
@@ -37,7 +36,6 @@ const Contact = ({ children, contacts }) =>
                   ) : (
                     <a
                       href={child.link}
-                      title={child?.text}
                       target={'_blank'}
                       rel="noopener noreferrer"
                     >
