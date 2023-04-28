@@ -109,47 +109,53 @@ const Template = (args) => (
 
 const AccTemplate = (args, panes) => {
   const [activeAccTabIndex, setActiveAccTabIndex] = useState(0);
-
-  function getTabs({ ...args }) {
-    return args.panes.map((tab, index) => ({
+  const items = args.panes.map((tab, index) => {
+    return {
       title: tab.menuItem,
+      // title: (
+      //   <>
+      //     <Icon className="ri-arrow-down-s-line" />
+      //     {tab.menuItem}
+      //   </>
+      // ),
       getContent: () => tab.render(),
-      /* Optional parameters */
       key: index,
       tabClassName: `tab ui button item title ${
         activeAccTabIndex === index ? 'active' : ''
       }`,
       panelClassName: 'panel ui bottom attached segment',
-    }));
-  }
+    };
+  });
 
   return (
     <Container>
-      <div
-        tabIndex="0"
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') {
-            e.preventDefault();
-            const focusedElement = document.activeElement;
-            if (focusedElement) focusedElement.click();
-          }
-        }}
-        role="tab"
-      >
-        <Tabs
-          id={args.id}
-          items={getTabs(args)}
-          selectedTabKey={activeAccTabIndex}
-          tabsWrapperClass="tabs-accordion-icon-right ui pointing secondary menu tabs-accessibility"
-          showMore={false}
-          onChange={(tab) => {
-            if (tab !== panes[activeAccTabIndex]) {
-              setActiveAccTabIndex(tab);
-            } else {
-              setActiveAccTabIndex(null);
+      <div className="tabs-block accordion light flex-start">
+        <div
+          tabIndex="0"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              const focusedElement = document.activeElement;
+              if (focusedElement) focusedElement.click();
             }
           }}
-        />
+          role="tab"
+        >
+          <Tabs
+            id={args.id}
+            items={items}
+            selectedTabKey={activeAccTabIndex}
+            tabsWrapperClass="tabs-accordion-icon-right ui pointing secondary menu tabs-accessibility"
+            showMore={false}
+            onChange={(tab) => {
+              if (tab !== panes[activeAccTabIndex]) {
+                setActiveAccTabIndex(tab);
+              } else {
+                setActiveAccTabIndex(null);
+              }
+            }}
+          />
+        </div>
       </div>
     </Container>
   );
