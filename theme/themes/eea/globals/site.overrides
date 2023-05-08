@@ -172,10 +172,10 @@ a {
     visibility: hidden;
   }
   .image {
- page-break-inside:avoid;  
+   page-break-inside:avoid;  
   }
   img {
- page-break-inside:avoid;  
+   page-break-inside:avoid;  
   }
   .card { 
   page-break-inside:avoid;  
