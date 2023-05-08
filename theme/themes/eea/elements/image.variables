@@ -20,6 +20,7 @@
 @imageAlignLargeMaxWidth: 50%;
 @imageAlignMediumMaxWidth: 25%;
 @imageAlignSmallMaxWidth: 15%;
+@imageBlockContainerLinkDisplay: block;
 
 /*-------------------
        Types

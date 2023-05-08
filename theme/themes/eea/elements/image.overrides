@@ -88,6 +88,12 @@
   position: relative;
 }
 
+// https://www.eea.europa.eu/en/newsroom/photo-competitions
+// ensure link focus goes over the image
+.image-block-container > a {
+  display: @imageBlockContainerLinkDisplay;
+}
+
 /* if the image is smaller than the content area the copyright
   isn't as big as the image unless the image is inline-block
 */
