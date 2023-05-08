@@ -172,12 +172,16 @@ a {
     visibility: hidden;
   }
   .image {
-    break-inside: avoid-page;
+ page-break-inside:avoid;  
   }
   img {
-    break-inside: avoid-page;
+ page-break-inside:avoid;  
   }
-  .card {
-    break-inside: avoid-page;
+  .card { 
+  page-break-inside:avoid;  
+
+  }
+  .grid-block-teaser .card{
+    page-break-inside:auto;  
   }
 }
