@@ -49,7 +49,7 @@ export default {
         type: { summary: 'boolean' },
       },
     },
-    objectfit: {
+    objectFit: {
       name: 'Image fit',
       options: ['unset', 'cover', 'contain', 'fill', 'scale-down'],
       control: { type: 'select' },
@@ -58,7 +58,7 @@ export default {
         defaultValue: { summary: 'cover' },
       },
     },
-    objectposition: {
+    objectPosition: {
       name: 'Image position',
       options: ['none', 'center', 'top', 'bottom', 'left', 'right'],
       control: { type: 'select' },
@@ -103,8 +103,8 @@ const CardTemplate = ({
   inverted,
   titleOnImage,
   rounded,
-  objectfit,
-  objectposition,
+  objectFit,
+  objectPosition,
   titleMaxLines,
   maxLines,
   card,
@@ -114,9 +114,9 @@ const CardTemplate = ({
     className={`u-card ${variant === 'default' ? '' : variant} ${
       inverted ? 'inverted' : ''
     } ${variant} ${rounded ? 'rounded' : ''} ${
-      objectfit === 'unset' ? '' : 'has--objectfit--' + objectfit
+      objectFit === 'unset' ? '' : 'has--object-fit--' + objectFit
     } ${
-      objectposition === 'none' ? '' : 'has--objectposition--' + objectposition
+      objectPosition === 'none' ? '' : 'has--object-position--' + objectPosition
     } ${
       titleMaxLines === 'none'
         ? 'title-max-0-lines'
@@ -190,8 +190,8 @@ const Template = (args) => (
         titleOnImage={args.titleOnImage}
         inverted={args.inverted}
         rounded={args.rounded}
-        objectfit={args.objectfit}
-        objectposition={args.objectposition}
+        objectFit={args.objectFit}
+        objectPosition={args.objectPosition}
         titleMaxLines={args.titleMaxLines}
         maxLines={args.maxLines}
         card={card}
@@ -207,8 +207,8 @@ Default.args = {
   variant: 'default',
   inverted: false,
   rounded: false,
-  objectfit: 'cover',
-  objectposition: 'center',
+  objectFit: 'cover',
+  objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
   cards: [
@@ -237,8 +237,8 @@ const GridTemplate = (args) => (
             titleOnImage={args.titleOnImage}
             inverted={args.inverted}
             rounded={args.rounded}
-            objectfit={args.objectfit}
-            objectposition={args.objectposition}
+            objectFit={args.objectFit}
+            objectPosition={args.objectPosition}
             titleMaxLines={args.titleMaxLines}
             maxLines={args.maxLines}
             card={card}
@@ -256,8 +256,8 @@ CardGrid.args = {
   variant: 'default',
   inverted: false,
   rounded: false,
-  objectfit: 'cover',
-  objectposition: 'center',
+  objectFit: 'cover',
+  objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
   cards: [
@@ -306,8 +306,8 @@ ImageGrid.args = {
   variant: 'default',
   inverted: false,
   rounded: false,
-  objectfit: 'center',
-  objectposition: 'cover',
+  objectFit: 'center',
+  objectPosition: 'cover',
   titleMaxLines: '2',
   maxLines: '2',
   cards: [
@@ -347,8 +347,8 @@ const FluidGridTemplate = (args) => (
           titleOnImage={args.titleOnImage}
           inverted={args.inverted}
           rounded={args.rounded}
-          objectfit={args.objectfit}
-          objectposition={args.objectposition}
+          objectFit={args.objectFit}
+          objectPosition={args.objectPosition}
           titleMaxLines={args.titleMaxLines}
           maxLines={args.maxLines}
           card={card}
@@ -365,8 +365,8 @@ FluidGrid.args = {
   variant: 'default',
   inverted: false,
   rounded: false,
-  objectfit: 'cover',
-  objectposition: 'center',
+  objectFit: 'cover',
+  objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
   cards: [
@@ -447,9 +447,9 @@ function CarouselCardsContent({
   variant,
   inverted,
   rounded,
-  objectfit,
+  objectFit,
   settings,
-  objectposition,
+  objectPosition,
   titleMaxLines,
   maxLines,
   cards,
@@ -464,8 +464,8 @@ function CarouselCardsContent({
             titleOnImage={titleOnImage}
             inverted={inverted}
             rounded={rounded}
-            objectfit={objectfit}
-            objectposition={objectposition}
+            objectFit={objectFit}
+            objectPosition={objectPosition}
             titleMaxLines={titleMaxLines}
             maxLines={maxLines}
             card={card}
@@ -490,8 +490,8 @@ CarouselCards.args = {
   variant: 'default',
   inverted: false,
   rounded: false,
-  objectfit: 'cover',
-  objectposition: 'center',
+  objectFit: 'cover',
+  objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
   settings: {
@@ -584,8 +584,8 @@ const TeaserCard = ({
   titleOnImage,
   inverted,
   rounded,
-  objectfit,
-  objectposition,
+  objectFit,
+  objectPosition,
   titleMaxLines,
   maxLines,
   card,
@@ -598,11 +598,11 @@ const TeaserCard = ({
         className={`ui card u-card ${card.fluid ? 'fluid' : ''} ${
           inverted ? 'inverted' : ''
         } ${variant} ${rounded ? 'rounded' : ''} ${
-          objectfit === 'unset' ? '' : 'has--objectfit--' + objectfit
+          objectFit === 'unset' ? '' : 'has--object-fit--' + objectFit
         } ${
-          objectposition === 'none'
+          objectPosition === 'none'
             ? ''
-            : 'has--objectposition--' + objectposition
+            : 'has--object-position--' + objectPosition
         } ${
           titleMaxLines === 'none'
             ? 'title-max-0-lines'
@@ -643,8 +643,8 @@ const TeaserTemplate = (args) => (
             titleOnImage={args.titleOnImage}
             inverted={args.inverted}
             rounded={args.rounded}
-            objectfit={args.objectfit}
-            objectposition={args.objectposition}
+            objectFit={args.objectFit}
+            objectPosition={args.objectPosition}
             titleMaxLines={args.titleMaxLines}
             maxLines={args.maxLines}
             card={card}
@@ -662,8 +662,8 @@ TeaserCardGrid.args = {
   variant: 'default',
   inverted: false,
   rounded: false,
-  objectfit: 'cover',
-  objectposition: 'center',
+  objectFit: 'cover',
+  objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
   cards: [
