@@ -30,6 +30,7 @@ function HeaderSearchPopUp({
   const {
     path = '',
     buttonTitle,
+    buttonUrl,
     description,
     placeholder = 'Search',
     searchSuggestions,
@@ -115,7 +116,7 @@ function HeaderSearchPopUp({
             <Container>
               <div>{description}</div>
               <a
-                href={defaultView[0].path}
+                href={buttonUrl || defaultView[0].path}
                 className="ui button white inverted"
                 title="Advanced search"
               >

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Transition } from 'semantic-ui-react';
 import { Container, Grid, List, Icon, Accordion } from 'semantic-ui-react';
 
@@ -244,17 +244,31 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
 };
 
 const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
-  let defaultIndex = -1;
+  const [activeIndex, setActiveIndex] = useState(-1);
+
+  useEffect(() => {
+    let index = 0;
+    menuItems.forEach((menuItem) => {
+      if (pathName.includes(menuItem.url)) setActiveIndex(index);
+      ++index;
+    });
+  }, [menuItems, pathName]);
+
   const rootPanels = [];
   menuItems.forEach((element, index) => {
     let x = {};
     x.key = index;
-
-    if (pathName.indexOf(element.url) !== -1) {
-      defaultIndex = index;
-    }
     x.title = (
-      <Accordion.Title key={`title-${index}`} index={index} as="button">
+      <Accordion.Title
+        key={`title-${index}`}
+        index={index}
+        as="button"
+        onClick={() => {
+          if (activeIndex === index) {
+            setActiveIndex(-1);
+          } else setActiveIndex(index);
+        }}
+      >
         {element.title}
         <Icon className="ri-arrow-down-s-line" size="small" />
       </Accordion.Title>
@@ -289,7 +303,7 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
     rootPanels.push(x);
   });
 
-  return <Accordion defaultActiveIndex={defaultIndex} panels={rootPanels} />;
+  return <Accordion activeIndex={activeIndex} panels={rootPanels} />;
 };
 
 function HeaderMenuPopUp({

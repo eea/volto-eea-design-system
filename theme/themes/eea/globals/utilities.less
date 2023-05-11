@@ -37,15 +37,19 @@ h1, h2, h3, h4, h5, h6, p, span, .header {
 .text-left,
 .has--text--left,
 .has--textAlign--left { text-align: left !important; }
+
 .text-center,
 .has--text--center,
 .has--textAlign--center { text-align: center !important;}
+
 .text-right,
 .has--text--right,
 .has--textAlign--right { text-align: right !important; }
+
 .text-justify,
 .has--text--justify,
 .has--textAlign--justify { text-align: justify !important; }
+
 .bold { font-weight: bold !important; }
 
 .has--text--left {
@@ -56,6 +60,49 @@ h1, h2, h3, h4, h5, h6, p, span, .header {
   --text-align: center;
   --justify-content: space-evenly;
 }
+
+/*******************************
+   Image properties utilities
+*******************************/
+
+// image object fit
+.has--object-fit--contain {
+  --image-object-fit: contain;
+}
+
+.has--object-fit--cover {
+  --image-object-fit: cover;
+}
+
+.has--object-fit--fill {
+  --image-object-fit: fill;
+}
+
+.has--object-fit--scale-down {
+  --image-object-fit: scale-down;
+}
+
+// image object position
+.has--object-position--top {
+  --image-object-position: top;
+}
+
+.has--object-position--bottom {
+  --image-object-position: bottom;
+}
+
+.has--object-position--left {
+  --image-object-position: left;
+}
+
+.has--object-position--right {
+  --image-object-position: right;
+}
+
+.has--object-position--center {
+  --image-object-position: center;
+}
+
 
 // background position utilities
 .has--bg--top {

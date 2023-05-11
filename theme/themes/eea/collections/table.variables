@@ -35,7 +35,7 @@
 @cellVerticalPadding: @relativeMini;
 @cellHorizontalPadding: @relativeMini;
 @cellVerticalAlign: inherit;
-@cellTextAlign: center;
+@cellTextAlign: inherit;
 @cellBorder: 1px solid @secondaryColor;
 
 /* Table Header */

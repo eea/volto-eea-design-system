@@ -158,3 +158,10 @@
 .ui.accordion.tertiary .title:not(.active):focus-visible i {
   color: @tertiaryColorCSSVar;
 }
+
+@media only screen and (max-width: @largestMobileScreen) {
+  .accordion-block h1 * { font-size: @mobileH1; }
+  .accordion-block h2 * { font-size: @mobileH2; }
+  .accordion-block h3 * { font-size: @mobileH3; }
+  .accordion-block h4 * { font-size: @mobileH4; }
+}
