@@ -88,7 +88,7 @@ const Countries = ({ menuItem, renderMenuItem }) => (
     <Grid.Column width={8}>
       {menuItem.items.map((section, index) => (
         <React.Fragment key={index}>
-          {section.title === 'EEA member countries' && (
+          {index === 0 && (
             <ItemGrid
               sectionTitle={section.title}
               item={section}
@@ -103,7 +103,7 @@ const Countries = ({ menuItem, renderMenuItem }) => (
       <Grid columns={1} className="nested-grid">
         {menuItem.items.map((section, index) => (
           <React.Fragment key={index}>
-            {section.title !== 'EEA member countries' && (
+            {index !== 0 && (
               <Grid.Column>
                 <ItemGrid
                   sectionTitle={section.title}
