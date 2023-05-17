@@ -29,7 +29,9 @@ h2, h3, h4, h5, h6 {
   color: @contentAreaColor;
 }
 
-[id="page-document"] > * {
+[id="page-document"] > *,
+.view-wrapper > *
+{
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -37,7 +39,8 @@ h2, h3, h4, h5, h6 {
 [class~="view-defaultview"] [id="page-document"] > *,
 [class~="view-viewview"] [id="page-document"] > *,
 #main .container_width,
-#main .has--size--container_width
+#main .has--size--container_width,
+.view-wrapper > *
 {
   max-width: @containerWidth !important;
 }
