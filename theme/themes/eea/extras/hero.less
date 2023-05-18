@@ -100,4 +100,37 @@
   }
 }
 
+@media print {
+  .eea.hero-block.full-height,
+  .eea.hero-block.full-height .hero-block-image-wrapper,
+  .eea.hero-block.full-height .hero-block-inner-wrapper {
+    min-height: unset;
+  }
+
+  .hero-block-inner-wrapper {
+    padding-top: @heroBlockPrintPadding;
+    padding-bottom: @heroBlockPrintPadding;
+  }
+
+  .hero-block-image-wrapper {
+    left: 0 !important;
+    right: 0 !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-right: 0% !important;
+    width: 100% !important;
+    break-inside: avoid-page;
+  }
+
+  .hero-block {
+    break-inside: avoid-page;
+  }
+
+  .hero-block-body .eea.copyright {
+    display: none;
+    visibility: hidden;
+  }
+}
+
 .loadUIOverrides();

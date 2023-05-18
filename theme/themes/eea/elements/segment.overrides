@@ -8,6 +8,13 @@
   padding-left: 0;
 }
 
+@media print {
+  .ui.basic.segment.content-area {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
 .ui.primary.segment {
   border-bottom: @4px solid @greyBorderColor;
   font-size: @16px;
