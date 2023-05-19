@@ -3,11 +3,15 @@ import React from 'react';
 
 function useOnScreen(ref, rootMargin = '0px') {
   const [isIntersecting, setIntersecting] = React.useState(false);
+  const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIntersecting(entry.isIntersecting);
+        if (mounted === false) {
+          setIntersecting(entry.isIntersecting);
+          if (entry.isIntersecting === true) setMounted(true);
+        }
       },
       {
         rootMargin,
@@ -24,7 +28,7 @@ function useOnScreen(ref, rootMargin = '0px') {
       }
       observer.disconnect();
     };
-  }, [ref, rootMargin]);
+  }, [ref, rootMargin, mounted]);
   return isIntersecting;
 }
 
