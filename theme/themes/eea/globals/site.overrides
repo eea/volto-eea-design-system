@@ -29,7 +29,9 @@ h2, h3, h4, h5, h6 {
   color: @contentAreaColor;
 }
 
-[id="page-document"] > * {
+[id="page-document"] > *,
+.view-wrapper > *
+{
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -37,7 +39,8 @@ h2, h3, h4, h5, h6 {
 [class~="view-defaultview"] [id="page-document"] > *,
 [class~="view-viewview"] [id="page-document"] > *,
 #main .container_width,
-#main .has--size--container_width
+#main .has--size--container_width,
+.view-wrapper > *
 {
   max-width: @containerWidth !important;
 }
@@ -148,5 +151,40 @@ a {
       span.text {
         color: @tertiaryColor;
       }
+  }
+}
+
+@media print {
+  .skiplinks-wrapper,
+  .top.bar,
+  .main.bar.transparency,
+  .main-menu,
+  .eea .header .action,
+  .slider-arrow,
+  #footer,
+  #page-header .action,
+  #inpage-navigation {
+    display: none;
+    visibility: hidden;
+  }
+  .logo {
+    margin-left: 0;
+  }
+  .static-banner {
+    display: none;
+    visibility: hidden;
+  }
+  .image {
+   page-break-inside: avoid;  
+  }
+  img {
+   page-break-inside: avoid;  
+  }
+  .card { 
+  page-break-inside: avoid;  
+
+  }
+  .grid-block-teaser .card{
+    page-break-inside: auto;  
   }
 }
