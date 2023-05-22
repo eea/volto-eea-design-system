@@ -5,6 +5,7 @@ function useFirstVisited(ref, rootMargin = '0px') {
   const [intersected, setIntersected] = React.useState(false);
 
   React.useEffect(() => {
+    if (intersected) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIntersected(intersected === false ? entry.isIntersecting : true);
