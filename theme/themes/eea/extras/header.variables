@@ -130,6 +130,8 @@
 
 
 /* Subsite */
+@subsitePosition                      : relative;
+@subsiteZIndex                        : 1;
 @subsiteFontFamily                    : @headerFont;
 @subsiteFontWeight                    : @headerFontWeight;
 @subsiteColor                         : @linkColor;
