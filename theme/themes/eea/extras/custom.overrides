@@ -109,13 +109,6 @@
   }
 }
 
-
-// ensure background of content-box goes above the content area
-// draft image for non published pages
-.view-viewview:not(.wf-state-published) .content-area {
-    z-index: 0;
-}
-
 // remove margin from block headings overriding blocks.less rule
 .block h1:last-child, .block h2:last-child, .block h3:last-child, .block h4:last-child, .block h5:last-child {
     margin: 0;
