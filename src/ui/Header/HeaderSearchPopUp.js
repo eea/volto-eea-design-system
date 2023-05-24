@@ -23,7 +23,7 @@ function HeaderSearchPopUp({
   const headerSearchViews = headerSearchBox || [];
   const defaultView = headerSearchViews.filter((v) => v.isDefault);
   const localView = headerSearchViews.filter((v) =>
-    location.pathname.includes(v.path),
+    location.pathname.match(v.matchpath ? v.matchpath : v.path),
   );
   const activeView = localView.length > 0 ? localView[0] : defaultView[0];
 
