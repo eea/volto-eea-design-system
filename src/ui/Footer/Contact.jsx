@@ -28,7 +28,7 @@ const Contact = ({ children, contacts }) =>
           {contact.children && (
             <div className="subcontact">
               {contact.children.map((child, index) => (
-                <>
+                <React.Fragment key={index}>
                   {isInternalURL(child.link) ? (
                     <Link to={child.link} key={index}>
                       {child.text}
@@ -42,7 +42,7 @@ const Contact = ({ children, contacts }) =>
                       {child.text}
                     </a>
                   )}
-                </>
+                </React.Fragment>
               ))}
             </div>
           )}
