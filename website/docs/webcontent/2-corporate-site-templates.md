@@ -1,3 +1,8 @@
+---
+title: EEA corporate site templates
+hide_table_of_contents: true
+---
+
 ## EEA corporate site templates
 
 ### Landing page
