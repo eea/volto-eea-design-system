@@ -275,14 +275,14 @@ pipeline {
                   env.NODEJS_HOME = "${tool 'NodeJS'}"
                   env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
 
-                  sh '''rm -rf volto-kitkat-frontend'''
+                  sh '''rm -rf eea-storybook'''
 
-                  sh '''git clone --branch develop https://github.com/eea/volto-kitkat-frontend.git'''
+                  sh '''git clone --branch develop https://github.com/eea/eea-storybook.git'''
 
-                  withCredentials([string(credentialsId: 'volto-kitkat-frontend-chromatica', variable: 'CHROMATICA_TOKEN')]) {
-                    def RETURN_STATUS = sh(script: '''cd volto-kitkat-frontend; npm install -g mrs-developer chromatic; yarn cache clean; make develop; cd src/addons/$GIT_NAME; git fetch origin pull/${CHANGE_ID}/head:PR-${CHANGE_ID}; git checkout PR-${CHANGE_ID}; cd ../../..; yarn install; yarn build-storybook; npx chromatic --no-interactive --force-rebuild  --project-token=$CHROMATICA_TOKEN | tee chromatic.log; cd ..''', returnStatus: true)
+                  withCredentials([string(credentialsId: 'eea-storybook-chromatica', variable: 'CHROMATICA_TOKEN')]) {
+                    def RETURN_STATUS = sh(script: '''cd eea-storybook; npm install -g mrs-developer chromatic; yarn cache clean; make develop; cd src/addons/$GIT_NAME; git fetch origin pull/${CHANGE_ID}/head:PR-${CHANGE_ID}; git checkout PR-${CHANGE_ID}; cd ../../..; yarn install; yarn build-storybook; npx chromatic --no-interactive --force-rebuild  --project-token=$CHROMATICA_TOKEN | tee chromatic.log; cd ..''', returnStatus: true)
                     if ( RETURN_STATUS == 0 ) {
-                      def STORY_URL = sh(script: '''grep "View your Storybook" volto-kitkat-frontend/chromatic.log | sed "s/.*https/https/" ''', returnStdout: true).trim()
+                      def STORY_URL = sh(script: '''grep "View your Storybook" eea-storybook/chromatic.log | sed "s/.*https/https/" ''', returnStdout: true).trim()
                       pullRequest.comment("### :heavy_check_mark: Storybook:\n${STORY_URL}\n\n:rocket: @${GITHUB_COMMENT_AUTHOR}")
                     }
                     else {
@@ -291,7 +291,7 @@ pipeline {
                        error("Storybook build FAILED")
                     }
                    }
-                   sh '''rm -rf volto-kitkat-frontend'''
+                   sh '''rm -rf eea-storybook'''
               }
              }
           }
