@@ -38,11 +38,21 @@ footer .theme-sites {
     margin: @mobileThemeSitesLogoMargin;
   }
 
-  .header {
-    font-size: @mobileFooterTitleFontSize;
-  }
+}
+footer .footer-header {
+  font-size: @mobileFooterTitleFontSize;
 }
 
+.theme-sites .logo.freshwater {
+  max-width: @freshwaterLogoMaxWidth;
+}
+.subfooter .item {
+  display: @subFooterItemDisplay;
+  justify-content: @subFooterItemJustifyContent;
+  width: @subFooterItemWidth;
+  height: @subFooterItemHeight;
+  align-items: @subFooterItemAlignItems;
+}
 .subfooter .item .ui.grid {
   align-items: center;
 }
@@ -159,21 +169,13 @@ footer .footer-wrapper .menu {
     background: @computerFooterBackgroundGradient;
   }
 
-  footer .theme-sites .header {
+  footer .footer-header {
     font-size: @tabletFooterTitleFontSize;
   }
 
   .subfooter .item {
     .logo img {
       max-height: 100px;
-    }
-
-    .site.logo img {
-      padding-right: @siteLogoPaddingRight;
-    }
-
-    .contact-wrapper {
-      padding-left: @siteLogoPaddingRight;
     }
   }
 

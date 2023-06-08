@@ -14,12 +14,20 @@ const Sites = (props) => {
         <Grid.Column className="logo" key={i}>
           <a className="logo" href={item.url}>
             <LazyLoadComponent>
-              <Image src={item.src} alt={item.alt}></Image>
+              <Image
+                className={item.className}
+                src={item.src}
+                alt={item.alt}
+              ></Image>
             </LazyLoadComponent>
           </a>
           <a className="logo" href={nextItem.url}>
             <LazyLoadComponent>
-              <Image src={nextItem.src} alt={nextItem.alt}></Image>
+              <Image
+                className={nextItem.className}
+                src={nextItem.src}
+                alt={nextItem.alt}
+              ></Image>
             </LazyLoadComponent>
           </a>
         </Grid.Column>,

@@ -1,10 +1,8 @@
 import React from 'react';
 
 const FooterHeader = (props) => {
-  return (
-    <div className="theme-sites">
-      <h3 className="header text-center">{props.children}</h3>
-    </div>
-  );
+  return props.children ? (
+    <h2 className="footer-header text-center">{props.children}</h2>
+  ) : null;
 };
 export default FooterHeader;
