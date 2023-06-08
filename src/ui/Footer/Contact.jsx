@@ -11,13 +11,13 @@ const Contact = ({ children, contacts }) =>
     <div className="contact-wrapper">
       {contacts?.map((contact, index) => (
         <div className="contact" key={index}>
-          {isInternalURL(contact.link) ? (
-            <Link to={contact.link} className="bold">
+          {isInternalURL(contact.url) ? (
+            <Link to={contact.url} className="bold">
               {contact.text}
             </Link>
           ) : (
             <a
-              href={contact.link}
+              href={contact.url}
               target={'_blank'}
               rel="noopener noreferrer"
               className={'bold'}
@@ -29,13 +29,13 @@ const Contact = ({ children, contacts }) =>
             <div className="subcontact">
               {contact.children.map((child, index) => (
                 <React.Fragment key={index}>
-                  {isInternalURL(child.link) ? (
-                    <Link to={child.link} key={index}>
+                  {isInternalURL(child.url) ? (
+                    <Link to={child.url} key={index}>
                       {child.text}
                     </Link>
                   ) : (
                     <a
-                      href={child.link}
+                      href={child.url}
                       target={'_blank'}
                       rel="noopener noreferrer"
                     >
