@@ -8,7 +8,7 @@ const Contact = ({ children, contacts }) =>
   children?.length ? (
     children
   ) : (
-    <div className="contact-block">
+    <div className="contact-wrapper">
       {contacts?.map((contact, index) => (
         <div className="contact" key={index}>
           {isInternalURL(contact.link) ? (
