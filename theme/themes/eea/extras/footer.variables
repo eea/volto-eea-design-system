@@ -23,14 +23,19 @@
 @computerThemeSitesLogoMargin       : 0 auto @rem-space-10;
 @mobileFooterTitleFontSize          : @mobileH4;
 @tabletFooterTitleFontSize          : @h3;
+@freshwaterLogoMaxWidth             : 122px;
+
+/* Sub-footer Item */
+@subFooterItemDisplay: flex;
+@subFooterItemJustifyContent: center;
+@subFooterItemAlignItems: center;
+@subFooterItemWidth: 100%;
+@subFooterItemHeight: 100%;
 
 /* Sub-footer Item Header */
 @mobileItemHeaderMarginBottom       : @space-5;
 @computerItemHeaderMarginBottom     : @space-12;
 @computerLogoHeaderMarginLeft       : -50px;
-
-/* Site Logo */
-@siteLogoPaddingRight : 20%;
 
 /* Contact Info */
 @tabletContactBlockMarginInline     : 0;

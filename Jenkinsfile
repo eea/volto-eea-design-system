@@ -8,7 +8,7 @@ pipeline {
   environment {
         GIT_NAME = "volto-eea-design-system"
         NAMESPACE = "@eeacms"
-        SONARQUBE_TAGS = "volto.eea.europa.eu,www.eea.europa.eu-ims,demo-www.eea.europa.eu,prod-www.eea.europa.eu,circularity.eea.europa.eu,climate-adapt.eea.europa.eu,climate-advisory-board.devel4cph.eea.europa.eu,climate-advisory-board.europa.eu,www.eea.europa.eu-en"
+        SONARQUBE_TAGS = "volto.eea.europa.eu,www.eea.europa.eu-ims,demo-www.eea.europa.eu,prod-www.eea.europa.eu,climate-adapt.eea.europa.eu,climate-advisory-board.devel4cph.eea.europa.eu,climate-advisory-board.europa.eu,www.eea.europa.eu-en"
         DEPENDENCIES = ""
         VOLTO = ""
     }
@@ -200,6 +200,7 @@ pipeline {
             def nodeJS = tool 'NodeJS';
             withSonarQubeEnv('Sonarqube') {
               sh '''sed -i "s#/opt/frontend/my-volto-project/src/addons/${GIT_NAME}/##g" xunit-reports/coverage/lcov.info'''
+              sh '''sed -i "s#src/addons/${GIT_NAME}/##g" xunit-reports/coverage/lcov.info'''
               sh "export PATH=${scannerHome}/bin:${nodeJS}/bin:$PATH; sonar-scanner -Dsonar.javascript.lcov.reportPaths=./xunit-reports/coverage/lcov.info,./cypress-coverage/coverage/lcov.info -Dsonar.sources=./src -Dsonar.projectKey=$GIT_NAME-$BRANCH_NAME -Dsonar.projectVersion=$BRANCH_NAME-$BUILD_NUMBER"
               sh '''try=2; while [ \$try -gt 0 ]; do curl -s -XPOST -u "${SONAR_AUTH_TOKEN}:" "${SONAR_HOST_URL}api/project_tags/set?project=${GIT_NAME}-${BRANCH_NAME}&tags=${SONARQUBE_TAGS},${BRANCH_NAME}" > set_tags_result; if [ \$(grep -ic error set_tags_result ) -eq 0 ]; then try=0; else cat set_tags_result; echo "... Will retry"; sleep 60; try=\$(( \$try - 1 )); fi; done'''
             }
@@ -275,14 +276,14 @@ pipeline {
                   env.NODEJS_HOME = "${tool 'NodeJS'}"
                   env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
 
-                  sh '''rm -rf volto-kitkat-frontend'''
+                  sh '''rm -rf eea-storybook'''
 
-                  sh '''git clone --branch develop https://github.com/eea/volto-kitkat-frontend.git'''
+                  sh '''git clone --branch develop https://github.com/eea/eea-storybook.git'''
 
-                  withCredentials([string(credentialsId: 'volto-kitkat-frontend-chromatica', variable: 'CHROMATICA_TOKEN')]) {
-                    def RETURN_STATUS = sh(script: '''cd volto-kitkat-frontend; npm install -g mrs-developer chromatic; yarn cache clean; make develop; cd src/addons/$GIT_NAME; git fetch origin pull/${CHANGE_ID}/head:PR-${CHANGE_ID}; git checkout PR-${CHANGE_ID}; cd ../../..; yarn install; yarn build-storybook; npx chromatic --no-interactive --force-rebuild  --project-token=$CHROMATICA_TOKEN | tee chromatic.log; cd ..''', returnStatus: true)
+                  withCredentials([string(credentialsId: 'eea-storybook-chromatica', variable: 'CHROMATICA_TOKEN')]) {
+                    def RETURN_STATUS = sh(script: '''cd eea-storybook; npm install -g mrs-developer chromatic; yarn cache clean; make develop; cd src/addons/$GIT_NAME; git fetch origin pull/${CHANGE_ID}/head:PR-${CHANGE_ID}; git checkout PR-${CHANGE_ID}; cd ../../..; yarn install; yarn build-storybook; npx chromatic --no-interactive --force-rebuild  --project-token=$CHROMATICA_TOKEN | tee chromatic.log; cd ..''', returnStatus: true)
                     if ( RETURN_STATUS == 0 ) {
-                      def STORY_URL = sh(script: '''grep "View your Storybook" volto-kitkat-frontend/chromatic.log | sed "s/.*https/https/" ''', returnStdout: true).trim()
+                      def STORY_URL = sh(script: '''grep "View your Storybook" eea-storybook/chromatic.log | sed "s/.*https/https/" ''', returnStdout: true).trim()
                       pullRequest.comment("### :heavy_check_mark: Storybook:\n${STORY_URL}\n\n:rocket: @${GITHUB_COMMENT_AUTHOR}")
                     }
                     else {
@@ -291,7 +292,7 @@ pipeline {
                        error("Storybook build FAILED")
                     }
                    }
-                   sh '''rm -rf volto-kitkat-frontend'''
+                   sh '''rm -rf eea-storybook'''
               }
              }
           }

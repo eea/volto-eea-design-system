@@ -23,7 +23,7 @@ const SubFooter = (props) => {
             >
               <div className="item">
                 <div className={manager.className}>
-                  <a href={manager.link}>
+                  <a href={manager.url}>
                     <LazyLoadComponent>
                       <Image src={manager.src} alt={manager.alt}></Image>
                     </LazyLoadComponent>
@@ -55,7 +55,7 @@ const SubFooter = (props) => {
             >
               <div className="item">
                 <div className={manager.className}>
-                  <a href={manager.link}>
+                  <a href={manager.url}>
                     <LazyLoadComponent>
                       <Image src={manager.src} alt={manager.alt}></Image>
                     </LazyLoadComponent>
