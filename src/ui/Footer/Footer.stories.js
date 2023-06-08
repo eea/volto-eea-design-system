@@ -45,47 +45,65 @@ Default.args = {
     },
   ],
   sites: [
-    { url: 'https://water.europa.eu/marine', src: Marine, alt: 'WISE marine' },
+    {
+      url: 'https://water.europa.eu/marine',
+      src: Marine,
+      alt: 'WISE marine',
+      className: 'marine logo',
+    },
     {
       url: 'https://water.europa.eu/freshwater',
       src: Freshwater,
       alt: 'WISE freshwater',
+      className: 'freshwater logo',
     },
-    { url: 'https://biodiversity.europa.eu/', src: Bise, alt: 'Biodiversity' },
+    {
+      url: 'https://biodiversity.europa.eu/',
+      src: Bise,
+      alt: 'Biodiversity',
+      className: 'biodiversity logo',
+    },
     {
       url: 'https://forest.eea.europa.eu/',
       src: Fise,
       alt: 'Forest information system for europe',
+      className: 'fise logo',
     },
     {
       url: 'https://climate-adapt.eea.europa.eu/observatory',
       src: ClimateHealth,
       alt: 'Information platform for chemical monitoring',
+      className: 'climate logo',
     },
     {
       url: 'https://climate-adapt.eea.europa.eu/',
       src: Cca,
       alt: 'Climate adapt',
+      className: 'cca logo',
     },
     {
       url: 'https://industry.eea.europa.eu/',
       src: Industry,
       alt: 'European industrial emissions portal',
+      className: 'industry logo',
     },
     {
       url: 'https://climate-energy.eea.europa.eu/',
       src: Energy,
       alt: 'Climate and energy in the EU',
+      className: 'energy logo',
     },
     {
       url: 'https://land.copernicus.eu/',
       src: Copernicus,
       alt: 'Copernicus land monitoring service',
+      className: 'copernicus logo',
     },
     {
       url: 'https://insitu.copernicus.eu/',
       src: Insitu,
       alt: 'Copernicus in situ',
+      className: 'insitu logo',
     },
   ],
   managedBy: [
