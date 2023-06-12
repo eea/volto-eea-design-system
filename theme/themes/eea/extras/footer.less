@@ -37,10 +37,17 @@ footer .theme-sites {
   .logos .logo img {
     margin: @mobileThemeSitesLogoMargin;
   }
-
+  .logos .logo:focus-visible {
+    outline: @outlineBorder;
+    outline: @outlineBorderWebkit;
+  }
 }
 footer .footer-header {
   font-size: @mobileFooterTitleFontSize;
+  .logo:focus-visible {
+    outline: @outlineBorder;
+    outline: @outlineBorderWebkit;
+  }
 }
 
 .theme-sites .logo.freshwater {
@@ -57,6 +64,10 @@ footer .footer-header {
   align-items: center;
 }
 
+.subfooter .logo a:focus-visible {
+  outline: @outlineBorder !important;
+  outline: @outlineBorderWebkit !important;
+}
 .subfooter .item {
   .header {
     margin-bottom: @mobileItemHeaderMarginBottom;
