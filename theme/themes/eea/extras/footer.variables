@@ -31,6 +31,8 @@
 @subFooterItemAlignItems: center;
 @subFooterItemWidth: 100%;
 @subFooterItemHeight: 100%;
+@outlineBorder: 1px dotted #212121;
+@outlineBorderWebkit: 5px auto -webkit-focus-ring-color;
 
 /* Sub-footer Item Header */
 @mobileItemHeaderMarginBottom       : @space-5;
