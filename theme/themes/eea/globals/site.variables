@@ -121,7 +121,7 @@
 --------------------*/
 
 /* Global focus-visible for accessibility */
-@focusVisibleOutline: .2rem solid var(--focus-visible, @blue-3);
+@focusVisibleOutline: .2rem auto var(--focus-visible, @blue-3);
 
 /* Used on inputs, textarea etc */
 @focusedFormBorderColor: @secondaryColor;
