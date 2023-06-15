@@ -143,6 +143,9 @@ a {
   .block-style-tertiary {
     color: @tertiaryColor;
   }
+  .active {
+    background-color: @grey-2;
+  }
 }
 
 @media print {
