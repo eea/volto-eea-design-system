@@ -132,25 +132,16 @@ a {
   color: @black;
 }
 
-/* Add colors for paragraphs styles options in StyeMenu */
+/* Add colors for paragraphs styles options in StyleMenu */
 #style-menu.ui.dropdown .menu {
-  span.block-style-primary {
+  .block-style-primary {
     color: @primaryColor;
-      span.text {
-        color: @primaryColor;
-      }
   }
-  span.block-style-secondary {
+  .block-style-secondary {
     color: @secondaryColor;
-      span.text {
-        color: @secondaryColor;
-      }
   }
-  span.block-style-tertiary {
+  .block-style-tertiary {
     color: @tertiaryColor;
-      span.text {
-        color: @tertiaryColor;
-      }
   }
 }
 
@@ -175,16 +166,16 @@ a {
     visibility: hidden;
   }
   .image {
-   page-break-inside: avoid;  
+   page-break-inside: avoid;
   }
   img {
-   page-break-inside: avoid;  
+   page-break-inside: avoid;
   }
-  .card { 
-  page-break-inside: avoid;  
+  .card {
+  page-break-inside: avoid;
 
   }
   .grid-block-teaser .card{
-    page-break-inside: auto;  
+    page-break-inside: auto;
   }
 }
