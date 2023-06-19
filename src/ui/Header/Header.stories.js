@@ -1214,7 +1214,7 @@ const Template = (args) => {
       <Header>
         <Header.TopHeader>
           <Header.TopItem className="official-union">
-            <Image src={eeaFlag} alt="EU flag"></Image>
+            <Image src={eeaFlag} alt="European Union flag"></Image>
             <Header.TopDropdownMenu
               text="An official website of the European Union | How do you know?"
               tabletText="An official website of the European Union"
