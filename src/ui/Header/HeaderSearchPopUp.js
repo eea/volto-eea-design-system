@@ -72,6 +72,13 @@ function HeaderSearchPopUp({
     onClose();
   };
 
+  const onKeyDownHandler = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      onSubmit(event);
+    }
+  };
+
   return (
     <div id="search-box" ref={nodeRef}>
       <div className="wrapper">
@@ -85,6 +92,8 @@ function HeaderSearchPopUp({
                 className: 'ri-search-line',
                 link: true,
                 onClick: onSubmit,
+                tabIndex: '0',
+                onKeyDown: onKeyDownHandler,
               }}
               placeholder={placeholder}
               fluid
