@@ -33,30 +33,34 @@
 
 /* Link */
 .ui.low.labels .label:hover,
-.ui.low.label:hover{
+.ui.low.label:hover {
   background-color: @lowImportanceHoverBackground;
   border-color: @lowImportanceHoverBackground;
 }
 
 .ui.medium.labels .label:hover,
-.ui.medium.label:hover{
+.ui.medium.label:hover {
   background-color: @mediumImportanceHoverBackground;
   border-color: @mediumImportanceHoverBackground;
 }
 
 .ui.high.labels .label:hover,
-.ui.high.label:hover{
+.ui.high.label:hover {
   background-color: @highImportanceHoverBackground;
   border-color: @highImportanceHoverBackground;
 }
 
 .ui.highlight.labels .label:hover,
-.ui.highlight.label:hover{
+.ui.highlight.label:hover {
   background-color: @highlightImportanceHoverBackground;
   border-color: @highlightImportanceHoverBackground;
 }
 
 /* Ribbon */
+.ui.ribbon.label {
+  z-index: @ribbonLabelZindex;
+}
+
 .ui.low.ribbon.label {
   border-color: @lowImportanceBackground;
 }
@@ -79,6 +83,7 @@
   color: @lowImportanceBasicTextColor;
   border-color: @lowImportanceBackground;
 }
+
 .ui.basic.low.labels a.label:hover,
 .ui.basic.low.label:hover {
   background-color: @white;
@@ -91,6 +96,7 @@
   color: @mediumImportanceBasicTextColor;
   border-color: @mediumImportanceBackground;
 }
+
 .ui.basic.medium.labels a.label:hover,
 .ui.basic.medium.label:hover {
   background-color: @white;
@@ -103,6 +109,7 @@
   color: @highImportanceBasicTextColor;
   border-color: @highImportanceBackground;
 }
+
 .ui.basic.high.labels a.label:hover,
 .ui.basic.high.label:hover {
   background-color: @white;
@@ -115,6 +122,7 @@
   color: @highlightImportanceBasicTextColor;
   border-color: @highlightImportanceBackground;
 }
+
 .ui.basic.highlight.labels a.label:hover,
 .ui.basic.highlight.label:hover {
   background-color: @white;
