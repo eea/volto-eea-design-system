@@ -72,7 +72,6 @@ const TopDropdownMenu = ({
               text={mobileText || text}
               icon={icon || 'chevron down'}
               aria-label="dropdown"
-              role="dropdown"
               lazyLoad
               closeOnChange={true}
               closeOnBlur={false}
@@ -89,7 +88,6 @@ const TopDropdownMenu = ({
             className={className}
             text={mobileText || text}
             icon={icon || 'chevron down'}
-            role="dropdown"
             aria-label="dropdown"
             lazyLoad
             closeOnChange={true}
@@ -307,6 +305,10 @@ const Main = ({
                         activeItem.indexOf(item['@id']) !== -1 ||
                         activeItem.indexOf(item.url) !== -1
                       }
+                      aria-expanded={
+                        activeItem.indexOf(item['@id']) !== -1 ||
+                        activeItem.indexOf(item.url) !== -1
+                      }
                     >
                       {renderGlobalMenuItem(item, {
                         onClick: menuOnClick,
@@ -322,23 +324,25 @@ const Main = ({
                   tabIndex="0"
                   aria-pressed="false"
                   aria-haspopup="true"
+                  aria-expanded={searchIsActive}
                   ref={searchButtonRef}
                 >
                   {/* <Icon name={!state.activeSearch ? 'search' : 'close'} /> */}
                   <Image
                     src={!searchIsActive ? `${searchIcon}` : `${closeIcon}`}
-                    alt="search button open/close"
+                    alt="Search"
                   />
                 </button>
               )}
               <Header.BurgerAction
                 className={`mobile ${burger}`}
                 onClick={mobileBurgerOnClick}
+                aria-expanded={menuIsActive}
                 ref={mobileMenuBurgerRef}
               >
                 <Image
                   src={burger === 'open' ? `${closeIcon}` : `${burgerIcon}`}
-                  alt="menu icon open/close"
+                  alt="Menu"
                 />
               </Header.BurgerAction>
             </div>
