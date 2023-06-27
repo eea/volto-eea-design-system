@@ -95,6 +95,7 @@ const Template = (args) => {
                     icon="ri-share-fill"
                     title="Share"
                     className="share"
+                    id="share"
                   />
                 }
                 content={
@@ -127,6 +128,7 @@ const Template = (args) => {
                 icon="ri-download-2-line"
                 title="Download"
                 className="download"
+                id="download"
               />
             )}
           </>

@@ -72,9 +72,18 @@ Banner.Action = React.forwardRef(function (
 ) {
   return (
     <div className="action" ref={ref}>
-      <Button className={className} basic icon inverted onClick={onClick}>
-        <Icon className={icon} color={color}></Icon>
-        <span className={titleClass || 'mobile hidden'}>{title}</span>
+      <Button
+        className={className}
+        basic
+        icon
+        inverted
+        onClick={onClick}
+        title={id}
+      >
+        <Icon className={icon} color={color} aria-labelledby={id}></Icon>
+        <span className={titleClass || 'mobile hidden'} id={id}>
+          {title}
+        </span>
       </Button>
     </div>
   );
