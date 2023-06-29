@@ -281,7 +281,7 @@ pipeline {
                   sh '''git clone --branch develop https://github.com/eea/eea-storybook.git'''
 
                   withCredentials([string(credentialsId: 'eea-storybook-chromatica', variable: 'CHROMATICA_TOKEN')]) {
-                    def RETURN_STATUS = sh(script: '''cd eea-storybook; npm install -g mrs-developer chromatic; yarn cache clean; make develop; cd src/addons/$GIT_NAME; git fetch origin pull/${CHANGE_ID}/head:PR-${CHANGE_ID}; git checkout PR-${CHANGE_ID}; cd ../../..; yarn install; yarn build-storybook; if [ $? -eq 0 ]; then npx chromatic --no-interactive --exit-zero-on-changes --project-token=$CHROMATICA_TOKEN -d docs/ | tee chromatic.log; else exit 1; fi''', returnStatus: true)
+                    def RETURN_STATUS = sh(script: '''cd eea-storybook; npm install -g mrs-developer chromatic; yarn cache clean; make develop; cd src/addons/$GIT_NAME; git fetch origin pull/${CHANGE_ID}/head:PR-${CHANGE_ID}; git checkout PR-${CHANGE_ID}; cd ../../..; yarn install; yarn build-storybook; if [ $? -eq 0 ]; then set -o pipefail; npx chromatic --no-interactive --exit-zero-on-changes --project-token=$CHROMATICA_TOKEN -d docs/ | tee chromatic.log; else exit 1; fi''', returnStatus: true)
                     if ( RETURN_STATUS == 0 ) {
                       def STORY_URL = sh(script: '''grep "View your Storybook" eea-storybook/chromatic.log | sed "s/.*https/https/" ''', returnStdout: true).trim()
                       pullRequest.comment("### :heavy_check_mark: Storybook:\n${STORY_URL}\n\n:rocket: @${GITHUB_COMMENT_AUTHOR}")
