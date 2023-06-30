@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, Image, Grid, Container, Icon, Button } from 'semantic-ui-react';
 import Slider from 'react-slick';
 
@@ -455,6 +455,17 @@ function CarouselCardsContent({
   cards,
 }) {
   const slider = React.useRef(null);
+
+  useEffect(() => {
+    // Slider dots innerText for voiceOver
+    const sliderDots = Array.from(
+      document.querySelectorAll('.slick-dots > li > button'),
+    );
+    sliderDots.map(
+      (dot, index) => (dot.innerText = `Slider page ${dot.innerText}`),
+    );
+  }, []);
+
   return (
     <div className="cards-carousel">
       <Slider {...settings} ref={slider}>
