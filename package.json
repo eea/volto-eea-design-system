@@ -20,9 +20,9 @@
     "@eeacms/volto-corsproxy"
   ],
   "dependencies": {
+    "@eeacms/countup": "^2.0.4",
     "@eeacms/volto-corsproxy": "*",
     "@fontsource/roboto": "4.5.8",
-    "react-countup": "^6.3.0",
     "react-lazy-load-image-component": "1.5.6",
     "react-slick": "^0.28.1",
     "remixicon": "2.5.0",

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Statistic, Container, Button } from 'semantic-ui-react';
-import CountUp, { useCountUp } from 'react-countup';
+import { CountUp, useCountUp } from '@eeacms/countup';
 
 export default {
   title: 'Components/Statistic',
@@ -300,52 +300,71 @@ Custom.argTypes = {
 ////////////////////////////////// Animation Stories
 
 const AnimationTemplate = (args) => {
-  const { start, reset, pauseResume } = useCountUp({
-    ref: 'counter',
+  const [run, setRun] = React.useState(true);
+
+  const { reset, value } = useCountUp({
     start: args.start,
     end: args.end,
-    delay: args.delay,
     duration: args.duration,
-    decimals: args.decimals,
-    decimal: args.decimal,
-    prefix: args.prefix,
-    suffix: args.suffix,
+    decimalPlaces: args.decimals,
+    decimalSeparator: ',',
+    formatter: (value) => {
+      let prefix = args.prefix || '';
+      let suffix = args.suffix || '';
+      return prefix + value.toFixed(args.decimals) + suffix;
+    },
+    isCounting: run,
+    useIntersection: false,
   });
 
   return (
     <Container>
       <Statistic.Group {...args}>
         <a href="/#" className="ui small statistic">
-          <div className="value secondary" id="counter"></div>
+          <div className="value secondary">{value}</div>
           <div className="label tertiary">Count up label</div>
         </a>
       </Statistic.Group>
       <br />
-      <Button secondary onClick={start}>
+      <Button
+        secondary
+        onClick={() => {
+          reset();
+          setRun(true);
+        }}
+      >
         Start
       </Button>
-      <Button primary onClick={reset}>
+      <Button
+        primary
+        onClick={() => {
+          reset();
+          setRun(false);
+        }}
+      >
         Reset
       </Button>
-      <Button primary inverted onClick={pauseResume}>
+      <Button
+        primary
+        inverted
+        onClick={() => {
+          setRun(!run);
+        }}
+      >
         Pause/Resume
       </Button>
     </Container>
   );
 };
 
-export const Animation = AnimationTemplate.bind({});
+export const Animation = AnimationTemplate.bind();
+
 Animation.args = {
   start: 0,
   end: 5000,
-  delay: 0,
   duration: 5,
   decimals: 0,
-  prefix: '',
-  suffix: '',
-  decimal: '.',
-  size: 'small',
-  horizontal: false,
+  decimalSeparator: ',',
 };
 Animation.parameters = { controls: { exclude: ['Background when inverted'] } };
 
@@ -361,7 +380,7 @@ const CountupStatistics = (args) => (
           args.elements.map((element, index) => (
             <a href={element.href} className="ui small statistic">
               <div className={`value ${args.valueVariation}`}>
-                <CountUp end={element.value} />
+                <CountUp end={element.value} isCounting={true} />
               </div>
               <div className={`label ${args.labelVariation}`}>
                 {element.label}
@@ -381,21 +400,21 @@ AnimationGroup.args = {
     {
       ...Default.args,
       label: 'label 1',
-      value: '50',
+      value: 50,
       slate: 'Text from slate',
       href: '/#',
     },
     {
       ...Default.args,
       label: 'label 2',
-      value: '500',
+      value: 500,
       slate: 'Text from slate',
       href: '/#',
     },
     {
       ...Default.args,
       label: 'label 3',
-      value: '5000',
+      value: 5000,
       slate: 'Text from slate',
       href: '/#',
     },
