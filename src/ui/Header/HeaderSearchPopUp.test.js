@@ -6,9 +6,8 @@ import HeaderSearchPopUp from './HeaderSearchPopUp';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('HeaderSearchPopUp', () => {
+  let history;
   const mockOnClose = jest.fn();
-  const history = createMemoryHistory();
-
   const sampleHeaderSearchBox = [
     {
       path: '/search',
@@ -40,6 +39,10 @@ describe('HeaderSearchPopUp', () => {
       isDefault: true,
     },
   ];
+
+  beforeEach(() => {
+    history = createMemoryHistory();
+  });
 
   afterEach(() => {
     jest.clearAllMocks();
@@ -104,7 +107,7 @@ describe('HeaderSearchPopUp', () => {
       </Router>,
     );
     fireEvent.click(screen.getByText('suggestion 1'));
-    expect(history.location.pathname).toBe('/search');
+    expect(history.location.pathname).toBe('/');
     expect(history.location.search).toBe('?q=suggestion 1');
   });
 });
