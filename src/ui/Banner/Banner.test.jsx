@@ -155,22 +155,6 @@ describe('Banner', () => {
   });
 });
 
-const socialPlatforms = {
-  facebook: {
-    shareLink: (url) => `https://facebook.com/sharer.php?u=${url}`,
-  },
-  twitter: {
-    shareLink: (url) => `https://www.twitter.com/share?url=${url}`,
-  },
-  linkedin: {
-    shareLink: (url) =>
-      `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
-  },
-  reddit: {
-    shareLink: (url, title) => `https://reddit.com/submit?url=${url}`,
-  },
-};
-
 describe('sharePage', () => {
   it('should not do anything if an invalid platform is provided', () => {
     document.createElement = jest.fn();

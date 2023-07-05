@@ -270,9 +270,10 @@ describe('FluidGrid component', () => {
   it('renders fluid grid with correct number of cards', () => {
     const { container } = render(<FluidGrid {...args} />);
     const fluidGridCards = container.querySelectorAll(
-      '.fluid-card-row .fluid.card .content .header',
+      '.fluid-card-row .fluid.card .header',
     );
-    // expect(fluidGridCards.length).toBe(3);
+
+    expect(fluidGridCards.length).toBe(3);
   });
 });
 
