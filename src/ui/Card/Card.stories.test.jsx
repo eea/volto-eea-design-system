@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { TeaserCardGrid, CarouselCards } from './Card.stories';
 
 const tabletBreakpoint = 835;
