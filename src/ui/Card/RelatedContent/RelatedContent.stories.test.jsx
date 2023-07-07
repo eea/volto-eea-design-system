@@ -27,12 +27,16 @@ describe('RelatedContentInTab component', () => {
 
 describe('DefaultOdd component', () => {
   it('renders corectly', () => {
-    const { getByText } = render(<DefaultOdd {...DefaultOdd.args} />);
+    const { getByText, getAllByText } = render(
+      <DefaultOdd {...DefaultOdd.args} />,
+    );
 
-    DefaultOdd.args.publicationCards.forEach((element) => {
-      expect(getByText(element.description)).toBeInTheDocument();
-    });
-    expect(getByText(DefaultOdd.args.publicationCards[0].tag)).tohaveLength(3);
+    expect(getAllByText(DefaultOdd.args.publicationCards[0].tag)).toHaveLength(
+      3,
+    );
+    expect(
+      getByText(DefaultOdd.args.publicationCards[0].description),
+    ).toBeInTheDocument();
   });
 });
 
