@@ -18,7 +18,7 @@ describe('HeaderSearchPopUp', () => {
       searchSuggestions: {
         suggestionsTitle: 'Suggestions Title',
         suggestions: ['suggestion 1', 'suggestion 2', 'suggestion 3'],
-        maxToShow: 2,
+        maxToShow: 3,
       },
       isDefault: true,
     },
@@ -34,7 +34,7 @@ describe('HeaderSearchPopUp', () => {
       searchSuggestions: {
         suggestionsTitle: 'Suggestions Title',
         suggestions: ['suggestion 1', 'suggestion 2', 'suggestion 3'],
-        maxToShow: 2,
+        maxToShow: 3,
       },
       isDefault: true,
     },
