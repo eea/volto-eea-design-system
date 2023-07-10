@@ -10,7 +10,7 @@ describe('FluidGrid component', () => {
   beforeEach(() => {
     history = createMemoryHistory();
   });
-  it('renders fluid grid with correct number of cards', () => {
+  it('renders the correct logo', () => {
     const { container } = render(
       <Router history={history}>
         <Logo {...Logo.args} />
@@ -22,7 +22,7 @@ describe('FluidGrid component', () => {
     ).toBeInTheDocument();
   });
 
-  it('renders fluid grid with correct number of cards', () => {
+  it('renders the correct logo', () => {
     const { container } = render(
       <Router history={history}>
         <Logo
@@ -37,7 +37,7 @@ describe('FluidGrid component', () => {
     ).toBeInTheDocument();
   });
 
-  it('renders fluid grid with correct number of cards', () => {
+  it('renders the correct logo', () => {
     const { container } = render(
       <Router history={history}>
         <Logo
@@ -52,7 +52,7 @@ describe('FluidGrid component', () => {
     ).toBeInTheDocument();
   });
 
-  it('renders fluid grid with correct number of cards', () => {
+  it('renders the correct logo', () => {
     const { container } = render(
       <Router history={history}>
         <Logo {...Logo.args} site={'Forest Information System for Europe'} />
@@ -64,7 +64,7 @@ describe('FluidGrid component', () => {
     ).toBeInTheDocument();
   });
 
-  it('renders fluid grid with correct number of cards', () => {
+  it('renders the correct logo', () => {
     const { container } = render(
       <Router history={history}>
         <Logo

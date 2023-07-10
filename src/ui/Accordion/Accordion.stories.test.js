@@ -4,7 +4,7 @@ import { Default } from './Accordion.stories';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('Default component', () => {
-  it('renders cirrectly and fires keyDown Enter events', () => {
+  it('renders correctly and fires keyDown Enter events', () => {
     const { getByText, getAllByText } = render(<Default {...Default.args} />);
 
     Default.args.panels.forEach((panel) => {
@@ -27,7 +27,7 @@ describe('Default component', () => {
     });
   });
 
-  it('renders cirrectly and fires keyDown A event', () => {
+  it('renders correctly and fires keyDown A event', () => {
     const { getByText, getAllByText } = render(
       <Default {...Default.args} title_size={'h1'} />,
     );
