@@ -450,6 +450,12 @@
   padding: @headerPadding;
 }
 
+// when title is on image the extra padding that displays the
+// link outline reveals part of title from 3rd row
+.ui.card .gradient .header {
+  padding: @headerOnImagePadding;
+}
+
 .ui.card .header > a {
   .useTitleMaxLines();
 }

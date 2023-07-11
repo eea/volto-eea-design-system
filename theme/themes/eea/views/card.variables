@@ -89,6 +89,7 @@
 @headerLinkDisplay: block;
 
 @headerPadding: @em-space-1;
+@headerOnImagePadding: 0;
 @headerLineHeightOffset: -(@headerPadding * 2);
 
 /* Metadata */
@@ -341,7 +342,7 @@
 @carouselButtonIconFontSize: 3.125rem;
 @carouselButtonIconOpacity: 1;
 @carouselButtonDistance: -3.5rem;
-@carouselButtonPaddingTop: @rem-space-4;
+@carouselButtonPaddingTop: 0;
 
 /* Dots */
 @carouselDotsFontSize: 0.75rem;
