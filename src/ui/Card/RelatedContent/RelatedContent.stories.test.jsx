@@ -47,5 +47,19 @@ describe('DefaultEven component', () => {
     DefaultEven.args.publicationCards.forEach((element) => {
       expect(getByText(element.description)).toBeInTheDocument();
     });
+
+    expect(getByText(DefaultEven.args.buttonText)).toBeInTheDocument();
+  });
+
+  it('renders corectly without the button', () => {
+    const { getByText, queryByText } = render(
+      <DefaultEven {...DefaultEven.args} showButton={false} />,
+    );
+
+    DefaultEven.args.publicationCards.forEach((element) => {
+      expect(getByText(element.description)).toBeInTheDocument();
+    });
+
+    expect(queryByText(DefaultEven.args.buttonText)).toBeNull();
   });
 });
