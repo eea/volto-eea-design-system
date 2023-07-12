@@ -5,9 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 
 describe('Playground component', () => {
   it('renders correctly', () => {
-    const { container, getByText } = render(
-      <Playground {...Playground.args} />,
-    );
+    const { container } = render(<Playground {...Playground.args} />);
 
     expect(
       container.querySelector('img[alt="playground image"]'),
