@@ -415,6 +415,7 @@
     border-top: none;
     .header {
       word-break: break-word;
+      font-size: @iconCardHeaderFontSize;
     }
   }
   .icon {

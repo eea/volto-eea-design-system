@@ -84,6 +84,7 @@
 @headerMargin: -@em-space-2 -@em-space-1 -@em-space-1 -@em-space-1;
 @headerFontWeight: @bold;
 @headerFontSize: 1.125rem;
+@iconCardHeaderFontSize: clamp(@font-size-1, @font-size-2, 18px);
 
 @headerColor: inherit;
 @headerLinkDisplay: block;
@@ -271,8 +272,8 @@
         Image with title
 *******************************/
 @imageTitleColor: @white;
-@imageTitleFontSize: @h2;
-@imageTitleMobileFontSize: @mobileH1;
+@imageTitleFontSize: clamp(@font-size-3, @h2, 32px);
+@imageTitleMobileFontSize: clamp(@font-size-2, @mobileH1, 30px);
 @imageTitleFontWeight: @font-weight-7;
 @imageTitleLineHeight: @font-lineheight-0;
 @imageTitlePadding: @rem-space-6;
