@@ -38,9 +38,6 @@
 /* The size of page text  */
 @fontSize : 16px;
 
-/* Overrides html & body default font-size to enable scaling from browser settings */
-@baseFontSize: 1rem;
-
 
 /*-------------------
     Border Radius
