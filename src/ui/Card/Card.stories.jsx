@@ -306,19 +306,68 @@ CardGrid.args = {
   numberOfCards: 5,
   cards: [...cardModels],
 };
-export const ImageGrid = GridTemplate.bind({});
+
+const ImageCard = ({
+  variant,
+  inverted,
+  rounded,
+  objectFit,
+  objectPosition,
+  fluid,
+  card,
+}) => (
+  <div
+    className={`ui card u-card ${fluid ? 'fluid' : ''} ${
+      inverted ? 'inverted' : ''
+    } ${variant} ${rounded ? 'rounded' : ''} ${
+      objectFit === 'unset' ? '' : 'has--object-fit--' + objectFit
+    } ${
+      objectPosition === 'none' ? '' : 'has--object-position--' + objectPosition
+    } `}
+  >
+    <a className="image" href={card.href}>
+      <img src={card.imgUrl} alt={card.title} className="ui image" />
+    </a>
+  </div>
+);
+
+const ImageCardTemplate = (args) => (
+  <Container>
+    <div className="items imageCard-items">
+      {args.cards.slice(0, args.numberOfCards).map((card, index) => (
+        <ImageCard {...args} card={card} key={index} />
+      ))}
+    </div>
+  </Container>
+);
+export const ImageGrid = ImageCardTemplate.bind({});
 ImageGrid.args = {
-  titleOnImage: true,
   variant: 'default',
   inverted: false,
   rounded: false,
   objectFit: 'center',
   objectPosition: 'cover',
-  titleMaxLines: '2',
-  maxLines: '2',
   fluid: true,
   cards: [...cardModels],
   numberOfCards: 5,
+};
+
+ImageGrid.argTypes = {
+  titleOnImage: {
+    table: {
+      disable: true,
+    },
+  },
+  titleMaxLines: {
+    table: {
+      disable: true,
+    },
+  },
+  maxLines: {
+    table: {
+      disable: true,
+    },
+  },
 };
 
 const FluidGridTemplate = (args) => (
