@@ -7,10 +7,6 @@
 @tabletTopSectionHeight      : 42px;
 @computerTopSectionHeight    : 34px;
 
-@mobileMainSectionHeight     : 69px;
-@tabletMainSectionHeight     : 117px;
-@computerMainSectionHeight   : 160px;
-
 @mobilePopUpHeight           : calc(100vh - (@mobileTopSectionHeight + @mobileMainSectionHeight));
 @tabletPopUpHeight           : calc(100vh - (@tabletTopSectionHeight + @tabletMainSectionHeight));
 @computerPopUpHeight         : calc(100vh - (@computerTopSectionHeight + @computerMainSectionHeight));
