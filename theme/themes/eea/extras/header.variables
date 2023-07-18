@@ -7,9 +7,9 @@
 @tabletTopSectionHeight      : 42px;
 @computerTopSectionHeight    : 34px;
 
-@mobilePopUpHeight           : calc(100vh - (@mobileTopSectionHeight + @mobileMainSectionHeight));
-@tabletPopUpHeight           : calc(100vh - (@tabletTopSectionHeight + @tabletMainSectionHeight));
-@computerPopUpHeight         : calc(100vh - (@computerTopSectionHeight + @computerMainSectionHeight));
+@mobilePopUpHeight           : calc(100vh - (@mobileTopSectionHeight + 100%));
+@tabletPopUpHeight           : calc(100vh - (@tabletTopSectionHeight + 100%));
+@computerPopUpHeight         : calc(100vh - (@computerTopSectionHeight + 100%));
 
 /* Header font sizes */
 @headerMinyFontSize: 0.5rem;
