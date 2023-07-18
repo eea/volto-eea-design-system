@@ -8,6 +8,72 @@ import 'slick-carousel/slick/slick-theme.css';
 const tabletBreakpoint = 835;
 const mobileBreakpoint = 480;
 
+let cardModels = [
+  {
+    title: 'Economy and resources',
+    imgUrl:
+      'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
+    description:
+      'The economy plays a vital role in our lives by providing access to employment, ' +
+      'products and services that help us thrive. Unfortunately, with its key sectors like agriculture,' +
+      ' energy and transport, our economy also harms the environment and causes climate change. ' +
+      'Europe needs a circular, carbon-neutral and zero-pollution economy. ',
+    meta: 'Article',
+    metaRight: '20/05/2022',
+    href: '/#',
+  },
+  {
+    title: 'Health',
+    imgUrl:
+      'https://www.eea.europa.eu/en/topics/at-a-glance/health/@@images/image/preview',
+    description:
+      'By improving air, water, and soil quality and limiting pollution released to nature, ' +
+      'the EU has significantly contributed to enhancing human health in the last five ' +
+      'decades. Yet, many vulnerable groups continue to be impacted by environmental ' +
+      'degradation and climate change. Further improvements can help keep Europeans ' +
+      'healthier and better equipped to cope with climate change impacts.',
+    meta: 'Article',
+    metaRight: '30/06/2023',
+    href: '/#',
+  },
+  {
+    title: 'Nature',
+    imgUrl:
+      'https://www.eea.europa.eu/en/topics/at-a-glance/nature/@@images/image/preview',
+    description:
+      'Europe’s nature is filled with forests, mountains, vast plains, long rivers, deep blue seas and ' +
+      'refreshing lakes. But it also is under threat. Unsustainable farming and forestry practices, ' +
+      'pollution, climate change and invasive species are stressing and destabilising all natural ' +
+      'systems in Europe. The result is a biodiversity crisis. The EU is taking steps to protect and restore nature.',
+    meta: 'Article',
+    metaRight: '10/04/2022',
+    href: '/#',
+  },
+  {
+    title: 'Climate',
+    meta: 'Article',
+    imgUrl:
+      'https://www.eea.europa.eu/en/topics/at-a-glance/climate/@@images/image/preview',
+    description:
+      'Climate change affects us all and is accelerating. Its impacts will become even more severe if ' +
+      'the increase in global temperature is not kept below 1.5°C. The EU and its Member States are ' +
+      'taking important steps to rapidly reduce greenhouse gas emissions and adapt to climate change.',
+    href: '/#',
+  },
+  {
+    title: "State of Europe's environment",
+    imgUrl:
+      'https://www.eea.europa.eu/en/topics/at-a-glance/state-of-europes-environment/@@images/image/preview',
+    description:
+      'EU environment and climate policies have delivered substantial benefits over recent ' +
+      'decades, such as cleaner air and water. Nevertheless, Europe, as well as the rest ' +
+      'of the globe, is facing environmental challenges of unprecedented scale and urgency.',
+    meta: 'Article',
+    metaRight: '16/03/2022',
+    href: '/#',
+  },
+];
+
 export default {
   title: 'Components/Card/Default',
   component: Card,
@@ -49,6 +115,12 @@ export default {
         type: { summary: 'boolean' },
       },
     },
+    fluid: {
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
     objectFit: {
       name: 'Image fit',
       options: ['unset', 'cover', 'contain', 'fill', 'scale-down'],
@@ -65,6 +137,15 @@ export default {
       table: {
         category: 'Image',
         defaultValue: { summary: 'center' },
+      },
+    },
+    numberOfCards: {
+      name: 'Number of cards',
+      options: [1, 2, 3, 4, 5],
+      control: { type: 'select' },
+      table: {
+        defaultValue: { summary: 3 },
+        type: { summary: 'number' },
       },
     },
     titleMaxLines: {
@@ -98,6 +179,19 @@ export default {
   },
 };
 
+const CardImage = (card) => (
+  <a href={card.href} className={'image'}>
+    <Image src={card.imgUrl} ui={false} alt="card image" />
+    <div className="gradient">
+      <Card.Header>{card.title}</Card.Header>
+    </div>
+  </a>
+);
+
+const MetaRight = (args) => (
+  <span className="bold text-right">{args.metaRight}</span>
+);
+
 const CardTemplate = ({
   variant,
   inverted,
@@ -107,10 +201,11 @@ const CardTemplate = ({
   objectPosition,
   titleMaxLines,
   maxLines,
+  fluid,
   card,
 }) => (
   <Card
-    fluid={card.fluid}
+    fluid={fluid}
     className={`u-card ${variant === 'default' ? '' : variant} ${
       inverted ? 'inverted' : ''
     } ${variant} ${rounded ? 'rounded' : ''} ${
@@ -118,27 +213,21 @@ const CardTemplate = ({
     } ${
       objectPosition === 'none' ? '' : 'has--object-position--' + objectPosition
     } ${
-      titleMaxLines === 'none'
-        ? 'title-max-0-lines'
-        : 'title-max-' + titleMaxLines + '-lines'
-    } ${maxLines === 'none' ? 'max-0-lines' : 'max-' + maxLines + '-lines'}`}
+      titleMaxLines === 'none' ? '' : 'title-max-' + titleMaxLines + '-lines'
+    } ${maxLines === 'none' ? '' : 'max-' + maxLines + '-lines'}`}
   >
     {/* Card Image */}
-    {card.hasImage ? (
-      titleOnImage ? (
-        <CardImage {...card} />
-      ) : (
-        <Image
-          as="a"
-          href={card.href}
-          src={card.imgUrl}
-          wrapped
-          ui={false}
-          alt="card image"
-        />
-      )
+    {titleOnImage ? (
+      <CardImage {...card} />
     ) : (
-      ''
+      <Image
+        as="a"
+        href={card.href}
+        src={card.imgUrl}
+        wrapped
+        ui={false}
+        alt="card image"
+      />
     )}
     <Card.Content>
       {/* Type & Date */}
@@ -147,7 +236,7 @@ const CardTemplate = ({
       </Card.Meta>
 
       {/* Title */}
-      {!titleOnImage || !card.hasImage ? (
+      {!titleOnImage ? (
         <Card.Header>
           <a href={card.href}>{card.title}</a>
         </Card.Header>
@@ -169,34 +258,10 @@ const CardTemplate = ({
   </Card>
 );
 
-const CardImage = (card) => (
-  <a href={card.href} className={'image'}>
-    <Image src={card.imgUrl} ui={false} alt="card image" />
-    <div className="gradient">
-      <Card.Header>{card.title}</Card.Header>
-    </div>
-  </a>
-);
-
-const MetaRight = (args) => (
-  <span className="bold text-right">{args.metaRight}</span>
-);
-
 const Template = (args) => (
   <Container>
-    {args.cards.map((card, index) => (
-      <CardTemplate
-        variant={args.variant}
-        titleOnImage={args.titleOnImage}
-        inverted={args.inverted}
-        rounded={args.rounded}
-        objectFit={args.objectFit}
-        objectPosition={args.objectPosition}
-        titleMaxLines={args.titleMaxLines}
-        maxLines={args.maxLines}
-        card={card}
-        key={index}
-      />
+    {args.cards.slice(0, args.numberOfCards).map((card, index) => (
+      <CardTemplate {...args} card={card} key={index} />
     ))}
   </Container>
 );
@@ -211,39 +276,16 @@ Default.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
-  cards: [
-    {
-      title: 'Economy and resources',
-      imgUrl:
-        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-      hasImage: true,
-      meta: 'Article',
-      metaRight: '30/07/2022',
-      href: '/#',
-      fluid: false,
-    },
-  ],
+  numberOfCards: 1,
+  fluid: false,
+  cards: [...cardModels],
 };
-
 const GridTemplate = (args) => (
   <Container>
     <Grid>
-      {args.cards.map((card, index) => (
+      {args.cards.slice(0, args.numberOfCards).map((card, index) => (
         <Grid.Column mobile={12} tablet={6} computer={4} key={index}>
-          <CardTemplate
-            variant={args.variant}
-            titleOnImage={args.titleOnImage}
-            inverted={args.inverted}
-            rounded={args.rounded}
-            objectFit={args.objectFit}
-            objectPosition={args.objectPosition}
-            titleMaxLines={args.titleMaxLines}
-            maxLines={args.maxLines}
-            card={card}
-            key={index}
-          />
+          <CardTemplate {...args} card={card} key={index} />
         </Grid.Column>
       ))}
     </Grid>
@@ -260,100 +302,79 @@ CardGrid.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
-  cards: [
-    {
-      title: 'Nature',
-      imgUrl:
-        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-      hasImage: true,
-      meta: 'Article',
-      metaRight: '30/07/2022',
-      href: '/#',
-      fluid: true,
-    },
-    {
-      title: 'Economy and resources',
-      imgUrl:
-        'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
-      description:
-        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-      hasImage: true,
-      meta: 'Article',
-      metaRight: '30/07/2022',
-      href: '/#',
-      fluid: true,
-    },
-    {
-      title: "State of Europe's environment",
-      imgUrl:
-        'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
-      description:
-        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-      hasImage: true,
-      meta: 'Article',
-      metaRight: '30/07/2022',
-      href: '/#',
-      fluid: true,
-    },
-  ],
+  fluid: true,
+  numberOfCards: 5,
+  cards: [...cardModels],
 };
 
-export const ImageGrid = GridTemplate.bind({});
+const ImageCard = ({
+  variant,
+  inverted,
+  rounded,
+  objectFit,
+  objectPosition,
+  fluid,
+  card,
+}) => (
+  <div
+    className={`ui card u-card ${fluid ? 'fluid' : ''} ${
+      inverted ? 'inverted' : ''
+    } ${variant} ${rounded ? 'rounded' : ''} ${
+      objectFit === 'unset' ? '' : 'has--object-fit--' + objectFit
+    } ${
+      objectPosition === 'none' ? '' : 'has--object-position--' + objectPosition
+    } `}
+  >
+    <a className="image" href={card.href}>
+      <img src={card.imgUrl} alt={card.title} className="ui image" />
+    </a>
+  </div>
+);
+
+const ImageCardTemplate = (args) => (
+  <Container>
+    <div className="items imageCard-items">
+      {args.cards.slice(0, args.numberOfCards).map((card, index) => (
+        <ImageCard {...args} card={card} key={index} />
+      ))}
+    </div>
+  </Container>
+);
+export const ImageGrid = ImageCardTemplate.bind({});
 ImageGrid.args = {
-  titleOnImage: true,
   variant: 'default',
   inverted: false,
   rounded: false,
   objectFit: 'center',
   objectPosition: 'cover',
-  titleMaxLines: '2',
-  maxLines: '2',
-  cards: [
-    {
-      title: 'Nature',
-      imgUrl:
-        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      hasImage: true,
-      href: '/#',
-      fluid: true,
+  fluid: true,
+  cards: [...cardModels],
+  numberOfCards: 5,
+};
+
+ImageGrid.argTypes = {
+  titleOnImage: {
+    table: {
+      disable: true,
     },
-    {
-      title: 'Economy and resources',
-      imgUrl:
-        'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
-      hasImage: true,
-      href: '/#',
-      fluid: true,
+  },
+  titleMaxLines: {
+    table: {
+      disable: true,
     },
-    {
-      title: "State of Europe's environment",
-      imgUrl:
-        'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
-      hasImage: true,
-      href: '/#',
-      fluid: true,
+  },
+  maxLines: {
+    table: {
+      disable: true,
     },
-  ],
+  },
 };
 
 const FluidGridTemplate = (args) => (
   <Container>
     <div className="fluid-card-row">
-      {args.cards.map((card, index) => (
-        <CardTemplate
-          variant={args.variant}
-          titleOnImage={args.titleOnImage}
-          inverted={args.inverted}
-          rounded={args.rounded}
-          objectFit={args.objectFit}
-          objectPosition={args.objectPosition}
-          titleMaxLines={args.titleMaxLines}
-          maxLines={args.maxLines}
-          card={card}
-          key={index}
-        />
+      {args.cards.slice(0, args.numberOfCards).map((card, index) => (
+        <CardTemplate {...args} card={card} key={index} />
       ))}
     </div>
   </Container>
@@ -369,44 +390,9 @@ FluidGrid.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
-  cards: [
-    {
-      title: 'Nature',
-      imgUrl:
-        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-      hasImage: true,
-      meta: 'Article',
-      metaRight: '30/07/2022',
-      href: '/#',
-      fluid: true,
-    },
-    {
-      title: 'Health',
-      imgUrl:
-        'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
-      description:
-        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-      hasImage: true,
-      meta: 'Article',
-      metaRight: '30/07/2022',
-      href: '/#',
-      fluid: true,
-    },
-    {
-      title: "State of Europe's environment",
-      imgUrl:
-        'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
-      description:
-        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis. Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-      hasImage: true,
-      meta: 'Article',
-      metaRight: '30/07/2022',
-      href: '/#',
-      fluid: true,
-    },
-  ],
+  numberOfCards: 3,
+  fluid: true,
+  cards: [...cardModels],
 };
 
 const Arrows = (props) => {
@@ -442,35 +428,13 @@ const Arrows = (props) => {
   );
 };
 
-function CarouselCardsContent({
-  titleOnImage,
-  variant,
-  inverted,
-  rounded,
-  objectFit,
-  settings,
-  objectPosition,
-  titleMaxLines,
-  maxLines,
-  cards,
-}) {
+function CarouselCardsContent(args) {
   const slider = React.useRef(null);
   return (
     <div className="cards-carousel">
-      <Slider {...settings} ref={slider}>
-        {cards.map((card, index) => (
-          <CardTemplate
-            variant={variant}
-            titleOnImage={titleOnImage}
-            inverted={inverted}
-            rounded={rounded}
-            objectFit={objectFit}
-            objectPosition={objectPosition}
-            titleMaxLines={titleMaxLines}
-            maxLines={maxLines}
-            card={card}
-            key={index}
-          />
+      <Slider {...args.settings} ref={slider}>
+        {args.cards.slice(0, args.numberOfCards).map((card, index) => (
+          <CardTemplate {...args} card={card} key={index} />
         ))}
       </Slider>
       <Arrows slider={slider} />
@@ -494,6 +458,7 @@ CarouselCards.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
+  fluid: true,
   settings: {
     dots: true,
     infinite: true,
@@ -519,53 +484,8 @@ CarouselCards.args = {
       },
     ],
   },
-  cards: [
-    {
-      title: "State of Europe's environment",
-      meta: 'March 20, 2022.',
-      imgUrl:
-        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      hasImage: true,
-      href: '/#',
-      fluid: true,
-    },
-    {
-      title: 'Nature',
-      meta: 'March 20, 2022.',
-      imgUrl:
-        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      hasImage: true,
-      href: '/#',
-      fluid: true,
-    },
-    {
-      title: 'Health',
-      meta: 'March 20, 2022.',
-      imgUrl:
-        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      hasImage: true,
-      href: '/#',
-      fluid: true,
-    },
-    {
-      title: 'Climate',
-      meta: 'March 20, 2022.',
-      imgUrl:
-        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      hasImage: true,
-      href: '/#',
-      fluid: true,
-    },
-    {
-      title: 'Economy and resources',
-      meta: 'March 20, 2022.',
-      imgUrl:
-        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      hasImage: true,
-      href: '/#',
-      fluid: true,
-    },
-  ],
+  numberOfCards: 5,
+  cards: [...cardModels],
 };
 CarouselCards.argTypes = {
   settings: {
@@ -587,6 +507,7 @@ const TeaserCard = ({
   objectFit,
   objectPosition,
   titleMaxLines,
+  fluid,
   maxLines,
   card,
 }) => (
@@ -595,7 +516,7 @@ const TeaserCard = ({
       className={`styled-teaser styled ${variant === 'default' ? '' : variant}`}
     >
       <div
-        className={`ui card u-card ${card.fluid ? 'fluid' : ''} ${
+        className={`ui card u-card ${fluid ? 'fluid' : ''} ${
           inverted ? 'inverted' : ''
         } ${variant} ${rounded ? 'rounded' : ''} ${
           objectFit === 'unset' ? '' : 'has--object-fit--' + objectFit
@@ -633,28 +554,28 @@ const TeaserCard = ({
   </div>
 );
 
-const TeaserTemplate = (args) => (
-  <Container>
-    <div className="block __grid teaserGrid centered three">
-      <div className="ui stackable stretched three column grid">
-        {args.cards.map((card, index) => (
-          <TeaserCard
-            variant={args.variant}
-            titleOnImage={args.titleOnImage}
-            inverted={args.inverted}
-            rounded={args.rounded}
-            objectFit={args.objectFit}
-            objectPosition={args.objectPosition}
-            titleMaxLines={args.titleMaxLines}
-            maxLines={args.maxLines}
-            card={card}
-            key={index}
-          />
-        ))}
+const TeaserTemplate = (args) => {
+  const columnCount = { 1: 'one', 2: 'two', 3: 'three', 4: 'four' };
+  return (
+    <Container>
+      <div
+        className={`block __grid teaserGrid centered ${
+          columnCount[args.numberOfCards]
+        }`}
+      >
+        <div
+          className={`ui stackable stretched ${
+            columnCount[args.numberOfCards]
+          } column grid`}
+        >
+          {args.cards.slice(0, args.numberOfCards).map((card, index) => (
+            <TeaserCard {...args} card={card} key={index} />
+          ))}
+        </div>
       </div>
-    </div>
-  </Container>
-);
+    </Container>
+  );
+};
 
 export const TeaserCardGrid = TeaserTemplate.bind({});
 TeaserCardGrid.args = {
@@ -666,36 +587,7 @@ TeaserCardGrid.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
-  cards: [
-    {
-      title: "State of Europe's environment",
-      imgUrl:
-        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      description:
-        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-      hasImage: true,
-      href: '/#',
-      fluid: true,
-    },
-    {
-      title: 'Climate',
-      imgUrl:
-        'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
-      hasImage: true,
-      description:
-        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-      href: '/#',
-      fluid: true,
-    },
-    {
-      title: 'Economy and resources',
-      imgUrl:
-        'https://www.eea.europa.eu/media/pictures/european-environment-agency-building-with/image_large',
-      hasImage: true,
-      description:
-        'Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.Leo fermentum sollicitudin suspendisse iaculis feugiat. Eget tellus blandit aenean mattis.',
-      href: '/#',
-      fluid: true,
-    },
-  ],
+  fluid: true,
+  numberOfCards: 3,
+  cards: [...cardModels],
 };
