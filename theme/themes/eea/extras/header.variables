@@ -166,6 +166,7 @@
 @megaMenuBackgroundColor: @darkMidnightBlue;
 @megaMenuTextDisplay: flex;
 @megaMenuTextColor: @white;
+@megaMenuWordBreak: break-word;
 @megaMenuTextHoverDecoration: underline;
 @mobileMegaMenuPadding: @rem-space-4 0;
 @tabletMegaMenuPadding: @rem-space-9;
