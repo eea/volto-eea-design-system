@@ -226,10 +226,11 @@
 .main.bar {
   background: @headerMainSectionBackground;
   scrollbar-gutter: stable;
+  padding-left: 0;
 
   > .ui.container {
     display: flex;
-    height: @mobileMainSectionHeight;
+    //height: @mobileMainSectionHeight;
     align-items: center;
     justify-content: space-between;
 
@@ -257,7 +258,8 @@
 .main-menu {
   display: flex;
   width: 100%;
-  align-items: flex-end;
+  height: 100%;
+  //align-items: flex-end;
   justify-content: flex-end;
 
   .item {
@@ -439,7 +441,7 @@
 .burger-action {
   display: flex;
   width: @mobileActionsBoxWidth;
-  height: @mobileMainSectionHeight;
+  //height: @mobileMainSectionHeight;
   align-items: center;
   justify-content: center;
   border: none;
@@ -456,7 +458,7 @@
 .search-action {
   display: flex;
   width: @mobileActionsBoxWidth;
-  height: @mobileMainSectionHeight;
+  //height: @mobileMainSectionHeight;
   align-items: center;
   justify-content: center;
   border: none;
@@ -498,7 +500,7 @@
   .burger-action.mobile,
   .search-action {
     width: @tabletActionsBoxWidth;
-    height: @tabletMainSectionHeight;
+    //height: @tabletMainSectionHeight;
   }
 
   /*----------------------------------------------------------------------------
@@ -557,11 +559,11 @@
     HEADER MAIN BAR TABLET
   ----------------------------------------------------------------------------*/
 
-  .main.bar {
-    .ui.container {
-      height: @tabletMainSectionHeight;
-    }
-  }
+  //.main.bar {
+  //  .ui.container {
+  //    height: @tabletMainSectionHeight;
+  //  }
+  //}
 
   .eea.header .eea-logo {
     max-width: @tabletLogoMaxWidth;
@@ -605,7 +607,7 @@
 
   .search-action {
     width: @computerActionsBoxWidth;
-    height: @computerMainSectionHeight;
+    //height: @computerMainSectionHeight;
   }
 
   /*----------------------------------------------------------------------------
@@ -657,16 +659,18 @@
 
   .main.bar {
     .ui.container {
-      height: @computerMainSectionHeight;
+      //height: @computerMainSectionHeight;
 
       .ui.text.menu {
         display: flex;
-        width: 88%;
+        width: 90%;
         max-height: 100%;
         flex-wrap: wrap;
         //justify-content: space-between;
         margin: 0;
         gap: 1vw;
+        align-self: flex-end;
+        padding: 1rem 0 0 0;
 
         .item {
           padding: @mainMenuItemPadding;
