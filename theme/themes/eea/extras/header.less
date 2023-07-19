@@ -230,7 +230,6 @@
 
   > .ui.container {
     display: flex;
-    //height: @mobileMainSectionHeight;
     align-items: center;
     justify-content: space-between;
 
@@ -420,9 +419,6 @@
 }
 
 @media all and (max-width: @largestMobileScreen) {
-  .homepage .content-area {
-    margin-top: -@mobileMainSectionHeight;
-  }
 
   .eea.header .top.bar .ui.container {
     width: 100% !important; //override semantic auto to display content with space between them
@@ -441,7 +437,6 @@
 .burger-action {
   display: flex;
   width: @mobileActionsBoxWidth;
-  //height: @mobileMainSectionHeight;
   align-items: center;
   justify-content: center;
   border: none;
@@ -458,7 +453,6 @@
 .search-action {
   display: flex;
   width: @mobileActionsBoxWidth;
-  //height: @mobileMainSectionHeight;
   align-items: center;
   justify-content: center;
   border: none;
@@ -500,7 +494,6 @@
   .burger-action.mobile,
   .search-action {
     width: @tabletActionsBoxWidth;
-    //height: @tabletMainSectionHeight;
   }
 
   /*----------------------------------------------------------------------------
@@ -559,12 +552,6 @@
     HEADER MAIN BAR TABLET
   ----------------------------------------------------------------------------*/
 
-  //.main.bar {
-  //  .ui.container {
-  //    height: @tabletMainSectionHeight;
-  //  }
-  //}
-
   .eea.header .eea-logo {
     max-width: @tabletLogoMaxWidth;
     margin-top: @tabletLogoMarginTop;
@@ -576,10 +563,6 @@
 
   .eea.header .subsite-logo {
     font-size: @tabletSubsiteFontSize;
-  }
-
-  .homepage .content-area {
-    margin-top: -@tabletMainSectionHeight !important;
   }
 
   /* Search box */
@@ -607,7 +590,6 @@
 
   .search-action {
     width: @computerActionsBoxWidth;
-    //height: @computerMainSectionHeight;
   }
 
   /*----------------------------------------------------------------------------
@@ -659,7 +641,6 @@
 
   .main.bar {
     .ui.container {
-      //height: @computerMainSectionHeight;
 
       .ui.text.menu {
         display: flex;
@@ -689,10 +670,6 @@
 
   .eea.header .subsite-logo {
     font-size: @computerSubsiteFontSize;
-  }
-
-  .homepage .content-area {
-    margin-top: -@computerMainSectionHeight !important;
   }
 
   /* Search box */
