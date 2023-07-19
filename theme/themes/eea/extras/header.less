@@ -663,14 +663,13 @@
 
       .ui.text.menu {
         display: flex;
-        width: 90%;
+        width: @mainMenuWidth;
         max-height: 100%;
         flex-wrap: wrap;
-        //justify-content: space-between;
-        margin: 0;
-        gap: 1vw;
-        align-self: flex-end;
-        padding: 1rem 0 0 0;
+        margin: @mainMenuMargin;
+        gap: @mainMenuGap;
+        align-self: @mainMenuAlignSelf;
+        padding: @mainMenuPadding;
 
         .item {
           padding: @mainMenuItemPadding;

@@ -117,6 +117,11 @@
 @computerLogoMarginTop                : @rem-space-5;
 
 /* Main menu */
+@mainMenuWidth                        : 90%;
+@mainMenuMargin                       : 0;
+@mainMenuGap                          : 1vw;
+@mainMenuAlignSelf                    : flex-end;
+@mainMenuPadding                      : @rem-space-4 0 0 0;
 @mainMenuItemColor                    : @primaryColor;
 @mainMenuItemInvertedColor            : @white;
 @mainMenuItemFontSize                 : ~"min(max(0.875rem, 1.5vw), 1.125rem)";
