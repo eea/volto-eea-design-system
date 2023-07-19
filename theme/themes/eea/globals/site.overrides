@@ -106,11 +106,18 @@ small {
 }
 
 /* Heading size adjustment */
-@media only screen and (max-width: @largestMobileScreen) {
-  h1 { font-size: @mobileH1; }
-  h2 { font-size: @mobileH2; }
-  h3 { font-size: @mobileH3; }
-  h4 { font-size: @mobileH4; }
+h1 { font-size: @mobileH1; }
+h2 { font-size: @mobileH2; }
+h3 { font-size: @mobileH3; }
+h4 { font-size: @mobileH4; }
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  h1 { font-size: @desktopH1; }
+  h2 { font-size: @desktopH2; }
+  h3 { font-size: @desktopH3; }
+  h4 { font-size: @desktopH4; }
+  h5 { font-size: @desktopH5; }
+  h6 { font-size: @desktopH6; }
 }
 
 a {
