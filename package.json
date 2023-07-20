@@ -20,7 +20,7 @@
     "@eeacms/volto-corsproxy"
   ],
   "dependencies": {
-    "@eeacms/countup": "^2.0.4",
+    "@eeacms/countup": "*",
     "@eeacms/volto-corsproxy": "*",
     "@fontsource/roboto": "4.5.8",
     "react-lazy-load-image-component": "1.5.6",
