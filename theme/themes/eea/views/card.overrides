@@ -140,7 +140,7 @@
   --card-image-height: @roundedImageHeight;
 }
 .ui.card.rounded {
-  padding-top: @iconCardPaddingTop;
+  padding: @roundedCardPadding;
   border: none;
 
   .image {
@@ -415,6 +415,7 @@
     border-top: none;
     .header {
       word-break: break-word;
+      font-size: @iconCardHeaderFontSize;
     }
   }
   .icon {
@@ -450,6 +451,12 @@
   padding: @headerPadding;
 }
 
+// when title is on image the extra padding that displays the
+// link outline reveals part of title from 3rd row
+.ui.card .gradient .header {
+  padding: @headerOnImagePadding;
+}
+
 .ui.card .header > a {
   .useTitleMaxLines();
 }
@@ -457,4 +464,13 @@
 // Meta align fix
 .ui.card.u-card .meta:after {
     content: none;
+}
+
+/*******************************
+    Image Card items grid
+*******************************/
+.imageCard-items {
+  display: grid;
+  gap: @imageCardItemsGap;
+  grid-template-columns: repeat(auto-fit,minmax(@imageCardItemsGridMin, @imageCardItemsGridMax));
 }
