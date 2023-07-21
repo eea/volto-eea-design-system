@@ -373,6 +373,7 @@ Animation.args = {
   suffix: '',
   decimal: '.',
   size: 'small',
+  horizontal: false,
 };
 Animation.argTypes = {
   decimal: {
