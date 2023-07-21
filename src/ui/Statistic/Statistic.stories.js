@@ -301,17 +301,22 @@ Custom.argTypes = {
 
 const AnimationTemplate = (args) => {
   const [run, setRun] = React.useState(true);
-
   const { reset, value } = useCountUp({
     start: args.start,
     end: args.end,
     duration: args.duration,
     decimalPlaces: args.decimals,
-    decimalSeparator: ',',
+    decimalSeparator: args.decimal,
     formatter: (value) => {
       let prefix = args.prefix || '';
       let suffix = args.suffix || '';
-      return prefix + value.toFixed(args.decimals) + suffix;
+      let valueFixed = value.toFixed(args.decimals);
+
+      if (args.decimal === ',')
+        return (
+          prefix + new Intl.NumberFormat('ro-RO').format(valueFixed) + suffix
+        );
+      else return prefix + valueFixed + suffix;
     },
     isCounting: run,
     useIntersection: false,
@@ -364,7 +369,18 @@ Animation.args = {
   end: 5000,
   duration: 5,
   decimals: 0,
-  decimalSeparator: ',',
+  prefix: '',
+  suffix: '',
+  decimal: '.',
+  size: 'small',
+};
+Animation.argTypes = {
+  decimal: {
+    name: 'decimal',
+    defaultValue: '.',
+    options: ['.', ','],
+    control: { type: 'select' },
+  },
 };
 Animation.parameters = { controls: { exclude: ['Background when inverted'] } };
 
