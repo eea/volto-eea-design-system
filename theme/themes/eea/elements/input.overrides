@@ -81,6 +81,7 @@
 .accordion-title:not(.active) .ui.input input {
   color: @textColorCSSVar;
 }
+
 .ui.input input {
   border: @border;
 
@@ -121,7 +122,19 @@ textarea.fluid {
     font-weight: @bold;
   }
 
-  i.icon {
+  .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    margin: 0;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .icon:before {
     color: @white;
     font-size: 16px;
     opacity: 1;
@@ -129,18 +142,18 @@ textarea.fluid {
 }
 
 .ui.fluid.icon.input.search > input::-webkit-input-placeholder {
-  opacity: 0.9;
   color: rgb(255, 255, 255);
+  opacity: 0.9;
 }
 
 .ui.fluid.icon.input.search > input::-moz-placeholder {
-  opacity: 0.9;
   color: rgb(255, 255, 255);
+  opacity: 0.9;
 }
 
 .ui.fluid.icon.input.search > input::-ms-input-placeholder {
-  opacity: 0.9;
   color: rgb(255, 255, 255);
+  opacity: 0.9;
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
@@ -150,7 +163,7 @@ textarea.fluid {
       font-size: 18px;
     }
 
-    i.icon {
+    .icon:before {
       font-size: 18px;
     }
   }
@@ -164,7 +177,7 @@ textarea.fluid {
       font-size: 40px;
     }
 
-    i.icon {
+    .icon:before {
       font-size: 38px;
     }
   }
