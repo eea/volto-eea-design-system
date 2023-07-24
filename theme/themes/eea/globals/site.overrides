@@ -4,6 +4,10 @@
 
 @import '@eeacms/volto-eea-design-system/../theme/themes/eea/globals/utilities';
 
+html, body {
+  font-size: @baseFontSize;
+}
+
 // Accessibility outline on focus-visible for every component
 *:focus-visible {
   outline: @focusVisibleOutline;
@@ -11,6 +15,7 @@
 
 button:focus-visible,
 a.button:focus-visible,
+.ui.dropdown:focus-visible,
 .ui.checkbox input[type="checkbox"]:focus-visible,
 .ui.checkbox input[type="radio"]:focus-visible {
   outline: @focusVisibleOutline !important;
@@ -132,25 +137,19 @@ a {
   color: @black;
 }
 
-/* Add colors for paragraphs styles options in StyeMenu */
+/* Add colors for paragraphs styles options in StyleMenu */
 #style-menu.ui.dropdown .menu {
-  span:nth-of-type(1) {
+  .block-style-primary {
     color: @primaryColor;
-      span.text {
-        color: @primaryColor;
-      }
   }
-  span:nth-of-type(2) {
+  .block-style-secondary {
     color: @secondaryColor;
-      span.text {
-        color: @secondaryColor;
-      }
   }
-  span:nth-of-type(3) {
+  .block-style-tertiary {
     color: @tertiaryColor;
-      span.text {
-        color: @tertiaryColor;
-      }
+  }
+  .active {
+    background-color: @grey-2;
   }
 }
 
@@ -175,16 +174,16 @@ a {
     visibility: hidden;
   }
   .image {
-   page-break-inside: avoid;  
+   page-break-inside: avoid;
   }
   img {
-   page-break-inside: avoid;  
+   page-break-inside: avoid;
   }
-  .card { 
-  page-break-inside: avoid;  
+  .card {
+  page-break-inside: avoid;
 
   }
   .grid-block-teaser .card{
-    page-break-inside: auto;  
+    page-break-inside: auto;
   }
 }

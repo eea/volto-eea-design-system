@@ -345,7 +345,7 @@
   display: flex;
   overflow: auto;
   width: 100%;
-  height: @mobilePopUpHeight;
+  min-height: @mobilePopUpHeight;
   align-items: @searchBoxAlignItems;
   background: @searchBoxBackgroundGradient;
 
@@ -582,7 +582,7 @@
 
   /* Search box */
   #search-box {
-    height: @tabletPopUpHeight;
+    min-height: @tabletPopUpHeight;
 
     .wrapper {
       margin: @searchBoxTabletPopupMarginTop 0;
@@ -693,7 +693,7 @@
 
   /* Search box */
   #search-box {
-    height: @computerPopUpHeight;
+    min-height: @computerPopUpHeight;
 
     .wrapper {
       margin: @searchBoxComputerPopupMarginTop 0;

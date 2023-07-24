@@ -39,6 +39,14 @@ const TopItem = ({ children, className, id }) => (
   </div>
 );
 
+const onKeyDownHandler = (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    event.target.click();
+    //event.target.focus();
+  }
+};
+
 const TopDropdownMenu = ({
   children,
   className,
@@ -69,6 +77,8 @@ const TopDropdownMenu = ({
               closeOnChange={true}
               closeOnBlur={false}
               closeOnEscape={true}
+              openOnFocus={false}
+              onKeyDown={onKeyDownHandler}
             >
               <Dropdown.Menu role="option">{children}</Dropdown.Menu>
             </Dropdown>
@@ -85,6 +95,8 @@ const TopDropdownMenu = ({
             closeOnChange={true}
             closeOnBlur={false}
             closeOnEscape={true}
+            openOnFocus={false}
+            onKeyDown={onKeyDownHandler}
           >
             <Dropdown.Menu role="option">{children}</Dropdown.Menu>
           </Dropdown>
