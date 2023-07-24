@@ -462,6 +462,9 @@ CarouselCards.args = {
   settings: {
     dots: true,
     infinite: true,
+    customPaging: (i) => (
+      <button className={'slider-dots-button'}>Slider page {i + 1}</button>
+    ),
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false,
