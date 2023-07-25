@@ -394,50 +394,45 @@ FluidGrid.args = {
   fluid: true,
   cards: [...cardModels],
 };
-
-const Arrows = (props) => {
-  const { slider = {} } = props;
+const PrevArrow = (props) => {
+  const { onClick } = props;
 
   return (
-    <>
-      <Button
-        aria-label="Previous slide"
-        className="slider-arrow prev-arrow tablet or lower hidden"
-        icon
-        onClick={() => {
-          if (slider.current) {
-            slider.current.slickPrev();
-          }
-        }}
-      >
-        <Icon className="ri-arrow-left-s-line" />
-      </Button>
-      <Button
-        aria-label="Next slide"
-        className="slider-arrow next-arrow tablet or lower hidden"
-        icon
-        onClick={() => {
-          if (slider.current) {
-            slider.current.slickNext();
-          }
-        }}
-      >
-        <Icon className="ri-arrow-right-s-line" />
-      </Button>
-    </>
+    <Button
+      aria-label="Previous slide"
+      className="slider-arrow prev-arrow tablet or lower hidden"
+      icon
+      onClick={onClick}
+    >
+      <Icon className="ri-arrow-left-s-line" />
+    </Button>
+  );
+};
+
+const NextArrow = (props) => {
+  const { onClick } = props;
+
+  return (
+    <Button
+      aria-label="Next slide"
+      className="slider-arrow next-arrow tablet or lower hidden"
+      icon
+      onClick={onClick}
+    >
+      <Icon className="ri-arrow-right-s-line" />
+    </Button>
   );
 };
 
 function CarouselCardsContent(args) {
   const slider = React.useRef(null);
   return (
-    <div className="cards-carousel">
+    <div className="cards-carousel" role={'region'} aria-label={'carousel'}>
       <Slider {...args.settings} ref={slider}>
         {args.cards.slice(0, args.numberOfCards).map((card, index) => (
           <CardTemplate {...args} card={card} key={index} />
         ))}
       </Slider>
-      <Arrows slider={slider} />
     </div>
   );
 }
@@ -463,11 +458,16 @@ CarouselCards.args = {
     dots: true,
     infinite: true,
     customPaging: (i) => (
-      <button className={'slider-dots-button'}>Slider page {i + 1}</button>
+      <button className={'slider-dots-button'}>
+        <span className="slick-dot-icon" aria-hidden="true" />
+        <span className="slick-sr-only">Go to slide {i + 1}</span>
+      </button>
     ),
     slidesToShow: 4,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: tabletBreakpoint,
