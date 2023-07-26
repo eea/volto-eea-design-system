@@ -5,6 +5,15 @@ import { CountUp, useCountUp } from '@eeacms/countup';
 export default {
   title: 'Components/Statistic',
   component: Statistic,
+  args: {
+    label: 'Statistic Label',
+    value: 'Value',
+    size: 'small',
+    horizontal: false,
+    linked: false,
+    inverted: false,
+    backgroundVariant: 'primary',
+  },
   argTypes: {
     size: {
       control: {
@@ -43,39 +52,65 @@ export default {
         type: { summary: 'string' },
       },
     },
+
+    label: {
+      description: 'label content of the Statistic',
+    },
+    value: {
+      description: 'value content of the statistic',
+    },
+    inverted: {
+      description: 'Is the theme inverted',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
+    linked: {
+      description: 'Add link to statistic',
+      table: {
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
   },
 };
 
-const Template = (args) => (
-  <div
-    className={`full-width color-bg-${
-      args.inverted ? args.backgroundVariant : ''
-    }`}
-  >
-    <Container>
-      <Statistic.Group {...args}>
-        {args.elements &&
-          args.elements.map((element, index) => (
-            <Statistic
-              as="a"
-              href={element.href}
-              key={index}
-              {...element}
-            ></Statistic>
-          ))}
-        {!args.elements && (
-          <>
-            {args.linked ? (
-              <Statistic as="a" href="/#" {...args}></Statistic>
-            ) : (
-              <Statistic {...args}></Statistic>
-            )}{' '}
-          </>
-        )}
-      </Statistic.Group>
-    </Container>
-  </div>
-);
+const Template = (args) => {
+  const { backgroundVariant, elements, linked, ...sematicProps } = args;
+  return (
+    <div
+      className={`full-width color-bg-${
+        sematicProps.inverted ? backgroundVariant : ''
+      }`}
+    >
+      <Container>
+        <Statistic.Group {...sematicProps}>
+          {elements &&
+            elements.map((element, index) => (
+              <Statistic
+                as="a"
+                href={element.href}
+                key={index}
+                {...element}
+              ></Statistic>
+            ))}
+          {!elements && (
+            <>
+              {linked ? (
+                <Statistic as="a" href="/#" {...sematicProps}></Statistic>
+              ) : (
+                <Statistic {...sematicProps}></Statistic>
+              )}{' '}
+            </>
+          )}
+        </Statistic.Group>
+      </Container>
+    </div>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {
@@ -192,7 +227,7 @@ const CustomTemplate = (args) => (
     <Container>
       <Statistic.Group {...args}>
         {args.elements &&
-          args.elements.map((element, index) => (
+          args.elements.map((element) => (
             <a href={element.href} className="ui small statistic">
               <div className={`value ${args.valueVariation}`}>
                 {element.value}
@@ -362,7 +397,7 @@ const AnimationTemplate = (args) => {
   );
 };
 
-export const Animation = AnimationTemplate.bind();
+export const Animation = AnimationTemplate.bind({});
 
 Animation.args = {
   start: 0,
@@ -385,7 +420,7 @@ Animation.argTypes = {
 };
 Animation.parameters = { controls: { exclude: ['Background when inverted'] } };
 
-const CountupStatistics = (args) => (
+const CountUpStatistics = (args) => (
   <div
     className={`full-width color-bg-${
       args.inverted ? args.backgroundVariant : ''
@@ -394,7 +429,7 @@ const CountupStatistics = (args) => (
     <Container>
       <Statistic.Group id="counter" {...args}>
         {args.elements &&
-          args.elements.map((element, index) => (
+          args.elements.map((element) => (
             <a href={element.href} className="ui small statistic">
               <div className={`value ${args.valueVariation}`}>
                 <CountUp end={element.value} isCounting={true} />
@@ -411,7 +446,7 @@ const CountupStatistics = (args) => (
     </Container>
   </div>
 );
-export const AnimationGroup = CountupStatistics.bind({});
+export const AnimationGroup = CountUpStatistics.bind({});
 AnimationGroup.args = {
   elements: [
     {
@@ -444,57 +479,4 @@ AnimationGroup.args = {
   extraVariation: 'tertiary',
   inverted: false,
   backgroundVariant: 'primary',
-};
-AnimationGroup.argTypes = {
-  widths: {
-    control: {
-      type: 'select',
-      options: ['one', 'two', 'three', 'four', 'five'],
-    },
-    description: 'statistic column size',
-    table: {
-      type: {
-        summary: 'string',
-      },
-      defaultValue: {
-        summary: ' "" ',
-      },
-    },
-  },
-  valueVariation: {
-    name: 'Value variation',
-    defaultValue: 'tertiary',
-    options: ['primary', 'secondary', 'tertiary'],
-    control: { type: 'select' },
-    description: 'Text color variation',
-    table: {
-      category: 'Color variations',
-      defaultValue: { summary: 'tertiary' },
-      type: { summary: 'string' },
-    },
-  },
-  labelVariation: {
-    name: 'Value variation',
-    defaultValue: 'tertiary',
-    options: ['primary', 'secondary', 'tertiary'],
-    control: { type: 'select' },
-    description: 'Text color variation',
-    table: {
-      category: 'Color variations',
-      defaultValue: { summary: 'tertiary' },
-      type: { summary: 'string' },
-    },
-  },
-  extraVariation: {
-    name: 'Extra info variation',
-    defaultValue: 'tertiary',
-    options: ['primary', 'secondary', 'tertiary'],
-    control: { type: 'select' },
-    description: 'Text color variation',
-    table: {
-      category: 'Color variations',
-      defaultValue: { summary: 'tertiary' },
-      type: { summary: 'string' },
-    },
-  },
 };
