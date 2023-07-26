@@ -426,9 +426,34 @@ const NextArrow = (props) => {
 
 function CarouselCardsContent(args) {
   const slider = React.useRef(null);
+  const dots_parent = React.useRef(null);
+  const settings = {
+    ...args.settings,
+    customPaging: (i) => (
+      <button className={'slider-dots-button'} aria-current={i === 0}>
+        <span className="slick-dot-icon" aria-hidden="true" />
+        <span className="slick-sr-only">Go to slide {i + 1}</span>
+      </button>
+    ),
+    appendDots: (dots) => (
+      <ul ref={dots_parent} className={'slick-dots'}>
+        {dots}
+      </ul>
+    ),
+    afterChange: (currentSlide) => {
+      const dots = dots_parent.current;
+      if (dots) {
+        dots
+          .querySelectorAll('.slider-dots-button')
+          .forEach(function (el, idx) {
+            el.setAttribute('aria-current', idx === currentSlide);
+          });
+      }
+    },
+  };
   return (
     <div className="cards-carousel" role={'region'} aria-label={'carousel'}>
-      <Slider {...args.settings} ref={slider}>
+      <Slider {...settings} ref={slider}>
         {args.cards.slice(0, args.numberOfCards).map((card, index) => (
           <CardTemplate {...args} card={card} key={index} />
         ))}
@@ -457,12 +482,6 @@ CarouselCards.args = {
   settings: {
     dots: true,
     infinite: true,
-    customPaging: (i) => (
-      <button className={'slider-dots-button'}>
-        <span className="slick-dot-icon" aria-hidden="true" />
-        <span className="slick-sr-only">Go to slide {i + 1}</span>
-      </button>
-    ),
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
