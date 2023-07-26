@@ -76,7 +76,7 @@ Checkout the docs found within the [mockups](https://github.com/eea/volto-eea-de
 
 See [RELEASE.md](https://github.com/eea/volto-eea-design-system/blob/master/RELEASE.md).
 
-## Documentation and Storybook
+## Docusaurus and Storybook
 
 See [Docusaurus](https://eea.github.io/).
 See [Storybook](https://eea.github.io/eea-storybook/).
