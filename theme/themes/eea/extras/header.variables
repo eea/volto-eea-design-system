@@ -150,12 +150,13 @@
 /*-----------------
    HEADER ACTIONS
 ------------------*/
+@burgerAndMenuBackgroundColor: @primaryColor;
 
 /* Actions (Mega menu & Search) */
 @mobileActionsBoxWidth: 44px;
 @tabletActionsBoxWidth: 66px;
 @computerActionsBoxWidth: 72px;
-@burgerActionBackgroundColor: @darkMidnightBlue;
+@burgerActionBackgroundColor: @burgerAndMenuBackgroundColor;
 
 /* Mega menu and Search popup */
 @mobilePopupMarginTop   : 5vh;
@@ -164,7 +165,7 @@
 
 /* Mega menu */
 @mobileMegaMenuWidth: 94%;
-@megaMenuBackgroundColor: @darkMidnightBlue;
+@megaMenuBackgroundColor: @burgerAndMenuBackgroundColor;
 @megaMenuTextDisplay: flex;
 @megaMenuTextColor: @white;
 @megaMenuWordBreak: break-word;
