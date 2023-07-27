@@ -1,4 +1,4 @@
-import { React } from 'react';
+import React from 'react';
 import { Button, Segment, Image, Icon } from 'semantic-ui-react';
 
 import Popup from './Popup';

@@ -377,6 +377,9 @@
 }
 
 .cards-carousel .slick-dots li button:before {
+  content: none;
+}
+.cards-carousel .slick-dots li .slick-dot-icon:before {
   background-color: @carouselDotsBackgroundColor;
   color: transparent;
   border: @carouselDotsBorder;
@@ -384,9 +387,16 @@
   opacity: @carouselDotsOpacity;
   width: @mobileCarouselDotsWidth;
   height: @mobileCarouselDotsHeight;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '•';
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.cards-carousel .slick-dots li.slick-active button:before {
+.cards-carousel .slick-dots li.slick-active .slick-dot-icon:before {
   background-color: @carouselDotsActiveBackgroundColor;
   color: transparent;
 }
