@@ -359,6 +359,10 @@
   z-index: 1; // make arrows clickable even on events page with right column
 }
 
+.cards-carousel .slider-arrow.slick-disabled {
+  opacity: @carouselArrowDisabledOpacity;
+}
+
 .cards-carousel .prev-arrow {
   right: auto;
   left: @carouselButtonDistance;
