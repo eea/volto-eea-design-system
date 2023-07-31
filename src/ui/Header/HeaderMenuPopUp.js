@@ -56,8 +56,11 @@ const StandardMegaMenuGrid = ({
   layout,
   depth = 0,
   withoutLayout,
+  subChildren = false,
 }) => {
   const columns = layout.columns || layout.columnsWidth?.length || 4;
+  const item_id =
+    menuItem.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
 
   const RenderItem = ({ item, layout }) => {
     return (
@@ -76,6 +79,7 @@ const StandardMegaMenuGrid = ({
               renderMenuItem={renderMenuItem}
               layout={layout}
               depth={depth + 1}
+              subChildren={true}
             />
           </>
         ) : (
@@ -91,26 +95,35 @@ const StandardMegaMenuGrid = ({
     );
   };
 
-  return (
+  return subChildren ? (
+    <List aria-labelledby={item_id} style={{ columns: columns }}>
+      {menuItem.items.map((item, index) => {
+        return (
+          !layout.hideChildrenFromNavigation && (
+            <RenderItem item={item} layout={layout} key={index} />
+          )
+        );
+      })}
+    </List>
+  ) : (
     <Grid columns={columns}>
-      {!layout.columnsWidth ||
-        (depth > 0 &&
-          menuItem.items.map((item, index) => {
-            return (
-              !layout.hideChildrenFromNavigation && (
-                <Grid.Column
-                  className={cx({
-                    depth: depth,
-                  })}
-                  key={index}
-                >
-                  <RenderItem item={item} layout={layout} />
-                </Grid.Column>
-              )
-            );
-          }))}
+      {!layout.columnsWidth &&
+        !withoutLayout &&
+        menuItem.items.map((item, index) => {
+          return (
+            !layout.hideChildrenFromNavigation && (
+              <Grid.Column
+                className={cx({
+                  depth: depth,
+                })}
+                key={index}
+              >
+                <RenderItem item={item} layout={layout} />
+              </Grid.Column>
+            )
+          );
+        })}
       {!!layout.columnsWidth &&
-        depth === 0 &&
         layout.columnsWidth.map((columnWidth, index) => {
           const columns = layout.columnsWidth.length;
           const isLastColumn = columns - 1 === index;
