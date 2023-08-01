@@ -6,8 +6,6 @@ import { cloneDeep } from 'lodash';
 
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
-import cx from 'classnames';
-
 import config from '@plone/volto/registry';
 
 function listToMatrix(list, elementsPerSubArray) {
@@ -26,155 +24,176 @@ function listToMatrix(list, elementsPerSubArray) {
   return matrix;
 }
 
-const Item = ({
+const createColumns = (item, renderMenuItem, item_id) => {
+  const itemList = item.items.map((item, index) => (
+    <React.Fragment key={index}>
+      {renderMenuItem(item, {
+        className: 'item',
+        key: index,
+        id: item_id,
+      })}
+    </React.Fragment>
+  ));
+  return itemList;
+};
+
+const ItemGrid = ({
+  sectionTitle,
   item,
+  columns,
   renderMenuItem,
-  isSubTitle = false,
-  depth = false,
-  withoutLayout,
+  hideChildrenFromNavigation,
 }) => {
   const item_id = item.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
   return (
     <>
-      {renderMenuItem(item, {
-        className: withoutLayout
-          ? 'sub-title'
-          : cx({
-              'sub-title': isSubTitle,
-              item: !isSubTitle,
-              depth: depth,
-            }),
-        id: item_id,
-      })}
+      {renderMenuItem(item, { className: 'sub-title', id: item_id })}
+      {item.items.length && !hideChildrenFromNavigation ? (
+        <List aria-labelledby={item_id} style={{ columns: `${columns}` }}>
+          {createColumns(item, renderMenuItem, item_id)}
+        </List>
+      ) : null}
     </>
   );
 };
 
-const StandardMegaMenuGrid = ({
-  menuItem,
-  renderMenuItem,
-  layout,
-  depth = 0,
-  withoutLayout,
-  subChildren = false,
-}) => {
-  const columns = layout.columns || layout.columnsWidth?.length || 4;
-  const item_id =
-    menuItem.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
-
-  const RenderItem = ({ item, layout }) => {
-    return (
-      <>
-        {!!item.items.length ? (
-          <>
-            <Item
-              item={item}
-              renderMenuItem={renderMenuItem}
-              isSubTitle={depth === 0 && !layout.hideChildrenFromNavigation}
-              depth={depth > 0}
-              withoutLayout={withoutLayout}
-            />
-            <StandardMegaMenuGrid
-              menuItem={item}
-              renderMenuItem={renderMenuItem}
-              layout={layout}
-              depth={depth + 1}
-              subChildren={true}
-            />
-          </>
-        ) : (
-          <Item
-            item={item}
-            renderMenuItem={renderMenuItem}
-            isSubTitle={depth === 0 && !layout.hideChildrenFromNavigation}
-            depth={depth > 0}
-            withoutLayout={withoutLayout}
-          />
-        )}
-      </>
-    );
-  };
-
-  return subChildren ? (
-    <List aria-labelledby={item_id} style={{ columns: columns }}>
-      {menuItem.items.map((item, index) => {
-        return (
-          !layout.hideChildrenFromNavigation && (
-            <RenderItem item={item} layout={layout} key={index} />
-          )
-        );
+const Item = ({ item, icon = false, iconName, renderMenuItem }) => {
+  const item_id = item.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
+  return (
+    <>
+      {renderMenuItem(item, {
+        className: 'sub-title',
+        id: item_id,
       })}
-    </List>
+      <List className="menu-list" aria-labelledby={item_id}>
+        {item.items.map((listItem, index) => (
+          <React.Fragment key={index}>
+            {renderMenuItem(
+              listItem,
+              {
+                className: 'item',
+                key: index,
+              },
+              { children: icon && <Icon className={iconName} /> },
+            )}
+          </React.Fragment>
+        ))}
+      </List>
+    </>
+  );
+};
+
+const RenderItem = ({ layout, section, renderMenuItem, index, key }) => {
+  return !layout.childrenColumns || layout.childrenColumns[index] === 1 ? (
+    <Item item={section} renderMenuItem={renderMenuItem} key={key} />
   ) : (
-    <Grid columns={columns}>
-      {!layout.columnsWidth &&
-        !withoutLayout &&
-        menuItem.items.map((item, index) => {
-          return (
-            !layout.hideChildrenFromNavigation && (
-              <Grid.Column
-                className={cx({
-                  depth: depth,
-                })}
-                key={index}
-              >
-                <RenderItem item={item} layout={layout} />
+    <ItemGrid
+      sectionTitle={section.title}
+      item={section}
+      columns={layout.childrenColumns[index]}
+      key={key}
+      renderMenuItem={renderMenuItem}
+      hideChildrenFromNavigation={layout.hideChildrenFromNavigation}
+    />
+  );
+};
+
+const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
+  return layout ? (
+    layout.equalySpreadColumns ? (
+      <Grid columns={layout.equalySpreadColumns}>
+        {menuItem.items.map((section, index) => (
+          <Grid.Column key={index}>
+            <RenderItem
+              layout={layout}
+              section={section}
+              renderMenuItem={renderMenuItem}
+              index={index}
+              key={index}
+            />
+          </Grid.Column>
+        ))}
+      </Grid>
+    ) : (
+      <Grid>
+        {layout.itemsEquallySpread &&
+          menuItem.items.map((section, index) => (
+            <React.Fragment key={index}>
+              <Grid.Column width={layout.columnsWidth[index]}>
+                <RenderItem
+                  layout={layout}
+                  section={section}
+                  renderMenuItem={renderMenuItem}
+                  index={index}
+                  key={index}
+                />
               </Grid.Column>
-            )
-          );
-        })}
-      {!!layout.columnsWidth &&
-        layout.columnsWidth.map((columnWidth, index) => {
-          const columns = layout.columnsWidth.length;
-          const isLastColumn = columns - 1 === index;
-          const lastColumnItems =
-            isLastColumn && menuItem.items.length > layout.columnsWidth.length
-              ? menuItem.items.slice(index + 1)
-              : [];
+            </React.Fragment>
+          ))}
+        {!layout.itemsEquallySpread &&
+          layout.columnsWidth.map((columnWidth, index) => {
+            const columns = layout.columnsWidth.length;
+            const isLastColumn = columns - 1 === index;
+            const lastColumnItems =
+              isLastColumn &&
+              menuItem.items.length >= layout.columnsWidth.length
+                ? menuItem.items.slice(index)
+                : [];
 
-          const itemsMatrix = listToMatrix(menuItem.items, columns);
-
-          return (
-            <Grid.Column key={index} width={columnWidth}>
-              {layout.itemsEquallySpread &&
-                itemsMatrix.map(
-                  (item, itemIndex) =>
-                    item[index] && (
-                      <RenderItem
-                        key={itemIndex}
-                        item={item[index]}
-                        layout={layout}
-                      />
-                    ),
+            const itemsMatrix = listToMatrix(menuItem.items, columns);
+            return (
+              <Grid.Column key={index} width={columnWidth}>
+                {layout.itemsEquallySpread &&
+                  itemsMatrix.map(
+                    (item, itemIndex) =>
+                      item[index] && (
+                        <RenderItem
+                          layout={layout}
+                          section={item[index]}
+                          renderMenuItem={renderMenuItem}
+                          index={index}
+                          key={itemIndex}
+                        />
+                      ),
+                  )}
+                {!layout.itemsEquallySpread &&
+                  !!menuItem.items[index] &&
+                  !isLastColumn && (
+                    <RenderItem
+                      layout={layout}
+                      section={menuItem.items[index]}
+                      renderMenuItem={renderMenuItem}
+                      index={index}
+                      key={index}
+                    />
+                  )}
+                {!layout.itemsEquallySpread && isLastColumn && (
+                  <Grid columns={1} className="nested-grid">
+                    {lastColumnItems.map((lastColumnItem, lastColumnIndex) => (
+                      <Grid.Column>
+                        <RenderItem
+                          layout={layout}
+                          section={lastColumnItem}
+                          renderMenuItem={renderMenuItem}
+                          index={index}
+                          key={lastColumnIndex}
+                        />
+                      </Grid.Column>
+                    ))}
+                  </Grid>
                 )}
-              {!layout.itemsEquallySpread && !!menuItem.items[index] && (
-                <RenderItem item={menuItem.items[index]} layout={layout} />
-              )}
-              {!layout.itemsEquallySpread &&
-                isLastColumn &&
-                lastColumnItems.map((lastColumnItem, lastColumnIndex) => (
-                  <RenderItem
-                    key={lastColumnIndex}
-                    item={lastColumnItem}
-                    layout={layout}
-                  />
-                ))}
-            </Grid.Column>
-          );
-        })}
-      {/* For paths without layout */}
-      {Object.keys(layout).length === 0 &&
-        menuItem.items.map((section, index) => {
-          return (
-            <Grid.Column key={index}>
-              <Item
-                item={section}
-                renderMenuItem={renderMenuItem}
-                withoutLayout={withoutLayout}
-              />
-            </Grid.Column>
-          );
-        })}
+              </Grid.Column>
+            );
+          })}
+      </Grid>
+    )
+  ) : (
+    <Grid columns={4}>
+      {menuItem.items.map((section, index) => (
+        <Grid.Column key={index}>
+          <Item item={section} renderMenuItem={renderMenuItem} />
+        </Grid.Column>
+      ))}
     </Grid>
   );
 };
@@ -373,10 +392,9 @@ function HeaderMenuPopUp({
 
   const layouts = config.settings?.megaMenuLayouts;
   const layout =
-    !!layouts && Object.keys(layouts).includes(menuItem?.url)
-      ? layouts[menuItem.url]
-      : {};
-  const withoutLayout = Object.keys(layout).length === 0;
+    !!layouts &&
+    Object.keys(layouts).includes(menuItem?.url) &&
+    layouts[menuItem.url];
 
   return (
     <Transition visible={visible} animation="slide down" duration={300}>
@@ -411,7 +429,6 @@ function HeaderMenuPopUp({
                 menuItem={menuItem}
                 renderMenuItem={renderMenuItem}
                 layout={layout}
-                withoutLayout={withoutLayout}
               />
             </div>
           )}

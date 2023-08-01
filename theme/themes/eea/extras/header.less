@@ -923,34 +923,17 @@
   }
 
   #mega-menu .sub-title {
-    display: @megaMenuSubTitleDisplay;
-    padding: @megaMenuSubTitlePadding;
     color: @megaMenuTextColor;
     font-size: @computerMegaMenuSubTitleFontSize;
     font-weight: @megaMenuSubTitleFontWeight;
+    padding: @megaMenuSubTitlePadding;
+    display: @megaMenuSubTitleDisplay;
 
     &:hover,
     &:focus-visible {
       text-decoration: underline;
     }
   }
-}
-
-#mega-menu .menu-content .ui.column .column.depth {
-  padding-top: 0;
-  padding-bottom: 0.3rem;
-}
-
-#mega-menu .sub-title {
-  padding: 1.5rem 0 0.5rem 0;
-}
-
-#mega-menu .item {
-  padding: 0.5rem 0.5rem;
-}
-
-#mega-menu .menu-content .ui.grid > .column:not(.row) {
-  padding-top: 0;
 }
 
 .loadUIOverrides();
