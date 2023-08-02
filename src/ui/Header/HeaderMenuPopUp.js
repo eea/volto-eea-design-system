@@ -113,8 +113,8 @@ const RenderItem = ({ layout, section, renderMenuItem, index, key }) => {
 
 const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
   return layout ? (
-    layout.equalySpreadColumns ? (
-      <Grid columns={layout.equalySpreadColumns}>
+    layout.equallySpreadColumns ? (
+      <Grid columns={layout.equallySpreadColumns}>
         {menuItem.items.map((section, index) => (
           <Grid.Column key={index}>
             <RenderItem
