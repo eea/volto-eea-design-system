@@ -112,105 +112,95 @@ const RenderItem = ({ layout, section, renderMenuItem, index, key }) => {
 };
 
 const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
-  return layout ? (
-    layout.equallySpreadColumns ? (
-      <Grid columns={layout.equallySpreadColumns}>
-        {menuItem.items.map((section, index) => (
+  return layout && layout.columnsWidth ? (
+    <Grid>
+      {layout.itemsEquallySpread &&
+        menuItem.items.map((section, index) => (
+          <React.Fragment key={index}>
+            <Grid.Column className={layout.columnsWidth[index]}>
+              <RenderItem
+                layout={layout}
+                section={section}
+                renderMenuItem={renderMenuItem}
+                index={index}
+                key={index}
+              />
+            </Grid.Column>
+          </React.Fragment>
+        ))}
+      {!layout.itemsEquallySpread &&
+        layout.columnsWidth.map((columnWidth, index) => {
+          const columns = layout.columnsWidth.length;
+          const isLastColumn = columns - 1 === index;
+          const lastColumnItems =
+            isLastColumn && menuItem.items.length >= layout.columnsWidth.length
+              ? menuItem.items.slice(index)
+              : [];
+
+          const itemsMatrix = listToMatrix(menuItem.items, columns);
+          return (
+            <Grid.Column key={index} className={layout.columnsWidth[index]}>
+              {layout.itemsEquallySpread &&
+                itemsMatrix.map(
+                  (item, itemIndex) =>
+                    item[index] && (
+                      <RenderItem
+                        layout={layout}
+                        section={item[index]}
+                        renderMenuItem={renderMenuItem}
+                        index={index}
+                        key={itemIndex}
+                      />
+                    ),
+                )}
+              {!layout.itemsEquallySpread &&
+                !!menuItem.items[index] &&
+                !isLastColumn && (
+                  <RenderItem
+                    layout={layout}
+                    section={menuItem.items[index]}
+                    renderMenuItem={renderMenuItem}
+                    index={index}
+                    key={index}
+                  />
+                )}
+              {!layout.itemsEquallySpread && isLastColumn && (
+                <Grid columns={1} className="nested-grid">
+                  {lastColumnItems.map((lastColumnItem, lastColumnIndex) => (
+                    <Grid.Column>
+                      <RenderItem
+                        layout={layout}
+                        section={lastColumnItem}
+                        renderMenuItem={renderMenuItem}
+                        index={index}
+                        key={lastColumnIndex}
+                      />
+                    </Grid.Column>
+                  ))}
+                </Grid>
+              )}
+            </Grid.Column>
+          );
+        })}
+    </Grid>
+  ) : (
+    <Grid className={layout?.equallySpreadColumns || 'four column'}>
+      {menuItem.items.map((section, index) => {
+        const hideChildrenFromNavigation =
+          layout.hideChildrenFromNavigation === undefined
+            ? true
+            : layout.hideChildrenFromNavigation;
+
+        return (
           <Grid.Column key={index}>
-            <RenderItem
-              layout={layout}
-              section={section}
+            <Item
+              item={section}
               renderMenuItem={renderMenuItem}
-              index={index}
-              key={index}
+              hideChildrenFromNavigation={hideChildrenFromNavigation}
             />
           </Grid.Column>
-        ))}
-      </Grid>
-    ) : (
-      <Grid>
-        {layout.itemsEquallySpread &&
-          menuItem.items.map((section, index) => (
-            <React.Fragment key={index}>
-              <Grid.Column width={layout.columnsWidth[index]}>
-                <RenderItem
-                  layout={layout}
-                  section={section}
-                  renderMenuItem={renderMenuItem}
-                  index={index}
-                  key={index}
-                />
-              </Grid.Column>
-            </React.Fragment>
-          ))}
-        {!layout.itemsEquallySpread &&
-          layout.columnsWidth.map((columnWidth, index) => {
-            const columns = layout.columnsWidth.length;
-            const isLastColumn = columns - 1 === index;
-            const lastColumnItems =
-              isLastColumn &&
-              menuItem.items.length >= layout.columnsWidth.length
-                ? menuItem.items.slice(index)
-                : [];
-
-            const itemsMatrix = listToMatrix(menuItem.items, columns);
-            return (
-              <Grid.Column key={index} width={columnWidth}>
-                {layout.itemsEquallySpread &&
-                  itemsMatrix.map(
-                    (item, itemIndex) =>
-                      item[index] && (
-                        <RenderItem
-                          layout={layout}
-                          section={item[index]}
-                          renderMenuItem={renderMenuItem}
-                          index={index}
-                          key={itemIndex}
-                        />
-                      ),
-                  )}
-                {!layout.itemsEquallySpread &&
-                  !!menuItem.items[index] &&
-                  !isLastColumn && (
-                    <RenderItem
-                      layout={layout}
-                      section={menuItem.items[index]}
-                      renderMenuItem={renderMenuItem}
-                      index={index}
-                      key={index}
-                    />
-                  )}
-                {!layout.itemsEquallySpread && isLastColumn && (
-                  <Grid columns={1} className="nested-grid">
-                    {lastColumnItems.map((lastColumnItem, lastColumnIndex) => (
-                      <Grid.Column>
-                        <RenderItem
-                          layout={layout}
-                          section={lastColumnItem}
-                          renderMenuItem={renderMenuItem}
-                          index={index}
-                          key={lastColumnIndex}
-                        />
-                      </Grid.Column>
-                    ))}
-                  </Grid>
-                )}
-              </Grid.Column>
-            );
-          })}
-      </Grid>
-    )
-  ) : (
-    <Grid columns={4}>
-      {menuItem.items.map((section, index) => (
-        <Grid.Column key={index}>
-          <Item
-            item={section}
-            renderMenuItem={renderMenuItem}
-            hideChildrenFromNavigation={true}
-          />
-        </Grid.Column>
-      ))}
+        );
+      })}
     </Grid>
   );
 };
