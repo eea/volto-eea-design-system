@@ -57,7 +57,13 @@ const ItemGrid = ({
   );
 };
 
-const Item = ({ item, icon = false, iconName, renderMenuItem }) => {
+const Item = ({
+  item,
+  icon = false,
+  iconName,
+  renderMenuItem,
+  hideChildrenFromNavigation,
+}) => {
   const item_id = item.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
   return (
     <>
@@ -65,27 +71,34 @@ const Item = ({ item, icon = false, iconName, renderMenuItem }) => {
         className: 'sub-title',
         id: item_id,
       })}
-      <List className="menu-list" aria-labelledby={item_id}>
-        {item.items.map((listItem, index) => (
-          <React.Fragment key={index}>
-            {renderMenuItem(
-              listItem,
-              {
-                className: 'item',
-                key: index,
-              },
-              { children: icon && <Icon className={iconName} /> },
-            )}
-          </React.Fragment>
-        ))}
-      </List>
+      {!hideChildrenFromNavigation && (
+        <List className="menu-list" aria-labelledby={item_id}>
+          {item.items.map((listItem, index) => (
+            <React.Fragment key={index}>
+              {renderMenuItem(
+                listItem,
+                {
+                  className: 'item',
+                  key: index,
+                },
+                { children: icon && <Icon className={iconName} /> },
+              )}
+            </React.Fragment>
+          ))}
+        </List>
+      )}
     </>
   );
 };
 
 const RenderItem = ({ layout, section, renderMenuItem, index, key }) => {
   return !layout.childrenColumns || layout.childrenColumns[index] === 1 ? (
-    <Item item={section} renderMenuItem={renderMenuItem} key={key} />
+    <Item
+      item={section}
+      renderMenuItem={renderMenuItem}
+      key={key}
+      hideChildrenFromNavigation={layout.hideChildrenFromNavigation}
+    />
   ) : (
     <ItemGrid
       sectionTitle={section.title}
@@ -191,7 +204,11 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
     <Grid columns={4}>
       {menuItem.items.map((section, index) => (
         <Grid.Column key={index}>
-          <Item item={section} renderMenuItem={renderMenuItem} />
+          <Item
+            item={section}
+            renderMenuItem={renderMenuItem}
+            hideChildrenFromNavigation={true}
+          />
         </Grid.Column>
       ))}
     </Grid>
