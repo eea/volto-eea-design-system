@@ -171,7 +171,7 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
               {!layout.itemsEquallySpread && isLastColumn && (
                 <Grid columns={1} className="nested-grid">
                   {lastColumnItems.map((lastColumnItem, lastColumnIndex) => (
-                    <div>
+                    <div className={'column'}>
                       <RenderItem
                         layout={layout}
                         section={lastColumnItem}
