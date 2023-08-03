@@ -92,12 +92,16 @@ const Item = ({
 };
 
 const RenderItem = ({ layout, section, renderMenuItem, index, key }) => {
+  const hideChildrenFromNavigation =
+    layout.hideChildrenFromNavigation === undefined
+      ? true
+      : layout.hideChildrenFromNavigation;
   return !layout.childrenColumns || layout.childrenColumns[index] === 1 ? (
     <Item
       item={section}
       renderMenuItem={renderMenuItem}
       key={key}
-      hideChildrenFromNavigation={layout.hideChildrenFromNavigation}
+      hideChildrenFromNavigation={hideChildrenFromNavigation}
     />
   ) : (
     <ItemGrid
@@ -106,7 +110,7 @@ const RenderItem = ({ layout, section, renderMenuItem, index, key }) => {
       columns={layout.childrenColumns[index]}
       key={key}
       renderMenuItem={renderMenuItem}
-      hideChildrenFromNavigation={layout.hideChildrenFromNavigation}
+      hideChildrenFromNavigation={hideChildrenFromNavigation}
     />
   );
 };
@@ -117,7 +121,7 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
       {layout.itemsEquallySpread &&
         menuItem.items.map((section, index) => (
           <React.Fragment key={index}>
-            <Grid.Column className={layout.columnsWidth[index]}>
+            <div className={layout.columnsWidth[index]}>
               <RenderItem
                 layout={layout}
                 section={section}
@@ -125,7 +129,7 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
                 index={index}
                 key={index}
               />
-            </Grid.Column>
+            </div>
           </React.Fragment>
         ))}
       {!layout.itemsEquallySpread &&
@@ -139,7 +143,7 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
 
           const itemsMatrix = listToMatrix(menuItem.items, columns);
           return (
-            <Grid.Column key={index} className={layout.columnsWidth[index]}>
+            <div key={index} className={layout.columnsWidth[index]}>
               {layout.itemsEquallySpread &&
                 itemsMatrix.map(
                   (item, itemIndex) =>
@@ -167,7 +171,7 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
               {!layout.itemsEquallySpread && isLastColumn && (
                 <Grid columns={1} className="nested-grid">
                   {lastColumnItems.map((lastColumnItem, lastColumnIndex) => (
-                    <Grid.Column>
+                    <div>
                       <RenderItem
                         layout={layout}
                         section={lastColumnItem}
@@ -175,33 +179,30 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
                         index={index}
                         key={lastColumnIndex}
                       />
-                    </Grid.Column>
+                    </div>
                   ))}
                 </Grid>
               )}
-            </Grid.Column>
+            </div>
           );
         })}
     </Grid>
   ) : (
-    <Grid className={layout?.equallySpreadColumns || 'four column'}>
+    <div className={layout?.equallySpreadColumns || 'ui four column grid'}>
       {menuItem.items.map((section, index) => {
-        const hideChildrenFromNavigation =
-          layout.hideChildrenFromNavigation === undefined
-            ? true
-            : layout.hideChildrenFromNavigation;
-
         return (
           <Grid.Column key={index}>
-            <Item
-              item={section}
+            <RenderItem
+              layout={layout}
+              section={section}
               renderMenuItem={renderMenuItem}
-              hideChildrenFromNavigation={hideChildrenFromNavigation}
+              index={index}
+              key={index}
             />
           </Grid.Column>
         );
       })}
-    </Grid>
+    </div>
   );
 };
 
