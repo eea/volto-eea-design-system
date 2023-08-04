@@ -12,8 +12,6 @@ import { cloneDeep } from 'lodash';
 
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
-import config from '@plone/volto/registry';
-
 const createColumns = (item, renderMenuItem, item_id) => {
   return item.items.map((item, index) => (
     <React.Fragment key={index}>
@@ -37,7 +35,10 @@ const ItemGrid = ({
     <>
       {renderMenuItem(item, { className: 'sub-title', id: item_id })}
       {item.items.length && !hideChildrenFromNavigation ? (
-        <List aria-labelledby={item_id} className={`has--${columns}--columns`}>
+        <List
+          aria-labelledby={item_id}
+          className={columns && columns > 1 ? `has--${columns}--columns` : ''}
+        >
           {createColumns(item, renderMenuItem, item_id)}
         </List>
       ) : null}
@@ -310,6 +311,7 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
 
 function HeaderMenuPopUp({
   menuItems,
+  menuItemsLayouts,
   renderMenuItem,
   pathName,
   onClose,
@@ -324,11 +326,10 @@ function HeaderMenuPopUp({
     (current) => current.url === activeItem || current['@id'] === activeItem,
   );
 
-  const layouts = config.settings?.megaMenuLayouts;
   const layout =
-    !!layouts &&
-    Object.keys(layouts).includes(menuItem?.url) &&
-    layouts[menuItem.url];
+    !!menuItemsLayouts &&
+    Object.keys(menuItemsLayouts).includes(menuItem?.url) &&
+    menuItemsLayouts[menuItem.url];
 
   return (
     <Transition visible={visible} animation="slide down" duration={300}>
