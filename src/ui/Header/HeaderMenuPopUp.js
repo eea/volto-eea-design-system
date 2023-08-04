@@ -8,22 +8,6 @@ import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
 import config from '@plone/volto/registry';
 
-function listToMatrix(list, elementsPerSubArray) {
-  let matrix = [],
-    i,
-    k;
-
-  for (i = 0, k = -1; i < list.length; i++) {
-    if (i % elementsPerSubArray === 0) {
-      k++;
-      matrix[k] = [];
-    }
-    matrix[k].push(list[i]);
-  }
-
-  return matrix;
-}
-
 const createColumns = (item, renderMenuItem, item_id) => {
   const itemList = item.items.map((item, index) => (
     <React.Fragment key={index}>
@@ -138,32 +122,17 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
               ? menuItem.items.slice(index)
               : [];
 
-          const itemsMatrix = listToMatrix(menuItem.items, columns);
           return (
             <div key={index} className={layout.columnsWidth[index]}>
-              {layout.itemsEquallySpread &&
-                itemsMatrix.map(
-                  (item, itemIndex) =>
-                    item[index] && (
-                      <RenderItem
-                        layout={layout}
-                        section={item[index]}
-                        renderMenuItem={renderMenuItem}
-                        index={index}
-                      />
-                    ),
-                )}
-              {!layout.itemsEquallySpread &&
-                !!menuItem.items[index] &&
-                !isLastColumn && (
-                  <RenderItem
-                    layout={layout}
-                    section={menuItem.items[index]}
-                    renderMenuItem={renderMenuItem}
-                    index={index}
-                  />
-                )}
-              {!layout.itemsEquallySpread && isLastColumn && (
+              {!!menuItem.items[index] && !isLastColumn && (
+                <RenderItem
+                  layout={layout}
+                  section={menuItem.items[index]}
+                  renderMenuItem={renderMenuItem}
+                  index={index}
+                />
+              )}
+              {isLastColumn && (
                 <Grid columns={1} className="nested-grid">
                   {lastColumnItems.map((lastColumnItem, lastColumnIndex) => (
                     <div key={lastColumnIndex} className={'column'}>
@@ -183,18 +152,16 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
     </Grid>
   ) : (
     <div className={layout?.equallySpreadColumns || 'ui four column grid'}>
-      {menuItem.items.map((section, index) => {
-        return (
-          <Grid.Column key={index}>
-            <RenderItem
-              layout={layout}
-              section={section}
-              renderMenuItem={renderMenuItem}
-              index={index}
-            />
-          </Grid.Column>
-        );
-      })}
+      {menuItem.items.map((section, index) => (
+        <Grid.Column key={index}>
+          <RenderItem
+            layout={layout}
+            section={section}
+            renderMenuItem={renderMenuItem}
+            index={index}
+          />
+        </Grid.Column>
+      ))}
     </div>
   );
 };
