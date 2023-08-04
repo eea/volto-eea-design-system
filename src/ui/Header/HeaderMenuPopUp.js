@@ -37,7 +37,7 @@ const ItemGrid = ({
     <>
       {renderMenuItem(item, { className: 'sub-title', id: item_id })}
       {item.items.length && !hideChildrenFromNavigation ? (
-        <List aria-labelledby={item_id} style={{ columns: `${columns}` }}>
+        <List aria-labelledby={item_id} className={`has--${columns}--columns`}>
           {createColumns(item, renderMenuItem, item_id)}
         </List>
       ) : null}
