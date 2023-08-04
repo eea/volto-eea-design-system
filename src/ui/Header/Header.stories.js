@@ -483,7 +483,7 @@ const menuItems = [
     ],
     review_state: null,
     title: 'Topics',
-    url: '/topics',
+    url: '/en/topics',
   },
   {
     '@id': 'Analysis-and-data',
@@ -887,7 +887,7 @@ const menuItems = [
     ],
     review_state: null,
     title: 'Countries',
-    url: '/countries',
+    url: '/en/countries',
   },
   {
     '@id': 'Newsroom',
@@ -1143,7 +1143,7 @@ const menuItems = [
     ],
     review_state: null,
     title: 'About Us',
-    url: '/about',
+    url: '/en/about',
   },
 ];
 
@@ -1180,7 +1180,7 @@ const debounce = (func) => {
 };
 
 const menuItemsLayouts = {
-  '/topics': {
+  '/en/topics': {
     menuItemListColumns: [1, 4],
     menuItemColumns: [
       'at-a-glance three wide column',
@@ -1188,13 +1188,13 @@ const menuItemsLayouts = {
     ],
     hideChildrenFromNavigation: false,
   },
-  '/countries': {
+  '/en/countries': {
     menuItemColumns: ['eight wide column', 'four wide column'],
     menuItemListColumns: [5, 2],
     appendExtraMenuItemsToLastColumn: true,
     hideChildrenFromNavigation: false,
   },
-  '/about': {
+  '/en/about': {
     hideChildrenFromNavigation: false,
   },
 };
