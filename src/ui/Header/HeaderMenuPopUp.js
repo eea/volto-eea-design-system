@@ -103,17 +103,18 @@ const RenderItem = ({ layout, section, renderMenuItem, index }) => {
 
 const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
   const itemsLength = menuItem.items.length;
-  const columnsWidth = layout && layout.columnsWidth;
-  const columnsWidthLength = (columnsWidth && columnsWidth.length - 1) || 0;
-  return columnsWidth ? (
+  const menuItemColumns = layout && layout.menuItemColumns;
+  const menuItemColumnsLength =
+    (menuItemColumns && menuItemColumns.length - 1) || 0;
+  return menuItemColumns ? (
     <Grid>
-      {columnsWidthLength < itemsLength &&
+      {menuItemColumnsLength < itemsLength &&
       layout.appendExtraMenuItemsToLastColumn
-        ? columnsWidth.map((section, columnIndex) => {
+        ? menuItemColumns.map((section, columnIndex) => {
             return (
               <React.Fragment key={columnIndex}>
-                <div className={layout.columnsWidth[columnIndex]}>
-                  {columnIndex !== columnsWidthLength ? (
+                <div className={layout.menuItemColumns[columnIndex]}>
+                  {columnIndex !== menuItemColumnsLength ? (
                     <RenderItem
                       layout={layout}
                       section={menuItem.items[columnIndex]}
@@ -122,7 +123,7 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
                     />
                   ) : (
                     menuItem.items
-                      .slice(columnsWidthLength)
+                      .slice(menuItemColumnsLength)
                       .map((section, _idx) => {
                         return (
                           <RenderItem
@@ -140,7 +141,7 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
           })
         : menuItem.items.map((section, index) => (
             <React.Fragment key={index}>
-              <div className={layout.columnsWidth[index]}>
+              <div className={layout.menuItemColumns[index]}>
                 <RenderItem
                   layout={layout}
                   section={section}
