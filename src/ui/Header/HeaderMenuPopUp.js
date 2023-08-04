@@ -22,7 +22,6 @@ const createColumns = (item, renderMenuItem, item_id) => {
 };
 
 const ItemGrid = ({
-  sectionTitle,
   item,
   columns,
   renderMenuItem,
@@ -88,7 +87,6 @@ const RenderItem = ({ layout, section, renderMenuItem, index }) => {
     />
   ) : (
     <ItemGrid
-      sectionTitle={section.title}
       item={section}
       columns={layout.childrenColumns[index]}
       renderMenuItem={renderMenuItem}
@@ -151,7 +149,7 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
         })}
     </Grid>
   ) : (
-    <div className={layout?.equallySpreadColumns || 'ui four column grid'}>
+    <div className={layout?.gridContainerClass || 'ui four column grid'}>
       {menuItem.items.map((section, index) => (
         <Grid.Column key={index}>
           <RenderItem
@@ -167,7 +165,7 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
 };
 
 const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
-  const topics = element.title === 'Topics' ? true : false;
+  const topics = element.title === 'Topics';
   let defaultIndex = -1;
 
   return (
