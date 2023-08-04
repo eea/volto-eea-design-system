@@ -1,6 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Transition } from 'semantic-ui-react';
-import { Container, Grid, List, Icon, Accordion } from 'semantic-ui-react';
+import React, { useEffect, useState } from 'react';
+import {
+  Accordion,
+  Container,
+  Grid,
+  Icon,
+  List,
+  Transition,
+} from 'semantic-ui-react';
 
 import { cloneDeep } from 'lodash';
 
@@ -9,7 +15,7 @@ import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 import config from '@plone/volto/registry';
 
 const createColumns = (item, renderMenuItem, item_id) => {
-  const itemList = item.items.map((item, index) => (
+  return item.items.map((item, index) => (
     <React.Fragment key={index}>
       {renderMenuItem(item, {
         className: 'item',
@@ -18,7 +24,6 @@ const createColumns = (item, renderMenuItem, item_id) => {
       })}
     </React.Fragment>
   ));
-  return itemList;
 };
 
 const ItemGrid = ({
@@ -98,55 +103,18 @@ const RenderItem = ({ layout, section, renderMenuItem, index }) => {
 const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
   return layout && layout.columnsWidth ? (
     <Grid>
-      {layout.itemsEquallySpread &&
-        menuItem.items.map((section, index) => (
-          <React.Fragment key={index}>
-            <div className={layout.columnsWidth[index]}>
-              <RenderItem
-                layout={layout}
-                section={section}
-                renderMenuItem={renderMenuItem}
-                index={index}
-              />
-            </div>
-          </React.Fragment>
-        ))}
-      {!layout.itemsEquallySpread &&
-        layout.columnsWidth.map((columnWidth, index) => {
-          const columns = layout.columnsWidth.length;
-          const isLastColumn = columns - 1 === index;
-          const lastColumnItems =
-            isLastColumn && menuItem.items.length >= layout.columnsWidth.length
-              ? menuItem.items.slice(index)
-              : [];
-
-          return (
-            <div key={index} className={layout.columnsWidth[index]}>
-              {!!menuItem.items[index] && !isLastColumn && (
-                <RenderItem
-                  layout={layout}
-                  section={menuItem.items[index]}
-                  renderMenuItem={renderMenuItem}
-                  index={index}
-                />
-              )}
-              {isLastColumn && (
-                <Grid columns={1} className="nested-grid">
-                  {lastColumnItems.map((lastColumnItem, lastColumnIndex) => (
-                    <div key={lastColumnIndex} className={'column'}>
-                      <RenderItem
-                        layout={layout}
-                        section={lastColumnItem}
-                        renderMenuItem={renderMenuItem}
-                        index={index}
-                      />
-                    </div>
-                  ))}
-                </Grid>
-              )}
-            </div>
-          );
-        })}
+      {menuItem.items.map((section, index) => (
+        <React.Fragment key={index}>
+          <div className={layout.columnsWidth[index]}>
+            <RenderItem
+              layout={layout}
+              section={section}
+              renderMenuItem={renderMenuItem}
+              index={index}
+            />
+          </div>
+        </React.Fragment>
+      ))}
     </Grid>
   ) : (
     <div className={layout?.gridContainerClass || 'ui four column grid'}>
