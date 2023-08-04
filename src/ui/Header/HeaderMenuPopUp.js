@@ -91,7 +91,7 @@ const Item = ({
   );
 };
 
-const RenderItem = ({ layout, section, renderMenuItem, index, key }) => {
+const RenderItem = ({ layout, section, renderMenuItem, index }) => {
   const hideChildrenFromNavigation =
     layout.hideChildrenFromNavigation === undefined
       ? true
@@ -100,7 +100,6 @@ const RenderItem = ({ layout, section, renderMenuItem, index, key }) => {
     <Item
       item={section}
       renderMenuItem={renderMenuItem}
-      key={key}
       hideChildrenFromNavigation={hideChildrenFromNavigation}
     />
   ) : (
@@ -108,7 +107,6 @@ const RenderItem = ({ layout, section, renderMenuItem, index, key }) => {
       sectionTitle={section.title}
       item={section}
       columns={layout.childrenColumns[index]}
-      key={key}
       renderMenuItem={renderMenuItem}
       hideChildrenFromNavigation={hideChildrenFromNavigation}
     />
@@ -127,7 +125,6 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
                 section={section}
                 renderMenuItem={renderMenuItem}
                 index={index}
-                key={index}
               />
             </div>
           </React.Fragment>
@@ -153,7 +150,6 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
                         section={item[index]}
                         renderMenuItem={renderMenuItem}
                         index={index}
-                        key={itemIndex}
                       />
                     ),
                 )}
@@ -165,19 +161,17 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
                     section={menuItem.items[index]}
                     renderMenuItem={renderMenuItem}
                     index={index}
-                    key={index}
                   />
                 )}
               {!layout.itemsEquallySpread && isLastColumn && (
                 <Grid columns={1} className="nested-grid">
                   {lastColumnItems.map((lastColumnItem, lastColumnIndex) => (
-                    <div className={'column'}>
+                    <div key={lastColumnIndex} className={'column'}>
                       <RenderItem
                         layout={layout}
                         section={lastColumnItem}
                         renderMenuItem={renderMenuItem}
                         index={index}
-                        key={lastColumnIndex}
                       />
                     </div>
                   ))}
@@ -197,7 +191,6 @@ const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
               section={section}
               renderMenuItem={renderMenuItem}
               index={index}
-              key={index}
             />
           </Grid.Column>
         );
