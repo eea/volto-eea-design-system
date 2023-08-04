@@ -483,7 +483,7 @@ const menuItems = [
     ],
     review_state: null,
     title: 'Topics',
-    url: '/#',
+    url: '/topics',
   },
   {
     '@id': 'Analysis-and-data',
@@ -887,7 +887,7 @@ const menuItems = [
     ],
     review_state: null,
     title: 'Countries',
-    url: '/#',
+    url: '/countries',
   },
   {
     '@id': 'Newsroom',
@@ -1143,7 +1143,7 @@ const menuItems = [
     ],
     review_state: null,
     title: 'About Us',
-    url: '/#',
+    url: '/about',
   },
 ];
 
@@ -1177,6 +1177,26 @@ const debounce = (func) => {
     if (timer) clearTimeout(timer);
     timer = setTimeout(func, 50, event);
   };
+};
+
+const menuItemsLayouts = {
+  '/topics': {
+    childrenColumns: [1, 4],
+    columnsWidth: [
+      'at-a-glance three wide column',
+      'topics-right-column nine wide column',
+    ],
+    hideChildrenFromNavigation: false,
+  },
+  '/countries': {
+    columnsWidth: ['eight wide column', 'four wide column'],
+    childrenColumns: [5, 2],
+    appendExtraMenuItemsToLastColumn: true,
+    hideChildrenFromNavigation: false,
+  },
+  '/about': {
+    hideChildrenFromNavigation: false,
+  },
 };
 
 const handleDropdownClick = (event) => {
@@ -1320,6 +1340,7 @@ const Template = (args) => {
           pathname={pathname}
           logo={<Logo {...logoProps} inverted={args.inverted} />}
           menuItems={menuItems}
+          menuItemsLayouts={menuItemsLayouts}
           headerSearchBox={headerSearchBox}
           renderMenuItem={(item, options = {}, props) => {
             const { onClick } = options;

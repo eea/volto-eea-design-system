@@ -102,20 +102,54 @@ const RenderItem = ({ layout, section, renderMenuItem, index }) => {
 };
 
 const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
-  return layout && layout.columnsWidth ? (
+  const itemsLength = menuItem.items.length;
+  const columnsWidth = layout && layout.columnsWidth;
+  const columnsWidthLength = (columnsWidth && columnsWidth.length - 1) || 0;
+  return columnsWidth ? (
     <Grid>
-      {menuItem.items.map((section, index) => (
-        <React.Fragment key={index}>
-          <div className={layout.columnsWidth[index]}>
-            <RenderItem
-              layout={layout}
-              section={section}
-              renderMenuItem={renderMenuItem}
-              index={index}
-            />
-          </div>
-        </React.Fragment>
-      ))}
+      {columnsWidthLength < itemsLength &&
+      layout.appendExtraMenuItemsToLastColumn
+        ? columnsWidth.map((section, columnIndex) => {
+            return (
+              <React.Fragment key={columnIndex}>
+                <div className={layout.columnsWidth[columnIndex]}>
+                  {columnIndex !== columnsWidthLength ? (
+                    <RenderItem
+                      layout={layout}
+                      section={menuItem.items[columnIndex]}
+                      renderMenuItem={renderMenuItem}
+                      index={columnIndex}
+                    />
+                  ) : (
+                    menuItem.items
+                      .slice(columnsWidthLength)
+                      .map((section, _idx) => {
+                        return (
+                          <RenderItem
+                            layout={layout}
+                            section={section}
+                            renderMenuItem={renderMenuItem}
+                            index={columnIndex}
+                          />
+                        );
+                      })
+                  )}
+                </div>
+              </React.Fragment>
+            );
+          })
+        : menuItem.items.map((section, index) => (
+            <React.Fragment key={index}>
+              <div className={layout.columnsWidth[index]}>
+                <RenderItem
+                  layout={layout}
+                  section={section}
+                  renderMenuItem={renderMenuItem}
+                  index={index}
+                />
+              </div>
+            </React.Fragment>
+          ))}
     </Grid>
   ) : (
     <div className={layout?.gridContainerClass || 'ui four column grid'}>
