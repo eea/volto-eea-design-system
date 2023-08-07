@@ -12,6 +12,7 @@ import cx from 'classnames';
 export default {
   title: 'Layout/Header',
   component: Header,
+  excludeStories: /menuItems$/,
   argTypes: {
     links: {
       table: {
@@ -98,7 +99,7 @@ const languages = [
   { name: 'Türkçe', code: 'tr' },
 ];
 
-const menuItems = [
+export const menuItems = [
   {
     '@id': 'Topics',
     items: [
