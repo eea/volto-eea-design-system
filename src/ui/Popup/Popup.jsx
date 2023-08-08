@@ -54,6 +54,18 @@ class Popup extends React.Component {
     this.popper && this.popper.destroy();
   }
 
+  componentWillUpdate(nextProps, nextState, nextContext) {
+    const position = nextProps.position;
+    if (
+      position &&
+      this.popper.state.placement !== positionsMapping[position]
+    ) {
+      this.popper.setOptions({
+        placement: positionsMapping[position] || 'bottom-end',
+      });
+    }
+  }
+
   togglePopup() {
     this.setState(
       (state) => {
@@ -82,11 +94,14 @@ class Popup extends React.Component {
     const onEvent = 'on' + event.charAt(0).toUpperCase() + event.slice(1);
     return (
       <React.Fragment>
-        {trigger &&
-          React.cloneElement(trigger, {
-            [onEvent]: this.togglePopup,
-            ref: this.triggerRef,
-          })}
+        {trigger && (
+          <div className="popup-trigger" ref={this.triggerRef}>
+            {React.cloneElement(trigger, {
+              [onEvent]: this.togglePopup,
+              ref: this.triggerRef,
+            })}
+          </div>
+        )}
 
         <div className="popup-container" ref={this.popupRef}>
           {this.state.isOpen && (
