@@ -127,6 +127,10 @@
   color: inherit;
 }
 
+.block-editor-__grid .block .toolbar, [class$='Grid'] .block .toolbar {
+  top: 0px;
+}
+
 // Tabs block border left/top
 .tabs-block {
   .border-left {
