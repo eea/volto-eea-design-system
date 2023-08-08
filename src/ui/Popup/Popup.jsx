@@ -25,6 +25,7 @@ class Popup extends React.Component {
 
     this.triggerRef = React.createRef();
     this.popupRef = React.createRef();
+    this.handleClickOutside = this.handleClickOutside.bind(this);
 
     this.state = {
       isOpen: false,
@@ -48,13 +49,15 @@ class Popup extends React.Component {
         ...this.props.popperModifiers,
       ],
     });
+    document.addEventListener('mousedown', this.handleClickOutside);
   }
 
   componentWillUnmount() {
     this.popper && this.popper.destroy();
+    document.removeEventListener('mousedown', this.handleClickOutside);
   }
 
-  componentWillUpdate(nextProps, nextState, nextContext) {
+  UNSAFE_componentWillUpdate(nextProps, nextState, nextContext) {
     const position = nextProps.position;
     if (
       position &&
@@ -63,6 +66,22 @@ class Popup extends React.Component {
       this.popper.setOptions({
         placement: positionsMapping[position] || 'bottom-end',
       });
+    }
+  }
+
+  handleClickOutside(event) {
+    if (
+      this.popupRef &&
+      !this.popupRef.current.contains(event.target) &&
+      !this.triggerRef.current.contains(event.target)
+    ) {
+      if (this.state.isOpen) {
+        this.setState((state) => {
+          return {
+            isOpen: false,
+          };
+        });
+      }
     }
   }
 
@@ -98,7 +117,6 @@ class Popup extends React.Component {
           <div className="popup-trigger" ref={this.triggerRef}>
             {React.cloneElement(trigger, {
               [onEvent]: this.togglePopup,
-              ref: this.triggerRef,
             })}
           </div>
         )}
