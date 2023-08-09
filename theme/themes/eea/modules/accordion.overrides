@@ -2,6 +2,10 @@
          Theme Overrides
 *******************************/
 
+.accordion .filter {
+  --accordion-icon-active: "\ed25";
+  --accordion-icon-inactive: '\f00d';
+}
 .ui.accordion button.title {
   background: transparent;
   width: 100%;

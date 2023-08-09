@@ -61,7 +61,7 @@ function AccordionContainer({ ...args }) {
       <div className="accordion-block">
         {args.enable_filtering && (
           <Accordion className={args.variant}>
-            <Accordion.Title active>
+            <Accordion.Title active className={'filter'}>
               {filterValue === '' ? (
                 <Icon className="ri-filter-3-line" />
               ) : (
