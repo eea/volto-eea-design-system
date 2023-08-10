@@ -4,10 +4,7 @@
 
 .accordion .filter {
   background-color: var(--bg-color, transparent);
-  --accordion-icon-active: '\f00d';
-  .ri-filter-3-line {
-    --accordion-icon-inactive: "\ed25";
-  }
+  --accordion-icon-inactive: '\ed25';
   .ri-close-line {
     --accordion-icon-inactive: '\eb99';
   }
