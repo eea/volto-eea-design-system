@@ -149,10 +149,10 @@
 .ui.accordion.primary .filter {
   background-color: @primaryColor;
 }
-.ui.accordion.primary .title:not(.active):not(.filter):hover,
-.ui.accordion.primary .title:not(.active):not(.filter):focus-visible,
-.ui.accordion.primary .title:not(.active):not(.filter):hover i,
-.ui.accordion.primary .title:not(.active):not(.filter):focus-visible i {
+.ui.accordion.primary .title:not(.active, .filter):hover,
+.ui.accordion.primary .title:not(.active, .filter):focus-visible,
+.ui.accordion.primary .title:not(.active, .filter):hover i,
+.ui.accordion.primary .title:not(.active, .filter):focus-visible i {
   color: @primaryColorCSSVar;
 }
 
@@ -161,10 +161,10 @@
 .ui.accordion.secondary .filter {
   background-color: @secondaryColor;
 }
-.ui.accordion.secondary .title:not(.active):not(.filter):hover,
-.ui.accordion.secondary .title:not(.active):not(.filter):focus-visible,
-.ui.accordion.secondary .title:not(.active):not(.filter):hover i,
-.ui.accordion.secondary .title:not(.active):not(.filter):focus-visible i {
+.ui.accordion.secondary .title:not(.active, .filter):hover,
+.ui.accordion.secondary .title:not(.active, .filter):focus-visible,
+.ui.accordion.secondary .title:not(.active, .filter):hover i,
+.ui.accordion.secondary .title:not(.active, .filter):focus-visible i {
   color: @secondaryColorCSSVar;
 }
 
@@ -173,10 +173,10 @@
 .ui.accordion.tertiary .filter {
   background-color: @tertiaryColor;
 }
-.ui.accordion.tertiary .title:not(.active):not(.filter):hover,
-.ui.accordion.tertiary .title:not(.active):not(.filter):focus-visible,
-.ui.accordion.tertiary .title:not(.active):not(.filter):hover i,
-.ui.accordion.tertiary .title:not(.active):not(.filter):focus-visible i {
+.ui.accordion.tertiary .title:not(.active, .filter):hover,
+.ui.accordion.tertiary .title:not(.active, .filter):focus-visible,
+.ui.accordion.tertiary .title:not(.active, .filter):hover i,
+.ui.accordion.tertiary .title:not(.active, .filter):focus-visible i {
   color: @tertiaryColorCSSVar;
 }
 
