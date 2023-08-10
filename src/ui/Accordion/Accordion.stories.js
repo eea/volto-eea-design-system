@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Accordion, Icon, Container } from 'semantic-ui-react';
+import { Accordion, Icon, Container, Input } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Accordion',
@@ -30,11 +30,20 @@ export default {
         type: { summary: 'string' },
       },
     },
+    enable_filtering: {
+      name: 'Enable filtering',
+      defaultValue: false,
+      table: {
+        defaultValue: { summary: false },
+        type: { summary: 'boolean' },
+      },
+    },
   },
 };
 
 function AccordionContainer({ ...args }) {
   const [activeIndex, setActiveIndex] = useState([0]);
+  const [filterValue, setFilterValue] = useState('');
 
   const handleClick = (e, titleProps) => {
     const { index } = titleProps;
@@ -43,33 +52,67 @@ function AccordionContainer({ ...args }) {
     setActiveIndex(newIndex);
   };
 
+  const handleFilteredValueChange = (value) => {
+    setFilterValue(value);
+  };
+
   return (
     <Container>
       <div className="accordion-block">
-        {args.panels.map((panel, index) => {
-          return (
-            <Accordion className={args.variant} key={index}>
-              <Accordion.Title
-                index={index}
-                tabIndex={0}
-                active={activeIndex === index}
-                onClick={handleClick}
-                as={args.title_size === 'no value' ? '' : args.title_size}
-                onKeyDown={(e) => {
-                  if (e.nativeEvent.keyCode === 13) {
-                    handleClick(e, { index });
-                  }
-                }}
-              >
-                <span>{panel.title}</span>
-                <Icon className="ri-arrow-down-s-line" />
-              </Accordion.Title>
-              <Accordion.Content active={activeIndex === index}>
-                {panel.content}
-              </Accordion.Content>
-            </Accordion>
-          );
-        })}
+        {args.enable_filtering && (
+          <Accordion className={args.variant}>
+            <Accordion.Title className={'filter'}>
+              {filterValue === '' ? (
+                <Icon className="ri-filter-3-line" />
+              ) : (
+                <Icon
+                  className="ri-close-line"
+                  onClick={() => handleFilteredValueChange('')}
+                />
+              )}
+              <Input
+                fluid
+                className="input-accordion-title"
+                transparent
+                placeholder="Type to filter..."
+                value={filterValue}
+                onChange={(e) => handleFilteredValueChange(e.target.value)}
+              />
+            </Accordion.Title>
+          </Accordion>
+        )}
+        {args.panels
+          .filter(
+            (panel) =>
+              !args.enable_filtering ||
+              filterValue === '' ||
+              (filterValue !== '' &&
+                panel.title?.toLowerCase().includes(filterValue.toLowerCase())),
+          )
+          .map((panel, index) => {
+            return (
+              <Accordion className={args.variant} key={index}>
+                <Accordion.Title
+                  index={index}
+                  tabIndex={0}
+                  active={activeIndex === index}
+                  onClick={handleClick}
+                  as={args.title_size === 'no value' ? '' : args.title_size}
+                  onKeyDown={(e) => {
+                    if (e.nativeEvent.keyCode === 13) {
+                      handleClick(e, { index });
+                    }
+                  }}
+                >
+                  <span>{panel.title}</span>
+                  <Icon className="ri-arrow-down-s-line" />
+                </Accordion.Title>
+                <Accordion.Content active={activeIndex === index}>
+                  {panel.content}
+                </Accordion.Content>
+              </Accordion>
+            );
+          })}
       </div>
     </Container>
   );
@@ -80,6 +123,7 @@ export const Default = Template.bind({});
 Default.args = {
   variant: 'secondary',
   title_size: 'no value',
+  enable_filtering: false,
   panels: [
     {
       title: 'Water and marine environment',

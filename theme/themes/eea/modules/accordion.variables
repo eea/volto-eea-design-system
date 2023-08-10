@@ -17,7 +17,7 @@
 
 /* Icon */
 @iconColor: var(--text-color, @oldSilver);
-@iconColorActive: @white;
+@iconColorActive: inherit;
 @iconOpacity: 1;
 @iconFontSize: 3rem;
 @iconFloat: none;
@@ -33,9 +33,11 @@
 @iconVerticalAlign: baseline;
 @iconTransform: none;
 @iconColorHover: @titleColorHover;
-@iconInactive: "\ea4e"; // Icon of closed accordion
-@iconActive: "\EA78"; // Icon of open accordion
+@iconInactive: var(--accordion-icon-inactive, "\ea4e"); // Icon of closed accordion
+@iconActive: var(--accordion-icon-active, "\ea78") ; // Icon of open accordion
 @iconOrder: 1; // Icon after text of the title
+@filterIconWidth: 3rem;
+@filterIconFontSize: 2rem;
 
 /* Child Accordion */
 @childAccordionMargin: 1em 0em 0em;
@@ -64,7 +66,7 @@
 
 @activeIconTransform: none;
 @activeTitleBackground: var(--bg-color, @white);
-@activeTitleColor: @grey-5;
+@activeTitleColor: var(--text-color, @grey-5);
 @activeTitleBorderBottom: 0;
 
 /*-------------------

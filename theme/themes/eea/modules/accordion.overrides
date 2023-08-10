@@ -2,6 +2,13 @@
          Theme Overrides
 *******************************/
 
+.accordion .filter {
+  background-color: var(--bg-color, transparent);
+  --accordion-icon-inactive: '\ed25';
+  .ri-close-line {
+    --accordion-icon-inactive: '\eb99';
+  }
+}
 .ui.accordion button.title {
   background: transparent;
   width: 100%;
@@ -50,6 +57,13 @@
       &:before {
         content: @iconInactive;
         font-size: @iconFontSize;
+      }
+    }
+
+    &.filter {
+      i:before {
+        width: @filterIconWidth;
+        font-size: @filterIconFontSize;
       }
     }
   }
@@ -118,45 +132,41 @@
 /*--------------
    Variations
 ---------------*/
-.ui.accordion:not([class*='ary']) .active.title i {
-   color: @tertiaryColor;
-}
 .ui.accordion[class*='ary'] .active.title,
-.ui.accordion[class*='ary'] .active.title i {
-  color: white;
+.ui.accordion[class*='ary'] .filter
+ {
+  --text-color-hover: white;
+  --text-color: white;
 }
 
 /* Primary */
-.ui.accordion.primary .active.title {
-  background-color: @primaryColor;
+.ui.accordion.primary .active.title,
+.ui.accordion.primary .filter {
+  --bg-color: @primaryColorCSSVar;
 }
-.ui.accordion.primary .title:not(.active):hover,
-.ui.accordion.primary .title:not(.active):focus-visible,
-.ui.accordion.primary .title:not(.active):hover i,
-.ui.accordion.primary .title:not(.active):focus-visible i {
-  color: @primaryColorCSSVar;
+.ui.accordion.primary .title:not(.active, .filter):hover,
+.ui.accordion.primary .title:not(.active, .filter):focus-visible {
+  --text-color-hover: @primaryColorCSSVar;
 }
 
 /* Secondary */
-.ui.accordion.secondary .active.title {
-  background-color: @secondaryColor;
+.ui.accordion.secondary .active.title,
+.ui.accordion.secondary .filter {
+  --bg-color: @secondaryColorCSSVar;
 }
-.ui.accordion.secondary .title:not(.active):hover,
-.ui.accordion.secondary .title:not(.active):focus-visible,
-.ui.accordion.secondary .title:not(.active):hover i,
-.ui.accordion.secondary .title:not(.active):focus-visible i {
-  color: @secondaryColorCSSVar;
+.ui.accordion.secondary .title:not(.active, .filter):hover,
+.ui.accordion.secondary .title:not(.active, .filter):focus-visible {
+  --text-color-hover: @secondaryColorCSSVar;
 }
 
 /* Tertiary */
-.ui.accordion.tertiary .active.title {
-  background-color: @tertiaryColor;
+.ui.accordion.tertiary .active.title,
+.ui.accordion.tertiary .filter {
+  --bg-color: @tertiaryColorCSSVar;
 }
-.ui.accordion.tertiary .title:not(.active):hover,
-.ui.accordion.tertiary .title:not(.active):focus-visible,
-.ui.accordion.tertiary .title:not(.active):hover i,
-.ui.accordion.tertiary .title:not(.active):focus-visible i {
-  color: @tertiaryColorCSSVar;
+.ui.accordion.tertiary .title:not(.active, .filter):hover,
+.ui.accordion.tertiary .title:not(.active, .filter):focus-visible {
+  --text-color-hover: @tertiaryColorCSSVar;
 }
 
 @media only screen and (max-width: @largestMobileScreen) {
