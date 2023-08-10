@@ -3,8 +3,13 @@
 *******************************/
 
 .accordion .filter {
-  --accordion-icon-active: "\ed25";
-  --accordion-icon-inactive: '\f00d';
+  --accordion-icon-active: '\f00d';
+  .ri-filter-3-line {
+    --accordion-icon-inactive: "\ed25";
+  }
+  .ri-close-line {
+    --accordion-icon-inactive: '\eb99';
+  }
 }
 .ui.accordion button.title {
   background: transparent;
@@ -54,6 +59,13 @@
       &:before {
         content: @iconInactive;
         font-size: @iconFontSize;
+      }
+    }
+
+    &.filter {
+      i:before {
+        width: @filterIconWidth;
+        font-size: @filterIconFontSize;
       }
     }
   }
@@ -126,40 +138,45 @@
    color: @tertiaryColor;
 }
 .ui.accordion[class*='ary'] .active.title,
-.ui.accordion[class*='ary'] .active.title i {
+.ui.accordion[class*='ary'] .active.title i,
+.ui.accordion[class*='ary'] .filter input,
+.ui.accordion[class*='ary'] .filter i {
   color: white;
 }
 
 /* Primary */
-.ui.accordion.primary .active.title {
+.ui.accordion.primary .active.title,
+.ui.accordion.primary .filter {
   background-color: @primaryColor;
 }
-.ui.accordion.primary .title:not(.active):hover,
-.ui.accordion.primary .title:not(.active):focus-visible,
-.ui.accordion.primary .title:not(.active):hover i,
-.ui.accordion.primary .title:not(.active):focus-visible i {
+.ui.accordion.primary .title:not(.active):not(.filter):hover,
+.ui.accordion.primary .title:not(.active):not(.filter):focus-visible,
+.ui.accordion.primary .title:not(.active):not(.filter):hover i,
+.ui.accordion.primary .title:not(.active):not(.filter):focus-visible i {
   color: @primaryColorCSSVar;
 }
 
 /* Secondary */
-.ui.accordion.secondary .active.title {
+.ui.accordion.secondary .active.title,
+.ui.accordion.secondary .filter {
   background-color: @secondaryColor;
 }
-.ui.accordion.secondary .title:not(.active):hover,
-.ui.accordion.secondary .title:not(.active):focus-visible,
-.ui.accordion.secondary .title:not(.active):hover i,
-.ui.accordion.secondary .title:not(.active):focus-visible i {
+.ui.accordion.secondary .title:not(.active):not(.filter):hover,
+.ui.accordion.secondary .title:not(.active):not(.filter):focus-visible,
+.ui.accordion.secondary .title:not(.active):not(.filter):hover i,
+.ui.accordion.secondary .title:not(.active):not(.filter):focus-visible i {
   color: @secondaryColorCSSVar;
 }
 
 /* Tertiary */
-.ui.accordion.tertiary .active.title {
+.ui.accordion.tertiary .active.title,
+.ui.accordion.tertiary .filter {
   background-color: @tertiaryColor;
 }
-.ui.accordion.tertiary .title:not(.active):hover,
-.ui.accordion.tertiary .title:not(.active):focus-visible,
-.ui.accordion.tertiary .title:not(.active):hover i,
-.ui.accordion.tertiary .title:not(.active):focus-visible i {
+.ui.accordion.tertiary .title:not(.active):not(.filter):hover,
+.ui.accordion.tertiary .title:not(.active):not(.filter):focus-visible,
+.ui.accordion.tertiary .title:not(.active):not(.filter):hover i,
+.ui.accordion.tertiary .title:not(.active):not(.filter):focus-visible i {
   color: @tertiaryColorCSSVar;
 }
 
