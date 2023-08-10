@@ -6,6 +6,8 @@ function FormFieldWrapper({
   required = false,
   error = false,
   label = '',
+  describedby = '',
+  labelledby = '',
   columns = 0,
 }) {
   return (
@@ -17,10 +19,19 @@ function FormFieldWrapper({
     >
       <Grid>
         <Grid.Row verticalAlign="top">
+          {error && (
+            <Message
+              negative
+              content="This is an error message"
+              size="mini"
+              icon="exclamation circle"
+              id={describedby}
+            />
+          )}
           {columns === 1 && (
             <Grid.Column computer="2" tablet="2" mobile="12">
               {label.length > 0 && (
-                <Label>
+                <Label id={labelledby}>
                   {label}
                   <span className="requred-input">*</span>
                 </Label>
@@ -33,14 +44,6 @@ function FormFieldWrapper({
             mobile="12"
           >
             {children}
-            {error && (
-              <Message
-                negative
-                content="This is a mandatory field"
-                size="mini"
-                icon="exclamation circle"
-              />
-            )}
           </Grid.Column>
         </Grid.Row>
       </Grid>

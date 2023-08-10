@@ -62,19 +62,12 @@ export const Default = Template.bind({});
 Default.args = {
   placeholder: 'Type here...',
   rows: 3,
-  fluid: false,
-};
-
-export const LabeledTextArea = Template.bind({});
-LabeledTextArea.args = {
-  placeholder: 'Type here...',
-  rows: 3,
   label: 'Textarea',
   required: true,
   fluid: false,
 };
 
-LabeledTextArea.argTypes = {
+Default.argTypes = {
   label: {
     description: 'textarea label',
     table: {

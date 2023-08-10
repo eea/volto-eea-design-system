@@ -10,11 +10,11 @@
 }
 
 .ui.selection.dropdown {
-  border: @border;
+  border-bottom: @border;
 
   &:active,
   &:focus {
-    border: @borderWidth solid @secondaryColor;
+    border-bottom: @borderWidth solid @secondaryColor;
   }
 }
 
@@ -23,7 +23,16 @@
 }
 
 .ui.dropdown.error {
-  border: @borderWidth solid @negativeBorderColor;
+  border-bottom: @borderWidth solid @negativeBorderColor;
+}
+
+// To override the white background that is used for error on inputs text
+.ui.form .field.error .ui.dropdown .menu .selected.item .text,
+.ui.form .field.error .ui.dropdown .menu .item:hover .text {
+  background: transparent;
+}
+.ui.form .field.error .ui.selection.active.dropdown .menu {
+  border-color: @negativeBorderColor;
 }
 
 .ui.dropdown.right {
@@ -35,10 +44,18 @@
   height: initial;
 }
 
+// Adjust dropdown icon
 .ui.selection.dropdown:not(.multiple):not(.search) > .dropdown.icon {
   position: @selectionIconPosition;
   padding: @selectionIconPadding;
   font-size: @selectionIconFontSize;
+}
+
+// Adjust loading icon
+// Padding overrides dropdown.less - L:775
+.ui.loading.selection.dropdown:not(.multiple):not(.search) > .dropdown.icon {
+  position: @loadingIconPosition;
+  padding: @selectionIconPadding !important;
 }
 
 .ui.selection.dropdown:not(.multiple) {
@@ -50,4 +67,11 @@
 i.icon.dropdown:before {
   content: @dropdownIconContent;
   font-family: 'Icons';
+}
+
+/* Kepping the semantic logic, removing left & right
+border for the menu in the same way it does for the top */
+.ui.selection.dropdown .menu {
+  border-left-width: @menuBorderWidth;
+  border-right-width: @menuBorderWidth;
 }

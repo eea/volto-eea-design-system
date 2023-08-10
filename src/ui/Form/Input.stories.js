@@ -5,6 +5,7 @@ import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
 export default {
   title: 'Components/Forms/Input',
   component: Input,
+  parameters: { controls: { exclude: ['invalid'] } },
   argTypes: {
     type: {
       control: {
@@ -50,6 +51,34 @@ export default {
         defaultValue: { summary: false },
       },
     },
+    disabled: {
+      description: 'disabled',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: true },
+      },
+    },
+    invalid: {
+      description: 'Aria attribute',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
+    },
+    describedby: {
+      description: 'Describes the element on which the attribute is set',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
+    },
+    labelledby: {
+      description: 'Id of the label of the element',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: ' "" ' },
+      },
+    },
   },
 };
 
@@ -60,9 +89,17 @@ const Template = ({ label, error, ...rest }) => (
         error={error}
         label={label}
         required={rest.required}
+        describedby={rest.describedby}
+        labelledby={rest.labelledby}
         columns={label ? 1 : 0}
       >
-        <Input {...rest} id="temp-id" />
+        <Input
+          {...rest}
+          id="temp-id"
+          aria-invalid={rest.invalid}
+          aria-describedby={rest.describedby}
+          aria-labelledby={rest.labelledby}
+        />
       </FormFieldWrapper>
     </Form>
   </Container>
@@ -70,22 +107,17 @@ const Template = ({ label, error, ...rest }) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  placeholder: 'Placeholder',
-  type: 'text',
-  fluid: false,
-  required: false,
-};
-
-export const StandardInput = Template.bind({});
-StandardInput.args = {
   label: 'Input label',
   placeholder: 'Placeholder',
   type: 'text',
   fluid: false,
   required: false,
+  disabled: false,
+  invalid: false,
+  labelledby: 'label_id',
 };
 
-StandardInput.argTypes = {
+Default.argTypes = {
   label: {
     description: 'input label',
     table: {
@@ -98,55 +130,6 @@ StandardInput.argTypes = {
     table: {
       type: { summary: 'boolean' },
       defaultValue: { summary: false },
-    },
-  },
-};
-
-export const DisabledInput = Template.bind({});
-DisabledInput.args = {
-  label: 'Input label',
-  placeholder: 'Placeholder',
-  type: 'text',
-  disabled: true,
-  fluid: false,
-  required: false,
-};
-DisabledInput.argTypes = {
-  fluid: {
-    description: 'take on the size of its container',
-    table: {
-      type: { summary: 'boolean' },
-      defaultValue: { summary: false },
-    },
-  },
-  label: {
-    description: 'input label',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: '' },
-    },
-  },
-  required: {
-    description: 'a field can show that is mandatory',
-    table: {
-      type: { summary: 'boolean' },
-      defaultValue: { summary: false },
-    },
-  },
-};
-DisabledInput.argTypes = {
-  disabled: {
-    description: 'disabled',
-    table: {
-      type: { summary: 'boolean' },
-      defaultValue: { summary: true },
-    },
-  },
-  label: {
-    description: 'input label',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: '' },
     },
   },
 };
@@ -159,6 +142,9 @@ LoadingInput.args = {
   loading: true,
   fluid: false,
   required: false,
+  disabled: false,
+  invalid: false,
+  labelledby: 'label_id',
 };
 LoadingInput.argTypes = {
   loading: {
@@ -189,10 +175,14 @@ export const ErrorInput = Template.bind({});
 ErrorInput.args = {
   label: 'Input label',
   placeholder: 'Placeholder',
-  type: 'text',
   error: true,
+  type: 'text',
   fluid: false,
   required: false,
+  disabled: false,
+  invalid: true,
+  describedby: 'desc_id',
+  labelledby: 'label_id',
 };
 ErrorInput.argTypes = {
   error: {
