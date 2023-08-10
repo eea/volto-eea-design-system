@@ -17,7 +17,7 @@
 
 /* Icon */
 @iconColor: var(--text-color, @oldSilver);
-@iconColorActive: @white;
+@iconColorActive: inherit;
 @iconOpacity: 1;
 @iconFontSize: 3rem;
 @iconFloat: none;
@@ -66,7 +66,7 @@
 
 @activeIconTransform: none;
 @activeTitleBackground: var(--bg-color, @white);
-@activeTitleColor: @grey-5;
+@activeTitleColor: var(--text-color, @grey-5);
 @activeTitleBorderBottom: 0;
 
 /*-------------------
