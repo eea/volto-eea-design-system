@@ -127,8 +127,9 @@
   color: inherit;
 }
 
-.quanta-block-toolbar .teaserGrid .block .toolbar {
+.quanta-block-editor-teaserGrid .teaserGrid .toolbar {
   top: 0px;
+  margin: 5px;
 }
 
 // Tabs block border left/top
