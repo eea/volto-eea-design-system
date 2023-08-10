@@ -127,7 +127,7 @@
   color: inherit;
 }
 
-.block-editor-__grid .block .toolbar, [class$='Grid'] .block .toolbar {
+.quanta-block-toolbar .teaserGrid .teaserGrid .block-editor-__grid .block .toolbar, [class$='Grid'] .block .toolbar {
   top: 0px;
 }
 
