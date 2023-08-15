@@ -4,11 +4,6 @@
 
 .accordion .filter {
   background-color: var(--bg-color, transparent);
-  --accordion-icon-inactive: '\ed25';
-  .ri-close-line, .accordion-icon-opened {
-    --accordion-icon-inactive: '\eb99';
-  }
-  --accordion-icon: @iconActive;
 }
 
 .ui.accordion button.title {
@@ -56,18 +51,6 @@
       font-size: @iconFontSize;
       line-height: @iconFontSize;
 
-      &:before {
-        content: @iconInactive;
-        font-size: @iconFontSize;
-      }
-
-      &.accordion-icon-opened:before {
-        content: var(--accordion-icon, '\eb99');
-      }
-
-      &.accordion-icon-closed:before {
-        content: var(--accordion-icon, '\ed25');
-      }
     }
 
     &.filter {
@@ -85,10 +68,6 @@
 
     i {
       color: @iconColorActive;
-
-      &:before {
-        content: @iconActive;
-      }
     }
   }
 

@@ -62,14 +62,10 @@ function AccordionContainer({ ...args }) {
         {args.enable_filtering && (
           <Accordion className={args.variant}>
             <Accordion.Title className={'filter'}>
-              {filterValue === '' ? (
-                <Icon className="ri-filter-3-line" />
-              ) : (
-                <Icon
-                  className="ri-close-line"
-                  onClick={() => handleFilteredValueChange('')}
-                />
-              )}
+              <Icon
+                className={filterValue ? 'ri-close-line' : 'ri-filter-3-line'}
+                onClick={() => handleFilteredValueChange('')}
+              />
               <Input
                 fluid
                 className="input-accordion-title"
@@ -90,12 +86,13 @@ function AccordionContainer({ ...args }) {
                 panel.title?.toLowerCase().includes(filterValue.toLowerCase())),
           )
           .map((panel, index) => {
+            const active = activeIndex === index;
             return (
               <Accordion className={args.variant} key={index}>
                 <Accordion.Title
                   index={index}
                   tabIndex={0}
-                  active={activeIndex === index}
+                  active={active}
                   onClick={handleClick}
                   as={args.title_size === 'no value' ? '' : args.title_size}
                   onKeyDown={(e) => {
@@ -105,9 +102,13 @@ function AccordionContainer({ ...args }) {
                   }}
                 >
                   <span>{panel.title}</span>
-                  <Icon className="ri-arrow-down-s-line" />
+                  <Icon
+                    className={
+                      active ? 'ri-arrow-down-s-line' : 'ri-arrow-up-s-line'
+                    }
+                  />
                 </Accordion.Title>
-                <Accordion.Content active={activeIndex === index}>
+                <Accordion.Content active={active}>
                   {panel.content}
                 </Accordion.Content>
               </Accordion>

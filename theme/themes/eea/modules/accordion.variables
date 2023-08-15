@@ -33,8 +33,6 @@
 @iconVerticalAlign: baseline;
 @iconTransform: none;
 @iconColorHover: @titleColorHover;
-@iconInactive: var(--accordion-icon-inactive, "\ea4e"); // Icon of closed accordion
-@iconActive: var(--accordion-icon-active, "\ea78") ; // Icon of open accordion
 @iconOrder: 1; // Icon after text of the title
 @filterIconWidth: 3rem;
 @filterIconFontSize: 2rem;
