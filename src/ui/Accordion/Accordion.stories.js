@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Accordion, Icon, Container, Input } from 'semantic-ui-react';
+import React, { useRef, useState } from 'react';
+import { Accordion, Icon, Container, Input, Button } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Accordion',
@@ -44,6 +44,7 @@ export default {
 function AccordionContainer({ ...args }) {
   const [activeIndex, setActiveIndex] = useState([0]);
   const [filterValue, setFilterValue] = useState('');
+  const inputRef = useRef();
 
   const handleClick = (e, titleProps) => {
     const { index } = titleProps;
@@ -54,6 +55,7 @@ function AccordionContainer({ ...args }) {
 
   const handleFilteredValueChange = (value) => {
     setFilterValue(value);
+    inputRef.current.focus();
   };
 
   return (
@@ -62,17 +64,21 @@ function AccordionContainer({ ...args }) {
         {args.enable_filtering && (
           <Accordion className={args.variant}>
             <Accordion.Title className={'filter'}>
-              <Icon
-                className={filterValue ? 'ri-close-line' : 'ri-filter-3-line'}
-                onClick={() => handleFilteredValueChange('')}
-              />
               <Input
                 fluid
                 className="input-accordion-title"
                 transparent
                 placeholder="Type to filter..."
                 value={filterValue}
+                ref={inputRef}
                 onChange={(e) => handleFilteredValueChange(e.target.value)}
+              />
+              <Button
+                className={
+                  'basic icon ' +
+                  (filterValue ? 'ri-close-line' : 'ri-filter-3-line')
+                }
+                onClick={() => handleFilteredValueChange('')}
               />
             </Accordion.Title>
           </Accordion>

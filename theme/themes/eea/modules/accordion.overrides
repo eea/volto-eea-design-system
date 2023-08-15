@@ -16,8 +16,18 @@
   margin: @itemsMargin;
   transition: @styledTitleTransition;
 
-  .title,
-  button.title {
+  .basic {
+    color: var(--text-color-hover, #323232) !important;
+  }
+
+  .basic:focus,
+  .basic:hover {
+    background-color: transparent !important;
+    box-shadow: none;
+    color: var(--text-color-hover, #323232) !important;
+  }
+
+  .title {
     display: flex;
     align-items: center;
     justify-content: @titleJustifyContent;
@@ -27,7 +37,7 @@
       justify-content: flex-start;
     }
 
-    i {
+    .icon {
       flex-shrink: 0;
     }
 
@@ -35,12 +45,12 @@
     &:focus-visible {
       color: @titleColorHover;
 
-      i {
+      .icon {
         color: @iconColorHover;
       }
     }
 
-    i {
+    .icon {
       display: flex;
       width: @iconWidth;
       height: @iconHeight;
@@ -52,13 +62,6 @@
       line-height: @iconFontSize;
 
     }
-
-    &.filter {
-      i:before {
-        width: @filterIconWidth;
-        font-size: @filterIconFontSize;
-      }
-    }
   }
 
   .active.title {
@@ -66,7 +69,7 @@
     background-color: @activeTitleBackground;
     color: @activeTitleColor;
 
-    i {
+    .icon {
       color: @iconColorActive;
     }
   }
@@ -109,7 +112,7 @@
     background-color: transparent;
   }
 
-  .ui.item i {
+  .ui.item .icon {
     font-size: @iconFontSize;
 
     &::before {
