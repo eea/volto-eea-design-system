@@ -85,8 +85,8 @@ const RenderItem = ({ layout, section, renderMenuItem, index }) => {
     layout.hideChildrenFromNavigation === undefined
       ? true
       : layout.hideChildrenFromNavigation;
-  return !layout.menuItemListColumns ||
-    layout.menuItemListColumns[index] === 1 ? (
+  return !layout.menuItemChildrenListColumns ||
+    layout.menuItemChildrenListColumns[index] === 1 ? (
     <Item
       item={section}
       renderMenuItem={renderMenuItem}
@@ -95,7 +95,7 @@ const RenderItem = ({ layout, section, renderMenuItem, index }) => {
   ) : (
     <ItemGrid
       item={section}
-      columns={layout.menuItemListColumns[index]}
+      columns={layout.menuItemChildrenListColumns[index]}
       renderMenuItem={renderMenuItem}
       hideChildrenFromNavigation={hideChildrenFromNavigation}
     />

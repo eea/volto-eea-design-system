@@ -1182,7 +1182,7 @@ const debounce = (func) => {
 
 const menuItemsLayouts = {
   '/en/topics': {
-    menuItemListColumns: [1, 4],
+    menuItemChildrenListColumns: [1, 4],
     menuItemColumns: [
       'at-a-glance three wide column',
       'topics-right-column nine wide column',
@@ -1191,7 +1191,7 @@ const menuItemsLayouts = {
   },
   '/en/countries': {
     menuItemColumns: ['eight wide column', 'four wide column'],
-    menuItemListColumns: [5, 2],
+    menuItemChildrenListColumns: [5, 2],
     appendExtraMenuItemsToLastColumn: true,
     hideChildrenFromNavigation: false,
   },
