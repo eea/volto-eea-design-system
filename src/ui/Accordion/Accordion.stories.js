@@ -44,7 +44,6 @@ export default {
 function AccordionContainer({ ...args }) {
   const [activeIndex, setActiveIndex] = useState([0]);
   const [filterValue, setFilterValue] = useState('');
-  const inputRef = useRef();
 
   const handleClick = (e, titleProps) => {
     const { index } = titleProps;
@@ -55,7 +54,6 @@ function AccordionContainer({ ...args }) {
 
   const handleFilteredValueChange = (value) => {
     setFilterValue(value);
-    inputRef.current.focus();
   };
 
   return (
@@ -70,14 +68,10 @@ function AccordionContainer({ ...args }) {
                 transparent
                 placeholder="Type to filter..."
                 value={filterValue}
-                ref={inputRef}
                 onChange={(e) => handleFilteredValueChange(e.target.value)}
               />
-              <Button
-                className={
-                  'basic icon ' +
-                  (filterValue ? 'ri-close-line' : 'ri-filter-3-line')
-                }
+              <Icon
+                className={filterValue ? 'ri-close-line' : 'ri-filter-3-line'}
                 onClick={() => handleFilteredValueChange('')}
               />
             </Accordion.Title>
