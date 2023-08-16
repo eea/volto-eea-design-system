@@ -4,11 +4,8 @@
 
 .accordion .filter {
   background-color: var(--bg-color, transparent);
-  --accordion-icon-inactive: '\ed25';
-  .ri-close-line {
-    --accordion-icon-inactive: '\eb99';
-  }
 }
+
 .ui.accordion button.title {
   background: transparent;
   width: 100%;
@@ -19,8 +16,18 @@
   margin: @itemsMargin;
   transition: @styledTitleTransition;
 
-  .title,
-  button.title {
+  .basic {
+    color: @titleColorHover !important;
+  }
+
+  .basic:focus,
+  .basic:hover {
+    background-color: transparent !important;
+    box-shadow: none;
+    color: @titleColorHover !important;
+  }
+
+  .title {
     display: flex;
     align-items: center;
     justify-content: @titleJustifyContent;
@@ -30,7 +37,7 @@
       justify-content: flex-start;
     }
 
-    i {
+    .icon {
       flex-shrink: 0;
     }
 
@@ -38,12 +45,12 @@
     &:focus-visible {
       color: @titleColorHover;
 
-      i {
+      .icon {
         color: @iconColorHover;
       }
     }
 
-    i {
+    .icon {
       display: flex;
       width: @iconWidth;
       height: @iconHeight;
@@ -54,17 +61,6 @@
       font-size: @iconFontSize;
       line-height: @iconFontSize;
 
-      &:before {
-        content: @iconInactive;
-        font-size: @iconFontSize;
-      }
-    }
-
-    &.filter {
-      i:before {
-        width: @filterIconWidth;
-        font-size: @filterIconFontSize;
-      }
     }
   }
 
@@ -73,12 +69,8 @@
     background-color: @activeTitleBackground;
     color: @activeTitleColor;
 
-    i {
+    .icon {
       color: @iconColorActive;
-
-      &:before {
-        content: @iconActive;
-      }
     }
   }
 
@@ -120,7 +112,7 @@
     background-color: transparent;
   }
 
-  .ui.item i {
+  .ui.item .icon {
     font-size: @iconFontSize;
 
     &::before {
