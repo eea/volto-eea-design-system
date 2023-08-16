@@ -9,6 +9,7 @@
 @contentBoxNoBackground: transparent;
 @contentBoxColorInverted : inherit;
 @contentBoxBeforeZIndex: -1;
+@contentBoxZIndex: 3;
 
 /* Themes */
 @contentBoxBackgroundColorPrimary: @primaryColor;

@@ -10,7 +10,7 @@
   width: @contentBoxWidth;
   margin-left: -50vw;
   background-color: inherit;
-  content: " ";
+  content: ' ';
   position: absolute;
   height: 100%;
   margin-right: -50vw;
@@ -24,7 +24,7 @@
   color: @contentBoxColorInverted;
   margin-bottom: @mediumGap;
   position: relative;
-
+  isolation: isolate;
   .content-box-inner {
     padding-top: @contentBoxContainerMarginTop;
     padding-bottom: @contentBoxContainerMarginBottom;
@@ -46,7 +46,7 @@
   }
 }
 
-.content-box[class*="ary"] {
+.content-box[class*='ary'] {
   --bg-color: transparent;
   --border-color-secondary: @contentBoxColor;
   --text-color: @contentBoxColor;
@@ -56,7 +56,7 @@
   --text-color-hover: @backgroundColorSupplementary;
 }
 // inherit link
-.content-box[class*="ary"] a:not(.ui, .item, .header-link) {
+.content-box[class*='ary'] a:not(.ui, .item, .header-link) {
   color: inherit;
   text-decoration: underline;
 }
