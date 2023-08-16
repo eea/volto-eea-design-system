@@ -17,14 +17,14 @@
   transition: @styledTitleTransition;
 
   .basic {
-    color: var(--text-color-hover, #323232) !important;
+    color: @titleColorHover !important;
   }
 
   .basic:focus,
   .basic:hover {
     background-color: transparent !important;
     box-shadow: none;
-    color: var(--text-color-hover, #323232) !important;
+    color: @titleColorHover !important;
   }
 
   .title {
