@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import { Accordion, Icon, Container, Input, Button } from 'semantic-ui-react';
+import React, { useState } from 'react';
+import { Accordion, Icon, Container, Input } from 'semantic-ui-react';
 
 export default {
   title: 'Components/Accordion',
