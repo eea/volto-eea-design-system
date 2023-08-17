@@ -270,7 +270,7 @@
 
 .card .gradient {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -357,6 +357,10 @@
   outline: none;
   transform: translate(0, -50%);
   z-index: 1; // make arrows clickable even on events page with right column
+}
+
+.cards-carousel .slider-arrow.slick-disabled {
+  opacity: @carouselArrowDisabledOpacity;
 }
 
 .cards-carousel .prev-arrow {

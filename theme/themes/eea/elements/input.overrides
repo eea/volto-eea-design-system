@@ -88,7 +88,7 @@
   &:active,
   &:focus {
     border: @borderWidth solid @secondaryColor;
-    color: @textColor;
+    color: @textColorCSSVar;
   }
 }
 

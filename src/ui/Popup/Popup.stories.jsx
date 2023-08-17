@@ -59,7 +59,7 @@ export default {
 };
 
 export const ButtonPopup = (args) => (
-  <Segment placeholder>
+  <Segment placeholder className={'flex-row flex-items-center'}>
     <Popup
       {...args}
       trigger={

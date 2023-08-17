@@ -12,6 +12,7 @@ import cx from 'classnames';
 export default {
   title: 'Layout/Header',
   component: Header,
+  excludeStories: /menuItems$/,
   argTypes: {
     links: {
       table: {
@@ -98,7 +99,7 @@ const languages = [
   { name: 'Türkçe', code: 'tr' },
 ];
 
-const menuItems = [
+export const menuItems = [
   {
     '@id': 'Topics',
     items: [
@@ -483,7 +484,7 @@ const menuItems = [
     ],
     review_state: null,
     title: 'Topics',
-    url: '/#',
+    url: '/en/topics',
   },
   {
     '@id': 'Analysis-and-data',
@@ -887,7 +888,7 @@ const menuItems = [
     ],
     review_state: null,
     title: 'Countries',
-    url: '/#',
+    url: '/en/countries',
   },
   {
     '@id': 'Newsroom',
@@ -1143,7 +1144,7 @@ const menuItems = [
     ],
     review_state: null,
     title: 'About Us',
-    url: '/#',
+    url: '/en/about',
   },
 ];
 
@@ -1177,6 +1178,26 @@ const debounce = (func) => {
     if (timer) clearTimeout(timer);
     timer = setTimeout(func, 50, event);
   };
+};
+
+const menuItemsLayouts = {
+  '/en/topics': {
+    menuItemChildrenListColumns: [1, 4],
+    menuItemColumns: [
+      'at-a-glance three wide column',
+      'topics-right-column nine wide column',
+    ],
+    hideChildrenFromNavigation: false,
+  },
+  '/en/countries': {
+    menuItemColumns: ['eight wide column', 'four wide column'],
+    menuItemChildrenListColumns: [5, 2],
+    appendExtraMenuItemsToLastColumn: true,
+    hideChildrenFromNavigation: false,
+  },
+  '/en/about': {
+    hideChildrenFromNavigation: false,
+  },
 };
 
 const handleDropdownClick = (event) => {
@@ -1320,6 +1341,7 @@ const Template = (args) => {
           pathname={pathname}
           logo={<Logo {...logoProps} inverted={args.inverted} />}
           menuItems={menuItems}
+          menuItemsLayouts={menuItemsLayouts}
           headerSearchBox={headerSearchBox}
           renderMenuItem={(item, options = {}, props) => {
             const { onClick } = options;

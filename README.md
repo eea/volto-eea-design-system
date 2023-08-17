@@ -27,9 +27,22 @@ This package provides the following features:
 
 ## Getting started
 
+### Try volto-eea-design-system with Docker
+
+      git clone https://github.com/eea/volto-eea-design-system.git
+      cd volto-eea-design-system
+      make
+      make start
+
+Go to http://localhost:3000
+
 ### Add volto-eea-design-system to your Volto project
 
 1. Make sure you have a [Plone backend](https://plone.org/download) up-and-running at http://localhost:8080/Plone
+
+   ```Bash
+   docker compose up backend
+   ```
 
 1. Start Volto frontend
 
@@ -75,6 +88,11 @@ Checkout the docs found within the [mockups](https://github.com/eea/volto-eea-de
 ## Release
 
 See [RELEASE.md](https://github.com/eea/volto-eea-design-system/blob/master/RELEASE.md).
+
+## Docusaurus and Storybook
+
+See [Docusaurus](https://eea.github.io/).
+See [Storybook](https://eea.github.io/eea-storybook/).
 
 ## How to contribute
 

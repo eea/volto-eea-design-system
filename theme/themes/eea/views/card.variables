@@ -345,6 +345,7 @@
 @carouselButtonIconOpacity: 1;
 @carouselButtonDistance: -3.5rem;
 @carouselButtonPaddingTop: 0;
+@carouselArrowDisabledOpacity: 0.25;
 
 /* Dots */
 @carouselDotsFontSize: 0.75rem;

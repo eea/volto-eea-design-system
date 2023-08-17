@@ -446,7 +446,10 @@ function CarouselCardsContent(args) {
         dots
           .querySelectorAll('.slider-dots-button')
           .forEach(function (el, idx) {
-            el.setAttribute('aria-current', idx === currentSlide);
+            el.setAttribute(
+              'aria-current',
+              el.parentElement.className === 'slick-active',
+            );
           });
       }
     },
