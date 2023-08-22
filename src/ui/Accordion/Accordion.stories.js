@@ -93,6 +93,8 @@ function AccordionContainer({ ...args }) {
                   index={index}
                   tabIndex={0}
                   active={active}
+                  role="button"
+                  aria-expanded={activeIndex === index}
                   onClick={handleClick}
                   as={args.title_size === 'no value' ? '' : args.title_size}
                   onKeyDown={(e) => {
