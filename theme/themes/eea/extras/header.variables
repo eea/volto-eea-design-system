@@ -182,9 +182,9 @@
 @megaMenuSubTitleFontWeight: @font-weight-7;
 @megaMenuSubTitlePadding: 0.5rem 0;
 @megaMenuSubTitleDisplay: block;
-@megaMenuSubTitleCountriesNestedGridMarginTop: -1rem;
 
 /* List Item */
+@megaMenuListGap: 0 2rem;
 @megaMenuListItemFontSize: @font-size-1;
 @megaMenuListItemFontWeight: @font-weight-4;
 @megaMenuListItemPadding: @rem-space-2 0;

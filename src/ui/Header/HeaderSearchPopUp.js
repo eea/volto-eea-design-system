@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Container, Input, List } from 'semantic-ui-react';
 import { withRouter, Link } from 'react-router-dom';
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
+import { handleEnterKeyPress } from '@eeacms/volto-eea-design-system/helpers';
 
 const getRandomItems = (arr, max) => {
   return (
@@ -37,7 +38,6 @@ function HeaderSearchPopUp({
   } = activeView || {};
   const { suggestionsTitle, suggestions, maxToShow } = searchSuggestions || {};
 
-  const [text, setText] = React.useState('');
   const [visibleSuggestions, setVisibileSuggestions] = React.useState(
     getRandomItems(suggestions, maxToShow),
   );
@@ -48,12 +48,8 @@ function HeaderSearchPopUp({
 
   useClickOutside({ targetRefs: [nodeRef, ...triggerRefs], callback: onClose });
 
-  const onChangeText = (event, { value }) => {
-    setText(value);
-    event.preventDefault();
-  };
-
   const onSubmit = (event) => {
+    const text = searchInputRef?.current?.inputRef?.current?.value;
     history.push(`${path}?q=${text}`);
 
     if (window?.searchContext?.resetSearch) {
@@ -79,12 +75,14 @@ function HeaderSearchPopUp({
           <form method="get" onSubmit={onSubmit}>
             <Input
               ref={searchInputRef}
-              className="search"
-              onChange={onChangeText}
-              icon={{
-                className: 'ri-search-line',
-                link: true,
+              className="icon search"
+              action={{
+                className: 'icon ri-search-line',
+                'aria-label': 'Submit search',
                 onClick: onSubmit,
+                onKeyDown: (event) => {
+                  handleEnterKeyPress(event, onSubmit);
+                },
               }}
               placeholder={placeholder}
               fluid

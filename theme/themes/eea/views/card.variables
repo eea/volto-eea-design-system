@@ -18,7 +18,7 @@
 @fontFamily: @pageFont;
 @display: flex;
 @borderRadius: @defaultBorderRadius;
-@margin: 1em 0em;
+@margin: 0em;
 @minHeight: 0px;
 @padding: 0em;
 @width: 290px;
@@ -84,11 +84,13 @@
 @headerMargin: -@em-space-2 -@em-space-1 -@em-space-1 -@em-space-1;
 @headerFontWeight: @bold;
 @headerFontSize: 1.125rem;
+@iconCardHeaderFontSize: clamp(@font-size-1, @font-size-2, 18px);
 
 @headerColor: inherit;
 @headerLinkDisplay: block;
 
 @headerPadding: @em-space-1;
+@headerOnImagePadding: 0;
 @headerLineHeightOffset: -(@headerPadding * 2);
 
 /* Metadata */
@@ -270,8 +272,8 @@
         Image with title
 *******************************/
 @imageTitleColor: @white;
-@imageTitleFontSize: @h2;
-@imageTitleMobileFontSize: @mobileH1;
+@imageTitleFontSize: clamp(@font-size-3, @h2, 32px);
+@imageTitleMobileFontSize: clamp(@font-size-2, @mobileH1, 30px);
 @imageTitleFontWeight: @font-weight-7;
 @imageTitleLineHeight: @font-lineheight-0;
 @imageTitlePadding: @rem-space-6;
@@ -281,6 +283,7 @@
           Rounded Card
 *******************************/
 /* Global */
+@roundedCardPadding              : @rem-space-4 0;
 @roundedImageBorderRadius        : @circularRadius;
 @roundedContentTitleMarginBottom : @rem-space-2;
 @roundedContentTitleTextAlign    : left;
@@ -341,7 +344,8 @@
 @carouselButtonIconFontSize: 3.125rem;
 @carouselButtonIconOpacity: 1;
 @carouselButtonDistance: -3.5rem;
-@carouselButtonPaddingTop: @rem-space-4;
+@carouselButtonPaddingTop: 0;
+@carouselArrowDisabledOpacity: 0.25;
 
 /* Dots */
 @carouselDotsFontSize: 0.75rem;
@@ -366,3 +370,10 @@
 @tabletTeaserCardPaddingInline: @rem-space-2;
 @tabletTeaserCardMinWidth: 100%;
 
+
+/*******************************
+    Image Card items grid
+*******************************/
+@imageCardItemsGap: 1.5rem;
+@imageCardItemsGridMin: 275px;
+@imageCardItemsGridMax: auto;
