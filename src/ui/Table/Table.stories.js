@@ -280,9 +280,7 @@ function SortableTableContent({
                   event.target.click();
                 }
               }}
-              aria-label={
-                direction ? item.name + ` sorted ` + direction : item.name
-              }
+              aria-label={direction ? direction + ` sorted ` : ''}
             >
               {item.name}
             </Table.HeaderCell>
