@@ -96,7 +96,7 @@ function AccordionContainer({ ...args }) {
                   onClick={handleClick}
                   as={args.title_size === 'no value' ? '' : args.title_size}
                   onKeyDown={(e) => {
-                    if (e.nativeEvent.keyCode === 13) {
+                    if (e.keyCode === 13 || e.keyCode === 32) {
                       handleClick(e, { index });
                     }
                   }}
