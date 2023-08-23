@@ -84,4 +84,6 @@
 
 .popup-container .popup {
   position: initial; // without position initial popper cannot correctly place popup
+  padding-right:10px;
+  margin-right:10px;
 }

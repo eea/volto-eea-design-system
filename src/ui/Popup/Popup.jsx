@@ -18,7 +18,6 @@ function Popup(props) {
   const triggerRef = useRef(null);
   const popupRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
-
   const options = {
     placement: positionsMapping[props.position] || 'bottom-end',
     strategy: props.positionFixed || 'absolute',
@@ -40,12 +39,11 @@ function Popup(props) {
   );
 
   useEffect(() => {
-    //force update because of ssr
     const updatePlacement = async () => {
       if (typeof update === 'function') await update();
     };
     updatePlacement();
-  }, [isOpen, update, popupRef.current]);
+  }, [isOpen, update]);
 
   const handleClickOutside = (event) => {
     if (

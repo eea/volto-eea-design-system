@@ -108,12 +108,11 @@
 }
 
 /*Share Popup*/
-
 .ui.popup.share-popup {
   min-width: @sharePopupMinWidth;
   padding: @sharePopupPadding;
   filter: @sharePopupFilter;
-  overflow-x: hidden;
+
   p {
     font-size: @sharePopupFontSize;
     font-weight: @sharePopupFontWeight;
@@ -130,10 +129,6 @@
     .action {
       display: flex;
       justify-content: center;
-    }
-
-    .ui.button:not(.icon) > .icon:not(.button):not(.dropdown) {
-      margin: @sharePopupActionsIconMargin;
     }
   }
 }
