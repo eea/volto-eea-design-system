@@ -233,7 +233,6 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
             <React.Fragment key={index}>
               {renderMenuItem(item, {
                 key: index,
-                role: 'listitem',
                 className: 'item',
               })}
             </React.Fragment>
@@ -242,7 +241,6 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
           <React.Fragment key={inDepth.url}>
             {renderMenuItem(inDepth, {
               key: inDepth.url,
-              role: 'listitem',
               className: 'item',
             })}
           </React.Fragment>
@@ -256,7 +254,6 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
           <React.Fragment key={index}>
             {renderMenuItem(item, {
               key: index,
-              role: 'listitem',
               className: 'item',
             })}
           </React.Fragment>
