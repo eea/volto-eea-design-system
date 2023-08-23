@@ -33,11 +33,19 @@ function Popup(props) {
     ],
   };
 
-  const { styles, attributes } = usePopper(
+  const { styles, attributes, update } = usePopper(
     triggerRef.current,
     popupRef.current,
     options,
   );
+
+  useEffect(() => {
+    //force update because of ssr
+    const updatePlacement = async () => {
+      if (typeof update === 'function') await update();
+    };
+    updatePlacement();
+  }, [isOpen, update, popupRef.current]);
 
   const handleClickOutside = (event) => {
     if (
@@ -72,7 +80,6 @@ function Popup(props) {
   const { trigger, className, size, position, basic, content, on } = props;
 
   const onEvent = 'on' + on.charAt(0).toUpperCase() + on.slice(1);
-
   return (
     <React.Fragment>
       {trigger && (
@@ -90,20 +97,22 @@ function Popup(props) {
         {...attributes.popper}
       >
         {isOpen && <EventStack name="keydown" on={closeOnEscape} />}
-        <React.Fragment>
-          <div
-            className={cx(
-              'ui popup transition',
-              className,
-              size,
-              position,
-              basic ? 'basic' : '',
-              isOpen ? 'visible' : '',
-            )}
-          >
-            {content}
-          </div>
-        </React.Fragment>
+        {isOpen && (
+          <React.Fragment>
+            <div
+              className={cx(
+                'ui popup transition',
+                className,
+                size,
+                position,
+                basic ? 'basic' : '',
+                'visible',
+              )}
+            >
+              {content}
+            </div>
+          </React.Fragment>
+        )}
       </div>
     </React.Fragment>
   );
