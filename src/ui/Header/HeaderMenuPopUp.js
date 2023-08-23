@@ -168,7 +168,17 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
               defaultIndex = index;
             }
             x.title = (
-              <Accordion.Title key={`title=${index}`} as="button">
+              <Accordion.Title
+                key={`title=${index}`}
+                as="button"
+                aria-expanded={false}
+                onClick={(e) => {
+                  e.currentTarget.setAttribute(
+                    'aria-expanded',
+                    e.currentTarget.className.indexOf('active') === -1,
+                  );
+                }}
+              >
                 {item.title}
                 <Icon className="ri-arrow-down-s-line" size="small" />
               </Accordion.Title>
@@ -277,6 +287,7 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
       <Accordion.Title
         key={`title-${index}`}
         index={index}
+        aria-expanded={activeIndex === index}
         as="button"
         onClick={() => {
           if (activeIndex === index) {
