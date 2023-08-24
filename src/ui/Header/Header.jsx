@@ -17,6 +17,7 @@ import HeaderMenuPopUp from './HeaderMenuPopUp';
 import PropTypes from 'prop-types';
 
 import { isInternalURL } from '@plone/volto/helpers';
+import config from '@plone/volto/registry';
 
 Header.propTypes = {
   transparency: PropTypes.bool,
@@ -141,6 +142,7 @@ const TopDropdownMenu = ({
 const Main = ({
   logo,
   menuItems,
+  menuItemsLayouts,
   renderMenuItem,
   renderGlobalMenuItem,
   headerSearchBox,
@@ -157,6 +159,7 @@ const Main = ({
   const [burger, setBurger] = React.useState('');
   const searchInputRef = React.useRef(null);
   const [isClient, setIsClient] = React.useState();
+  const itemsLayouts = menuItemsLayouts || config.settings?.menuItemsLayouts;
 
   React.useEffect(() => setIsClient(true), []);
 
@@ -361,6 +364,7 @@ const Main = ({
         renderMenuItem={renderMenuItem}
         activeItem={activeItem}
         menuItems={menuItems}
+        menuItemsLayouts={itemsLayouts}
         pathName={pathname}
         onClose={menuOnClickOutside}
         triggerRefs={[mobileMenuBurgerRef, desktopMenuRef]}

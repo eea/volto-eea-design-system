@@ -67,7 +67,7 @@ function Banner({ image, metadata, properties, children, ...rest }) {
 }
 
 Banner.Action = React.forwardRef(function (
-  { id, title, titleClass, icon, onClick, className, color },
+  { id, title, titleClass, icon, onClick, className, color, ...rest },
   ref,
 ) {
   return (

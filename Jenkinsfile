@@ -210,6 +210,31 @@ pipeline {
     }
 
 
+    stage('SonarQube compare to master') {
+      when {
+        allOf {
+          environment name: 'CHANGE_ID', value: ''
+          branch 'develop'
+          not { changelog '.*^Automated release [0-9\\.]+$' }
+        }
+      }
+      steps {
+        node(label: 'docker') {
+          script {
+            sh '''docker pull eeacms/gitflow'''
+            sh '''echo "Error" > checkresult.txt'''
+            catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+               sh '''set -o pipefail; docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh | grep -v "Found script" | tee checkresult.txt'''
+             }
+
+            publishChecks name: 'SonarQube', title: 'Sonarqube Code Quality Check', summary: "Quality check on the SonarQube metrics from branch develop, comparing it with the ones from master branch. No bugs are allowed",
+                          text: readFile(file: 'checkresult.txt'), conclusion: "${currentBuild.currentResult}",
+                          detailsURL: "${env.BUILD_URL}display/redirect"
+          }
+        }
+      }
+    }
+
    stage('Pull Request COMMENT') {
       when {
         not { environment name: 'CHANGE_ID', value: '' }
@@ -281,7 +306,7 @@ pipeline {
                   sh '''git clone --branch develop https://github.com/eea/eea-storybook.git'''
 
                   withCredentials([string(credentialsId: 'eea-storybook-chromatica', variable: 'CHROMATICA_TOKEN')]) {
-                    def RETURN_STATUS = sh(script: '''cd eea-storybook; npm install -g mrs-developer chromatic; yarn cache clean; make develop; cd src/addons/$GIT_NAME; git fetch origin pull/${CHANGE_ID}/head:PR-${CHANGE_ID}; git checkout PR-${CHANGE_ID}; cd ../../..; yarn install; yarn build-storybook; if [ $? -eq 0 ]; then npx chromatic --no-interactive --exit-zero-on-changes --project-token=$CHROMATICA_TOKEN -d docs/ | tee chromatic.log; else exit 1; fi''', returnStatus: true)
+                    def RETURN_STATUS = sh(script: '''cd eea-storybook; npm install -g mrs-developer chromatic; yarn cache clean; make develop; cd src/addons/$GIT_NAME; git fetch origin pull/${CHANGE_ID}/head:PR-${CHANGE_ID}; git checkout PR-${CHANGE_ID}; cd ../../..; yarn install; yarn build-storybook; if [ $? -eq 0 ]; then set -o pipefail; npx chromatic --no-interactive --exit-zero-on-changes --project-token=$CHROMATICA_TOKEN -d docs/ | tee chromatic.log; else exit 1; fi''', returnStatus: true)
                     if ( RETURN_STATUS == 0 ) {
                       def STORY_URL = sh(script: '''grep "View your Storybook" eea-storybook/chromatic.log | sed "s/.*https/https/" ''', returnStdout: true).trim()
                       pullRequest.comment("### :heavy_check_mark: Storybook:\n${STORY_URL}\n\n:rocket: @${GITHUB_COMMENT_AUTHOR}")

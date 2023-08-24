@@ -127,6 +127,11 @@
   color: inherit;
 }
 
+.quanta-block-editor-teaserGrid .teaserGrid .toolbar {
+  top: 0px;
+  margin: 5px;
+}
+
 // Tabs block border left/top
 .tabs-block {
   .border-left {
