@@ -287,13 +287,8 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
         aria-expanded={activeIndex === index}
         as="button"
         onClick={() => {
-          if (activeIndex === index) {
-            setActiveIndex(-1);
-          } else {
-            setActiveIndex(index);
-          }
+          setActiveIndex(activeIndex === index ? -1 : index);
         }}
-        aria-expanded={activeIndex === index}
       >
         {element.title}
         <Icon className="ri-arrow-down-s-line" size="small" />
