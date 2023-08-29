@@ -83,7 +83,7 @@ RelatedContent.Grid = ({ children, ...rest }) => {
           ))}
 
       {rest.showButton && rest.publicationCards.length > 4 && (
-        <Grid.Row className={!rest.showButton ? 'hidden' : null}>
+        <Grid.Row>
           <Grid.Column>
             <div className="button-wrapper">
               <Button secondary>{rest.buttonText}</Button>
