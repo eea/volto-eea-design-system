@@ -10,6 +10,20 @@ import {
 import '@testing-library/jest-dom/extend-expect';
 
 describe('AnimationGroup component', () => {
+  let observe;
+  let unobserve;
+  let callback;
+  let disconnect;
+  observe = jest.fn();
+  unobserve = jest.fn();
+  disconnect = jest.fn();
+
+  window.IntersectionObserver = jest.fn(function (cb) {
+    this.observe = observe;
+    this.unobserve = unobserve;
+    this.disconnect = disconnect;
+    callback = cb;
+  });
   it('renders a button with label', () => {
     const { getByText } = render(<AnimationGroup {...AnimationGroup.args} />);
 
@@ -26,6 +40,20 @@ describe('AnimationGroup component', () => {
 });
 
 describe('Animation component', () => {
+  let observe;
+  let unobserve;
+  let callback;
+  let disconnect;
+  observe = jest.fn();
+  unobserve = jest.fn();
+  disconnect = jest.fn();
+
+  window.IntersectionObserver = jest.fn(function (cb) {
+    this.observe = observe;
+    this.unobserve = unobserve;
+    this.disconnect = disconnect;
+    callback = cb;
+  });
   it('renders a button with label', () => {
     const { getByText } = render(<Animation {...Animation.args} />);
 
