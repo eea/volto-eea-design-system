@@ -7,9 +7,9 @@
 }
 
 .ui.accordion button.title {
-  background: transparent;
   width: 100%;
   border: none;
+  background: transparent;
 }
 
 .ui.accordion {
@@ -60,7 +60,18 @@
       color: @iconColor;
       font-size: @iconFontSize;
       line-height: @iconFontSize;
+    }
 
+    &.filter {
+      .icon {
+        margin: @filterIconMargin;
+        color: @filterTextColor;
+        font-size: @filterIconFontSize;
+      }
+
+      .ui.input input::placeholder {
+        color: @filterTextColor;
+      }
     }
   }
 
@@ -75,9 +86,9 @@
   }
 
   .content {
+    padding: @contentPadding;
     background: @contentBackground;
     color: @contentColor;
-    padding: @contentPadding;
   }
 }
 
@@ -94,11 +105,12 @@
      Styled
 ---------------*/
 
-.ui.styled.accordion  .title,
-.ui.styled.accordion  .title:hover,
-.ui.styled.accordion  .title:focus-visible {
+.ui.styled.accordion .title,
+.ui.styled.accordion .title:hover,
+.ui.styled.accordion .title:focus-visible {
   background-color: @styledActiveTitleBackground;
 }
+
 .ui.styled.accordion .active.title input {
   color: @styledActiveTitleColor;
 }
@@ -125,8 +137,7 @@
    Variations
 ---------------*/
 .ui.accordion[class*='ary'] .active.title,
-.ui.accordion[class*='ary'] .filter
- {
+.ui.accordion[class*='ary'] .filter {
   --text-color-hover: white;
   --text-color: white;
 }
@@ -136,6 +147,7 @@
 .ui.accordion.primary .filter {
   --bg-color: @primaryColorCSSVar;
 }
+
 .ui.accordion.primary .title:not(.active, .filter):hover,
 .ui.accordion.primary .title:not(.active, .filter):focus-visible {
   --text-color-hover: @primaryColorCSSVar;
@@ -146,6 +158,7 @@
 .ui.accordion.secondary .filter {
   --bg-color: @secondaryColorCSSVar;
 }
+
 .ui.accordion.secondary .title:not(.active, .filter):hover,
 .ui.accordion.secondary .title:not(.active, .filter):focus-visible {
   --text-color-hover: @secondaryColorCSSVar;
@@ -156,14 +169,26 @@
 .ui.accordion.tertiary .filter {
   --bg-color: @tertiaryColorCSSVar;
 }
+
 .ui.accordion.tertiary .title:not(.active, .filter):hover,
 .ui.accordion.tertiary .title:not(.active, .filter):focus-visible {
   --text-color-hover: @tertiaryColorCSSVar;
 }
 
 @media only screen and (max-width: @largestMobileScreen) {
-  .accordion-block h1 * { font-size: @mobileH1; }
-  .accordion-block h2 * { font-size: @mobileH2; }
-  .accordion-block h3 * { font-size: @mobileH3; }
-  .accordion-block h4 * { font-size: @mobileH4; }
+  .accordion-block h1 * {
+    font-size: @mobileH1;
+  }
+
+  .accordion-block h2 * {
+    font-size: @mobileH2;
+  }
+
+  .accordion-block h3 * {
+    font-size: @mobileH3;
+  }
+
+  .accordion-block h4 * {
+    font-size: @mobileH4;
+  }
 }
