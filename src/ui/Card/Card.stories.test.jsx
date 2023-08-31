@@ -18,11 +18,7 @@ describe('TeaserCardGrid component', () => {
   it('displays the correct title on each card', () => {
     const { container } = render(<TeaserCardGrid {...TeaserCardGrid.args} />);
     const cardTitles = container.querySelectorAll('.content .header a');
-    const expectedTitles = [
-      "State of Europe's environment",
-      'Climate',
-      'Economy and resources',
-    ];
+    const expectedTitles = ['Economy and resources', 'Health', 'Nature'];
     cardTitles.forEach((titleElement, index) => {
       expect(titleElement.textContent).toBe(expectedTitles[index]);
     });
@@ -67,7 +63,7 @@ describe('CardGrid component', () => {
     const cardGridCards = container.querySelectorAll(
       '.ui.fluid.card .content .header',
     );
-    expect(cardGridCards.length).toBe(3);
+    expect(cardGridCards.length).toBe(5);
   });
 });
 

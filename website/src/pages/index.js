@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import 'remixicon/fonts/remixicon.css'
+import 'remixicon/fonts/remixicon.css';
 import '@fontsource/roboto/latin-300.css';
 import '@fontsource/roboto/latin-400.css';
 import '@fontsource/roboto/latin-500.css';
@@ -14,7 +14,7 @@ import '@fontsource/roboto/latin-400-italic.css';
 import '@fontsource/roboto/latin-700-italic.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -23,7 +23,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--md"
-            to="/docs/intro">
+            to="/docs/intro"
+          >
             Get started
           </Link>
         </div>
@@ -32,14 +33,13 @@ function HomepageHeader() {
   );
 }
 
-
-
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title={`Welcome to ${siteConfig.title} Homepage`}
-      description="${siteConfig.tagline}">
+      description="${siteConfig.tagline}"
+    >
       <HomepageHeader />
       <main>
         <HomepageFeatures />
