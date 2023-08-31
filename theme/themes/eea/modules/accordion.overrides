@@ -65,12 +65,12 @@
     &.filter {
       .icon {
         margin: @filterIconMargin;
-        color: @filterTextColor;
+        color: var(--text-color, @filterTextColor);
         font-size: @filterIconFontSize;
       }
 
       .ui.input input::placeholder {
-        color: @filterTextColor;
+        color: var(--text-color, @filterTextColor);
       }
     }
   }
