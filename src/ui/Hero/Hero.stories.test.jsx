@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Playground, Default } from './Hero.stories';
+import { Playground, Default } from './Hero.st';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('Playground component', () => {
