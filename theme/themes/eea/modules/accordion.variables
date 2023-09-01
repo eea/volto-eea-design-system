@@ -36,6 +36,8 @@
 @iconOrder: 1; // Icon after text of the title
 @filterIconWidth: 3rem;
 @filterIconFontSize: 2rem;
+@filterIconMargin: 0 10px;
+@filterTextColor: @grey-4;
 
 /* Child Accordion */
 @childAccordionMargin: 1em 0em 0em;
