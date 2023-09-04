@@ -106,7 +106,7 @@ function AccordionContainer({ ...args }) {
                   <span>{panel.title}</span>
                   <Icon
                     className={
-                      active ? 'ri-arrow-down-s-line' : 'ri-arrow-up-s-line'
+                      active ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'
                     }
                   />
                 </Accordion.Title>
