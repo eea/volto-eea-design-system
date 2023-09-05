@@ -120,9 +120,9 @@
 --------------------------------*/
 
 .ui.menu.RRT__accordion {
-  .ui.item {
-    background-color: transparent;
-  }
+  //.ui.item {
+  //  background-color: transparent;
+  //}
 
   .ui.item .icon {
     font-size: @iconFontSize;

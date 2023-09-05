@@ -222,9 +222,9 @@
 @secondaryHoverItemBackground: @transparentBlack;
 @secondaryHoverItemColor: @selectedTextColor;
 
-@secondaryActiveItemBackground: @transparentBlack;
+@secondaryActiveItemBackground: var(--bg-color, @white);
 @secondaryActiveItemColor: @selectedTextColor;
-@secondaryActiveHoverItemBackground: @transparentBlack;
+@secondaryActiveHoverItemBackground: @secondaryActiveItemBackground;
 @secondaryActiveHoverItemColor: @selectedTextColor;
 
 @secondaryActiveHoveredItemBackground: @transparentBlack;
@@ -256,8 +256,8 @@
 
 @secondaryPointingHoverTextColor: var(--text-color-hover, @textColor);
 
-@secondaryPointingActiveBorderColor: @secondaryColor;
-@secondaryPointingActiveTextColor: @secondaryColor;
+@secondaryPointingActiveBorderColor: @secondaryColorCSSVar;
+@secondaryPointingActiveTextColor: @secondaryColorCSSVar;
 @secondaryPointingActiveFontWeight: @normal;
 
 @secondaryPointingActiveDropdownBorderColor: transparent;
@@ -270,7 +270,7 @@
 
 
 @secondaryPointingItemBorderBottom: @1px solid @midGray;
-@secondaryPointingItemMaxWidth: 15.625rem; 
+@secondaryPointingItemMaxWidth: 15.625rem;
 
 /* Inverted Secondary */
 @secondaryInvertedColor: @invertedLightTextColor;

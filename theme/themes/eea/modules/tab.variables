@@ -2,7 +2,7 @@
               Tab
 *******************************/
 @tabsBlockColor: @textColor;
-@tabActiveItemHoverColor: @secondaryColor;
+@tabActiveItemHoverColor: @secondaryColorCSSVar;
 
 @mobileItemFontSize: 1rem;
 @mobileItemPadding: 1rem 0.25rem;
