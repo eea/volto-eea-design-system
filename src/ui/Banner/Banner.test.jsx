@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Banner from './Banner';
-import { sharePage } from './Banner';
+import { sharePage, getImageSource } from './Banner';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('Banner', () => {
@@ -288,5 +288,48 @@ describe('sharePage', () => {
       'noreferrer',
     );
     expect(mockLink.click).toHaveBeenCalled();
+  });
+});
+
+describe('getImageSource', () => {
+  it('returns the base64-encoded image source when given a base64-encoded image', () => {
+    const source = getImageSource({
+      data: 'base64-encoded-image-data',
+      encoding: 'base64',
+      contentType: 'image/png',
+    });
+    expect(source).toBe('data:image/png;base64,base64-encoded-image-data');
+  });
+
+  it('returns the URL of the huge image scale when given an image with a huge scale', () => {
+    const source = getImageSource({
+      scales: {
+        huge: { download: '/path/to/huge/image.png' },
+      },
+    });
+    expect(source).toBe('/path/to/huge/image.png');
+  });
+
+  it('returns the URL of the great image scale when given an image with a great scale', () => {
+    const source = getImageSource({
+      scales: {
+        great: { download: '/path/to/great/image.png' },
+      },
+    });
+    expect(source).toBe('/path/to/great/image.png');
+  });
+
+  it('returns the URL of the large image scale when given an image with a large scale', () => {
+    const source = getImageSource({
+      scales: {
+        large: { download: '/path/to/large/image.png' },
+      },
+    });
+    expect(source).toBe('/path/to/large/image.png');
+  });
+
+  it('returns null when given an image with no data or scales', () => {
+    const source = getImageSource({});
+    expect(source).toBeNull();
   });
 });
