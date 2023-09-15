@@ -13,8 +13,38 @@
 }
 
 .tabs-block {
-  color: @tabsBlockColor;
+  .RRT__container {
+    .inverted {
+      background-color: @green !important;
+        .RRT__tab.active {
+          background-color: rgba(0, 0, 0, 0.1) !important;
+        }
+
+    .RRT__tab{
+      background-color:@green !important;
+      color: white !important;
+    }
+
+    .RRT__tab:not(.active):hover {
+      color: @tabsColorHover !important;
+    }
+
+    .RRT__tab:hover {
+      color: @tabsColorHover !important;
+    }
+    }
+
+    .RRT__tab{
+      background:transparent !important;
+      padding:1rem 1.25rem !important;
+      .icon{
+        margin:0 !important;
+      }
+    }
+  }
 }
+
+
 
 // Contain images inside vertical tab content
 .stretched.wide.column > .tab img {

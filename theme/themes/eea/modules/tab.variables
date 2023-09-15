@@ -10,6 +10,7 @@
 @headerSize: @h4;
 @headerSizeResponsive: @fontSize;
 @contentSize: @fontSize;
+@tabsColorHover: #fefefe;
 
 /* Loading */
 @loadingMinHeight: 250px;

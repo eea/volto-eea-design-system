@@ -3,13 +3,13 @@
 *******************************/
 
 .accordion .filter {
-  background-color: var(--bg-color, transparent);
+  background-color: var(--bg-color, transparent) !important;
 }
 
 .ui.accordion button.title {
   width: 100%;
   border: none;
-  background: transparent;
+  background: transparent !important;
 }
 
 .ui.accordion {
@@ -77,7 +77,7 @@
 
   .active.title {
     border-bottom: @activeTitleBorderBottom;
-    background-color: @activeTitleBackground;
+    background-color: @activeTitleBackground !important;
     color: @activeTitleColor;
 
     .icon {
@@ -119,17 +119,20 @@
      Tabs as accordion (Volto)
 --------------------------------*/
 
-.ui.menu.RRT__accordion {
-  //.ui.item {
-  //  background-color: transparent;
-  //}
-
+.ui.accordion.RRT__accordion {
   .ui.item .icon {
     font-size: @iconFontSize;
 
     &::before {
       font-size: @iconFontSize;
     }
+  }
+
+  .title {
+      padding: 1rem 1.25rem;
+      font-family: 'Roboto', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+      font-size: 1.125rem;
+      color: var(--text-color, #3D5265);
   }
 }
 
@@ -140,6 +143,15 @@
 .ui.accordion[class*='ary'] .filter {
   --text-color-hover: white;
   --text-color: white;
+ 
+
+}
+
+.ui.accordion.inverted{
+  background-color: @green !important;
+    .icon {
+    color: white !important;
+  } 
 }
 
 /* Primary */
