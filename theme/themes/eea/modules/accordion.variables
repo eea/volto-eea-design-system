@@ -113,5 +113,5 @@
 @styledActiveChildTitleColor: @styledActiveTitleColor;
 
 /* Inverted */
-@invertedTitleColor: @invertedTextColor;
+@invertedTitleColor: @activeTitleColor;
 
