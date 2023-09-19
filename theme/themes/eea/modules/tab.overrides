@@ -2,67 +2,29 @@
          Tab Overrides
 *******************************/
 
-.ui.pointing.secondary.menu {
+.ui.menu[class*='ary'] {
   .item {
     font-size: @headerSize;
   }
-
-  .item:hover {
-    color: @tabActiveItemHoverColor;
-  }
 }
-
-.tabs-block {
-  .RRT__container {
-    .inverted {
-      background-color: @green !important;
-        .RRT__tab.active {
-          background-color: rgba(0, 0, 0, 0.1) !important;
-        }
-
-    .RRT__tab{
-      background-color:@green !important;
-      color: white !important;
-    }
-
-    .RRT__tab:not(.active):hover {
-      color: @tabsColorHover !important;
-    }
-
-    .RRT__tab:hover {
-      color: @tabsColorHover !important;
-    }
-    }
-
-    .RRT__tab{
-      background:transparent !important;
-      padding:1rem 1.25rem !important;
-      .icon{
-        margin:0 !important;
-      }
-    }
-  }
-}
-
-
 
 // Contain images inside vertical tab content
 .stretched.wide.column > .tab img {
   max-width: @verticalTabPaneImageMaxWidth;
 }
 
-.ui.pointing.secondary.menu::-webkit-scrollbar {
+.ui.menu[class*='ary']::-webkit-scrollbar {
   height: @mobileTabScrollbarHeight;
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-  .ui.pointing.secondary.menu::-webkit-scrollbar {
+  .ui.menu[class*='ary']::-webkit-scrollbar {
     height: @tabletTabScrollbarHeight;
   }
 }
 
 @media only screen and (max-width: @largestMobileScreen) {
-  .ui.pointing.secondary.vertical.menu {
+  .ui.menu[class*='ary'].vertical {
     .item {
       padding: @mobileItemPadding;
       font-size: @mobileItemFontSize;

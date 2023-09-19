@@ -275,10 +275,10 @@
 /* Inverted Secondary */
 @secondaryInvertedColor: @invertedLightTextColor;
 
-@secondaryInvertedHoverBackground: @transparentWhite;
+@secondaryInvertedHoverBackground: @strongTransparentBlack;
 @secondaryInvertedHoverColor: @invertedSelectedTextColor;
 
-@secondaryInvertedActiveBackground: @strongTransparentWhite;
+@secondaryInvertedActiveBackground: transparent;
 @secondaryInvertedActiveColor: @invertedSelectedTextColor;
 
 /* Inverted Pointing */
@@ -369,7 +369,7 @@
 
 @textMenuActiveItemFontWeight: @normal;
 @textMenuActiveItemColor: @selectedTextColor;
-@secondaryPointingctiveItemMarginBottom: @2px;
+@secondaryPointingActiveItemMarginBottom: @2px;
 
 @textMenuHeaderSize: @relativeSmall;
 @textMenuHeaderColor: @darkTextColor;
@@ -389,7 +389,7 @@
 ---------------*/
 
 /* Inverted */
-@invertedBackground: @black;
+@invertedBackground: var(--bg-color, @secondaryColor);
 @invertedBoxShadow: none;
 @invertedBorder: 0px solid transparent;
 @invertedHeaderBackground: transparent;

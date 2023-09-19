@@ -281,32 +281,50 @@
 ***********/
 
 /* Tab active item custom border design */
-.ui.secondary.pointing.menu:not(.vertical):not(.pagination) .active.item,
-.ui.secondary.pointing.menu:not(.vertical):not(.pagination) .item:active {
+.ui.menu[class*='ary']:not(.vertical):not(.pagination) .active.item,
+.ui.menu[class*='ary']:not(.vertical):not(.pagination) .item:active {
   padding: (@secondaryPointingItemVerticalPadding - @1px)
     @secondaryPointingItemHorizontalPadding;
   border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
-  margin-bottom: -@secondaryPointingctiveItemMarginBottom;
+  margin-bottom: -@secondaryPointingActiveItemMarginBottom;
   color: var(--text-color, @secondaryPointingActiveTextColor);
 }
 
 /* Menu items custom border for responsive issues */
-.ui.secondary.pointing.menu:not(.vertical) {
+.ui.menu[class*='ary']:not(.vertical) {
   position: relative;
-  overflow: auto; // Horizontal scolling of links
+  overflow: auto; // Horizontal scrolling of links
   height: auto; //  height ensures that scrollable region has keyboard access
   padding-bottom: @2px; // Leave room for the active border item
   border-bottom: none; // Border comes from before pseudo-element
-  margin-right: 0em;
-  margin-left: 0em;
+  margin-right: 0;
+  margin-left: 0;
 
   a.item {
     max-width: @secondaryPointingItemMaxWidth;
     border-bottom: @secondaryPointingItemBorderBottom;
   }
+  .item {
+    padding: @secondaryItemVerticalPadding @secondaryItemHorizontalPadding;
+  }
+}
+.ui.secondary.inverted.menu {
+  background-color: var(--bg-color, @secondaryColorCSSVar);
 }
 
-.ui.pointing.secondary.menu:not(.vertical):before {
+.primary.inverted.menu {
+  --bg-color: @primaryColorCSSVar;
+}
+.tertiary.inverted.menu {
+  --bg-color: @tertiaryColorCSSVar;
+}
+
+.ui.pointing.menu.inverted .active.title {
+  background-color: @invertedColoredActiveBackground;
+}
+
+
+.ui.menu[class*='ary']:not(.vertical):before {
   position: absolute;
   z-index: 0;
   right: 0;
@@ -318,7 +336,7 @@
 }
 
 // edit page, normalize font size of tab headers from the sidebar
-.section-edit .ui.pointing.secondary.menu .item,
-.tabs-wrapper .ui.pointing.secondary.menu .item {
+.section-edit .menu[class*='ary'] .item,
+.tabs-wrapper .menu[class*='ary'] .item {
   font-size: 1.25rem;
 }
