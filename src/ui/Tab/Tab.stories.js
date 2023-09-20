@@ -24,24 +24,15 @@ export default {
   },
 };
 
-function TabContent({
-  panes,
-  renderActive,
-  text,
-  attached,
-  borderless,
-  vertical,
-  fluid,
-  grid,
-}) {
+function TabContent({ panes, renderActive, vertical, pointing, fluid, grid }) {
   return (
     <Tab
       panes={panes}
       renderActiveOnly={renderActive}
       menu={{
         secondary: true,
-        pointing: true,
         vertical: vertical,
+        pointing: pointing,
         fluid: fluid,
         tabIndex: 0,
       }}
@@ -83,6 +74,7 @@ export const Vertical = Template.bind({});
 Vertical.args = {
   renderActive: true,
   vertical: true,
+  pointing: true,
   fluid: true,
   grid: { paneWidth: 7, tabWidth: 5 },
   panes: [
