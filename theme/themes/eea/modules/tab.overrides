@@ -7,6 +7,9 @@
     font-size: @headerSize;
   }
 }
+.tabs-block {
+  --text-color: @textColor;
+}
 
 // Contain images inside vertical tab content
 .stretched.wide.column > .tab img {

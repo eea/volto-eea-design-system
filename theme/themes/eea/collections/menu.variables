@@ -30,7 +30,7 @@
   color @defaultDuration @defaultEasing
 ;
 @itemFontWeight: @normal;
-@itemTextColor: var(--text-color, @deepBlue);
+@itemTextColor: @textColor;
 
 /* Divider */
 @dividerSize: 1px;
@@ -168,14 +168,14 @@
 
 /* Active Item */
 @activeItemBackground: none;
-@activeItemTextColor: @selectedTextColor;
+@activeItemTextColor: var(--text-color, @textColor);
 @activeItemFontWeight: @normal;
 @activeIconOpacity: 1;
 @activeItemBoxShadow: none;
 
 /* Active Hovered Item */
 @activeHoverItemBackground: @transparentBlack;
-@activeHoverItemColor: @selectedTextColor;
+@activeHoverItemColor: @activeItemTextColor;
 
 /* Selected Dropdown */
 @dropdownSelectedItemBackground: @transparentBlack;
@@ -219,13 +219,13 @@
 @secondaryItemTransition: none;
 @secondaryItemColor: @unselectedTextColor;
 
-@secondaryHoverItemBackground: @transparentBlack;
-@secondaryHoverItemColor: @selectedTextColor;
+@secondaryHoverItemBackground: transparent;
+@secondaryHoverItemColor: @textColor;
 
 @secondaryActiveItemBackground: var(--bg-color, @white);
-@secondaryActiveItemColor: @selectedTextColor;
+@secondaryActiveItemColor: @activeItemTextColor;
 @secondaryActiveHoverItemBackground: @secondaryActiveItemBackground;
-@secondaryActiveHoverItemColor: @selectedTextColor;
+@secondaryActiveHoverItemColor: @secondaryActiveItemColor;
 
 @secondaryActiveHoveredItemBackground: @transparentBlack;
 @secondaryActiveHoveredItemColor: @selectedTextColor;
@@ -269,16 +269,16 @@
 @secondaryVerticalPointingItemMargin: 0em -@secondaryPointingBorderWidth 0em 0em;
 
 
-@secondaryPointingItemBorderBottom: @1px solid @midGray;
+@secondaryPointingItemBorderBottom: @1px solid transparent;
 @secondaryPointingItemMaxWidth: 15.625rem;
 
 /* Inverted Secondary */
 @secondaryInvertedColor: @invertedLightTextColor;
 
-@secondaryInvertedHoverBackground: @strongTransparentBlack;
+@secondaryInvertedHoverBackground: transparent;
 @secondaryInvertedHoverColor: @invertedSelectedTextColor;
 
-@secondaryInvertedActiveBackground: transparent;
+@secondaryInvertedActiveBackground: @invertedActiveBackground;
 @secondaryInvertedActiveColor: @invertedSelectedTextColor;
 
 /* Inverted Pointing */
@@ -402,23 +402,23 @@
 @invertedSubMenuColor: @invertedUnselectedTextColor;
 
 /* Inverted Hover */
-@invertedHoverBackground: @transparentWhite;
+@invertedHoverBackground: transparent;
 @invertedHoverColor: @invertedSelectedTextColor;
 
 @invertedSubMenuHoverBackground: transparent;
 @invertedSubMenuHoverColor: @invertedSelectedTextColor;
 
 /* Pressed */
-@invertedMenuPressedBackground: @transparentWhite;
+@invertedMenuPressedBackground: transparent;
 @invertedMenuPressedColor: @invertedSelectedTextColor;
 
 /* Inverted Active */
-@invertedActiveBackground: @strongTransparentWhite;
+@invertedActiveBackground: @strongTransparentBlack;
 @invertedActiveColor: @invertedSelectedTextColor;
 @invertedArrowActiveColor: #3D3E3F;
 
 /* Inverted Active Hover  */
-@invertedActiveHoverBackground: @invertedActiveBackground;
+@invertedActiveHoverBackground: transparent;
 @invertedActiveHoverColor: @white;
 @invertedArrowActiveHoverColor: @invertedArrowActiveColor;
 

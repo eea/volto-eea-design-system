@@ -281,12 +281,12 @@
 ***********/
 
 /* Tab active item custom border design */
-.ui.menu[class*='ary']:not(.vertical):not(.pagination) .active.item,
+.ui.menu[class*='ary']:not(.vertical):not(.pagination) .item.active,
 .ui.menu[class*='ary']:not(.vertical):not(.pagination) .item:active {
-  padding: (@secondaryPointingItemVerticalPadding - @1px)
-    @secondaryPointingItemHorizontalPadding;
-  border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
+  border-bottom: @secondaryPointingActiveBorderWidth solid var(--text-color, @secondaryColor);
   margin-bottom: -@secondaryPointingActiveItemMarginBottom;
+}
+.ui.menu[class*='ary']:not(.inverted) .ui.item:active {
   color: var(--text-color, @secondaryPointingActiveTextColor);
 }
 
@@ -300,20 +300,49 @@
   margin-right: 0;
   margin-left: 0;
 
-  a.item {
+  .item {
+    margin: 0;
     max-width: @secondaryPointingItemMaxWidth;
     border-bottom: @secondaryPointingItemBorderBottom;
-  }
-  .item {
     padding: @secondaryItemVerticalPadding @secondaryItemHorizontalPadding;
   }
+}
+
+.ui.menu:not(.inverted) .active.item:hover {
+  background-color: transparent;
+}
+
+.ui.menu .item:hover {
+  cursor: pointer;
+}
+
+.ui.menu[class*='ary']:not(.inverted) {
+  border: none;
+  box-shadow: none;
+}
+.ui.menu[class*='ary'] .item:before {
+  display: none;
+}
+
+.primary.menu {
+  --text-color: @primaryColorCSSVar;
+}
+.primary.inverted.menu {
+  --bg-color: @primaryColorCSSVar;
+}
+
+.secondary.menu {
+  --text-color: @secondaryColorCSSVar;
 }
 .ui.secondary.inverted.menu {
   background-color: var(--bg-color, @secondaryColorCSSVar);
 }
 
-.primary.inverted.menu {
-  --bg-color: @primaryColorCSSVar;
+.tertiary.menu {
+  --text-color: @tertiaryColorCSSVar;
+}
+.inverted.menu {
+  --text-active-color: @white;
 }
 .tertiary.inverted.menu {
   --bg-color: @tertiaryColorCSSVar;
@@ -321,6 +350,10 @@
 
 .ui.pointing.menu.inverted .active.title {
   background-color: @invertedColoredActiveBackground;
+}
+
+.ui.inverted.menu .ui.item.active:hover {
+  background-color: @invertedActiveBackground;
 }
 
 
