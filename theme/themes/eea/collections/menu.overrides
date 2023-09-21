@@ -281,11 +281,13 @@
 ***********/
 
 .ui.vertical.menu {
+  border-width: 0;
   border-right: @verticalMenuBorder;
   box-shadow: none;
   margin: 0;
 }
 
+.ui.secondary.vertical.menu > .item,
 .ui.vertical.menu .item {
   margin: @verticalItemMargin;
   border-right: @verticalItemBorder;

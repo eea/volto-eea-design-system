@@ -74,7 +74,7 @@ export const Vertical = Template.bind({});
 Vertical.args = {
   renderActive: true,
   vertical: true,
-  pointing: true,
+  pointing: false,
   fluid: true,
   grid: { paneWidth: 7, tabWidth: 5 },
   panes: [
