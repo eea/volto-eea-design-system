@@ -38,6 +38,7 @@ function TabContent({
   panes,
   variant,
   renderActive,
+  inverted,
   vertical,
   pointing,
   fluid,
@@ -49,6 +50,7 @@ function TabContent({
       renderActiveOnly={renderActive}
       menu={{
         vertical: vertical,
+        inverted: inverted,
         pointing: pointing,
         fluid: fluid,
         className: variant,
@@ -68,6 +70,7 @@ const Template = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   renderActive: false,
+  inverted: false,
   panes: [
     {
       menuItem: 'Tab 1',
@@ -177,6 +180,7 @@ Vertical.args = {
 
 Vertical.argTypes = {
   variant: 'secondary',
+  inverted: false,
   vertical: {
     description: 'vertical tab',
     table: {

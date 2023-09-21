@@ -225,7 +225,7 @@
 @secondaryItemColor: @unselectedTextColor;
 
 @secondaryHoverItemBackground: transparent;
-@secondaryHoverItemColor: @textColor;
+@secondaryHoverItemColor: @activeItemTextColor;
 
 @secondaryActiveItemBackground: var(--bg-color, @white);
 @secondaryActiveItemColor: @activeItemTextColor;
@@ -278,7 +278,7 @@
 @secondaryPointingItemMaxWidth: 15.625rem;
 
 /* Inverted Secondary */
-@secondaryInvertedColor: @invertedLightTextColor;
+@secondaryInvertedColor: @white;
 
 @secondaryInvertedHoverBackground: transparent;
 @secondaryInvertedHoverColor: @invertedSelectedTextColor;
