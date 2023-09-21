@@ -341,8 +341,12 @@
 .tertiary.menu {
   --text-color: @tertiaryColorCSSVar;
 }
-.inverted.menu {
+
+.menu.inverted {
   --text-active-color: @white;
+}
+.menu.inverted input {
+  --text-color: @white;
 }
 .tertiary.inverted.menu {
   --bg-color: @tertiaryColorCSSVar;
