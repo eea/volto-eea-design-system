@@ -159,7 +159,7 @@
 
 /* Hovered Item */
 @hoverItemBackground: none;
-@hoverItemTextColor: @selectedTextColor;
+@hoverItemTextColor: @activeItemTextColor;
 
 /* Pressed Item */
 @pressedItemBackground: none;
@@ -200,8 +200,13 @@
 @verticalBoxShadow: @boxShadow;
 @verticalPointerWidth: 2px;
 @verticalBackground: #FFFFFF;
-@verticalItemBackground: none;
 @verticalDividerBackground: @dividerBackground;
+@verticalMenuBorder: @1px  solid @grey-3;
+@verticalItemBackground: none;
+@verticalItemBorder: @secondaryPointingItemBorderBottom;
+@verticalItemMargin: @secondaryVerticalPointingItemMargin;
+@verticalItemPadding: @secondaryPointingItemVerticalPadding @secondaryPointingItemHorizontalPadding;
+@verticalItemActiveBorder: @1px solid @activeItemTextColor;
 
 @verticalActiveBoxShadow: none;
 
@@ -234,7 +239,7 @@
 @secondaryHeaderBorder: none;
 
 @secondaryItemVerticalSpacing: @secondaryItemSpacing;
-@secondaryVerticalItemMargin: 0em 0em @secondaryItemVerticalSpacing;
+@secondaryVerticalItemMargin: @secondaryVerticalPointingItemMargin;
 @secondaryVerticalItemBorderRadius: @defaultBorderRadius;
 
 @secondaryMenuSubMenuMargin: 0em -@secondaryItemHorizontalPadding;

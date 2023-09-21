@@ -280,6 +280,23 @@
     Tabs
 ***********/
 
+.ui.vertical.menu {
+  border-right: @verticalMenuBorder;
+  box-shadow: none;
+  margin: 0;
+}
+
+.ui.vertical.menu .item {
+  margin: @verticalItemMargin;
+  border-right: @verticalItemBorder;
+  padding: @verticalItemPadding;
+  word-break: break-word;
+}
+
+.ui.vertical.menu .item.active {
+  border-right: @verticalItemActiveBorder;
+}
+
 /* Tab active item custom border design */
 .ui.menu[class*='ary']:not(.vertical):not(.pagination) .item.active,
 .ui.menu[class*='ary']:not(.vertical):not(.pagination) .item:active {
@@ -316,7 +333,7 @@
   cursor: pointer;
 }
 
-.ui.menu[class*='ary']:not(.inverted) {
+.ui.menu[class*='ary']:not(.inverted,.vertical) {
   border: none;
   box-shadow: none;
 }
