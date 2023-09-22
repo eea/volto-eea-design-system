@@ -203,7 +203,6 @@
   }
 }
 
-
 /*************/
 /* EEA Theme */
 /*************/
@@ -283,15 +282,15 @@
 .ui.vertical.menu {
   border-width: 0;
   border-right: @verticalMenuBorder;
-  box-shadow: none;
   margin: 0;
+  box-shadow: none;
 }
 
 .ui.secondary.vertical.menu > .item,
 .ui.vertical.menu .item {
-  margin: @verticalItemMargin;
-  border-right: @verticalItemBorder;
   padding: @verticalItemPadding;
+  border-right: @verticalItemBorder;
+  margin: @verticalItemMargin;
   word-break: break-word;
 }
 
@@ -302,9 +301,11 @@
 /* Tab active item custom border design */
 .ui.menu[class*='ary']:not(.vertical):not(.pagination) .item.active,
 .ui.menu[class*='ary']:not(.vertical):not(.pagination) .item:active {
-  border-bottom: @secondaryPointingActiveBorderWidth solid var(--text-color, @secondaryColor);
+  border-bottom: @secondaryPointingActiveBorderWidth solid
+    var(--text-color, @secondaryColor);
   margin-bottom: -@secondaryPointingActiveItemMarginBottom;
 }
+
 .ui.menu[class*='ary']:not(.inverted) .ui.item:active {
   color: var(--text-color, @secondaryPointingActiveTextColor);
 }
@@ -320,10 +321,10 @@
   margin-left: 0;
 
   .item {
-    margin: 0;
     max-width: @secondaryPointingItemMaxWidth;
-    border-bottom: @secondaryPointingItemBorderBottom;
     padding: @secondaryItemVerticalPadding @secondaryItemHorizontalPadding;
+    border-bottom: @secondaryPointingItemBorderBottom;
+    margin: 0;
   }
 }
 
@@ -335,10 +336,11 @@
   cursor: pointer;
 }
 
-.ui.menu[class*='ary']:not(.inverted,.vertical) {
+.ui.menu[class*='ary']:not(.inverted, .vertical) {
   border: none;
   box-shadow: none;
 }
+
 .ui.menu[class*='ary'] .item:before {
   display: none;
 }
@@ -346,6 +348,7 @@
 .primary.menu {
   --text-color: @primaryColorCSSVar;
 }
+
 .primary.inverted.menu {
   --bg-color: @primaryColorCSSVar;
 }
@@ -353,6 +356,7 @@
 .secondary.menu {
   --text-color: @secondaryColorCSSVar;
 }
+
 .ui.secondary.inverted.menu {
   background-color: var(--bg-color, @secondaryColorCSSVar);
 }
@@ -364,9 +368,11 @@
 .menu.inverted {
   --text-active-color: @white;
 }
+
 .menu.inverted input {
   --text-color: @white;
 }
+
 .tertiary.inverted.menu {
   --bg-color: @tertiaryColorCSSVar;
 }
@@ -378,7 +384,6 @@
 .ui.inverted.menu .ui.item.active:hover {
   background-color: @invertedActiveBackground;
 }
-
 
 .ui.menu[class*='ary']:not(.vertical):before {
   position: absolute;
