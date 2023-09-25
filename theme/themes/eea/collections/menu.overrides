@@ -279,17 +279,28 @@
     Tabs
 ***********/
 
-.ui.vertical.menu {
-  border-width: 0;
-  border-right: @verticalMenuBorder;
+.vertical.border-left {
+  --vertical-menu-border: @verticalMenuBorderOnLeftSide;
+  --vertical-item-border: @verticalItemBorderOnLeftSide;
+  --vertical-item-border-style: @verticalItemBorderStyleOnLeft;
+  --vertical-item-margin: @verticalItemMarginOnLeft;
+}
+
+.ui.menu.vertical {
+  border-width: @verticalMenuBorderWidth !important;
+  border-style: @verticalItemBorderStyle !important;
+  border-color: @verticalMenuBorderColor !important;
   margin: 0;
   box-shadow: none;
 }
 
+
 .ui.secondary.vertical.menu > .item,
 .ui.vertical.menu .item {
   padding: @verticalItemPadding;
-  border-right: @verticalItemBorder;
+  border-width: @verticalItemBorder;
+  border-style: @verticalItemBorderStyle;
+  border-color: transparent;
   margin: @verticalItemMargin;
   word-break: break-word;
 }

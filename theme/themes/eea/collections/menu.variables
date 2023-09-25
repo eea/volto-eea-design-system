@@ -201,12 +201,21 @@
 @verticalPointerWidth: 2px;
 @verticalBackground: #FFFFFF;
 @verticalDividerBackground: @dividerBackground;
+@verticalBorderWidth: @1px;
 @verticalMenuBorder: @1px  solid @grey-3;
+@verticalMenuBorderWidth: var(--vertical-menu-border, 0 @verticalBorderWidth 0 0) !important;
+@verticalMenuBorderOnLeftSide: 0 0 0 @verticalBorderWidth;
+@verticalMenuBorderColor: @grey-3;
 @verticalItemBackground: none;
-@verticalItemBorder: @secondaryPointingItemBorderBottom;
+@verticalItemBorderWidth: @3px;
+@verticalItemBorder: var(--vertical-item-border, 0 @verticalItemBorderWidth 0 0) !important;
+@verticalItemBorderStyle: var(--vertical-item-border-style, none solid none none);
+@verticalItemBorderStyleOnLeft: none none none solid;
+@verticalItemBorderOnLeftSide:  0 0 0 @verticalItemBorderWidth;
 @verticalItemMargin: @secondaryVerticalPointingItemMargin;
+@verticalItemMarginOnLeft: 0 0 0 -@secondaryPointingBorderWidth;
 @verticalItemPadding: @secondaryPointingItemVerticalPadding @secondaryPointingItemHorizontalPadding;
-@verticalItemActiveBorder: @1px solid @activeItemTextColor;
+@verticalItemActiveBorder: @3px solid @activeItemTextColor;
 
 @verticalActiveBoxShadow: none;
 
@@ -271,7 +280,7 @@
 @secondaryPointingActiveHoverTextColor: @secondaryPointingActiveTextColor;
 
 @secondaryPointingHeaderColor: @darkTextColor;
-@secondaryVerticalPointingItemMargin: 0em -@secondaryPointingBorderWidth 0em 0em;
+@secondaryVerticalPointingItemMargin: var(--vertical-item-margin, 0em -@secondaryPointingBorderWidth 0em 0em);
 
 
 @secondaryPointingItemBorderBottom: @1px solid transparent;
