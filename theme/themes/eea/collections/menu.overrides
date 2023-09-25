@@ -310,11 +310,15 @@
 }
 
 /* Tab active item custom border design */
-.ui.menu[class*='ary']:not(.vertical):not(.pagination) .item.active,
-.ui.menu[class*='ary']:not(.vertical):not(.pagination) .item:active {
+.ui.menu[class*='ary']:not(.vertical):not(.pagination) .ui.item.active,
+.ui.menu[class*='ary']:not(.vertical):not(.pagination) .ui.item:active {
   border-bottom: @secondaryPointingActiveBorderWidth solid
     var(--text-color, @secondaryColor);
   margin-bottom: -@secondaryPointingActiveItemMarginBottom;
+}
+
+.tabs-block .ui.secondary.inverted.menu a.active.item {
+  background-color: transparent;
 }
 
 .ui.menu[class*='ary']:not(.inverted) .ui.item:active {
