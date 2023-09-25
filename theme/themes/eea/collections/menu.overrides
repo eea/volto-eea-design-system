@@ -341,6 +341,7 @@
   box-shadow: none;
 }
 
+.ui.menu.vertical .item:before,
 .ui.menu[class*='ary'] .item:before {
   display: none;
 }

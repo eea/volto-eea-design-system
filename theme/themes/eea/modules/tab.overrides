@@ -2,11 +2,13 @@
          Tab Overrides
 *******************************/
 
+.ui.menu.vertical,
 .ui.menu[class*='ary'] {
   .item {
     font-size: @headerSize;
   }
 }
+
 .tabs-block {
   --text-color: @textColor;
 }
