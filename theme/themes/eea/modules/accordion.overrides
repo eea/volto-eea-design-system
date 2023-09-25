@@ -90,6 +90,16 @@
     background: @contentBackground;
     color: @contentColor;
   }
+
+  &.filter-listing {
+    .title {
+      .icon {
+        font-size: @filterListingIconFontSize;
+        line-height: @filterListingIconLineHeight;
+        margin-left: @filterListingIconMarginLeft !important;
+      }
+    }
+  }
 }
 
 /* All content padding are equal including last child */

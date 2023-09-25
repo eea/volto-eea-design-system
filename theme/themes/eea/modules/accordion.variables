@@ -39,6 +39,10 @@
 @filterIconMargin: 0 10px;
 @filterTextColor: @grey-4;
 
+@filterListingIconFontSize: 1rem;
+@filterListingIconLineHeight: 1rem;
+@filterListingIconMarginLeft: 0.5rem;
+
 /* Child Accordion */
 @childAccordionMargin: 1em 0em 0em;
 @childAccordionPadding: 0em;
