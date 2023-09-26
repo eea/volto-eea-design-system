@@ -94,10 +94,10 @@
 }
 
 .power-user-menu,
-.blocks-chooser {
+.blocks-chooser,
+.tabs-block {
   --text-color: @textColor;
 }
-
 .blocks-chooser {
   .searchbox {
     height: auto !important;
