@@ -114,6 +114,14 @@
   .icon {
     margin-right: 0 !important;
   }
+
+  /* fix order and color of block choose title block
+   * which receives accordion title styling */
+  .button.title {
+    --text-color: @brown;
+    --text-color-hover: @brown;
+    --accordion-title-icon-order: 0;
+  }
 }
 
 // remove margin from block headings overriding blocks.less rule
