@@ -339,7 +339,7 @@
     max-width: @secondaryPointingItemMaxWidth;
     padding: @secondaryItemVerticalPadding @secondaryItemHorizontalPadding;
     border-bottom: @secondaryPointingItemBorderBottom;
-    margin: 0;
+    margin: @secondaryPointingItemMargin;
   }
 }
 

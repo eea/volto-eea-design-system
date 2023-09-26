@@ -283,7 +283,8 @@
 @secondaryVerticalPointingItemMargin: var(--vertical-item-margin, 0em -@secondaryPointingBorderWidth 0em 0em);
 
 
-@secondaryPointingItemBorderBottom: @1px solid transparent;
+@secondaryPointingItemBorderBottom: @3px solid transparent;
+@secondaryPointingItemMargin: 0 0 -@1px 0;
 @secondaryPointingItemMaxWidth: 15.625rem;
 
 /* Inverted Secondary */
@@ -383,7 +384,7 @@
 
 @textMenuActiveItemFontWeight: @normal;
 @textMenuActiveItemColor: @selectedTextColor;
-@secondaryPointingActiveItemMarginBottom: @2px;
+@secondaryPointingActiveItemMarginBottom: @1px;
 
 @textMenuHeaderSize: @relativeSmall;
 @textMenuHeaderColor: @darkTextColor;
