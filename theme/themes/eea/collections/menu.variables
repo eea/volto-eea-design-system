@@ -301,7 +301,7 @@
 @secondaryPointingInvertedItemTextColor: @invertedTextColor;
 @secondaryPointingInvertedItemHeaderColor: @white;
 @secondaryPointingInvertedItemHoverTextColor: @selectedTextColor;
-@secondaryPointingInvertedActiveBorderColor: @white;
+@secondaryPointingInvertedActiveBorderColor: @strongTransparentBlack;
 @secondaryPointingInvertedActiveColor: @invertedSelectedTextColor;
 
 
