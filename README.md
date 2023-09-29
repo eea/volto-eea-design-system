@@ -25,6 +25,19 @@ This package provides the following features:
 2. A repository for the design system source files and mockups
 3. A website to showcase the design system
 
+### Try the design system website
+
+Checkout the docs found within the [website](https://github.com/eea/volto-eea-design-system/blob/develop/website/README.md) folder
+
+### Try the design system mockups
+
+Checkout the docs found within the [mockups](https://github.com/eea/volto-eea-design-system/blob/develop/mockups/README.md) folder
+
+## Docusaurus and Storybook
+
+See [Docusaurus](https://eea.github.io/).
+See [Storybook](https://eea.github.io/eea-storybook/).
+
 ## Getting started
 
 ### Try volto-eea-design-system with Docker
@@ -77,33 +90,20 @@ Go to http://localhost:3000
 
 1. Happy editing!
 
-### Try the design system website
-
-Checkout the docs found within the [website](https://github.com/eea/volto-eea-design-system/blob/develop/website/README.md) folder
-
-### Try the design system mockups
-
-Checkout the docs found within the [mockups](https://github.com/eea/volto-eea-design-system/blob/develop/mockups/README.md) folder
-
 ## Release
 
 See [RELEASE.md](https://github.com/eea/volto-eea-design-system/blob/master/RELEASE.md).
 
-## Docusaurus and Storybook
-
-See [Docusaurus](https://eea.github.io/).
-See [Storybook](https://eea.github.io/eea-storybook/).
-
 ## How to contribute
 
-See [DEVELOP.md](https://github.com/eea/volto-eea-design-system/blob/develop/DEVELOP.md).
+See [DEVELOP.md](https://github.com/eea/volto-eea-design-system/blob/master/DEVELOP.md).
 
 ## Copyright and license
 
 The Initial Owner of the Original Code is European Environment Agency (EEA).
 All Rights Reserved.
 
-See [LICENSE.md](https://github.com/eea/volto-eea-design-system/blob/develop/LICENSE.md) for details.
+See [LICENSE.md](https://github.com/eea/volto-eea-design-system/blob/master/LICENSE.md) for details.
 
 ## Funding
 
