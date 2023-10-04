@@ -12,7 +12,7 @@ const Sites = (props) => {
       const nextItem = logos[i + 1];
       column.push(
         <Grid.Column className="logo" key={i}>
-          <a className="logo" href={item.url}>
+          <a className="logo" href={item.url} aria-label={item.alt}>
             <LazyLoadComponent>
               <Image
                 className={item.className}
@@ -21,7 +21,7 @@ const Sites = (props) => {
               ></Image>
             </LazyLoadComponent>
           </a>
-          <a className="logo" href={nextItem.url}>
+          <a className="logo" href={nextItem.url} aria-label={item.alt}>
             <LazyLoadComponent>
               <Image
                 className={nextItem.className}
