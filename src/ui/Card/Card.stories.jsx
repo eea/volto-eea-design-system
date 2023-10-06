@@ -1,6 +1,8 @@
 import React from 'react';
 import { Card, Image, Grid, Container, Icon, Button } from 'semantic-ui-react';
 import Slider from 'react-slick';
+import TagList from '../TagList/TagList';
+import Tag from '../Tag/Tag';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -21,6 +23,10 @@ let cardModels = [
     meta: 'Article',
     metaRight: '20/05/2022',
     href: '/#',
+    tags: [
+      { category: 'tag 1', href: '#' },
+      { category: 'tag 2', href: '#' },
+    ],
   },
   {
     title: 'Health',
@@ -35,6 +41,13 @@ let cardModels = [
     meta: 'Article',
     metaRight: '30/06/2023',
     href: '/#',
+    tags: [
+      { category: 'tag 1', href: '#' },
+      { category: 'tag 2', href: '#' },
+      { category: 'bigger tag', href: '#' },
+      { category: 'tag 3', href: '#' },
+      { category: 'tag 4', href: '#' },
+    ],
   },
   {
     title: 'Nature',
@@ -48,6 +61,7 @@ let cardModels = [
     meta: 'Article',
     metaRight: '10/04/2022',
     href: '/#',
+    tags: [{ category: 'tag 1', href: '#' }],
   },
   {
     title: 'Climate',
@@ -59,6 +73,10 @@ let cardModels = [
       'the increase in global temperature is not kept below 1.5°C. The EU and its Member States are ' +
       'taking important steps to rapidly reduce greenhouse gas emissions and adapt to climate change.',
     href: '/#',
+    tags: [
+      { category: 'tag 1', href: '#' },
+      { category: 'tag 2', href: '#' },
+    ],
   },
   {
     title: "State of Europe's environment",
@@ -71,6 +89,10 @@ let cardModels = [
     meta: 'Article',
     metaRight: '16/03/2022',
     href: '/#',
+    tags: [
+      { category: 'tag 1', href: '#' },
+      { category: 'tag 2', href: '#' },
+    ],
   },
 ];
 
@@ -176,6 +198,28 @@ export default {
         defaultValue: { summary: ' "" ' },
       },
     },
+    hasTags: {
+      name: 'Tags',
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+        category: 'Tags',
+      },
+    },
+    direction: {
+      name: 'Tags direction',
+      control: { type: 'select' },
+      options: ['right', 'left'],
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: {
+          summary: 'left',
+        },
+        category: 'Tags',
+      },
+    },
   },
 };
 
@@ -203,6 +247,8 @@ const CardTemplate = ({
   maxLines,
   fluid,
   card,
+  hasTags,
+  direction,
 }) => (
   <Card
     fluid={fluid}
@@ -246,6 +292,19 @@ const CardTemplate = ({
 
       {/* Description */}
       <Card.Description>{card.description}</Card.Description>
+      {hasTags && (
+        <div className="card-tags">
+          <TagList className={direction}>
+            <TagList.Content>
+              {card.tags.map((tag, index) => [
+                <Tag href={tag.href} key={index}>
+                  {tag.category}
+                </Tag>,
+              ])}
+            </TagList.Content>
+          </TagList>
+        </div>
+      )}
     </Card.Content>
 
     {/* Additional links */}
@@ -279,6 +338,8 @@ Default.args = {
   numberOfCards: 1,
   fluid: false,
   cards: [...cardModels],
+  hasTags: false,
+  direction: 'left',
 };
 const GridTemplate = (args) => (
   <Container>
@@ -305,6 +366,8 @@ CardGrid.args = {
   fluid: true,
   numberOfCards: 5,
   cards: [...cardModels],
+  hasTags: false,
+  direction: 'left',
 };
 
 const ImageCard = ({
@@ -350,6 +413,8 @@ ImageGrid.args = {
   fluid: true,
   cards: [...cardModels],
   numberOfCards: 5,
+  hasTags: false,
+  direction: 'left',
 };
 
 ImageGrid.argTypes = {
@@ -393,6 +458,8 @@ FluidGrid.args = {
   numberOfCards: 3,
   fluid: true,
   cards: [...cardModels],
+  hasTags: false,
+  direction: 'left',
 };
 const PrevArrow = (props) => {
   const { onClick } = props;
@@ -511,6 +578,8 @@ CarouselCards.args = {
   },
   numberOfCards: 5,
   cards: [...cardModels],
+  hasTags: false,
+  direction: 'left',
 };
 CarouselCards.argTypes = {
   settings: {
@@ -535,6 +604,8 @@ const TeaserCard = ({
   fluid,
   maxLines,
   card,
+  hasTags,
+  direction,
 }) => (
   <div className="column grid-block-teaser">
     <div
@@ -572,6 +643,19 @@ const TeaserCard = ({
               <a href={card.href}>{card.title}</a>
             </div>
             <Card.Description>{card.description}</Card.Description>
+            {hasTags && (
+              <div className="card-tags">
+                <TagList className={direction}>
+                  <TagList.Content>
+                    {card.tags.map((tag, index) => [
+                      <Tag href={tag.href} key={index}>
+                        {tag.category}
+                      </Tag>,
+                    ])}
+                  </TagList.Content>
+                </TagList>
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -615,4 +699,6 @@ TeaserCardGrid.args = {
   fluid: true,
   numberOfCards: 3,
   cards: [...cardModels],
+  hasTags: false,
+  direction: 'left',
 };
