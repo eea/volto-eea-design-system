@@ -10,37 +10,51 @@ import 'slick-carousel/slick/slick-theme.css';
 const tabletBreakpoint = 835;
 const mobileBreakpoint = 480;
 
-let cardModels = [
-  {
-    title: 'Economy and resources',
-    imgUrl:
-      'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
-    description:
-      'The economy plays a vital role in our lives by providing access to employment, ' +
-      'products and services that help us thrive. Unfortunately, with its key sectors like agriculture,' +
-      ' energy and transport, our economy also harms the environment and causes climate change. ' +
-      'Europe needs a circular, carbon-neutral and zero-pollution economy. ',
-    meta: 'Article',
-    metaRight: '20/05/2022',
-    href: '/#',
-    tags: [
-      { category: 'tag 1', href: '#' },
-      { category: 'tag 2', href: '#' },
+// Content for all cards
+let cardData = {
+  cardContent: {
+    title: [
+      'Economy and resources',
+      'Health',
+      'Nature',
+      'Climate',
+      "State of Europe's environment",
     ],
-  },
-  {
-    title: 'Health',
-    imgUrl:
+    imgUrl: [
+      'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
       'https://www.eea.europa.eu/en/topics/at-a-glance/health/@@images/image/preview',
-    description:
+      'https://www.eea.europa.eu/en/topics/at-a-glance/nature/@@images/image/preview',
+      'https://www.eea.europa.eu/en/topics/at-a-glance/climate/@@images/image/preview',
+      'https://www.eea.europa.eu/en/topics/at-a-glance/state-of-europes-environment/@@images/image/preview',
+    ],
+    description: [
+      'The economy plays a vital role in our lives by providing access to employment, ' +
+        'products and services that help us thrive. Unfortunately, with its key sectors like agriculture,' +
+        ' energy and transport, our economy also harms the environment and causes climate change. ' +
+        'Europe needs a circular, carbon-neutral and zero-pollution economy. ',
       'By improving air, water, and soil quality and limiting pollution released to nature, ' +
-      'the EU has significantly contributed to enhancing human health in the last five ' +
-      'decades. Yet, many vulnerable groups continue to be impacted by environmental ' +
-      'degradation and climate change. Further improvements can help keep Europeans ' +
-      'healthier and better equipped to cope with climate change impacts.',
-    meta: 'Article',
-    metaRight: '30/06/2023',
-    href: '/#',
+        'the EU has significantly contributed to enhancing human health in the last five ' +
+        'decades. Yet, many vulnerable groups continue to be impacted by environmental ' +
+        'degradation and climate change. Further improvements can help keep Europeans ' +
+        'healthier and better equipped to cope with climate change impacts.',
+      'Europe’s nature is filled with forests, mountains, vast plains, long rivers, deep blue seas and ' +
+        'refreshing lakes. But it also is under threat. Unsustainable farming and forestry practices, ' +
+        'pollution, climate change and invasive species are stressing and destabilising all natural ' +
+        'systems in Europe. The result is a biodiversity crisis. The EU is taking steps to protect and restore nature.',
+      'Climate change affects us all and is accelerating. Its impacts will become even more severe if ' +
+        'the increase in global temperature is not kept below 1.5°C. The EU and its Member States are ' +
+        'taking important steps to rapidly reduce greenhouse gas emissions and adapt to climate change.',
+      'EU environment and climate policies have delivered substantial benefits over recent ' +
+        'decades, such as cleaner air and water. Nevertheless, Europe, as well as the rest ' +
+        'of the globe, is facing environmental challenges of unprecedented scale and urgency.',
+    ],
+    metaRight: [
+      '20/05/2023',
+      '30/04/2023',
+      '10/04/2023',
+      '02/04/2023',
+      '16/03/2023',
+    ],
     tags: [
       { category: 'tag 1', href: '#' },
       { category: 'tag 2', href: '#' },
@@ -49,52 +63,28 @@ let cardModels = [
       { category: 'tag 4', href: '#' },
     ],
   },
-  {
-    title: 'Nature',
-    imgUrl:
-      'https://www.eea.europa.eu/en/topics/at-a-glance/nature/@@images/image/preview',
-    description:
-      'Europe’s nature is filled with forests, mountains, vast plains, long rivers, deep blue seas and ' +
-      'refreshing lakes. But it also is under threat. Unsustainable farming and forestry practices, ' +
-      'pollution, climate change and invasive species are stressing and destabilising all natural ' +
-      'systems in Europe. The result is a biodiversity crisis. The EU is taking steps to protect and restore nature.',
+};
+
+// Fill the cardModel array that stories use
+let cardModels = [];
+let tempCardContent = {};
+for (var i = 0; i <= cardData.cardContent.title.length; i++) {
+  tempCardContent = {
+    title: cardData.cardContent.title[i],
+    imgUrl: cardData.cardContent.imgUrl[i],
+    description: cardData.cardContent.description[i],
     meta: 'Article',
-    metaRight: '10/04/2022',
+    metaRight: cardData.cardContent.metaRight[i],
     href: '/#',
-    tags: [{ category: 'tag 1', href: '#' }],
-  },
-  {
-    title: 'Climate',
-    meta: 'Article',
-    imgUrl:
-      'https://www.eea.europa.eu/en/topics/at-a-glance/climate/@@images/image/preview',
-    description:
-      'Climate change affects us all and is accelerating. Its impacts will become even more severe if ' +
-      'the increase in global temperature is not kept below 1.5°C. The EU and its Member States are ' +
-      'taking important steps to rapidly reduce greenhouse gas emissions and adapt to climate change.',
-    href: '/#',
-    tags: [
-      { category: 'tag 1', href: '#' },
-      { category: 'tag 2', href: '#' },
-    ],
-  },
-  {
-    title: "State of Europe's environment",
-    imgUrl:
-      'https://www.eea.europa.eu/en/topics/at-a-glance/state-of-europes-environment/@@images/image/preview',
-    description:
-      'EU environment and climate policies have delivered substantial benefits over recent ' +
-      'decades, such as cleaner air and water. Nevertheless, Europe, as well as the rest ' +
-      'of the globe, is facing environmental challenges of unprecedented scale and urgency.',
-    meta: 'Article',
-    metaRight: '16/03/2022',
-    href: '/#',
-    tags: [
-      { category: 'tag 1', href: '#' },
-      { category: 'tag 2', href: '#' },
-    ],
-  },
-];
+    tags: [],
+  };
+
+  // Fill cards with random amount of tags
+  for (var j = 0; j < Math.floor(Math.random() * 4 + 1); j++) {
+    tempCardContent.tags.push(cardData.cardContent.tags[j]);
+  }
+  cardModels.push(tempCardContent);
+}
 
 export default {
   title: 'Components/Card/Default',
