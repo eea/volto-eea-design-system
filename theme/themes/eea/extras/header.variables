@@ -33,7 +33,7 @@
 @topSectionItemFontSize               : @font-size-00;
 @mobileTopSectionItemFontSize         : @font-size-00;
 @tabletTopSectionItemFontSize         : @font-size-00;
-@topSectionZIndex                     : @z-index-3;
+@topSectionZIndex                     : @z-index-1;
 @dropdownColor                        : @blue-grey-6;
 @mobileDropdownFontSize               : @font-size-00;
 @tabletDropdownFontSize               : @font-size-00;
