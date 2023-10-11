@@ -51,7 +51,7 @@ describe('ImageGrid component', () => {
   it('renders the image grid with correct number of cards', () => {
     const { container } = render(<ImageGrid {...ImageGrid.args} />);
     const imageGridCards = container.querySelectorAll(
-      '.imageCard-items .ui.card .image',
+      '.imageCard-items .ui.card a.image',
     );
     expect(imageGridCards.length).toBe(5);
   });
