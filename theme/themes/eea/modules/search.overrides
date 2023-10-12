@@ -3,5 +3,5 @@
 *******************************/
 
 .react-select__value-container{
-    padding: 4px !important;
+    padding: 8px !important;
 }
