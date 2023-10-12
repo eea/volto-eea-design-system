@@ -38,6 +38,9 @@
 /* The size of page text  */
 @fontSize : 16px;
 
+/* Overrides html & body default font-size to enable scaling from browser settings */
+@baseFontSize: 1rem;
+
 
 /*-------------------
     Border Radius
@@ -108,7 +111,7 @@
 @inputPadding           : @inputVerticalPadding @inputHorizontalPadding;
 
 /* Input Text Color */
-@inputColor: @textColor;
+@inputColor: @textColorCSSVar;
 //@inputPlaceholderColor: lighten(@inputColor, 75);
 @inputPlaceholderColor: #B8C6C8;
 @inputPlaceholderFocusColor: lighten(@inputColor, 45);
@@ -121,7 +124,7 @@
 --------------------*/
 
 /* Global focus-visible for accessibility */
-@focusVisibleOutline: .2rem solid var(--focus-visible, @blue-3);
+@focusVisibleOutline: .2rem auto var(--focus-visible, @blue-3);
 
 /* Used on inputs, textarea etc */
 @focusedFormBorderColor: @secondaryColor;
@@ -254,8 +257,8 @@
 @highlightBackground      : #CCE2FF;
 @highlightColor           : @textColor;
 
-@inputHighlightBackground : rgba(100, 100, 100, 0.4);
-@inputHighlightColor      : @textColor;
+@inputHighlightBackground : rgba(31, 189, 238, 0.5);
+@inputHighlightColor      : @textColorCSSVar;
 
 
 /*-------------------

@@ -16,7 +16,7 @@ module.exports = {
   organizationName: 'eea', // Usually your GitHub org/user name.
   projectName: 'volto-eea-design-system', // Usually your repo name.
   customFields: {
-    storyBookUrl: 'https://eea.github.io/volto-kitkat-frontend/',
+    storyBookUrl: 'https://eea.github.io/eea-storybook/',
   },
   staticDirectories: ['static'],
   themeConfig: {
@@ -82,7 +82,7 @@ module.exports = {
             },
             {
               label: 'EEA Storybook',
-              href: 'https://eea.github.io/volto-kitkat-frontend/',
+              href: 'https://eea.github.io/eea-storybook/',
             },
           ],
         },
@@ -96,7 +96,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          exclude: ['**/md_components/**','**/_partials/**' ],
+          exclude: ['**/md_components/**', '**/_partials/**'],
           editUrl: ({ versionDocsDirPath, docPath }) => {
             let thePath = `${versionDocsDirPath}/${docPath}`;
             let newPath = '';

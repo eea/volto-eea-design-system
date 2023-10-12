@@ -1,13 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 
-function useOnScreen(ref, rootMargin = '0px') {
-  const [isIntersecting, setIntersecting] = React.useState(false);
+function useFirstVisited(ref, rootMargin = '0px') {
+  const [intersected, setIntersected] = React.useState(false);
 
   React.useEffect(() => {
+    if (intersected) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIntersecting(entry.isIntersecting);
+        setIntersected(intersected === false ? entry.isIntersecting : true);
       },
       {
         rootMargin,
@@ -24,8 +25,8 @@ function useOnScreen(ref, rootMargin = '0px') {
       }
       observer.disconnect();
     };
-  }, [ref, rootMargin]);
-  return isIntersecting;
+  }, [ref, rootMargin, intersected]);
+  return intersected;
 }
 
-export default useOnScreen;
+export default useFirstVisited;

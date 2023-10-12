@@ -15,13 +15,13 @@ const FooterActions = (props) => {
           <div className="actions">
             {props.actions &&
               props.actions.map((action, index) =>
-                isInternalURL(action.link) ? (
-                  <Link to={action.link} key={index}>
+                isInternalURL(action.url) ? (
+                  <Link to={action.url} key={index}>
                     {action.title}
                   </Link>
                 ) : (
                   <a
-                    href={action.link}
+                    href={action.url}
                     key={index}
                     target={'_blank'}
                     rel={'noreferrer'}
@@ -37,13 +37,13 @@ const FooterActions = (props) => {
           <div className="copyright">
             {props.copyright &&
               props.copyright.map((copyright, index) =>
-                isInternalURL(copyright.link) ? (
-                  <Link to={copyright.link} key={index}>
+                isInternalURL(copyright.url) ? (
+                  <Link to={copyright.url} key={index}>
                     {copyright.title}
                   </Link>
                 ) : (
                   <a
-                    href={copyright.link}
+                    href={copyright.url}
                     key={index}
                     target={'_blank'}
                     rel={'noreferrer'}

@@ -136,19 +136,21 @@
 @ribbonTriangleSize: 1.2em;
 @ribbonShadowColor: rgba(0, 0, 0, 0.15);
 
+@ribbonLabelZindex: 1;
+
 @ribbonMargin: 1rem;
 @ribbonOffset: calc(-@ribbonMargin - @ribbonTriangleSize);
 @ribbonDistance: calc(@ribbonMargin + @ribbonTriangleSize);
-@rightRibbonOffset:  calc(100% + @ribbonMargin + @ribbonTriangleSize);
+@rightRibbonOffset: calc(100% + @ribbonMargin + @ribbonTriangleSize);
 
 @ribbonImageTopDistance: 1rem;
 @ribbonImageMargin: 0.05rem; /* Rounding Offset on Triangle */
 @ribbonImageOffset: calc(-@ribbonImageMargin - @ribbonTriangleSize);
-@rightRibbonImageOffset:  calc(100% + @ribbonImageMargin + @ribbonTriangleSize);
+@rightRibbonImageOffset: calc(100% + @ribbonImageMargin + @ribbonTriangleSize);
 
 @ribbonTableMargin: @relativeMini; /* Rounding Offset on Triangle */
 @ribbonTableOffset: calc(-@ribbonTableMargin - @ribbonTriangleSize);
-@rightRibbonTableOffset:  calc(100% + @ribbonTableMargin + @ribbonTriangleSize);
+@rightRibbonTableOffset: calc(100% + @ribbonTableMargin + @ribbonTriangleSize);
 
 
 /* Colors */
@@ -159,10 +161,10 @@
 @highlightImportanceBackground: @secondaryColor;
 
 /* Hover Colors */
-@lowImportanceHoverBackground: darken(@deepBlue,5);
-@mediumImportanceHoverBackground: darken(#346F83,5);
-@highImportanceHoverBackground: darken(#005293,5);
-@highlightImportanceHoverBackground: darken(@secondaryColor,5);
+@lowImportanceHoverBackground: darken(@deepBlue, 5);
+@mediumImportanceHoverBackground: darken(#346F83, 5);
+@highImportanceHoverBackground: darken(#005293, 5);
+@highlightImportanceHoverBackground: darken(@secondaryColor, 5);
 
 @importanceHoverTextColor: @white;
 
@@ -271,11 +273,11 @@
 --------------------*/
 
 /* Sizing */
-@mini    : @9px;
-@tiny    : @10px;
-@small   : @11px;
-@medium  : @12px;
-@large   : @absoluteMedium;
-@big     : @absoluteBig;
-@huge    : @absoluteHuge;
-@massive : @absoluteMassive;
+@mini: @9px;
+@tiny: @10px;
+@small: @11px;
+@medium: @12px;
+@large: @absoluteMedium;
+@big: @absoluteBig;
+@huge: @absoluteHuge;
+@massive: @absoluteMassive;

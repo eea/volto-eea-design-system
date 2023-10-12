@@ -8,6 +8,7 @@
 @contentBoxBackgroundColor: @grey-1;
 @contentBoxNoBackground: transparent;
 @contentBoxColorInverted : inherit;
+@contentBoxBeforeZIndex: -1;
 
 /* Themes */
 @contentBoxBackgroundColorPrimary: @primaryColor;

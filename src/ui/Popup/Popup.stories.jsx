@@ -1,4 +1,4 @@
-import { React } from 'react';
+import React from 'react';
 import { Button, Segment, Image, Icon } from 'semantic-ui-react';
 
 import Popup from './Popup';
@@ -59,7 +59,7 @@ export default {
 };
 
 export const ButtonPopup = (args) => (
-  <Segment placeholder>
+  <Segment placeholder className={'flex-row flex-items-center'}>
     <Popup
       {...args}
       trigger={

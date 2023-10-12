@@ -38,11 +38,21 @@ footer .theme-sites {
     margin: @mobileThemeSitesLogoMargin;
   }
 
-  .header {
-    font-size: @mobileFooterTitleFontSize;
-  }
+}
+footer .footer-header {
+  font-size: @mobileFooterTitleFontSize;
 }
 
+.theme-sites .logo.freshwater {
+  max-width: @freshwaterLogoMaxWidth;
+}
+.subfooter .item {
+  display: @subFooterItemDisplay;
+  justify-content: @subFooterItemJustifyContent;
+  width: @subFooterItemWidth;
+  height: @subFooterItemHeight;
+  align-items: @subFooterItemAlignItems;
+}
 .subfooter .item .ui.grid {
   align-items: center;
 }
@@ -54,11 +64,11 @@ footer .theme-sites {
   }
 }
 
-.subfooter .contact-block {
+.subfooter .contact-wrapper {
   margin-bottom: @tabletContactBlockMarginBottom;
 }
 
-.contact-block .subcontact a {
+.contact-wrapper .subcontact a {
   font-size: @computerSubContactIconFontSize;
   margin-right: @computerSubContactIconMarginRight;
   font-weight: @computerSubContactIconFontWeight;
@@ -149,7 +159,7 @@ footer .footer-wrapper .menu {
     font-weight: @mobileMenuCopyrightFontWeight;
   }
 
-  .contact-block .subcontact {
+  .contact-wrapper .subcontact {
     margin-top: @mobileSubcontactBlockMarginTop;
   }
 }
@@ -159,21 +169,13 @@ footer .footer-wrapper .menu {
     background: @computerFooterBackgroundGradient;
   }
 
-  footer .theme-sites .header {
+  footer .footer-header {
     font-size: @tabletFooterTitleFontSize;
   }
 
   .subfooter .item {
     .logo img {
       max-height: 100px;
-    }
-
-    .site.logo img {
-      padding-right: @siteLogoPaddingRight;
-    }
-
-    .contact-block {
-      padding-left: @siteLogoPaddingRight;
     }
   }
 
@@ -184,11 +186,11 @@ footer .footer-wrapper .menu {
     gap: @tabletContactGap;
   }
 
-  .subfooter .contact-block {
+  .subfooter .contact-wrapper {
     margin-inline: @tabletContactBlockMarginInline;
   }
 
-  .contact-block .subcontact a {
+  .contact-wrapper .subcontact a {
     font-size: @tabletSubContactIconFontSize;
     margin-right: @tabletSubContactIconMarginRight;
   }
@@ -216,6 +218,9 @@ footer .footer-wrapper .menu {
       padding: @computerWrapperPadding;
       background-size: @computerWrapperBackgroundSize;
     }
+    .footer-wrapper-nobg {
+      padding: @computerWrapperPadding;
+    }
   }
 
   footer .theme-sites {
@@ -234,10 +239,9 @@ footer .footer-wrapper .menu {
       .header {
         margin-bottom: @computerItemHeaderMarginBottom;
       }
-
     }
 
-    .contact-block .subcontact a {
+    .contact-wrapper .subcontact a {
       font-size: @computerSubContactIconFontSize;
       margin-right: @computerSubContactIconMarginRight;
     }

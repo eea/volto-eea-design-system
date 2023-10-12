@@ -140,7 +140,7 @@
   --card-image-height: @roundedImageHeight;
 }
 .ui.card.rounded {
-  padding-top: @iconCardPaddingTop;
+  padding: @roundedCardPadding;
   border: none;
 
   .image {
@@ -270,7 +270,7 @@
 
 .card .gradient {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -359,6 +359,10 @@
   z-index: 1; // make arrows clickable even on events page with right column
 }
 
+.cards-carousel .slider-arrow.slick-disabled {
+  opacity: @carouselArrowDisabledOpacity;
+}
+
 .cards-carousel .prev-arrow {
   right: auto;
   left: @carouselButtonDistance;
@@ -377,6 +381,9 @@
 }
 
 .cards-carousel .slick-dots li button:before {
+  content: none;
+}
+.cards-carousel .slick-dots li .slick-dot-icon:before {
   background-color: @carouselDotsBackgroundColor;
   color: transparent;
   border: @carouselDotsBorder;
@@ -384,9 +391,16 @@
   opacity: @carouselDotsOpacity;
   width: @mobileCarouselDotsWidth;
   height: @mobileCarouselDotsHeight;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '•';
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.cards-carousel .slick-dots li.slick-active button:before {
+.cards-carousel .slick-dots li.slick-active .slick-dot-icon:before {
   background-color: @carouselDotsActiveBackgroundColor;
   color: transparent;
 }
@@ -415,6 +429,7 @@
     border-top: none;
     .header {
       word-break: break-word;
+      font-size: @iconCardHeaderFontSize;
     }
   }
   .icon {
@@ -450,6 +465,12 @@
   padding: @headerPadding;
 }
 
+// when title is on image the extra padding that displays the
+// link outline reveals part of title from 3rd row
+.ui.card .gradient .header {
+  padding: @headerOnImagePadding;
+}
+
 .ui.card .header > a {
   .useTitleMaxLines();
 }
@@ -457,4 +478,13 @@
 // Meta align fix
 .ui.card.u-card .meta:after {
     content: none;
+}
+
+/*******************************
+    Image Card items grid
+*******************************/
+.imageCard-items {
+  display: grid;
+  gap: @imageCardItemsGap;
+  grid-template-columns: repeat(auto-fit,minmax(@imageCardItemsGridMin, @imageCardItemsGridMax));
 }

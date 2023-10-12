@@ -172,6 +172,27 @@
   }
 }
 
+.flex-items-wrapper.items-2-columns .flex-item {
+  width: var(--flex-item-width, 100%);
+}
+@media only screen and (min-width: @tabletBreakpoint) {
+  .flex-items-wrapper.items-2-columns  .flex-item {
+    --flex-item-width: calc(@width / 2 - 1%);
+  }
+
+  .flex-items-wrapper.items-3-columns .flex-item {
+    --flex-item-width: calc(@width / 3);
+  }
+
+  .flex-items-wrapper.items-4-columns .flex-item {
+    --flex-item-width: calc(@width / 4);
+  }
+
+  .flex-items-wrapper.items-5-columns .flex-item {
+    --flex-item-width: calc(@width / 5);
+  }
+}
+
 
 @media only screen and (max-width: @largestMobileScreen) {
   .ui.items.row > .item {

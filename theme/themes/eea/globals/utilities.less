@@ -27,11 +27,20 @@ h1, h2, h3, h4, h5, h6, p, span, .header {
   z-index: 0;
 }
 
+/* Layout */
 // Flexbox
 .d-flex { display: flex !important; }
+.flex-row { flex-direction: row !important; }
 .flex-items-start { align-items: flex-start !important; }
 .flex-items-end { align-items: flex-end !important; }
 .flex-items-center { align-items: center !important; }
+
+// Columns
+each(range(2, 6), {
+  .has--@{value}--columns {
+    columns: @value;
+  }
+});
 
 // Text
 .text-left,
@@ -66,40 +75,40 @@ h1, h2, h3, h4, h5, h6, p, span, .header {
 *******************************/
 
 // image object fit
-.has--objectfit--contain {
+.has--object-fit--contain {
   --image-object-fit: contain;
 }
 
-.has--objectfit--cover {
+.has--object-fit--cover {
   --image-object-fit: cover;
 }
 
-.has--objectfit--fill {
+.has--object-fit--fill {
   --image-object-fit: fill;
 }
 
-.has--objectfit--scale-down {
+.has--object-fit--scale-down {
   --image-object-fit: scale-down;
 }
 
 // image object position
-.has--objectposition--top {
+.has--object-position--top {
   --image-object-position: top;
 }
 
-.has--objectposition--bottom {
+.has--object-position--bottom {
   --image-object-position: bottom;
 }
 
-.has--objectposition--left {
+.has--object-position--left {
   --image-object-position: left;
 }
 
-.has--objectposition--right {
+.has--object-position--right {
   --image-object-position: right;
 }
 
-.has--objectposition--center {
+.has--object-position--center {
   --image-object-position: center;
 }
 

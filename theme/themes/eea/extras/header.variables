@@ -33,7 +33,7 @@
 @topSectionItemFontSize               : @font-size-00;
 @mobileTopSectionItemFontSize         : @font-size-00;
 @tabletTopSectionItemFontSize         : @font-size-00;
-@topSectionZIndex                     : @z-index-1;
+@topSectionZIndex                     : @z-index-3;
 @dropdownColor                        : @blue-grey-6;
 @mobileDropdownFontSize               : @font-size-00;
 @tabletDropdownFontSize               : @font-size-00;
@@ -130,6 +130,8 @@
 
 
 /* Subsite */
+@subsitePosition                      : relative;
+@subsiteZIndex                        : 1;
 @subsiteFontFamily                    : @headerFont;
 @subsiteFontWeight                    : @headerFontWeight;
 @subsiteColor                         : @linkColor;
@@ -180,9 +182,9 @@
 @megaMenuSubTitleFontWeight: @font-weight-7;
 @megaMenuSubTitlePadding: 0.5rem 0;
 @megaMenuSubTitleDisplay: block;
-@megaMenuSubTitleCountriesNestedGridMarginTop: -1rem;
 
 /* List Item */
+@megaMenuListGap: 0 2rem;
 @megaMenuListItemFontSize: @font-size-1;
 @megaMenuListItemFontWeight: @font-weight-4;
 @megaMenuListItemPadding: @rem-space-2 0;
@@ -239,9 +241,9 @@
 @searchBoxSuggestionsTextColor: @white;
 @searchBoxSuggestionsColumnGap: 2em;
 @searchBoxSuggestionsRowGap: 1em;
-@searchBoxMobilePopupMarginTop: 0.5em;
-@searchBoxTabletPopupMarginTop: 1em;
-@searchBoxComputerPopupMarginTop: 1.5em;
+@searchBoxMobilePopupMarginTop: @em-space-8;
+@searchBoxTabletPopupMarginTop: @em-space-8;
+@searchBoxComputerPopupMarginTop: @em-space-8;
 
 /* Custom shadows for dropdowns */
 @shadow-topbar-dropdown: 2px 0 2px -5px hsla(@shadow-color, calc(@shadow-strength + 6%));

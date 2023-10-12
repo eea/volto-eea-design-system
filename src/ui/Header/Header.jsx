@@ -17,6 +17,7 @@ import HeaderMenuPopUp from './HeaderMenuPopUp';
 import PropTypes from 'prop-types';
 
 import { isInternalURL } from '@plone/volto/helpers';
+import config from '@plone/volto/registry';
 
 Header.propTypes = {
   transparency: PropTypes.bool,
@@ -38,6 +39,14 @@ const TopItem = ({ children, className, id }) => (
     {children}
   </div>
 );
+
+const onKeyDownHandler = (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    event.target.click();
+    //event.target.focus();
+  }
+};
 
 const TopDropdownMenu = ({
   children,
@@ -69,6 +78,8 @@ const TopDropdownMenu = ({
               closeOnChange={true}
               closeOnBlur={false}
               closeOnEscape={true}
+              openOnFocus={false}
+              onKeyDown={onKeyDownHandler}
             >
               <Dropdown.Menu role="option">{children}</Dropdown.Menu>
             </Dropdown>
@@ -85,6 +96,8 @@ const TopDropdownMenu = ({
             closeOnChange={true}
             closeOnBlur={false}
             closeOnEscape={true}
+            openOnFocus={false}
+            onKeyDown={onKeyDownHandler}
           >
             <Dropdown.Menu role="option">{children}</Dropdown.Menu>
           </Dropdown>
@@ -131,6 +144,7 @@ const TopDropdownMenu = ({
 const Main = ({
   logo,
   menuItems,
+  menuItemsLayouts,
   renderMenuItem,
   renderGlobalMenuItem,
   headerSearchBox,
@@ -147,6 +161,7 @@ const Main = ({
   const [burger, setBurger] = React.useState('');
   const searchInputRef = React.useRef(null);
   const [isClient, setIsClient] = React.useState();
+  const itemsLayouts = menuItemsLayouts || config.settings?.menuItemsLayouts;
 
   React.useEffect(() => setIsClient(true), []);
 
@@ -345,6 +360,7 @@ const Main = ({
         renderMenuItem={renderMenuItem}
         activeItem={activeItem}
         menuItems={menuItems}
+        menuItemsLayouts={itemsLayouts}
         pathName={pathname}
         onClose={menuOnClickOutside}
         triggerRefs={[mobileMenuBurgerRef, desktopMenuRef]}

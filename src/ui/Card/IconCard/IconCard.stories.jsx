@@ -21,6 +21,15 @@ export default {
         defaultValue: { summary: 'null' },
       },
     },
+    titleMaxLines: {
+      name: 'Title max lines',
+      options: ['none', '1', '2', '3', '4', '5'],
+      control: { type: 'select' },
+      table: {
+        category: 'Content',
+        defaultValue: { summary: '2' },
+      },
+    },
     inverted: {
       description: 'Inverted card',
       table: {
@@ -43,7 +52,11 @@ const Template = (args) => (
     <Card
       className={`icon text-center ${
         args.variant === 'default' ? '' : args.variant
-      } ${args.inverted ? 'inverted' : ''}`}
+      } ${args.inverted ? 'inverted' : ''} ${
+        args.titleMaxLines === 'none'
+          ? 'title-max-0-lines'
+          : 'title-max-' + args.titleMaxLines + '-lines'
+      }`}
     >
       {args.hasLink ? (
         <a href={args.href} aria-label={args.title}>
@@ -70,6 +83,7 @@ const Template = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   variant: 'default',
+  titleMaxLines: '2',
   inverted: false,
   title: 'Lorem Ipsum',
   icon: 'ri-leaf-line',
@@ -116,7 +130,11 @@ const GridTemplate = (args) => (
             <Card
               className={`icon text-center ${
                 args.variant === 'default' ? '' : args.variant
-              } ${args.inverted ? 'inverted' : ''}`}
+              } ${args.inverted ? 'inverted' : ''} ${
+                args.titleMaxLines === 'none'
+                  ? 'title-max-0-lines'
+                  : 'title-max-' + args.titleMaxLines + '-lines'
+              }`}
             >
               {args.hasLink ? (
                 <a href={args.href} aria-label={card.title}>
@@ -146,6 +164,7 @@ const GridTemplate = (args) => (
 export const GridIconCard = GridTemplate.bind({});
 GridIconCard.args = {
   variant: 'default',
+  titleMaxLines: '2',
   inverted: false,
   hasLink: true,
   href: '/#',
@@ -186,6 +205,7 @@ GridIconCard.argTypes = {
   cards: {
     description: 'array with cards data',
     table: {
+      category: 'Content',
       type: {
         summary: 'Object',
       },
