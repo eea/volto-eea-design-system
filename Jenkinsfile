@@ -10,7 +10,7 @@ pipeline {
         NAMESPACE = "@eeacms"
         SONARQUBE_TAGS = "volto.eea.europa.eu,www.eea.europa.eu-ims,demo-www.eea.europa.eu,prod-www.eea.europa.eu,climate-adapt.eea.europa.eu,climate-advisory-board.devel4cph.eea.europa.eu,climate-advisory-board.europa.eu,www.eea.europa.eu-en"
         DEPENDENCIES = ""
-        VOLTO = ""
+        VOLTO = "16"
     }
 
   stages {

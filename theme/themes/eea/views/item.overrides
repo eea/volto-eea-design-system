@@ -172,7 +172,7 @@
   }
 }
 
-.flex-items-wrapper.items-2-columns .flex-item {
+.flex-items-wrapper .flex-item {
   width: var(--flex-item-width, 100%);
 }
 @media only screen and (min-width: @tabletBreakpoint) {
@@ -181,15 +181,15 @@
   }
 
   .flex-items-wrapper.items-3-columns .flex-item {
-    --flex-item-width: calc(@width / 3);
+    --flex-item-width: calc(@width / 3 - 1%);
   }
 
   .flex-items-wrapper.items-4-columns .flex-item {
-    --flex-item-width: calc(@width / 4);
+    --flex-item-width: calc(@width / 4 - 1%);
   }
 
   .flex-items-wrapper.items-5-columns .flex-item {
-    --flex-item-width: calc(@width / 5);
+    --flex-item-width: calc(@width / 5 - 1%);
   }
 }
 
