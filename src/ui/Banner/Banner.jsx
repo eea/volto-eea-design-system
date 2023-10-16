@@ -3,6 +3,7 @@ import { Container, Icon, Button, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { formatDate } from '@plone/volto/helpers/Utils/Date';
+import cx from 'classnames';
 import config from '@plone/volto/registry';
 
 Banner.propTypes = {
@@ -44,7 +45,8 @@ export const sharePage = (url, platform) => {
   link.click();
 };
 
-function Banner({ image, metadata, properties, children, ...rest }) {
+function Banner({ image, metadata, properties, children, styles, ...rest }) {
+  console.log(styles);
   if (image) {
     //extract Lead image from page content.
     const content = metadata || properties;
@@ -52,7 +54,7 @@ function Banner({ image, metadata, properties, children, ...rest }) {
     return (
       <div className="eea banner">
         <div
-          className={imageUrl ? 'image' : ''}
+          className={cx(imageUrl ? 'image' : '', styles?.bg)}
           style={imageUrl ? { backgroundImage: `url(${imageUrl})` } : {}}
         >
           <div className="gradient">
