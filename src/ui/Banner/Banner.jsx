@@ -46,7 +46,6 @@ export const sharePage = (url, platform) => {
 };
 
 function Banner({ image, metadata, properties, children, styles, ...rest }) {
-  console.log(styles);
   if (image) {
     //extract Lead image from page content.
     const content = metadata || properties;
