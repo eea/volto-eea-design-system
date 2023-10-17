@@ -6,6 +6,7 @@ import {
   CarouselCards,
   FluidGrid,
   CardGrid,
+  ImageGrid,
   Default,
 } from './Card.stories';
 
@@ -196,6 +197,36 @@ describe('CardGrid component', () => {
       '.ui.fluid.card .content .header',
     );
     expect(cardGridCards.length).toBe(5);
+  });
+});
+
+describe('ImageGrid component', () => {
+  it('renders correctly', () => {
+    const { container } = render(<ImageGrid {...ImageGrid.args} />);
+
+    expect(container.querySelector('.ui.image')).toBeInTheDocument();
+
+    expect(
+      container.querySelector(`.ui.card.u-card.${ImageGrid.args.variant}`),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.has--object-fit--${ImageGrid.args.objectFit}`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.has--object-position--${ImageGrid.args.objectPosition}`,
+      ),
+    ).toBeInTheDocument();
+  });
+
+  it('renders the image grid with correct number of cards', () => {
+    const { container } = render(<ImageGrid {...ImageGrid.args} />);
+    const imageGridCards = container.querySelectorAll(
+      '.ui.card.u-card.default .ui.image',
+    );
+    expect(imageGridCards.length).toBe(5);
   });
 });
 
