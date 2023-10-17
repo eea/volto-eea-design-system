@@ -20,6 +20,7 @@ let cardModels = [
       'Europe needs a circular, carbon-neutral and zero-pollution economy. ',
     meta: 'Article',
     metaRight: '20/05/2022',
+    eventDate: '15/10/2023',
     href: '/#',
   },
   {
@@ -34,6 +35,7 @@ let cardModels = [
       'healthier and better equipped to cope with climate change impacts.',
     meta: 'Article',
     metaRight: '30/06/2023',
+    eventDate: '03/08/2023',
     href: '/#',
   },
   {
@@ -47,17 +49,20 @@ let cardModels = [
       'systems in Europe. The result is a biodiversity crisis. The EU is taking steps to protect and restore nature.',
     meta: 'Article',
     metaRight: '10/04/2022',
+    eventDate: '18/05/2023',
     href: '/#',
   },
   {
     title: 'Climate',
-    meta: 'Article',
     imgUrl:
       'https://www.eea.europa.eu/en/topics/at-a-glance/climate/@@images/image/preview',
     description:
       'Climate change affects us all and is accelerating. Its impacts will become even more severe if ' +
       'the increase in global temperature is not kept below 1.5°C. The EU and its Member States are ' +
       'taking important steps to rapidly reduce greenhouse gas emissions and adapt to climate change.',
+    meta: 'Article',
+    metaRight: '20/06/2022',
+    eventDate: '15/03/2024',
     href: '/#',
   },
   {
@@ -70,6 +75,7 @@ let cardModels = [
       'of the globe, is facing environmental challenges of unprecedented scale and urgency.',
     meta: 'Article',
     metaRight: '16/03/2022',
+    eventDate: '13/01/2024',
     href: '/#',
   },
 ];
@@ -166,6 +172,15 @@ export default {
         defaultValue: { summary: '2' },
       },
     },
+    eventDate: {
+      name: 'Event date',
+      control: { type: 'boolean' },
+      table: {
+        category: 'Content',
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
     cards: {
       name: 'Cards content',
       table: {
@@ -192,6 +207,17 @@ const MetaRight = (args) => (
   <span className="bold text-right">{args.metaRight}</span>
 );
 
+const EventDate = (args) => (
+  <>
+    {args.eventDate && (
+      <span className="event-date">
+        <Icon className="ri-calendar-line" />
+        <span>{args.eventDate}</span>
+      </span>
+    )}
+  </>
+);
+
 const CardTemplate = ({
   variant,
   inverted,
@@ -201,6 +227,7 @@ const CardTemplate = ({
   objectPosition,
   titleMaxLines,
   maxLines,
+  eventDate,
   fluid,
   card,
 }) => (
@@ -244,6 +271,9 @@ const CardTemplate = ({
         ''
       )}
 
+      {/* Event date */}
+      {eventDate && <EventDate {...card} />}
+
       {/* Description */}
       <Card.Description>{card.description}</Card.Description>
     </Card.Content>
@@ -276,6 +306,7 @@ Default.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
+  eventDate: false,
   numberOfCards: 1,
   fluid: false,
   cards: [...cardModels],
@@ -302,6 +333,7 @@ CardGrid.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
+  eventDate: false,
   fluid: true,
   numberOfCards: 5,
   cards: [...cardModels],
@@ -363,6 +395,11 @@ ImageGrid.argTypes = {
       disable: true,
     },
   },
+  eventDate: {
+    table: {
+      disable: true,
+    },
+  },
   maxLines: {
     table: {
       disable: true,
@@ -391,6 +428,7 @@ FluidGrid.args = {
   titleMaxLines: '2',
   maxLines: '2',
   numberOfCards: 3,
+  eventDate: false,
   fluid: true,
   cards: [...cardModels],
 };
@@ -481,6 +519,7 @@ CarouselCards.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
+  eventDate: false,
   fluid: true,
   settings: {
     dots: true,
@@ -534,6 +573,7 @@ const TeaserCard = ({
   titleMaxLines,
   fluid,
   maxLines,
+  eventDate,
   card,
 }) => (
   <div className="column grid-block-teaser">
@@ -571,6 +611,7 @@ const TeaserCard = ({
             <div className="header">
               <a href={card.href}>{card.title}</a>
             </div>
+            {eventDate && <EventDate {...card} />}
             <Card.Description>{card.description}</Card.Description>
           </div>
         )}
@@ -612,6 +653,7 @@ TeaserCardGrid.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
+  eventDate: false,
   fluid: true,
   numberOfCards: 3,
   cards: [...cardModels],
