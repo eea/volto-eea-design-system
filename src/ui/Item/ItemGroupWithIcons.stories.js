@@ -17,6 +17,16 @@ export default {
         defaultValue: { summary: false },
       },
     },
+    textAlign: {
+      name: 'text align',
+      options: ['left', 'center', 'right'],
+      control: { type: 'select' },
+      defaultValue: 'left',
+      table: {
+        defaultValue: { summary: 'left' },
+        type: { summary: 'string' },
+      },
+    },
     mediaType: {
       name: 'media type',
       options: ['image', 'icon'],
@@ -61,6 +71,7 @@ function SingleItem({
   description,
   verticalAlign,
   stackable,
+  textAlign,
 }) {
   return (
     <Item className={`${stackable ? ' stackable' : ''}`}>
@@ -73,7 +84,10 @@ function SingleItem({
       ) : (
         <Icon className={`${imageSize} ${icon} ${colorVariation}`} />
       )}
-      <Item.Content verticalAlign={verticalAlign}>
+      <Item.Content
+        verticalAlign={verticalAlign}
+        className={`text-${textAlign}`}
+      >
         <Item.Description>{description}</Item.Description>
       </Item.Content>
     </Item>
@@ -96,12 +110,13 @@ DefaultItem.args = {
   verticalAlign: 'middle',
   colorVariation: 'secondary',
   stackable: false,
+  textAlign: 'left',
   description:
     'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
 };
 DefaultItem.argTypes = {
   imageUrl: {
-    name: 'Image URL',
+    name: 'image URL',
     control: 'text',
     if: { arg: 'mediaType', eq: 'image' },
   },
@@ -120,14 +135,13 @@ DefaultItem.argTypes = {
 
 function ItemGroup({
   mediaType,
-  imageUrl,
-  icon,
   imageSize,
   colorVariation,
   verticalAlign,
   ColumnLeft,
   ColumnRight,
   stackable,
+  textAlign,
 }) {
   return (
     <Container>
@@ -159,6 +173,7 @@ function ItemGroup({
                   imageSize={imageSize}
                   colorVariation={colorVariation}
                   stackable={stackable}
+                  textAlign={textAlign}
                 ></SingleItem>
               ))}
             </Item.Group>
@@ -179,6 +194,7 @@ DefaultGroup.args = {
   colorVariation: 'secondary',
   verticalAlign: 'middle',
   stackable: false,
+  textAlign: 'left',
   ColumnLeft: [
     {
       childKey: 0,
@@ -222,13 +238,12 @@ DefaultGroup.args = {
 
 function ItemFlexGroup({
   mediaType,
-  imageUrl,
-  icon,
   imageSize,
   colorVariation,
   verticalAlign,
   Items,
   stackable,
+  textAlign,
 }) {
   return (
     <Container>
@@ -242,6 +257,7 @@ function ItemFlexGroup({
             imageSize={imageSize}
             colorVariation={colorVariation}
             stackable={stackable}
+            textAlign={textAlign}
           ></SingleItem>
         ))}
       </Item.Group>
@@ -259,6 +275,7 @@ FlexGroup.args = {
   colorVariation: 'secondary',
   verticalAlign: 'middle',
   stackable: false,
+  textAlign: 'left',
   Items: [
     {
       childKey: 0,
