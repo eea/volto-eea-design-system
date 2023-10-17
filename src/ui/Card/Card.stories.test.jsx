@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import {
   TeaserCardGrid,
   CarouselCards,
@@ -9,6 +10,38 @@ import {
 } from './Card.stories';
 
 describe('TeaserCardGrid component', () => {
+  it('renders correctly', () => {
+    const { container } = render(<TeaserCardGrid {...TeaserCardGrid.args} />);
+
+    expect(container.querySelector('.image')).toBeInTheDocument();
+    expect(container.querySelector('.header')).toBeInTheDocument();
+    expect(container.querySelector('.description')).toBeInTheDocument();
+
+    expect(
+      container.querySelector(`.ui.card.u-card.${TeaserCardGrid.args.variant}`),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.max-${TeaserCardGrid.args.maxLines}-lines`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.title-max-${TeaserCardGrid.args.maxLines}-lines`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.has--object-fit--${TeaserCardGrid.args.objectFit}`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.has--object-position--${TeaserCardGrid.args.objectPosition}`,
+      ),
+    ).toBeInTheDocument();
+  });
+
   it('renders the teaser card grid with correct number of cards', () => {
     const { container } = render(<TeaserCardGrid {...TeaserCardGrid.args} />);
     const teaserCards = container.querySelectorAll('.column.grid-block-teaser');
@@ -26,6 +59,39 @@ describe('TeaserCardGrid component', () => {
 });
 
 describe('CarouselCards component', () => {
+  it('renders correctly', () => {
+    const { container } = render(<CarouselCards {...CarouselCards.args} />);
+
+    expect(container.querySelector('.image')).toBeInTheDocument();
+    expect(container.querySelector('.header')).toBeInTheDocument();
+    expect(container.querySelector('.meta')).toBeInTheDocument();
+    expect(container.querySelector('.description')).toBeInTheDocument();
+
+    expect(
+      container.querySelector(`.ui.card.u-card.${CarouselCards.args.variant}`),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.max-${CarouselCards.args.maxLines}-lines`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.title-max-${CarouselCards.args.maxLines}-lines`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.has--object-fit--${CarouselCards.args.objectFit}`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.has--object-position--${CarouselCards.args.objectPosition}`,
+      ),
+    ).toBeInTheDocument();
+  });
+
   it('renders the carousel with correct number of cards', () => {
     const { container } = render(<CarouselCards {...CarouselCards.args} />);
     const carouselCards = container.querySelectorAll(
@@ -47,6 +113,39 @@ describe('CarouselCards component', () => {
 });
 
 describe('FluidGrid component', () => {
+  it('renders correctly', () => {
+    const { container } = render(<FluidGrid {...FluidGrid.args} />);
+
+    expect(container.querySelector('.image')).toBeInTheDocument();
+    expect(container.querySelector('.header')).toBeInTheDocument();
+    expect(container.querySelector('.meta')).toBeInTheDocument();
+    expect(container.querySelector('.description')).toBeInTheDocument();
+
+    expect(
+      container.querySelector(`.ui.card.u-card.${FluidGrid.args.variant}`),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.max-${FluidGrid.args.maxLines}-lines`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.title-max-${FluidGrid.args.maxLines}-lines`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.has--object-fit--${FluidGrid.args.objectFit}`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.has--object-position--${FluidGrid.args.objectPosition}`,
+      ),
+    ).toBeInTheDocument();
+  });
+
   it('renders fluid grid with correct number of cards', () => {
     const { container } = render(<FluidGrid {...FluidGrid.args} />);
     const fluidGridCards = container.querySelectorAll(
@@ -58,6 +157,39 @@ describe('FluidGrid component', () => {
 });
 
 describe('CardGrid component', () => {
+  it('renders correctly', () => {
+    const { container } = render(<CardGrid {...CardGrid.args} />);
+
+    expect(container.querySelector('.image')).toBeInTheDocument();
+    expect(container.querySelector('.header')).toBeInTheDocument();
+    expect(container.querySelector('.meta')).toBeInTheDocument();
+    expect(container.querySelector('.description')).toBeInTheDocument();
+
+    expect(
+      container.querySelector(`.ui.card.u-card.${CardGrid.args.variant}`),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.max-${CardGrid.args.maxLines}-lines`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.title-max-${CardGrid.args.maxLines}-lines`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.has--object-fit--${CardGrid.args.objectFit}`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.has--object-position--${CardGrid.args.objectPosition}`,
+      ),
+    ).toBeInTheDocument();
+  });
+
   it('renders the card grid with correct number of cards', () => {
     const { container } = render(<CardGrid {...CardGrid.args} />);
     const cardGridCards = container.querySelectorAll(
@@ -68,6 +200,39 @@ describe('CardGrid component', () => {
 });
 
 describe('Default component', () => {
+  it('renders correctly', () => {
+    const { container } = render(<Default {...Default.args} />);
+
+    expect(container.querySelector('.image')).toBeInTheDocument();
+    expect(container.querySelector('.header')).toBeInTheDocument();
+    expect(container.querySelector('.meta')).toBeInTheDocument();
+    expect(container.querySelector('.description')).toBeInTheDocument();
+
+    expect(
+      container.querySelector(`.ui.card.u-card.${Default.args.variant}`),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.max-${Default.args.maxLines}-lines`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.title-max-${Default.args.maxLines}-lines`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.has--object-fit--${Default.args.objectFit}`,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector(
+        `.ui.card.u-card.has--object-position--${Default.args.objectPosition}`,
+      ),
+    ).toBeInTheDocument();
+  });
+
   it('renders the default with correct number of cards', () => {
     const { container } = render(<Default {...Default.args} />);
     const defaultCards = container.querySelectorAll(
