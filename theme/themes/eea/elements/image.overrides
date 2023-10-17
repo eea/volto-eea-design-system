@@ -100,14 +100,27 @@
 .image-block-container.center {
   display: inline-block;
 }
+
 .image-block-container.has--bg--top {
   img {
-object-fit: none;  
-object-position: top;  
-
-  }
+    object-fit: none;  
+    object-position: top;  
+ }
 }
 
+.image-block-container.has--bg--bottom {
+  img {
+    object-fit: none;  
+    object-position: bottom;  
+ }
+}
+
+.image-block-container.has--bg--center {
+  img {
+    object-fit: fill;  
+    object-position: unset;   
+ }
+}
 
 .image-block-container.right {
   margin-left: @imageBlockContainerLeftMargin;
