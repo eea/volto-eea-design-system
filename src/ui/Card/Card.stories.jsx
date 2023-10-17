@@ -8,77 +8,89 @@ import 'slick-carousel/slick/slick-theme.css';
 const tabletBreakpoint = 835;
 const mobileBreakpoint = 480;
 
-let cardModels = [
-  {
-    title: 'Economy and resources',
-    imgUrl:
-      'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
-    description:
-      'The economy plays a vital role in our lives by providing access to employment, ' +
+const createCardModel = (
+  title,
+  imgUrl,
+  description,
+  meta,
+  metaRight,
+  eventDate,
+  href,
+) => {
+  return {
+    title: title,
+    imgUrl: imgUrl,
+    description: description,
+    meta: meta,
+    metaRight: metaRight,
+    eventDate: eventDate,
+    href: href,
+  };
+};
+
+const cardData = [
+  [
+    'Economy and resources',
+    'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
+    'The economy plays a vital role in our lives by providing access to employment, ' +
       'products and services that help us thrive. Unfortunately, with its key sectors like agriculture,' +
       ' energy and transport, our economy also harms the environment and causes climate change. ' +
       'Europe needs a circular, carbon-neutral and zero-pollution economy. ',
-    meta: 'Article',
-    metaRight: '20/05/2022',
-    eventDate: '15/10/2023',
-    href: '/#',
-  },
-  {
-    title: 'Health',
-    imgUrl:
-      'https://www.eea.europa.eu/en/topics/at-a-glance/health/@@images/image/preview',
-    description:
-      'By improving air, water, and soil quality and limiting pollution released to nature, ' +
+    'Article',
+    '20/05/2022',
+    '15/10/2023',
+    '/#',
+  ],
+  [
+    'Health',
+    'https://www.eea.europa.eu/en/topics/at-a-glance/health/@@images/image/preview',
+    'By improving air, water, and soil quality and limiting pollution released to nature, ' +
       'the EU has significantly contributed to enhancing human health in the last five ' +
       'decades. Yet, many vulnerable groups continue to be impacted by environmental ' +
       'degradation and climate change. Further improvements can help keep Europeans ' +
       'healthier and better equipped to cope with climate change impacts.',
-    meta: 'Article',
-    metaRight: '30/06/2023',
-    eventDate: '03/08/2023',
-    href: '/#',
-  },
-  {
-    title: 'Nature',
-    imgUrl:
-      'https://www.eea.europa.eu/en/topics/at-a-glance/nature/@@images/image/preview',
-    description:
-      'Europe’s nature is filled with forests, mountains, vast plains, long rivers, deep blue seas and ' +
+    'Article',
+    '30/06/2023',
+    '03/08/2023',
+    '/#',
+  ],
+  [
+    'Nature',
+    'https://www.eea.europa.eu/en/topics/at-a-glance/nature/@@images/image/preview',
+    "Europe's nature is filled with forests, mountains, vast plains, long rivers, deep blue seas and " +
       'refreshing lakes. But it also is under threat. Unsustainable farming and forestry practices, ' +
       'pollution, climate change and invasive species are stressing and destabilising all natural ' +
       'systems in Europe. The result is a biodiversity crisis. The EU is taking steps to protect and restore nature.',
-    meta: 'Article',
-    metaRight: '10/04/2022',
-    eventDate: '18/05/2023',
-    href: '/#',
-  },
-  {
-    title: 'Climate',
-    imgUrl:
-      'https://www.eea.europa.eu/en/topics/at-a-glance/climate/@@images/image/preview',
-    description:
-      'Climate change affects us all and is accelerating. Its impacts will become even more severe if ' +
+    'Article',
+    '10/04/2022',
+    '18/05/2023',
+    '/#',
+  ],
+  [
+    'Climate',
+    'https://www.eea.europa.eu/en/topics/at-a-glance/climate/@@images/image/preview',
+    'Climate change affects us all and is accelerating. Its impacts will become even more severe if ' +
       'the increase in global temperature is not kept below 1.5°C. The EU and its Member States are ' +
       'taking important steps to rapidly reduce greenhouse gas emissions and adapt to climate change.',
-    meta: 'Article',
-    metaRight: '20/06/2022',
-    eventDate: '15/03/2024',
-    href: '/#',
-  },
-  {
-    title: "State of Europe's environment",
-    imgUrl:
-      'https://www.eea.europa.eu/en/topics/at-a-glance/state-of-europes-environment/@@images/image/preview',
-    description:
-      'EU environment and climate policies have delivered substantial benefits over recent ' +
+    'Article',
+    '20/06/2022',
+    '15/03/2024',
+    '/#',
+  ],
+  [
+    "State of Europe's environment",
+    'https://www.eea.europa.eu/en/topics/at-a-glance/state-of-europes-environment/@@images/image/preview',
+    'EU environment and climate policies have delivered substantial benefits over recent ' +
       'decades, such as cleaner air and water. Nevertheless, Europe, as well as the rest ' +
       'of the globe, is facing environmental challenges of unprecedented scale and urgency.',
-    meta: 'Article',
-    metaRight: '16/03/2022',
-    eventDate: '13/01/2024',
-    href: '/#',
-  },
+    'Article',
+    '16/03/2022',
+    '13/01/2024',
+    '/#',
+  ],
 ];
+
+const cardModels = cardData.map((card) => createCardModel(...card));
 
 export default {
   title: 'Components/Card/Default',
