@@ -7,13 +7,9 @@
 @tabletTopSectionHeight      : 42px;
 @computerTopSectionHeight    : 34px;
 
-@mobileMainSectionHeight     : 69px;
-@tabletMainSectionHeight     : 117px;
-@computerMainSectionHeight   : 160px;
-
-@mobilePopUpHeight           : calc(100vh - (@mobileTopSectionHeight + @mobileMainSectionHeight));
-@tabletPopUpHeight           : calc(100vh - (@tabletTopSectionHeight + @tabletMainSectionHeight));
-@computerPopUpHeight         : calc(100vh - (@computerTopSectionHeight + @computerMainSectionHeight));
+@mobilePopUpHeight           : calc(100vh - (@mobileTopSectionHeight + 100%));
+@tabletPopUpHeight           : calc(100vh - (@tabletTopSectionHeight + 100%));
+@computerPopUpHeight         : calc(100vh - (@computerTopSectionHeight + 100%));
 
 /* Header font sizes */
 @headerMinyFontSize: 0.5rem;
@@ -117,6 +113,11 @@
 @computerLogoMarginTop                : @rem-space-5;
 
 /* Main menu */
+@mainMenuWidth                        : 90%;
+@mainMenuMargin                       : 0;
+@mainMenuGap                          : 1vw;
+@mainMenuAlignSelf                    : flex-end;
+@mainMenuPadding                      : @rem-space-4 0 0 0;
 @mainMenuItemColor                    : @primaryColor;
 @mainMenuItemInvertedColor            : @white;
 @mainMenuItemFontSize                 : ~"min(max(0.875rem, 1.5vw), 1.125rem)";
@@ -166,6 +167,7 @@
 @megaMenuBackgroundColor: @darkMidnightBlue;
 @megaMenuTextDisplay: flex;
 @megaMenuTextColor: @white;
+@megaMenuWordBreak: break-word;
 @megaMenuTextHoverDecoration: underline;
 @mobileMegaMenuPadding: @rem-space-4 0;
 @tabletMegaMenuPadding: @rem-space-9;

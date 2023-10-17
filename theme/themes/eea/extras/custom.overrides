@@ -13,7 +13,12 @@
 
 // remove padding from homepage content-area since we have the bg image over the header
 .homepage .content-area {
-    padding-top: 0 !important;
+  padding-top: 0 !important;
+  margin-top: 0;
+}
+.homepage .main.bar {
+  position: absolute;
+  width: 100%;
 }
 
 // show staging banner on homepage
