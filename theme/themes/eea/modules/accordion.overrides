@@ -2,7 +2,8 @@
          Theme Overrides
 *******************************/
 
-.accordion .filter {
+.accordion.inverted > .title,
+.accordion > .filter {
   background-color: var(--bg-color, transparent);
 }
 
@@ -16,6 +17,7 @@
   margin: @itemsMargin;
   transition: @styledTitleTransition;
 
+  // basic has important as such we also need to use important
   .basic {
     color: @titleColorHover !important;
   }
@@ -27,7 +29,7 @@
     color: @titleColorHover !important;
   }
 
-  .title {
+  > .title {
     display: flex;
     align-items: center;
     justify-content: @titleJustifyContent;
@@ -50,7 +52,7 @@
       }
     }
 
-    .icon {
+    > .icon {
       display: flex;
       width: @iconWidth;
       height: @iconHeight;
@@ -75,7 +77,7 @@
     }
   }
 
-  .active.title {
+  > .title.active {
     border-bottom: @activeTitleBorderBottom;
     background-color: @activeTitleBackground;
     color: @activeTitleColor;
@@ -129,11 +131,7 @@
      Tabs as accordion (Volto)
 --------------------------------*/
 
-.ui.menu.RRT__accordion {
-  .ui.item {
-    background-color: transparent;
-  }
-
+.ui.accordion.RRT__accordion {
   .ui.item .icon {
     font-size: @iconFontSize;
 
@@ -146,42 +144,47 @@
 /*--------------
    Variations
 ---------------*/
-.ui.accordion[class*='ary'] .active.title,
-.ui.accordion[class*='ary'] .filter {
+.ui.accordion[class*='ary'] > .active.title,
+.ui.accordion[class*='ary'].inverted > .title,
+.ui.accordion[class*='ary'].inverted > .icon,
+.ui.accordion[class*='ary'] > .filter {
   --text-color-hover: white;
   --text-color: white;
 }
 
 /* Primary */
-.ui.accordion.primary .active.title,
-.ui.accordion.primary .filter {
+.ui.accordion.primary > .active.title,
+.ui.accordion.primary.inverted > .title,
+.ui.accordion.primary > .filter {
   --bg-color: @primaryColorCSSVar;
 }
 
-.ui.accordion.primary .title:not(.active, .filter):hover,
-.ui.accordion.primary .title:not(.active, .filter):focus-visible {
+.ui.accordion.primary:not(.inverted) > .title:not(.active, .filter):hover,
+.ui.accordion.primary:not(.inverted) > .title:not(.active, .filter):focus-visible {
   --text-color-hover: @primaryColorCSSVar;
 }
 
 /* Secondary */
-.ui.accordion.secondary .active.title,
-.ui.accordion.secondary .filter {
+.ui.accordion.secondary > .active.title,
+.ui.accordion.secondary.inverted > .title,
+.ui.accordion.secondary > .filter {
   --bg-color: @secondaryColorCSSVar;
 }
 
-.ui.accordion.secondary .title:not(.active, .filter):hover,
-.ui.accordion.secondary .title:not(.active, .filter):focus-visible {
+.ui.accordion.secondary:not(.inverted) > .title:not(.active, .filter):hover,
+.ui.accordion.secondary:not(.inverted) > .title:not(.active, .filter):focus-visible {
   --text-color-hover: @secondaryColorCSSVar;
 }
 
 /* Tertiary */
-.ui.accordion.tertiary .active.title,
-.ui.accordion.tertiary .filter {
+.ui.accordion.tertiary > .active.title,
+.ui.accordion.tertiary.inverted > .title,
+.ui.accordion.tertiary > .filter {
   --bg-color: @tertiaryColorCSSVar;
 }
 
-.ui.accordion.tertiary .title:not(.active, .filter):hover,
-.ui.accordion.tertiary .title:not(.active, .filter):focus-visible {
+.ui.accordion.tertiary:not(.inverted) > .title:not(.active, .filter):hover,
+.ui.accordion.tertiary:not(.inverted) > .title:not(.active, .filter):focus-visible {
   --text-color-hover: @tertiaryColorCSSVar;
 }
 
