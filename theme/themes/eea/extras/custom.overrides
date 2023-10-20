@@ -153,6 +153,10 @@
 
 // Tabs block border left/top
 .tabs-block {
+  // make accordion transformed from rrt_tabs use same color bg as tabs
+  .tabs-accessibility .RRT__panel {
+    --bg-color: @white;
+  }
   .border-top {
     border: none !important;
     border-top: 0.0625rem solid @midGray !important;

@@ -51,7 +51,7 @@
 @contentMargin: 0;
 @contentPaddingBottom: 1.563rem;
 @contentPadding: @squareMedium;
-@contentBackground: @grey-1;
+@contentBackground: var(--bg-color, @grey-1);
 @contentColor: @tertiaryColor;
 
 /*-------------------
