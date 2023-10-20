@@ -161,6 +161,11 @@ body {
   ) !important;
 }
 
+#page-add [class*='block-editor-'].has--size--full,
+#page-edit [class*='block-editor-'].has--size--full {
+  position: initial;
+}
+
 .has--size--full:not(.block-editor-columnsBlock) .ui.grid {
   margin-right: 0;
   margin-left: 0;
@@ -175,10 +180,6 @@ body {
 
 // tweak size of full to take into account toolbar open or collapsed
 @media screen and (min-width: 768px) and (hover: hover) {
-  .has-toolbar .has--size--full:not(.block-editor-columnsBlock) {
-    width: calc(100vw - 96px) !important;
-  }
-
   #page-add [class*='block-editor-'].has--size--full .block.inner,
   #page-edit [class*='block-editor-'].has--size--full .column-grid {
     position: relative;
@@ -188,10 +189,6 @@ body {
     max-width: initial !important;
     margin-right: -50vw !important;
     margin-left: -50vw !important;
-  }
-
-  .has-toolbar-collapsed .has--size--full:not(.block-editor-columnsBlock) {
-    width: calc(100vw - 37px) !important;
   }
 }
 
