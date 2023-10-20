@@ -45,18 +45,19 @@ body {
     width: auto !important;
     max-width: @containerWidth !important;
   }
-   #page-add .container,
-   #page-edit .container {
-     max-width: unset !important;
-   }
 
-  [class*="block-editor"] {
-    padding-left: @editContainerGutter;
+  #page-add .container,
+  #page-edit .container {
+    max-width: unset !important;
+  }
+
+  [class*='block-editor'] {
     padding-right: @editContainerGutter;
+    padding-left: @editContainerGutter;
 
-    [class*="block-editor"] {
-      padding-left: 0;
+    [class*='block-editor'] {
       padding-right: 0;
+      padding-left: 0;
     }
   }
 }
@@ -66,8 +67,8 @@ body {
 // top of the edit page selector
 .container > .blocks-form > .invisible > div > * {
   max-width: var(--layout-max-width, @containerWidth);
-  margin-left: auto !important;
   margin-right: auto !important;
+  margin-left: auto !important;
 }
 
 .contentWidth(@offset) {
@@ -110,6 +111,7 @@ body {
     [class*='or lower hidden']:not(.computer):not(.tablet):not(.mobile) {
       display: none !important;
     }
+
     #page-document {
       width: unset !important;
       max-width: unset !important;
@@ -134,8 +136,8 @@ body {
 }
 
 /* Hack for escape the blocks container in blocks full width */
-[class~="view-defaultview"] [id="page-document"] > .full-width,
-[class~="view-viewview"] [id="page-document"] > .full-width {
+[class~='view-defaultview'] [id='page-document'] > .full-width,
+[class~='view-viewview'] [id='page-document'] > .full-width {
   max-width: initial !important;
 }
 
@@ -145,21 +147,30 @@ body {
   @sidebarWidthCSS: var(--sidebar-width, 0px);
   @scrollbarWidthCSS: var(--scrollbar-width, @scrollbarWidth);
   position: relative;
-  width: calc(100vw - @toolbarWidthCSS - @sidebarWidthCSS - @scrollbarWidthCSS) !important;
   right: 50%;
   left: 50%;
+  width: calc(
+    100vw - @toolbarWidthCSS - @sidebarWidthCSS - @scrollbarWidthCSS
+  ) !important;
   max-width: initial !important;
-  margin-left: calc(-50vw + (@toolbarWidthCSS + @sidebarWidthCSS + @scrollbarWidthCSS) / 2) !important;
-  margin-right: calc(-50vw + (@toolbarWidthCSS + @sidebarWidthCSS + @scrollbarWidthCSS) / 2) !important;
+  margin-right: calc(
+    -50vw + (@toolbarWidthCSS + @sidebarWidthCSS + @scrollbarWidthCSS) / 2
+  ) !important;
+  margin-left: calc(
+    -50vw + (@toolbarWidthCSS + @sidebarWidthCSS + @scrollbarWidthCSS) / 2
+  ) !important;
 }
 
 .has--size--full:not(.block-editor-columnsBlock) .ui.grid {
-  margin-left: 0;
   margin-right: 0;
+  margin-left: 0;
 }
-.has--size--full:not(.block-editor-columnsBlock) .ui.grid .column-blocks-wrapper {
-  padding-left: 0;
+
+.has--size--full:not(.block-editor-columnsBlock)
+  .ui.grid
+  .column-blocks-wrapper {
   padding-right: 0;
+  padding-left: 0;
 }
 
 // tweak size of full to take into account toolbar open or collapsed
@@ -168,35 +179,32 @@ body {
     width: calc(100vw - 96px) !important;
   }
 
-  #page-add [class*="block-editor-"].has--size--full .block.inner,
-  #page-edit [class*="block-editor-"].has--size--full .column-grid {
-    width: calc(100vw - 471px) !important;
-    left: calc(50% + 240px);
+  #page-add [class*='block-editor-'].has--size--full .block.inner,
+  #page-edit [class*='block-editor-'].has--size--full .column-grid {
     position: relative;
     right: 50%;
+    left: calc(50% + 240px);
+    width: calc(100vw - 471px) !important;
     max-width: initial !important;
     margin-right: -50vw !important;
     margin-left: -50vw !important;
-
   }
 
   .has-toolbar-collapsed .has--size--full:not(.block-editor-columnsBlock) {
     width: calc(100vw - 37px) !important;
   }
-
 }
 
 // when we have no hover we have touch where there is no always visible
 // scrollbar
 @media screen and (min-width: 768px) and (hover: none) {
   .has-toolbar .has--size--full:not(.block-editor-columnsBlock) {
-    width: calc(100vw - 80px) !important;
     left: calc(50% + 40px);
+    width: calc(100vw - 80px) !important;
   }
 
   .has-toolbar-collapsed .has--size--full:not(.block-editor-columnsBlock) {
-    width: calc(100vw - 20px) !important;
     left: calc(50% + 12px);
+    width: calc(100vw - 20px) !important;
   }
-
 }
