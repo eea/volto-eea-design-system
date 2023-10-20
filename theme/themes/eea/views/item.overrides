@@ -149,6 +149,7 @@
 // Stackable items that have image above content
 .ui.items.row .item.stackable {
   display: grid;
+  justify-content: center; // center text with icon
 
   .image,
   i.icon {
