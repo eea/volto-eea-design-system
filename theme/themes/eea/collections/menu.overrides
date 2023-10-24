@@ -437,6 +437,11 @@
   --text-color: @grey;
 }
 
+.brown.inverted.menu {
+  --bg-color: @brown;
+  --text-color: @brown;
+}
+
 .black.inverted.menu {
   --bg-color: @black;
   --text-color: @black;
