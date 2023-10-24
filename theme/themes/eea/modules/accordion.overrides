@@ -96,9 +96,9 @@
   &.filter-listing {
     .title {
       .icon {
+        margin-left: @filterListingIconMarginLeft !important;
         font-size: @filterListingIconFontSize;
         line-height: @filterListingIconLineHeight;
-        margin-left: @filterListingIconMarginLeft !important;
       }
     }
   }
@@ -155,12 +155,16 @@
 /* Primary */
 .ui.accordion.primary > .active.title,
 .ui.accordion.primary.inverted > .title,
-.ui.accordion.primary > .filter {
+.ui.accordion.primary > .filter,
+.ui.accordion.secondary.primary > .active.title,
+.ui.accordion.secondary.primary.inverted > .title,
+.ui.accordion.secondary.primary > .filter {
   --bg-color: @primaryColorCSSVar;
 }
 
 .ui.accordion.primary:not(.inverted) > .title:not(.active, .filter):hover,
-.ui.accordion.primary:not(.inverted) > .title:not(.active, .filter):focus-visible {
+.ui.accordion.primary:not(.inverted)
+  > .title:not(.active, .filter):focus-visible {
   --text-color-hover: @primaryColorCSSVar;
 }
 
@@ -172,19 +176,24 @@
 }
 
 .ui.accordion.secondary:not(.inverted) > .title:not(.active, .filter):hover,
-.ui.accordion.secondary:not(.inverted) > .title:not(.active, .filter):focus-visible {
+.ui.accordion.secondary:not(.inverted)
+  > .title:not(.active, .filter):focus-visible {
   --text-color-hover: @secondaryColorCSSVar;
 }
 
 /* Tertiary */
 .ui.accordion.tertiary > .active.title,
 .ui.accordion.tertiary.inverted > .title,
-.ui.accordion.tertiary > .filter {
+.ui.accordion.tertiary > .filter,
+.ui.accordion.secondary.tertiary > .active.title,
+.ui.accordion.secondary.tertiary.inverted > .title,
+.ui.accordion.secondary.tertiary > .filter {
   --bg-color: @tertiaryColorCSSVar;
 }
 
 .ui.accordion.tertiary:not(.inverted) > .title:not(.active, .filter):hover,
-.ui.accordion.tertiary:not(.inverted) > .title:not(.active, .filter):focus-visible {
+.ui.accordion.tertiary:not(.inverted)
+  > .title:not(.active, .filter):focus-visible {
   --text-color-hover: @tertiaryColorCSSVar;
 }
 

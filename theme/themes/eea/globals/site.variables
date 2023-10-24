@@ -296,9 +296,6 @@
 /*-------------------
   Pastanaga Toolbar
 --------------------*/
-// legacy variable names kept for tests and older volto versions use the toolbar variables from now on
-@toolbalWidth: 80px;
-@toolbalWidthMin: 20px;
 
 @toolbarWidth: 80px;
 @toolbarWidthMin: 20px;
@@ -618,7 +615,7 @@
 @selectedTextColor           : rgba(0, 0, 0, 0.95);
 @disabledTextColor           : rgba(0, 0, 0, 0.2);
 
-@invertedTextColor           : @white;
+@invertedTextColor           : rgba(255, 255, 255, 0.9);
 @invertedMutedTextColor      : rgba(255, 255, 255, 0.8);
 @invertedLightTextColor      : rgba(255, 255, 255, 0.7);
 @invertedUnselectedTextColor : rgba(255, 255, 255, 0.5);

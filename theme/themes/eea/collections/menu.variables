@@ -288,7 +288,7 @@
 @secondaryPointingItemMaxWidth: 15.625rem;
 
 /* Inverted Secondary */
-@secondaryInvertedColor: @white;
+@secondaryInvertedColor: @invertedTextColor;
 
 @secondaryInvertedHoverBackground: @strongTransparentBlack;
 @secondaryInvertedHoverColor: @invertedSelectedTextColor;

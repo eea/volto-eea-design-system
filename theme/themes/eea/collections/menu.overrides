@@ -294,7 +294,6 @@
   box-shadow: none;
 }
 
-
 .ui.secondary.vertical.menu > .item,
 .ui.vertical.menu .item {
   padding: @verticalItemPadding;
@@ -444,6 +443,10 @@
 }
 
 .ui.secondary.inverted.menu {
+  --inverted-text-color: @invertedItemTextColor;
+  --inverted-hover-text-color: @white;
+  --inverted-bg-color: var(--bg-color, @secondaryColorCSSVar);
+  --inverted-secondary-border-color: @secondaryPointingInvertedBorderColor;
   background-color: var(--bg-color, @secondaryColorCSSVar);
 }
 
