@@ -98,6 +98,7 @@
 .tabs-block {
   --text-color: @textColor;
 }
+
 .blocks-chooser {
   .searchbox {
     height: auto !important;
@@ -157,6 +158,13 @@
   .tabs-accessibility .RRT__panel {
     --bg-color: @white;
   }
+
+  // remove border from secondary active item so that when we use color
+  // it doesn't show a different color from the active background
+  .ui.secondary.inverted.menu .active.item {
+    border-color: transparent !important;
+  }
+
   .border-top {
     border: none !important;
     border-top: 0.0625rem solid @midGray !important;

@@ -449,6 +449,7 @@
 
 .ui.secondary.inverted.menu {
   --inverted-text-color: @invertedItemTextColor;
+  --inverted-active-text-color: @white;
   --inverted-hover-text-color: @white;
   --inverted-bg-color: var(--bg-color, @secondaryColorCSSVar);
   --inverted-secondary-border-color: @secondaryPointingInvertedBorderColor;
