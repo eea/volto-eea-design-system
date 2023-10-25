@@ -154,6 +154,11 @@
 
 // Tabs block border left/top
 .tabs-block {
+  // we don't want to show the active background color on the eea tabs
+  .tabs-accessibility {
+    --tab-active-bg-color: transparent;
+  }
+
   // make accordion transformed from rrt_tabs use same color bg as tabs
   .tabs-accessibility .RRT__panel {
     --bg-color: @white;

@@ -270,8 +270,8 @@
 
 @secondaryPointingHoverTextColor: var(--text-color-hover, @textColor);
 
-@secondaryPointingActiveBorderColor: @secondaryColorCSSVar;
-@secondaryPointingActiveTextColor: @secondaryColorCSSVar;
+@secondaryPointingActiveBorderColor: var(--text-color, @secondaryColor);
+@secondaryPointingActiveTextColor: var(--text-color, @secondaryColor);
 @secondaryPointingActiveFontWeight: @normal;
 
 @secondaryPointingActiveDropdownBorderColor: transparent;

@@ -373,6 +373,10 @@
   --text-color: @primaryColorCSSVar;
 }
 
+.primary.secondary.menu {
+  --text-color-secondary: @primaryColorCSSVar;
+}
+
 .primary.inverted.menu {
   --bg-color: @primaryColorCSSVar;
 }
@@ -442,22 +446,30 @@
   --text-color: @brown;
 }
 
+.black.menu,
 .black.inverted.menu {
   --bg-color: @black;
   --text-color: @black;
 }
 
-.ui.secondary.inverted.menu {
-  --inverted-text-color: @invertedItemTextColor;
-  --inverted-active-text-color: @white;
-  --inverted-hover-text-color: @white;
-  --inverted-bg-color: var(--bg-color, @secondaryColorCSSVar);
-  --inverted-secondary-border-color: @secondaryPointingInvertedBorderColor;
-  background-color: var(--bg-color, @secondaryColorCSSVar);
+.ui.inverted.menu {
+  --tab-inverted-text-color: @invertedItemTextColor;
+  --tab-inverted-active-text-color: @white;
+  --tab-inverted-hover-text-color: @white;
+  --tab-inverted-bg-color: var(--bg-color, @secondaryColorCSSVar);
+  --tab-inverted-secondary-active-border-color: @secondaryPointingInvertedBorderColor;
+}
+
+.ui.secondary.pointing.menu {
+  background-color: var(--tab-inverted-bg-color);
 }
 
 .tertiary.menu {
   --text-color: @tertiaryColorCSSVar;
+}
+
+.tertiary.secondary.menu {
+  --text-color-secondary: @tertiaryColorCSSVar;
 }
 
 .menu.inverted {
