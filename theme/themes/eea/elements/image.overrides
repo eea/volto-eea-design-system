@@ -48,7 +48,6 @@
   width: @massiveWidth;
 }
 
-
 /*--------------
   Image block float changes
 ---------------*/
@@ -67,18 +66,19 @@
 .block.image.align.left {
   img {
     max-width: 100% !important;
-    float: none !important;
     margin: 0 !important;
+    float: none !important;
   }
 }
 
 /* edit page fixes for float issues */
-#page-edit  .image {
+#page-edit .image {
   max-width: 100%;
   min-height: @imageMinHeight;
 }
-#page-edit  .image.left,
-#page-edit  .image.right,
+
+#page-edit .image.left,
+#page-edit .image.right,
 #page-document > .image.left,
 #page-document > .image.right {
   float: none;
@@ -123,4 +123,3 @@
 .image.align:not(.full, .center) .image-block-container.small {
   max-width: @imageAlignSmallMaxWidth;
 }
-
