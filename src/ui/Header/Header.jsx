@@ -15,7 +15,7 @@ import burgerIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/asse
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
 import PropTypes from 'prop-types';
-
+import _ from 'lodash';
 import { isInternalURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 
@@ -25,7 +25,11 @@ Header.propTypes = {
 };
 
 function Header({ children }) {
-  return <div className="eea header">{children}</div>;
+  return (
+    <header className="eea header" aria-label={'Site'}>
+      {children}
+    </header>
+  );
 }
 
 const TopHeader = ({ children }) => (
@@ -324,16 +328,13 @@ const Main = ({
                 <button
                   className="search-action"
                   onClick={searchOnClick}
-                  tabIndex="0"
-                  aria-pressed="false"
-                  aria-haspopup="true"
                   aria-expanded={searchIsActive}
                   ref={searchButtonRef}
                 >
                   {/* <Icon name={!state.activeSearch ? 'search' : 'close'} /> */}
                   <Image
                     src={!searchIsActive ? `${searchIcon}` : `${closeIcon}`}
-                    alt="Search"
+                    alt="Global search"
                   />
                 </button>
               )}
@@ -345,7 +346,7 @@ const Main = ({
               >
                 <Image
                   src={burger === 'open' ? `${closeIcon}` : `${burgerIcon}`}
-                  alt="Menu"
+                  alt="Menu navigation"
                 />
               </Header.BurgerAction>
             </div>
@@ -378,9 +379,7 @@ const BurgerAction = React.forwardRef((props, ref) => (
   <button
     ref={ref}
     className={`burger-action ${props.className}`}
-    tabIndex="0"
-    aria-pressed="false"
-    aria-haspopup="true"
+    {..._.omit(props, ['onClick', 'children', 'className', 'ref'])}
     onClick={props.onClick}
   >
     {props.children}
