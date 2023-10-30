@@ -26,7 +26,12 @@ const socialPlatforms = {
 };
 
 export const getImageSource = (image) => {
+  if (image?.data && image?.encoding === 'base64') {
+    return `data:${image.contentType};base64,${image.data}`;
+  }
   if (image?.scales?.huge) return flattenToAppURL(image.scales.huge.download);
+  if (image?.scales?.great) return flattenToAppURL(image.scales.great.download);
+  if (image?.scales?.large) return flattenToAppURL(image.scales.large.download);
   return null;
 };
 

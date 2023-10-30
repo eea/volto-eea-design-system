@@ -10,8 +10,8 @@
 
 @media print {
   .ui.basic.segment.content-area {
-    margin-top: 0;
     padding-top: 0;
+    margin-top: 0;
   }
 }
 
@@ -33,9 +33,9 @@
 // eea add .form class for inline form with booleans, the segment doesn't have form class
 .form .segment,
 .ui.form.segment {
-//  // commented to restore padding to a list of toggle inputs within field-wrapper-hideContentType
-//  padding: 0;
-//
+  //  // commented to restore padding to a list of toggle inputs within field-wrapper-hideContentType
+  //  padding: 0;
+  //
   .ui.grid > .row {
     padding-top: 0;
     padding-bottom: 0;

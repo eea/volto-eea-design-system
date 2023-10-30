@@ -1,4 +1,4 @@
-export useClickOutside from './useClickOutside';
-export usePrevious from './usePrevious';
-export useFirstVisited from './useFirstVisited';
-export handleEnterKeyPress from './eventHandlers';
+export { default as useClickOutside } from './useClickOutside';
+export { default as usePrevious } from './usePrevious';
+export { default as useFirstVisited } from './useFirstVisited';
+export { default as handleEnterKeyPress } from './eventHandlers';

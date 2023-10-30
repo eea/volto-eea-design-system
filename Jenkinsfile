@@ -10,7 +10,7 @@ pipeline {
         NAMESPACE = "@eeacms"
         SONARQUBE_TAGS = "volto.eea.europa.eu,www.eea.europa.eu-ims,demo-www.eea.europa.eu,prod-www.eea.europa.eu,climate-adapt.eea.europa.eu,climate-advisory-board.devel4cph.eea.europa.eu,climate-advisory-board.europa.eu,www.eea.europa.eu-en"
         DEPENDENCIES = ""
-        VOLTO = ""
+        VOLTO = "16"
     }
 
   stages {
@@ -67,14 +67,17 @@ pipeline {
 
     stage('Tests') {
       when {
-        allOf {
-          environment name: 'CHANGE_ID', value: ''
-          anyOf {
-            allOf {
+        anyOf {
+          allOf {
+            not { environment name: 'CHANGE_ID', value: '' }
+            environment name: 'CHANGE_TARGET', value: 'develop'
+          }
+          allOf {
+            environment name: 'CHANGE_ID', value: ''
+            anyOf {
               not { changelog '.*^Automated release [0-9\\.]+$' }
-              not { changelog '.*^Autobuild of docusaurus docs$'}
+              branch 'master'
             }
-           branch 'master'
           }
         }
       }
@@ -118,14 +121,17 @@ pipeline {
 
     stage('Integration tests') {
       when {
-        allOf {
-          environment name: 'CHANGE_ID', value: ''
-          anyOf {
-            allOf {
+        anyOf {
+          allOf {
+            not { environment name: 'CHANGE_ID', value: '' }
+            environment name: 'CHANGE_TARGET', value: 'develop'
+          }
+          allOf {
+            environment name: 'CHANGE_ID', value: ''
+            anyOf {
               not { changelog '.*^Automated release [0-9\\.]+$' }
-              not { changelog '.*^Autobuild of docusaurus docs$' }
+              branch 'master'
             }
-           branch 'master'
           }
         }
       }
@@ -178,14 +184,19 @@ pipeline {
 
     stage('Report to SonarQube') {
       when {
-        allOf {
-          environment name: 'CHANGE_ID', value: ''
-          anyOf {
-            branch 'master'
-            allOf {
-              branch 'develop'
-              not { changelog '.*^Automated release [0-9\\.]+$' }
-              not { changelog '.*^Autobuild of docusaurus docs$' }
+        anyOf {
+          allOf {
+            not { environment name: 'CHANGE_ID', value: '' }
+            environment name: 'CHANGE_TARGET', value: 'develop'
+          }
+          allOf {
+            environment name: 'CHANGE_ID', value: ''
+            anyOf {
+              allOf {
+                branch 'develop'
+                not { changelog '.*^Automated release [0-9\\.]+$' }
+              }
+              branch 'master'
             }
           }
         }
@@ -212,10 +223,16 @@ pipeline {
 
     stage('SonarQube compare to master') {
       when {
-        allOf {
-          environment name: 'CHANGE_ID', value: ''
-          branch 'develop'
-          not { changelog '.*^Automated release [0-9\\.]+$' }
+        anyOf {
+          allOf {
+            not { environment name: 'CHANGE_ID', value: '' }
+            environment name: 'CHANGE_TARGET', value: 'develop'
+          }
+          allOf {
+            environment name: 'CHANGE_ID', value: ''
+            branch 'develop'
+            not { changelog '.*^Automated release [0-9\\.]+$' }
+          }
         }
       }
       steps {

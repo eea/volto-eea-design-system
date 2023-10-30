@@ -124,7 +124,7 @@
 --------------------*/
 
 /* Global focus-visible for accessibility */
-@focusVisibleOutline: .2rem auto var(--focus-visible, @blue-3);
+@focusVisibleOutline: .2rem auto var(--focus-visible, @blue-2);
 
 /* Used on inputs, textarea etc */
 @focusedFormBorderColor: @secondaryColor;
@@ -296,9 +296,6 @@
 /*-------------------
   Pastanaga Toolbar
 --------------------*/
-// legacy variable names kept for tests and older volto versions use the toolbar variables from now on
-@toolbalWidth: 80px;
-@toolbalWidthMin: 20px;
 
 @toolbarWidth: 80px;
 @toolbarWidthMin: 20px;
@@ -626,7 +623,7 @@
 @invertedPressedTextColor    : rgba(255, 255, 255, 1);
 @invertedSelectedTextColor   : rgba(255, 255, 255, 1);
 @invertedDisabledTextColor   : rgba(255, 255, 255, 0.2);
-// check volto core to rename this lowercased variable
+// check volto core to rename this lowercase variable
 @inverteditemlinkcolor       : @white;
 @invertedItemLinkColor       : @white;
 
