@@ -163,8 +163,8 @@
 }
 
 .ui.accordion.primary:not(.inverted) > .title:not(.active, .filter):hover,
-.ui.accordion.primary:not(.inverted)
-  > .title:not(.active, .filter):focus-visible {
+.ui.accordion.primary:not(.inverted),
+> .title:not(.active, .filter):focus-visible {
   --text-color-hover: @primaryColorCSSVar;
 }
 
@@ -176,8 +176,8 @@
 }
 
 .ui.accordion.secondary:not(.inverted) > .title:not(.active, .filter):hover,
-.ui.accordion.secondary:not(.inverted)
-  > .title:not(.active, .filter):focus-visible {
+.ui.accordion.secondary:not(.inverted),
+> .title:not(.active, .filter):focus-visible {
   --text-color-hover: @secondaryColorCSSVar;
 }
 
@@ -192,8 +192,8 @@
 }
 
 .ui.accordion.tertiary:not(.inverted) > .title:not(.active, .filter):hover,
-.ui.accordion.tertiary:not(.inverted)
-  > .title:not(.active, .filter):focus-visible {
+.ui.accordion.tertiary:not(.inverted),
+> .title:not(.active, .filter):focus-visible {
   --text-color-hover: @tertiaryColorCSSVar;
 }
 
