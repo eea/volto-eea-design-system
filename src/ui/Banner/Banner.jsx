@@ -72,23 +72,14 @@ function Banner({ image, metadata, properties, children, ...rest }) {
 }
 
 Banner.Action = React.forwardRef(function (
-  { id, title, titleClass, icon, onClick, className, color, ...rest },
+  { title, titleClass, icon, onClick, className, color, ...rest },
   ref,
 ) {
   return (
     <div className="action" ref={ref}>
-      <Button
-        className={className}
-        basic
-        icon
-        inverted
-        onClick={onClick}
-        title={id}
-      >
-        <Icon className={icon} color={color} aria-labelledby={id}></Icon>
-        <span className={titleClass || 'mobile hidden'} id={id}>
-          {title}
-        </span>
+      <Button className={className} basic icon inverted onClick={onClick}>
+        <Icon className={icon} color={color} title={title}></Icon>
+        <span className={titleClass || 'mobile-sr-only'}>{title}</span>
       </Button>
     </div>
   );
