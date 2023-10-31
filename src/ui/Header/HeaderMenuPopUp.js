@@ -202,6 +202,7 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
                 panels={firstLevelPanels}
                 key={index}
                 defaultActiveIndex={defaultIndex === index ? 0 : -1}
+                className={'ui'}
               />
             );
           })}
