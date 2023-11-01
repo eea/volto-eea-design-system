@@ -305,7 +305,7 @@
 }
 
 .ui.vertical.menu .item.active {
-  border-right: @verticalItemActiveBorder;
+  border: @verticalItemActiveBorder;
 }
 
 /* Tab active item custom border design */
@@ -460,6 +460,7 @@
   --tab-inverted-secondary-active-border-color: @secondaryPointingInvertedBorderColor;
 }
 
+.ui.secondary.inverted.menu,
 .ui.secondary.pointing.menu {
   background-color: var(--tab-inverted-bg-color);
 }
@@ -484,7 +485,7 @@
   --bg-color: @tertiaryColorCSSVar;
 }
 
-.ui.pointing.menu.inverted .active.title {
+.ui.menu.inverted .active.title {
   background-color: @invertedColoredActiveBackground;
 }
 
