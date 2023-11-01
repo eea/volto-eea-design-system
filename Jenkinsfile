@@ -63,6 +63,7 @@ pipeline {
             not { environment name: 'CHANGE_ID', value: '' }
             environment name: 'CHANGE_TARGET', value: 'develop'
             environment name: 'SKIP_TESTS', value: ''
+            environment name: 'GITHUB_COMMENT', value: ''
           }
           allOf {
             environment name: 'CHANGE_ID', value: ''
@@ -214,6 +215,7 @@ pipeline {
         anyOf {
           allOf {
             not { environment name: 'CHANGE_ID', value: '' }
+            environment name: 'GITHUB_COMMENT', value: ''
             environment name: 'CHANGE_TARGET', value: 'develop'
           }
           allOf {
@@ -249,6 +251,7 @@ pipeline {
         anyOf {
           allOf {
             not { environment name: 'CHANGE_ID', value: '' }
+            environment name: 'GITHUB_COMMENT', value: ''
             environment name: 'CHANGE_TARGET', value: 'develop'
           }
           allOf {
@@ -367,9 +370,8 @@ pipeline {
 
     stage('Pull Request') {
       when {
-        not {
-          environment name: 'CHANGE_ID', value: ''
-        }
+        not { environment name: 'CHANGE_ID', value: '' }
+        environment name: 'GITHUB_COMMENT', value: ''
         environment name: 'CHANGE_TARGET', value: 'master'
       }
       steps {
