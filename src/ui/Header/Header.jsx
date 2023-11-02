@@ -55,6 +55,7 @@ const onKeyDownHandler = (event) => {
 const TopDropdownMenu = ({
   children,
   className,
+  classNameHeader,
   icon,
   hasLanguageDropdown = false,
   id,
@@ -76,8 +77,7 @@ const TopDropdownMenu = ({
               className={className}
               text={mobileText || text}
               icon={icon || 'chevron down'}
-              aria-label="dropdown"
-              lazyLoad
+              aria-label={mobileText || text}
               closeOnChange={true}
               closeOnBlur={false}
               closeOnEscape={true}
@@ -91,10 +91,13 @@ const TopDropdownMenu = ({
           <Dropdown
             id={id}
             className={className}
-            text={mobileText || text}
+            text={() => (
+              <div className={`divider text ${classNameHeader}`}>
+                {mobileText || text}
+              </div>
+            )}
             icon={icon || 'chevron down'}
-            aria-label="dropdown"
-            lazyLoad
+            aria-label={mobileText || text}
             closeOnChange={true}
             closeOnBlur={false}
             closeOnEscape={true}
