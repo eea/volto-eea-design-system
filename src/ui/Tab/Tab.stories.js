@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Tab, Container, Menu } from 'semantic-ui-react';
+import { Tab, Container, Menu, Icon } from 'semantic-ui-react';
+import Tabs from 'react-responsive-tabs';
+import { withResizeDetector } from 'react-resize-detector';
 
 export default {
   title: 'Components/Tab',
@@ -259,4 +261,118 @@ Vertical.argTypes = {
       },
     },
   },
+};
+
+const TabsAccTemplate = (args, panes) => {
+  const { width } = args;
+  const [activeAccTabIndex, setActiveAccTabIndex] = useState(0);
+  const transformWidth = 800;
+  const tabsContainer = React.useRef();
+  const [mounted, setMounted] = React.useState(false);
+  const [initialWidth, setInitialWidth] = React.useState(transformWidth);
+  const tabs_width = tabsContainer?.current?.state?.blockWidth || initialWidth;
+  const [isAccordion, setIsAccordion] = React.useState(
+    tabs_width < initialWidth,
+  );
+
+  const items = args.panes.map((tab, index) => {
+    const title = tab.menuItem;
+    const defaultTitle = `Tab ${index + 1}`;
+    const active = activeAccTabIndex === index;
+
+    return {
+      title: (
+        <>
+          {active ? (
+            <Icon className="ri-arrow-up-s-line" />
+          ) : (
+            <Icon className="ri-arrow-down-s-line" />
+          )}
+          <span>{title || defaultTitle} </span>
+        </>
+      ),
+      getContent: () => tab.render(),
+      key: index,
+      tabClassName: `${
+        isAccordion ? 'title accordion-title' : 'ui item title'
+      } ${active ? 'active' : ''}`,
+      panelClassName: `ui attached segment tab content ${
+        active ? 'active' : ''
+      }`,
+    };
+  });
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  React.useEffect(() => {
+    if (!mounted) return;
+    const { blockWidth, tabsTotalWidth } = tabsContainer.current?.state || {};
+    setInitialWidth(
+      tabsTotalWidth < blockWidth ? tabsTotalWidth + 1 : blockWidth + 1,
+    );
+  }, [mounted]);
+
+  React.useEffect(() => {
+    setIsAccordion(width <= initialWidth);
+  }, [width, initialWidth]);
+
+  React.useLayoutEffect(() => {
+    if (document.activeElement.role !== 'tab') return;
+    if (document.getElementsByClassName('tab active').length > 0) {
+      let activeTabDiv = document.getElementsByClassName('tab active')[0];
+      activeTabDiv.setAttribute('tabindex', '0');
+      activeTabDiv.setAttribute('className', 'accessibility-accordion-tab');
+      activeTabDiv.focus();
+    }
+  }, [activeAccTabIndex]);
+
+  return (
+    <Container>
+      <div className="tabs-block accordion light flex-start">
+        <div
+          tabIndex="0"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              const focusedElement = document.activeElement;
+              if (focusedElement) focusedElement.click();
+            }
+          }}
+          role="tab"
+        >
+          <Tabs
+            //id={args.id}
+            ref={tabsContainer}
+            transformWidth={initialWidth}
+            selectedTabKey={activeAccTabIndex}
+            unmountOnExit={true}
+            items={items}
+            onChange={(tab) => {
+              const { blockWidth } = tabsContainer.current?.state || {};
+              if (tab !== activeAccTabIndex) {
+                setActiveAccTabIndex(tab);
+              } else if (blockWidth <= initialWidth) {
+                setActiveAccTabIndex(null);
+              }
+            }}
+            tabsWrapperClass={
+              isAccordion
+                ? 'tabs-accordion-icon-right ui accordion tabs-accessibility light pointing secondary'
+                : 'tabs-accordion-icon-right ui pointing secondary menu tabs-accessibility'
+            }
+            showMore={false}
+          />
+        </div>
+      </div>
+    </Container>
+  );
+};
+
+export const TabsAccordion = withResizeDetector(TabsAccTemplate.bind({}));
+TabsAccordion.args = {
+  renderActive: true,
+  id: 'tab-accordion',
+  panes: [...panes],
 };
