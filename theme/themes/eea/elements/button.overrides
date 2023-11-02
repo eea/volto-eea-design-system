@@ -116,10 +116,10 @@ button.ui.button.text,
 button.ui.buttons.text,
 a.ui.button.text,
 p.ui.button {
+  padding: @textButtonPadding;
   background-color: @textButtonBackground;
   color: @primaryColor;
   text-decoration: underline;
-  padding: @textButtonPadding;
 
   &:hover,
   &:active,

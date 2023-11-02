@@ -58,16 +58,20 @@ const logoProps = {
 };
 
 const links = [
-  { title: 'EEA Main Portal', href: '/#' },
-  { title: 'Biodiversity Information System for Europe', href: '/#' },
-  { title: 'Climate Adaptation Platform', href: '/#' },
-  { title: 'Copernicus in situ component', href: '/#' },
-  { title: 'Copernicus land monitoring', href: '/#' },
+  { title: 'European Environment Agency website', href: '/#' },
+  { title: 'WISE marine - Marine information system for Europe', href: '/#' },
+  {
+    title: 'WISE freshwater - Freshwater information system for Europe',
+    href: '/#',
+  },
+  { title: 'BISE - Biodiversity information system for Europe', href: '/#' },
+  { title: 'FISE - Forest information system for Europe', href: '/#' },
+  { title: 'European Climate and health observatory', href: '/#' },
+  { title: 'ClimateADAPT', href: '/#' },
   { title: 'European Industrial Emissions Portal', href: '/#' },
-  { title: 'Forest Information System for Europe', href: '/#' },
-  { title: 'Information Platform for Chemical Monitoring', href: '/#' },
-  { title: 'Marine Water Information System for Europe', href: '/#' },
-  { title: 'Fresh Water Information System for Europe', href: '/#' },
+  { title: 'Climate and Energy in the EU', href: '/#' },
+  { title: 'Copernicus Land Monitoring Service', href: '/#' },
+  { title: 'Copernicus InSitu', href: '/#' },
 ];
 
 const languages = [
@@ -1234,7 +1238,7 @@ const Template = (args) => {
       <Header>
         <Header.TopHeader>
           <Header.TopItem className="official-union">
-            <Image src={eeaFlag} alt="eea flag"></Image>
+            <Image src={eeaFlag} alt="European Union flag"></Image>
             <Header.TopDropdownMenu
               text="An official website of the European Union | How do you know?"
               tabletText="An official website of the European Union"

@@ -203,7 +203,6 @@
   }
 }
 
-
 /*************/
 /* EEA Theme */
 /*************/
@@ -280,33 +279,220 @@
     Tabs
 ***********/
 
+.vertical.border-left {
+  --vertical-menu-border: @verticalMenuBorderOnLeftSide;
+  --vertical-item-border: @verticalItemBorderOnLeftSide;
+  --vertical-item-border-style: @verticalItemBorderStyleOnLeft;
+  --vertical-item-margin: @verticalItemMarginOnLeft;
+}
+
+.ui.menu.vertical {
+  border-width: @verticalMenuBorderWidth !important;
+  border-style: @verticalItemBorderStyle !important;
+  border-color: @verticalMenuBorderColor !important;
+  margin: 0;
+  box-shadow: none;
+}
+
+.ui.secondary.vertical.menu > .item,
+.ui.vertical.menu .item {
+  padding: @verticalItemPadding;
+  border-width: @verticalItemBorder;
+  border-style: @verticalItemBorderStyle;
+  border-color: transparent;
+  margin: @verticalItemMargin;
+  word-break: break-word;
+}
+
+.ui.vertical.menu .item.active {
+  border-right: @verticalItemActiveBorder;
+}
+
 /* Tab active item custom border design */
-.ui.secondary.pointing.menu:not(.vertical):not(.pagination) .active.item,
-.ui.secondary.pointing.menu:not(.vertical):not(.pagination) .item:active {
-  padding: (@secondaryPointingItemVerticalPadding - @1px)
-    @secondaryPointingItemHorizontalPadding;
-  border-bottom: @secondaryPointingActiveBorderWidth solid @secondaryColor;
-  margin-bottom: -@secondaryPointingctiveItemMarginBottom;
+.ui.menu[class*='ary']:not(.vertical, .inverted):not(.pagination) .item.active,
+.ui.menu[class*='ary']:not(.vertical, .inverted):not(.pagination) .item:active {
+  border-bottom: @secondaryPointingActiveBorderWidth solid
+    var(--text-color, transparent);
+  margin-bottom: -@secondaryPointingActiveItemMarginBottom;
+}
+
+.block-editor-tabs_block .ui.menu a.active.item,
+.block-editor-tabs_block .ui.menu a.item:hover {
+  background-color: transparent !important;
+}
+
+.block-editor-tabs_block .ui.inverted.menu .item:not(a):hover {
+  background-color: @strongTransparentBlack;
+}
+
+.tabs-block .ui.pointing.menu .item::after {
+  display: none;
+}
+
+.ui.menu[class*='ary']:not(.inverted) .ui.item:active {
   color: var(--text-color, @secondaryPointingActiveTextColor);
 }
 
 /* Menu items custom border for responsive issues */
-.ui.secondary.pointing.menu:not(.vertical) {
+.ui.menu[class*='ary']:not(.vertical) {
   position: relative;
-  overflow: auto; // Horizontal scolling of links
+  overflow: auto; // Horizontal scrolling of links
   height: auto; //  height ensures that scrollable region has keyboard access
   padding-bottom: @2px; // Leave room for the active border item
   border-bottom: none; // Border comes from before pseudo-element
-  margin-right: 0em;
-  margin-left: 0em;
+  margin-right: 0;
+  margin-left: 0;
 
-  a.item {
+  .item {
     max-width: @secondaryPointingItemMaxWidth;
+    padding: @secondaryItemVerticalPadding @secondaryItemHorizontalPadding;
     border-bottom: @secondaryPointingItemBorderBottom;
+    margin: @secondaryPointingItemMargin;
   }
 }
 
-.ui.pointing.secondary.menu:not(.vertical):before {
+.ui.menu:not(.inverted) .active.item:hover {
+  background-color: transparent;
+}
+
+.ui.menu .item:hover {
+  cursor: pointer;
+}
+
+.ui.menu[class*='ary']:not(.inverted, .vertical) {
+  border: none;
+  box-shadow: none;
+}
+
+.ui.menu.vertical .item:before,
+.ui.menu[class*='ary'] .item:before {
+  display: none;
+}
+
+.primary.menu {
+  --text-color: @primaryColorCSSVar;
+}
+
+.primary.secondary.menu {
+  --text-color-secondary: @primaryColorCSSVar;
+}
+
+.primary.inverted.menu {
+  --bg-color: @primaryColorCSSVar;
+}
+
+.secondary.menu {
+  --text-color: @secondaryColorCSSVar;
+}
+
+// color options from semantic tabs
+.red.inverted.menu {
+  --bg-color: @red;
+  --text-color: @red;
+}
+
+.orange.inverted.menu {
+  --bg-color: @orange;
+  --text-color: @orange;
+}
+
+.yellow.inverted.menu {
+  --bg-color: @yellow;
+  --text-color: @yellow;
+}
+
+.olive.inverted.menu {
+  --bg-color: @olive;
+  --text-color: @olive;
+}
+
+.green.inverted.menu {
+  --bg-color: @green;
+  --text-color: @green;
+}
+
+.teal.inverted.menu {
+  --bg-color: @teal;
+  --text-color: @teal;
+}
+
+.blue.inverted.menu {
+  --bg-color: @blue;
+  --text-color: @blue;
+}
+
+.violet.inverted.menu {
+  --bg-color: @violet;
+  --text-color: @violet;
+}
+
+.purple.inverted.menu {
+  --bg-color: @purple;
+  --text-color: @purple;
+}
+
+.pink.inverted.menu {
+  --bg-color: @pink;
+  --text-color: @pink;
+}
+
+.grey.inverted.menu {
+  --bg-color: @grey;
+  --text-color: @grey;
+}
+
+.brown.inverted.menu {
+  --bg-color: @brown;
+  --text-color: @brown;
+}
+
+.black.menu,
+.black.inverted.menu {
+  --bg-color: @black;
+  --text-color: @black;
+}
+
+.ui.inverted.menu {
+  --tab-inverted-text-color: @invertedItemTextColor;
+  --tab-inverted-active-text-color: @white;
+  --tab-inverted-hover-text-color: @white;
+  --tab-inverted-bg-color: var(--bg-color, @secondaryColorCSSVar);
+  --tab-inverted-secondary-active-border-color: @secondaryPointingInvertedBorderColor;
+}
+
+.ui.secondary.pointing.menu {
+  background-color: var(--tab-inverted-bg-color);
+}
+
+.tertiary.menu {
+  --text-color: @tertiaryColorCSSVar;
+}
+
+.tertiary.secondary.menu {
+  --text-color-secondary: @tertiaryColorCSSVar;
+}
+
+.menu.inverted {
+  --text-active-color: @white;
+}
+
+.menu.inverted input {
+  --text-color: @white;
+}
+
+.tertiary.inverted.menu {
+  --bg-color: @tertiaryColorCSSVar;
+}
+
+.ui.pointing.menu.inverted .active.title {
+  background-color: @invertedColoredActiveBackground;
+}
+
+.ui.inverted.menu .ui.item.active:hover {
+  background-color: @invertedActiveBackground;
+}
+
+.ui.menu[class*='ary']:not(.vertical):before {
   position: absolute;
   z-index: 0;
   right: 0;
@@ -318,7 +504,7 @@
 }
 
 // edit page, normalize font size of tab headers from the sidebar
-.section-edit .ui.pointing.secondary.menu .item,
-.tabs-wrapper .ui.pointing.secondary.menu .item {
+.section-edit .menu[class*='ary'] .item,
+.tabs-wrapper .menu[class*='ary'] .item {
   font-size: 1.25rem;
 }

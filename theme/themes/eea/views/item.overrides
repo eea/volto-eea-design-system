@@ -57,14 +57,14 @@
       }
 
       .description {
-        color: @defaultItemColor;
-        font-size: @mobileDefaultItemDescriptionFontSize;
-        font-weight: @defaultItemDescriptionFontWeight;
         display: -webkit-box;
         overflow: hidden;
         -webkit-box-orient: vertical;
-        text-overflow: ellipsis;
+        color: @defaultItemColor;
+        font-size: @mobileDefaultItemDescriptionFontSize;
+        font-weight: @defaultItemDescriptionFontWeight;
         -webkit-line-clamp: @defaultItemDescriptionLineClamp;
+        text-overflow: ellipsis;
       }
     }
   }
@@ -149,6 +149,7 @@
 // Stackable items that have image above content
 .ui.items.row .item.stackable {
   display: grid;
+  justify-content: center; // center text with icon
 
   .image,
   i.icon {
@@ -156,8 +157,8 @@
   }
 
   .content {
-    padding-left: @stackableContentPaddingLeft;
     padding-top: @stackableContentPaddingTop;
+    padding-left: @stackableContentPaddingLeft;
   }
 }
 
@@ -176,7 +177,7 @@
   width: var(--flex-item-width, 100%);
 }
 @media only screen and (min-width: @tabletBreakpoint) {
-  .flex-items-wrapper.items-2-columns  .flex-item {
+  .flex-items-wrapper.items-2-columns .flex-item {
     --flex-item-width: calc(@width / 2 - 1%);
   }
 
@@ -192,7 +193,6 @@
     --flex-item-width: calc(@width / 5 - 1%);
   }
 }
-
 
 @media only screen and (max-width: @largestMobileScreen) {
   .ui.items.row > .item {
@@ -224,6 +224,7 @@
       }
     }
   }
+
   .ui.items.row > .item {
     margin: @tabletRowItemMargin;
   }
@@ -253,6 +254,7 @@
       }
     }
   }
+
   .ui.items.row > .item {
     margin: @desktopRowItemMargin;
   }
@@ -269,8 +271,7 @@
 
 .ui.items > .item {
   &.primary,
-  > .icon.primary
-  {
+  > .icon.primary {
     color: @primaryColor;
   }
 
@@ -278,6 +279,7 @@
   > .icon.secondary {
     color: @secondaryColor;
   }
+
   &.tertiary,
   > .icon.tertiary {
     color: @tertiaryColor;

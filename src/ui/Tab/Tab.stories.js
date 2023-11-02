@@ -10,6 +10,16 @@ export default {
     },
   },
   argTypes: {
+    variant: {
+      name: 'Variation',
+      defaultValue: 'secondary',
+      options: ['primary', 'secondary', 'tertiary'],
+      control: { type: 'select' },
+      table: {
+        defaultValue: { summary: 'secondary' },
+        type: { summary: 'string' },
+      },
+    },
     panes: {
       description: 'tab names and content array',
       table: {
@@ -26,11 +36,11 @@ export default {
 
 function TabContent({
   panes,
+  variant,
   renderActive,
-  text,
-  attached,
-  borderless,
+  inverted,
   vertical,
+  pointing,
   fluid,
   grid,
 }) {
@@ -39,10 +49,11 @@ function TabContent({
       panes={panes}
       renderActiveOnly={renderActive}
       menu={{
-        secondary: true,
-        pointing: true,
         vertical: vertical,
+        inverted: inverted,
+        pointing: pointing,
         fluid: fluid,
+        className: variant,
         tabIndex: 0,
       }}
       grid={grid}
@@ -59,6 +70,7 @@ const Template = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   renderActive: false,
+  inverted: false,
   panes: [
     {
       menuItem: 'Tab 1',
@@ -81,8 +93,10 @@ Default.args = {
 
 export const Vertical = Template.bind({});
 Vertical.args = {
+  variant: 'secondary',
   renderActive: true,
   vertical: true,
+  pointing: false,
   fluid: true,
   grid: { paneWidth: 7, tabWidth: 5 },
   panes: [
@@ -165,6 +179,8 @@ Vertical.args = {
 };
 
 Vertical.argTypes = {
+  variant: 'secondary',
+  inverted: false,
   vertical: {
     description: 'vertical tab',
     table: {
