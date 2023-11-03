@@ -202,6 +202,7 @@ const FirstLevelContent = ({ element, renderMenuItem, pathName }) => {
                 panels={firstLevelPanels}
                 key={index}
                 defaultActiveIndex={defaultIndex === index ? 0 : -1}
+                className={'ui'}
               />
             );
           })}
@@ -287,9 +288,7 @@ const NestedAccordion = ({ menuItems, renderMenuItem, pathName }) => {
         aria-expanded={activeIndex === index}
         as="button"
         onClick={() => {
-          if (activeIndex === index) {
-            setActiveIndex(-1);
-          } else setActiveIndex(index);
+          setActiveIndex(activeIndex === index ? -1 : index);
         }}
       >
         {element.title}
