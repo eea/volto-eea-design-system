@@ -263,7 +263,7 @@ Vertical.argTypes = {
   },
 };
 
-const TabsAccTemplate = (args, panes) => {
+const TabsAccTemplate = (args) => {
   const { width } = args;
   const [activeAccTabIndex, setActiveAccTabIndex] = useState(0);
   const transformWidth = 800;
@@ -343,7 +343,6 @@ const TabsAccTemplate = (args, panes) => {
           role="tab"
         >
           <Tabs
-            //id={args.id}
             ref={tabsContainer}
             transformWidth={initialWidth}
             selectedTabKey={activeAccTabIndex}
@@ -357,11 +356,13 @@ const TabsAccTemplate = (args, panes) => {
                 setActiveAccTabIndex(null);
               }
             }}
-            tabsWrapperClass={
+            tabsWrapperClass={`tabs-accessibility ${args.variant} ${
+              args.inverted ? 'inverted' : ''
+            } ${
               isAccordion
-                ? 'tabs-accordion-icon-right ui accordion tabs-accessibility light pointing secondary'
-                : 'tabs-accordion-icon-right ui pointing secondary menu tabs-accessibility'
-            }
+                ? 'tabs-accordion-icon-right ui accordion light pointing'
+                : 'ui menu'
+            }`}
             showMore={false}
           />
         </div>
@@ -372,7 +373,8 @@ const TabsAccTemplate = (args, panes) => {
 
 export const TabsAccordion = withResizeDetector(TabsAccTemplate.bind({}));
 TabsAccordion.args = {
+  variant: 'secondary',
+  inverted: false,
   renderActive: true,
-  id: 'tab-accordion',
   panes: [...panes],
 };
