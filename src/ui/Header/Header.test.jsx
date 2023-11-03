@@ -29,10 +29,7 @@ describe('Header component', () => {
             <p>Test</p>
           </Header.TopItem>
           <Header.TopItem>
-            <Header.TopDropdownMenu
-              hasLanguageDropdown={true}
-              viewportWidth={1000}
-            >
+            <Header.TopDropdownMenu viewportWidth={1000}>
               <div aria-label="language switcher">Language Switcher</div>
             </Header.TopDropdownMenu>
           </Header.TopItem>

@@ -54,10 +54,10 @@ const onKeyDownHandler = (event) => {
 
 const TopDropdownMenu = ({
   children,
+  ariaLabel,
   className,
   classNameHeader,
   icon,
-  hasLanguageDropdown = false,
   id,
   tabletText,
   mobileText,
@@ -68,45 +68,29 @@ const TopDropdownMenu = ({
   const isMobile = viewportWidth < 767;
 
   const Component = ({ mobileText }) => {
+    const headerText = mobileText || text;
+    const label = ariaLabel || headerText;
+
     return (
       <>
-        {children.props['aria-label'] === 'language switcher' ? (
-          hasLanguageDropdown && (
-            <Dropdown
-              id={id}
-              className={className}
-              text={mobileText || text}
-              icon={icon || 'chevron down'}
-              aria-label={mobileText || text}
-              closeOnChange={true}
-              closeOnBlur={false}
-              closeOnEscape={true}
-              openOnFocus={false}
-              onKeyDown={onKeyDownHandler}
-            >
-              <Dropdown.Menu role="option">{children}</Dropdown.Menu>
-            </Dropdown>
-          )
-        ) : (
-          <Dropdown
-            id={id}
-            className={className}
-            text={() => (
-              <div className={`divider text ${classNameHeader}`}>
-                {mobileText || text}
-              </div>
-            )}
-            icon={icon || 'chevron down'}
-            aria-label={mobileText || text}
-            closeOnChange={true}
-            closeOnBlur={false}
-            closeOnEscape={true}
-            openOnFocus={false}
-            onKeyDown={onKeyDownHandler}
-          >
-            <Dropdown.Menu role="option">{children}</Dropdown.Menu>
-          </Dropdown>
-        )}
+        <Dropdown
+          id={id}
+          className={className}
+          text={() => (
+            <div className={`divider text ${classNameHeader}`}>
+              {headerText}
+            </div>
+          )}
+          icon={icon || 'chevron down'}
+          aria-label={label}
+          closeOnChange={true}
+          closeOnBlur={false}
+          closeOnEscape={true}
+          openOnFocus={false}
+          onKeyDown={onKeyDownHandler}
+        >
+          <Dropdown.Menu role="option">{children}</Dropdown.Menu>
+        </Dropdown>
       </>
     );
   };
