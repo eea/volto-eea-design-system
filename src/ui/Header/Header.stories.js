@@ -1246,6 +1246,7 @@ const Template = (args) => {
               icon="chevron down"
               aria-label="dropdown"
               className=""
+              classNameHeader="mobile-sr-only"
               viewportWidth={viewportWidth}
             >
               <div
@@ -1280,7 +1281,7 @@ const Template = (args) => {
               mobileText={mobileLinksMenuTitle}
               viewportWidth={viewportWidth}
             >
-              <div className="wrapper">
+              <div className="wrapper" tabIndex={0} role={'presentation'}>
                 {links.map((item, index) => (
                   <Dropdown.Item key={index}>
                     <a
@@ -1297,47 +1298,49 @@ const Template = (args) => {
             </Header.TopDropdownMenu>
           </Header.TopItem>
 
-          <Header.TopDropdownMenu
-            id="language-switcher"
-            hasLanguageDropdown={hasLanguageDropdown}
-            className="item"
-            text={`${language.toUpperCase()}`}
-            mobileText={`${language.toUpperCase()}`}
-            icon={
-              <Image
-                role="option"
-                src={globeIcon}
-                alt="language dropdown globe icon"
-              ></Image>
-            }
-            viewportWidth={viewportWidth}
-          >
-            <ul
-              className="wrapper language-list"
-              role="listbox"
-              aria-label="language switcher"
+          {hasLanguageDropdown && (
+            <Header.TopDropdownMenu
+              id="language-switcher"
+              className="item"
+              ariaLabel={'language switcher'}
+              text={`${language.toUpperCase()}`}
+              mobileText={`${language.toUpperCase()}`}
+              icon={
+                <Image
+                  role="option"
+                  src={globeIcon}
+                  alt="language dropdown globe icon"
+                ></Image>
+              }
+              viewportWidth={viewportWidth}
             >
-              {languages.map((item, index) => (
-                <Dropdown.Item
-                  as="li"
-                  key={index}
-                  text={
-                    <a
-                      href={'/' + item.code}
-                      onClick={() => setLanguage(item.code)}
-                      tabIndex={0}
-                      className={'language-link'}
-                    >
-                      {item.name}
-                      <span className="country-code">
-                        {item.code.toUpperCase()}
-                      </span>
-                    </a>
-                  }
-                ></Dropdown.Item>
-              ))}
-            </ul>
-          </Header.TopDropdownMenu>
+              <ul
+                className="wrapper language-list"
+                role="listbox"
+                aria-label="language switcher"
+              >
+                {languages.map((item, index) => (
+                  <Dropdown.Item
+                    as="li"
+                    key={index}
+                    text={
+                      <a
+                        href={'/' + item.code}
+                        onClick={() => setLanguage(item.code)}
+                        tabIndex={0}
+                        className={'language-link'}
+                      >
+                        {item.name}
+                        <span className="country-code">
+                          {item.code.toUpperCase()}
+                        </span>
+                      </a>
+                    }
+                  ></Dropdown.Item>
+                ))}
+              </ul>
+            </Header.TopDropdownMenu>
+          )}
         </Header.TopHeader>
         <Header.Main
           transparency={args.transparency}
