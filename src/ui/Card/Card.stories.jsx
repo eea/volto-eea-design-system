@@ -178,6 +178,15 @@ export default {
         defaultValue: { summary: '2' },
       },
     },
+    eventDate: {
+      name: 'Event date',
+      control: { type: 'boolean' },
+      table: {
+        category: 'Content',
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
     cards: {
       name: 'Cards content',
       table: {
@@ -226,6 +235,17 @@ const MetaRight = (args) => (
   <span className="bold text-right">{args.metaRight}</span>
 );
 
+const EventDate = (args) => (
+  <>
+    {args.eventDate && (
+      <span className="event-date">
+        <Icon className="ri-calendar-line" />
+        <span>{args.eventDate}</span>
+      </span>
+    )}
+  </>
+);
+
 const CardTemplate = ({
   variant,
   inverted,
@@ -235,6 +255,7 @@ const CardTemplate = ({
   objectPosition,
   titleMaxLines,
   maxLines,
+  eventDate,
   fluid,
   card,
   hasTags,
@@ -279,6 +300,9 @@ const CardTemplate = ({
       ) : (
         ''
       )}
+
+      {/* Event date */}
+      {eventDate && <EventDate {...card} />}
 
       {/* Description */}
       <Card.Description>{card.description}</Card.Description>
@@ -325,6 +349,7 @@ Default.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
+  eventDate: false,
   numberOfCards: 1,
   fluid: false,
   cards: [...cardModels],
@@ -353,6 +378,7 @@ CardGrid.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
+  eventDate: false,
   fluid: true,
   numberOfCards: 5,
   cards: [...cardModels],
@@ -418,6 +444,11 @@ ImageGrid.argTypes = {
       disable: true,
     },
   },
+  eventDate: {
+    table: {
+      disable: true,
+    },
+  },
   maxLines: {
     table: {
       disable: true,
@@ -446,6 +477,7 @@ FluidGrid.args = {
   titleMaxLines: '2',
   maxLines: '2',
   numberOfCards: 3,
+  eventDate: false,
   fluid: true,
   cards: [...cardModels],
   hasTags: false,
@@ -538,6 +570,7 @@ CarouselCards.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
+  eventDate: false,
   fluid: true,
   settings: {
     dots: true,
@@ -593,6 +626,7 @@ const TeaserCard = ({
   titleMaxLines,
   fluid,
   maxLines,
+  eventDate,
   card,
   hasTags,
   direction,
@@ -632,6 +666,7 @@ const TeaserCard = ({
             <div className="header">
               <a href={card.href}>{card.title}</a>
             </div>
+            {eventDate && <EventDate {...card} />}
             <Card.Description>{card.description}</Card.Description>
             {hasTags && (
               <div className="card-tags">
@@ -686,6 +721,7 @@ TeaserCardGrid.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
+  eventDate: false,
   fluid: true,
   numberOfCards: 3,
   cards: [...cardModels],

@@ -13,7 +13,7 @@
 @titleColor: @textColorCSSVar;
 @titleBorderBottom: @1px solid @silverGray;
 @titleColorHover:var(--text-color-hover, @grey-5);
-@titleJustifyContent: space-between;
+@titleJustifyContent: var(--accordion-title-justify, space-between);
 
 /* Icon */
 @iconColor: var(--text-color, @oldSilver);
@@ -33,7 +33,7 @@
 @iconVerticalAlign: baseline;
 @iconTransform: none;
 @iconColorHover: @titleColorHover;
-@iconOrder: 1; // Icon after text of the title
+@iconOrder: var(--accordion-title-icon-order, 1); // Icon after text of the title
 @filterIconWidth: 3rem;
 @filterIconFontSize: 2rem;
 @filterIconMargin: 0 10px;
@@ -51,7 +51,7 @@
 @contentMargin: 0;
 @contentPaddingBottom: 1.563rem;
 @contentPadding: @squareMedium;
-@contentBackground: @grey-1;
+@contentBackground: var(--bg-color, @grey-1);
 @contentColor: @tertiaryColor;
 
 /*-------------------
@@ -117,5 +117,5 @@
 @styledActiveChildTitleColor: @styledActiveTitleColor;
 
 /* Inverted */
-@invertedTitleColor: @invertedTextColor;
+@invertedTitleColor: @activeTitleColor;
 

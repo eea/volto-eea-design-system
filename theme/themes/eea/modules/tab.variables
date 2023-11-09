@@ -2,7 +2,7 @@
               Tab
 *******************************/
 @tabsBlockColor: @textColor;
-@tabActiveItemHoverColor: @secondaryColor;
+@tabActiveItemHoverColor: @secondaryColorCSSVar;
 
 @mobileItemFontSize: 1rem;
 @mobileItemPadding: 1rem 0.25rem;
@@ -10,6 +10,7 @@
 @headerSize: @h4;
 @headerSizeResponsive: @fontSize;
 @contentSize: @fontSize;
+@tabsColorHover: #fefefe;
 
 /* Loading */
 @loadingMinHeight: 250px;

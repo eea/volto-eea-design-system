@@ -2,18 +2,11 @@
          Tab Overrides
 *******************************/
 
-.ui.pointing.secondary.menu {
+.ui.menu.vertical,
+.ui.menu[class*='ary'] {
   .item {
     font-size: @headerSize;
   }
-
-  .item:hover {
-    color: @tabActiveItemHoverColor;
-  }
-}
-
-.tabs-block {
-  color: @tabsBlockColor;
 }
 
 // Contain images inside vertical tab content
@@ -21,18 +14,19 @@
   max-width: @verticalTabPaneImageMaxWidth;
 }
 
-.ui.pointing.secondary.menu::-webkit-scrollbar {
+.ui.menu[class*='ary']::-webkit-scrollbar {
   height: @mobileTabScrollbarHeight;
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
-  .ui.pointing.secondary.menu::-webkit-scrollbar {
+  .ui.menu[class*='ary']::-webkit-scrollbar {
     height: @tabletTabScrollbarHeight;
   }
 }
 
 @media only screen and (max-width: @largestMobileScreen) {
-  .ui.pointing.secondary.vertical.menu {
+  .ui.menu.vertical,
+  .ui.menu.vertical.secondary {
     .item {
       padding: @mobileItemPadding;
       font-size: @mobileItemFontSize;

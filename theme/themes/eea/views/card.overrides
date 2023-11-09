@@ -47,6 +47,12 @@ img.ui.image {
   margin-bottom: @cardContentMarginBottom;
 }
 
+.ui.card .event-date {
+  display: @eventDateDisplay;
+  flex-direction: @eventDateFlexDirection;
+  align-items: @eventDateAlign;
+}
+
 .ui.card .meta {
   display: flex;
   width: 100%;

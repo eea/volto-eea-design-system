@@ -133,7 +133,12 @@ function ItemGroup({
     <Container>
       <Grid>
         <Grid.Row>
-          <Grid.Column mobile={12} tablet={6} computer={6}>
+          <Grid.Column
+            mobile={12}
+            tablet={6}
+            computer={6}
+            className={'column-blocks-wrapper'}
+          >
             <Item.Group unstackable className="row">
               {ColumnLeft.map((item) => (
                 <SingleItem
@@ -148,7 +153,12 @@ function ItemGroup({
               ))}
             </Item.Group>
           </Grid.Column>
-          <Grid.Column mobile={12} tablet={6} computer={6}>
+          <Grid.Column
+            mobile={12}
+            tablet={6}
+            computer={6}
+            className={'column-blocks-wrapper'}
+          >
             <Item.Group unstackable className="row">
               {ColumnRight.map((item) => (
                 <SingleItem
@@ -265,42 +275,42 @@ FlexGroup.args = {
       imageUrl: GlobeEco,
       icon: 'ri-earth-line',
       description:
-        'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
+        'Support Europe’s transition to a sustainable future with evidence-based knowledge and data. ',
     },
     {
       childKey: 1,
-      imageUrl: Sustainable,
-      icon: 'ri-leaf-line',
-      description:
-        'Supply input on solutions to the sustainability challenges of today – and tomorrow.  ',
-    },
-    {
-      childKey: 2,
-      imageUrl: DataAnalytics,
-      icon: 'ri-pie-chart-line',
-      description:
-        'This is an exmple of an item having bigger description text. Leverage the data and technology to support the EU’s decision-making processes concerning the environment and climate',
-    },
-    {
-      childKey: 3,
       imageUrl: Network,
       icon: 'ri-pin-distance-line',
       description:
-        'Build stronger networks and partnerships with state and regional governments and organisations.',
+        'Build stronger networks and partnerships with state and regional governments and organisations. This is an example of an item having bigger description text. ',
     },
     {
-      childKey: 4,
-      imageUrl: GlobeEco,
-      icon: 'ri-earth-line',
+      childKey: 2,
+      imageUrl: Sustainable,
+      icon: 'ri-leaf-line',
       description:
-        'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
+        'Supply input on solutions to the sustainability challenges of today – and tomorrow. This is an example of an item having bigger description text.  ',
     },
     {
-      childKey: 5,
+      childKey: 3,
       imageUrl: Knowledge,
       icon: 'ri-line-chart-line',
       description:
         'Strengthen the EU’s knowledge capacity and help secure the resources needed to create a sustainable Europe.',
+    },
+    {
+      childKey: 4,
+      imageUrl: DataAnalytics,
+      icon: 'ri-pie-chart-line',
+      description:
+        'Leverage the data and technology to support the EU’s decision-making processes concerning the environment and climate',
+    },
+    {
+      childKey: 5,
+      imageUrl: GlobeEco,
+      icon: 'ri-earth-line',
+      description:
+        'Support Europe’s transition to a sustainable future with evidence-based knowledge and data.',
     },
   ],
 };

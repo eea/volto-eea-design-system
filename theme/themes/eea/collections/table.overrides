@@ -27,7 +27,6 @@
     text-transform: @headerTextTransform;
     vertical-align: @headerVerticalAlign;
   }
-
 }
 
 // fix hiding of table header on mobile resolutions, by default whitespace is no wrap from table.less
@@ -36,30 +35,29 @@
 }
 
 @media only screen and (max-width: @tabletBreakpoint) {
-
   .ui.table.responsive {
-
     &:not(.unstackable) td:first-child {
       font-weight: @responsiveMobileCellHeaderFontWeight;
     }
 
     thead {
-      border: none;
-      clip: @responsiveMobileCellHeaderClip;
-      height: @responsiveMobileHeaderHeight;
-      margin: @responsiveMobileHeaderMargin;
-      overflow: hidden;
-      padding: @responsiveMobileHeaderPadding;
       position: absolute;
+      overflow: hidden;
       width: @responsiveMobileHeaderWidth;
+      height: @responsiveMobileHeaderHeight;
+      padding: @responsiveMobileHeaderPadding;
+      border: none;
+      margin: @responsiveMobileHeaderMargin;
+      clip: @responsiveMobileCellHeaderClip;
     }
 
     td {
       display: block;
-      text-align: @responsiveMobileCellTextAlign;
       clear: both;
-  
+      text-align: @responsiveMobileCellTextAlign;
+
       &::before {
+        max-width: @responsiveMobileCellDataLabelMaxSize;
         /*
         * aria-label has no advantage, it won't be read inside a table
         content: attr(aria-label);
@@ -68,11 +66,7 @@
         float: @responsiveMobileCellDataLabelFloat;
         font-weight: @responsiveMobileCellDataLabelFontWeigth;
         text-align: @responsiveMobileCellDataLabelTextAlign;
-        max-width: @responsiveMobileCellDataLabelMaxSize;
       }
-      
     }
-
   }
-
 }

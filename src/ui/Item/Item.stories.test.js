@@ -19,7 +19,7 @@ describe('DefaultGroup Component', () => {
 });
 
 describe('DefaultItem Component', () => {
-  it('renders correclty', () => {
+  it('renders correctly', () => {
     const { container } = render(<DefaultItem {...DefaultItem.args} />);
     expect(container.querySelector('.header')).toBeInTheDocument();
     expect(container.querySelector('.meta')).toBeInTheDocument();
@@ -29,7 +29,7 @@ describe('DefaultItem Component', () => {
 });
 
 describe('Default Component', () => {
-  it('renders correclty', () => {
+  it('renders correctly', () => {
     const { container } = render(<Default {...Default.args} />);
     expect(container.querySelector('.header')).toBeInTheDocument();
     expect(container.querySelector('.meta')).toBeInTheDocument();

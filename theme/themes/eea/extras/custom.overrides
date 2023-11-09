@@ -4,7 +4,7 @@
 
 // hide breadcrumbs on homepage
 .homepage .breadcrumbs {
-    display: none !important;
+  display: none !important;
 }
 
 .homepage #page-document > .hero-block h2 {
@@ -13,16 +13,16 @@
 
 // remove padding from homepage content-area since we have the bg image over the header
 .homepage .content-area {
-    padding-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 // show staging banner on homepage
 .homepage .stagingBanner {
-    display: block !important;
+  display: block !important;
 }
 
 // use homepage text color for color of cards that are within a content-box that has a variant class
-.homepage .content-box[class*="ary"] [class="ui fluid card"] {
+.homepage .content-box[class*='ary'] [class='ui fluid card'] {
   color: @blue-grey-5;
 }
 // set carousel arrow to homepage color
@@ -40,17 +40,21 @@
   .content {
     text-align: center;
   }
+
   svg.default {
     background-color: @grey-1;
   }
+
   svg.primary {
     background-color: @primaryColor;
     fill: @white !important;
   }
+
   svg.secondary {
     background-color: @secondaryColor;
     fill: @white !important;
   }
+
   svg.tertiary {
     background-color: @tertiaryColor;
     fill: @white !important;
@@ -67,7 +71,6 @@
 .block .ui.card {
   margin: 0;
 }
-
 
 // inherit font weight of styled headers so that if we set 300 weight it's visible also on
 // the edit page
@@ -87,31 +90,48 @@
 
 // customize error class from volto-slate to our color of red
 .error {
-    color: @red-5;
+  color: @red-5;
 }
 
 .power-user-menu,
-.blocks-chooser {
+.blocks-chooser,
+.tabs-block {
   --text-color: @textColor;
 }
+
 .blocks-chooser {
   .searchbox {
     height: auto !important;
   }
+
   .input {
     width: auto !important;
   }
+
   .clear-search-button {
     padding: 0.5rem;
   }
+
   .icon {
     margin-right: 0 !important;
+  }
+
+  /* fix order and color of block choose title block
+   * which receives accordion title styling */
+  .button.title {
+    --text-color: @brown;
+    --text-color-hover: @brown;
+    --accordion-title-icon-order: 0;
   }
 }
 
 // remove margin from block headings overriding blocks.less rule
-.block h1:last-child, .block h2:last-child, .block h3:last-child, .block h4:last-child, .block h5:last-child {
-    margin: 0;
+.block h1:last-child,
+.block h2:last-child,
+.block h3:last-child,
+.block h4:last-child,
+.block h5:last-child {
+  margin: 0;
 }
 
 // tweak padding of workflow progress titles now that
@@ -134,19 +154,20 @@
 
 // Tabs block border left/top
 .tabs-block {
-  .border-left {
-    border-right: none !important;
-    border-left: 0.0625rem solid @midGray !important;
+  // we don't want to show the active background color on the eea tabs
+  .tabs-accessibility {
+    --tab-active-bg-color: transparent;
+  }
 
-    .item.active {
-      border-right: none !important;
-      border-left-style: solid !important;
-      margin: 0em 0em 0em -0.2rem !important;
-    }
+  // make accordion transformed from rrt_tabs use same color bg as tabs
+  .tabs-accessibility .RRT__panel {
+    --bg-color: @white;
+  }
 
-    .item:active {
-      border-right: none !important;
-    }
+  // remove border from secondary active item so that when we use color
+  // it doesn't show a different color from the active background
+  .ui.secondary.inverted.menu .active.item {
+    border-color: transparent !important;
   }
 
   .border-top {
@@ -162,9 +183,9 @@
     }
 
     .item.active {
-      border-bottom: none !important;
       border-top-style: solid !important;
-      margin: 0em 0em 0em -0.2rem !important;
+      border-bottom: none !important;
+      margin: 0 0 0 -0.2rem !important;
     }
 
     .item:active {
