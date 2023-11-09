@@ -55,6 +55,13 @@ let cardData = {
       '02/04/2023',
       '16/03/2023',
     ],
+    eventDate: [
+      '20/05/2023',
+      '30/04/2023',
+      '10/04/2023',
+      '02/04/2023',
+      '16/03/2023',
+    ],
     tags: [
       { category: 'tag 1', href: '#' },
       { category: 'tag 2', href: '#' },
@@ -75,6 +82,7 @@ for (var i = 0; i <= cardData.cardContent.title.length; i++) {
     description: cardData.cardContent.description[i],
     meta: 'Article',
     metaRight: cardData.cardContent.metaRight[i],
+    eventDate: cardData.cardContent.eventDate[i],
     href: '/#',
     tags: [],
   };
