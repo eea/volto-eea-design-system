@@ -45,6 +45,7 @@ const TopItem = ({ children, className, id }) => (
 );
 
 const onKeyDownHandler = (event) => {
+  console.log('on key');
   if (event.key === 'Enter') {
     event.preventDefault();
     event.target.click();
@@ -70,6 +71,7 @@ const TopDropdownMenu = ({
   const Component = ({ mobileText }) => {
     const headerText = mobileText || text;
     const label = ariaLabel || headerText;
+    const dropdownRef = React.useRef(null);
 
     return (
       <>
@@ -81,12 +83,20 @@ const TopDropdownMenu = ({
               {headerText}
             </div>
           )}
+          ref={dropdownRef}
           icon={icon || 'chevron down'}
           aria-label={label}
           closeOnChange={true}
           closeOnBlur={false}
           closeOnEscape={true}
-          openOnFocus={false}
+          openOnFocus={true}
+          onBlur={(e) => {
+            const dropdown = dropdownRef.current;
+            const ref = dropdown.ref.current;
+            if (e.target !== ref && !ref.contains(e.relatedTarget)) {
+              dropdown.close();
+            }
+          }}
           onKeyDown={onKeyDownHandler}
         >
           <Dropdown.Menu role="option">{children}</Dropdown.Menu>
