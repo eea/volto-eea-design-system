@@ -45,11 +45,9 @@ const TopItem = ({ children, className, id }) => (
 );
 
 const onKeyDownHandler = (event) => {
-  console.log('on key');
   if (event.key === 'Enter') {
     event.preventDefault();
     event.target.click();
-    //event.target.focus();
   }
 };
 
