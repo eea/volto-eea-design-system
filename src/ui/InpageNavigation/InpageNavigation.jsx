@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Button, Icon } from 'semantic-ui-react';
+import { debounce } from 'lodash';
 
 class InpageNavigation extends Component {
   constructor(props) {
@@ -22,7 +23,10 @@ class InpageNavigation extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleInpageNavigationVisibility);
+    window.addEventListener(
+      'scroll',
+      debounce(this.handleInpageNavigationVisibility, 250),
+    );
   }
 
   componentWillUnmount() {
