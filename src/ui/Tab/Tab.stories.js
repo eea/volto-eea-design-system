@@ -220,6 +220,7 @@ Vertical.argTypes = {
 };
 
 function IconTabContent({
+  variant,
   renderActive,
   hideTabTitle,
   iconPosition,
@@ -342,6 +343,7 @@ function IconTabContent({
         secondary: true,
         pointing: true,
         fluid: true,
+        className: variant,
         tabIndex: 0,
       }}
     ></Tab>
@@ -361,6 +363,7 @@ MenuIcon.args = {
   hideTabTitle: false,
   iconPosition: 'top',
   iconSize: 'small',
+  variant: 'secondary',
 };
 
 MenuIcon.argTypes = {
