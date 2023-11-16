@@ -68,6 +68,7 @@
   color: @dropdownColor;
   font-size: @mobileDropdownFontSize;
   font-weight: @dropdownFontWeight;
+  position: relative !important; /* needed because of mobile-sr-only position absolute */
 }
 
 .top.bar .ui.dropdown .menu {
@@ -161,7 +162,7 @@
 /* Theme sites dropdown */
 #theme-sites.ui.dropdown .menu {
   .wrapper {
-    width: @mobileThemeSitesMenuWidth;
+    width: @themeSitesMenuWidth;
 
     .item {
       &:hover,
@@ -345,7 +346,7 @@
   display: flex;
   overflow: auto;
   width: 100%;
-  height: @mobilePopUpHeight;
+  min-height: @mobilePopUpHeight;
   align-items: @searchBoxAlignItems;
   background: @searchBoxBackgroundGradient;
 
@@ -534,13 +535,6 @@
     }
   }
 
-  /* Theme sites dropdown */
-  #theme-sites.ui.dropdown .menu {
-    .wrapper {
-      width: @tabletThemeSitesMenuWidth;
-    }
-  }
-
   /* Language dropdown */
   #language-switcher {
     .divider.text {
@@ -582,7 +576,7 @@
 
   /* Search box */
   #search-box {
-    height: @tabletPopUpHeight;
+    min-height: @tabletPopUpHeight;
 
     .wrapper {
       margin: @searchBoxTabletPopupMarginTop 0;
@@ -636,13 +630,6 @@
     }
   }
 
-  /* Theme sites dropdown */
-  #theme-sites.ui.dropdown .menu {
-    .wrapper {
-      width: @computerThemeSitesMenuWidth;
-    }
-  }
-
   #language-switcher {
     padding: @computerLanguageMenuPadding;
 
@@ -693,7 +680,7 @@
 
   /* Search box */
   #search-box {
-    height: @computerPopUpHeight;
+    min-height: @computerPopUpHeight;
 
     .wrapper {
       margin: @searchBoxComputerPopupMarginTop 0;
@@ -747,6 +734,7 @@
 
 #mega-menu .ui.list {
   margin: 0;
+  gap: @megaMenuListGap;
 }
 
 #mega-menu .item {
@@ -770,7 +758,7 @@
   }
 }
 
-#at-a-glance {
+.at-a-glance {
   .item {
     margin: @megaMenuGlanceListItemMargin;
     font-size: @megaMenuGlanceListItemFontSize;
@@ -782,28 +770,8 @@
   }
 }
 
-// add negative margin to the first column subtitle from nested grid
-// so that the subtitle lines up with the subtitle from the left column
-#mega-menu .nested-grid > .column:first-of-type .sub-title {
-  margin-top: @megaMenuSubTitleCountriesNestedGridMarginTop;
-}
-
-#topics-right-column {
+.topics-right-column {
   padding-left: @topicsRightColumnPaddingLeft;
-}
-
-.ui.grid > .column > .ui.grid {
-  margin-top: 0;
-}
-
-#mega-menu .ui.grid {
-  div.column:first-child {
-    padding-left: 0.625rem;
-  }
-
-  div.column:last-child {
-    padding-right: 0.625rem;
-  }
 }
 
 #mega-menu .active:not(.title-link):not(.button) > span {

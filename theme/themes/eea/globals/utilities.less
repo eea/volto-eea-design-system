@@ -27,11 +27,20 @@ h1, h2, h3, h4, h5, h6, p, span, .header {
   z-index: 0;
 }
 
+/* Layout */
 // Flexbox
 .d-flex { display: flex !important; }
+.flex-row { flex-direction: row !important; }
 .flex-items-start { align-items: flex-start !important; }
 .flex-items-end { align-items: flex-end !important; }
 .flex-items-center { align-items: center !important; }
+
+// Columns
+each(range(2, 6), {
+  .has--@{value}--columns {
+    columns: @value;
+  }
+});
 
 // Text
 .text-left,
@@ -158,4 +167,10 @@ h1, h2, h3, h4, h5, h6, p, span, .header {
   position: absolute !important;
   white-space: nowrap !important;
   width: 1px !important;
+}
+
+@media screen and (max-width: @largestMobileScreen) {
+  .mobile-sr-only {
+    .hiddenStructure;
+  }
 }

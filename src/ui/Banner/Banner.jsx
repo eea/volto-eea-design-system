@@ -26,7 +26,12 @@ const socialPlatforms = {
 };
 
 export const getImageSource = (image) => {
+  if (image?.data && image?.encoding === 'base64') {
+    return `data:${image.contentType};base64,${image.data}`;
+  }
   if (image?.scales?.huge) return flattenToAppURL(image.scales.huge.download);
+  if (image?.scales?.great) return flattenToAppURL(image.scales.great.download);
+  if (image?.scales?.large) return flattenToAppURL(image.scales.large.download);
   return null;
 };
 
@@ -67,14 +72,14 @@ function Banner({ image, metadata, properties, children, ...rest }) {
 }
 
 Banner.Action = React.forwardRef(function (
-  { id, title, titleClass, icon, onClick, className, color },
+  { title, titleClass, icon, onClick, className, color, ...rest },
   ref,
 ) {
   return (
     <div className="action" ref={ref}>
       <Button className={className} basic icon inverted onClick={onClick}>
-        <Icon className={icon} color={color}></Icon>
-        <span className={titleClass || 'mobile hidden'}>{title}</span>
+        <Icon className={icon} color={color} title={title}></Icon>
+        <span className={titleClass || 'mobile-sr-only'}>{title}</span>
       </Button>
     </div>
   );

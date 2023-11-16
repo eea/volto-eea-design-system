@@ -1,8 +1,5 @@
-/* Simplified popup with several options found in the semantic ui implementation
- * https://github.com/Semantic-Org/Semantic-UI-React/blob/master/src/modules/Popup/Popup.js
- *  */
-import React from 'react';
-import { createPopper } from '@popperjs/core';
+import React, { useEffect, useRef, useState } from 'react';
+import { usePopper } from 'react-popper';
 import EventStack from '@semantic-ui-react/event-stack';
 import cx from 'classnames';
 
@@ -10,88 +7,95 @@ export const positionsMapping = {
   'top center': 'top',
   'top left': 'top-start',
   'top right': 'top-end',
-
   'bottom center': 'bottom',
   'bottom left': 'bottom-start',
   'bottom right': 'bottom-end',
-
   'right center': 'right',
   'left center': 'left',
 };
 
-class Popup extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.triggerRef = React.createRef();
-    this.popupRef = React.createRef();
-
-    this.state = {
-      isOpen: false,
-    };
-
-    this.togglePopup = this.togglePopup.bind(this);
-    this.closeOnEscape = this.closeOnEscape.bind(this);
-  }
-
-  componentDidMount() {
-    this.popper = createPopper(this.triggerRef.current, this.popupRef.current, {
-      placement: positionsMapping[this.props.position] || 'bottom-end',
-      strategy: this.props.positionFixed || 'absolute',
-      modifiers: [
-        {
-          name: 'offset',
-          options: {
-            offset: this.props.offset,
-          },
+function Popup(props) {
+  const triggerRef = useRef(null);
+  const popupRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const options = {
+    placement: positionsMapping[props.position] || 'bottom-end',
+    strategy: props.positionFixed || 'absolute',
+    modifiers: [
+      {
+        name: 'offset',
+        options: {
+          offset: props.offset,
         },
-        ...this.props.popperModifiers,
-      ],
-    });
-  }
-
-  componentWillUnmount() {
-    this.popper && this.popper.destroy();
-  }
-
-  togglePopup() {
-    this.setState(
-      (state) => {
-        return {
-          isOpen: !state.isOpen,
-        };
       },
-      () => {
-        this.popper.forceUpdate();
-      },
-    );
-  }
-  closeOnEscape(e) {
-    if (e.key === 'Escape') {
-      this.setState((state) => {
-        return {
-          isOpen: !state.isOpen,
-        };
-      });
+      ...props.popperModifiers,
+    ],
+  };
+
+  const { styles, attributes, update } = usePopper(
+    triggerRef.current,
+    popupRef.current,
+    options,
+  );
+
+  useEffect(() => {
+    const updatePlacement = async () => {
+      if (typeof update === 'function') await update();
+    };
+    updatePlacement();
+  }, [isOpen, update]);
+
+  const handleClickOutside = (event) => {
+    if (
+      popupRef.current &&
+      !popupRef.current.contains(event.target) &&
+      !triggerRef.current.contains(event.target)
+    ) {
+      if (isOpen) {
+        setIsOpen(false);
+      }
     }
-  }
+  };
 
-  render() {
-    const { trigger, className, size, position, basic, content } = this.props;
-    const event = this.props.on;
-    const onEvent = 'on' + event.charAt(0).toUpperCase() + event.slice(1);
-    return (
-      <React.Fragment>
-        {trigger &&
-          React.cloneElement(trigger, {
-            [onEvent]: this.togglePopup,
-            ref: this.triggerRef,
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
+
+  const togglePopup = () => {
+    setIsOpen((prevIsOpen) => !prevIsOpen);
+  };
+
+  const closeOnEscape = (e) => {
+    if (e.key === 'Escape') {
+      setIsOpen((prevIsOpen) => !prevIsOpen);
+    }
+  };
+
+  const { trigger, className, size, position, basic, content, on } = props;
+
+  const onEvent = 'on' + on.charAt(0).toUpperCase() + on.slice(1);
+  return (
+    <React.Fragment>
+      {trigger && (
+        <div className="popup-trigger" ref={triggerRef}>
+          {React.cloneElement(trigger, {
+            [onEvent]: togglePopup,
           })}
+        </div>
+      )}
 
-        <div className="popup-container" ref={this.popupRef}>
-          {this.state.isOpen && (
-            <EventStack name="keydown" on={this.closeOnEscape} />
-          )}
+      <div
+        className="popup-container"
+        ref={popupRef}
+        style={styles.popper}
+        {...attributes.popper}
+      >
+        {isOpen && <EventStack name="keydown" on={closeOnEscape} />}
+        {isOpen && (
           <React.Fragment>
             <div
               className={cx(
@@ -100,16 +104,16 @@ class Popup extends React.Component {
                 size,
                 position,
                 basic ? 'basic' : '',
-                this.state.isOpen ? 'visible' : '',
+                'visible',
               )}
             >
               {content}
             </div>
           </React.Fragment>
-        </div>
-      </React.Fragment>
-    );
-  }
+        )}
+      </div>
+    </React.Fragment>
+  );
 }
 
 Popup.defaultProps = {
@@ -122,14 +126,6 @@ Popup.defaultProps = {
   wide: false,
   on: 'click',
   popperModifiers: [],
-  // disabled,
-  // flowing,
-  // header,
-  // inverted,
-  // pinned,
-  // popper,
-  // popperDependencies,
-  // style,
 };
 
 export default Popup;

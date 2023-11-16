@@ -15,8 +15,9 @@ import burgerIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/asse
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
 import PropTypes from 'prop-types';
-
+import _ from 'lodash';
 import { isInternalURL } from '@plone/volto/helpers';
+import config from '@plone/volto/registry';
 
 Header.propTypes = {
   transparency: PropTypes.bool,
@@ -24,7 +25,11 @@ Header.propTypes = {
 };
 
 function Header({ children }) {
-  return <div className="eea header">{children}</div>;
+  return (
+    <header className="eea header" aria-label={'Site'}>
+      {children}
+    </header>
+  );
 }
 
 const TopHeader = ({ children }) => (
@@ -39,11 +44,19 @@ const TopItem = ({ children, className, id }) => (
   </div>
 );
 
+const onKeyDownHandler = (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    event.target.click();
+  }
+};
+
 const TopDropdownMenu = ({
   children,
+  ariaLabel,
   className,
+  classNameHeader,
   icon,
-  hasLanguageDropdown = false,
   id,
   tabletText,
   mobileText,
@@ -54,41 +67,38 @@ const TopDropdownMenu = ({
   const isMobile = viewportWidth < 767;
 
   const Component = ({ mobileText }) => {
+    const headerText = mobileText || text;
+    const label = ariaLabel || headerText;
+    const dropdownRef = React.useRef(null);
+
     return (
       <>
-        {children.props['aria-label'] === 'language switcher' ? (
-          hasLanguageDropdown && (
-            <Dropdown
-              id={id}
-              className={className}
-              text={mobileText || text}
-              icon={icon || 'chevron down'}
-              aria-label="dropdown"
-              role="dropdown"
-              lazyLoad
-              closeOnChange={true}
-              closeOnBlur={false}
-              closeOnEscape={true}
-            >
-              <Dropdown.Menu role="option">{children}</Dropdown.Menu>
-            </Dropdown>
-          )
-        ) : (
-          <Dropdown
-            id={id}
-            className={className}
-            text={mobileText || text}
-            icon={icon || 'chevron down'}
-            role="dropdown"
-            aria-label="dropdown"
-            lazyLoad
-            closeOnChange={true}
-            closeOnBlur={false}
-            closeOnEscape={true}
-          >
-            <Dropdown.Menu role="option">{children}</Dropdown.Menu>
-          </Dropdown>
-        )}
+        <Dropdown
+          id={id}
+          className={className}
+          text={() => (
+            <div className={`divider text ${classNameHeader}`}>
+              {headerText}
+            </div>
+          )}
+          ref={dropdownRef}
+          icon={icon || 'chevron down'}
+          aria-label={label}
+          closeOnChange={true}
+          closeOnBlur={false}
+          closeOnEscape={true}
+          openOnFocus={true}
+          onBlur={(e) => {
+            const dropdown = dropdownRef.current;
+            const ref = dropdown.ref.current;
+            if (e.target !== ref && !ref.contains(e.relatedTarget)) {
+              dropdown.close();
+            }
+          }}
+          onKeyDown={onKeyDownHandler}
+        >
+          <Dropdown.Menu role="option">{children}</Dropdown.Menu>
+        </Dropdown>
       </>
     );
   };
@@ -131,6 +141,7 @@ const TopDropdownMenu = ({
 const Main = ({
   logo,
   menuItems,
+  menuItemsLayouts,
   renderMenuItem,
   renderGlobalMenuItem,
   headerSearchBox,
@@ -147,6 +158,7 @@ const Main = ({
   const [burger, setBurger] = React.useState('');
   const searchInputRef = React.useRef(null);
   const [isClient, setIsClient] = React.useState();
+  const itemsLayouts = menuItemsLayouts || config.settings?.menuItemsLayouts;
 
   React.useEffect(() => setIsClient(true), []);
 
@@ -273,7 +285,7 @@ const Main = ({
       className={`main bar ${transparency ? 'transparency' : ''}`}
       ref={node}
     >
-      <Container>
+      <Container className={'main-bar-container'}>
         <Grid>
           <Grid.Column mobile={8} tablet={8} computer={4}>
             {logo}
@@ -281,52 +293,57 @@ const Main = ({
           <Grid.Column mobile={4} tablet={4} computer={8}>
             <div className={inverted ? 'main-menu inverted' : 'main-menu'}>
               {menuItems && (
-                <ul
-                  className="ui text eea-main-menu tablet or lower hidden menu"
-                  ref={desktopMenuRef}
-                  id={'navigation'}
-                >
-                  {menuItems.map((item) => (
-                    <Menu.Item
-                      name={item['@id'] || item.url}
-                      key={item['@id'] || item.url}
-                      as={'li'}
-                      active={
-                        activeItem.indexOf(item['@id']) !== -1 ||
-                        activeItem.indexOf(item.url) !== -1
-                      }
-                    >
-                      {renderGlobalMenuItem(item, {
-                        onClick: menuOnClick,
-                      })}
-                    </Menu.Item>
-                  ))}
-                </ul>
+                <nav aria-label={'Main'}>
+                  <ul
+                    className="ui text eea-main-menu tablet or lower hidden menu"
+                    ref={desktopMenuRef}
+                    id={'navigation'}
+                  >
+                    {menuItems.map((item) => (
+                      <Menu.Item
+                        name={item['@id'] || item.url}
+                        key={item['@id'] || item.url}
+                        as={'li'}
+                        active={
+                          activeItem.indexOf(item['@id']) !== -1 ||
+                          activeItem.indexOf(item.url) !== -1
+                        }
+                        aria-expanded={
+                          activeItem.indexOf(item['@id']) !== -1 ||
+                          activeItem.indexOf(item.url) !== -1
+                        }
+                      >
+                        {renderGlobalMenuItem(item, {
+                          onClick: menuOnClick,
+                        })}
+                      </Menu.Item>
+                    ))}
+                  </ul>
+                </nav>
               )}
               {!hideSearch && (
                 <button
                   className="search-action"
                   onClick={searchOnClick}
-                  tabIndex="0"
-                  aria-pressed="false"
-                  aria-haspopup="true"
+                  aria-expanded={searchIsActive}
                   ref={searchButtonRef}
                 >
                   {/* <Icon name={!state.activeSearch ? 'search' : 'close'} /> */}
                   <Image
                     src={!searchIsActive ? `${searchIcon}` : `${closeIcon}`}
-                    alt="search button open/close"
+                    alt="Global search"
                   />
                 </button>
               )}
               <Header.BurgerAction
                 className={`mobile ${burger}`}
                 onClick={mobileBurgerOnClick}
+                aria-expanded={menuIsActive}
                 ref={mobileMenuBurgerRef}
               >
                 <Image
                   src={burger === 'open' ? `${closeIcon}` : `${burgerIcon}`}
-                  alt="menu icon open/close"
+                  alt="Menu navigation"
                 />
               </Header.BurgerAction>
             </div>
@@ -345,6 +362,7 @@ const Main = ({
         renderMenuItem={renderMenuItem}
         activeItem={activeItem}
         menuItems={menuItems}
+        menuItemsLayouts={itemsLayouts}
         pathName={pathname}
         onClose={menuOnClickOutside}
         triggerRefs={[mobileMenuBurgerRef, desktopMenuRef]}
@@ -358,9 +376,7 @@ const BurgerAction = React.forwardRef((props, ref) => (
   <button
     ref={ref}
     className={`burger-action ${props.className}`}
-    tabIndex="0"
-    aria-pressed="false"
-    aria-haspopup="true"
+    {..._.omit(props, ['onClick', 'children', 'className', 'ref'])}
     onClick={props.onClick}
   >
     {props.children}

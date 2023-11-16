@@ -59,9 +59,9 @@
         align-items: @mobileActionsAlignItems;
         justify-content: flex-end;
 
-        > .action {
+        .action {
           .ui.basic.inverted.button {
-            /* used basic inverted button for minimun overrides on box-shadow and active state background */
+            /* used basic inverted button for minimum overrides on box-shadow and active state background */
             box-shadow: @bannerActionButtonBoxShadow !important;
 
             &:active {
@@ -110,7 +110,6 @@
 /*Share Popup*/
 
 .ui.popup.share-popup {
-  position: initial; // without position initial popper cannot correctly place popup
   min-width: @sharePopupMinWidth;
   padding: @sharePopupPadding;
   filter: @sharePopupFilter;
@@ -167,7 +166,7 @@
           flex-direction: @tabletActionsFlexDirection;
           align-items: @tabletActionsAlignItems;
 
-          > .action {
+          .action {
             min-width: @tabletActionsActionMinWidth;
 
             .ui.basic.inverted.button i.icon {

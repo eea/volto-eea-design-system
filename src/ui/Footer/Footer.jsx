@@ -18,7 +18,7 @@ import Description from '@eeacms/volto-eea-design-system/ui/Footer/Description';
 /**
  * Component to display the footer.
  * @function Footer
- * @param {Object} intl Intl object
+ * @param {Object} props object
  * @returns {string} Markup of the component
  */
 
@@ -28,7 +28,7 @@ const Footer = (props) => {
   const bgImgRef = React.useRef();
   const onScreen = useFirstVisited(bgImgRef);
   return (
-    <footer id={'footer'}>
+    <footer id={'footer'} aria-label={'Footer'}>
       <div
         ref={bgImgRef}
         className={onScreen ? 'footer-wrapper' : 'footer-wrapper-nobg'}

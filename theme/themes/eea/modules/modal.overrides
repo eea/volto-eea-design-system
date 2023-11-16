@@ -7,8 +7,8 @@
 }
 
 .ui.modal .ui.button.close {
-  background: @closeButtonBackground;
   padding: @closeButtonPadding;
+  background: @closeButtonBackground;
 
   i {
     color: @closeColor;

@@ -1,5 +1,6 @@
 import React, { useState, useContext, createContext } from 'react';
 import { Popup } from 'semantic-ui-react';
+import noop from 'lodash/noop';
 
 const LanguageContext = createContext();
 
@@ -59,7 +60,7 @@ const Dropdown = ({ children, ...rest }) => {
             <li key={index}>
               <div
                 onClick={() => context.setLanguage(item.code.toUpperCase())}
-                onKeyDown={() => context.setHidden(!context.hidden)}
+                onKeyDown={noop}
                 role="button"
                 tabIndex={0}
               >
@@ -73,7 +74,7 @@ const Dropdown = ({ children, ...rest }) => {
             <li key={index}>
               <div
                 onClick={() => context.setLanguage(item.code.toUpperCase())}
-                onKeyDown={() => context.setHidden(!context.hidden)}
+                onKeyDown={noop}
                 role="button"
                 tabIndex={0}
               >

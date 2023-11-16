@@ -270,9 +270,17 @@ function SortableTableContent({
               key={item.key}
               textAlign="center"
               sorted={column === item.key ? direction : null}
+              tabIndex={0}
               onClick={() =>
                 dispatch({ type: 'CHANGE_SORT', column: item.key })
               }
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') {
+                  event.preventDefault();
+                  event.target.click();
+                }
+              }}
+              aria-label={direction ? direction + ` sorted ` : ''}
             >
               {item.name}
             </Table.HeaderCell>

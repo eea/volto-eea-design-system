@@ -12,10 +12,11 @@
 }
 
 .ui.breadcrumb ol {
-  list-style: none;
+  padding-top: @space-025;
   padding-left: 0;
   margin: 0;
-  padding-top: @space-025;
+  list-style: none;
+
   li {
     display: inline-block;
   }
@@ -28,10 +29,10 @@
 .ui.breadcrumb {
   .section {
     overflow: hidden;
+    max-width: @breadcrumbItemMaxWidth;
 
     /* Max breadcrumb length */
     min-height: @breadcrumbItemMinHeight;
-    max-width: @breadcrumbItemMaxWidth;
     padding: @mobileBreadcrumbPadding;
     text-overflow: ellipsis;
     white-space: nowrap;
