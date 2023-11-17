@@ -62,10 +62,12 @@ each(range(2, 6), {
 .bold { font-weight: bold !important; }
 
 .has--text--left {
+  text-align: left !important;
   --text-align: left;
 }
 
 .has--text--center {
+  text-align: center !important;
   --text-align: center;
   --justify-content: space-evenly;
 }
@@ -76,40 +78,52 @@ each(range(2, 6), {
 
 // image object fit
 .has--object-fit--contain {
+  object-fit: contain !important;
   --image-object-fit: contain;
 }
 
 .has--object-fit--cover {
+  object-fit: cover !important;
   --image-object-fit: cover;
 }
 
 .has--object-fit--fill {
+  object-fit: fill !important;
   --image-object-fit: fill;
 }
 
 .has--object-fit--scale-down {
+  object-fit: scale-down !important;
   --image-object-fit: scale-down;
 }
 
 // image object position
 .has--object-position--top {
+  object-position: top !important;
   --image-object-position: top;
+  object-fit: var(--image-object-fit, none);
 }
 
 .has--object-position--bottom {
+  object-position: bottom !important;
   --image-object-position: bottom;
+  object-fit: var(--image-object-fit, none);
 }
 
 .has--object-position--left {
+  object-position: left !important;
   --image-object-position: left;
 }
 
 .has--object-position--right {
+  object-position: right !important;
   --image-object-position: right;
 }
 
 .has--object-position--center {
+  object-position: center !important;
   --image-object-position: center;
+  object-fit: var(--image-object-fit, fill);
 }
 
 
@@ -153,7 +167,7 @@ each(range(2, 6), {
 }
 
 .fw-light {
-  font-weight: @font-weight-3;
+  font-weight: @font-weight-3 !important;
 }
 
 .hiddenStructure {
