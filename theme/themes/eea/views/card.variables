@@ -77,7 +77,7 @@
 @contentBorderRadius: 0em;
 @contentBoxShadow: none;
 @contentBorder: none;
-@cardContentMarginBottom: @rem-space-4;
+@cardContentMarginBottom: @rem-space-2;
 
 
 /* Header */
@@ -91,7 +91,7 @@
 
 @headerPadding: @em-space-1;
 @headerOnImagePadding: 0;
-@headerLineHeightOffset: -(@headerPadding * 2);
+@headerLineHeightOffset: 0;
 
 /* Metadata */
 @metaJustifyContent: space-between;
@@ -127,6 +127,11 @@
 /* Description */
 @descriptionDistance: 0;
 @descriptionColor: inherit;
+
+/* Dates */
+@eventDateDisplay: flex;
+@eventDateFlexDirection: row;
+@eventDateAlign: center;
 
 /* Content Image */
 @contentImageWidth: '';

@@ -9,8 +9,8 @@
 }
 
 // To display focus state
-.ui.checkbox input[type="checkbox"],
-.ui.checkbox input[type="radio"] {
+.ui.checkbox input[type='checkbox'],
+.ui.checkbox input[type='radio'] {
   opacity: 1 !important;
 }
 

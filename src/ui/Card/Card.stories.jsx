@@ -1,6 +1,8 @@
 import React from 'react';
 import { Card, Image, Grid, Container, Icon, Button } from 'semantic-ui-react';
 import Slider from 'react-slick';
+import TagList from '../TagList/TagList';
+import Tag from '../Tag/Tag';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -8,71 +10,89 @@ import 'slick-carousel/slick/slick-theme.css';
 const tabletBreakpoint = 835;
 const mobileBreakpoint = 480;
 
-let cardModels = [
-  {
-    title: 'Economy and resources',
-    imgUrl:
+// Content for all cards
+let cardData = {
+  cardContent: {
+    title: [
+      'Economy and resources',
+      'Health',
+      'Nature',
+      'Climate',
+      "State of Europe's environment",
+    ],
+    imgUrl: [
       'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
-    description:
-      'The economy plays a vital role in our lives by providing access to employment, ' +
-      'products and services that help us thrive. Unfortunately, with its key sectors like agriculture,' +
-      ' energy and transport, our economy also harms the environment and causes climate change. ' +
-      'Europe needs a circular, carbon-neutral and zero-pollution economy. ',
-    meta: 'Article',
-    metaRight: '20/05/2022',
-    href: '/#',
-  },
-  {
-    title: 'Health',
-    imgUrl:
       'https://www.eea.europa.eu/en/topics/at-a-glance/health/@@images/image/preview',
-    description:
-      'By improving air, water, and soil quality and limiting pollution released to nature, ' +
-      'the EU has significantly contributed to enhancing human health in the last five ' +
-      'decades. Yet, many vulnerable groups continue to be impacted by environmental ' +
-      'degradation and climate change. Further improvements can help keep Europeans ' +
-      'healthier and better equipped to cope with climate change impacts.',
-    meta: 'Article',
-    metaRight: '30/06/2023',
-    href: '/#',
-  },
-  {
-    title: 'Nature',
-    imgUrl:
       'https://www.eea.europa.eu/en/topics/at-a-glance/nature/@@images/image/preview',
-    description:
-      'Europe’s nature is filled with forests, mountains, vast plains, long rivers, deep blue seas and ' +
-      'refreshing lakes. But it also is under threat. Unsustainable farming and forestry practices, ' +
-      'pollution, climate change and invasive species are stressing and destabilising all natural ' +
-      'systems in Europe. The result is a biodiversity crisis. The EU is taking steps to protect and restore nature.',
-    meta: 'Article',
-    metaRight: '10/04/2022',
-    href: '/#',
-  },
-  {
-    title: 'Climate',
-    meta: 'Article',
-    imgUrl:
       'https://www.eea.europa.eu/en/topics/at-a-glance/climate/@@images/image/preview',
-    description:
-      'Climate change affects us all and is accelerating. Its impacts will become even more severe if ' +
-      'the increase in global temperature is not kept below 1.5°C. The EU and its Member States are ' +
-      'taking important steps to rapidly reduce greenhouse gas emissions and adapt to climate change.',
-    href: '/#',
-  },
-  {
-    title: "State of Europe's environment",
-    imgUrl:
       'https://www.eea.europa.eu/en/topics/at-a-glance/state-of-europes-environment/@@images/image/preview',
-    description:
+    ],
+    description: [
+      'The economy plays a vital role in our lives by providing access to employment, ' +
+        'products and services that help us thrive. Unfortunately, with its key sectors like agriculture,' +
+        ' energy and transport, our economy also harms the environment and causes climate change. ' +
+        'Europe needs a circular, carbon-neutral and zero-pollution economy. ',
+      'By improving air, water, and soil quality and limiting pollution released to nature, ' +
+        'the EU has significantly contributed to enhancing human health in the last five ' +
+        'decades. Yet, many vulnerable groups continue to be impacted by environmental ' +
+        'degradation and climate change. Further improvements can help keep Europeans ' +
+        'healthier and better equipped to cope with climate change impacts.',
+      'Europe’s nature is filled with forests, mountains, vast plains, long rivers, deep blue seas and ' +
+        'refreshing lakes. But it also is under threat. Unsustainable farming and forestry practices, ' +
+        'pollution, climate change and invasive species are stressing and destabilising all natural ' +
+        'systems in Europe. The result is a biodiversity crisis. The EU is taking steps to protect and restore nature.',
+      'Climate change affects us all and is accelerating. Its impacts will become even more severe if ' +
+        'the increase in global temperature is not kept below 1.5°C. The EU and its Member States are ' +
+        'taking important steps to rapidly reduce greenhouse gas emissions and adapt to climate change.',
       'EU environment and climate policies have delivered substantial benefits over recent ' +
-      'decades, such as cleaner air and water. Nevertheless, Europe, as well as the rest ' +
-      'of the globe, is facing environmental challenges of unprecedented scale and urgency.',
-    meta: 'Article',
-    metaRight: '16/03/2022',
-    href: '/#',
+        'decades, such as cleaner air and water. Nevertheless, Europe, as well as the rest ' +
+        'of the globe, is facing environmental challenges of unprecedented scale and urgency.',
+    ],
+    metaRight: [
+      '20/05/2023',
+      '30/04/2023',
+      '10/04/2023',
+      '02/04/2023',
+      '16/03/2023',
+    ],
+    eventDate: [
+      '20/05/2023',
+      '30/04/2023',
+      '10/04/2023',
+      '02/04/2023',
+      '16/03/2023',
+    ],
+    tags: [
+      { category: 'tag 1', href: '#' },
+      { category: 'tag 2', href: '#' },
+      { category: 'bigger tag', href: '#' },
+      { category: 'tag 3', href: '#' },
+      { category: 'tag 4', href: '#' },
+    ],
   },
-];
+};
+
+// Fill the cardModel array that stories use
+let cardModels = [];
+let tempCardContent = {};
+for (var i = 0; i <= cardData.cardContent.title.length; i++) {
+  tempCardContent = {
+    title: cardData.cardContent.title[i],
+    imgUrl: cardData.cardContent.imgUrl[i],
+    description: cardData.cardContent.description[i],
+    meta: 'Article',
+    metaRight: cardData.cardContent.metaRight[i],
+    eventDate: cardData.cardContent.eventDate[i],
+    href: '/#',
+    tags: [],
+  };
+
+  // Fill cards with random amount of tags
+  for (var j = 0; j < Math.floor(Math.random() * 4 + 1); j++) {
+    tempCardContent.tags.push(cardData.cardContent.tags[j]);
+  }
+  cardModels.push(tempCardContent);
+}
 
 export default {
   title: 'Components/Card/Default',
@@ -166,6 +186,15 @@ export default {
         defaultValue: { summary: '2' },
       },
     },
+    eventDate: {
+      name: 'Event date',
+      control: { type: 'boolean' },
+      table: {
+        category: 'Content',
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
     cards: {
       name: 'Cards content',
       table: {
@@ -174,6 +203,28 @@ export default {
         },
         category: 'Content',
         defaultValue: { summary: ' "" ' },
+      },
+    },
+    hasTags: {
+      name: 'Tags',
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+        category: 'Tags',
+      },
+    },
+    direction: {
+      name: 'Tags direction',
+      control: { type: 'select' },
+      options: ['right', 'left'],
+      table: {
+        type: {
+          summary: 'string',
+        },
+        defaultValue: {
+          summary: 'left',
+        },
+        category: 'Tags',
       },
     },
   },
@@ -192,6 +243,17 @@ const MetaRight = (args) => (
   <span className="bold text-right">{args.metaRight}</span>
 );
 
+const EventDate = (args) => (
+  <>
+    {args.eventDate && (
+      <span className="event-date">
+        <Icon className="ri-calendar-line" />
+        <span>{args.eventDate}</span>
+      </span>
+    )}
+  </>
+);
+
 const CardTemplate = ({
   variant,
   inverted,
@@ -201,8 +263,11 @@ const CardTemplate = ({
   objectPosition,
   titleMaxLines,
   maxLines,
+  eventDate,
   fluid,
   card,
+  hasTags,
+  direction,
 }) => (
   <Card
     fluid={fluid}
@@ -244,8 +309,24 @@ const CardTemplate = ({
         ''
       )}
 
+      {/* Event date */}
+      {eventDate && <EventDate {...card} />}
+
       {/* Description */}
       <Card.Description>{card.description}</Card.Description>
+      {hasTags && (
+        <div className="card-tags">
+          <TagList className={direction}>
+            <TagList.Content>
+              {card.tags.map((tag, index) => [
+                <Tag href={tag.href} key={index}>
+                  {tag.category}
+                </Tag>,
+              ])}
+            </TagList.Content>
+          </TagList>
+        </div>
+      )}
     </Card.Content>
 
     {/* Additional links */}
@@ -276,9 +357,12 @@ Default.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
+  eventDate: false,
   numberOfCards: 1,
   fluid: false,
   cards: [...cardModels],
+  hasTags: false,
+  direction: 'left',
 };
 const GridTemplate = (args) => (
   <Container>
@@ -302,9 +386,12 @@ CardGrid.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
+  eventDate: false,
   fluid: true,
   numberOfCards: 5,
   cards: [...cardModels],
+  hasTags: false,
+  direction: 'left',
 };
 
 const ImageCard = ({
@@ -350,6 +437,8 @@ ImageGrid.args = {
   fluid: true,
   cards: [...cardModels],
   numberOfCards: 5,
+  hasTags: false,
+  direction: 'left',
 };
 
 ImageGrid.argTypes = {
@@ -359,6 +448,11 @@ ImageGrid.argTypes = {
     },
   },
   titleMaxLines: {
+    table: {
+      disable: true,
+    },
+  },
+  eventDate: {
     table: {
       disable: true,
     },
@@ -391,8 +485,11 @@ FluidGrid.args = {
   titleMaxLines: '2',
   maxLines: '2',
   numberOfCards: 3,
+  eventDate: false,
   fluid: true,
   cards: [...cardModels],
+  hasTags: false,
+  direction: 'left',
 };
 const PrevArrow = (props) => {
   const { onClick } = props;
@@ -481,6 +578,7 @@ CarouselCards.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
+  eventDate: false,
   fluid: true,
   settings: {
     dots: true,
@@ -511,6 +609,8 @@ CarouselCards.args = {
   },
   numberOfCards: 5,
   cards: [...cardModels],
+  hasTags: false,
+  direction: 'left',
 };
 CarouselCards.argTypes = {
   settings: {
@@ -534,7 +634,10 @@ const TeaserCard = ({
   titleMaxLines,
   fluid,
   maxLines,
+  eventDate,
   card,
+  hasTags,
+  direction,
 }) => (
   <div className="column grid-block-teaser">
     <div
@@ -571,7 +674,21 @@ const TeaserCard = ({
             <div className="header">
               <a href={card.href}>{card.title}</a>
             </div>
+            {eventDate && <EventDate {...card} />}
             <Card.Description>{card.description}</Card.Description>
+            {hasTags && (
+              <div className="card-tags">
+                <TagList className={direction}>
+                  <TagList.Content>
+                    {card.tags.map((tag, index) => [
+                      <Tag href={tag.href} key={index}>
+                        {tag.category}
+                      </Tag>,
+                    ])}
+                  </TagList.Content>
+                </TagList>
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -612,7 +729,10 @@ TeaserCardGrid.args = {
   objectPosition: 'center',
   titleMaxLines: '2',
   maxLines: '2',
+  eventDate: false,
   fluid: true,
   numberOfCards: 3,
   cards: [...cardModels],
+  hasTags: false,
+  direction: 'left',
 };
