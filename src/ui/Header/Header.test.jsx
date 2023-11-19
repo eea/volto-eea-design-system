@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import { debug } from 'react-dom/test-utils';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
 import Header from './Header';
