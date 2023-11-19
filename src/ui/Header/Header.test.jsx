@@ -337,10 +337,13 @@ describe('Header component', () => {
           tabletText="Tablet Dropdown"
           mobileText="Mobile Dropdown"
         >
-          <span data-testid="option1">Option 1</span>
-          <span data-testid="option2">Option 2</span>
+          <a href="/" data-testid="option1">
+            Option 1
+          </a>
         </Header.TopDropdownMenu>
-        ,
+        <a href="/" data-testid="option2">
+          Option 2
+        </a>
       </div>,
     );
 
@@ -378,8 +381,11 @@ describe('Header component', () => {
     fireEvent.keyDown(dropdownText, { key: 'Enter', code: 'Enter' });
 
     expect(dropdown).toHaveAttribute('aria-expanded', 'true');
-    const wrapper = container.querySelector('.wrapper');
 
-    fireEvent.keyDown(wrapper, { key: 'Tab', code: 'Tab' });
+    // Simulate Escape key press to trigger onBlur
+    fireEvent.keyDown(document, { key: 'Escape', code: 'Escape' });
+
+    // Call onBlur on the dropdown text
+    fireEvent.blur(dropdownText);
   });
 });
