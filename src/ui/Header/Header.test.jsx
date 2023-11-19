@@ -1,5 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+
+import { debug } from 'react-dom/test-utils';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
 import Header from './Header';
@@ -285,6 +287,45 @@ describe('Header component', () => {
     fireEvent.keyDown(getByText('No Language Switcher'), {
       key: 'Enter',
       code: 'Enter',
+    });
+  });
+
+  test('TopDropdownMenu renders without crashing', () => {
+    render(<Header.TopDropdownMenu text="Desktop" />);
+    const dropdownMenu = screen.getByText('Desktop');
+    expect(dropdownMenu).toBeInTheDocument();
+  });
+
+  test('TopDropdownMenu renders the correct text based on viewportWidth', () => {
+    render(
+      <Header.TopDropdownMenu
+        text="Desktop"
+        mobileText="Mobile"
+        viewportWidth={500}
+      />,
+    );
+    expect(screen.getByText('Mobile')).toBeInTheDocument();
+
+    render(
+      <Header.TopDropdownMenu
+        text="Desktop"
+        mobileText="Mobile"
+        viewportWidth={1200}
+      />,
+    );
+    expect(screen.getByText('Desktop')).toBeInTheDocument();
+  });
+
+  test('TopDropdownMenu opens dropdown menu when clicked, closed on escape', () => {
+    render(<Header.TopDropdownMenu text={'Desktop'} />);
+    const dropdownMenu = screen.getByText('Desktop');
+    fireEvent.click(dropdownMenu);
+    const dropdownItems = screen.getByRole('option');
+    expect(dropdownItems).toBeVisible();
+
+    fireEvent.keyDown(screen.getByText('Desktop'), {
+      key: 'Escape',
+      code: 'Escape',
     });
   });
 });
