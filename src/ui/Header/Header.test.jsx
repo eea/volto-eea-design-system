@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
@@ -326,5 +327,59 @@ describe('Header component', () => {
       key: 'Escape',
       code: 'Escape',
     });
+  });
+  test('renders dropdown text and checks for visibility of options on click', () => {
+    // Render the component
+    const { container } = render(
+      <div className="wrapper">
+        <Header.TopDropdownMenu
+          text="Dropdown"
+          tabletText="Tablet Dropdown"
+          mobileText="Mobile Dropdown"
+        >
+          <span data-testid="option1">Option 1</span>
+          <span data-testid="option2">Option 2</span>
+        </Header.TopDropdownMenu>
+        ,
+      </div>,
+    );
+
+    const dropdown = screen.getByRole('listbox');
+
+    // Find the dropdown text and options
+    const dropdownText = screen.getByText('Dropdown');
+
+    // Initially, options should not be visible
+    expect(dropdown).toHaveAttribute('aria-expanded', 'false');
+
+    // Simulate click on the dropdown text
+    fireEvent.click(dropdownText);
+
+    // After clicking, options should be visible
+    expect(dropdown).toHaveAttribute('aria-expanded', 'true');
+
+    // Simulate Escape key press to trigger onBlur
+    fireEvent.keyDown(document, { key: 'Escape', code: 'Escape' });
+
+    // After Escape key press, options should not be visible
+    expect(dropdown).toHaveAttribute('aria-expanded', 'false');
+
+    // Simulate click on the dropdown text
+    // fireEvent.click(dropdownText);
+
+    // Click on document to trigger onBlur
+    // fireEvent.click(document);
+
+    // Hit Enter key on the dropdown text
+    // fireEvent.keyDown(dropdownText, { key: 'Enter', code: 'Enter' });
+
+    // Tab outside of the dropdown
+    fireEvent.keyDown(dropdownText, { key: 'Tab', code: 'Tab' });
+    fireEvent.keyDown(dropdownText, { key: 'Enter', code: 'Enter' });
+
+    expect(dropdown).toHaveAttribute('aria-expanded', 'true');
+    const wrapper = container.querySelector('.wrapper');
+
+    fireEvent.keyDown(wrapper, { key: 'Tab', code: 'Tab' });
   });
 });
