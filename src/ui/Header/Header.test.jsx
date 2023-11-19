@@ -330,7 +330,7 @@ describe('Header component', () => {
   });
   test('renders dropdown text and checks for visibility of options on click', () => {
     // Render the component
-    const { container } = render(
+    render(
       <div className="wrapper">
         <Header.TopDropdownMenu
           text="Dropdown"
