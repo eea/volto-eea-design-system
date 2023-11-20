@@ -1,5 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
 import Header from './Header';
@@ -29,10 +31,7 @@ describe('Header component', () => {
             <p>Test</p>
           </Header.TopItem>
           <Header.TopItem>
-            <Header.TopDropdownMenu
-              hasLanguageDropdown={true}
-              viewportWidth={1000}
-            >
+            <Header.TopDropdownMenu viewportWidth={1000}>
               <div aria-label="language switcher">Language Switcher</div>
             </Header.TopDropdownMenu>
           </Header.TopItem>
@@ -289,5 +288,104 @@ describe('Header component', () => {
       key: 'Enter',
       code: 'Enter',
     });
+  });
+
+  test('TopDropdownMenu renders without crashing', () => {
+    render(<Header.TopDropdownMenu text="Desktop" />);
+    const dropdownMenu = screen.getByText('Desktop');
+    expect(dropdownMenu).toBeInTheDocument();
+  });
+
+  test('TopDropdownMenu renders the correct text based on viewportWidth', () => {
+    render(
+      <Header.TopDropdownMenu
+        text="Desktop"
+        mobileText="Mobile"
+        viewportWidth={500}
+      />,
+    );
+    expect(screen.getByText('Mobile')).toBeInTheDocument();
+
+    render(
+      <Header.TopDropdownMenu
+        text="Desktop"
+        mobileText="Mobile"
+        viewportWidth={1200}
+      />,
+    );
+    expect(screen.getByText('Desktop')).toBeInTheDocument();
+  });
+
+  test('TopDropdownMenu opens dropdown menu when clicked, closed on escape', () => {
+    render(<Header.TopDropdownMenu text={'Desktop'} />);
+    const dropdownMenu = screen.getByText('Desktop');
+    fireEvent.click(dropdownMenu);
+    const dropdownItems = screen.getByRole('option');
+    expect(dropdownItems).toBeVisible();
+
+    fireEvent.keyDown(screen.getByText('Desktop'), {
+      key: 'Escape',
+      code: 'Escape',
+    });
+  });
+  test('renders dropdown text and checks for visibility of options on click', () => {
+    // Render the component
+    render(
+      <div className="wrapper">
+        <Header.TopDropdownMenu
+          text="Dropdown"
+          tabletText="Tablet Dropdown"
+          mobileText="Mobile Dropdown"
+        >
+          <a href="/" data-testid="option1">
+            Option 1
+          </a>
+        </Header.TopDropdownMenu>
+        <a href="/" data-testid="option2">
+          Option 2
+        </a>
+      </div>,
+    );
+
+    const dropdown = screen.getByRole('listbox');
+
+    // Find the dropdown text and options
+    const dropdownText = screen.getByText('Dropdown');
+
+    // Initially, options should not be visible
+    expect(dropdown).toHaveAttribute('aria-expanded', 'false');
+
+    // Simulate click on the dropdown text
+    fireEvent.click(dropdownText);
+
+    // After clicking, options should be visible
+    expect(dropdown).toHaveAttribute('aria-expanded', 'true');
+
+    // Simulate Escape key press to trigger onBlur
+    fireEvent.keyDown(document, { key: 'Escape', code: 'Escape' });
+
+    // After Escape key press, options should not be visible
+    expect(dropdown).toHaveAttribute('aria-expanded', 'false');
+
+    // Simulate click on the dropdown text
+    // fireEvent.click(dropdownText);
+
+    // Click on document to trigger onBlur
+    // fireEvent.click(document);
+
+    // Hit Enter key on the dropdown text
+    // fireEvent.keyDown(dropdownText, { key: 'Enter', code: 'Enter' });
+
+    // Tab outside of the dropdown
+    fireEvent.keyDown(dropdownText, { key: 'Tab', code: 'Tab' });
+    fireEvent.keyDown(dropdownText, { key: 'Enter', code: 'Enter' });
+
+    expect(dropdown).toHaveAttribute('aria-expanded', 'true');
+
+    // Simulate Escape key press to trigger onBlur
+    fireEvent.keyDown(document, { key: 'Escape', code: 'Escape' });
+
+    // Call onBlur on the dropdown text
+    fireEvent.blur(dropdownText);
   });
 });

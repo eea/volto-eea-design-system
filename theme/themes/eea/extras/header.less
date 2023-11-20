@@ -68,6 +68,7 @@
   color: @dropdownColor;
   font-size: @mobileDropdownFontSize;
   font-weight: @dropdownFontWeight;
+  position: relative !important; /* needed because of mobile-sr-only position absolute */
 }
 
 .top.bar .ui.dropdown .menu {
@@ -161,7 +162,7 @@
 /* Theme sites dropdown */
 #theme-sites.ui.dropdown .menu {
   .wrapper {
-    width: @mobileThemeSitesMenuWidth;
+    width: @themeSitesMenuWidth;
 
     .item {
       &:hover,
@@ -534,13 +535,6 @@
     }
   }
 
-  /* Theme sites dropdown */
-  #theme-sites.ui.dropdown .menu {
-    .wrapper {
-      width: @tabletThemeSitesMenuWidth;
-    }
-  }
-
   /* Language dropdown */
   #language-switcher {
     .divider.text {
@@ -633,13 +627,6 @@
           max-width: @computerOfficialUnionMaxWidth;
         }
       }
-    }
-  }
-
-  /* Theme sites dropdown */
-  #theme-sites.ui.dropdown .menu {
-    .wrapper {
-      width: @computerThemeSitesMenuWidth;
     }
   }
 

@@ -136,16 +136,6 @@
   font-size: @largeMediaSize;
 }
 
-.ui.items.row > .item {
-  margin: @mobileRowItemMargin;
-}
-
-// As semantic does for non unstackable items
-// so columns does not affect margin in mobiles
-.ui.items.row:not(.flex-items-wrapper) > .item:last-child {
-  margin-bottom: 0;
-}
-
 // Stackable items that have image above content
 .ui.items.row .item.stackable {
   display: grid;
@@ -163,8 +153,19 @@
 }
 
 // Flex wrapper for list of items
-.ui.items.flex-items-wrapper {
+.ui.items {
   display: flex;
+  flex-direction: column;
+  gap: @groupMargin;
+}
+
+.ui.grid > .row > .column-blocks-wrapper, // override item.less .ui.grid > .row > .column margin 0
+.column-blocks-wrapper {
+  margin-bottom: @groupItemsSpacing;
+}
+
+.ui.items.flex-items-wrapper {
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 
@@ -176,6 +177,7 @@
 .flex-items-wrapper .flex-item {
   width: var(--flex-item-width, 100%);
 }
+
 @media only screen and (min-width: @tabletBreakpoint) {
   .flex-items-wrapper.items-2-columns .flex-item {
     --flex-item-width: calc(@width / 2 - 1%);
@@ -200,7 +202,7 @@
   }
 
   .ui.items.row > .item:not(.stackable) > .image + .content {
-    padding: 0em 0em 0em @mobileContentImageDistance;
+    padding: 0 0 0 @mobileContentImageDistance;
   }
 }
 
@@ -223,10 +225,6 @@
         font-size: @tabletDefaultItemHeaderFontSize;
       }
     }
-  }
-
-  .ui.items.row > .item {
-    margin: @tabletRowItemMargin;
   }
 
   // Flex wrapper for list of items
@@ -253,10 +251,6 @@
         font-size: @desktopDefaultItemDescriptionFontSize;
       }
     }
-  }
-
-  .ui.items.row > .item {
-    margin: @desktopRowItemMargin;
   }
 
   // Flex wrapper for list of items

@@ -7,7 +7,8 @@
 --------------------*/
 
 /* Group */
-@groupMargin: @rem-space-6 0em;
+@groupItemsSpacing: 2rem;
+@groupMargin: @groupItemsSpacing 0;
 
 /* Item */
 @display: flex;
@@ -26,7 +27,7 @@
 @itemTertiaryFilterColor: invert(27%) sepia(15%) saturate(1161%) hue-rotate(167deg) brightness(93%) contrast(80%);
 
 /* Responsive */
-@itemSpacing: 1em;
+@itemSpacing: 0;
 @imageWidth: 175px;
 @contentImageDistance: 2rem;
 
@@ -173,9 +174,6 @@
 @stackableContentPaddingLeft: 0;
 
 /* Row */
-@mobileRowItemMargin  : 1rem 0;
-@tabletRowItemMargin  : 1.5rem 0;
-@desktopRowItemMargin : 2rem 0;
 
 /*-------------------
       Default

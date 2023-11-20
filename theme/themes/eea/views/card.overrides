@@ -8,6 +8,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: var(--text-align, @extraJustifyContent);
+  padding-top: 0;
   font-size: @extraLinkFontSize;
   word-break: @extraLinkWordBreak;
 }
@@ -66,7 +67,7 @@ img.ui.image {
 //
 .ui.cards > .card .meta,
 .ui.card .meta {
-  margin-bottom: @rem-space-4;
+  margin-bottom: @cardContentMarginBottom;
 }
 
 .ui.card .extra.content a:not(.ui) {

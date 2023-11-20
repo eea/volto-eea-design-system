@@ -81,9 +81,7 @@
 @computerOfficialUnionPadding         : @rem-space-2 @rem-space-6 @rem-space-2 @rem-space-12;
 
 // Theme Sites
-@mobileThemeSitesMenuWidth            : 168px;
-@tabletThemeSitesMenuWidth            : 168px;
-@computerThemeSitesMenuWidth          : 225px;
+@themeSitesMenuWidth                  : 224px;
 @themeSitesMenuSiteLinkColor          : @blue-grey-6;
 @themeSitesMenuSiteLinkFontWeight     : @normal;
 @mobileThemeSitesMenuLeft             : 0px;

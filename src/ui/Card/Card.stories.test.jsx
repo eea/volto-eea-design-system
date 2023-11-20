@@ -5,8 +5,8 @@ import {
   TeaserCardGrid,
   CarouselCards,
   FluidGrid,
-  CardGrid,
   ImageGrid,
+  CardGrid,
   Default,
 } from './Card.stories';
 
@@ -110,6 +110,16 @@ describe('CarouselCards component', () => {
 
     const nextArrowButton = getByLabelText('Next slide');
     fireEvent.click(nextArrowButton);
+  });
+});
+
+describe('ImageGrid component', () => {
+  it('renders the image grid with correct number of cards', () => {
+    const { container } = render(<ImageGrid {...ImageGrid.args} />);
+    const imageGridCards = container.querySelectorAll(
+      '.imageCard-items .ui.card a.image',
+    );
+    expect(imageGridCards.length).toBe(5);
   });
 });
 

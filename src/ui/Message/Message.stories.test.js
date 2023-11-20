@@ -1,6 +1,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Info, Error, Warning, Success, Default } from './Message.stories';
+import {
+  Info,
+  ErrorMessage,
+  Warning,
+  Success,
+  Default,
+} from './Message.stories';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('Info component', () => {
@@ -11,11 +17,11 @@ describe('Info component', () => {
   });
 });
 
-describe('Error component', () => {
+describe('ErrorMessage component', () => {
   it('renders a Message component', () => {
-    const { getByText } = render(<Error {...Error.args} />);
-    expect(getByText(Error.args.header)).toBeInTheDocument();
-    expect(getByText(Error.args.content)).toBeInTheDocument();
+    const { getByText } = render(<ErrorMessage {...ErrorMessage.args} />);
+    expect(getByText(ErrorMessage.args.header)).toBeInTheDocument();
+    expect(getByText(ErrorMessage.args.content)).toBeInTheDocument();
   });
 });
 
