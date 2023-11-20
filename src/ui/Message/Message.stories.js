@@ -114,15 +114,15 @@ Warning.parameters = {
   },
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  header: 'Error header',
-  content: 'This is an Error Message',
+export const ErrorMessage = Template.bind({});
+ErrorMessage.args = {
+  header: 'ErrorMessage header',
+  content: 'This is an ErrorMessage Message',
   icon: 'exclamation circle',
   error: true,
   size: 'small',
 };
-Error.argTypes = {
+ErrorMessage.argTypes = {
   error: {
     description: 'message may be formatted to display an error message',
     table: {
@@ -135,7 +135,7 @@ Error.argTypes = {
     },
   },
 };
-Error.parameters = {
+ErrorMessage.parameters = {
   controls: {
     exclude: ['icon', 'error'],
     hideNoControlsWarning: true,
