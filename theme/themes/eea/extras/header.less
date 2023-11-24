@@ -260,6 +260,7 @@
   width: 100%;
   align-items: flex-end;
   justify-content: flex-end;
+  gap: 0 @mainMenuGap;
 
   .item {
     a {
@@ -456,6 +457,7 @@
 
 .search-action {
   display: flex;
+  flex-shrink: 0;
   width: @mobileActionsBoxWidth;
   height: @mobileMainSectionHeight;
   align-items: center;
@@ -648,11 +650,12 @@
 
       .ui.text.menu {
         display: flex;
-        width: 88%;
         max-height: 100%;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: end;
         margin: 0;
+        padding-left: 0;
+        gap: 0 @mainMenuGap;
 
         .item {
           padding: @mainMenuItemPadding;

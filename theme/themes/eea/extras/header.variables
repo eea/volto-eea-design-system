@@ -115,6 +115,7 @@
 @computerLogoMarginTop                : @rem-space-5;
 
 /* Main menu */
+@mainMenuGap                          : @component-padding;
 @mainMenuItemColor                    : @primaryColor;
 @mainMenuItemInvertedColor            : @white;
 @mainMenuItemFontSize                 : ~"min(max(0.875rem, 1.5vw), 1.125rem)";

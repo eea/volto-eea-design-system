@@ -1,5 +1,7 @@
 import React from 'react';
-import { Tab, Container } from 'semantic-ui-react';
+import { Tab, Container, Menu, Icon } from 'semantic-ui-react';
+import cx from 'classnames';
+import './style.less';
 
 export default {
   title: 'Components/Tab',
@@ -212,6 +214,191 @@ Vertical.argTypes = {
       },
       defaultValue: {
         summary: '{ paneWidth: 12, tabWidth: 4 }',
+      },
+    },
+  },
+};
+
+function IconTabContent({
+  variant,
+  renderActive,
+  hideTabTitle,
+  iconPosition,
+  iconSize,
+}) {
+  const panes = [
+    {
+      menuItem: (
+        <Menu.Item>
+          <div
+            className={cx({
+              'asset-top': iconPosition === 'top',
+              'asset-left': iconPosition === 'left',
+              'asset-right': iconPosition === 'right',
+            })}
+          >
+            <Icon
+              className={cx('aligned ri-sun-line', iconSize)}
+              size={iconSize}
+              {...{
+                ...(hideTabTitle && {
+                  role: 'img',
+                  'aria-hidden': 'false',
+                  'aria-label': 'Ground level ozone',
+                }),
+              }}
+            />
+            {!hideTabTitle && <>Ground level ozone</>}
+          </div>
+        </Menu.Item>
+      ),
+      render: () => (
+        <Tab.Pane>
+          is not directly emitted into the atmosphere. Instead, it forms in the
+          atmosphere from a chain of chemical reactions following emissions of
+          certain precursor gases: NOX, carbon monoxide (CO) and NMVOCs and
+          methane (CH4).
+        </Tab.Pane>
+      ),
+    },
+    {
+      menuItem: (
+        <Menu.Item>
+          <div
+            className={cx({
+              'asset-top': iconPosition === 'top',
+              'asset-left': iconPosition === 'left',
+              'asset-right': iconPosition === 'right',
+            })}
+          >
+            <Icon
+              className={cx('aligned ri-moon-line', iconSize)}
+              size={iconSize}
+              {...{
+                ...(hideTabTitle && {
+                  role: 'img',
+                  'aria-hidden': 'false',
+                  'aria-label': 'Nitrogen oxides',
+                }),
+              }}
+            />
+            {!hideTabTitle && <>Nitrogen oxides</>}
+          </div>
+        </Menu.Item>
+      ),
+      render: () => (
+        <Tab.Pane>
+          are emitted during fuel combustion from industrial facilities and the
+          road transport sector. NOX is a group of gases comprising nitrogen
+          monoxide (NO) and nitrogen dioxide (NO2). NO makes up the majority of
+          NOX emissions. NOX contributes to the formation of ozone and
+          particulate matter.
+        </Tab.Pane>
+      ),
+    },
+    {
+      menuItem: (
+        <Menu.Item>
+          <div
+            className={cx({
+              'asset-top': iconPosition === 'top',
+              'asset-left': iconPosition === 'left',
+              'asset-right': iconPosition === 'right',
+            })}
+          >
+            <Icon
+              className={cx('aligned ri-flashlight-line', iconSize)}
+              size={iconSize}
+              {...{
+                ...(hideTabTitle && {
+                  role: 'img',
+                  'aria-hidden': 'false',
+                  'aria-label': 'Particulate matter',
+                }),
+              }}
+            />
+            {!hideTabTitle && <>Particulate matter</>}
+          </div>
+        </Menu.Item>
+      ),
+      render: () => (
+        <Tab.Pane>
+          is a mixture of aerosol particles (solid and liquid) covering a wide
+          range of sizes and chemical compositions. PM is either directly
+          emitted as primary particles or it forms in the atmosphere from
+          emissions of certain precursor pollutants such as SO2, NOX, NH3 and
+          NMVOCs. PM is emitted from many anthropogenic sources, including both
+          combustion and non-combustion sources. Natural emissions of PM also
+          occur, including from sea salt and windblown Saharan dust.
+        </Tab.Pane>
+      ),
+    },
+  ];
+
+  return (
+    <Tab
+      panes={panes}
+      renderActiveOnly={renderActive}
+      menu={{
+        secondary: true,
+        pointing: true,
+        fluid: true,
+        className: variant,
+        tabIndex: 0,
+      }}
+    ></Tab>
+  );
+}
+
+const IconTabTemplate = (args) => (
+  <Container>
+    <IconTabContent {...args}></IconTabContent>
+  </Container>
+);
+
+export const MenuIcon = IconTabTemplate.bind({});
+
+MenuIcon.args = {
+  renderActive: true,
+  hideTabTitle: false,
+  iconPosition: 'top',
+  iconSize: 'small',
+  variant: 'secondary',
+};
+
+MenuIcon.argTypes = {
+  hideTabTitle: {
+    description: 'hide label',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: {
+        summary: false,
+      },
+    },
+  },
+  iconPosition: {
+    control: {
+      type: 'inline-radio',
+      options: ['top', 'left', 'right'],
+    },
+    description: 'icon position',
+    type: { name: 'string' },
+    table: {
+      defaultValue: { summary: '""' },
+    },
+  },
+  iconSize: {
+    control: { type: 'inline-radio' },
+    options: ['mini', 'tiny', 'small', 'big', 'massive'],
+    description: 'icon size',
+    table: {
+      type: {
+        summary: 'string',
+      },
+      defaultValue: {
+        summary: 'large',
       },
     },
   },
