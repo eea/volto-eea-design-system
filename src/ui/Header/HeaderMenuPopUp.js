@@ -345,10 +345,14 @@ function HeaderMenuPopUp({
     (current) => current.url === activeItem || current['@id'] === activeItem,
   );
 
+  // Get layout for current menu item and fallback to a * layout that can
+  // be used for all menu items that don't have a specific layout
   const layout =
-    !!menuItemsLayouts &&
-    Object.keys(menuItemsLayouts).includes(menuItem?.url) &&
-    menuItemsLayouts[menuItem.url];
+    (!!menuItemsLayouts &&
+      Object.keys(menuItemsLayouts).includes(menuItem?.url) &&
+      menuItemsLayouts[menuItem.url]) ||
+    (!!menuItemsLayouts && menuItemsLayouts['*']) ||
+    {};
 
   return (
     <Transition visible={visible} animation="slide down" duration={300}>
