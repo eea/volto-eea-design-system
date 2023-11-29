@@ -260,7 +260,6 @@
   width: 100%;
   align-items: flex-end;
   justify-content: flex-end;
-  gap: 0 @mainMenuGap;
 
   .item {
     a {
@@ -348,7 +347,6 @@
   overflow: auto;
   width: 100%;
   min-height: @mobilePopUpHeight;
-  align-items: @searchBoxAlignItems;
   background: @searchBoxBackgroundGradient;
 
   .ui.container {
@@ -445,6 +443,7 @@
   align-items: center;
   justify-content: center;
   border: none;
+  flex-shrink: 0;
   background-color: @burgerActionBackgroundColor;
   cursor: pointer;
 }
@@ -655,7 +654,6 @@
         justify-content: end;
         margin: 0;
         padding-left: 0;
-        gap: 0 @mainMenuGap;
 
         .item {
           padding: @mainMenuItemPadding;
@@ -684,6 +682,7 @@
   /* Search box */
   #search-box {
     min-height: @computerPopUpHeight;
+    align-items: @searchBoxAlignItems;
 
     .wrapper {
       margin: @searchBoxComputerPopupMarginTop 0;
@@ -695,10 +694,20 @@
   }
 }
 
+//@media only screen and (min-width: @smallMonitorBreakpoint) and (max-width: @largestSmallMonitor) {
+//}
 @media only screen and (min-width: @largestSmallMonitor) {
   .eea.header .subsite-logo {
     left: calc(100% + calc(@subsiteFlexGap / 2));
   }
+
+  .main-menu {
+    gap: 0 @mainMenuGap;
+  }
+  .main.bar .ui.text.menu {
+    gap: 0 @mainMenuGap;
+  }
+
 }
 
 /************************
