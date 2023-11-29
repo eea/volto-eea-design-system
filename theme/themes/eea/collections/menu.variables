@@ -30,7 +30,7 @@
   color @defaultDuration @defaultEasing
 ;
 @itemFontWeight: @normal;
-@itemTextColor: @textColor;
+@itemTextColor: var(--text-color-inactive, @textColor);
 
 /* Divider */
 @dividerSize: 1px;
