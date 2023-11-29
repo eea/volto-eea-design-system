@@ -5,6 +5,7 @@
 /* Content Box */
 @contentBoxWidth : 100vw;
 @contentBoxColor : @white;
+@contentBoxInactiveColor : @invertedTextColor;
 @contentBoxBackgroundColor: @grey-1;
 @contentBoxNoBackground: transparent;
 @contentBoxColorInverted : inherit;

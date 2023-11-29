@@ -159,6 +159,11 @@
     --tab-active-bg-color: transparent;
   }
 
+  // ensure that tab content has text color useful when tab is inside a content-box
+  .tab {
+    color: @textColor;
+  }
+
   // make accordion transformed from rrt_tabs use same color bg as tabs
   .tabs-accessibility .RRT__panel {
     --bg-color: @white;
