@@ -14,7 +14,6 @@
 /* Tag text */
 @tagNameFontSize       : 1rem;
 @tagNameFontColor      : @textColorCSSVar;
-@tagNameFontColorWithBackground : @grey-0;
 @tagNameFontWeight     : 500;
 @tagNameLineHeight     : 1.25rem;
 
