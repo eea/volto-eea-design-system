@@ -89,7 +89,7 @@
 @headerColor: inherit;
 @headerLinkDisplay: block;
 
-@headerPadding: @em-space-1;
+@headerPadding: 2px; // fix from custom to avoid 3rd line from showing
 @headerOnImagePadding: 0;
 @headerLineHeightOffset: 0;
 

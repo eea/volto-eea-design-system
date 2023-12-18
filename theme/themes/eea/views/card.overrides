@@ -473,6 +473,7 @@ img.ui.image {
 }
 
 // Spacing adjustment to display outline with overflow hidden
+/* avoid 3rd line visibility for card headings */
 .ui.card .header {
   padding: @headerPadding;
 }
