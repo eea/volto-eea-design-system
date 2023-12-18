@@ -694,8 +694,6 @@
   }
 }
 
-//@media only screen and (min-width: @smallMonitorBreakpoint) and (max-width: @largestSmallMonitor) {
-//}
 @media only screen and (min-width: @largestSmallMonitor) {
   .eea.header .subsite-logo {
     left: calc(100% + calc(@subsiteFlexGap / 2));
@@ -707,7 +705,13 @@
   .main.bar .ui.text.menu {
     gap: 0 @mainMenuGap;
   }
+}
 
+/* avoid menu item on 2nd row when we don't have enough space to have larger gap */
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  .main.bar .ui.container .ui.text.menu {
+    gap: 0;
+  }
 }
 
 /************************

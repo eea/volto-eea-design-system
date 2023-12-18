@@ -258,7 +258,7 @@ p.ui.button {
 
 .ui.inverted.secondary.buttons .button:focus,
 .ui.inverted.secondary.button:focus,
-\.ui.inverted.secondary.buttons .button:focus-visible,
+.ui.inverted.secondary.buttons .button:focus-visible,
 .ui.inverted.secondary.button:focus-visible {
   background-color: @secondaryColorFocus;
 }

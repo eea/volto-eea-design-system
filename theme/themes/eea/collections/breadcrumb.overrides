@@ -5,6 +5,7 @@
 .ui.breadcrumb {
   display: flex;
   align-items: center;
+  line-height: @lineHeight;
 
   .home.icon {
     margin-right: 0;
