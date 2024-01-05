@@ -1,6 +1,5 @@
 import React from 'react';
 import { Grid, Image } from 'semantic-ui-react';
-import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 import PropTypes from 'prop-types';
 
@@ -13,22 +12,20 @@ const Sites = (props) => {
       column.push(
         <Grid.Column className="logo" key={i}>
           <a className="logo" href={item.url} aria-label={item.alt}>
-            <LazyLoadComponent>
-              <Image
-                className={item.className}
-                src={item.src}
-                alt={item.alt}
-              ></Image>
-            </LazyLoadComponent>
+            <Image
+              className={item.className}
+              src={item.src}
+              alt={item.alt}
+              loading="lazy"
+            ></Image>
           </a>
           <a className="logo" href={nextItem.url} aria-label={item.alt}>
-            <LazyLoadComponent>
-              <Image
-                className={nextItem.className}
-                src={nextItem.src}
-                alt={nextItem.alt}
-              ></Image>
-            </LazyLoadComponent>
+            <Image
+              className={nextItem.className}
+              src={nextItem.src}
+              alt={nextItem.alt}
+              loading="lazy"
+            ></Image>
           </a>
         </Grid.Column>,
       );

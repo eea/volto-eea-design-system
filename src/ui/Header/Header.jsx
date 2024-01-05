@@ -77,11 +77,7 @@ const TopDropdownMenu = ({
           id={id}
           className={className}
           text={() => (
-            <div
-              role="option"
-              aria-selected="false"
-              className={`divider text ${classNameHeader}`}
-            >
+            <div className={`divider text ${classNameHeader}`}>
               {headerText}
             </div>
           )}
