@@ -15,15 +15,15 @@ const Sites = (props) => {
             <Image
               className={item.className}
               src={item.src}
-              alt={item.alt}
+              alt={''}
               loading="lazy"
             ></Image>
           </a>
-          <a className="logo" href={nextItem.url} aria-label={item.alt}>
+          <a className="logo" href={nextItem.url} aria-label={nextItem.alt}>
             <Image
               className={nextItem.className}
               src={nextItem.src}
-              alt={nextItem.alt}
+              alt={''}
               loading="lazy"
             ></Image>
           </a>
