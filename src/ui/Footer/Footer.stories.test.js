@@ -6,12 +6,6 @@ import { Default } from './Footer.stories';
 import Footer from './Footer';
 import '@testing-library/jest-dom/extend-expect';
 
-jest.mock('react-lazy-load-image-component', () => {
-  return {
-    LazyLoadComponent: ({ children }) => <>{children}</>,
-  };
-});
-
 describe('Default', () => {
   let history;
   let observe;

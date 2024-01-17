@@ -66,6 +66,12 @@
   z-index: @z-index-5;
 }
 
+/* hide delete button for layout settings from edit and add page */
+#page-add .block-editor-layoutSettings .delete-button,
+#page-edit .block-editor-layoutSettings .delete-button {
+  display: none;
+}
+
 // remove extra margin from cards on edit, when they are inside a grid such as teaser
 // the outline is cut before the theme background with margin 1em set
 .block .ui.card {
@@ -112,8 +118,27 @@
     padding: 0.5rem;
   }
 
+  /* Fix title block color and icon position modified by accordion.overrides */
+  .button.title {
+    --text-color: #ab8766;
+    --text-color-hover: #ab8766;
+
+    .icon {
+      order: 0 !important;
+    }
+  }
+
   .icon {
     margin-right: 0 !important;
+  }
+
+  /* File preview_image - see https://taskman.eionet.europa.eu/issues/256131 */
+  .contenttype-file .block.metadata.preview_image img {
+    max-width: 200px;
+  }
+
+  .contenttype-image .block.metadata.image img {
+    max-width: 100%;
   }
 
   /* fix order and color of block choose title block
@@ -197,4 +222,10 @@
       border-bottom: none !important;
     }
   }
+}
+
+/* IMSv4 fixes */
+#page-diff .ui.table td.eight.wide,
+#page-diff .ui.table th.eight.wide {
+  width: 50%;
 }
