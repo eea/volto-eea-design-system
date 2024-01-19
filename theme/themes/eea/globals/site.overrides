@@ -8,43 +8,7 @@ html,
 body {
   font-size: @baseFontSize;
 }
-/* Warn editor when there is an empty link */
-.slate-editor-link.external
-  > span:first-child
-  > span
-  > span[data-slate-length='0']::before {
-  color: red;
-  content: 'Empty external link ';
-}
 
-.slate-editor-link.internal
-  > span
-  > span
-  > span[data-slate-length='0']::before {
-  color: red;
-  content: 'Empty internal link ';
-}
-
-// select img with empty alt attribute which are inside a link using has pseudo-selector
-.image-block-container:has(img[alt=''])::before {
-  display: flex;
-  justify-content: center;
-  border: 3px solid red;
-  color: red;
-  content: 'Empty alt attribute';
-}
-
-// border: 3px solid red;
-
-// span[data-slate-length="0"]:empty::before {
-//   color: red;
-//   content: "Empty tag";
-// }
-
-// span[data-slate-length="0"]::before {
-//   color: red;
-//   content: "Empty tag";
-// }
 // Accessibility outline on focus-visible for every component
 *:focus-visible {
   outline: @focusVisibleOutline;
