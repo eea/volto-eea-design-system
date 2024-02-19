@@ -344,7 +344,6 @@
   margin-left: 0;
 
   .item {
-    max-width: @secondaryPointingItemMaxWidth;
     padding: @secondaryItemVerticalPadding @secondaryItemHorizontalPadding;
     border-bottom: @secondaryPointingItemBorderBottom;
     margin: @secondaryPointingItemMargin;
@@ -507,4 +506,9 @@
 .section-edit .menu[class*='ary'] .item,
 .tabs-wrapper .menu[class*='ary'] .item {
   font-size: 1.25rem;
+}
+
+// This fixes the visual bug where the dropdown menu is rendered behind checkbox
+.react-select__menu {
+  z-index: 999 !important;
 }
