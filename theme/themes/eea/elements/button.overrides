@@ -95,8 +95,9 @@
 }
 
 // Maps, Video and Image blocks use buttons without
+// also ObjectBrowserWidget used on Teaser target
 // icons, fix them in css for now
-.toolbar-inner .ui.buttons .basic.button {
+.ui.buttons .basic.button {
   padding: 0;
   background-color: transparent !important;
   box-shadow: none !important;
