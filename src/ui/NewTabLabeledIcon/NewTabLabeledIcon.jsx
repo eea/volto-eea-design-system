@@ -4,13 +4,7 @@ import { Button, Icon } from 'semantic-ui-react';
 function NewTabLabeledIcon({ children, ...rest }) {
   return (
     <div className="eea new tab labeled icon">
-      <Button
-        target="_blank"
-        rel="noreferrer"
-        href={rest.link}
-        as="a"
-        className="text"
-      >
+      <Button target="_blank" href={rest.link} as="a" className="text">
         {children}
       </Button>
     </div>
