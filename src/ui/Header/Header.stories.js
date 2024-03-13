@@ -1263,7 +1263,6 @@ const Template = (args) => {
                 <a
                   href="https://europa.eu/european-union/contact/institutions-bodies_en"
                   target="_blank"
-                  rel="noreferrer"
                   role="option"
                   aria-selected="false"
                 >
@@ -1284,12 +1283,7 @@ const Template = (args) => {
               <div className="wrapper" tabIndex={0} role={'presentation'}>
                 {links.map((item, index) => (
                   <Dropdown.Item key={index}>
-                    <a
-                      href={item.href}
-                      className="site"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
+                    <a href={item.href} className="site" target="_blank">
                       {item.title}
                     </a>
                   </Dropdown.Item>

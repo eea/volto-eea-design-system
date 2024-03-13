@@ -20,12 +20,7 @@ const FooterActions = (props) => {
                     {action.title}
                   </Link>
                 ) : (
-                  <a
-                    href={action.url}
-                    key={index}
-                    target={'_blank'}
-                    rel={'noreferrer'}
-                  >
+                  <a href={action.url} key={index} target={'_blank'}>
                     {action.title}
                   </a>
                 ),
@@ -42,12 +37,7 @@ const FooterActions = (props) => {
                     {copyright.title}
                   </Link>
                 ) : (
-                  <a
-                    href={copyright.url}
-                    key={index}
-                    target={'_blank'}
-                    rel={'noreferrer'}
-                  >
+                  <a href={copyright.url} key={index} target={'_blank'}>
                     {copyright.title}
                   </a>
                 ),
