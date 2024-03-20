@@ -40,6 +40,10 @@ h6 {
   color: @headerColor;
 }
 
+h4 {
+  font-weight: @font-weight-2;
+}
+
 .content-area {
   color: @contentAreaColor;
 }

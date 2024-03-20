@@ -85,7 +85,7 @@
 @h1 : unit((44 / @fontSize), rem);
 @h2 : unit((32 / @fontSize), rem);
 @h3 : unit((26 / @fontSize), rem);
-@h4 : unit((20 / @fontSize), rem);
+@h4 : unit((22 / @fontSize), rem);
 @h5 : unit((18 / @fontSize), rem);
 @h6 : unit((16 / @fontSize), rem);
 
