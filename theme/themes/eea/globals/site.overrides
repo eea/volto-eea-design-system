@@ -40,7 +40,8 @@ h6 {
   color: @headerColor;
 }
 
-h4 {
+h3.subtitle-light {
+  font-size: @h3-light;
   font-weight: @font-weight-2;
 }
 
