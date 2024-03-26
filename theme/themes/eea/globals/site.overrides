@@ -40,6 +40,11 @@ h6 {
   color: @headerColor;
 }
 
+.subtitle-light {
+  font-size: @h3-light !important;
+  font-weight: @font-weight-2 !important;
+}
+
 .content-area {
   color: @contentAreaColor;
 }
