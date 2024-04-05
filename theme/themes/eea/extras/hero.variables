@@ -6,6 +6,7 @@
 @mobileHeroBlockMinHeight : 412px;
 @tabletHeroBlockMinHeight : 446px;
 @desktopHeroBlockMinHeight: 664px;
+@heroDeleteButtonColor: white;
 
 @heroBlockPosition: relative;
 @heroBlockHomePagePadding: 0 @rem-space-5;
