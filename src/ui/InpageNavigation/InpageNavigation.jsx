@@ -9,6 +9,10 @@ class InpageNavigation extends Component {
       scrollPosition: 0,
       removeClass: 'hidden',
     };
+    this.debouncedHandleInpageNavigationVisibility = debounce(
+      this.handleInpageNavigationVisibility,
+      250,
+    );
   }
 
   handleInpageNavigationVisibility = () => {
@@ -25,12 +29,16 @@ class InpageNavigation extends Component {
   componentDidMount() {
     window.addEventListener(
       'scroll',
-      debounce(this.handleInpageNavigationVisibility, 250),
+      this.debouncedHandleInpageNavigationVisibility,
     );
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleInpageNavigationVisibility);
+    window.removeEventListener(
+      'scroll',
+      this.debouncedHandleInpageNavigationVisibility,
+    );
+    this.debouncedHandleInpageNavigationVisibility.cancel();
   }
 
   onInpageNavigationClick = () => {
