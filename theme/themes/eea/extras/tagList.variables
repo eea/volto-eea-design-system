@@ -9,7 +9,7 @@
 @tagsContentGap            : 0 1rem;
 
 /* Tags Title */
-@tagsTitleFontColor        : @textColorCSSVar;
+@tagsTitleFontColor        : @linkColor;
 @tagsFontWeight            : 400;
 @tagsFontSize              : 1.125rem;
 @tagsLineHeight            : 1.312rem;

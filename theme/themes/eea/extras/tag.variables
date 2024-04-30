@@ -13,7 +13,7 @@
 
 /* Tag text */
 @tagNameFontSize       : 1rem;
-@tagNameFontColor      : @textColorCSSVar;
+@tagNameFontColor      : @linkColor;
 @tagNameFontWeight     : 500;
 @tagNameLineHeight     : 1.25rem;
 
