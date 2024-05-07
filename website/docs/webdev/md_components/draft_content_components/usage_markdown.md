@@ -19,8 +19,12 @@ The component handles various cases to determine if the content is published or 
 The DraftBackground component is typically used in the main layout or template of the Volto application.  
 It should be rendered on every page to ensure that the draft state indicator is displayed consistently across the entire application.
 
-## Styling
+## Do's
 
-The `wf-state-is-draft` CSS class added by the DraftBackground component can be styled to provide a visual indication of the draft state. For example, you could add a semi-transparent overlay or a watermark to the page when the content is in a draft state.
+- Use the Draft Content component on every view page of your Volto application to ensure consistent draft state indication across the entire site.
+- Ensure that the CSS class `wf-state-is-draft` is applied to the body element when the content is in a draft or unpublished state, and remove it when the content is published.
 
-This example adds a semi-transparent "DRAFT" watermark to the center of the page when the `wf-state-is-draft` class is present on the body element.
+## Don'ts
+
+- Don't use the Draft Content component on pages where you don't want to display the draft state indicator.
+- Don't modify the logic for determining the draft state without considering all the edge cases and potential implications.
