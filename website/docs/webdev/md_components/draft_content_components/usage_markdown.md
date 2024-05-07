@@ -16,7 +16,7 @@ The component handles various cases to determine if the content is published or 
 
 ## Usage
 
-The DraftBackground component is typically used in the main layout or template of the Volto application.  
+The Draft Content component is typically used in the main layout or template of the Volto application.  
 It should be rendered on every page to ensure that the draft state indicator is displayed consistently across the entire application.
 
 ## Do's
