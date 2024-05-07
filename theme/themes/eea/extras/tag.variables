@@ -6,6 +6,7 @@
 @tagPadding            : @mediumGap 0;
 @tagHeight             : 1.25rem;
 @tagMargin             : 0 0 0 0;
+@tagLinkFontColor      : var(--text-color, @linkColor);
 
 /* Tag Icon */
 @tagHashtagFontSize    : 0.75rem;
