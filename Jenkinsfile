@@ -337,7 +337,7 @@ pipeline {
        stage('Storybook') {
            when {
             expression {
-              env.GITHUB_COMMENT.contains("@eea-jenkins build all") || env.GITHUB_COMMENT.contains("@eea-jenkins build story")
+              env.GITHUB_COMMENT.contains("@eea-jenkins build all") || env.GITHUB_COMMENT.contains("@eea-jenkins build storybook")
               }
            }
 
