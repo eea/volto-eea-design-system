@@ -5,37 +5,37 @@ import styles from './HomepageFeatures.module.css';
 const FeatureList = [
   {
     title: 'Web developer',
-    link: 'docs/category/web-development',
+    link: 'docs/category/web-development/',
     Svg: require('../../static/img/undraw_proud_coder_re_exuy.svg').default,
     description: <>Design system for web developers</>,
   },
   {
     title: 'Web designer',
-    link: 'docs/category/web-development',
+    link: 'docs/category/web-development/',
     Svg: require('../../static/img/undraw_static_website_re_x70h.svg').default,
     description: <>Design system for web designers</>,
   },
   {
     title: 'Web content creator',
-    link: 'docs/category/web-content',
+    link: 'docs/category/web-content/',
     Svg: require('../../static/img/undraw_add_post_re_174w.svg').default,
     description: <>Tips and tricks for writing for the web</>,
   },
   {
     title: 'Publication writer',
-    link: 'docs/pubguide/writing',
+    link: 'docs/pubguide/writing/',
     Svg: require('../../static/img/undraw_education_f8ru.svg').default,
     description: <>Writing manual for publications</>,
   },
   {
     title: 'Publication designer',
-    link: 'docs/pubguide/design',
+    link: 'docs/pubguide/design/',
     Svg: require('../../static/img/undraw_online_articles_re_yrkj.svg').default,
     description: <>Design system for publications</>,
   },
   {
     title: 'Data scientist',
-    link: 'docs/category/maps-and-charts',
+    link: 'docs/category/maps-and-charts/',
     Svg: require('../../static/img/undraw_all_the_data_re_hh4w.svg').default,
     description: <>Design system for data scientists</>,
   },
