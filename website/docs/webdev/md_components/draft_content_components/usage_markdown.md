@@ -6,12 +6,12 @@ easily distinguish between published and unpublished content.
 
 The component checks the current content's review state, effective date, and parent content's review state to determine if the content should be considered published or not. If the content is not published, the component adds a CSS class (`wf-state-is-draft`) to the body element of the view page. This CSS class is used to apply a specific background to indicate the draft state.
 
-The component handles the following cases to determine if the draft image should be displayed:
+The component handles the following cases to determine that the draft image should be displayed:
 - If the content has an effective date set in the future, regardless of the review state, it is considered unpublished.
 - If the content has a review state which isn't explicitly set to "published" 
 
-The component handles various cases to determine if the draft image should not be displayed:
-- If the content's review state is explicitly set to "published".
+The component handles the following cases to determine that the draft image should not be displayed:
+- If the content's review state is explicitly set to "published" and the effective date is not in the future.
 - If the content's review state is null, but its parent's review state is "published", (e.g., an image in a published folder).
 - If the content's review state is null, and there is no parent (e.g., the Plone site root).
 - If the content's review state is null, and the parent's review state is also null (e.g., an image in the Plone site root).
