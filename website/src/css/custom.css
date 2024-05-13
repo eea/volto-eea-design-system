@@ -186,6 +186,12 @@ body {
   line-height: 1.5;
 }
 
+/* reduce the width of the paragraphs to something more reasonable */
+li,
+p {
+  max-width: 95ch;
+}
+
 .caption {
   font-size: 0.875rem;
 }

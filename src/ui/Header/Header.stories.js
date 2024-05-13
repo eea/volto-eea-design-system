@@ -1540,7 +1540,7 @@ const Template = (args) => {
 };
 
 export const Default = Template.bind({});
-Default.args = {
+export const HeaderArgs = {
   linksMenuTitle: 'Environmental information systems',
   tabletLinksMenuTitle: 'EEA information systems',
   mobileLinksMenuTitle: 'EEA information systems',
@@ -1551,3 +1551,4 @@ Default.args = {
   transparency: false,
   inverted: false,
 };
+Default.args = HeaderArgs;
