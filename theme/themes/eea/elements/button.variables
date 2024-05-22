@@ -254,6 +254,9 @@
 @basicLoadingColor: @offWhite;
 @basicTextTransform: none;
 
+@basicButtonIconMargin: 0 !important;
+@basicButtonIconVerticalAlign: top;
+
 /* Basic Hover */
 @basicHoverBackground: #FFFFFF;
 @basicHoverTextColor: @hoveredTextColor;
@@ -303,9 +306,10 @@
 /* Circular */
 @circularButtonBorderWidth: 2px;
 @circularButtonBorderColor: currentColor;
-@circularButtonPadding: 0.25em;
+@circularButtonPadding: 0;
 @circularButtonIconFontSize: 1.375em;
 @circularButtonLineHeight: 1;
+@circularButtonBorderRadius: 50%;
 
 /*-------------------
       Variations
