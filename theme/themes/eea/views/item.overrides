@@ -71,6 +71,10 @@
 }
 
 // color item images that are svg files
+
+.content-box[class*='ary'] .item img {
+  filter: @itemWhiteFilterColor;
+}
 .item.primary img {
   filter: @itemPrimaryFilterColor;
 }
@@ -266,16 +270,19 @@
 .ui.items > .item {
   &.primary,
   > .icon.primary {
-    color: @primaryColor;
+    --text-color: @primaryColorCSSVar;
+    color: @primaryColorCSSVar;
   }
 
   &.secondary,
   > .icon.secondary {
-    color: @secondaryColor;
+    --text-color: @secondaryColorCSSVar;
+    color: @secondaryColorCSSVar;
   }
 
   &.tertiary,
   > .icon.tertiary {
-    color: @tertiaryColor;
+    --text-color: @tertiaryColorCSSVar;
+    color: @tertiaryColorCSSVar;
   }
 }
