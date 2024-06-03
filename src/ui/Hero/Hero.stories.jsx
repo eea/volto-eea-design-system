@@ -31,13 +31,10 @@ export default {
       },
     },
     buttonVariant: {
-      options: ['', 'primary', 'secondary'],
+      options: ['default', 'primary', 'secondary'],
       description: 'button variant options',
       control: {
         type: 'select',
-        labels: {
-          '': 'default',
-        },
       },
       defaultValue: 'primary',
       table: {
