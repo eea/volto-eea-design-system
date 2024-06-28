@@ -15,6 +15,13 @@ class InpageNavigation extends Component {
     );
   }
 
+  shouldComponentUpdate(_nextProps, nextState) {
+    if (this.state.removeClass !== nextState.removeClass) {
+      return true;
+    }
+    return false;
+  }
+
   handleInpageNavigationVisibility = () => {
     const position = window.scrollY;
     this.setState({ scrollPosition: position });
