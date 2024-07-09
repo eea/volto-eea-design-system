@@ -10,7 +10,7 @@ const SubFooter = (props) => {
 
   return (
     <div className={'subfooter'}>
-      <Grid>
+      <Grid className="mobile hidden">
         {props.managedBy &&
           props.managedBy.map((manager, index) => (
             <Grid.Column
@@ -42,9 +42,6 @@ const SubFooter = (props) => {
       </Grid>
 
       <Footer.Description description={props.description} />
-
-      <Footer.Social social={props.social} />
-
       <Grid className="mobile only">
         {props.managedBy &&
           props.managedBy.map((manager, index) => (
@@ -53,6 +50,7 @@ const SubFooter = (props) => {
               tablet={manager.columnSize.tablet}
               computer={manager.columnSize.computer}
               key={index}
+              className="mobile only"
             >
               <div className="item">
                 <div className={manager.className}>

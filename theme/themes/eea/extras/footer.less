@@ -37,7 +37,6 @@ footer .theme-sites {
   .logos .logo img {
     margin: @mobileThemeSitesLogoMargin;
   }
-
 }
 footer .footer-header {
   font-size: @mobileFooterTitleFontSize;
@@ -90,7 +89,8 @@ footer .footer-header {
   }
 }
 
-.subfooter .social {
+.subfooter,
+footer .social {
   display: flex;
   justify-content: @mobileSocialJustifyContent;
   margin: @mobileSocialIconsMargin;
@@ -199,7 +199,8 @@ footer .footer-wrapper .menu {
     margin: @tabletFooterDescriptionMargin;
   }
 
-  .subfooter .social {
+  .subfooter,
+  footer .social {
     justify-content: @tabletSocialJustifyContent;
     gap: @tabletSocialGap;
     margin: @tabletSocialIconsMargin;
@@ -264,7 +265,8 @@ footer .footer-wrapper .menu {
       }
     }
 
-    .subfooter .social {
+    .subfooter,
+    footer .social {
       margin: @computerSocialIconsMargin;
     }
 
