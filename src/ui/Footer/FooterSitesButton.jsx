@@ -12,14 +12,16 @@ const SitesButton = (props) => {
 
   //fallback to props
   return (
-    <Button
-      className="theme-sites-button"
-      onClick={() => {
-        history.push(props.hrefButton || '');
-      }}
-    >
-      {props.buttonName}
-    </Button>
+    <div className="theme-sites">
+      <Button
+        className="theme-sites-button"
+        onClick={() => {
+          history.push(props.hrefButton || '');
+        }}
+      >
+        {props.buttonName}
+      </Button>
+    </div>
   );
 };
 
