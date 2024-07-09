@@ -1,11 +1,10 @@
 import React from 'react';
-import { Grid, Image } from 'semantic-ui-react';
 import { Button } from 'semantic-ui-react';
 
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
-const Sites = (props) => {
+const SitesButton = (props) => {
   const history = useHistory();
   if (props.children) {
     return <div>{props.children}</div>;
@@ -13,34 +12,19 @@ const Sites = (props) => {
 
   //fallback to props
   return (
-    <div
-      className="theme-sites"
-      style={{
-        display: 'flex',
-        width: '100%',
-        justifyContent: 'center',
+    <Button
+      className="theme-sites-button"
+      onClick={() => {
+        history.push(props.hrefButton || '');
       }}
     >
-      <Button
-        style={{
-          background: 'transparent',
-          fontSize: '1.2rem',
-          padding: '1rem 2rem',
-          color: 'white',
-          border: '1px solid white',
-        }}
-        onClick={() => {
-          history.push(props.hrefButton || '');
-        }}
-      >
-        {props.buttonName}
-      </Button>
-    </div>
+      {props.buttonName}
+    </Button>
   );
 };
 
-Sites.propTypes = {
-  sites: PropTypes.array,
+SitesButton.propTypes = {
+  hrefButton: PropTypes.string,
 };
 
-export default Sites;
+export default SitesButton;
