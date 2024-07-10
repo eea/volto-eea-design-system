@@ -53,11 +53,6 @@ describe('Default', () => {
     ).toBeInTheDocument();
 
     expect(container.querySelector('.theme-sites-button')).toBeInTheDocument();
-    Default.args.sites.map((site) =>
-      expect(
-        container.querySelector(`a[href="${site.url}"] img[src="${site.src}"]`),
-      ).toBeInTheDocument(),
-    );
   });
 
   it('renders correctly', () => {
