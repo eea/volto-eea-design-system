@@ -43,6 +43,16 @@ const SubFooter = (props) => {
 
       <Footer.Description description={props.description} />
       <Grid className="mobile only">
+        <Grid.Column
+          mobile={12}
+          tablet={4}
+          computer={4}
+          className="mobile only"
+        >
+          <div className="item">
+            <Footer.Contact contacts={props.contacts} />
+          </div>
+        </Grid.Column>
         {props.managedBy &&
           props.managedBy.map((manager, index) => (
             <Grid.Column
