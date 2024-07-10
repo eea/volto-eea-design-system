@@ -46,9 +46,13 @@ describe('Default', () => {
     expect(container.querySelector('.actions')).toBeInTheDocument();
 
     expect(container.querySelector('.footer-header')).toBeInTheDocument();
-    expect(getByText('Environmental information systems')).toBeInTheDocument();
+    expect(
+      getByText(
+        'Dive into environmental data and information from EEA and partners on our dedicated platforms',
+      ),
+    ).toBeInTheDocument();
 
-    expect(container.querySelector('.theme-sites')).toBeInTheDocument();
+    expect(container.querySelector('.theme-sites-button')).toBeInTheDocument();
     Default.args.sites.map((site) =>
       expect(
         container.querySelector(`a[href="${site.url}"] img[src="${site.src}"]`),
