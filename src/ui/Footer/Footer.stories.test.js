@@ -91,7 +91,11 @@ describe('Default', () => {
     expect(container.querySelector('.actions')).toBeInTheDocument();
 
     expect(container.querySelector('.footer-header')).toBeInTheDocument();
-    expect(getByText('Environmental information systems')).toBeInTheDocument();
+    expect(
+      getByText(
+        'Dive into environmental data and information from EEA and partners on our dedicated platforms',
+      ),
+    ).toBeInTheDocument();
 
     expect(getByText('Sites test')).toBeInTheDocument();
     expect(getByText('SubFooter test')).toBeInTheDocument();
@@ -122,7 +126,11 @@ describe('Default', () => {
     expect(container.querySelector('.footer-wrapper-nobg')).toBeInTheDocument();
 
     expect(container.querySelector('.footer-header')).toBeInTheDocument();
-    expect(getByText('Environmental information systems')).toBeInTheDocument();
+    expect(
+      getByText(
+        'Dive into environmental data and information from EEA and partners on our dedicated platforms',
+      ),
+    ).toBeInTheDocument();
 
     expect(getByText('Actions test')).toBeInTheDocument();
   });
