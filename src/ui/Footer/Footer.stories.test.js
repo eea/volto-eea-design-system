@@ -23,7 +23,7 @@ describe('Default', () => {
   });
 
   it('renders correctly', () => {
-    const { container, getByText } = render(
+    const { container } = render(
       <Router history={history}>
         <Default {...Default.args} />
       </Router>,
