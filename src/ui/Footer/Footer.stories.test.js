@@ -44,14 +44,7 @@ describe('Default', () => {
       container.querySelector('a[href="https://www.eea.europa.eu/en/login"]'),
     ).toBeInTheDocument();
     expect(container.querySelector('.actions')).toBeInTheDocument();
-
     expect(container.querySelector('.footer-header')).toBeInTheDocument();
-    expect(
-      getByText(
-        'Dive into environmental data and information from EEA and partners on our dedicated platforms',
-      ),
-    ).toBeInTheDocument();
-
     expect(container.querySelector('.theme-sites-button')).toBeInTheDocument();
   });
 
@@ -86,12 +79,6 @@ describe('Default', () => {
     expect(container.querySelector('.actions')).toBeInTheDocument();
 
     expect(container.querySelector('.footer-header')).toBeInTheDocument();
-    expect(
-      getByText(
-        'Dive into environmental data and information from EEA and partners on our dedicated platforms',
-      ),
-    ).toBeInTheDocument();
-
     expect(getByText('Sites test')).toBeInTheDocument();
     expect(getByText('SubFooter test')).toBeInTheDocument();
   });
@@ -119,14 +106,7 @@ describe('Default', () => {
 
     expect(container.querySelector('#footer')).toBeInTheDocument();
     expect(container.querySelector('.footer-wrapper-nobg')).toBeInTheDocument();
-
     expect(container.querySelector('.footer-header')).toBeInTheDocument();
-    expect(
-      getByText(
-        'Dive into environmental data and information from EEA and partners on our dedicated platforms',
-      ),
-    ).toBeInTheDocument();
-
     expect(getByText('Actions test')).toBeInTheDocument();
   });
 });
