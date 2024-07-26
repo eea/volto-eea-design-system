@@ -30,7 +30,7 @@ const Contact = ({ children, contacts }) =>
               {contact.children.map((child, index) => (
                 <React.Fragment key={index}>
                   {isInternalURL(child.url) ? (
-                    <Link to={child.url} key={index}>
+                    <Link to={child.url} key={index} className="bold">
                       {child.text}
                     </Link>
                   ) : (
@@ -38,6 +38,7 @@ const Contact = ({ children, contacts }) =>
                       href={child.url}
                       target={'_blank'}
                       rel="noopener noreferrer"
+                      className="bold"
                     >
                       {child.text}
                     </a>

@@ -19,6 +19,7 @@
 /* Theme Sites */
 @mobileThemeSitesPadding            : @rem-space-3 0;
 @computerThemeSitesPadding          : @rem-space-5 0;
+@computerThemeSitesPaddingTop       : @rem-space-10;
 @mobileThemeSitesLogoMargin         : 0 auto @rem-space-8;
 @computerThemeSitesLogoMargin       : 0 auto @rem-space-10;
 @mobileFooterTitleFontSize          : @font-size-1;
@@ -42,16 +43,17 @@
 @tabletContactBlockMarginBottom     : @space-4;
 @mobileContactMargin                : @space-4 0;
 @tabletContactMargin                : @rem-space-050 0;
-@contactFontSize                    : @font-size-3;
-@tabletContactFontSize              : @font-size-1;
+@contactFontSize                    : @font-size-2;
+@tabletContactFontSize              : @font-size-3;
 @tabletContactGap                   : @rem-space-4;
-@contactGap                         : @rem-space-8;
+@contactGap                         : @rem-space-4;
+@mobileContactGap                   : @em-space-8;
 @mobileContactIconMarginRight       : @space-3;
 @mobileSubcontactBlockMarginTop     : @space-3;
 @mobileContactIconFontSize          : @font-size-4;
 @computerContactIconFontSize        : @font-size-9;
-@tabletSubContactIconFontSize       : @font-size-0;
-@computerSubContactIconFontSize     : @font-size-1;
+@tabletSubContactIconFontSize       : @font-size-3;
+@computerSubContactIconFontSize     : @font-size-3;
 @tabletSubContactIconMarginRight    : @rem-space-2;
 @computerSubContactIconMarginRight  : @rem-space-4;
 @computerSubContactIconFontWeight   : @font-weight-4;
