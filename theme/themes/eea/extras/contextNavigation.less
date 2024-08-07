@@ -84,8 +84,12 @@
   border-bottom: none; 
 }
 
-.item.level-3 a {
+.context-navigation .item.level-2 a {
   padding-left: @subparItemPaddingLeft;
+}
+
+ .context-navigation .item.level-3 a {
+  padding-left: @subparItemPaddingLeft + 2rem;
 }
 
 // Active indicator
@@ -97,6 +101,43 @@
 .context-navigation .active.item > .content > a:focus-visible {
   color : @sidenavItemActiveColorHover;
 }
+
+.context-navigation {
+.content .ui.accordion > .title.active {
+  --bg-color: transparent;
+  --text-color: @sidenavItemActiveColor;
+}
+.ui.accordion > .title {
+  border-bottom: 0.125rem solid #3D5265;
+  text-align: left;
+}
+
+.accordion-list {
+  margin-top: 0;
+  list-style: none;
+  padding-left: 0;
+  .accordion {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .content {
+    width: 100%;
+  }
+  .title {
+    padding: 1rem 1.25rem;
+    border-bottom: 0.125rem solid #3D5265;
+  }
+}
+
+.current {
+  color: @sidenavItemActiveColor;
+} 
+.ui.accordion .content {
+  --bg-color: transparent;
+
+}
+}
+
 
 // Hide arrow
 .content.active-indicator {
