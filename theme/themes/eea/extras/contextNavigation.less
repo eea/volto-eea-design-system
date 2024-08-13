@@ -7,14 +7,25 @@
   max-width      : @widescreenSidenavMaxWidth;
   background     : @sidenavBackground;
   margin-right   : @sidenavMarginRight;
-  padding-left   : @sidenavPaddingLeft;
+  // padding-left   : @sidenavPaddingLeft;
   overflow       : @sidenavOverflow;
+  box-shadow     : 0px 3px 3px @sidenavShadowColor;
 }
 @media (max-width: @largeMonitorBreakpoint) {
   .context-navigation {
     max-width: @sidenavMaxWidth;
     margin: @sidenavMargin;
   }
+}
+
+.context-navigation-list a {
+  display: block;
+  color: @sidenavItemColor; 
+  font-size  : @sidenavItemFontSize;
+  font-weight: @sidenavItemFontWeight;
+}
+.context-navigation-list .content a {
+  font-weight: 400;
 }
 
 .context-navigation .item a {
@@ -43,12 +54,17 @@
     margin-right: @sidenavHeaderIconMarginRight;
   }
 
-  &::before {
+  &::before:not(.accordion-header) {
     content: @sidenavHeaderIconContent;
     font-family: 'remixicon';
     font-weight: @sidenavHeaderIconFontWeight;
     padding-right: @sidenavHeaderIconPaddingRight;
   }
+}
+.accordion-header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
 }
 
 .context-navigation a.contenttype-folder {
@@ -108,12 +124,16 @@
   --text-color: @sidenavItemActiveColor;
 }
 .ui.accordion > .title {
-  border-bottom: 0.125rem solid #3D5265;
   text-align: left;
+}
+
+.ui.accordion > .title:not([aria-expanded="true"]) {
+  border-bottom: 1px solid #3D5265;
 }
 
 .accordion-list {
   margin-top: 0;
+  margin-bottom: 0;
   list-style: none;
   padding-left: 0;
   .accordion {
@@ -123,11 +143,22 @@
   .content {
     width: 100%;
   }
-  .title {
-    padding: 1rem 1.25rem;
-    border-bottom: 0.125rem solid #3D5265;
+  .title:not(.ui) {
+    padding: 1rem;
+    font-size: @sidenavItemFontSize;
+    font-weight: 500;
   }
 }
+.content .accordion-list .title:not(.ui) {
+  padding: 0;
+}
+.content .accordion-list .title-link {
+  padding: 1rem 1.75rem;
+}
+.context-navigation-list > .title {
+    border-bottom: 1px solid #3D5265;
+}
+
 
 .current {
   color: @sidenavItemActiveColor;

@@ -9,6 +9,7 @@
 @sidenavPaddingLeft: @rem-space-4;
 @sidenavOverflow: inherit;
 @sidenavMargin: @rem-space-8 auto;
+@sidenavShadowColor: @grey-3;
 
 /* Header */
 @sidenavHeaderColor: @blue-grey-5;
@@ -29,7 +30,7 @@
 /* Nav item */
 @sidenavItemPadding: @rem-space-2 0 @rem-space-2 @rem-space-8;
 @sidenavItemFontSize: @font-size-1;
-@sidenavItemFontWeight: @font-weight-4;
+@sidenavItemFontWeight: @font-weight-5;
 @sidenavItemColor: @blue-grey-5;
 @sidenavItemHoverBackground: @blue-grey-5;
 @sidenavItemHoverColor: @grey-0;
