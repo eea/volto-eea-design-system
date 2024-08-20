@@ -17,6 +17,13 @@
   }
 }
 
+@media screen and (min-width: @mobileBreakpoint) and (max-width: @computerBreakpoint) {
+  .context-navigation {
+    max-width: @mobileSidenavMaxWidth;
+    margin: 0 auto;
+  }
+}
+
 .context-navigation .item a {
   display    : block;
   padding    : @sidenavItemPadding;

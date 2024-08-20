@@ -4,6 +4,7 @@
 
 @sidenavMaxWidth: 350px;
 @widescreenSidenavMaxWidth: 300px;
+@mobileSidenavMaxWidth: 100%;
 @sidenavBackground: @grey-0;
 @sidenavMarginRight: @rem-space-4;
 @sidenavPaddingLeft: 0;
