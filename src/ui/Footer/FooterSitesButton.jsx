@@ -1,11 +1,9 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
-
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
+import { isInternalURL, flattenToAppURL } from '@plone/volto/helpers';
 
 const SitesButton = (props) => {
-  const history = useHistory();
   if (props.children) {
     return <div>{props.children}</div>;
   }
@@ -16,7 +14,13 @@ const SitesButton = (props) => {
       <Button
         className="theme-sites-button"
         onClick={() => {
-          history.push(props.hrefButton || '');
+          if (__CLIENT__ && window) {
+            window.location.replace(
+              isInternalURL(props.hrefButton)
+                ? flattenToAppURL(props.hrefButton)
+                : props.hrefButton,
+            );
+          }
         }}
       >
         {props.buttonName}
