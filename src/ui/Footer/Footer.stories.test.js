@@ -23,7 +23,7 @@ describe('Default', () => {
   });
 
   it('renders correctly', () => {
-    const { container, getByText } = render(
+    const { container } = render(
       <Router history={history}>
         <Default {...Default.args} />
       </Router>,
@@ -44,16 +44,7 @@ describe('Default', () => {
       container.querySelector('a[href="https://www.eea.europa.eu/en/login"]'),
     ).toBeInTheDocument();
     expect(container.querySelector('.actions')).toBeInTheDocument();
-
-    expect(container.querySelector('.footer-header')).toBeInTheDocument();
-    expect(getByText('Environmental information systems')).toBeInTheDocument();
-
-    expect(container.querySelector('.theme-sites')).toBeInTheDocument();
-    Default.args.sites.map((site) =>
-      expect(
-        container.querySelector(`a[href="${site.url}"] img[src="${site.src}"]`),
-      ).toBeInTheDocument(),
-    );
+    expect(container.querySelector('.theme-sites-button')).toBeInTheDocument();
   });
 
   it('renders correctly', () => {
@@ -85,10 +76,6 @@ describe('Default', () => {
       container.querySelector('a[href="https://www.eea.europa.eu/en/login"]'),
     ).toBeInTheDocument();
     expect(container.querySelector('.actions')).toBeInTheDocument();
-
-    expect(container.querySelector('.footer-header')).toBeInTheDocument();
-    expect(getByText('Environmental information systems')).toBeInTheDocument();
-
     expect(getByText('Sites test')).toBeInTheDocument();
     expect(getByText('SubFooter test')).toBeInTheDocument();
   });
@@ -116,10 +103,6 @@ describe('Default', () => {
 
     expect(container.querySelector('#footer')).toBeInTheDocument();
     expect(container.querySelector('.footer-wrapper-nobg')).toBeInTheDocument();
-
-    expect(container.querySelector('.footer-header')).toBeInTheDocument();
-    expect(getByText('Environmental information systems')).toBeInTheDocument();
-
     expect(getByText('Actions test')).toBeInTheDocument();
   });
 });
