@@ -73,7 +73,7 @@
 @footerDescriptionTextAlign         : center;
 
 /* Social Icons */
-@computerSocialIconsMargin            : @rem-space-2 0 @rem-space-8;
+@computerSocialIconsMargin          : @rem-space-2 0 @rem-space-8;
 @mobileSocialIconsMargin            : @rem-space-2 0 @rem-space-10;
 @tabletSocialIconsMargin            : @rem-space-13 0;
 @computerSocialIconsMargin          : @rem-space-17 0;
