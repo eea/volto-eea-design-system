@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from 'semantic-ui-react';
+import { Grid, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 const Social = (props) => {
@@ -8,7 +8,7 @@ const Social = (props) => {
   }
 
   return props.social && props.social.length > 0 ? (
-    <div>
+    <Grid.Row>
       <span className="social">
         {props.social?.map((item, index) => (
           <a href={item.url} aria-label={`${item.name} link`} key={index}>
@@ -16,7 +16,7 @@ const Social = (props) => {
           </a>
         ))}
       </span>
-    </div>
+    </Grid.Row>
   ) : null;
 };
 
