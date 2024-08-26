@@ -31,10 +31,8 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  header:
-    'Dive into environmental data and information from EEA and partners on our dedicated platforms',
   buttonName: 'Explore our thematic sites',
-  hrefButton: '/en/information-platforms',
+  hrefButton: 'https://www.eea.europa.eu/en/information-systems',
   description: '',
   actions: [
     { url: '/privacy', title: 'Privacy' },
