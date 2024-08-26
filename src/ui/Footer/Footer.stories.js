@@ -23,14 +23,16 @@ const Template = (args) => (
   <Footer>
     <Footer.SubFooter {...args} />
     <Footer.Header>{args.header}</Footer.Header>
-    <Footer.Sites sites={args.sites} />
+    <Footer.SitesButton {...args} />
+    <Footer.Social {...args} />
     <Footer.Actions actions={args.actions} copyright={args.copyright} />
   </Footer>
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  header: 'Environmental information systems',
+  buttonName: 'Explore our Environmental information systems',
+  hrefButton: 'https://www.eea.europa.eu/en/information-systems',
   description: '',
   actions: [
     { url: '/privacy', title: 'Privacy' },

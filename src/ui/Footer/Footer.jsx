@@ -11,6 +11,7 @@ import FooterActions from '@eeacms/volto-eea-design-system/ui/Footer/FooterActio
 import FooterHeader from '@eeacms/volto-eea-design-system/ui/Footer/FooterHeader';
 import SubFooter from '@eeacms/volto-eea-design-system/ui/Footer/SubFooter';
 import Social from '@eeacms/volto-eea-design-system/ui/Footer/Social';
+import FooterSitesButton from '@eeacms/volto-eea-design-system/ui/Footer/FooterSitesButton';
 import Contact from '@eeacms/volto-eea-design-system/ui/Footer/Contact';
 import { useFirstVisited } from '@eeacms/volto-eea-design-system/helpers';
 import Description from '@eeacms/volto-eea-design-system/ui/Footer/Description';
@@ -44,6 +45,7 @@ Footer.Contact = Contact;
 Footer.Header = FooterHeader;
 Footer.Sites = FooterSites;
 Footer.Social = Social;
+Footer.SitesButton = FooterSitesButton;
 Footer.SubFooter = SubFooter;
 Footer.Description = Description;
 
