@@ -28,9 +28,9 @@
 @freshwaterLogoMaxWidth             : 122px;
 @themeSitesButtonBackground         : transparent;
 @themeSitesButtonFontSize           : 1rem;
-@themeSitesButtonPadding            : 1rem 2rem !important;
+@themeSitesButtonPadding            : 1rem 2rem;
 @themeSitesButtonColor              : white;
-@themeSitesButtonBorder             : 1px solid white !important;
+@themeSitesButtonBorder             : 1px solid white;
 
 /* Sub-footer Item */
 @subFooterItemDisplay: flex;
