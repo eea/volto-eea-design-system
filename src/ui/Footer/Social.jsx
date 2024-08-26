@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Icon } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 const Social = (props) => {
