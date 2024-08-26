@@ -18,13 +18,19 @@
 
 /* Theme Sites */
 @mobileThemeSitesPadding            : @rem-space-3 0;
+@mobileThemeSitesPaddingTop         : @rem-space-10;
 @computerThemeSitesPadding          : @rem-space-5 0;
-@computerThemeSitesPaddingTop       : @rem-space-10;
+@computerThemeSitesPaddingTop       : @rem-space-20;
 @mobileThemeSitesLogoMargin         : 0 auto @rem-space-8;
 @computerThemeSitesLogoMargin       : 0 auto @rem-space-10;
 @mobileFooterTitleFontSize          : @font-size-1;
 @tabletFooterTitleFontSize          : @font-size-3;
 @freshwaterLogoMaxWidth             : 122px;
+@themeSitesButtonBackground         : transparent;
+@themeSitesButtonFontSize           : 1rem;
+@themeSitesButtonPadding            : 1rem 2rem !important;
+@themeSitesButtonColor              : white;
+@themeSitesButtonBorder             : 1px solid white !important;
 
 /* Sub-footer Item */
 @subFooterItemDisplay: flex;
@@ -67,8 +73,9 @@
 @footerDescriptionTextAlign         : center;
 
 /* Social Icons */
-@mobileSocialIconsMargin            : @rem-space-2 0 @rem-space-8;
-@tabletSocialIconsMargin            : @rem-space-7 0;
+@computerSocialIconsMargin            : @rem-space-2 0 @rem-space-8;
+@mobileSocialIconsMargin            : @rem-space-2 0 @rem-space-10;
+@tabletSocialIconsMargin            : @rem-space-13 0;
 @computerSocialIconsMargin          : @rem-space-17 0;
 @socialIconColor                    : @white;
 @mobileSocialJustifyContent         : space-around;

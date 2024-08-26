@@ -26,11 +26,11 @@ footer {
     padding: @mobileWrapperPadding;
   }
   .theme-sites-button {
-    background: transparent !important;
-    font-size: 1.2rem !important;
-    padding: 1rem 2rem !important;
-    color: white !important;
-    border: 1px solid white !important;
+    background: @themeSitesButtonBackground !important;
+    font-size: @themeSitesButtonFontSize !important;
+    padding: @themeSitesButtonPadding !important;
+    color: @themeSitesButtonColor !important;
+    border: @themeSitesButtonBorder !important;
   }
   .theme-sites {
     display: flex;
@@ -174,7 +174,7 @@ footer .footer-wrapper .menu {
   }
 }
 
-@media only screen and (max-width: @largestMobileScreen) {
+@media only screen and (max-width: @tabletBreakpoint) {
   .footer-wrapper > .container {
     display: flex;
     flex-direction: column;
@@ -184,12 +184,22 @@ footer .footer-wrapper .menu {
     font-size: @mobileMenuCopyrightFontSize;
     font-weight: @mobileMenuCopyrightFontWeight;
   }
+  .contact-wrapper {
+    padding: @mobileContactMargin;
+  }
   .contact-wrapper .contact {
     gap: @mobileContactGap;
   }
   .contact-wrapper .subcontact {
     display: flex;
     gap: @mobileContactGap;
+  }
+  .theme-sites {
+    padding-top: @mobileThemeSitesPaddingTop !important;
+    padding-bottom: @mobileThemeSitesPaddingTop !important;
+  }
+  footer .social {
+    margin: @mobileSocialIconsMargin;
   }
 }
 

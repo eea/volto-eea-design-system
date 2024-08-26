@@ -34,7 +34,7 @@ const SubFooter = (props) => {
             </Grid.Column>
           ))}
 
-        <Grid.Column mobile={12} tablet={12} computer={4}>
+        <Grid.Column mobile={12} tablet={6} computer={4}>
           <div className="item">
             <Footer.Contact contacts={props.contacts} />
           </div>
