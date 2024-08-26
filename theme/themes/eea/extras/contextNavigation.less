@@ -17,6 +17,13 @@
   }
 }
 
+@media screen and (min-width: @mobileBreakpoint) and (max-width: @computerBreakpoint) {
+  .context-navigation {
+    max-width: @mobileSidenavMaxWidth;
+    margin: 0 auto;
+  }
+}
+
 .context-navigation .item a {
   display    : block;
   padding    : @sidenavItemPadding;
@@ -43,7 +50,7 @@
     margin-right: @sidenavHeaderIconMarginRight;
   }
 
-  &::before {
+  &::before:not(.accordion-header) {
     content: @sidenavHeaderIconContent;
     font-family: 'remixicon';
     font-weight: @sidenavHeaderIconFontWeight;
@@ -84,8 +91,12 @@
   border-bottom: none; 
 }
 
-.item.level-3 a {
+.context-navigation .item.level-2 a {
   padding-left: @subparItemPaddingLeft;
+}
+
+ .context-navigation .item.level-3 a {
+  padding-left: @subparItemPaddingLeft + 2rem;
 }
 
 // Active indicator
@@ -102,4 +113,74 @@
 .content.active-indicator {
   display: none;
 }
+
+/*******************************
+          Side navigation
+*******************************/
+.accordion-header {
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  padding: @sidenavAccordionHeaderPadding;
+}
+
+.context-navigation-list .title-link {
+  display: block;
+  color: @sidenavItemColor; 
+  font-size  : @sidenavItemFontSize;
+  font-weight: @sidenavItemFontWeight;
+}
+.context-navigation-list .content .title-link {
+  font-weight: @sidenavLevelTwoItemFontWeight;
+}
+.context-navigation {
+  box-shadow: @sidenavBoxShadow;
+
+  .current {
+    color: @sidenavItemActiveColor;
+  }
+
+  .accordion {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ui.accordion>.title {
+    --text-color: @sidenavItemColor;
+    --text-color-hover: @sidenavItemColor;
+    font-size: @sidenavItemFontSize;
+    font-weight: @sidenavItemFontWeight;
+    padding: @sidenavFolderItemPadding;
+    text-align: left;
+    &:not([aria-expanded="true"]) {
+        border-bottom: @sidenavContentBorderBottom;
+      }
+  }
+
+  .accordion-list {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .context-navigation-list>.accordion-list-title {
+    border-bottom: @sidenavContentBorderBottom;
+
+    .title-link {
+      padding: @sidenavFolderItemPadding;
+      font-size: @sidenavItemFontSize;
+      font-weight: @sidenavItemFontWeight;
+    }
+  }
+
+  .content .accordion-list .title-link {
+    padding: @sidenavLevelTwoItemPadding;
+  }
+
+  .ui.accordion .content {
+    --bg-color: transparent;
+    width: 100%;
+  }
+}
+
 .loadUIOverrides();
