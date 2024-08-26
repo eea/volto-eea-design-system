@@ -12,9 +12,16 @@ const Contact = ({ children, contacts }) =>
       {contacts?.map((contact, index) => (
         <div className="contact" key={index}>
           {isInternalURL(contact.url) ? (
-            <Link to={contact.url}>{contact.text}</Link>
+            <Link to={contact.url} className="bold">
+              {contact.text}
+            </Link>
           ) : (
-            <a href={contact.url} target={'_blank'} rel="noopener noreferrer">
+            <a
+              href={contact.url}
+              target={'_blank'}
+              rel="noopener noreferrer"
+              className={'bold'}
+            >
               {contact.text}
             </a>
           )}
@@ -31,7 +38,6 @@ const Contact = ({ children, contacts }) =>
                       href={child.url}
                       target={'_blank'}
                       rel="noopener noreferrer"
-                      className="bold"
                     >
                       {child.text}
                     </a>
