@@ -15,7 +15,7 @@ const SitesButton = (props) => {
         className="theme-sites-button"
         onClick={() => {
           if (__CLIENT__ && window) {
-            window.location.replace(
+            window.location.assign(
               isInternalURL(props.hrefButton)
                 ? flattenToAppURL(props.hrefButton)
                 : props.hrefButton,
