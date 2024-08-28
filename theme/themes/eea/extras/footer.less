@@ -211,7 +211,22 @@ footer .footer-wrapper .menu {
   footer .footer-header {
     font-size: @tabletFooterTitleFontSize;
   }
+  .contact-wrapper {
+    display: flex;
+    padding-top: @tabletContactWrapperPaddingTop;
+    gap: @tabletContactGap;
+  }
 
+  .contact-wrapper .subcontact {
+    display: block;
+  }
+  .many-contacts {
+    display: block;
+    padding-top: 0px;
+  }
+  .many-contacts .subcontact {
+    display: flex;
+  }
   .subfooter .item {
     .logo img {
       max-height: 100px;
@@ -256,6 +271,13 @@ footer .footer-wrapper .menu {
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
+  .contact-wrapper {
+    display: block;
+    padding-top: 0px;
+  }
+  .contact-wrapper .subcontact {
+    display: flex;
+  }
   footer {
     .footer-wrapper {
       padding: @computerWrapperPadding;
