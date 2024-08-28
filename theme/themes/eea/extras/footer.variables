@@ -49,6 +49,7 @@
 @tabletContactBlockMarginBottom     : @space-4;
 @mobileContactMargin                : @space-4 0;
 @tabletContactMargin                : @rem-space-050 0;
+@tabletContactWrapperPaddingTop     : @rem-space-8;
 @contactFontSize                    : @font-size-2;
 @tabletContactFontSize              : @font-size-3;
 @tabletContactGap                   : @rem-space-4;

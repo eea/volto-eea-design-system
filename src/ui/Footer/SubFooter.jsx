@@ -33,12 +33,13 @@ const SubFooter = (props) => {
               </div>
             </Grid.Column>
           ))}
-
-        <Grid.Column mobile={12} tablet={12} computer={4}>
-          <div className="item">
-            <Footer.Contact contacts={props.contacts} />
-          </div>
-        </Grid.Column>
+        {props.contacts?.length > 0 && (
+          <Grid.Column mobile={12} tablet={12} computer={4}>
+            <div className="item">
+              <Footer.Contact contacts={props.contacts} />
+            </div>
+          </Grid.Column>
+        )}
       </Grid>
     </div>
   );

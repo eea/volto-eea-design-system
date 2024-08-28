@@ -1,14 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
+import cx from 'classnames';
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 
-const Contact = ({ children, contacts }) =>
-  children?.length ? (
+const Contact = ({ children, contacts }) => {
+  return children?.length ? (
     children
   ) : (
-    <div className="contact-wrapper">
+    <div
+      className={cx(
+        'contact-wrapper',
+        contacts?.length > 5 ? 'many-contacts' : '',
+      )}
+    >
       {contacts?.map((contact, index) => (
         <div className="contact" key={index}>
           {isInternalURL(contact.url) ? (
@@ -50,6 +55,7 @@ const Contact = ({ children, contacts }) =>
       ))}
     </div>
   );
+};
 
 Contact.propTypes = {
   contacts: PropTypes.array,
