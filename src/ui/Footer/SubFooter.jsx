@@ -36,14 +36,7 @@ const SubFooter = (props) => {
         {props.contacts?.length > 0 && (
           <Grid.Column mobile={12} tablet={12} computer={4}>
             <div className="item">
-              <Footer.Contact
-                contacts={[
-                  ...props.contacts,
-                  { url: 'a', text: 'testam 123' },
-                  { url: 'a', text: 'testam 123' },
-                  { url: 'a', text: 'testam 123' },
-                ]}
-              />
+              <Footer.Contact contacts={props.contacts} />
             </div>
           </Grid.Column>
         )}
