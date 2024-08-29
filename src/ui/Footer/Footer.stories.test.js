@@ -3,8 +3,10 @@ import { render } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
 import { Default } from './Footer.stories';
+import { Provider } from 'react-redux';
 import Footer from './Footer';
 import '@testing-library/jest-dom/extend-expect';
+import configureStore from 'redux-mock-store';
 
 describe('Default', () => {
   let history;
@@ -22,11 +24,21 @@ describe('Default', () => {
     });
   });
 
+  const mockStore = configureStore();
+  const store = mockStore({
+    intl: {
+      locale: 'en',
+      messages: {},
+    },
+  });
+
   it('renders correctly', () => {
     const { container } = render(
-      <Router history={history}>
-        <Default {...Default.args} />
-      </Router>,
+      <Provider store={store}>
+        <Router history={history}>
+          <Default {...Default.args} />
+        </Router>
+      </Provider>,
     );
 
     expect(container.querySelector('#footer')).toBeInTheDocument();
@@ -49,21 +61,23 @@ describe('Default', () => {
 
   it('renders correctly', () => {
     const { container, getByText } = render(
-      <Router history={history}>
-        <Footer>
-          <Footer.SubFooter {...Default.args}>
-            <div>SubFooter test</div>
-          </Footer.SubFooter>
-          <Footer.Header>{Default.args.header}</Footer.Header>
-          <Footer.Sites sites={Default.args.sites}>
-            <div>Sites test</div>
-          </Footer.Sites>
-          <Footer.Actions
-            actions={Default.args.actions}
-            copyright={Default.args.copyright}
-          />
-        </Footer>
-      </Router>,
+      <Provider store={store}>
+        <Router history={history}>
+          <Footer>
+            <Footer.SubFooter {...Default.args}>
+              <div>SubFooter test</div>
+            </Footer.SubFooter>
+            <Footer.Header>{Default.args.header}</Footer.Header>
+            <Footer.Sites sites={Default.args.sites}>
+              <div>Sites test</div>
+            </Footer.Sites>
+            <Footer.Actions
+              actions={Default.args.actions}
+              copyright={Default.args.copyright}
+            />
+          </Footer>
+        </Router>
+      </Provider>,
     );
 
     expect(container.querySelector('#footer')).toBeInTheDocument();
@@ -82,23 +96,25 @@ describe('Default', () => {
 
   it('renders correctly', () => {
     const { container, getByText } = render(
-      <Router history={history}>
-        <Footer>
-          <Footer.SubFooter
-            {...Default.args}
-            description={'test description'}
-            social={undefined}
-          />
-          <Footer.Header>{Default.args.header}</Footer.Header>
-          <Footer.Sites sites={Default.args.sites} />
-          <Footer.Actions
-            actions={Default.args.actions}
-            copyright={Default.args.copyright}
-          >
-            <div>Actions test</div>
-          </Footer.Actions>
-        </Footer>
-      </Router>,
+      <Provider store={store}>
+        <Router history={history}>
+          <Footer>
+            <Footer.SubFooter
+              {...Default.args}
+              description={'test description'}
+              social={undefined}
+            />
+            <Footer.Header>{Default.args.header}</Footer.Header>
+            <Footer.Sites sites={Default.args.sites} />
+            <Footer.Actions
+              actions={Default.args.actions}
+              copyright={Default.args.copyright}
+            >
+              <div>Actions test</div>
+            </Footer.Actions>
+          </Footer>
+        </Router>
+      </Provider>,
     );
 
     expect(container.querySelector('#footer')).toBeInTheDocument();
