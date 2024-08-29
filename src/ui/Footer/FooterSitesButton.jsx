@@ -1,7 +1,5 @@
-import React from 'react';
-import { Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { isInternalURL, flattenToAppURL } from '@plone/volto/helpers';
+import { UniversalLink } from '@plone/volto/components';
 
 const SitesButton = (props) => {
   if (props.children) {
@@ -11,20 +9,13 @@ const SitesButton = (props) => {
   //fallback to props
   return (
     <div className="theme-sites">
-      <Button
+      <UniversalLink
+        href={props.hrefButton}
         className="theme-sites-button"
-        onClick={() => {
-          if (__CLIENT__ && window) {
-            window.location.assign(
-              isInternalURL(props.hrefButton)
-                ? flattenToAppURL(props.hrefButton)
-                : props.hrefButton,
-            );
-          }
-        }}
+        openLinkInNewTab={false}
       >
         {props.buttonName}
-      </Button>
+      </UniversalLink>
     </div>
   );
 };
