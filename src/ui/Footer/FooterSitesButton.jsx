@@ -11,7 +11,7 @@ const SitesButton = (props) => {
     <div className="theme-sites">
       <UniversalLink
         href={props.hrefButton}
-        className="theme-sites-button"
+        className="ui button white inverted theme-sites-button"
         openLinkInNewTab={false}
       >
         {props.buttonName}

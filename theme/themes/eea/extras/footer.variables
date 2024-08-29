@@ -31,6 +31,7 @@
 @themeSitesButtonPadding            : 1rem 2rem;
 @themeSitesButtonColor              : white;
 @themeSitesButtonBorder             : 1px solid white;
+@themeSitesButtonBoxShadow          : none;
 
 /* Sub-footer Item */
 @subFooterItemDisplay: flex;
