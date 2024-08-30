@@ -43,7 +43,7 @@ const Template = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  buttonName: 'Explore our Environmental information systems',
+  buttonName: 'Explore our environmental information systems',
   hrefButton: 'https://www.eea.europa.eu/en/information-systems',
   description: '',
   actions: [
