@@ -2,11 +2,11 @@
         Sidebar Nav
 *******************************/
 
-@sidenavMaxWidth: 350px;
+@sidenavMaxWidth: 300px;
 @widescreenSidenavMaxWidth: 300px;
 @mobileSidenavMaxWidth: 100%;
 @sidenavBackground: @grey-0;
-@sidenavMarginRight: @rem-space-4;
+@sidenavMarginRight: 0;
 @sidenavPaddingLeft: 0;
 @sidenavOverflow: inherit;
 @sidenavMargin: @rem-space-8 auto;
@@ -19,6 +19,7 @@
 @sidenavHeaderFontWeight: @font-weight-7;
 @sidenavHeaderPadding: @rem-space-4;
 @sidenavAccordionHeaderPadding: @rem-space-2 @rem-space-4;
+@sidenavAccordionHeaderBackgroundColor: white;
 @sidenavHeaderBorderBottom: @2px solid @blue-grey-5;
 @sidenavHeaderIconMarginRight: @rem-space-4;
 
