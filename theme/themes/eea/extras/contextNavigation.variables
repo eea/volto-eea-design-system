@@ -2,14 +2,14 @@
         Sidebar Nav
 *******************************/
 
-@sidenavMaxWidth: 300px;
-@widescreenSidenavMaxWidth: 300px;
+@sidenavMaxWidth: 315px;
+@widescreenSidenavMaxWidth: 315px;
 @mobileSidenavMaxWidth: 100%;
 @sidenavBackground: @grey-0;
 @sidenavMarginRight: 0;
 @sidenavPaddingLeft: 0;
 @sidenavOverflow: inherit;
-@sidenavMargin: @rem-space-8 auto;
+@sidenavMargin: auto;
 @sidenavShadowColor: @grey-3;
 @sidenavBoxShadow: 0px 3px 3px @sidenavShadowColor;
 
