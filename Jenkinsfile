@@ -240,7 +240,7 @@ pipeline {
       steps {
         script {
           def scannerHome = tool 'SonarQubeScanner'
-          def nodeJS = tool 'NodeJS'
+          def nodeJS = tool 'NodeJS18'
           withSonarQubeEnv('Sonarqube') {
             sh '''sed -i "s#/app/src/addons/${GIT_NAME}/##g" xunit-reports/coverage/lcov.info'''
             sh '''sed -i "s#src/addons/${GIT_NAME}/##g" xunit-reports/coverage/lcov.info'''
@@ -303,7 +303,7 @@ pipeline {
 
               script {
                   checkout scm
-                  env.NODEJS_HOME = "${tool 'NodeJS'}"
+                  env.NODEJS_HOME = "${tool 'NodeJS18'}"
                   env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
 
                   sh '''sed -i "s#url:.*#url: 'https://ci.eionet.europa.eu/',#" website/docusaurus.config.js'''
@@ -344,7 +344,7 @@ pipeline {
           steps {
             node(label: 'docker') {
               script {
-                  env.NODEJS_HOME = "${tool 'NodeJS'}"
+                  env.NODEJS_HOME = "${tool 'NodeJS18'}"
                   env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
 
                   sh '''rm -rf eea-storybook'''
