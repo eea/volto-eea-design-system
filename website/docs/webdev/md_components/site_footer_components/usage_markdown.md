@@ -9,7 +9,7 @@ The core footer provides supplementary information such as copyright, legal, pri
 | 1   | **EEA logo**                                | yes       | Logo of European Environment Agency (EEA)                                 |
 | 2   | **EIONET logo**                             | yes       | Logo of European Environment Information and Observation Network          |
 | 3   | **Contact information**<br />               | yes       | Links to the associated services available through the EEA site           |
-| 4   | **Environmental information system button** | yes       | European Information System                                               |
+| 4   | **Environmental information systems button** | yes      | European Information Systems                                              |
 | 5   | **Social media**                            | yes       | Links to social EEA's social media                                        |
 | 6   | **Legal navigation**                        | yes       | Contains legal information links - consistent throughout the family sites |
 | 7   | **Content owner details**                   | yes       | Indicates ownership over the site's content                               |
