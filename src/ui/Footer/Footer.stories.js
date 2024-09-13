@@ -12,6 +12,8 @@ import Industry from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets
 import Marine from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/marine.svg';
 import Eionet from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eionet.svg';
 import EEA from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
+import configureStore from 'redux-mock-store';
+import { Provider } from 'react-redux';
 
 export default {
   title: 'Layout/Footer',
@@ -19,14 +21,24 @@ export default {
   argTypes: {},
 };
 
+const mockStore = configureStore();
+const store = mockStore({
+  intl: {
+    locale: 'en',
+    messages: {},
+  },
+});
+
 const Template = (args) => (
-  <Footer>
-    <Footer.SubFooter {...args} />
-    <Footer.Header>{args.header}</Footer.Header>
-    <Footer.SitesButton {...args} />
-    <Footer.Social {...args} />
-    <Footer.Actions actions={args.actions} copyright={args.copyright} />
-  </Footer>
+  <Provider store={store}>
+    <Footer>
+      <Footer.SubFooter {...args} />
+      <Footer.Header>{args.header}</Footer.Header>
+      <Footer.SitesButton {...args} />
+      <Footer.Social {...args} />
+      <Footer.Actions actions={args.actions} copyright={args.copyright} />
+    </Footer>
+  </Provider>
 );
 
 export const Default = Template.bind({});
