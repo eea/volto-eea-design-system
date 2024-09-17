@@ -183,7 +183,7 @@
 @orderedCountOpacity: 1;
 @orderedCountTextAlign: right;
 @orderedCountVerticalAlign: middle;
-@orderedDistance: @rem-space-5;
+@orderedDistance: @bulletDistance;
 
 @orderedChildCountDistance: 1em;
 @orderedChildCountOffset: -2em;
