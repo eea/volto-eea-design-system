@@ -35,6 +35,13 @@ ul.ui.list li:before {
   font-size: @bulletSize;
 }
 
+/* Ordered list */
+
+ol.ui.list,
+.ui.ordered.list {
+  padding-left: @orderedDistance;
+}
+
 // Third layer margin fix
 .ui.ordered.list .list .list > .item:before,
 .ui.ordered.list .list .list > li:before {
