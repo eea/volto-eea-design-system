@@ -80,6 +80,10 @@
   }
 }
 
+.ui.form .SingleDatePicker_picker {
+  z-index: @z-index-3;
+}
+
 .ui.form .field .ui.basic.button.delete-button {
   padding: 0;
   border: none;
