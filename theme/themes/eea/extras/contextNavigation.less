@@ -135,6 +135,7 @@
 .context-navigation-list .title-link {
   display: block;
   color: @sidenavItemColor; 
+  margin: 0 @sidenavItemMargin;
   font-size  : @sidenavItemFontSize;
   font-weight: @sidenavItemFontWeight;
 }
@@ -158,19 +159,21 @@
     font-weight: @sidenavItemFontWeight;
     padding: @sidenavFolderItemPadding;
     text-align: left;
+    margin: @sidenavItemMargin;
     &:not([aria-expanded="true"]) {
         border-bottom: @sidenavContentBorderBottom;
       }
   }
-
+  .context-navigation-list.accordion-list {
+      max-height: 85dvh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+  }
   .accordion-list {
     margin-top: 0;
     margin-bottom: 0;
     list-style: none;
     padding-left: 0;
-    max-height: 85dvh;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
   }
 
   .context-navigation-list>.accordion-list-title {

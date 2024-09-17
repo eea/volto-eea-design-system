@@ -39,6 +39,7 @@
 @sidenavItemHoverBackground: @blue-grey-5;
 @sidenavItemHoverColor: @grey-0;
 @sidenavLastItemMarginBottom: @rem-space-2;
+@sidenavItemMargin: 2px;
 
 /* Third level item */
 @subparItemPaddingLeft: @rem-space-12;
