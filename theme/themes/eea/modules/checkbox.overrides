@@ -28,6 +28,11 @@
   }
 }
 
+.ui.checkbox.toggle label::before,
+.ui.checkbox.toggle label::after {
+  z-index: auto;
+}
+
 /* Helper text for disabled element */
 .ui.disabled.checkbox + label,
 .ui.disabled.radio.checkbox + label {
