@@ -3,6 +3,8 @@
 *******************************/
 
 @bannerBackgroundColor   : @secondaryColor;
+@bannerMaxWidth:  100% !important;
+@bannerHomepageColor    : @blue-grey-6;
 
 /* Background Image */
 @imageBackgroundRepeat   : no-repeat;

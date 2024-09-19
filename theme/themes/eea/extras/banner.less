@@ -10,18 +10,22 @@
 .eea.banner {
   position: relative;
   width: 100%;
+  max-width: @bannerMaxWidth;
   background: @bannerBackgroundColor;
   color: @white;
 
   .gradient {
     background: @backgroundGradient;
     opacity: @backgroundGradientOpacity;
+    height: 100%;
 
     .content {
+      width: 100%;
       padding: @mobileContentPadding;
 
       .ui.grid {
         align-items: flex-end;
+        width: 100%;
       }
 
       .title {
@@ -105,6 +109,33 @@
       content: @titleBorderBottom;
     }
   }
+}
+
+.homepage-header .banner {
+  height: 500px;
+  color: @bannerHomepageColor;
+
+  .content-type {
+    color: @secondaryColor;
+    font-size: @h3;
+  }
+  .container {
+      display: flex;
+      height: 100%;
+      align-items: flex-end;
+    }
+
+    .content {
+      padding: 0 !important;
+      margin-bottom: 2rem;
+    }
+    .grid {
+      text-align: center;
+    }
+}
+
+.hero-header .banner {
+  height: 800px;
 }
 
 /*Share Popup*/
