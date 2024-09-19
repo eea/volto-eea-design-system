@@ -94,15 +94,25 @@ Banner.Action = React.forwardRef(function (
 });
 
 Banner.Content = ({ children, actions }) => {
+  const actionsWithChildren =
+    actions && actions.props?.children?.filter((item) => item);
   return (
     <div className="content">
       <Grid>
-        <Grid.Column mobile={10} tablet={9} computer={9}>
-          {children}
-        </Grid.Column>
-        <Grid.Column mobile={2} tablet={3} computer={3} className="actions">
-          {actions}
-        </Grid.Column>
+        {actionsWithChildren.length ? (
+          <>
+            <Grid.Column mobile={10} tablet={9} computer={9}>
+              {children}
+            </Grid.Column>
+            <Grid.Column mobile={2} tablet={3} computer={3} className="actions">
+              {actions}
+            </Grid.Column>
+          </>
+        ) : (
+          <Grid.Column mobile={12} tablet={12} computer={12}>
+            {children}
+          </Grid.Column>
+        )}
       </Grid>
     </div>
   );
