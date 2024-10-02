@@ -15,6 +15,7 @@ const Breadcrumbs = ({
   sections = [],
   icon = 'ri-arrow-right-s-line',
   size = 'tiny',
+  LinkLevels = 1,
 }) => {
   return sections.length > 0 ? (
     <Segment className="breadcrumbs" attached vertical>
@@ -31,7 +32,7 @@ const Breadcrumbs = ({
                 <Breadcrumb.Divider key={`divider-${item.href}`}>
                   <Icon className={icon}></Icon>
                 </Breadcrumb.Divider>
-                {index < items.length - 1 ? (
+                {index < items.length - LinkLevels ? (
                   <Link key={item.key} to={item.href} className="section">
                     {item.title}
                   </Link>
