@@ -3,6 +3,7 @@
 *******************************/
 
 @bannerBackgroundColor   : @secondaryColor;
+@bannerTextColor   : @textColorCSSVar;
 @bannerMaxWidth:  100% !important;
 @bannerHomepageColor    : @blue-grey-6;
 

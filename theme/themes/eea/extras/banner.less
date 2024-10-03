@@ -8,11 +8,12 @@
 --------------------*/
 
 .eea.banner {
+  --text-color: @white;
   position: relative;
   width: 100%;
   max-width: @bannerMaxWidth;
   background: @bannerBackgroundColor;
-  color: @white;
+  color: @bannerTextColor;
 
   .gradient {
     background: @backgroundGradient;
@@ -111,12 +112,31 @@
   }
 }
 
+.light-header {
+  .container {
+    width: 100%;
+    max-width: 1300px !important;
+  } 
+  .eea.banner {
+    --text-color: @bannerHomepageColor;
+
+    .content-type {
+      color: @secondaryColorCSSVar;
+      font-weight: bold;
+    }
+
+    .gradient .content .subtitle {
+      margin: 0 0 0.5rem 0;
+    }
+  }
+}
+
 .homepage-header .banner {
+  --text-color: @bannerHomepageColor;
   height: 500px;
-  color: @bannerHomepageColor;
 
   .content-type {
-    color: @secondaryColor;
+    color: @secondaryColorCSSVar;
     font-size: @h2;
     font-weight: bold;
   }
