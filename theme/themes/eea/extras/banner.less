@@ -155,9 +155,6 @@
     }
 }
 
-.hero-header .banner {
-  height: 800px;
-}
 
 /*Share Popup*/
 
@@ -253,7 +250,14 @@
   }
 }
 
+.light-header .eea.banner .gradient .content {
+  padding: @computerContentPadding;
+}
+
 @media only screen and (min-width: @computerBreakpoint) {
+  .hero-header .banner {
+    height: 800px;
+  }
   .eea.banner {
     .image {
       .gradient .content {
