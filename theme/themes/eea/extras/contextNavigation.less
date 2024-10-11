@@ -5,7 +5,7 @@
 
 .context-navigation {
   max-width      : @widescreenSidenavMaxWidth;
-  background     : @sidenavBackground;
+  // background     : @sidenavBackground;
   margin-right   : @sidenavMarginRight;
   padding-left   : @sidenavPaddingLeft;
   overflow       : @sidenavOverflow;
@@ -115,18 +115,27 @@
 }
 
 /*******************************
-          Side navigation
+        Side navigation
 *******************************/
 .accordion-header {
   cursor: pointer;
   justify-content: space-between;
   align-items: center;
   padding: @sidenavAccordionHeaderPadding;
+  font-weight: @sidenavItemFontWeight;
+  background-color: @sidenavAccordionHeaderBackgroundColor;
+  box-shadow: @sidenavBoxShadow;
 }
 
+.context-navigation-list {
+  width: @sidenavMaxWidth;
+  box-shadow: @sidenavBoxShadow;
+  background-color: @sidenavBackground;
+}
 .context-navigation-list .title-link {
   display: block;
   color: @sidenavItemColor; 
+  margin: 0 @sidenavItemMargin;
   font-size  : @sidenavItemFontSize;
   font-weight: @sidenavItemFontWeight;
 }
@@ -134,7 +143,6 @@
   font-weight: @sidenavLevelTwoItemFontWeight;
 }
 .context-navigation {
-  box-shadow: @sidenavBoxShadow;
 
   .current {
     color: @sidenavItemActiveColor;
@@ -151,11 +159,16 @@
     font-weight: @sidenavItemFontWeight;
     padding: @sidenavFolderItemPadding;
     text-align: left;
+    margin: @sidenavItemMargin;
     &:not([aria-expanded="true"]) {
         border-bottom: @sidenavContentBorderBottom;
       }
   }
-
+  .context-navigation-list.accordion-list {
+      max-height: @sidenavAccordionListMaxHeight;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+  }
   .accordion-list {
     margin-top: 0;
     margin-bottom: 0;

@@ -2,14 +2,14 @@
         Sidebar Nav
 *******************************/
 
-@sidenavMaxWidth: 350px;
-@widescreenSidenavMaxWidth: 300px;
+@sidenavMaxWidth: 315px;
+@widescreenSidenavMaxWidth: 315px;
 @mobileSidenavMaxWidth: 100%;
 @sidenavBackground: @grey-0;
-@sidenavMarginRight: @rem-space-4;
+@sidenavMarginRight: 0;
 @sidenavPaddingLeft: 0;
 @sidenavOverflow: inherit;
-@sidenavMargin: @rem-space-8 auto;
+@sidenavMargin: auto;
 @sidenavShadowColor: @grey-3;
 @sidenavBoxShadow: 0px 3px 3px @sidenavShadowColor;
 
@@ -19,6 +19,8 @@
 @sidenavHeaderFontWeight: @font-weight-7;
 @sidenavHeaderPadding: @rem-space-4;
 @sidenavAccordionHeaderPadding: @rem-space-2 @rem-space-4;
+@sidenavAccordionHeaderBackgroundColor: white;
+@sidenavAccordionListMaxHeight: 86dvh;
 @sidenavHeaderBorderBottom: @2px solid @blue-grey-5;
 @sidenavHeaderIconMarginRight: @rem-space-4;
 
@@ -38,6 +40,7 @@
 @sidenavItemHoverBackground: @blue-grey-5;
 @sidenavItemHoverColor: @grey-0;
 @sidenavLastItemMarginBottom: @rem-space-2;
+@sidenavItemMargin: 2px;
 
 /* Third level item */
 @subparItemPaddingLeft: @rem-space-12;
