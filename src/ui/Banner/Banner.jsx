@@ -94,12 +94,16 @@ Banner.Action = React.forwardRef(function (
 });
 
 Banner.Content = ({ children, actions }) => {
-  const actionsWithChildren =
-    actions && actions.props?.children?.filter((item) => item);
+  // actions can be a single child or an array of children
+  // when we disable actions we get an array of false or undefined
+  const actionsWithChildren = actions
+    ? React.Children.toArray(actions.props.children).some(Boolean)
+    : false;
+
   return (
     <div className="content">
       <Grid>
-        {actionsWithChildren.length ? (
+        {actionsWithChildren ? (
           <>
             <Grid.Column mobile={10} tablet={9} computer={9}>
               {children}
