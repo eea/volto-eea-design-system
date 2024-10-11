@@ -8,20 +8,25 @@
 --------------------*/
 
 .eea.banner {
+  --text-color: @white;
   position: relative;
   width: 100%;
+  max-width: @bannerMaxWidth;
   background: @bannerBackgroundColor;
-  color: @white;
+  color: @bannerTextColor;
 
   .gradient {
     background: @backgroundGradient;
     opacity: @backgroundGradientOpacity;
+    height: 100%;
 
     .content {
+      width: 100%;
       padding: @mobileContentPadding;
 
       .ui.grid {
         align-items: flex-end;
+        width: 100%;
       }
 
       .title {
@@ -106,6 +111,53 @@
     }
   }
 }
+
+.light-header {
+  .container {
+    width: 100%;
+    max-width: 1300px !important;
+  } 
+  .eea.banner {
+    --text-color: @bannerHomepageColor;
+
+    .content-type {
+      color: @secondaryColorCSSVar;
+      font-weight: bold;
+    }
+
+    .gradient .content .subtitle {
+      margin: 0 0 0.5rem 0;
+    }
+  }
+}
+
+.homepage-header .banner {
+  --text-color: @bannerHomepageColor;
+  height: 500px;
+
+  .content-type {
+    color: @secondaryColorCSSVar;
+    font-size: @h2;
+    font-weight: bold;
+  }
+  .container {
+      display: flex;
+      height: 100%;
+      align-items: flex-end;
+    }
+
+    .content {
+      padding: 0 !important;
+      margin-bottom: 2rem;
+    }
+    .grid {
+      text-align: center;
+    }
+    .wrapper {
+      justify-content: center;
+    }
+}
+
 
 /*Share Popup*/
 
@@ -201,7 +253,14 @@
   }
 }
 
+.light-header .eea.banner .gradient .content {
+  padding: @computerContentPadding;
+}
+
 @media only screen and (min-width: @computerBreakpoint) {
+  .hero-header .banner {
+    height: 800px;
+  }
   .eea.banner {
     .image {
       .gradient .content {
@@ -211,6 +270,9 @@
 
     .gradient .content {
       padding: @computerContentPadding;
+      .light-header & {
+        padding: @computerContentPaddingWithImage;
+      }
 
       .title {
         margin: @computerTitleMargin;
