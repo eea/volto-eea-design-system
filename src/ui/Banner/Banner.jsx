@@ -97,7 +97,7 @@ Banner.Content = ({ children, actions }) => {
   // actions can be a single child or an array of children
   // when we disable actions we get an array of false or undefined
   const actionsWithChildren = actions
-    ? React.Children.toArray(actions.props.children).some(Boolean)
+    ? React.Children.toArray(actions.props?.children).some(Boolean)
     : false;
 
   return (
