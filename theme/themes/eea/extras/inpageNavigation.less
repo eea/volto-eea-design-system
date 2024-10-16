@@ -38,6 +38,20 @@
   }
 }
 
+@media only screen and (max-width: (@mobileDefaultBreakpoint - @1px)) {
+    #inpage-navigation {
+        bottom: 0;
+    }
+}
+
+
+@media only screen and (max-width: @largestMobileScreen) {
+  // avoid overlap with web report mobile menu
+    #inpage-navigation {
+        right: 0;
+    }
+}
+
 @media only screen and (min-width: @computerBreakpoint) {
   #inpage-navigation {
     width: @computerNavWidth;

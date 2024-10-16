@@ -599,6 +599,11 @@
   }
 }
 
+@media only screen and (max-width: @largestTabletScreen) {
+  .light-header .eea.banner .gradient .content {
+    padding: 12.5rem 0 1.25rem;
+  }
+}
 @media only screen and (min-width: @computerBreakpoint) {
   .eea.header .subsite-logo {
     position: absolute;
@@ -882,6 +887,11 @@
     .content {
       max-width: 100%;
     }
+  }
+
+  // avoid overlap of gradient of top.bar
+  .view-viewview.light-header .main.bar {
+    margin-bottom: -65px;
   }
 
   #theme-sites.ui.dropdown .menu {
