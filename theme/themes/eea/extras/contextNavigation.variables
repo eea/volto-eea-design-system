@@ -42,8 +42,6 @@
 @sidenavLastItemMarginBottom: @rem-space-2;
 @sidenavItemMargin: 2px;
 
-/* Third level item */
-@subparItemPaddingLeft: @rem-space-12;
 
 /* Item active */
 @sidenavItemActiveColor: @secondaryColor;
@@ -58,3 +56,9 @@
 /* Item - Level 2 */
 @sidenavLevelTwoItemFontWeight: @font-weight-4;
 @sidenavLevelTwoItemPadding: 0.5rem 1.5rem;
+@secondLevelItemPaddingLeft: @rem-space-6; 
+
+
+/* Item - Level 3 */
+@subparItemPaddingLeft: @rem-space-12;
+@thirdLevelItemPaddingLeft: @rem-space-7; 

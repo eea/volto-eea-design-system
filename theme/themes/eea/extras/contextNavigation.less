@@ -170,6 +170,12 @@
       -webkit-overflow-scrolling: touch;
   }
   .accordion-list {
+    .accordion-list .accordion-list-item .title {
+      padding-left: @secondLevelItemPaddingLeft;
+    }
+  .accordion-list .accordion-list-item .accordion-list-title {
+    padding-left: @thirdLevelItemPaddingLeft;
+  }
     margin-top: 0;
     margin-bottom: 0;
     list-style: none;
