@@ -116,7 +116,7 @@
   .container {
     width: 100%;
     max-width: 1300px !important;
-  } 
+  }
   .eea.banner {
     --text-color: @bannerHomepageColor;
 
@@ -137,27 +137,26 @@
 
   .content-type {
     color: @secondaryColorCSSVar;
-    font-size: @h2;
+    font-size: @h4;
     font-weight: bold;
   }
   .container {
-      display: flex;
-      height: 100%;
-      align-items: flex-end;
-    }
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+  }
 
-    .content {
-      padding: 0 !important;
-      margin-bottom: 2rem;
-    }
-    .grid {
-      text-align: center;
-    }
-    .wrapper {
-      justify-content: center;
-    }
+  // .content {
+  // padding: 0 !important;
+  // margin-bottom: 2rem;
+  // }
+  .grid {
+    text-align: center;
+  }
+  .wrapper {
+    justify-content: center;
+  }
 }
-
 
 /*Share Popup*/
 
@@ -186,6 +185,18 @@
 
     .ui.button:not(.icon) > .icon:not(.button):not(.dropdown) {
       margin: @sharePopupActionsIconMargin;
+    }
+  }
+}
+
+.light-header {
+  .banner {
+    // .title {
+    //   line-height: 1;
+    // }
+    .subtitle-light {
+      font-size: 24px !important;
+      line-height: 1.2;
     }
   }
 }
@@ -258,9 +269,18 @@
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
-  .hero-header .banner {
-    height: 650px;
+  .hero-header {
+    .banner {
+      height: calc(100dvh - 35px);
+    }
+    .subtitle-light {
+      letter-spacing: @font-letterspacing-00;
+    }
+    .gradient .content {
+      margin-bottom: 8rem;
+    }
   }
+
   .eea.banner {
     .image {
       .gradient .content {
@@ -271,20 +291,41 @@
     .gradient .content {
       padding: @computerContentPadding;
       .light-header & {
-        padding: @computerContentPaddingWithImage;
+        padding: 18.625rem 0 1.25rem;
       }
 
       .title {
         margin: @computerTitleMargin;
         font-size: @computerTitleFontSize;
         line-height: @computerTitleLineHeight;
+        .hero-header & {
+          line-height: 1;
+          letter-spacing: @font-letterspacing-00;
+        }
       }
 
       .subtitle {
-        margin: @computerSubtitleMargin;
         font-size: @computerSubtitleFontSize;
+        margin: @computerSubtitleMargin;
         line-height: @computerSubtitleLineHeight;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .hero-header .banner {
+    .title {
+      font-size: @heroTitleFontSize !important;
+    }
+
+    .content-type {
+      font-size: @h3;
+    }
+
+    .subtitle-light {
+      font-size: @h2 !important;
+      line-height: 1.2;
     }
   }
 }
