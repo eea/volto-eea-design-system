@@ -123,10 +123,18 @@
     .content-type {
       color: @secondaryColorCSSVar;
       font-weight: bold;
+      // margin-bottom: 0.5rem;
     }
 
-    .gradient .content .subtitle {
-      margin: 0 0 0.5rem 0;
+    .gradient .content {
+      .subtitle {
+        margin: 0.5rem 0;
+        font-size: 1.25rem;
+        line-height: 1.2;
+      }
+      .metadata {
+        margin-top: 1rem;
+      }
     }
   }
 }
@@ -268,16 +276,26 @@
   padding: @computerContentPadding;
 }
 
+.hero-header {
+  .banner {
+    height: calc(100dvh - 35px);
+  }
+}
+@media only screen and (min-height: 600px) {
+  .hero-header {
+    .gradient .content {
+      margin-bottom: 10dvh;
+    }
+  }
+}
+
 @media only screen and (min-width: @computerBreakpoint) {
   .hero-header {
-    .banner {
-      height: calc(100dvh - 35px);
-    }
+    // .banner {
+    //   height: calc(100dvh - 35px);
+    // }
     .subtitle-light {
       letter-spacing: @font-letterspacing-00;
-    }
-    .gradient .content {
-      margin-bottom: 8rem;
     }
   }
 
@@ -299,7 +317,7 @@
         font-size: @computerTitleFontSize;
         line-height: @computerTitleLineHeight;
         .hero-header & {
-          line-height: 1;
+          line-height: 1.2;
           letter-spacing: @font-letterspacing-00;
         }
       }
