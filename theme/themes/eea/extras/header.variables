@@ -3,17 +3,23 @@
 --------------------*/
 
 /* Heights */
-@mobileTopSectionHeight      : 42px; //delete
-@tabletTopSectionHeight      : 42px;
-@computerTopSectionHeight    : 34px;
+@mobileTopSectionHeight: 42px; //delete
+@tabletTopSectionHeight: 42px;
+@computerTopSectionHeight: 34px;
 
-@mobileMainSectionHeight     : 69px;
-@tabletMainSectionHeight     : 117px;
-@computerMainSectionHeight   : 160px;
+@mobileMainSectionHeight: 69px;
+@tabletMainSectionHeight: 117px;
+@computerMainSectionHeight: 160px;
 
-@mobilePopUpHeight           : calc(100vh - (@mobileTopSectionHeight + @mobileMainSectionHeight));
-@tabletPopUpHeight           : calc(100vh - (@tabletTopSectionHeight + @tabletMainSectionHeight));
-@computerPopUpHeight         : calc(100vh - (@computerTopSectionHeight + @computerMainSectionHeight));
+@mobilePopUpHeight: calc(
+  100vh - (@mobileTopSectionHeight + @mobileMainSectionHeight)
+);
+@tabletPopUpHeight: calc(
+  100vh - (@tabletTopSectionHeight + @tabletMainSectionHeight)
+);
+@computerPopUpHeight: calc(
+  100vh - (@computerTopSectionHeight + @computerMainSectionHeight)
+);
 
 /* Header font sizes */
 @headerMinyFontSize: 0.5rem;
@@ -22,128 +28,128 @@
 @headerMediumFontSize: 0.875rem;
 @headerLargeFontSize: 1.125rem;
 
-
 /*-------------------
    HEADER TOP BAR
 --------------------*/
 
-@topSectionBackground                 : @grey-2;
-@topSectionItemColor                  : @blue-grey-6;
-@topSectionItemFontWeight             : @bold;
-@topSectionItemFontSize               : @font-size-00;
-@mobileTopSectionItemFontSize         : @font-size-00;
-@tabletTopSectionItemFontSize         : @font-size-00;
-@topSectionZIndex                     : @z-index-3;
-@dropdownColor                        : @blue-grey-6;
-@mobileDropdownFontSize               : @font-size-00;
-@tabletDropdownFontSize               : @font-size-00;
-@dropdownFontWeight                   : @bold;
+@topSectionBackground: @grey-2;
+@topSectionItemColor: @blue-grey-6;
+@topSectionItemFontWeight: @bold;
+@topSectionItemFontSize: @font-size-00;
+@mobileTopSectionItemFontSize: @font-size-00;
+@tabletTopSectionItemFontSize: @font-size-00;
+@topSectionZIndex: @z-index-2;
+@dropdownColor: @blue-grey-6;
+@mobileDropdownFontSize: @font-size-00;
+@tabletDropdownFontSize: @font-size-00;
+@dropdownFontWeight: @bold;
 
 /* Icon */
-@topSectionIconMarginLeft             : @rem-space-1;
-@topSectionIconMarginRight            : @rem-space-1;
-@topSectionIconFontSize               : @font-size-0;
-@topSectionIconLineHeight             : @font-lineheight-00;
-@mobileTopSectionIconTop              : 14px;
-@computerTopSectionIconTop            : 10px;
+@topSectionIconMarginLeft: @rem-space-1;
+@topSectionIconMarginRight: @rem-space-1;
+@topSectionIconFontSize: @font-size-0;
+@topSectionIconLineHeight: @font-lineheight-00;
+@mobileTopSectionIconTop: 14px;
+@computerTopSectionIconTop: 10px;
 
 /* Dropdown Menu */
-@mobileDropdownPadding                : @rem-space-3 @rem-space-6 @rem-space-3 @rem-space-2;
-@computerDropdownPadding              : @rem-space-2 @rem-space-6 @rem-space-2 @rem-space-2;
-@dropdownMaxWidth                     : 410px;
-@dropdownMenuLeft                     : auto;
-@dropdownMenuRight                    : 0;
-@dropdownMenuWrapperGap               : @rem-space-1;
-@dropdownMenuWrapperMargin            : @rem-space-1 0;
-@dropdownMenuLanguageWrapperPaddingInlineStart : 0;
-@dropdownMenuContentWhiteSpace        : pre-wrap;
-@mobileDropdownMenuContentFontSize    : @font-size-00;
-@desktopDropdownMenuContentFontSize   : @font-size-00;
-@dropdownMenuItemColorHover           : @white;
-@dropdownMenuItemBackgroundColorHover : @blue-grey-6;
-@dropdownMenuItemPadding              : @rem-space-050 @rem-space-5;
-@dropdownMenuFontSize                 : @font-size-00;
+@mobileDropdownPadding: @rem-space-3 @rem-space-6 @rem-space-3 @rem-space-2;
+@computerDropdownPadding: @rem-space-2 @rem-space-6 @rem-space-2 @rem-space-2;
+@dropdownMaxWidth: 410px;
+@dropdownMenuLeft: auto;
+@dropdownMenuRight: 0;
+@dropdownMenuWrapperGap: @rem-space-1;
+@dropdownMenuWrapperMargin: @rem-space-1 0;
+@dropdownMenuLanguageWrapperPaddingInlineStart: 0;
+@dropdownMenuContentWhiteSpace: pre-wrap;
+@mobileDropdownMenuContentFontSize: @font-size-00;
+@desktopDropdownMenuContentFontSize: @font-size-00;
+@dropdownMenuItemColorHover: @white;
+@dropdownMenuItemBackgroundColorHover: @blue-grey-6;
+@dropdownMenuItemPadding: @rem-space-050 @rem-space-5;
+@dropdownMenuFontSize: @font-size-00;
 
 // Official Union
-@mobileOfficialUnionGap               : 0;
-@tabletOfficialUnionGap               : 0;
-@officialUnionLinkFontWeight          : @bold;
-@officialUnionPadding                 : @rem-space-3;
-@mobileOfficialUnionMaxWidth          : 108px;
-@tabletOfficialUnionMaxWidth          : 272px;
-@computerOfficialUnionMaxWidth        : 380px;
-@mobileOfficialUnionImageWidth        : 25px;
-@tabletOfficialUnionImageWidth        : 44px;
-@mobileOfficialUnionMenuLeft          : 0;
-@tabletOfficialUnionMenuLeft          : 0;
-@mobileOfficialUnionPadding           : @rem-space-3 @rem-space-6;
-@tabletOfficialUnionPadding           : @rem-space-3 @rem-space-6 @rem-space-3 @rem-space-12;
-@computerOfficialUnionPadding         : @rem-space-2 @rem-space-6 @rem-space-2 @rem-space-12;
+@mobileOfficialUnionGap: 0;
+@tabletOfficialUnionGap: 0;
+@officialUnionLinkFontWeight: @bold;
+@officialUnionPadding: @rem-space-3;
+@mobileOfficialUnionMaxWidth: 108px;
+@tabletOfficialUnionMaxWidth: 272px;
+@computerOfficialUnionMaxWidth: 380px;
+@mobileOfficialUnionImageWidth: 25px;
+@tabletOfficialUnionImageWidth: 44px;
+@mobileOfficialUnionMenuLeft: 0;
+@tabletOfficialUnionMenuLeft: 0;
+@mobileOfficialUnionPadding: @rem-space-3 @rem-space-6;
+@tabletOfficialUnionPadding: @rem-space-3 @rem-space-6 @rem-space-3
+  @rem-space-12;
+@computerOfficialUnionPadding: @rem-space-2 @rem-space-6 @rem-space-2
+  @rem-space-12;
 
 // Theme Sites
-@themeSitesMenuWidth                  : 224px;
-@themeSitesMenuSiteLinkColor          : @blue-grey-6;
-@themeSitesMenuSiteLinkFontWeight     : @normal;
-@mobileThemeSitesMenuLeft             : 0px;
+@themeSitesMenuWidth: 224px;
+@themeSitesMenuSiteLinkColor: @blue-grey-6;
+@themeSitesMenuSiteLinkFontWeight: @normal;
+@mobileThemeSitesMenuLeft: 0px;
 
 // Language
-@mobileLanguageMenuPadding            : @rem-space-3 @rem-space-2;
-@computerLanguageMenuPadding          : @rem-space-2;
-@languageMenuItemFontWeight           : @normal;
-@mobileLanguageCountryCodeMarginLeft  : 3px;
-@mobileLanguageCountryCodeFontWeight  : @bold;
-@mobileLanguageFontSize               : @font-size-0;
-@computerLanguageFontSize             : @font-size-1;
-@mobileLanguageImageWidth             : 17px;
-@tabletLanguageImageWidth             : 18px;
+@mobileLanguageMenuPadding: @rem-space-3 @rem-space-2;
+@computerLanguageMenuPadding: @rem-space-2;
+@languageMenuItemFontWeight: @normal;
+@mobileLanguageCountryCodeMarginLeft: 3px;
+@mobileLanguageCountryCodeFontWeight: @bold;
+@mobileLanguageFontSize: @font-size-0;
+@computerLanguageFontSize: @font-size-1;
+@mobileLanguageImageWidth: 17px;
+@tabletLanguageImageWidth: 18px;
 
 /*-----------------------
    HEADER MAIN SECTION
 -----------------------*/
 
 /* Main Section */
-@headerMainSectionBackground          : transparent;
-@headerMainSectionTransparency        : rgba(255, 255, 255, 0.1);
+@headerMainSectionBackground: transparent;
+@headerMainSectionTransparency: rgba(255, 255, 255, 0.1);
 
 /* Logo */
-@logoWidth                            : 100%;
-@mobileLogoMaxWidth                   : 142px;
-@tabletLogoMaxWidth                   : 252px;
-@computerLogoMaxWidth                 : 347px; //348 rendered fuzzy :(
-@mobileLogoMarginTop                  : @rem-space-2;
-@tabletLogoMarginTop                  : @rem-space-3-5;
-@computerLogoMarginTop                : @rem-space-5;
+@logoWidth: 100%;
+@mobileLogoMaxWidth: 142px;
+@tabletLogoMaxWidth: 252px;
+@computerLogoMaxWidth: 347px; //348 rendered fuzzy :(
+@mobileLogoMarginTop: @rem-space-2;
+@tabletLogoMarginTop: @rem-space-3-5;
+@computerLogoMarginTop: @rem-space-5;
 
 /* Main menu */
-@mainMenuGap                          : @component-padding;
-@mainMenuItemColor                    : @primaryColor;
-@mainMenuItemInvertedColor            : @white;
-@mainMenuItemFontSize                 : ~"min(max(0.875rem, 1.5vw), 1.125rem)";
-@mainMenuItemFontWeight               : @font-weight-5;
-@mainMenuItemPadding                  : @rem-space-050 @rem-space-2;
-@mainMenuItemActiveColor              : @secondaryColor;
-@mainMenuItemBorder                   : 4px solid transparent;
-@mainMenuItemActiveBorder             : 4px solid @secondaryColor;
-@mainMenuInvertedItemActiveBorder     : 4px solid @white;
-@mainMenuItemAlignSelf                : flex-end;
-
+@mainMenuGap: @component-padding;
+@mainMenuItemColor: @primaryColor;
+@mainMenuItemInvertedColor: @white;
+@mainMenuItemFontSize: ~'min(max(0.875rem, 1.5vw), 1.125rem)';
+@mainMenuItemFontWeight: @font-weight-5;
+@mainMenuItemPadding: @rem-space-050 @rem-space-2;
+@mainMenuItemActiveColor: @secondaryColor;
+@mainMenuItemBorder: 4px solid transparent;
+@mainMenuItemActiveBorder: 4px solid @secondaryColor;
+@mainMenuInvertedItemActiveBorder: 4px solid @white;
+@mainMenuItemAlignSelf: flex-end;
 
 /* Subsite */
-@subsitePosition                      : relative;
-@subsiteZIndex                        : 1;
-@subsiteFontFamily                    : @headerFont;
-@subsiteFontWeight                    : @headerFontWeight;
-@subsiteColor                         : @linkColor;
-@subsiteLineHeight                    : 1.1;
-@subsiteFlexGap                       : 30px;
-@subsiteLogoTopPosition               : 50%;
-@subsiteDividerHeight                 : 110%;
-@subsiteDividerWidth                  : 1px;
-@subsiteDividerTopPosition            : 50%;
-@subsiteDividerColor                  : @secondaryColorCSSVar;
-@mobileSubsiteFontSize                : unit(@h6, em);
-@tabletSubsiteFontSize                : unit(@h4, em);
-@computerSubsiteFontSize              : unit(@h2, em);
+@subsitePosition: relative;
+@subsiteZIndex: 1;
+@subsiteFontFamily: @headerFont;
+@subsiteFontWeight: @headerFontWeight;
+@subsiteColor: @linkColor;
+@subsiteLineHeight: 1.1;
+@subsiteFlexGap: 30px;
+@subsiteLogoTopPosition: 50%;
+@subsiteDividerHeight: 110%;
+@subsiteDividerWidth: 1px;
+@subsiteDividerTopPosition: 50%;
+@subsiteDividerColor: @secondaryColorCSSVar;
+@mobileSubsiteFontSize: unit(@h6, em);
+@tabletSubsiteFontSize: unit(@h4, em);
+@computerSubsiteFontSize: unit(@h2, em);
 
 /*-----------------
    HEADER ACTIONS
@@ -156,9 +162,9 @@
 @burgerActionBackgroundColor: @darkMidnightBlue;
 
 /* Mega menu and Search popup */
-@mobilePopupMarginTop   : 5vh;
-@tabletPopupMarginTop   : 10vh;
-@computerPopupMarginTop : 18vh;
+@mobilePopupMarginTop: 5vh;
+@tabletPopupMarginTop: 10vh;
+@computerPopupMarginTop: 18vh;
 
 /* Mega menu */
 @mobileMegaMenuWidth: 94%;
@@ -187,7 +193,7 @@
 @megaMenuListItemFontSize: @font-size-1;
 @megaMenuListItemFontWeight: @font-weight-4;
 @megaMenuListItemPadding: @rem-space-2 0;
-@megaMenuListItemActiveBorder: 4px solid #FFF;
+@megaMenuListItemActiveBorder: 4px solid #fff;
 @megaMenuListItemActivePadding: 8px;
 
 /* Topics */
@@ -221,8 +227,12 @@
 
 /* Search box */
 @searchBoxPosition: absolute;
-@searchBoxBackgroundGradient : linear-gradient(13.69deg, @blue-5 1.17%, @secondaryColor 80%);
-@searchBoxWrapperGap : 75px;
+@searchBoxBackgroundGradient: linear-gradient(
+  13.69deg,
+  @blue-5 1.17%,
+  @secondaryColor 80%
+);
+@searchBoxWrapperGap: 75px;
 @searchBoxAlignItems: center;
 @searchBoxFullSearchBackground: rgba(255, 255, 255, 0.1);
 @searchBoxFullSearchBoxShadow: 0 0 6px 0 rgba(0, 0, 0, 0.25);
@@ -245,7 +255,8 @@
 @searchBoxComputerPopupMarginTop: @em-space-8;
 
 /* Custom shadows for dropdowns */
-@shadow-topbar-dropdown: 2px 0 2px -5px hsla(@shadow-color, calc(@shadow-strength + 6%));
+@shadow-topbar-dropdown: 2px 0 2px -5px hsla(@shadow-color, calc(@shadow-strength +
+        6%));
 @shadow-4-no-top:
   0 0 0 0 hsla(@shadow-color, calc(@shadow-strength + 2%)),
   0 1px 1px -2px hsla(@shadow-color, calc(@shadow-strength + 3%)),
