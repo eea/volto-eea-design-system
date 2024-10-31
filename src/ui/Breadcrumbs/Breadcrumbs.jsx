@@ -15,7 +15,7 @@ const Breadcrumbs = ({
   sections = [],
   icon = 'ri-arrow-right-s-line',
   size = 'tiny',
-  contentTypesToAvoidAsLinks = [],
+  contentTypesAsBreadcrumbSection = [],
 }) => {
   return sections.length > 0 ? (
     <Segment className="breadcrumbs" attached vertical>
@@ -35,7 +35,7 @@ const Breadcrumbs = ({
                     <Icon className={icon}></Icon>
                   </Breadcrumb.Divider>
                   {index < items.length - 1 &&
-                  contentTypesToAvoidAsLinks.indexOf(item.portal_type) ===
+                  contentTypesAsBreadcrumbSection.indexOf(item.portal_type) ===
                     -1 ? (
                     <Link key={item.key} to={url} className="section">
                       {item.title}
