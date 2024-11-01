@@ -4,11 +4,11 @@
 @import (multiple) '../../theme.config';
 
 .context-navigation {
-  max-width      : @widescreenSidenavMaxWidth;
+  max-width: @widescreenSidenavMaxWidth;
   // background     : @sidenavBackground;
-  margin-right   : @sidenavMarginRight;
-  padding-left   : @sidenavPaddingLeft;
-  overflow       : @sidenavOverflow;
+  margin-right: @sidenavMarginRight;
+  padding-left: @sidenavPaddingLeft;
+  overflow: @sidenavOverflow;
 }
 @media (max-width: @largeMonitorBreakpoint) {
   .context-navigation {
@@ -25,25 +25,25 @@
 }
 
 .context-navigation .item a {
-  display    : block;
-  padding    : @sidenavItemPadding;
-  font-size  : @sidenavItemFontSize;
+  display: block;
+  padding: @sidenavItemPadding;
+  font-size: @sidenavItemFontSize;
   font-weight: @sidenavItemFontWeight;
-  color      : @sidenavItemColor;
+  color: @sidenavItemColor;
 
   &:hover,
   &:focus-visible {
     background: @sidenavItemHoverBackground;
-    color     : @sidenavItemHoverColor;
+    color: @sidenavItemHoverColor;
   }
 }
 
 .context-navigation-header {
-  display    : flex;
-  color      : @sidenavHeaderColor;
-  font-size  : @sidenavHeaderFontSize;
+  display: flex;
+  color: @sidenavHeaderColor;
+  font-size: @sidenavHeaderFontSize;
   font-weight: @sidenavHeaderFontWeight;
-  padding    : @sidenavHeaderPadding;
+  padding: @sidenavHeaderPadding;
   border-bottom: @sidenavHeaderBorderBottom;
 
   i.icon {
@@ -59,9 +59,9 @@
 }
 
 .context-navigation a.contenttype-folder {
-  font-size  : @sidenavFolderFontSize;
+  font-size: @sidenavFolderFontSize;
   font-weight: @sidenavFolderFontWeight;
-  padding    : @sidenavFolderItemPadding;
+  padding: @sidenavFolderItemPadding;
 }
 
 .context-navigation .ui.list > .item > .content {
@@ -70,7 +70,7 @@
 
 // Hide last border
 .context-navigation .ui.list > .item:last-child > .content {
-  border-bottom: none; 
+  border-bottom: none;
 }
 
 // Nav custom list
@@ -88,14 +88,14 @@
 }
 
 .context-navigation .item.level-1 .ui.divider {
-  border-bottom: none; 
+  border-bottom: none;
 }
 
 .context-navigation .item.level-2 a {
   padding-left: @subparItemPaddingLeft;
 }
 
- .context-navigation .item.level-3 a {
+.context-navigation .item.level-3 a {
   padding-left: @subparItemPaddingLeft + 2rem;
 }
 
@@ -106,7 +106,7 @@
 }
 .context-navigation .active.item > .content > a:hover,
 .context-navigation .active.item > .content > a:focus-visible {
-  color : @sidenavItemActiveColorHover;
+  color: @sidenavItemActiveColorHover;
 }
 
 // Hide arrow
@@ -134,16 +134,15 @@
 }
 .context-navigation-list .title-link {
   display: block;
-  color: @sidenavItemColor; 
+  color: @sidenavItemColor;
   margin: 0 @sidenavItemMargin;
-  font-size  : @sidenavItemFontSize;
+  font-size: @sidenavItemFontSize;
   font-weight: @sidenavItemFontWeight;
 }
 .context-navigation-list .content .title-link {
   font-weight: @sidenavLevelTwoItemFontWeight;
 }
 .context-navigation {
-
   .current {
     color: @sidenavItemActiveColor;
   }
@@ -151,38 +150,53 @@
   .accordion {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 !important;
   }
-  .ui.accordion>.title {
+  .ui.accordion > .title {
     --text-color: @sidenavItemColor;
     --text-color-hover: @sidenavItemColor;
     font-size: @sidenavItemFontSize;
     font-weight: @sidenavItemFontWeight;
     padding: @sidenavFolderItemPadding;
     text-align: left;
-    margin: @sidenavItemMargin;
-    &:not([aria-expanded="true"]) {
-        border-bottom: @sidenavContentBorderBottom;
-      }
+    line-height: @sidenavFolderItemLineHeight;
+    // margin: @sidenavItemMargin;
+    margin: 0;
+    &:not([aria-expanded='true']) {
+      border-bottom: @sidenavContentBorderBottom;
+    }
   }
   .context-navigation-list.accordion-list {
-      max-height: @sidenavAccordionListMaxHeight;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
+    max-height: @sidenavAccordionListMaxHeight;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .accordion-list {
     .accordion-list .accordion-list-item .title {
       padding-left: @secondLevelItemPaddingLeft;
     }
-  .accordion-list .accordion-list-item .accordion-list-title {
-    padding-left: @thirdLevelItemPaddingLeft;
-  }
+
+    .accordion-list .accordion-list .accordion-list-item .title {
+      padding-left: @thirdLevelItemPaddingLeft;
+    }
+    .accordion-list .accordion-list-item .accordion-list-title .title-link {
+      padding-left: @thirdLevelItemPaddingLeft;
+    }
+
+    .accordion-list
+      .accordion-list
+      .accordion-list-item
+      .accordion-list-title
+      .title-link {
+      padding-left: @fourthLevelItemPaddingLeft;
+    }
     margin-top: 0;
     margin-bottom: 0;
     list-style: none;
     padding-left: 0;
   }
 
-  .context-navigation-list>.accordion-list-title {
+  .context-navigation-list > .accordion-list-title {
     border-bottom: @sidenavContentBorderBottom;
 
     .title-link {
