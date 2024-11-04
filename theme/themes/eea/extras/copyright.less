@@ -17,12 +17,16 @@
         align-items: @copyrightAlignItems;
         line-height: @copyrightLineHeight;
         gap: @copyrightContentPaddingRight;
+        justify-content: var(--justify-content, flex-start);
     }
-    &.left .wrapper {
-      justify-content: flex-start;
-    }
+  &.left .wrapper {
+    --justify-content: flex-start;
+  }
+  &.center .wrapper {
+    --justify-content: center;
+  }
   &.right .wrapper {
-    justify-content: flex-end;
+    --justify-content: flex-end;
   }
   .icon {
     margin: 0; // override default
