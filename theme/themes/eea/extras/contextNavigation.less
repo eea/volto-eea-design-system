@@ -162,10 +162,25 @@
     line-height: @sidenavFolderItemLineHeight;
     // margin: @sidenavItemMargin;
     margin: 0;
-    &:not([aria-expanded='true']) {
-      border-bottom: @sidenavContentBorderBottom;
-    }
   }
+
+  // add border-bottom only on first level titles
+  .context-navigation-list
+    > .accordion-list-item
+    > .accordion
+    > .title:not([aria-expanded='true']) {
+    border-bottom: @sidenavContentBorderBottom;
+  }
+
+  // add border-bottom to content of first level expanded accordion
+  .context-navigation-list
+    > .accordion-list-item
+    > .accordion
+    > .title[aria-expanded='true']
+    + .content {
+    border-bottom: @sidenavContentBorderBottom;
+  }
+
   .context-navigation-list.accordion-list {
     max-height: @sidenavAccordionListMaxHeight;
     overflow-y: auto;
