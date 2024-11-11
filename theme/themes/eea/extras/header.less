@@ -16,11 +16,10 @@
   /* So child can have position sticky */
   display: initial;
   &:has(.eea-side-menu) {
-    margin-bottom: 3.7rem;
+    margin-bottom: 1rem;
+    position: relative;
   }
-
 }
-
 
 /*----------------------------------------------------------------------------
    HEADER TOP BAR
@@ -227,15 +226,6 @@
   height: 100%;
   background-color: @headerMainSectionTransparency;
   content: ' ';
-}
-
-.light-header  {
-  .main.bar.transparency:before {
-    background: linear-gradient(0deg, rgba(96, 96, 96, 0.2), #3d5265 100%);
-  }
-  #page-header {
-    margin-bottom: 2rem;
-  }
 }
 
 .main.bar {
@@ -933,5 +923,102 @@
     }
   }
 }
+
+/*******************************
+          Light Header
+*******************************/
+// Styles that turn the header into a transparent white header such as on the homepage
+.light-header {
+  .main.bar.transparency:before {
+    background: linear-gradient(0deg, rgba(96, 96, 96, 0.2), #3d5265 100%);
+  }
+}
+
+/* fix size of visualization that enlarge content are of web reports resulting in a scrollbar */
+.light-header #view .ui.grid {
+  max-width: 900px;
+}
+
+//Gradient styles for web report
+.light-header .gradient {
+  // background: linear-gradient(
+  //   0deg,
+  //   #ffffff,
+  //   rgba(255, 255, 255, 0.9) 30%,
+  //   rgba(46, 82, 114, 0.7) 70%,
+  //   rgba(14, 21, 26, 0.8) 100%
+  // ) !important;
+  background: linear-gradient(
+    0deg,
+    #fff,
+    rgba(255, 255, 255, 0.8) 30%,
+    rgba(31, 31, 31, 0.1) 50%,
+    rgba(58, 58, 58, 0.8) 100%
+  ) !important;
+}
+
+.view-viewview.light-header .main.bar {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-bottom: -160px;
+}
+
+@media all and (max-width: @largestMobileScreen) {
+  // avoid overlap of gradient of top.bar
+  .view-viewview.light-header .main.bar {
+    margin-bottom: -65px;
+  }
+
+  .view-viewview.light-header .eea-side-menu.mobile:not(.fixed) {
+    top: 111px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .view-viewview.light-header {
+    .main.bar {
+      margin-bottom: -115px;
+    }
+
+    .eea-side-menu:not(.fixed) {
+      top: 160px;
+    }
+
+    #page-document {
+      padding: 0 1.25rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .view-viewview.light-header
+    .eea.header:has(#search-box, .visible)
+    .eea-side-menu {
+    z-index: 0;
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  .light-header #page-header:empty + .breadcrumbs + .content-area {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .view-viewview.light-header .main.bar {
+    margin-bottom: -115px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1365px) {
+  .view-viewview.light-header .ui.container {
+    padding: 0 1.25rem;
+  }
+}
+/*******************************
+          /Light Header
+*******************************/
 
 .loadUIOverrides();
