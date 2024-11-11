@@ -21,7 +21,6 @@
 @sidenavAccordionHeaderPadding: @rem-space-2 @rem-space-4;
 @sidenavAccordionHeaderBackgroundColor: white;
 @sidenavAccordionListMaxHeight: 86dvh;
-@sidenavHeaderBorderBottom: @2px solid @blue-grey-5;
 @sidenavHeaderIconMarginRight: 0;
 
 /* Header icon */
