@@ -126,6 +126,13 @@
   background-color: @sidenavAccordionHeaderBackgroundColor;
   box-shadow: @sidenavBoxShadow;
 }
+@media only screen and (max-width: 991px) {
+  .view-viewview.light-header .eea-side-menu:not(.fixed) .accordion-header {
+    color: white;
+    background: transparent;
+    box-shadow: 0px 3px 6px @grey-5;
+  }
+}
 
 .context-navigation-list {
   width: @sidenavMaxWidth;
@@ -160,7 +167,6 @@
     padding: @sidenavFolderItemPadding;
     text-align: left;
     line-height: @sidenavFolderItemLineHeight;
-    // margin: @sidenavItemMargin;
     margin: 0;
   }
 

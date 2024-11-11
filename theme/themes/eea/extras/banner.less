@@ -112,60 +112,6 @@
   }
 }
 
-.light-header {
-  .container {
-    width: 100%;
-    max-width: 1300px !important;
-  }
-  .eea.banner {
-    --text-color: @bannerHomepageColor;
-
-    .content-type {
-      color: @secondaryColorCSSVar;
-      font-weight: bold;
-      // margin-bottom: 0.5rem;
-    }
-
-    .gradient .content {
-      .subtitle {
-        margin: 0.5rem 0;
-        font-size: 1.25rem;
-        line-height: 1.2;
-      }
-      .metadata {
-        margin-top: 1rem;
-      }
-    }
-  }
-}
-
-.homepage-header .banner {
-  --text-color: @bannerHomepageColor;
-  height: 500px;
-
-  .content-type {
-    color: @secondaryColorCSSVar;
-    font-size: @h4;
-    font-weight: bold;
-  }
-  .container {
-    display: flex;
-    height: 100%;
-    align-items: flex-end;
-  }
-
-  // .content {
-  // padding: 0 !important;
-  // margin-bottom: 2rem;
-  // }
-  .grid {
-    text-align: center;
-  }
-  .wrapper {
-    justify-content: center;
-  }
-}
-
 /*Share Popup*/
 
 .ui.popup.share-popup {
@@ -193,18 +139,6 @@
 
     .ui.button:not(.icon) > .icon:not(.button):not(.dropdown) {
       margin: @sharePopupActionsIconMargin;
-    }
-  }
-}
-
-.light-header {
-  .banner {
-    // .title {
-    //   line-height: 1;
-    // }
-    .subtitle-light {
-      font-size: 24px !important;
-      line-height: 1.2;
     }
   }
 }
@@ -272,8 +206,62 @@
   }
 }
 
-.light-header .eea.banner .gradient .content {
-  padding: @computerContentPadding;
+/*******************************
+          Light & Hero Header
+*******************************/
+.light-header {
+  .container {
+    width: 100%;
+    max-width: 1300px !important;
+  }
+  .eea.banner {
+    --text-color: @bannerHomepageColor;
+
+    .content-type {
+      color: @secondaryColorCSSVar;
+      font-weight: bold;
+    }
+
+    .subtitle-light {
+      font-size: 24px !important;
+      line-height: 1.2;
+    }
+
+    .gradient .content {
+      padding: @computerContentPadding;
+      .subtitle {
+        margin: 0.5rem 0;
+        font-size: 1.25rem;
+        line-height: 1.2;
+      }
+      .metadata {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+.homepage-header .banner {
+  --text-color: @bannerHomepageColor;
+  height: 500px;
+
+  .content-type {
+    color: @secondaryColorCSSVar;
+    font-size: @h4;
+    font-weight: bold;
+  }
+  .container {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+  }
+
+  .grid {
+    text-align: center;
+  }
+  .wrapper {
+    justify-content: center;
+  }
 }
 
 .hero-header {
@@ -290,11 +278,14 @@
   }
 }
 
+@media only screen and (max-width: @largestTabletScreen) {
+  .light-header .eea.banner .gradient .content {
+    padding: 16.5rem 0 1.25rem;
+  }
+}
+
 @media only screen and (min-width: @computerBreakpoint) {
   .hero-header {
-    // .banner {
-    //   height: calc(100dvh - 35px);
-    // }
     .subtitle-light {
       letter-spacing: @font-letterspacing-00;
     }
@@ -348,6 +339,9 @@
     }
   }
 }
+/*******************************
+      /Light & Hero Header
+*******************************/
 
 @media print {
   .eea.banner .gradient .content,

@@ -128,8 +128,9 @@
     }
   }
 
-  /* Removed z-index from .block.right pastanaga blocks.less */
-  .block.right {
+  /* Removed z-index .block.align .right & .left from pastanaga blocks.less */
+  .block.align.left,
+  .block.align.right {
     z-index: initial;
   }
 
