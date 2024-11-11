@@ -105,6 +105,12 @@
   --text-color: @textColor;
 }
 
+/* Removed z-index .block.align .right & .left from pastanaga blocks.less */
+.block.align.left,
+.block.align.right {
+  z-index: initial;
+}
+
 .blocks-chooser {
   .searchbox {
     height: auto !important;
@@ -126,12 +132,6 @@
     .icon {
       order: 0 !important;
     }
-  }
-
-  /* Removed z-index .block.align .right & .left from pastanaga blocks.less */
-  .block.align.left,
-  .block.align.right {
-    z-index: initial;
   }
 
   .icon {
