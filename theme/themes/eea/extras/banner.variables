@@ -35,6 +35,7 @@
 @mobileTitleFontSize       : @mobileH1;
 @tabletTitleFontSize       : @h2;
 @computerTitleFontSize     : @h1;
+@heroTitleFontSize         : 3.5rem;
 @mobileTitleLineHeight     : @headerLineHeight;
 @tabletTitleLineHeight     : @headerLineHeight;
 @computerTitleLineHeight   : @headerLineHeight;

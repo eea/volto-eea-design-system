@@ -324,6 +324,7 @@
 --------------------*/
 
 @mobileBreakpoint            : 320px;
+@mobileDefaultBreakpoint     : 360px;  
 @mobileLandscapeBreakpoint   : 480px;  // introduced for the design system
 @tabletBreakpoint            : 768px;
 @contentBreakpoint           : 835px; // introduced for the design system

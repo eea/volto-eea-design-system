@@ -53,7 +53,10 @@ function Banner({ image, metadata, properties, children, styles, ...rest }) {
     return (
       <div className="eea banner">
         <div
-          className={cx(imageUrl ? 'image' : '', styles?.bg)}
+          className={cx(
+            imageUrl ? 'image' : '',
+            ...Object.values(styles || {}),
+          )}
           style={imageUrl ? { backgroundImage: `url(${imageUrl})` } : {}}
         >
           <div className="gradient">
