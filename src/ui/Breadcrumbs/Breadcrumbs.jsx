@@ -29,6 +29,7 @@ const Breadcrumbs = ({
             </li>
             {sections.map((item, index, items) => {
               const url = item.url || item.href;
+              const lastItem = items.length - 1 === index;
               return (
                 <li key={index}>
                   <Breadcrumb.Divider key={`divider-${url}`}>
@@ -41,7 +42,7 @@ const Breadcrumbs = ({
                       {item.title}
                     </Link>
                   ) : (
-                    <Breadcrumb.Section key={item.key} className="section">
+                    <Breadcrumb.Section key={item.key} active={lastItem}>
                       {item.title}
                     </Breadcrumb.Section>
                   )}

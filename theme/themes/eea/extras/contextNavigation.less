@@ -98,6 +98,10 @@
   padding-left: @subparItemPaddingLeft + 2rem;
 }
 
+.context-navigation .item.level-4 a {
+  padding-left: @subparItemPaddingLeft + 4rem;
+}
+
 // Active indicator
 .context-navigation .active.item > .content > a {
   color: @sidenavItemActiveColor;
@@ -111,6 +115,21 @@
 // Hide arrow
 .content.active-indicator {
   display: none;
+}
+
+/*******************************
+  Report additional files navigation
+*******************************/
+.report-navigation {
+  .list {
+    padding-inline-start: 1.5rem;
+  }
+  .list-item {
+    padding: 0.25rem 0;
+  }
+  .list-item:has(> .context-navigation-detail) {
+    list-style-type: none;
+  }
 }
 
 /*******************************
