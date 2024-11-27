@@ -235,3 +235,27 @@
 #page-diff .ui.table th.eight.wide {
   width: 50%;
 }
+
+/* Report PDF styles */
+/* Remove border left on description block on PDF Report 
+   See: https://taskman.eionet.europa.eu/issues/259256#note-24
+*/
+.contenttype-report_pdf .eea.callout {
+  padding: 0;
+  border-left: none;
+}
+
+/* Remove full width background on PDF Report description area column-block */
+.contenttype-report_pdf
+  #page-document
+  > .styled-columnsBlock:first-of-type
+  .content-box:before {
+  content: none;
+}
+
+.contenttype-report_pdf
+  #page-document
+  > .styled-columnsBlock:first-of-type
+  .content-box-inner {
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+}
