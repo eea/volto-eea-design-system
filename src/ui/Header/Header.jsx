@@ -301,9 +301,6 @@ const Main = ({
                   >
                     {menuItems.map((item, index) => {
                       const url = item['@id'] || item.url;
-                      console.log('activeItem', activeItem);
-                      console.log(url);
-                      console.log(item);
                       const firstItem = index === 0 && item.title === 'Home';
                       const active = firstItem
                         ? url === activeItem
