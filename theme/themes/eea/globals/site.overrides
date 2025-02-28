@@ -183,20 +183,21 @@ a {
 
 @media print {
   .skiplinks-wrapper,
-  .top.bar,
-  .main.bar.transparency,
-  .main-menu,
-  .eea .header .action,
   .slider-arrow,
   #footer,
-  #page-header .action,
-  #inpage-navigation {
-    display: none;
+  #inpage-navigation,
+  .column.actions,
+  .slick-arrows {
+    display: none !important;
     visibility: hidden;
   }
 
-  .logo {
-    margin-left: 0;
+  .ui.segment.breadcrumbs {
+    padding: 0;
+
+    .ui.breadcrumb {
+      visibility: hidden;
+    }
   }
 
   .static-banner {
@@ -204,14 +205,8 @@ a {
     visibility: hidden;
   }
 
-  .image {
-    page-break-inside: avoid;
-  }
-
-  img {
-    page-break-inside: avoid;
-  }
-
+  img,
+  .image,
   .card {
     page-break-inside: avoid;
   }
