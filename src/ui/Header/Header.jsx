@@ -299,25 +299,26 @@ const Main = ({
                     ref={desktopMenuRef}
                     id={'navigation'}
                   >
-                    {menuItems.map((item) => (
-                      <Menu.Item
-                        name={item['@id'] || item.url}
-                        key={item['@id'] || item.url}
-                        as={'li'}
-                        active={
-                          activeItem.indexOf(item['@id']) !== -1 ||
-                          activeItem.indexOf(item.url) !== -1
-                        }
-                        aria-expanded={
-                          activeItem.indexOf(item['@id']) !== -1 ||
-                          activeItem.indexOf(item.url) !== -1
-                        }
-                      >
-                        {renderGlobalMenuItem(item, {
-                          onClick: menuOnClick,
-                        })}
-                      </Menu.Item>
-                    ))}
+                    {menuItems.map((item, index) => {
+                      const url = item['@id'] || item.url;
+                      const firstItem = index === 0 && item.title === 'Home';
+                      const active = firstItem
+                        ? url === activeItem
+                        : activeItem.indexOf(url) !== -1;
+                      return (
+                        <Menu.Item
+                          name={url}
+                          key={url}
+                          as={'li'}
+                          active={active}
+                          aria-expanded={active}
+                        >
+                          {renderGlobalMenuItem(item, {
+                            onClick: menuOnClick,
+                          })}
+                        </Menu.Item>
+                      );
+                    })}
                   </ul>
                 </nav>
               )}
