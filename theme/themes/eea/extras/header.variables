@@ -111,6 +111,7 @@
 /* Main Section */
 @headerMainSectionBackground: transparent;
 @headerMainSectionTransparency: rgba(255, 255, 255, 0.1);
+@printHeaderMainSectionPadding: 1.5em 2.5em 0 2.5em;
 
 /* Logo */
 @logoWidth: 100%;
