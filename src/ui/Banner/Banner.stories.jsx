@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
+import cx from 'classnames';
 import Banner from './Banner';
 // eslint-disable-next-line import/no-unresolved
 import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/banner.png';
-import { Icon } from 'semantic-ui-react';
+import { Icon, Container } from 'semantic-ui-react';
 import Popup from '@eeacms/volto-eea-design-system/ui/Popup/Popup';
 import Copyright from '../Copyright/Copyright';
 
@@ -132,8 +133,12 @@ const Template = (args) => {
           </>
         }
       >
-        <Banner.Subtitle>{args.subtitle}</Banner.Subtitle>
+        {!args.aboveTitle && args.subtitle && (
+          <Banner.Subtitle>{args.subtitle}</Banner.Subtitle>
+        )}
+        {args.aboveTitle && args.aboveTitle}
         <Banner.Title>{args.title}</Banner.Title>
+        {args.belowTitle && args.belowTitle}
         {args.metadata && (
           <Banner.Metadata>
             <>
@@ -175,4 +180,97 @@ Default.args = {
   copyrightPosition: 'left',
   copyrightIcon: 'ri-copyright-line',
   copyright: 'John Smith, Well with Nature /EEA',
+};
+
+const WebReportTemplate = (args) => (
+  <Container
+    className={cx(
+      'homepage-inverse homepage-header light-header',
+      args.heroHeaderSize ? 'hero-header' : '',
+    )}
+    style={{
+      width: '100%',
+    }}
+  >
+    <Template
+      {...args}
+      aboveTitle={
+        !args.hideContentType ? (
+          <div className="content-type">{args.content_type}</div>
+        ) : (
+          ' '
+        )
+      }
+      belowTitle={
+        <>
+          <Banner.Subtitle>
+            <span className="subtitle-light">{args.subtitle}</span>
+          </Banner.Subtitle>
+        </>
+      }
+    ></Template>
+  </Container>
+);
+
+export const WebReport = WebReportTemplate.bind({});
+WebReport.args = {
+  ...Default.args,
+  metadata: Default.args.metadata.filter((meta) => meta.type !== 'type'),
+  hideContentType: false,
+  heroHeaderSize: false,
+  content_type: 'Web report',
+};
+
+WebReport.argTypes = {
+  hideContentType: {
+    description: 'hide content type',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: {
+        summary: false,
+      },
+    },
+  },
+  heroHeaderSize: {
+    description: 'Make banner size of an hero image',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: {
+        summary: true,
+      },
+    },
+  },
+};
+
+const WebReportPageTemplate = (args) => (
+  <Container
+    className={cx('homepage-inverse light-header')}
+    style={{
+      width: '100%',
+    }}
+  >
+    <Template
+      {...args}
+      aboveTitle={
+        <>
+          {!args.hideContentType && (
+            <div className="content-type">{args.content_type}</div>
+          )}
+          <div className="subtitle">{args.subtitle}</div>
+        </>
+      }
+    ></Template>
+  </Container>
+);
+
+export const WebReportPage = WebReportPageTemplate.bind({});
+
+WebReportPage.args = {
+  ...Default.args,
+  metadata: Default.args.metadata.filter((meta) => meta.type !== 'type'),
+  content_type: 'Web report page',
 };

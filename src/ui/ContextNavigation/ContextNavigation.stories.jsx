@@ -1,5 +1,10 @@
 import React from 'react';
-import { Container } from 'semantic-ui-react';
+import {
+  Container,
+  Accordion as SemanticAccordion,
+  Icon,
+} from 'semantic-ui-react';
+import cx from 'classnames';
 
 const sidenavItems = [
   {
@@ -238,4 +243,125 @@ export const Default = Template.bind({});
 Default.args = {
   header: '',
   sidenavItems: sidenavItems,
+};
+
+const AccordionNavigation = ({ navigation, header }) => {
+  const [isNavOpen, setIsNavOpen] = React.useState(true);
+  const [activeItems, setActiveItems] = React.useState({});
+
+  const onClickSummary = (e) => {
+    e.preventDefault();
+    setIsNavOpen((prev) => !prev);
+  };
+
+  const renderItems = ({ item, level = 0 }) => {
+    const {
+      title,
+      href = item['@id'],
+      is_current,
+      is_in_path,
+      items: childItems,
+      type = 'Link',
+    } = item;
+    const hasChildItems = childItems && childItems.length > 0;
+
+    const checkIfActive = () => {
+      return activeItems[href] !== undefined ? activeItems[href] : is_in_path;
+    };
+
+    const isActive = checkIfActive();
+
+    const handleTitleClick = () => {
+      setActiveItems((prev) => ({ ...prev, [href]: !isActive }));
+    };
+
+    return (
+      <li
+        className={cx({
+          is_in_path,
+          'accordion-list-title': !hasChildItems,
+          'accordion-list-item': hasChildItems,
+        })}
+        key={href}
+      >
+        {hasChildItems ? (
+          <SemanticAccordion className="default">
+            <SemanticAccordion.Title
+              active={isActive}
+              as={'button'}
+              aria-expanded={isActive}
+              onClick={handleTitleClick}
+              aria-controls={`accordion-content-${title}`}
+              id={`accordion-title-${title}`}
+            >
+              <span className="title-text">{title}</span>
+              <Icon
+                size="tiny"
+                className={
+                  isActive ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'
+                }
+              />
+            </SemanticAccordion.Title>
+            <SemanticAccordion.Content
+              active={isActive}
+              role="region"
+              id={`accordion-content-${title}`}
+              aria-labelledby={`accordion-title-${title}`}
+            >
+              <ul className="accordion-list">
+                {childItems.map((child) =>
+                  renderItems({ item: child, level: level + 1 }),
+                )}
+              </ul>
+            </SemanticAccordion.Content>
+          </SemanticAccordion>
+        ) : (
+          <a
+            href={href}
+            className={cx(`title-link contenttype-${type}`, {
+              current: is_current,
+              in_path: is_in_path,
+            })}
+          >
+            {title}
+          </a>
+        )}
+      </li>
+    );
+  };
+
+  return navigation.length ? (
+    <Container>
+      <nav className="context-navigation" aria-label={header}>
+        <details open={isNavOpen}>
+          {/* eslint-disable-next-line */}
+          <summary
+            className="context-navigation-header accordion-header"
+            onClick={onClickSummary}
+          >
+            {header}
+            <Icon
+              className={
+                isNavOpen ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'
+              }
+            />
+          </summary>
+
+          <ul
+            className="context-navigation-list accordion-list"
+            style={{ width: '100%' }}
+          >
+            {navigation.map((item) => renderItems({ item }))}
+          </ul>
+        </details>
+      </nav>
+    </Container>
+  ) : null;
+};
+
+export const Accordion = AccordionNavigation.bind({});
+
+Accordion.args = {
+  navigation: sidenavItems,
+  header: 'Navigation',
 };
