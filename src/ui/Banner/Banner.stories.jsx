@@ -192,6 +192,8 @@ const InvertedwithHeroTemplate = (args) => (
   >
     <Template
       {...args}
+      hideShareButton
+      hideDownloadButton
       aboveTitle={
         !args.hideContentType ? (
           <div className="content-type">{args.content_type}</div>
@@ -219,7 +221,7 @@ InvertedHero.args = {
   content_type: 'Web report',
 };
 
-InvertedHero.argTypes = {
+const invertedArgTypes = {
   hideContentType: {
     description: 'hide content type',
     table: {
@@ -231,6 +233,24 @@ InvertedHero.argTypes = {
       },
     },
   },
+  hideShareButton: {
+    description: 'hide/show share button',
+    table: {
+      disable: true,
+    },
+    control: false,
+  },
+  hideDownloadButton: {
+    description: 'hide/show download button',
+    table: {
+      disable: true,
+    },
+    control: false,
+  },
+};
+
+InvertedHero.argTypes = {
+  ...invertedArgTypes,
   heroHeaderSize: {
     description: 'Make banner size of an hero image',
     table: {
@@ -248,6 +268,8 @@ const InvertedTemplate = (args) => (
   <Container className={cx('homepage-inverse light-header')} fluid>
     <Template
       {...args}
+      hideShareButton
+      hideDownloadButton
       aboveTitle={
         <>
           {!args.hideContentType && (
@@ -265,5 +287,10 @@ export const Inverted = InvertedTemplate.bind({});
 Inverted.args = {
   ...Default.args,
   metadata: Default.args.metadata.filter((meta) => meta.type !== 'type'),
+  hideContentType: false,
   content_type: 'Web report page',
+};
+
+Inverted.argTypes = {
+  ...invertedArgTypes,
 };
