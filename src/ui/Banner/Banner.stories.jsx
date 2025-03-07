@@ -136,9 +136,9 @@ const Template = (args) => {
         {!args.aboveTitle && args.subtitle && (
           <Banner.Subtitle>{args.subtitle}</Banner.Subtitle>
         )}
-        {args.aboveTitle && args.aboveTitle}
+        {args.aboveTitle}
         <Banner.Title>{args.title}</Banner.Title>
-        {args.belowTitle && args.belowTitle}
+        {args.belowTitle}
         {args.metadata && (
           <Banner.Metadata>
             <>
