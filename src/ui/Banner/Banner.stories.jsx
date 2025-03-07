@@ -188,9 +188,6 @@ const InvertedwithHeroTemplate = (args) => (
       'homepage-inverse homepage-header light-header',
       args.heroHeaderSize ? 'hero-header' : '',
     )}
-    style={{
-      width: '100%',
-    }}
   >
     <Template
       {...args}
@@ -247,12 +244,7 @@ InvertedHero.argTypes = {
 };
 
 const InvertedTemplate = (args) => (
-  <Container
-    className={cx('homepage-inverse light-header')}
-    style={{
-      width: '100%',
-    }}
-  >
+  <Container className={cx('homepage-inverse light-header')}>
     <Template
       {...args}
       aboveTitle={
