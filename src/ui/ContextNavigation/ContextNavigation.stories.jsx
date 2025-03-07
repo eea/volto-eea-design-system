@@ -296,7 +296,6 @@ const AccordionNavigation = ({ navigation, header }) => {
             >
               <span className="title-text">{title}</span>
               <Icon
-                size="tiny"
                 className={
                   isActive ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'
                 }
@@ -341,6 +340,7 @@ const AccordionNavigation = ({ navigation, header }) => {
           >
             {header}
             <Icon
+              size="large"
               className={
                 isNavOpen ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'
               }
