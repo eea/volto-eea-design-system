@@ -182,7 +182,7 @@ Default.args = {
   copyright: 'John Smith, Well with Nature /EEA',
 };
 
-const WebReportTemplate = (args) => (
+const InvertedwithHeroTemplate = (args) => (
   <Container
     className={cx(
       'homepage-inverse homepage-header light-header',
@@ -212,8 +212,8 @@ const WebReportTemplate = (args) => (
   </Container>
 );
 
-export const WebReport = WebReportTemplate.bind({});
-WebReport.args = {
+export const InvertedHero = InvertedwithHeroTemplate.bind({});
+InvertedHero.args = {
   ...Default.args,
   metadata: Default.args.metadata.filter((meta) => meta.type !== 'type'),
   hideContentType: false,
@@ -221,7 +221,7 @@ WebReport.args = {
   content_type: 'Web report',
 };
 
-WebReport.argTypes = {
+InvertedHero.argTypes = {
   hideContentType: {
     description: 'hide content type',
     table: {
@@ -246,7 +246,7 @@ WebReport.argTypes = {
   },
 };
 
-const WebReportPageTemplate = (args) => (
+const InvertedTemplate = (args) => (
   <Container
     className={cx('homepage-inverse light-header')}
     style={{
@@ -267,9 +267,9 @@ const WebReportPageTemplate = (args) => (
   </Container>
 );
 
-export const WebReportPage = WebReportPageTemplate.bind({});
+export const Inverted = InvertedTemplate.bind({});
 
-WebReportPage.args = {
+Inverted.args = {
   ...Default.args,
   metadata: Default.args.metadata.filter((meta) => meta.type !== 'type'),
   content_type: 'Web report page',
