@@ -254,6 +254,13 @@ const AccordionNavigation = ({ navigation, header }) => {
     setIsNavOpen((prev) => !prev);
   };
 
+  const onKeyDownSummary = (e) => {
+    if (e.keyCode === 13 || e.keyCode === 32) {
+      e.preventDefault();
+      onClickSummary(e);
+    }
+  };
+
   const renderItems = ({ item, level = 0 }) => {
     const {
       title,
@@ -337,6 +344,7 @@ const AccordionNavigation = ({ navigation, header }) => {
           <summary
             className="context-navigation-header accordion-header"
             onClick={onClickSummary}
+            onKeyDown={onKeyDownSummary}
           >
             {header}
             <Icon
