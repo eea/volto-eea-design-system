@@ -208,7 +208,7 @@ const InvertedwithHeroTemplate = (args) => (
           </Banner.Subtitle>
         </>
       }
-    ></Template>
+    />
   </Container>
 );
 
@@ -278,7 +278,7 @@ const InvertedTemplate = (args) => (
           <div className="subtitle">{args.subtitle}</div>
         </>
       }
-    ></Template>
+    />
   </Container>
 );
 
