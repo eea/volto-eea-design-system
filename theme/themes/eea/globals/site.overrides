@@ -220,11 +220,3 @@ a {
     page-break-inside: auto;
   }
 }
-
-/* Update tags and topics in metadata to have link color */
-.block.metadata.subjects.token.widget.tags-content .tag .name,
-.block.metadata.subjects.token.widget.tags-content i.hashtag.icon.icon,
-.block.metadata.topics.token.widget.tags-content .tag .name,
-.block.metadata.topics.token.widget.tags-content i.hashtag.icon.icon {
-  color: var(--text-color, @linkColor);
-}
