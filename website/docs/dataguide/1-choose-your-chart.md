@@ -30,7 +30,7 @@ Static charts are often an adequate option because they are easy to access and d
 
 But sometimes it is strongly recommended to use the interactive version when:
 
-- there are **many categories**, and consequently many colours (see [Don't use more than (about) six colours](#dont-use-more-than-about-six-colours)) (Example 1);
+- there are **many categories**, and consequently many colours (see [Don't use more than (about) six colours](../make-charts-easy-to-read/#dont-use-more-than-about-six-colours)) (Example 1);
 - if, due to lack of space, the **labels are not visible** (Example 2);
 - if the **values are so divergent** that some of them would not be visible (Example 3);
 - and naturally, if there is a need to **sort the values** or filter the information.
