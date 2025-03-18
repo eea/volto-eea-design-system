@@ -200,6 +200,10 @@ a {
     }
   }
 
+  .ui.tab {
+    display: block;
+  }
+
   .static-banner {
     display: none;
     visibility: hidden;
@@ -207,7 +211,12 @@ a {
 
   img,
   .image,
-  .card {
+  .card,
+  .visualization,
+  .embed-map,
+  .embed-tableau,
+  .embed-map-visualization,
+  .embed-visualization {
     page-break-inside: avoid;
   }
 
