@@ -182,6 +182,14 @@ a {
 }
 
 @media print {
+  @page {
+    size: A4;
+    margin: 1cm;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
   .skiplinks-wrapper,
   .slider-arrow,
   #footer,
@@ -190,6 +198,11 @@ a {
   .slick-arrows {
     display: none !important;
     visibility: hidden;
+  }
+
+  .block.gridBlock .ui.grid,
+  .content-box {
+    break-inside: avoid;
   }
 
   .ui.segment.breadcrumbs {
