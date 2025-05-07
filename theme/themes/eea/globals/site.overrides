@@ -49,27 +49,27 @@ h6 {
   color: @contentAreaColor;
 }
 
-[id='page-document'] > *,
-.view-wrapper > * {
+[id='page-document']>*,
+.view-wrapper>* {
   margin-right: auto !important;
   margin-left: auto !important;
 }
 
-[class~='view-defaultview'] [id='page-document'] > *,
-[class~='view-viewview'] [id='page-document'] > *,
+[class~='view-defaultview'] [id='page-document']>*,
+[class~='view-viewview'] [id='page-document']>*,
 #main .container_width,
 #main .has--size--container_width,
-.view-wrapper > * {
+.view-wrapper>* {
   max-width: @containerWidth !important;
 }
 
-[class~='narrow_view'] [id='page-document'] > *,
+[class~='narrow_view'] [id='page-document']>*,
 #main .narrow_width,
 #main .has--size--narrow_width {
   max-width: @narrowWidth !important;
 }
 
-[class~='wide_view'] [id='page-document'] > *,
+[class~='wide_view'] [id='page-document']>*,
 #main .wide_width,
 #main .has--size--wide_width {
   max-width: @wideWidth !important;
@@ -77,7 +77,8 @@ h6 {
 
 // enlarge wide section when we have a resolution from 1280px to before the laptop hd resolution
 @media screen and (min-width: 1280px) and (max-width: 1365px) {
-  [class~='wide_view'] [id='page-document'] > *,
+
+  [class~='wide_view'] [id='page-document']>*,
   #main .wide_width,
   #main .has--size--wide_width {
     max-width: @wideWidthLaptop !important;
@@ -97,7 +98,7 @@ h6 {
 }
 
 // add a 1rem margin top and bottom on all direct styled classes from container
-[class~='container'] > [class*='styled-'] {
+[class~='container']>[class*='styled-'] {
   margin-top: @rem-space-4;
   margin-bottom: @rem-space-4;
 }
@@ -181,7 +182,30 @@ a {
   }
 }
 
+
+// fix background position when using the side navigation and the
+// content area is moved to the left instead of being centered
+@media (min-width:992px) and (max-width:1365px) {
+
+  .has-side-nav .content-box::before,
+  .has-side-nav .full-width {
+    margin-left: -20px !important;
+    margin-right: auto;
+    left: initial;
+    right: initial;
+  }
+}
+
+@media (min-width:1366px) {
+
+  .has-side-nav .content-box::before,
+  .has-side-nav .full-width {
+    left: 72% !important;
+  }
+}
+
 @media print {
+
   @page {
     size: A4;
     margin: 1cm;

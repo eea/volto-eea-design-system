@@ -3,8 +3,8 @@
 *******************************/
 
 /* Avoid long links from spilling outside of card body area */
-.ui.cards > .card > .extra,
-.ui.card > .extra {
+.ui.cards>.card>.extra,
+.ui.card>.extra {
   display: flex;
   flex-wrap: wrap;
   justify-content: var(--text-align, @extraJustifyContent);
@@ -25,8 +25,8 @@
   margin-left: @cardMetaDateMarginLeft;
 }
 
-.ui.cards > .card:not(.rounded) > .image,
-.ui.card:not(.rounded) > .image {
+.ui.cards>.card:not(.rounded)>.image,
+.ui.card:not(.rounded)>.image {
   overflow: @cardImageOverflow;
   height: @cardImageHeight;
 
@@ -42,8 +42,13 @@ img.ui.image {
   object-position: var(--image-object-position, @imageObjectPosition);
 }
 
-.ui.cards > .card > .content > *:not(:last-child),
-.ui.card > .content > *:not(:last-child) {
+// Align image inside card content
+.ui.card>.content>.image {
+  margin-top: auto;
+}
+
+.ui.cards>.card>.content>*:not(:last-child),
+.ui.card>.content>*:not(:last-child) {
   margin-bottom: @cardContentMarginBottom;
 }
 
@@ -59,13 +64,13 @@ img.ui.image {
   justify-content: var(--justify-content, @metaJustifyContent);
 }
 
-.ui.card .meta > .category {
+.ui.card .meta>.category {
   font-size: @metaFontSize;
 }
 
 // add bottom margin also when meta isn't inside .content
 //
-.ui.cards > .card .meta,
+.ui.cards>.card .meta,
 .ui.card .meta {
   margin-bottom: @cardContentMarginBottom;
 }
@@ -98,9 +103,11 @@ img.ui.image {
   --card-background-color: @primaryCardBackground;
   --card-text-color: @primaryCardColor;
 }
+
 /* Inverted */
 .card.has--theme--primary.has--inverted--true,
-.card.primary.inverted {
+.card.primary.inverted,
+.cardsVisualization .primary {
   --card-background-color: @invertedPrimaryCardBackgroundColor;
   --card-text-color: @invertedPrimaryCardColor;
 }
@@ -113,11 +120,13 @@ img.ui.image {
   --card-background-color: @secondaryCardBackground;
   --card-text-color: @secondaryCardColor;
 }
+
 /* Inverted */
 .card.has--theme--secondary.has--inverted--true,
-.card.secondary.inverted {
-  background-color: @invertedSecondaryCardBackgroundColor;
-  color: @invertedSecondaryCardColor;
+.card.secondary.inverted,
+.cardsVisualization .secondary {
+  --card-background-color: @invertedSecondaryCardBackgroundColor;
+  --card-text-color: @invertedSecondaryCardColor;
 }
 
 /*******************************
@@ -128,9 +137,11 @@ img.ui.image {
   --card-background-color: @tertiaryCardBackground;
   --card-text-color: @tertiaryCardColor;
 }
+
 /* Inverted */
 .card.has--theme--tertiary.has--inverted--true,
-.card.tertiary.inverted {
+.card.tertiary.inverted,
+.cardsVisualization .tertiary {
   --card-background-color: @invertedTertiaryCardBackgroundColor;
   --card-text-color: @invertedTertiaryCardColor;
 }
@@ -138,7 +149,7 @@ img.ui.image {
 /*******************************
           Rounded Card
 *******************************/
-.ui.card.rounded > .image {
+.ui.card.rounded>.image {
   height: auto;
 }
 
@@ -266,7 +277,7 @@ img.ui.image {
       Image with title
 *******************************/
 // Adding the default image css for image inside image-with-title
-.ui.cards > .card > .image {
+.ui.cards>.card>.image {
   position: relative;
   display: block;
   flex: 0 0 auto;
@@ -325,7 +336,7 @@ img.ui.image {
     flex-direction: column;
     margin: @slickSlideMargin;
 
-    > div {
+    >div {
       height: 100%;
     }
   }
@@ -421,6 +432,7 @@ img.ui.image {
 }
 
 @media only screen and (max-width: @tabletBreakpoint) {
+
   .cards-carousel .slick-dots li,
   .cards-carousel .slick-dots li button {
     width: @mobileCarouselDotsButtonWidth;
@@ -449,10 +461,10 @@ img.ui.image {
   }
 }
 
-.ui.cards > .card > i.icon,
-.ui.cards > .card > a:not(.ui) > i.icon,
-.ui.card > i.icon,
-.ui.card > a:not(.ui) > i.icon {
+.ui.cards>.card>i.icon,
+.ui.cards>.card>a:not(.ui)>i.icon,
+.ui.card>i.icon,
+.ui.card>a:not(.ui)>i.icon {
   color: @iconColor;
 }
 
@@ -461,8 +473,9 @@ img.ui.image {
 *******************************/
 // Teaser cards grid on tablet update padding and min-width
 @media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
-  .ui.grid > .column.grid-block-teaser,
-  .ui.grid > .row > .column.grid-block-teaser {
+
+  .ui.grid>.column.grid-block-teaser,
+  .ui.grid>.row>.column.grid-block-teaser {
     padding-right: @tabletTeaserCardPaddingInline;
     padding-left: @tabletTeaserCardPaddingInline;
   }
@@ -484,7 +497,7 @@ img.ui.image {
   padding: @headerOnImagePadding;
 }
 
-.ui.card .header > a {
+.ui.card .header>a {
   .useTitleMaxLines();
 }
 
@@ -499,8 +512,6 @@ img.ui.image {
 .imageCard-items {
   display: grid;
   gap: @imageCardItemsGap;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(@imageCardItemsGridMin, @imageCardItemsGridMax)
-  );
+  grid-template-columns: repeat(auto-fit,
+      minmax(@imageCardItemsGridMin, @imageCardItemsGridMax));
 }
