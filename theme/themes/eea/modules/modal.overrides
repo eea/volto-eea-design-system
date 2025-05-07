@@ -2,10 +2,6 @@
          Theme Overrides
 *******************************/
 
-.ui.modal> :last-child {
-  overflow: hidden; // clear floats from modal
-}
-
 .ui.modal .close {
   padding: @closeButtonPadding;
   background: @closeButtonBackground;
@@ -15,7 +11,6 @@
     color: @closeColor;
   }
 }
-
 
 .ui.modal .ui.button.close:focus-visible {
   outline: @focusVisibleOutline;
