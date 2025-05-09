@@ -168,6 +168,10 @@
   margin-bottom: @groupItemsSpacing;
 }
 
+.flex-blocks-form {
+  margin: @groupItemsSpacing 0;
+}
+
 .ui.items.flex-items-wrapper {
   flex-direction: row;
   flex-wrap: wrap;
@@ -179,7 +183,17 @@
 }
 
 .flex-items-wrapper .flex-item {
-  width: var(--flex-item-width, 100%);
+  min-width: var(--flex-item-width, auto);
+}
+
+.group.flex .items-1-columns {
+  --flex-item-width: 25%;
+}
+
+.items.flex-items-wrapper.items-1-columns {
+  align-items: var(--flex-item-align, baseline);
+  justify-content: normal;
+  gap: @space-4;
 }
 
 @media only screen and (min-width: @tabletBreakpoint) {
