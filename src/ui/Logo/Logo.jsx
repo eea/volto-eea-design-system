@@ -13,15 +13,27 @@ import { Image } from 'semantic-ui-react';
  * @param {Object} intl Intl object
  * @returns {string} Markup of the component.
  */
-const Logo = ({ src, invertedSrc, id, url, alt, title, inverted }) => {
+const Logo = ({
+  src,
+  invertedSrc,
+  id,
+  url,
+  alt,
+  title,
+  inverted,
+  width,
+  height,
+}) => {
   return (
-    <Link to={url} title={title} className={'logo'}>
+    <Link to={url} title={title} className="logo">
       <Image
         src={inverted ? invertedSrc : src}
         alt={alt}
         title={title}
         className="eea-logo"
         id={id}
+        {...(width ? { width: width } : {})}
+        {...(height ? { height: height } : {})}
       />
     </Link>
   );

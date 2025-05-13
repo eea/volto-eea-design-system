@@ -27,6 +27,8 @@ const SubFooter = (props) => {
                       src={manager.src}
                       alt={manager.alt}
                       loading="lazy"
+                      {...(manager?.width ? { width: manager.width } : {})}
+                      {...(manager?.height ? { height: manager.height } : {})}
                     ></Image>
                   </a>
                 </div>
