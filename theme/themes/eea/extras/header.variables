@@ -114,6 +114,7 @@
 
 /* Logo */
 @logoWidth: 100%;
+@logoHeight: 100%;
 @mobileLogoMaxWidth: 142px;
 @tabletLogoMaxWidth: 252px;
 @computerLogoMaxWidth: 347px; //348 rendered fuzzy :(
@@ -160,6 +161,10 @@
 @tabletActionsBoxWidth: 66px;
 @computerActionsBoxWidth: 72px;
 @burgerActionBackgroundColor: @darkMidnightBlue;
+@searchIconWidth: 45px;
+@searchIconHeight: 45px;
+@searchIconHeightMobile: 24px;
+@searchIconWidthMobile: 24px;
 
 /* Mega menu and Search popup */
 @mobilePopupMarginTop: 5vh;
