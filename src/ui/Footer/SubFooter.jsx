@@ -27,8 +27,8 @@ const SubFooter = (props) => {
                       src={manager.src}
                       alt={manager.alt}
                       loading="lazy"
-                      {...(manager?.width ? { width: manager.width } : {})}
-                      {...(manager?.height ? { height: manager.height } : {})}
+                      width={manager.width}
+                      height={manager.height}
                       className="footer-logo-icon"
                     ></Image>
                   </a>

@@ -32,8 +32,8 @@ const Logo = ({
         title={title}
         className="eea-logo"
         id={id}
-        {...(width ? { width: width } : {})}
-        {...(height ? { height: height } : {})}
+        width={width}
+        height={height}
       />
     </Link>
   );
