@@ -24,7 +24,7 @@ const Breadcrumbs = ({
           <ol aria-label="Breadcrumbs navigation">
             <li>
               <Link to={root || '/'} className="section" title={'Home'}>
-                <Image src={homeIcon} alt="" />
+                <Image src={homeIcon} alt="" width="12" height="13"/>
               </Link>
             </li>
             {sections.map((item, index, items) => {
