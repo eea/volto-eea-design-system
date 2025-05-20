@@ -114,7 +114,7 @@
 
 /* Logo */
 @logoWidth: 100%;
-@logoHeight: 100%;
+@logoHeight: auto;
 @mobileLogoMaxWidth: 142px;
 @tabletLogoMaxWidth: 252px;
 @computerLogoMaxWidth: 347px; //348 rendered fuzzy :(
