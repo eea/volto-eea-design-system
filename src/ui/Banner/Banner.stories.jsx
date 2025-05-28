@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
+import cx from 'classnames';
 import Banner from './Banner';
 // eslint-disable-next-line import/no-unresolved
 import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/banner.png';
-import { Icon } from 'semantic-ui-react';
+import { Icon, Container } from 'semantic-ui-react';
 import Popup from '@eeacms/volto-eea-design-system/ui/Popup/Popup';
 import Copyright from '../Copyright/Copyright';
 
@@ -132,8 +133,12 @@ const Template = (args) => {
           </>
         }
       >
-        <Banner.Subtitle>{args.subtitle}</Banner.Subtitle>
+        {!args.aboveTitle && args.subtitle && (
+          <Banner.Subtitle>{args.subtitle}</Banner.Subtitle>
+        )}
+        {args.aboveTitle}
         <Banner.Title>{args.title}</Banner.Title>
+        {args.belowTitle}
         {args.metadata && (
           <Banner.Metadata>
             <>
@@ -175,4 +180,117 @@ Default.args = {
   copyrightPosition: 'left',
   copyrightIcon: 'ri-copyright-line',
   copyright: 'John Smith, Well with Nature /EEA',
+};
+
+const InvertedwithHeroTemplate = (args) => (
+  <Container
+    className={cx(
+      'homepage-inverse homepage-header light-header',
+      args.heroHeaderSize ? 'hero-header' : '',
+    )}
+    fluid
+  >
+    <Template
+      {...args}
+      hideShareButton
+      hideDownloadButton
+      aboveTitle={
+        !args.hideContentType ? (
+          <div className="content-type">{args.content_type}</div>
+        ) : (
+          ' '
+        )
+      }
+      belowTitle={
+        <>
+          <Banner.Subtitle>
+            <span className="subtitle-light">{args.subtitle}</span>
+          </Banner.Subtitle>
+        </>
+      }
+    />
+  </Container>
+);
+
+export const InvertedHero = InvertedwithHeroTemplate.bind({});
+InvertedHero.args = {
+  ...Default.args,
+  metadata: Default.args.metadata.filter((meta) => meta.type !== 'type'),
+  hideContentType: false,
+  heroHeaderSize: false,
+  content_type: 'Web report',
+};
+
+const invertedArgTypes = {
+  hideContentType: {
+    description: 'hide content type',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: {
+        summary: false,
+      },
+    },
+  },
+  hideShareButton: {
+    description: 'hide/show share button',
+    table: {
+      disable: true,
+    },
+    control: false,
+  },
+  hideDownloadButton: {
+    description: 'hide/show download button',
+    table: {
+      disable: true,
+    },
+    control: false,
+  },
+};
+
+InvertedHero.argTypes = {
+  ...invertedArgTypes,
+  heroHeaderSize: {
+    description: 'Make banner size of an hero image',
+    table: {
+      type: {
+        summary: 'boolean',
+      },
+      defaultValue: {
+        summary: true,
+      },
+    },
+  },
+};
+
+const InvertedTemplate = (args) => (
+  <Container className={cx('view-viewview homepage-inverse light-header')} fluid>
+    <Template
+      {...args}
+      hideShareButton
+      hideDownloadButton
+      aboveTitle={
+        <>
+          {!args.hideContentType && (
+            <div className="content-type">{args.content_type}</div>
+          )}
+          <div className="subtitle">{args.subtitle}</div>
+        </>
+      }
+    />
+  </Container>
+);
+
+export const Inverted = InvertedTemplate.bind({});
+
+Inverted.args = {
+  ...Default.args,
+  metadata: Default.args.metadata.filter((meta) => meta.type !== 'type'),
+  hideContentType: false,
+  content_type: 'Web report page',
+};
+
+Inverted.argTypes = {
+  ...invertedArgTypes,
 };
