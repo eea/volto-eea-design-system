@@ -265,7 +265,10 @@ InvertedHero.argTypes = {
 };
 
 const InvertedTemplate = (args) => (
-  <Container className={cx('view-viewview homepage-inverse light-header')} fluid>
+  <Container
+    className={cx('view-viewview homepage-inverse light-header')}
+    fluid
+  >
     <Template
       {...args}
       hideShareButton
