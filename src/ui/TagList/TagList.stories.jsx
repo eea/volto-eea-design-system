@@ -52,16 +52,16 @@ export default {
 export const List = (args) => (
   <Provider store={store}>
     <Container>
-        <TagList className={args.direction}>
-          <TagList.Title>{args.title}</TagList.Title>
-          <TagList.Content>
-            {args.tags.map((tag, index) => [
-              <Tag href={tag.href} key={index}>
-                {tag.category}
-              </Tag>,
-            ])}
-          </TagList.Content>
-        </TagList>
+      <TagList className={args.direction}>
+        <TagList.Title>{args.title}</TagList.Title>
+        <TagList.Content>
+          {args.tags.map((tag, index) => [
+            <Tag href={tag.href} key={index}>
+              {tag.category}
+            </Tag>,
+          ])}
+        </TagList.Content>
+      </TagList>
     </Container>
   </Provider>
 );
