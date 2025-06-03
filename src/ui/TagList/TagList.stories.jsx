@@ -2,6 +2,16 @@ import React from 'react';
 import TagList from './TagList';
 import Tag from '../Tag/Tag';
 import { Container } from 'semantic-ui-react';
+import configureStore from 'redux-mock-store';
+import { Provider } from 'react-redux';
+const mockStore = configureStore();
+
+const store = mockStore({
+  intl: {
+    locale: 'en',
+    messages: {},
+  },
+});
 
 export default {
   title: 'Components/Tag',
@@ -40,18 +50,20 @@ export default {
 };
 
 export const List = (args) => (
-  <Container>
-    <TagList className={args.direction}>
-      <TagList.Title>{args.title}</TagList.Title>
-      <TagList.Content>
-        {args.tags.map((tag, index) => [
-          <Tag href={tag.href} key={index}>
-            {tag.category}
-          </Tag>,
-        ])}
-      </TagList.Content>
-    </TagList>
-  </Container>
+  <Provider store={store}>
+    <Container>
+        <TagList className={args.direction}>
+          <TagList.Title>{args.title}</TagList.Title>
+          <TagList.Content>
+            {args.tags.map((tag, index) => [
+              <Tag href={tag.href} key={index}>
+                {tag.category}
+              </Tag>,
+            ])}
+          </TagList.Content>
+        </TagList>
+    </Container>
+  </Provider>
 );
 
 List.args = {
