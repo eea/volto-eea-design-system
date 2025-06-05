@@ -145,4 +145,61 @@ describe('HeaderSearchPopUp', () => {
       screen.getByPlaceholderText('Search GHG knowledge hub'),
     ).toBeInTheDocument();
   });
+
+  it('should not match regex pattern for nested children', () => {
+    const ghgHeaderSearchBox = [
+      {
+        matchpath: 'en/ghg-knowledge-hub/[^/]+$',
+        buttonTitle: 'GHG Search',
+        placeholder: 'Search GHG knowledge hub',
+        path: '/en/ghg-knowledge-hub',
+        isDefault: false,
+      },
+      {
+        path: '/search',
+        buttonTitle: 'Default Search',
+        placeholder: 'Default search',
+        isDefault: true,
+      },
+    ];
+
+    // Test nested path should not match and fallback to default
+    history.push('/en/ghg-knowledge-hub/climate-data/detailed-view');
+    render(
+      <Router history={history}>
+        <HeaderSearchPopUp
+          headerSearchBox={ghgHeaderSearchBox}
+          onClose={mockOnClose}
+          triggerRefs={[]}
+        />
+      </Router>,
+    );
+    expect(screen.getByPlaceholderText('Default search')).toBeInTheDocument();
+  });
+
+  it('should prefer matchpath over path when both exist', () => {
+    const headerSearchBoxBoth = [
+      {
+        path: '/en/ghg-knowledge-hub',
+        matchpath: 'en/ghg-knowledge-hub/[^/]+$',
+        buttonTitle: 'GHG Search',
+        placeholder: 'Matchpath preferred',
+        isDefault: true,
+      },
+    ];
+
+    history.push('/en/ghg-knowledge-hub/climate-data');
+    render(
+      <Router history={history}>
+        <HeaderSearchPopUp
+          headerSearchBox={headerSearchBoxBoth}
+          onClose={mockOnClose}
+          triggerRefs={[]}
+        />
+      </Router>,
+    );
+    expect(
+      screen.getByPlaceholderText('Matchpath preferred'),
+    ).toBeInTheDocument();
+  });
 });
