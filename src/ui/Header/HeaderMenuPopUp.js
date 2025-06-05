@@ -355,18 +355,22 @@ function HeaderMenuPopUp({
       return layouts[url];
     }
 
-    // Try pattern matching for wildcards
+    // Try pattern matching for regex patterns
     for (const pattern of Object.keys(layouts)) {
-      if (pattern.includes('*')) {
-        // Handle wildcard patterns like '/en/ghg-knowledge-hub/*'
-        // Convert wildcard to regex that matches only immediate children
-        const regexPattern = pattern
-          .replace(/\*/g, '[^/]+') // Replace * with pattern for immediate children only
-          .replace(/\//g, '\\/'); // Escape forward slashes
-
-        const regex = new RegExp(`^${regexPattern}$`);
-        if (regex.test(url)) {
-          return layouts[pattern];
+      if (
+        pattern.includes('[') ||
+        pattern.includes('$') ||
+        pattern.includes('^')
+      ) {
+        // Handle regex patterns like '/en/ghg-knowledge-hub/[^/]+$'
+        try {
+          const regexPattern = pattern.replace(/\//g, '\\/'); // Escape forward slashes
+          const regex = new RegExp(`^${regexPattern}`);
+          if (regex.test(url)) {
+            return layouts[pattern];
+          }
+        } catch (e) {
+          // Invalid regex pattern, skip it
         }
       }
     }
