@@ -347,12 +347,35 @@ function HeaderMenuPopUp({
 
   // Get layout for current menu item and fallback to a * layout that can
   // be used for all menu items that don't have a specific layout
-  const layout =
-    (!!menuItemsLayouts &&
-      Object.keys(menuItemsLayouts).includes(menuItem?.url) &&
-      menuItemsLayouts[menuItem.url]) ||
-    (!!menuItemsLayouts && menuItemsLayouts['*']) ||
-    {};
+  const getMatchingLayout = (url, layouts) => {
+    if (!layouts || !url) return {};
+
+    // First try exact match
+    if (layouts[url]) {
+      return layouts[url];
+    }
+
+    // Try pattern matching for wildcards
+    for (const pattern of Object.keys(layouts)) {
+      if (pattern.includes('*')) {
+        // Handle wildcard patterns like '/en/ghg-knowledge-hub/*'
+        // Convert wildcard to regex that matches only immediate children
+        const regexPattern = pattern
+          .replace(/\*/g, '[^/]+') // Replace * with pattern for immediate children only
+          .replace(/\//g, '\\/'); // Escape forward slashes
+
+        const regex = new RegExp(`^${regexPattern}$`);
+        if (regex.test(url)) {
+          return layouts[pattern];
+        }
+      }
+    }
+
+    // Fallback to global wildcard
+    return layouts['*'] || {};
+  };
+
+  const layout = getMatchingLayout(menuItem?.url, menuItemsLayouts);
 
   return (
     <Transition visible={visible} animation="slide down" duration={300}>
