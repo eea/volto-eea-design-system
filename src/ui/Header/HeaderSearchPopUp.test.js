@@ -8,6 +8,7 @@ import '@testing-library/jest-dom/extend-expect';
 describe('HeaderSearchPopUp', () => {
   let history;
   const mockOnClose = jest.fn();
+
   const sampleHeaderSearchBox = [
     {
       path: '/search',
@@ -110,5 +111,38 @@ describe('HeaderSearchPopUp', () => {
     fireEvent.click(screen.getByText('suggestion 1'));
     expect(history.location.pathname).toBe('/');
     expect(history.location.search).toBe('?q=suggestion 1');
+  });
+
+  it('should match regex pattern for GHG knowledge hub direct children', () => {
+    const ghgHeaderSearchBox = [
+      {
+        matchpath: 'en/ghg-knowledge-hub/[^/]+$',
+        buttonTitle: 'GHG Search',
+        placeholder: 'Search GHG knowledge hub',
+        path: '/en/ghg-knowledge-hub',
+        isDefault: false,
+      },
+      {
+        path: '/search',
+        buttonTitle: 'Default Search',
+        placeholder: 'Default search',
+        isDefault: true,
+      },
+    ];
+
+    // Test direct child match
+    history.push('/en/ghg-knowledge-hub/climate-data');
+    render(
+      <Router history={history}>
+        <HeaderSearchPopUp
+          headerSearchBox={ghgHeaderSearchBox}
+          onClose={mockOnClose}
+          triggerRefs={[]}
+        />
+      </Router>,
+    );
+    expect(
+      screen.getByPlaceholderText('Search GHG knowledge hub'),
+    ).toBeInTheDocument();
   });
 });

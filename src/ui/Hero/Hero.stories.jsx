@@ -120,8 +120,7 @@ Default.args = {
   fullHeight: true,
   image: true,
   quoted: true,
-  text:
-    'Forests are a key part of the solution to combat climate change and biodiversity loss.',
+  text: 'Forests are a key part of the solution to combat climate change and biodiversity loss.',
   textVariant: 'tertiary',
   textAlign: 'left',
   metaAlign: 'left',
@@ -158,8 +157,7 @@ Playground.args = {
   fullHeight: true,
   image: true,
   quoted: false,
-  text:
-    'Forests are a key part of the solution to combat climate change and biodiversity loss.',
+  text: 'Forests are a key part of the solution to combat climate change and biodiversity loss.',
   textVariant: 'tertiary',
   textAlign: 'left',
   metaAlign: 'left',
