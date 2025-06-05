@@ -31,7 +31,7 @@ const ItemGrid = ({
   hideChildrenFromNavigation,
 }) => {
   const item_id =
-    item?.title?.toLowerCase().replaceAll(' ', '-') + '-sub-title';
+    item?.title?.toLowerCase()?.replaceAll(' ', '-') + '-sub-title';
   return (
     <>
       {renderMenuItem(item, { className: 'sub-title', id: item_id })}
