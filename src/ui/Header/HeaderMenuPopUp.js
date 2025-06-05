@@ -349,12 +349,12 @@ function HeaderMenuPopUp({
   // be used for all menu items that don't have a specific layout
   const layout =
     (!!menuItemsLayouts &&
-     menuItemsLayouts[menuItem.url]) ||
-      menuItemsLayouts[
-        Object.keys(menuItemsLayouts).find((key) =>
-          menuItem?.url?.includes(key),
-        )
-      ]) ||
+      (menuItemsLayouts[menuItem.url] ||
+        menuItemsLayouts[
+          Object.keys(menuItemsLayouts).find((key) =>
+            menuItem?.url?.includes(key),
+          )
+        ])) ||
     (!!menuItemsLayouts && menuItemsLayouts['*']) ||
     {};
 
