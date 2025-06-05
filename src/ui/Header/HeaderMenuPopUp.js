@@ -347,39 +347,18 @@ function HeaderMenuPopUp({
 
   // Get layout for current menu item and fallback to a * layout that can
   // be used for all menu items that don't have a specific layout
-  const getMatchingLayout = (url, layouts) => {
-    if (!layouts || !url) return {};
-
-    // First try exact match
-    if (layouts[url]) {
-      return layouts[url];
-    }
-
-    // Try pattern matching for regex patterns
-    for (const pattern of Object.keys(layouts)) {
-      if (
-        pattern.includes('[') ||
-        pattern.includes('$') ||
-        pattern.includes('^')
-      ) {
-        // Handle regex patterns like '/en/ghg-knowledge-hub/[^/]+$'
-        try {
-          const regexPattern = pattern.replace(/\//g, '\\/'); // Escape forward slashes
-          const regex = new RegExp(`^${regexPattern}`);
-          if (regex.test(url)) {
-            return layouts[pattern];
-          }
-        } catch (e) {
-          // Invalid regex pattern, skip it
-        }
-      }
-    }
-
-    // Fallback to global wildcard
-    return layouts['*'] || {};
-  };
-
-  const layout = getMatchingLayout(menuItem?.url, menuItemsLayouts);
+  const layout =
+    (!!menuItemsLayouts &&
+      Object.keys(menuItemsLayouts).find((key) =>
+        menuItem?.url?.includes(key),
+      ) &&
+      menuItemsLayouts[
+        Object.keys(menuItemsLayouts).find((key) =>
+          menuItem?.url?.includes(key),
+        )
+      ]) ||
+    (!!menuItemsLayouts && menuItemsLayouts['*']) ||
+    {};
 
   return (
     <Transition visible={visible} animation="slide down" duration={300}>
