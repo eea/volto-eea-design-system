@@ -30,7 +30,8 @@ const ItemGrid = ({
   renderMenuItem,
   hideChildrenFromNavigation,
 }) => {
-  const item_id = item.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
+  const item_id =
+    item?.title?.toLowerCase()?.replaceAll(' ', '-') + '-sub-title';
   return (
     <>
       {renderMenuItem(item, { className: 'sub-title', id: item_id })}
@@ -53,7 +54,8 @@ const Item = ({
   renderMenuItem,
   hideChildrenFromNavigation,
 }) => {
-  const item_id = item.title.toLowerCase().replaceAll(' ', '-') + '-sub-title';
+  const item_id =
+    item?.title?.toLowerCase()?.replaceAll(' ', '-') + '-sub-title';
   return (
     <>
       {renderMenuItem(item, {
@@ -349,8 +351,13 @@ function HeaderMenuPopUp({
   // be used for all menu items that don't have a specific layout
   const layout =
     (!!menuItemsLayouts &&
-      Object.keys(menuItemsLayouts).includes(menuItem?.url) &&
-      menuItemsLayouts[menuItem.url]) ||
+      menuItem?.items?.length > 0 &&
+      (menuItemsLayouts[menuItem?.url] ||
+        menuItemsLayouts[
+          Object.keys(menuItemsLayouts).find((key) =>
+            menuItem?.url?.includes(key),
+          )
+        ])) ||
     (!!menuItemsLayouts && menuItemsLayouts['*']) ||
     {};
 
