@@ -12,6 +12,7 @@ import cx from 'classnames';
 export default {
   title: 'Layout/Header',
   component: Header,
+  excludeStories: /menuItems$/,
   argTypes: {
     links: {
       table: {
@@ -57,16 +58,20 @@ const logoProps = {
 };
 
 const links = [
-  { title: 'EEA Main Portal', href: '/#' },
-  { title: 'Biodiversity Information System for Europe', href: '/#' },
-  { title: 'Climate Adaptation Platform', href: '/#' },
-  { title: 'Copernicus in situ component', href: '/#' },
-  { title: 'Copernicus land monitoring', href: '/#' },
+  { title: 'European Environment Agency website', href: '/#' },
+  { title: 'WISE marine - Marine information system for Europe', href: '/#' },
+  {
+    title: 'WISE freshwater - Freshwater information system for Europe',
+    href: '/#',
+  },
+  { title: 'BISE - Biodiversity information system for Europe', href: '/#' },
+  { title: 'FISE - Forest information system for Europe', href: '/#' },
+  { title: 'European Climate and health observatory', href: '/#' },
+  { title: 'ClimateADAPT', href: '/#' },
   { title: 'European Industrial Emissions Portal', href: '/#' },
-  { title: 'Forest Information System for Europe', href: '/#' },
-  { title: 'Information Platform for Chemical Monitoring', href: '/#' },
-  { title: 'Marine Water Information System for Europe', href: '/#' },
-  { title: 'Fresh Water Information System for Europe', href: '/#' },
+  { title: 'Climate and Energy in the EU', href: '/#' },
+  { title: 'Copernicus Land Monitoring Service', href: '/#' },
+  { title: 'Copernicus InSitu', href: '/#' },
 ];
 
 const languages = [
@@ -98,7 +103,7 @@ const languages = [
   { name: 'Türkçe', code: 'tr' },
 ];
 
-const menuItems = [
+export const menuItems = [
   {
     '@id': 'Topics',
     items: [
@@ -483,7 +488,7 @@ const menuItems = [
     ],
     review_state: null,
     title: 'Topics',
-    url: '/#',
+    url: '/en/topics',
   },
   {
     '@id': 'Analysis-and-data',
@@ -887,7 +892,7 @@ const menuItems = [
     ],
     review_state: null,
     title: 'Countries',
-    url: '/#',
+    url: '/en/countries',
   },
   {
     '@id': 'Newsroom',
@@ -1143,7 +1148,7 @@ const menuItems = [
     ],
     review_state: null,
     title: 'About Us',
-    url: '/#',
+    url: '/en/about',
   },
 ];
 
@@ -1177,6 +1182,26 @@ const debounce = (func) => {
     if (timer) clearTimeout(timer);
     timer = setTimeout(func, 50, event);
   };
+};
+
+const menuItemsLayouts = {
+  '/en/topics': {
+    menuItemChildrenListColumns: [1, 4],
+    menuItemColumns: [
+      'at-a-glance three wide column',
+      'topics-right-column nine wide column',
+    ],
+    hideChildrenFromNavigation: false,
+  },
+  '/en/countries': {
+    menuItemColumns: ['eight wide column', 'four wide column'],
+    menuItemChildrenListColumns: [5, 2],
+    appendExtraMenuItemsToLastColumn: true,
+    hideChildrenFromNavigation: false,
+  },
+  '/en/about': {
+    hideChildrenFromNavigation: false,
+  },
 };
 
 const handleDropdownClick = (event) => {
@@ -1213,7 +1238,7 @@ const Template = (args) => {
       <Header>
         <Header.TopHeader>
           <Header.TopItem className="official-union">
-            <Image src={eeaFlag} alt="eea flag"></Image>
+            <Image src={eeaFlag} alt="European Union flag"></Image>
             <Header.TopDropdownMenu
               text="An official website of the European Union | How do you know?"
               tabletText="An official website of the European Union"
@@ -1221,6 +1246,7 @@ const Template = (args) => {
               icon="chevron down"
               aria-label="dropdown"
               className=""
+              classNameHeader="mobile-sr-only"
               viewportWidth={viewportWidth}
             >
               <div
@@ -1237,7 +1263,6 @@ const Template = (args) => {
                 <a
                   href="https://europa.eu/european-union/contact/institutions-bodies_en"
                   target="_blank"
-                  rel="noreferrer"
                   role="option"
                   aria-selected="false"
                 >
@@ -1255,15 +1280,10 @@ const Template = (args) => {
               mobileText={mobileLinksMenuTitle}
               viewportWidth={viewportWidth}
             >
-              <div className="wrapper">
+              <div className="wrapper" tabIndex={0} role={'presentation'}>
                 {links.map((item, index) => (
                   <Dropdown.Item key={index}>
-                    <a
-                      href={item.href}
-                      className="site"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
+                    <a href={item.href} className="site" target="_blank">
                       {item.title}
                     </a>
                   </Dropdown.Item>
@@ -1272,47 +1292,49 @@ const Template = (args) => {
             </Header.TopDropdownMenu>
           </Header.TopItem>
 
-          <Header.TopDropdownMenu
-            id="language-switcher"
-            hasLanguageDropdown={hasLanguageDropdown}
-            className="item"
-            text={`${language.toUpperCase()}`}
-            mobileText={`${language.toUpperCase()}`}
-            icon={
-              <Image
-                role="option"
-                src={globeIcon}
-                alt="language dropdown globe icon"
-              ></Image>
-            }
-            viewportWidth={viewportWidth}
-          >
-            <ul
-              className="wrapper language-list"
-              role="listbox"
-              aria-label="language switcher"
+          {hasLanguageDropdown && (
+            <Header.TopDropdownMenu
+              id="language-switcher"
+              className="item"
+              ariaLabel={'language switcher'}
+              text={`${language.toUpperCase()}`}
+              mobileText={`${language.toUpperCase()}`}
+              icon={
+                <Image
+                  role="option"
+                  src={globeIcon}
+                  alt="language dropdown globe icon"
+                ></Image>
+              }
+              viewportWidth={viewportWidth}
             >
-              {languages.map((item, index) => (
-                <Dropdown.Item
-                  as="li"
-                  key={index}
-                  text={
-                    <a
-                      href={'/' + item.code}
-                      onClick={() => setLanguage(item.code)}
-                      tabIndex={0}
-                      className={'language-link'}
-                    >
-                      {item.name}
-                      <span className="country-code">
-                        {item.code.toUpperCase()}
-                      </span>
-                    </a>
-                  }
-                ></Dropdown.Item>
-              ))}
-            </ul>
-          </Header.TopDropdownMenu>
+              <ul
+                className="wrapper language-list"
+                role="listbox"
+                aria-label="language switcher"
+              >
+                {languages.map((item, index) => (
+                  <Dropdown.Item
+                    as="li"
+                    key={index}
+                    text={
+                      <a
+                        href={'/' + item.code}
+                        onClick={() => setLanguage(item.code)}
+                        tabIndex={0}
+                        className={'language-link'}
+                      >
+                        {item.name}
+                        <span className="country-code">
+                          {item.code.toUpperCase()}
+                        </span>
+                      </a>
+                    }
+                  ></Dropdown.Item>
+                ))}
+              </ul>
+            </Header.TopDropdownMenu>
+          )}
         </Header.TopHeader>
         <Header.Main
           transparency={args.transparency}
@@ -1320,6 +1342,7 @@ const Template = (args) => {
           pathname={pathname}
           logo={<Logo {...logoProps} inverted={args.inverted} />}
           menuItems={menuItems}
+          menuItemsLayouts={menuItemsLayouts}
           headerSearchBox={headerSearchBox}
           renderMenuItem={(item, options = {}, props) => {
             const { onClick } = options;
@@ -1517,7 +1540,7 @@ const Template = (args) => {
 };
 
 export const Default = Template.bind({});
-Default.args = {
+export const HeaderArgs = {
   linksMenuTitle: 'Environmental information systems',
   tabletLinksMenuTitle: 'EEA information systems',
   mobileLinksMenuTitle: 'EEA information systems',
@@ -1528,3 +1551,4 @@ Default.args = {
   transparency: false,
   inverted: false,
 };
+Default.args = HeaderArgs;

@@ -16,6 +16,7 @@
   margin-right: -50vw;
   left: 50%;
   right: 50%;
+  z-index: @contentBoxBeforeZIndex;
 }
 
 .content-box {
@@ -28,7 +29,6 @@
     padding-top: @contentBoxContainerMarginTop;
     padding-bottom: @contentBoxContainerMarginBottom;
     position: relative;
-    z-index: @contentBoxContainerZIndex;
   }
 
   &.primary {
@@ -50,6 +50,7 @@
   --bg-color: transparent;
   --border-color-secondary: @contentBoxColor;
   --text-color: @contentBoxColor;
+  --text-color-inactive: @contentBoxInactiveColor;
   --text-color-primary: @contentBoxColor;
   --text-color-secondary: @contentBoxColor;
   --text-color-tertiary: @contentBoxColor;

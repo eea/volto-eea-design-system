@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -33,6 +33,8 @@ jobs:
           git pull
           git fetch
           npx auto-changelog --commit-limit false  --unreleased --stdout  --template templates/eea.hbs > website/docs/2-whatsnew.md
+          sed -i 's/[R|r]efs #\([0-9]*\)/Refs \[#\1\]\(https:\/\/taskman.eionet.europa.eu\/issues\/\1\)/g'  website/docs/2-whatsnew.md
+          sed -i 's/{/\\{/g' website/docs/2-whatsnew.md
           cd website
           yarn
           yarn build

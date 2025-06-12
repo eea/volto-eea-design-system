@@ -45,7 +45,7 @@ export const List = (args) => (
       <TagList.Title>{args.title}</TagList.Title>
       <TagList.Content>
         {args.tags.map((tag, index) => [
-          <Tag className={tag.class} href={tag.href} key={index}>
+          <Tag href={tag.href} key={index}>
             {tag.category}
           </Tag>,
         ])}

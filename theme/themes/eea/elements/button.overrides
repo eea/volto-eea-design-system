@@ -80,11 +80,19 @@
 *******************************/
 // ensure circular button gets the border color of the current text color
 // and acts as a circular button
+.ui.circular.basic.button,
+.ui.basic.floated.button,
 .ui.circular.icon.button {
   padding: @circularButtonPadding;
   border-width: @circularButtonBorderWidth;
   border-color: @circularButtonBorderColor;
+  border-radius: @circularButtonBorderRadius;
   line-height: @circularButtonLineHeight;
+}
+
+.ui.basic.button > .icon {
+  margin: @basicButtonIconMargin;
+  vertical-align: @basicButtonIconVerticalAlign;
 }
 
 // toolbar yes and cancel icons go outside the button area with default line
@@ -95,8 +103,9 @@
 }
 
 // Maps, Video and Image blocks use buttons without
+// also ObjectBrowserWidget used on Teaser target
 // icons, fix them in css for now
-.toolbar-inner .ui.buttons .basic.button {
+.ui.buttons .basic.button {
   padding: 0;
   background-color: transparent !important;
   box-shadow: none !important;
@@ -116,10 +125,10 @@ button.ui.button.text,
 button.ui.buttons.text,
 a.ui.button.text,
 p.ui.button {
+  padding: @textButtonPadding;
   background-color: @textButtonBackground;
   color: @primaryColor;
   text-decoration: underline;
-  padding: @textButtonPadding;
 
   &:hover,
   &:active,
@@ -139,8 +148,8 @@ p.ui.button {
 .ui.button.search {
   box-sizing: border-box;
   border: @buttonBorder @white;
-  background: @searchButtonBackground;
   border-radius: @searchButtonBorderRadius;
+  background: @searchButtonBackground;
   color: @searchButtonColor;
   font-size: @searchButtonFontSize;
 
@@ -258,7 +267,7 @@ p.ui.button {
 
 .ui.inverted.secondary.buttons .button:focus,
 .ui.inverted.secondary.button:focus,
-\.ui.inverted.secondary.buttons .button:focus-visible,
+.ui.inverted.secondary.buttons .button:focus-visible,
 .ui.inverted.secondary.button:focus-visible {
   background-color: @secondaryColorFocus;
 }

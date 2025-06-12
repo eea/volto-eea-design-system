@@ -25,10 +25,25 @@ footer {
     width: @wrapperWidth;
     padding: @mobileWrapperPadding;
   }
+  .theme-sites {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .theme-sites-button {
+    font-size: @themeSitesButtonFontSize !important;
+    padding: @themeSitesButtonPadding !important;
+    border: @themeSitesButtonBorder !important;
+  }
+
+  .ui.button.theme-sites-button {
+    box-shadow: @themeSitesButtonBoxShadow !important;
+  }
 }
 
 footer .theme-sites {
   padding: @mobileThemeSitesPadding;
+  padding-top: @computerThemeSitesPaddingTop;
 
   .logos .ui.grid {
     align-items: center;
@@ -37,7 +52,6 @@ footer .theme-sites {
   .logos .logo img {
     margin: @mobileThemeSitesLogoMargin;
   }
-
 }
 footer .footer-header {
   font-size: @mobileFooterTitleFontSize;
@@ -53,6 +67,7 @@ footer .footer-header {
   height: @subFooterItemHeight;
   align-items: @subFooterItemAlignItems;
 }
+
 .subfooter .item .ui.grid {
   align-items: center;
 }
@@ -64,33 +79,46 @@ footer .footer-header {
   }
 }
 
-.subfooter .contact-wrapper {
-  margin-bottom: @tabletContactBlockMarginBottom;
-}
-
 .contact-wrapper .subcontact a {
   font-size: @computerSubContactIconFontSize;
   margin-right: @computerSubContactIconMarginRight;
   font-weight: @computerSubContactIconFontWeight;
 }
-
-.subfooter .contact {
-  display: block;
-  margin: @mobileContactMargin;
-  font-size: @contactFontSize;
-  gap: @contactGap;
-
-  a {
-    color: @menuLinkColor;
-  }
-
-  i.big.icon {
-    margin-right: @mobileContactIconMarginRight;
-    font-size: @mobileContactIconFontSize;
-  }
+.contact-wrapper .subcontact a {
+  font-size: @tabletSubContactIconFontSize;
+  margin-right: @tabletSubContactIconMarginRight;
 }
 
-.subfooter .social {
+.subfooter .contact {
+  display: flex;
+  font-size: @tabletContactFontSize;
+  margin: @tabletContactMargin;
+  gap: @tabletContactGap;
+}
+.contact-wrapper .subcontact {
+  display: flex;
+  gap: @tabletContactGap;
+}
+
+.subfooter .contact-wrapper {
+  margin-inline: @tabletContactBlockMarginInline;
+}
+
+.subfooter .contact {
+  a {
+    color: @socialIconColor;
+
+    &:active,
+    &:hover {
+      color: @socialIconColor;
+    }
+
+    i.icon {
+      font-size: @mobileSocialIconSize;
+    }
+  }
+}
+footer .social {
   display: flex;
   justify-content: @mobileSocialJustifyContent;
   margin: @mobileSocialIconsMargin;
@@ -148,7 +176,7 @@ footer .footer-wrapper .menu {
   }
 }
 
-@media only screen and (max-width: @largestMobileScreen) {
+@media only screen and (max-width: @tabletBreakpoint) {
   .footer-wrapper > .container {
     display: flex;
     flex-direction: column;
@@ -158,9 +186,22 @@ footer .footer-wrapper .menu {
     font-size: @mobileMenuCopyrightFontSize;
     font-weight: @mobileMenuCopyrightFontWeight;
   }
-
+  .contact-wrapper {
+    padding: @mobileContactMargin;
+  }
+  .contact-wrapper .contact {
+    gap: @mobileContactGap;
+  }
   .contact-wrapper .subcontact {
-    margin-top: @mobileSubcontactBlockMarginTop;
+    display: flex;
+    gap: @mobileContactGap;
+  }
+  .theme-sites {
+    padding-top: @mobileThemeSitesPaddingTop !important;
+    padding-bottom: @mobileThemeSitesPaddingTop !important;
+  }
+  footer .social {
+    margin: @mobileSocialIconsMargin;
   }
 }
 
@@ -172,7 +213,22 @@ footer .footer-wrapper .menu {
   footer .footer-header {
     font-size: @tabletFooterTitleFontSize;
   }
+  .contact-wrapper {
+    display: flex;
+    padding-top: @tabletContactWrapperPaddingTop;
+    gap: @tabletContactGap;
+  }
 
+  .contact-wrapper .subcontact {
+    display: block;
+  }
+  .many-contacts {
+    display: block;
+    padding-top: 0px;
+  }
+  .many-contacts .subcontact {
+    display: flex;
+  }
   .subfooter .item {
     .logo img {
       max-height: 100px;
@@ -181,8 +237,11 @@ footer .footer-wrapper .menu {
 
   .subfooter .contact {
     display: flex;
+
     font-size: @tabletContactFontSize;
+
     margin: @tabletContactMargin;
+
     gap: @tabletContactGap;
   }
 
@@ -192,6 +251,7 @@ footer .footer-wrapper .menu {
 
   .contact-wrapper .subcontact a {
     font-size: @tabletSubContactIconFontSize;
+
     margin-right: @tabletSubContactIconMarginRight;
   }
 
@@ -199,7 +259,7 @@ footer .footer-wrapper .menu {
     margin: @tabletFooterDescriptionMargin;
   }
 
-  .subfooter .social {
+  footer .social {
     justify-content: @tabletSocialJustifyContent;
     gap: @tabletSocialGap;
     margin: @tabletSocialIconsMargin;
@@ -213,6 +273,13 @@ footer .footer-wrapper .menu {
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
+  .contact-wrapper {
+    display: block;
+    padding-top: 0px;
+  }
+  .contact-wrapper .subcontact {
+    display: flex;
+  }
   footer {
     .footer-wrapper {
       padding: @computerWrapperPadding;
@@ -220,14 +287,6 @@ footer .footer-wrapper .menu {
     }
     .footer-wrapper-nobg {
       padding: @computerWrapperPadding;
-    }
-  }
-
-  footer .theme-sites {
-    padding: @computerThemeSitesPadding;
-
-    .logos .logo img {
-      margin: @computerThemeSitesLogoMargin;
     }
   }
 
@@ -264,7 +323,8 @@ footer .footer-wrapper .menu {
       }
     }
 
-    .subfooter .social {
+    .subfooter,
+    footer .social {
       margin: @computerSocialIconsMargin;
     }
 

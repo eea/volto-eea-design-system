@@ -27,7 +27,7 @@ module.exports = {
     announcementBar: {
       id: 'alpha-release',
       content:
-        '🚧 The EEA Design System is currently <strong>Work-In-Progress</strong>. See <a target="_blank" rel="noopener noreferrer" href="/volto-eea-design-system/docs/whatsnew">What\'s new</a> for more information. 🚧',
+        'See <a href="/volto-eea-design-system/docs/whatsnew">What\'s new</a> for more information.',
       backgroundColor: '#fafbfc',
       textColor: '#091E42',
       isCloseable: false,
@@ -96,7 +96,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          exclude: ['**/md_components/**','**/_partials/**' ],
+          exclude: ['**/md_components/**', '**/_partials/**'],
           editUrl: ({ versionDocsDirPath, docPath }) => {
             let thePath = `${versionDocsDirPath}/${docPath}`;
             let newPath = '';

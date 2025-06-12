@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Button, Icon } from 'semantic-ui-react';
+import { debounce } from 'lodash';
 
 class InpageNavigation extends Component {
   constructor(props) {
@@ -8,6 +9,17 @@ class InpageNavigation extends Component {
       scrollPosition: 0,
       removeClass: 'hidden',
     };
+    this.debouncedHandleInpageNavigationVisibility = debounce(
+      this.handleInpageNavigationVisibility,
+      250,
+    );
+  }
+
+  shouldComponentUpdate(_nextProps, nextState) {
+    if (this.state.removeClass !== nextState.removeClass) {
+      return true;
+    }
+    return false;
   }
 
   handleInpageNavigationVisibility = () => {
@@ -22,11 +34,18 @@ class InpageNavigation extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleInpageNavigationVisibility);
+    window.addEventListener(
+      'scroll',
+      this.debouncedHandleInpageNavigationVisibility,
+    );
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleInpageNavigationVisibility);
+    window.removeEventListener(
+      'scroll',
+      this.debouncedHandleInpageNavigationVisibility,
+    );
+    this.debouncedHandleInpageNavigationVisibility.cancel();
   }
 
   onInpageNavigationClick = () => {

@@ -57,20 +57,24 @@
       }
 
       .description {
-        color: @defaultItemColor;
-        font-size: @mobileDefaultItemDescriptionFontSize;
-        font-weight: @defaultItemDescriptionFontWeight;
         display: -webkit-box;
         overflow: hidden;
         -webkit-box-orient: vertical;
-        text-overflow: ellipsis;
+        color: @defaultItemColor;
+        font-size: @mobileDefaultItemDescriptionFontSize;
+        font-weight: @defaultItemDescriptionFontWeight;
         -webkit-line-clamp: @defaultItemDescriptionLineClamp;
+        text-overflow: ellipsis;
       }
     }
   }
 }
 
 // color item images that are svg files
+
+.content-box[class*='ary'] .item img {
+  filter: @itemWhiteFilterColor;
+}
 .item.primary img {
   filter: @itemPrimaryFilterColor;
 }
@@ -136,19 +140,10 @@
   font-size: @largeMediaSize;
 }
 
-.ui.items.row > .item {
-  margin: @mobileRowItemMargin;
-}
-
-// As semantic does for non unstackable items
-// so columns does not affect margin in mobiles
-.ui.items.row:not(.flex-items-wrapper) > .item:last-child {
-  margin-bottom: 0;
-}
-
 // Stackable items that have image above content
 .ui.items.row .item.stackable {
   display: grid;
+  justify-content: center; // center text with icon
 
   .image,
   i.icon {
@@ -156,14 +151,29 @@
   }
 
   .content {
-    padding-left: @stackableContentPaddingLeft;
     padding-top: @stackableContentPaddingTop;
+    padding-left: @stackableContentPaddingLeft;
   }
 }
 
 // Flex wrapper for list of items
-.ui.items.flex-items-wrapper {
+.ui.items {
   display: flex;
+  flex-direction: column;
+  gap: @groupMargin;
+}
+
+.ui.grid > .row > .column-blocks-wrapper, // override item.less .ui.grid > .row > .column margin 0
+.column-blocks-wrapper {
+  margin-bottom: @groupItemsSpacing;
+}
+
+.flex-blocks-form {
+  margin: @groupItemsSpacing 0;
+}
+
+.ui.items.flex-items-wrapper {
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 
@@ -172,6 +182,37 @@
   }
 }
 
+.flex-items-wrapper .flex-item {
+  min-width: var(--flex-item-width, auto);
+}
+
+.group.flex .items-1-columns {
+  --flex-item-width: 25%;
+}
+
+.items.flex-items-wrapper.items-1-columns {
+  align-items: var(--flex-item-align, baseline);
+  justify-content: normal;
+  gap: @space-4;
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .flex-items-wrapper.items-2-columns .flex-item {
+    --flex-item-width: calc(@width / 2 - 1%);
+  }
+
+  .flex-items-wrapper.items-3-columns .flex-item {
+    --flex-item-width: calc(@width / 3 - 1%);
+  }
+
+  .flex-items-wrapper.items-4-columns .flex-item {
+    --flex-item-width: calc(@width / 4 - 1%);
+  }
+
+  .flex-items-wrapper.items-5-columns .flex-item {
+    --flex-item-width: calc(@width / 5 - 1%);
+  }
+}
 
 @media only screen and (max-width: @largestMobileScreen) {
   .ui.items.row > .item {
@@ -179,7 +220,7 @@
   }
 
   .ui.items.row > .item:not(.stackable) > .image + .content {
-    padding: 0em 0em 0em @mobileContentImageDistance;
+    padding: 0 0 0 @mobileContentImageDistance;
   }
 }
 
@@ -202,9 +243,6 @@
         font-size: @tabletDefaultItemHeaderFontSize;
       }
     }
-  }
-  .ui.items.row > .item {
-    margin: @tabletRowItemMargin;
   }
 
   // Flex wrapper for list of items
@@ -232,9 +270,6 @@
       }
     }
   }
-  .ui.items.row > .item {
-    margin: @desktopRowItemMargin;
-  }
 
   // Flex wrapper for list of items
   .ui.items.flex-items-wrapper > .item {
@@ -248,17 +283,20 @@
 
 .ui.items > .item {
   &.primary,
-  > .icon.primary
-  {
-    color: @primaryColor;
+  > .icon.primary {
+    --text-color: @primaryColorCSSVar;
+    color: @primaryColorCSSVar;
   }
 
   &.secondary,
   > .icon.secondary {
-    color: @secondaryColor;
+    --text-color: @secondaryColorCSSVar;
+    color: @secondaryColorCSSVar;
   }
+
   &.tertiary,
   > .icon.tertiary {
-    color: @tertiaryColor;
+    --text-color: @tertiaryColorCSSVar;
+    color: @tertiaryColorCSSVar;
   }
 }

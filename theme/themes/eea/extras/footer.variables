@@ -18,12 +18,20 @@
 
 /* Theme Sites */
 @mobileThemeSitesPadding            : @rem-space-3 0;
+@mobileThemeSitesPaddingTop         : @rem-space-10;
 @computerThemeSitesPadding          : @rem-space-5 0;
+@computerThemeSitesPaddingTop       : @rem-space-20;
 @mobileThemeSitesLogoMargin         : 0 auto @rem-space-8;
 @computerThemeSitesLogoMargin       : 0 auto @rem-space-10;
-@mobileFooterTitleFontSize          : @mobileH4;
-@tabletFooterTitleFontSize          : @h3;
+@mobileFooterTitleFontSize          : @font-size-1;
+@tabletFooterTitleFontSize          : @font-size-3;
 @freshwaterLogoMaxWidth             : 122px;
+@themeSitesButtonBackground         : transparent;
+@themeSitesButtonFontSize           : 1rem;
+@themeSitesButtonPadding            : 1rem 2rem;
+@themeSitesButtonColor              : white;
+@themeSitesButtonBorder             : 1px solid white;
+@themeSitesButtonBoxShadow          : none;
 
 /* Sub-footer Item */
 @subFooterItemDisplay: flex;
@@ -42,16 +50,18 @@
 @tabletContactBlockMarginBottom     : @space-4;
 @mobileContactMargin                : @space-4 0;
 @tabletContactMargin                : @rem-space-050 0;
-@contactFontSize                    : @font-size-3;
-@tabletContactFontSize              : @font-size-1;
+@tabletContactWrapperPaddingTop     : @rem-space-8;
+@contactFontSize                    : @font-size-2;
+@tabletContactFontSize              : @font-size-3;
 @tabletContactGap                   : @rem-space-4;
-@contactGap                         : @rem-space-8;
+@contactGap                         : @rem-space-4;
+@mobileContactGap                   : @em-space-10;
 @mobileContactIconMarginRight       : @space-3;
 @mobileSubcontactBlockMarginTop     : @space-3;
 @mobileContactIconFontSize          : @font-size-4;
 @computerContactIconFontSize        : @font-size-9;
-@tabletSubContactIconFontSize       : @font-size-0;
-@computerSubContactIconFontSize     : @font-size-1;
+@tabletSubContactIconFontSize       : @font-size-3;
+@computerSubContactIconFontSize     : @font-size-3;
 @tabletSubContactIconMarginRight    : @rem-space-2;
 @computerSubContactIconMarginRight  : @rem-space-4;
 @computerSubContactIconFontWeight   : @font-weight-4;
@@ -65,8 +75,9 @@
 @footerDescriptionTextAlign         : center;
 
 /* Social Icons */
-@mobileSocialIconsMargin            : @rem-space-2 0 @rem-space-8;
-@tabletSocialIconsMargin            : @rem-space-7 0;
+@computerSocialIconsMargin          : @rem-space-2 0 @rem-space-8;
+@mobileSocialIconsMargin            : @rem-space-2 0 @rem-space-10;
+@tabletSocialIconsMargin            : @rem-space-13 0;
 @computerSocialIconsMargin          : @rem-space-17 0;
 @socialIconColor                    : @white;
 @mobileSocialJustifyContent         : space-around;

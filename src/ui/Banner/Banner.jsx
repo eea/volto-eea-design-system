@@ -3,6 +3,7 @@ import { Container, Icon, Button, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { formatDate } from '@plone/volto/helpers/Utils/Date';
+import cx from 'classnames';
 import config from '@plone/volto/registry';
 
 Banner.propTypes = {
@@ -26,7 +27,12 @@ const socialPlatforms = {
 };
 
 export const getImageSource = (image) => {
+  if (image?.data && image?.encoding === 'base64') {
+    return `data:${image.contentType};base64,${image.data}`;
+  }
   if (image?.scales?.huge) return flattenToAppURL(image.scales.huge.download);
+  if (image?.scales?.great) return flattenToAppURL(image.scales.great.download);
+  if (image?.scales?.large) return flattenToAppURL(image.scales.large.download);
   return null;
 };
 
@@ -39,7 +45,7 @@ export const sharePage = (url, platform) => {
   link.click();
 };
 
-function Banner({ image, metadata, properties, children, ...rest }) {
+function Banner({ image, metadata, properties, children, styles, ...rest }) {
   if (image) {
     //extract Lead image from page content.
     const content = metadata || properties;
@@ -47,7 +53,10 @@ function Banner({ image, metadata, properties, children, ...rest }) {
     return (
       <div className="eea banner">
         <div
-          className={imageUrl ? 'image' : ''}
+          className={cx(
+            imageUrl ? 'image' : '',
+            ...Object.values(styles || {}),
+          )}
           style={imageUrl ? { backgroundImage: `url(${imageUrl})` } : {}}
         >
           <div className="gradient">
@@ -67,29 +76,50 @@ function Banner({ image, metadata, properties, children, ...rest }) {
 }
 
 Banner.Action = React.forwardRef(function (
-  { id, title, titleClass, icon, onClick, className, color },
+  { title, titleClass, icon, onClick, className, color, ...rest },
   ref,
 ) {
   return (
     <div className="action" ref={ref}>
-      <Button className={className} basic icon inverted onClick={onClick}>
-        <Icon className={icon} color={color}></Icon>
-        <span className={titleClass || 'mobile hidden'}>{title}</span>
+      <Button
+        className={className}
+        basic
+        icon
+        inverted
+        onClick={onClick}
+        {...rest}
+      >
+        <Icon className={icon} color={color} title={title}></Icon>
+        <span className={titleClass || 'mobile-sr-only'}>{title}</span>
       </Button>
     </div>
   );
 });
 
 Banner.Content = ({ children, actions }) => {
+  // actions can be a single child or an array of children
+  // when we disable actions we get an array of false or undefined
+  const actionsWithChildren = actions
+    ? React.Children.toArray(actions.props?.children).some(Boolean)
+    : false;
+
   return (
     <div className="content">
       <Grid>
-        <Grid.Column mobile={10} tablet={9} computer={9}>
-          {children}
-        </Grid.Column>
-        <Grid.Column mobile={2} tablet={3} computer={3} className="actions">
-          {actions}
-        </Grid.Column>
+        {actionsWithChildren ? (
+          <>
+            <Grid.Column mobile={10} tablet={9} computer={9}>
+              {children}
+            </Grid.Column>
+            <Grid.Column mobile={2} tablet={3} computer={3} className="actions">
+              {actions}
+            </Grid.Column>
+          </>
+        ) : (
+          <Grid.Column mobile={12} tablet={12} computer={12}>
+            {children}
+          </Grid.Column>
+        )}
       </Grid>
     </div>
   );

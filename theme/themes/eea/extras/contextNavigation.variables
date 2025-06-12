@@ -2,24 +2,29 @@
         Sidebar Nav
 *******************************/
 
-@sidenavMaxWidth: 350px;
-@widescreenSidenavMaxWidth: 300px;
+@sidenavMaxWidth: 315px;
+@widescreenSidenavMaxWidth: 315px;
+@mobileSidenavMaxWidth: 100%;
 @sidenavBackground: @grey-0;
-@sidenavMarginRight: @rem-space-4;
-@sidenavPaddingLeft: @rem-space-4;
+@sidenavMarginRight: 0;
+@sidenavPaddingLeft: 0;
 @sidenavOverflow: inherit;
-@sidenavMargin: @rem-space-8 auto;
+@sidenavMargin: auto;
+@sidenavShadowColor: @grey-3;
+@sidenavBoxShadow: 0px 3px 3px @sidenavShadowColor;
 
 /* Header */
 @sidenavHeaderColor: @blue-grey-5;
 @sidenavHeaderFontSize: @font-size-3;
 @sidenavHeaderFontWeight: @font-weight-7;
 @sidenavHeaderPadding: @rem-space-4;
-@sidenavHeaderBorderBottom: @2px solid @blue-grey-5;
-@sidenavHeaderIconMarginRight: @rem-space-4;
+@sidenavAccordionHeaderPadding: @rem-space-2 @rem-space-4;
+@sidenavAccordionHeaderBackgroundColor: white;
+@sidenavAccordionListMaxHeight: 86dvh;
+@sidenavHeaderIconMarginRight: 0;
 
 /* Header icon */
-@sidenavHeaderIconContent: "\ef32";
+@sidenavHeaderIconContent: '\ef32';
 @sidenavHeaderIconFontWeight: @font-weight-4;
 @sidenavHeaderIconPaddingRight: @rem-space-4;
 
@@ -29,14 +34,12 @@
 /* Nav item */
 @sidenavItemPadding: @rem-space-2 0 @rem-space-2 @rem-space-8;
 @sidenavItemFontSize: @font-size-1;
-@sidenavItemFontWeight: @font-weight-4;
+@sidenavItemFontWeight: @font-weight-5;
 @sidenavItemColor: @blue-grey-5;
 @sidenavItemHoverBackground: @blue-grey-5;
 @sidenavItemHoverColor: @grey-0;
 @sidenavLastItemMarginBottom: @rem-space-2;
-
-/* Third level item */
-@subparItemPaddingLeft: @rem-space-12;
+@sidenavItemMargin: 2px;
 
 /* Item active */
 @sidenavItemActiveColor: @secondaryColor;
@@ -46,4 +49,15 @@
 /* Folders - Level 1 */
 @sidenavFolderFontSize: @font-size-2;
 @sidenavFolderFontWeight: @font-weight-7;
-@sidenavFolderItemPadding: @rem-space-4 0 @rem-space-4 @rem-space-4;
+@sidenavFolderItemPadding: @rem-space-4;
+@sidenavFolderItemLineHeight: 1.5;
+
+/* Item - Level 2 */
+@sidenavLevelTwoItemFontWeight: @font-weight-4;
+@sidenavLevelTwoItemPadding: 0.5rem 1.5rem;
+@secondLevelItemPaddingLeft: @rem-space-6;
+
+/* Item - Level 3 */
+@subparItemPaddingLeft: @rem-space-12;
+@thirdLevelItemPaddingLeft: @rem-space-8;
+@fourthLevelItemPaddingLeft: @rem-space-10;

@@ -11,6 +11,7 @@ import FooterActions from '@eeacms/volto-eea-design-system/ui/Footer/FooterActio
 import FooterHeader from '@eeacms/volto-eea-design-system/ui/Footer/FooterHeader';
 import SubFooter from '@eeacms/volto-eea-design-system/ui/Footer/SubFooter';
 import Social from '@eeacms/volto-eea-design-system/ui/Footer/Social';
+import FooterSitesButton from '@eeacms/volto-eea-design-system/ui/Footer/FooterSitesButton';
 import Contact from '@eeacms/volto-eea-design-system/ui/Footer/Contact';
 import { useFirstVisited } from '@eeacms/volto-eea-design-system/helpers';
 import Description from '@eeacms/volto-eea-design-system/ui/Footer/Description';
@@ -18,7 +19,7 @@ import Description from '@eeacms/volto-eea-design-system/ui/Footer/Description';
 /**
  * Component to display the footer.
  * @function Footer
- * @param {Object} intl Intl object
+ * @param {Object} props object
  * @returns {string} Markup of the component
  */
 
@@ -28,7 +29,7 @@ const Footer = (props) => {
   const bgImgRef = React.useRef();
   const onScreen = useFirstVisited(bgImgRef);
   return (
-    <footer id={'footer'}>
+    <footer id={'footer'} aria-label={'Footer'}>
       <div
         ref={bgImgRef}
         className={onScreen ? 'footer-wrapper' : 'footer-wrapper-nobg'}
@@ -44,6 +45,7 @@ Footer.Contact = Contact;
 Footer.Header = FooterHeader;
 Footer.Sites = FooterSites;
 Footer.Social = Social;
+Footer.SitesButton = FooterSitesButton;
 Footer.SubFooter = SubFooter;
 Footer.Description = Description;
 

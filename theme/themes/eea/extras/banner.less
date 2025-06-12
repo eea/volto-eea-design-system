@@ -8,20 +8,25 @@
 --------------------*/
 
 .eea.banner {
+  --text-color: @white;
   position: relative;
   width: 100%;
+  max-width: @bannerMaxWidth;
   background: @bannerBackgroundColor;
-  color: @white;
+  color: @bannerTextColor;
 
   .gradient {
     background: @backgroundGradient;
     opacity: @backgroundGradientOpacity;
+    height: 100%;
 
     .content {
+      width: 100%;
       padding: @mobileContentPadding;
 
       .ui.grid {
         align-items: flex-end;
+        width: 100%;
       }
 
       .title {
@@ -59,9 +64,9 @@
         align-items: @mobileActionsAlignItems;
         justify-content: flex-end;
 
-        > .action {
+        .action {
           .ui.basic.inverted.button {
-            /* used basic inverted button for minimun overrides on box-shadow and active state background */
+            /* used basic inverted button for minimum overrides on box-shadow and active state background */
             box-shadow: @bannerActionButtonBoxShadow !important;
 
             &:active {
@@ -110,7 +115,6 @@
 /*Share Popup*/
 
 .ui.popup.share-popup {
-  position: initial; // without position initial popper cannot correctly place popup
   min-width: @sharePopupMinWidth;
   padding: @sharePopupPadding;
   filter: @sharePopupFilter;
@@ -167,7 +171,7 @@
           flex-direction: @tabletActionsFlexDirection;
           align-items: @tabletActionsAlignItems;
 
-          > .action {
+          .action {
             min-width: @tabletActionsActionMinWidth;
 
             .ui.basic.inverted.button i.icon {
@@ -202,7 +206,91 @@
   }
 }
 
+/*******************************
+          Light & Hero Header
+*******************************/
+.light-header {
+  .container {
+    width: 100%;
+    max-width: 1300px !important;
+  }
+  .eea.banner {
+    --text-color: @bannerHomepageColor;
+
+    .content-type {
+      color: @secondaryColorCSSVar;
+      font-weight: bold;
+    }
+
+    .subtitle-light {
+      font-size: 24px !important;
+      line-height: 1.2;
+    }
+
+    .gradient .content {
+      padding: @computerContentPadding;
+      .subtitle {
+        margin: 0.5rem 0;
+        font-size: 1.25rem;
+        line-height: 1.2;
+      }
+      .metadata {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+.homepage-header .banner {
+  --text-color: @bannerHomepageColor;
+  height: 500px;
+
+  .content-type {
+    color: @secondaryColorCSSVar;
+    font-size: @h4;
+    font-weight: bold;
+  }
+  .container {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+  }
+
+  .grid {
+    text-align: center;
+  }
+  .wrapper {
+    justify-content: center;
+  }
+}
+
+.hero-header {
+  .banner {
+    height: calc(100dvh - 35px);
+    min-height: 400px;
+  }
+}
+@media only screen and (min-height: 600px) {
+  .hero-header {
+    .gradient .content {
+      margin-bottom: 10dvh;
+    }
+  }
+}
+
+@media only screen and (max-width: @largestTabletScreen) {
+  .light-header .eea.banner .gradient .content {
+    padding: 16.5rem 0 1.25rem;
+  }
+}
+
 @media only screen and (min-width: @computerBreakpoint) {
+  .hero-header {
+    .subtitle-light {
+      letter-spacing: @font-letterspacing-00;
+    }
+  }
+
   .eea.banner {
     .image {
       .gradient .content {
@@ -212,21 +300,48 @@
 
     .gradient .content {
       padding: @computerContentPadding;
+      .light-header & {
+        padding: 18.625rem 0 1.25rem;
+      }
 
       .title {
         margin: @computerTitleMargin;
         font-size: @computerTitleFontSize;
         line-height: @computerTitleLineHeight;
+        .hero-header & {
+          line-height: 1.2;
+          letter-spacing: @font-letterspacing-00;
+        }
       }
 
       .subtitle {
-        margin: @computerSubtitleMargin;
         font-size: @computerSubtitleFontSize;
+        margin: @computerSubtitleMargin;
         line-height: @computerSubtitleLineHeight;
       }
     }
   }
 }
+
+@media screen and (min-width: 1280px) {
+  .hero-header .banner {
+    .title {
+      font-size: @heroTitleFontSize !important;
+    }
+
+    .content-type {
+      font-size: @h3;
+    }
+
+    .subtitle-light {
+      font-size: @h2 !important;
+      line-height: 1.2;
+    }
+  }
+}
+/*******************************
+      /Light & Hero Header
+*******************************/
 
 @media print {
   .eea.banner .gradient .content,

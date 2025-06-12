@@ -4,6 +4,11 @@
 
 @import '@eeacms/volto-eea-design-system/../theme/themes/eea/globals/utilities';
 
+html,
+body {
+  font-size: @baseFontSize;
+}
+
 // Accessibility outline on focus-visible for every component
 *:focus-visible {
   outline: @focusVisibleOutline;
@@ -11,57 +16,69 @@
 
 button:focus-visible,
 a.button:focus-visible,
-.ui.checkbox input[type="checkbox"]:focus-visible,
-.ui.checkbox input[type="radio"]:focus-visible {
+.ui.dropdown:focus-visible,
+.ui.checkbox input[type='checkbox']:focus-visible,
+.ui.checkbox input[type='radio']:focus-visible {
   outline: @focusVisibleOutline !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: @font-lineheight-0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   letter-spacing: @font-letterspacing-00;
+  line-height: @font-lineheight-0;
 }
 
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: @headerColor;
+}
+
+.subtitle-light {
+  font-size: @h3-light !important;
+  font-weight: @font-weight-2 !important;
 }
 
 .content-area {
   color: @contentAreaColor;
 }
 
-[id="page-document"] > *,
-.view-wrapper > *
-{
-  margin-left: auto !important;
+[id='page-document']>*,
+.view-wrapper>* {
   margin-right: auto !important;
+  margin-left: auto !important;
 }
 
-[class~="view-defaultview"] [id="page-document"] > *,
-[class~="view-viewview"] [id="page-document"] > *,
+[class~='view-defaultview'] [id='page-document']>*,
+[class~='view-viewview'] [id='page-document']>*,
 #main .container_width,
 #main .has--size--container_width,
-.view-wrapper > *
-{
+.view-wrapper>* {
   max-width: @containerWidth !important;
 }
 
-[class~="narrow_view"] [id="page-document"] > *,
+[class~='narrow_view'] [id='page-document']>*,
 #main .narrow_width,
-#main .has--size--narrow_width
-{
+#main .has--size--narrow_width {
   max-width: @narrowWidth !important;
 }
 
-[class~="wide_view"] [id="page-document"] > *,
+[class~='wide_view'] [id='page-document']>*,
 #main .wide_width,
-#main .has--size--wide_width
-{
+#main .has--size--wide_width {
   max-width: @wideWidth !important;
 }
 
 // enlarge wide section when we have a resolution from 1280px to before the laptop hd resolution
 @media screen and (min-width: 1280px) and (max-width: 1365px) {
-  [class~="wide_view"] [id="page-document"] > *,
+
+  [class~='wide_view'] [id='page-document']>*,
   #main .wide_width,
   #main .has--size--wide_width {
     max-width: @wideWidthLaptop !important;
@@ -71,15 +88,17 @@ h2, h3, h4, h5, h6 {
 .block-editor-title {
   --layout-max-width: @containerWidth;
 }
-[class~="narrow_view"] {
+
+[class~='narrow_view'] {
   --layout-max-width: @narrowWidth;
 }
-[class~="wide_view"] {
+
+[class~='wide_view'] {
   --layout-max-width: @wideWidth;
 }
 
 // add a 1rem margin top and bottom on all direct styled classes from container
-[class~="container"] > [class*="styled-"] {
+[class~='container']>[class*='styled-'] {
   margin-top: @rem-space-4;
   margin-bottom: @rem-space-4;
 }
@@ -95,23 +114,35 @@ h2, h3, h4, h5, h6 {
 .caption,
 .discreet,
 small {
-  letter-spacing: @font-letterspacing-1;
   font-size: @font-size-00;
+  letter-spacing: @font-letterspacing-1;
   line-height: @font-lineheight-3;
 }
 
 /* Heading size adjustment */
 @media only screen and (max-width: @largestMobileScreen) {
-  h1 { font-size: @mobileH1; }
-  h2 { font-size: @mobileH2; }
-  h3 { font-size: @mobileH3; }
-  h4 { font-size: @mobileH4; }
+  h1 {
+    font-size: @mobileH1;
+  }
+
+  h2 {
+    font-size: @mobileH2;
+  }
+
+  h3 {
+    font-size: @mobileH3;
+  }
+
+  h4 {
+    font-size: @mobileH4;
+  }
 }
 
 a {
   &:visited {
-    color:  @linkVisitedColor;
+    color: @linkVisitedColor;
   }
+
   &:active {
     color: @linkActiveColor;
   }
@@ -132,29 +163,49 @@ a {
   color: @black;
 }
 
-/* Add colors for paragraphs styles options in StyeMenu */
+/* Add colors for paragraphs styles options in StyleMenu */
 #style-menu.ui.dropdown .menu {
-  span:nth-of-type(1) {
+  .block-style-primary {
     color: @primaryColor;
-      span.text {
-        color: @primaryColor;
-      }
   }
-  span:nth-of-type(2) {
+
+  .block-style-secondary {
     color: @secondaryColor;
-      span.text {
-        color: @secondaryColor;
-      }
   }
-  span:nth-of-type(3) {
+
+  .block-style-tertiary {
     color: @tertiaryColor;
-      span.text {
-        color: @tertiaryColor;
-      }
+  }
+
+  .active {
+    background-color: @grey-2;
+  }
+}
+
+
+// fix background position when using the side navigation and the
+// content area is moved to the left instead of being centered
+@media (min-width:992px) and (max-width:1365px) {
+
+  .has-side-nav .content-box::before,
+  .has-side-nav .full-width {
+    margin-left: -20px !important;
+    margin-right: auto;
+    left: initial;
+    right: initial;
+  }
+}
+
+@media (min-width:1366px) {
+
+  .has-side-nav .content-box::before,
+  .has-side-nav .full-width {
+    left: 72% !important;
   }
 }
 
 @media print {
+
   .skiplinks-wrapper,
   .top.bar,
   .main.bar.transparency,
@@ -167,24 +218,29 @@ a {
     display: none;
     visibility: hidden;
   }
+
   .logo {
     margin-left: 0;
   }
+
   .static-banner {
     display: none;
     visibility: hidden;
   }
-  .image {
-   page-break-inside: avoid;  
-  }
-  img {
-   page-break-inside: avoid;  
-  }
-  .card { 
-  page-break-inside: avoid;  
 
+  .image {
+    page-break-inside: avoid;
   }
-  .grid-block-teaser .card{
-    page-break-inside: auto;  
+
+  img {
+    page-break-inside: avoid;
+  }
+
+  .card {
+    page-break-inside: avoid;
+  }
+
+  .grid-block-teaser .card {
+    page-break-inside: auto;
   }
 }

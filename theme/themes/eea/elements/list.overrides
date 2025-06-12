@@ -21,16 +21,25 @@ dl dd {
 /* Unordered list */
 
 // use padding instead
-ul.ui.list, .ui.bulleted.list {
+ul.ui.list,
+.ui.bulleted.list {
   padding-left: @bulletDistance;
   margin-left: 0;
 }
+
 .ui.bulleted.list .list > .item:before,
 .ui.bulleted.list .list > a.item:before,
 .ui.bulleted.list > .item:before,
 .ui.bulleted.list > a.item:before,
 ul.ui.list li:before {
   font-size: @bulletSize;
+}
+
+/* Ordered list */
+
+ol.ui.list,
+.ui.ordered.list {
+  padding-left: @orderedDistance;
 }
 
 // Third layer margin fix

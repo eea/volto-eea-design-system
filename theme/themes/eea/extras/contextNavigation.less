@@ -4,11 +4,11 @@
 @import (multiple) '../../theme.config';
 
 .context-navigation {
-  max-width      : @widescreenSidenavMaxWidth;
-  background     : @sidenavBackground;
-  margin-right   : @sidenavMarginRight;
-  padding-left   : @sidenavPaddingLeft;
-  overflow       : @sidenavOverflow;
+  max-width: @widescreenSidenavMaxWidth;
+  // background     : @sidenavBackground;
+  margin-right: @sidenavMarginRight;
+  padding-left: @sidenavPaddingLeft;
+  overflow: @sidenavOverflow;
 }
 @media (max-width: @largeMonitorBreakpoint) {
   .context-navigation {
@@ -17,33 +17,39 @@
   }
 }
 
+@media screen and (min-width: @mobileBreakpoint) and (max-width: @computerBreakpoint) {
+  .context-navigation {
+    max-width: @mobileSidenavMaxWidth;
+    margin: 0 auto;
+  }
+}
+
 .context-navigation .item a {
-  display    : block;
-  padding    : @sidenavItemPadding;
-  font-size  : @sidenavItemFontSize;
+  display: block;
+  padding: @sidenavItemPadding;
+  font-size: @sidenavItemFontSize;
   font-weight: @sidenavItemFontWeight;
-  color      : @sidenavItemColor;
+  color: @sidenavItemColor;
 
   &:hover,
   &:focus-visible {
     background: @sidenavItemHoverBackground;
-    color     : @sidenavItemHoverColor;
+    color: @sidenavItemHoverColor;
   }
 }
 
 .context-navigation-header {
-  display    : flex;
-  color      : @sidenavHeaderColor;
-  font-size  : @sidenavHeaderFontSize;
+  display: flex;
+  color: @sidenavHeaderColor;
+  font-size: @sidenavHeaderFontSize;
   font-weight: @sidenavHeaderFontWeight;
-  padding    : @sidenavHeaderPadding;
-  border-bottom: @sidenavHeaderBorderBottom;
+  padding: @sidenavHeaderPadding;
 
   i.icon {
     margin-right: @sidenavHeaderIconMarginRight;
   }
 
-  &::before {
+  &::before:not(.accordion-header) {
     content: @sidenavHeaderIconContent;
     font-family: 'remixicon';
     font-weight: @sidenavHeaderIconFontWeight;
@@ -52,9 +58,9 @@
 }
 
 .context-navigation a.contenttype-folder {
-  font-size  : @sidenavFolderFontSize;
+  font-size: @sidenavFolderFontSize;
   font-weight: @sidenavFolderFontWeight;
-  padding    : @sidenavFolderItemPadding;
+  padding: @sidenavFolderItemPadding;
 }
 
 .context-navigation .ui.list > .item > .content {
@@ -63,7 +69,7 @@
 
 // Hide last border
 .context-navigation .ui.list > .item:last-child > .content {
-  border-bottom: none; 
+  border-bottom: none;
 }
 
 // Nav custom list
@@ -81,11 +87,19 @@
 }
 
 .context-navigation .item.level-1 .ui.divider {
-  border-bottom: none; 
+  border-bottom: none;
 }
 
-.item.level-3 a {
+.context-navigation .item.level-2 a {
   padding-left: @subparItemPaddingLeft;
+}
+
+.context-navigation .item.level-3 a {
+  padding-left: @subparItemPaddingLeft + 2rem;
+}
+
+.context-navigation .item.level-4 a {
+  padding-left: @subparItemPaddingLeft + 4rem;
 }
 
 // Active indicator
@@ -95,11 +109,156 @@
 }
 .context-navigation .active.item > .content > a:hover,
 .context-navigation .active.item > .content > a:focus-visible {
-  color : @sidenavItemActiveColorHover;
+  color: @sidenavItemActiveColorHover;
 }
 
 // Hide arrow
 .content.active-indicator {
   display: none;
 }
+
+/*******************************
+  Report additional files navigation
+*******************************/
+.report-navigation {
+  .list {
+    padding-inline-start: 1.5rem;
+  }
+
+  .list-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+  }
+  .list-item {
+    padding: 0.25rem 0;
+  }
+  .list-item:has(> .context-navigation-detail) {
+    list-style-type: none;
+  }
+}
+
+/*******************************
+        Side navigation
+*******************************/
+.accordion-header {
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  padding: @sidenavAccordionHeaderPadding;
+  font-weight: @sidenavItemFontWeight;
+  background-color: @sidenavAccordionHeaderBackgroundColor;
+  box-shadow: @sidenavBoxShadow;
+}
+@media only screen and (max-width: 991px) {
+  .view-viewview.light-header .eea-side-menu:not(.fixed) .accordion-header {
+    color: white;
+    background: transparent;
+    box-shadow: 0px 3px 6px @grey-5;
+  }
+}
+
+.context-navigation-list {
+  width: @sidenavMaxWidth;
+  box-shadow: @sidenavBoxShadow;
+  background-color: @sidenavBackground;
+}
+.context-navigation-list .title-link {
+  display: block;
+  color: @sidenavItemColor;
+  margin: 0 @sidenavItemMargin;
+  font-size: @sidenavItemFontSize;
+  font-weight: @sidenavItemFontWeight;
+}
+.context-navigation-list .content .title-link {
+  font-weight: @sidenavLevelTwoItemFontWeight;
+}
+.context-navigation {
+  .current {
+    color: @sidenavItemActiveColor;
+  }
+
+  .accordion {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 !important;
+  }
+  .ui.accordion > .title {
+    --text-color: @sidenavItemColor;
+    --text-color-hover: @sidenavItemColor;
+    font-size: @sidenavItemFontSize;
+    font-weight: @sidenavItemFontWeight;
+    padding: @sidenavFolderItemPadding;
+    text-align: left;
+    line-height: @sidenavFolderItemLineHeight;
+    margin: 0;
+  }
+
+  // add border-bottom only on first level titles
+  .context-navigation-list
+    > .accordion-list-item
+    > .accordion
+    > .title:not([aria-expanded='true']) {
+    border-bottom: @sidenavContentBorderBottom;
+  }
+
+  // add border-bottom to content of first level expanded accordion
+  .context-navigation-list
+    > .accordion-list-item
+    > .accordion
+    > .title[aria-expanded='true']
+    + .content {
+    border-bottom: @sidenavContentBorderBottom;
+  }
+
+  .context-navigation-list.accordion-list {
+    max-height: @sidenavAccordionListMaxHeight;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .accordion-list {
+    .accordion-list .accordion-list-item .title {
+      padding-left: @secondLevelItemPaddingLeft;
+    }
+
+    .accordion-list .accordion-list .accordion-list-item .title {
+      padding-left: @thirdLevelItemPaddingLeft;
+    }
+    .accordion-list .accordion-list-item .accordion-list-title .title-link {
+      padding-left: @thirdLevelItemPaddingLeft;
+    }
+
+    .accordion-list
+      .accordion-list
+      .accordion-list-item
+      .accordion-list-title
+      .title-link {
+      padding-left: @fourthLevelItemPaddingLeft;
+    }
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .context-navigation-list > .accordion-list-title {
+    border-bottom: @sidenavContentBorderBottom;
+
+    .title-link {
+      padding: @sidenavFolderItemPadding;
+      font-size: @sidenavItemFontSize;
+      font-weight: @sidenavItemFontWeight;
+    }
+  }
+
+  .content .accordion-list .title-link {
+    padding: @sidenavLevelTwoItemPadding;
+  }
+
+  .ui.accordion .content {
+    --bg-color: transparent;
+    width: 100%;
+  }
+}
+
 .loadUIOverrides();

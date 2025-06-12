@@ -8,7 +8,6 @@
 *******************************/
 
 .tag {
-  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -20,6 +19,18 @@
   font-size: @tagNameFontSize;
   font-weight: @tagNameFontWeight;
   line-height: @tagNameLineHeight;
+
+  &.link {
+    .icon,
+    .name {
+      color: @tagLinkFontColor;
+      cursor: pointer;
+
+      &:visited {
+        color: @tagLinkFontColor;
+      }
+    }
+  }
 
   .icon {
     width: unset;

@@ -38,6 +38,9 @@
 /* The size of page text  */
 @fontSize : 16px;
 
+/* Overrides html & body default font-size to enable scaling from browser settings */
+@baseFontSize: 1rem;
+
 
 /*-------------------
     Border Radius
@@ -81,10 +84,13 @@
 
 @h1 : unit((44 / @fontSize), rem);
 @h2 : unit((32 / @fontSize), rem);
+@h3-light : unit((22 / @fontSize), rem);
 @h3 : unit((26 / @fontSize), rem);
 @h4 : unit((20 / @fontSize), rem);
 @h5 : unit((18 / @fontSize), rem);
 @h6 : unit((16 / @fontSize), rem);
+
+
 
 @mobileH1: unit((30 / @fontSize), rem);
 @mobileH2: unit((24 / @fontSize), rem);
@@ -108,7 +114,7 @@
 @inputPadding           : @inputVerticalPadding @inputHorizontalPadding;
 
 /* Input Text Color */
-@inputColor: @textColor;
+@inputColor: @textColorCSSVar;
 //@inputPlaceholderColor: lighten(@inputColor, 75);
 @inputPlaceholderColor: #B8C6C8;
 @inputPlaceholderFocusColor: lighten(@inputColor, 45);
@@ -121,7 +127,7 @@
 --------------------*/
 
 /* Global focus-visible for accessibility */
-@focusVisibleOutline: .2rem solid var(--focus-visible, @blue-3);
+@focusVisibleOutline: .2rem auto var(--focus-visible, @blue-2);
 
 /* Used on inputs, textarea etc */
 @focusedFormBorderColor: @secondaryColor;
@@ -254,8 +260,8 @@
 @highlightBackground      : #CCE2FF;
 @highlightColor           : @textColor;
 
-@inputHighlightBackground : rgba(100, 100, 100, 0.4);
-@inputHighlightColor      : @textColor;
+@inputHighlightBackground : rgba(31, 189, 238, 0.5);
+@inputHighlightColor      : @textColorCSSVar;
 
 
 /*-------------------
@@ -293,9 +299,6 @@
 /*-------------------
   Pastanaga Toolbar
 --------------------*/
-// legacy variable names kept for tests and older volto versions use the toolbar variables from now on
-@toolbalWidth: 80px;
-@toolbalWidthMin: 20px;
 
 @toolbarWidth: 80px;
 @toolbarWidthMin: 20px;
@@ -321,6 +324,7 @@
 --------------------*/
 
 @mobileBreakpoint            : 320px;
+@mobileDefaultBreakpoint     : 360px;  
 @mobileLandscapeBreakpoint   : 480px;  // introduced for the design system
 @tabletBreakpoint            : 768px;
 @contentBreakpoint           : 835px; // introduced for the design system
@@ -623,7 +627,7 @@
 @invertedPressedTextColor    : rgba(255, 255, 255, 1);
 @invertedSelectedTextColor   : rgba(255, 255, 255, 1);
 @invertedDisabledTextColor   : rgba(255, 255, 255, 0.2);
-// check volto core to rename this lowercased variable
+// check volto core to rename this lowercase variable
 @inverteditemlinkcolor       : @white;
 @invertedItemLinkColor       : @white;
 

@@ -1,41 +1,21 @@
-export Banner from './Banner/Banner';
-
-export Callout from './Callout/Callout';
-
-export Breadcrumbs from './Breadcrumbs/Breadcrumbs';
-
-export Tag from './Tag/Tag';
-
-export TagList from './TagList/TagList';
-
-export Footer from './Footer/Footer';
-
-export Header from './Header/Header';
-
-export InpageNavigation from './InpageNavigation/InpageNavigation';
-
-export Logo from './Logo/Logo';
-
-export Quote from './Quote/Quote';
-
-export Timeline from './Timeline/Timeline';
-
-export Testimonial from './Quote/Testimonial/Testimonial';
-
-export KeyContent from './KeyContent/KeyContent';
-
-export DownloadLabeledIcon from './DownloadLabeledIcon/DownloadLabeledIcon';
-
-export NewTabLabeledIcon from './NewTabLabeledIcon/NewTabLabeledIcon';
-
-export LabeledIconGroup from './LabeledIconGroup/LabeledIconGroup';
-
-export LanguageLabeledIcon from './LanguageLabeledIcon/LanguageLabeledIcon';
-
-export RelatedContent from './Card/RelatedContent/RelatedContent';
-
-export Hero from './Hero/Hero';
-
-export Copyright from './Copyright/Copyright';
-
-export Video from './Video/Video';
+export { default as Banner } from './Banner/Banner';
+export { default as Callout } from './Callout/Callout';
+export { default as Breadcrumbs } from './Breadcrumbs/Breadcrumbs';
+export { default as Tag } from './Tag/Tag';
+export { default as TagList } from './TagList/TagList';
+export { default as Footer } from './Footer/Footer';
+export { default as Header } from './Header/Header';
+export { default as InpageNavigation } from './InpageNavigation/InpageNavigation';
+export { default as Logo } from './Logo/Logo';
+export { default as Quote } from './Quote/Quote';
+export { default as Timeline } from './Timeline/Timeline';
+export { default as Testimonial } from './Quote/Testimonial/Testimonial';
+export { default as KeyContent } from './KeyContent/KeyContent';
+export { default as DownloadLabeledIcon } from './DownloadLabeledIcon/DownloadLabeledIcon';
+export { default as NewTabLabeledIcon } from './NewTabLabeledIcon/NewTabLabeledIcon';
+export { default as LabeledIconGroup } from './LabeledIconGroup/LabeledIconGroup';
+export { default as LanguageLabeledIcon } from './LanguageLabeledIcon/LanguageLabeledIcon';
+export { default as RelatedContent } from './Card/RelatedContent/RelatedContent';
+export { default as Hero } from './Hero/Hero';
+export { default as Copyright } from './Copyright/Copyright';
+export { default as Video } from './Video/Video';

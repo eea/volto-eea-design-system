@@ -9,8 +9,8 @@
 }
 
 // To display focus state
-.ui.checkbox input[type="checkbox"],
-.ui.checkbox input[type="radio"] {
+.ui.checkbox input[type='checkbox'],
+.ui.checkbox input[type='radio'] {
   opacity: 1 !important;
 }
 
@@ -26,6 +26,11 @@
       }
     }
   }
+}
+
+.ui.checkbox.toggle label::before,
+.ui.checkbox.toggle label::after {
+  z-index: auto;
 }
 
 /* Helper text for disabled element */
