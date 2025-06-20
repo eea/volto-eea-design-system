@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, getByAltText } from '@testing-library/react';
 import Banner from './Banner';
 import { sharePage, getImageSource } from './Banner';
 import '@testing-library/jest-dom/extend-expect';
@@ -38,9 +38,11 @@ describe('Banner', () => {
       </Banner>,
     );
     const imageElement = container.querySelector('.eea.banner .image');
+    const bannerImage = container.querySelector('img');
+
     expect(imageElement).toBeInTheDocument();
-    expect(imageElement.style.backgroundImage).toBe(`url(${image})`);
     expect(getByText('Content')).toBeInTheDocument();
+    expect(bannerImage.alt).toContain('Banner');
   });
 
   it('calls the onClick function when an action button is clicked', () => {

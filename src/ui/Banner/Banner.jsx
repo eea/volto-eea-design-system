@@ -53,7 +53,8 @@ function Banner({ image, metadata, properties, children, styles, ...rest }) {
     const imageUrl = getImageSource(content['image']) ?? image;
     return (
       <div className="eea banner">
-        <Image
+        <img
+          loading="eager"
           src={imageUrl}
           alt="Banner"
           style={{
