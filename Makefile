@@ -96,7 +96,6 @@ test:			## Run jest tests
 test-watch:			## Run jest tests
 	${DOCKER_COMPOSE} run -e CI=1 frontend test --watchAll
 
-
 .PHONY: test-update
 test-update:	## Update jest tests snapshots
 	${DOCKER_COMPOSE} run -e CI=1 frontend test -u
