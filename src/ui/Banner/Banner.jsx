@@ -5,7 +5,6 @@ import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { formatDate } from '@plone/volto/helpers/Utils/Date';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
-import Image from '@plone/volto/components/theme/Image/Image';
 
 Banner.propTypes = {
   title: PropTypes.string,
@@ -90,7 +89,7 @@ function Banner({ image, metadata, properties, children, styles, ...rest }) {
   );
 }
 
-Banner.Action = React.forwardRef(function (
+Banner.Action = React.forwardRef(function(
   { title, titleClass, icon, onClick, className, color, ...rest },
   ref,
 ) {
