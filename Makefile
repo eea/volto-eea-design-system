@@ -92,6 +92,10 @@ cypress-run:	## Run cypress integration tests
 test:			## Run jest tests
 	${DOCKER_COMPOSE} run -e CI=1 frontend test
 
+.PHONY: test-watch
+test-watch:			## Run jest tests
+	${DOCKER_COMPOSE} run -e CI=1 frontend test --watchAll
+
 .PHONY: test-update
 test-update:	## Update jest tests snapshots
 	${DOCKER_COMPOSE} run -e CI=1 frontend test -u
