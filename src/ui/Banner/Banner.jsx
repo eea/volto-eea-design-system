@@ -89,7 +89,7 @@ function Banner({ image, metadata, properties, children, styles, ...rest }) {
   );
 }
 
-Banner.Action = React.forwardRef(function(
+Banner.Action = React.forwardRef(function (
   { title, titleClass, icon, onClick, className, color, ...rest },
   ref,
 ) {
