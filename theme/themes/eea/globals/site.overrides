@@ -206,21 +206,39 @@ a {
 
 @media print {
 
+  @page {
+    size: A4;
+    margin: 1cm;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
   .skiplinks-wrapper,
-  .top.bar,
-  .main.bar.transparency,
-  .main-menu,
-  .eea .header .action,
   .slider-arrow,
   #footer,
-  #page-header .action,
-  #inpage-navigation {
-    display: none;
+  #inpage-navigation,
+  .column.actions,
+  .slick-arrows {
+    display: none !important;
     visibility: hidden;
   }
 
-  .logo {
-    margin-left: 0;
+  .block.gridBlock .ui.grid,
+  .content-box {
+    break-inside: avoid;
+  }
+
+  .ui.segment.breadcrumbs {
+    padding: 0;
+
+    .ui.breadcrumb {
+      visibility: hidden;
+    }
+  }
+
+  .ui.tab {
+    display: block;
   }
 
   .static-banner {
@@ -228,15 +246,14 @@ a {
     visibility: hidden;
   }
 
-  .image {
-    page-break-inside: avoid;
-  }
-
-  img {
-    page-break-inside: avoid;
-  }
-
-  .card {
+  img,
+  .image,
+  .card,
+  .visualization,
+  .embed-map,
+  .embed-tableau,
+  .embed-map-visualization,
+  .embed-visualization {
     page-break-inside: avoid;
   }
 
