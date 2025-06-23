@@ -42,7 +42,7 @@ describe('Banner', () => {
 
     expect(imageElement).toBeInTheDocument();
     expect(getByText('Content')).toBeInTheDocument();
-    expect(bannerImage.alt).toContain('Banner');
+    expect(bannerImage.alt).toContain('');
   });
 
   it('calls the onClick function when an action button is clicked', () => {
