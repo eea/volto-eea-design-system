@@ -5,6 +5,7 @@ import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { formatDate } from '@plone/volto/helpers/Utils/Date';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
+import { Image } from '@plone/volto/components';
 
 Banner.propTypes = {
   title: PropTypes.string,
@@ -52,10 +53,9 @@ function Banner({ image, metadata, properties, children, styles, ...rest }) {
     const imageUrl = getImageSource(content['image']) ?? image;
     return (
       <div className="eea banner">
-        <img
-          loading="eager"
+        <Image
           src={imageUrl}
-          alt="Banner"
+          alt=""
           style={{
             position: 'absolute',
             top: 0,

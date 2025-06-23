@@ -46,7 +46,7 @@ endif
 DIR=$(shell basename $$(pwd))
 NODE_MODULES?="../../../node_modules"
 PLONE_VERSION?=6
-VOLTO_VERSION?=16
+VOLTO_VERSION?=17
 ADDON_PATH="${DIR}"
 ADDON_NAME="@eeacms/${ADDON_PATH}"
 DOCKER_COMPOSE=PLONE_VERSION=${PLONE_VERSION} VOLTO_VERSION=${VOLTO_VERSION} ADDON_NAME=${ADDON_NAME} ADDON_PATH=${ADDON_PATH} docker compose
@@ -93,7 +93,7 @@ test:			## Run jest tests
 	${DOCKER_COMPOSE} run -e CI=1 frontend test
 
 .PHONY: test-watch
-test-watch:			## Run jest tests
+test-watch:			## Watch jest tests
 	${DOCKER_COMPOSE} run -e CI=1 frontend test --watchAll
 
 .PHONY: test-update
