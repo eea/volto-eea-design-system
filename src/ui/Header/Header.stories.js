@@ -1265,6 +1265,7 @@ const Template = (args) => {
                   target="_blank"
                   role="option"
                   aria-selected="false"
+                  rel="noopener"
                 >
                   See all EU institutions and bodies
                 </a>
@@ -1283,7 +1284,12 @@ const Template = (args) => {
               <div className="wrapper" tabIndex={0} role={'presentation'}>
                 {links.map((item, index) => (
                   <Dropdown.Item key={index}>
-                    <a href={item.href} className="site" target="_blank">
+                    <a
+                      href={item.href}
+                      className="site"
+                      target="_blank"
+                      rel="noopener"
+                    >
                       {item.title}
                     </a>
                   </Dropdown.Item>
