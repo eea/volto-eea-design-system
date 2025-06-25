@@ -131,6 +131,8 @@ Default.args = {
         tablet: 4,
         computer: 4,
       },
+      width: 270,
+      height: 100,
     },
     {
       url: 'https://www.eionet.europa.eu/',
@@ -142,6 +144,8 @@ Default.args = {
         tablet: 4,
         computer: 4,
       },
+      width: 330,
+      height: 100,
     },
   ],
   social: [

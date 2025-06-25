@@ -307,6 +307,7 @@
   width: @logoWidth;
   max-width: @mobileLogoMaxWidth;
   margin-top: @mobileLogoMarginTop;
+  height: @logoHeight;
 }
 
 /* Subsite */
@@ -476,6 +477,10 @@
   img {
     width: 75%;
   }
+  .header-search-icon {
+    width: @searchIconWidthMobile;
+    height: @searchIconHeightMobile;
+  }
   // icon to be used
   i.icon {
     display: flex;
@@ -505,6 +510,10 @@
   .search-action {
     width: @tabletActionsBoxWidth;
     height: @tabletMainSectionHeight;
+    .header-search-icon {
+      width: @searchIconWidth;
+      height: @searchIconHeight;
+    }
   }
 
   /*----------------------------------------------------------------------------
