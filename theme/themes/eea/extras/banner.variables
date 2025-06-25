@@ -20,7 +20,7 @@
 @mobileContentPadding      : 1rem 0 1.25rem;
 @tabletContentPadding      : 3rem 0 1.25rem;
 @computerContentPadding    : 5rem 0 1.25rem;
-@printContentPadding       : 15px;
+@printContentPadding       : 2rem 1.25rem;
 
 @mobileContentPaddingWithImage      : 6.25rem 0 1.25rem;
 @tabletContentPaddingWithImage      : 12.5rem 0 1.25rem;
