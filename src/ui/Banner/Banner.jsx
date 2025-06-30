@@ -5,6 +5,7 @@ import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { formatDate } from '@plone/volto/helpers/Utils/Date';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
+import { Helmet } from '@plone/volto/helpers';
 
 Banner.propTypes = {
   title: PropTypes.string,
@@ -51,19 +52,25 @@ function Banner({ image, metadata, properties, children, styles, ...rest }) {
     const content = metadata || properties;
     const imageUrl = getImageSource(content['image']) ?? image;
     return (
-      <div className="eea banner">
-        <div
-          className={cx(
-            imageUrl ? 'image' : '',
-            ...Object.values(styles || {}),
-          )}
-          style={imageUrl ? { backgroundImage: `url(${imageUrl})` } : {}}
-        >
-          <div className="gradient">
-            <Container>{children}</Container>
+      <>
+        <Helmet>
+          <link rel="preload" href={imageUrl} as="image" />
+        </Helmet>
+
+        <div className="eea banner">
+          <div
+            className={cx(
+              imageUrl ? 'image' : '',
+              ...Object.values(styles || {}),
+            )}
+            style={imageUrl ? { backgroundImage: `url(${imageUrl})` } : {}}
+          >
+            <div className="gradient">
+              <Container>{children}</Container>
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
   return (
