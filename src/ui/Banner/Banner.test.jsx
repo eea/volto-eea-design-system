@@ -38,11 +38,10 @@ describe('Banner', () => {
       </Banner>,
     );
     const imageElement = container.querySelector('.eea.banner .image');
-    const bannerImage = container.querySelector('img');
 
     expect(imageElement).toBeInTheDocument();
+    expect(imageElement.style.backgroundImage).toBe(`url(${image})`);
     expect(getByText('Content')).toBeInTheDocument();
-    expect(bannerImage.alt).toContain('');
   });
 
   it('calls the onClick function when an action button is clicked', () => {
