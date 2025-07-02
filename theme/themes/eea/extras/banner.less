@@ -214,7 +214,8 @@
     width: 100%;
     max-width: 1300px !important;
   }
-  .eea.banner {
+
+  .eea.header .eea.banner {
     --text-color: @bannerHomepageColor;
 
     .content-type {
@@ -229,11 +230,13 @@
 
     .gradient .content {
       padding: @computerContentPadding;
+
       .subtitle {
         margin: 0.5rem 0;
         font-size: 1.25rem;
         line-height: 1.2;
       }
+
       .metadata {
         margin-top: 1rem;
       }
@@ -250,6 +253,7 @@
     font-size: @h4;
     font-weight: bold;
   }
+
   .container {
     display: flex;
     height: 100%;
@@ -259,6 +263,7 @@
   .grid {
     text-align: center;
   }
+
   .wrapper {
     justify-content: center;
   }
@@ -270,6 +275,7 @@
     min-height: 400px;
   }
 }
+
 @media only screen and (min-height: 600px) {
   .hero-header {
     .gradient .content {
@@ -279,7 +285,7 @@
 }
 
 @media only screen and (max-width: @largestTabletScreen) {
-  .light-header .eea.banner .gradient .content {
+  .light-header .eea.header .eea.banner .gradient .content {
     padding: 16.5rem 0 1.25rem;
   }
 }
@@ -300,7 +306,8 @@
 
     .gradient .content {
       padding: @computerContentPadding;
-      .light-header & {
+
+      .light-header .eea.header & {
         padding: 18.625rem 0 1.25rem;
       }
 
@@ -308,6 +315,7 @@
         margin: @computerTitleMargin;
         font-size: @computerTitleFontSize;
         line-height: @computerTitleLineHeight;
+
         .hero-header & {
           line-height: 1.2;
           letter-spacing: @font-letterspacing-00;
@@ -339,6 +347,7 @@
     }
   }
 }
+
 /*******************************
       /Light & Hero Header
 *******************************/

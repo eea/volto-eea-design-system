@@ -3,13 +3,10 @@
 
 name: Storybook & Docusaurus CI deployment
 
-on:
-  push:
-    branches: [ develop ]
+on: {}
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -18,16 +15,16 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-        ref: ${{ github.head_ref }}
-        fetch-depth: 0
-    - name: Use Node.js ${{ matrix.node-version }} to build docusaurus website
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Push Docusaurus build changes
-      run: |
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - name: Use Node.js ${{ matrix.node-version }} to build docusaurus website
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Push Docusaurus build changes
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git pull
@@ -43,14 +40,14 @@ jobs:
           git commit -m "Autobuild of docusaurus docs"
           git push
 
-    - uses: convictional/trigger-workflow-and-wait@v1.6.5
-      with:
-        github_token: ${{ secrets.PAT_TOKEN }}
-        owner: 'eea'
-        repo: 'eea-storybook'
-        ref: 'develop'
-        workflow_file_name: node.js.yml
-    - name: Deploy Storybook changes
-      run: |
+      - uses: convictional/trigger-workflow-and-wait@v1.6.5
+        with:
+          github_token: ${{ secrets.PAT_TOKEN }}
+          owner: 'eea'
+          repo: 'eea-storybook'
+          ref: 'develop'
+          workflow_file_name: node.js.yml
+      - name: Deploy Storybook changes
+        run: |
           echo "Deploy Storybook changes"
           sleep 1s
