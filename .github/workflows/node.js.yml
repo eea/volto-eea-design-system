@@ -5,7 +5,7 @@ name: Storybook & Docusaurus CI deployment
 
 on:
   push:
-    branches: [ master ]
+    branches: [ develop ]
 
 jobs:
   build:
