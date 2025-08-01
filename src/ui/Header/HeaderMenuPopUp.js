@@ -346,13 +346,6 @@ function HeaderMenuPopUp({
   const menuItem = menuItems.find(
     (current) => current.url === activeItem || current['@id'] === activeItem,
   );
-  console.log(
-    menuItem,
-    menuItemsLayouts[menuItem?.url],
-    menuItem?.url,
-    menuItemsLayouts,
-  );
-
   // Get layout for current menu item and fallback to a * layout that can
   // be used for all menu items that don't have a specific layout
   const layout =
@@ -366,17 +359,6 @@ function HeaderMenuPopUp({
         ])) ||
     (!!menuItemsLayouts && menuItemsLayouts['*']) ||
     {};
-  console.log(
-    { layout },
-    menuItemsLayouts,
-    menuItem?.url,
-    menuItemsLayouts[menuItem?.url] ||
-      menuItemsLayouts[
-        Object.keys(menuItemsLayouts).find((key) =>
-          menuItem?.url?.includes(key),
-        )
-      ],
-  );
   return (
     <Transition visible={visible} animation="slide down" duration={300}>
       <div id="mega-menu" ref={nodeRef}>
