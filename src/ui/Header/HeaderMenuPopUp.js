@@ -346,6 +346,12 @@ function HeaderMenuPopUp({
   const menuItem = menuItems.find(
     (current) => current.url === activeItem || current['@id'] === activeItem,
   );
+  console.log(
+    menuItem,
+    menuItemsLayouts[menuItem?.url],
+    menuItem?.url,
+    menuItemsLayouts,
+  );
 
   // Get layout for current menu item and fallback to a * layout that can
   // be used for all menu items that don't have a specific layout

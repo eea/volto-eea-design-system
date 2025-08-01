@@ -5,6 +5,7 @@
 
 import React from 'react'; // , { Component }
 import { useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import cx from 'classnames';
 import { Container, Image, Menu, Grid, Dropdown } from 'semantic-ui-react'; // Dropdown,
 
@@ -18,6 +19,7 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import { isInternalURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
+import { getNavigationSettings } from '@eeacms/volto-eea-website-theme/actions';
 
 Header.propTypes = {
   transparency: PropTypes.bool,
@@ -152,15 +154,53 @@ const Main = ({
   isMultilingual,
 }) => {
   const history = useHistory();
+  const dispatch = useDispatch();
+  const navigationSettings = useSelector(
+    (state) => state.navigationSettings?.settings || {},
+  );
+  const navigationLoaded = useSelector(
+    (state) => state.navigationSettings?.loaded,
+  );
   const [activeItem, setActiveItem] = React.useState(pathname);
   const [menuIsActive, setMenuIsActive] = React.useState(false);
   const [searchIsActive, setSearchIsActive] = React.useState(false);
   const [burger, setBurger] = React.useState('');
   const searchInputRef = React.useRef(null);
   const [isClient, setIsClient] = React.useState();
-  const itemsLayouts = menuItemsLayouts || config.settings?.menuItemsLayouts;
 
+  // Combine navigation settings from backend with config fallback
+  const configLayouts = config.settings?.menuItemsLayouts || {};
+  const enhancedLayouts = { ...configLayouts };
+
+  // Map navigation settings to menu item URLs
+  if (menuItems) {
+    menuItems.forEach((menuItem) => {
+      const menuItemUrl = menuItem.url;
+      // Check if we have navigation settings for any route that might match this menu item
+      Object.keys(navigationSettings).forEach((routeId) => {
+        const route = navigationSettings[routeId];
+        if (route.hideChildrenFromNavigation !== undefined) {
+          // Override the config setting with backend data
+          enhancedLayouts[menuItemUrl] = {
+            ...enhancedLayouts[menuItemUrl],
+            hideChildrenFromNavigation: route.hideChildrenFromNavigation,
+          };
+        }
+      });
+    });
+  }
+
+  const itemsLayouts = menuItemsLayouts || enhancedLayouts;
+
+  console.log({ itemsLayouts }, { menuItems });
   React.useEffect(() => setIsClient(true), []);
+
+  // Load navigation settings
+  React.useEffect(() => {
+    if (!navigationLoaded) {
+      dispatch(getNavigationSettings(pathname));
+    }
+  }, [dispatch, navigationLoaded, pathname]);
 
   React.useEffect(() => {
     setMenuIsActive(false);
