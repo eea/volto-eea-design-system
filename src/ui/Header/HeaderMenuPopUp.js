@@ -366,7 +366,17 @@ function HeaderMenuPopUp({
         ])) ||
     (!!menuItemsLayouts && menuItemsLayouts['*']) ||
     {};
-
+  console.log(
+    { layout },
+    menuItemsLayouts,
+    menuItem?.url,
+    menuItemsLayouts[menuItem?.url] ||
+      menuItemsLayouts[
+        Object.keys(menuItemsLayouts).find((key) =>
+          menuItem?.url?.includes(key),
+        )
+      ],
+  );
   return (
     <Transition visible={visible} animation="slide down" duration={300}>
       <div id="mega-menu" ref={nodeRef}>

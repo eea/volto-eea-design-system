@@ -158,6 +158,7 @@ const Main = ({
   const navigationSettings = useSelector(
     (state) => state.navigationSettings?.settings || {},
   );
+  console.log('wtf', { navigationSettings });
   const navigationLoaded = useSelector(
     (state) => state.navigationSettings?.loaded,
   );
@@ -179,20 +180,39 @@ const Main = ({
       // Check if we have navigation settings for any route that might match this menu item
       Object.keys(navigationSettings).forEach((routeId) => {
         const route = navigationSettings[routeId];
+        console.log(routeId, { route });
+        
+        const backendSettings = {};
+        
         if (route.hideChildrenFromNavigation !== undefined) {
+          console.log('overide beatch');
+          backendSettings.hideChildrenFromNavigation = route.hideChildrenFromNavigation;
+        }
+        
+        if (route.menuItemChildrenListColumns !== undefined) {
+          // Convert strings back to integers for header usage
+          backendSettings.menuItemChildrenListColumns = Array.isArray(route.menuItemChildrenListColumns)
+            ? route.menuItemChildrenListColumns.map(val => 
+                typeof val === 'string' ? parseInt(val, 10) : val
+              ).filter(val => !isNaN(val))
+            : route.menuItemChildrenListColumns;
+        }
+        
+        if (Object.keys(backendSettings).length > 0) {
           // Override the config setting with backend data
-          enhancedLayouts[menuItemUrl] = {
-            ...enhancedLayouts[menuItemUrl],
-            hideChildrenFromNavigation: route.hideChildrenFromNavigation,
+          enhancedLayouts[routeId] = {
+            ...enhancedLayouts[routeId],
+            ...backendSettings,
           };
         }
       });
     });
   }
 
+  console.log('lalal', menuItemsLayouts, enhancedLayouts);
   const itemsLayouts = menuItemsLayouts || enhancedLayouts;
 
-  console.log({ itemsLayouts }, { menuItems });
+  console.log({ itemsLayouts });
   React.useEffect(() => setIsClient(true), []);
 
   // Load navigation settings
