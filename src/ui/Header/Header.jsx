@@ -182,6 +182,7 @@ const Main = ({
         const route = navigationSettings[routeId];
         console.log(routeId, { route });
 
+        console.log({ route });
         const backendSettings = {};
 
         if (route.hideChildrenFromNavigation !== undefined) {
