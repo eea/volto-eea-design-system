@@ -175,7 +175,6 @@ const Main = ({
   // Map navigation settings to menu item URLs
   if (menuItems) {
     menuItems.forEach((menuItem) => {
-      const menuItemUrl = menuItem.url;
       // Check if we have navigation settings for any route that might match this menu item
       Object.keys(navigationSettings).forEach((routeId) => {
         const route = navigationSettings[routeId];
