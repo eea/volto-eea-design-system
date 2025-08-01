@@ -198,6 +198,11 @@ const Main = ({
             : route.menuItemChildrenListColumns;
         }
         
+        if (route.menuItemColumns !== undefined) {
+          // Use menuItemColumns directly as they're already in semantic UI format
+          backendSettings.menuItemColumns = route.menuItemColumns;
+        }
+        
         if (Object.keys(backendSettings).length > 0) {
           // Override the config setting with backend data
           enhancedLayouts[routeId] = {
