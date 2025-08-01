@@ -158,7 +158,6 @@ const Main = ({
   const navigationSettings = useSelector(
     (state) => state.navigationSettings?.settings || {},
   );
-  console.log('wtf', { navigationSettings });
   const navigationLoaded = useSelector(
     (state) => state.navigationSettings?.loaded,
   );
@@ -180,13 +179,9 @@ const Main = ({
       // Check if we have navigation settings for any route that might match this menu item
       Object.keys(navigationSettings).forEach((routeId) => {
         const route = navigationSettings[routeId];
-        console.log(routeId, { route });
-
-        console.log({ route });
         const backendSettings = {};
 
         if (route.hideChildrenFromNavigation !== undefined) {
-          console.log('overide beatch');
           backendSettings.hideChildrenFromNavigation =
             route.hideChildrenFromNavigation;
         }
@@ -220,10 +215,8 @@ const Main = ({
     });
   }
 
-  console.log('lalal', menuItemsLayouts, enhancedLayouts);
   const itemsLayouts = menuItemsLayouts || enhancedLayouts;
 
-  console.log({ itemsLayouts });
   React.useEffect(() => setIsClient(true), []);
 
   // Load navigation settings
