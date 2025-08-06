@@ -14,7 +14,9 @@ import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 
 const generateCssClassFromUrl = (url) => {
   if (!url) return '';
-  return kebabCase(url.replace(/\//g, '-').replace(/\./g, '-').replace(/@/g, '-'));
+  return kebabCase(
+    url.replace(/\//g, '-').replace(/\./g, '-').replace(/@/g, '-'),
+  );
 };
 
 const createColumns = (item, renderMenuItem, item_id) => {
@@ -126,22 +128,27 @@ export const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
   const renderColumns = () => (
     <Grid>
       {menuItemColumns.map((section, columnIndex) => {
-        const sectionItem = columnIndex !== menuItemColumnsLength 
-          ? menuItem.items[columnIndex] 
-          : menuItem.items.slice(menuItemColumnsLength)[0];
-        const urlClass = sectionItem?.url ? generateCssClassFromUrl(sectionItem.url) : '';
-        const classNames = `${layout.menuItemColumns[columnIndex]}${urlClass ? ` ${urlClass}` : ''}`;
-        
+        const sectionItem =
+          columnIndex !== menuItemColumnsLength
+            ? menuItem.items[columnIndex]
+            : menuItem.items.slice(menuItemColumnsLength)[0];
+        const urlClass = sectionItem?.url
+          ? generateCssClassFromUrl(sectionItem.url)
+          : '';
+        const classNames = `${layout.menuItemColumns[columnIndex]}${
+          urlClass ? ` ${urlClass}` : ''
+        }`;
+
         return (
-        <div className={classNames} key={columnIndex}>
-          {columnIndex !== menuItemColumnsLength
-            ? renderColumnContent(menuItem.items[columnIndex], columnIndex)
-            : menuItem.items
-                .slice(menuItemColumnsLength)
-                .map((section, _idx) =>
-                  renderColumnContent(section, columnIndex),
-                )}
-        </div>
+          <div className={classNames} key={columnIndex}>
+            {columnIndex !== menuItemColumnsLength
+              ? renderColumnContent(menuItem.items[columnIndex], columnIndex)
+              : menuItem.items
+                  .slice(menuItemColumnsLength)
+                  .map((section, _idx) =>
+                    renderColumnContent(section, columnIndex),
+                  )}
+          </div>
         );
       })}
     </Grid>
