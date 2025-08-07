@@ -159,10 +159,10 @@ const Main = ({
   const searchInputRef = React.useRef(null);
   const [isClient, setIsClient] = React.useState();
 
-  const itemsLayouts = menuItemsLayouts || config.settings?.menuItemsLayouts || {};
+  const itemsLayouts =
+    menuItemsLayouts || config.settings?.menuItemsLayouts || {};
 
   React.useEffect(() => setIsClient(true), []);
-
 
   React.useEffect(() => {
     setMenuIsActive(false);
