@@ -335,6 +335,9 @@ const Main = ({
                   <Image
                     src={!searchIsActive ? `${searchIcon}` : `${closeIcon}`}
                     alt="Global search"
+                    height={45}
+                    width={45}
+                    className="header-search-icon"
                   />
                 </button>
               )}
