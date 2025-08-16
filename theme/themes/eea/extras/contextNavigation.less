@@ -196,6 +196,7 @@
     font-size: 1rem !important;
     font-weight: inherit;
     margin-right: 0;
+    margin-left: -4px; // align icon with title text
   }
 
   .ui.accordion>.title {
@@ -232,6 +233,11 @@
   }
 
   .accordion-list {
+    &.level-0 {
+      > .accordion-list-title .title-link {
+        font-weight: @sidenavItemFontWeight;
+      }
+    }
     .accordion-list .accordion-list-item .title {
       padding-left: @secondLevelItemPaddingLeft;
     }
