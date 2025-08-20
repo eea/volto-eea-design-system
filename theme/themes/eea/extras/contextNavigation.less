@@ -10,6 +10,7 @@
   padding-left: @sidenavPaddingLeft;
   overflow: @sidenavOverflow;
 }
+
 @media (max-width: @largeMonitorBreakpoint) {
   .context-navigation {
     max-width: @sidenavMaxWidth;
@@ -63,12 +64,12 @@
   padding: @sidenavFolderItemPadding;
 }
 
-.context-navigation .ui.list > .item > .content {
+.context-navigation .ui.list>.item>.content {
   border-bottom: @sidenavContentBorderBottom;
 }
 
 // Hide last border
-.context-navigation .ui.list > .item:last-child > .content {
+.context-navigation .ui.list>.item:last-child>.content {
   border-bottom: none;
 }
 
@@ -103,12 +104,13 @@
 }
 
 // Active indicator
-.context-navigation .active.item > .content > a {
+.context-navigation .active.item>.content>a {
   color: @sidenavItemActiveColor;
   font-weight: @sidenavItemActiveFontWeight;
 }
-.context-navigation .active.item > .content > a:hover,
-.context-navigation .active.item > .content > a:focus-visible {
+
+.context-navigation .active.item>.content>a:hover,
+.context-navigation .active.item>.content>a:focus-visible {
   color: @sidenavItemActiveColorHover;
 }
 
@@ -130,9 +132,11 @@
     align-items: center;
     gap: 0.15rem;
   }
+
   .list-item {
     padding: 0.25rem 0;
   }
+
   .list-item:has(> .context-navigation-detail) {
     list-style-type: none;
   }
@@ -150,6 +154,7 @@
   background-color: @sidenavAccordionHeaderBackgroundColor;
   box-shadow: @sidenavBoxShadow;
 }
+
 @media only screen and (max-width: 991px) {
   .view-viewview.light-header .eea-side-menu:not(.fixed) .accordion-header {
     color: white;
@@ -163,6 +168,7 @@
   box-shadow: @sidenavBoxShadow;
   background-color: @sidenavBackground;
 }
+
 .context-navigation-list .title-link {
   display: block;
   color: @sidenavItemColor;
@@ -170,9 +176,11 @@
   font-size: @sidenavItemFontSize;
   font-weight: @sidenavItemFontWeight;
 }
+
 .context-navigation-list .content .title-link {
   font-weight: @sidenavLevelTwoItemFontWeight;
 }
+
 .context-navigation {
   .current {
     color: @sidenavItemActiveColor;
@@ -183,7 +191,16 @@
     flex-wrap: wrap;
     margin: 0 !important;
   }
-  .ui.accordion > .title {
+
+  .navigation_home .icon {
+    font-size: 1rem !important;
+    font-weight: inherit;
+    margin-right: 0;
+    margin-left: -4px; // align icon with title text
+    margin-left: 2px;
+  }
+
+  .ui.accordion>.title {
     --text-color: @sidenavItemColor;
     --text-color-hover: @sidenavItemColor;
     font-size: @sidenavItemFontSize;
@@ -192,22 +209,21 @@
     text-align: left;
     line-height: @sidenavFolderItemLineHeight;
     margin: 0;
+    display: flex;
+    align-items: normal;
+
+    .icon {
+      margin-top: 4px;
+    }
   }
 
   // add border-bottom only on first level titles
-  .context-navigation-list
-    > .accordion-list-item
-    > .accordion
-    > .title:not([aria-expanded='true']) {
+  .context-navigation-list>.accordion-list-item>.accordion>.title:not([aria-expanded='true']) {
     border-bottom: @sidenavContentBorderBottom;
   }
 
   // add border-bottom to content of first level expanded accordion
-  .context-navigation-list
-    > .accordion-list-item
-    > .accordion
-    > .title[aria-expanded='true']
-    + .content {
+  .context-navigation-list>.accordion-list-item>.accordion>.title[aria-expanded='true']+.content {
     border-bottom: @sidenavContentBorderBottom;
   }
 
@@ -216,7 +232,14 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
+
   .accordion-list {
+    &.level-0 {
+      >.accordion-list-title .title-link {
+        font-weight: @sidenavItemFontWeight;
+      }
+    }
+
     .accordion-list .accordion-list-item .title {
       padding-left: @secondLevelItemPaddingLeft;
     }
@@ -224,24 +247,22 @@
     .accordion-list .accordion-list .accordion-list-item .title {
       padding-left: @thirdLevelItemPaddingLeft;
     }
+
     .accordion-list .accordion-list-item .accordion-list-title .title-link {
       padding-left: @thirdLevelItemPaddingLeft;
     }
 
-    .accordion-list
-      .accordion-list
-      .accordion-list-item
-      .accordion-list-title
-      .title-link {
+    .accordion-list .accordion-list .accordion-list-item .accordion-list-title .title-link {
       padding-left: @fourthLevelItemPaddingLeft;
     }
+
     margin-top: 0;
     margin-bottom: 0;
     list-style: none;
     padding-left: 0;
   }
 
-  .context-navigation-list > .accordion-list-title {
+  .context-navigation-list>.accordion-list-title {
     border-bottom: @sidenavContentBorderBottom;
 
     .title-link {

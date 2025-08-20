@@ -8,9 +8,16 @@ import {
   Transition,
 } from 'semantic-ui-react';
 
-import { cloneDeep } from 'lodash';
+import { cloneDeep, kebabCase } from 'lodash';
 
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
+
+const generateCssClassFromUrl = (url) => {
+  if (!url) return '';
+  return kebabCase(
+    url.replace(/\//g, '-').replace(/\./g, '-').replace(/@/g, '-'),
+  );
+};
 
 const createColumns = (item, renderMenuItem, item_id) => {
   return item.items.map((item, index) => (
@@ -120,17 +127,30 @@ export const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
 
   const renderColumns = () => (
     <Grid>
-      {menuItemColumns.map((section, columnIndex) => (
-        <div className={layout.menuItemColumns[columnIndex]} key={columnIndex}>
-          {columnIndex !== menuItemColumnsLength
-            ? renderColumnContent(menuItem.items[columnIndex], columnIndex)
-            : menuItem.items
-                .slice(menuItemColumnsLength)
-                .map((section, _idx) =>
-                  renderColumnContent(section, columnIndex),
-                )}
-        </div>
-      ))}
+      {menuItemColumns.map((section, columnIndex) => {
+        const sectionItem =
+          columnIndex !== menuItemColumnsLength
+            ? menuItem.items[columnIndex]
+            : menuItem.items.slice(menuItemColumnsLength)[0];
+        const urlClass = sectionItem?.url
+          ? generateCssClassFromUrl(sectionItem.url)
+          : '';
+        const classNames = `${layout.menuItemColumns[columnIndex]}${
+          urlClass ? ` ${urlClass}` : ''
+        }`;
+
+        return (
+          <div className={classNames} key={columnIndex}>
+            {columnIndex !== menuItemColumnsLength
+              ? renderColumnContent(menuItem.items[columnIndex], columnIndex)
+              : menuItem.items
+                  .slice(menuItemColumnsLength)
+                  .map((section, _idx) =>
+                    renderColumnContent(section, columnIndex),
+                  )}
+          </div>
+        );
+      })}
     </Grid>
   );
 
@@ -346,7 +366,6 @@ function HeaderMenuPopUp({
   const menuItem = menuItems.find(
     (current) => current.url === activeItem || current['@id'] === activeItem,
   );
-
   // Get layout for current menu item and fallback to a * layout that can
   // be used for all menu items that don't have a specific layout
   const layout =
@@ -360,7 +379,6 @@ function HeaderMenuPopUp({
         ])) ||
     (!!menuItemsLayouts && menuItemsLayouts['*']) ||
     {};
-
   return (
     <Transition visible={visible} animation="slide down" duration={300}>
       <div id="mega-menu" ref={nodeRef}>

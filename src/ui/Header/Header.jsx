@@ -158,7 +158,9 @@ const Main = ({
   const [burger, setBurger] = React.useState('');
   const searchInputRef = React.useRef(null);
   const [isClient, setIsClient] = React.useState();
-  const itemsLayouts = menuItemsLayouts || config.settings?.menuItemsLayouts;
+
+  const itemsLayouts =
+    menuItemsLayouts || config.settings?.menuItemsLayouts || {};
 
   React.useEffect(() => setIsClient(true), []);
 

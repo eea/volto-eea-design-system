@@ -47,6 +47,7 @@ h6 {
 
 .content-area {
   color: @contentAreaColor;
+  min-height: 100px;
 }
 
 [id='page-document']>*,
@@ -210,10 +211,12 @@ a {
     size: A4;
     margin: 1cm;
   }
+
   * {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
+
   .skiplinks-wrapper,
   .slider-arrow,
   #footer,
