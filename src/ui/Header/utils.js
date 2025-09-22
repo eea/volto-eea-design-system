@@ -16,7 +16,6 @@ export function findBestMatchingMenuItem(menuItems, activeItem) {
   const normalizedActiveItem = stripSlash(activeItem);
   let bestMatchUrl = null;
   let bestScore = -1;
-  console.log('menuItems', menuItems, normalizedActiveItem);
   if (menuItems && normalizedActiveItem) {
     menuItems.forEach((item) => {
       const url = stripSlash(item.url || item['@id']);
