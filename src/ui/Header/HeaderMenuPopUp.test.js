@@ -3,13 +3,12 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
+import HeaderMenuPopUp, { StandardMegaMenuGrid } from './HeaderMenuPopUp';
 
 // Mock the useClickOutside hook
 jest.mock('@eeacms/volto-eea-design-system/helpers', () => ({
   useClickOutside: jest.fn(),
 }));
-
-import HeaderMenuPopUp, { StandardMegaMenuGrid } from './HeaderMenuPopUp';
 
 describe('HeaderMenuPopUp', () => {
   let history;
