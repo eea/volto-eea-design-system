@@ -13,6 +13,7 @@ module.exports = {
     '@root/(.*)$': '<rootDir>/src/$1',
     '@plone/volto-quanta/(.*)$': '<rootDir>/src/addons/volto-quanta/src/$1',
     '@eeacms/(.*?)/(.*)$': '<rootDir>/node_modules/@eeacms/$1/src/$2',
+    '@eeacms/countup': '<rootDir>/node_modules/@eeacms/countup/src',
     '@plone/volto-slate':
       '<rootDir>/node_modules/@plone/volto/packages/volto-slate/src',
     '~/(.*)$': '<rootDir>/src/$1',
@@ -26,7 +27,7 @@ module.exports = {
     '^.+\\.(jpg)$': 'jest-file',
     '^.+\\.(svg)$': './node_modules/@plone/volto/jest-svgsystem-transform.js',
   },
-  transformIgnorePatterns: ['/node_modules/(?!@plone/volto).+\\.js$'],
+  transformIgnorePatterns: ['/node_modules/(?!@plone/volto|@eeacms).+\\.js$'],
   setupFiles: [
     '@plone/volto/test-setup-globals.js',
     '@plone/volto/test-setup-config.js',
