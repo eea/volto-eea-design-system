@@ -9,6 +9,16 @@ body {
   font-size: @baseFontSize;
 }
 
+/* sensible image defaults */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // shape-margin: 0.75rem;
+}
+
 // Accessibility outline on focus-visible for every component
 *:focus-visible {
   outline: @focusVisibleOutline;
