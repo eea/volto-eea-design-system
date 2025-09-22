@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-eea-design-system",
-  "version": "1.39.0",
+  "version": "1.39.1",
   "description": "@eeacms/volto-eea-design-system: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
@@ -36,7 +36,8 @@
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "md5": "^2.3.0",
-    "postcss-less": "6.0.0"
+    "postcss-less": "6.0.0",
+    "ts-jest": "^26.4.2"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
