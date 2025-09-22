@@ -1,11 +1,22 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
-import Header from './Header';
 import '@testing-library/jest-dom/extend-expect';
+
+// Mock subcomponents that pull in ESM helpers not transformed by Jest here
+jest.doMock('./HeaderSearchPopUp', () => () => null);
+jest.doMock('./HeaderMenuPopUp', () => () => null);
+
+// Mock helpers ESM module used by HeaderSearchPopUp to avoid transform issues
+jest.mock('@eeacms/volto-eea-design-system/helpers', () => ({
+  useClickOutside: () => ({ current: null }),
+  handleEnterKeyPress: () => {},
+}));
+
+const Header = require('./Header').default;
 
 describe('Header component', () => {
   let history;
@@ -388,4 +399,107 @@ describe('Header component', () => {
     // Call onBlur on the dropdown text
     fireEvent.blur(dropdownText);
   });
+});
+
+test('marks only the best-matching top-level item active (sibling collision case)', async () => {
+  const history = createMemoryHistory({
+    initialEntries: ['/en/europe-environment-2025/media-corner'],
+  });
+
+  const menuItems = [
+    {
+      '@id': '/en/europe-environment-2025',
+      url: '/en/europe-environment-2025',
+      title: 'Report home',
+      items: [],
+    },
+    {
+      '@id': '/en/europe-environment-2025/media-corner',
+      url: '/en/europe-environment-2025/media-corner',
+      title: 'Outreach',
+      items: [],
+    },
+    {
+      '@id': '/en/europe-environment-2025/ask-ai',
+      url: '/en/europe-environment-2025/ask-ai',
+      title: 'Ask AI assistant',
+      items: [],
+    },
+  ];
+
+  const { container, getByText } = render(
+    <Router history={history}>
+      <Header>
+        <Header.Main
+          pathname={'/en/europe-environment-2025/media-corner'}
+          menuItems={menuItems}
+          renderGlobalMenuItem={(item) => (
+            <a href={item.url} title={item.title}>
+              {item.title}
+            </a>
+          )}
+        />
+      </Header>
+    </Router>,
+  );
+
+  await waitFor(() => {
+    const activeLis = container.querySelectorAll('ul#navigation li.active');
+    expect(activeLis.length).toBe(1);
+  });
+
+  const outreachLink = getByText('Outreach');
+  const outreachLi = outreachLink.closest('li');
+  expect(outreachLi).toHaveClass('active');
+
+  const reportHomeLi = getByText('Report home').closest('li');
+  expect(reportHomeLi).not.toHaveClass('active');
+});
+
+test('exact match wins: parent item active only on its own URL', async () => {
+  const history = createMemoryHistory({
+    initialEntries: ['/en/europe-environment-2025'],
+  });
+
+  const menuItems = [
+    {
+      '@id': '/en/europe-environment-2025',
+      url: '/en/europe-environment-2025',
+      title: 'Report home',
+      items: [],
+    },
+    {
+      '@id': '/en/europe-environment-2025/media-corner',
+      url: '/en/europe-environment-2025/media-corner',
+      title: 'Outreach',
+      items: [],
+    },
+  ];
+
+  const { container, getByText } = render(
+    <Router history={history}>
+      <Header>
+        <Header.Main
+          pathname={'/en/europe-environment-2025'}
+          menuItems={menuItems}
+          renderGlobalMenuItem={(item) => (
+            <a href={item.url} title={item.title}>
+              {item.title}
+            </a>
+          )}
+        />
+      </Header>
+    </Router>,
+  );
+
+  await waitFor(() => {
+    const activeLis = container.querySelectorAll('ul#navigation li.active');
+    expect(activeLis.length).toBe(1);
+  });
+
+  const parentLi = getByText('Report home').closest('li');
+  expect(parentLi).toHaveClass('active');
+
+  const childLi = getByText('Outreach').closest('li');
+  expect(childLi).not.toHaveClass('active');
 });

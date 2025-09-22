@@ -21,9 +21,18 @@ module.exports = {
   },
   transform: {
     '^.+\\.js(x)?$': 'babel-jest',
+    '^.+\\.ts(x)?$': 'ts-jest',
     '^.+\\.(png)$': 'jest-file',
     '^.+\\.(jpg)$': 'jest-file',
     '^.+\\.(svg)$': './node_modules/@plone/volto/jest-svgsystem-transform.js',
+  },
+  transformIgnorePatterns: ['/node_modules/(?!@plone/volto).+\\.js$'],
+  setupFiles: [
+    '@plone/volto/test-setup-globals.js',
+    '@plone/volto/test-setup-config.js',
+  ],
+  globals: {
+    __DEV__: true,
   },
   coverageThreshold: {
     global: {
