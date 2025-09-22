@@ -503,3 +503,249 @@ test('exact match wins: parent item active only on its own URL', async () => {
   const childLi = getByText('Outreach').closest('li');
   expect(childLi).not.toHaveClass('active');
 });
+
+test('mobile burger menu interactions', async () => {
+  const history = createMemoryHistory();
+  const menuItems = [
+    {
+      '@id': '/test',
+      url: '/test',
+      title: 'Test Item',
+      items: [],
+    },
+  ];
+
+  const { container } = render(
+    <Router history={history}>
+      <Header>
+        <Header.Main
+          pathname="/test"
+          menuItems={menuItems}
+          renderGlobalMenuItem={(item) => (
+            <a href={item.url} title={item.title}>
+              {item.title}
+            </a>
+          )}
+          renderMenuItem={(item, options) => (
+            <a href={item.url || '/'} {...(options || {})}>
+              {item.title}
+            </a>
+          )}
+        />
+      </Header>
+    </Router>,
+  );
+
+  const burgerButton = container.querySelector('.burger-action');
+  expect(burgerButton).toBeInTheDocument();
+
+  // Test burger menu opening
+  fireEvent.click(burgerButton);
+  expect(burgerButton).toHaveAttribute('aria-expanded', 'true');
+
+  // Test burger menu closing
+  fireEvent.click(burgerButton);
+  expect(burgerButton).toHaveAttribute('aria-expanded', 'false');
+});
+
+test('search interactions and state management', async () => {
+  const history = createMemoryHistory();
+  const menuItems = [
+    {
+      '@id': '/test',
+      url: '/test',
+      title: 'Test Item',
+      items: [],
+    },
+  ];
+
+  const { container } = render(
+    <Router history={history}>
+      <Header>
+        <Header.Main
+          pathname="/test"
+          menuItems={menuItems}
+          renderGlobalMenuItem={(item) => (
+            <a href={item.url} title={item.title}>
+              {item.title}
+            </a>
+          )}
+          renderMenuItem={(item, options) => (
+            <a href={item.url || '/'} {...(options || {})}>
+              {item.title}
+            </a>
+          )}
+        />
+      </Header>
+    </Router>,
+  );
+
+  const searchButton = container.querySelector('.search-action');
+  expect(searchButton).toBeInTheDocument();
+
+  // Test search opening
+  fireEvent.click(searchButton);
+  expect(searchButton).toHaveAttribute('aria-expanded', 'true');
+
+  // Test search closing
+  fireEvent.click(searchButton);
+  expect(searchButton).toHaveAttribute('aria-expanded', 'false');
+});
+
+test('escape key handling', async () => {
+  const history = createMemoryHistory();
+  const menuItems = [
+    {
+      '@id': '/test',
+      url: '/test',
+      title: 'Test Item',
+      items: [],
+    },
+  ];
+
+  const { container } = render(
+    <Router history={history}>
+      <Header>
+        <Header.Main
+          pathname="/test"
+          menuItems={menuItems}
+          renderGlobalMenuItem={(item) => (
+            <a href={item.url} title={item.title}>
+              {item.title}
+            </a>
+          )}
+          renderMenuItem={(item, options) => (
+            <a href={item.url || '/'} {...(options || {})}>
+              {item.title}
+            </a>
+          )}
+        />
+      </Header>
+    </Router>,
+  );
+
+  const searchButton = container.querySelector('.search-action');
+  const burgerButton = container.querySelector('.burger-action');
+
+  // Open search and burger menu
+  fireEvent.click(searchButton);
+  fireEvent.click(burgerButton);
+
+  // Press escape key
+  fireEvent.keyDown(document, { key: 'Escape', code: 'Escape' });
+
+  // Both should be closed
+  expect(searchButton).toHaveAttribute('aria-expanded', 'false');
+  expect(burgerButton).toHaveAttribute('aria-expanded', 'false');
+});
+
+test('multilingual pathname handling', async () => {
+  const history = createMemoryHistory();
+  const menuItems = [
+    {
+      '@id': '/test',
+      url: '/test',
+      title: 'Test Item',
+      items: [],
+    },
+  ];
+
+  const { rerender } = render(
+    <Router history={history}>
+      <Header>
+        <Header.Main
+          pathname="/en/test"
+          isMultilingual={true}
+          menuItems={menuItems}
+          renderGlobalMenuItem={(item) => (
+            <a href={item.url} title={item.title}>
+              {item.title}
+            </a>
+          )}
+          renderMenuItem={(item, options) => (
+            <a href={item.url || '/'} {...(options || {})}>
+              {item.title}
+            </a>
+          )}
+        />
+      </Header>
+    </Router>,
+  );
+
+  // Test with empty multilingual path
+  rerender(
+    <Router history={history}>
+      <Header>
+        <Header.Main
+          pathname="/en/"
+          isMultilingual={true}
+          menuItems={menuItems}
+          renderGlobalMenuItem={(item) => (
+            <a href={item.url} title={item.title}>
+              {item.title}
+            </a>
+          )}
+          renderMenuItem={(item, options) => (
+            <a href={item.url || '/'} {...(options || {})}>
+              {item.title}
+            </a>
+          )}
+        />
+      </Header>
+    </Router>,
+  );
+});
+
+test('menu click outside behavior with different active states', async () => {
+  const history = createMemoryHistory();
+  const menuItems = [
+    {
+      '@id': '/test',
+      url: '/test',
+      title: 'Test Item',
+      items: [],
+    },
+  ];
+
+  const { container } = render(
+    <Router history={history}>
+      <Header>
+        <Header.Main
+          pathname="/different-path"
+          menuItems={menuItems}
+          renderGlobalMenuItem={(item) => (
+            <a href={item.url} title={item.title}>
+              {item.title}
+            </a>
+          )}
+          renderMenuItem={(item, options) => (
+            <a href={item.url || '/'} {...(options || {})}>
+              {item.title}
+            </a>
+          )}
+        />
+      </Header>
+    </Router>,
+  );
+
+  const burgerButton = container.querySelector('.burger-action');
+  const searchButton = container.querySelector('.search-action');
+
+  // Open burger menu first
+  fireEvent.click(burgerButton);
+  expect(burgerButton).toHaveAttribute('aria-expanded', 'true');
+
+  // Open search to trigger search state
+  fireEvent.click(searchButton);
+  expect(searchButton).toHaveAttribute('aria-expanded', 'true');
+
+  // Click outside to trigger menuOnClickOutside
+  fireEvent.click(document.body);
+
+  // Test escape key when burger is open and pathname !== activeItem
+  fireEvent.click(burgerButton); // Open burger again
+  fireEvent.keyDown(document, { key: 'Escape', code: 'Escape' });
+
+  expect(burgerButton).toHaveAttribute('aria-expanded', 'false');
+  expect(searchButton).toHaveAttribute('aria-expanded', 'false');
+});

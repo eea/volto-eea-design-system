@@ -111,4 +111,122 @@ describe('HeaderSearchPopUp', () => {
     expect(history.location.pathname).toBe('/');
     expect(history.location.search).toBe('?q=suggestion 1');
   });
+
+  it('should handle keydown events on search action button', () => {
+    const { container } = render(
+      <Router history={history}>
+        <HeaderSearchPopUp
+          headerSearchBox={sampleHeaderSearchBox}
+          onClose={mockOnClose}
+          triggerRefs={[]}
+        />
+      </Router>,
+    );
+
+    const searchActionButton = container.querySelector(
+      'button[aria-label="Submit search"]',
+    );
+    expect(searchActionButton).toBeInTheDocument();
+
+    // Test Enter key press on search action button
+    fireEvent.keyDown(searchActionButton, { key: 'Enter', code: 'Enter' });
+
+    // Test other key press (should not trigger action)
+    fireEvent.keyDown(searchActionButton, { key: 'Tab', code: 'Tab' });
+  });
+
+  it('should handle search without searchContext', () => {
+    // Remove searchContext to test the fallback
+    delete window.searchContext;
+
+    const { container } = render(
+      <Router history={history}>
+        <HeaderSearchPopUp
+          headerSearchBox={sampleHeaderSearchBox}
+          onClose={mockOnClose}
+          triggerRefs={[]}
+        />
+      </Router>,
+    );
+
+    const input = screen.getByPlaceholderText('Search');
+    fireEvent.change(input, { target: { value: 'Test search' } });
+    fireEvent.submit(container.querySelector('form'));
+
+    expect(history.location.pathname).toBe('/search');
+  });
+
+  it('should handle suggestion click without searchContext', () => {
+    // Remove searchContext to test the fallback
+    delete window.searchContext;
+
+    render(
+      <Router history={history}>
+        <HeaderSearchPopUp
+          headerSearchBox={sampleHeaderSearchBox}
+          onClose={mockOnClose}
+        />
+      </Router>,
+    );
+
+    fireEvent.click(screen.getByText('suggestion 1'));
+    expect(mockOnClose).toHaveBeenCalled();
+  });
+
+  it('should render without search suggestions', () => {
+    const headerSearchBoxNoSuggestions = [
+      {
+        path: '/search',
+        buttonTitle: 'Advanced Search',
+        buttonUrl: '/advanced-search',
+        description: 'Sample description',
+        placeholder: 'Search',
+        isDefault: true,
+      },
+    ];
+
+    render(
+      <Router history={history}>
+        <HeaderSearchPopUp
+          headerSearchBox={headerSearchBoxNoSuggestions}
+          onClose={mockOnClose}
+          triggerRefs={[]}
+        />
+      </Router>,
+    );
+
+    expect(screen.getByPlaceholderText('Search')).toBeInTheDocument();
+    expect(screen.queryByText('Suggestions Title')).not.toBeInTheDocument();
+  });
+
+  it('should render with empty suggestions array', () => {
+    const headerSearchBoxEmptySuggestions = [
+      {
+        path: '/search',
+        buttonTitle: 'Advanced Search',
+        buttonUrl: '/advanced-search',
+        description: 'Sample description',
+        placeholder: 'Search',
+        searchSuggestions: {
+          suggestionsTitle: 'Suggestions Title',
+          suggestions: [],
+          maxToShow: 3,
+        },
+        isDefault: true,
+      },
+    ];
+
+    render(
+      <Router history={history}>
+        <HeaderSearchPopUp
+          headerSearchBox={headerSearchBoxEmptySuggestions}
+          onClose={mockOnClose}
+          triggerRefs={[]}
+        />
+      </Router>,
+    );
+
+    expect(screen.getByPlaceholderText('Search')).toBeInTheDocument();
+    expect(screen.queryByText('Suggestions Title')).not.toBeInTheDocument();
+  });
 });

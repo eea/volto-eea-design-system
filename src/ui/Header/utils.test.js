@@ -48,6 +48,51 @@ describe('Header utils', () => {
       expect(result.bestMatchUrl).toBe(null);
       expect(result.bestScore).toBe(-1);
     });
+
+    test('handles menu items with empty/null urls', () => {
+      const menuItems = [
+        { url: '', items: [] },
+        { url: null, items: [] },
+        { '@id': null, url: undefined, items: [] },
+        { url: '/valid', items: [] },
+      ];
+
+      const result = findBestMatchingMenuItem(menuItems, '/valid');
+      expect(result.bestMatchUrl).toBe('/valid');
+      expect(result.bestScore).toBe('/valid'.length + 1);
+    });
+
+    test('handles empty menuItems array', () => {
+      const result = findBestMatchingMenuItem([], '/test');
+      expect(result.bestMatchUrl).toBe(null);
+      expect(result.bestScore).toBe(-1);
+    });
+
+    test('handles null/undefined menuItems', () => {
+      const result1 = findBestMatchingMenuItem(null, '/test');
+      expect(result1.bestMatchUrl).toBe(null);
+      expect(result1.bestScore).toBe(-1);
+
+      const result2 = findBestMatchingMenuItem(undefined, '/test');
+      expect(result2.bestMatchUrl).toBe(null);
+      expect(result2.bestScore).toBe(-1);
+    });
+
+    test('handles empty/null activeItem', () => {
+      const menuItems = [{ url: '/topics', items: [] }];
+
+      const result1 = findBestMatchingMenuItem(menuItems, '');
+      expect(result1.bestMatchUrl).toBe(null);
+      expect(result1.bestScore).toBe(-1);
+
+      const result2 = findBestMatchingMenuItem(menuItems, null);
+      expect(result2.bestMatchUrl).toBe(null);
+      expect(result2.bestScore).toBe(-1);
+
+      const result3 = findBestMatchingMenuItem(menuItems, undefined);
+      expect(result3.bestMatchUrl).toBe(null);
+      expect(result3.bestScore).toBe(-1);
+    });
   });
 
   describe('isMenuItemActive', () => {
