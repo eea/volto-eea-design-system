@@ -9,6 +9,21 @@ body {
   font-size: @baseFontSize;
 }
 
+.is-fullscreen-mode {
+
+  #header,
+  #footer,
+  .skiplinks-wrapper,
+  .inpage-navigation-wrapper {
+    display: none !important;
+    visibility: hidden;
+  }
+
+  body {
+    margin-top: 0 !important;
+  }
+}
+
 /* sensible image defaults */
 img {
   max-width: 100%;
@@ -219,7 +234,7 @@ a {
 
   @page {
     size: A4;
-    margin: 1cm;
+    margin: 0;
   }
 
   * {
@@ -272,5 +287,25 @@ a {
 
   .grid-block-teaser .card {
     page-break-inside: auto;
+  }
+
+  // pdf printing optimizations
+  .light-header .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .content-type {
+    --text-color-secondary: @textColor;
+  }
+
+  .columns-view {
+    .ui.column.grid>[class*="three wide"].column {
+      width: 16.66666667% !important;
+    }
+
+    .ui.column.grid>[class*="ten wide"].column {
+      width: 83.33333333% !important;
+    }
   }
 }
