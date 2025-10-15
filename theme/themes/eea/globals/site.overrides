@@ -230,11 +230,37 @@ a {
   }
 }
 
+@first-print-page: ~"@page :first { margin-top: 0; }";
+
 @media print {
 
   @page {
     size: A4;
+    margin: 14mm 0;
+  }
+
+  @{first-print-page} html,
+  body {
+    width: auto;
+    height: auto;
+    background: @white;
+    color: @textColor;
+  }
+
+  // avoid cutting elements
+  body {
     margin: 0;
+    overflow: visible !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    break-after: avoid-page;
+    break-inside: avoid;
+    page-break-after: avoid;
+    page-break-inside: avoid;
   }
 
   * {
@@ -242,12 +268,22 @@ a {
     print-color-adjust: exact;
   }
 
+  .eea.header,
+  .eea.header .container,
+  .light-header .container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
   .skiplinks-wrapper,
   .slider-arrow,
   #footer,
   #inpage-navigation,
   .column.actions,
-  .slick-arrows {
+  .slick-arrows,
+  .ui.sticky,
+  .has-side-nav .content-box::before,
+  .light-header::before {
     display: none !important;
     visibility: hidden;
   }
@@ -255,6 +291,14 @@ a {
   .block.gridBlock .ui.grid,
   .content-box {
     break-inside: avoid;
+  }
+
+  // avoid single lines at the beginning or end of a page
+  #page-document p,
+  #page-document li,
+  #page-document blockquote {
+    orphans: 3;
+    widows: 3;
   }
 
   .ui.segment.breadcrumbs {
@@ -282,7 +326,15 @@ a {
   .embed-tableau,
   .embed-map-visualization,
   .embed-visualization {
+    break-inside: avoid;
     page-break-inside: avoid;
+  }
+
+  .ui.segment,
+  .content-box,
+  .card,
+  figure {
+    box-shadow: none !important;
   }
 
   .grid-block-teaser .card {
@@ -291,8 +343,8 @@ a {
 
   // pdf printing optimizations
   .light-header .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 8mm;
+    padding-right: 8mm;
   }
 
   .content-type {
