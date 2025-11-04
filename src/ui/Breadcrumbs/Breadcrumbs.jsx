@@ -6,9 +6,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Breadcrumb, Container, Image, Icon, Segment } from 'semantic-ui-react';
-
-import homeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/home-icon.svg';
+import { Breadcrumb, Container, Icon, Segment } from 'semantic-ui-react';
 
 const Breadcrumbs = ({
   root,
@@ -22,9 +20,9 @@ const Breadcrumbs = ({
       <Container>
         <Breadcrumb size={size} as="nav" aria-label={'Breadcrumbs'}>
           <ol aria-label="Breadcrumbs navigation">
-            <li>
+            <li className="breadcrumbs-home-item">
               <Link to={root || '/'} className="section" title={'Home'}>
-                <Image src={homeIcon} alt="" width="12" height="13" />
+                <Icon className="ri-home-2-line breadcrumbs-home-icon" />
               </Link>
             </li>
             {sections.map((item, index, items) => {

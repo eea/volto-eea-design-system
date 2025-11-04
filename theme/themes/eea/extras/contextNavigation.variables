@@ -18,8 +18,9 @@
 @sidenavHeaderFontSize: @font-size-3;
 @sidenavHeaderFontWeight: @font-weight-7;
 @sidenavHeaderPadding: @rem-space-4;
-@sidenavAccordionHeaderPadding: @rem-space-2 @rem-space-4;
-@sidenavAccordionHeaderBackgroundColor: white;
+@sidenavAccordionHeaderPadding: @rem-space-3 @rem-space-4;
+@sidenavAccordionHeaderColor: white;
+@sidenavAccordionHeaderBackgroundColor: @secondaryColor;
 @sidenavAccordionListMaxHeight: 86dvh;
 @sidenavHeaderIconMarginRight: 0;
 
@@ -54,10 +55,10 @@
 
 /* Item - Level 2 */
 @sidenavLevelTwoItemFontWeight: @font-weight-4;
-@sidenavLevelTwoItemPadding: 0.5rem 1.5rem;
-@secondLevelItemPaddingLeft: @rem-space-6;
+@sidenavLevelTwoItemPadding: 0.5rem 1rem 0.5rem 2rem;
+@secondLevelItemPaddingLeft: @rem-space-8;
 
 /* Item - Level 3 */
 @subparItemPaddingLeft: @rem-space-12;
-@thirdLevelItemPaddingLeft: @rem-space-8;
-@fourthLevelItemPaddingLeft: @rem-space-10;
+@thirdLevelItemPaddingLeft: @rem-space-12;
+@fourthLevelItemPaddingLeft: @rem-space-14;

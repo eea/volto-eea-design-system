@@ -949,7 +949,7 @@
 }
 
 //Gradient styles for web report
-.light-header .banner .gradient {
+.light-header .eea.header .banner .gradient {
   // background: linear-gradient(
   //   0deg,
   //   #ffffff,
@@ -1026,6 +1026,46 @@
     padding: 0 1.25rem;
   }
 }
+
+@media print {
+  .top.bar,
+  .main-menu,
+  .eea .header .action,
+  #page-header .action {
+    display: none !important;
+    visibility: hidden;
+  }
+
+  .eea.header {
+    max-width: @containerWidth !important;
+
+    .eea-logo {
+      margin-top: 0;
+    }
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+
+  .main.bar.transparency:before {
+    background-color: transparent !important;
+  }
+
+  .homepage.homepage-inverse {
+    .eea.header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      .main.bar {
+        padding: @printHeaderMainSectionPadding;
+      }
+    }
+  }
+}
+
 /*******************************
           /Light Header
 *******************************/

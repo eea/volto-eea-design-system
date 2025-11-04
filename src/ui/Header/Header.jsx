@@ -14,6 +14,7 @@ import burgerIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/asse
 
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
+import { findBestMatchingMenuItem, isMenuItemActive } from './utils';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import { isInternalURL } from '@plone/volto/helpers';
@@ -158,7 +159,9 @@ const Main = ({
   const [burger, setBurger] = React.useState('');
   const searchInputRef = React.useRef(null);
   const [isClient, setIsClient] = React.useState();
-  const itemsLayouts = menuItemsLayouts || config.settings?.menuItemsLayouts;
+
+  const itemsLayouts =
+    menuItemsLayouts || config.settings?.menuItemsLayouts || {};
 
   React.useEffect(() => setIsClient(true), []);
 
@@ -273,6 +276,12 @@ const Main = ({
   const mobileMenuBurgerRef = React.useRef();
   const desktopMenuRef = React.useRef();
 
+  // Memoize the best-matching menu item calculation to avoid re-computation on every render
+  const { bestMatchUrl, bestScore } = React.useMemo(() => {
+    const result = findBestMatchingMenuItem(menuItems, activeItem);
+    return result;
+  }, [menuItems, activeItem]);
+
   // disable sticky setting until feature is more stable
   // const isScrollingUp = useScrollingUp();
   // <div
@@ -301,10 +310,11 @@ const Main = ({
                   >
                     {menuItems.map((item, index) => {
                       const url = item['@id'] || item.url;
-                      const firstItem = index === 0 && item.title === 'Home';
-                      const active = firstItem
-                        ? url === activeItem
-                        : activeItem.indexOf(url) !== -1;
+                      const active = isMenuItemActive(
+                        item,
+                        bestMatchUrl,
+                        bestScore,
+                      );
                       return (
                         <Menu.Item
                           name={url}
