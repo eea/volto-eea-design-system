@@ -2,10 +2,12 @@ import React from 'react';
 import TagList from './TagList';
 import Tag from '../Tag/Tag';
 import { Container } from 'semantic-ui-react';
+import { withReduxProvider } from '@root/../.storybook/redux-decorator';
 
 export default {
   title: 'Components/Tag',
   component: TagList,
+  decorators: [withReduxProvider],
   argTypes: {
     title: {
       name: 'title',
