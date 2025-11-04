@@ -2,7 +2,12 @@
  * Tests for Header utility functions
  */
 
-import { findBestMatchingMenuItem, isMenuItemActive } from './utils';
+import {
+  findBestMatchingMenuItem,
+  isMenuItemActive,
+  numberToColumnString,
+  numbersToMenuItemColumns,
+} from './utils';
 
 describe('Header utils', () => {
   describe('findBestMatchingMenuItem', () => {
@@ -118,6 +123,103 @@ describe('Header utils', () => {
       const menuItem = { '@id': '/topics', url: '/topics', items: [] };
       const result = isMenuItemActive(menuItem, '/topics', 10);
       expect(result).toBe(true);
+    });
+  });
+
+  describe('numberToColumnString', () => {
+    test('converts number 1 to "one wide column"', () => {
+      expect(numberToColumnString(1)).toBe('one wide column');
+    });
+
+    test('converts number 2 to "two wide column"', () => {
+      expect(numberToColumnString(2)).toBe('two wide column');
+    });
+
+    test('converts number 3 to "three wide column"', () => {
+      expect(numberToColumnString(3)).toBe('three wide column');
+    });
+
+    test('converts number 4 to "four wide column"', () => {
+      expect(numberToColumnString(4)).toBe('four wide column');
+    });
+
+    test('converts number 5 to "five wide column"', () => {
+      expect(numberToColumnString(5)).toBe('five wide column');
+    });
+
+    test('converts number 6 to "six wide column"', () => {
+      expect(numberToColumnString(6)).toBe('six wide column');
+    });
+
+    test('converts number 7 to "seven wide column"', () => {
+      expect(numberToColumnString(7)).toBe('seven wide column');
+    });
+
+    test('converts number 8 to "eight wide column"', () => {
+      expect(numberToColumnString(8)).toBe('eight wide column');
+    });
+
+    test('converts number 9 to "nine wide column"', () => {
+      expect(numberToColumnString(9)).toBe('nine wide column');
+    });
+
+    test('returns empty string for number 0', () => {
+      expect(numberToColumnString(0)).toBe('');
+    });
+
+    test('returns empty string for numbers > 9', () => {
+      expect(numberToColumnString(10)).toBe('');
+      expect(numberToColumnString(100)).toBe('');
+    });
+
+    test('returns empty string for negative numbers', () => {
+      expect(numberToColumnString(-1)).toBe('');
+    });
+  });
+
+  describe('numbersToMenuItemColumns', () => {
+    test('converts array of numbers to column strings', () => {
+      const result = numbersToMenuItemColumns([1, 2, 3]);
+      expect(result).toEqual([
+        'one wide column',
+        'two wide column',
+        'three wide column',
+      ]);
+    });
+
+    test('filters out invalid numbers (0, negative, > 9)', () => {
+      const result = numbersToMenuItemColumns([0, 1, 2, 10, -1, 3]);
+      expect(result).toEqual([
+        'one wide column',
+        'two wide column',
+        'three wide column',
+      ]);
+    });
+
+    test('handles string numbers by parsing them', () => {
+      const result = numbersToMenuItemColumns(['1', '2', '3']);
+      expect(result).toEqual([
+        'one wide column',
+        'two wide column',
+        'three wide column',
+      ]);
+    });
+
+    test('returns non-array input as-is', () => {
+      expect(numbersToMenuItemColumns('not an array')).toBe('not an array');
+      expect(numbersToMenuItemColumns(null)).toBe(null);
+      expect(numbersToMenuItemColumns(undefined)).toBe(undefined);
+      expect(numbersToMenuItemColumns(123)).toBe(123);
+    });
+
+    test('handles empty array', () => {
+      const result = numbersToMenuItemColumns([]);
+      expect(result).toEqual([]);
+    });
+
+    test('handles array with all invalid numbers', () => {
+      const result = numbersToMenuItemColumns([0, 10, -1, 100]);
+      expect(result).toEqual([]);
     });
   });
 });
