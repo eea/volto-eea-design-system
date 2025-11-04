@@ -11,6 +11,7 @@ import {
 import { cloneDeep, kebabCase } from 'lodash';
 
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
+import { numbersToMenuItemColumns } from '../Header/utils';
 
 const generateCssClassFromUrl = (url) => {
   if (!url) return '';
@@ -135,19 +136,20 @@ export const StandardMegaMenuGrid = ({ menuItem, renderMenuItem, layout }) => {
         const urlClass = sectionItem?.url
           ? generateCssClassFromUrl(sectionItem.url)
           : '';
-        const classNames = `${layout.menuItemColumns[columnIndex]}${
-          urlClass ? ` ${urlClass}` : ''
-        }`;
-
+        const classNames = `${numbersToMenuItemColumns(
+          layout.menuItemColumns[columnIndex],
+        )}${urlClass ? ` ${urlClass}` : ''}`;
         return (
-          <div className={classNames} key={columnIndex}>
+          <div className={classNames} key={columnIndex + '-column'}>
             {columnIndex !== menuItemColumnsLength
               ? renderColumnContent(menuItem.items[columnIndex], columnIndex)
               : menuItem.items
                   .slice(menuItemColumnsLength)
-                  .map((section, _idx) =>
-                    renderColumnContent(section, columnIndex),
-                  )}
+                  .map((section, _idx) => (
+                    <React.Fragment key={`${columnIndex}-${_idx}`}>
+                      {renderColumnContent(section, columnIndex)}
+                    </React.Fragment>
+                  ))}
           </div>
         );
       })}

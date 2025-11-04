@@ -53,3 +53,27 @@ export function isMenuItemActive(menuItem, bestMatchUrl, bestScore) {
   const itemUrl = menuItem['@id'] || menuItem.url;
   return itemUrl === bestMatchUrl;
 }
+
+// Helper functions for menuItemColumns conversion (numbers to semantic UI format)
+export const numberToColumnString = (num) => {
+  const numbers = [
+    '',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+  ];
+  return numbers[num] ? `${numbers[num]} wide column` : '';
+};
+
+export const numbersToMenuItemColumns = (numbers) => {
+  if (!Array.isArray(numbers)) return numbers;
+  return numbers
+    .map((num) => numberToColumnString(parseInt(num)))
+    .filter((col) => col !== '');
+};
