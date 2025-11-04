@@ -3,23 +3,26 @@
 *******************************/
 
 .ui.breadcrumb {
-  display: flex;
-  align-items: center;
-  line-height: @lineHeight;
 
-  .home.icon {
-    margin-right: 0;
+  .breadcrumbs-home-item {
+    line-height: 1;
+  }
+
+  .breadcrumbs-home-icon {
+    --breadcrumbIconFontSize: @breadcrumbIconWidth;
   }
 }
 
 .ui.breadcrumb ol {
+  display: flex;
+  line-height: @lineHeight;
   padding-top: @space-025;
   padding-left: 0;
   margin: 0;
   list-style: none;
 
   li {
-    display: inline-block;
+    display: inline-flex;
   }
 }
 
@@ -49,6 +52,6 @@
 
   i.icon {
     width: @breadcrumbIconWidth;
-    font-size: @breadcrumbIconFontSize;
+    font-size: var(--breadcrumbIconFontSize, @breadcrumbIconFontSize);
   }
 }

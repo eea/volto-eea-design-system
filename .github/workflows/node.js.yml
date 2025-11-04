@@ -3,7 +3,9 @@
 
 name: Storybook & Docusaurus CI deployment
 
-on: {}
+on:
+  push:
+    branches: [ develop ]
 
 jobs:
   build:

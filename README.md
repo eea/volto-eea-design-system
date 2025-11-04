@@ -31,7 +31,10 @@ Checkout the docs found within the [website](https://github.com/eea/volto-eea-de
 
 ### Try the design system mockups
 
-Checkout the docs found within the [mockups](https://github.com/eea/volto-eea-design-system/blob/develop/mockups/README.md) folder
+Checkout the docs found within the [mockups](https://github.com/eea/volto-eea-design-system/blob/figma_mockups/mockups/README.md) folder from the `figma_mockups` branch.
+
+> [!NOTE]
+We moved the mockups to a separate branch to avoid bloating the main branch with large files.
 
 ## Docusaurus and Storybook
 
