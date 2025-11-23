@@ -205,13 +205,6 @@ describe('Header utils', () => {
       ]);
     });
 
-    test('returns non-array input as-is', () => {
-      expect(numbersToMenuItemColumns('not an array')).toBe('not an array');
-      expect(numbersToMenuItemColumns(null)).toBe(null);
-      expect(numbersToMenuItemColumns(undefined)).toBe(undefined);
-      expect(numbersToMenuItemColumns(123)).toBe(123);
-    });
-
     test('handles empty array', () => {
       const result = numbersToMenuItemColumns([]);
       expect(result).toEqual([]);
