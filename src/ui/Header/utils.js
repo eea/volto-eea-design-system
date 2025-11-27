@@ -68,12 +68,12 @@ export const numberToColumnString = (num) => {
     'eight',
     'nine',
   ];
-  return numbers[num] ? `${numbers[num]} wide column` : '';
+  return numbers[num] ? `${numbers[num]} wide column` : num;
 };
 
 export const numbersToMenuItemColumns = (numbers) => {
   // Handle both single number and array of numbers for column dimensions
-  if (!Array.isArray(numbers)) return numberToColumnString(parseInt(numbers));
+  if (!Array.isArray(numbers)) return numberToColumnString(numbers);
   return numbers
     .map((num) => numberToColumnString(parseInt(num)))
     .filter((col) => col !== '');
