@@ -68,7 +68,7 @@ export const numberToColumnString = (num) => {
     'eight',
     'nine',
   ];
-  return numbers[num] ? `${numbers[num]} wide column` : num;
+  return numbers[num] ? `${numbers[num]} wide column` : '';
 };
 
 export const numbersToMenuItemColumns = (numbers) => {
