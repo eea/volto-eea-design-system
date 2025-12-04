@@ -249,7 +249,7 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
       (element) => element.title === 'At a glance',
     );
     const inDepth = element.items.find(
-      (element) => element.url.indexOf('in-depth') !== -1,
+      (element) => element.url && element.url.indexOf('in-depth') !== -1,
     );
     content = (
       <List>

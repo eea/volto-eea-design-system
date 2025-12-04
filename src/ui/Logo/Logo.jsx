@@ -29,7 +29,6 @@ const Logo = ({
       <Image
         src={inverted ? invertedSrc : src}
         alt={alt}
-        title={title}
         className="eea-logo"
         id={id}
         width={width}

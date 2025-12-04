@@ -72,7 +72,8 @@ export const numberToColumnString = (num) => {
 };
 
 export const numbersToMenuItemColumns = (numbers) => {
-  if (!Array.isArray(numbers)) return numbers;
+  // Handle both single number and array of numbers for column dimensions
+  if (!Array.isArray(numbers)) return numberToColumnString(numbers);
   return numbers
     .map((num) => numberToColumnString(parseInt(num)))
     .filter((col) => col !== '');
