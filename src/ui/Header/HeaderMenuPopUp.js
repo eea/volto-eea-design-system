@@ -43,7 +43,7 @@ const ItemGrid = ({
   return (
     <>
       {renderMenuItem(item, { className: 'sub-title', id: item_id })}
-      {item.items.length && !hideChildrenFromNavigation ? (
+      {item.items.length ? (
         <List
           aria-labelledby={item_id}
           className={columns && columns > 1 ? `has--${columns}--columns` : ''}
@@ -70,44 +70,34 @@ const Item = ({
         className: 'sub-title',
         id: item_id,
       })}
-      {!hideChildrenFromNavigation && (
-        <List className="menu-list" aria-labelledby={item_id}>
-          {item.items.map((listItem, index) => (
-            <React.Fragment key={index}>
-              {renderMenuItem(
-                listItem,
-                {
-                  className: 'item',
-                  key: index,
-                },
-                { children: icon && <Icon className={iconName} /> },
-              )}
-            </React.Fragment>
-          ))}
-        </List>
-      )}
+
+      <List className="menu-list" aria-labelledby={item_id}>
+        {item.items.map((listItem, index) => (
+          <React.Fragment key={index}>
+            {renderMenuItem(
+              listItem,
+              {
+                className: 'item',
+                key: index,
+              },
+              { children: icon && <Icon className={iconName} /> },
+            )}
+          </React.Fragment>
+        ))}
+      </List>
     </>
   );
 };
 
 const RenderItem = ({ layout, section, renderMenuItem, index }) => {
-  const hideChildrenFromNavigation =
-    layout.hideChildrenFromNavigation === undefined
-      ? true
-      : layout.hideChildrenFromNavigation;
   return !layout.menuItemChildrenListColumns ||
     layout.menuItemChildrenListColumns[index] === 1 ? (
-    <Item
-      item={section}
-      renderMenuItem={renderMenuItem}
-      hideChildrenFromNavigation={hideChildrenFromNavigation}
-    />
+    <Item item={section} renderMenuItem={renderMenuItem} />
   ) : (
     <ItemGrid
       item={section}
       columns={layout.menuItemChildrenListColumns[index]}
       renderMenuItem={renderMenuItem}
-      hideChildrenFromNavigation={hideChildrenFromNavigation}
     />
   );
 };
