@@ -134,23 +134,23 @@ describe('Header utils', () => {
         { url: '/topics/climate', items: [] },
       ];
 
-      // Should match /topics, not /topics-archive
+      // Should match /topics/climate (most specific parent), not /topics-archive
       const result1 = findBestMatchingMenuItem(
         menuItems,
         '/topics/climate/overview',
       );
-      expect(result1.bestMatchUrl).toBe('/topics');
+      expect(result1.bestMatchUrl).toBe('/topics/climate');
 
       // Should match /topics-archive exactly, not /topics
       const result2 = findBestMatchingMenuItem(menuItems, '/topics-archive');
       expect(result2.bestMatchUrl).toBe('/topics-archive');
 
-      // Should not match /topics when on /topics-archive/page
+      // Should match /topics-archive when on /topics-archive/page (parent-child relationship)
       const result3 = findBestMatchingMenuItem(
         menuItems,
         '/topics-archive/page',
       );
-      expect(result3.bestMatchUrl).toBe(null);
+      expect(result3.bestMatchUrl).toBe('/topics-archive');
     });
 
     test('root path ("/") handling', () => {
