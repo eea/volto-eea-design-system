@@ -73,8 +73,21 @@ export const numberToColumnString = (num) => {
 
 export const numbersToMenuItemColumns = (numbers) => {
   // Handle both single number and array of numbers for column dimensions
-  if (!Array.isArray(numbers)) return numberToColumnString(numbers);
+  // Also handle pre-formatted strings (e.g., 'at-a-glance three wide column')
+  if (!Array.isArray(numbers)) {
+    // If it's already a string containing 'wide column', return it as-is
+    if (typeof numbers === 'string' && numbers.includes('wide column')) {
+      return numbers;
+    }
+    return numberToColumnString(numbers);
+  }
   return numbers
-    .map((num) => numberToColumnString(parseInt(num)))
+    .map((num) => {
+      // If array element is already a formatted string, return it as-is
+      if (typeof num === 'string' && num.includes('wide column')) {
+        return num;
+      }
+      return numberToColumnString(parseInt(num));
+    })
     .filter((col) => col !== '');
 };
