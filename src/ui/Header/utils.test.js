@@ -98,6 +98,75 @@ describe('Header utils', () => {
       expect(result3.bestMatchUrl).toBe(null);
       expect(result3.bestScore).toBe(-1);
     });
+
+    test('handles trailing slashes in URLs correctly', () => {
+      const menuItems = [
+        { url: '/topics/', items: [] },
+        { url: '/topics/climate/', items: [] },
+      ];
+
+      // Active item with trailing slash should match menu item without
+      const result1 = findBestMatchingMenuItem(menuItems, '/topics/');
+      expect(result1.bestMatchUrl).toBe('/topics');
+
+      // Active item without trailing slash should match menu item with
+      const result2 = findBestMatchingMenuItem(menuItems, '/topics/climate');
+      expect(result2.bestMatchUrl).toBe('/topics/climate');
+
+      // Exact match with both having trailing slashes
+      const result3 = findBestMatchingMenuItem(menuItems, '/topics/climate/');
+      expect(result3.bestMatchUrl).toBe('/topics/climate');
+    });
+
+    test('handles multiple trailing slashes', () => {
+      const menuItems = [{ url: '/topics///', items: [] }];
+
+      const result = findBestMatchingMenuItem(menuItems, '/topics');
+      expect(result.bestMatchUrl).toBe('/topics');
+      expect(result.bestScore).toBe('/topics'.length + 1);
+    });
+
+    test('prevents sibling collision with similar URLs', () => {
+      // This is the key test for the megamenu fix
+      const menuItems = [
+        { url: '/topics', items: [] },
+        { url: '/topics-archive', items: [] },
+        { url: '/topics/climate', items: [] },
+      ];
+
+      // Should match /topics, not /topics-archive
+      const result1 = findBestMatchingMenuItem(
+        menuItems,
+        '/topics/climate/overview',
+      );
+      expect(result1.bestMatchUrl).toBe('/topics');
+
+      // Should match /topics-archive exactly, not /topics
+      const result2 = findBestMatchingMenuItem(menuItems, '/topics-archive');
+      expect(result2.bestMatchUrl).toBe('/topics-archive');
+
+      // Should not match /topics when on /topics-archive/page
+      const result3 = findBestMatchingMenuItem(
+        menuItems,
+        '/topics-archive/page',
+      );
+      expect(result3.bestMatchUrl).toBe(null);
+    });
+
+    test('root path ("/") handling', () => {
+      const menuItems = [
+        { url: '/', items: [] },
+        { url: '/topics', items: [] },
+      ];
+
+      const result1 = findBestMatchingMenuItem(menuItems, '/');
+      expect(result1.bestMatchUrl).toBe('/');
+
+      // Root should not match other paths
+      const result2 = findBestMatchingMenuItem(menuItems, '/topics');
+      expect(result2.bestMatchUrl).toBe('/topics');
+      expect(result2.bestScore).toBe('/topics'.length + 1);
+    });
   });
 
   describe('isMenuItemActive', () => {
@@ -213,6 +282,47 @@ describe('Header utils', () => {
     test('handles array with all invalid numbers', () => {
       const result = numbersToMenuItemColumns([0, 10, -1, 100]);
       expect(result).toEqual([]);
+    });
+
+    test('handles single number input (non-array)', () => {
+      expect(numbersToMenuItemColumns(3)).toBe('three wide column');
+      expect(numbersToMenuItemColumns(5)).toBe('five wide column');
+      expect(numbersToMenuItemColumns(0)).toBe('');
+      expect(numbersToMenuItemColumns(10)).toBe('');
+    });
+
+    test('handles pre-formatted string input', () => {
+      const result = numbersToMenuItemColumns('at-a-glance three wide column');
+      expect(result).toBe('at-a-glance three wide column');
+    });
+
+    test('handles array with pre-formatted strings', () => {
+      const result = numbersToMenuItemColumns([
+        'custom one wide column',
+        2,
+        'another three wide column',
+      ]);
+      expect(result).toEqual([
+        'custom one wide column',
+        'two wide column',
+        'another three wide column',
+      ]);
+    });
+
+    test('handles mixed array with numbers, strings, and pre-formatted strings', () => {
+      const result = numbersToMenuItemColumns([
+        1,
+        'special four wide column',
+        '3',
+        0,
+        'another five wide column',
+      ]);
+      expect(result).toEqual([
+        'one wide column',
+        'special four wide column',
+        'three wide column',
+        'another five wide column',
+      ]);
     });
   });
 });
