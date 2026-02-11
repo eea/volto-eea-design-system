@@ -77,11 +77,11 @@ const TopDropdownMenu = ({
         <Dropdown
           id={id}
           className={className}
-          text={() => (
+          trigger={
             <div className={`divider text ${classNameHeader}`}>
               {headerText}
             </div>
-          )}
+          }
           ref={dropdownRef}
           icon={icon || 'chevron down'}
           aria-label={label}
