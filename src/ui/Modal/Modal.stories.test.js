@@ -1,7 +1,7 @@
 import { render, fireEvent } from '@testing-library/react';
 import { Default } from './Modal.stories';
 import { Button } from 'semantic-ui-react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('Default component', () => {
   it('renders corectly', () => {

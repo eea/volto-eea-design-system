@@ -7,7 +7,7 @@ import {
   Animation,
   AnimationGroup,
 } from './Statistic.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('AnimationGroup component', () => {
   let observe;

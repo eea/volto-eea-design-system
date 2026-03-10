@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { GridExamples, Basic12 } from './ComponentGrid.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('GridExamples component', () => {
   it('renders corectly', () => {

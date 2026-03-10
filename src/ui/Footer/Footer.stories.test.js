@@ -5,7 +5,7 @@ import { Router } from 'react-router-dom';
 import { Default } from './Footer.stories';
 import { Provider } from 'react-redux';
 import Footer from './Footer';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import configureStore from 'redux-mock-store';
 
 describe('Default', () => {

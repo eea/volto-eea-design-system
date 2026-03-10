@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { Default, invalid as Invalid, BinaryRadio } from './Radio.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('BinaryRadio component', () => {
   it('renders corectly', () => {

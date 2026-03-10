@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Banner from './Banner';
 import { sharePage, getImageSource } from './Banner';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('Banner', () => {
   it('renders without errors', () => {
