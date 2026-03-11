@@ -1,9 +1,20 @@
 const fs = require('fs');
 const path = require('path');
 
+const projectRootCandidates = [
+  path.resolve(__dirname, '../../../'),
+  path.resolve(__dirname, '../../../../'),
+];
+
 const projectRootPath = fs.existsSync('./project')
   ? fs.realpathSync('./project')
-  : fs.realpathSync(__dirname + '/../../../');
+  : projectRootCandidates.find((candidate) =>
+      fs.existsSync(path.join(candidate, 'jsconfig.json')),
+    );
+
+if (!projectRootPath) {
+  throw new Error('Could not locate a project root containing jsconfig.json');
+}
 const jsConfig = require(
   path.join(projectRootPath, 'jsconfig.json'),
 ).compilerOptions;
