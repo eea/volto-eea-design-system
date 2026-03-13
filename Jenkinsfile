@@ -133,7 +133,7 @@ pipeline {
             }
 
             stage('Coverage Tests') {
-              parallel {
+              stages {
                 stage('Unit tests') {
                   steps {
                     script {
