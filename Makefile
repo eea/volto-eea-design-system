@@ -155,6 +155,10 @@ start-ci:
 	cd ../..
 	yarn start
 
+.PHONY: check-ci
+check-ci:
+	$(NODE_MODULES)/.bin/wait-on -t 240000  http://localhost:3000
+
 .PHONY: cypress-ci
 cypress-ci:
 	$(NODE_MODULES)/.bin/wait-on -t 240000  http://localhost:3000
