@@ -152,6 +152,7 @@ pipeline {
                         reportName: 'UTCoverage',
                         reportTitles: 'Unit Tests Code Coverage'
                       ])
+                        stash name: 'unit-coverage', includes: 'xunit-reports/**', allowEmpty: true
                     } finally {
                         catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
                             junit testResults: 'xunit-reports/junit.xml', allowEmptyResults: true
@@ -194,6 +195,7 @@ pipeline {
                                  reportFiles: 'index.html',
                                  reportName: 'CypressCoverage',
                                  reportTitles: 'Integration Tests Code Coverage'])
+                            stash name: 'cypress-coverage', includes: 'cypress-coverage/**', allowEmpty: true
                           }
                           if ( videos == 0 ) {
                             sh '''for file in $(find cypress-results -name *.xml); do if [ $(grep -E 'failures="[1-9].*"' $file | wc -l) -eq 0 ]; then testname=$(grep -E 'file=.*failures="0"' $file | sed 's#.* file=".*\\/\\(.*\\.[jsxt]\\+\\)" time.*#\\1#' );  rm -f cypress-videos/videos/$testname.mp4; fi; done'''
@@ -344,6 +346,8 @@ pipeline {
             env.sonarParams = " -Dsonar.branch.name=${env.BRANCH_NAME}"
           }
           withSonarQubeEnv('Sonarqube') {
+            unstash 'unit-coverage'
+            unstash 'cypress-coverage'
             sh '''sed -i "s#/app/src/addons/${GIT_NAME}/##g" xunit-reports/coverage/lcov.info'''
             sh '''sed -i "s#src/addons/${GIT_NAME}/##g" xunit-reports/coverage/lcov.info'''
             sh "export PATH=${scannerHome}/bin:${nodeJS}/bin:$PATH; sonar-scanner -Dsonar.javascript.lcov.reportPaths=./xunit-reports/coverage/lcov.info,./cypress-coverage/coverage/lcov.info -Dsonar.sources=./src -Dsonar.projectKey=$GIT_NAME -Dsonar.projectName=$GIT_NAME -Dsonar.projectVersion=\$(jq -r '.version' package.json) ${env.sonarParams}"
