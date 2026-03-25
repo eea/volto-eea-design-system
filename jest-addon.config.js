@@ -19,6 +19,12 @@ const path = require('path');
 const fs = require('fs');
 const fg = require('fast-glob');
 
+const voltoSlatePath = fs.existsSync(
+  path.join(__dirname, '../../../node_modules/@plone/volto-slate/src'),
+)
+  ? '<rootDir>/node_modules/@plone/volto-slate/src'
+  : '<rootDir>/node_modules/@plone/volto/packages/volto-slate/src';
+
 // Get the addon name from the current file path
 const pathParts = __filename.split(path.sep);
 const addonsIdx = pathParts.lastIndexOf('addons');
@@ -424,10 +430,8 @@ module.exports = {
     '@eeacms/countup': '<rootDir>/node_modules/@eeacms/countup/lib',
     '@eeacms/(.*?)/(.*)$': '<rootDir>/node_modules/@eeacms/$1/src/$2',
     '@eeacms/(.*?)$': '<rootDir>/node_modules/@eeacms/$1/src',
-    '@plone/volto-slate$':
-      '<rootDir>/node_modules/@plone/volto/packages/volto-slate/src',
-    '@plone/volto-slate/(.*)$':
-      '<rootDir>/node_modules/@plone/volto/packages/volto-slate/src/$1',
+    '@plone/volto-slate$': voltoSlatePath,
+    '@plone/volto-slate/(.*)$': `${voltoSlatePath}/$1`,
     '~/(.*)$': '<rootDir>/src/$1',
     'load-volto-addons':
       '<rootDir>/node_modules/@plone/volto/jest-addons-loader.js',

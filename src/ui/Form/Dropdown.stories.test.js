@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { ErrorDropdown, Default } from './Dropdown.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('ErrorDropdown component', () => {
   it('renders correctly', () => {

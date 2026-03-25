@@ -6,7 +6,7 @@ import {
   Multiple,
   MultipleReversed,
 } from './Timeline.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('MultipleReversed component', () => {
   it('renders corectly', () => {

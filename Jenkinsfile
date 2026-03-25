@@ -14,7 +14,8 @@ pipeline {
     DEPENDENCIES = ""
     BACKEND_PROFILES = "eea.kitkat:testing"
     BACKEND_ADDONS = ""
-    VOLTO = "16"
+    VOLTO = "17"
+    VOLTO18_BREAKING_CHANGES = "no"
     IMAGE_NAME = BUILD_TAG.toLowerCase()
   }
 
@@ -75,133 +76,229 @@ pipeline {
           }
         }
       }
-      stages {
-        stage('Build test image') {
-          steps {
-            checkout scm
-            sh '''docker build --pull --build-arg="VOLTO_VERSION=$VOLTO" --build-arg="ADDON_NAME=$NAMESPACE/$GIT_NAME"  --build-arg="ADDON_PATH=$GIT_NAME" . -t $IMAGE_NAME-frontend'''
-          }
-        }
-        
-        stage('Fix code') {
-          when {
-              environment name: 'CHANGE_ID', value: ''
-              not { branch 'master' }
-          }
-          steps {
-            script {
-              fix_result = sh(script: '''docker run --name="$IMAGE_NAME-fix" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME  $IMAGE_NAME-frontend ci-fix''', returnStatus: true)
-              sh '''docker cp $IMAGE_NAME-fix:/app/src/addons/$GIT_NAME/src .'''
-              sh '''docker rm -v $IMAGE_NAME-fix'''
-              FOUND_FIX = sh(script: '''git diff | wc -l''', returnStdout: true).trim()
-
-              if (FOUND_FIX != '0') {
-                withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GITHUB_TOKEN')]) {
-                  sh '''sed -i "s|url = .*|url = https://eea-jenkins:$GITHUB_TOKEN@github.com/eea/$GIT_NAME.git|" .git/config'''
-                }
-                sh '''git fetch origin $GIT_BRANCH:$GIT_BRANCH'''
-                sh '''git checkout $GIT_BRANCH'''
-                sh '''git add src/'''
-                sh '''git commit -m "style: Automated code fix" '''
-                sh '''git push --set-upstream origin $GIT_BRANCH'''
-                sh '''exit 1'''
+      parallel {
+        stage('Volto 17') {
+          agent { node { label 'docker-1.13'} }
+          stages {
+            stage('Build test image') {
+              steps {
+                checkout scm
+                sh '''docker build --pull --build-arg="VOLTO_VERSION=$VOLTO" --build-arg="ADDON_NAME=$NAMESPACE/$GIT_NAME"  --build-arg="ADDON_PATH=$GIT_NAME" . -t $IMAGE_NAME-frontend'''
               }
             }
-          }
-        }
 
-        stage('ES lint') {
-          steps {
-            sh '''docker run --rm --name="$IMAGE_NAME-eslint" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME $IMAGE_NAME-frontend lint'''
-          }
-        }
-
-        stage('Style lint') {
-          steps {
-            sh '''docker run --rm --name="$IMAGE_NAME-stylelint" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME  $IMAGE_NAME-frontend stylelint'''
-          }
-        }
-
-        stage('Prettier') {
-          steps {
-            sh '''docker run --rm --name="$IMAGE_NAME-prettier" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME  $IMAGE_NAME-frontend prettier'''
-          }
-        }
-
-        stage('Coverage Tests') {
-          parallel {
-            
-            stage('Unit tests') {
+            stage('Fix code') {
+              when {
+                  environment name: 'CHANGE_ID', value: ''
+                  not { branch 'master' }
+              }
               steps {
                 script {
-                  try {
-                    sh '''docker run --name="$IMAGE_NAME-volto" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME $IMAGE_NAME-frontend test-ci'''
-                    sh '''rm -rf xunit-reports'''
-                    sh '''mkdir -p xunit-reports'''
-                    sh '''docker cp $IMAGE_NAME-volto:/app/coverage xunit-reports/'''
-                    sh '''docker cp $IMAGE_NAME-volto:/app/junit.xml xunit-reports/'''
-                    publishHTML(target : [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: 'xunit-reports/coverage/lcov-report',
-                    reportFiles: 'index.html',
-                    reportName: 'UTCoverage',
-                    reportTitles: 'Unit Tests Code Coverage'
-                  ])
-                } finally {
-                    catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
-                        junit testResults: 'xunit-reports/junit.xml', allowEmptyResults: true
+                  fix_result = sh(script: '''docker run --name="$IMAGE_NAME-fix" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME  $IMAGE_NAME-frontend ci-fix''', returnStatus: true)
+                  sh '''docker cp $IMAGE_NAME-fix:/app/src/addons/$GIT_NAME/src .'''
+                  sh '''docker rm -v $IMAGE_NAME-fix'''
+                  FOUND_FIX = sh(script: '''git diff | wc -l''', returnStdout: true).trim()
+
+                  if (FOUND_FIX != '0') {
+                    withCredentials([string(credentialsId: 'eea-jenkins-token', variable: 'GITHUB_TOKEN')]) {
+                      sh '''sed -i "s|url = .*|url = https://eea-jenkins:$GITHUB_TOKEN@github.com/eea/$GIT_NAME.git|" .git/config'''
                     }
-                    sh script: '''docker rm -v $IMAGE_NAME-volto''', returnStatus: true
+                    sh '''git fetch origin $GIT_BRANCH:$GIT_BRANCH'''
+                    sh '''git checkout $GIT_BRANCH'''
+                    sh '''git add src/'''
+                    sh '''git commit -m "style: Automated code fix" '''
+                    sh '''git push --set-upstream origin $GIT_BRANCH'''
+                    sh '''exit 1'''
                   }
                 }
               }
             }
-            
-            stage('Integration tests') {
+
+            stage('ES lint') {
+              steps {
+                sh '''docker run --rm --name="$IMAGE_NAME-eslint" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME $IMAGE_NAME-frontend lint'''
+              }
+            }
+
+            stage('Style lint') {
+              steps {
+                sh '''docker run --rm --name="$IMAGE_NAME-stylelint" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME  $IMAGE_NAME-frontend stylelint'''
+              }
+            }
+
+            stage('Prettier') {
+              steps {
+                sh '''docker run --rm --name="$IMAGE_NAME-prettier" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME  $IMAGE_NAME-frontend prettier'''
+              }
+            }
+
+            stage('Coverage Tests') {
+              stages {
+                stage('Unit tests') {
+                  steps {
+                    script {
+                      try {
+                        sh '''docker run --name="$IMAGE_NAME-volto" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME $IMAGE_NAME-frontend test-ci'''
+                        sh '''rm -rf xunit-reports'''
+                        sh '''mkdir -p xunit-reports'''
+                        sh '''docker cp $IMAGE_NAME-volto:/app/coverage xunit-reports/'''
+                        sh '''docker cp $IMAGE_NAME-volto:/app/junit.xml xunit-reports/'''
+                        publishHTML(target : [
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'xunit-reports/coverage/lcov-report',
+                        reportFiles: 'index.html',
+                        reportName: 'UTCoverage',
+                        reportTitles: 'Unit Tests Code Coverage'
+                      ])
+                        stash name: 'unit-coverage', includes: 'xunit-reports/**', allowEmpty: true
+                    } finally {
+                        catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
+                            junit testResults: 'xunit-reports/junit.xml', allowEmptyResults: true
+                        }
+                        sh script: '''docker rm -v $IMAGE_NAME-volto''', returnStatus: true
+                      }
+                    }
+                  }
+                }
+
+                stage('Integration tests') {
+                  steps {
+                    script {
+                      try {
+                        sh '''docker run --pull always --rm -d --name="$IMAGE_NAME-plone" -e SITE="Plone" -e PROFILES="$BACKEND_PROFILES" -e ADDONS="$BACKEND_ADDONS" eeacms/plone-backend'''
+                        sh '''docker run -d --shm-size=4g --link $IMAGE_NAME-plone:plone --name="$IMAGE_NAME-cypress" -e "RAZZLE_INTERNAL_API_PATH=http://plone:8080/Plone" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME $IMAGE_NAME-frontend start-ci'''
+                        frontend = sh script:'''docker exec --workdir=/app/src/addons/${GIT_NAME} $IMAGE_NAME-cypress make check-ci''', returnStatus: true
+                        if ( frontend != 0 ) {
+                          sh '''docker logs $IMAGE_NAME-cypress; exit 1'''
+                        }
+                        sh '''timeout -s 9 1800 docker exec --workdir=/app/src/addons/${GIT_NAME} $IMAGE_NAME-cypress make cypress-ci'''
+                      } finally {
+                        try {
+                          if ( frontend == 0 ) {
+                          sh '''rm -rf cypress-videos cypress-results cypress-coverage cypress-screenshots'''
+                          sh '''mkdir -p cypress-videos cypress-results cypress-coverage cypress-screenshots'''
+                          videos = sh script: '''docker cp $IMAGE_NAME-cypress:/app/src/addons/$GIT_NAME/cypress/videos cypress-videos/''', returnStatus: true
+                          sh '''docker cp $IMAGE_NAME-cypress:/app/src/addons/$GIT_NAME/cypress/reports cypress-results/'''
+                          screenshots = sh script: '''docker cp $IMAGE_NAME-cypress:/app/src/addons/$GIT_NAME/cypress/screenshots cypress-screenshots''', returnStatus: true
+
+                          archiveArtifacts artifacts: 'cypress-screenshots/**', fingerprint: true, allowEmptyArchive: true
+
+                          coverage = sh script: '''docker cp $IMAGE_NAME-cypress:/app/src/addons/$GIT_NAME/coverage cypress-coverage''', returnStatus: true
+
+                          if ( coverage == 0 ) {
+                            publishHTML(target : [allowMissing: false,
+                                 alwaysLinkToLastBuild: true,
+                                 keepAll: true,
+                                 reportDir: 'cypress-coverage/coverage/lcov-report',
+                                 reportFiles: 'index.html',
+                                 reportName: 'CypressCoverage',
+                                 reportTitles: 'Integration Tests Code Coverage'])
+                            stash name: 'cypress-coverage', includes: 'cypress-coverage/**', allowEmpty: true
+                          }
+                          if ( videos == 0 ) {
+                            sh '''for file in $(find cypress-results -name *.xml); do if [ $(grep -E 'failures="[1-9].*"' $file | wc -l) -eq 0 ]; then testname=$(grep -E 'file=.*failures="0"' $file | sed 's#.* file=".*\\/\\(.*\\.[jsxt]\\+\\)" time.*#\\1#' );  rm -f cypress-videos/videos/$testname.mp4; fi; done'''
+                            archiveArtifacts artifacts: 'cypress-videos/**/*.mp4', fingerprint: true, allowEmptyArchive: true
+                          }
+                          }
+                        } finally {
+                          catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
+                            junit testResults: 'cypress-results/**/*.xml', allowEmptyResults: true
+                          }
+                          catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
+                            sh '''docker logs $IMAGE_NAME-cypress'''
+                          }
+                          sh script: "docker stop $IMAGE_NAME-cypress", returnStatus: true
+                          sh script: "docker stop $IMAGE_NAME-plone", returnStatus: true
+                          sh script: "docker rm -v $IMAGE_NAME-plone", returnStatus: true
+                          sh script: "docker rm -v $IMAGE_NAME-cypress", returnStatus: true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        stage('Volto 18') {
+          agent { node { label 'integration'} }
+          when {
+            allOf {
+              environment name: 'SKIP_TESTS', value: ''
+              not { environment name: 'VOLTO18_BREAKING_CHANGES', value: 'yes' }
+            }
+          }
+          stages {
+            stage('Build test image') {
+              steps {
+                sh '''docker build --pull --build-arg="VOLTO_VERSION=18-yarn" --build-arg="ADDON_NAME=$NAMESPACE/$GIT_NAME"  --build-arg="ADDON_PATH=$GIT_NAME" . -t $IMAGE_NAME-frontend18'''
+              }
+            }
+
+            stage('Unit tests Volto 18') {
               steps {
                 script {
                   try {
-                    sh '''docker run --pull always --rm -d --name="$IMAGE_NAME-plone" -e SITE="Plone" -e PROFILES="$BACKEND_PROFILES" -e ADDONS="$BACKEND_ADDONS" eeacms/plone-backend'''
-                    sh '''docker run -d --shm-size=3g --link $IMAGE_NAME-plone:plone --name="$IMAGE_NAME-cypress" -e "RAZZLE_INTERNAL_API_PATH=http://plone:8080/Plone" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME $IMAGE_NAME-frontend start-ci'''
-                    sh '''timeout -s 9 1800 docker exec --workdir=/app/src/addons/${GIT_NAME} $IMAGE_NAME-cypress make cypress-ci'''
+                    sh '''docker run --name="$IMAGE_NAME-volto18" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME $IMAGE_NAME-frontend18 test-ci'''
+                    sh '''rm -rf xunit-reports18'''
+                    sh '''mkdir -p xunit-reports18'''
+                    sh '''docker cp $IMAGE_NAME-volto18:/app/junit.xml xunit-reports18/'''
+                  } finally {
+                    catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
+                      junit testResults: 'xunit-reports18/junit.xml', allowEmptyResults: true
+                    }
+                    sh script: '''docker rm -v $IMAGE_NAME-volto18''', returnStatus: true
+                  }
+                }
+              }
+            }
+
+            stage('Integration tests Volto 18') {
+              steps {
+                script {
+                  try {
+                    sh '''docker run --pull always --rm -d --name="$IMAGE_NAME-plone18" -e SITE="Plone" -e PROFILES="$BACKEND_PROFILES" -e ADDONS="$BACKEND_ADDONS" eeacms/plone-backend'''
+                    sh '''docker run -d --shm-size=4g --link $IMAGE_NAME-plone18:plone --name="$IMAGE_NAME-cypress18" -e "RAZZLE_INTERNAL_API_PATH=http://plone:8080/Plone" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME $IMAGE_NAME-frontend18 start-ci'''
+                    sh '''timeout -s 9 1800 docker exec --workdir=/app/src/addons/${GIT_NAME} $IMAGE_NAME-cypress18 make cypress-ci'''
                   } finally {
                     try {
-                      sh '''rm -rf cypress-videos cypress-results cypress-coverage cypress-screenshots'''
-                      sh '''mkdir -p cypress-videos cypress-results cypress-coverage cypress-screenshots'''
-                      videos = sh script: '''docker cp $IMAGE_NAME-cypress:/app/src/addons/$GIT_NAME/cypress/videos cypress-videos/''', returnStatus: true
-                      sh '''docker cp $IMAGE_NAME-cypress:/app/src/addons/$GIT_NAME/cypress/reports cypress-results/'''
-                      screenshots = sh script: '''docker cp $IMAGE_NAME-cypress:/app/src/addons/$GIT_NAME/cypress/screenshots cypress-screenshots''', returnStatus: true
+                      sh '''rm -rf cypress-videos18 cypress-results18 cypress-coverage18 cypress-screenshots18'''
+                      sh '''mkdir -p cypress-videos18 cypress-results18 cypress-coverage18 cypress-screenshots18'''
+                      videos = sh script: '''docker cp $IMAGE_NAME-cypress18:/app/src/addons/$GIT_NAME/cypress/videos cypress-videos18/''', returnStatus: true
+                      sh '''docker cp $IMAGE_NAME-cypress18:/app/src/addons/$GIT_NAME/cypress/reports cypress-results18/'''
+                      screenshots = sh script: '''docker cp $IMAGE_NAME-cypress18:/app/src/addons/$GIT_NAME/cypress/screenshots cypress-screenshots18''', returnStatus: true
 
-                      archiveArtifacts artifacts: 'cypress-screenshots/**', fingerprint: true, allowEmptyArchive: true
+                      archiveArtifacts artifacts: 'cypress-screenshots18/**', fingerprint: true, allowEmptyArchive: true
 
-                      coverage = sh script: '''docker cp $IMAGE_NAME-cypress:/app/src/addons/$GIT_NAME/coverage cypress-coverage''', returnStatus: true
+                      coverage = sh script: '''docker cp $IMAGE_NAME-cypress18:/app/src/addons/$GIT_NAME/coverage cypress-coverage18''', returnStatus: true
 
                       if ( coverage == 0 ) {
                         publishHTML(target : [allowMissing: false,
                              alwaysLinkToLastBuild: true,
                              keepAll: true,
-                             reportDir: 'cypress-coverage/coverage/lcov-report',
+                             reportDir: 'cypress-coverage18/coverage/lcov-report',
                              reportFiles: 'index.html',
-                             reportName: 'CypressCoverage',
-                             reportTitles: 'Integration Tests Code Coverage'])
+                             reportName: 'CypressCoverage18',
+                             reportTitles: 'Integration Tests Code Coverage Volto 18'])
                       }
                       if ( videos == 0 ) {
-                        sh '''for file in $(find cypress-results -name *.xml); do if [ $(grep -E 'failures="[1-9].*"' $file | wc -l) -eq 0 ]; then testname=$(grep -E 'file=.*failures="0"' $file | sed 's#.* file=".*\\/\\(.*\\.[jsxt]\\+\\)" time.*#\\1#' );  rm -f cypress-videos/videos/$testname.mp4; fi; done'''
-                        archiveArtifacts artifacts: 'cypress-videos/**/*.mp4', fingerprint: true, allowEmptyArchive: true
+                        sh '''for file in $(find cypress-results18 -name *.xml); do if [ $(grep -E 'failures="[1-9].*"' $file | wc -l) -eq 0 ]; then testname=$(grep -E 'file=.*failures="0"' $file | sed 's#.* file=".*\\/\\(.*\\.[jsxt]\\+\\)" time.*#\\1#' );  rm -f cypress-videos18/videos/$testname.mp4; fi; done'''
+                        archiveArtifacts artifacts: 'cypress-videos18/**/*.mp4', fingerprint: true, allowEmptyArchive: true
                       }
                     } finally {
                       catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
-                        junit testResults: 'cypress-results/**/*.xml', allowEmptyResults: true
+                        junit testResults: 'cypress-results18/**/*.xml', allowEmptyResults: true
                       }
                       catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
-                        sh '''docker logs $IMAGE_NAME-cypress'''
+                        sh '''docker logs $IMAGE_NAME-cypress18'''
                       }
-                      sh script: "docker stop $IMAGE_NAME-cypress", returnStatus: true
-                      sh script: "docker stop $IMAGE_NAME-plone", returnStatus: true
-                      sh script: "docker rm -v $IMAGE_NAME-plone", returnStatus: true
-                      sh script: "docker rm -v $IMAGE_NAME-cypress", returnStatus: true
+                      sh script: "docker stop $IMAGE_NAME-cypress18", returnStatus: true
+                      sh script: "docker stop $IMAGE_NAME-plone18", returnStatus: true
+                      sh script: "docker rm -v $IMAGE_NAME-plone18", returnStatus: true
+                      sh script: "docker rm -v $IMAGE_NAME-cypress18", returnStatus: true
                     }
                   }
                 }
@@ -212,7 +309,8 @@ pipeline {
       }
       post {
         always {
-            sh script: "docker rmi $IMAGE_NAME-frontend", returnStatus: true
+          sh script: "docker rmi $IMAGE_NAME-frontend", returnStatus: true
+          sh script: "docker rmi $IMAGE_NAME-frontend18", returnStatus: true
         }
       }
     }
@@ -248,6 +346,8 @@ pipeline {
             env.sonarParams = " -Dsonar.branch.name=${env.BRANCH_NAME}"
           }
           withSonarQubeEnv('Sonarqube') {
+            unstash 'unit-coverage'
+            unstash 'cypress-coverage'
             sh '''sed -i "s#/app/src/addons/${GIT_NAME}/##g" xunit-reports/coverage/lcov.info'''
             sh '''sed -i "s#src/addons/${GIT_NAME}/##g" xunit-reports/coverage/lcov.info'''
             sh "export PATH=${scannerHome}/bin:${nodeJS}/bin:$PATH; sonar-scanner -Dsonar.javascript.lcov.reportPaths=./xunit-reports/coverage/lcov.info,./cypress-coverage/coverage/lcov.info -Dsonar.sources=./src -Dsonar.projectKey=$GIT_NAME -Dsonar.projectName=$GIT_NAME -Dsonar.projectVersion=\$(jq -r '.version' package.json) ${env.sonarParams}"

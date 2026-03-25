@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { GridIconCard, Default } from './IconCard.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('GridIconCard component', () => {
   it('renders correctly', () => {

@@ -52,6 +52,11 @@ See [Storybook](https://eea.github.io/eea-storybook/).
 
 Go to http://localhost:3000
 
+`make start` now defaults to Volto 18. To run the same setup against Volto 17, use:
+
+      VOLTO_VERSION=17 make
+      VOLTO_VERSION=17 make start
+
 ### Add volto-eea-design-system to your Volto project
 
 1. Make sure you have a [Plone backend](https://plone.org/download) up-and-running at http://localhost:8080/Plone
@@ -65,29 +70,38 @@ Go to http://localhost:3000
 * If you already have a volto project, just update `package.json`:
 
    ```JSON
-   "addons": [
-       "@eeacms/volto-eea-design-system"
-   ],
-
    "dependencies": {
        "@eeacms/volto-eea-design-system": "*"
    }
    ```
 
-* If not, create one:
+   and `volto.config.js`:
 
-   ```
-   npm install -g yo @plone/generator-volto
-   yo @plone/volto my-volto-project --canary --addon @eeacms/volto-eea-design-system
-   cd my-volto-project
+   ```JavaScript
+   const addons = ['@eeacms/volto-eea-design-system'];
    ```
 
-1. Install new add-ons and restart Volto:
+* If not, create one with Cookieplone, as recommended by the official Plone documentation for Volto 18+:
 
    ```
-   yarn
-   yarn start
+   uvx cookieplone project
+   cd project-title
    ```
+
+1. Install or update dependencies, then start the project:
+
+   ```
+   make install
+   ```
+
+   For a Cookieplone project, start the backend and frontend in separate terminals:
+
+   ```
+   make backend-start
+   make frontend-start
+   ```
+
+   For a legacy Volto 17 project, install the package with `yarn` and restart the frontend as usual.
 
 1. Go to http://localhost:3000
 

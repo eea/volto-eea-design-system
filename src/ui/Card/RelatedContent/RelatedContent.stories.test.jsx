@@ -5,7 +5,7 @@ import {
   DefaultOdd,
   DefaultEven,
 } from './RelatedContent.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('RelatedContentInTab component', () => {
   it('renders corectly', () => {

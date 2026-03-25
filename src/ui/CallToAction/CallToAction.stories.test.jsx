@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Default, Inverted, Link, Labeled } from './CallToAction.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('Link', () => {
   it('renders correctly', () => {
