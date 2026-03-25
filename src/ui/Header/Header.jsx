@@ -9,7 +9,7 @@ import cx from 'classnames';
 import { Container, Image, Menu, Grid, Dropdown } from 'semantic-ui-react'; // Dropdown,
 
 import closeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/close-line.svg';
-import searchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search-line.svg';
+import searchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/ai-search.svg';
 import burgerIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/menu-line.svg';
 
 import HeaderSearchPopUp from './HeaderSearchPopUp';

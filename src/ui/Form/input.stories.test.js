@@ -7,7 +7,7 @@ import {
   LoadingInput,
   ErrorInput,
 } from './Input.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('ErrorInput component', () => {
   it('renders corectly', () => {

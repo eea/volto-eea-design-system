@@ -46,7 +46,7 @@ endif
 DIR=$(shell basename $$(pwd))
 NODE_MODULES?="../../../node_modules"
 PLONE_VERSION?=6
-VOLTO_VERSION?=16
+VOLTO_VERSION?=18-yarn
 ADDON_PATH="${DIR}"
 ADDON_NAME="@eeacms/${ADDON_PATH}"
 DOCKER_COMPOSE=PLONE_VERSION=${PLONE_VERSION} VOLTO_VERSION=${VOLTO_VERSION} ADDON_NAME=${ADDON_NAME} ADDON_PATH=${ADDON_PATH} docker compose
@@ -154,6 +154,10 @@ start-ci:
 	cp .coverage.babel.config.js /app/babel.config.js
 	cd ../..
 	yarn start
+
+.PHONY: check-ci
+check-ci:
+	$(NODE_MODULES)/.bin/wait-on -t 240000  http://localhost:3000
 
 .PHONY: cypress-ci
 cypress-ci:

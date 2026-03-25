@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { DividerWithContent, Default } from './Divider.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('DividerWithContent component', () => {
   it('renders correctly', () => {
