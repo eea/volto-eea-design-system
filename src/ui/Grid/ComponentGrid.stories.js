@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import times from 'lodash/times';
 import React from 'react';
 import { Grid, Container } from 'semantic-ui-react';
 
@@ -9,7 +9,7 @@ export default {
 };
 
 const getColumns = (number, text) => {
-  const columns = _.times(number, (i) => (
+  const columns = times(number, (i) => (
     <Grid.Column key={i}>
       <div className="col-example">{text}</div>
     </Grid.Column>
