@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import { Dropdown, Image, Segment, Container } from 'semantic-ui-react';
-import { Logo } from '@eeacms/volto-eea-design-system/ui';
+import Logo from '@eeacms/volto-eea-design-system/ui/Logo/Logo';
 
 import LogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo.svg';
 import InvertedLogoImage from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/logo/eea-logo-white.svg';
