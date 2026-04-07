@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from './Footer';
+import Contact from './Contact';
 
 import { Grid, Image } from 'semantic-ui-react';
 
@@ -39,7 +39,7 @@ const SubFooter = (props) => {
         {props.contacts?.length > 0 && (
           <Grid.Column mobile={12} tablet={12} computer={4}>
             <div className="item">
-              <Footer.Contact contacts={props.contacts} />
+              <Contact contacts={props.contacts} />
             </div>
           </Grid.Column>
         )}
