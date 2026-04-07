@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, Container } from 'semantic-ui-react';
-import _ from 'lodash';
+import sortBy from 'lodash/sortBy';
 
 export default {
   title: 'Components/Table',
@@ -224,7 +224,7 @@ function reducer(state, action) {
 
       return {
         column: action.column,
-        data: _.sortBy(state.data, [action.column]),
+        data: sortBy(state.data, [action.column]),
         direction: 'ascending',
       };
     default:

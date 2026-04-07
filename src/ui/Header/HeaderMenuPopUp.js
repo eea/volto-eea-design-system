@@ -8,7 +8,8 @@ import {
   Transition,
 } from 'semantic-ui-react';
 
-import { cloneDeep, kebabCase } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
+import kebabCase from 'lodash/kebabCase';
 
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 import { numbersToMenuItemColumns } from '../Header/utils';
