@@ -16,8 +16,8 @@ import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
 import { findBestMatchingMenuItem, isMenuItemActive } from './utils';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
-import { isInternalURL } from '@plone/volto/helpers';
+import omit from 'lodash/omit';
+import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 
 Header.propTypes = {
@@ -390,7 +390,7 @@ const BurgerAction = React.forwardRef((props, ref) => (
   <button
     ref={ref}
     className={`burger-action ${props.className}`}
-    {..._.omit(props, ['onClick', 'children', 'className', 'ref'])}
+    {...omit(props, ['onClick', 'children', 'className', 'ref'])}
     onClick={props.onClick}
   >
     {props.children}

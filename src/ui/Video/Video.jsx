@@ -38,7 +38,7 @@ Video.Embed = ({
 
 Video.Track = ({ tracks }) =>
   tracks.map((track, index) => {
-    return <track {...track} />;
+    return <track key={track.src ?? track.srcLang ?? index} {...track} />;
   });
 
 export default Video;
