@@ -1,6 +1,6 @@
 import React from 'react';
 import NewTabLabeledIcon from './NewTabLabeledIcon';
-import LabeledIconGroup from '../LabeledIconGroup/LabeledIconGroup';
+import LabeledIconGroup from '@eeacms/volto-eea-design-system/ui/LabeledIconGroup/LabeledIconGroup';
 
 export default {
   title: 'Components/Labeled Icons/New Tab',

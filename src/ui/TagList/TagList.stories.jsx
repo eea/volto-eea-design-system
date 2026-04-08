@@ -1,6 +1,6 @@
 import React from 'react';
 import TagList from './TagList';
-import Tag from '../Tag/Tag';
+import Tag from '@eeacms/volto-eea-design-system/ui/Tag/Tag';
 import { Container } from 'semantic-ui-react';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';

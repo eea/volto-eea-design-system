@@ -5,7 +5,7 @@ import Banner from './Banner';
 import imgUrl from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/banner.png';
 import { Icon, Container } from 'semantic-ui-react';
 import Popup from '@eeacms/volto-eea-design-system/ui/Popup/Popup';
-import Copyright from '../Copyright/Copyright';
+import Copyright from '@eeacms/volto-eea-design-system/ui/Copyright/Copyright';
 
 export default {
   title: 'Components/Page Header',
