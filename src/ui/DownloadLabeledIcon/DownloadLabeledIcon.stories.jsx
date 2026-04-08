@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
 import DownloadLabeledIcon from './DownloadLabeledIcon';
-import LabeledIconGroup from '../LabeledIconGroup/LabeledIconGroup';
+import LabeledIconGroup from '@eeacms/volto-eea-design-system/ui/LabeledIconGroup/LabeledIconGroup';
 
 export default {
   title: 'Components/Labeled Icons/Download',
