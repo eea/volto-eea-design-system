@@ -12,7 +12,7 @@
 @copyrightWrapperPaddingLeft: @rem-space-3;
 @copyrightWrapperPaddingRight: @rem-space-3;
 @copyrightWrapperBottom: @rem-space-4;
-@copyrightAlignItems: start;
+@copyrightAlignItems: flex-start;
 
 /* Image block */
 @floatImageLeftMaxWidth: 50%;

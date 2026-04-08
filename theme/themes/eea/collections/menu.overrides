@@ -230,7 +230,7 @@
 .ui.pagination.pointing.secondary, .ui.pagination {
   display: flex;
   width: @paginationWidth;
-  justify-content: start;
+  justify-content: flex-start;
 
   @media only screen and (min-width: @tabletBreakpoint) {
     justify-content: center;
