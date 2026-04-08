@@ -25,6 +25,10 @@ This package provides the following features:
 2. A repository for the design system source files and mockups
 3. A website to showcase the design system
 
+## Upgrade
+
+- Version `^2.0.0` requires `^eea.volto.policy@12.0`
+
 ### Try the design system website
 
 Checkout the docs found within the [website](https://github.com/eea/volto-eea-design-system/blob/develop/website/README.md) folder
