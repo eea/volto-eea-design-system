@@ -12,7 +12,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import kebabCase from 'lodash/kebabCase';
 
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
-import { numbersToMenuItemColumns } from '../Header/utils';
+import { numbersToMenuItemColumns } from '@eeacms/volto-eea-design-system/ui/Header/utils';
 
 const generateCssClassFromUrl = (url) => {
   if (!url) return '';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header, Divider, Container } from 'semantic-ui-react';
-import ContentBox from '../ContentBox/ContentBox';
+import ContentBox from '@eeacms/volto-eea-design-system/ui/ContentBox/ContentBox';
 
 export default {
   title: 'Components/Heading/Underlined',

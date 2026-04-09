@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Quote from '../Quote';
+import Quote from '@eeacms/volto-eea-design-system/ui/Quote/Quote';
 import { Grid, Card, Image, Divider } from 'semantic-ui-react';
 
 Testimonial.propTypes = {

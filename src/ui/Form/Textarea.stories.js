@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextArea, Form, Container } from 'semantic-ui-react';
-import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
+import FormFieldWrapper from '@eeacms/volto-eea-design-system/ui/FormFieldWrapper/FormFieldWrapper';
 
 export default {
   title: 'Components/Forms/Text Area',
