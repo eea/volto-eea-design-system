@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Container, Input, List, Image } from 'semantic-ui-react';
 import { withRouter, Link } from 'react-router-dom';
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';
 import { handleEnterKeyPress } from '@eeacms/volto-eea-design-system/helpers';
 
-import searchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/ai-search.svg';
+import searchSVG from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search-line.svg';
+import aiSearchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/ai-search.svg';
 
 const getRandomItems = (arr, max) => {
   return (
@@ -58,6 +60,12 @@ function HeaderSearchPopUp({
   const [visibleSuggestions, setVisibileSuggestions] = React.useState(
     getRandomItems(suggestions, maxToShow),
   );
+
+  const headerSettings = useSelector(
+    (state) => state.eeaSettings?.data?.header || {},
+  );
+
+  const searchIcon = headerSettings.useAISearchIcon ? aiSearchIcon : searchSVG;
 
   useEffect(() => {
     setVisibileSuggestions(getRandomItems(suggestions, maxToShow));
