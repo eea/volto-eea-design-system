@@ -2,8 +2,12 @@ import React from 'react';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
 import { render, fireEvent, act } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import { Default } from './Header.stories';
 import '@testing-library/jest-dom';
+
+const mockStore = createStore(() => ({ eeaSettings: { data: { header: {} } } }));
 
 global.ResizeObserver = require('resize-observer-polyfill');
 
@@ -129,9 +133,11 @@ describe('Default component', () => {
 
   it('renders the default with correct number of cards', () => {
     const { container, getByText } = render(
-      <Router history={history}>
-        <Default {...args} />
-      </Router>,
+      <Provider store={mockStore}>
+        <Router history={history}>
+          <Default {...args} />
+        </Router>
+      </Provider>,
     );
     const dropdown = container.querySelector('.official-union .content');
     fireEvent.click(dropdown);
