@@ -6,16 +6,18 @@ import { Provider } from 'react-redux';
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import '@testing-library/jest-dom';
 
-const mockStore = {
-  getState: () => ({
-    eeaSettings: {
-      data: {
-        header: {
-          useAISearchIcon: false,
-        },
+const mockState = {
+  eeaSettings: {
+    data: {
+      header: {
+        useAISearchIcon: false,
       },
     },
-  }),
+  },
+};
+
+const mockStore = {
+  getState: () => mockState,
   subscribe: () => () => {},
   dispatch: () => {},
 };
