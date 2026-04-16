@@ -7,7 +7,9 @@ import { createStore } from 'redux';
 import { Default } from './Header.stories';
 import '@testing-library/jest-dom';
 
-const mockStore = createStore(() => ({ eeaSettings: { data: { header: {} } } }));
+const mockStore = createStore(() => ({
+  eeaSettings: { data: { header: {} } },
+}));
 
 global.ResizeObserver = require('resize-observer-polyfill');
 
