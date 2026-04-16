@@ -2,41 +2,53 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import '@testing-library/jest-dom';
+
+const mockState = {
+  eeaSettings: {
+    data: {
+      header: {
+        useAISearchIcon: false,
+      },
+    },
+  },
+};
+
+const mockStore = {
+  getState: () => mockState,
+  subscribe: () => () => {},
+  dispatch: () => {},
+};
 
 describe('HeaderSearchPopUp', () => {
   let history;
   const mockOnClose = jest.fn();
   const sampleHeaderSearchBox = [
     {
+      type: 'search-input',
       path: '/search',
-      buttonTitle: 'Advanced Search',
-      buttonUrl: '/advanced-search',
-      description: 'Sample description',
       placeholder: 'Search',
-      searchSuggestions: {
-        suggestionsTitle: 'Suggestions Title',
-        suggestions: ['suggestion 1', 'suggestion 2', 'suggestion 3'],
-        maxToShow: 3,
-      },
-      isDefault: true,
+      suggestionsTitle: 'Suggestions Title',
+      suggestions: ['suggestion 1', 'suggestion 2', 'suggestion 3'],
+      maxToShow: 3,
+    },
+    {
+      type: 'button-link',
+      title: 'Advanced Search',
+      url: '/advanced-search',
     },
   ];
 
   const sampleHeaderSearchBoxWithMatchpath = [
     {
+      type: 'search-input',
       matchpath: '/search',
-      buttonTitle: 'Advanced Search',
-      buttonUrl: undefined,
-      description: 'Sample description',
       placeholder: 'Search',
-      searchSuggestions: {
-        suggestionsTitle: 'Suggestions Title',
-        suggestions: ['suggestion 1', 'suggestion 2', 'suggestion 3'],
-        maxToShow: 3,
-      },
-      isDefault: true,
+      suggestionsTitle: 'Suggestions Title',
+      suggestions: ['suggestion 1', 'suggestion 2', 'suggestion 3'],
+      maxToShow: 3,
     },
   ];
 
@@ -50,26 +62,30 @@ describe('HeaderSearchPopUp', () => {
 
   it('should render HeaderSearchPopUp', () => {
     render(
-      <Router history={history}>
-        <HeaderSearchPopUp
-          headerSearchBox={sampleHeaderSearchBox}
-          onClose={mockOnClose}
-          triggerRefs={[]}
-        />
-      </Router>,
+      <Provider store={mockStore}>
+        <Router history={history}>
+          <HeaderSearchPopUp
+            headerSearchBox={sampleHeaderSearchBox}
+            onClose={mockOnClose}
+            triggerRefs={[]}
+          />
+        </Router>
+      </Provider>,
     );
     expect(screen.getByPlaceholderText('Search')).toBeInTheDocument();
   });
 
   it('should update search text on change', () => {
     render(
-      <Router history={history}>
-        <HeaderSearchPopUp
-          headerSearchBox={sampleHeaderSearchBox}
-          onClose={mockOnClose}
-          triggerRefs={[]}
-        />
-      </Router>,
+      <Provider store={mockStore}>
+        <Router history={history}>
+          <HeaderSearchPopUp
+            headerSearchBox={sampleHeaderSearchBox}
+            onClose={mockOnClose}
+            triggerRefs={[]}
+          />
+        </Router>
+      </Provider>,
     );
     const input = screen.getByPlaceholderText('Search');
     fireEvent.change(input, { target: { value: 'New text' } });
@@ -80,32 +96,35 @@ describe('HeaderSearchPopUp', () => {
     window.searchContext = { resetSearch: jest.fn() };
 
     const { container } = render(
-      <Router history={history}>
-        <HeaderSearchPopUp
-          headerSearchBox={sampleHeaderSearchBox}
-          onClose={mockOnClose}
-          triggerRefs={[]}
-        />
-      </Router>,
+      <Provider store={mockStore}>
+        <Router history={history}>
+          <HeaderSearchPopUp
+            headerSearchBox={sampleHeaderSearchBox}
+            onClose={mockOnClose}
+            triggerRefs={[]}
+          />
+        </Router>
+      </Provider>,
     );
     const input = screen.getByPlaceholderText('Search');
     fireEvent.change(input, { target: { value: 'Search text' } });
     fireEvent.submit(container.querySelector('form'));
     fireEvent.keyDown(input, { key: 'Enter', code: 'Enter' });
     expect(history.location.pathname).toBe('/search');
-    // expect(history.location.search).toBe('?q=Search text');
   });
 
   it('should navigate to the suggestion when a suggestion is clicked', () => {
     window.searchContext = { resetSearch: jest.fn() };
 
     render(
-      <Router history={history}>
-        <HeaderSearchPopUp
-          headerSearchBox={sampleHeaderSearchBoxWithMatchpath}
-          onClose={mockOnClose}
-        />
-      </Router>,
+      <Provider store={mockStore}>
+        <Router history={history}>
+          <HeaderSearchPopUp
+            headerSearchBox={sampleHeaderSearchBoxWithMatchpath}
+            onClose={mockOnClose}
+          />
+        </Router>
+      </Provider>,
     );
     fireEvent.click(screen.getByText('suggestion 1'));
     expect(history.location.pathname).toBe('/');
@@ -114,13 +133,15 @@ describe('HeaderSearchPopUp', () => {
 
   it('should handle keydown events on search action button', () => {
     const { container } = render(
-      <Router history={history}>
-        <HeaderSearchPopUp
-          headerSearchBox={sampleHeaderSearchBox}
-          onClose={mockOnClose}
-          triggerRefs={[]}
-        />
-      </Router>,
+      <Provider store={mockStore}>
+        <Router history={history}>
+          <HeaderSearchPopUp
+            headerSearchBox={sampleHeaderSearchBox}
+            onClose={mockOnClose}
+            triggerRefs={[]}
+          />
+        </Router>
+      </Provider>,
     );
 
     const searchActionButton = container.querySelector(
@@ -128,25 +149,23 @@ describe('HeaderSearchPopUp', () => {
     );
     expect(searchActionButton).toBeInTheDocument();
 
-    // Test Enter key press on search action button
     fireEvent.keyDown(searchActionButton, { key: 'Enter', code: 'Enter' });
-
-    // Test other key press (should not trigger action)
     fireEvent.keyDown(searchActionButton, { key: 'Tab', code: 'Tab' });
   });
 
   it('should handle search without searchContext', () => {
-    // Remove searchContext to test the fallback
     delete window.searchContext;
 
     const { container } = render(
-      <Router history={history}>
-        <HeaderSearchPopUp
-          headerSearchBox={sampleHeaderSearchBox}
-          onClose={mockOnClose}
-          triggerRefs={[]}
-        />
-      </Router>,
+      <Provider store={mockStore}>
+        <Router history={history}>
+          <HeaderSearchPopUp
+            headerSearchBox={sampleHeaderSearchBox}
+            onClose={mockOnClose}
+            triggerRefs={[]}
+          />
+        </Router>
+      </Provider>,
     );
 
     const input = screen.getByPlaceholderText('Search');
@@ -157,16 +176,17 @@ describe('HeaderSearchPopUp', () => {
   });
 
   it('should handle suggestion click without searchContext', () => {
-    // Remove searchContext to test the fallback
     delete window.searchContext;
 
     render(
-      <Router history={history}>
-        <HeaderSearchPopUp
-          headerSearchBox={sampleHeaderSearchBox}
-          onClose={mockOnClose}
-        />
-      </Router>,
+      <Provider store={mockStore}>
+        <Router history={history}>
+          <HeaderSearchPopUp
+            headerSearchBox={sampleHeaderSearchBox}
+            onClose={mockOnClose}
+          />
+        </Router>
+      </Provider>,
     );
 
     fireEvent.click(screen.getByText('suggestion 1'));
@@ -176,23 +196,27 @@ describe('HeaderSearchPopUp', () => {
   it('should render without search suggestions', () => {
     const headerSearchBoxNoSuggestions = [
       {
+        type: 'search-input',
         path: '/search',
-        buttonTitle: 'Advanced Search',
-        buttonUrl: '/advanced-search',
-        description: 'Sample description',
         placeholder: 'Search',
-        isDefault: true,
+      },
+      {
+        type: 'button-link',
+        title: 'Advanced Search',
+        url: '/advanced-search',
       },
     ];
 
     render(
-      <Router history={history}>
-        <HeaderSearchPopUp
-          headerSearchBox={headerSearchBoxNoSuggestions}
-          onClose={mockOnClose}
-          triggerRefs={[]}
-        />
-      </Router>,
+      <Provider store={mockStore}>
+        <Router history={history}>
+          <HeaderSearchPopUp
+            headerSearchBox={headerSearchBoxNoSuggestions}
+            onClose={mockOnClose}
+            triggerRefs={[]}
+          />
+        </Router>
+      </Provider>,
     );
 
     expect(screen.getByPlaceholderText('Search')).toBeInTheDocument();
@@ -202,28 +226,25 @@ describe('HeaderSearchPopUp', () => {
   it('should render with empty suggestions array', () => {
     const headerSearchBoxEmptySuggestions = [
       {
+        type: 'search-input',
         path: '/search',
-        buttonTitle: 'Advanced Search',
-        buttonUrl: '/advanced-search',
-        description: 'Sample description',
         placeholder: 'Search',
-        searchSuggestions: {
-          suggestionsTitle: 'Suggestions Title',
-          suggestions: [],
-          maxToShow: 3,
-        },
-        isDefault: true,
+        suggestionsTitle: 'Suggestions Title',
+        suggestions: [],
+        maxToShow: 3,
       },
     ];
 
     render(
-      <Router history={history}>
-        <HeaderSearchPopUp
-          headerSearchBox={headerSearchBoxEmptySuggestions}
-          onClose={mockOnClose}
-          triggerRefs={[]}
-        />
-      </Router>,
+      <Provider store={mockStore}>
+        <Router history={history}>
+          <HeaderSearchPopUp
+            headerSearchBox={headerSearchBoxEmptySuggestions}
+            onClose={mockOnClose}
+            triggerRefs={[]}
+          />
+        </Router>
+      </Provider>,
     );
 
     expect(screen.getByPlaceholderText('Search')).toBeInTheDocument();

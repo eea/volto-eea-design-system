@@ -5,11 +5,13 @@
 
 import React from 'react'; // , { Component }
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import cx from 'classnames';
 import { Container, Image, Menu, Grid, Dropdown } from 'semantic-ui-react'; // Dropdown,
 
 import closeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/close-line.svg';
-import searchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/ai-search.svg';
+import searchSVG from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search-line.svg';
+import aiSearchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/ai-search.svg';
 import burgerIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/menu-line.svg';
 
 import HeaderSearchPopUp from './HeaderSearchPopUp';
@@ -159,6 +161,11 @@ const Main = ({
   const [burger, setBurger] = React.useState('');
   const searchInputRef = React.useRef(null);
   const [isClient, setIsClient] = React.useState();
+  const headerSettings = useSelector(
+    (state) => state.eeaSettings?.data?.header || {},
+  );
+
+  const searchIcon = headerSettings.useAISearchIcon ? aiSearchIcon : searchSVG;
 
   const itemsLayouts =
     menuItemsLayouts || config.settings?.menuItemsLayouts || {};
