@@ -4,7 +4,26 @@ import '@testing-library/jest-dom';
 
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import '@testing-library/jest-dom';
+
+const mockStore = {
+  getState: () => ({
+    eeaSettings: {
+      data: {
+        header: {
+          useAISearchIcon: false,
+        },
+      },
+    },
+  }),
+  subscribe: () => () => {},
+  dispatch: () => {},
+};
+
+const renderWithProvider = (component) => {
+  return render(<Provider store={mockStore}>{component}</Provider>);
+};
 
 // Mock subcomponents that pull in ESM helpers not transformed by Jest here
 jest.doMock('./HeaderSearchPopUp', () => () => null);
@@ -26,16 +45,16 @@ describe('Header component', () => {
   });
 
   it('renders without crashing', () => {
-    render(<Header />);
+    renderWithProvider(<Header />);
   });
 
   it('renders children correctly', () => {
-    render(<Header>Test Children</Header>);
+    renderWithProvider(<Header>Test Children</Header>);
     expect(screen.getByText('Test Children')).toBeInTheDocument();
   });
 
   it('renders without crashing', () => {
-    render(
+    renderWithProvider(
       <Header>
         <Header.TopHeader>
           <Header.TopItem>
@@ -83,7 +102,7 @@ describe('Header component', () => {
   });
 
   it('renders without crashing', () => {
-    render(
+    renderWithProvider(
       <Header>
         <Header.TopHeader>
           <Header.TopItem>
@@ -129,7 +148,7 @@ describe('Header component', () => {
   });
 
   it('renders without crashing', () => {
-    const { getByText, getAllByText, container } = render(
+    const { getByText, getAllByText, container } = renderWithProvider(
       <Router history={history}>
         <Header>
           <Header.TopHeader>
@@ -427,7 +446,7 @@ test('marks only the best-matching top-level item active (sibling collision case
     },
   ];
 
-  const { container, getByText } = render(
+  const { container, getByText } = renderWithProvider(
     <Router history={history}>
       <Header>
         <Header.Main
@@ -476,7 +495,7 @@ test('exact match wins: parent item active only on its own URL', async () => {
     },
   ];
 
-  const { container, getByText } = render(
+  const { container, getByText } = renderWithProvider(
     <Router history={history}>
       <Header>
         <Header.Main
@@ -515,7 +534,7 @@ test('mobile burger menu interactions', async () => {
     },
   ];
 
-  const { container } = render(
+  const { container } = renderWithProvider(
     <Router history={history}>
       <Header>
         <Header.Main
@@ -559,7 +578,7 @@ test('search interactions and state management', async () => {
     },
   ];
 
-  const { container } = render(
+  const { container } = renderWithProvider(
     <Router history={history}>
       <Header>
         <Header.Main
@@ -603,7 +622,7 @@ test('escape key handling', async () => {
     },
   ];
 
-  const { container } = render(
+  const { container } = renderWithProvider(
     <Router history={history}>
       <Header>
         <Header.Main
@@ -650,7 +669,7 @@ test('multilingual pathname handling', async () => {
     },
   ];
 
-  const { rerender } = render(
+  const { rerender } = renderWithProvider(
     <Router history={history}>
       <Header>
         <Header.Main
@@ -674,25 +693,27 @@ test('multilingual pathname handling', async () => {
 
   // Test with empty multilingual path
   rerender(
-    <Router history={history}>
-      <Header>
-        <Header.Main
-          pathname="/en/"
-          isMultilingual={true}
-          menuItems={menuItems}
-          renderGlobalMenuItem={(item) => (
-            <a href={item.url} title={item.title}>
-              {item.title}
-            </a>
-          )}
-          renderMenuItem={(item, options) => (
-            <a href={item.url || '/'} {...(options || {})}>
-              {item.title}
-            </a>
-          )}
-        />
-      </Header>
-    </Router>,
+    <Provider store={mockStore}>
+      <Router history={history}>
+        <Header>
+          <Header.Main
+            pathname="/en/"
+            isMultilingual={true}
+            menuItems={menuItems}
+            renderGlobalMenuItem={(item) => (
+              <a href={item.url} title={item.title}>
+                {item.title}
+              </a>
+            )}
+            renderMenuItem={(item, options) => (
+              <a href={item.url || '/'} {...(options || {})}>
+                {item.title}
+              </a>
+            )}
+          />
+        </Header>
+      </Router>
+    </Provider>,
   );
 });
 
@@ -707,11 +728,11 @@ test('menu click outside behavior with different active states', async () => {
     },
   ];
 
-  const { container } = render(
+  const { container } = renderWithProvider(
     <Router history={history}>
       <Header>
         <Header.Main
-          pathname="/different-path"
+          pathname="/test"
           menuItems={menuItems}
           renderGlobalMenuItem={(item) => (
             <a href={item.url} title={item.title}>
