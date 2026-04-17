@@ -27,7 +27,7 @@ This package provides the following features:
 
 ## Upgrade
 
-- Version `^2.0.0` requires `^eea.volto.policy@12.0`
+- Version `^1.60.0` requires `^eea.volto.policy@12.0` to allow customizing the search icon in the Header component.
 
 ### Try the design system website
 
