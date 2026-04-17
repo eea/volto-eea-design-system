@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import isArray from 'lodash/isArray';
+import isPlainObject from 'lodash/isPlainObject';
 import { useSelector } from 'react-redux';
 import { Container, Input, List, Image } from 'semantic-ui-react';
 import { withRouter, Link } from 'react-router-dom';
@@ -14,6 +16,33 @@ const getRandomItems = (arr, max) => {
       return this.splice(Math.floor(Math.random() * this.length), 1)[0];
     }, arr.slice()) || []
   );
+};
+
+const getSearchInput = (config, location) => {
+  return (
+    config.filter(
+      (v) =>
+        v.type === 'search-input' &&
+        location.pathname.match(v.matchpath ? v.matchpath : v.path),
+    )[0] ||
+    config.filter((v) => v.type === 'search-input')[0] ||
+    {}
+  );
+};
+
+const serializeAction = (action, location) => {
+  if (action.type === 'info' && isArray(action.content)) {
+    const matchedContent =
+      action.content.filter((c) => {
+        const path = c.matchpath ? c.matchpath : c.path;
+        return path && location.pathname.match(path);
+      })[0] || action.content[0];
+    return {
+      type: 'info',
+      content: (isPlainObject(matchedContent) && matchedContent.text) || null,
+    };
+  }
+  return action;
 };
 
 function ActionItem({ action }) {
@@ -36,6 +65,7 @@ function ActionItem({ action }) {
 
 function HeaderSearchPopUp({
   history,
+  location,
   onClose,
   searchInputRef,
   headerSearchBox,
@@ -43,11 +73,11 @@ function HeaderSearchPopUp({
 }) {
   const nodeRef = React.useRef();
 
-  const searchInput =
-    headerSearchBox.filter((v) => v.type === 'search-input')[0] || {};
+  const searchInput = getSearchInput(headerSearchBox, location);
   const actions =
-    headerSearchBox.filter((v) => ['info', 'button-link'].includes(v.type)) ||
-    [];
+    headerSearchBox
+      .filter((v) => ['info', 'button-link'].includes(v.type))
+      .map((v) => serializeAction(v, location)) || [];
 
   const {
     path = '',
