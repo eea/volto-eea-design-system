@@ -7,11 +7,9 @@ import HeaderSearchPopUp from './HeaderSearchPopUp';
 import '@testing-library/jest-dom';
 
 const mockState = {
-  eeaSettings: {
-    data: {
-      header: {
-        useAISearchIcon: false,
-      },
+  reduxAsyncConnect: {
+    headerSettings: {
+      useAISearchIcon: false,
     },
   },
 };

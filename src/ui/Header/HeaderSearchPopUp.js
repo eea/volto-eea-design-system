@@ -91,11 +91,12 @@ function HeaderSearchPopUp({
     getRandomItems(suggestions, maxToShow),
   );
 
-  const headerSettings = useSelector(
-    (state) => state.eeaSettings?.data?.header || {},
+  const useAISearchIcon = useSelector(
+    (state) =>
+      state.reduxAsyncConnect?.headerSettings?.useAISearchIcon || false,
   );
 
-  const searchIcon = headerSettings.useAISearchIcon ? aiSearchIcon : searchSVG;
+  const searchIcon = useAISearchIcon ? aiSearchIcon : searchSVG;
 
   useEffect(() => {
     setVisibileSuggestions(getRandomItems(suggestions, maxToShow));
