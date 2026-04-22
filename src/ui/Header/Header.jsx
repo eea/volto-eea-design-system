@@ -161,11 +161,12 @@ const Main = ({
   const [burger, setBurger] = React.useState('');
   const searchInputRef = React.useRef(null);
   const [isClient, setIsClient] = React.useState();
-  const headerSettings = useSelector(
-    (state) => state.eeaSettings?.data?.header || {},
+  const useAISearchIcon = useSelector(
+    (state) =>
+      state.reduxAsyncConnect?.headerSettings?.useAISearchIcon || false,
   );
 
-  const searchIcon = headerSettings.useAISearchIcon ? aiSearchIcon : searchSVG;
+  const searchIcon = useAISearchIcon ? aiSearchIcon : searchSVG;
 
   const itemsLayouts =
     menuItemsLayouts || config.settings?.menuItemsLayouts || {};

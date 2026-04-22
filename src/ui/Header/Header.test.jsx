@@ -8,11 +8,9 @@ import { Provider } from 'react-redux';
 import '@testing-library/jest-dom';
 
 const mockState = {
-  eeaSettings: {
-    data: {
-      header: {
-        useAISearchIcon: false,
-      },
+  reduxAsyncConnect: {
+    headerSettings: {
+      useAISearchIcon: false,
     },
   },
 };
