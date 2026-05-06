@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Icon } from 'semantic-ui-react';
-import Copyright from '../Copyright/Copyright';
+import Copyright from '@eeacms/volto-eea-design-system/ui/Copyright/Copyright';
 
 Hero.propTypes = {
   image: PropTypes.bool,

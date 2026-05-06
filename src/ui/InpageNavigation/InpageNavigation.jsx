@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Button, Icon } from 'semantic-ui-react';
-import { debounce } from 'lodash';
+import debounce from 'lodash/debounce';
 
 class InpageNavigation extends Component {
   constructor(props) {

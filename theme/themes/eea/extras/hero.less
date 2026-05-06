@@ -8,7 +8,7 @@
 --------------------*/
 
 .block.hero .ui.delete-button {
-    color: @heroDeleteButtonColor !important;
+  color: @heroDeleteButtonColor !important;
 }
 
 .eea.hero-block {
@@ -105,15 +105,20 @@
 }
 
 @media print {
+  .homepage.homepage-inverse {
+    .hero-block-inner-wrapper {
+      padding: @printInverseHeroBlockPrintPadding;
+    }
+  }
+
+  .hero-block-inner-wrapper {
+    padding: @printHeroBlockPrintPadding;
+  }
+
   .eea.hero-block.full-height,
   .eea.hero-block.full-height .hero-block-image-wrapper,
   .eea.hero-block.full-height .hero-block-inner-wrapper {
     min-height: unset;
-  }
-
-  .hero-block-inner-wrapper {
-    padding-top: @heroBlockPrintPadding;
-    padding-bottom: @heroBlockPrintPadding;
   }
 
   .hero-block-image-wrapper {
@@ -132,8 +137,8 @@
   }
 
   .hero-block-body .eea.copyright {
-    display: none;
-    visibility: hidden;
+    position: relative;
+    bottom: 0;
   }
 }
 

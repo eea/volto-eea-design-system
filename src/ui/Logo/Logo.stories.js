@@ -137,4 +137,6 @@ Logo.args = {
   src: LogoImage,
   invertedSrc: InvertedLogoImage,
   inverted: false,
+  width: 350,
+  height: 130,
 };

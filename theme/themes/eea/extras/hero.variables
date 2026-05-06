@@ -27,7 +27,8 @@
 @heroBlockWrapperPadding : 5rem;
 @tableHeroBlockWrapperPadding: 6rem;
 @desktopHeroBlockWrapperPadding: 194px 96px;
-@heroBlockPrintPadding: 20px;
+@printHeroBlockPrintPadding: 2.5em;
+@printInverseHeroBlockPrintPadding: 8.5em 2.5em 2.5em 2.5em;
 
 /* Body */
 @mobileHeroBlockBodyGap  : @rem-space-6;

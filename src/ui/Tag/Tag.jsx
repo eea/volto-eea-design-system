@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from 'semantic-ui-react';
-import { ConditionalLink } from '@plone/volto/components';
-import { getFieldURL } from '@plone/volto/helpers';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
+import { getFieldURL } from '@plone/volto/helpers/Url/Url';
 
 function Tag({ href, children }) {
   return (

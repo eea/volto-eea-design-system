@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { ErrorTextArea, LabeledTextArea, Default } from './Textarea.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('ErrorTextArea component', () => {
   it('renders correctly', () => {

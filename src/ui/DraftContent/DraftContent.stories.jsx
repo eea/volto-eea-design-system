@@ -1,5 +1,8 @@
 import React from 'react';
-import { Default as HeaderDefault, HeaderArgs } from '../Header/Header.stories';
+import {
+  Default as HeaderDefault,
+  HeaderArgs,
+} from '@eeacms/volto-eea-design-system/ui/Header/Header.stories';
 import './draft.css';
 
 export default {

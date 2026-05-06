@@ -20,10 +20,12 @@ function useFirstVisited(ref, rootMargin = '0px') {
       observer.observe(ref.current);
     }
     return () => {
-      if (ref?.current) {
+      if (ref?.current && typeof observer.unobserve === 'function') {
         observer.unobserve(ref.current);
       }
-      observer.disconnect();
+      if (typeof observer.disconnect === 'function') {
+        observer.disconnect();
+      }
     };
   }, [ref, rootMargin, intersected]);
   return intersected;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
-import NewTabLabeledIcon from '../NewTabLabeledIcon/NewTabLabeledIcon';
-import DownloadLabeledIcon from '../DownloadLabeledIcon/DownloadLabeledIcon';
-import LanguageLabeledIcon from '../LanguageLabeledIcon/LanguageLabeledIcon';
+import NewTabLabeledIcon from '@eeacms/volto-eea-design-system/ui/NewTabLabeledIcon/NewTabLabeledIcon';
+import DownloadLabeledIcon from '@eeacms/volto-eea-design-system/ui/DownloadLabeledIcon/DownloadLabeledIcon';
+import LanguageLabeledIcon from '@eeacms/volto-eea-design-system/ui/LanguageLabeledIcon/LanguageLabeledIcon';
 
 function LabeledIconGroup({ children, ...rest }) {
   return (

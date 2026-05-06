@@ -5,7 +5,7 @@ import {
   DefaultGroup,
   DefaultItem,
 } from './ItemGroupWithIcons.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('FlexGroup component', () => {
   it('renders correctly', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { DefaultGroup, DefaultItem, Default } from './Item.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('DefaultGroup Component', () => {
   it('renders correctly', () => {

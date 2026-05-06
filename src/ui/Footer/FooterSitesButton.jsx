@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 const SitesButton = (props) => {
   if (props.children) {

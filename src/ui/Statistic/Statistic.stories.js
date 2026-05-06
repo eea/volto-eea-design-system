@@ -227,8 +227,12 @@ const CustomTemplate = (args) => (
     <Container>
       <Statistic.Group {...args}>
         {args.elements &&
-          args.elements.map((element) => (
-            <a href={element.href} className="ui small statistic">
+          args.elements.map((element, index) => (
+            <a
+              key={element.href ?? `${element.label}-${index}`}
+              href={element.href}
+              className="ui small statistic"
+            >
               <div className={`value ${args.valueVariation}`}>
                 {element.value}
               </div>
@@ -429,8 +433,12 @@ const CountUpStatistics = (args) => (
     <Container>
       <Statistic.Group id="counter" {...args}>
         {args.elements &&
-          args.elements.map((element) => (
-            <a href={element.href} className="ui small statistic">
+          args.elements.map((element, index) => (
+            <a
+              key={element.href ?? `${element.label}-${index}`}
+              href={element.href}
+              className="ui small statistic"
+            >
               <div className={`value ${args.valueVariation}`}>
                 <CountUp end={element.value} isCounting={true} />
               </div>

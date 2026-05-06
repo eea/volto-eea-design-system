@@ -8,7 +8,7 @@ import {
   Primary,
   Default,
 } from './Button.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('Text component', () => {
   it('renders a button with label', () => {

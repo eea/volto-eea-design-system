@@ -5,18 +5,21 @@
 
 import React from 'react'; // , { Component }
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import cx from 'classnames';
 import { Container, Image, Menu, Grid, Dropdown } from 'semantic-ui-react'; // Dropdown,
 
 import closeIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/close-line.svg';
-import searchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search-line.svg';
+import searchSVG from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search-line.svg';
+import aiSearchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/ai-search.svg';
 import burgerIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/menu-line.svg';
 
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
+import { findBestMatchingMenuItem, isMenuItemActive } from './utils';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
-import { isInternalURL } from '@plone/volto/helpers';
+import omit from 'lodash/omit';
+import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 
 Header.propTypes = {
@@ -76,11 +79,11 @@ const TopDropdownMenu = ({
         <Dropdown
           id={id}
           className={className}
-          text={() => (
+          trigger={
             <div className={`divider text ${classNameHeader}`}>
               {headerText}
             </div>
-          )}
+          }
           ref={dropdownRef}
           icon={icon || 'chevron down'}
           aria-label={label}
@@ -158,7 +161,15 @@ const Main = ({
   const [burger, setBurger] = React.useState('');
   const searchInputRef = React.useRef(null);
   const [isClient, setIsClient] = React.useState();
-  const itemsLayouts = menuItemsLayouts || config.settings?.menuItemsLayouts;
+  const useAISearchIcon = useSelector(
+    (state) =>
+      state.reduxAsyncConnect?.headerSettings?.useAISearchIcon || false,
+  );
+
+  const searchIcon = useAISearchIcon ? aiSearchIcon : searchSVG;
+
+  const itemsLayouts =
+    menuItemsLayouts || config.settings?.menuItemsLayouts || {};
 
   React.useEffect(() => setIsClient(true), []);
 
@@ -273,6 +284,12 @@ const Main = ({
   const mobileMenuBurgerRef = React.useRef();
   const desktopMenuRef = React.useRef();
 
+  // Memoize the best-matching menu item calculation to avoid re-computation on every render
+  const { bestMatchUrl, bestScore } = React.useMemo(() => {
+    const result = findBestMatchingMenuItem(menuItems, activeItem);
+    return result;
+  }, [menuItems, activeItem]);
+
   // disable sticky setting until feature is more stable
   // const isScrollingUp = useScrollingUp();
   // <div
@@ -301,10 +318,11 @@ const Main = ({
                   >
                     {menuItems.map((item, index) => {
                       const url = item['@id'] || item.url;
-                      const firstItem = index === 0 && item.title === 'Home';
-                      const active = firstItem
-                        ? url === activeItem
-                        : activeItem.indexOf(url) !== -1;
+                      const active = isMenuItemActive(
+                        item,
+                        bestMatchUrl,
+                        bestScore,
+                      );
                       return (
                         <Menu.Item
                           name={url}
@@ -333,6 +351,9 @@ const Main = ({
                   <Image
                     src={!searchIsActive ? `${searchIcon}` : `${closeIcon}`}
                     alt="Global search"
+                    height={45}
+                    width={45}
+                    className="header-search-icon"
                   />
                 </button>
               )}
@@ -377,7 +398,7 @@ const BurgerAction = React.forwardRef((props, ref) => (
   <button
     ref={ref}
     className={`burger-action ${props.className}`}
-    {..._.omit(props, ['onClick', 'children', 'className', 'ref'])}
+    {...omit(props, ['onClick', 'children', 'className', 'ref'])}
     onClick={props.onClick}
   >
     {props.children}

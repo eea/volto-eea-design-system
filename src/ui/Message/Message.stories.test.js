@@ -7,7 +7,7 @@ import {
   Success,
   Default,
 } from './Message.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('Info component', () => {
   it('renders a Message component', () => {

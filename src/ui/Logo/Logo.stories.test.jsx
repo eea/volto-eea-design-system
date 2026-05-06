@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { Logo } from './Logo.stories';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('FluidGrid component', () => {
   let history;

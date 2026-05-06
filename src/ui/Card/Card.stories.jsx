@@ -1,8 +1,8 @@
 import React from 'react';
 import { Card, Image, Grid, Container, Icon, Button } from 'semantic-ui-react';
 import Slider from 'react-slick';
-import TagList from '../TagList/TagList';
-import Tag from '../Tag/Tag';
+import TagList from '@eeacms/volto-eea-design-system/ui/TagList/TagList';
+import Tag from '@eeacms/volto-eea-design-system/ui/Tag/Tag';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';

@@ -5,7 +5,7 @@ import {
   optional as Optional,
   invalid as Invalid,
 } from './Checkbox.stories';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 describe('Single', () => {
   it('renders correctly', () => {

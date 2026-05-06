@@ -9,6 +9,31 @@ body {
   font-size: @baseFontSize;
 }
 
+.is-fullscreen-mode {
+
+  #header,
+  #footer,
+  .skiplinks-wrapper,
+  .inpage-navigation-wrapper {
+    display: none !important;
+    visibility: hidden;
+  }
+
+  body {
+    margin-top: 0 !important;
+  }
+}
+
+/* sensible image defaults */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // shape-margin: 0.75rem;
+}
+
 // Accessibility outline on focus-visible for every component
 *:focus-visible {
   outline: @focusVisibleOutline;
@@ -47,6 +72,7 @@ h6 {
 
 .content-area {
   color: @contentAreaColor;
+  min-height: 100px;
 }
 
 [id='page-document']>*,
@@ -204,23 +230,87 @@ a {
   }
 }
 
+@first-print-page: ~"@page :first { margin-top: 0; }";
+
 @media print {
 
+  @page {
+    size: A4;
+    margin: 14mm 0;
+  }
+
+  @{first-print-page} html,
+  body {
+    width: auto;
+    height: auto;
+    background: @white;
+    color: @textColor;
+  }
+
+  // avoid cutting elements
+  body {
+    margin: 0;
+    overflow: visible !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    break-after: avoid-page;
+    break-inside: avoid;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .eea.header,
+  .eea.header .container,
+  .light-header .container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
   .skiplinks-wrapper,
-  .top.bar,
-  .main.bar.transparency,
-  .main-menu,
-  .eea .header .action,
   .slider-arrow,
   #footer,
-  #page-header .action,
-  #inpage-navigation {
-    display: none;
+  #inpage-navigation,
+  .column.actions,
+  .slick-arrows,
+  .ui.sticky,
+  .has-side-nav .content-box::before,
+  .light-header::before {
+    display: none !important;
     visibility: hidden;
   }
 
-  .logo {
-    margin-left: 0;
+  .block.gridBlock .ui.grid,
+  .content-box {
+    break-inside: avoid;
+  }
+
+  // avoid single lines at the beginning or end of a page
+  #page-document p,
+  #page-document li,
+  #page-document blockquote {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .ui.segment.breadcrumbs {
+    padding: 0;
+
+    .ui.breadcrumb {
+      visibility: hidden;
+    }
+  }
+
+  .ui.tab {
+    display: block;
   }
 
   .static-banner {
@@ -228,19 +318,46 @@ a {
     visibility: hidden;
   }
 
-  .image {
+  img,
+  .image,
+  .card,
+  .visualization,
+  .embed-map,
+  .embed-tableau,
+  .embed-map-visualization,
+  .embed-visualization {
+    break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  img {
-    page-break-inside: avoid;
-  }
-
-  .card {
-    page-break-inside: avoid;
+  .ui.segment,
+  .content-box,
+  .card,
+  figure {
+    box-shadow: none !important;
   }
 
   .grid-block-teaser .card {
     page-break-inside: auto;
+  }
+
+  // pdf printing optimizations
+  .light-header .container {
+    padding-left: 8mm;
+    padding-right: 8mm;
+  }
+
+  .content-type {
+    --text-color-secondary: @textColor;
+  }
+
+  .columns-view {
+    .ui.column.grid>[class*="three wide"].column {
+      width: 16.66666667% !important;
+    }
+
+    .ui.column.grid>[class*="ten wide"].column {
+      width: 83.33333333% !important;
+    }
   }
 }
