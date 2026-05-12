@@ -50,26 +50,6 @@
   }
 }
 
-#page-sharing .ui.actions.segment .ui.basic.primary.button,
-#page-sharing .ui.actions.segment .ui.basic.secondary.button {
-  padding: 0;
-  border-width: 2px;
-  border-radius: 50%;
-  margin-right: 0;
-  margin-left: 1.25em;
-  background: transparent !important;
-  box-shadow: none !important;
-  line-height: 1;
-
-  &:hover,
-  &:active,
-  &:focus,
-  &:focus-visible {
-    background: transparent !important;
-    box-shadow: none !important;
-  }
-}
-
 .ui.noborder.button {
   padding: 0 !important;
   border: 0;
@@ -102,12 +82,20 @@
 // and acts as a circular button
 .ui.circular.basic.button,
 .ui.basic.floated.button,
+.ui.actions.segment .ui.basic.primary.button,
+.ui.actions.segment .ui.basic.secondary.button,
 .ui.circular.icon.button {
   padding: @circularButtonPadding;
   border-width: @circularButtonBorderWidth;
   border-color: @circularButtonBorderColor;
   border-radius: @circularButtonBorderRadius;
   line-height: @circularButtonLineHeight;
+}
+
+.ui.actions.segment .ui.basic.primary.button,
+.ui.actions.segment .ui.basic.secondary.button {
+  margin-right: 0;
+  margin-left: @floatedMargin;
 }
 
 .ui.basic.button > .icon {
