@@ -277,9 +277,16 @@ a {
 
   .skiplinks-wrapper,
   .slider-arrow,
+  #navigation,
   #footer,
   #inpage-navigation,
   .column.actions,
+  .main-menu,
+  .search-action,
+  .burger-action,
+  .header-menu-popup,
+  .header-search-popup,
+  .context-navigation:not(.report-navigation),
   .slick-arrows,
   .ui.sticky,
   .has-side-nav .content-box::before,
@@ -289,8 +296,17 @@ a {
   }
 
   .block.gridBlock .ui.grid,
-  .content-box {
+  .content-box,
+  .block.image,
+  figure {
     break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .block.image,
+  figure {
+    break-before: avoid-page;
+    page-break-before: avoid;
   }
 
   // avoid single lines at the beginning or end of a page
@@ -320,14 +336,24 @@ a {
 
   img,
   .image,
+  .ui.image,
   .card,
   .visualization,
   .embed-map,
   .embed-tableau,
   .embed-map-visualization,
   .embed-visualization {
+    max-width: 100% !important;
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+
+  img,
+  .image img,
+  .ui.image img,
+  figure img {
+    height: auto !important;
+    object-fit: contain;
   }
 
   .ui.segment,
