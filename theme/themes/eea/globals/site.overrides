@@ -214,7 +214,8 @@ a {
 @media (min-width:992px) and (max-width:1365px) {
 
   .has-side-nav .content-box::before,
-  .has-side-nav .full-width {
+  .has-side-nav .full-width,
+  .has-side-nav .has--size--full {
     margin-left: -20px !important;
     margin-right: auto;
     left: initial;
@@ -225,7 +226,8 @@ a {
 @media (min-width:1366px) {
 
   .has-side-nav .content-box::before,
-  .has-side-nav .full-width {
+  .has-side-nav .full-width,
+  .has-side-nav .has--size--full {
     left: 72% !important;
   }
 }
