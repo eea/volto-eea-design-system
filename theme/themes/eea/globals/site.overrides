@@ -334,9 +334,12 @@ a {
     visibility: hidden;
   }
 
-  img,
-  .image,
-  .ui.image,
+  .content-area img,
+  .content-area .image,
+  .content-area .ui.image,
+  #page-document img,
+  #page-document .image,
+  #page-document .ui.image,
   .card,
   .visualization,
   .embed-map,
@@ -348,9 +351,12 @@ a {
     page-break-inside: avoid;
   }
 
-  img,
-  .image img,
-  .ui.image img,
+  .content-area img,
+  .content-area .image img,
+  .content-area .ui.image img,
+  #page-document img,
+  #page-document .image img,
+  #page-document .ui.image img,
   figure img {
     height: auto !important;
     object-fit: contain;
