@@ -214,7 +214,8 @@ a {
 @media (min-width:992px) and (max-width:1365px) {
 
   .has-side-nav .content-box::before,
-  .has-side-nav .full-width {
+  .has-side-nav .full-width,
+  .has-side-nav .has--size--full {
     margin-left: -20px !important;
     margin-right: auto;
     left: initial;
@@ -225,7 +226,8 @@ a {
 @media (min-width:1366px) {
 
   .has-side-nav .content-box::before,
-  .has-side-nav .full-width {
+  .has-side-nav .full-width,
+  .has-side-nav .has--size--full {
     left: 72% !important;
   }
 }
@@ -277,16 +279,9 @@ a {
 
   .skiplinks-wrapper,
   .slider-arrow,
-  #navigation,
   #footer,
   #inpage-navigation,
   .column.actions,
-  .main-menu,
-  .search-action,
-  .burger-action,
-  .header-menu-popup,
-  .header-search-popup,
-  .context-navigation:not(.report-navigation),
   .slick-arrows,
   .ui.sticky,
   .has-side-nav .content-box::before,
@@ -303,8 +298,14 @@ a {
     page-break-inside: avoid;
   }
 
-  .block.image,
-  figure {
+  h1 + .block.image,
+  h2 + .block.image,
+  h3 + .block.image,
+  h4 + .block.image,
+  h1 + figure,
+  h2 + figure,
+  h3 + figure,
+  h4 + figure {
     break-before: avoid-page;
     page-break-before: avoid;
   }
@@ -334,32 +335,16 @@ a {
     visibility: hidden;
   }
 
-  .content-area img,
-  .content-area .image,
-  .content-area .ui.image,
-  #page-document img,
-  #page-document .image,
-  #page-document .ui.image,
+  img,
+  .image,
   .card,
   .visualization,
   .embed-map,
   .embed-tableau,
   .embed-map-visualization,
   .embed-visualization {
-    max-width: 100% !important;
     break-inside: avoid;
     page-break-inside: avoid;
-  }
-
-  .content-area img,
-  .content-area .image img,
-  .content-area .ui.image img,
-  #page-document img,
-  #page-document .image img,
-  #page-document .ui.image img,
-  figure img {
-    height: auto !important;
-    object-fit: contain;
   }
 
   .ui.segment,
@@ -384,12 +369,28 @@ a {
   }
 
   .columns-view {
+    .content-box & .column-blocks-wrapper {
+      box-sizing: border-box;
+      padding-right: 8mm !important;
+      padding-left: 8mm !important;
+    }
+
     .ui.column.grid>[class*="three wide"].column {
       width: 16.66666667% !important;
     }
 
     .ui.column.grid>[class*="ten wide"].column {
       width: 83.33333333% !important;
+    }
+
+    .ui.column.grid>[class*="five wide computer"].column,
+    .ui.column.grid>[class*="seven wide computer"].column {
+      width: 100% !important;
+    }
+
+    .ui.column.grid>[class*="seven wide computer"].column .ui.button {
+      max-width: 100%;
+      white-space: normal;
     }
   }
 }
