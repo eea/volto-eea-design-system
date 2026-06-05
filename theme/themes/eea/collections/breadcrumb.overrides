@@ -26,6 +26,19 @@
   }
 }
 
+@media only screen and (max-width: @largestMobileScreen) {
+  .ui.breadcrumb ol {
+    flex-wrap: wrap;
+    max-width: 100%;
+    row-gap: @space-025;
+  }
+
+  .ui.breadcrumb ol li {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
 /*******************************
         Theme Overrides
 *******************************/
