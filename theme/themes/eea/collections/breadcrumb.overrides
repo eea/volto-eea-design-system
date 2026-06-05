@@ -3,7 +3,6 @@
 *******************************/
 
 .ui.breadcrumb {
-
   .breadcrumbs-home-item {
     line-height: 1;
   }
@@ -15,6 +14,7 @@
 
 .ui.breadcrumb ol {
   display: flex;
+  flex-wrap: wrap;
   line-height: @lineHeight;
   padding-top: @space-025;
   padding-left: 0;
@@ -23,6 +23,7 @@
 
   li {
     display: inline-flex;
+    min-width: 0;
   }
 }
 

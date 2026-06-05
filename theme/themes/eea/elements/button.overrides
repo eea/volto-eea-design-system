@@ -82,12 +82,20 @@
 // and acts as a circular button
 .ui.circular.basic.button,
 .ui.basic.floated.button,
+.ui.actions.segment .ui.basic.primary.button,
+.ui.actions.segment .ui.basic.secondary.button,
 .ui.circular.icon.button {
   padding: @circularButtonPadding;
   border-width: @circularButtonBorderWidth;
   border-color: @circularButtonBorderColor;
   border-radius: @circularButtonBorderRadius;
   line-height: @circularButtonLineHeight;
+}
+
+.ui.actions.segment .ui.basic.primary.button,
+.ui.actions.segment .ui.basic.secondary.button {
+  margin-right: 0;
+  margin-left: @floatedMargin;
 }
 
 .ui.basic.button > .icon {
