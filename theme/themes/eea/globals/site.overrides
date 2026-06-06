@@ -10,7 +10,6 @@ body {
 }
 
 .is-fullscreen-mode {
-
   #header,
   #footer,
   .skiplinks-wrapper,
@@ -75,27 +74,27 @@ h6 {
   min-height: 100px;
 }
 
-[id='page-document']>*,
-.view-wrapper>* {
+[id='page-document'] > *,
+.view-wrapper > * {
   margin-right: auto !important;
   margin-left: auto !important;
 }
 
-[class~='view-defaultview'] [id='page-document']>*,
-[class~='view-viewview'] [id='page-document']>*,
+[class~='view-defaultview'] [id='page-document'] > *,
+[class~='view-viewview'] [id='page-document'] > *,
 #main .container_width,
 #main .has--size--container_width,
-.view-wrapper>* {
+.view-wrapper > * {
   max-width: @containerWidth !important;
 }
 
-[class~='narrow_view'] [id='page-document']>*,
+[class~='narrow_view'] [id='page-document'] > *,
 #main .narrow_width,
 #main .has--size--narrow_width {
   max-width: @narrowWidth !important;
 }
 
-[class~='wide_view'] [id='page-document']>*,
+[class~='wide_view'] [id='page-document'] > *,
 #main .wide_width,
 #main .has--size--wide_width {
   max-width: @wideWidth !important;
@@ -103,8 +102,7 @@ h6 {
 
 // enlarge wide section when we have a resolution from 1280px to before the laptop hd resolution
 @media screen and (min-width: 1280px) and (max-width: 1365px) {
-
-  [class~='wide_view'] [id='page-document']>*,
+  [class~='wide_view'] [id='page-document'] > *,
   #main .wide_width,
   #main .has--size--wide_width {
     max-width: @wideWidthLaptop !important;
@@ -124,7 +122,7 @@ h6 {
 }
 
 // add a 1rem margin top and bottom on all direct styled classes from container
-[class~='container']>[class*='styled-'] {
+[class~='container'] > [class*='styled-'] {
   margin-top: @rem-space-4;
   margin-bottom: @rem-space-4;
 }
@@ -208,11 +206,9 @@ a {
   }
 }
 
-
 // fix background position when using the side navigation and the
 // content area is moved to the left instead of being centered
-@media (min-width:992px) and (max-width:1365px) {
-
+@media (min-width: 992px) and (max-width: 1365px) {
   .has-side-nav .content-box::before,
   .has-side-nav .full-width,
   .has-side-nav .has--size--full {
@@ -223,8 +219,7 @@ a {
   }
 }
 
-@media (min-width:1366px) {
-
+@media (min-width: 1366px) {
   .has-side-nav .content-box::before,
   .has-side-nav .full-width,
   .has-side-nav .has--size--full {
@@ -232,10 +227,9 @@ a {
   }
 }
 
-@first-print-page: ~"@page :first { margin-top: 0; }";
+@first-print-page: ~'@page :first { margin-top: 0; }';
 
 @media print {
-
   @page {
     size: A4;
     margin: 14mm 0;
@@ -285,14 +279,58 @@ a {
   .slick-arrows,
   .ui.sticky,
   .has-side-nav .content-box::before,
-  .light-header::before {
+  .light-header::before,
+  #download-print-loader,
+  .context-navigation {
     display: none !important;
     visibility: hidden;
   }
 
-  .block.gridBlock .ui.grid,
+  #page-document {
+    padding-left: 12mm;
+    padding-right: 12mm;
+  }
+
   .content-box {
+    margin-left: -12mm;
+    margin-right: -12mm;
+  }
+
+  .content-box-inner {
+    padding-left: 12mm;
+    padding-right: 12mm;
+  }
+
+  .eea.hero-block,
+  .eea.hero-block .hero-block-image-wrapper,
+  .full-width,
+  .has--size--full {
+    margin-left: -12mm;
+    margin-right: -12mm;
+  }
+
+  .light-header .container {
+    padding-left: 12mm;
+    padding-right: 12mm;
+  }
+
+  .block.gridBlock .ui.grid,
+  .content-box,
+  .block.image,
+  figure {
     break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    + .block.image,
+    + .block.gridBlock,
+    + .visualization,
+    + figure {
+      break-before: avoid-page;
+    }
   }
 
   // avoid single lines at the beginning or end of a page
@@ -343,23 +381,33 @@ a {
     page-break-inside: auto;
   }
 
-  // pdf printing optimizations
-  .light-header .container {
-    padding-left: 8mm;
-    padding-right: 8mm;
-  }
-
   .content-type {
     --text-color-secondary: @textColor;
   }
 
   .columns-view {
-    .ui.column.grid>[class*="three wide"].column {
+    .content-box & .column-blocks-wrapper {
+      box-sizing: border-box;
+      padding-right: 8mm !important;
+      padding-left: 8mm !important;
+    }
+
+    .ui.column.grid > [class*='three wide'].column {
       width: 16.66666667% !important;
     }
 
-    .ui.column.grid>[class*="ten wide"].column {
+    .ui.column.grid > [class*='ten wide'].column {
       width: 83.33333333% !important;
+    }
+
+    .ui.column.grid > [class*='five wide computer'].column,
+    .ui.column.grid > [class*='seven wide computer'].column {
+      width: 100% !important;
+    }
+
+    .ui.column.grid > [class*='seven wide computer'].column .ui.button {
+      max-width: 100%;
+      white-space: normal;
     }
   }
 }
