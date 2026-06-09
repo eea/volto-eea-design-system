@@ -33,6 +33,9 @@ const Logo = ({
         id={id}
         width={width}
         height={height}
+        style={
+          width && height ? { aspectRatio: `${width} / ${height}` } : undefined
+        }
       />
     </Link>
   );
