@@ -29,6 +29,13 @@ const SubFooter = (props) => {
                       loading="lazy"
                       width={manager.width}
                       height={manager.height}
+                      style={
+                        manager.width && manager.height
+                          ? {
+                              aspectRatio: `${manager.width} / ${manager.height}`,
+                            }
+                          : undefined
+                      }
                       className="footer-logo-icon"
                     ></Image>
                   </a>
