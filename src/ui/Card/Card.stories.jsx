@@ -21,7 +21,7 @@ let cardData = {
       "State of Europe's environment",
     ],
     imgUrl: [
-      'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini',
+      'https://www.eea.europa.eu/en/topics/at-a-glance/economy-and-resources/@@images/image/preview',
       'https://www.eea.europa.eu/en/topics/at-a-glance/health/@@images/image/preview',
       'https://www.eea.europa.eu/en/topics/at-a-glance/nature/@@images/image/preview',
       'https://www.eea.europa.eu/en/topics/at-a-glance/climate/@@images/image/preview',
