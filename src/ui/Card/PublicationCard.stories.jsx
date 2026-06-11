@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Image, Container } from 'semantic-ui-react';
 
 const imageUrl =
-  'https://www.eea.europa.eu/publications/eea-eionet-strategy-2021-2030/image_mini';
+  'https://www.eea.europa.eu/en/analysis/publications/eea-eionet-strategy-2021-2030/@@images/preview_image/preview';
 
 export default {
   title: 'Components/Card/Publication',
