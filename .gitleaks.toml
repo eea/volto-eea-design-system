@@ -87,3 +87,9 @@ regexTarget = "match"
 regexes = [
   '''SONAR_AUTH_TOKEN''',
 ]
+
+[[allowlists]]
+description = "Allow generated documentation assets"
+paths = [
+  '''^docs/assets/''',
+]
