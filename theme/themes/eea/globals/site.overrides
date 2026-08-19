@@ -70,8 +70,8 @@ h6 {
 }
 
 .content-area {
-  color: @contentAreaColor;
   min-height: 100px;
+  color: @contentAreaColor;
 }
 
 [id='page-document'] > *,
@@ -212,10 +212,10 @@ a {
   .has-side-nav .content-box::before,
   .has-side-nav .full-width,
   .has-side-nav .has--size--full {
-    margin-left: -20px !important;
-    margin-right: auto;
-    left: initial;
     right: initial;
+    left: initial;
+    margin-right: auto;
+    margin-left: -20px !important;
   }
 }
 
@@ -231,8 +231,8 @@ a {
 
 @media print {
   @page {
-    size: A4;
     margin: 14mm 0;
+    size: A4;
   }
 
   @{first-print-page} html,
@@ -245,8 +245,8 @@ a {
 
   // avoid cutting elements
   body {
-    margin: 0;
     overflow: visible !important;
+    margin: 0;
   }
 
   h1,
@@ -267,8 +267,8 @@ a {
   .eea.header,
   .eea.header .container,
   .light-header .container {
-    margin-top: 0 !important;
     padding-top: 0 !important;
+    margin-top: 0 !important;
   }
 
   .skiplinks-wrapper,
@@ -287,31 +287,31 @@ a {
   }
 
   #page-document {
-    padding-left: 12mm;
     padding-right: 12mm;
+    padding-left: 12mm;
   }
 
   .content-box {
-    margin-left: -12mm;
     margin-right: -12mm;
+    margin-left: -12mm;
   }
 
   .content-box-inner {
-    padding-left: 12mm;
     padding-right: 12mm;
+    padding-left: 12mm;
   }
 
   .eea.hero-block,
   .eea.hero-block .hero-block-image-wrapper,
   .full-width,
   .has--size--full {
-    margin-left: -12mm;
     margin-right: -12mm;
+    margin-left: -12mm;
   }
 
   .light-header .container {
-    padding-left: 12mm;
     padding-right: 12mm;
+    padding-left: 12mm;
   }
 
   .block.gridBlock .ui.grid,

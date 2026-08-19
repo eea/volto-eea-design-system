@@ -3,9 +3,9 @@
 *******************************/
 
 .ui.modal .close {
+  z-index: @zIndex;
   padding: @closeButtonPadding;
   background: @closeButtonBackground;
-  z-index: @zIndex;
 
   i {
     color: @closeColor;

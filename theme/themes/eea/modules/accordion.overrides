@@ -198,13 +198,14 @@
 }
 
 /* Remove padding from navigation settings accordion content */
-.navigation-objectlist-widget .ui.styled.accordion .content, .navigation-objectlist-widget  .ui.styled.accordion .accordion .content {
+.navigation-objectlist-widget .ui.styled.accordion .content,
+.navigation-objectlist-widget .ui.styled.accordion .accordion .content {
   padding: 0 !important;
-  margin: 0 !important
+  margin: 0 !important;
 }
 
-navigation-objectlist-widget .ui.styled.accordion{
-   margin: 0 !important
+navigation-objectlist-widget .ui.styled.accordion {
+  margin: 0 !important;
 }
 
 @media only screen and (max-width: @largestMobileScreen) {
