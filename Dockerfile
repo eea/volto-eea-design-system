@@ -39,6 +39,8 @@ RUN set -eux; \
 
 USER node
 
+ENV NODE_OPTIONS="--max-old-space-size=4096"
+
 COPY --chown=node:node ./package.json /app/packages/${ADDON_PATH}/package.json
 RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 \
     set -- \
@@ -58,7 +60,8 @@ RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 \
       razzle_version="$(node -p "require('/app/core/packages/volto/package.json').devDependencies.razzle")"; \
       set -- "$@" "razzle@${razzle_version}"; \
     fi; \
-    pnpm --config.auto-install-peers=false add --workspace-root "$@"
+    pnpm --config.auto-install-peers=false add --workspace-root --lockfile-only "$@"; \
+    pnpm install --force --no-frozen-lockfile
 RUN pnpm --filter @plone/registry build
 
 COPY --chown=node:node ./ /app/packages/${ADDON_PATH}/
