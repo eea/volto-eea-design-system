@@ -128,6 +128,8 @@
 
 /* Global focus-visible for accessibility */
 @focusVisibleOutline: .2rem auto var(--focus-visible, @blue-2);
+@innerFocusShadow: @white;
+@outerFocusOutline: @black;
 
 /* Used on inputs, textarea etc */
 @focusedFormBorderColor: @secondaryColor;

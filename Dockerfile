@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-ARG VOLTO_VERSION
+ARG VOLTO_VERSION=19
 FROM plone/frontend-builder:${VOLTO_VERSION}
 
 ARG ADDON_NAME
@@ -8,6 +8,7 @@ ARG CHROMIUM_VERSION=149.0.7827.196-1~deb12u1
 
 
 ENV HOST="0.0.0.0"
+ENV ADDON_NAME=${ADDON_NAME}
 ENV CHROME_BIN="/usr/bin/chromium"
 ENV CHROMIUM_BIN="/usr/bin/chromium"
 ENV CYPRESS_BROWSER_PATH="/usr/bin/chromium"
@@ -16,7 +17,7 @@ ENV CYPRESS_BROWSER_PATH="/usr/bin/chromium"
 USER root
 RUN apt-get update -q \
     && apt-get install -qy --no-install-recommends \
-        libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb \
+        xvfb \
     && rm -rf /var/lib/apt/lists/*
 
 RUN set -eux; \
@@ -38,11 +39,30 @@ RUN set -eux; \
 
 USER node
 
-COPY --chown=node:node ./ /app/src/addons/${ADDON_PATH}/
+COPY --chown=node:node ./package.json /app/packages/${ADDON_PATH}/package.json
+RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 \
+    set -- \
+      "${ADDON_NAME}@workspace:*" \
+      "@eeacms/volto-corsproxy"; \
+    for dependency in \
+      "components:@plone/components" \
+      "volto-razzle:@plone/razzle" \
+      "volto-slate:@plone/volto-slate"; do \
+      package_dir="${dependency%%:*}"; \
+      package_name="${dependency#*:}"; \
+      if [ -f "/app/core/packages/${package_dir}/package.json" ]; then \
+        set -- "$@" "${package_name}@workspace:*"; \
+      fi; \
+    done; \
+    if [ ! -f /app/core/packages/volto-razzle/package.json ]; then \
+      razzle_version="$(node -p "require('/app/core/packages/volto/package.json').devDependencies.razzle")"; \
+      set -- "$@" "razzle@${razzle_version}"; \
+    fi; \
+    pnpm --config.auto-install-peers=false add --workspace-root "$@"
+RUN pnpm --filter @plone/registry build
 
-RUN /setupAddon
-RUN yarn add jest-junit
-RUN yarn install
+COPY --chown=node:node ./ /app/packages/${ADDON_PATH}/
+COPY --chown=node:node ./volto.config.js /app/volto.config.js
 
-ENTRYPOINT ["yarn"]
+ENTRYPOINT ["pnpm"]
 CMD ["start"]

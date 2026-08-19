@@ -3,7 +3,7 @@ const path = require('path');
 
 const projectRootPath = fs.existsSync('./project')
   ? fs.realpathSync('./project')
-  : fs.realpathSync(__dirname + '/../../../');
+  : fs.realpathSync(__dirname + '/../..');
 
 let voltoPath = path.join(projectRootPath, 'node_modules/@plone/volto');
 let configFile;
@@ -18,6 +18,22 @@ if (configFile) {
   if (pathsConfig['@plone/volto'])
     voltoPath = `./${jsConfig.baseUrl}/${pathsConfig['@plone/volto'][0]}`;
 }
+
+const voltoEslintConfig = require(`${voltoPath}/.eslintrc.core.js`);
+const noRestrictedImports = voltoEslintConfig.rules[
+  'no-restricted-imports'
+].map((restriction) => {
+  if (
+    restriction?.name === 'semantic-ui-react' &&
+    restriction.importNames?.includes('Image')
+  ) {
+    const importNames = restriction.importNames.filter(
+      (name) => name !== 'Image',
+    );
+    return importNames.length ? { ...restriction, importNames } : null;
+  }
+  return restriction;
+});
 
 const { AddonRegistry } = require('@plone/registry/addon-registry');
 const { registry } = AddonRegistry.init(projectRootPath);
@@ -45,12 +61,18 @@ const defaultConfig = {
         ],
         extensions: ['.js', '.jsx', '.json'],
       },
+      node: {
+        paths: [path.join(projectRootPath, 'core/packages/volto/node_modules')],
+      },
       'babel-plugin-root-import': {
         rootPathSuffix: 'src',
       },
     },
   },
   rules: {
+    // Keep the legacy Semantic UI Image until its callers can be migrated
+    // without changing their rendered markup.
+    'no-restricted-imports': noRestrictedImports.filter(Boolean),
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/jsx-no-target-blank': 'off',
   },
