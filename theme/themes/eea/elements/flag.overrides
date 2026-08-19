@@ -907,7 +907,7 @@ i.flag.portugal:before {
   background-position: -72px -702px;
 }
 
-i.flag.pw:before,
+i.flag.pw:before, /* betterleaks:allow -- PW is the Palau country code */
 i.flag.palau:before {
   background-position: -72px -728px;
 }
