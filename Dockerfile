@@ -61,7 +61,7 @@ RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 \
       set -- "$@" "razzle@${razzle_version}"; \
     fi; \
     pnpm --config.auto-install-peers=false add --workspace-root --lockfile-only "$@"; \
-    pnpm install --force --no-frozen-lockfile
+    pnpm --config.auto-install-peers=false install --force --no-frozen-lockfile
 RUN pnpm --filter @plone/registry build
 
 COPY --chown=node:node ./ /app/packages/${ADDON_PATH}/
