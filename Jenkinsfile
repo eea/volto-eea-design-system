@@ -147,7 +147,7 @@ pipeline {
                         allowMissing: false,
                         alwaysLinkToLastBuild: true,
                         keepAll: true,
-                        reportDir: 'xunit-reports-current/coverage/lcov-report',
+                        reportDir: 'xunit-reports-current/coverage',
                         reportFiles: 'index.html',
                         reportName: 'UTCoverage',
                         reportTitles: 'Unit Tests Code Coverage'

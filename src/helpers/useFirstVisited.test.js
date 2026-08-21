@@ -8,11 +8,11 @@ describe('useFirstVisited', () => {
   let disconnect;
 
   beforeEach(() => {
-    observe = jest.fn();
-    unobserve = jest.fn();
-    disconnect = jest.fn();
+    observe = vi.fn();
+    unobserve = vi.fn();
+    disconnect = vi.fn();
 
-    window.IntersectionObserver = jest.fn(function (cb) {
+    window.IntersectionObserver = vi.fn(function (cb) {
       this.observe = observe;
       this.unobserve = unobserve;
       this.disconnect = disconnect;

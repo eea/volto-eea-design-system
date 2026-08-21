@@ -22,7 +22,7 @@ const mockStore = {
 
 describe('HeaderSearchPopUp', () => {
   let history;
-  const mockOnClose = jest.fn();
+  const mockOnClose = vi.fn();
   const sampleHeaderSearchBox = [
     {
       type: 'search-input',
@@ -55,7 +55,7 @@ describe('HeaderSearchPopUp', () => {
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should render HeaderSearchPopUp', () => {
@@ -91,7 +91,7 @@ describe('HeaderSearchPopUp', () => {
   });
 
   it('should submit the form with search text', () => {
-    window.searchContext = { resetSearch: jest.fn() };
+    window.searchContext = { resetSearch: vi.fn() };
 
     const { container } = render(
       <Provider store={mockStore}>
@@ -112,7 +112,7 @@ describe('HeaderSearchPopUp', () => {
   });
 
   it('should navigate to the suggestion when a suggestion is clicked', () => {
-    window.searchContext = { resetSearch: jest.fn() };
+    window.searchContext = { resetSearch: vi.fn() };
 
     render(
       <Provider store={mockStore}>

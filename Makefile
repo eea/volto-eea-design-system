@@ -90,11 +90,11 @@ cypress-run:	## Run cypress integration tests
 
 .PHONY: test
 test:			## Run unit tests
-	${DOCKER_COMPOSE} run --no-deps -e CI=1 frontend --dir /app --filter ${ADDON_NAME} run test --runInBand
+	${DOCKER_COMPOSE} run --no-deps -e CI=1 frontend --dir /app --filter ${ADDON_NAME} run test
 
 .PHONY: test-update
 test-update:	## Update unit test snapshots
-	${DOCKER_COMPOSE} run --no-deps -e CI=1 frontend --dir /app --filter ${ADDON_NAME} run test --runInBand --updateSnapshot
+	${DOCKER_COMPOSE} run --no-deps -e CI=1 frontend --dir /app --filter ${ADDON_NAME} run test --update
 
 .PHONY: stylelint
 stylelint:		## Stylelint
@@ -146,7 +146,7 @@ ci-fix:
 
 .PHONY: test-ci
 test-ci:
-	JEST_JUNIT_OUTPUT_DIR=/app JEST_JUNIT_OUTPUT_NAME=junit.xml CI=true pnpm --dir /app --filter ${ADDON_NAME} run test --runInBand --reporters=default --reporters=jest-junit --coverage --coverageDirectory=/app/coverage --coverageReporters=lcov --coverageReporters=cobertura --coverageReporters=text
+	CI=true pnpm --dir /app --filter ${ADDON_NAME} run test --coverage --coverage.reportsDirectory=/app/coverage --reporter=default --reporter=junit --outputFile.junit=/app/junit.xml
 
 .PHONY: start-ci
 start-ci:

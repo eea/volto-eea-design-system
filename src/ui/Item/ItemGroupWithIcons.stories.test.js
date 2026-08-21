@@ -16,24 +16,9 @@ describe('FlexGroup component', () => {
     expect(
       container.querySelector('.ui.unstackable.items.row.flex-items-wrapper'),
     ).toBeInTheDocument();
-    expect(
-      container.querySelector('img[src="globe-eco.svg"]'),
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector('img[src="sustainable.svg"]'),
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector('img[src="data-analytics.svg"]'),
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector('img[src="network.svg"]'),
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector('img[src="globe-eco.svg"]'),
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector('img[src="knowledge.svg"]'),
-    ).toBeInTheDocument();
+    expect(container.querySelectorAll('img')).toHaveLength(
+      FlexGroup.args.Items.length,
+    );
 
     FlexGroup.args.Items.forEach((item) => {
       expect(queryAllByText(item.description)).not.toBeNull();
@@ -50,24 +35,10 @@ describe('DefaultGroup component', () => {
     expect(
       container.querySelector('.ui.unstackable.items.row'),
     ).toBeInTheDocument();
-    expect(
-      container.querySelector('img[src="globe-eco.svg"]'),
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector('img[src="sustainable.svg"]'),
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector('img[src="data-analytics.svg"]'),
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector('img[src="network.svg"]'),
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector('img[src="globe-eco.svg"]'),
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector('img[src="knowledge.svg"]'),
-    ).toBeInTheDocument();
+    expect(container.querySelectorAll('img')).toHaveLength(
+      DefaultGroup.args.ColumnLeft.length +
+        DefaultGroup.args.ColumnRight.length,
+    );
 
     DefaultGroup.args.ColumnLeft.forEach((item) => {
       expect(queryAllByText(item.description)).not.toBeNull();

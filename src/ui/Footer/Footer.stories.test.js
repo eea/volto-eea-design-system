@@ -15,10 +15,10 @@ describe('Default', () => {
 
   beforeEach(() => {
     history = createMemoryHistory();
-    observe = jest.fn();
-    unobserve = jest.fn();
+    observe = vi.fn();
+    unobserve = vi.fn();
 
-    window.IntersectionObserver = jest.fn(function () {
+    window.IntersectionObserver = vi.fn(function () {
       this.observe = observe;
       this.unobserve = unobserve;
     });

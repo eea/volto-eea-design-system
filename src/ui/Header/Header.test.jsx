@@ -26,16 +26,16 @@ const renderWithProvider = (component) => {
 };
 
 // Mock subcomponents that pull in ESM helpers not transformed by Jest here
-jest.doMock('./HeaderSearchPopUp', () => () => null);
-jest.doMock('./HeaderMenuPopUp', () => () => null);
+vi.doMock('./HeaderSearchPopUp', () => ({ default: () => null }));
+vi.doMock('./HeaderMenuPopUp', () => ({ default: () => null }));
 
 // Mock helpers ESM module used by HeaderSearchPopUp to avoid transform issues
-jest.mock('@eeacms/volto-eea-design-system/helpers', () => ({
+vi.mock('@eeacms/volto-eea-design-system/helpers', () => ({
   useClickOutside: () => ({ current: null }),
   handleEnterKeyPress: () => {},
 }));
 
-const Header = require('./Header').default;
+const Header = (await import('./Header')).default;
 
 describe('Header component', () => {
   let history;

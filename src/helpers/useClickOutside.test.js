@@ -2,8 +2,8 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import useClickOutside from './useClickOutside';
 import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 
-jest.mock('semantic-ui-react/dist/commonjs/lib', () => ({
-  doesNodeContainClick: jest.fn(),
+vi.mock('semantic-ui-react/dist/commonjs/lib', () => ({
+  doesNodeContainClick: vi.fn(),
 }));
 
 describe('useClickOutside', () => {
@@ -12,7 +12,7 @@ describe('useClickOutside', () => {
 
   beforeEach(() => {
     ref = { current: {} };
-    callback = jest.fn();
+    callback = vi.fn();
   });
 
   it('does not call callback function when clicked inside', () => {

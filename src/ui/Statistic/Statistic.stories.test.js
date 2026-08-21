@@ -13,11 +13,11 @@ describe('AnimationGroup component', () => {
   let observe;
   let unobserve;
   let disconnect;
-  observe = jest.fn();
-  unobserve = jest.fn();
-  disconnect = jest.fn();
+  observe = vi.fn();
+  unobserve = vi.fn();
+  disconnect = vi.fn();
 
-  window.IntersectionObserver = jest.fn(function () {
+  window.IntersectionObserver = vi.fn(function () {
     this.observe = observe;
     this.unobserve = unobserve;
     this.disconnect = disconnect;
@@ -41,11 +41,11 @@ describe('Animation component', () => {
   let observe;
   let unobserve;
   let disconnect;
-  observe = jest.fn();
-  unobserve = jest.fn();
-  disconnect = jest.fn();
+  observe = vi.fn();
+  unobserve = vi.fn();
+  disconnect = vi.fn();
 
-  window.IntersectionObserver = jest.fn(function () {
+  window.IntersectionObserver = vi.fn(function () {
     this.observe = observe;
     this.unobserve = unobserve;
     this.disconnect = disconnect;

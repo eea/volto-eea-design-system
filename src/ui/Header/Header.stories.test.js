@@ -11,7 +11,11 @@ const mockStore = createStore(() => ({
   reduxAsyncConnect: { headerSettings: {} },
 }));
 
-global.ResizeObserver = require('resize-observer-polyfill');
+global.ResizeObserver = class ResizeObserver {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+};
 
 const history = createMemoryHistory();
 

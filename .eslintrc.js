@@ -59,7 +59,7 @@ const defaultConfig = {
           ['@root', `${__dirname}/src`],
           ['~', `${__dirname}/src`],
         ],
-        extensions: ['.js', '.jsx', '.json'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       },
       node: {
         paths: [path.join(projectRootPath, 'core/packages/volto/node_modules')],

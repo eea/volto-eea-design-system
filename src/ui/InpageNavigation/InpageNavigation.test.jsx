@@ -7,7 +7,7 @@ describe('InpageNavigation', () => {
   let scrollToMock;
 
   beforeEach(() => {
-    scrollToMock = jest.fn();
+    scrollToMock = vi.fn();
     global.window.scrollTo = scrollToMock;
   });
 

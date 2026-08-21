@@ -5,6 +5,10 @@
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
   "license": "MIT",
+  "packageManager": "pnpm@10.20.0",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "homepage": "https://github.com/eea/volto-eea-design-system",
   "keywords": [
     "volto-addon",
@@ -38,14 +42,18 @@
     "semantic-ui-react": ">=2.0.0"
   },
   "devDependencies": {
-    "@cypress/code-coverage": "^3.10.0",
     "@babel/plugin-proposal-export-default-from": "7.29.7",
     "@babel/plugin-proposal-nullish-coalescing-operator": "7.18.6",
     "@babel/plugin-proposal-throw-expressions": "7.29.7",
     "@babel/plugin-syntax-export-namespace-from": "7.8.3",
+    "@cypress/code-coverage": "^3.10.0",
     "@loadable/babel-plugin": "5.16.1",
     "@plone/scripts": "*",
-    "babel-jest": "26.6.3",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/react-hooks": "8.0.1",
+    "@vitejs/plugin-react": "4.7.0",
+    "@vitest/coverage-v8": "3.2.7",
     "babel-plugin-lodash": "3.3.4",
     "babel-plugin-react-intl": "5.1.17",
     "babel-plugin-root-import": "6.6.0",
@@ -55,15 +63,12 @@
     "eslint-import-resolver-babel-plugin-root-import": "1.1.1",
     "fast-glob": "^3.1.1",
     "husky": "^8.0.3",
-    "identity-obj-proxy": "3.0.0",
-    "jest": "26.6.3",
-    "jest-environment-jsdom": "26.6.2",
-    "jest-file": "1.0.0",
-    "jest-junit": "^16.0.0",
+    "jsdom": "23.0.0",
     "lint-staged": "^14.0.1",
     "md5": "^2.3.0",
     "postcss-less": "6.0.0",
-    "ts-jest": "^26.4.2"
+    "vite": "6.4.3",
+    "vitest": "3.2.7"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
@@ -91,8 +96,8 @@
     "release-major-beta": "release-it major --preRelease=beta",
     "release-beta": "release-it --preRelease=beta",
     "bootstrap": "npm install -g ejs; npm link ejs; node bootstrap",
-    "test": "jest --config ./jest-addon.config.js",
-    "test:fix": "jest --config ./jest-addon.config.js --updateSnapshot",
+    "test": "vitest --config ./vitest.config.mjs run --passWithNoTests",
+    "test:fix": "vitest --config ./vitest.config.mjs run --passWithNoTests --update",
     "pre-commit": "pnpm stylelint:fix && pnpm prettier:fix && pnpm lint:fix",
     "stylelint": "make stylelint",
     "stylelint:overrides": "make stylelint-overrides",

@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import LanguageLabeledIcon from './LanguageLabeledIcon';
 import '@testing-library/jest-dom';
 
-jest.mock('semantic-ui-react', () => {
+vi.mock('semantic-ui-react', () => {
   return {
     Popup: ({ trigger, content }) => <div>{content}</div>,
   };

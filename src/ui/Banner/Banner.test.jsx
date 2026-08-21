@@ -44,7 +44,7 @@ describe('Banner', () => {
   });
 
   it('calls the onClick function when an action button is clicked', () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     const { getByText } = render(
       <Banner.Action title="Action" icon="icon-name" onClick={onClick} />,
     );
@@ -67,7 +67,7 @@ describe('Banner', () => {
   });
 
   it('calls the onClick handler when the action button is clicked', () => {
-    const onClick = jest.fn();
+    const onClick = vi.fn();
     const { getByText } = render(
       <Banner.Action title="Action" icon="icon-name" onClick={onClick} />,
     );
@@ -157,7 +157,7 @@ describe('Banner', () => {
 
 describe('sharePage', () => {
   it('should not do anything if an invalid platform is provided', () => {
-    document.createElement = jest.fn();
+    document.createElement = vi.fn();
     sharePage('https://example.com', 'invalidPlatform');
     expect(document.createElement).not.toHaveBeenCalled();
   });
@@ -167,11 +167,11 @@ describe('sharePage', () => {
     const platform = 'facebook';
 
     const mockLink = {
-      setAttribute: jest.fn(),
-      click: jest.fn(),
+      setAttribute: vi.fn(),
+      click: vi.fn(),
     };
 
-    document.createElement = jest.fn(() => mockLink);
+    document.createElement = vi.fn(() => mockLink);
 
     sharePage(url, platform);
 
@@ -199,11 +199,11 @@ describe('sharePage', () => {
     const platform = 'twitter';
 
     const mockLink = {
-      setAttribute: jest.fn(),
-      click: jest.fn(),
+      setAttribute: vi.fn(),
+      click: vi.fn(),
     };
 
-    document.createElement = jest.fn(() => mockLink);
+    document.createElement = vi.fn(() => mockLink);
 
     sharePage(url, platform);
 
@@ -231,11 +231,11 @@ describe('sharePage', () => {
     const platform = 'linkedin';
 
     const mockLink = {
-      setAttribute: jest.fn(),
-      click: jest.fn(),
+      setAttribute: vi.fn(),
+      click: vi.fn(),
     };
 
-    document.createElement = jest.fn(() => mockLink);
+    document.createElement = vi.fn(() => mockLink);
 
     sharePage(url, platform);
 
@@ -263,11 +263,11 @@ describe('sharePage', () => {
     const platform = 'reddit';
 
     const mockLink = {
-      setAttribute: jest.fn(),
-      click: jest.fn(),
+      setAttribute: vi.fn(),
+      click: vi.fn(),
     };
 
-    document.createElement = jest.fn(() => mockLink);
+    document.createElement = vi.fn(() => mockLink);
 
     sharePage(url, platform);
 

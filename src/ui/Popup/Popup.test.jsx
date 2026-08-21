@@ -3,14 +3,14 @@ import { render, fireEvent } from '@testing-library/react';
 import Popup from './Popup';
 import '@testing-library/jest-dom';
 
-jest.mock('@popperjs/core', () => {
-  const originalModule = jest.requireActual('@popperjs/core');
+vi.mock('@popperjs/core', async () => {
+  const originalModule = await vi.importActual('@popperjs/core');
 
   return {
     ...originalModule,
-    createPopper: jest.fn(() => ({
-      forceUpdate: jest.fn(),
-      destroy: jest.fn(),
+    createPopper: vi.fn(() => ({
+      forceUpdate: vi.fn(),
+      destroy: vi.fn(),
     })),
   };
 });

@@ -6,14 +6,14 @@ import { Router } from 'react-router-dom';
 import HeaderMenuPopUp, { StandardMegaMenuGrid } from './HeaderMenuPopUp';
 
 // Mock the useClickOutside hook
-jest.mock('@eeacms/volto-eea-design-system/helpers', () => ({
-  useClickOutside: jest.fn(),
+vi.mock('@eeacms/volto-eea-design-system/helpers', () => ({
+  useClickOutside: vi.fn(),
 }));
 
 describe('HeaderMenuPopUp', () => {
   let history;
-  const mockOnClose = jest.fn();
-  const mockRenderMenuItem = jest.fn((item, options, props) => (
+  const mockOnClose = vi.fn();
+  const mockRenderMenuItem = vi.fn((item, options, props) => (
     <a
       href={item.url || '/'}
       title={item.nav_title || item.title}
@@ -77,7 +77,7 @@ describe('HeaderMenuPopUp', () => {
 
   beforeEach(() => {
     history = createMemoryHistory();
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('renders without crashing when visible', () => {
@@ -250,7 +250,7 @@ describe('HeaderMenuPopUp', () => {
 });
 
 describe('StandardMegaMenuGrid', () => {
-  const mockRenderMenuItem = jest.fn((item, options) => (
+  const mockRenderMenuItem = vi.fn((item, options) => (
     <a href={item.url || '/'} {...(options || {})}>
       {item.title}
     </a>
@@ -274,7 +274,7 @@ describe('StandardMegaMenuGrid', () => {
   };
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('renders with default layout when no menuItemColumns', () => {
@@ -381,8 +381,8 @@ describe('StandardMegaMenuGrid', () => {
 
 describe('HeaderMenuPopUp - Complex scenarios', () => {
   let history;
-  const mockOnClose = jest.fn();
-  const mockRenderMenuItem = jest.fn((item, options, props) => (
+  const mockOnClose = vi.fn();
+  const mockRenderMenuItem = vi.fn((item, options, props) => (
     <a
       href={item.url || '/'}
       title={item.nav_title || item.title}
@@ -396,7 +396,7 @@ describe('HeaderMenuPopUp - Complex scenarios', () => {
 
   beforeEach(() => {
     history = createMemoryHistory();
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('handles Topics menu with special structure', () => {
