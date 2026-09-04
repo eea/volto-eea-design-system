@@ -9,6 +9,7 @@ import { handleEnterKeyPress } from '@eeacms/volto-eea-design-system/helpers';
 
 import searchSVG from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search-line.svg';
 import aiSearchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/ai-search.svg';
+import { useAISummaryToggle } from './useAISummaryToggle';
 
 const getRandomItems = (arr, max) => {
   return (
@@ -96,7 +97,12 @@ function HeaderSearchPopUp({
       state.reduxAsyncConnect?.headerSettings?.useAISearchIcon || false,
   );
 
-  const searchIcon = useAISearchIcon ? aiSearchIcon : searchSVG;
+  const [aiSummaryEnabled] = useAISummaryToggle();
+
+  // The AI sparkle only shows when the AI search icon is configured and
+  // the user has not opted out of AI summaries.
+  const searchIcon =
+    useAISearchIcon && aiSummaryEnabled ? aiSearchIcon : searchSVG;
 
   useEffect(() => {
     setVisibileSuggestions(getRandomItems(suggestions, maxToShow));
