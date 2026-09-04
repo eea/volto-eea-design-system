@@ -1,0 +1,7 @@
+{
+  "title": "Eea Design System",
+  "frontend_addon_name": "volto-eea-design-system",
+  "description": "@eeacms/volto-eea-design-system: Volto add-on",
+  "volto_version": "19.3.0",
+  "__template__": "frontend_addon"
+}
