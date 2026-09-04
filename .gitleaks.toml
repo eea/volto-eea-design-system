@@ -94,3 +94,9 @@ paths = [
   '''(^|/)core/''',
   '''(^|/)node_modules/''',
 ]
+
+[[allowlists]]
+description = "Ignore compiled documentation assets; their source files remain scanned"
+paths = [
+  '''(^|/)docs/assets/(?:css|js)/''',
+]
