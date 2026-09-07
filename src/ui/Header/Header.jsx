@@ -16,6 +16,7 @@ import burgerIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/asse
 
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
+import { useAISummaryToggle } from './useAISummaryToggle';
 import { findBestMatchingMenuItem, isMenuItemActive } from './utils';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
@@ -166,7 +167,12 @@ const Main = ({
       state.reduxAsyncConnect?.headerSettings?.useAISearchIcon || false,
   );
 
-  const searchIcon = useAISearchIcon ? aiSearchIcon : searchSVG;
+  const [aiSummaryEnabled] = useAISummaryToggle();
+
+  // The AI sparkle only shows when the AI search icon is configured and
+  // the user has not opted out of AI summaries.
+  const searchIcon =
+    useAISearchIcon && aiSummaryEnabled ? aiSearchIcon : searchSVG;
 
   const itemsLayouts =
     menuItemsLayouts || config.settings?.menuItemsLayouts || {};
