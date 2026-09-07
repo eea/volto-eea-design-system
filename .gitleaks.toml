@@ -93,3 +93,9 @@ description = "Allow generated documentation assets"
 paths = [
   '''^docs/assets/''',
 ]
+
+[[allowlists]]
+description = "Semantic UI flag stylesheet uses ISO country-code selectors like `.pw:before` (Palau), not credentials"
+paths = [
+  '''(^|/)theme/themes/eea/elements/flag\.overrides$''',
+]
