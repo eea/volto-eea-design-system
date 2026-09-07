@@ -17,13 +17,16 @@ import { useCallback, useEffect, useState } from 'react';
 export const AI_SUMMARY_STORAGE_KEY = 'eea-ai-summary-enabled';
 export const AI_SUMMARY_TOGGLE_EVENT = 'eea:ai-summary-toggle';
 
-export const readAISummaryEnabled = (storage = window.localStorage) =>
-  storage.getItem(AI_SUMMARY_STORAGE_KEY) !== '0';
+// The hooks render during SSR, where window/localStorage do not exist;
+// storage access defaults to the enabled state until the client re-reads it.
+const getStorage = () =>
+  typeof window === 'undefined' ? null : window.localStorage;
 
-export const writeAISummaryEnabled = (
-  enabled,
-  storage = window.localStorage,
-) => {
+export const readAISummaryEnabled = (storage = getStorage()) =>
+  storage ? storage.getItem(AI_SUMMARY_STORAGE_KEY) !== '0' : true;
+
+export const writeAISummaryEnabled = (enabled, storage = getStorage()) => {
+  if (!storage) return;
   storage.setItem(AI_SUMMARY_STORAGE_KEY, enabled ? '1' : '0');
   window.dispatchEvent(
     new CustomEvent(AI_SUMMARY_TOGGLE_EVENT, { detail: enabled }),
