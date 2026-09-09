@@ -38,7 +38,8 @@
     "@eeacms/volto-eea-design-system": "workspace:*"
   },
   "devDependencies": {
-    "mrs-developer": "^2.2.0"
+    "mrs-developer": "^2.2.0",
+    "lint-staged": "^14.0.1"
   },
   "pnpm": {
     "overrides": {

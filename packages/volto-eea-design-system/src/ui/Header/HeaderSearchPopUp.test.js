@@ -248,4 +248,53 @@ describe('HeaderSearchPopUp', () => {
     expect(screen.getByPlaceholderText('Search')).toBeInTheDocument();
     expect(screen.queryByText('Suggestions Title')).not.toBeInTheDocument();
   });
+
+  describe('search icon and AI summary state', () => {
+    beforeEach(() => {
+      window.localStorage.clear();
+      mockState.reduxAsyncConnect.headerSettings.useAISearchIcon = false;
+    });
+
+    const renderPopup = () =>
+      render(
+        <Provider store={mockStore}>
+          <Router history={history}>
+            <HeaderSearchPopUp
+              headerSearchBox={sampleHeaderSearchBox}
+              onClose={mockOnClose}
+              triggerRefs={[]}
+            />
+          </Router>
+        </Provider>,
+      );
+
+    it('shows the plain magnifier when useAISearchIcon is false', () => {
+      const { container } = renderPopup();
+      expect(container.querySelector('img')).toHaveAttribute(
+        'src',
+        'search-line.svg',
+      );
+    });
+
+    it('shows the AI sparkle when useAISearchIcon is true and AI summaries are enabled', () => {
+      mockState.reduxAsyncConnect.headerSettings.useAISearchIcon = true;
+
+      const { container } = renderPopup();
+      expect(container.querySelector('img')).toHaveAttribute(
+        'src',
+        'ai-search.svg',
+      );
+    });
+
+    it('shows the plain magnifier when useAISearchIcon is true but AI summaries are disabled', () => {
+      mockState.reduxAsyncConnect.headerSettings.useAISearchIcon = true;
+      window.localStorage.setItem('eea-ai-summary-enabled', '0');
+
+      const { container } = renderPopup();
+      expect(container.querySelector('img')).toHaveAttribute(
+        'src',
+        'search-line.svg',
+      );
+    });
+  });
 });

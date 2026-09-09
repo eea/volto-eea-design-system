@@ -100,3 +100,9 @@ description = "Ignore compiled documentation assets; their source files remain s
 paths = [
   '''(^|/)docs/assets/(?:css|js)/''',
 ]
+
+[[allowlists]]
+description = "Semantic UI flag stylesheet uses ISO country-code selectors like `.pw:before` (Palau), not credentials"
+paths = [
+  '''(^|/)theme/themes/eea/elements/flag\.overrides$''',
+]

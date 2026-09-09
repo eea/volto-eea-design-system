@@ -770,3 +770,58 @@ test('menu click outside behavior with different active states', async () => {
   expect(burgerButton).toHaveAttribute('aria-expanded', 'false');
   expect(searchButton).toHaveAttribute('aria-expanded', 'false');
 });
+
+describe('header search icon and AI summary state', () => {
+  const renderMain = () =>
+    renderWithProvider(
+      <Router history={createMemoryHistory()}>
+        <Header>
+          <Header.Main
+            pathname="/test"
+            menuItems={[
+              { '@id': '/test', url: '/test', title: 'Test', items: [] },
+            ]}
+            renderGlobalMenuItem={(item) => (
+              <a href={item.url} title={item.title}>
+                {item.title}
+              </a>
+            )}
+          />
+        </Header>
+      </Router>,
+    );
+
+  beforeEach(() => {
+    window.localStorage.clear();
+    mockState.reduxAsyncConnect.headerSettings.useAISearchIcon = false;
+  });
+
+  it('shows the plain magnifier when useAISearchIcon is false', () => {
+    const { container } = renderMain();
+    expect(container.querySelector('img[alt="Global search"]')).toHaveAttribute(
+      'src',
+      'search-line.svg',
+    );
+  });
+
+  it('shows the AI sparkle when useAISearchIcon is true and AI summaries are enabled', () => {
+    mockState.reduxAsyncConnect.headerSettings.useAISearchIcon = true;
+
+    const { container } = renderMain();
+    expect(container.querySelector('img[alt="Global search"]')).toHaveAttribute(
+      'src',
+      'ai-search.svg',
+    );
+  });
+
+  it('shows the plain magnifier when useAISearchIcon is true but AI summaries are disabled', () => {
+    mockState.reduxAsyncConnect.headerSettings.useAISearchIcon = true;
+    window.localStorage.setItem('eea-ai-summary-enabled', '0');
+
+    const { container } = renderMain();
+    expect(container.querySelector('img[alt="Global search"]')).toHaveAttribute(
+      'src',
+      'search-line.svg',
+    );
+  });
+});
