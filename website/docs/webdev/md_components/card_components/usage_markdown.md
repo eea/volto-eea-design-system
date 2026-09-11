@@ -67,6 +67,10 @@ If an Indicator preview is missing or unexpected, check its lead image, embedded
 
 ### Scope and reuse
 
-This update covers the Listing Block card family. **Search Item** in that family is distinct from the cards in **Advanced Search (`volto-searchlib`)**, which are outside the scope of this change.
+**Advanced Search → Maps & Graphs** also uses the existing `visualizationCard` template through `UniversalCard`. Search-lib adapts the search result fields to the shared card model and reuses the listing styles, including the top border; it does not maintain a separate card layout.
+
+Search cards show the content-type label, title (up to four lines), publishing date when available, preview image and **Read more** action. The title, image and CTA navigate to the same content URL, including external destinations. Descriptions, tags and content popups are disabled. Previews come from the search index; missing previews use the shared placeholder, and missing or invalid publishing dates are omitted.
+
+Maps & Graphs retains its responsive four-column card view. Other Advanced Search sections retain their existing default views. **Search Item** remains a separate template in the Listing Block family for horizontal search results.
 
 Review legacy cards for reuse where appropriate. Migrating cards on thematic sites such as WISE Freshwater or Climate-ADAPT, and consolidating their implementations, are follow-up work; documenting this component does not imply those migrations have been completed.
