@@ -1,0 +1,517 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+/* Avoid long links from spilling outside of card body area */
+.ui.cards > .card > .extra,
+.ui.card > .extra {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: var(--text-align, @extraJustifyContent);
+  padding-top: 0;
+  font-size: @extraLinkFontSize;
+  word-break: @extraLinkWordBreak;
+}
+
+/* Cards must have same height */
+.ui.card {
+  height: 100%;
+  background-color: var(--card-background-color, @background);
+  color: var(--card-text-color, @cardColor);
+  text-align: var(--text-align, @cardTextAlign);
+}
+
+.card .meta .date {
+  margin-left: @cardMetaDateMarginLeft;
+}
+
+.ui.cards > .card:not(.rounded) > .image,
+.ui.card:not(.rounded) > .image {
+  overflow: @cardImageOverflow;
+  height: @cardImageHeight;
+
+  img {
+    width: var(--card-image-width, @imageWidth);
+    height: var(--card-image-width, @imageHeight);
+  }
+}
+
+.ui.card img,
+img.ui.image {
+  object-fit: var(--image-object-fit, @imageObjectFit);
+  object-position: var(--image-object-position, @imageObjectPosition);
+}
+
+// Align image inside card content
+.ui.card > .content > .image {
+  margin-top: auto;
+}
+
+.ui.cards > .card > .content > *:not(:last-child),
+.ui.card > .content > *:not(:last-child) {
+  margin-bottom: @cardContentMarginBottom;
+}
+
+.ui.card .event-date {
+  display: @eventDateDisplay;
+  flex-direction: @eventDateFlexDirection;
+  align-items: @eventDateAlign;
+}
+
+.ui.card .meta {
+  display: flex;
+  width: 100%;
+  justify-content: var(--justify-content, @metaJustifyContent);
+}
+
+.ui.card .meta > .category {
+  font-size: @metaFontSize;
+}
+
+// add bottom margin also when meta isn't inside .content
+//
+.ui.cards > .card .meta,
+.ui.card .meta {
+  margin-bottom: @cardContentMarginBottom;
+}
+
+.ui.card .extra.content a:not(.ui) {
+  font-weight: @contentLinkFontWeight;
+
+  &:hover {
+    text-decoration: @contentLinkTextDecoration;
+  }
+}
+
+.card .header-link:hover {
+  text-decoration: @contentLinkTextDecoration;
+}
+
+.ui.left.card {
+  margin-right: auto;
+}
+
+.ui.right.card {
+  margin-left: auto;
+}
+
+/*******************************
+            Primary
+*******************************/
+.card.has--theme--primary,
+.card.primary {
+  --card-background-color: @primaryCardBackground;
+  --card-text-color: @primaryCardColor;
+}
+
+/* Inverted */
+.card.has--theme--primary.has--inverted--true,
+.card.primary.inverted,
+.cardsVisualization .primary {
+  --card-background-color: @invertedPrimaryCardBackgroundColor;
+  --card-text-color: @invertedPrimaryCardColor;
+}
+
+/*******************************
+            Secondary
+*******************************/
+.card.has--theme--secondary,
+.card.secondary {
+  --card-background-color: @secondaryCardBackground;
+  --card-text-color: @secondaryCardColor;
+}
+
+/* Inverted */
+.card.has--theme--secondary.has--inverted--true,
+.card.secondary.inverted,
+.cardsVisualization .secondary {
+  --card-background-color: @invertedSecondaryCardBackgroundColor;
+  --card-text-color: @invertedSecondaryCardColor;
+}
+
+/*******************************
+            Tertiary
+*******************************/
+.card.has--theme--tertiary,
+.card.tertiary {
+  --card-background-color: @tertiaryCardBackground;
+  --card-text-color: @tertiaryCardColor;
+}
+
+/* Inverted */
+.card.has--theme--tertiary.has--inverted--true,
+.card.tertiary.inverted,
+.cardsVisualization .tertiary {
+  --card-background-color: @invertedTertiaryCardBackgroundColor;
+  --card-text-color: @invertedTertiaryCardColor;
+}
+
+/*******************************
+          Rounded Card
+*******************************/
+.ui.card.rounded > .image {
+  height: auto;
+}
+
+.card.rounded {
+  --card-image-width: @roundedImageWidth;
+  --card-image-height: @roundedImageHeight;
+}
+
+.ui.card.rounded {
+  padding: @roundedCardPadding;
+  border: none;
+
+  .image {
+    display: flex;
+    justify-content: @roundedImageJustifyContent;
+  }
+
+  img {
+    width: @roundedImageWidth;
+    height: @roundedImageHeight;
+    border-radius: @roundedImageBorderRadius !important;
+    object-fit: var(--image-object-fit, @imageObjectFit);
+    object-position: var(--image-object-position, @imageObjectPosition);
+  }
+
+  .content {
+    border-top: none;
+
+    .header {
+      margin-bottom: @roundedContentTitleMarginBottom;
+      font-size: @roundedContentTitleFontSize;
+      font-weight: @roundedContentTitleFontWeight;
+      //text-align: @roundedContentTitleTextAlign;
+    }
+
+    .description {
+      //text-align: @roundedContentTitleTextAlign;
+      font-size: @roundedMetadataFontSize;
+      font-weight: @roundedMetadataFontWeight;
+    }
+  }
+}
+
+/*******************************
+        Publication Card
+*******************************/
+
+.ui.card.publication {
+  width: @mobilePublicationCardWidth;
+  border: none;
+
+  .image {
+    height: @mobilePublicationcardImageHeight;
+    flex-grow: 1;
+  }
+
+  .content {
+    height: @mobileCardContentHeight;
+    max-height: @cardContentMaxHeight;
+    padding: @cardContentPadding;
+    background-color: @publicationCardDescriptionColor;
+
+    .meta,
+    .meta a:not(.ui) {
+      color: @publicationCardtextColor;
+      font-size: @cardMetaFontSize;
+      font-weight: @cardMetaTagFontWeight;
+    }
+
+    .description {
+      display: -webkit-box;
+      overflow: hidden;
+      margin-top: 0;
+      -webkit-box-orient: vertical;
+      color: @publicationCardtextColor;
+      font-size: @cardDescriptionTextFontSize;
+      font-weight: @cardDescriptionTextFontWeight;
+      -webkit-line-clamp: @cardDescriptionTextLineClampMobile;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+@media only screen and (min-width: @tabletBreakpoint) {
+  .ui.card.publication {
+    width: @tabletPublicationCardWidth;
+
+    .image {
+      height: @tabletPublicationcardImageHeight;
+    }
+
+    .content {
+      height: @tabletCardContentHeight;
+      max-height: @tabletCardContentMaxHeight;
+
+      .description {
+        -webkit-line-clamp: @cardDescriptionTextLineClampTablet;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  .ui.card.publication {
+    width: @computerPublicationCardWidth;
+
+    .image {
+      height: @computerPublicationcardImageHeight;
+    }
+  }
+}
+
+.fluid-card-row {
+  display: grid;
+  justify-content: space-between;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  .ui.card {
+    margin: 0;
+  }
+}
+
+/*******************************
+      Image with title
+*******************************/
+// Adding the default image css for image inside image-with-title
+.ui.cards > .card > .image {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  padding: 0;
+  background: transparent;
+}
+
+.card .gradient {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: flex-end;
+  padding: @imageTitlePadding;
+  .image-overlay-gradient();
+}
+
+.gradient .header {
+  color: @imageTitleColor;
+  font-size: var(--image-header-font-size, @imageTitleMobileFontSize);
+  font-weight: @imageTitleFontWeight;
+  line-height: @imageTitleLineHeight;
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  .card .gradient {
+    padding-block: @imageTitlePaddingBlock;
+  }
+
+  .gradient .header {
+    --image-header-font-size: @imageTitleFontSize;
+  }
+}
+
+/*******************************
+        Carousel
+*******************************/
+
+.cards-carousel {
+  position: relative;
+
+  .slick-list {
+    margin: @slickListMargin;
+  }
+
+  .slick-track {
+    display: flex;
+    margin: @slickTrackMargin;
+  }
+
+  .slick-slide {
+    display: flex;
+    height: auto;
+    flex: 1;
+    flex-direction: column;
+    margin: @slickSlideMargin;
+
+    > div {
+      height: 100%;
+    }
+  }
+}
+
+/* Carousel arrows */
+.cards-carousel .ui.button.icon.slider-arrow {
+  padding: @carouselButtonPadding;
+  margin: @carouselButtonMargin;
+
+  .active,
+  &:focus,
+  &:hover {
+    background: transparent;
+  }
+
+  &:focus-visible {
+    outline: auto;
+  }
+
+  .icon {
+    width: auto;
+    padding-top: @carouselButtonPaddingTop;
+    color: @carouselButtonIconColor;
+    font-size: @carouselButtonIconFontSize;
+    opacity: @carouselButtonIconOpacity;
+  }
+}
+
+.cards-carousel .slider-arrow {
+  position: absolute;
+  z-index: 1; // make arrows clickable even on events page with right column
+  top: 50%;
+  bottom: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  transform: translate(0, -50%);
+}
+
+.cards-carousel .slider-arrow.slick-disabled {
+  opacity: @carouselArrowDisabledOpacity;
+}
+
+.cards-carousel .prev-arrow {
+  right: auto;
+  left: @carouselButtonDistance;
+}
+
+.cards-carousel .next-arrow {
+  right: @carouselButtonDistance;
+  left: auto;
+}
+
+/* Custom carousel pagination bullets */
+// avoid dots going over content that follows sliders
+.slick-dots {
+  position: relative;
+  bottom: 0;
+}
+
+.cards-carousel .slick-dots li button:before {
+  content: none;
+}
+
+.cards-carousel .slick-dots li .slick-dot-icon:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: @mobileCarouselDotsWidth;
+  height: @mobileCarouselDotsHeight;
+  border: @carouselDotsBorder;
+  border-radius: @carouselDotsBorderRadius;
+  background-color: @carouselDotsBackgroundColor;
+  color: transparent;
+  content: '•';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  opacity: @carouselDotsOpacity;
+  text-align: center;
+}
+
+.cards-carousel .slick-dots li.slick-active .slick-dot-icon:before {
+  background-color: @carouselDotsActiveBackgroundColor;
+  color: transparent;
+}
+
+.slick-dots li button:focus-visible {
+  outline: black;
+  outline-style: auto;
+}
+
+@media only screen and (max-width: @tabletBreakpoint) {
+  .cards-carousel .slick-dots li,
+  .cards-carousel .slick-dots li button {
+    width: @mobileCarouselDotsButtonWidth;
+    height: @mobileCarouselDotsButtonHeight;
+  }
+}
+
+/*******************************
+          Icon Card
+*******************************/
+
+.ui.card.icon {
+  padding-top: @iconCardPaddingTop;
+
+  .content {
+    border-top: none;
+
+    .header {
+      font-size: @iconCardHeaderFontSize;
+      word-break: break-word;
+    }
+  }
+
+  .icon {
+    margin: auto;
+  }
+}
+
+.ui.cards > .card > i.icon,
+.ui.cards > .card > a:not(.ui) > i.icon,
+.ui.card > i.icon,
+.ui.card > a:not(.ui) > i.icon {
+  color: @iconColor;
+}
+
+/*******************************
+          Teaser Card
+*******************************/
+// Teaser cards grid on tablet update padding and min-width
+@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+  .ui.grid > .column.grid-block-teaser,
+  .ui.grid > .row > .column.grid-block-teaser {
+    padding-right: @tabletTeaserCardPaddingInline;
+    padding-left: @tabletTeaserCardPaddingInline;
+  }
+
+  .grid-block-teaser .ui.card {
+    min-width: @tabletTeaserCardMinWidth;
+  }
+}
+
+// Spacing adjustment to display outline with overflow hidden
+/* avoid 3rd line visibility for card headings */
+.ui.card .header {
+  padding: @headerPadding;
+}
+
+// when title is on image the extra padding that displays the
+// link outline reveals part of title from 3rd row
+.ui.card .gradient .header {
+  padding: @headerOnImagePadding;
+}
+
+.ui.card .header > a {
+  .useTitleMaxLines();
+}
+
+// Meta align fix
+.ui.card.u-card .meta:after {
+  content: none;
+}
+
+/*******************************
+    Image Card items grid
+*******************************/
+.imageCard-items {
+  display: grid;
+  gap: @imageCardItemsGap;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(@imageCardItemsGridMin, @imageCardItemsGridMax)
+  );
+}

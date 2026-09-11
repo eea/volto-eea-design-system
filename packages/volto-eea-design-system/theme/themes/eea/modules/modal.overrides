@@ -1,0 +1,17 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+.ui.modal .close {
+  z-index: @zIndex;
+  padding: @closeButtonPadding;
+  background: @closeButtonBackground;
+
+  i {
+    color: @closeColor;
+  }
+}
+
+.ui.modal .ui.button.close:focus-visible {
+  outline: @focusVisibleOutline;
+}

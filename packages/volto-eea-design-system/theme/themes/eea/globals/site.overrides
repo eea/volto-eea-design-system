@@ -1,0 +1,413 @@
+/*******************************
+        Global Overrides
+*******************************/
+
+@import '@eeacms/volto-eea-design-system/../theme/themes/eea/globals/utilities';
+
+html,
+body {
+  font-size: @baseFontSize;
+}
+
+.is-fullscreen-mode {
+  #header,
+  #footer,
+  .skiplinks-wrapper,
+  .inpage-navigation-wrapper {
+    display: none !important;
+    visibility: hidden;
+  }
+
+  body {
+    margin-top: 0 !important;
+  }
+}
+
+/* sensible image defaults */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // shape-margin: 0.75rem;
+}
+
+// Accessibility outline on focus-visible for every component
+*:focus-visible {
+  outline: @focusVisibleOutline;
+}
+
+button:focus-visible,
+a.button:focus-visible,
+.ui.dropdown:focus-visible,
+.ui.checkbox input[type='checkbox']:focus-visible,
+.ui.checkbox input[type='radio']:focus-visible {
+  outline: @focusVisibleOutline !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: @font-letterspacing-00;
+  line-height: @font-lineheight-0;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: @headerColor;
+}
+
+.subtitle-light {
+  font-size: @h3-light !important;
+  font-weight: @font-weight-2 !important;
+}
+
+.content-area {
+  min-height: 100px;
+  color: @contentAreaColor;
+}
+
+[id='page-document'] > *,
+.view-wrapper > * {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+[class~='view-defaultview'] [id='page-document'] > *,
+[class~='view-viewview'] [id='page-document'] > *,
+#main .container_width,
+#main .has--size--container_width,
+.view-wrapper > * {
+  max-width: @containerWidth !important;
+}
+
+[class~='narrow_view'] [id='page-document'] > *,
+#main .narrow_width,
+#main .has--size--narrow_width {
+  max-width: @narrowWidth !important;
+}
+
+[class~='wide_view'] [id='page-document'] > *,
+#main .wide_width,
+#main .has--size--wide_width {
+  max-width: @wideWidth !important;
+}
+
+// enlarge wide section when we have a resolution from 1280px to before the laptop hd resolution
+@media screen and (min-width: 1280px) and (max-width: 1365px) {
+  [class~='wide_view'] [id='page-document'] > *,
+  #main .wide_width,
+  #main .has--size--wide_width {
+    max-width: @wideWidthLaptop !important;
+  }
+}
+
+.block-editor-title {
+  --layout-max-width: @containerWidth;
+}
+
+[class~='narrow_view'] {
+  --layout-max-width: @narrowWidth;
+}
+
+[class~='wide_view'] {
+  --layout-max-width: @wideWidth;
+}
+
+// add a 1rem margin top and bottom on all direct styled classes from container
+[class~='container'] > [class*='styled-'] {
+  margin-top: @rem-space-4;
+  margin-bottom: @rem-space-4;
+}
+
+// clear any floats if we add a columns block as a floated image
+// can modify the width of the column block children
+.styled-columnsBlock {
+  clear: both;
+}
+
+// text smaller than body has extra letterspacing as described in docusaurus
+.tiny,
+.caption,
+.discreet,
+small {
+  font-size: @font-size-00;
+  letter-spacing: @font-letterspacing-1;
+  line-height: @font-lineheight-3;
+}
+
+/* Heading size adjustment */
+@media only screen and (max-width: @largestMobileScreen) {
+  h1 {
+    font-size: @mobileH1;
+  }
+
+  h2 {
+    font-size: @mobileH2;
+  }
+
+  h3 {
+    font-size: @mobileH3;
+  }
+
+  h4 {
+    font-size: @mobileH4;
+  }
+}
+
+a {
+  &:visited {
+    color: @linkVisitedColor;
+  }
+
+  &:active {
+    color: @linkActiveColor;
+  }
+}
+
+[class^='ri-'],
+[class*=' ri-'] {
+  fill: currentColor;
+}
+
+.homepage {
+  color: @tertiaryColor;
+}
+
+/* Add background and color for scroll-to-text fragments */
+::target-text {
+  background: @lightLavender;
+  color: @black;
+}
+
+/* Add colors for paragraphs styles options in StyleMenu */
+#style-menu.ui.dropdown .menu {
+  .block-style-primary {
+    color: @primaryColor;
+  }
+
+  .block-style-secondary {
+    color: @secondaryColor;
+  }
+
+  .block-style-tertiary {
+    color: @tertiaryColor;
+  }
+
+  .active {
+    background-color: @grey-2;
+  }
+}
+
+// fix background position when using the side navigation and the
+// content area is moved to the left instead of being centered
+@media (min-width: 992px) and (max-width: 1365px) {
+  .has-side-nav .content-box::before,
+  .has-side-nav .full-width,
+  .has-side-nav .has--size--full {
+    right: initial;
+    left: initial;
+    margin-right: auto;
+    margin-left: -20px !important;
+  }
+}
+
+@media (min-width: 1366px) {
+  .has-side-nav .content-box::before,
+  .has-side-nav .full-width,
+  .has-side-nav .has--size--full {
+    left: 72% !important;
+  }
+}
+
+@first-print-page: ~'@page :first { margin-top: 0; }';
+
+@media print {
+  @page {
+    margin: 14mm 0;
+    size: A4;
+  }
+
+  @{first-print-page} html,
+  body {
+    width: auto;
+    height: auto;
+    background: @white;
+    color: @textColor;
+  }
+
+  // avoid cutting elements
+  body {
+    overflow: visible !important;
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    break-after: avoid-page;
+    break-inside: avoid;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .eea.header,
+  .eea.header .container,
+  .light-header .container {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .skiplinks-wrapper,
+  .slider-arrow,
+  #footer,
+  #inpage-navigation,
+  .column.actions,
+  .slick-arrows,
+  .ui.sticky,
+  .has-side-nav .content-box::before,
+  .light-header::before,
+  #download-print-loader,
+  .context-navigation {
+    display: none !important;
+    visibility: hidden;
+  }
+
+  #page-document {
+    padding-right: 12mm;
+    padding-left: 12mm;
+  }
+
+  .content-box {
+    margin-right: -12mm;
+    margin-left: -12mm;
+  }
+
+  .content-box-inner {
+    padding-right: 12mm;
+    padding-left: 12mm;
+  }
+
+  .eea.hero-block,
+  .eea.hero-block .hero-block-image-wrapper,
+  .full-width,
+  .has--size--full {
+    margin-right: -12mm;
+    margin-left: -12mm;
+  }
+
+  .light-header .container {
+    padding-right: 12mm;
+    padding-left: 12mm;
+  }
+
+  .block.gridBlock .ui.grid,
+  .content-box,
+  .block.image,
+  figure {
+    break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    + .block.image,
+    + .block.gridBlock,
+    + .visualization,
+    + figure {
+      break-before: avoid-page;
+    }
+  }
+
+  // avoid single lines at the beginning or end of a page
+  #page-document p,
+  #page-document li,
+  #page-document blockquote {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .ui.segment.breadcrumbs {
+    padding: 0;
+
+    .ui.breadcrumb {
+      visibility: hidden;
+    }
+  }
+
+  .ui.tab {
+    display: block;
+  }
+
+  .static-banner {
+    display: none;
+    visibility: hidden;
+  }
+
+  img,
+  .image,
+  .card,
+  .visualization,
+  .embed-map,
+  .embed-tableau,
+  .embed-map-visualization,
+  .embed-visualization {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .ui.segment,
+  .content-box,
+  .card,
+  figure {
+    box-shadow: none !important;
+  }
+
+  .grid-block-teaser .card {
+    page-break-inside: auto;
+  }
+
+  .content-type {
+    --text-color-secondary: @textColor;
+  }
+
+  .columns-view {
+    .content-box & .column-blocks-wrapper {
+      box-sizing: border-box;
+      padding-right: 8mm !important;
+      padding-left: 8mm !important;
+    }
+
+    .ui.column.grid > [class*='three wide'].column {
+      width: 16.66666667% !important;
+    }
+
+    .ui.column.grid > [class*='ten wide'].column {
+      width: 83.33333333% !important;
+    }
+
+    .ui.column.grid > [class*='five wide computer'].column,
+    .ui.column.grid > [class*='seven wide computer'].column {
+      width: 100% !important;
+    }
+
+    .ui.column.grid > [class*='seven wide computer'].column .ui.button {
+      max-width: 100%;
+      white-space: normal;
+    }
+  }
+}
