@@ -75,10 +75,12 @@ function HeaderSearchPopUp({
   const nodeRef = React.useRef();
 
   const searchInput = getSearchInput(headerSearchBox, location);
-  const actions =
-    headerSearchBox
-      .filter((v) => ['info', 'button-link'].includes(v.type))
-      .map((v) => serializeAction(v, location)) || [];
+  // A search box with hideActions shows no info text or buttons below it
+  const actions = searchInput.hideActions
+    ? []
+    : headerSearchBox
+        .filter((v) => ['info', 'button-link'].includes(v.type))
+        .map((v) => serializeAction(v, location)) || [];
 
   const {
     path = '',

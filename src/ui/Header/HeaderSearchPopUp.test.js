@@ -339,4 +339,33 @@ describe('HeaderSearchPopUp', () => {
       );
     });
   });
+
+  describe('hideActions', () => {
+    const renderWith = (headerSearchBox) =>
+      render(
+        <Provider store={mockStore}>
+          <Router history={history}>
+            <HeaderSearchPopUp
+              headerSearchBox={headerSearchBox}
+              onClose={mockOnClose}
+              triggerRefs={[]}
+            />
+          </Router>
+        </Provider>,
+      );
+
+    it('shows the actions by default', () => {
+      renderWith(sampleHeaderSearchBox);
+      expect(screen.getByText('Advanced Search')).toBeInTheDocument();
+    });
+
+    it('hides the actions when the matched search input has hideActions', () => {
+      renderWith([
+        { ...sampleHeaderSearchBox[0], hideActions: true },
+        ...sampleHeaderSearchBox.slice(1),
+      ]);
+      expect(screen.queryByText('Advanced Search')).toBeNull();
+      expect(screen.getByPlaceholderText('Search')).toBeInTheDocument();
+    });
+  });
 });
