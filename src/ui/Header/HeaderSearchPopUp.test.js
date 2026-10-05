@@ -111,6 +111,48 @@ describe('HeaderSearchPopUp', () => {
     expect(history.location.pathname).toBe('/search');
   });
 
+  const submitText = (headerSearchBox, text) => {
+    const searchInputRef = React.createRef();
+    const { container } = render(
+      <Provider store={mockStore}>
+        <Router history={history}>
+          <HeaderSearchPopUp
+            headerSearchBox={headerSearchBox}
+            onClose={mockOnClose}
+            searchInputRef={searchInputRef}
+            triggerRefs={[]}
+          />
+        </Router>
+      </Provider>,
+    );
+    fireEvent.change(screen.getByPlaceholderText('Search'), {
+      target: { value: text },
+    });
+    fireEvent.submit(container.querySelector('form'));
+  };
+
+  it('should submit the search text as q by default', () => {
+    submitText(sampleHeaderSearchBox, 'plenary');
+    expect(history.location.pathname).toBe('/search');
+    expect(history.location.search).toBe('?q=plenary');
+  });
+
+  it('should submit the search text as the entry queryParam', () => {
+    submitText(
+      [
+        {
+          type: 'search-input',
+          path: '/en/epanet/site-search',
+          queryParam: 'SearchableText',
+          placeholder: 'Search',
+        },
+      ],
+      'plenary',
+    );
+    expect(history.location.pathname).toBe('/en/epanet/site-search');
+    expect(history.location.search).toBe('?SearchableText=plenary');
+  });
+
   it('should navigate to the suggestion when a suggestion is clicked', () => {
     window.searchContext = { resetSearch: jest.fn() };
 
