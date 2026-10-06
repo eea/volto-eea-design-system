@@ -170,10 +170,12 @@ const Main = ({
     (state) =>
       state.reduxAsyncConnect?.headerSettings?.useAISearchIcon || false,
   );
-  // The search box matching the current path can override the site-wide icon
+  // The search box matching the current path can turn the site-wide icon off
   const useAISearchIcon =
-    getSearchInput(headerSearchBox || [], { pathname: pathname || '' })
-      .useAISearchIcon ?? siteUseAISearchIcon;
+    siteUseAISearchIcon &&
+    (getSearchInput(headerSearchBox || [], { pathname: pathname || '' })
+      .useAISearchIcon ??
+      true);
 
   const [aiSummaryEnabled] = useAISummaryToggle();
 

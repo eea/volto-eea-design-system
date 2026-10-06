@@ -367,16 +367,6 @@ describe('HeaderSearchPopUp', () => {
         'search-line.svg',
       );
     });
-
-    it('shows the AI sparkle when the search box turns the AI icon on', () => {
-      mockState.reduxAsyncConnect.headerSettings.useAISearchIcon = false;
-
-      const { container } = renderWithEntry({ useAISearchIcon: true });
-      expect(container.querySelector('img')).toHaveAttribute(
-        'src',
-        'ai-search.svg',
-      );
-    });
   });
 
   describe('hideActions', () => {

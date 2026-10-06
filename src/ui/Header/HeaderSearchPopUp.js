@@ -90,8 +90,9 @@ function HeaderSearchPopUp({
     (state) =>
       state.reduxAsyncConnect?.headerSettings?.useAISearchIcon || false,
   );
-  // A search box can override the site-wide icon, e.g. a subsite search
-  const useAISearchIcon = searchInput.useAISearchIcon ?? siteUseAISearchIcon;
+  // A search box can turn the site-wide icon off, e.g. a subsite search
+  const useAISearchIcon =
+    siteUseAISearchIcon && (searchInput.useAISearchIcon ?? true);
 
   const [aiSummaryEnabled] = useAISummaryToggle();
 
