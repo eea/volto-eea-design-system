@@ -17,7 +17,11 @@ import burgerIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/asse
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
 import { useAISummaryToggle } from './useAISummaryToggle';
-import { findBestMatchingMenuItem, isMenuItemActive } from './utils';
+import {
+  findBestMatchingMenuItem,
+  getSearchInput,
+  isMenuItemActive,
+} from './utils';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
@@ -162,10 +166,14 @@ const Main = ({
   const [burger, setBurger] = React.useState('');
   const searchInputRef = React.useRef(null);
   const [isClient, setIsClient] = React.useState();
-  const useAISearchIcon = useSelector(
+  const siteUseAISearchIcon = useSelector(
     (state) =>
       state.reduxAsyncConnect?.headerSettings?.useAISearchIcon || false,
   );
+  // The search box matching the current path can override the site-wide icon
+  const useAISearchIcon =
+    getSearchInput(headerSearchBox || [], { pathname: pathname || '' })
+      .useAISearchIcon ?? siteUseAISearchIcon;
 
   const [aiSummaryEnabled] = useAISummaryToggle();
 

@@ -10,24 +10,13 @@ import { handleEnterKeyPress } from '@eeacms/volto-eea-design-system/helpers';
 import searchSVG from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search-line.svg';
 import aiSearchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/ai-search.svg';
 import { useAISummaryToggle } from './useAISummaryToggle';
+import { getSearchInput } from './utils';
 
 const getRandomItems = (arr, max) => {
   return (
     arr?.slice(0, max).map(function () {
       return this.splice(Math.floor(Math.random() * this.length), 1)[0];
     }, arr.slice()) || []
-  );
-};
-
-const getSearchInput = (config, location) => {
-  return (
-    config.filter(
-      (v) =>
-        v.type === 'search-input' &&
-        location.pathname.match(v.matchpath ? v.matchpath : v.path),
-    )[0] ||
-    config.filter((v) => v.type === 'search-input')[0] ||
-    {}
   );
 };
 
@@ -97,10 +86,12 @@ function HeaderSearchPopUp({
     getRandomItems(suggestions, maxToShow),
   );
 
-  const useAISearchIcon = useSelector(
+  const siteUseAISearchIcon = useSelector(
     (state) =>
       state.reduxAsyncConnect?.headerSettings?.useAISearchIcon || false,
   );
+  // A search box can override the site-wide icon, e.g. a subsite search
+  const useAISearchIcon = searchInput.useAISearchIcon ?? siteUseAISearchIcon;
 
   const [aiSummaryEnabled] = useAISummaryToggle();
 
