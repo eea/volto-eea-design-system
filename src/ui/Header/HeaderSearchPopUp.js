@@ -75,13 +75,18 @@ function HeaderSearchPopUp({
   const nodeRef = React.useRef();
 
   const searchInput = getSearchInput(headerSearchBox, location);
-  const actions =
-    headerSearchBox
-      .filter((v) => ['info', 'button-link'].includes(v.type))
-      .map((v) => serializeAction(v, location)) || [];
+  // A search box with hideActions shows no info text or buttons below it
+  const actions = searchInput.hideActions
+    ? []
+    : headerSearchBox
+        .filter((v) => ['info', 'button-link'].includes(v.type))
+        .map((v) => serializeAction(v, location)) || [];
 
   const {
     path = '',
+    // URL parameter that carries the search text, e.g. 'SearchableText' for
+    // a page with Volto's Search block
+    queryParam = 'q',
     placeholder = 'Search',
     suggestionsTitle,
     maxToShow,
@@ -112,7 +117,7 @@ function HeaderSearchPopUp({
 
   const onSubmit = (event) => {
     const text = searchInputRef?.current?.inputRef?.current?.value;
-    history.push(`${path}?q=${text}`);
+    history.push(`${path}?${queryParam}=${text}`);
 
     if (window?.searchContext?.resetSearch) {
       window.searchContext.resetSearch({ searchTerm: text });
@@ -168,7 +173,7 @@ function HeaderSearchPopUp({
                   return (
                     <List.Item key={i}>
                       <Link
-                        to={`${path}?q=${item}`}
+                        to={`${path}?${queryParam}=${item}`}
                         onClick={() => onClickHandler(item)}
                       >
                         {item}
