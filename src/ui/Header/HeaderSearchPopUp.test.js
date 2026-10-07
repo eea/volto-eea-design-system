@@ -340,6 +340,35 @@ describe('HeaderSearchPopUp', () => {
     });
   });
 
+  describe('search box useAISearchIcon override', () => {
+    beforeEach(() => {
+      window.localStorage.clear();
+    });
+
+    const renderWithEntry = (entry) =>
+      render(
+        <Provider store={mockStore}>
+          <Router history={history}>
+            <HeaderSearchPopUp
+              headerSearchBox={[{ ...sampleHeaderSearchBox[0], ...entry }]}
+              onClose={mockOnClose}
+              triggerRefs={[]}
+            />
+          </Router>
+        </Provider>,
+      );
+
+    it('shows the plain magnifier when the search box turns the AI icon off', () => {
+      mockState.reduxAsyncConnect.headerSettings.useAISearchIcon = true;
+
+      const { container } = renderWithEntry({ useAISearchIcon: false });
+      expect(container.querySelector('img')).toHaveAttribute(
+        'src',
+        'search-line.svg',
+      );
+    });
+  });
+
   describe('hideActions', () => {
     const renderWith = (headerSearchBox) =>
       render(
