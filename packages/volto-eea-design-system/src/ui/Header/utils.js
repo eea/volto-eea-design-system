@@ -91,3 +91,24 @@ export const numbersToMenuItemColumns = (numbers) => {
     })
     .filter((col) => col !== '');
 };
+
+/**
+ * Finds the search-input entry of the header search box config that matches
+ * the current path (its matchpath, else its path), falling back to the first
+ * search-input entry.
+ *
+ * @param {Array} config - headerSearchBox entries
+ * @param {Object} location - object with a pathname
+ * @returns {Object} The matched search-input entry, or {}
+ */
+export const getSearchInput = (config, location) => {
+  return (
+    config.filter(
+      (v) =>
+        v.type === 'search-input' &&
+        location.pathname.match(v.matchpath ? v.matchpath : v.path),
+    )[0] ||
+    config.filter((v) => v.type === 'search-input')[0] ||
+    {}
+  );
+};

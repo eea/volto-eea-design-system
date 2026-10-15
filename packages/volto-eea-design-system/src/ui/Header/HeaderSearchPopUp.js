@@ -10,24 +10,13 @@ import { handleEnterKeyPress } from '@eeacms/volto-eea-design-system/helpers';
 import searchSVG from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search-line.svg';
 import aiSearchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/ai-search.svg';
 import { useAISummaryToggle } from './useAISummaryToggle';
+import { getSearchInput } from './utils';
 
 const getRandomItems = (arr, max) => {
   return (
     arr?.slice(0, max).map(function () {
       return this.splice(Math.floor(Math.random() * this.length), 1)[0];
     }, arr.slice()) || []
-  );
-};
-
-const getSearchInput = (config, location) => {
-  return (
-    config.filter(
-      (v) =>
-        v.type === 'search-input' &&
-        location.pathname.match(v.matchpath ? v.matchpath : v.path),
-    )[0] ||
-    config.filter((v) => v.type === 'search-input')[0] ||
-    {}
   );
 };
 
@@ -75,13 +64,18 @@ function HeaderSearchPopUp({
   const nodeRef = React.useRef();
 
   const searchInput = getSearchInput(headerSearchBox, location);
-  const actions =
-    headerSearchBox
-      .filter((v) => ['info', 'button-link'].includes(v.type))
-      .map((v) => serializeAction(v, location)) || [];
+  // A search box with hideActions shows no info text or buttons below it
+  const actions = searchInput.hideActions
+    ? []
+    : headerSearchBox
+        .filter((v) => ['info', 'button-link'].includes(v.type))
+        .map((v) => serializeAction(v, location)) || [];
 
   const {
     path = '',
+    // URL parameter that carries the search text, e.g. 'SearchableText' for
+    // a page with Volto's Search block
+    queryParam = 'q',
     placeholder = 'Search',
     suggestionsTitle,
     maxToShow,
@@ -92,10 +86,13 @@ function HeaderSearchPopUp({
     getRandomItems(suggestions, maxToShow),
   );
 
-  const useAISearchIcon = useSelector(
+  const siteUseAISearchIcon = useSelector(
     (state) =>
       state.reduxAsyncConnect?.headerSettings?.useAISearchIcon || false,
   );
+  // A search box can turn the site-wide icon off, e.g. a subsite search
+  const useAISearchIcon =
+    siteUseAISearchIcon && (searchInput.useAISearchIcon ?? true);
 
   const [aiSummaryEnabled] = useAISummaryToggle();
 
@@ -112,7 +109,7 @@ function HeaderSearchPopUp({
 
   const onSubmit = (event) => {
     const text = searchInputRef?.current?.inputRef?.current?.value;
-    history.push(`${path}?q=${text}`);
+    history.push(`${path}?${queryParam}=${text}`);
 
     if (window?.searchContext?.resetSearch) {
       window.searchContext.resetSearch({ searchTerm: text });
@@ -168,7 +165,7 @@ function HeaderSearchPopUp({
                   return (
                     <List.Item key={i}>
                       <Link
-                        to={`${path}?q=${item}`}
+                        to={`${path}?${queryParam}=${item}`}
                         onClick={() => onClickHandler(item)}
                       >
                         {item}

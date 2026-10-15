@@ -772,12 +772,13 @@ test('menu click outside behavior with different active states', async () => {
 });
 
 describe('header search icon and AI summary state', () => {
-  const renderMain = () =>
+  const renderMain = (props = {}) =>
     renderWithProvider(
       <Router history={createMemoryHistory()}>
         <Header>
           <Header.Main
             pathname="/test"
+            {...props}
             menuItems={[
               { '@id': '/test', url: '/test', title: 'Test', items: [] },
             ]}
@@ -823,5 +824,38 @@ describe('header search icon and AI summary state', () => {
       'src',
       'search-line.svg',
     );
+  });
+
+  describe('search box useAISearchIcon override', () => {
+    const headerSearchBox = [
+      { type: 'search-input', path: '/search' },
+      {
+        type: 'search-input',
+        matchpath: '/en/epanet',
+        path: '/en/epanet/site-search',
+        useAISearchIcon: false,
+      },
+    ];
+
+    it('shows the plain magnifier in the search box path that turns the AI icon off', () => {
+      mockState.reduxAsyncConnect.headerSettings.useAISearchIcon = true;
+
+      const { container } = renderMain({
+        pathname: '/en/epanet/about',
+        headerSearchBox,
+      });
+      expect(
+        container.querySelector('img[alt="Global search"]'),
+      ).toHaveAttribute('src', 'search-line.svg');
+    });
+
+    it('keeps the site-wide AI sparkle outside that path', () => {
+      mockState.reduxAsyncConnect.headerSettings.useAISearchIcon = true;
+
+      const { container } = renderMain({ pathname: '/en', headerSearchBox });
+      expect(
+        container.querySelector('img[alt="Global search"]'),
+      ).toHaveAttribute('src', 'ai-search.svg');
+    });
   });
 });
