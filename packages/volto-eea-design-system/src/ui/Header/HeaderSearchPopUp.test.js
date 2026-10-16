@@ -5,6 +5,25 @@ import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import HeaderSearchPopUp from './HeaderSearchPopUp';
 import '@testing-library/jest-dom';
+import searchLineIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search-line.svg';
+import aiSearchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/ai-search.svg';
+
+// Volto 19.5 test setup stubs localStorage (vi.stubGlobal), so localStorage
+// cannot drive the AI summary state in tests. Control the hook instead.
+const aiSummaryState = vi.hoisted(() => ({ enabled: true }));
+
+vi.mock('./useAISummaryToggle', async (importOriginal) => {
+  const actual = await importOriginal();
+  return {
+    ...actual,
+    useAISummaryToggle: () => [aiSummaryState.enabled, () => {}],
+  };
+});
+
+beforeEach(() => {
+  aiSummaryState.enabled = true;
+});
+
 
 const mockState = {
   reduxAsyncConnect: {
@@ -314,7 +333,7 @@ describe('HeaderSearchPopUp', () => {
       const { container } = renderPopup();
       expect(container.querySelector('img')).toHaveAttribute(
         'src',
-        'search-line.svg',
+        searchLineIcon,
       );
     });
 
@@ -324,18 +343,18 @@ describe('HeaderSearchPopUp', () => {
       const { container } = renderPopup();
       expect(container.querySelector('img')).toHaveAttribute(
         'src',
-        'ai-search.svg',
+        aiSearchIcon,
       );
     });
 
     it('shows the plain magnifier when useAISearchIcon is true but AI summaries are disabled', () => {
       mockState.reduxAsyncConnect.headerSettings.useAISearchIcon = true;
-      window.localStorage.setItem('eea-ai-summary-enabled', '0');
+      aiSummaryState.enabled = false;
 
       const { container } = renderPopup();
       expect(container.querySelector('img')).toHaveAttribute(
         'src',
-        'search-line.svg',
+        searchLineIcon,
       );
     });
   });
@@ -364,7 +383,7 @@ describe('HeaderSearchPopUp', () => {
       const { container } = renderWithEntry({ useAISearchIcon: false });
       expect(container.querySelector('img')).toHaveAttribute(
         'src',
-        'search-line.svg',
+        searchLineIcon,
       );
     });
   });

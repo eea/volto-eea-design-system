@@ -1,11 +1,30 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import searchLineIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search-line.svg';
+import aiSearchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/ai-search.svg';
 
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import '@testing-library/jest-dom';
+
+// Volto 19.5 test setup stubs localStorage (vi.stubGlobal), so localStorage
+// cannot drive the AI summary state in tests. Control the hook instead.
+const aiSummaryState = vi.hoisted(() => ({ enabled: true }));
+
+vi.mock('./useAISummaryToggle', async (importOriginal) => {
+  const actual = await importOriginal();
+  return {
+    ...actual,
+    useAISummaryToggle: () => [aiSummaryState.enabled, () => {}],
+  };
+});
+
+beforeEach(() => {
+  aiSummaryState.enabled = true;
+});
+
 
 const mockState = {
   reduxAsyncConnect: {
@@ -801,7 +820,7 @@ describe('header search icon and AI summary state', () => {
     const { container } = renderMain();
     expect(container.querySelector('img[alt="Global search"]')).toHaveAttribute(
       'src',
-      'search-line.svg',
+      searchLineIcon,
     );
   });
 
@@ -811,18 +830,18 @@ describe('header search icon and AI summary state', () => {
     const { container } = renderMain();
     expect(container.querySelector('img[alt="Global search"]')).toHaveAttribute(
       'src',
-      'ai-search.svg',
+      aiSearchIcon,
     );
   });
 
   it('shows the plain magnifier when useAISearchIcon is true but AI summaries are disabled', () => {
     mockState.reduxAsyncConnect.headerSettings.useAISearchIcon = true;
-    window.localStorage.setItem('eea-ai-summary-enabled', '0');
+    aiSummaryState.enabled = false;
 
     const { container } = renderMain();
     expect(container.querySelector('img[alt="Global search"]')).toHaveAttribute(
       'src',
-      'search-line.svg',
+      searchLineIcon,
     );
   });
 
@@ -846,7 +865,7 @@ describe('header search icon and AI summary state', () => {
       });
       expect(
         container.querySelector('img[alt="Global search"]'),
-      ).toHaveAttribute('src', 'search-line.svg');
+      ).toHaveAttribute('src', searchLineIcon);
     });
 
     it('keeps the site-wide AI sparkle outside that path', () => {
@@ -855,7 +874,7 @@ describe('header search icon and AI summary state', () => {
       const { container } = renderMain({ pathname: '/en', headerSearchBox });
       expect(
         container.querySelector('img[alt="Global search"]'),
-      ).toHaveAttribute('src', 'ai-search.svg');
+      ).toHaveAttribute('src', aiSearchIcon);
     });
   });
 });
