@@ -53,7 +53,7 @@
     "@testing-library/react": "^16.3.2",
     "@testing-library/react-hooks": "8.0.1",
     "@vitejs/plugin-react": "4.7.0",
-    "@vitest/coverage-v8": "3.2.7",
+    "@vitest/coverage-istanbul": "3.2.7",
     "babel-plugin-lodash": "3.3.4",
     "babel-plugin-react-intl": "5.1.17",
     "babel-plugin-root-import": "6.6.0",

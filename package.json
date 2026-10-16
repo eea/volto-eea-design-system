@@ -38,6 +38,7 @@
     "@eeacms/volto-eea-design-system": "workspace:*"
   },
   "devDependencies": {
+    "babel-plugin-istanbul": "^6.1.1",
     "mrs-developer": "^2.2.0",
     "lint-staged": "^14.0.1"
   },
