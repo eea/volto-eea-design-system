@@ -24,7 +24,6 @@ beforeEach(() => {
   aiSummaryState.enabled = true;
 });
 
-
 const mockState = {
   reduxAsyncConnect: {
     headerSettings: {
