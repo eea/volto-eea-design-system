@@ -106,7 +106,7 @@
     "test": "vitest --config ./vitest.config.mjs run --passWithNoTests",
     "test:fix": "vitest --config ./vitest.config.mjs run --passWithNoTests --update",
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
-    "prepare": "cd ../.. && husky install || true",
+    "husky:install": "cd ../.. && husky install || true",
     "dry-release": "release-it --dry-run",
     "release-major-alpha": "release-it major --preRelease=alpha",
     "release-alpha": "release-it --preRelease=alpha"
