@@ -49,7 +49,8 @@
   margin: 4px -14px 0;
   background-repeat: no-repeat;
   background-size: 64px 18px;
-  transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
+  transition:
+    width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
     margin 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
@@ -200,6 +201,22 @@
   .active.item {
     background: none;
     color: @textColor;
+  }
+}
+
+// On phones the items (arrows, pages, ellipsis) do not fit on one row with
+// the default padding and widen the whole page: narrower items, and a second
+// row when it is still too long
+@media only screen and (max-width: @largestMobileScreen) {
+  .ui.pagination.menu {
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .item {
+      padding-right: @paginationMobileItemHorizontalPadding;
+      padding-left: @paginationMobileItemHorizontalPadding;
+    }
   }
 }
 
