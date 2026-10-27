@@ -129,6 +129,10 @@
 /* Global focus-visible for accessibility */
 @focusVisibleOutline: .2rem auto var(--focus-visible, @blue-2);
 
+/* Used by Volto's pastanaga extras/focus.less (Volto >= 18.36.0) */
+@innerFocusShadow: transparent;
+@outerFocusOutline: var(--focus-visible, @blue-2);
+
 /* Used on inputs, textarea etc */
 @focusedFormBorderColor: @secondaryColor;
 
