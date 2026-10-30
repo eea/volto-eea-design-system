@@ -81,7 +81,9 @@
 
 
 /* Header */
-@headerMargin: -@em-space-2 -@em-space-1 -@em-space-1 -@em-space-1;
+// the side margins cancel the padding of the header (room for the focus
+// outline), so the title lines up with the other elements of the card
+@headerMargin: -@em-space-2 -@headerPadding -@em-space-1 -@headerPadding;
 @headerFontWeight: @bold;
 @headerFontSize: 1.125rem;
 @iconCardHeaderFontSize: clamp(@font-size-1, @font-size-2, 18px);

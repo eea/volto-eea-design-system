@@ -2,7 +2,7 @@ import Iframe from '../iframe_component.mdx';
 
 ### Visualisation card defaults
 
-Content type and description are hidden, the publishing date is displayed, and the CTA popup is off. The title, image and CTA lead to the same destination.
+A Grid card with the top accent border. Content type and description are hidden, the publishing date is displayed, and the CTA popup is off. The title, image and CTA lead to the same destination.
 
 <Iframe height="600" id="eea-listing-block-cards--visualization-defaults" />
 
@@ -16,13 +16,21 @@ Enable the optional content-type label above the title and the description. Publ
 
 [View the example without a publishing date](https://eea.github.io/eea-storybook/?path=/story/eea-listing-block-cards--without-publishing-date).
 
+### Card and list item
+
+The two base templates. Use the Storybook controls to change the image position, the elements and their order, the border and the call to action.
+
+<Iframe height="600" id="eea-listing-block-cards--default-card" />
+
+[Open the list item in Storybook](https://eea.github.io/eea-storybook/?path=/story/eea-listing-block-cards--list-item).
+
 ### All card variations
 
-Compare the eight templates and try the title, preview image and CTA where those elements are present.
+The looks that used to be separate templates, built with the controls of the Card and List item. Try the title, preview image and CTA where those elements are present.
 
 <Iframe height="1100" id="eea-listing-block-cards--all-card-variations" />
 
-[Open all card variations in Storybook](https://eea.github.io/eea-storybook/?path=/story/eea-listing-block-cards--all-card-variations).
+[Open all card variations in Storybook](https://eea.github.io/eea-storybook/?path=/story/eea-listing-block-cards--all-card-variations), or [the same blocks saved with the former templates](https://eea.github.io/eea-storybook/?path=/story/eea-listing-block-cards--legacy-templates).
 
 ### Popup and editing examples
 
