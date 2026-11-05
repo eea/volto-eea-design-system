@@ -131,6 +131,10 @@
 @innerFocusShadow: @white;
 @outerFocusOutline: @black;
 
+/* Used by Volto's pastanaga extras/focus.less (Volto >= 18.36.0) */
+@innerFocusShadow: transparent;
+@outerFocusOutline: var(--focus-visible, @blue-2);
+
 /* Used on inputs, textarea etc */
 @focusedFormBorderColor: @secondaryColor;
 

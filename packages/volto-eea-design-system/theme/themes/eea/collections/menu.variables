@@ -359,6 +359,8 @@
 @paginationWidth: 100%;
 @paginationColor: @deepBlue;
 @paginationMinWidth: 2em;
+// narrower items on phones, for the whole pagination to fit on the screen
+@paginationMobileItemHorizontalPadding: @rem-space-2;
 @paginationActiveBackground: @transparentBlack;
 @paginationActiveTextColor: @selectedTextColor;
 

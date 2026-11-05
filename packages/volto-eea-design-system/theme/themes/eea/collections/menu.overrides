@@ -204,6 +204,22 @@
   }
 }
 
+// On phones the items (arrows, pages, ellipsis) do not fit on one row with
+// the default padding and widen the whole page: narrower items, and a second
+// row when it is still too long
+@media only screen and (max-width: @largestMobileScreen) {
+  .ui.pagination.menu {
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .item {
+      padding-right: @paginationMobileItemHorizontalPadding;
+      padding-left: @paginationMobileItemHorizontalPadding;
+    }
+  }
+}
+
 /*************/
 /* EEA Theme */
 /*************/
