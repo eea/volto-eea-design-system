@@ -1,0 +1,227 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+.accordion.inverted > .title,
+.accordion > .filter {
+  background-color: var(--bg-color, transparent);
+}
+
+.ui.accordion button.title {
+  width: 100%;
+  border: none;
+  background: transparent;
+}
+
+.ui.accordion {
+  margin: @itemsMargin;
+  transition: @styledTitleTransition;
+
+  // basic has important as such we also need to use important
+  .basic {
+    color: @titleColorHover !important;
+  }
+
+  .basic:focus,
+  .basic:hover {
+    background-color: transparent !important;
+    box-shadow: none;
+    color: @titleColorHover !important;
+  }
+
+  > .title {
+    display: flex;
+    align-items: center;
+    justify-content: @titleJustifyContent;
+    border-bottom: @titleBorderBottom;
+
+    &.align-arrow-left {
+      justify-content: flex-start;
+    }
+
+    .icon {
+      flex-shrink: 0;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: @titleColorHover;
+
+      .icon {
+        color: @iconColorHover;
+      }
+    }
+
+    > .icon {
+      display: flex;
+      width: @iconWidth;
+      height: @iconHeight;
+      align-items: center;
+      order: @iconOrder;
+      margin: @iconMargin;
+      color: @iconColor;
+      font-size: @iconFontSize;
+      line-height: @iconFontSize;
+    }
+
+    &.filter {
+      .icon {
+        margin: @filterIconMargin;
+        color: var(--text-color, @filterTextColor);
+        font-size: @filterIconFontSize;
+      }
+
+      .ui.input input::placeholder {
+        color: var(--text-color, @filterTextColor);
+      }
+    }
+  }
+
+  > .title.active {
+    border-bottom: @activeTitleBorderBottom;
+    background-color: @activeTitleBackground;
+    color: @activeTitleColor;
+
+    .icon {
+      color: @iconColorActive;
+    }
+  }
+
+  .content {
+    padding: @contentPadding;
+    background: @contentBackground;
+    color: @contentColor;
+  }
+
+  &.filter-listing {
+    .title {
+      .icon {
+        margin-left: @filterListingIconMarginLeft !important;
+        font-size: @filterListingIconFontSize;
+        line-height: @filterListingIconLineHeight;
+      }
+    }
+  }
+}
+
+/* All content padding are equal including last child */
+.ui.accordion:not(.styled) .title ~ .content:not(.ui):last-child {
+  padding-bottom: @contentPaddingBottom;
+}
+
+/*******************************
+            Types
+*******************************/
+
+/*--------------
+     Styled
+---------------*/
+
+.ui.styled.accordion .title,
+.ui.styled.accordion .title:hover,
+.ui.styled.accordion .title:focus-visible {
+  background-color: @styledActiveTitleBackground;
+}
+
+.ui.styled.accordion .active.title input {
+  color: @styledActiveTitleColor;
+}
+
+/*------------------------------
+     Tabs as accordion (Volto)
+--------------------------------*/
+
+.ui.accordion.RRT__accordion {
+  .ui.item .icon {
+    font-size: @iconFontSize;
+
+    &::before {
+      font-size: @iconFontSize;
+    }
+  }
+}
+
+/*--------------
+   Variations
+---------------*/
+.ui.accordion[class*='ary'] > .active.title,
+.ui.accordion[class*='ary'].inverted > .title,
+.ui.accordion[class*='ary'].inverted > .icon,
+.ui.accordion[class*='ary'] > .filter {
+  --text-color-hover: white;
+  --text-color: white;
+}
+
+/* Primary */
+.ui.accordion.primary > .active.title,
+.ui.accordion.primary.inverted > .title,
+.ui.accordion.primary > .filter,
+.ui.accordion.secondary.primary > .active.title,
+.ui.accordion.secondary.primary.inverted > .title,
+.ui.accordion.secondary.primary > .filter {
+  --bg-color: @primaryColorCSSVar;
+}
+
+.ui.accordion.primary:not(.inverted) > .title:not(.active, .filter):hover,
+.ui.accordion.primary:not(.inverted),
+> .title:not(.active, .filter):focus-visible {
+  --text-color-hover: @primaryColorCSSVar;
+}
+
+/* Secondary */
+.ui.accordion.secondary > .active.title,
+.ui.accordion.secondary.inverted > .title,
+.ui.accordion.secondary > .filter {
+  --bg-color: @secondaryColorCSSVar;
+}
+
+.ui.accordion.secondary:not(.inverted) > .title:not(.active, .filter):hover,
+.ui.accordion.secondary:not(.inverted),
+> .title:not(.active, .filter):focus-visible {
+  --text-color-hover: @secondaryColorCSSVar;
+}
+
+/* Tertiary */
+.ui.accordion.tertiary > .active.title,
+.ui.accordion.tertiary.inverted > .title,
+.ui.accordion.tertiary > .filter,
+.ui.accordion.secondary.tertiary > .active.title,
+.ui.accordion.secondary.tertiary.inverted > .title,
+.ui.accordion.secondary.tertiary > .filter {
+  --bg-color: @tertiaryColorCSSVar;
+}
+
+.ui.accordion.tertiary:not(.inverted) > .title:not(.active, .filter):hover,
+.ui.accordion.tertiary:not(.inverted),
+> .title:not(.active, .filter):focus-visible {
+  --text-color-hover: @tertiaryColorCSSVar;
+}
+
+/* Remove padding from navigation settings accordion content */
+.navigation-objectlist-widget .ui.styled.accordion .content,
+.navigation-objectlist-widget .ui.styled.accordion .accordion .content {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+navigation-objectlist-widget .ui.styled.accordion {
+  margin: 0 !important;
+}
+
+@media only screen and (max-width: @largestMobileScreen) {
+  .accordion-block h1 * {
+    font-size: @mobileH1;
+  }
+
+  .accordion-block h2 * {
+    font-size: @mobileH2;
+  }
+
+  .accordion-block h3 * {
+    font-size: @mobileH3;
+  }
+
+  .accordion-block h4 * {
+    font-size: @mobileH4;
+  }
+}

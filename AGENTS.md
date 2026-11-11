@@ -33,7 +33,7 @@
   make test-update # update snapshots (-u)
   ```
   Under the hood: `docker compose run --no-deps -e CI=1 frontend test`.
-  - The project uses a custom `jest-addon.config.js` that resolves Volto and EEA addon aliases. Coverage thresholds are intentionally low (5%).
+  - The project uses a custom `vitest.config.mjs` that resolves Volto and EEA add-on aliases. Coverage thresholds are intentionally low (5%).
 - **E2E tests (Cypress):** require the full Docker stack running on ports 3000 and 8080.
   ```bash
   make          # build
