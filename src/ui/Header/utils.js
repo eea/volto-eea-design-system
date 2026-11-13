@@ -2,7 +2,6 @@
  * Utility functions for Header component
  */
 
-import isArray from 'lodash/isArray';
 import { useState, useEffect, useMemo } from 'react';
 
 export const DEFAULT_HEADER_SEED_QUESTIONS_CACHE_MINUTES = 10;
@@ -118,18 +117,32 @@ export const getSearchInput = (config, location) => {
   );
 };
 
+function getSecureRandomIndex(length) {
+  if (typeof crypto !== 'undefined' && crypto.getRandomValues) {
+    const array = new Uint32Array(1);
+    crypto.getRandomValues(array);
+    return array[0] % length;
+  }
+  return 0;
+}
+
 export function getRandomItems(arr, max) {
-  if (!arr || !isArray(arr) || arr.length === 0) {
+  if (!arr || !Array.isArray(arr) || arr.length === 0) {
     return [];
   }
-  return arr.slice(0, max).map(function () {
-    return this.splice(Math.floor(Math.random() * this.length), 1)[0];
-  }, arr.slice());
+  const copy = arr.slice();
+  const limit = Math.min(arr.length, max);
+  const result = [];
+  for (let i = 0; i < limit; i += 1) {
+    const randIdx = getSecureRandomIndex(copy.length);
+    result.push(copy.splice(randIdx, 1)[0]);
+  }
+  return result;
 }
 
 export function normalizeTopics(topics) {
   if (!topics) return [];
-  if (isArray(topics)) {
+  if (Array.isArray(topics)) {
     return topics
       .map((t) =>
         (typeof t === 'string' ? t.trim() : t?.topic || t?.name || '').trim(),

@@ -12,6 +12,15 @@ import aiSearchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/as
 import { useAISummaryToggle } from './useAISummaryToggle';
 import { getSearchInput, useHeaderSearchSuggestions } from './utils';
 
+const SKELETON_ITEMS = [
+  { id: 'suggestion-skeleton-180', width: 180 },
+  { id: 'suggestion-skeleton-240', width: 240 },
+  { id: 'suggestion-skeleton-160', width: 160 },
+  { id: 'suggestion-skeleton-220', width: 220 },
+  { id: 'suggestion-skeleton-190', width: 190 },
+  { id: 'suggestion-skeleton-230', width: 230 },
+];
+
 const serializeAction = (action, location) => {
   if (action.type === 'info' && isArray(action.content)) {
     const matchedContent =
@@ -148,30 +157,27 @@ function HeaderSearchPopUp({
 
               <List>
                 {isLoading
-                  ? Array.from({ length: maxToShow || 6 }).map((_, i) => {
-                      const widths = [180, 240, 160, 220, 190, 230];
-                      const width = widths[i % widths.length];
-                      return (
-                        <List.Item key={i} className="suggestion-skeleton">
-                          <span
-                            className="suggestion-skeleton-line"
-                            style={{ width: `${width}px` }}
-                          />
-                        </List.Item>
-                      );
-                    })
-                  : visibleSuggestions.map((item, i) => {
-                      return (
-                        <List.Item key={i}>
-                          <Link
-                            to={`${path}?${queryParam}=${item}`}
-                            onClick={() => onClickHandler(item)}
-                          >
-                            {item}
-                          </Link>
-                        </List.Item>
-                      );
-                    })}
+                  ? SKELETON_ITEMS.slice(0, maxToShow || 6).map((skeleton) => (
+                      <List.Item
+                        key={skeleton.id}
+                        className="suggestion-skeleton"
+                      >
+                        <span
+                          className="suggestion-skeleton-line"
+                          style={{ width: `${skeleton.width}px` }}
+                        />
+                      </List.Item>
+                    ))
+                  : visibleSuggestions.map((item) => (
+                      <List.Item key={item}>
+                        <Link
+                          to={`${path}?${queryParam}=${item}`}
+                          onClick={() => onClickHandler(item)}
+                        >
+                          {item}
+                        </Link>
+                      </List.Item>
+                    ))}
               </List>
             </div>
           )}
