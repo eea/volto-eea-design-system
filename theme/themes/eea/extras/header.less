@@ -376,7 +376,37 @@
         a {
           color: @searchBoxSuggestionsTextColor;
         }
+
+        &.suggestion-skeleton {
+          display: flex;
+          align-items: center;
+          pointer-events: none;
+
+          .suggestion-skeleton-line {
+            display: inline-block;
+            height: 1.2em;
+            border-radius: 4px;
+            animation: header-suggestion-shimmer 1.5s infinite;
+            background: linear-gradient(
+              90deg,
+              rgba(255, 255, 255, 0.15) 25%,
+              rgba(255, 255, 255, 0.35) 50%,
+              rgba(255, 255, 255, 0.15) 75%
+            );
+            background-size: 200% 100%;
+          }
+        }
       }
+    }
+  }
+
+  @keyframes header-suggestion-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+
+    100% {
+      background-position: -200% 0;
     }
   }
 

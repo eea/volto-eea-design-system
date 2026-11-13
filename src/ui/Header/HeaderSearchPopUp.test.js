@@ -397,4 +397,173 @@ describe('HeaderSearchPopUp', () => {
       expect(screen.getByPlaceholderText('Search')).toBeInTheDocument();
     });
   });
+
+  describe('enableGeneratedSeedQuestions in searchInput', () => {
+    let originalFetch;
+
+    beforeEach(() => {
+      window.localStorage.clear();
+      originalFetch = global.fetch;
+    });
+
+    afterEach(() => {
+      global.fetch = originalFetch;
+      window.localStorage.clear();
+    });
+
+    it('does not call fetch when enableGeneratedSeedQuestions is false or omitted', () => {
+      global.fetch = jest.fn();
+
+      render(
+        <Provider store={mockStore}>
+          <Router history={history}>
+            <HeaderSearchPopUp
+              headerSearchBox={sampleHeaderSearchBox}
+              onClose={mockOnClose}
+              triggerRefs={[]}
+            />
+          </Router>
+        </Provider>,
+      );
+
+      expect(global.fetch).not.toHaveBeenCalled();
+      expect(screen.getByText('Suggestions Title')).toBeInTheDocument();
+    });
+
+    it('uses cached seed questions from localStorage without calling fetch', () => {
+      global.fetch = jest.fn();
+      const cacheKey = 'eea_header_search_seed_questions_/search';
+      window.localStorage.setItem(
+        cacheKey,
+        JSON.stringify({
+          timestamp: Date.now(),
+          questions: ['Cached Question 1', 'Cached Question 2'],
+        }),
+      );
+
+      render(
+        <Provider store={mockStore}>
+          <Router history={history}>
+            <HeaderSearchPopUp
+              headerSearchBox={[
+                {
+                  ...sampleHeaderSearchBox[0],
+                  enableGeneratedSeedQuestions: true,
+                },
+              ]}
+              onClose={mockOnClose}
+              triggerRefs={[]}
+            />
+          </Router>
+        </Provider>,
+      );
+
+      expect(global.fetch).not.toHaveBeenCalled();
+      expect(screen.getByText('Cached Question 1')).toBeInTheDocument();
+      expect(screen.getByText('Cached Question 2')).toBeInTheDocument();
+    });
+
+    it('fetches seed questions from /_rq/questions when cache is missing or expired and saves to localStorage', async () => {
+      global.fetch = jest.fn().mockResolvedValue({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            questions: ['Generated Question A', 'Generated Question B'],
+          }),
+      });
+
+      render(
+        <Provider store={mockStore}>
+          <Router history={history}>
+            <HeaderSearchPopUp
+              headerSearchBox={[
+                {
+                  ...sampleHeaderSearchBox[0],
+                  enableGeneratedSeedQuestions: true,
+                  topics: ['Climate change', 'Air pollution'],
+                  maxToShow: 4,
+                },
+              ]}
+              onClose={mockOnClose}
+              triggerRefs={[]}
+            />
+          </Router>
+        </Provider>,
+      );
+
+      expect(global.fetch).toHaveBeenCalledWith(
+        '/_rq/questions',
+        expect.objectContaining({
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            topics: ['Climate change', 'Air pollution'],
+            count: 4,
+          }),
+        }),
+      );
+
+      const generatedLink = await screen.findByText('Generated Question A');
+      expect(generatedLink).toBeInTheDocument();
+      expect(screen.getByText('Generated Question B')).toBeInTheDocument();
+
+      const cacheKey = 'eea_header_search_seed_questions_/search';
+      const stored = JSON.parse(window.localStorage.getItem(cacheKey));
+      expect(stored.questions).toEqual([
+        'Generated Question A',
+        'Generated Question B',
+      ]);
+    });
+
+    it('renders skeleton lines matching maxToShow while loading', () => {
+      global.fetch = jest.fn(() => new Promise(() => {}));
+
+      const { container } = render(
+        <Provider store={mockStore}>
+          <Router history={history}>
+            <HeaderSearchPopUp
+              headerSearchBox={[
+                {
+                  ...sampleHeaderSearchBox[0],
+                  enableGeneratedSeedQuestions: true,
+                  maxToShow: 5,
+                },
+              ]}
+              onClose={mockOnClose}
+              triggerRefs={[]}
+            />
+          </Router>
+        </Provider>,
+      );
+
+      const skeletons = container.querySelectorAll('.suggestion-skeleton');
+      expect(skeletons).toHaveLength(5);
+    });
+
+    it('falls back to static suggestions when fetch fails', async () => {
+      global.fetch = jest.fn().mockRejectedValue(new Error('Network error'));
+
+      render(
+        <Provider store={mockStore}>
+          <Router history={history}>
+            <HeaderSearchPopUp
+              headerSearchBox={[
+                {
+                  ...sampleHeaderSearchBox[0],
+                  enableGeneratedSeedQuestions: true,
+                  suggestions: ['Static Fallback Question'],
+                },
+              ]}
+              onClose={mockOnClose}
+              triggerRefs={[]}
+            />
+          </Router>
+        </Provider>,
+      );
+
+      expect(
+        await screen.findByText('Static Fallback Question'),
+      ).toBeInTheDocument();
+    });
+  });
 });
