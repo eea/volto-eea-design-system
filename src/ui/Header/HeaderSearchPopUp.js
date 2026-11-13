@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import isArray from 'lodash/isArray';
 import isPlainObject from 'lodash/isPlainObject';
 import { useSelector } from 'react-redux';
@@ -10,15 +10,16 @@ import { handleEnterKeyPress } from '@eeacms/volto-eea-design-system/helpers';
 import searchSVG from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/search-line.svg';
 import aiSearchIcon from '@eeacms/volto-eea-design-system/../theme/themes/eea/assets/images/Header/ai-search.svg';
 import { useAISummaryToggle } from './useAISummaryToggle';
-import { getSearchInput } from './utils';
+import { getSearchInput, useHeaderSearchSuggestions } from './utils';
 
-const getRandomItems = (arr, max) => {
-  return (
-    arr?.slice(0, max).map(function () {
-      return this.splice(Math.floor(Math.random() * this.length), 1)[0];
-    }, arr.slice()) || []
-  );
-};
+const SKELETON_ITEMS = [
+  { id: 'suggestion-skeleton-180', width: 180 },
+  { id: 'suggestion-skeleton-240', width: 240 },
+  { id: 'suggestion-skeleton-160', width: 160 },
+  { id: 'suggestion-skeleton-220', width: 220 },
+  { id: 'suggestion-skeleton-190', width: 190 },
+  { id: 'suggestion-skeleton-230', width: 230 },
+];
 
 const serializeAction = (action, location) => {
   if (action.type === 'info' && isArray(action.content)) {
@@ -79,12 +80,10 @@ function HeaderSearchPopUp({
     placeholder = 'Search',
     suggestionsTitle,
     maxToShow,
-    suggestions,
   } = searchInput;
 
-  const [visibleSuggestions, setVisibileSuggestions] = React.useState(
-    getRandomItems(suggestions, maxToShow),
-  );
+  const { suggestions: visibleSuggestions, isLoading } =
+    useHeaderSearchSuggestions(searchInput);
 
   const siteUseAISearchIcon = useSelector(
     (state) =>
@@ -100,10 +99,6 @@ function HeaderSearchPopUp({
   // the user has not opted out of AI summaries.
   const searchIcon =
     useAISearchIcon && aiSummaryEnabled ? aiSearchIcon : searchSVG;
-
-  useEffect(() => {
-    setVisibileSuggestions(getRandomItems(suggestions, maxToShow));
-  }, [maxToShow, suggestions]);
 
   useClickOutside({ targetRefs: [nodeRef, ...triggerRefs], callback: onClose });
 
@@ -156,23 +151,33 @@ function HeaderSearchPopUp({
               fluid
             />
           </form>
-          {suggestions?.length > 0 && (
+          {(visibleSuggestions?.length > 0 || isLoading) && (
             <div className="search-suggestions">
               {suggestionsTitle && <h4>{suggestionsTitle}</h4>}
 
               <List>
-                {visibleSuggestions.map((item, i) => {
-                  return (
-                    <List.Item key={i}>
-                      <Link
-                        to={`${path}?${queryParam}=${item}`}
-                        onClick={() => onClickHandler(item)}
+                {isLoading
+                  ? SKELETON_ITEMS.slice(0, maxToShow || 6).map((skeleton) => (
+                      <List.Item
+                        key={skeleton.id}
+                        className="suggestion-skeleton"
                       >
-                        {item}
-                      </Link>
-                    </List.Item>
-                  );
-                })}
+                        <span
+                          className="suggestion-skeleton-line"
+                          style={{ width: `${skeleton.width}px` }}
+                        />
+                      </List.Item>
+                    ))
+                  : visibleSuggestions.map((item) => (
+                      <List.Item key={item}>
+                        <Link
+                          to={`${path}?${queryParam}=${item}`}
+                          onClick={() => onClickHandler(item)}
+                        >
+                          {item}
+                        </Link>
+                      </List.Item>
+                    ))}
               </List>
             </div>
           )}
