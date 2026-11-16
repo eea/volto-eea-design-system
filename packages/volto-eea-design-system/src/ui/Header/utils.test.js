@@ -7,6 +7,11 @@ import {
   isMenuItemActive,
   numberToColumnString,
   numbersToMenuItemColumns,
+  getRandomItems,
+  normalizeTopics,
+  loadCachedQuestions,
+  saveCachedQuestions,
+  DEFAULT_HEADER_SEED_QUESTIONS_CACHE_MINUTES,
 } from './utils';
 
 describe('Header utils', () => {
@@ -323,6 +328,92 @@ describe('Header utils', () => {
         'three wide column',
         'another five wide column',
       ]);
+    });
+  });
+
+  describe('getRandomItems', () => {
+    test('returns empty array when input is empty or null', () => {
+      expect(getRandomItems(null, 5)).toEqual([]);
+      expect(getRandomItems([], 5)).toEqual([]);
+    });
+
+    test('returns at most max items', () => {
+      const items = ['a', 'b', 'c', 'd', 'e'];
+      const result = getRandomItems(items, 3);
+      expect(result).toHaveLength(3);
+    });
+  });
+
+  describe('normalizeTopics', () => {
+    test('normalizes array of strings', () => {
+      expect(normalizeTopics(['Topic A', ' Topic B '])).toEqual([
+        'Topic A',
+        'Topic B',
+      ]);
+    });
+
+    test('normalizes array of topic objects', () => {
+      expect(
+        normalizeTopics([{ topic: 'Climate' }, { name: 'Water' }]),
+      ).toEqual(['Climate', 'Water']);
+    });
+
+    test('normalizes newline-separated string', () => {
+      expect(normalizeTopics('Topic 1\n\nTopic 2\n')).toEqual([
+        'Topic 1',
+        'Topic 2',
+      ]);
+    });
+
+    test('returns empty array for empty inputs', () => {
+      expect(normalizeTopics(null)).toEqual([]);
+      expect(normalizeTopics('')).toEqual([]);
+    });
+  });
+
+  describe('loadCachedQuestions and saveCachedQuestions', () => {
+    let mockStorage = {};
+
+    beforeEach(() => {
+      mockStorage = {};
+      Object.defineProperty(window, 'localStorage', {
+        value: {
+          getItem: jest.fn((key) => mockStorage[key] || null),
+          setItem: jest.fn((key, val) => {
+            mockStorage[key] = val;
+          }),
+          removeItem: jest.fn((key) => {
+            delete mockStorage[key];
+          }),
+        },
+        writable: true,
+      });
+    });
+
+    test('saves and loads questions within default cache minutes', () => {
+      expect(DEFAULT_HEADER_SEED_QUESTIONS_CACHE_MINUTES).toBe(10);
+      const questions = ['Q1?', 'Q2?'];
+      saveCachedQuestions('header-cache-key', questions);
+
+      const loaded = loadCachedQuestions('header-cache-key');
+      expect(loaded).toEqual(questions);
+    });
+
+    test('returns null when cached questions expired based on cacheMinutes', () => {
+      mockStorage['expired-header-key'] = JSON.stringify({
+        timestamp: Date.now() - 11 * 60 * 1000,
+        questions: ['Old Q'],
+      });
+
+      expect(loadCachedQuestions('expired-header-key')).toBeNull();
+    });
+
+    test('returns null when cache entry is invalid JSON or empty array', () => {
+      mockStorage['corrupt-key'] = 'not-json';
+      expect(loadCachedQuestions('corrupt-key')).toBeNull();
+
+      mockStorage['empty-questions'] = JSON.stringify({ questions: [] });
+      expect(loadCachedQuestions('empty-questions')).toBeNull();
     });
   });
 });
