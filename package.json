@@ -1,6 +1,7 @@
 {
   "name": "@eeacms/volto-eea-design-system-dev",
-  "version": "1.0.0-alpha.0",
+  "private": true,
+  "version": "1.70.0",
   "description": "@eeacms/volto-eea-design-system: Volto add-on",
   "author": "European Environment Agency: IDM2 A-Team",
   "homepage": "https://github.com/eea/volto-eea-design-system",
