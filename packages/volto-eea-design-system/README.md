@@ -16,6 +16,8 @@ This package provides the following features:
 
 ## Upgrade
 
+- Version `^1.70.0` adds Volto 19 support and publishes from `packages/volto-eea-design-system`. It requires Node.js 22 and React 18. No CSS class, Less variable or export was removed: the theme files, `theme.config`, `theme.less` and every component are the same as `1.61.10`, apart from `rel="noreferrer"` on the footer's external links.
+
 - Version `^1.60.0` requires `^eea.volto.policy@12.0` to allow customizing the header search box.
 
 ### Try the design system website
