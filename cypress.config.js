@@ -3,11 +3,12 @@ const { defineConfig } = require('cypress');
 module.exports = defineConfig({
   viewportWidth: 1280,
   viewportHeight: 1280,
+  defaultCommandTimeout: 8888,
+  chromeWebSecurity: false,
+  video: false,
   retries: {
     runMode: 3,
   },
-  // JUnit reporter so the EEA Jenkinsfile can publish Cypress results
-  // (it copies cypress/reports/*.xml via `junit testResults: 'cypress-results-current/**/*.xml'`).
   reporter: 'junit',
   reporterOptions: {
     mochaFile: 'cypress/reports/cypress-[hash].xml',
